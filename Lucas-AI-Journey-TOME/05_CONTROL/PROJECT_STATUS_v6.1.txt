@@ -1,0 +1,24 @@
+LUCAS AI JOURNEY TOME — v6.1
+Internal lineage/object name: TOME
+Reader/project final name: Lucas AI Journey TOME
+
+CURRENT STATE
+- 10/10 English narrative books present.
+- 4/10 Slovak narrative books currently completed and included.
+- 6/10 Slovak narrative books remain in active localization.
+- Technical & Research 01–24 are NOT complete.
+- Previous 00–24 technical corpus is retained only as SOURCE QUARRY because direct examination found heavy repetition/padding.
+- Corrective branched reconstruction pipeline v6.0 is authoritative for technical rebuilding.
+- 00 is navigation/index; 01–24 are the 24 substantive technical/research books.
+
+FINAL PROJECT GOAL
+10 English narrative books
++ 10 Slovak narrative books
++ 24 substantive Technical & Research books
++ rebuilt Technical 00 Master Index & Navigation
++ global evidence/provenance/repetition/research-publication QA
+= FULL-SCOPE LUCAS AI JOURNEY TOME — READY FOR EXAMINATION
+
+STATUS LANGUAGE
+Generated != Saved != Reviewed != Compiled != Run != Tested != Verified != Released.
+This repository snapshot is a recoverable current project state, not a declaration of final publication readiness.
