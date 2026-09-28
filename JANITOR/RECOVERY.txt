@@ -1,0 +1,40 @@
+JANITOR RECOVERY / CONTINUITY
+
+Authoritative repository: Lucas-Private-edenOS-apps
+Project path: JANITOR/
+
+Current HEAD: v0.5.3-portability-hardening-candidate
+Historical physically evidenced LKG: v0.1.1
+Release: not yet promoted.
+
+RECOVER BEFORE REDESIGN.
+
+Current source:
+macOS/JANITOR.command
+Windows/JANITOR.ps1
+Windows/JANITOR.cmd
+
+Verification:
+TEST_STATUS.txt
+
+Change history:
+CHANGELOG.txt
+
+Build/run:
+macOS:
+  chmod +x macOS/JANITOR.command
+  macOS/JANITOR.command --version
+  macOS/JANITOR.command
+
+Windows:
+  run Windows/JANITOR.cmd
+  or powershell.exe -NoProfile -ExecutionPolicy Bypass -File Windows/JANITOR.ps1
+
+Current required external gates:
+1. Execute current HEAD on target macOS hardware and preserve evidence.
+2. Execute current HEAD in Windows PowerShell 5.1 and preserve evidence.
+3. Repair any failures and rerun downstream gates.
+4. Promote LKG only after required target verification.
+
+Do not infer physical PASS from static or fixture tests.
+Generated != Saved != Implemented != Built != Tested != Verified != Released.
