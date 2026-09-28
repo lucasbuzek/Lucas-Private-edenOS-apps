@@ -1,0 +1,23 @@
+JANITOR GOVERNED PROJECT STATE
+Date: 2026-09-28
+
+Goal: safe standalone cleanup/storage/organization/maintenance/recovery application.
+Active milestone: cross-platform CLI candidate.
+HEAD: v0.5.3-portability-hardening-candidate.
+LKG: v0.1.1 historical physically evidenced CLI.
+Release: NOT RELEASED.
+
+Implemented domains:
+Quick Scan; Safe Clean; storage; large files; exact duplicates; similar-name review; media inventory; applications inventory/review; developer analysis and safe developer clean; project discovery; build/dependency discovery; Downloads; privacy review; broken items; maintenance/status; backup/snapshot visibility; cloud/local-state visibility; quarantine; restore; application leftovers/background review.
+
+v0.5.3 repairs:
+- stock-macOS portability: no runtime GNU find -maxdepth/-mindepth
+- Windows PowerShell 5.1: no Get-ChildItem -Depth dependency
+- NUL-safe macOS exact-duplicate staging for legal filenames containing |
+- per-item Windows Developer Clean recovery manifests
+- protection of JANITOR state
+- protection/pruning of managed .photoslibrary content
+
+Remaining evidence gates:
+macOS physical: UNKNOWN/PENDING
+Windows physical: UNKNOWN/PENDING
