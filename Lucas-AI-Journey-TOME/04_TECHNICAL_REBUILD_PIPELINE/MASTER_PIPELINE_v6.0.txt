@@ -1,0 +1,37 @@
+LUCAS AI JOURNEY TOME — CORRECTIVE BRANCHED DEVELOPMENT PIPELINE — v6.0
+
+PROJECT GOAL
+A. 10 narrative books: complete English + complete Slovak.
+B. Technical reference: 00 navigation/index + 24 substantive Technical & Research books 01–24.
+C. Technical books must contain enough evidence, mechanisms, examples, limitations, provenance and research apparatus for serious research/publication analysis.
+
+CORRECTION
+The old Technical & Research 00–24 corpus is REVOKED as Content Complete.
+It is retained only as quarry until a passage is independently judged substantive.
+Repeated scaffolding is not evidence and must not be migrated merely because it exists.
+
+PARALLEL BRANCHES
+N — Narrative localization branch.
+T01...T24 — one independent branch per substantive technical book.
+T00 — master index/navigation, rebuilt from passed branches.
+
+TECHNICAL EXECUTION FOR EACH Txx
+RECOVER relevant evidence -> create evidence ledger -> identify gaps -> architecture/outline -> write substantive manuscript -> add concrete examples/tables/diagrams/code where supported -> provenance -> cross-reference -> anti-padding/dedup QA -> technical accuracy/evidence QA -> publication-analysis QA -> TECH_BOOK_COMPLETE.
+
+BRANCHED DEVELOPMENT
+Each Txx has independent state and can progress/fail without blocking unrelated books.
+Shared evidence may be referenced by multiple books, but each technical concept has one primary owner.
+Cross-reference instead of duplicating long explanations.
+Changes to shared terminology/contracts trigger affected-branch review, not global blind rewrite.
+
+T00
+Rebuild only after branch structures stabilize. It is navigation, not one of the 24 substantive books.
+
+GLOBAL COMPLETION
+Narrative: 10 EN + 10 SK, all SK QA pass.
+Technical: T01–T24 all TECH_BOOK_COMPLETE; T00 index consistent.
+Global repetition audit.
+Evidence/provenance audit.
+Research/publication usability audit.
+Contents/cross-reference validation.
+Then: FULL-SCOPE LUCAS AI JOURNEY TOME CONTENT COMPLETE — READY FOR EXAMINATION.
