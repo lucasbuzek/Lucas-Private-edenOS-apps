@@ -1,0 +1,48 @@
+LUCAS AI JOURNEY TOME — CONTENTS v6.1
+
+NARRATIVE — ENGLISH
+- Beyond the Prompt
+- Build Something
+- AI-Assisted Development
+- Building Reliable Software with AI
+- Architecture for AI-Assisted Systems
+- I Have an Idea. Now What?
+- When the Code Fights Back
+- From Projects to Systems
+- Make It Actually Work
+- My First Game
+
+NARRATIVE — SLOVAK COMPLETED
+- My First Game
+- Make It Actually Work
+- Building Reliable Software with AI
+- Architecture for AI-Assisted Systems
+
+TECHNICAL & RESEARCH TARGET
+- 00 Master Index & Navigation
+- 01 Chronology & Provenance
+- 02 Requirements & Specifications
+- 03 Architecture
+- 04 Architecture Decision Records
+- 05 APIs & Contracts
+- 06 Data, State & Persistence
+- 07 Capabilities / Providers / Adapters
+- 08 Embedded Systems & Hardware
+- 09 Electrical / Wiring / Pinouts
+- 10 Resource Constraints & Performance
+- 11 UI / UX / Interaction Principles
+- 12 Automation & Rules
+- 13 Security & Permissions
+- 14 Testing & Verification
+- 15 Evidence & Provenance Records
+- 16 Failure / Debugging Atlas
+- 17 Build & Compilation
+- 18 Packaging & Installation
+- 19 Deployment / Updates / Migration / Recovery
+- 20 Code & Implementation Reference
+- 21 AI Development Methods / Prompt & Context Patterns
+- 22 Research / Comparative Analysis
+- 23 Historical Project Evolution
+- 24 Glossary / Terminology / Cross-reference
+
+NOTE: Current old 00–24 files are source quarry only and are not final technical books.
