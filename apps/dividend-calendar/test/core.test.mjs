@@ -30,7 +30,7 @@ test("detects annual dividend cut",()=>{
 test("capture strategy includes price drop and frictions",()=>{
  const r=dividendCaptureScenario({buyPrice:100,sellPrice:99,dividend:1,quantity:1,commissionBuy:.1,commissionSell:.1,spreadCost:.1,slippage:.1,dividendTaxRate:.2});
  assert.ok(r.totalReturn<0);
- assert.equal(Number(r.netPnL.toFixed(2)),-0.5);
+ assert.equal(Number(r.netPnL.toFixed(2)),-0.6);
 });
 
 test("lookahead guard rejects future knowledge",()=>{
