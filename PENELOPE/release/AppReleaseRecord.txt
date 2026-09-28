@@ -1,0 +1,19 @@
+APP RELEASE RECORD
+App: PENELOPE
+app_version: 0.5.0
+source_revision: penelope-recovery-pipeline-20260928-r5
+build_id: PENELOPE-20260928-PRIVATE-EXP-005
+package_version: 0.5.0-private.experimental.cross-platform
+package_sha256: 334bec0e3ef060ce72368f72f1bf710a66aac2c23d9a447331fd72c11b7bcdf9
+release_channel: EXPERIMENTAL
+authority: Development/Admin — Lucas Private
+audience: PRIVATE — Lucas
+Build: PASS
+Regression: PASS
+CLI: PASS
+macOS target: UNKNOWN
+Windows target: UNKNOWN
+Historical equivalence: UNKNOWN
+LKG/rollback: IMPLEMENTED
+Stage materialization/verification: IMPLEMENTED
+Maintenance rescan: IMPLEMENTED
