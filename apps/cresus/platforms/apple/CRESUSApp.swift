@@ -1,0 +1,36 @@
+import SwiftUI
+
+@main
+struct CRESUSApp: App {
+    var body: some Scene {
+        WindowGroup { RootView() }
+    }
+}
+
+struct RootView: View {
+    var body: some View {
+        TabView {
+            NavigationStack { ResearchView() }
+                .tabItem { Label("Research", systemImage: "magnifyingglass") }
+            NavigationStack { PortfolioView() }
+                .tabItem { Label("Portfolio", systemImage: "chart.pie") }
+            NavigationStack { IncomeView() }
+                .tabItem { Label("ZACCHAEUS", systemImage: "calendar") }
+            NavigationStack { LabView() }
+                .tabItem { Label("Lab", systemImage: "flask") }
+        }
+    }
+}
+
+private struct ResearchView: View {
+    @State private var query = ""
+    var body: some View {
+        Form {
+            Section("Ask CRESUS") { TextField("Company, security or question", text: $query) }
+            Section("Alpha") { Text("All implemented capabilities are unlocked for testing.") }
+        }.navigationTitle("CRESUS")
+    }
+}
+private struct PortfolioView: View { var body: some View { ContentUnavailableView("Portfolio", systemImage:"chart.pie", description:Text("Alpha workspace")) .navigationTitle("Portfolio") } }
+private struct IncomeView: View { var body: some View { ContentUnavailableView("ZACCHAEUS", systemImage:"calendar", description:Text("Dividend & Income Collector")) .navigationTitle("Income") } }
+private struct LabView: View { var body: some View { ContentUnavailableView("Strategy Lab", systemImage:"flask", description:Text("Local analysis workspace")) .navigationTitle("Lab") } }
