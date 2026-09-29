@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "routeOrder": [
+    "deterministic",
+    "device",
+    "cloud"
+  ],
+  "classes": {
+    "deterministic": {
+      "requiresSubscription": false,
+      "mayTransmitPrivateData": false
+    },
+    "device": {
+      "requiresSubscription": false,
+      "requiresFull": true,
+      "mayTransmitPrivateData": false
+    },
+    "cloud": {
+      "requiresSubscription": true,
+      "requiresAccount": true,
+      "minimumNecessaryContext": true
+    }
+  },
+  "cloudCapabilities": [
+    "research",
+    "reasoning",
+    "documents",
+    "evidence-discovery",
+    "gilded-order"
+  ],
+  "rules": [
+    "provider_keys_server_side_only",
+    "external_model_output_is_not_authoritative_state",
+    "user_private_context_is_bounded_per_task",
+    "provider_is_replaceable"
+  ]
+}
