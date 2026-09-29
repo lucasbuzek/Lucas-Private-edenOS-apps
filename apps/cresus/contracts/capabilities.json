@@ -1,39 +1,51 @@
 {
-  "version": 1,
-  "products": {
-    "free": [
-      "security.lookup.basic",
-      "watchlist.limited",
-      "portfolio.limited",
-      "notes.basic",
-      "income.calendar.basic",
-      "sources.basic"
-    ],
-    "full": [
-      "security.lookup.full",
-      "watchlist.full",
-      "portfolio.full",
-      "notes.full",
-      "zacchaeus.full",
-      "thesis.full",
-      "strategy.local",
-      "expert",
-      "device.ai.supported",
-      "export.full"
-    ],
-    "intelligence": [
-      "online.research",
-      "cloud.reasoning",
-      "cloud.documents",
-      "evidence.discovery",
-      "gilded_order.cloud"
-    ]
+  "version": 2,
+  "profiles": {
+    "development_alpha": {
+      "unrestricted": true,
+      "requiresIAP": false,
+      "requiresSubscription": false,
+      "description": "All implemented capabilities exposed for development and Alpha testing. External-provider credentials/costs remain technical dependencies only."
+    },
+    "commercial": {
+      "unrestricted": false,
+      "products": {
+        "free": [
+          "security.lookup.basic",
+          "watchlist.limited",
+          "portfolio.limited",
+          "notes.basic",
+          "income.calendar.basic",
+          "sources.basic"
+        ],
+        "full": [
+          "security.lookup.full",
+          "watchlist.full",
+          "portfolio.full",
+          "notes.full",
+          "zacchaeus.full",
+          "thesis.full",
+          "strategy.local",
+          "expert",
+          "device.ai.supported",
+          "export.full"
+        ],
+        "intelligence": [
+          "online.research",
+          "cloud.reasoning",
+          "cloud.documents",
+          "evidence.discovery",
+          "gilded_order.cloud"
+        ]
+      }
+    }
   },
   "invariants": [
-    "full_is_permanent",
-    "intelligence_is_recurring",
+    "development_alpha_has_no_commercial_limits",
+    "development_alpha_requires_no_iap",
+    "development_alpha_requires_no_subscription",
+    "full_is_permanent_in_commercial_builds",
     "local_data_survives_subscription_expiry",
-    "device_ai_is_capability_detected",
-    "cloud_ai_requires_entitlement"
+    "device_ai_is_capability_detected"
   ]
 }
