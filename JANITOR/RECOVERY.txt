@@ -3,38 +3,34 @@ JANITOR RECOVERY / CONTINUITY
 Authoritative repository: Lucas-Private-edenOS-apps
 Project path: JANITOR/
 
-Current HEAD: v0.5.3-portability-hardening-candidate
 Historical physically evidenced LKG: v0.1.1
-Release: not yet promoted.
+Current candidate: v0.9.0-mode-separation-cloud-photos-candidate
+Release: NOT RELEASED.
 
 RECOVER BEFORE REDESIGN.
 
-Current source:
-macOS/JANITOR.command
-Windows/JANITOR.ps1
-Windows/JANITOR.cmd
+Preserve:
+- physical PASS/FAIL evidence
+- failed candidates as evidence
+- STANDARD / DEVELOPER / MEDIA / FULL CREW separation
+- provider-aware quarantine ownership
+- Photos library protection
+- script-first behavioral reference until target-Mac acceptance
 
-Verification:
-TEST_STATUS.txt
+Important failure history:
+- v0.7.4-v0.7.6 quarantine branches failed physically.
+- v0.8.1 Full Scan hung at Home summary for ~2 hours.
 
-Change history:
-CHANGELOG.txt
+Current correction:
+- bounded Full Scan
+- provider-aware cloud operations
+- same-provider quarantine/recovery
+- no force-download cloud fallback
+- Photos read-only storage analysis
+- verified local quarantine actions
 
-Build/run:
-macOS:
-  chmod +x macOS/JANITOR.command
-  macOS/JANITOR.command --version
-  macOS/JANITOR.command
+Platform sequence:
+script -> macOS native -> iOS/iPadOS native -> Windows native -> other platforms.
 
-Windows:
-  run Windows/JANITOR.cmd
-  or powershell.exe -NoProfile -ExecutionPolicy Bypass -File Windows/JANITOR.ps1
-
-Current required external gates:
-1. Execute current HEAD on target macOS hardware and preserve evidence.
-2. Execute current HEAD in Windows PowerShell 5.1 and preserve evidence.
-3. Repair any failures and rerun downstream gates.
-4. Promote LKG only after required target verification.
-
-Do not infer physical PASS from static or fixture tests.
+Do not promote v0.9.0 to LKG until physical Mac verification.
 Generated != Saved != Implemented != Built != Tested != Verified != Released.
