@@ -18,6 +18,16 @@ Commercial packaging is retained as a dormant release profile only.
 - platform adapter boundaries for storage, device AI and optional cloud intelligence
 - fixture/test vectors consumable by every platform
 - no PWA dependency
+- CRESUS Expert COMPLETE-OR-EXHAUST execution across chat and native intelligence implementations
+
+## Expert completion gate
+A single Expert invocation must continue the safe research cycle until the requested evidence matrix is COMPLETE or remaining material evidence is explicitly EXHAUSTED after changed-source or changed-method attempts.
+
+Intermediate missing data, stale observations, failed searches, incomplete securities, known next research actions, or an incomplete comparison clock are not completion conditions.
+
+Comparative synthesis must not present asymmetric evidence as a completed Expert examination. Research queues are internal execution state and should be executed rather than handed back to the user when the work remains safely available.
+
+The canonical detailed rule is `CRESUS_EXPERT_CHAT_RULE.md` and the executable contract is represented in `contracts/intelligence.json` plus Core completion tests.
 
 ## Future commercial profile
 FREE demonstrates a bounded product.
