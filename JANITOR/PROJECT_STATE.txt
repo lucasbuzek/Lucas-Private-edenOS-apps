@@ -1,25 +1,48 @@
 JANITOR GOVERNED PROJECT STATE
 Date: 2026-09-30
+Governor: EITRI — The Master Builder v0.2.0
+Mode: UPDATE / AUDIT
 
 Goal: safe standalone cleanup/storage/organization/maintenance/recovery application.
-Current candidate: v0.8.2 bounded-full-scan repair.
+Current candidate: v0.9.0-mode-separation-cloud-photos-candidate
 Historical physical LKG: v0.1.1.
 Release: NOT RELEASED.
+
+AUTHORITATIVE PRODUCT DECISIONS
+- ONE JANITOR app/package. FULL CREW is an advanced area inside JANITOR.
+- PENELOPE is a separate App and is not a JANITOR helper.
+- Script-only reference implementation first; no daemon/server/WebKit/host runtime.
+- User-facing separation: STANDARD / DEVELOPER / MEDIA / FULL CREW.
+- Cloud quarantine follows storage ownership and stays in the respective provider root when provider-managed.
+- Cloud user choices: quarantine, delete, or consolidate/archive as appropriate.
+- Cloud consolidate/archive is whole-item organization, not blind source merging.
+- Photos library internals are PROTECTED; use Photos-aware analysis and native/supported reclaim paths only.
+- Native app order after script acceptance: macOS -> iOS/iPadOS -> Windows -> other platforms.
+- Native AI is optional reasoning/classification assistance; deterministic OS services execute actions.
 
 PHYSICAL EVIDENCE
 - v0.7.2 script-only launcher / Quick Scan: PASS on target Mac.
 - v0.7.4 developer quarantine: FAIL (no demonstrated moves).
-- v0.7.5/v0.7.6 quarantine: FAIL on target Mac; source items remained.
+- v0.7.5/v0.7.6 quarantine: FAIL on target Mac; source items remained / operation timed out.
 - v0.8.1 Full Scan: FAIL; hung at stage 1 Home summary for ~2 hours.
+- v0.9.0 physical Mac: UNKNOWN / PENDING.
 
-v0.8.2 CORRECTION
-- removed blocking whole-home summary traversal
-- bounded root-by-root Full Scan
-- cloud/provider roots excluded from automatic recursion
-- per-root timeout/stall containment
-- partial findings preserved and scan continues
-- Ctrl-C safe during read-only Full Scan
-- Full Scan remains analysis/classification; destructive actions require explicit later confirmation
+v0.9.0 IMPLEMENTED CANDIDATE CHANGES
+- top-level STANDARD / DEVELOPER / MEDIA / FULL CREW separation
+- bounded local Full Scan; no whole-home summary traversal
+- per-root time budget and partial-result continuation
+- cloud provider roots separated from ordinary recursive scanning
+- same-provider cloud quarantine with recoverable manifests
+- same-provider consolidate/archive option
+- cloud delete option with explicit destructive confirmation
+- no force-download/materialization fallback for provider-managed quarantine
+- MEDIA -> Photos Storage Analysis with protected .photoslibrary internals
+- verified Safe Clean / Developer Safe Clean quarantine transfer path
+- bounded standard Broken Items, Storage Overview, Large Files and Media Inventory paths
 
-Recovered implemented domains remain governed by RECOVER BEFORE REDESIGN.
-Generated != Tested != Physical PASS. v0.8.2 physical Mac gate is PENDING.
+CURRENT MILESTONE
+Physical verification of v0.9.0 script behavioral contract on target Mac. After acceptance, freeze behavioral contract for native macOS implementation.
+
+STATE TRUTH
+GENERATED != IMPLEMENTED != BUILT != TESTED != VERIFIED != RELEASED.
+UNKNOWN != PASS.
