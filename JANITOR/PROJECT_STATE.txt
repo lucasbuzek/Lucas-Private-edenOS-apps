@@ -1,23 +1,25 @@
 JANITOR GOVERNED PROJECT STATE
-Date: 2026-09-28
+Date: 2026-09-30
 
 Goal: safe standalone cleanup/storage/organization/maintenance/recovery application.
-Active milestone: cross-platform CLI candidate.
-HEAD: v0.5.3-portability-hardening-candidate.
-LKG: v0.1.1 historical physically evidenced CLI.
+Current candidate: v0.8.2 bounded-full-scan repair.
+Historical physical LKG: v0.1.1.
 Release: NOT RELEASED.
 
-Implemented domains:
-Quick Scan; Safe Clean; storage; large files; exact duplicates; similar-name review; media inventory; applications inventory/review; developer analysis and safe developer clean; project discovery; build/dependency discovery; Downloads; privacy review; broken items; maintenance/status; backup/snapshot visibility; cloud/local-state visibility; quarantine; restore; application leftovers/background review.
+PHYSICAL EVIDENCE
+- v0.7.2 script-only launcher / Quick Scan: PASS on target Mac.
+- v0.7.4 developer quarantine: FAIL (no demonstrated moves).
+- v0.7.5/v0.7.6 quarantine: FAIL on target Mac; source items remained.
+- v0.8.1 Full Scan: FAIL; hung at stage 1 Home summary for ~2 hours.
 
-v0.5.3 repairs:
-- stock-macOS portability: no runtime GNU find -maxdepth/-mindepth
-- Windows PowerShell 5.1: no Get-ChildItem -Depth dependency
-- NUL-safe macOS exact-duplicate staging for legal filenames containing |
-- per-item Windows Developer Clean recovery manifests
-- protection of JANITOR state
-- protection/pruning of managed .photoslibrary content
+v0.8.2 CORRECTION
+- removed blocking whole-home summary traversal
+- bounded root-by-root Full Scan
+- cloud/provider roots excluded from automatic recursion
+- per-root timeout/stall containment
+- partial findings preserved and scan continues
+- Ctrl-C safe during read-only Full Scan
+- Full Scan remains analysis/classification; destructive actions require explicit later confirmation
 
-Remaining evidence gates:
-macOS physical: UNKNOWN/PENDING
-Windows physical: UNKNOWN/PENDING
+Recovered implemented domains remain governed by RECOVER BEFORE REDESIGN.
+Generated != Tested != Physical PASS. v0.8.2 physical Mac gate is PENDING.
