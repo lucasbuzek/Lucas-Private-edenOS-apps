@@ -1,0 +1,12 @@
+v0.9.0-mode-separation-cloud-photos-candidate — 2026-09-30
+- Reorganized main UX into STANDARD / DEVELOPER / MEDIA / FULL CREW.
+- Replaced v0.8.1 blocking Full Scan with bounded per-root scan and partial-result continuation.
+- Added provider-aware Cloud Storage review.
+- Added same-provider cloud quarantine + recover manifests.
+- Added cloud delete choice with explicit destructive confirmation.
+- Added same-provider consolidate/archive choice (whole-item organization, not content merge).
+- Removed force-download/materialization fallback from quarantine.
+- Added MEDIA -> Photos Storage Analysis with protected .photoslibrary internals.
+- Made Safe Clean quarantine transfers verified and recoverable.
+- Bounded standard Broken Items, Storage Overview, Large Files and Media Inventory operations.
+- Preserved historical functionality and FULL CREW instead of restarting architecture.
