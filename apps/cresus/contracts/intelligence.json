@@ -1,10 +1,38 @@
 {
-  "version": 1,
+  "version": 2,
   "routeOrder": [
     "deterministic",
     "device",
     "cloud"
   ],
+  "expertExecution": {
+    "contract": "complete_or_exhaust",
+    "requiredEvidence": [
+      "identity",
+      "price",
+      "priceAsOf",
+      "fundamentals",
+      "balanceSheet",
+      "income",
+      "dividend",
+      "dividendDates",
+      "valuation",
+      "riskDrivers",
+      "recentEvents",
+      "sources"
+    ],
+    "rules": [
+      "build_evidence_matrix_before_synthesis",
+      "same_comparison_clock_or_explicitly_noncomparable",
+      "missing_field_creates_research_queue_item",
+      "retry_must_change_source_or_method",
+      "continue_until_complete_or_source_exhausted",
+      "never_present_incomplete_comparison_as_completed_expert_report",
+      "surface_missing_fields_and_exhausted_sources",
+      "first_party_company_sources_preferred_for_company_fundamentals",
+      "current_market_observation_required_for_current_valuation"
+    ]
+  },
   "classes": {
     "deterministic": {
       "requiresSubscription": false,
