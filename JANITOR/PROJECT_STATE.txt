@@ -46,3 +46,16 @@ Physical verification of v0.9.0 script behavioral contract on target Mac. After 
 STATE TRUTH
 GENERATED != IMPLEMENTED != BUILT != TESTED != VERIFIED != RELEASED.
 UNKNOWN != PASS.
+
+
+FULL FUNCTION AUDIT — 2026-10-01
+- v0.9.0 behavioral baseline: FAIL / NOT PROMOTED.
+- Provider routing defect: redirected/symlinked iCloud Documents can be treated as local.
+- Project Discovery advertised bounded depth 6 but implementation is unbounded.
+- Cloud Storage lacks Scan/Review stage.
+- Quick Scan and several legacy scans remain unbounded.
+- FULL CREW processes/background/remnants are incomplete relative to described UX.
+- Photos is filesystem-footprint analysis only, not native Photos integration.
+- Windows v0.9.0 package content is stale/broken and not parity-ready.
+See AUDIT_v0.9.0_FULL_FUNCTION.md.
+Current milestone: rectify script behavioral contract before native macOS work.
