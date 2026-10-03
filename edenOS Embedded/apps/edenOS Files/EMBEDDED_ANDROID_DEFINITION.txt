@@ -1,0 +1,2 @@
+edenOS Files — Embedded Android definition
+Small file-management surface for internal user storage, microSD, Downloads, Documents and permitted SKALD media paths. Reuse Android/platform or mature providers for SMB; optional SFTP/WebDAV later. Do not reinvent a network filesystem or cloud-drive monolith. Target ARMv7/1024x600 with minimal dependencies.
