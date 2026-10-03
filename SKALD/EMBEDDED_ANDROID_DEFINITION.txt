@@ -1,0 +1,6 @@
+SKALD EMBEDDED — Android definition
+Role: primary edenOS Embedded media workload; standalone SKALD specialist remains domain authority. Android APK is lightweight representation/control over SKALD headless core.
+Target: SM-T110/goyawifi ARMv7.
+Required embedded workload: downloads; MKV ingest/inspection; metadata; artwork; subtitles; Apple-compatible MP4/M4V remux where streams permit; VIDEO STREAM COPY ONLY; compatible audio preservation; chapters/language/default/forced metadata where possible; verify then atomic promote; preserve source; direct serving; remote management; SMB-managed media paths.
+No video transcoding. Truth states: REMUXED / SOURCE PRESERVED / TRANSCODE REQUIRED (defer to capable node).
+Preserve established SKALD scope including unified library, Movies/TV, search, jobs/activity, review, storage, settings/diagnostics, watched/progress, collections, Travel Packs, Daily Episodes and established Web UI. Closing Android UI must not stop headless service in Server Mode.
