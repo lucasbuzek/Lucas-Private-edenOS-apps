@@ -1,2 +1,22 @@
 edenOS Home — Embedded Android definition
-Very lightweight edenOS launcher/home for constrained Android hardware. Launch EDEN Apps and ordinary third-party APKs; show essential device/service state; provide entry to Settings/BIFROST/SKALD/NOSTOS/Files; lightweight Apps list; expose Tablet/Server Device Mode and EDEN Experience Mode. Consume state from specialist/system contracts rather than owning it. No AI dependency. Must remain responsive under SKALD workload and render at 1024x600.
+Role: very lightweight edenOS launcher/home for constrained Android hardware. Target first reference: Samsung SM-T110/goyawifi, Android 4.2.2/API17, ARMv7, 1024x600, ~1 GB RAM.
+
+ARCHITECTURE
+Do not reinvent Android launcher mechanics. Start from a legally modifiable lightweight open-source launcher engine compatible with API17, with Holo Launcher/Holo-style behavior as the functional reference. Before adopting source, verify repository provenance, license, API17 buildability and redistribution/modification terms. If the exact Holo source cannot be verified/licensed/buildable, select the smallest equivalent open-source API17 launcher and document the substitution; do not patch/repackage an opaque APK.
+
+Retain only useful launcher mechanics: HOME intent/default launcher role, package discovery, ordinary APK launch, app list/drawer, shortcuts, folders where inexpensive, orientation handling and reliable reboot persistence. Remove/disable unnecessary effects, live-wallpaper integration, heavy widgets, analytics/network dependencies and ornamental animation where safe. TouchWiz remains rollback only until edenOS Home passes physical install/default-HOME/reboot testing; never remove the only known-working HOME activity prematurely.
+
+VISUAL AUTHORITY
+The three edenOS Linux preview images supplied by Lucas on 2026-10-03 are canonical visual references for edenOS Home. They define identity; do not reinterpret edenOS into generic Android/Holo styling. The tablet shell should translate that established language to 1024x600: edenOS wallpaper/background treatment; clean desktop/app icons; restrained translucent bottom dock; consistent edenOS icon treatment; uncluttered typography/spacing; landscape and portrait support. Preserve performance over decorative fidelity. The third preview is the closest shell/layout reference; the first establishes lighter application/icon language; the second establishes broader edenOS branding. Source images must be copied into the private project visual-reference/assets area before implementation if available to the cloud task; otherwise implement structure/theme tokens and mark exact image-derived assets UNVERIFIED rather than inventing them.
+
+FUNCTION
+Launch EDEN Apps and ordinary third-party APKs; show essential device/service state; provide direct entry to Settings, BIFROST, SKALD, NOSTOS and Files; lightweight Apps list; expose Tablet/Server Device Mode and EDEN Experience Mode. Home consumes specialist/system contracts rather than owning service state. Tablet/Server mode is implemented/supervised by BIFROST; Home only presents/control-handoffs that state. Third-party APK UI remains untouched.
+
+ICONS
+Use edenOS-owned icons for EDEN Apps and launcher/system surfaces. For third-party Apps, launcher-side icon mapping/masking may provide visual consistency without modifying APKs. Preserve recognizable app identity and provide fallback to original app icon. Do not rewrite third-party packages.
+
+PERFORMANCE
+No AI dependency. No Compose. No mandatory Google Play Services. Prefer Java/platform APIs/minimal deterministic dependencies. Must remain responsive while SKALD server workload is resident. Avoid resident work not required by HOME. Reduce animations and redraw pressure. Capability on disk must not imply resident RAM use.
+
+ACCEPTANCE
+Build as independent edenOS-Home.apk with minSdk 17/ARMv7 compatibility; valid HOME/DEFAULT intent; render 1024x600 landscape and portrait; discover/launch ordinary third-party packages; expose EDEN app entries and truthful BIFROST-backed state; survive reboot/default-HOME selection; remain functional when specialist backends are unavailable by showing UNKNOWN/UNAVAILABLE rather than fake success. Physical TouchWiz disablement is a LAST gate after edenOS Home is proven on-device.
