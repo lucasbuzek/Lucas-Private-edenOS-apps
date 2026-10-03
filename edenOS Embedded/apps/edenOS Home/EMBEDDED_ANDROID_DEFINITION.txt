@@ -1,0 +1,2 @@
+edenOS Home — Embedded Android definition
+Very lightweight edenOS launcher/home for constrained Android hardware. Launch EDEN Apps and ordinary third-party APKs; show essential device/service state; provide entry to Settings/BIFROST/SKALD/NOSTOS/Files; lightweight Apps list; expose Tablet/Server Device Mode and EDEN Experience Mode. Consume state from specialist/system contracts rather than owning it. No AI dependency. Must remain responsive under SKALD workload and render at 1024x600.
