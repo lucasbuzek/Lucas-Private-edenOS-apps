@@ -1,3 +1,72 @@
-CODEX HANDOFF — edenOS Embedded 0.1
-Read edenOS Embedded/PROJECT_BIBLE.txt first, then global AppDev authority on the Mac. Recover existing source before implementation.
-Current milestone: independent ARMv7 APK candidates for edenOS Home, BIFROST Embedded, SKALD, NOSTOS and edenOS Files for SM-T110/goyawifi. App-specific Android definitions live with their respective private development folders. Exact tablet Android/SystemUI is a deferred physical gate. Do not restart architecture or duplicate specialist Apps.
+FORGEMASTER -> CODEX EXECUTION HANDOFF — edenOS Embedded 0.1
+Updated: 2026-10-03
+
+READ FIRST
+1. edenOS Embedded/PROJECT_BIBLE.txt — project-specific authority.
+2. BIFROST/EMBEDDED_ANDROID_DEFINITION.txt.
+3. SKALD/EMBEDDED_ANDROID_DEFINITION.txt.
+4. NOSTOS/EMBEDDED_ANDROID_DEFINITION.txt.
+5. edenOS Embedded/apps/edenOS Home/EMBEDDED_ANDROID_DEFINITION.txt.
+6. edenOS Embedded/apps/edenOS Files/EMBEDDED_ANDROID_DEFINITION.txt.
+Recover any additional private-repo source/evidence before recreating functionality.
+
+DO NOT START BY CONNECTING TO THE USER'S MAC. The Mac/SM-T110 is the LAST physical qualification gate. Implement, build, test and package in Codex/cloud development first. Do not use official edenOS or edenOS-apps repositories for this development.
+
+FIXED TARGET
+Samsung SM-T110/goyawifi; Android 4.2.2 Jelly Bean; API 17; build JDQ39.T110XXUAOA1; kernel 3.4.5-2824340; ARMv7/armeabi-v7a 32-bit; ~1 GB RAM; 1024x600.
+minSdk = 17. No Compose. No mandatory Google Play Services. No ARM64-only dependencies. Prefer platform APIs/minimal deterministic libraries. Third-party APKs remain untouched.
+
+MILESTONE
+Create five independent, functional candidate APKs:
+- edenOS-Home.apk
+- BIFROST-Embedded.apk
+- SKALD.apk
+- NOSTOS.apk
+- edenOS-Files.apk
+No monolithic APK and no placeholder-only proof.
+
+PLAN / IMPLEMENTATION UNITS
+A. Shared tiny Android contract: identity/version, capability/state enum, representation/headless endpoint, Server Mode participation, Experience Mode consumption, package/API/ABI compatibility. Keep TYPE != CAPABILITY != PROVIDER != INSTANCE/CONNECTION != REPRESENTATION.
+B. edenOS Home: launcher for EDEN + ordinary APKs; truthful service summary; Tablet/Server state; Standard/Simple/Child/Accessible/Kiosk state; links to BIFROST/SKALD/NOSTOS/Files/Settings. No ownership of specialist state.
+C. BIFROST Embedded: CONNECT/KEEP/RESOLVE; service registry with UNKNOWN/RUNNING/STOPPED/UNAVAILABLE; lifecycle control where implemented; device/storage/network status; APK inspection/install handoff; Server Mode supervision; remote-management representation contract. REGISTERED != WORKING.
+D. SKALD Android: thin control/representation over SKALD headless domain. Implement/port only what can be real on API17. Media contract: MKV source inspection; metadata/artwork/subtitles; Apple-compatible MP4/M4V remux by video stream copy only; compatible audio; verify before atomic promotion; preserve source; outcomes REMUXED/SOURCE_PRESERVED/TRANSCODE_REQUIRED. Never video-transcode on SM-T110. Direct serving and managed media paths. Preserve Travel Packs/Daily Episodes/library/jobs/review/storage/settings contracts rather than inventing replacements.
+E. NOSTOS Android: lightweight local representation over the established household headless/Web model. Same data/service; no competing DB. Preserve household/family, spaces, inventory/assets, provisions, tasks, maintenance, records/docs, utilities where applicable, history/search/settings/backup. Do not introduce smart-home/security/AI scope.
+F. edenOS Files: lightweight internal/microSD/Downloads/Documents/permitted-SKALD file UI; provider boundary for SMB. Do not reinvent network filesystem.
+G. Packaging/evidence: produce APKs plus manifests/package metadata, build logs, tests, checksums and acceptance matrix.
+
+TEST-DRIVEN GATES
+For each independently reviewable unit: write a failing test/contract check first; demonstrate failure; implement minimum real behavior; rerun; commit only on pass. Add tests for API17 compatibility, 1024x600 resource/layout assumptions, missing backend => UNKNOWN/UNAVAILABLE rather than fake success, ordinary third-party package launch path, Server Mode state persistence contract, Experience Mode affecting EDEN UI only, and no accidental Play Services/ARM64-only dependency.
+
+SKALD SPECIAL TESTS
+Probe/remux decision tests must cover compatible stream-copy input, incompatible codec => TRANSCODE_REQUIRED without transcoding, failed output verification => source retained/no promotion, insufficient space => job rejected safely, subtitle/metadata mapping, interrupted temporary output not promoted. If a suitable API17/ARMv7 FFmpeg binary/provider cannot be safely produced in the cloud build, keep the provider interface real and mark native media binary integration UNVERIFIED for the physical/toolchain gate; do not fake it.
+
+NOSTOS SPECIAL TESTS
+Headless unavailable => truthful unavailable UI; Web endpoint representation; shared data/service contract; Experience Mode rendering behavior; no embedded automation/security services.
+
+BIFROST SPECIAL TESTS
+REGISTERED is not RUNNING; lifecycle failures stay failures; Server Mode only supervises configured EDEN services; third-party APKs are not modified; APK inspector rejects incompatible ABI/API truthfully.
+
+EVIDENCE STATES
+Maintain PROJECT / AUTHORITATIVE BASELINE / LKG / CURRENT CANDIDATE / CURRENT STAGE / VERIFIED / UNVERIFIED / FAILURES / BLOCKERS / NEXT GATE.
+GENERATED != IMPLEMENTED != BUILT != TESTED != VERIFIED != RELEASED. UNKNOWN != PASS.
+Pipeline: REFERENCE -> BASELINE -> IMPLEMENT -> STATIC VERIFY -> ENVIRONMENT VERIFY -> REGRESSION VERIFY -> PACKAGE -> PACKAGE VERIFY -> PHYSICAL GATE -> PROMOTE.
+A failed test is repair work, not a blocker. A blocker requires an attempted action plus an unavailable dependency.
+
+OUTPUT LOCATION
+Commit current development only to lucasbuzek/Lucas-Private-edenOS-apps in the existing project/app folders. Do not write development artifacts to lucasbuzek/edenOS or lucasbuzek/edenOS-apps.
+
+RETURN TO FORGEMASTER
+When cloud implementation/package verification is exhausted, return:
+- exact commit SHA(s);
+- five APK paths or explicit evidence why a particular APK is not yet buildable;
+- SHA-256 for each built APK;
+- build/test logs;
+- dependency/ABI/minSdk inspection;
+- acceptance matrix by App/capability;
+- all UNVERIFIED items;
+- genuine blockers only;
+- exact physical-device tests remaining.
+Do not ask for the Mac/device until the physical gate is genuinely next.
+
+AUTO
+Continue autonomously through all safe cloud-side implementation, repair, testing and packaging. Do not stop at scaffolding, a first build failure, or a written plan. Do not redesign canon. Stop only when the pre-device milestone is verified as far as available tooling permits or a genuine unavailable dependency blocks further work.
