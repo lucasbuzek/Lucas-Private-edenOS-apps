@@ -1,41 +1,94 @@
 # SWAYcore — Active Handoff
+Updated: 2026-10-03
 
 PROJECT: SWAYcore
-CURRENT GOAL: Working full-feature Alpha with established final consumer UI/UIX and fully rendered production character system.
-REQUESTED DELIVERABLE: Complete coherent Lucia Alpha satisfying the SWAYcore Project Bible.
+CURRENT PRODUCT: SWAYcore Dance & Fitness
+CURRENT GOAL: Working full-feature Alpha with established final consumer UI/UIX and fully rendered production character system, while preserving the wider SWAYcore family architecture.
+
+AUTHORITATIVE GLOBAL / PROJECT SOURCES
+- Global AppDev authority: lucasbuzek/Lucas-private-appDevDocs
+- Project Bible: Project Bibles/SWAYcore.txt
+- Project implementation/state: lucasbuzek/Lucas-Private-edenOS-apps under SWAYcore/
+- This HANDOFF and AGENTS.md are continuity/control documents, not substitutes for the Project Bible.
 
 AUTHORITATIVE BASELINE / LKG
 - Build 143: protected graphical/runtime recovery reference.
 - Build 147: protected tracking recovery reference.
 - Build 148: rejected physical-test evidence; never promote.
+- Build 153: incomplete candidate lineage. Preserve as engineering/build recovery evidence only.
 
-CURRENT CANDIDATE
-Build 153 lineage is incomplete. Demonstrated engineering evidence includes successful generic iOS compilation and earlier build/sign/install/launch gates. Subsequent implementation routed Home and Workout COACH through a unified RealityKit avatar stage and replaced an unsupported RealityKit capsule primitive with supported geometry; generic Xcode build then succeeded. This does NOT demonstrate production Lucia or Alpha acceptance.
+CURRENT CANDIDATE STATUS
+Recovered analysis demonstrates that the candidate can reach build/install/launch gates but remains materially short of product acceptance.
+Known current architecture gaps:
+- production 3D coaches not demonstrated;
+- all-five-coach runtime character registry not demonstrated complete;
+- current Blender path remains proof-quality/primitive rather than final character art;
+- YOUR DANCER production customization not demonstrated visually functional;
+- final UI/UIX authority and rendered comparison gate incomplete;
+- runtime/integration test coverage inadequate;
+- one-click build automation historically fragmented;
+- resource duplication/collision occurred historically;
+- full iPhone/iPad product journey remains unverified.
 
-DEMONSTRATED / IMPLEMENTED STATE
-- RealityKit volumetric procedural avatar fallback implemented in candidate lineage.
-- Home hero and Workout COACH routed through SWAYAvatarStageView in candidate lineage.
-- Primary HOME · MOVES · BEATS · PROFILE navigation preserved.
-- Build/install/launch evidence remains bounded to those gates.
+PROTECTED PRODUCT INVARIANTS
+- HOME · MOVES · BEATS · PROFILE.
+- WATCH → COPY → MATCH → COMBO → SCORE → UNLOCK → DANCE.
+- One movement/choreography truth.
+- One musical timeline.
+- Calibration: STEP INTO VIEW → WAVE LEFT → WAVE RIGHT → LIFT LEFT FOOT → LIFT RIGHT FOOT → JUMP → READY TO SWAY.
+- No workout progression/scoring before READY.
+- COACH and YOU share one stage.
+- Raw Vision skeleton is diagnostics only.
+- Five coaches: Lucia, Nandi, Thabo, Zuri, Kyle.
+- YOUR DANCER is real production functionality.
+- No PNG/cutout/primitive mannequin/2.5D fallback may satisfy final character acceptance.
+- Offline/local-first core.
+- iPhone + iPad portrait/landscape.
 
-UNVERIFIED / INCOMPLETE
-- Production Blender-authored Lucia is not demonstrated.
-- Production YOUR DANCER and graphical tracked YOU are not demonstrated complete.
-- Final UI/UIX across all Alpha surfaces is not demonstrated complete.
-- Complete musical-clock/tracking/music/cue/scoring convergence is not demonstrated.
-- Complete Alpha feature journey and iPhone/iPad physical acceptance are not demonstrated.
+CONTEXT CONTINUITY RULE
+If context is lost, STOP local inference and RETRIEVE authority.
+Re-read, in order:
+1. AppDev authority
+2. SWAYcore Project Bible
+3. SWAYcore/AGENTS.md
+4. this HANDOFF.md
+5. current source/worktree
+6. current candidate/LKG evidence
+7. exact affected requirement/asset/reference
+UNKNOWN remains UNKNOWN until recovered. Never reconstruct canon from memory.
 
-KNOWN FAILURE PATTERN
-Do not substitute build numbers, generated assets, compilation, packaging, installation or launch for product functionality. Do not consume physical/user gates merely to rediscover already-known implementation gaps.
-
-CURRENT IMPLEMENTATION POSITION
-Continue implementation from the Build 153 candidate lineage while preserving Build 143/147 protected behavior. Integrate genuine production character assets and graphical YOU, complete final UI/UIX and convergence, then run regression/build verification before physical acceptance.
+ACTIVE CONTRACT
+Every implementation session must pin these before editing:
+PROJECT=SWAYcore
+PRODUCT=Dance & Fitness
+MILESTONE=complete production-UI Alpha
+LKG=Build 143 graphical/runtime + Build 147 tracking; Build 148 rejected
+CANDIDATE=Build 153 lineage/remediation successor
+COACHES=Lucia,Nandi,Thabo,Zuri,Kyle
+TARGETS=iPhone+iPad portrait+iPad landscape
+PROHIBITED_FINAL_FALLBACKS=primitive mannequin,raw skeleton,static PNG/cutout,2.5D placeholder
+EVIDENCE=GENERATED!=IMPLEMENTED!=BUILT!=TESTED!=VERIFIED!=RELEASED; UNKNOWN!=PASS
 
 EXACT NEXT EXECUTABLE ACTION
-Recover/persist the actual current SWAYcore source into this authoritative project repository (or its explicitly established separate SWAYcore repo if chosen), preserving the candidate and LKG references; then continue the production Lucia + graphical YOU + final UI implementation against that source. Mac access is only required for the bounded source-copy, Blender/Xcode build, rendering and device verification operations.
+Use the persisted GitHub authority to create/continue a remediation candidate that:
+1. preserves Build 153/LKG evidence untouched;
+2. consolidates one authoritative macOS one-click builder;
+3. makes resource handling deterministic;
+4. adds real test gates with zero-test discovery treated as failure;
+5. replaces Lucia/user-only assumptions with a data-driven character registry for Lucia/Nandi/Thabo/Zuri/Kyle/YOUR DANCER;
+6. integrates or creates production character assets on the shared rig;
+7. binds YOUR DANCER settings to visible mesh/material/accessory changes;
+8. recovers/establishes final UI reference authority and visual-regression mapping;
+9. unifies .swaypack external format;
+10. completes all non-physical gates before requesting device testing.
 
-VERIFICATION REQUIRED
-Static/source verification → Xcode build → regression verification → package integrity where applicable → iPhone physical journey → iPad portrait → iPad landscape → offline test → user acceptance.
+VERIFICATION PIPELINE
+REFERENCE → BASELINE → IMPLEMENT → STATIC VERIFY → ENVIRONMENT VERIFY → REGRESSION VERIFY → PACKAGE → PACKAGE VERIFY → PHYSICAL GATE → PROMOTE.
+
+PHYSICAL DEVICE GATE
+Do not use iPhone/iPad merely to discover already-known software incompleteness.
+Connect/unlock only after non-physical implementation/build/test/visual gates are ready.
 
 GENUINE BLOCKERS
-The GitHub project repository currently has continuity state but not the recovered full SWAYcore implementation source. Copying that source from the Mac is a bounded migration task; absence of source in GitHub is not evidence that functionality is absent historically.
+Only a demonstrated unavailable dependency that prevents remaining safe work qualifies as BLOCKED.
+Failed tests, incomplete implementation, missing generated assets, build errors, missing package state and unverified gates are not blockers while repairable work remains.
