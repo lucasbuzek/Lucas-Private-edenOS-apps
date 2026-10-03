@@ -1,0 +1,5 @@
+NOSTOS EMBEDDED — Android definition
+Role: lightweight headless Home & Household information server. Established responsive Web UI remains primary management surface; Android APK is optional lightweight local representation using the same service/data.
+Core domain: household/family; sites/structures/spaces; possessions/assets/inventory; provisions/supplies; chores/tasks; maintenance schedules/records; household documents/records; utilities where applicable; history; search; settings; local-first persistence; backup/restore; established multi-user access.
+This embedded profile excludes Home Assistant, Homebridge, Matterbridge, Node-RED, HomeKit, Matter, MQTT, smart-home automation, alarm/security/camera processing and AI requirements.
+Participates in system-wide EDEN Experience Mode; do not create a separate senior-only fork.
