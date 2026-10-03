@@ -1,0 +1,50 @@
+PENELOPE — PROJECT BIBLE
+Status: CURRENT / ESTABLISHED CANON
+Established: 2026-10-03
+
+IDENTITY
+PENELOPE is an independent EDEN App for user files and user information.
+
+SOLE PURPOSE
+PENELOPE checks and analyzes user-authorized local and cloud files/data, identifies what they are, discovers connections and relationships between them, organizes/reconciles related material, and consolidates fragmented information into meaningful data.
+
+CORE FUNCTION
+FIND → RECOGNIZE → CONNECT → ANALYZE → ORGANIZE / RECONCILE → CONSOLIDATE
+
+USER DATA DOMAIN
+PENELOPE operates on user files/data: local files, cloud/provider-backed files, archives, documents, media where relevant, project/source material, and other user-owned information within authorized scope.
+
+LOCAL + CLOUD
+Local and cloud/provider-backed data are first-class inputs. PENELOPE distinguishes local, provider-backed, cloud-only, external, network, synchronized and unknown representations where evidence permits. Cloud-only is not missing. Local plus cloud representation is not automatically a duplicate.
+
+RECOGNITION AND RELATIONSHIPS
+PENELOPE identifies/classifies user material, including the practical “What is this?” case, and connects related material even when filenames or locations differ. She may identify duplicates, versions, fragments, derivatives, related records, conflicts, unique material, provenance, lineage and recovery relationships where these help understand and consolidate user information.
+
+Project/source identity, revision, provenance, duplicate/fragment/version relationships and recovery relationships are applications of PENELOPE’s general user-file understanding, not a separate project-governance mission.
+
+AI
+PENELOPE works without AI. AI is an optional first-class capability for deeper recognition, semantic relationships, ambiguity resolution, interpretation and consolidation. Prefer native/OS intelligence, native/on-device models and local models; authorized external providers remain optional. AI assists reasoning; deterministic evidence and explicit authority remain authoritative. Private user data is not sent externally without authorization.
+
+JANITOR BOUNDARY
+JANITOR is primarily a deterministic system/device maintenance App driven by defined instructions. PENELOPE is the intelligent user-file/data understanding and consolidation App. JANITOR can prepare the system/storage environment or perform maintenance before PENELOPE works. PENELOPE can call JANITOR when analysis reveals an appropriate maintenance/cleanup operation. They are independent; neither is mandatory. PENELOPE does not absorb JANITOR’s generic cleanup/system-maintenance role.
+
+SYSTEM BOUNDARIES
+EITRI/EITRIMB: engineering governance. CONDUCTOR: orchestration/coordination. FORGE: deterministic implementation/build/test/package execution. BIFROST: system-level CONNECT · KEEP · RESOLVE infrastructure. HEIMDALL: composition/presentation/integration. Specialist Apps retain their domains. PENELOPE may be called directly or invoked by another authorized EDEN App; no single invocation method defines the product.
+
+INSPIRATION / DESIGN AUTHORITY
+PENELOPE’s inspiration is Penelope from Greek mythology. Her current visual identity and UI/UIX are ESTABLISHED CURRENT CANON, derived from the PENELOPE name/inspiration, established PENELOPE functionality, the authoritative EDEN Design Mantra, and current platform design rules. Do not use THREAD or WEAVER terminology as PENELOPE naming/capability labels because THREAD and WEAVER are separate established EDEN identities.
+
+The historical pixel-for-pixel UI may remain unrecovered; current PENELOPE UI/UIX is nevertheless established canon and is not an open redesign question.
+
+DESIGN / UIX REQUIREMENTS
+The experience expresses recognition of scattered information, relationships becoming clear, fragmented material becoming coherent, provenance remaining visible, ambiguity remaining visible rather than hidden, and consolidation without destructive loss. It must support source/location visibility, local-vs-cloud/provider distinction, recognized relationships, grouped/related material, conflicts/ambiguity, provenance/source tracing, consolidated output, optional AI state/assistance, detail on demand, and explicit consequence before destructive/maintenance handoff.
+
+Apply the authoritative EDEN Design Mantra: LOCAL FIRST; USER DATA OUTLIVES SOFTWARE; DATA BELONGS TO THE USER; INTEGRATIONS ARE ADAPTERS, NOT OWNERS; RECOVERY IS A PRODUCT FEATURE; SAFETY IS ARCHITECTURE; POLISH IS FUNCTIONAL; PROGRESSIVE DISCLOSURE; SHOW STATE; CONFIRM CONSEQUENCE; MAKE AUTOMATION EXPLAINABLE; BUILD A SMALL CORE AND MOVE WEIGHT OUTWARD; REMOVE BEFORE ADDING; ONE AUTHORITATIVE PATH; DETAIL ON DEMAND; VERIFY BEFORE DESTRUCTIVE ACTION.
+
+CANONICAL PRODUCT BOUNDARY
+PENELOPE understands and consolidates user files and user information across local and cloud sources. JANITOR primarily maintains the system/storage environment. Other EDEN Apps may invoke or present PENELOPE but do not redefine her domain.
+
+AUTHORITY
+Newest explicit Lucas decision → current frozen EDEN/AppDev canon → this PENELOPE Project Bible → verified implementation evidence → older valid implementation/provenance.
+
+Do not infer new PENELOPE scope from incomplete source. Do not redesign PENELOPE from scratch. Do not elevate implementation mechanisms into product identity.
