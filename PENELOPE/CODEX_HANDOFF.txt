@@ -1,0 +1,144 @@
+PENELOPE — CODEX EXECUTION HANDOFF
+Status: READY FOR IMPLEMENTATION
+Date: 2026-10-03
+
+AUTHORITATIVE SOURCES
+1. Global AppDev Bible on Mac:
+   /Users/lucas/edenOS/Projects/#appDev Bible/
+2. PENELOPE Project Bible on Mac:
+   /Users/lucas/edenOS/Projects/#appDev Bible/Project Bibles/PENELOPE.txt
+3. GitHub mirror:
+   Project Bibles/PENELOPE.txt in lucasbuzek/Lucas-Private-edenOS-apps
+
+DO NOT REDESIGN THE PRODUCT.
+DO NOT RECOVER GENERAL CANON AGAIN.
+LOAD AUTHORITY, RECOVER EXISTING SOURCE/LKG, IMPLEMENT ONLY THE GAP.
+
+PROJECT
+PENELOPE
+
+PROJECT GOAL
+Build the established PENELOPE App for user files/information:
+FIND → RECOGNIZE → CONNECT → ANALYZE → ORGANIZE / RECONCILE → CONSOLIDATE
+
+ACCEPTANCE TARGET
+A functional macOS-first PENELOPE implementation that:
+- works across authorized local and cloud/provider-backed user data
+- identifies/classifies material
+- recognizes relationships despite filename/location differences
+- analyzes related information
+- organizes/reconciles it
+- consolidates it into meaningful results with provenance
+- works without AI
+- supports optional native/on-device/local AI assistance
+- preserves ambiguity and user data
+- can cooperate with JANITOR for maintenance/cleanup without absorbing JANITOR
+- follows the established PENELOPE UI/UIX and EDEN Design Mantra
+
+CANONICAL PATHS
+Persistent project:
+  /Users/lucas/edenOS/Projects/PENELOPE/
+Temporary:
+  /Users/lucas/edenOS/Temporary/PENELOPE/
+
+FIRST ACTIONS
+1. Load APPDEV_BIBLE.txt, DESIGN_MANTRA.txt, namingRules.txt.
+2. Load PENELOPE.txt Project Bible.
+3. Inspect /Users/lucas/edenOS/Projects/PENELOPE/.
+4. Recover existing PENELOPE source, LKG, current candidate and tests.
+5. Search only where needed for older valid PENELOPE source/packages/evidence.
+6. Compare actual demonstrated implementation against Project Bible.
+7. Reuse proven existing capabilities before custom code.
+8. Implement only missing product gaps.
+9. Build on macOS.
+10. Test, repair, regression-check against LKG.
+11. Package only after verification.
+12. Persist truthful current/LKG/evidence state.
+13. Update GitHub continuity with actual source/evidence, not just metadata.
+
+IMPORTANT PRODUCT BOUNDARY
+PENELOPE is NOT:
+- a general system cleaner
+- JANITOR
+- EITRI/EITRIMB
+- FORGE
+- CONDUCTOR
+- BIFROST
+- a generic backup product
+- a cloud sync engine
+- universal project governance
+
+PENELOPE operates on USER FILES / USER INFORMATION.
+
+JANITOR
+JANITOR is primarily deterministic system/device maintenance.
+JANITOR may prepare the environment before PENELOPE runs.
+PENELOPE may invoke JANITOR when maintenance/cleanup is appropriate.
+They remain independent.
+
+AI
+AI is optional.
+Core functionality must work without AI.
+Preferred order when useful:
+native/OS intelligence → on-device/native models → local models → authorized LAN/self-hosted → optional connected/cloud.
+Do not send private user data externally without authorization.
+AI assists interpretation; deterministic evidence and explicit authority remain authoritative.
+
+UI / UIX
+PENELOPE inspiration: Penelope from Greek mythology.
+Current PENELOPE UI/UIX is established canon.
+Derive implementation from:
+- PENELOPE inspiration
+- Project Bible functions
+- EDEN Design Mantra
+- current platform design rules
+
+Do not use THREAD or WEAVER terminology as PENELOPE naming/capability labels.
+
+The interface must communicate:
+- source/location
+- local vs cloud/provider state
+- recognized relationships
+- grouped/related material
+- conflicts/ambiguity
+- provenance/source tracing
+- consolidated result
+- optional AI state
+- detail on demand
+- explicit consequence before destructive/maintenance handoff
+
+BUILD / EXECUTION RULES
+Use existing capability first:
+OS native → installed suitable software → mature library/framework/SDK/CLI/provider → adapt/integrate → custom code only for remaining gap.
+
+Do not stop at planning if safe implementation work remains.
+Retry failures with changed method.
+Preserve LKG before risky changes.
+A build number/package/ZIP does not prove functionality.
+Evidence states remain strict:
+GENERATED != IMPLEMENTED != BUILT != TESTED != VERIFIED != RELEASED
+UNKNOWN != PASS
+
+DELIVERABLES
+At minimum, leave:
+- authoritative source in /Users/lucas/edenOS/Projects/PENELOPE/
+- root-level primary entry points where appropriate
+- build/test/run/install instructions or commands where appropriate
+- working macOS target/representation
+- tested deterministic core
+- optional AI adapter architecture with at least native/local path implemented if capability is available
+- provenance-preserving local/cloud analysis flow
+- verified package/candidate
+- LKG/current-candidate record
+- tests/evidence
+- GitHub source continuity sufficient for cold recovery
+
+DO NOT CREATE FAKE PLATFORM CLIENTS.
+If a platform does not need a native PENELOPE client, prefer legitimate CLI/headless/Web/adapter representations.
+
+STOP CONDITION
+Stop only when:
+- requested milestone is reached and verified, or
+- a genuine unavailable dependency/user decision blocks remaining safe execution.
+
+If a safe product-advancing action exists, execute it.
