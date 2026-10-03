@@ -1,0 +1,3 @@
+CODEX HANDOFF — edenOS Embedded 0.1
+Read edenOS Embedded/PROJECT_BIBLE.txt first, then global AppDev authority on the Mac. Recover existing source before implementation.
+Current milestone: independent ARMv7 APK candidates for edenOS Home, BIFROST Embedded, SKALD, NOSTOS and edenOS Files for SM-T110/goyawifi. App-specific Android definitions live with their respective private development folders. Exact tablet Android/SystemUI is a deferred physical gate. Do not restart architecture or duplicate specialist Apps.
