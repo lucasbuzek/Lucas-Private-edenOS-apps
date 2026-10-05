@@ -1,7 +1,8 @@
 """Optional RDC provider through the mature MCP SDK; never a new MCP host."""
 import asyncio
+import hmac
 import webbrowser
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, parse_qs
 import httpx
 from mcp import ClientSession
 from mcp.client.auth import OAuthClientProvider, TokenStorage
@@ -41,6 +42,9 @@ class RDCClient:
                 if not connect: raise ProviderError("rdc_connect_required")
                 if target.scheme!="https" or target.netloc not in {"auth.desktopcommander.app","mcp.desktopcommander.app"}:
                     raise ProviderError("untrusted_rdc_login")
+                expected=parse_qs(target.query).get("state",[""])[0]
+                if not expected: raise ProviderError("invalid_rdc_state")
+                callback.accept=lambda data: len(data.get("state",[]))==1 and hmac.compare_digest(data["state"][0],expected)
                 if not webbrowser.open(url): raise ProviderError("browser_unavailable")
             async def receive():
                 params=await asyncio.to_thread(callback.wait)

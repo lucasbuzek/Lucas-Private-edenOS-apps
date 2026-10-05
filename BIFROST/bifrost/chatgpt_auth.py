@@ -26,6 +26,7 @@ def validate_callback(params,state,client_id):
     if any(len(v)!=1 for v in params.values()): raise ProviderError("invalid_callback")
     returned=params.get("state",[""])[0]
     if not hmac.compare_digest(returned,state): raise ProviderError("invalid_state")
+    if params.get("iss",[ISSUER])[0] != ISSUER: raise ProviderError("invalid_issuer")
     if "error" in params: raise ProviderError("sign_in_declined")
     code=params.get("code",[""])[0]
     issued=params.get("client_id",[client_id])[0]
@@ -71,7 +72,7 @@ class ChatAuth:
             record=self.store.read("connection")
             if not record or not record.get("token"): return {"state":"connect"}
             token=record["token"]
-            permitted=PLAN in token.get("scope","").split()
+            permitted=PLAN in token.get("scope","").split() and "resource.invoke" in token.get("scope","").split()
             return {"state":"connected" if permitted else "permission_required",
                     "plan_authorized":permitted,"account":record.get("email")}
 
