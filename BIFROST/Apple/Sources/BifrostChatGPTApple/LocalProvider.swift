@@ -1,5 +1,6 @@
 #if os(macOS)
 import Foundation
+import Darwin
 
 /// One instance belongs to BIFROST Core. No TCP listener or remote authorization.
 public final class ChatGPTLocalProvider: ChatGPTCapabilityClient, @unchecked Sendable {
@@ -75,10 +76,14 @@ public final class ChatGPTLocalProvider: ChatGPTCapabilityClient, @unchecked Sen
             guard buffered.count <= 16 * 1024 * 1024 else {
                 throw ChatGPTIntegrationError.invalidResponse
             }
-            guard let chunk = try output.read(upToCount: 4096), !chunk.isEmpty else {
-                throw ChatGPTIntegrationError.providerStopped
-            }
-            buffered.append(chunk)
+            // A single POSIX pipe read returns available bytes. FileHandle's
+            // count-based read may wait to fill its count while the child waits
+            // for our next request, deadlocking short JSON-line responses.
+            var bytes = [UInt8](repeating: 0, count: 4096)
+            let count = Darwin.read(output.fileDescriptor, &bytes, bytes.count)
+            if count < 0 && errno == EINTR { continue }
+            guard count > 0 else { throw ChatGPTIntegrationError.providerStopped }
+            buffered.append(contentsOf: bytes.prefix(count))
         }
     }
 }
