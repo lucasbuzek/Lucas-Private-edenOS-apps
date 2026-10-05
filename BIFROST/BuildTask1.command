@@ -11,7 +11,7 @@ python3 -m venv "$candidate_dir/venv"
 "$candidate_dir/venv/bin/pip" install . pyinstaller==6.16.0
 "$candidate_dir/venv/bin/python" -m unittest discover -s tests -v
 "$candidate_dir/venv/bin/pyinstaller" --noconfirm --onedir --name bifrost-chatgpt-provider \
-  --collect-all keyring --collect-all mcp --collect-all authlib --collect-all openai \
+  --collect-all keyring --collect-submodules mcp.client --collect-submodules mcp.shared --collect-data mcp --collect-all authlib --collect-all openai \
   --distpath "$candidate_dir/provider" --workpath "$candidate_dir/pyinstaller" \
   --specpath "$candidate_dir" provider_entry.py
 swift test --package-path Apple
