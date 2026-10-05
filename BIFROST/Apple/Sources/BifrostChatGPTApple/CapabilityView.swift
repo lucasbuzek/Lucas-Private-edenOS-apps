@@ -25,10 +25,16 @@ import SwiftUI
             if connected {
                 ScrollView { Text(reply).textSelection(.enabled) }
                 TextField("Ask ChatGPT", text: $prompt)
-                if !files.isEmpty { Text(files.map(\.lastPathComponent).joined(separator: ", ")) }
+                if !files.isEmpty {
+                    HStack {
+                        Text(files.map(\.lastPathComponent).joined(separator: ", "))
+                        Button("Clear files") { files = [] }.disabled(busy)
+                    }
+                }
                 HStack {
                     Button("Attach files") { pickingFiles = true }.disabled(busy)
                     Button("Send") { send() }.disabled(busy || prompt.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                    Button("New chat") { newChat() }.disabled(busy)
                     Button("Disconnect") { disconnect() }.disabled(busy)
                 }
             } else {
@@ -91,9 +97,21 @@ import SwiftUI
         }
     }
 
+    private func newChat() {
+        busy = true
+        Task {
+            defer { busy = false }
+            do {
+                _ = try await client.send("forget", values: ["thread": .string(thread)], onDelta: { _ in })
+                reply = ""; notice = ""
+            } catch { notice = "A new conversation could not start. Try again." }
+        }
+    }
+
     private func send() {
         busy = true; reply = ""; notice = ""
         let selected = files
+        let submittedPrompt = prompt
         let requestID = UUID()
         activeRequest = requestID
         Task {
@@ -119,12 +137,19 @@ import SwiftUI
                     paths.append(.string(target.path))
                 }
                 let result = try await client.send("chat", values: [
-                    "thread": .string(thread), "prompt": .string(prompt),
+                    "thread": .string(thread), "prompt": .string(submittedPrompt),
                     "files": .array(paths), "files_confirmed": .bool(true)
                 ], onDelta: { delta in Task { @MainActor in if activeRequest == requestID { reply += delta } } })
                 reply = result["text"]?.text ?? reply
-                prompt = ""; files = []
-            } catch { notice = "The response did not complete. Partial text is shown; retry when ready." }
+                if prompt == submittedPrompt { prompt = "" }
+                files = []
+            } catch ChatGPTIntegrationError.providerFailure("context_limit") {
+                notice = "This conversation is full. Choose New chat to continue; your login stays connected."
+            } catch ChatGPTIntegrationError.providerTimedOut {
+                notice = "The provider stopped responding. Your next request restarts it with a fresh conversation."
+            } catch {
+                notice = "The response did not complete. Partial text is shown; retry when ready."
+            }
         }
     }
 }

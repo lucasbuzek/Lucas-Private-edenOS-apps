@@ -13,6 +13,19 @@ final class ProviderTests: XCTestCase {
     func testMissingInstallationIsExplicit() {
         XCTAssertThrowsError(try ChatGPTLocalProvider(executable: URL(fileURLWithPath: "/missing/bifrost-provider")))
     }
+    func testChildThatNeverReadsDoesNotBlockRequestWrite() async throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: directory) }
+        let script = directory.appendingPathComponent("provider")
+        try "#!/usr/bin/env python3\nimport time\ntime.sleep(30)\n".write(to: script, atomically: true, encoding: .utf8)
+        try FileManager.default.setAttributes([.posixPermissions: 0o700], ofItemAtPath: script.path)
+        let provider = try ChatGPTLocalProvider(executable: script, requestTimeout: 1)
+        do {
+            _ = try await provider.send("chat", values: ["prompt": .string(String(repeating: "x", count: 100000))])
+            XCTFail("Blocked request writes should time out")
+        } catch ChatGPTIntegrationError.providerTimedOut {}
+    }
     func testUnresponsiveChildTimesOutAndNextRequestRestarts() async throws {
         let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)

@@ -1,7 +1,7 @@
 import Foundation
 
 public enum ChatGPTIntegrationError: Error {
-    case providerNotInstalled, providerStopped, invalidResponse, requestTooLarge
+    case providerNotInstalled, providerStopped, providerTimedOut, invalidResponse, requestTooLarge
     case providerFailure(String), authorizedRouteUnavailable
 }
 

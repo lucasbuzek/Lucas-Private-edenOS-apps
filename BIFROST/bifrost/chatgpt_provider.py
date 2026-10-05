@@ -13,7 +13,7 @@ class ProviderError(Exception):
     pass
 
 MAX_FILE = 10 * 1024 * 1024
-MAX_CONTEXT = 40 * 1024 * 1024
+MAX_CONTEXT = 64 * 1024 * 1024
 MIMES = {".pdf":"application/pdf", ".txt":"text/plain", ".md":"text/markdown",
          ".csv":"text/csv", ".json":"application/json",
          ".png":"image/png", ".jpg":"image/jpeg", ".jpeg":"image/jpeg",
@@ -72,7 +72,13 @@ class ChatProvider:
             key = (account,thread)
             context = copy.deepcopy(self.history.get(key,[])) + [user]
             if len(json.dumps(context).encode())>MAX_CONTEXT: raise ProviderError("context_limit")
-            stream = client.responses.create(model=model,input=context,store=False,stream=True)
+            try:
+                stream = client.responses.create(model=model,input=context,store=False,stream=True)
+            except Exception as error:
+                # SDK error text may contain private input; expose only a known code.
+                if getattr(error, "code", None) == "context_length_exceeded":
+                    raise ProviderError("context_limit") from None
+                raise
             text = ""
             output = None
             completed = False
