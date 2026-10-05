@@ -105,6 +105,7 @@ class NativeHost:
         self.vault = secret_store if secret_store is not None else AppleSecrets()
         self._sessions = {}
         self._jobs = {}
+        self._uploads = {}
         self._closed = threading.Event()
         self.db.executescript("""
             CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
@@ -188,6 +189,10 @@ class NativeHost:
             jobs = [job for job in self._jobs.values() if job.device_id == device_id]
         for job in jobs:
             self._stop(job)
+        with self._lock:
+            for uid in list(self._uploads):
+                if self._uploads[uid]["device"] == device_id:
+                    self._discard_upload(uid)
         self._audit(device_id, "revoke")
         self.vault.delete(device_id)
         return {"revoked": device_id}
@@ -520,7 +525,7 @@ class NativeHost:
             digest = hashlib.sha256(executable.read_bytes()).hexdigest()
             command = str(uuid.uuid4())
             with self.db:
-                self.db.execute("INSERT INTO commands VALUES (?,?,?,?,?,?,?,?,?,0)",
+                self.db.execute("INSERT INTO commands VALUES (?,?,?,?,?,?,?,?,0)",
                                 (command, device_id, grant_id, cwd, json.dumps(argv), digest, json.dumps(environment), timeout))
             self._audit(device_id, "approve_command")
             return {"id": command, "argv": argv, "cwd": cwd, "os_privileges": "owner"}
@@ -683,5 +688,99 @@ class NativeHost:
             self._stop(job)
             for reader in job.readers:
                 reader.join(timeout=1)
+        for uid in list(self._uploads):
+            self._discard_upload(uid)
         self._sessions.clear()
         self.db.close()
+
+    def begin_upload(self, session, grant_id, path, size, expected_sha256=None):
+        self._grant(session, grant_id, "write")
+        parts = self._parts(path)
+        if not parts or not isinstance(size, int) or not 0 <= size <= self.file_limit:
+            raise NativeError("invalid_transfer", "Choose a relative file and size up to 1 GiB")
+        with self._lock:
+            if len(self._uploads) >= 4:
+                raise NativeError("capacity", "Finish or abort an existing transfer")
+            uid = str(uuid.uuid4())
+            stage = self.state_dir / ("upload-" + uid)
+            fd = os.open(stage, os.O_RDWR | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
+            self._uploads[uid] = {"device": session.device_id, "grant": grant_id, "path": path,
+                                  "size": size, "offset": 0, "expected": expected_sha256,
+                                  "fd": fd, "stage": stage, "expires": time.monotonic()+3600}
+            return {"id": uid, "next_offset": 0, "size": size}
+
+    def _upload(self, session, upload_id):
+        self._check(session)
+        upload = self._uploads.get(upload_id)
+        if not upload or upload["device"] != session.device_id:
+            raise NativeError("transfer_denied", "Transfer is not owned by this device")
+        self._grant(session, upload["grant"], "write")
+        if time.monotonic() > upload["expires"]:
+            self._discard_upload(upload_id)
+            raise NativeError("transfer_expired", "Restart the expired transfer")
+        return upload
+
+    def upload_chunk(self, session, upload_id, offset, data):
+        with self._lock:
+            upload = self._upload(session, upload_id)
+            chunk = self._decode(data, self.chunk_limit)
+            if offset != upload["offset"] or offset+len(chunk) > upload["size"]:
+                raise NativeError("transfer_conflict", "Use the exact next offset and declared size")
+            view = memoryview(chunk)
+            while view:
+                count = os.write(upload["fd"], view)
+                view = view[count:]
+            upload["offset"] += len(chunk)
+            return {"id": upload_id, "next_offset": upload["offset"]}
+
+    def finish_upload(self, session, upload_id, sha256):
+        with self._lock:
+            upload = self._upload(session, upload_id)
+            if upload["offset"] != upload["size"] or not isinstance(sha256, str) or self._digest(upload["fd"]) != sha256:
+                raise NativeError("transfer_conflict", "Transfer size or SHA-256 does not match")
+            row = self._grant(session, upload["grant"], "write")
+            parts = self._parts(upload["path"])
+            with self._directory(row, parts[:-1]) as parent:
+                exists = self._existing(parent, parts[-1], upload["expected"])
+                temporary = ".bifrost-stage-" + secrets.token_hex(16)
+                fd = os.open(temporary, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600, dir_fd=parent)
+                try:
+                    with os.fdopen(fd, "wb") as stream:
+                        position = 0
+                        while position < upload["size"]:
+                            chunk = os.pread(upload["fd"], self.chunk_limit, position)
+                            if not chunk:
+                                raise NativeError("transfer_conflict", "Staged transfer was truncated")
+                            stream.write(chunk)
+                            position += len(chunk)
+                        stream.flush()
+                        os.fsync(stream.fileno())
+                    if exists:
+                        self._existing(parent, parts[-1], upload["expected"])
+                        os.replace(temporary, parts[-1], src_dir_fd=parent, dst_dir_fd=parent)
+                    else:
+                        os.link(temporary, parts[-1], src_dir_fd=parent, dst_dir_fd=parent, follow_symlinks=False)
+                        os.unlink(temporary, dir_fd=parent)
+                    os.fsync(parent)
+                except FileExistsError:
+                    raise NativeError("conflict", "Destination appeared; nothing overwritten") from None
+                finally:
+                    try:
+                        os.unlink(temporary, dir_fd=parent)
+                    except FileNotFoundError:
+                        pass
+            size = upload["size"]
+            self._discard_upload(upload_id)
+            self._audit(session.device_id, "transfer_complete")
+            return {"bytes": size, "sha256": sha256}
+
+    def _discard_upload(self, upload_id):
+        upload = self._uploads.pop(upload_id)
+        os.close(upload["fd"])
+        upload["stage"].unlink(missing_ok=True)
+
+    def abort_upload(self, session, upload_id):
+        with self._lock:
+            self._upload(session, upload_id)
+            self._discard_upload(upload_id)
+            return {"aborted": upload_id}

@@ -198,6 +198,51 @@ class NativeHostTests(unittest.TestCase):
         self.assertTrue(result["truncated"])
         self.assertLessEqual(result["stdout_size"], self.host.output_limit)
 
+    def test_large_upload_is_atomic_and_checksum_verified(self):
+        import hashlib
+        data = b"binary\\x00" * 100000
+        upload = self.host.begin_upload(self.session, self.grant["id"], "large", len(data))
+        self.assertFalse((self.root / "large").exists())
+        for offset in range(0, len(data), self.host.chunk_limit):
+            self.host.upload_chunk(self.session, upload["id"], offset, base64.b64encode(data[offset:offset+self.host.chunk_limit]).decode())
+        self.assertDenied(self.host.finish_upload, self.session, upload["id"], "wrong")
+        self.host.finish_upload(self.session, upload["id"], hashlib.sha256(data).hexdigest())
+        self.assertEqual((self.root / "large").read_bytes(), data)
+
+    def test_upload_offsets_scope_and_revocation(self):
+        upload = self.host.begin_upload(self.session, self.grant["id"], "large", 8)
+        self.assertDenied(self.host.upload_chunk, self.session, upload["id"], 1, "eA==")
+        self.assertDenied(self.host.upload_chunk, self.session, upload["id"], 0, base64.b64encode(b"x"*9).decode())
+        self.host.revoke(self.device["id"], approved=True)
+        self.assertEqual(self.host._uploads, {})
+        self.assertFalse((self.root / "large").exists())
+
+    def test_replaced_root_is_denied(self):
+        self.root.rename(self.base / "old-share")
+        self.root.mkdir()
+        self.assertDenied(self.host.list, self.session, self.grant["id"])
+
+    def test_state_symlink_and_permissions_are_denied(self):
+        linked = self.base / "linked-state"
+        linked.symlink_to(self.base / "state")
+        self.assertDenied(NativeHost, linked, self.vault)
+        insecure = self.base / "insecure"
+        insecure.mkdir(mode=0o755)
+        self.assertDenied(NativeHost, insecure, self.vault)
+
+    def test_timeout_and_release(self):
+        argv = [str(Path(sys.executable).resolve()), "-c", "import time; time.sleep(10)"]
+        command = self.host.approve_command(self.device["id"], argv, self.grant["id"], ".", timeout=1, approved=True)
+        job = self.host.start(self.session, command["id"])
+        self.assertDenied(self.host.release, self.session, job["id"])
+        for _ in range(150):
+            if self.host.process(self.session, job["id"])["state"] == "exited":
+                break
+            time.sleep(.02)
+        self.assertEqual(self.host.process(self.session, job["id"])["state"], "exited")
+        self.host.release(self.session, job["id"])
+        self.assertDenied(self.host.process, self.session, job["id"])
+
 
 if __name__ == "__main__":
     unittest.main()

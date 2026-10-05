@@ -1,0 +1,6 @@
+include README.md
+include RECONCILIATION_STATE.md
+include docs/NATIVE_HOST*.md
+recursive-include tests *.py
+recursive-include scripts *.py
+recursive-include apple *.swift
