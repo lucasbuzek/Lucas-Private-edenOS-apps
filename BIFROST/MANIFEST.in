@@ -1,0 +1,8 @@
+include project.yml BuildTask1.command provider_entry.py package_metadata.py
+recursive-include Sources *.swift
+recursive-include Apple *.swift
+recursive-include docs *.md
+recursive-include tests *.py
+global-exclude *.pyc
+prune Apple/.build
+prune .task1-build

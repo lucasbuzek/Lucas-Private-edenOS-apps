@@ -22,8 +22,18 @@ candidate_app="$candidate_dir/DerivedData/Build/Products/Debug/BIFROST.app"
 mkdir -p "$candidate_app/Contents/Resources/ChatGPTProvider"
 cp -R "$candidate_dir/provider/bifrost-chatgpt-provider/." "$candidate_app/Contents/Resources/ChatGPTProvider/"
 test -x "$candidate_app/Contents/Resources/ChatGPTProvider/bifrost-chatgpt-provider"
+"$candidate_dir/venv/bin/python" package_metadata.py "$candidate_app"
 # Inspect the frozen helper in a clean working directory; no network/login.
-(cd /tmp && printf '%s\n' '{"id":"preflight","op":"status"}' | "$candidate_app/Contents/Resources/ChatGPTProvider/bifrost-chatgpt-provider")
+"$candidate_dir/venv/bin/python" - "$candidate_app" <<'PY'
+import json, subprocess, sys
+from pathlib import Path
+helper=Path(sys.argv[1])/"Contents/Resources/ChatGPTProvider/bifrost-chatgpt-provider"
+result=subprocess.run([str(helper)],input='{"id":"preflight","op":"status"}\\n',
+    capture_output=True,text=True,cwd="/tmp",timeout=30,check=True)
+record=json.loads(result.stdout)
+assert record.get("id")=="preflight" and record.get("result",{}).get("state") in {"connect","connected","permission_required"}, "Frozen provider preflight failed"
+print("Frozen provider preflight passed")
+PY
 /usr/bin/plutil -lint "$candidate_app/Contents/Info.plist"
 /usr/bin/ditto -c -k --keepParent "$candidate_app" "$candidate_dir/BIFROST-task1-macos-arm64-candidate.zip"
 /usr/bin/unzip -t "$candidate_dir/BIFROST-task1-macos-arm64-candidate.zip"
