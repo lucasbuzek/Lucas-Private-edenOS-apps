@@ -4,7 +4,9 @@ The 13 original Swift files and project.yml were inspected and preserved on this
 GitHub candidate branch. RECOVERY_STATUS.md and IMPLEMENTATION_INVENTORY.md are original
 2026-10-02 evidence, not current authority. Their missing-Bible claim is superseded
 by the canonical GitHub master Bible and RECONCILIATION_STATE recovered here.
-New native integration adds only a ChatGPT pane and local package linkage.
+New native integration adds a ChatGPT pane, Core-owned provider and local package linkage.
+Three Keep Awake bindings use explicit closures to avoid the cloud Swift 6 compiler's
+actor-bound setter IR crash; their action and behavior remain unchanged.
 Existing discovery, Keep Awake, JANITOR, RDC lifecycle, representations and complexity
 surfaces are retained. Their interactive functionality still needs physical regression.
 

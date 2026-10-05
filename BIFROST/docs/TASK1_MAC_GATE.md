@@ -29,6 +29,10 @@ Intel/universal builds have not been verified.
 3. Confirm genuine account/model eligibility; identity-only/declined access never means ready.
 4. Send two chat turns, observe streaming and remembered context across native navigation.
    Force disconnect/interruption and confirm partial output is not a successful response.
+   Type a new draft during streaming and confirm it remains. Clear unwanted attachments.
+   Fill a conversation, choose New chat and continue without signing out.
+   Suspend the owned helper: verify bounded timeout and restart on the next explicit
+   request. Interrupted tool operations must never be automatically replayed.
 5. Attach each supported file type using the picker; confirm model acceptance and permissions.
 6. Restart app: official login remains protected in Keychain; current chat history resets.
    Test refresh, denial, locked Keychain and reconnect without overwriting valid credentials.

@@ -23,6 +23,8 @@ Source: https://developers.openai.com/siwc/token-sharing-open-source/models-and-
 Inline files/images are supported by compatible models. SIWC excludes Files upload,
 hosted MCP, file search and Code Interpreter. Candidate accepts PDF, UTF-8 text/Markdown,
 CSV/JSON, PNG/JPEG/WebP; conservative limit 10 MiB each, four files. No server uploads API.
+The encoded context budget is 64 MiB, accommodating four full-size files after base64.
+Model limits may be smaller; New chat clears context while retaining login.
 Capability/model file acceptance still requires live validation.
 Source: https://developers.openai.com/siwc/token-sharing-open-source/preview-limitations
 Source: https://developers.openai.com/api/docs/guides/file-inputs
