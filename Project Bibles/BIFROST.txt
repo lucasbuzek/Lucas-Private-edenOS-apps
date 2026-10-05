@@ -1,0 +1,73 @@
+BIFROST — MASTER PROJECT BIBLE
+Status: AUTHORITATIVE PRODUCT CANON / IMPLEMENTATION CONTINUATION
+Date: 2026-10-05
+
+IDENTITY
+BIFROST — CONNECT · KEEP · RESOLVE.
+BIFROST is the edenOS Base App/gateway and connective infrastructure. It connects devices/nodes, Apps, services, providers and execution environments; keeps connective identities, relationships, availability and persistent connective state; resolves the correct authorized capability/provider/route/representation; installs/manages compatible EDEN Apps/packages/services/providers; and exposes those functions through user-facing control surfaces.
+
+AUTHORITY
+Current user instruction → AppDev Bible/AppDevRules/edenOS rules → this Project Bible → authoritative source → LKG/verified evidence → project history.
+Canon determines what should exist. Evidence determines what does exist. UNKNOWN != PASS.
+
+GLOBAL EXECUTION RULE
+RECOVER → DISCOVER → RECOGNIZE → REUSE → RECONCILE → INTEGRATE/ADAPT → BUILD ONLY THE GAP → VERIFY.
+Existing Capability First: OS/native → existing implementation/app/service → mature library/engine/CLI/protocol → provider → custom implementation only for the remaining gap.
+No vertical slice, reduced MVP, fake controls or placeholder functionality for the defined Alpha.
+
+PRODUCT/OWNERSHIP BOUNDARIES
+BIFROST is one codebase/product with configurable Official and Custom/Private profiles. Lucas's `Garden of EDEN` is a Custom/Private environment/front-door display name, not universal BIFROST identity. Old universal `My EDEN` naming is superseded.
+Specialist Apps remain standalone domain owners. HEIMDALL organizes/composes Workspaces. CONDUCTOR is a default-installed BIFROST plugin for interpretation/reasoning/orchestration. ForgeMASTER governs AppDev. JANITOR remains separate. WEAVER owns website design/development/adaptation/optimization/SEO. Hosting/integration/composition does not transfer domain ownership.
+
+CORE OPERATION
+One authoritative BIFROST Core/state system backs Headless/API, permanent Web UI, macOS menu bar and operational native macOS App. BIFROST remains deterministically functional when CONDUCTOR/AI is unavailable. AI reasons where useful; deterministic/native services execute where possible. Lowest sufficient capability wins.
+
+IDENTITY / ENVIRONMENTS / NODES
+Users may own multiple named environments. Authorized devices/nodes may participate in multiple environments. Nodes may be personally or organization managed and may transfer/move under explicit authorization.
+Stable BIFROST IDs are distinct from mutable display names. Physical/system name reported by the OS/device is the default display name. BIFROST alias is optional user naming inside an environment. MAC/HW identifiers may be evidence/properties; network addresses are properties, never identity.
+No mandatory master BIFROST. Multiple nodes may coexist; node-local facts remain truthful.
+
+SYNC / DATA
+LOCAL FIRST. USER-OWNED DURABLE DATA. ONE AUTHORITATIVE OWNER. Authority, synchronization and backup are distinct. Synchronization is provider-neutral; iCloud and Dropbox are examples/reference adapters, not mandatory architecture. Continue independently when disconnected and reconcile when available.
+
+HEADLESS APPS / HOSTING
+Compatible Apps retain identity, authoritative domain state/data/APIs and independent operation. Reversible hosting: STANDALONE → DELEGATING → BIFROST_HOSTED. Prevent duplicate authoritative services. Apps can surrender compatible hosting and retake it. REGISTERED means known only, not working.
+Web representations normally open in another browser tab. Native BIFROST presents Apps under Apps using the best available representation.
+
+CAPABILITY RESOLUTION
+Request capability → determine authorized implementation → choose execution device/environment → choose provider → choose representation → execute → validate → return result. Access device and execution device may differ. BIFROST FIRST does not mean BIFROST MANDATORY.
+
+CODE / AGENT EXECUTION
+BIFROST owns low-friction coding-agent execution for ordinary users: request → select authorized agent/environment/device → submit → verify acceptance → persist task/session identity → monitor pending/running/progress → handle required permission/attention → complete/fail/block → verify output → return to originating App/helper → continue next gate.
+Each App/helper may maintain its own persistent agent context/session; BIFROST manages authentication reuse, routing, continuity, monitoring, recovery and evidence. Support local/cloud/hybrid where available. WORKinCODEX is canonical AppDev procedural evidence for this UX.
+Investigate/integrate proven replaceable implementations rather than merely recommending them: Lody/ACP-class agent session sharing/control; Codex/Codex Cloud; ACP-compatible agents; Coder-class execution environments. BIFROST remains the architectural owner of routing/state.
+
+NETWORK / TRANSFER / REMOTE
+Use proven/native networking and security. No custom cryptography. Bonjour/mDNS/Network.framework where appropriate on Apple; Tailscale/WireGuard/Headscale-class secure remote networking and LocalSend-class LAN discovery/transfer are integration candidates/providers. Discovery != trust.
+RDC is architecturally optional/replaceable, but current macOS Alpha requires real RDC detect/configure/start/monitor/stop/restart/recover.
+
+WEB DEPLOYMENT
+User supplies ZIP/equivalent Web package. BIFROST can create/serve local Web interface or deliberately expose/deploy a secured Internet-facing representation according to user choice. Provide suitable hosting-provider links/integration and guided low-friction provider connection/configuration where technically possible. Never equate Internet deployment with exposing localhost/admin ports.
+WEAVER may later generate/adapt richer personalized Web representations; BIFROST retains generic deployment/connectivity/provider integration.
+
+MULTIMODAL PROVIDERS
+Picsart AI Playground/provider-aggregation class capabilities are optional replaceable integration candidates for image/video/audio capability resolution, especially for APELLES/KUROSAWA. Prefer adequate local/native capability first. Specialist Apps retain workflow/semantics/validation/authoritative domain state.
+
+MACOS TARGET
+Current full target is macOS. Use appropriate App Intents/App Shortcuts/Shortcuts/Siri, Bonjour/mDNS/Network.framework, Keychain where appropriate, menu-bar integration, notifications/actions, native power assertions/Keep Awake, Services/Share/Open In, deep links, filesystem integration and Apple/system-intelligence routes. Specified != implemented; functional evidence required.
+Headless/API + Web UI + menu-bar controls/status first, operational native macOS App next, all synchronized to one Core. Simple/Advanced/Expert progressive disclosure; Simple is layman-first. Windows/Linux are later Official targets.
+
+INSTALL / UPDATE / RECOVERY
+Profiles: INSTALL/RECOMMENDED, LEAN, FULL, CUSTOM. Detect/reuse existing capability; never silently install software.
+DETECT → VALIDATE → BACKUP/STAGE → INSTALL/MIGRATE/UPDATE → VERIFY → COMMIT. Roll back on failure. Preserve user data. Packages/plugins/providers/scripts are generic extension mechanisms; helpers do not become Core merely because BIFROST can invoke them.
+
+EVIDENCE
+GENERATED != IMPLEMENTED != BUILT != TESTED != VERIFIED != RELEASED.
+NEWEST != LKG. UNKNOWN != PASS. REGISTERED != WORKING. DISCOVERED != TRUSTED. PROCESS RUNNING != SERVICE FUNCTIONAL.
+A failed gate is a repair task while safe executable work remains. Preserve rollback/LKG.
+
+CURRENT CANDIDATE EVIDENCE
+Codex Cloud task `task_e_6ac37dd224388332a5dfbb40e647d73f`, environment `lucas-Private-edenOS-apps`, reached READY 2026-10-05 and reported 48 files changed (+1147/-53). This is CANDIDATE implementation evidence only. It requires inspection/reconciliation/application to the correct working tree, functional verification, regression, packaging and package verification before promotion.
+
+PERSISTENCE CONTRACT
+GitHub is canonical active project persistence/working source for Codex. Mac `~/edenOS/Projects/` is synchronized cold/offline/recovery mirror and physical build/test environment. Never replace established GitHub facts with Mac assumptions or vice versa; reconcile explicitly.
