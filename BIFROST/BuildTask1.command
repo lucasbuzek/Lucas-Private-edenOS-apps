@@ -37,5 +37,21 @@ PY
 /usr/bin/plutil -lint "$candidate_app/Contents/Info.plist"
 /usr/bin/ditto -c -k --keepParent "$candidate_app" "$candidate_dir/BIFROST-task1-macos-arm64-candidate.zip"
 /usr/bin/unzip -t "$candidate_dir/BIFROST-task1-macos-arm64-candidate.zip"
+# Extract the exact archive into a fresh location and exercise its bundled runtime.
+"$candidate_dir/venv/bin/python" - "$candidate_dir/BIFROST-task1-macos-arm64-candidate.zip" <<'PY'
+import json, subprocess, sys, tempfile
+from pathlib import Path
+with tempfile.TemporaryDirectory(prefix="bifrost-clean-package-") as clean:
+    subprocess.run(["/usr/bin/ditto","-x","-k",sys.argv[1],clean],check=True)
+    app=Path(clean)/"BIFROST.app"
+    metadata=json.loads((app/"Contents/Resources/TASK1_BUILD.json").read_text())
+    assert metadata["promotion"]=="NOT_PROMOTED"
+    helper=app/"Contents/Resources/ChatGPTProvider/bifrost-chatgpt-provider"
+    result=subprocess.run([str(helper)],input=json.dumps({"id":"clean","op":"status"})+chr(10),
+        capture_output=True,text=True,cwd=clean,timeout=30,check=True)
+    record=json.loads(result.stdout)
+    assert record.get("id")=="clean" and record.get("result",{}).get("state") in {"connect","connected","permission_required"}
+    print("Clean extracted app runtime passed")
+PY
 /usr/bin/shasum -a 256 "$candidate_dir/BIFROST-task1-macos-arm64-candidate.zip" > "$candidate_dir/SHA256SUMS"
 echo "Candidate prepared; signing, notarization and physical verification remain UNKNOWN."

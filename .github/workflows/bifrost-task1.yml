@@ -3,6 +3,9 @@ on:
   push:
     branches: ["bifrost/task1-chatgpt-apple-20261005"]
   workflow_dispatch:
+concurrency:
+  group: bifrost-task1-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
@@ -42,6 +45,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Compile and test Apple integration library
+        timeout-minutes: 3
         working-directory: BIFROST/Apple
         run: swift test
       - uses: actions/setup-python@v5
