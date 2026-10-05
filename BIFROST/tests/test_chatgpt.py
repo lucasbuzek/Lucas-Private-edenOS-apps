@@ -17,7 +17,7 @@ class ChatTests(unittest.TestCase):
         self.sent=[]
         self.stream=Stream(events)
         client=NS(responses=NS(create=lambda **kw: self.sent.append(kw) or self.stream))
-        return ChatProvider(lambda: ("account-a", client))
+        return ChatProvider(lambda: ("account-a", client), model="test")
 
     def test_streaming_context_and_completion(self):
         p=self.provider([NS(type="response.output_text.delta",delta="Hello"),
