@@ -1,0 +1,7 @@
+.task1-build/
+Apple/.build/
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.pyc

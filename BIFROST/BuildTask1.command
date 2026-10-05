@@ -1,0 +1,30 @@
+#!/bin/bash
+# Developer/Mac continuation gate, not an ordinary user's setup procedure.
+set -euo pipefail
+cd "$(dirname "$0")"
+command -v python3 >/dev/null || { echo "Python 3.11+ is required for the build."; exit 1; }
+command -v xcodegen >/dev/null || { echo "Install XcodeGen for this developer build, then retry."; exit 1; }
+xcode-select -p >/dev/null
+candidate_dir="${BIFROST_TASK1_OUTPUT:-$PWD/.task1-build}"
+mkdir -p "$candidate_dir"
+python3 -m venv "$candidate_dir/venv"
+"$candidate_dir/venv/bin/pip" install . pyinstaller==6.16.0
+"$candidate_dir/venv/bin/python" -m unittest discover -s tests -v
+"$candidate_dir/venv/bin/pyinstaller" --noconfirm --onedir --name bifrost-chatgpt-provider \
+  --collect-all keyring --collect-all mcp --collect-all authlib --collect-all openai \
+  --distpath "$candidate_dir/provider" --workpath "$candidate_dir/pyinstaller" \
+  --specpath "$candidate_dir" provider_entry.py
+swift test --package-path Apple
+xcodegen generate
+xcodebuild -quiet -project BIFROST.xcodeproj -scheme BIFROST -configuration Debug \
+  -destination 'platform=macOS' -derivedDataPath "$candidate_dir/DerivedData" CODE_SIGNING_ALLOWED=NO build
+candidate_app="$candidate_dir/DerivedData/Build/Products/Debug/BIFROST.app"
+mkdir -p "$candidate_app/Contents/Resources/ChatGPTProvider"
+cp -R "$candidate_dir/provider/bifrost-chatgpt-provider/." "$candidate_app/Contents/Resources/ChatGPTProvider/"
+test -x "$candidate_app/Contents/Resources/ChatGPTProvider/bifrost-chatgpt-provider"
+# Inspect the frozen helper in a clean working directory; no network/login.
+(cd /tmp && printf '%s\n' '{"id":"preflight","op":"status"}' | "$candidate_app/Contents/Resources/ChatGPTProvider/bifrost-chatgpt-provider")
+/usr/bin/plutil -lint "$candidate_app/Contents/Info.plist"
+/usr/bin/ditto -c -k --keepParent "$candidate_app" "$candidate_dir/BIFROST-task1-macos-arm64-candidate.zip"
+/usr/bin/shasum -a 256 "$candidate_dir/BIFROST-task1-macos-arm64-candidate.zip" > "$candidate_dir/SHA256SUMS"
+echo "Candidate prepared; signing, notarization and physical verification remain UNKNOWN."

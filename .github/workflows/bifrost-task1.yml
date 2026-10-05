@@ -44,3 +44,18 @@ jobs:
       - name: Compile and test Apple integration library
         working-directory: BIFROST/Apple
         run: swift test
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Recover app build and bundle provider
+        working-directory: BIFROST
+        run: |
+          brew install xcodegen
+          ./BuildTask1.command
+      - name: Upload native candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: bifrost-task1-macos-arm64-candidate
+          path: |
+            BIFROST/.task1-build/BIFROST-task1-macos-arm64-candidate.zip
+            BIFROST/.task1-build/SHA256SUMS

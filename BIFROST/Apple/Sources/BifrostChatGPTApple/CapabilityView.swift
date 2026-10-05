@@ -12,6 +12,8 @@ import SwiftUI
     @State private var notice = ""
     @State private var files: [URL] = []
     @State private var pickingFiles = false
+    @State private var activeRequest: UUID?
+    @State private var rdcNotice = ""
 
     public init(client: any ChatGPTCapabilityClient) { self.client = client }
 
@@ -30,6 +32,10 @@ import SwiftUI
             } else {
                 Text("Use your eligible ChatGPT plan. Continue in your browser to authorize access.")
                 Button("Continue with ChatGPT") { connect() }.disabled(busy)
+            }
+            DisclosureGroup("Mac capabilities (optional)") {
+                Button("Connect Remote Desktop Commander") { connectRDC() }.disabled(busy)
+                if !rdcNotice.isEmpty { Text(rdcNotice).font(.caption) }
             }
             if busy { ProgressView() }
             if !notice.isEmpty { Text(notice).font(.callout) }
@@ -72,14 +78,27 @@ import SwiftUI
         }
     }
 
+    private func connectRDC() {
+        busy = true
+        Task {
+            defer { busy = false }
+            do {
+                _ = try await client.send("rdc.connect", values: ["confirmed": .bool(true)], onDelta: { _ in })
+                rdcNotice = "Connected to the optional provider. Mac access still depends on its device authorization."
+            } catch { rdcNotice = "The optional Mac provider could not connect. ChatGPT remains independent." }
+        }
+    }
+
     private func send() {
         busy = true; reply = ""; notice = ""
         let selected = files
+        let requestID = UUID()
+        activeRequest = requestID
         Task {
             // The Python helper cannot inherit sandbox-scoped access from the UI.
             // Stage only explicitly selected files into this app's private temporary directory.
             let staging = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)
-            defer { try? FileManager.default.removeItem(at: staging); busy = false }
+            defer { try? FileManager.default.removeItem(at: staging); activeRequest = nil; busy = false }
             do {
                 try FileManager.default.createDirectory(at: staging, withIntermediateDirectories: true,
                                                         attributes: [.posixPermissions: 0o700])
@@ -100,7 +119,7 @@ import SwiftUI
                 let result = try await client.send("chat", values: [
                     "thread": .string(thread), "prompt": .string(prompt),
                     "files": .array(paths), "files_confirmed": .bool(true)
-                ], onDelta: { delta in Task { @MainActor in reply += delta } })
+                ], onDelta: { delta in Task { @MainActor in if activeRequest == requestID { reply += delta } } })
                 reply = result["text"]?.text ?? reply
                 prompt = ""; files = []
             } catch { notice = "The response did not complete. Partial text is shown; retry when ready." }
