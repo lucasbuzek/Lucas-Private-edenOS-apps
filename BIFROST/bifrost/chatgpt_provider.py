@@ -58,6 +58,7 @@ class ChatProvider:
             raise ProviderError("invalid_thread")
         if len(files)>4: raise ProviderError("too_many_files")
         if not self._lock.acquire(blocking=False): raise ProviderError("request_busy")
+        client = None
         try:
             account, client = self.client_for_account()
             model = self.model
@@ -96,4 +97,7 @@ class ChatProvider:
             self.history[key] = context + (output if output is not None else [{"role":"assistant","content":text}])
             return text
         finally:
+            if client is not None and hasattr(client, "close"):
+                try: client.close()
+                except Exception: pass
             self._lock.release()

@@ -4,7 +4,7 @@ import SwiftUI
 /// Embed in the existing BIFROST capability surface, not a new application.
 @MainActor public struct ChatGPTCapabilityView: View {
     private let client: any ChatGPTCapabilityClient
-    private let thread = UUID().uuidString
+    private let thread: String
     @State private var connected = false
     @State private var busy = false
     @State private var prompt = ""
@@ -15,7 +15,9 @@ import SwiftUI
     @State private var activeRequest: UUID?
     @State private var rdcNotice = ""
 
-    public init(client: any ChatGPTCapabilityClient) { self.client = client }
+    public init(client: any ChatGPTCapabilityClient, thread: String = UUID().uuidString) {
+        self.client = client; self.thread = thread
+    }
 
     public var body: some View {
         VStack(alignment: .leading, spacing: 12) {

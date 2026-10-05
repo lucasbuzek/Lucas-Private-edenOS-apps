@@ -1,10 +1,13 @@
 import Foundation
 import AppKit
+import BifrostChatGPTApple
 
 @MainActor final class BifrostSystem: ObservableObject {
     @Published var complexity: Complexity = .simple
     @Published var keepAwake = false
     @Published var lastMessage = "Ready"
+    @Published var chatGPTClient: ChatGPTLocalProvider?
+    let chatGPTThread = UUID().uuidString
     let discovery = DiscoveryService()
     let remote = RemoteDesktopProvider()
     let janitor = JanitorProvider()
