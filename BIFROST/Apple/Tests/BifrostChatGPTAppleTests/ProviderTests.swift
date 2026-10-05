@@ -13,6 +13,30 @@ final class ProviderTests: XCTestCase {
     func testMissingInstallationIsExplicit() {
         XCTAssertThrowsError(try ChatGPTLocalProvider(executable: URL(fileURLWithPath: "/missing/bifrost-provider")))
     }
+    func testUnresponsiveChildTimesOutAndNextRequestRestarts() async throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: directory) }
+        let script = directory.appendingPathComponent("provider")
+        let source = """
+        #!/usr/bin/env python3
+        import json, sys, time
+        for line in sys.stdin:
+            request = json.loads(line)
+            if request["op"] == "hang":
+                time.sleep(30)
+            print(json.dumps({"id": request["id"], "result": {"state": "connect"}}), flush=True)
+        """
+        try source.write(to: script, atomically: true, encoding: .utf8)
+        try FileManager.default.setAttributes([.posixPermissions: 0o700], ofItemAtPath: script.path)
+        let provider = try ChatGPTLocalProvider(executable: script, requestTimeout: 1)
+        do {
+            _ = try await provider.send("hang", values: [:])
+            XCTFail("Unresponsive child should time out")
+        } catch ChatGPTIntegrationError.providerTimedOut {}
+        let result = try await provider.send("status", values: [:])
+        XCTAssertEqual(result["state"]?.text, "connect")
+    }
     func testActualPrivateIPCStreamingAndMultipleRequests() async throws {
         let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)

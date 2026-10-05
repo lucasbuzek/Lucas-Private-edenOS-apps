@@ -4,6 +4,7 @@ import unittest
 from pathlib import Path
 from types import SimpleNamespace as NS
 from bifrost.chatgpt_provider import ChatProvider, attachment, ProviderError
+from unittest.mock import patch
 from bifrost.chatgpt_auth import validate_callback, require_plan_scope
 from bifrost.chatgpt_mcp import authorize_tool
 
@@ -74,6 +75,35 @@ class ChatTests(unittest.TestCase):
         for prompt in ["", " "*3, None]:
             with self.assertRaises(ProviderError): p.chat("thread",prompt)
         self.assertEqual(self.sent,[])
+
+
+    def test_four_maximum_files_fit_the_advertised_request_budget(self):
+        p=self.provider([NS(type="response.completed")])
+        with tempfile.TemporaryDirectory() as d:
+            path=Path(d)/"large.txt"; path.write_bytes(b"x" * (10*1024*1024))
+            p.chat("thread","Inspect selected files",[path]*4)
+        self.assertEqual(len(self.sent[0]["input"][0]["content"]),5)
+
+    def test_forget_recovers_exhausted_conversation_without_login_change(self):
+        p=self.provider([NS(type="response.completed")])
+        p.chat("thread","old content")
+        with patch("bifrost.chatgpt_provider.MAX_CONTEXT",200):
+            with self.assertRaises(ProviderError): p.chat("thread","another turn")
+            p.forget("thread")
+            p.chat("thread","fresh")
+        self.assertEqual(len(self.sent[-1]["input"]),1)
+
+    def test_sdk_context_rejection_has_a_recoverable_stable_code(self):
+        import httpx
+        from openai import BadRequestError
+        response=httpx.Response(400,request=httpx.Request("POST","https://api.openai.com/v1/responses"))
+        rejected=BadRequestError("sensitive request body",response=response,
+            body={"code":"context_length_exceeded"})
+        client=NS(responses=NS(create=lambda **kw: (_ for _ in ()).throw(rejected)))
+        p=ChatProvider(lambda:("account",client),model="test")
+        with self.assertRaisesRegex(ProviderError,"^context_limit$"):
+            p.chat("thread","test")
+        self.assertEqual(p.history,{})
 
 class AuthTests(unittest.TestCase):
     def test_dynamic_client_callback(self):
