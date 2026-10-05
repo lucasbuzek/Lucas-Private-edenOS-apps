@@ -36,3 +36,11 @@ jobs:
         with:
           name: bifrost-task1-candidate
           path: BIFROST/dist/
+  apple-library:
+    runs-on: macos-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile and test Apple integration library
+        working-directory: BIFROST/Apple
+        run: swift test
