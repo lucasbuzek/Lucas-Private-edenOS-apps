@@ -26,5 +26,6 @@ test -x "$candidate_app/Contents/Resources/ChatGPTProvider/bifrost-chatgpt-provi
 (cd /tmp && printf '%s\n' '{"id":"preflight","op":"status"}' | "$candidate_app/Contents/Resources/ChatGPTProvider/bifrost-chatgpt-provider")
 /usr/bin/plutil -lint "$candidate_app/Contents/Info.plist"
 /usr/bin/ditto -c -k --keepParent "$candidate_app" "$candidate_dir/BIFROST-task1-macos-arm64-candidate.zip"
+/usr/bin/unzip -t "$candidate_dir/BIFROST-task1-macos-arm64-candidate.zip"
 /usr/bin/shasum -a 256 "$candidate_dir/BIFROST-task1-macos-arm64-candidate.zip" > "$candidate_dir/SHA256SUMS"
 echo "Candidate prepared; signing, notarization and physical verification remain UNKNOWN."
