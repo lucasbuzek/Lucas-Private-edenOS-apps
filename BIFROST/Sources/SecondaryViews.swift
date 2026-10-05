@@ -148,7 +148,7 @@ struct SettingsView: View {
             Picker("Interface complexity", selection: $system.complexity) {
                 ForEach(Complexity.allCases) { Text($0.rawValue).tag($0) }
             }
-            Toggle("Keep Mac awake", isOn: Binding(get: { system.keepAwake }, set: system.setKeepAwake))
+            Toggle("Keep Mac awake", isOn: Binding(get: { system.keepAwake }, set: { system.setKeepAwake($0) }))
             LabeledContent("Remote bridge", value: system.remote.state.rawValue)
             LabeledContent("Discovered services", value: "\(system.discovery.services.count)")
             LabeledContent("Available capabilities", value: "\(system.capabilities.items.filter { $0.available }.count)")
