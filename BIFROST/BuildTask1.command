@@ -28,7 +28,7 @@ test -x "$candidate_app/Contents/Resources/ChatGPTProvider/bifrost-chatgpt-provi
 import json, subprocess, sys
 from pathlib import Path
 helper=Path(sys.argv[1])/"Contents/Resources/ChatGPTProvider/bifrost-chatgpt-provider"
-result=subprocess.run([str(helper)],input='{"id":"preflight","op":"status"}\\n',
+result=subprocess.run([str(helper)],input=json.dumps({"id":"preflight","op":"status"})+chr(10),
     capture_output=True,text=True,cwd="/tmp",timeout=30,check=True)
 record=json.loads(result.stdout)
 assert record.get("id")=="preflight" and record.get("result",{}).get("state") in {"connect","connected","permission_required"}, "Frozen provider preflight failed"
