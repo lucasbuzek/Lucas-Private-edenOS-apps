@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bifrost-chatgpt-apple"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = ["openai>=2,<3", "Authlib>=1.6,<2", "requests>=2.32,<3", "keyring>=25,<26", "mcp>=1.20,<2", "httpx>=0.28,<1"]
+
+[project.scripts]
+bifrost-chatgpt-provider = "bifrost.chatgpt_stdio:main"
+
+[tool.setuptools.packages.find]
+include = ["bifrost*"]

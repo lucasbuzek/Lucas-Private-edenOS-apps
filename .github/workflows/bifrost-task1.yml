@@ -1,0 +1,38 @@
+name: BIFROST Task 1 integration
+on:
+  push:
+    branches: ["bifrost/task1-chatgpt-apple-20261005"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install supported integration libraries
+        run: python -m pip install ./BIFROST build
+      - name: Test provider and recovered regression
+        working-directory: BIFROST
+        run: python -m unittest discover -s tests -v
+      - name: Package and clean install
+        working-directory: BIFROST
+        run: |
+          python -m compileall -q bifrost
+          python -m build
+          python -m pip freeze > dist/verified-dependencies.txt
+          python -m venv /tmp/bifrost-clean
+          /tmp/bifrost-clean/bin/pip install dist/*.whl
+          cd /tmp
+          /tmp/bifrost-clean/bin/python -c "import bifrost.chatgpt_auth, bifrost.chatgpt_mcp, bifrost.chatgpt_stdio"
+      - name: Package integrity
+        working-directory: BIFROST
+        run: sha256sum dist/* > dist/SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bifrost-task1-candidate
+          path: BIFROST/dist/
