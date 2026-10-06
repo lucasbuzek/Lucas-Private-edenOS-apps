@@ -1,0 +1,10 @@
+{
+  "contract":"SWAY-DURER-2.5D-ALPHA-139",
+  "goal":"Full working illustrated 2.5D COACH and user avatar for Alpha physical testing",
+  "renderer":"SWAYSkeletal2DAvatarView",
+  "shared_runtime":true,
+  "required_customization":{"body":3,"skin":5,"face":3,"hair":5,"hairColor":6,"outfit":5,"footwear":4,"accessories":4},
+  "geometry_rules":["continuous silhouette","joint overlap caps","neck under head and torso","rear/front depth ordering","full body framing"],
+  "movement_proofs":["march","step-touch","grapevine","knee-lift","squat","jumping-jack","arm-reach","hip-sway","v-step"],
+  "physical_gate":"Xcode build + iPhone visual/motion test required"
+}

@@ -1,0 +1,14 @@
+SWAYcore 0.9 Build 138 — DÜRER 2.5D Runtime Alpha
+Forward baseline: Build 137. No rollback.
+
+Audit finding repaired:
+Build 137's shared SwayHumanFigureView selected the new 2.5D renderer only when instructorPreset == 0. Call sites using the default nil or another preset silently retained the legacy StickFigureView. This contradicted the stated Alpha objective and made visual results route-dependent.
+
+Build 138:
+- makes SWAYSkeletal2DAvatarView the single visible Alpha character authority for every SwayHumanFigureView consumer;
+- passes current appearance values into the 2.5D profile so user customization is not discarded;
+- retains legacy cutout source only for debug/recovery, not silent production selection;
+- adds DÜRER 2.5D asset contract and executable runtime-routing validator;
+- freezes Alpha objective as simple coherent Memoji-like 2.5D; 3D/Blender is optional future research, not Alpha critical path.
+
+Physical acceptance remains required on iPhone. Build 137 was not physically tested, so no visual regression claim is made against it.

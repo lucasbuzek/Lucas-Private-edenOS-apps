@@ -1,0 +1,16 @@
+SWAYcore Build 145 Candidate — Product Convergence
+
+Goal: functional Alpha with production-facing UI, not a development control surface.
+
+Corrections:
+- Tracking calibration is part of the Workout surface, not a separate setup destination.
+- One movement space overlays camera sensor input, COACH and YOU.
+- Removed split COACH/camera tracking panels.
+- READY is calibration completion only; body detection no longer labels the user READY.
+- Calibration automatically transitions into the same workout.
+- Workout setup can choose tracking without pre-calibration or a separate setup sheet.
+- Removed standalone Movement Tracking route from Profile.
+- Simplified workout-display Settings to four user-facing choices; removed development-style preset matrix.
+- Build 144 Lucia cleanup and streamlined Avatar/Moves work preserved.
+
+Physical gates pending: Xcode compile/install; iPhone portrait; iPad portrait/landscape; tracking acquisition/calibration/workout/loss/reacquisition; visual/product acceptance.

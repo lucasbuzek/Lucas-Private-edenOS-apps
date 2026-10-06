@@ -1,0 +1,150 @@
+{
+  "animations": {
+    "arm-reach": {
+      "beatsPerCycle": 1,
+      "loop": true,
+      "resource": "sway_arm_reach_v1"
+    },
+    "body-roll": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_body_roll_v1"
+    },
+    "box-step": {
+      "beatsPerCycle": 4,
+      "loop": true,
+      "resource": "sway_box_step_v1"
+    },
+    "cha-cha": {
+      "beatsPerCycle": 4,
+      "loop": true,
+      "resource": "sway_cha_cha_v1"
+    },
+    "cross-step": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_cross_step_v1"
+    },
+    "double-step": {
+      "beatsPerCycle": 4,
+      "loop": true,
+      "resource": "sway_double_step_v1"
+    },
+    "grapevine": {
+      "beatsPerCycle": 4,
+      "loop": true,
+      "resource": "sway_grapevine_v1"
+    },
+    "heel-dig": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_heel_dig_v1"
+    },
+    "hip-sway": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_hip_sway_v1"
+    },
+    "idle": {
+      "beatsPerCycle": 4,
+      "loop": true,
+      "resource": "sway_idle_v1"
+    },
+    "jumping-jack": {
+      "beatsPerCycle": 1,
+      "loop": true,
+      "resource": "sway_jumping_jack_v1"
+    },
+    "knee": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_knee_lift_v1"
+    },
+    "mambo": {
+      "beatsPerCycle": 4,
+      "loop": true,
+      "resource": "sway_mambo_v1"
+    },
+    "march": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_march_v1"
+    },
+    "pivot-turn": {
+      "beatsPerCycle": 4,
+      "loop": true,
+      "resource": "sway_pivot_turn_v1"
+    },
+    "side-lunge": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_side_lunge_v1"
+    },
+    "side-tap": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_side_tap_v1"
+    },
+    "skater": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_skater_v1"
+    },
+    "squat-pulse": {
+      "beatsPerCycle": 1,
+      "loop": true,
+      "resource": "sway_squat_v1"
+    },
+    "step-touch": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_step_touch_v1"
+    },
+    "v-step": {
+      "beatsPerCycle": 4,
+      "loop": true,
+      "resource": "sway_v_step_v1"
+    }
+  },
+  "assetBaseName": "LuciaReality",
+  "authoredBPM": 120,
+  "blenderVersion": "5.2.2 LTS",
+  "characterID": "lucia",
+  "displayName": "Lucia",
+  "exportedSkeleton": "SWAYRuntimeSkeleton",
+  "hipsJoint": "Hips",
+  "motionSource": "SwayCoachPoseEngine@a54028713f6d",
+  "nativeHelpersPreserved": true,
+  "renderer": "realitykit",
+  "retargetSourceMapping": {
+    "Chest": "Spine2",
+    "Head": "head",
+    "Hips": "Sacrum.001",
+    "LeftFoot": "Foot.L",
+    "LeftHand": "hand001.L",
+    "LeftLowerArm": "LowerArm.L",
+    "LeftLowerLeg": "Tibia.L",
+    "LeftShoulder": "Clavicle.L",
+    "LeftToe": "Foot.L.001",
+    "LeftUpperArm": "Humerus.L",
+    "LeftUpperLeg": "Femur.L",
+    "Neck": "Spine3.002",
+    "RightFoot": "Foot.R",
+    "RightHand": "hand001.R",
+    "RightLowerArm": "LowerArm.R",
+    "RightLowerLeg": "Tibia.R",
+    "RightShoulder": "Clavicle.R",
+    "RightToe": "Foot.R.001",
+    "RightUpperArm": "Humerus.R",
+    "RightUpperLeg": "Femur.R",
+    "Root": "Sacrum",
+    "Spine": "Spine1",
+    "Spine1": "Spine1.001"
+  },
+  "rootJoint": "Root",
+  "runtimeApproved": false,
+  "skeletonContract": "SWAYHumanoid-v1",
+  "sourceLedgerId": "girush-human-yw-cc0",
+  "version": 2,
+  "visualQuality": "UNREVIEWED"
+}

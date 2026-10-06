@@ -1,0 +1,12 @@
+{
+  "character": "lucia",
+  "paletteSource": "AssetFactory/data/characters.json",
+  "nativeMesh": "body.001",
+  "facesPerRole": {
+    "top": 308,
+    "bottom": 500,
+    "shoes": 426
+  },
+  "visualQuality": "UNREVIEWED",
+  "method": "native face material assignment; topology, UVs, rig and weights preserved"
+}

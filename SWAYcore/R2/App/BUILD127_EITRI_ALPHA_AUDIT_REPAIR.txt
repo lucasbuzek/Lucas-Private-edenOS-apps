@@ -1,0 +1,16 @@
+SWAYcore 0.9 Build 127 — EITRI Alpha Audit Repair
+
+Implemented in this pass:
+- Corrected project.yml CFBundleVersion mismatch (125 -> 127) and synchronized project build version to 127.
+- SWAY Beats automatic-drummer XY Feel control now rebuilds the generated offline loop while previewing, so Energy/Complexity changes are audible rather than only affecting a future playback instance.
+- Preserved local Downloads/fileImporter swaypack workflow; no file-association requirement added.
+
+Audit findings:
+- 26/26 bundled Moves have pose-engine implementations.
+- Lucia remains the sole selectable Alpha COACH; other COACH work remains Beta scope.
+- No empty Button actions found.
+- No TODO/FIXME production stubs found; CameraLab init(coder:) fatalError is the normal programmatic UIView initializer path.
+- Some future/non-primary code (Shared Sessions, pack/professional scaffolding, secondary beat-pattern model) exists but is not wired into the Alpha primary navigation and is not treated as Alpha completion evidence.
+
+Evidence state after verification: IMPLEMENTED + STATIC PASS + PACKAGE PASS.
+Xcode/iOS SDK compile and physical iPhone verification remain required.

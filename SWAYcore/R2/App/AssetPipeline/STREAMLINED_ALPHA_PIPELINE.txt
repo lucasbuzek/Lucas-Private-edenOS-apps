@@ -1,0 +1,16 @@
+SWAY AVATAR ALPHA — AUTHORITATIVE PRODUCTION PIPELINE
+
+PRODUCTION critical path:
+BLENDER CHARACTER AUTHORING -> SWAYHumanoid-v1 ARMATURE -> ALPHA MOVE CLIPS -> USD/USDZ EXPORT -> REALITYKIT MANIFEST VALIDATION -> LUCIA RUNTIME -> YOUR DANCER RUNTIME -> XCODE -> IPHONE/IPAD -> PHYSICAL ACCEPTANCE
+
+Recovery/fallback path:
+Existing illustrated 2.5D renderer remains available until the production RealityKit assets pass physical validation. It is evidence and fallback, not the production avatar target.
+
+Hard rules:
+- Blender is the production character-authoring authority for COACH and YOUR DANCER.
+- Lucia proves the shared armature/movement contract first; Nandi, Thabo, Zuri and Kyle must retarget to the same contract.
+- YOUR DANCER uses the compatible shared armature and Alpha movement IDs.
+- Never substitute Canvas primitives or static cutouts for a missing production asset.
+- Never remove the verified 2.5D fallback until RealityKit assets pass Xcode + iPhone/iPad physical gates.
+- Never promote static checks to runtime evidence.
+- Music/count/choreography owns WHAT + WHEN; the avatar renderer owns HOW.

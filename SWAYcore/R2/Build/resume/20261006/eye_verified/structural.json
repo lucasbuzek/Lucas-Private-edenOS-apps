@@ -1,0 +1,21 @@
+{
+  "character": "candidate.blend",
+  "structural": "PASS",
+  "issues": [],
+  "metrics": {
+    "triangles": 7040,
+    "heightMeters": 1.68,
+    "materials": 8,
+    "textures": 5,
+    "bodyEdges": 4841,
+    "worstEdgeStretch": 12.257,
+    "worstEdgeStretchClip": "sway_knee_lift_v1",
+    "worstGrossEdgeGrowthMeters": 0.1114,
+    "worstGrossEdgeGrowthClip": "sway_knee_lift_v1",
+    "grossEdgeGrowthLimitMeters": 0.0504,
+    "p99EdgeGrowthMeters": 0.0135
+  },
+  "visualQuality": "UNREVIEWED",
+  "silhouette": "UNKNOWN (human review required)",
+  "blender": "5.2.2 LTS"
+}

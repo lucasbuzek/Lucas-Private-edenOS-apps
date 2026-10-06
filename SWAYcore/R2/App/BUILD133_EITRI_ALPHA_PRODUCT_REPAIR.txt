@@ -1,0 +1,26 @@
+SWAYcore 0.9 Build 133 — EITRI Alpha Product Repair
+
+BASELINE
+Build 132 physical iPhone Alpha evidence: app runs; core navigation and SWAY Beats work. Physical failures: Lucia assembly/framing, choreography/count synchronization, missing Music/Health settings, camera setup discoverability, duplicated End wording/termination UX, remaining prototype diagnostics.
+
+IMPLEMENTED FORWARD
+- Canonical workout move-local eight-count clock: visible count, Lucia pose and tracking reference now share the same phrase timing.
+- Learn preview now displays a live count driven by the same preview clock.
+- Settings adds Music and Health & Fitness status/actions using existing MusicKit and HealthKit services.
+- Camera Tracking selection now opens setup when uncalibrated; Dance is gated until setup completes when tracking is selected.
+- Workout pause termination wording changed to Finish… -> single destructive End Workout confirmation; existing neutral endedEarly semantics preserved.
+- Health workout lifecycle now receives pause/resume events from workout pause state.
+- Lucia head/hair now use one neck-rooted assembly instead of independent pose.head/pose.neck anchors; stage scale reduced to keep full dancer framed.
+- Removed developer Diagnostics affordance from production workout chrome (internal diagnostics implementation retained).
+- Beats behavior preserved from physical PASS.
+
+RESEARCH BASIS
+Apple HealthKit requires explicit read/share authorization and usage descriptions; authorizationStatus(for:) reports sharing/write status and intentionally does not reveal read-denial state. Existing HealthKit capability and usage descriptions retained.
+
+EVIDENCE
+- Swift parser: PASS after modifications.
+- HealthKit entitlement present.
+- Physical re-test required for Lucia visual acceptance, camera setup, MusicKit, HealthKit, synchronization, termination flow and full UI acceptance.
+
+STATE
+HEAD Build 133. IMPLEMENTED + STATIC PASS. NOT LKG / NOT ALPHA ACCEPTED until Xcode/iPhone regression.

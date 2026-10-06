@@ -1,0 +1,23 @@
+SWAYcore 0.9 Build 135 — EITRI AVATAR ASSET PIPELINE ALPHA
+Baseline: Build 134, forward only.
+
+TEAM EXECUTION
+EITRI: froze EDC SWAY-FINAL-AVATAR-001 and separated asset production from runtime rendering.
+CONDUCTOR: retained Build 134 product baseline and routed COACH/YOUR DANCER through one renderer boundary.
+IRIS: acceptance is coherent full-body humanoid, stable stage framing, no detached/capsule final presentation.
+ARTEMIS: added SWAYHumanoid-v1 asset-production contract and Blender alpha rig generator.
+FORGE: added dual role RealityKit routing, UserAvatar manifest, contract validator and executable asset pipeline.
+
+PIPELINE
+REFERENCE -> SWAYHumanoid-v1 CONTRACT -> GENERATE/IMPORT MESH -> ARMATURE -> AUTO WEIGHTS -> WEIGHT QA -> IDLE/MARCH -> USD/USDZ EXPORT -> REALITY COMPOSER PRO QA -> BUNDLE -> RUNTIME MANIFEST VALIDATION -> IPHONE PHYSICAL GATE.
+
+CURRENT EVIDENCE
+Contract validator: PASS (23 unique joints).
+Generator: IMPLEMENTED.
+Generator execution in build environment: BLOCKED after attempt because Blender is not installed.
+RealityKit runtime boundary: IMPLEMENTED for COACH and YOUR DANCER.
+UserAvatarReality asset: NOT GENERATED in this environment; legacy renderer remains explicitly marked 2D FALLBACK.
+Physical iPhone/Xcode: REQUIRED.
+
+IMPORTANT
+The generated Blender character is an engineering alpha/proof rig, not final Lucia art. Its purpose is to prove mesh -> weights -> SWAYHumanoid-v1 -> animation -> RealityKit. Final Lucia and customizable YOUR DANCER assets replace the proof mesh after the same gates pass.

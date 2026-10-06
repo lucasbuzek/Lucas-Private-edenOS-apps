@@ -1,0 +1,14 @@
+SWAYcore 0.9 Build 131 — EITRI Xcode Symbol Repair
+
+Evidence source: Xcode Build 130 reported `Cannot find SwayPill in scope` in ProgressViewScreen.swift.
+
+Implemented:
+- Restored the missing shared `SwayPill` SwiftUI primitive in RootView.swift.
+- Preserved the existing call-site contract `SwayPill(text:selected:)` used by Progress and Beats.
+- Audited all project-wide Sway* custom symbol references against struct/class/enum/protocol/typealias declarations. After repair: zero unresolved Sway* custom symbols by static declaration audit.
+- Rechecked all 16 Swift files are represented in the Xcode project.
+- Rechecked compact operator/member lexical hazards (*. /., +., -.).
+- Bumped Xcode and project.yml build metadata to 131.
+
+State: IMPLEMENTED + STATIC AUDIT PASS + PACKAGE PASS after archive verification.
+Required next gate: Xcode/iOS SDK compile. Static checks do not claim Xcode compile success.

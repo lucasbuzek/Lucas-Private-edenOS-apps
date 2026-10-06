@@ -1,0 +1,14 @@
+SWAYcore 0.9 Build 125 — EITRI Alpha Completion Candidate
+
+Implemented in this pass:
+- Expanded executable movement library from 10 to 20 authored movement definitions.
+- Removed shared choreography shortcut between Step Touch, Double Step and Side Tap.
+- Added Box Step, Mambo Step, Cha-Cha Basic, Squat Pulse, Side Lunge, Cross Step, Body Roll, Dance Jack, Skater and Pivot Turn with deterministic pose definitions.
+- Expanded intermediate/advanced workout pool with actual executable choreography rather than metadata-only difficulty.
+- Reworked SWAY Beats primary UI around an automatic-drummer interaction: style, XY Feel pad (complexity/energy), tempo, preview, and Dance With This Beat. Detailed music/analysis tools remain Advanced.
+- Expanded offline beat styles to ten distinct engine identities: Simple, Pop, House, Hip-Hop, Disco, Latin, Afro, Percussion, Rock and Minimal.
+- Beat synthesis now responds to energy and complexity rather than style/BPM alone.
+- Lucia remains the sole Alpha production instructor target. Other COACH visual fixes/content remain Beta scope.
+
+Evidence state:
+IMPLEMENTED. Static/package checks must pass before promotion. Xcode/iOS compile and physical Alpha behavior remain external gates.

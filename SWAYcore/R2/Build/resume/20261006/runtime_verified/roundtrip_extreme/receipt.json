@@ -1,0 +1,37 @@
+{
+  "roundtripImport": "PASS",
+  "renders": [
+    {
+      "move": "idle",
+      "meshes": 5,
+      "rigs": 1,
+      "frame": 13
+    },
+    {
+      "move": "knee",
+      "meshes": 5,
+      "rigs": 1,
+      "frame": 7
+    },
+    {
+      "move": "squat-pulse",
+      "meshes": 5,
+      "rigs": 1,
+      "frame": 7
+    },
+    {
+      "move": "jumping-jack",
+      "meshes": 5,
+      "rigs": 1,
+      "frame": 7
+    },
+    {
+      "move": "pivot-turn",
+      "meshes": 5,
+      "rigs": 1,
+      "frame": 13
+    }
+  ],
+  "humanVisualGate": "UNKNOWN",
+  "realityKitPlayback": "UNKNOWN"
+}

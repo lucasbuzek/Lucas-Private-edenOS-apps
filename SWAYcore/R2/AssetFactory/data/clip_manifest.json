@@ -1,0 +1,112 @@
+{
+  "_doc": "Coach clips baked from the SAME movement truth as Learn/Workout/matching (coach_pose_port <- SwayCoachPoseEngine). The 10 proof clip names are preserved from Build 153; the remaining authored moves get sway_<id>_v1. beatsPerCycle is verified as the true period by tests.",
+  "tempoBPM": 120,
+  "clips": [
+    {
+      "move": "idle",
+      "clip": "sway_idle_v1",
+      "beatsPerCycle": 4,
+      "synthetic": true
+    },
+    {
+      "move": "march",
+      "clip": "sway_march_v1",
+      "beatsPerCycle": 2
+    },
+    {
+      "move": "step-touch",
+      "clip": "sway_step_touch_v1",
+      "beatsPerCycle": 2
+    },
+    {
+      "move": "grapevine",
+      "clip": "sway_grapevine_v1",
+      "beatsPerCycle": 4
+    },
+    {
+      "move": "knee",
+      "clip": "sway_knee_lift_v1",
+      "beatsPerCycle": 2
+    },
+    {
+      "move": "squat-pulse",
+      "clip": "sway_squat_v1",
+      "beatsPerCycle": 1
+    },
+    {
+      "move": "side-lunge",
+      "clip": "sway_side_lunge_v1",
+      "beatsPerCycle": 2
+    },
+    {
+      "move": "jumping-jack",
+      "clip": "sway_jumping_jack_v1",
+      "beatsPerCycle": 1
+    },
+    {
+      "move": "body-roll",
+      "clip": "sway_body_roll_v1",
+      "beatsPerCycle": 2
+    },
+    {
+      "move": "pivot-turn",
+      "clip": "sway_pivot_turn_v1",
+      "beatsPerCycle": 4
+    },
+    {
+      "move": "double-step",
+      "clip": "sway_double_step_v1",
+      "beatsPerCycle": 4
+    },
+    {
+      "move": "side-tap",
+      "clip": "sway_side_tap_v1",
+      "beatsPerCycle": 2
+    },
+    {
+      "move": "hip-sway",
+      "clip": "sway_hip_sway_v1",
+      "beatsPerCycle": 2
+    },
+    {
+      "move": "heel-dig",
+      "clip": "sway_heel_dig_v1",
+      "beatsPerCycle": 2
+    },
+    {
+      "move": "arm-reach",
+      "clip": "sway_arm_reach_v1",
+      "beatsPerCycle": 1
+    },
+    {
+      "move": "v-step",
+      "clip": "sway_v_step_v1",
+      "beatsPerCycle": 4
+    },
+    {
+      "move": "box-step",
+      "clip": "sway_box_step_v1",
+      "beatsPerCycle": 4
+    },
+    {
+      "move": "mambo",
+      "clip": "sway_mambo_v1",
+      "beatsPerCycle": 4
+    },
+    {
+      "move": "cha-cha",
+      "clip": "sway_cha_cha_v1",
+      "beatsPerCycle": 4
+    },
+    {
+      "move": "cross-step",
+      "clip": "sway_cross_step_v1",
+      "beatsPerCycle": 2
+    },
+    {
+      "move": "skater",
+      "clip": "sway_skater_v1",
+      "beatsPerCycle": 2
+    }
+  ]
+}

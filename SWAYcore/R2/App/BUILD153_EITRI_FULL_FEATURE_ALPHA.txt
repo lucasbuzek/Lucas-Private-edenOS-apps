@@ -1,0 +1,13 @@
+SWAYcore Build 153 — FULL FEATURE ALPHA HARNESS
+
+Purpose: one-click local-first Mac workflow with Blender + Xcode + connected iPhone/iPad.
+The launcher does not download dependencies and does not require Internet for core build/test.
+It validates SWAY contracts, runs Blender's SWAYHumanoid generator when available, opens Blender and Xcode together,
+performs Swift parsing and Xcode generic iOS build, discovers connected devices dynamically, attempts install/launch
+when an unambiguous device is available, and creates a timestamped AlphaEvidence bundle with the full physical journey.
+
+Evidence truth:
+- Blender generator execution on the user's Mac: pending local run.
+- Xcode compile/sign: pending local run.
+- iPhone/iPad physical acceptance: pending.
+- Provider tests (Apple Music/Shazam) are non-blocking when offline.

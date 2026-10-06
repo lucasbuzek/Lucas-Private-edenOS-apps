@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "toleranceMeters": 0.001,
+  "clips": [
+    {
+      "clip": "sway_arm_reach_v1",
+      "maxJointPositionErrorMeters": 0.000369788293420737
+    },
+    {
+      "clip": "sway_body_roll_v1",
+      "maxJointPositionErrorMeters": 0.0002367231433241269
+    },
+    {
+      "clip": "sway_box_step_v1",
+      "maxJointPositionErrorMeters": 0.00030206477432258354
+    },
+    {
+      "clip": "sway_cha_cha_v1",
+      "maxJointPositionErrorMeters": 0.00034650481418155613
+    },
+    {
+      "clip": "sway_cross_step_v1",
+      "maxJointPositionErrorMeters": 0.00027314402559400013
+    },
+    {
+      "clip": "sway_double_step_v1",
+      "maxJointPositionErrorMeters": 0.00038080859441714913
+    },
+    {
+      "clip": "sway_grapevine_v1",
+      "maxJointPositionErrorMeters": 0.0003260783263823227
+    },
+    {
+      "clip": "sway_heel_dig_v1",
+      "maxJointPositionErrorMeters": 0.0004638319657626691
+    },
+    {
+      "clip": "sway_hip_sway_v1",
+      "maxJointPositionErrorMeters": 0.0003394678517329209
+    },
+    {
+      "clip": "sway_idle_v1",
+      "maxJointPositionErrorMeters": 0.00026068159644520276
+    },
+    {
+      "clip": "sway_jumping_jack_v1",
+      "maxJointPositionErrorMeters": 0.0005023230279184585
+    },
+    {
+      "clip": "sway_knee_lift_v1",
+      "maxJointPositionErrorMeters": 0.00023012034274025677
+    },
+    {
+      "clip": "sway_mambo_v1",
+      "maxJointPositionErrorMeters": 0.00033086394820722436
+    },
+    {
+      "clip": "sway_march_v1",
+      "maxJointPositionErrorMeters": 0.00023012034274025677
+    },
+    {
+      "clip": "sway_pivot_turn_v1",
+      "maxJointPositionErrorMeters": 0.00035609356567639855
+    },
+    {
+      "clip": "sway_side_lunge_v1",
+      "maxJointPositionErrorMeters": 0.0003568782536741402
+    },
+    {
+      "clip": "sway_side_tap_v1",
+      "maxJointPositionErrorMeters": 0.0004793961273910489
+    },
+    {
+      "clip": "sway_skater_v1",
+      "maxJointPositionErrorMeters": 0.0002840415803247375
+    },
+    {
+      "clip": "sway_squat_v1",
+      "maxJointPositionErrorMeters": 0.0001470124880829824
+    },
+    {
+      "clip": "sway_step_touch_v1",
+      "maxJointPositionErrorMeters": 0.00038791299517994563
+    },
+    {
+      "clip": "sway_v_step_v1",
+      "maxJointPositionErrorMeters": 0.0004013499580123062
+    }
+  ],
+  "realityKitPlayback": "UNKNOWN"
+}

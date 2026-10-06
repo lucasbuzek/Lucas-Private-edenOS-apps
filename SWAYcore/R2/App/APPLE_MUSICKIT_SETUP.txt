@@ -1,0 +1,14 @@
+SWAYcore Build 120 — Apple Music runtime setup
+
+Bundle identifier: com.lucasbuzek.private.sway
+
+MusicKit for Swift automatically manages Apple Music tokens on Apple platforms, but automatic developer-token generation requires the MusicKit App Service to be enabled for this exact explicit App ID in the Apple Developer portal. MusicKit is an App Service, not an entitlement to add to SWAY.entitlements.
+
+Before physical Apple Music testing:
+1. Apple Developer → Certificates, Identifiers & Profiles → Identifiers.
+2. Open/create explicit App ID com.lucasbuzek.private.sway.
+3. App Services → enable MusicKit → Save.
+4. In Xcode use the same Apple developer account/team and the same bundle identifier.
+5. Build/run on device, authorize Music access when requested.
+
+SWAY Beats, local-file analysis, Follow-Along and camera tracking do not depend on this service.

@@ -1,0 +1,41 @@
+SWAYcore 0.9 — BUILD 116 — P4 ENGINEERING CONVERGENCE
+
+Pipeline ownership
+- CONDUCTOR: dependencies, retries, milestone gates.
+- ARTEMIS + FORGE: production assets and integration.
+- IRIS: visual/UIX review; not an asset dependency.
+
+P1 convergence changes
+- User Avatar Creator exposes functional Body, Skin Tone, Face, Hair, Hair Color, Outfit, Footwear and Accessories controls.
+- Hair variants use distinct vector geometry rather than resizing one RigHair image.
+- Face shape, hair colour, footwear and accessory choices alter the articulated runtime preview.
+- User Avatar and instructor remain on the same SwayCoachPoseEngine articulation path.
+
+P2A convergence changes
+- Create supports Move, Combination and Routine.
+- Combinations/routines persist in SwayStore.
+- .swaypack v2 carries user creations in the same portable envelope as moves/transitions.
+- Imported packages are validated before preview.
+- Import Preview shows creator/content counts and requires explicit Add to Library.
+- ShareLink/AirDrop export remains local-first and account-free.
+
+P2B tracking
+- Existing AVFoundation/Vision tracking, setup/calibration, optional camera path and workout integration preserved.
+
+P2C Beats
+- Existing generated multi-voice percussion, local audio analysis and MusicKit/provider paths preserved.
+- Generated percussion does not use the prior sustained test-tone fallback.
+
+P3
+- Existing Home / Moves / Beats / Profile production navigation preserved.
+- Avatar/Create/Tracking flows remain reachable through the production navigation hierarchy.
+
+P4 validations performed in this environment
+- Swift parser gate for all Swift sources.
+- Asset Contents.json parse/inventory gate.
+- Installer shell syntax gate.
+- Build-number consistency gate.
+- No stale *.tmp source files.
+- ZIP integrity gate.
+
+P5 is intentionally not claimed here. Per current canon, P5 is delivery of the functional-assets package for Lucas to test in Xcode.

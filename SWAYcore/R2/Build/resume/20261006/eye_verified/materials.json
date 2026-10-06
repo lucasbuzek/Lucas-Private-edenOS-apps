@@ -1,0 +1,32 @@
+{
+  "materials": [
+    {
+      "material": "body",
+      "packedOriginalTexture": "baseMesh_A1_body.png"
+    },
+    {
+      "material": "head",
+      "packedOriginalTexture": "baseMesh_A1_face.png"
+    },
+    {
+      "material": "mat_eye",
+      "packedOriginalTexture": "black_eye.png"
+    },
+    {
+      "material": "Material.000",
+      "packedOriginalTexture": "black_eye.png"
+    },
+    {
+      "material": "mat_hair",
+      "originalDiffuseColor": [
+        0.057805441319942474,
+        0.016807377338409424,
+        0.008568125776946545,
+        1.0
+      ],
+      "singlePortableSurface": true
+    }
+  ],
+  "visualQuality": "UNREVIEWED",
+  "attireGate": "UNKNOWN"
+}

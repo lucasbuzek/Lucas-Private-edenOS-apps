@@ -1,0 +1,25 @@
+SWAYcore 0.9 Build 126 — EITRI Alpha Audit Candidate
+
+Implemented in this audit:
+- Filled the previously empty Advanced Moves filter with six executable advanced moves and pose definitions.
+- Added transition relationships/easier/accessibility links for those advanced moves.
+- Locked Alpha COACH rendering/selection to Lucia so incomplete Beta instructor asset families cannot leak into Alpha runtime.
+- Preserved Beta coach models/assets in source for later work.
+
+Verified in this environment:
+- swiftc -parse: PASS for all Swift sources.
+- Assets.xcassets JSON/reference audit: PASS, 0 missing referenced files.
+- Lucia authored asset family: 17 image sets present.
+- Build number: 126.
+
+Known gates/omissions requiring Xcode/device or subsequent implementation:
+- Xcode/iOS SDK compile and signing not run here.
+- Lucia visual pose/seam/proportion matrix needs physical/rendered acceptance.
+- Apple Music permission/search/playback requires device/account verification.
+- Camera/Vision calibration and tracking requires device verification.
+- HealthKit lifecycle requires device verification.
+- .swaypack external document association (opening an AirDropped pack by extension) is not explicitly registered in generated Info.plist build settings; in-app importer works via JSON fallback. Add exported/imported UTI/document declarations before claiming seamless tap-to-open AirDrop.
+- Local music analysis is functional baseline but phrase/section analysis remains heuristic; validate against real recordings.
+- Alpha Move catalog is now populated across Beginner/Intermediate/Advanced but remains a starter catalog, not the later full content library.
+
+State: IMPLEMENTED + STATIC PASS. PACKAGE verification follows archive creation.

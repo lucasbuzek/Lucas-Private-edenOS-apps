@@ -1,0 +1,268 @@
+{
+  "_note": "Appearance PARAMETERS are new implementation decisions (not recovered canon): only the six identities are canon. materialRoles maps substrings of the acquired base model's material names to palette roles; it is EMPTY until a base model is acquired and its real material names are inspected.",
+  "characters": [
+    {
+      "id": "lucia",
+      "displayName": "Lucia",
+      "heightMeters": 1.68,
+      "skin": [
+        0.55,
+        0.36,
+        0.26
+      ],
+      "hairColor": [
+        0.07,
+        0.04,
+        0.03
+      ],
+      "eye": [
+        0.18,
+        0.1,
+        0.05
+      ],
+      "outfit": {
+        "top": [
+          0.55,
+          0.2,
+          0.85
+        ],
+        "bottom": [
+          0.08,
+          0.06,
+          0.14
+        ],
+        "shoes": [
+          0.9,
+          0.9,
+          0.95
+        ]
+      },
+      "materialRoles": {},
+      "alphaEnabled": true,
+      "releaseTarget": "alpha"
+    },
+    {
+      "id": "nandi",
+      "displayName": "Nandi",
+      "heightMeters": 1.65,
+      "skin": [
+        0.36,
+        0.22,
+        0.15
+      ],
+      "hairColor": [
+        0.03,
+        0.02,
+        0.02
+      ],
+      "eye": [
+        0.12,
+        0.07,
+        0.04
+      ],
+      "outfit": {
+        "top": [
+          0.95,
+          0.35,
+          0.6
+        ],
+        "bottom": [
+          0.1,
+          0.1,
+          0.18
+        ],
+        "shoes": [
+          0.95,
+          0.95,
+          0.95
+        ]
+      },
+      "materialRoles": {},
+      "alphaEnabled": false,
+      "releaseTarget": "beta"
+    },
+    {
+      "id": "thabo",
+      "displayName": "Thabo",
+      "heightMeters": 1.84,
+      "skin": [
+        0.3,
+        0.18,
+        0.12
+      ],
+      "hairColor": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "eye": [
+        0.1,
+        0.06,
+        0.04
+      ],
+      "outfit": {
+        "top": [
+          0.1,
+          0.65,
+          0.8
+        ],
+        "bottom": [
+          0.08,
+          0.08,
+          0.12
+        ],
+        "shoes": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      "materialRoles": {},
+      "alphaEnabled": false,
+      "releaseTarget": "beta"
+    },
+    {
+      "id": "zuri",
+      "displayName": "Zuri",
+      "heightMeters": 1.72,
+      "skin": [
+        0.42,
+        0.27,
+        0.18
+      ],
+      "hairColor": [
+        0.04,
+        0.03,
+        0.02
+      ],
+      "eye": [
+        0.14,
+        0.08,
+        0.05
+      ],
+      "outfit": {
+        "top": [
+          0.95,
+          0.75,
+          0.2
+        ],
+        "bottom": [
+          0.12,
+          0.08,
+          0.2
+        ],
+        "shoes": [
+          0.95,
+          0.95,
+          0.95
+        ]
+      },
+      "materialRoles": {},
+      "alphaEnabled": false,
+      "releaseTarget": "beta"
+    },
+    {
+      "id": "kyle",
+      "displayName": "Kyle",
+      "heightMeters": 1.8,
+      "skin": [
+        0.78,
+        0.58,
+        0.46
+      ],
+      "hairColor": [
+        0.35,
+        0.22,
+        0.1
+      ],
+      "eye": [
+        0.2,
+        0.35,
+        0.5
+      ],
+      "outfit": {
+        "top": [
+          0.85,
+          0.15,
+          0.55
+        ],
+        "bottom": [
+          0.1,
+          0.1,
+          0.16
+        ],
+        "shoes": [
+          0.92,
+          0.92,
+          0.95
+        ]
+      },
+      "materialRoles": {},
+      "alphaEnabled": false,
+      "releaseTarget": "beta"
+    },
+    {
+      "id": "yourdancer",
+      "displayName": "YOUR DANCER",
+      "heightMeters": 1.7,
+      "skin": [
+        0.6,
+        0.42,
+        0.32
+      ],
+      "hairColor": [
+        0.1,
+        0.07,
+        0.05
+      ],
+      "eye": [
+        0.2,
+        0.14,
+        0.08
+      ],
+      "outfit": {
+        "top": [
+          0.55,
+          0.3,
+          0.9
+        ],
+        "bottom": [
+          0.1,
+          0.1,
+          0.15
+        ],
+        "shoes": [
+          0.9,
+          0.9,
+          0.95
+        ]
+      },
+      "materialRoles": {},
+      "customizable": {
+        "hairVariants": [
+          "short",
+          "long",
+          "braids",
+          "afro",
+          "bun"
+        ],
+        "outfitVariants": [
+          "Tee",
+          "Tank",
+          "Jacket"
+        ],
+        "runtimeTints": [
+          "skin",
+          "hair",
+          "top",
+          "bottom",
+          "shoes",
+          "eye"
+        ]
+      },
+      "alphaEnabled": true,
+      "releaseTarget": "alpha"
+    }
+  ],
+  "_alphaScope": "Alpha production characters are Lucia (textured instructor) and YOUR DANCER (fully customizable user avatar). Nandi, Thabo, Zuri and Kyle remain defined for Beta and must not block Alpha."
+}

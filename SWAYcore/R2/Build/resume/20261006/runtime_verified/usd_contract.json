@@ -1,0 +1,888 @@
+{
+  "status": "PASS",
+  "issues": [],
+  "files": [
+    {
+      "file": "LuciaReality.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        }
+      ]
+    },
+    {
+      "file": "Animations/sway_arm_reach_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        }
+      ],
+      "durationSeconds": 0.5,
+      "rotationSamples": 13
+    },
+    {
+      "file": "Animations/sway_body_roll_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        }
+      ],
+      "durationSeconds": 1.0,
+      "rotationSamples": 25
+    },
+    {
+      "file": "Animations/sway_box_step_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        }
+      ],
+      "durationSeconds": 2.0,
+      "rotationSamples": 49
+    },
+    {
+      "file": "Animations/sway_cha_cha_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        }
+      ],
+      "durationSeconds": 2.0,
+      "rotationSamples": 49
+    },
+    {
+      "file": "Animations/sway_cross_step_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        }
+      ],
+      "durationSeconds": 1.0,
+      "rotationSamples": 25
+    },
+    {
+      "file": "Animations/sway_double_step_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        }
+      ],
+      "durationSeconds": 2.0,
+      "rotationSamples": 49
+    },
+    {
+      "file": "Animations/sway_grapevine_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        }
+      ],
+      "durationSeconds": 2.0,
+      "rotationSamples": 49
+    },
+    {
+      "file": "Animations/sway_heel_dig_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        }
+      ],
+      "durationSeconds": 1.0,
+      "rotationSamples": 25
+    },
+    {
+      "file": "Animations/sway_hip_sway_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        }
+      ],
+      "durationSeconds": 1.0,
+      "rotationSamples": 25
+    },
+    {
+      "file": "Animations/sway_idle_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        }
+      ],
+      "durationSeconds": 2.0,
+      "rotationSamples": 49
+    },
+    {
+      "file": "Animations/sway_jumping_jack_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        }
+      ],
+      "durationSeconds": 0.5,
+      "rotationSamples": 13
+    },
+    {
+      "file": "Animations/sway_knee_lift_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        }
+      ],
+      "durationSeconds": 1.0,
+      "rotationSamples": 25
+    },
+    {
+      "file": "Animations/sway_mambo_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        }
+      ],
+      "durationSeconds": 2.0,
+      "rotationSamples": 49
+    },
+    {
+      "file": "Animations/sway_march_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        }
+      ],
+      "durationSeconds": 1.0,
+      "rotationSamples": 25
+    },
+    {
+      "file": "Animations/sway_pivot_turn_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        }
+      ],
+      "durationSeconds": 2.0,
+      "rotationSamples": 49
+    },
+    {
+      "file": "Animations/sway_side_lunge_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        }
+      ],
+      "durationSeconds": 1.0,
+      "rotationSamples": 25
+    },
+    {
+      "file": "Animations/sway_side_tap_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        }
+      ],
+      "durationSeconds": 1.0,
+      "rotationSamples": 25
+    },
+    {
+      "file": "Animations/sway_skater_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        }
+      ],
+      "durationSeconds": 1.0,
+      "rotationSamples": 25
+    },
+    {
+      "file": "Animations/sway_squat_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        }
+      ],
+      "durationSeconds": 0.5,
+      "rotationSamples": 13
+    },
+    {
+      "file": "Animations/sway_step_touch_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        }
+      ],
+      "durationSeconds": 1.0,
+      "rotationSamples": 25
+    },
+    {
+      "file": "Animations/sway_v_step_v1.usdc",
+      "skeletons": 1,
+      "meshes": 5,
+      "joints": 65,
+      "skin": [
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_L_runtime/eye_004",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/hair_runtime/Plane_004",
+          "vertices": 474,
+          "influences": 3,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/eye_R_runtime/eye_006",
+          "vertices": 171,
+          "influences": 1,
+          "weightedJoints": 1
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/baseMesh1_A1_001_runtime/baseMesh1_A1_002",
+          "vertices": 696,
+          "influences": 4,
+          "weightedJoints": 4
+        },
+        {
+          "mesh": "/root/SWAY_ImportRoot/SWAYRuntimeSkeleton/body_001_runtime/Plane_002",
+          "vertices": 2232,
+          "influences": 4,
+          "weightedJoints": 60
+        }
+      ],
+      "durationSeconds": 2.0,
+      "rotationSamples": 49
+    }
+  ],
+  "realityKitPlayback": "UNKNOWN",
+  "humanVisualGate": "UNKNOWN",
+  "runtimeApproved": false,
+  "visualQuality": "UNREVIEWED"
+}

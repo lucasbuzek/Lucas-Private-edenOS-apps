@@ -1,0 +1,383 @@
+{
+  "characterID": "lucia",
+  "version": 2,
+  "source": "Generated geometry from delivered Lucia PNGs; semantic pivots preserved from authored contract",
+  "placeholderAllowed": false,
+  "parts": {
+    "head": {
+      "file": "lucia_head.png",
+      "size": [
+        65,
+        66
+      ],
+      "pivots": {
+        "neck": [
+          0.5,
+          0.92
+        ]
+      },
+      "alphaBounds": [
+        2,
+        0,
+        54,
+        66
+      ]
+    },
+    "hairBack": {
+      "file": "lucia_hairBack.png",
+      "size": [
+        60,
+        66
+      ],
+      "pivots": {
+        "head": [
+          0.5,
+          0.55
+        ]
+      },
+      "alphaBounds": [
+        8,
+        0,
+        56,
+        66
+      ]
+    },
+    "hairFront": {
+      "file": "lucia_hairFront.png",
+      "size": [
+        60,
+        66
+      ],
+      "pivots": {
+        "head": [
+          0.5,
+          0.55
+        ]
+      },
+      "alphaBounds": [
+        0,
+        0,
+        60,
+        66
+      ]
+    },
+    "torso": {
+      "file": "lucia_torso.png",
+      "size": [
+        55,
+        60
+      ],
+      "pivots": {
+        "neck": [
+          0.5,
+          0.08
+        ],
+        "leftShoulder": [
+          0.18,
+          0.18
+        ],
+        "rightShoulder": [
+          0.82,
+          0.18
+        ],
+        "pelvis": [
+          0.5,
+          0.92
+        ]
+      },
+      "alphaBounds": [
+        0,
+        0,
+        55,
+        60
+      ]
+    },
+    "pelvis": {
+      "file": "lucia_pelvis.png",
+      "size": [
+        52,
+        60
+      ],
+      "pivots": {
+        "spine": [
+          0.5,
+          0.1
+        ],
+        "leftHip": [
+          0.32,
+          0.75
+        ],
+        "rightHip": [
+          0.68,
+          0.75
+        ]
+      },
+      "alphaBounds": [
+        0,
+        0,
+        52,
+        60
+      ]
+    },
+    "leftUpperArm": {
+      "file": "lucia_leftUpperArm.png",
+      "size": [
+        30,
+        60
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.06
+        ],
+        "distal": [
+          0.5,
+          0.94
+        ]
+      },
+      "alphaBounds": [
+        0,
+        2,
+        24,
+        59
+      ]
+    },
+    "rightUpperArm": {
+      "file": "lucia_rightUpperArm.png",
+      "size": [
+        31,
+        60
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.06
+        ],
+        "distal": [
+          0.5,
+          0.94
+        ]
+      },
+      "alphaBounds": [
+        0,
+        3,
+        26,
+        60
+      ]
+    },
+    "leftLowerArm": {
+      "file": "lucia_leftLowerArm.png",
+      "size": [
+        30,
+        60
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.06
+        ],
+        "distal": [
+          0.5,
+          0.94
+        ]
+      },
+      "alphaBounds": [
+        0,
+        4,
+        24,
+        58
+      ]
+    },
+    "rightLowerArm": {
+      "file": "lucia_rightLowerArm.png",
+      "size": [
+        31,
+        60
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.06
+        ],
+        "distal": [
+          0.5,
+          0.94
+        ]
+      },
+      "alphaBounds": [
+        1,
+        3,
+        27,
+        58
+      ]
+    },
+    "leftHand": {
+      "file": "lucia_leftHand.png",
+      "size": [
+        28,
+        60
+      ],
+      "pivots": {
+        "wrist": [
+          0.5,
+          0.1
+        ]
+      },
+      "alphaBounds": [
+        7,
+        1,
+        28,
+        60
+      ]
+    },
+    "rightHand": {
+      "file": "lucia_rightHand.png",
+      "size": [
+        27,
+        60
+      ],
+      "pivots": {
+        "wrist": [
+          0.5,
+          0.1
+        ]
+      },
+      "alphaBounds": [
+        5,
+        0,
+        27,
+        60
+      ]
+    },
+    "leftThigh": {
+      "file": "lucia_leftThigh.png",
+      "size": [
+        28,
+        78
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.05
+        ],
+        "distal": [
+          0.5,
+          0.95
+        ]
+      },
+      "alphaBounds": [
+        0,
+        0,
+        28,
+        78
+      ]
+    },
+    "rightThigh": {
+      "file": "lucia_rightThigh.png",
+      "size": [
+        29,
+        78
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.05
+        ],
+        "distal": [
+          0.5,
+          0.95
+        ]
+      },
+      "alphaBounds": [
+        0,
+        0,
+        29,
+        78
+      ]
+    },
+    "leftCalf": {
+      "file": "lucia_leftCalf.png",
+      "size": [
+        28,
+        78
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.05
+        ],
+        "distal": [
+          0.5,
+          0.95
+        ]
+      },
+      "alphaBounds": [
+        0,
+        2,
+        18,
+        72
+      ]
+    },
+    "rightCalf": {
+      "file": "lucia_rightCalf.png",
+      "size": [
+        28,
+        78
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.05
+        ],
+        "distal": [
+          0.5,
+          0.95
+        ]
+      },
+      "alphaBounds": [
+        0,
+        0,
+        28,
+        78
+      ]
+    },
+    "leftShoe": {
+      "file": "lucia_leftShoe.png",
+      "size": [
+        35,
+        53
+      ],
+      "pivots": {
+        "ankle": [
+          0.35,
+          0.25
+        ]
+      },
+      "alphaBounds": [
+        0,
+        0,
+        35,
+        53
+      ]
+    },
+    "rightShoe": {
+      "file": "lucia_rightShoe.png",
+      "size": [
+        34,
+        53
+      ],
+      "pivots": {
+        "ankle": [
+          0.65,
+          0.25
+        ]
+      },
+      "alphaBounds": [
+        13,
+        42,
+        34,
+        52
+      ]
+    }
+  }
+}

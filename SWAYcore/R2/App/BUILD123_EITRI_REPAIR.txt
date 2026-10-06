@@ -1,0 +1,20 @@
+SWAYcore 0.9 Build 123 — EITRI Repair Candidate
+Date: 2026-09-28
+State: IMPLEMENTED + STATIC PASS. iOS/Xcode/device verification pending.
+
+Changes from Build 122:
+1. Lucia renderer now consumes the authored proximal/distal pivot spans for upper/lower arms, thighs and calves instead of stretching complete PNG bounds between joints.
+2. Lucia torso aligns its authored neck (0.08) and pelvis (0.92) pivots to pose-engine neck/hip joints. Generic user-avatar path remains separate and unchanged by this repair.
+3. Progress Weekly Activity is derived from persisted sessionResults for the actual last seven days; labels follow the actual weekday and today is highlighted. Static sample bars removed.
+4. Apple Music authorization state now initializes/refreshed from MusicAuthorization.currentStatus. When notDetermined, SWAYcore requests authorization at the point of use. If denied/restricted, UI offers Open Settings rather than pretending a new system prompt can always be forced. Search requests still request authorization before use when appropriate.
+5. Removed the Build-122 error-message assumption that any developer-token text necessarily means MusicKit was never enabled. Runtime error is now reported truthfully for device diagnosis.
+
+Apple Music note:
+Apple documents that MusicAuthorization.request() prompts when authorization has not yet been decided. A user can change authorization in Settings. Build 123 therefore re-reads device state and provides the Settings recovery path for previously denied/restricted access.
+
+Remaining physical gates:
+- Xcode/iOS SDK compile and signing.
+- Lucia visual pose matrix on device (seams, scale, head/hands/shoes, mirroring).
+- Apple Music permission prompt/re-authorization and playback on device.
+- Camera tracking/calibration on device.
+- End-to-end workout/Create/share/import regression.

@@ -1,0 +1,27 @@
+SWAYcore candidate comparison — source evidence
+143=/Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/143/SWAYcore_0.9_BUILD143_STREAMLINED_ILLUSTRATED_2_5D_ALPHA/SWAY
+148=/Users/lucas/Downloads/SWAYcore_0.9_BUILD148_SCALABLE_WORKOUT_AVATAR_CANDIDATE/SWAY
+151=/Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/151/SWAYcore_0.9_BUILD151_ALPHA_AVATAR_CONVERGENCE_CANDIDATE/SWAY
+153=/Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/153/SWAYcore_0.9_BUILD153_FULL_FEATURE_ALPHA/SWAY
+All candidates contain the same broad MusicKit/camera/tracking/workout symbol families; build number alone is not progress.
+
+DIFF 143 -> 148
+Files /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/143/SWAYcore_0.9_BUILD143_STREAMLINED_ILLUSTRATED_2_5D_ALPHA/SWAY/Services/NativeCapabilities.swift and /Users/lucas/Downloads/SWAYcore_0.9_BUILD148_SCALABLE_WORKOUT_AVATAR_CANDIDATE/SWAY/Services/NativeCapabilities.swift differ
+Files /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/143/SWAYcore_0.9_BUILD143_STREAMLINED_ILLUSTRATED_2_5D_ALPHA/SWAY/Views/CameraLabView.swift and /Users/lucas/Downloads/SWAYcore_0.9_BUILD148_SCALABLE_WORKOUT_AVATAR_CANDIDATE/SWAY/Views/CameraLabView.swift differ
+Files /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/143/SWAYcore_0.9_BUILD143_STREAMLINED_ILLUSTRATED_2_5D_ALPHA/SWAY/Views/HomeView.swift and /Users/lucas/Downloads/SWAYcore_0.9_BUILD148_SCALABLE_WORKOUT_AVATAR_CANDIDATE/SWAY/Views/HomeView.swift differ
+Files /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/143/SWAYcore_0.9_BUILD143_STREAMLINED_ILLUSTRATED_2_5D_ALPHA/SWAY/Views/MoveLibraryView.swift and /Users/lucas/Downloads/SWAYcore_0.9_BUILD148_SCALABLE_WORKOUT_AVATAR_CANDIDATE/SWAY/Views/MoveLibraryView.swift differ
+Files /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/143/SWAYcore_0.9_BUILD143_STREAMLINED_ILLUSTRATED_2_5D_ALPHA/SWAY/Views/RootView.swift and /Users/lucas/Downloads/SWAYcore_0.9_BUILD148_SCALABLE_WORKOUT_AVATAR_CANDIDATE/SWAY/Views/RootView.swift differ
+Files /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/143/SWAYcore_0.9_BUILD143_STREAMLINED_ILLUSTRATED_2_5D_ALPHA/SWAY/Views/SettingsView.swift and /Users/lucas/Downloads/SWAYcore_0.9_BUILD148_SCALABLE_WORKOUT_AVATAR_CANDIDATE/SWAY/Views/SettingsView.swift differ
+Files /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/143/SWAYcore_0.9_BUILD143_STREAMLINED_ILLUSTRATED_2_5D_ALPHA/SWAY/Views/WorkoutPlayerView.swift and /Users/lucas/Downloads/SWAYcore_0.9_BUILD148_SCALABLE_WORKOUT_AVATAR_CANDIDATE/SWAY/Views/WorkoutPlayerView.swift differ
+
+DIFF 148 -> 151
+Files /Users/lucas/Downloads/SWAYcore_0.9_BUILD148_SCALABLE_WORKOUT_AVATAR_CANDIDATE/SWAY/Services/NativeCapabilities.swift and /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/151/SWAYcore_0.9_BUILD151_ALPHA_AVATAR_CONVERGENCE_CANDIDATE/SWAY/Services/NativeCapabilities.swift differ
+Files /Users/lucas/Downloads/SWAYcore_0.9_BUILD148_SCALABLE_WORKOUT_AVATAR_CANDIDATE/SWAY/Views/MoveLibraryView.swift and /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/151/SWAYcore_0.9_BUILD151_ALPHA_AVATAR_CONVERGENCE_CANDIDATE/SWAY/Views/MoveLibraryView.swift differ
+Files /Users/lucas/Downloads/SWAYcore_0.9_BUILD148_SCALABLE_WORKOUT_AVATAR_CANDIDATE/SWAY/Views/RootView.swift and /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/151/SWAYcore_0.9_BUILD151_ALPHA_AVATAR_CONVERGENCE_CANDIDATE/SWAY/Views/RootView.swift differ
+Files /Users/lucas/Downloads/SWAYcore_0.9_BUILD148_SCALABLE_WORKOUT_AVATAR_CANDIDATE/SWAY/Views/SettingsView.swift and /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/151/SWAYcore_0.9_BUILD151_ALPHA_AVATAR_CONVERGENCE_CANDIDATE/SWAY/Views/SettingsView.swift differ
+Files /Users/lucas/Downloads/SWAYcore_0.9_BUILD148_SCALABLE_WORKOUT_AVATAR_CANDIDATE/SWAY/Views/WorkoutPlayerView.swift and /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/151/SWAYcore_0.9_BUILD151_ALPHA_AVATAR_CONVERGENCE_CANDIDATE/SWAY/Views/WorkoutPlayerView.swift differ
+
+DIFF 151 -> 153
+Files /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/151/SWAYcore_0.9_BUILD151_ALPHA_AVATAR_CONVERGENCE_CANDIDATE/SWAY/Services/NativeCapabilities.swift and /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/153/SWAYcore_0.9_BUILD153_FULL_FEATURE_ALPHA/SWAY/Services/NativeCapabilities.swift differ
+Files /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/151/SWAYcore_0.9_BUILD151_ALPHA_AVATAR_CONVERGENCE_CANDIDATE/SWAY/Views/RootView.swift and /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/153/SWAYcore_0.9_BUILD153_FULL_FEATURE_ALPHA/SWAY/Views/RootView.swift differ
+Files /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/151/SWAYcore_0.9_BUILD151_ALPHA_AVATAR_CONVERGENCE_CANDIDATE/SWAY/Views/WorkoutPlayerView.swift and /Users/lucas/edenOS/Temporary/SWAYcore/recovery-compare/153/SWAYcore_0.9_BUILD153_FULL_FEATURE_ALPHA/SWAY/Views/WorkoutPlayerView.swift differ

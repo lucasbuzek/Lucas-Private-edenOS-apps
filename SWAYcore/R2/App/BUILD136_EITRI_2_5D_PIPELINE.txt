@@ -1,0 +1,22 @@
+SWAYcore 0.9 Build 136 — 2.5D AVATAR PIPELINE ALPHA
+Forward baseline: Build 135. No rollback.
+
+AUTHORITATIVE ALPHA DIRECTION
+- Primary production avatar provider: weighted 2.5D skeletal mesh.
+- Apple runtime target: Swift + Metal/MetalKit (Xcode supplied).
+- Existing rigid cutout: debug/fallback only.
+- RealityKit/3D: optional future provider, retained but not Alpha dependency.
+- Blender: OPTIONAL experiment only. TRY_BLENDER_3D.command may install Blender via Homebrew when Homebrew is already present.
+
+PIPELINE
+IRIS visual contract -> ARTEMIS layered artwork -> 2.5D compiler -> SWAY2DHumanoid-v1 -> weighted triangulated meshes -> .swayavatar -> FORGE renderer -> choreography/musical clock -> physical iPhone gate.
+
+BUILD 136 EVIDENCE
+- Executed 2.5D compiler against the 17 Lucia production PNGs.
+- Generated LuciaAlpha.swayavatar and lucia.swayavatar.json.
+- 20 semantic bones and 17 weighted triangulated meshes.
+- Meshes carry UVs, bone names, normalized vertex weights, triangle indices and draw layers.
+- No Blender dependency for 2.5D.
+
+LIMITATION / NEXT GATE
+The generated asset is an ENGINEERING ALPHA contract. It proves deterministic asset generation and weighted mesh data, but the existing app still requires the Metal/MetalKit textured-mesh renderer to consume this package before visual acceptance can occur. Do not call the visible avatar fixed until physical iPhone evidence shows it.

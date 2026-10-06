@@ -1,0 +1,26 @@
+SWAYcore 0.9 BUILD 144 CANDIDATE
+EITRIMB focused convergence from preserved Build 143 LKG.
+
+IMPLEMENTED
+- DÜRER Lucia cleanup: each of 12 illustrated coach poses keeps the primary connected character component; detached extraction remnants removed.
+- Matching cleanup mask propagated to USER illustrated layers.
+- Camera tracking setup moved from a separate .sheet/window into an overlay on WorkoutPlayerView's single performance surface.
+- Tracking overlay supports completion and cancellation without navigating away from workout.
+- YOUR DANCER editor streamlined to character-first preview plus only asset-backed Alpha controls: Skin, Hair Color, Outfit.
+- Unsupported Body/Face/Hair-style/Footwear/Accessory controls hidden from production Alpha editor until real illustrated variants exist.
+- Moves library streamlined: compact header, filter menu, integrated search, smaller visual cards.
+- Removed developer-facing 2.5D ALPHA badge from user avatar preview.
+- Build numbers synchronized to 144.
+
+PRESERVED
+- Build 143 illustrated COACH/USER renderer path.
+- Learn count pose inspection and preview.
+- Beats/workout runtime architecture.
+- Build 143 remains external LKG; this candidate does not overwrite it.
+
+PHYSICAL GATES
+- Xcode compile
+- iPhone camera permission/calibration overlay
+- Lucia visual cleanliness
+- YOUR DANCER tint variants
+- Moves/Learn UX

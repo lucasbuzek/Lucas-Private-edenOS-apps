@@ -1,0 +1,17 @@
+SWAYcore 0.9 Build 153 — ALPHA PRODUCT CONVERGENCE CANDIDATE
+
+Base: Build 149 working candidate / recorded runtime.
+
+Implemented in this candidate:
+- Preserves Build 149 calibration ownership and Build 147 tracking recovery path.
+- Learn/Step-by-step now exposes user-selected learning tempo from 20–180 BPM.
+- Preview and Practice This Move use the same selected tempo authority.
+- Adds explicit Slow (40 BPM) and Move tempo controls without imposing a beginner speed.
+- Renames the personal top-level surface from Profile to You while preserving its contents.
+- Build 149 protected capabilities remain unchanged.
+
+Still gated:
+- Blender production Lucia/YOUR DANCER assets and runtime import.
+- Final production iPhone/iPad UIX pass.
+- Record Me / Record SWAY end-to-end implementation.
+- Physical iPhone/iPad verification.

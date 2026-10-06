@@ -1,0 +1,24 @@
+BUILD 150 — EITRI CONVERGENCE EXECUTION
+
+AUTHORITATIVE BASE: Build 149 source package + recorded runtime evidence.
+HISTORICAL GRAPHICAL LKG: Build 143.
+TRACKING RECOVERY: Build 147.
+REJECTED: Build 148.
+
+IMPLEMENTED
+1. Preserved Build 149 tracking/calibration ownership invariant.
+2. Learn tempo is now explicitly user controlled, 20–180 BPM.
+3. Learn preview and practice launch consume the same selected tempo.
+4. Personal top-level navigation label corrected Profile -> You; functionality preserved.
+
+BLENDER CONTRACT
+Blender is the production authoring pipeline for Lucia, the remaining four COACHes and YOUR DANCER. Swift/RealityKit is runtime consumption, not character authoring. The production asset must use a compatible shared armature/movement contract so one canonical movement library can animate COACH and YOUR DANCER variants. Existing 2D assets remain fallback/LKG evidence until the production Blender asset passes runtime validation; they are not the final Alpha character substrate.
+
+NEXT EXECUTABLE GATES
+G1 Blender production asset import (requires generated/exported asset bytes).
+G2 RealityKit/runtime adapter while preserving 2D fallback.
+G3 iPhone/iPad production UIX convergence.
+G4 one-clock music/count/COACH/YOU/cue verification.
+G5 protected capability regression.
+G6 Xcode build/package verification.
+G7 physical iPhone/iPad Alpha test.

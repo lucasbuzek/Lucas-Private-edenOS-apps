@@ -1,0 +1,18 @@
+SWAYcore 0.9 Build 141 — compile repair evidence
+
+Observed physical Xcode gate from Build 140:
+- 27 diagnostics in SWAYSkeletal2DAvatarView.swift: Cannot find operator '=-' in scope.
+
+Root cause:
+- compressed assignments such as p.leftArmX=-17*s lex as the custom operator token '=-' in Swift.
+
+Repair:
+- removed all ambiguous assignment/unary-operator adjacency across Swift source.
+- source hazard gate now rejects =-, =+, =!, =<, => patterns before packaging.
+- verified SwayHumanFigureView still routes COACH and USER to SWAYSkeletal2DAvatarView.
+- verified DÜRER 2.5D contract remains in Xcode Resources.
+- Debug/Release CURRENT_PROJECT_VERSION and CFBundleVersion set to 141.
+
+Evidence limits:
+- Linux/source checks do not prove Apple SDK/Xcode compilation.
+- Xcode compile, install, runtime avatar appearance, and visual acceptance remain physical gates.

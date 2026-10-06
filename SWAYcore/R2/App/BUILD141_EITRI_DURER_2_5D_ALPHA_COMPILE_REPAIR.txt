@@ -1,0 +1,17 @@
+SWAYcore 0.9 Build 141 — EITRI / DÜRER 2.5D Alpha implementation
+
+Milestone: a single working 2.5D avatar system for COACH (Lucia) and YOUR DANCER, packaged for Alpha device testing.
+
+Evidence-bearing changes:
+- Added SWAY-DURER-2.5D-v1.json as an actual Xcode Resources build-phase member.
+- Visible SWAYSkeletal2DAvatarView now hard-requires and decodes that DÜRER runtime asset; missing/invalid asset fails loudly instead of silently falling back to legacy PNGs.
+- DÜRER asset defines shared rig identity, layer order, joints, body metrics, customization cardinalities and Alpha acceptance invariants.
+- COACH and USER continue through the same renderer. Lucia now has a stable authored profile and cannot inherit arbitrary user/default customization.
+- YOUR DANCER remains driven by persisted SwayCharacterProfile choices.
+- Legacy StickFigureView remains recovery/debug source but is not selected by SwayHumanFigureView.
+- Accessibility identifiers expose the active runtime: sway.avatar.durer2d.coach / sway.avatar.durer2d.user.
+
+Scope truth:
+This is the integrated illustrated 2.5D Alpha renderer: skeletal pose contract + continuous overlapping vector geometry + DÜRER runtime asset + customization + shared COACH/USER consumer. It is not the future textured Metal GPU skinning renderer and does not claim to be.
+
+Physical gates still required: Xcode build on Apple SDK, iPhone runtime appearance, IRIS visual acceptance.

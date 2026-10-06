@@ -1,0 +1,10 @@
+SWAYcore Build 142 — EITRI AUTO / DÜRER 2.5D runtime repair
+Physical evidence input: Build 141 iPhone recording.
+Repairs:
+- Corrected musical phase model: 8 counts = one full motion cycle. Integer counts now seek to distinct canonical phases instead of sin(pi*n)=0 neutral collapse.
+- Learn adds an explicit tappable 1...N pose-filmstrip with an individual frozen avatar for every count.
+- Count/arrows pause preview and seek the main COACH to the exact selected count.
+- DÜRER visible geometry upgraded from uniform stroked limbs to tapered closed silhouettes with overlap caps.
+- DÜRER runtime contract v2 records illustrated 2.5D visual requirements and discrete-count seekability.
+- Legacy segmented PNG path remains prohibited by runtime contract.
+Evidence limits: Xcode compile and iPhone visual acceptance require Apple/device environment.

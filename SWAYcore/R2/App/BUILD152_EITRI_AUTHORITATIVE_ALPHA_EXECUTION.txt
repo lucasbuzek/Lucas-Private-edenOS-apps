@@ -1,0 +1,33 @@
+SWAYcore 0.9 BUILD 152 — AUTHORITATIVE ALPHA EXECUTION
+
+BASELINE
+Build 149 working recovered baseline; Build 151 avatar convergence preserved; Build 148 rejected.
+
+IMPLEMENTED
+- Durable PRODUCT/CAPABILITY/DECISION/BUILD/PROTECTED/REGRESSION/CHARACTER/TIMING/UIX/PHYSICAL/RELEASE ledgers.
+- Consumer navigation reconciled to authoritative HOME · MOVES · BEATS · PROFILE.
+- Native ReplayKit Record SWAY controller and workout recording control added; native preview surface wired.
+- Build identity synchronized to 152.
+- Stale Build-150/151 verifier defects repaired.
+- DÜRER validator made shell-portable.
+- Stale active '3d_optional' naming retired to legacy; Blender remains required production character pipeline.
+
+PRESERVED
+- Build 147 tracking path and calibration ownership invariant.
+- Build 151 RealityKit/Blender character boundary and 2.5D fallback.
+- Learn 20–180 BPM user tempo.
+- Moves/Beats/Create/.swaypack/Health/progression recovered paths.
+
+VERIFIED HERE
+- Swift parser: PASS.
+- Source hazard/routing/build identity: PASS.
+- SWAYHumanoid-v1 contract: PASS.
+- Lucia/User RealityKit 10-animation manifest contract: PASS.
+- Protected 2.5D fallback validator: PASS.
+
+EXTERNAL GATES
+- Blender executable absent on this host: production Lucia/YOUR DANCER asset generation cannot be physically executed here.
+- Xcode/xcodebuild absent on this host: iOS compile/environment gate pending Mac.
+- iPhone/iPad physical gates pending.
+- Record SWAY is IMPLEMENTED, not PHYSICAL PASS.
+- Graphical YOU remains IN PROGRESS; current tracked silhouette is not accepted production graphical YOU.
