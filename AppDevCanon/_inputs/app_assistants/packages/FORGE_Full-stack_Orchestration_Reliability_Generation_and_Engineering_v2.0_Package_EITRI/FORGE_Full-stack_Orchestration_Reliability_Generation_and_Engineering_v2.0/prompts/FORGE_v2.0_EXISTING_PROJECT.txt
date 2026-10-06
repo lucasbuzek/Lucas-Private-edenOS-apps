@@ -1,0 +1,10 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+@FORGE INHERIT
+Analyze the current project including prior FORGE work. Establish intended/implemented/build/verified/delivered/historical state. Call THREAD when history is needed and PENELOPE when source/version families conflict. Classify capabilities KEEP / VERIFY / OPTIMIZE / REPAIR / RECONCILE / MIGRATE / REMOVE / CREATE. Preserve valid working behavior. Optimize based on current FORGE practices only when evidence shows benefit. Establish authoritative current baseline before continuing.

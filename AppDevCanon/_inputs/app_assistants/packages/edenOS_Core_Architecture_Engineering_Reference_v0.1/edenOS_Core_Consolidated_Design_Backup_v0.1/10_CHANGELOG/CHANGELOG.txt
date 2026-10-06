@@ -1,0 +1,10 @@
+EDENOS CORE CONSOLIDATED DESIGN BACKUP — CHANGELOG
+
+v0.1 — 2026-09-22
+- Consolidated gardenOS → edenOS Core lineage.
+- Preserved Nandi as tiny universal-helper lineage rather than Core identity.
+- Preserved dedicated machine lineages including Mechanical Mule direction.
+- Added shared Core hardware requirements and module model.
+- Integrated external reference architecture: OpenMower, Acorn, FarmBot, AgOpenGPS, ArduPilot, PX4/Pixhawk/MAVSDK, BlueOS, OpenCyphal, ODrive, SimpleFOC, ros2_control, Nav2, Gazebo and Open-RMF.
+- Added source manifest, recovery script, master links and license/provenance policy.
+- Included available gardenOS source/reference TXT files in backup.

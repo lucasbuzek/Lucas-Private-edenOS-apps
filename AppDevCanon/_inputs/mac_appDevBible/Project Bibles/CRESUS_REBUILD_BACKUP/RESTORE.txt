@@ -1,0 +1,8 @@
+CRESUS REBUILD BACKUP
+
+1. Read CRESUS_PROJECT_BIBLE.txt.
+2. CRESUS_REPOSITORY.bundle is a complete Git bundle of all refs present in the local Lucas-Private-edenOS-apps repository at backup time.
+3. Restore with: git clone CRESUS_REPOSITORY.bundle Lucas-Private-edenOS-apps
+4. apps-cresus/ is an immediately inspectable copy of the CRESUS source tree when the local repository was available.
+5. BACKUP_MANIFEST.txt records repository path, branch/status, remotes and HEAD at backup time.
+6. Current AppDev/EITRIMB authority remains in lucasbuzek/Lucas-private-appDevDocs; the Project Bible is included here so CRESUS identity/canon does not depend on chat history.

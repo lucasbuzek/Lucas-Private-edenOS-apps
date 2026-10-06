@@ -1,0 +1,8 @@
+IMPLEMENTATION ROADMAP — v0.1
+R0 reference (this package): schemas + registry + local project runtime + novice web UI.
+R1 foundation: durable SQLite HEIMDALL store, file ingestion/indexing, job/event/checkpoint engine, provider abstraction, tests.
+R2 desktop: signed macOS SwiftUI shell, Finder integration, Keychain, local service lifecycle.
+R3 specialist adapters: migrate canonical assistant packages and regression suites.
+R4 edenOS: edenUI/edenAPI/EDEN Connect adapters, permissions, multi-user.
+R5 server/web: authenticated LAN/remote access, headless automation, API tokens, observability.
+R6 hardening: migrations, backups, fault injection, privacy controls, packaging/notarization, long-run tests.

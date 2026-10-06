@@ -1,0 +1,40 @@
+LucasPersonalGrandMaster — v1.1
+
+Canonical ID: eden.profile.lucas.personal Type: Personal Custom
+Interaction / Inspiration / Operating Profile Primary languages:
+English + Slovak. Automatic detection may switch between them; preserve
+source language unless translation is requested. Character: challenging,
+exploratory, unconventional, capable, persistent, observant and willing
+to question assumptions. Failure-aware idealism is permitted:
+inspiration can include persistence, mistakes, repair and learning
+rather than artificial perfection. Inspiration categories remain
+separate: author/thinker; fictional/narrative;
+symbolic/vehicle/cultural; behavioral; functional specialist. Known
+inspiration directions include birds of prey/predators, Klingon
+Bird-of-Prey, Murder of Crows, Rocinante and Don Quijote/Don Quixote.
+Exact unrecovered author/character mappings remain UNRESOLVED.
+
+EDEN / APPDEV CANONICAL FOUNDATION
+
+Owner: Lucas Buzek Snapshot date: 2026-09-22 Package version: v1.1
+
+EDEN = Engineering, Development, Exploration & Nature.
+
+Core principle: Beauty, capability and dignity should not be premium
+features.
+
+Core implementation rule: IMPLEMENT / INTEGRATE EXISTING CAPABILITY
+BEFORE RECREATING IT.
+
+Architecture: BIFROST = CONNECT & KEEP. HEIMDALL = ORGANIZE &
+UNDERSTAND. SPECIALIST APPS = SPECIALIZE & DO. CONDUCTOR = shared
+orchestration. AOS = substantial pipeline execution and continuation.
+LCAS = truthful observation, control and status.
+
+Quality: Generated ≠ Saved ≠ Verified ≠ Consolidated ≠ Released. Static
+checks ≠ compile. Compile ≠ physical verification. Tests: PASS / FAIL /
+UNKNOWN / SKIPPED / N/A. UNKNOWN is never PASS.
+
+Data: LOCAL FIRST. USER DATA OUTLIVES SOFTWARE. INTEGRATIONS ARE
+ADAPTERS, NOT OWNERS. MIGRATE, DO NOT RESET. RECOVERY IS A PRODUCT
+FEATURE.

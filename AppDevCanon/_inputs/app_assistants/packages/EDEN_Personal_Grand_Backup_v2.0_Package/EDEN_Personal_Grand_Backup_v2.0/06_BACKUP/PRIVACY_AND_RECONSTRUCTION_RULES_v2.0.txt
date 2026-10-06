@@ -1,0 +1,19 @@
+PRIVACY / RECONSTRUCTION RULES v2.0
+
+1.  Public profile and private personal corpus are separate.
+2.  Sensitive health/psychological data defaults to pseudonymous/private
+    storage.
+3.  Credentials/secrets are excluded from general backups.
+4.  Every factual personal record should retain source/provenance and
+    date where possible.
+5.  Do not silently turn old travel/legal/medical answers into current
+    facts.
+6.  Do not infer identity, language, diagnosis or qualification from
+    indirect signals.
+7.  Preserve historical project mistakes because they are useful
+    engineering provenance.
+8.  Personal data can seed Workspaces and workflows; distributable Apps
+    receive generalized schemas and de-identified/synthetic fixtures.
+9.  Backup should be reconstructable without requiring the original chat
+    history.
+10. Unknown/unrecovered remains UNKNOWN rather than invented.

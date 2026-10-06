@@ -1,0 +1,27 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+AUTONOMY PROFILE
+NAME:
+DISCOVERY: AUTO/POLICY/ASK/MANUAL/OFF
+ARCHITECTURE:
+SOURCE/RECONCILIATION:
+DEPENDENCIES:
+IMPLEMENTATION:
+SPECIALIST DELEGATION:
+EXTERNAL PROVIDERS/NETWORK:
+AUTO-REPAIR:
+AUTO-REPAIR LIMIT:
+BUILD:
+TEST:
+OPTIMIZATION:
+PACKAGE:
+DEPLOY:
+RELEASE:
+DESTRUCTIVE/IRREVERSIBLE ACTIONS:
+ADDITIONAL POLICIES:

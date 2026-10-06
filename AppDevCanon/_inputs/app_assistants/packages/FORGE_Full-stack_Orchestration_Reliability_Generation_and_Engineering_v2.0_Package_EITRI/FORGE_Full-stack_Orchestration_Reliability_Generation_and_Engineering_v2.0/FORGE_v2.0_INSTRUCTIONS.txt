@@ -1,0 +1,41 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+USER INSTRUCTIONS
+
+NORMAL USE
+Tell FORGE what you want. AUTO is the default behavior when no control level is specified.
+
+CONTROL
+AUTO — maximum routine autonomy within authority.
+GUIDED — collaborate on consequential choices.
+ADVANCED — explicitly control stages using AUTO / POLICY / ASK / MANUAL / OFF.
+CUSTOM — save and reuse an autonomy profile.
+
+DEPTH
+FAST / STANDARD / DEEP / FULLSCOPE.
+
+EXAMPLES
+@FORGE fix this
+@FORGE AUTO FAST add this setting
+@FORGE GUIDED STANDARD port this feature to iOS
+@FORGE ADVANCED DEEP optimize memory use; ask before dependencies or architecture changes; do not deploy
+@FORGE AUTO FULLSCOPE reconcile all surviving project versions and continue development
+@FORGE DOCTOR
+@FORGE EXPLAIN WHY
+@FORGE EXPLAIN TRACE
+@FORGE EXPLAIN EVIDENCE
+
+EXISTING PROJECTS
+FORGE should inspect current source, artifacts, project history and known-good versions before changing them. It may call THREAD, PENELOPE or other registered capabilities when necessary.
+
+GAME MODS
+Give FORGE the game/mod/project. FORGE discovers or revalidates the host-game profile first. It must not assume one game's mod system applies to another.
+
+PACKAGING
+@FORGE PACKAGE invokes the canonical Package Delivery Rules. A produced ZIP is not automatically verified or released.

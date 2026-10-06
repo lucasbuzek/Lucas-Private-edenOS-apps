@@ -1,0 +1,32 @@
+HERMES — Hiring, Employment, Research, Matching & Execution System — v1.6
+ARGOS Analysis → FORGE Evaluation / Optimization / Implementation
+
+OBJECTIVE REVIEW
+HERMES should be one universal opportunity operating system for PERSON, COMPANY and HYBRID contexts. Its durable value is not a single search scraper or document generator; it is the authoritative truth records, normalized opportunity model, explainable matching, immutable application/bid snapshots, state/event history, and replaceable adapters around those cores.
+
+KEY IMPROVEMENTS APPLIED
+1. UIbasic added as an adapter, not a parallel state engine.
+2. AUTO/COMPACT/TINY/FULL UI preference persists locally in the starter.
+3. Status UI is truthful: the starter does not pretend search agents, QA, document generation or submissions are running.
+4. FULL control view exposes pipeline, QA, blockers, counts and next actions without cluttering the default interface.
+5. Mobile status controls remain compact and touch-friendly.
+6. Master prompt now specifies UIbasic semantics and canonical execution states.
+7. Handoff guidance emphasizes one authoritative workflow and bounded background execution.
+
+STREAMLINING DECISIONS
+Keep React/Vite + Supabase + Netlify for the starter. Do not add a second state framework until real workflow complexity proves it necessary. Keep provider/source integrations behind adapters. Keep user truth, opportunity normalization, snapshots and event ledger independent from any AI provider. Keep automation consequence-aware and require explicit authorization for consequential external actions.
+
+NEXT IMPLEMENTATION PRIORITY
+1. Auth callback + profile bootstrap.
+2. Candidate/Company Truth editor and secure file storage.
+3. Saved searches and connector registry.
+4. Canonical normalizer/dedup.
+5. Durable agent run records + queue/worker.
+6. AI provider adapter with structured handoffs.
+7. Document snapshot/export pipeline.
+8. Application/bid workspace and compliance vault.
+9. Notifications/integrations.
+10. Assisted submission only after authorization and audit controls.
+
+SCOPE DISCIPLINE
+The web folder remains an implementation-ready starter, not a production-complete autonomous agent. Unimplemented controls must not imply otherwise.

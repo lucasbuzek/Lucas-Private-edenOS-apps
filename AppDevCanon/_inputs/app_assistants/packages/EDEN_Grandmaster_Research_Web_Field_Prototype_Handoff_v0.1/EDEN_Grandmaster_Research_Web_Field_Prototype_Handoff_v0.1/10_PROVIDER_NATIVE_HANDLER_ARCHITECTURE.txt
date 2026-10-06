@@ -1,0 +1,36 @@
+EDEN — CONTENT PROVIDERS & NATIVE DEVICE HANDLERS — v0.1
+
+CANONICAL MODEL
+Capability != Provider != Surface != Handler.
+
+CAPABILITY
+What EDEN needs done.
+
+PROVIDER
+External/internal implementation that can supply the capability: content service, AI API, cloud, local service, installed app.
+
+NATIVE HANDLER
+OS/device-specific mechanism: file association, share sheet, deep link, URL scheme, Shortcuts/automation, CLI, background service, device API, media framework, browser/PWA integration.
+
+SURFACE
+Where the human interacts: Web, PWA, native app, HEIMDALL Workspace, LCAS panel.
+
+PROVIDER ADAPTER CONTRACT
+provider_id; capability_ids; auth method; permissions/scopes; locality; online/offline; cost model; limits; supported content types; import/export; provenance; health; privacy; version; fallback eligibility.
+
+CONTENT INGESTION CONTRACT
+source/provider → acquire → identify → normalize metadata → preserve original/provenance → extract/index → relate → classify/tag → expose through HEIMDALL. Never destroy the original merely to normalize it.
+
+NATIVE HANDLER RESEARCH
+For every target platform document:
+- native capability already present;
+- programmatic API/automation support;
+- supported file/content types;
+- security sandbox/permissions;
+- offline behavior;
+- handoff/return path;
+- install dependency;
+- license/cost;
+- failure behavior.
+
+Rule: use the native handler when it is already better than a custom EDEN implementation and can be integrated reliably.

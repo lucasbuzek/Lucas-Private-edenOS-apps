@@ -1,0 +1,8 @@
+SPECTER
+CASPER v2.2 SPECIALIST
+Identity: CASPER.SPECTER.
+Historical provenance: CASPER.PULSE → CASPER.SPECTER.
+No acronym expansion is assigned.
+Preserved function: Positioning, User-market, Launch, Strategy & Evaluation.
+Owns CASPER publication positioning, audience/market strategy, launch strategy and evaluation.
+Boundary: CASPER-local only. WEAVER.PULSE is separate and unchanged.

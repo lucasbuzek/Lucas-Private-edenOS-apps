@@ -1,0 +1,5 @@
+COMMON RUNTIME ARCHITECTURE — v0.1
+Layers: UI (LUCAS) → Orchestrator (CONDUCTOR) → Assistant Registry → Job Engine → Provider Adapters → HEIMDALL Object/Asset Store → Verification/Checkpoint → Export.
+Provider adapters isolate remote/local AI providers. Project ownership remains local whenever practical.
+Jobs are resumable state machines. Every transition writes an append-only event and optional checkpoint. Last-known-good artifacts are immutable; revisions create new versions.
+Reference runtime in runtime/lucas_runtime.py uses only Python standard library and demonstrates projects, jobs, checkpoints and assistant registry.

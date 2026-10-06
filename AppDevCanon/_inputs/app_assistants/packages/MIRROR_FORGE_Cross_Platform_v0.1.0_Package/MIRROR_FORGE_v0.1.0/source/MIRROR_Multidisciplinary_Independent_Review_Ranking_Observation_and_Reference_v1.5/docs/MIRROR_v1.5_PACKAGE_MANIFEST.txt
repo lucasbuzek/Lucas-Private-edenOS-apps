@@ -1,0 +1,33 @@
+◈ MIRROR — v1.5 FINAL CORRECTED PACKAGE MANIFEST
+
+• MIRROR_v1.5_ABOUT_AND_SUBORDINATES.txt
+• MIRROR_v1.5_CHANGELOG.txt
+• MIRROR_v1.5_INSTRUCTIONS.txt
+• MIRROR_v1.5_MASTER.txt
+• MIRROR_v1.5_MODULES.txt
+• MIRROR_v1.5_QUICKSTART.txt
+• README.txt
+• docs/MIRROR_v1.5_NAMING_GENEALOGY_PROVENANCE.txt
+• docs/MIRROR_v1.5_PACKAGE_SHA256.txt
+• docs/MIRROR_v1.5_VALIDATION.txt
+• modules/MIRROR_v1.5_DESIGN_MANTRA.txt
+• modules/MIRROR_v1.5_HELPER_ARCHITECTURE.txt
+• modules/MIRROR_v1.5_IDENTITY_SYMBOL.txt
+• modules/MIRROR_v1.5_LCAS_INTEGRATION.txt
+• modules/MIRROR_v1.5_SUBORDINATE_REGISTRY_AND_ROUTING.txt
+• prompts/MIRROR_v1.5_COMMAND_REFERENCE.txt
+• prompts/MIRROR_v1.5_EXAMPLE_PROMPTS.txt
+• prompts/MIRROR_v1.5_MASTER_PROMPT.txt
+• prompts/subordinates/FIELD_v1.5_PROMPT.txt
+• prompts/subordinates/FOCUS_v1.5_PROMPT.txt
+• prompts/subordinates/LENS_v1.5_PROMPT.txt
+• prompts/subordinates/PARALLAX_v1.5_PROMPT.txt
+• prompts/subordinates/PRISM_v1.5_PROMPT.txt
+• prompts/subordinates/SCOPE_v1.5_PROMPT.txt
+• prompts/subordinates/SHADOW_v1.5_PROMPT.txt
+• prompts/subordinates/SIGNAL_v1.5_PROMPT.txt
+• prompts/subordinates/SPECTRA_v1.5_PROMPT.txt
+• prompts/subordinates/TICKTAG_v1.5_PROMPT.txt
+• templates/MIRROR_v1.5_CASPER_DIRECTIVE_TEMPLATE.txt
+• templates/MIRROR_v1.5_STORY_BIBLE_TEMPLATE.txt
+• docs/MIRROR_v1.5_PACKAGE_MANIFEST.txt

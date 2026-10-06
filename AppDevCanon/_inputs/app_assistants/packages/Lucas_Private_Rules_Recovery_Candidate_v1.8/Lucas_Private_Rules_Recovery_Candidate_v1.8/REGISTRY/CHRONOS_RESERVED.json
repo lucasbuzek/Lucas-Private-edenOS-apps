@@ -1,0 +1,21 @@
+{
+  "canonical_name": "CHRONOS",
+  "status": "FUNCTIONAL_DESCRIPTION_ONLY",
+  "defined": false,
+  "described_functionality": [
+    "time",
+    "schedules",
+    "recurrence",
+    "deadlines",
+    "calendars",
+    "temporal relationships/history",
+    "timers",
+    "related temporal operations"
+  ],
+  "constraints": [
+    "Do not invent acronym/expansion",
+    "Do not invent personality",
+    "Do not assign authoritative boundaries until approved",
+    "Do not implement merely to fill the registry"
+  ]
+}

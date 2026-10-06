@@ -1,0 +1,147 @@
+{
+  "schema": 1,
+  "release": "DP0.7-v1.5-everything-in",
+  "principle": "capability-before-application",
+  "services": [
+    {
+      "id": "eden.identity",
+      "headless": true
+    },
+    {
+      "id": "eden.profile",
+      "headless": true
+    },
+    {
+      "id": "eden.object",
+      "headless": true
+    },
+    {
+      "id": "heimdall.core",
+      "headless": true
+    },
+    {
+      "id": "eden.connect",
+      "headless": true
+    },
+    {
+      "id": "eden.sync",
+      "headless": true
+    },
+    {
+      "id": "eden.task",
+      "headless": true
+    },
+    {
+      "id": "eden.compute",
+      "headless": true
+    },
+    {
+      "id": "eden.automation",
+      "headless": true
+    },
+    {
+      "id": "eden.portal",
+      "headless": true
+    },
+    {
+      "id": "eden.spatial",
+      "headless": true
+    },
+    {
+      "id": "eden.history",
+      "headless": true
+    },
+    {
+      "id": "eden.share",
+      "headless": true
+    },
+    {
+      "id": "eden.search",
+      "headless": false
+    },
+    {
+      "id": "eden.preview",
+      "headless": false
+    },
+    {
+      "id": "eden.notify",
+      "headless": true
+    },
+    {
+      "id": "eden.health",
+      "headless": true
+    },
+    {
+      "id": "eden.diagnostics",
+      "headless": true
+    },
+    {
+      "id": "eden.update",
+      "headless": true
+    },
+    {
+      "id": "eden.recovery",
+      "headless": true
+    },
+    {
+      "id": "eden.adaptive",
+      "headless": false
+    },
+    {
+      "id": "eden.type",
+      "headless": true
+    },
+    {
+      "id": "eden.vault",
+      "headless": true
+    },
+    {
+      "id": "eden.backup",
+      "headless": true
+    },
+    {
+      "id": "eden.appregistry",
+      "headless": true
+    },
+    {
+      "id": "eden.shell",
+      "headless": false
+    },
+    {
+      "id": "eden.ui",
+      "headless": false
+    },
+    {
+      "id": "eden.index",
+      "headless": true
+    },
+    {
+      "id": "eden.pack",
+      "headless": true
+    },
+    {
+      "id": "eden.resource",
+      "headless": true
+    },
+    {
+      "id": "eden.session",
+      "headless": true
+    },
+    {
+      "id": "eden.home",
+      "headless": true
+    },
+    {
+      "id": "eden.permissions",
+      "headless": true
+    },
+    {
+      "id": "eden.localization",
+      "headless": true
+    },
+    {
+      "id": "eden.accessibility",
+      "headless": false
+    }
+  ]
+}

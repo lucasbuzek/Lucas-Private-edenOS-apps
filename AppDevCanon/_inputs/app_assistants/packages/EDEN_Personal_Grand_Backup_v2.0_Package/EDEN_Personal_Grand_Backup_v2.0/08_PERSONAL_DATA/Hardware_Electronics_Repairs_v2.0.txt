@@ -1,0 +1,19 @@
+HARDWARE / ELECTRONICS / REPAIR WORKING DOMAIN — v2.0
+
+PERSONAL WORKSPACE SHOULD RETAIN: • ESP8266 / Wemos D1 and ESP32 work. •
+Arduino and I2C expansion. • PCF8574, relays, DHT11, analog soil sensors
+and sensor multiplexing/polling questions. • Raspberry Pi /
+small-computer / NAS / automation experiments. • HomeKit, Matter, Home
+Assistant and local-network integration. • 12 V / 24 V lighting, pumps
+and control. • solar PV, batteries, MPPT/inverters and small off-grid
+systems. • wiring, pinouts, power budgets, voltage/current compatibility
+and protection. • repair/troubleshooting history and measured evidence.
+• BOMs, substitutions, suppliers and cost constraints. • compile errors,
+firmware versions and regression evidence.
+
+SPECIALIST FLOW: IDENTIFY DEVICE → CAPTURE SYMPTOMS → SAFETY CLASSIFY →
+INVENTORY COMPONENTS → READ DATASHEETS/SOURCES → MEASURE → HYPOTHESIZE →
+TEST NON-DESTRUCTIVELY → REPAIR/REPLACE → VERIFY → DOCUMENT.
+
+Electrical/mains/high-energy work requires explicit safety boundaries
+and must distinguish advice from verified field measurements.

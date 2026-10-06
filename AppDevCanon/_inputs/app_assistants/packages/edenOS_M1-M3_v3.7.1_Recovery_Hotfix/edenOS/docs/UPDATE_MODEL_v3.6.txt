@@ -1,0 +1,14 @@
+edenOS v3.6 canonical update model
+
+Fixes observed on macOS:
+1. zsh unmatched globs in CLEANUP_EDENOS.command are null-safe with (N).
+2. APPLY_UPDATE validates the extracted release before changing ~/Downloads/edenOS.
+3. Release-managed roots are staged, backed up, replaced, then canonical workspace is revalidated.
+4. On validation failure, managed files are restored from the backup.
+5. Persistent cache, images, data, config, logs, builds and releases are preserved.
+6. INSTALL_EDENOS no longer contains or executes the obsolete DP0.7 v2.0 installer path.
+7. Tests reject stale release identity and missing shell/platform/apps/tests payload.
+
+Normal use after extraction:
+- If extracted directly as ~/Downloads/edenOS, run INSTALL_EDENOS.command.
+- If Finder creates edenOS 2 / edenOS 3, run APPLY_UPDATE.command there, then use ~/Downloads/edenOS.

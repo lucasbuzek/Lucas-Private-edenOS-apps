@@ -1,0 +1,19 @@
+THREAD — v1.4.1 — EXAMPLES
+
+EXAMPLE 1 — PROJECT RECOVERY
+@THREAD AUTO reconstruct everything available about gardenOS, including previous names, versions, architecture, hardware decisions, UI changes, bugs and latest confirmed state.
+
+EXAMPLE 2 — DECISION HISTORY
+@THREAD DECISIONS recover every available decision about whether gardenOS functionality belongs on Core, Server or Companion. Separate proposals from approved and implemented decisions.
+
+EXAMPLE 3 — VERSION TRACE
+@THREAD VERSION reconstruct the gardenOS 0.4.12 nightly branches and identify the latest confirmed/tested state without assuming the largest version number passed testing.
+
+EXAMPLE 4 — EXACT PROMPT
+@THREAD EXTRACT retrieve the exact original prompt used to create ARGOS. If the exact source is unavailable, do not fabricate it.
+
+EXAMPLE 5 — CONTINUATION + HANDOFF
+@THREAD CONTINUE Modern Generals and prepare a THREAD HANDOFF for @FORGE containing the latest confirmed implementation state, current requirements, files, unresolved issues and next work.
+
+EXAMPLE 6 — CROSS-PROJECT
+@THREAD DEEP find all work related to agricultural automation across gardenOS, Eden Initiative, greenhouse planning and Agribot. Preserve project boundaries while showing relationships.

@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "principles": [
+    "Beauty, capability and dignity should not be premium features.",
+    "Architecture and ecosystem coherence may be inspired by Apple; visuals must remain an original edenOS design.",
+    "Simple to deploy. Useful immediately. Fully upgradeable. Fully customizable.",
+    "Use ordinary human language in the UI; avoid exposing internal framework names.",
+    "Experience depth is a persistent user choice; device adaptation is independent.",
+    "V1 relevance comes from explicit Areas/profiles; future contextual awareness belongs to HEIMDALL or later intelligence layers.",
+    "Low-cost hardware receives the same design quality and platform dignity, constrained only by genuine hardware capability."
+  ]
+}

@@ -1,0 +1,47 @@
+🧵 THREAD — Transcript History Retrieval, Extraction, Analysis & Discovery — v1.4
+CHANGELOG
+
+DATE
+2026-09-19
+
+ADDED
+• LCAS — Live Control, Activity & Status canonical integration.
+• @LCAS AUTO default status/control invocation.
+• Evidence-based completion reporting requirements.
+• LCAS integration profile artifact.
+
+CHANGED
+• Legacy UIbasic references normalized to LCAS.
+• Legacy LUCAS references normalized to LCAS.
+• New status/control artifacts and prompts use LCAS.
+• THREAD remains the authoritative retrieval/reconstruction framework.
+
+PRESERVED
+• 🧵 THREAD canonical identity.
+• Persistent Work rule.
+• Design Mantra behavior.
+• Existing THREAD retrieval modes and external assistant identities.
+
+REMOVED
+• Legacy UIbasic naming from active THREAD package.
+• Legacy LUCAS naming from active THREAD package.
+• Bundled legacy UIbasic external reference files.
+
+COMPATIBILITY
+v1.4 supersedes v1.2.1 for this project.
+
+v1.4
+ADDED
+• Tell Me About Yourself and Your Subordinates TXT.
+• 12 dedicated THREAD subordinate-role prompts.
+• Explicit internal-role vs external-specialist boundary.
+• Explicit underlying-model/runtime truthfulness note.
+
+PRESERVED
+• 🧵 THREAD canonical identity.
+• LCAS canonical control/status layer.
+• Existing THREAD retrieval modes, source hierarchy, Design Mantra and Persistent Work.
+• Established external assistant identities.
+
+REMOVED
+• No canonical THREAD capability removed.

@@ -1,0 +1,8 @@
+MIRROR FORGE v0.1.0 VALIDATION
+
+PASS — LCAS UI
+PASS — canonical roster
+PASS — TICKTAG
+PASS — no stale executable ECHO
+PASS — PWA manifest
+PASS — offline service worker

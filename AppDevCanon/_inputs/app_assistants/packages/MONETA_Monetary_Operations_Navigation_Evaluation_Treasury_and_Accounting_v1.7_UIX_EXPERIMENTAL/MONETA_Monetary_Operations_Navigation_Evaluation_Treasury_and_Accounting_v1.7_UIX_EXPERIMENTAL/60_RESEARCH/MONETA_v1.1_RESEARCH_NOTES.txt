@@ -1,0 +1,24 @@
+MONETA ENTERPRISE FINANCE RESEARCH NOTES — v1.1
+
+SOURCE-SUPPORTED FACTS
+- COSO Internal Control—Integrated Framework uses five integrated components: control environment, risk assessment,
+  control activities, information and communication, and monitoring. It also addresses IT controls and fraud risk.
+- IFRS 10 establishes principles for consolidated financial statements where a parent controls subsidiaries and
+  presents the group as a single economic entity.
+- Current CFO/finance transformation guidance emphasizes tighter coordination across accounting, FP&A, treasury and
+  audit, and increased use of analytics/automation/AI with controls and accountability.
+
+EDENOS DESIGN INFERENCES
+- MONETA should have a cross-cutting control plane rather than bolting controls onto individual prompts.
+- LEDGER needs an explicit Consolidation capability.
+- Company boundaries should remain specialist ownership boundaries, while cross-company workflows use formal handoffs.
+- AI/provider implementation must remain beneath capability identity.
+
+RESEARCH URLS
+https://www.coso.org/guidance-on-ic
+https://www.ifrs.org/issued-standards/list-of-standards/ifrs-10-consolidated-financial-statements/
+https://www.pwc.com/us/en/leadership-center/cfo.html
+
+NOTE
+These references inform architecture. They do not make MONETA an accounting standard, auditor, bank, tax authority,
+or substitute for appropriately qualified professional review where required.

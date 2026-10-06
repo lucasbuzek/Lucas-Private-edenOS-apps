@@ -1,0 +1,19 @@
+◈ MIRROR — Multidisciplinary Independent Review, Ranking, Observation & Reference — v1.5
+CHANGELOG
+DATE: 2026-09-23
+
+CHANGED
+• MIRROR.ECHO renamed to MIRROR.TICKTAG.
+• TICKTAG inherits Evaluation, Consistency, Handoff & Outcome unchanged.
+• Subordinate registry, prompts, routing/capability mapping, workflows, help/about, commands and package metadata updated.
+• Latest Profile & Prompts subordinate prompt set reconciled into the complete MIRROR package.
+
+PRESERVED
+• PRISM, SCOPE, LENS, PARALLAX, FOCUS, SPECTRA, SIGNAL, SHADOW and FIELD identities/functions.
+• READ.ECHO, CASPER.RESONANCE, READ.READROUNDtable, READ.READSIDEBYSIDE and fullSCOPE are protected external identities.
+• LCAS integration is not propagated or redesigned.
+
+MIGRATION HISTORY
+Historical identity: MIRROR.ECHO.
+Current identity: MIRROR.TICKTAG.
+Historical function retained: Evaluation, Consistency, Handoff & Outcome.

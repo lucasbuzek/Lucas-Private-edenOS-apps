@@ -1,0 +1,149 @@
+EDEN 25 — Complete Current Project Master — v1.0
+
+@THREAD @ARGOS @CASPER @AOS @WEAVER
+
+MODE: AUTO
+
+PROJECT Eden Initiative — Twenty-Five Years After 9/11 — 2001–2026 /
+2026–2051
+
+AUTHOR / PROJECT Eden Initiative Lucas Buzek
+
+OBJECTIVE Take the EXISTING Eden Initiative Twenty-Five Years After 9/11
+project from its current state to a complete, research-validated,
+multilingual, publication-ready and web-deployable release.
+
+Do not restart research unnecessarily. First recover and evaluate all
+existing work. Reuse reliable existing work and research only missing
+evidence, outdated evidence, weak claims, contradictions, newly required
+evidence and publication-specific gaps.
+
+PHASE 1 — THREAD RECOVERY Recover all available material relating to
+Twenty-Five Years After 9/11, 25th Anniversary research, Eden
+Initiative, alternative-history research, 2001–2026 timeline, post-9/11
+mobilization, development counterfactuals, Eden manifesto, Eden research
+thesis and 2026–2051 forward programme. Known prior artifacts may
+include: Eden_Initiative_White_Paper_25_Years_After_9-11_2026
+Eden_Initiative_Step2_Alternative_History_Research_Review
+Eden_Initiative_Manifesto_Research_Thesis_2026_Enhanced and related
+source/research material. Do not assume a referenced artifact is
+available. Locate and verify it before relying on it. Build the
+canonical research corpus. Recover claims, sources, citations,
+calculations, tables, timelines, arguments, counterarguments,
+methodology, previous conclusions and drafts. Classify: FACT /
+CALCULATION / ESTIMATE / ASSUMPTION / COUNTERFACTUAL / INTERPRETATION.
+Automatically hand off to ARGOS.
+
+PHASE 2 — ARGOS RESEARCH COMPLETION Verify the corpus. Historical
+period: 2001–2026. Forward analytical period: 2026–2051. Research
+domains: security expenditure; resource mobilization; water; sanitation;
+energy; food; agriculture; health; education; infrastructure;
+manufacturing; science; R&D; technology; communications; institutional
+capacity; human development; resilience. Counterfactual scenarios: 1% /
+5% / 10% / 25% / equivalent mobilization. Do not model money as the only
+constraint. Include deployment capacity, human capital, institutions,
+supply chains, manufacturing, technology availability, politics,
+geography, maintenance and governance. Use RED TEAM analysis.
+
+PHASE 3 — ARGOS PUBLICATION PROGRAMME Establish EIRS — Eden Initiative
+Research Series. Flagship: EIRS-2026-001 — Twenty-Five Years After 9/11
+Working subtitle: What Humanity Chose to Optimize — and What the Next
+Twenty-Five Years Could Build Mine the corpus for every genuinely
+independent publication it supports. Potential subjects include scale of
+mobilization; water; sanitation; energy; food systems; agriculture;
+human-scale infrastructure; manufacturing; technology deployment;
+deployment gap; security and resilience; human development;
+institutional capacity; cost of delay; local capability; resilient
+communities; 2026–2051 scenarios; Eden deployment doctrine; Eden
+technology doctrine; Eden measurement framework. Do not force
+unsupported papers. Create EIRS PUBLICATION MATRIX.
+
+PHASE 4 — CASPER ENGLISH PUBLICATIONS Create canonical English
+publications. For the flagship include as appropriate: title; abstract;
+executive summary; research question; historical context; methodology;
+evidence; analysis; counterfactual scenarios; limitations;
+counterarguments; findings; 2026–2051 implications; conclusion;
+references; appendices. Generate appropriate derivative publications:
+policy briefs, executive editions, public editions, funder briefs, web
+articles, FAQs and data notes.
+
+PHASE 5 — ARGOS QA Audit sources, citations, numbers, dates, units,
+calculations, assumptions, scenario boundaries, geography, populations,
+chronology, counterarguments and limitations. Red-team conclusions.
+Return defects to CASPER and repeat automatically until BLOCKING=0 and
+MAJOR=0. Lock EN_MASTER_APPROVED.
+
+PHASE 6 — AOS v2.0 Create synchronized EN, SK and DE editions. English
+remains canonical. Create TERMINOLOGY_MASTER, TRANSLATION_MEMORY and
+SEGMENT_MAP. Apply SEMANTIC LOCK, NUMBER LOCK, CITATION LOCK, FORMAT
+MIRROR and SOURCE VERSION LOCK. Every approved publication must be
+produced as EN TXT, EN RTF, SK TXT, SK RTF, DE TXT and DE RTF. Run
+independent Slovak and German language QA, then ARGOS
+factual-equivalence QA. Correct automatically.
+
+PHASE 7 — WEAVER Create the complete multilingual project website with
+/en/ /sk/ /de/ routing.
+
+SITE STRUCTURE HOME 25 YEARS AFTER 9/11 TIMELINE — 2001–2026 THE
+COUNTERFACTUAL — 1% / 5% / 10% / 25% / Equivalent Mobilization RESEARCH
+— Water / Sanitation / Energy / Food / Agriculture / Health / Education
+/ Infrastructure / Manufacturing / Science & Technology / Human
+Development / Security & Resilience PUBLICATIONS — searchable/filterable
+EIRS library NEXT 25 YEARS — 2026–2051 EDEN INITIATIVE — Research /
+Engineering / Prototype / Deployment / Measurement / Publication
+METHODOLOGY SOURCES & DATA ABOUT CONTACT
+
+Each publication page: ID / title / abstract / version / authors / date
+/ research domain / executive summary / web edition / references /
+related research / downloads. Downloads: EN TXT / EN RTF / SK TXT / SK
+RTF / DE TXT / DE RTF.
+
+WEBSITE VISUAL LANGUAGE Professional international research institute.
+Evidence first. Avoid sensationalism. Visually distinguish ACTUAL
+HISTORY / COUNTERFACTUAL / FORWARD SCENARIO. Use meaningful timelines,
+charts, comparison graphics, maps, data visualizations and publication
+cards. Use @IRIS for original supporting imagery where appropriate.
+Never present generated imagery as documentary historical evidence.
+
+WEBSITE ENGINEERING Mobile first; fast; minimal unnecessary
+dependencies; semantic HTML; accessibility-conscious; SEO optimized.
+Implement canonical URLs, hreflang, OpenGraph, structured data,
+publication metadata, sitemap.xml, robots.txt, responsive images and
+lazy loading. Create PUBLICATION_MANIFEST.json as the publication source
+of truth.
+
+PHASE 8 — FINAL QA ARGOS: facts and research. CASPER: editorial
+consistency. AOS: EN/SK/DE equivalence. WEAVER: functionality,
+accessibility, performance, SEO and download integrity. Errors return
+automatically to their owner and affected downstream stages are
+retested.
+
+PHASE 9 — PACKAGE Follow Universal Project Packaging Standard. Root:
+EDEN_25_YEARS_2001-2026_v1.0/ 00_README/ 01_SOURCE/ 02_RESEARCH/
+03_PUBLICATIONS/ 04_TRANSLATION/ 05_WEBSITE/ 06_QA/ 07_DEPLOYMENT/
+08_ARCHIVE/ Use TXT for human-readable instructions wherever practical.
+Include QUICKSTART.txt, PROJECT_INFO.txt, PUBLICATION_INDEX.txt,
+VERSION_HISTORY.txt, RESEARCH_METHOD.txt, SOURCE_REGISTER.txt,
+TRANSLATION_TERMINOLOGY.txt, TRANSLATION_QA.txt, FINAL_QA.txt,
+DEPLOYMENT_INSTRUCTIONS.txt, WEBSITE_MAINTENANCE.txt and
+PUBLICATION_MANIFEST.json.
+
+CONTROL UI Display PROJECT STATUS / CURRENT PHASE / CURRENT PUBLICATION
+/ PROGRESS / COMPLETED / ACTIVE / QUEUED / BLOCKING ISSUES / NEXT
+OPERATION. Commands: NEXT / AUTO / STATUS / DETAIL / PUBLICATIONS /
+RESEARCH / LANGUAGES / WEBSITE / QA / FILES / PACKAGE / PAUSE / RESUME /
+HELP. DEFAULT = AUTO. Do not stop at routine phase boundaries.
+
+COMPLETION CONDITION COMPLETE means: research corpus recovered; research
+verified; publication matrix completed; approved publications generated;
+English masters approved; Slovak editions generated; German editions
+generated; TXT generated; RTF generated; translation QA passed;
+multilingual website completed; publication downloads connected;
+research QA passed; editorial QA passed; technical QA passed; deployment
+instructions generated; final package built.
+
+Never declare completion for work not actually performed. If the
+environment prevents a required operation, report the exact remaining
+operation.
+
+BEGIN NOW.

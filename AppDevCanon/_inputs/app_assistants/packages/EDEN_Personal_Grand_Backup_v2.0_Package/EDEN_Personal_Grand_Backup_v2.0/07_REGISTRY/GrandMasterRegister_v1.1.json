@@ -1,0 +1,86 @@
+{
+  "package": {
+    "name": "GRANDMASTER — EDEN/AppDev Canonical Backup",
+    "version": "1.1",
+    "owner": "Lucas Buzek",
+    "date": "2026-09-22"
+  },
+  "root_identity": {
+    "id": "eden",
+    "name": "EDEN",
+    "expansion": "Engineering, Development, Exploration & Nature"
+  },
+  "profiles": [
+    "LucasPersonalGrandMaster",
+    "Family",
+    "Friends",
+    "Official_Public"
+  ],
+  "apps": [
+    "BIFROST",
+    "HEIMDALL",
+    "HERMES",
+    "MONETA",
+    "CAMEL",
+    "SKALD",
+    "CURATOR",
+    "CASPER",
+    "LINGUA",
+    "THEMIS",
+    "HESPERA",
+    "HESTIA",
+    "NANDI",
+    "PROMETHEUS",
+    "DAEDALUS",
+    "cloud9"
+  ],
+  "helpers": [
+    "CONDUCTOR",
+    "AOS",
+    "LCAS",
+    "ARGOS",
+    "ARTEMIS",
+    "IRIS",
+    "FORGE",
+    "ORACLE",
+    "THREAD",
+    "WEAVER",
+    "READ",
+    "MIRROR",
+    "APPLE",
+    "CHRONOS",
+    "TINY_HELPERS"
+  ],
+  "lingua": {
+    "canonical_fallback": "English",
+    "private_baseline": [
+      "English",
+      "Slovak"
+    ],
+    "packs": [
+      "Common Tongues",
+      "Atlantic Light",
+      "Amber Road",
+      "Africa Connect",
+      "Atlas & Cedar",
+      "Baobab Roads",
+      "River of Many Voices",
+      "Jasmine Coast",
+      "Under Southern Stars",
+      "Silk & Sand",
+      "Monsoon Letters",
+      "Bamboo & Ink",
+      "Islands of Morning",
+      "My Own Road"
+    ]
+  },
+  "unresolved": [
+    "PROMETHEUS/DAEDALUS mapping",
+    "CHRONOS expansion",
+    "cloud9 boundary",
+    "Tiny Helper roles",
+    "name collision relationships",
+    "Bamboo & Ink exact 7",
+    "Islands of Morning exact 7"
+  ]
+}

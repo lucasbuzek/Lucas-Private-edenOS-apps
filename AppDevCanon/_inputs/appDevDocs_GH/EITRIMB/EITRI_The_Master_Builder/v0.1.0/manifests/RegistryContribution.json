@@ -1,0 +1,43 @@
+{
+  "id": "eden.eitrimb",
+  "display_name": "EITRI — The Master Builder",
+  "role": "Software Development Governor",
+  "version": "0.1.0",
+  "channel": "EXPERIMENTAL",
+  "audience": "PRIVATE — Lucas",
+  "authority": "Development/Admin",
+  "ui": "LCAS FULL",
+  "status": "PRODUCED",
+  "runtime_verification": "UNKNOWN",
+  "modules": [
+    {
+      "id": "development-readiness",
+      "version": "1.0",
+      "status": "INTEGRATED",
+      "modes": ["STARTER", "UPDATE", "AUDIT", "FEATURE"]
+    },
+    {
+      "id": "capability-provider-discovery",
+      "version": "1.0",
+      "status": "INTEGRATED",
+      "human_authorization_required": true,
+      "resolution_order": [
+        "EXISTING_PROJECT_CAPABILITY",
+        "NATIVE_LOCAL",
+        "INSTALLED_CONNECTED_PROVIDER",
+        "SEARCH_AVAILABLE_PLUGINS_APPS",
+        "REQUEST_INSTALL_CONNECTION",
+        "ALTERNATE_PROVIDER",
+        "REDUCED_CAPABILITY_SAFE_PATH",
+        "GENUINE_BLOCKER"
+      ]
+    }
+  ],
+  "convergence": {
+    "date": "2026-09-30",
+    "source_comparison": "PASS",
+    "plugin_discovery_integration": "PASS",
+    "project_handoff_created": "PASS",
+    "runtime_verification": "UNKNOWN"
+  }
+}

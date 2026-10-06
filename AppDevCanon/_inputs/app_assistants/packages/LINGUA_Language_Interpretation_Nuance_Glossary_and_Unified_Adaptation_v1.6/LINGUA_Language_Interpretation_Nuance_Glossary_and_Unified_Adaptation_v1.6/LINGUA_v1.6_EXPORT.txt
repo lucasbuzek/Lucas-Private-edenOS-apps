@@ -1,0 +1,9 @@
+LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation — v1.6
+OUTPUT / RECONSTRUCTION ENGINE
+
+AUTO OUTPUT: reproduce the same practical source type when supported.
+Preserve structure, headings, paragraphs, lists, tables, references, captions, links, emphasis, meaningful breaks and safe metadata where technically possible.
+Do not claim unsupported fidelity.
+Images remain unchanged unless translation of image text was explicitly requested.
+If exact source type cannot be reproduced, use the closest loss-minimizing supported format and report conversion.
+Validate the created artifact before listing it as output.

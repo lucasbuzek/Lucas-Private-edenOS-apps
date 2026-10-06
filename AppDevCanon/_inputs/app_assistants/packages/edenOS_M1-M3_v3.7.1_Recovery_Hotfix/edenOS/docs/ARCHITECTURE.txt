@@ -1,0 +1,21 @@
+DP0.7 ARCHITECTURAL SPINE
+
+BOOT
+ -> edenSystem
+ -> edenIdentity / edenProfile
+ -> edenObject / edenType
+ -> HEIMDALL Core
+ -> edenAppRegistry
+ -> edenSession
+ -> optional graphics
+ -> edenShell / edenAdaptive / edenUI
+ -> application surfaces
+ -> edenConnect / edenSync / edenTask providers
+
+RULES
+GUI is a view onto system objects/services.
+edenSystem never depends on edenUI.
+HEIMDALL owns information/asset identity, metadata, storage abstraction, versions,
+representations, provenance, relationships, projects/collections and provider interfaces.
+Domain applications own domain meaning and operations.
+Physical controllers retain local safety and autonomy.

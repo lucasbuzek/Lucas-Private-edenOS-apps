@@ -1,0 +1,21 @@
+LCAS — LIVE CONTROL, ACTIVITY & STATUS
+
+LCAS is WEAVER's canonical control/status vocabulary across all branches.
+Legacy aliases: LUCAS, UIbasic. These may be recognized during migration but must not be emitted in new project artifacts.
+
+Minimum status panel:
+PROJECT / TRACKING PROJECT
+IDENTITY / HIERARCHY
+BRANCH
+STAGE / STEP
+OVERALL % COMPLETE / REMAINING
+COMPLETED
+ACTIVE / READY
+REMAINING PIPELINE
+BLOCKERS
+QA / TESTING
+ARTIFACTS / RELEASES
+DECISIONS
+NEXT ACTION
+
+Percentages must be evidence-based. Unknown branch state remains UNKNOWN or NOT_YET_IMPLEMENTED rather than being estimated optimistically.

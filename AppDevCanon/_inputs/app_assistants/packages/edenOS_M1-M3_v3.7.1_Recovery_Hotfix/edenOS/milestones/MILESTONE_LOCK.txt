@@ -1,0 +1,14 @@
+edenOS MILESTONE LOCK — 2026-09-21
+
+M1 — INVESTOR VISION SYSTEM
+Bootable custom Linux; edenOS GUI; real OS fundamentals; deterministic interactive previews for unfinished capabilities. Every visible control works, demonstrates a deterministic preview, or is clearly marked future/demo.
+
+M2 — WORKSPACES
+Operational Workspace -> Project -> Helper -> Module -> Function -> Task hierarchy. Persistent local workspace/project state, LCAS project state, CONDUCTOR orchestration contract, Search/Explore relationships, restoration/portability foundations.
+
+M3 — STARTER APPS
+First functional first-party edenOS application set using shared HEIMDALL/BIFROST/platform contracts. Mature engines and web portals remain replaceable providers.
+
+M4 — DEEPER INTEGRATION
+M5 — HESPERA / gardenOS management and update deployment
+M6 — expanded applications and system polish

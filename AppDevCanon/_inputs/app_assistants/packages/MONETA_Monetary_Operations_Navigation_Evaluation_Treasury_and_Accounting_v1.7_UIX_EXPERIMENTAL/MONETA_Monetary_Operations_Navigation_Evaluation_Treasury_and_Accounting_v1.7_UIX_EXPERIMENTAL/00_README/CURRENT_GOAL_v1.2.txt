@@ -1,0 +1,18 @@
+MONETA CURRENT DEVELOPMENT GOAL — v1.2
+ONE CAPABILITY SYSTEM · THREE EXECUTION ENVIRONMENTS · NO PARALLEL REIMPLEMENTATION.
+
+B0 — IN-CHAT HELPER
+Reference prompt behavior, routing, research, artifacts, approvals, handoffs, provenance and LCAS state.
+
+B1 — WEB AGENT
+Browser-accessible implementation using the same canonical capability IDs/contracts, with workspaces, tasks,
+files, approvals, integrations and richer visualization as implemented.
+
+B2 — PRIVATE DESKTOP AGENT
+Private macOS/Windows implementation using the same canonical capability IDs/contracts. OS-specific access is
+adapter-owned. Local-only, hybrid and cloud/API-assisted provider profiles are execution modes, not capabilities.
+
+MANDATORY FLOW
+RECOVER → EXISTING-SOLUTION CHECK → COMPARE → KEEP/REUSE/INTEGRATE/ADAPT/EXTEND/REPLACE/BUILD_NEW
+→ IMPLEMENT → VERIFY.
+BUILD_NEW requires a documented material gap.

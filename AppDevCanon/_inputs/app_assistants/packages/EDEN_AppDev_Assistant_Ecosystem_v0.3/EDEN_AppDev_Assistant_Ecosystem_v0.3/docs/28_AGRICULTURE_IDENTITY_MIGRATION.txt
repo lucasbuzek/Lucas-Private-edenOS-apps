@@ -1,0 +1,11 @@
+CURRENT
+HESPERA — canonical agriculture/growing Application.
+HESTIA — canonical agriculture/growing Product / physical local-first control system.
+NANDI — modular agricultural helper/agriBot and field robotics/mobility platform.
+
+LEGACY
+gardenOS / GardenOScore — legacy/internal provenance only.
+
+GardenOS remains an established architectural/design reference: local-first,
+standalone core, optional nodes/server, progressive capability, hardware
+abstraction, quiet automation, recovery and user-data survival.

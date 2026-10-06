@@ -1,0 +1,22 @@
+NAMING RULES — APPLIED TO MONETA PACKAGE — v1.1
+
+AUTHORITATIVE PROJECT STANDARD APPLIED
+- Establish/retain meaningful acronym, expanded functional name, conceptual meaning, version and purpose.
+- Do not silently rename established projects.
+- Canonical display: [ACRONYM] — [Expanded Functional Meaning] — v[VERSION].
+- Root: [ACRONYM]_[Expanded_Name]_v[VERSION]/
+- Human-readable documentation defaults to .txt.
+- Use concise versioned internal filenames.
+- Required human documentation includes README, INSTRUCTIONS, QUICKSTART where useful, MODULES when modules exist,
+  and CHANGELOG for releases.
+- Package must include functional project files as well as instructions.
+- Validate canonical name, expansion, conceptual meaning, version, internal references, obsolete filenames,
+  contradictory duplicate masters and referenced modules.
+- ZIP: [ACRONYM]_[Expanded_Name]_v[VERSION]_Package.zip containing one root directory.
+
+MONETA-SPECIFIC APPLICATION
+Canonical identity: MONETA — Monetary Operations, Navigation, Evaluation, Treasury & Accounting — v1.1
+Conceptual meaning: a corporation-scale finance intelligence organization whose specialist companies remain one
+coherent edenOS capability hierarchy.
+NUNTIUS is the canonical reporting-company name from v1.1; Finance SCRIBE is retained as a legacy alias only.
+PATRON remains canonical pending an explicit approved rename.

@@ -1,0 +1,39 @@
+Canon Supersession & Cleanup Ledger
+Version: 1.8
+Date: 2026-09-24
+
+ACTIVE/PROMOTED
+- smallest adequate implementation; recover/discover/reuse/integrate before build
+- native/user-installed/network/provider capabilities first-class
+- information may remain in authoritative existing systems
+- GrandMasterRegister owns entity catalogue; AppDevRules/edenOSrules contain no catalogue; lookup user opt-in
+- release channel OFFICIAL/DEVELOPMENT/EXPERIMENTAL
+- authority STANDARD/ADMIN as independent dimension
+- audience PRIVATE/FAMILY/FRIENDS/PUBLIC as independent deployment dimension
+- nested Family/Friends groups/users; Recommended/Custom inheritance/deltas
+- BIFROST deployment composition/handoff for applicable targets
+- capability-aware deployment; simple Nodes/controllers do not inherit irrelevant complexity
+- human-readable TXT access in Lucas Private build
+- Nodes, shared capability independence, control-plane/data-plane separation
+- Web-first testing, LKG, truthful testing, independent version dimensions
+
+SUPERSEDED
+- LCAS as edenOS runtime/service/system operational-state owner; LCAS is Chat UI only
+- AOS as separate current global execution owner; historical identity preserved as provenance
+- historical HEIMDALL ownership of EDEN-generic identity/registry/location/provider architecture
+- Keychain as universal credential architecture
+- BIFROST specialist ownership inferred from discovery/connection
+- flat ADMIN/DEVELOPMENT combined access category
+- mixing PRIVATE/FAMILY/FRIENDS/PUBLIC with release maturity
+- embedding EDEN App/Helper lists in AppDevRules or edenOSrules
+
+EXPERIMENTAL BRIDGES
+- current direct BIFROST Experimental App update/install path
+- direct BIFROST device OTA path used for integration testing
+These may bootstrap rapid testing but never establish permanent ownership.
+
+UNRESOLVED
+- exact PROMETHEUS/DAEDALUS Mechanical vs Electrical mapping; do not guess.
+
+HISTORICAL SOURCE RULE
+Older files remain provenance/recovery evidence. Conflicting historical text cannot promote itself back into active canon.

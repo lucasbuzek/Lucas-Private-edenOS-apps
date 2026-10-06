@@ -1,0 +1,505 @@
+edenOSrules — Canonical Rules & Design Canon
+
+Status: CANONICAL Scope: edenOS / EDEN AppDev Canonical name:
+edenOSrules
+
+1.  edenOS canonical foundation
+
+edenOS is the reusable platform/system layer of EDEN. Applications
+retain their own domain ownership; edenOS provides the common substrate
+that allows them to install, operate, integrate, discover capabilities,
+exchange information and compose into a coherent system.
+
+Hierarchy: EDEN → AppDev → edenOS → Apps / Products / Workspaces /
+shared capabilities
+
+edenOS is not one giant application and must not absorb the domain logic
+of its Apps.
+
+2.  Design Mantra
+
+LOCAL FIRST. USER DATA OUTLIVES SOFTWARE. DATA BELONGS TO THE USER, NOT
+THE FIRMWARE IMAGE. INTEGRATIONS ARE ADAPTERS, NOT OWNERS. MIGRATE, DO
+NOT RESET. RECOVERY IS A PRODUCT FEATURE. SAFETY IS ARCHITECTURE.
+QUALITY IS MEASURED, NOT ASSUMED. POLISH IS FUNCTIONAL. DEFAULTS SHOULD
+BE GOOD ENOUGH TO SUCCEED. DESIGN FOR THE COMMON CASE; RETAIN POWER FOR
+THE EXPERT. PROGRESSIVE DISCLOSURE. SHOW STATE. CONFIRM CONSEQUENCE.
+MAKE AUTOMATION EXPLAINABLE. BUILD A SMALL CORE AND MOVE WEIGHT OUTWARD.
+REMOVE BEFORE ADDING. ONE AUTHORITATIVE PATH. DETAIL ON DEMAND. VERIFY
+BEFORE DESTRUCTIVE ACTION.
+
+Overarching EDEN principle: “Beauty, capability and dignity should not
+be premium features.”
+
+3.  Existing-solution preflight
+
+REQUIREMENT → CHECK PRIOR ART → VERIFY MATURITY / FIT / LICENSE /
+RESOURCES / SAFETY → COMPARE KEEP / REMOVE / SIMPLIFY / REUSE / ADAPT /
+BUILD / REPLACE → REUSE / INTEGRATE / ADAPT WHEN SUITABLE → CUSTOM BUILD
+ONLY WHEN JUSTIFIED → VERIFY
+
+Engineering shorthand: Fresh architecture. Proven components. Integrate
+→ Adapt → Optimize → Customize UX. Recreate only when justified by
+evidence.
+
+Generated ≠ Saved ≠ Verified ≠ Consolidated ≠ Released. Static checks ≠
+compile. Compile ≠ physical verification.
+
+4.  Local-first / edge autonomy
+
+Essential functionality must continue without the cloud.
+
+Portability stack: APPLICATION → EDEN/DOMAIN API → PLATFORM CORE →
+PLATFORM ADAPTER → DRIVER → HARDWARE
+
+Essential local operation and safety must not depend upon Internet
+connectivity, HEIMDALL, a remote server or a phone. Real-time control
+stays local; information/history/context can travel through a separate
+data path.
+
+5.  Small core, rich composition
+
+Small by default. Rich by composition. Modular underneath. Simple on the
+surface.
+
+A capability useful to multiple Apps should, where practical, become an
+independently consumable shared capability with a stable contract.
+
+Preferred: APP A ─┐ APP B ─┼→ SHARED CAPABILITY → adapters/providers
+BIFROST┘
+
+Not by default: APP → BIFROST → capability
+
+BIFROST may discover, integrate, permission, coordinate and expose
+capabilities without becoming a mandatory gateway or single point of
+failure.
+
+6.  Clear ownership
+
+Each function needs one authoritative owner.
+
+Apps own domain intent and domain logic. Shared capabilities own their
+generic contracts. Providers/adapters implement
+external/platform-specific connections. edenOS provides common
+infrastructure.
+
+BIFROST — Base App/Gateway; connects and keeps the EDEN environment.
+GrandMasterRegister — authoritative identity/capability relationship
+registry; an artifact/service, not another App. CONDUCTOR —
+orchestration and coordination. AOS — persistent autonomous execution,
+sequencing, dependencies, recovery and completion. LCAS — truthful Live
+Control, Activity & Status; does not own orchestration intelligence.
+HEIMDALL — workspace/information organization and composition. APPLE —
+architecture/product/performance/lean-engineering principles and review
+capability. ARGOS — evidence/research/opposition/synthesis. FORGE —
+deterministic/software implementation, build, verification and packaging
+where applicable. Specialist Apps retain their respective domains.
+
+7.  Canonical identity and namespace
+
+Canonical runtime human-readable identity: APP.SUBORDINATE
+
+Examples: IRIS.RESEARCH IRIS.COMPILER ORACLE.DATA READ.BOOKMARK
+WEAVER.WEBSEEKER
+
+Stable canonical IDs preserve software identity. Display surfaces may
+show the shorter subordinate name when App context is already
+unambiguous.
+
+Generic scoped module names do not constitute a global conflict merely
+because another App uses the same unqualified word.
+
+Historical aliases belong in provenance/migration records, not the
+active namespace.
+
+8.  Installation canon
+
+One obvious primary Install action. Install does not mean install
+everything.
+
+INSTALL / RECOMMENDED — balanced and device-aware; detect and reuse
+adequate existing capabilities, install/configure useful missing
+components, defer heavyweight/infrequent optional components where
+practical. LEAN — minimum useful everyday core. FULL — all appropriate
+supported capabilities for that system while avoiding pointless
+duplication or incompatibility. CUSTOM — explicit control over
+capabilities, providers, integrations and optional components.
+
+9.  Configuration canon
+
+Configuration depth: SIMPLE → ADVANCED → EXPERT
+
+Development/Diagnostic controls remain separate where applicable.
+
+Assistance layer: RECOMMENDED / GUIDED / AUTOMATED
+
+These are not additional expertise levels. They assist configuration of
+the existing levels.
+
+10. Migration and updates
+
+Migration: DETECT → VALIDATE → BACKUP/STAGE → MIGRATE → VERIFY → COMMIT
+→ ROLLBACK ON FAILURE
+
+Bootstrap: UNPACK → VERIFY → DETECT EXISTING EDEN/INSTALL → DISCOVER
+EXISTING SUITABLE CAPABILITIES → BACKUP/STAGE → TRANSACTIONAL
+INSTALL/UPDATE → PRESERVE STATE → VERIFY → ATOMIC COMMIT → LAUNCH
+INSTALLED COPY → HEALTH CHECK → OPEN UI → RETURN TERMINAL CONTROL
+
+Update: CHECK → DOWNLOAD/STAGE → VERIFY → BACKUP → UPDATE →
+TEST/REGRESSION → COMMIT
+
+Failure returns to Last Known Good.
+
+11. Consequential actions and safety
+
+Consequential action: REQUEST → VALIDATE → SAFETY CHECK → EXECUTE →
+CONFIRM
+
+Physical automation: OBSERVATION → CONDITION → POLICY → INTENT →
+PLATFORM SAFETY/VALIDATION → ACTION → CONFIRMATION → EVENT/EXPLANATION
+
+Desired state is not confirmed state. Unknown outputs do not
+automatically activate. Expired dangerous commands are not replayed.
+Remote commands cannot bypass local safety.
+
+12. Testing and truthful state
+
+Canonical test vocabulary: PASS / FAIL / UNKNOWN / SKIPPED / N/A
+
+UNKNOWN is never PASS. PASS requires evidence. Platform behavior remains
+UNKNOWN until tested on that target.
+
+A localhost response is not proof that the intended build is running.
+edenOS should expose product/object ID, version, build ID, installation
+identity/path and integrity/manifest identity, and explicitly handle
+stale processes and port collisions.
+
+13. Automatic development workflow
+
+GOAL/CHANGE → LOAD BOUNDED CANON + PROJECT CONTEXT → INSPECT CURRENT
+SOURCE/STATE → PLAN → SEARCH/REUSE BEFORE CREATING → IMPLEMENT → STATIC
+CHECKS → BUILD → TEST → ANALYZE FAILURES → BOUNDED AUTO-REPAIR/RETRY →
+REGRESSION TEST → PACKAGE → REGISTER
+BUILD/REVISION/HASH/PROVENANCE/EVIDENCE → DISTRIBUTE → AUTHORIZED
+DEPLOYMENT → POST-DEPLOYMENT HEALTH CHECK → LCAS ACTUAL STATE →
+CHECKPOINT/LKG/ROLLBACK
+
+CONDUCTOR coordinates. AOS carries persistent/restartable work. FORGE
+implements/builds/tests/packages where appropriate. ARGOS handles
+difficult evidence/research questions. APPLE reviews
+architecture/product/UX. BIFROST maintains system integration and
+registration. LCAS records/exposes actual operational state.
+
+14. AI canon
+
+AI reasons; deterministic services execute. USE THE LOWEST SUFFICIENT
+CAPABILITY.
+
+Do not invoke a large remote AI model for a task a deterministic parser,
+local service, small model or platform API can reliably perform.
+
+Cloud AI enhances edenOS; it must not become a prerequisite for
+deterministic/local operation.
+
+15. Data ownership, durability and provenance
+
+User data must survive: - App replacement - firmware replacement -
+edenOS upgrades - provider changes - migration to another machine -
+removal of an integration
+
+Apps/providers are views and processors over durable user-owned
+information, not owners of that information.
+
+Important artifacts should preserve enough provenance to answer: What is
+it? Where did it come from? What version is it? What produced or changed
+it? Was it verified? What currently depends on it? Can the previous
+state be recovered?
+
+16. Quiet automation
+
+Routine successful automation should generally remain quiet.
+
+Normal experience: concise human summary at an appropriate moment rather
+than endless telemetry and notifications.
+
+Surface exceptions, safety problems, failures, meaningful changes,
+decisions requiring the user, and genuinely useful next actions.
+
+Detailed telemetry remains available through LCAS/detail-on-demand.
+
+17. Localization
+
+English = canonical/reference and universal fallback.
+
+Private / Custom / Experimental = EN/SK baseline, including UI where
+possible and shipped operational documentation.
+
+Final / Public = multilingual-by-design through LINGUA from one
+codebase.
+
+UI language, input language, source/content language and output/document
+language remain separable.
+
+18. Apple-centric Private build without platform lock-in
+
+The Private edenOS environment is Apple-centric by default: macOS,
+iPhone/iOS, iPad/iPadOS, Safari and suitable native Apple capabilities
+receive first-class optimization where materially useful.
+
+edenOS itself remains portable and open/cross-platform in architecture.
+
+Shared cores/contracts remain portable; Apple implementations are
+first-class native adapters alongside other platform
+adapters/distributions.
+
+19. Recovery and continuity
+
+RECOVER / REUSE LAST KNOWN GOOD BEFORE REDESIGN.
+
+Do not rebuild what can be recovered. Do not reset what can be migrated.
+Do not replace what can be repaired. Do not fork what can share a core.
+Do not duplicate what can be composed. Do not claim verification without
+evidence.
+
+20. Canonical operating summary
+
+LOCAL FIRST. USER-OWNED DURABLE DATA. SMALL CORE, RICH COMPOSITION. ONE
+AUTHORITATIVE OWNER. SHARED CAPABILITIES WITHOUT FORCED GATEWAY
+DEPENDENCY. MIGRATE, DO NOT RESET. RECOVER BEFORE REDESIGN. VERIFY
+BEFORE CLAIMING SUCCESS. QUIET AUTOMATION. LOWEST SUFFICIENT CAPABILITY.
+NATIVE OPTIMIZATION WITHOUT PLATFORM LOCK-IN. BEAUTY, CAPABILITY AND
+DIGNITY SHOULD NOT BE PREMIUM FEATURES. 21. Identity reconciliation and
+GrandMasterRegister canon
+
+ONE ACTIVE IDENTITY → ONE CANONICAL ID → ONE AUTHORITATIVE DEFINITION →
+ONE CURRENT ACTIVE RECORD.
+
+Renames preserve stable identity and genealogy. Superseded names remain
+aliases/provenance, never parallel active identities.
+
+GrandMasterRegister is the authoritative identity and capability
+relationship graph for the active EDEN/edenOS environment.
+
+Canonical relationship vocabulary includes, where applicable: parent
+module_of subordinate_of capability_provider_for invoked_by available_to
+depends_on integrates_with representation_of supersedes superseded_by
+legacy_aliases
+
+Historical records may preserve prior states, but active runtime
+registries expose only the current canonical identity.
+
+22. Domain ownership and non-duplication
+
+An App may expose, compose or invoke another capability without cloning
+its implementation or becoming its new owner.
+
+A capability useful to multiple Apps should, where technically
+practical, remain independently consumable through a stable shared
+contract rather than being duplicated inside each consuming App or made
+reachable only through a gateway.
+
+Composition does not transfer domain ownership.
+
+23. Identity relationship classification
+
+Similar names, related functions or shared concepts do not automatically
+mean duplicate identities.
+
+Before changing architecture or identity, classify the relationship as
+one of: DUPLICATE REPRESENTATION / ADAPTER OVERLAP DISTINCT OBSOLETE
+
+A duplicate name does not imply two valid identities. Prove
+independently necessary identities before creating parallel active
+records or renaming them.
+
+24. Namespace qualification and collision handling
+
+APP.SUBORDINATE is the canonical human-readable scoped identity pattern
+for App-owned subordinates/modules where applicable.
+
+Namespace qualification resolves lexical collisions; it does not justify
+two independently active implementations of the same authoritative
+capability.
+
+Do not rename for cosmetic consistency. Scoped generic names are valid
+when APP.SUBORDINATE makes identity unambiguous.
+
+Rename only for a genuine identity/semantic conflict or an explicit
+product decision.
+
+25. Truthful operational state
+
+REQUESTED ≠ PLANNED ≠ EXECUTING ≠ COMPLETED ≠ VERIFIED.
+
+Intent, desired state and scheduled work must never be presented as
+actual completed state.
+
+LCAS reports actual observed operational state and clearly distinguishes
+it from requested, planned, inferred or expected state.
+
+26. Build identity and provenance
+
+Every distributable or deployable build should preserve, where
+applicable: product/object identity canonical version build ID source
+revision artifact hash/checksum installation identity/path
+manifest/integrity identity producing workflow/tool/provider build and
+test evidence verification status deployment target/state provenance and
+predecessor/Last-Known-Good relationship
+
+A build is not VERIFIED merely because it was generated, packaged,
+copied, served or launched.
+
+27. Checkpoint and Last-Known-Good protection
+
+A destructive migration, update, repair or replacement must not destroy
+the last verified recoverable state.
+
+BACKUP/STAGE → CHANGE → VERIFY → COMMIT.
+
+Commit the new state only after required verification succeeds.
+
+On failure, preserve evidence and restore or make available the Last
+Known Good state according to the applicable recovery policy.
+
+28. Graceful capability degradation
+
+Failure, absence or disconnection of an optional provider, integration,
+App, remote service or AI capability should, wherever technically
+practical, degrade only the dependent capability rather than edenOS as a
+whole.
+
+Core local operation, safety and unrelated capabilities should continue.
+
+No optional gateway, cloud provider, AI provider or integration should
+become an accidental single point of failure.
+
+29. Offline deterministic continuity
+
+Approved deterministic workflows, presets and locally available
+capabilities should continue without ChatGPT/OpenAI or another remote AI
+provider wherever the task does not intrinsically require that provider.
+
+Remote AI is an enhancement/provider, not the owner of deterministic
+local workflows.
+
+Provider loss should not invalidate locally owned user data, canonical
+configuration, deterministic automation or recoverable system state.
+
+30. Cross-App composition and Custom Apps
+
+HEIMDALL Workspaces and compatible Custom Apps may compose authorized
+functions, views, actions, forms, searches, reports, content panels and
+capabilities from multiple EDEN Apps.
+
+A Custom App is normally a saved user-facing composition/profile over
+existing capabilities and data contexts, not a new domain owner.
+
+Composition must not duplicate underlying domain logic or transfer
+ownership of the source capability.
+
+31. Canon evolution and change governance
+
+CANONICAL ≠ IMMUTABLE.
+
+Canon may evolve through an explicit decision and controlled migration.
+
+A newer verified canonical decision supersedes conflicting older active
+definitions while preserving historical provenance, aliases and
+genealogy where useful.
+
+Historical documents, chats, packages and checkpoints are not silently
+rewritten to simulate a history that did not occur.
+
+Current runtime state and current documentation must clearly identify
+the active canon.
+
+32. Naming reconciliation closure
+
+Completed naming decisions remain closed unless an explicit new product
+decision or genuinely contradictory authoritative evidence requires
+reopening them.
+
+Do not repeatedly re-evaluate settled names during unrelated development
+work.
+
+Historical aliases remain available for migration, provenance and
+recovery but must not silently re-enter the active namespace.
+
+Naming work must not block unrelated system development when unresolved
+items can be safely quarantined as provenance or architecture-recovery
+issues.
+
+33. WEB / BROWSER BRIDGE — SHARED CAPABILITY RULE
+
+The Web / Browser Bridge is a first-class independently consumable
+shared EDEN capability. It is not owned exclusively by WEAVER, HERMES,
+BIFROST, or another consuming App.
+
+ARCHITECTURE EDEN WEB CAPABILITY / BROWSER BRIDGE CORE → Safari native /
+WebExtension adapter — first-class for the Apple-centric Private build →
+Chromium WebExtension adapter → Firefox WebExtension adapter →
+default-browser / URL / Share fallback where richer integration is
+unavailable
+
+Apps consume the shared Web capability directly through a stable common
+contract where technically practical.
+
+BIFROST may discover, register, permission, expose, coordinate,
+synchronize and enhance the Web capability, but BIFROST must not become
+a mandatory runtime gateway or single point of failure.
+
+WEAVER owns website design/development/optimization/SEO, not the generic
+Browser Bridge. HERMES may use rich browser/page/form capabilities for
+opportunity and application workflows, but does not own the generic
+Browser Bridge. Other compatible Apps may consume the same capability
+directly.
+
+COMMON CAPABILITY SURFACE The shared contract may expose, where
+supported and authorized: web.open web.fetch web.search web.download
+web.capture active-page URL/title/metadata page/rendered-content
+extraction current user selection page-to-App handoff
+permission-controlled browser actions
+
+Adapters normalize browser/platform differences behind the shared
+contract. Capability/status semantics must truthfully expose what each
+adapter can and cannot do.
+
+INTERACTION PIPELINE For rich browser interaction, use: READ → EXTRACT →
+UNDERSTAND → PREPARE → PREVIEW → AUTHORIZED ACTION → VERIFY
+
+Reading/extraction and external actions remain permission-aware.
+Consequential actions such as submissions, purchases, commitments,
+messages, account changes or irreversible external actions require the
+appropriate authorization and must follow: REQUEST → VALIDATE → SAFETY
+CHECK → EXECUTE → CONFIRM
+
+The Browser Bridge must not silently submit, purchase, commit, publish
+or perform another consequential external action merely because it can
+inspect or prepare the page.
+
+APPLE PRIVATE BUILD Safari receives first-class native optimization and
+integration for the Private Apple-centric environment where materially
+useful. The shared core remains portable and must not become Safari-only
+or Apple-only.
+
+CROSS-PLATFORM Chromium and Firefox use compatible WebExtension/platform
+adapters where practical. Unsupported browser functionality must degrade
+gracefully to available capabilities rather than breaking unrelated EDEN
+operation.
+
+NO EDEN BROWSER REQUIREMENT Do not create a separate EDEN browser merely
+to provide this capability when mature browser-extension/native
+integration can satisfy the requirement. Integrate/adapt existing
+browser platforms first.
+
+LOCAL / PROVIDER INDEPENDENCE Browser integration is an adapter/provider
+layer, not the owner of user data or domain logic. Loss of a browser
+adapter must not invalidate EDEN-owned data, canonical state or
+unrelated capabilities.
+
+VERIFICATION Architecture/design status and implementation status are
+separate. A Browser Bridge or adapter is not considered implemented,
+installed, functional or verified until the relevant build,
+installation, permissions and target-browser behavior have been tested
+with evidence.

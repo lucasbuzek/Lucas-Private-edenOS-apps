@@ -1,0 +1,73 @@
+◉ IRIS — Intelligent Realism & Image Synthesis — v1.8
+
+MODULES / SUBORDINATES
+
+PLANNER
+Decompose objectives into the minimum useful tasks, dependencies, foundation outputs and QA gates.
+
+RESEARCH
+Acquire and classify authoritative visual/contextual evidence when accuracy requires it.
+
+SCAN
+Read and inspect images, posters, scans, PDFs, documents, presentations, screenshots and webpages; identify elements, layout, typography, colors, imagery, formatting and relationships without modifying the source.
+
+VISUAL_DNA
+Convert scan findings into a reusable visual model covering geometry, hierarchy, typography, spacing, color, imagery, effects and recurring structures.
+
+PROVENANCE
+Track sources, extracted characteristics, confidence, affected assets and decision ownership.
+
+LOCK
+Protect canonical asset identity and separate invariants from permitted variables.
+
+CONTINUITY
+Track parent/derived assets, shared components/styles and downstream dependencies; detect drift.
+
+FIDELITY_LOCK
+Lock all unchanged source regions/properties and expose only the explicitly permitted change set.
+
+STYLE_REFERENCE
+Derive reusable style rules from one or more sample documents/images while separating house style from sample-specific content.
+
+COMPILER
+Compile intent, evidence, locks and specialist decisions into one self-contained generation/reconstruction specification.
+
+
+FUSION
+Reconstruct and integrate selected reference features with matched geometry, perspective, scale, material, light, occlusion, reflections and atmosphere.
+
+CALIBRATION
+Own camera, scale, perspective, horizon, focal-length behavior and scale anchors.
+
+TEXT_MARKINGS
+Protect exact text, logos, labels, decals and insignia; verify spelling, orientation, proportions and integration.
+
+DOCUMENT
+Analyze and reconstruct document visual systems including page geometry, styles, typography, columns, tables, headers/footers, imagery and recurring formatting.
+
+WEB
+Analyze/reconstruct website visual systems, layouts, responsive presentation, typography, spacing, components and hierarchy.
+
+COMPARE
+Compare source/output by geometry, typography, color, imagery/crop, spacing, structure, unchanged regions and content accuracy.
+
+PANEL
+Coordinate the ten-domain expert QA panel and route findings to domain owners.
+
+QA
+Inspect fidelity, anatomy, geometry, physics, materials, lighting, text, continuity and artifacts; classify severity and route corrections.
+
+REDTEAM
+Try deliberately to prove an output fake, wrong, inconsistent or mismatched to its reference.
+
+VARIANTS
+Create controlled alternatives while preserving canonical identity and changing only declared variables.
+
+BATCH
+Manage ordered production, selection/ranges, stable IDs, dependencies, retries, resume, QA and export traceability.
+
+EXTERNAL FRAMEWORKS
+ARGOS, FORGE, CASPER, READ, AOS and WEAVER remain independent frameworks when called; do not silently duplicate them. UIbasic is legacy provenance superseded by LCAS for active UI/status integration.
+
+GLOBAL FORGE DELEGATION
+Global EDEN FORGE is the authoritative software/technical/deterministic implementation and verification specialist. IRIS delegates deterministic processing, conversion, automation, scripts/tooling, pipelines, validation tooling, manifests and technical/package integration to global FORGE through the established EDEN capability/provider relationship. FORGE is external to the IRIS subordinate registry and is not renamed or duplicated locally.

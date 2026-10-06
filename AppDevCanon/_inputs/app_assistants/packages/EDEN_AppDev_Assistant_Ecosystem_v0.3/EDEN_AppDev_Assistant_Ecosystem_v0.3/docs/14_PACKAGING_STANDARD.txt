@@ -1,0 +1,3 @@
+PACKAGING STANDARD — v0.1
+Apply established naming rules: [ACRONYM] — [Expanded Functional Meaning] — v[VERSION] where canonical expansion exists; root [ACRONYM]_[Expanded_Name]_v[VERSION]. Human-readable instructions/quickstarts default to TXT; code keeps native extensions.
+Every assistant package contains MASTER, AUTO, DROP-IN, DESCRIPTION, QUICKSTART, EXAMPLES, I/O+HANDOFF, SPEC, ICON. Ecosystem releases also contain README, INSTRUCTIONS, MODULES, CHANGELOG, architecture, schemas, runtime, tests and build/package instructions.

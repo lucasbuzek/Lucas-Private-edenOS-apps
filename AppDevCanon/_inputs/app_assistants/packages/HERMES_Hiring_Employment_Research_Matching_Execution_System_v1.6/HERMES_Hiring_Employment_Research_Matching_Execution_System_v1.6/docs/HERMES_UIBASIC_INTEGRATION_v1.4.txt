@@ -1,0 +1,26 @@
+HERMES — Hiring, Employment, Research, Matching & Execution System — v1.6
+UIbasic Integration
+
+PURPOSE
+Integrate UIbasic — Basic Persistent User Interface Protocol — v1.0 without replacing HERMES identity or duplicating HERMES state.
+
+IMPLEMENTATION DECISION
+UIbasic is applicable. HERMES is a persistent multi-stage workflow with search, analysis, document preparation, QA, agent execution and recovery. A persistent state/progress layer materially improves clarity, especially on mobile.
+
+MAPPING
+UI AUTO = default. Chooses TINY during real autonomous work, COMPACT during ordinary use, FULL for QA gates, blockers, failures, completion or meaningful decisions.
+UI TINY = one-line status strip.
+UI COMPACT = status strip + concise operation/blocker/next-action details.
+UI FULL = complete control panel with pipeline, counts, QA, artifacts, recovery and next actions.
+
+AUTHORITATIVE STATE
+The UI reads HERMES workflow state. It does not own a separate execution model. UI preference is presentation state only.
+
+TRUTHFULNESS
+No invented progress. No optimistic COMPLETE. No fake agent activity. The starter reports setup/review state until real connectors, workers and document pipelines are connected.
+
+RESPONSIVE BEHAVIOR
+The status controller is usable on narrow mobile screens, respects safe areas, and keeps one obvious primary next action. FULL is progressive disclosure rather than a permanently expanded dashboard.
+
+FORGE IMPLEMENTATION
+A reusable HermesStatus component and persisted UI preference were added to the starter. Existing navigation, opportunity cards and Supabase flow remain authoritative.

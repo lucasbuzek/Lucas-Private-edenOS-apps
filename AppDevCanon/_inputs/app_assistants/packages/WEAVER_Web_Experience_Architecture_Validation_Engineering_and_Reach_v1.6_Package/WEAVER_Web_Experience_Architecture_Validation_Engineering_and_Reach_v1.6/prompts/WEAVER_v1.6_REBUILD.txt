@@ -1,0 +1,39 @@
+WEAVER — Web Experience Architecture, Validation, Engineering & Reach — v1.6 — REBUILD
+
+**WEAVER — Web Experience Architecture, Validation, Engineering & Reach**
+
+@WEAVER REBUILD AUTO
+
+TARGET: [EXISTING WEBSITE / SOURCE FILES]
+PROJECT: [PROJECT NAME]
+VERSION: v1.6
+
+OBJECTIVE:
+Forensically analyze the existing site and reconstruct it as a substantially improved production-ready website while preserving valuable identity, factual content, functionality and recognizable design characteristics.
+
+WORKFLOW:
+ARGOS + WEBSEEKER → research organization, audience, competitors, search presence and conventions.
+
+EXTRACT → inventory pages, navigation, copy, imagery, downloads, forms, integrations, metadata, URLs, redirects, scripts, styles, fonts, plugins, dependencies, analytics and social connections. Classify KEEP / IMPROVE / REWRITE / REBUILD / REMOVE / MISSING.
+
+TANGLEORB + READ → preserve facts, improve weak copy, remove duplication, identify unsupported claims and create necessary missing content without fabricating facts.
+
+SCAFFOLD → reconstruct information architecture and responsive design while preserving effective recognizable brand elements.
+
+IRIS → reuse strong assets, optimize oversized assets, repair/generate missing visuals where appropriate and define responsive assets/alt text.
+
+FORGE → reconstruct with the leanest suitable architecture; remove unnecessary dependencies, plugins, JS, duplicate styles, unused assets and legacy code without deleting useful functionality merely to improve benchmarks.
+
+SIGNALWEB → SEO, metadata, semantic structure, internal links, structured data, crawl architecture, social metadata, sitemap/robots. Preserve valuable URLs where possible and define redirects where URLs change.
+
+WEBPULSE → improve page weight, requests, JS/CSS, imagery, fonts, rendering, caching, loading, layout stability and interaction performance.
+
+SPINNERET → reconstruct required forms, CMS, APIs, analytics, commerce, email, social and automation integrations.
+
+WEBPROBE → compare old vs new to ensure useful functionality/content was not accidentally lost, then independently QA the new implementation.
+
+READ → evaluate as representative visitors and route actionable problems back through WEAVER.
+
+SILKFLIGHT → prepare deployment/migration, redirect map, configuration requirements, content/asset inventories, SEO checklist and post-launch verification.
+
+Do not stop after analysis when implementation is possible. Continue through reconstruction, testing and packaging.

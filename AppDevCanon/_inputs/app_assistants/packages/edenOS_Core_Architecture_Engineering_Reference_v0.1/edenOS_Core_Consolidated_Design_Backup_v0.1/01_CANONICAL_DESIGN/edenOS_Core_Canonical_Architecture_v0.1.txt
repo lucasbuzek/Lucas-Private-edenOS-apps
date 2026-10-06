@@ -1,0 +1,43 @@
+EDENOS CORE — CANONICAL ARCHITECTURE v0.1
+
+1. LINEAGE
+gardenOS Core → extract/generalize proven generic services → edenOS Core → domain/product profiles.
+Do not rewrite working gardenOS simply to fit a new framework. Extract incrementally and verify gardenOS after each extraction.
+
+2. RESPONSIBILITY BOUNDARY
+edenOS Core owns generic local capabilities:
+Identity; capability registry; hardware abstraction; I/O; sensors; actuators; safety supervisor; watchdog/recovery; energy; communications; configuration/storage; calibration; discovery; health; diagnostics; events; jobs; local deterministic automation; telemetry; update/rollback; security/provisioning; extension/adapters.
+
+Optional machine capability modules extend the same architecture:
+Motion; Payload/Tool; Position/Localization; Navigation interface; Home/Dock; Mission runtime.
+
+Domain applications own domain semantics:
+gardenOS owns plants, growing zones, irrigation semantics, biological/reference data and agriculture-specific strategies.
+Nandi owns tiny-helper product semantics, not the universal Core.
+Dedicated lineages own their mechanical/product semantics.
+
+3. SAME CORE ARCHITECTURE
+One shared architecture, multiple hardware capability envelopes. Hardware changes resources/capabilities, not the conceptual model.
+Do not fork the architecture into unrelated Tiny/Robot/Air cores.
+
+4. LOCAL-FIRST / GRACEFUL DEGRADATION
+Core must remain useful without cloud, AI, Server or Companion. Machines must remain safe if communications disappear. Advanced navigation/AI may disappear while manual, deterministic automation, safety, telemetry and recovery remain.
+
+5. AUTHORITATIVE CONTROL PATH
+Commands from UI, remote, Server, AI, ROS, MAVLink or other integrations enter through adapters and Core validation/safety. Integrations do not directly own actuators or bypass safety.
+
+6. DATA / RECOVERY
+User configuration, calibration, machine identity and programs outlive firmware where schema compatibility permits. Use versioned schemas and DETECT → VALIDATE → BACKUP/STAGE → MIGRATE → VERIFY → COMMIT → ROLLBACK.
+
+7. AUTOMATION CONTINUUM
+Manual → Teach → Replay → Deterministic/Programmed → Assisted Navigation → Precision Navigation → Bounded Autonomy → Fleet Coordination.
+AI is optional throughout.
+
+8. REUSE GATE
+Before implementing a subsystem:
+A. Does gardenOS already implement it?
+B. Can its authoritative implementation be generalized?
+C. Does an established open-source/product ecosystem already solve it?
+D. Can we integrate through an adapter instead of recreating it?
+E. Is the capability truly universal enough for Core?
+Only then create new Core functionality.

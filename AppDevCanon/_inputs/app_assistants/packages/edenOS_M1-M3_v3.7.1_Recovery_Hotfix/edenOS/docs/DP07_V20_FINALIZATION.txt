@@ -1,0 +1,20 @@
+edenOS DP0.7 v2.0 — Finalization Candidate
+
+PURPOSE
+Freeze current build parameters and integrate the latest HEIMDALL/BIFROST/SKALD application model before runtime build validation.
+
+LOCKED EXPERIENCE BASELINE
+- Standard Desktop is default; Workspace is optional.
+- Standard Files is default; Explore is optional.
+- Files remain files; Explore never requires moving data.
+- HEIMDALL is experience/UI; BIFROST is headless information/data/orchestration.
+- SKALD is the established media-oriented hybrid application.
+- SKALD-level apps may combine native HEIMDALL UI, integrated WebContentView, AuthenticationSession, and external-browser fallback.
+- Integrated portals do not become authoritative owners of edenOS state.
+- Preview mode requires no HEIMDALL/provider downloads or live portal connections.
+
+BUILD PARAMETERS
+See platform/build-parameters.json. Current development target: Apple Silicon, AArch64 QEMU VM, 2 vCPU, 1024 MB RAM, FULL profile, Alpine 3.24.2 bootstrap. Runtime acceptance remains UNKNOWN until actually booted on target hardware.
+
+WORKING APP NAMES
+SKALD is established. Other newly selected names are working names and can be changed without changing contracts. See docs/APPLICATION_NAMING_CANDIDATES.txt.

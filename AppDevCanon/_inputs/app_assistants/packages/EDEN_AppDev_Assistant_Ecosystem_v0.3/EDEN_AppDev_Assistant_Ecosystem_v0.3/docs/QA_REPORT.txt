@@ -1,0 +1,3 @@
+QA REPORT — v0.1
+Static package validation performed: required top-level docs present; assistant packages generated; JSON specs parse; Python self-test executed separately during build; reference runtime uses localhost only; originals supplied to this build were copied into references/docs rather than modified.
+Not performed/claimed: signed macOS build, edenOS integration build, remote provider calls, full canonical recovery of every historical assistant package, security penetration test.

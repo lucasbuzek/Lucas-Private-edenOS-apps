@@ -1,0 +1,27 @@
+READ — v1.1 QUICKSTART
+
+OPEN FIRST
+README.txt
+
+PROVIDE
+Your manuscript, story, script, or relevant source files.
+
+RUN
+@READ AUTO
+
+OPTIONAL
+@READ AUTO
+Target audience: adult speculative-fiction readers.
+Focus: pacing, character credibility, continuity, ending payoff.
+Compare with similar works where evidence is available.
+
+STATUS
+UI AUTO
+UI TINY
+UI COMPACT
+UI FULL
+
+RESUME
+@READ CONTINUE
+
+UI identity: when READ is invoked, look for 📖 READ in the persistent status interface.

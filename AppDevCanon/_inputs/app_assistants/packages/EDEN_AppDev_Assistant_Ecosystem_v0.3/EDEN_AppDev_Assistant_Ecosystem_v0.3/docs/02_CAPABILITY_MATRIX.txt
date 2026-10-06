@@ -1,0 +1,20 @@
+ASSISTANT CAPABILITY / DELIVERY MATRIX — v0.1
+Legend: P=primary, S=supported, O=optional, -=not normally appropriate
+
+Assistant    Drop-in Simple Desktop edenOS LocalWeb Hybrid API
+CONDUCTOR       P      P      P       P      P       P     P
+LUCAS           S      P      P       P      P       P     S
+ARGOS           P      P      S       S      P       P     P
+CASPER          P      P      S       S      P       P     P
+FORGE           P      S      P       P      P       P     P
+WEAVER          P      P      S       S      P       P     P
+ARTEMIS         P      S      S       S      S       S     O
+IRIS            P      P      P       S      P       P     P
+LINGUA          P      P      P       P      P       P     P
+AOS             P      P      P       P      P       P     P
+MIRROR          P      P      S       S      P       P     P
+READ            P      P      S       S      P       P     O
+HEIMDALL        -      S      P       P      P       P     P
+THREAD          P      S      S       S      P       P     P
+
+Principle: one assistant specification, many adapters. Delivery forms do not fork assistant identity or logic.

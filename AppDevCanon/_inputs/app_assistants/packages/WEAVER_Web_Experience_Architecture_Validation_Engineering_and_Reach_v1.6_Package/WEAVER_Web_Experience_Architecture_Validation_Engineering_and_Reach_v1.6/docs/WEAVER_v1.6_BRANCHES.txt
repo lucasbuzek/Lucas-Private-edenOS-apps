@@ -1,0 +1,22 @@
+WEAVER BRANCHED DEVELOPMENT MATRIX — v1.6
+
+Canonical project: 🕷️ WEAVER — Web Experience Architecture, Validation, Engineering & Reach
+
+B0 CHAT
+Status: VERIFIED for the packaged prompt/framework definitions in this release.
+Scope: master orchestration, modules, prompts, handoffs, LCAS state conventions.
+
+B1 API / CONTEXTUAL GUI
+Status: NOT_YET_IMPLEMENTED in this package.
+Target: shared WEAVER schemas/capability IDs exposed through API/contextual GUI without changing canonical behavior.
+
+B2 STANDALONE
+Status: NOT_YET_IMPLEMENTED in this package.
+Target: standalone application distribution using the same canonical capability model.
+
+B3 LOCAL / HYBRID
+Status: NOT_YET_IMPLEMENTED in this package.
+Target: local/hybrid/headless runtime and provider adapters using the same canonical capability model.
+
+DRIFT GATE
+No branch may redefine WEAVER identity, SCAFFOLD ownership, LCAS status semantics, shared capability boundaries or external helper identities independently.

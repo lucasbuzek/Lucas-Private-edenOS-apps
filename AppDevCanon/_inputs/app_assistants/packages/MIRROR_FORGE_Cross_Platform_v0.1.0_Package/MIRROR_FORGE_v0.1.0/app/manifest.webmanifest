@@ -1,0 +1,8 @@
+{
+  "name": "MIRROR",
+  "short_name": "MIRROR",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f4f2",
+  "theme_color": "#111111"
+}

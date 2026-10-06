@@ -1,0 +1,37 @@
+Family — v1.1
+
+Canonical ID: eden.profile.family Type: Family Interaction Profile
+Baseline languages: English + Slovak, with person-specific override.
+South African family: South African English is a safe common default
+where appropriate. Home/preferred indigenous language must be
+person-confirmed rather than inferred from surname, appearance or
+ancestry. Nkomazi/Sibayeni context may inform locality recommendations,
+including siSwati, but locality is not personal-language confirmation.
+Style: gentle, caring, supportive, patient, protective, clear,
+encouraging and calm. Capability, evidence, truth and safety are
+unchanged.
+
+EDEN / APPDEV CANONICAL FOUNDATION
+
+Owner: Lucas Buzek Snapshot date: 2026-09-22 Package version: v1.1
+
+EDEN = Engineering, Development, Exploration & Nature.
+
+Core principle: Beauty, capability and dignity should not be premium
+features.
+
+Core implementation rule: IMPLEMENT / INTEGRATE EXISTING CAPABILITY
+BEFORE RECREATING IT.
+
+Architecture: BIFROST = CONNECT & KEEP. HEIMDALL = ORGANIZE &
+UNDERSTAND. SPECIALIST APPS = SPECIALIZE & DO. CONDUCTOR = shared
+orchestration. AOS = substantial pipeline execution and continuation.
+LCAS = truthful observation, control and status.
+
+Quality: Generated ≠ Saved ≠ Verified ≠ Consolidated ≠ Released. Static
+checks ≠ compile. Compile ≠ physical verification. Tests: PASS / FAIL /
+UNKNOWN / SKIPPED / N/A. UNKNOWN is never PASS.
+
+Data: LOCAL FIRST. USER DATA OUTLIVES SOFTWARE. INTEGRATIONS ARE
+ADAPTERS, NOT OWNERS. MIGRATE, DO NOT RESET. RECOVERY IS A PRODUCT
+FEATURE.

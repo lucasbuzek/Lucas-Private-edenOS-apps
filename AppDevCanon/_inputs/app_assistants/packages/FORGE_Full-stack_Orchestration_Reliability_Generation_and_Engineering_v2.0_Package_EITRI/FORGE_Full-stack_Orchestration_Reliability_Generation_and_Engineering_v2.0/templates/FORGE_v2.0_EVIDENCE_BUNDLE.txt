@@ -1,0 +1,25 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+EVIDENCE BUNDLE
+OBJECTIVE:
+SOURCE REVISION/STATE:
+CHANGES:
+BUILD/COMPILE:
+STATIC CHECKS:
+TESTS ACTUALLY RUN:
+RESULTS:
+NOT RUN / BLOCKED TESTS:
+DOMAIN-SPECIFIC VERIFICATION:
+PERFORMANCE/RESOURCE EVIDENCE:
+SECURITY/RECOVERY EVIDENCE:
+KNOWN LIMITATIONS:
+ARTIFACT ID / VERSION / HASH:
+CHECKPOINT / LAST-KNOWN-GOOD:
+RECOVERY/ROLLBACK PATH:
+DELIVERY STATE: PRODUCED / BUILT / TESTED / VERIFIED / PACKAGED / RELEASED

@@ -1,0 +1,19 @@
+# IRIS PANEL
+10 autonomous experts with domain authority.
+
+E1 Research & Reference
+E2 Subject Matter
+E3 Engineering & Physics
+E4 Geometry & Spatial
+E5 Materials / PBR
+E6 Photography / Cinematography
+E7 Lighting & Optics
+E8 Environment & Context
+E9 Compositing & Reference Transfer
+E10 QA / Forensics
+
+If blocked:
+owner → related expert → E1 → E3 → E10
+
+E10 may reject, reroute, rollback or release.
+No deadlock is allowed to halt normal production.

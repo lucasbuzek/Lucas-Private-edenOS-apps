@@ -1,0 +1,7 @@
+REFERENCE: ODrive
+URL: https://docs.odriverobotics.com/v/latest/manual/can-protocol.html
+ROLE IN EDEN DESIGN
+Motor-control reference/product with CAN control and watchdog behavior. Candidate external motor controller for capable prototypes.
+
+STATUS
+Reference / integration candidate. Not a canonical dependency until architecture, license, safety and prototype validation are completed.

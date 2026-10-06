@@ -1,0 +1,26 @@
+edenOS / AppDev INSTALL, TEST & RELEASE STRATEGY — v1.1
+
+INSTALL PROFILES: INSTALL / RECOMMENDED — balanced, device-aware; reuse
+adequate existing capability. LEAN — minimum essentials. FULL — all
+appropriate supported capabilities, avoiding pointless duplication.
+CUSTOM — explicit user control.
+
+BOOTSTRAP: UNPACK → VERIFY → DETECT EXISTING EDEN/INSTALL → DISCOVER
+EXISTING SUITABLE CAPABILITIES → BACKUP/STAGE → TRANSACTIONAL
+INSTALL/UPDATE → PRESERVE STATE → VERIFY → ATOMIC COMMIT → LAUNCH
+INSTALLED COPY → HEALTH CHECK → OPEN UI → RETURN TERMINAL CONTROL.
+
+UPDATE: CHECK → DOWNLOAD/STAGE → VERIFY → BACKUP → UPDATE →
+TEST/REGRESSION → COMMIT → ROLLBACK TO LAST KNOWN GOOD ON FAILURE.
+
+RELEASE RINGS: LUCAS / PRIVATE → FAMILY & FRIENDS → ALPHA → PREVIEW →
+FINAL / PUBLIC.
+
+Promotion is evidence-based, not calendar-based.
+
+Family & Friends inherits the Family interaction preference: calm,
+gentle, supportive, clear, recovery-oriented. This never hides real
+failures, warnings or safety consequences.
+
+AI / EXECUTION: DETERMINISTIC/EXISTING → TINY → LOCAL → LAN/SHARED →
+EXTERNAL API → HYBRID. Use the lowest sufficient capability.

@@ -1,0 +1,51 @@
+{
+  "profile_id": "PRIVATE_LUCAS",
+  "owner": "Lucas Buzek",
+  "environment": "cloud9",
+  "personal_front_door": "Garden of EDEN",
+  "inherits": "Universal AppDev",
+  "apple_centric": true,
+  "platform_priority": [
+    "macOS",
+    "iPhone/iOS",
+    "iPad/iPadOS",
+    "Safari",
+    "native Apple capabilities"
+  ],
+  "portable_open_core": true,
+  "localization": {
+    "canonical": "en",
+    "baseline": [
+      "en",
+      "sk"
+    ]
+  },
+  "web_first_testing": true,
+  "family_friends_alpha": "verified components only",
+  "development_mode": true,
+  "diagnostics": true,
+  "experimental_capabilities_allowed": true,
+  "install_profiles": [
+    "INSTALL_RECOMMENDED",
+    "LEAN",
+    "FULL",
+    "CUSTOM"
+  ],
+  "configuration_depth": [
+    "SIMPLE",
+    "ADVANCED",
+    "EXPERT",
+    "DEVELOPMENT_DIAGNOSTIC"
+  ],
+  "last_known_good": true,
+  "quiet_background_automation": true,
+  "resource_policy": {
+    "owner_first": true,
+    "private_default": "OFF",
+    "friends_default": "ON",
+    "friends_default_percent": 5,
+    "public_default": "OFF",
+    "expert_range_percent": "0-100"
+  },
+  "secrets_policy": "references only; use Keychain/secure provider auth; no plaintext secrets in portable backup"
+}

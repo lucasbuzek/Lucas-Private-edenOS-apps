@@ -1,0 +1,6 @@
+BUILD / PACKAGE — v0.1
+Reference requires Python 3.10+ and no third-party packages.
+Run locally: python3 runtime/lucas_runtime.py
+Validation: python3 runtime/selftest.py
+Package: python3 runtime/package.py
+Production macOS/edenOS builds are architectural targets, not falsely claimed as compiled in this reference release.

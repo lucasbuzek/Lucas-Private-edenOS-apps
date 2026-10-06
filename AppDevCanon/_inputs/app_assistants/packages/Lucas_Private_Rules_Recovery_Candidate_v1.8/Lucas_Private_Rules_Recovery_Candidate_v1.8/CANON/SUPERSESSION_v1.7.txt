@@ -1,0 +1,30 @@
+SUPERSESSION / MIGRATION RECORD — v1.7
+
+CURRENT decisions supersede conflicting older descriptions while preserving provenance.
+
+1. HEIMDALL
+OLD: Workspace/information organization only.
+CURRENT: Doorway to EDEN; ORGANIZE, UNDERSTAND, ACCESS & COMPOSE; owns Workspaces/information composition; creates Custom Apps; can initiate new App engineering. Universal access does not impose mandatory runtime dependency.
+
+2. CONDUCTOR
+OLD: global EDEN runtime orchestration/intelligence fabric.
+CURRENT: HEIMDALL.CONDUCTOR — HEIMDALL-owned, EDEN-wide conversational/voice/command layer. Deterministic/offline baseline; actual voice independent of AI; optional native/local/provider AI. Domain/runtime authority remains with Apps, capabilities, orchestrators, AOS and BIFROST as appropriate.
+
+3. LCAS
+OLD: Apps/edenOS shared runtime Live Control, Activity & Status layer.
+CURRENT: retired from Apps/edenOS runtime; retained as in-Chat UI identity. Runtime status/progress/control requirements migrate to truthful state contracts + actual UIX. UIbasic remains older legacy provenance.
+
+4. FORGE
+OLD: generic implementation/build role.
+CURRENT: FORGE v2.0 authoritative general Software Engineering environment. Not all Engineering.
+
+5. PROMETHEUS / DAEDALUS
+OLD: companion Engineering Apps with exact Mechanical/Electrical mapping intentionally unresolved.
+CURRENT: PROMETHEUS = Technology, Research & Prototype Development. DAEDALUS = Engineering Design, Systems & Realization. Old narrow mapping remains provenance only.
+
+6. EITRI
+CURRENT: Engineering Master Smith / Engineering Orchestrator across PROMETHEUS, DAEDALUS, focused Engineering Apps, FORGE, specialists and shared capabilities.
+
+7. UIX
+OLD: shared LCAS/UIbasic runtime status framing.
+CURRENT: actual App/edenOS UIX. One EDEN UIX language with specialized professional environments; direct domain-object access; adaptive phone/tablet/desktop; immersive/focus states; provider complexity hidden by default; truthful state.

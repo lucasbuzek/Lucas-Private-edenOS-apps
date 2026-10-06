@@ -1,0 +1,7 @@
+REFERENCE: MAVSDK
+URL: https://mavsdk.mavlink.io/
+ROLE IN EDEN DESIGN
+High-level API for MAVLink vehicles; candidate adapter boundary for missions, telemetry and vehicle commands.
+
+STATUS
+Reference / integration candidate. Not a canonical dependency until architecture, license, safety and prototype validation are completed.

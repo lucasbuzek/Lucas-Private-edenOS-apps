@@ -1,0 +1,62 @@
+EITRIMB — OPTIONAL DEVELOPMENT READINESS WORKFLOW — v1.0
+
+ROLE
+EITRI remains governor/control plane. Specialists retain domain authority. Evidence determines state.
+
+ENTRY
+Recover existing project truth before inventing missing architecture.
+Classify invocation as STARTER, UPDATE, AUDIT, or FEATURE.
+
+READINESS DOMAINS
+A. Identity and purpose
+B. Ownership / authority / non-ownership
+C. Users, roles and operating context
+D. Core use cases and expected outcomes
+E. Functional requirements
+F. Non-functional requirements and resource budgets
+G. Target platforms, hardware and capability envelope
+H. Existing capability discovery / reuse
+I. System architecture and dependency boundaries
+J. Canonical data/state model
+K. Interfaces, APIs, protocols and contracts
+L. UX/UI interaction and state model
+M. Installation, configuration, deployment and removal
+N. Security, privacy and trust boundaries
+O. Safety and recovery
+P. Compatibility, migration and lifecycle
+Q. Observability and diagnostics
+R. Acceptance criteria
+S. Verification plan
+T. Definition of Done
+
+PRIORITY ORDER
+SAFETY → RECOVERY → AUTHORITATIVE STATE/OWNERSHIP → CORRECTNESS → FUNCTIONALITY → PERFORMANCE → POLISH.
+
+STARTER MODE
+Define only what is required to prevent architectural guessing.
+Do not demand premature finalization of implementation details.
+Produce/update the EDC and IAC before implementation work is released.
+
+UPDATE MODE
+1. Recover current canon, source, manifests, contracts and evidence.
+2. Compare implementation against the readiness domains.
+3. Preserve valid existing decisions.
+4. Flag contradictions, omissions and stale assumptions.
+5. Repair safe deterministic gaps directly when authorized.
+6. Route specialist gaps to their authoritative owner.
+7. Re-run readiness evaluation.
+8. Never reset a working project merely because this workflow was added later.
+
+AUDIT MODE
+Read-only unless separately authorized. Report evidence, gaps, risks and recommended work orders.
+
+FEATURE MODE
+Apply the same gates proportionally to the feature and its affected dependencies. Do not reopen unrelated settled architecture.
+
+STATE
+READY — sufficient evidence exists to implement safely.
+READY WITH TRACKED GAPS — implementation may proceed; gaps are non-blocking and explicitly tracked.
+NOT READY — unresolved ambiguity would force unsafe or architecturally consequential guessing.
+BLOCKED — a required external dependency is demonstrably unavailable after attempted resolution.
+
+FAILED GATE and UNVERIFIED are states, not automatic stopping conditions. Continue safe repair work when possible.

@@ -1,0 +1,22 @@
+LUCAS BUZEK — CREATIVE PORTFOLIO & PUBLISHING WORKFLOW — v0.1
+
+SCOPE
+Photography, video, books/writing, graphic/media work, services, landing pages, store links and publication workflows.
+
+HEIMDALL
+Ingests/organizes assets, metadata, versions, rights/provenance, project relationships and reference content.
+
+CURATOR
+Media selection/organization/publishing preparation where established.
+
+NATIVE/EXTERNAL PROVIDERS
+Prefer existing capable tools for RAW development, video/audio editing, publishing, commerce, social scheduling, book distribution and analytics. Integrate through supported APIs, exports, file handlers, share sheets, watched folders, CLI/automation or deep links before recreating them.
+
+WORKFLOW
+INGEST → ORGANIZE → RIGHTS/PROVENANCE → SELECT → EDIT/MASTER externally where appropriate → QA → DERIVATIVES → METADATA/COPY → APPROVAL → PUBLISH/SCHEDULE → VERIFY → ANALYTICS → ARCHIVE.
+
+PORTAL CONTENT TYPES
+Project; Gallery; Photo; Video; Book/Publication; Service; Case Study; Product/Store Link; Landing Page; Journal/Update; About/CV; Contact.
+
+AI
+AI may assist tagging, search, draft metadata/copy, translation, asset recommendations and workflow automation. Human approval remains required for public publishing until separately validated.

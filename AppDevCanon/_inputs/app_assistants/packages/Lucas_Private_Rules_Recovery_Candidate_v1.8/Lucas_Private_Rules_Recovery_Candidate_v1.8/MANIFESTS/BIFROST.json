@@ -1,0 +1,14 @@
+{
+  "role": "CONNECT & KEEP",
+  "owns": [
+    "identity",
+    "registry",
+    "provenance",
+    "connections",
+    "persistence",
+    "interoperability",
+    "package/install/update state"
+  ],
+  "headless_capable": true,
+  "ai_required": false
+}

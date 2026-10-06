@@ -1,0 +1,36 @@
+EDEN — FIELD SCIENCES & PROTOTYPE VALIDATION PREPARATION — v0.1
+
+Do not build separate knowledge-store Apps. HEIMDALL Library is the common content substrate.
+
+INITIAL SPECIALIST HELPERS / WORKSPACES
+- Botany / Plant Science
+- Agronomy / Agriculture
+- Animal & Wildlife Science / welfare
+- Ecology & Conservation
+- Soil Science
+- Water / Hydrology
+- Environmental Science
+- Field / Expedition Science
+Future human-facing field work may add Education, Public Health, Community Development and Human Factors as Helpers/Workspaces.
+
+FIELD VALIDATION LOOP
+ARGOS evidence → domain specialist requirements → engineering design → ORACLE experimental design/model → physical prototype → field observations/sensors → ORACLE analysis → ARGOS challenge → engineering revision.
+
+PRE-FUNDING RESEARCH OUTPUTS
+For each domain create:
+1. standards/regulatory map;
+2. literature/prior-art corpus;
+3. field measurement list;
+4. required instruments/sensors;
+5. ethical/welfare/safety constraints;
+6. calibration and sampling methods;
+7. baseline/control design;
+8. acceptance metrics;
+9. data schema;
+10. prototype interfaces;
+11. site/facility needs;
+12. consumables;
+13. cost envelope;
+14. risks and unknowns.
+
+Never let an engineering specialist independently define biological, animal-welfare or ecological safety requirements outside its competence.

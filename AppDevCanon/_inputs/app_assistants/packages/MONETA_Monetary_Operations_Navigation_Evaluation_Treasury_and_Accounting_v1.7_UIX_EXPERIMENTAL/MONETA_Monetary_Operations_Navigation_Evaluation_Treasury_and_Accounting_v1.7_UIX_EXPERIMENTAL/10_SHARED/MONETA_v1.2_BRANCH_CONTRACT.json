@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.2",
+  "branches": {
+    "B0": "chat",
+    "B1": "web",
+    "B2": "desktop"
+  },
+  "invariants": [
+    "branch-independent capability_id",
+    "provider is not capability owner",
+    "shared handoff/result semantics",
+    "preserve authority/truth states",
+    "OS behavior is adapter-owned"
+  ],
+  "desktop_platforms": [
+    "macos",
+    "windows"
+  ],
+  "provider_profiles": [
+    "cloud",
+    "local",
+    "hybrid"
+  ]
+}

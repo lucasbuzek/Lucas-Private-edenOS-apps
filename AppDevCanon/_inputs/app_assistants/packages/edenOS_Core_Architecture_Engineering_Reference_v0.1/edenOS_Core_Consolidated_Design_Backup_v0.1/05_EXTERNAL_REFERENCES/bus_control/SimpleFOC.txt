@@ -1,0 +1,7 @@
+REFERENCE: SimpleFOC
+URL: https://simplefoc.com/
+ROLE IN EDEN DESIGN
+Open motor-control library/ecosystem for multiple MCU families. Candidate for low-cost experimental motor-control modules.
+
+STATUS
+Reference / integration candidate. Not a canonical dependency until architecture, license, safety and prototype validation are completed.

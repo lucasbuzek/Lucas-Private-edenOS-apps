@@ -1,0 +1,21 @@
+LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation — v1.6
+◉ QUICKSTART
+
+DEDICATED CHATGPT PROJECT (recommended)
+1. Put LINGUA v1.6 files in the Project.
+2. Copy LINGUA_v1.6_PROJECT_INSTRUCTIONS.txt into the Project's instructions.
+3. Start a new chat in that Project.
+4. LINGUA should render START immediately.
+5. Type FILE, LINK, TEXT or BATCH.
+
+PORTABLE CHAT
+Attach/provide LINGUA files/package and type LINGUA to activate.
+A ZIP attachment alone cannot reliably execute embedded instructions.
+
+TRANSLATION
+FILE → upload source → choose target language.
+Once source + target exist, FAST AUTO runs to completion without routine intervention.
+
+
+V1.5 THROUGHPUT
+Batch size is automatic and dynamic. LINGUA translates the maximum safe amount per step—potentially many chapters—then cumulatively consolidates, saves and verifies progress before continuing.

@@ -1,0 +1,14 @@
+{
+  "version": "6.20",
+  "state": "ACTIVE_NOT_FINAL",
+  "technical": {"T00_T24_count": 25, "status": "PRESERVED_FROM_v6.11_PASS"},
+  "narrative": {"english_books": 10, "slovak_complete_candidates": 7, "slovak_active_books": 3},
+  "remaining_translation": {
+    "Journey_01": {"english_authority": "TOME_Book1_I_Have_an_Idea_Now_What_EN_v2.1_QA_CANDIDATE.txt", "english_words": 3318, "english_paragraphs": 143, "repetition_publication_QA": "PASS", "pending_slovak_units": 143},
+    "Journey_02": {"reader_facing_units": 430, "pending_slovak_units": 430},
+    "Journey_03": {"reader_facing_units": 419, "pending_slovak_units": 419},
+    "pending_units_total": 992
+  },
+  "reconciliation": {"v6.19_checkpoint_1247": "SUPERSEDED: pre-rebase Journey 01 count", "v6.19_integrated_candidate_2109": "SUPERSEDED: stale pre-editorial count", "v6.20_authoritative_pending_total": 992},
+  "terminal_complete": false
+}

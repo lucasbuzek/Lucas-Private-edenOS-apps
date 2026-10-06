@@ -1,0 +1,175 @@
+{
+  "schema": 3,
+  "note": "Plain-language system names are stable where specified. Portal application names marked working_name remain replaceable until explicitly locked.",
+  "apps": [
+    {
+      "id": "org.eden.files",
+      "name": "Files",
+      "category": "System",
+      "surface": "files",
+      "adaptive": true
+    },
+    {
+      "id": "org.eden.browser",
+      "name": "Browser",
+      "category": "System",
+      "surface": "browser",
+      "adaptive": true
+    },
+    {
+      "id": "org.eden.documents",
+      "name": "Documents",
+      "category": "Work",
+      "surface": "documents",
+      "adaptive": true
+    },
+    {
+      "id": "org.eden.photos",
+      "name": "Photos",
+      "category": "Media",
+      "surface": "photos",
+      "adaptive": true
+    },
+    {
+      "id": "org.eden.atlas",
+      "name": "Atlas",
+      "category": "Knowledge",
+      "surface": "atlas",
+      "adaptive": true
+    },
+    {
+      "id": "org.eden.education",
+      "name": "Education",
+      "category": "Learning",
+      "surface": "education",
+      "adaptive": true
+    },
+    {
+      "id": "org.eden.research",
+      "name": "Research",
+      "category": "Science",
+      "surface": "research",
+      "adaptive": true
+    },
+    {
+      "id": "org.eden.gardenos",
+      "name": "gardenOS",
+      "category": "Physical",
+      "surface": "gardenos",
+      "adaptive": true
+    },
+    {
+      "id": "org.eden.nandi",
+      "name": "Nandi",
+      "category": "Physical",
+      "surface": "nandi",
+      "adaptive": true
+    },
+    {
+      "id": "org.eden.settings",
+      "name": "Settings",
+      "category": "System",
+      "surface": "settings",
+      "adaptive": true
+    },
+    {
+      "id": "org.eden.skald",
+      "name": "SKALD",
+      "category": "Media",
+      "surface": "skald",
+      "adaptive": true,
+      "implementation": "hybrid",
+      "portal_capable": true,
+      "portal_default": "preview",
+      "working_name": false
+    },
+    {
+      "id": "org.eden.portal.office",
+      "name": "Ledger",
+      "category": "Integrated",
+      "surface": "portal-office",
+      "adaptive": true,
+      "implementation": "hybrid",
+      "portal_capable": true,
+      "portal_default": "preview",
+      "working_name": true
+    },
+    {
+      "id": "org.eden.portal.research",
+      "name": "Thesis",
+      "category": "Integrated",
+      "surface": "portal-research",
+      "adaptive": true,
+      "implementation": "hybrid",
+      "portal_capable": true,
+      "portal_default": "preview",
+      "working_name": true
+    },
+    {
+      "id": "org.eden.portal.education",
+      "name": "Workshop",
+      "category": "Integrated",
+      "surface": "portal-education",
+      "adaptive": true,
+      "implementation": "hybrid",
+      "portal_capable": true,
+      "portal_default": "preview",
+      "working_name": true
+    },
+    {
+      "id": "org.eden.portal.engineering",
+      "name": "Prototype",
+      "category": "Integrated",
+      "surface": "portal-engineering",
+      "adaptive": true,
+      "implementation": "hybrid",
+      "portal_capable": true,
+      "portal_default": "preview",
+      "working_name": true
+    },
+    {
+      "id": "org.eden.portal.health",
+      "name": "Pulse",
+      "category": "Integrated",
+      "surface": "portal-health",
+      "adaptive": true,
+      "implementation": "hybrid",
+      "portal_capable": true,
+      "portal_default": "preview",
+      "working_name": true
+    },
+    {
+      "id": "org.eden.portal.agriculture",
+      "name": "Field",
+      "category": "Integrated",
+      "surface": "portal-agriculture",
+      "adaptive": true,
+      "implementation": "hybrid",
+      "portal_capable": true,
+      "portal_default": "preview",
+      "working_name": true
+    },
+    {
+      "id": "org.eden.portal.geo",
+      "name": "Latitude",
+      "category": "Integrated",
+      "surface": "portal-geo",
+      "adaptive": true,
+      "implementation": "hybrid",
+      "portal_capable": true,
+      "portal_default": "preview",
+      "working_name": true
+    },
+    {
+      "id": "org.eden.portal.creative",
+      "name": "Reel",
+      "category": "Integrated",
+      "surface": "portal-creative",
+      "adaptive": true,
+      "implementation": "hybrid",
+      "portal_capable": true,
+      "portal_default": "preview",
+      "working_name": true
+    }
+  ]
+}

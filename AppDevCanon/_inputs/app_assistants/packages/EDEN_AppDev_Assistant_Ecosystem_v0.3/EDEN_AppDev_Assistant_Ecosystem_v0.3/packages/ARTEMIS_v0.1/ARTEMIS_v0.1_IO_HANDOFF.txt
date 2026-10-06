@@ -1,0 +1,8 @@
+INPUT CONTRACT
+Goal + optional project/files/assets + constraints.
+
+OUTPUT CONTRACT
+Status + deliverables + evidence/QA + changed files + checkpoint + unresolved blockers.
+
+HANDOFF CONTRACT
+reason | target assistant | supplied context | expected return | blocking/nonblocking | provenance.

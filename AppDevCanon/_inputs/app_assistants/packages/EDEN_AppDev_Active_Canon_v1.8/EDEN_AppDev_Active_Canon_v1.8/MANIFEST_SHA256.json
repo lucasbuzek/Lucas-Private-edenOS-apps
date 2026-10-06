@@ -1,0 +1,82 @@
+{
+  "README.txt": {
+    "sha256": "f42c7379962855c51bde38359b845cfd46f9f43d7e0cec25b79a6515de036a86",
+    "bytes": 1020
+  },
+  "PRIVATE_TXT/Versioning.txt": {
+    "sha256": "a6892dc18674a48708b800685ebd8b4636d77b655e579e9fa87d1f715e3500f8",
+    "bytes": 206
+  },
+  "PRIVATE_TXT/README.txt": {
+    "sha256": "4a65b676ab17a5776e3bd247f97d22609b42dcdd1a5a25d9326cd3c708c25abb",
+    "bytes": 156
+  },
+  "PRIVATE_TXT/DesignMantra.txt": {
+    "sha256": "d810a8f0a07d63c7550f4e1f5cbd2f3761ca46ba03d3685a57f65917c1edb821",
+    "bytes": 677
+  },
+  "PRIVATE_TXT/CapabilityContracts.txt": {
+    "sha256": "3620fc69001d6c4abe32294ba849cf2e9ead60bd5940598e4ad47706d1bc8c3b",
+    "bytes": 679
+  },
+  "PRIVATE_TXT/PRIVATE_LUCAS_Profile.txt": {
+    "sha256": "e2f6afe65356612a32f90a7f43dcd3b1f2b3b48ed171a81c6bbb8e50a72693bd",
+    "bytes": 1229
+  },
+  "PRIVATE_TXT/EDEN_Deployment_Audience_Profiles.txt": {
+    "sha256": "f00eec78fb17e719c482061978d66395df03a120d75da5226d6f2a3b4923ee14",
+    "bytes": 1418
+  },
+  "PRIVATE_TXT/edenOSrules.txt": {
+    "sha256": "664f250456c0dc340d2c66a93591d0de886d2057ac04a6659cdedfa7c163623f",
+    "bytes": 8665
+  },
+  "PRIVATE_TXT/Canon_Supersession_Ledger.txt": {
+    "sha256": "d510894784d8713b28db03956e1673662454c53f3d66baf6a3ce8f9593a7b5a3",
+    "bytes": 2051
+  },
+  "PRIVATE_TXT/AppDevRules.txt": {
+    "sha256": "b05ac06d22c7e0d173be6e8d157d80b5bc1731ca2cc6e5b566d249d5c3e5c9d9",
+    "bytes": 10516
+  },
+  "PRIVATE_TXT/GrandMasterRegister_CONTRACT.txt": {
+    "sha256": "b70aa26f3272d4f2bf7275e8b3e0456b485d2fc4bc2c0c335436c9ada8128bb2",
+    "bytes": 1617
+  },
+  "ACTIVE_CANON/Versioning.txt": {
+    "sha256": "a6892dc18674a48708b800685ebd8b4636d77b655e579e9fa87d1f715e3500f8",
+    "bytes": 206
+  },
+  "ACTIVE_CANON/DesignMantra.txt": {
+    "sha256": "d810a8f0a07d63c7550f4e1f5cbd2f3761ca46ba03d3685a57f65917c1edb821",
+    "bytes": 677
+  },
+  "ACTIVE_CANON/edenOSrules.txt": {
+    "sha256": "664f250456c0dc340d2c66a93591d0de886d2057ac04a6659cdedfa7c163623f",
+    "bytes": 8665
+  },
+  "ACTIVE_CANON/AppDevRules.txt": {
+    "sha256": "b05ac06d22c7e0d173be6e8d157d80b5bc1731ca2cc6e5b566d249d5c3e5c9d9",
+    "bytes": 10516
+  },
+  "CONTRACTS/CapabilityContracts.txt": {
+    "sha256": "3620fc69001d6c4abe32294ba849cf2e9ead60bd5940598e4ad47706d1bc8c3b",
+    "bytes": 679
+  },
+  "REGISTRY/GrandMasterRegister_CONTRACT.txt": {
+    "sha256": "b70aa26f3272d4f2bf7275e8b3e0456b485d2fc4bc2c0c335436c9ada8128bb2",
+    "bytes": 1617
+  },
+  "PROFILES/PRIVATE_LUCAS_Profile.txt": {
+    "sha256": "e2f6afe65356612a32f90a7f43dcd3b1f2b3b48ed171a81c6bbb8e50a72693bd",
+    "bytes": 1229
+  },
+  "PROFILES/EDEN_Deployment_Audience_Profiles.txt": {
+    "sha256": "f00eec78fb17e719c482061978d66395df03a120d75da5226d6f2a3b4923ee14",
+    "bytes": 1418
+  },
+  "PROVENANCE/Canon_Supersession_Ledger.txt": {
+    "sha256": "d510894784d8713b28db03956e1673662454c53f3d66baf6a3ce8f9593a7b5a3",
+    "bytes": 2051
+  }
+}

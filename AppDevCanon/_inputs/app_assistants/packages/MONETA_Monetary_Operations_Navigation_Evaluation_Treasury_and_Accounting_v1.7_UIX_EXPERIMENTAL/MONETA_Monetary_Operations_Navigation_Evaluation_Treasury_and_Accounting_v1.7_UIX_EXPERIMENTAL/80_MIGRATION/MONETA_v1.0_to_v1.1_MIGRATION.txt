@@ -1,0 +1,8 @@
+MONETA v1.0 → v1.1 MIGRATION
+1. Preserve all v1.0 canonical Finance identities except explicitly approved rename.
+2. SCRIBE (Finance) → NUNTIUS.
+3. Retain SCRIBE as a legacy alias in compatibility/traceability.
+4. Do not rename PATRON until explicitly approved.
+5. Add hierarchy below companies without promoting subordinates to top-level Helpers.
+6. Add shared contracts and branch metadata.
+7. Do not claim runtime migration until an actual runtime exists and migration tests run.

@@ -1,0 +1,11 @@
+IRIS — Intelligent Realism & Image Synthesis — v1.8
+MODULE: WEB MATCH
+
+PURPOSE
+Analyze a supplied webpage, local site, screenshot or captured responsive state and reconstruct its visual system while preserving requested content/behavior.
+
+ANALYZE
+Viewport; breakpoints when evidence exists; grid; spacing; typography; colors; components; navigation; imagery; states; responsive relationships.
+
+VERIFY
+Render target viewport(s), compare to source/capture, correct geometry and styling, then regression-test functionality. Do not infer hidden responsive states as verified facts.

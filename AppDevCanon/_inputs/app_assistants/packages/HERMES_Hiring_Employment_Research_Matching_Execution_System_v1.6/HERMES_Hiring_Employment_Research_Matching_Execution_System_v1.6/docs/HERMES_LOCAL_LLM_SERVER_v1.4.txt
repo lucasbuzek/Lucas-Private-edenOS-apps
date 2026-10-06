@@ -1,0 +1,32 @@
+HERMES v1.6 — B3 LOCAL / HYBRID LLM SERVER SPECIFICATION
+
+PURPOSE
+Run HERMES intelligence locally where desired while preserving the same canonical HERMES workflows used by chat, hosted and standalone branches.
+
+GUI
+Dashboard; Models; Routing; Scope; Jobs; Knowledge/Data; Connectors; Documents; Logs/Diagnostics; Security; Updates. UIbasic status modes and the persistent HERMES Signal remain available.
+
+MODEL REGISTRY
+Each installed/remote model records provider, model ID, location, capabilities, context limits, tool/function support, multimodal support, resource requirements, availability and user aliases. HERMES never assumes all models have equal capabilities.
+
+USER MODEL CHOICE
+Global default plus per-capability/per-task override. Examples: discovery summarization, CV drafting, tender analysis, document QA, coding, image understanding. AUTO may choose from user-authorized models using capability/resource policy.
+
+SCOPE / ROUTING POLICIES
+LOCAL ONLY — no model payload leaves local runtime.
+LOCAL PREFERRED — local first; cloud fallback only if explicitly permitted.
+BALANCED — route by capability/resource/privacy policy.
+CLOUD PREFERRED — cloud first where permitted; local fallback.
+PER-TASK — user chooses before or during each task.
+
+DATA BOUNDARY
+Every provider call receives an explicit scope: allowed data classes, files/records, redaction policy, tool permissions and retention preference. Secrets never enter prompts unless required and explicitly authorized.
+
+SERVER CONTRACT
+Expose a versioned local API compatible with the canonical provider abstraction. Standalone and hosted clients may connect to it only after authentication/pairing. Support health, models, capabilities, jobs, inference, cancellation and event streaming.
+
+INSTALL/UPDATE PRINCIPLES
+One-command/installer path; dependency checks; preserve existing model downloads; verify before redownload; repair and rollback; checksums; no destructive update of /data or /models; headless mode plus GUI.
+
+STATUS v1.6
+Architecture/specification: DEFINED. Dedicated runtime/model manager/native installer: NOT YET IMPLEMENTED in this package.

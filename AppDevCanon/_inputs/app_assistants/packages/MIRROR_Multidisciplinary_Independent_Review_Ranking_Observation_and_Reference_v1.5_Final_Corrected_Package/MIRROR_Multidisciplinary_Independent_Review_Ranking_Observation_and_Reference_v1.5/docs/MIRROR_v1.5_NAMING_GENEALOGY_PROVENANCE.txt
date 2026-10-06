@@ -1,0 +1,30 @@
+◈ MIRROR — NAMING GENEALOGY / PROVENANCE — v1.5
+
+SOURCE
+MIRROR v1.4 framework package plus its v1.4 Profile & Prompts addendum were staged as the latest available MIRROR state.
+
+LOCAL MIGRATION
+MIRROR.ECHO → MIRROR.TICKTAG
+
+FUNCTION PRESERVED
+Evaluation, Consistency, Handoff & Outcome.
+
+TICKTAG inherits the former MIRROR.ECHO responsibilities unchanged:
+• evaluation consistency;
+• handoff integrity;
+• outcome tracking/review;
+• checking that findings and conclusions survive transfer through the review process.
+
+NAMESPACE CONTEXT — DOCUMENTATION ONLY
+READ.ECHO remains READ.ECHO.
+CASPER.RESONANCE remains CASPER.RESONANCE.
+READ.READROUNDtable remains READ.READROUNDtable.
+READ.READSIDEBYSIDE remains READ.READSIDEBYSIDE.
+fullSCOPE remains separate terminology/mode.
+
+DISCIPLINE
+DETECT → VALIDATE → BACKUP/STAGE → MIGRATE → VERIFY → COMMIT.
+Rollback target: the untouched MIRROR v1.4 source packages.
+
+SCOPE
+Local MIRROR reconciliation only. No BIFROST, GrandMasterRegister, CONDUCTOR, LCAS or edenOS propagation performed.

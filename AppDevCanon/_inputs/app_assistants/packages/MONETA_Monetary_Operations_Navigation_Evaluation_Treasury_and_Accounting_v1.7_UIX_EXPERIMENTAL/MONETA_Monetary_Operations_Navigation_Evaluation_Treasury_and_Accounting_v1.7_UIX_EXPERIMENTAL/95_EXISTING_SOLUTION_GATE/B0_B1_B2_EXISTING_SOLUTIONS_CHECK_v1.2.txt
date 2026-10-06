@@ -1,0 +1,21 @@
+EXISTING SOLUTIONS CHECK — 2026-09-21
+RESULT: PASS FOR ARCHITECTURE SELECTION. EACH FEATURE STILL REQUIRES ITS OWN GATE.
+
+B0 CHAT — REUSE existing Chat/helper runtime. Do not build a duplicate chat runtime.
+B1 WEB — REUSE/ADAPT established agent SDK/runtime capabilities rather than creating a new agent framework.
+INTEROP — ADAPT MCP for tools/resources/prompts where appropriate rather than inventing a universal protocol.
+B2 DESKTOP — REUSE/ADAPT Tauri as the initial lean macOS/Windows shell, subject to measured validation.
+LOCAL MODELS — integrate through provider adapters; local model servers never own MONETA capabilities.
+
+REFERENCE URLS
+https://openai.com/index/the-next-evolution-of-the-agents-sdk/
+https://developers.openai.com/api/docs/quickstart
+https://blog.modelcontextprotocol.io/posts/2026-07-28/
+https://modelcontextprotocol.io/specification/draft/server/index
+https://tauri.app/
+https://tauri.app/concept/architecture/
+https://ollama.com/
+
+DECISION
+Do not build a new agent SDK, universal tool protocol, desktop windowing framework or local-model server now.
+Build MONETA/edenOS-specific capability contracts, adapters, policy/control logic, UI and missing domain behavior.

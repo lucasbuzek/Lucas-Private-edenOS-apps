@@ -1,0 +1,17 @@
+CAMEL — NAMING RECONCILIATION MIGRATION PROVENANCE
+Version: v0.3.1
+Source: CAMEL_Cargo_Assets_Movement_Execution_Logistics_v0.3_Prompt_Package.zip
+Migration: CAMEL.BEACON -> CAMEL.WAYMARK
+Scope: CAMEL local package only. No BIFROST, GrandMasterRegister, CONDUCTOR, LCAS, edenOS or WEAVER propagation performed.
+
+Canonical roster after migration:
+CARAVAN
+DROVER
+CARGO
+WAYMARK
+WAYFARER
+
+Historical genealogy only:
+CAMEL.BEACON -> CAMEL.WAYMARK
+
+Function preserved: logistics tracking, status and movement visibility; tracking/ETA/geofences/milestones/exceptions/incidents remain within the established scope.

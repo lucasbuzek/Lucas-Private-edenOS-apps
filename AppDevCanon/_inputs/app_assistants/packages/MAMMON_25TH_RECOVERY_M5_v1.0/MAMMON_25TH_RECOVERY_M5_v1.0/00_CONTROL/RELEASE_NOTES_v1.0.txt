@@ -1,0 +1,12 @@
+RELEASE NOTES — M5 FINAL DELIVERY v1.0
+
+Purpose
+Final delivery of the recovered and provenance-separated MAMMON / APPLE / Eden Initiative Twenty-Five Years After 9/11 corpus.
+
+Branches
+1. MAMMON-related recovered material.
+2. APPLE material used as a derived MAMMON quality/decision overlay.
+3. Eden 25th Anniversary recovered corpus and related source material.
+
+Known unresolved historical gaps are intentionally retained as unresolved rather than fabricated.
+This release closes the recovery-package pipeline; it does not assert completion of the later research/publication programme.

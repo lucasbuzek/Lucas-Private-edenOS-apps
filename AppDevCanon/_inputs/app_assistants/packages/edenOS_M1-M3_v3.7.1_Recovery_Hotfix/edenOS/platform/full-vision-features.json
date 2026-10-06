@@ -1,0 +1,226 @@
+{
+  "schema": 1,
+  "release": "DP0.7-v1.6-everything-in-consolidated",
+  "strategy": "include-before-test; remove, disable or replace only after measured failure",
+  "status_note": "Contracts and demonstrator surfaces are included for testing. Inclusion does not claim production-complete backend implementation.",
+  "features": [
+    {
+      "id": "adaptive-surfaces",
+      "enabled": true,
+      "stage": "fundamental"
+    },
+    {
+      "id": "multi-user-server",
+      "enabled": true,
+      "stage": "fundamental"
+    },
+    {
+      "id": "roaming-profile",
+      "enabled": true,
+      "stage": "fundamental"
+    },
+    {
+      "id": "object-graph",
+      "enabled": true,
+      "stage": "fundamental"
+    },
+    {
+      "id": "heimdall-core",
+      "enabled": true,
+      "stage": "fundamental"
+    },
+    {
+      "id": "universal-search",
+      "enabled": true,
+      "stage": "fundamental"
+    },
+    {
+      "id": "eden-connect",
+      "enabled": true,
+      "stage": "fundamental"
+    },
+    {
+      "id": "eden-sync",
+      "enabled": true,
+      "stage": "fundamental"
+    },
+    {
+      "id": "eden-share-cast",
+      "enabled": true,
+      "stage": "fundamental"
+    },
+    {
+      "id": "distributed-compute",
+      "enabled": true,
+      "stage": "fundamental"
+    },
+    {
+      "id": "offline-knowledge-packs",
+      "enabled": true,
+      "stage": "fundamental"
+    },
+    {
+      "id": "provenance-history",
+      "enabled": true,
+      "stage": "fundamental"
+    },
+    {
+      "id": "backup-recovery-update",
+      "enabled": true,
+      "stage": "fundamental"
+    },
+    {
+      "id": "accessibility-input-adaptation",
+      "enabled": true,
+      "stage": "fundamental"
+    },
+    {
+      "id": "plant-animal-atlas",
+      "enabled": true,
+      "stage": "product"
+    },
+    {
+      "id": "research-lab-field-notebook",
+      "enabled": true,
+      "stage": "product"
+    },
+    {
+      "id": "education-real-data-loop",
+      "enabled": true,
+      "stage": "product"
+    },
+    {
+      "id": "gardenos-integration",
+      "enabled": true,
+      "stage": "product"
+    },
+    {
+      "id": "nandi-robotics",
+      "enabled": true,
+      "stage": "product"
+    },
+    {
+      "id": "heimdall-media-experience",
+      "enabled": true,
+      "stage": "product",
+      "scope": "HEIMDALL media capability/experience; no Cloud9 production identity"
+    },
+    {
+      "id": "heimdall-reading-calibre-provider",
+      "enabled": true,
+      "stage": "provider",
+      "scope": "HEIMDALL Books & Documents capability; calibre is an optional provider, not a separate edenOS application/domain"
+    },
+    {
+      "id": "gis-spatial-provider",
+      "enabled": true,
+      "stage": "provider"
+    },
+    {
+      "id": "engineering-cad-provider",
+      "enabled": true,
+      "stage": "provider"
+    },
+    {
+      "id": "medical-information-provider",
+      "enabled": true,
+      "stage": "provider",
+      "constraint": "information handling only; no diagnostic-certification claim"
+    },
+    {
+      "id": "ocr-provider",
+      "enabled": true,
+      "stage": "provider"
+    },
+    {
+      "id": "argOS-research-workflow",
+      "enabled": true,
+      "stage": "workflow"
+    },
+    {
+      "id": "casper-read-review-workflow",
+      "enabled": true,
+      "stage": "workflow"
+    },
+    {
+      "id": "lingua-translation-workflow",
+      "enabled": true,
+      "stage": "workflow"
+    },
+    {
+      "id": "iris-visual-workflow",
+      "enabled": true,
+      "stage": "workflow"
+    },
+    {
+      "id": "forge-build-workflow",
+      "enabled": true,
+      "stage": "workflow"
+    },
+    {
+      "id": "weaver-publish-workflow",
+      "enabled": true,
+      "stage": "workflow"
+    },
+    {
+      "id": "headless-core",
+      "enabled": true,
+      "stage": "profile"
+    },
+    {
+      "id": "server-profile",
+      "enabled": true,
+      "stage": "profile"
+    },
+    {
+      "id": "desktop-profile",
+      "enabled": true,
+      "stage": "profile"
+    },
+    {
+      "id": "full-profile",
+      "enabled": true,
+      "stage": "profile"
+    },
+    {
+      "id": "recovery-profile",
+      "enabled": true,
+      "stage": "profile"
+    },
+    {
+      "id": "wayland-gui-bootstrap",
+      "enabled": true,
+      "stage": "experiment"
+    },
+    {
+      "id": "alpine-dev-base",
+      "enabled": true,
+      "stage": "experiment"
+    },
+    {
+      "id": "buildroot-release-path",
+      "enabled": true,
+      "stage": "experiment"
+    },
+    {
+      "id": "image-based-updates",
+      "enabled": true,
+      "stage": "experiment"
+    },
+    {
+      "id": "ab-rollback",
+      "enabled": true,
+      "stage": "experiment"
+    },
+    {
+      "id": "sandbox-ipc",
+      "enabled": true,
+      "stage": "experiment"
+    },
+    {
+      "id": "edenapp-bundle",
+      "enabled": true,
+      "stage": "experiment"
+    }
+  ]
+}

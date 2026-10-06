@@ -1,0 +1,15 @@
+MONETA VERTICAL SLICE — v1.1
+REFERENCE FLOW
+RECEIPT → MERCURY → LEDGER → MONETA
+
+EXTENDED FLOW
+RECEIPT → MERCURY → LEDGER → ALLOCATE / VAULT / MARGIN / TRIBUTE → NUNTIUS → MONETA
+
+SCENARIOS
+invoice-to-ledger; monthly close; cash shortage; budget overrun; duplicate payment; project profitability;
+grant-funded project; multi-currency transaction; missing receipt; forecast revision; tax evidence preparation;
+executive monthly report.
+
+RULE
+Each stage consumes a formal handoff object and emits a formal result object. Cross-company context is referenced,
+not blindly duplicated.

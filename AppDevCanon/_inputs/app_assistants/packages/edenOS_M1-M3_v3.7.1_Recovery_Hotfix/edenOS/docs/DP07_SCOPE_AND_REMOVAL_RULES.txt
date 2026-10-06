@@ -1,0 +1,38 @@
+DP0.7 PUSH-EVERYTHING / TEST / REMOVE RULE
+
+INCLUDED NOW
+- edenShell desktop presentation: menu, dashboard, desktop files, windows, Dock, launcher.
+- edenAdaptive responsive layout seed.
+- edenAppRegistry and first-party surfaces.
+- Files as view onto HEIMDALL information/storage concepts.
+- Atlas with Plant/Animal Atlas integrated as knowledge contexts.
+- Education and Research surfaces.
+- gardenOS and Nandi operational surfaces with local-authority/safety boundary.
+- HEIMDALL Core information/asset foundation.
+- edenObject schema seed.
+- Projects/relationships, provenance, versions/representations concepts.
+- recovery credentials for development.
+- static package tests and runtime acceptance checklist.
+
+TEST THEN REMOVE
+1. Renderer/compositor dependencies that exceed value.
+2. Duplicate metadata/index/search implementations.
+3. Any daemon that exists only because a logical service was mistaken for a process.
+4. Decorative animation/blur if it harms LEAN targets.
+5. Provider packages not needed by the selected profile.
+6. Demo data/assets after they cease to exercise architecture.
+7. Chromium if footprint/RAM is excessive; replace renderer without changing edenUI contracts.
+
+NEVER REMOVE TO HIT SIZE
+- recovery path
+- user-data separation
+- authoritative object identity/provenance
+- safety boundaries
+- app registry
+- headless independence
+- accessibility semantics/adaptive architecture
+- verification/rollback hooks
+
+MEASUREMENT GATES
+Record boot success, overlay success, GUI success, installed bytes, idle RAM, shell launch time,
+app launch latency, headless boot, clean shutdown/recovery. Claims remain UNKNOWN until measured.

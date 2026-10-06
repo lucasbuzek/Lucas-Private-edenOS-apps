@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "principle": "The user environment belongs to the person, not the machine.",
+  "identity_data_state_separation": true,
+  "data_locality": ["available_everywhere", "on_demand", "offline_pinned", "device_local", "server_only"],
+  "offline": "Authorized local profile/data cache remains usable offline; changes reconcile after reconnect.",
+  "presentation": "Application state and logical workspace may roam; window geometry and device presentation do not."
+}

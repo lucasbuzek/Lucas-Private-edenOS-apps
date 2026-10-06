@@ -1,0 +1,19 @@
+OWNERSHIP AUDIT — v1.8 RECOVERY CANDIDATE
+
+CONFIRMED
+- AOS -> CONDUCTOR: predecessor/superseded identity.
+- Historical HEIMDALL media-center ownership -> SKALD.
+- Books/Reading specialist -> LECTOR.
+- Professional photography -> CURATOR.
+- LCAS Apps/edenOS runtime -> retired; Chat UI identity retained.
+- Current HEIMDALL differs materially from historical HEIMDALL.
+
+RESERVED, NOT MISSING
+- CHRONOS: functionality may be described; canonical definition not approved.
+- Tiny Helpers: some intentionally have no defined need beyond name/description.
+
+STILL REQUIRES OWNERSHIP SWEEP
+Historical HEIMDALL material concerning generic documents, universal conversion, GIS/maps, medical/DICOM, scientific datasets, ingestion/indexing, offline knowledge packs, storage/file management and other cross-domain functions must be checked against newer specialist/shared-capability decisions before assigning current ownership. Do not automatically restore them to HEIMDALL.
+
+EVIDENCE RULE
+Recovered decision != implemented capability != verified working software. UNKNOWN remains UNKNOWN where runtime/build evidence is absent.

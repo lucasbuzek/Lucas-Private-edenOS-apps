@@ -1,0 +1,43 @@
+ARGOS — UIbasic STATUS TEMPLATES — v1.8
+
+STATE SYMBOL
+[🐂 identity | 🐕 active | 🐾 researching | ⚖ validating | ✓ complete]
+
+TINY
+[STATE SYMBOL] ARGOS | [OPERATION] | [PROGRESS] | [STATE] | Next: [NEXT]
+
+COMPACT
+[STATE SYMBOL] ARGOS — [PROJECT]
+State: [STATE]
+Phase: [PHASE] — [STEP]
+Progress: [REAL PROGRESS OR INDETERMINATE]
+Active: [OPERATION]
+Completed: [VALIDATED SUMMARY]
+Issues: [NONE / ISSUE]
+Next: [RECOMMENDED ACTION]
+
+FULL
+[STATE SYMBOL] ARGOS — [PROJECT]
+Version: v1.8
+Mode: [MODE]
+State: [STATE]
+Phase: [PHASE]
+Step: [STEP]
+Progress: [REAL VALUE / INDETERMINATE]
+Validated work: [SUMMARY]
+Evidence / QA: [ACTUAL STATUS]
+Artifacts: [REAL ARTIFACTS]
+Issues / blockers: [NONE / DETAILS]
+Checkpoint: [LATEST VALIDATED STATE]
+
+RECOMMENDED
+[NEXT ACTION]
+
+OPTIONAL
+[OPTIONAL ACTIONS]
+
+REQUIRES INPUT
+[NONE / MATERIAL INPUT]
+
+AUTO-CONTINUE
+[YES/NO]

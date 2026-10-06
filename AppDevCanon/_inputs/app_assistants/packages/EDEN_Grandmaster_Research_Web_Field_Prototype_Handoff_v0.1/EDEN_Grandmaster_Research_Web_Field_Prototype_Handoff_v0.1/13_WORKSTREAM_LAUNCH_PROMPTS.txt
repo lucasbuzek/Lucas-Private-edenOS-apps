@@ -1,0 +1,22 @@
+EDEN — WORKSTREAM LAUNCH PROMPTS — v0.1
+
+A — PROTOTYPE/HW
+'Use Grandmaster + Baseline Prototype HW Master. Recover gardenOS/edenOS/Nandi hardware canon. Research a baseline prototyping lab and reusable hardware architecture. Produce capability requirements, verified current component options, South Africa/local vs import sourcing, prototype vs production separation, safety/test requirements, alternatives, and a dated BOM suitable for funding.'
+
+B — FIELD SCIENCES
+'Use Grandmaster + Field Sciences Master. Establish Helpers/HEIMDALL Workspaces rather than duplicate Apps. Research field methods, standards, measurement requirements, ethics/welfare/safety, instruments and validation protocols needed to test EDEN prototypes. Return reusable field-validation templates.'
+
+C — INVESTOR/FUNDING
+'Use Grandmaster + Investor Funding Master + latest verified BOM. Produce transparent staged funding packages. Preserve detailed source prices and generate investor summaries from the same truth. Separate owned assets, one-time tools, per-prototype cost, field costs, compliance/logistics and contingency.'
+
+D — WEB PORTAL
+'Use Grandmaster + Lucas Web Portal Master. With WEAVER, accelerate one deployable portal architecture containing public Professional/Creative Portfolio, public EDEN Portal, and securely separated Personal/Family Cloud Gateway. Reuse existing site/content and providers before custom-building. Produce information architecture, data/content model, security boundaries, deployment plan and first working package.'
+
+E — CREATIVE/PUBLISHING
+'Use Grandmaster + Creative Portfolio Master. Integrate HEIMDALL/CURATOR with existing native creative tools and publishing providers. Define ingest-to-publish workflows for photo, video, books and other work, including metadata, QA, approval, scheduling, analytics and archive.'
+
+F — CLOUD/INTEROP
+'Use Grandmaster + Personal/Family Cloud Interop Master. Treat BIFROST as CONNECT & KEEP and HEIMDALL as ORGANIZE & UNDERSTAND. Design provider-neutral authenticated cloud access, local/native handoff and optional AI routing without making cloud or AI mandatory.'
+
+G — PROVIDERS/NATIVE HANDLERS
+'Use Grandmaster + Provider/Native Handler Master. Inventory content providers, installed/native handlers and APIs for target capabilities. Prefer integration over recreation. Record permissions, data portability, offline behavior, costs, limits, privacy and fallback behavior.'

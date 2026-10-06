@@ -1,0 +1,20 @@
+MAMMON v0.1 — OPEN ITEMS
+
+HISTORICAL RECOVERY
+- Exact Generals Generations lineage, names, order and descriptions.
+- Exact “25th anniversary” research corpus, methods, sources and inputs.
+- GrandMasterRegister audit for strategist/rogue/scout identities.
+
+IMPLEMENTATION
+- MAMMON Capability Manifest.
+- Opportunity schema.
+- SWEATSHOP Execution Contract schema.
+- Worker lifecycle/events.
+- Strategic War Room interface.
+- Economic feedback schema.
+- ARGOS corpus/privacy/promotion gates.
+- Provider benchmark framework.
+- Cross-domain Opportunity Matrix.
+
+FIRST ACCEPTANCE TEST
+REAL OPPORTUNITY → VERIFY → STRATEGIZE → ECONOMICS → DECOMPOSE → RESOLVE PROVIDERS → EXECUTE → QA → DELIVER → MEASURE → RESEARCH → OPTIMIZE.

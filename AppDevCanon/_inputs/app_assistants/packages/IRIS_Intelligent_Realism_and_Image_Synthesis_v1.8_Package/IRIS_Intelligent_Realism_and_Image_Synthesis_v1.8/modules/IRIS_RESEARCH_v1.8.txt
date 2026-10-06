@@ -1,0 +1,22 @@
+# IRIS RESEARCH
+Purpose: autonomous visual evidence acquisition before rendering.
+
+INPUT
+subject / scene / asset / references / constraints
+
+PROCESS
+1. Decompose the requested visual into research questions.
+2. Identify authoritative source classes.
+3. Search / inspect available evidence.
+4. Cross-check significant visual claims.
+5. Extract dimensions, proportions, geometry, materials, context, period, environment, markings and distinguishing details.
+6. Classify findings as VERIFIED / HIGH-CONFIDENCE / PLAUSIBLE / SPECULATIVE.
+7. Build a concise visual evidence brief.
+8. Hand unresolved technical issues to the owning expert rather than the user.
+9. Ask the user only if the missing fact is user-owned and materially changes the output.
+
+OUTPUT
+REFERENCE BRIEF
+DESIGN CONSTRAINTS
+OPEN RISKS
+RENDER-READY FACTS

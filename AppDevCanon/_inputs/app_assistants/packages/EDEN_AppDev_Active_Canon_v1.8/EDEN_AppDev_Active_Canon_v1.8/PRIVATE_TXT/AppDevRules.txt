@@ -1,0 +1,193 @@
+AppDevRules — ACTIVE CLEAN CANON
+Version: 1.8
+Date: 2026-09-24
+Owner: Lucas Buzek
+Status: ACTIVE CANON
+
+SCOPE
+Universal EDEN application-development rules. This file defines HOW development works.
+It does NOT enumerate EDEN Apps, Specialists, Helpers, Tiny Helpers, Agents or Products.
+The GrandMasterRegister is the authoritative catalogue and may be consulted only when the user opts in.
+
+AUTHORITY
+Newest explicit Lucas Buzek decision overrides older conflicting material.
+Preserve superseded material as provenance; do not silently keep it active.
+Do not invent unresolved identities, names, acronym meanings, ownership or relationships.
+ACTIVE CANON != IMPLEMENTED/RECOVERED != VERIFIED.
+Generated != Saved != Verified != Consolidated != Released.
+UNKNOWN is never PASS.
+
+CONTROLLING RULE
+Make the capability available coherently through EDEN using the smallest adequate implementation.
+RECOVER -> DISCOVER -> RECOGNIZE -> REUSE -> LINK/HANDOFF -> INTEGRATE -> ADAPT -> ENHANCE -> BUILD ONLY THE GAP -> VERIFY.
+Existing native, user-installed, network and provider capabilities are first-class implementations.
+A redirect, contextual launch, native API, protocol, file format, mature library/service/application or provider adapter may be the adequate implementation.
+Before building: check prior art; verify maturity/fit/license/resources/safety; compare KEEP/REMOVE/SIMPLIFY/REUSE/ADAPT/BUILD/REPLACE.
+
+DESIGN MANTRA
+LOCAL FIRST.
+USER DATA OUTLIVES SOFTWARE.
+DATA BELONGS TO THE USER, NOT THE FIRMWARE OR APPLICATION IMAGE.
+INTEGRATIONS ARE ADAPTERS, NOT OWNERS.
+MIGRATE, DO NOT RESET.
+RECOVERY IS A PRODUCT FEATURE.
+SAFETY IS ARCHITECTURE.
+QUALITY IS MEASURED, NOT ASSUMED.
+POLISH IS FUNCTIONAL.
+DEFAULTS SHOULD BE GOOD ENOUGH TO SUCCEED.
+DESIGN FOR THE COMMON CASE; RETAIN POWER FOR THE EXPERT.
+PROGRESSIVE DISCLOSURE.
+SHOW STATE.
+CONFIRM CONSEQUENCE.
+MAKE AUTOMATION EXPLAINABLE.
+BUILD A SMALL CORE AND MOVE WEIGHT OUTWARD.
+REMOVE BEFORE ADDING.
+ONE AUTHORITATIVE PATH.
+DETAIL ON DEMAND.
+VERIFY BEFORE DESTRUCTIVE ACTION.
+“Beauty, capability and dignity should not be premium features.”
+
+OWNERSHIP
+One authoritative owner per function/domain.
+Apps own domain intent, semantics and workflows.
+Shared capabilities own stable generic contracts.
+Providers/adapters implement platform/external connections.
+OWN THE DOMAIN. SHARE THE CAPABILITY.
+ORCHESTRATION != OWNERSHIP != EXECUTION.
+TYPE != CAPABILITY != PROVIDER != INSTANCE/CONNECTION.
+
+SHARED CAPABILITY INDEPENDENCE
+Preferred: APP -> SHARED CAPABILITY -> provider/platform adapter.
+Not by default: APP -> BIFROST -> SHARED CAPABILITY.
+A shared capability should be independently consumable where practical.
+BIFROST may discover/register/integrate/permission/coordinate/expose without becoming mandatory runtime gateway.
+
+DATA / INFORMATION
+Where practical, information remains in the best existing native, user-installed or user-selected authoritative system.
+EDEN integrates, relates, discovers, accesses and presents it rather than unnecessarily copying it into another EDEN database.
+EDEN stores information itself when it is the appropriate authority, no suitable external authority exists, or EDEN-specific relationship/state/provenance must persist independently.
+Removing/replacing an App/provider/integration must not unnecessarily destroy user information.
+
+PORTABILITY
+APPLICATION -> EDEN/DOMAIN API -> PLATFORM CORE -> PLATFORM ADAPTER -> DRIVER/PROVIDER -> HARDWARE/SERVICE.
+Private optimization may be platform-native; shared architecture remains portable.
+
+INSTALLATION
+One obvious primary Install action. Install does not mean install everything.
+INSTALL/RECOMMENDED = balanced, device-aware; detect/reuse adequate existing capabilities; add useful missing pieces; defer heavyweight/infrequent options.
+LEAN = minimum useful core.
+FULL = all appropriate supported/recommended capabilities without pointless duplication/incompatibility.
+CUSTOM = explicit control.
+
+CONFIGURATION
+SIMPLE -> ADVANCED -> EXPERT.
+Development/Diagnostic controls are separate.
+Assistance: RECOMMENDED / GUIDED / AUTOMATED. These are assistance layers, not expertise levels.
+
+RELEASE CHANNEL / AUTHORITY
+Release channel and authority are independent dimensions.
+Release channel: OFFICIAL / DEVELOPMENT / EXPERIMENTAL.
+Authority: STANDARD / ADMIN.
+ADMIN is privileged authority, not a release channel.
+An OFFICIAL build may expose ADMIN functions to authorized administrators.
+EXPERIMENTAL may use explicitly recorded Experimental Bridges; such bridges never establish architectural ownership.
+Promotion requires evidence; do not infer maturity from a version number.
+
+AUDIENCE
+PRIVATE / FAMILY / FRIENDS / PUBLIC is a deployment audience dimension, not release maturity or authority.
+Named users/groups/preferences are deployment/profile data and do not belong in universal AppDevRules.
+Deployment systems may compose audience with release channel, authority and Recommended/Custom configuration.
+
+PACKAGING / DEPLOYMENT PREFLIGHT
+Before a distributable/deployment package is committed:
+- identify target(s)
+- choose release channel
+- choose authority where applicable
+- choose audience scope
+- for FAMILY/FRIENDS, allow nested groups/users
+- choose RECOMMENDED or CUSTOM profile
+- resolve inherited group defaults and only user-specific deltas
+- adapt to target device/capabilities
+- verify dependencies/providers
+- verify package identity/version/build/integrity
+- preserve rollback/LKG where applicable
+- do not include secrets, private user payloads or development debris unless explicitly required and authorized
+- provide README.txt and appropriate operational documentation
+Nontechnical recipients default to SIMPLE + RECOMMENDED/AUTOMATED, not a crippled edition.
+
+CAPABILITY-AWARE DEPLOYMENT
+Only expose deployment dimensions relevant to the target and requested operation.
+Do not impose workstation/application deployment complexity on simple controllers or constrained Nodes.
+
+MIGRATION / UPDATE / RECOVERY
+Migration: DETECT -> VALIDATE -> BACKUP/STAGE -> MIGRATE -> VERIFY -> COMMIT -> ROLLBACK ON FAILURE.
+Bootstrap: UNPACK -> VERIFY -> DETECT EXISTING EDEN/INSTALL -> DISCOVER EXISTING SUITABLE CAPABILITIES -> BACKUP/STAGE -> TRANSACTIONAL INSTALL/UPDATE -> PRESERVE STATE -> VERIFY -> ATOMIC COMMIT -> LAUNCH INSTALLED COPY -> HEALTH CHECK -> OPEN UI -> RETURN TERMINAL CONTROL.
+Generic update safety: CHECK -> DOWNLOAD/STAGE -> VERIFY -> BACKUP -> UPDATE -> TEST/REGRESSION -> COMMIT.
+A safety lifecycle does not assign domain ownership.
+RECOVER / REUSE LAST KNOWN GOOD BEFORE REDESIGN.
+No new feature silently regresses verified behavior.
+
+AUTOMATIC DEVELOPMENT WORKFLOW
+GOAL/CHANGE REQUEST -> load bounded project context/canon -> inspect current source/state -> plan/decompose -> recover/reuse/search before new code -> implement -> format/static checks -> build/compile -> relevant automated tests -> analyze failures -> bounded safe repair/retry -> regression test -> package -> record source revision/build identity/hash/provenance/evidence -> publish/deploy when authorized -> post-deployment health/smoke test -> retain checkpoint/LKG/rollback.
+CONDUCTOR coordinates; authoritative specialist/shared capabilities perform their domains. Chat UI may display workflow activity but is not a runtime dependency.
+
+TESTING
+PASS / FAIL / UNKNOWN / SKIPPED / N/A.
+PASS requires evidence.
+Platform/device behavior remains UNKNOWN until tested on that target.
+A localhost response alone is not proof that the intended build is running.
+Expose enough identity to verify product/object ID, version, build ID, install identity/path and integrity/manifest.
+
+VERSION DIMENSIONS
+Keep independent where applicable:
+app_version; appdev_schema; profile_version; package_version; source_revision; build_id; migration_level.
+Never infer one from another.
+
+WEB-FIRST
+Establish and verify backend/domain capability first.
+Responsive Web access is the default practical testing/private-access representation when adequate.
+Build native clients when native integration materially improves capability, usability, performance, offline operation or platform integration.
+A Web representation is not a new App.
+
+BROWSER / WEB INTEGRATION
+Web Access and Browser Bridge are distinct shared capabilities.
+Prefer launch/contextual launch/standard Web APIs before deeper proprietary browser control when adequate.
+Consequential browser actions follow REQUEST -> VALIDATE -> SAFETY CHECK -> PREVIEW/AUTHORIZE -> EXECUTE -> VERIFY.
+Never silently submit, purchase, publish or commit.
+
+HEADLESS PROVIDERS
+Remote management is the default for headless providers where appropriate.
+Provider hardware supplies capabilities/data; compatible Apps/HEIMDALL provide interaction elsewhere.
+Do not install a full EDEN UI onto every NAS/server/controller merely because it is possible.
+
+PROVIDER CONTINUITY
+Prefer LIVE VERIFIED STATE -> LAST KNOWN GOOD where safe -> GRACEFUL DEGRADATION -> UNAVAILABLE only where necessary.
+Changing/removing a provider must not destroy canonical EDEN identity/configuration/relationships.
+
+AI
+AI reasons; deterministic services execute.
+USE THE LOWEST SUFFICIENT CAPABILITY.
+Cloud AI enhances EDEN; it is not a prerequisite for deterministic/local operation.
+
+LOCALIZATION
+English = canonical/reference/fallback.
+Private/Custom/Experimental = EN/SK baseline.
+Final/Public = multilingual-by-design through LINGUA from one codebase.
+UI/input/source/output language remain separable where applicable.
+
+DOCUMENTATION
+Human-readable documentation defaults to TXT; code/config keeps native formats.
+New-App bootstrap asks: Create project documentation? YES / LATER / NO.
+CASPER or another compatible documentation provider may be connected when available; it is not mandatory.
+In Lucas’s Private build, active rules, registry exports, profiles, contracts, versioning and provenance relevant to that environment must be accessible as human-readable TXT.
+
+GRANDMASTERREGISTER OPT-IN
+GrandMasterRegister contains the catalogue of EDEN identities/entities/relationships.
+AppDevRules contains no duplicate App/Helper list.
+When the user opts in, AppDev tooling may consult GrandMasterRegister for canonical identity, type, ownership, capabilities, relationships, aliases/supersession and provenance.
+Without opt-in, universal AppDev remains usable independently.
+
+QUIET AUTOMATION
+Routine successful automation generally remains quiet.
+Surface exceptions, safety problems, failures, meaningful changes and decisions requiring the user.
+Detail on demand.

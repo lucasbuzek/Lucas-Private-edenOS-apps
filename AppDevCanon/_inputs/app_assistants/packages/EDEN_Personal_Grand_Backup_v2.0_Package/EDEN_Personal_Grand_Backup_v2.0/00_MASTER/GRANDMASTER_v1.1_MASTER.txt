@@ -1,0 +1,63 @@
+GRANDMASTER — EDEN/AppDev Canonical Master Snapshot — v1.1
+
+EDEN / APPDEV CANONICAL FOUNDATION
+
+Owner: Lucas Buzek Snapshot date: 2026-09-22 Package version: v1.1
+
+EDEN = Engineering, Development, Exploration & Nature.
+
+Core principle: Beauty, capability and dignity should not be premium
+features.
+
+Core implementation rule: IMPLEMENT / INTEGRATE EXISTING CAPABILITY
+BEFORE RECREATING IT.
+
+Architecture: BIFROST = CONNECT & KEEP. HEIMDALL = ORGANIZE &
+UNDERSTAND. SPECIALIST APPS = SPECIALIZE & DO. CONDUCTOR = shared
+orchestration. AOS = substantial pipeline execution and continuation.
+LCAS = truthful observation, control and status.
+
+Quality: Generated ≠ Saved ≠ Verified ≠ Consolidated ≠ Released. Static
+checks ≠ compile. Compile ≠ physical verification. Tests: PASS / FAIL /
+UNKNOWN / SKIPPED / N/A. UNKNOWN is never PASS.
+
+Data: LOCAL FIRST. USER DATA OUTLIVES SOFTWARE. INTEGRATIONS ARE
+ADAPTERS, NOT OWNERS. MIGRATE, DO NOT RESET. RECOVERY IS A PRODUCT
+FEATURE.
+
+GRANDMASTERREGISTER
+
+GrandMasterRegister is an authoritative registry artifact, not a new App
+or Helper. BIFROST is the software keeper of canonical registry state.
+CONDUCTOR coordinates cross-system work. LCAS exposes truthful
+state/control.
+
+Names are labels; canonical IDs define identity. The registry records
+identities; it does not replace their authoritative identity packages.
+
+Registry fields include: canonical_id; canonical_name; symbol;
+expansion/title; entity_type; role; purpose; scope; authority;
+capabilities; boundaries; personality/metaphor; parent/family;
+subordinates; relationships; standalone/embedded capability; providers;
+status; version; aliases; supersession; provenance; confidence; visual
+metadata.
+
+PROFILE RULE
+
+Interaction profiles may change expression, never truth, evidence,
+safety, capability or authoritative responsibility.
+
+LANGUAGE RULE
+
+English is canonical/reference and universal fallback.
+Private/Custom/Experimental remains EN/SK baseline. Official/Public
+releases are multilingual-by-design through LINGUA. UI language, input
+language, source/content language and output/document language remain
+independently selectable.
+
+LINGUA uses: WORLD → CONTINENT/REGIONAL COVERAGE → COUNTRY/LOCALITY
+RECOMMENDATION → PERSONAL PREFERENCE → OPTIONAL PROVIDERS.
+
+Locality recommends and orders. It never locks, hides or determines
+identity. Language packs are reusable manifests, not duplicate
+translations.

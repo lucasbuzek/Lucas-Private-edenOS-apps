@@ -1,0 +1,6 @@
+EXAMPLE
+@FORGE AUTO
+Goal: Review this project and produce a verified, versioned release package.
+
+HANDOFF EXAMPLE
+If research is missing, return a structured handoff request to CONDUCTOR rather than silently impersonating another assistant.

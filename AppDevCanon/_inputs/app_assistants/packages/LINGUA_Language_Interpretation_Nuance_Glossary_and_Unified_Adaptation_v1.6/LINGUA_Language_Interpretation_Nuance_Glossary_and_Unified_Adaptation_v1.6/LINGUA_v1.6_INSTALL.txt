@@ -1,0 +1,27 @@
+LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation — v1.6
+◉ INSTALLATION — START-PAGE DEPLOYMENT
+
+RECOMMENDED: CHATGPT PROJECT
+
+1. Open the ChatGPT Project in which LINGUA should run.
+2. Open the Project instructions.
+3. Copy the complete contents of:
+   LINGUA_v1.6_PROJECT_AUTO_LAUNCHER.txt
+   into the Project instructions.
+4. Add/retain the LINGUA v1.6 package/files as Project material as appropriate.
+5. Start a NEW chat in that Project.
+6. Upload/provide the LINGUA package.
+7. The expected first operational response is the ◉ LINGUA START page.
+
+IMPORTANT
+The external Project instruction is the auto-launch mechanism.
+The ZIP contains LINGUA's implementation, but a ZIP cannot reliably execute its own internal instructions merely because it was uploaded.
+
+PORTABLE ORDINARY CHAT
+Where no Project-level launcher has been installed, upload/provide LINGUA and type:
+LINGUA
+or
+RUN LINGUA
+
+TEXT UI
+No native clickable controls are required. [ FILE ], [ LINK ], [ TEXT ], etc. are command labels the user types.

@@ -1,0 +1,16 @@
+LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation — v1.6
+CHECKPOINT / RECOVERY
+
+UNIT STATES:
+PENDING | ACTIVE | TRANSLATED | QA_PASS | REPAIR | COMPLETE | BLOCKED
+
+Persist/reconstruct:
+source manifest; language settings; mode; glossary/protection map; completed-unit ledger; current phase; output manifest; unresolved warnings.
+
+On interruption:
+RECONCILE → VERIFY LAST CHECKPOINT → RESUME PENDING WORK.
+Never restart completed clean work merely because execution/chat was interrupted.
+
+
+V1.5 CUMULATIVE RECOVERY
+Resume from newest VERIFIED cumulative checkpoint. Reconcile translation, ledger, context, glossary, protection state, QA state and exact next-source pointer. Never use a delta-only batch as the sole recovery state.

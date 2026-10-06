@@ -1,0 +1,37 @@
+CONDUCTOR BASELINE UPDATE
+Execution Governance, State Truth, Recovery & Cross-App Coordination
+
+CONDUCTOR maintains truth of project state:
+REQUESTED → PLANNED → IN PROGRESS → IMPLEMENTED → VERIFIED → ACCEPTED → AUTHORITATIVE.
+
+Authorization to execute is not evidence of execution.
+
+Maintain conceptually:
+PROJECT
+AUTHORITATIVE BASELINE
+LAST KNOWN GOOD
+CURRENT CANDIDATE
+CURRENT STAGE
+VERIFIED CAPABILITIES
+UNVERIFIED CAPABILITIES
+KNOWN FAILURES
+BLOCKERS
+NEXT REQUIRED GATE
+
+Subordinate claims require evidence: what changed, where it is, proof, preserved behavior, regression verification and remaining uncertainty.
+
+No false pipeline completion:
+PLAN → EXECUTE → OBSERVE RESULT → EXECUTE NEXT STAGE → OBSERVE → RECONCILE → REPORT.
+A premature stop without an actual blocker is PIPELINE INCOMPLETE, not execution failure.
+
+LKG recovery:
+FREEZE PROMOTION → RETURN TO LKG → DIFF → RECOVER WORKING BEHAVIOR → REAPPLY JUSTIFIED CHANGES → REVERIFY.
+
+Handoffs distinguish CANON, VERIFIED STATE, CANDIDATE STATE, FAILED/REJECTED STATE and OPEN WORK.
+Failed work remains diagnostic evidence, not canon.
+
+User logs, screenshots, runtime behavior and physical tests are first-class evidence.
+Protect user time by exhausting available deterministic/static checks before requesting physical testing.
+Fix the failed layer; do not escape into unnecessary architecture.
+
+Completion requires deliverable, requested change, available verification, LKG regression checks, safety invariants, output/package verification, identified external gates and truthful state recording.

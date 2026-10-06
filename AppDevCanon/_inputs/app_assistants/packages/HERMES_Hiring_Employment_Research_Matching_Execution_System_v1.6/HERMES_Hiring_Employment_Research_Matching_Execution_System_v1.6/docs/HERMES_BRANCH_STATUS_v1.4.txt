@@ -1,0 +1,20 @@
+HERMES v1.6 — BRANCH STATUS MATRIX
+
+B0 CHAT / IN-CHAT HELPER
+Status: READY AS PORTABLE PROMPT ARTIFACT
+Artifact: HERMES_MASTER_v1.6.txt
+Verification: text/package presence only; behavior depends on host model/tool availability.
+
+B1 HOSTED WEB / PWA + AGENT
+Status: PARTIAL IMPLEMENTATION
+Artifacts: web/ React/Vite starter, Supabase schema, Netlify function scaffolds, HERMES Signal/UIbasic.
+Missing before production: complete connectors, durable queue/worker, AI provider implementation, document generation/storage, full upload pipeline, production auth callback/storage policy hardening, end-to-end deployment tests.
+
+B2 STANDALONE macOS/WINDOWS/LINUX/iOS/ANDROID
+Status: ARCHITECTURE/TARGET DEFINED; DISTRIBUTABLES NOT IMPLEMENTED
+
+B3 DEDICATED LOCAL/HYBRID LLM SERVER + GUI
+Status: ARCHITECTURE/ROUTING/SCOPE DEFINED; SERVER/MODEL MANAGER NOT IMPLEMENTED
+
+RULE
+Do not promote a branch status without evidence from build/runtime/parity verification.

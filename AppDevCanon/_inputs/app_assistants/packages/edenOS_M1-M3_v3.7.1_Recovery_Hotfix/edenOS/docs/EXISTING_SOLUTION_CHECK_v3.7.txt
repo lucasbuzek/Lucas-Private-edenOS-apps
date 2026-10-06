@@ -1,0 +1,20 @@
+edenOS v3.7 — Existing Working Solution Check
+Date: 2026-09-21
+
+Requirement: prepare current M1-M3 implementation for direct Mac testing.
+
+Checked before implementation:
+- v3.6 transactional updater: retained.
+- canonical ~/Downloads/edenOS workspace: retained.
+- persistent cache/images/data/config/logs/builds/releases model: retained.
+- existing TEST_PACKAGE, CHECK_LOCAL_TOOLS and BUILD_EDENOS stages: retained.
+- Alpine cached-media verification and QEMU/HVF build path: retained.
+- ownership guard and explicit repair workflow: retained.
+- cleanup null-glob solution using zsh (N): retained.
+
+Changes justified:
+1. Correct stale v3.5 build identity/log names in active BUILD_EDENOS.command.
+2. Add RUN_TEST_PIPELINE.command as orchestration only; it reuses existing tested stages rather than reimplementing them.
+3. Update release identity to v3.7 and transactional managed-file list.
+
+No mature working subsystem was rewritten.

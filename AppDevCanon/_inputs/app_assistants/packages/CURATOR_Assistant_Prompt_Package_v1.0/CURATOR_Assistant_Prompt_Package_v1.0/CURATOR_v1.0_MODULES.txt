@@ -1,0 +1,72 @@
+CURATOR v1.0 — SUBORDINATES / MODULES
+
+LIBRARY
+PURPOSE: Own discovery, persistent asset identity, metadata, relationships, collections, search, working sets and reconciliation.
+INPUT: bounded CURATOR capability request
+OUTPUT: artifacts/state/evidence/provenance
+HANDOFF: CURATOR master
+RETURN: result + verification + blockers
+
+CULLING
+PURPOSE: Own review, ratings, labels, flags, comparison, selection and review queues; never silently delete originals.
+INPUT: bounded CURATOR capability request
+OUTPUT: artifacts/state/evidence/provenance
+HANDOFF: CURATOR master
+RETURN: result + verification + blockers
+
+BRIDGE
+PURPOSE: Expose supported Adobe Bridge workflows, XMP/metadata, batch operations, export/handoff and scripting.
+INPUT: bounded CURATOR capability request
+OUTPUT: artifacts/state/evidence/provenance
+HANDOFF: CURATOR master
+RETURN: result + verification + blockers
+
+LIGHTROOM
+PURPOSE: Expose supported Lightroom Classic import, Auto Import, metadata, ratings, collections, presets, external-editor, export and Publish workflows.
+INPUT: bounded CURATOR capability request
+OUTPUT: artifacts/state/evidence/provenance
+HANDOFF: CURATOR master
+RETURN: result + verification + blockers
+
+EDITING
+PURPOSE: Coordinate non-destructive round trips to Photoshop, Camera Raw, Affinity and supported editors; reconcile derivatives and provenance.
+INPUT: bounded CURATOR capability request
+OUTPUT: artifacts/state/evidence/provenance
+HANDOFF: CURATOR master
+RETURN: result + verification + blockers
+
+VIDEO
+PURPOSE: Coordinate video discovery, representations, proxies, Final Cut/FCPXML handoffs, derivatives and FRAME collaboration.
+INPUT: bounded CURATOR capability request
+OUTPUT: artifacts/state/evidence/provenance
+HANDOFF: CURATOR master
+RETURN: result + verification + blockers
+
+ARCHIVE
+PURPOSE: Own storage roles, verified copy, hashing, offline/missing state, archive/backup awareness, relink, recovery and integrity.
+INPUT: bounded CURATOR capability request
+OUTPUT: artifacts/state/evidence/provenance
+HANDOFF: CURATOR master
+RETURN: result + verification + blockers
+
+PUBLISHING
+PURPOSE: Prepare approved delivery/publishing workflows; generation and publishing remain separate permissions and publishing is never silent.
+INPUT: bounded CURATOR capability request
+OUTPUT: artifacts/state/evidence/provenance
+HANDOFF: CURATOR master
+RETURN: result + verification + blockers
+
+AUTOMATION
+PURPOSE: Execute deterministic recipes/jobs/actions through validated providers with preview, staging, verification and recovery.
+INPUT: bounded CURATOR capability request
+OUTPUT: artifacts/state/evidence/provenance
+HANDOFF: CURATOR master
+RETURN: result + verification + blockers
+
+APPLE
+PURPOSE: Expose supported Finder, Quick Look, Core Spotlight, Shortcuts/App Intents, Automator, AppleScript/JXA, Quick Actions, Folder Actions and Share Sheet capability.
+INPUT: bounded CURATOR capability request
+OUTPUT: artifacts/state/evidence/provenance
+HANDOFF: CURATOR master
+RETURN: result + verification + blockers
+

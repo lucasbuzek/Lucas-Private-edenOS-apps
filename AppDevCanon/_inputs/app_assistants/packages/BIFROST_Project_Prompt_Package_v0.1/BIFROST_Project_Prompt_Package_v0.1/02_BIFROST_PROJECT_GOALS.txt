@@ -1,0 +1,47 @@
+BIFROST — PROJECT GOALS — v0.1
+
+PRIMARY GOAL
+Create an open, local-first information and interoperability fabric that allows edenOS and external systems to understand, connect, exchange and preserve information without locking the user into a particular application, database, vendor or storage system.
+
+CORE GOALS
+1. Universal information model: persistent identities for people, organizations, projects, documents, media, devices, transactions, locations, assets and other objects.
+2. Metadata understanding: discover, extract, normalize and interpret embedded, sidecar, filesystem, database and provider metadata.
+3. Reuse before recreation: integrate mature software for established capabilities.
+4. Provider independence: applications request capabilities; provider selection resolves implementation.
+5. Cross-system relationships: connect logically related records even when they live in different systems.
+6. Portable user-owned information: preserve standards and authoritative sources; avoid proprietary metadata imprisonment.
+7. Provenance and integrity: record origin, transformations, providers, representations and relevant evidence.
+8. Local-first operation: core functionality remains useful without Internet connectivity.
+9. Unified discovery/search: searchable information layer across authorized sources.
+10. Long-term interoperability: stable contracts and models outlive individual implementations.
+11. Replaceability: swapping an ERP, DMS, storage backend or other provider must not require redesigning the whole platform.
+12. Lean implementation: BIFROST should contain only the custom machinery that creates genuine cross-system value.
+
+FIRST ENGINEERING MILESTONE — BIFROST KERNEL DP0.1
+Point BIFROST at an arbitrary directory and allow it to:
+DISCOVER → IDENTIFY → READ METADATA → NORMALIZE → CLASSIFY → HASH/FINGERPRINT → RELATE → PERSIST → INDEX → EXPOSE THROUGH API
+without modifying originals.
+
+INITIAL KERNEL COMPONENTS
+- Object identity
+- Metadata model/extraction interface
+- Type Registry
+- Capability Registry
+- Representation model
+- Location model
+- Relationship model
+- Provenance model
+- Provider interface/registry
+- SQLite persistence for development
+- Filesystem provider
+- Search/index baseline
+- REST/API baseline
+
+DOMAIN STRATEGY
+ERP engines: finance, accounting, procurement, inventory, sales, suppliers, customers, assets and related enterprise machinery.
+Legal providers: contracts, matters, legal documents, signatures, evidence, retention and compliance.
+Specialist providers: media, document conversion, GIS, science, medical interoperability, device systems and other domains.
+BIFROST: identity, metadata, relationships, provenance, representations, locations, provider abstraction and cross-system interoperability.
+
+SUCCESS TEST
+Replace an application, move files, change a database or introduce a better provider. The user's information structure survives and remains understandable.

@@ -1,0 +1,53 @@
+APP IDENTITY & OVERLAP RECONCILIATION — v1.1 Owner: Lucas Buzek
+
+ENGLISH
+
+GOAL Reconcile EDEN/AppDev names and overlap before expanding the
+registry.
+
+TEST FOR EVERY CANDIDATE 1. What TYPE is it? 2. What authoritative
+domain/state does it uniquely own? 3. Which existing identities overlap?
+4. Which identity owns truth and which consumes/displays/analyses it? 5.
+Is standalone value meaningful? 6. Is it actually a Workspace, Helper,
+Agent, Module, Capability, Provider, Product, Instance/Connection or
+representation? 7. Is it a legacy/superseded identity? 8. What explicit
+handoff contracts connect it to siblings? 9. What can it do with NO AI?
+10. Which capabilities may use TINY/local/LAN/API/hybrid providers?
+
+CANONICAL RELATIONSHIPS parent module_of subordinate_of
+capability_provider_for invoked_by available_to depends_on
+integrates_with representation_of supersedes superseded_by
+legacy_aliases
+
+RECONCILIATION RECORD CANONICAL ID NAME TYPE PURPOSE AUTHORITATIVE STATE
+OWNS DOES NOT OWN OVERLAPS WITH HANDOFF CONTRACTS STANDALONE / EMBEDDED
+NO_AI_CORE TINY CAPABILITIES LOCAL AI LAN AI EXTERNAL API
+HYBRID/FALLBACK PRIVACY STATUS = CURRENT | MERGE-CANDIDATE | RECLASSIFY
+| SUPERSEDED | UNRESOLVED PROVENANCE CONFIDENCE
+
+BOUNDARY PRINCIPLE A NEW APP MUST EARN ITS BOUNDARY. A different model,
+provider, UI, package, prompt or implementation does not by itself
+create a new App.
+
+KNOWN EXAMPLE UIbasic is legacy/provenance and is superseded by LCAS. Do
+not keep both as competing current shared frameworks.
+
+SLOVENSKY
+
+CIEĽ Najprv zosúladiť názvy a prekryvy EDEN/AppDev, až potom rozširovať
+register.
+
+PRE KAŽDÉHO KANDIDÁTA Urči TYPE, autoritatívnu doménu/stav, prekryvy,
+vlastníka pravdy, standalone hodnotu, či nejde skôr o
+Workspace/Helper/Module/Capability/Provider/Product, legacy stav,
+handoff kontrakty a možnosti NO-AI/TINY/LOCAL/LAN/API/HYBRID.
+
+ZÁZNAM Canonical ID; názov; typ; účel; autoritatívny stav; vlastní;
+nevlastní; prekryvy; handoff; standalone/embedded; NO_AI_CORE; TINY;
+local AI; LAN AI; external API; hybrid/fallback; privacy; status;
+provenance; confidence.
+
+PRINCÍP NOVÁ APP SI MUSÍ ZASLÚŽIŤ VLASTNÚ HRANICU. Iný model, provider,
+UI, balík, prompt alebo implementácia sám osebe nevytvára novú App.
+
+UIbasic je legacy/provenance a bol nahradený LCAS.

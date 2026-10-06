@@ -1,0 +1,21 @@
+CONDUCTOR UNIVERSAL BRANCHED DEVELOPMENT — v1.0
+
+A Branch is a governed child context derived from an authoritative parent context, inheriting applicable state while recording only intentional divergence.
+
+Universal and project-neutral. Branches may represent platform, hardware, feature, experiment, release, localization, design, research, delivery, recovery, sandbox or other controlled divergence.
+
+Effective Branch State = Parent Effective State + Branch Delta.
+
+Core rule:
+Branch deliberately. Inherit by default. Record only divergence. Preserve provenance. Verify independently. Promote evidence, not assumptions. Reconcile drift. Retire branches when their purpose ends.
+
+CONDUCTOR owns branch governance and coordination.
+AOS is the preferred execution capability for substantial sequential/repetitive/parallel branch pipelines.
+Small branch work may be delegated directly to specialist Helpers/Roles.
+LCAS remains the single canonical human-facing state/control layer.
+
+B0/B1/B2/B3 is an optional Helper Implementation Profile, not the universal definition of branching.
+
+Branch operations include CREATE, SWITCH, TREE, STATUS, COMPARE, DIFF, SYNC, REBASE, MERGE, PROMOTE, CHERRY-PICK, VERIFY, DRIFT, ARCHIVE, RESCUE and AUTO.
+
+Git is an adapter/provider, not the universal branch model.

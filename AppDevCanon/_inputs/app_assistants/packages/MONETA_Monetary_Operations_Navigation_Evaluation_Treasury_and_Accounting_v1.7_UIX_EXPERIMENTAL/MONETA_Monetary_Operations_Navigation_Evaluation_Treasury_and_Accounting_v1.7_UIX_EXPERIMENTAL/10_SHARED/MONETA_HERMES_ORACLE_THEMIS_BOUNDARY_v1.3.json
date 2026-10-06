@@ -1,0 +1,58 @@
+{
+  "version": "1.3",
+  "applications": {
+    "HERMES": {
+      "owns": [
+        "jobs_and_opportunities",
+        "employment_and_careers",
+        "freelance_contract_project_opportunities",
+        "tenders_procurement_opportunities_rfqs_rfps",
+        "opportunity_discovery",
+        "eligibility",
+        "matching",
+        "opportunity_research",
+        "application_and_bid_preparation",
+        "opportunity_specific_commercial_requirements",
+        "proposed_bid_price_rate_remuneration",
+        "submission_execution",
+        "submission_verification",
+        "opportunity_tracking",
+        "awards_offers_outcomes",
+        "recruitment_and_hiring_workflows"
+      ]
+    },
+    "MONETA": {
+      "owns": [
+        "financial_state",
+        "financial_semantics",
+        "financial_administration",
+        "authoritative_budgets",
+        "accounting",
+        "cash_flow",
+        "profitability_and_margin",
+        "financial_transactions",
+        "treasury",
+        "financial_invoices_and_receipts",
+        "tax_financial_records",
+        "financial_reporting"
+      ]
+    },
+    "ORACLE": {
+      "owns": [
+        "generalized_quantitative_analysis",
+        "generalized_modelling",
+        "generalized_scenario_computation"
+      ]
+    },
+    "THEMIS": {
+      "owns": [
+        "legal_semantics",
+        "contracts_legal_interpretation",
+        "legal_and_compliance_capabilities"
+      ]
+    }
+  },
+  "handoff_rule": "HERMES may originate opportunity-specific commercial inputs; MONETA becomes authoritative when they become financial records, financial plans, financial administration, or financial analysis.",
+  "non_merge_rule": "MONETA, HERMES, ORACLE and THEMIS remain separate cooperating EDEN applications.",
+  "existing_solution_first": true
+}

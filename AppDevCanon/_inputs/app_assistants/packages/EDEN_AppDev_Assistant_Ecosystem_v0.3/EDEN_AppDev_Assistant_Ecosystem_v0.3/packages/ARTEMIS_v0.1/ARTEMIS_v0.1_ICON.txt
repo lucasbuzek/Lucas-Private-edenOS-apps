@@ -1,0 +1,3 @@
+Symbol: ➶
+Name: ARTEMIS
+Rule: symbol is semantic shorthand, not a trademark claim. Maintain legibility at 16px and monochrome fallback.

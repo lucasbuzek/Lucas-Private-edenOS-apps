@@ -1,0 +1,13 @@
+ARGOS × FORGE — edenOS DP0.7 v1.2 Integrated
+
+OBJECTIVE
+Push the current cross-project V1 architecture into one testable development build. Contracts and real basic surfaces first; heavyweight providers remain optional.
+
+SPINE
+BOOT -> edenSystem -> Identity/Profile -> edenObject -> HEIMDALL Core -> edenAppRegistry -> edenConnect -> edenSession -> edenShell/edenAdaptive -> application surfaces -> Search/Share/Task/Notify -> Recovery.
+
+NEW
+EDEN Connect/Sync/Share/Compute contracts; adaptive surface/input/context/presentation capabilities; Simple/Child/Accessibility/Kiosk profiles; HEIMDALL provider/type contract; contextual ARGOS/IRIS/CASPER-READ/LINGUA/FORGE/WEAVER workflows; expanded validation/removal gate.
+
+TEST / REMOVE
+KEEP when correct and within budget. OPTIMIZE when correct but expensive. REPLACE when capability is required but implementation is wrong. REMOVE when redundant or low value. Chromium and Weston are test scaffolding, not frozen dependencies. Never remove recovery, data separation, object identity, provenance, safety boundaries, accessibility/adaptive architecture, app registry or headless independence merely to hit size.

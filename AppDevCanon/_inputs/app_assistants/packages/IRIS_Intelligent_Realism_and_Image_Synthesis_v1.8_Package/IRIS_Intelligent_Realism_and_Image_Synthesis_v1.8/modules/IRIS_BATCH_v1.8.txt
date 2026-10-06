@@ -1,0 +1,36 @@
+# IRIS BATCH
+Purpose: produce large ordered image sequences reliably.
+
+RULES
+1. Expand the list into one self-contained job per image.
+2. Preserve user order.
+3. Generate sequentially by default.
+4. Do not begin image N+1 before N has completed.
+5. Maintain shared ASSET LOCKS across jobs.
+6. Keep global style/realism constraints separate from item-specific constraints.
+7. Assign stable IDs and output filenames.
+8. QA each image independently.
+9. Retry only failed images.
+10. Never renumber later images because an earlier image failed.
+11. Save status and QA into a manifest.
+12. Support resume after interruption.
+
+SUPPORTED VIEW SETS
+- front 3/4
+- rear 3/4
+- left profile
+- right profile
+- front
+- rear
+- elevated
+- top
+- detail
+- environmental action
+- studio product
+- isometric game asset
+
+RECOMMENDED OUTPUT PAIR FOR GAME ASSETS
+A. HD / full 3D reference preview
+B. final in-game/isometric representation
+
+This reflects prior project requirements for Modern Generals style asset batches.

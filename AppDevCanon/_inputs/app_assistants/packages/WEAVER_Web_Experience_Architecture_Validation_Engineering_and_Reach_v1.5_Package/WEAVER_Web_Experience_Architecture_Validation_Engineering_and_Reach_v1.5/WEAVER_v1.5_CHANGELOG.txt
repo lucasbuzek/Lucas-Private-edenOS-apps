@@ -1,0 +1,69 @@
+WEAVER — Web Experience Architecture, Validation, Engineering & Reach
+CHANGELOG
+
+VERSION 1.3
+DATE 2026-09-17
+
+ADDED
+• Three-state WEAVER visual lifecycle: 🪰 REQUEST/QUEUED → 🕷️ ACTIVE → 🕸️ COMPLETE.
+• Explicit rule that 🕸️ is reserved for completed tasks/workflows.
+• Explicit specialist-symbol handoff rule: invoked assistants/frameworks use their own respective canonical symbols.
+• Plain-text fallbacks for all three WEAVER states.
+
+CHANGED
+• 🕷️ is now the canonical persistent WEAVER active symbol, replacing the v1.2 active web mark.
+• 🪰 is the WEAVER queued/request symbol.
+• 🕸️ is the WEAVER completion symbol.
+
+COMPATIBILITY NOTES
+• Supersedes the v1.2 UI identity convention.
+• No change to WEAVER's core website-production workflow or external-framework architecture.
+
+VERSION 1.2
+DATE: 2026-09-17
+
+ADDED
+• Canonical persistent WEAVER visual identity: 🕸️ WEAVER.
+• Active/invoked state display rules.
+• Persistent UI/header/status identity guidance.
+• Handoff display convention, e.g. 🕸️ WEAVER → FORGE and 🕸️ WEAVER ← FORGE.
+• 🕷️ as an optional secondary spider motif.
+• Plain-text fallback for interfaces that cannot render the canonical symbol.
+
+CHANGED
+• README, MASTER, INSTRUCTIONS, QUICKSTART and MODULES now document the visual identity convention.
+
+COMPATIBILITY NOTES
+• Backward compatible with WEAVER v1.1 workflows.
+• No external framework invocation syntax changed.
+
+VERSION 1.1
+• Human-facing documentation normalized to plain text.
+• Package structure aligned with Universal Project Naming & Packaging Standard v1.1.
+
+VERSION 1.4
+DATE 2026-09-21
+ADDED
+• Branched development model B0 Chat / B1 API-Contextual GUI / B2 Standalone / B3 Local-Hybrid.
+• Branch matrix with evidence-based implementation states.
+• LCAS — Live Control, Activity & Status as canonical status/control layer.
+• Branch drift, shared schema/test, reuse-first and release workflow rules.
+• Installable-software branch package contract for future B1–B3 deliverables.
+
+CHANGED
+• FRAME renamed to SCAFFOLD — Systemic Composition, Architecture, Flow, Framework, Organization, Layout & Design.
+• LUCAS/UIbasic normalized as LCAS migration aliases only.
+• Fixed obsolete .md master reference and removed accidental [PROJECT NAME] deployment placeholder.
+
+COMPATIBILITY NOTES
+• FRAME is recognized only as a legacy alias for SCAFFOLD.
+• Existing WEAVER state symbols remain: 🪰 request/queued, 🕷️ active, 🕸️ complete.
+• Established external assistants retain their own names and symbols.
+
+
+v1.5 — 2026-09-22
+ADDED
+• Tell Me About Yourself and Your Subordinates plain-text guide.
+• Standalone master prompt copy under prompts/.
+• Individual prompt files for SCOUT, LORE, SCAFFOLD, BRIDGE, BEACON, PULSE, PROBE and LAUNCH.
+• Prompt index distinguishing internal subordinates from external framework handoffs.

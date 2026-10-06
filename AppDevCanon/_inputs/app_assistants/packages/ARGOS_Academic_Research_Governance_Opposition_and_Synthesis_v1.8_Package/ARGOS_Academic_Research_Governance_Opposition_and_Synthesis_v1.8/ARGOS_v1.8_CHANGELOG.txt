@@ -1,0 +1,172 @@
+VERSION v1.8
+DATE 2026-09-22
+ADDED
+• Tell Me About Yourself and Your Subordinates TXT.
+• Dedicated reusable master prompt.
+• 15 dedicated subordinate specialist prompts.
+• Explicit subordinate return contract to ARGOS.
+PRESERVED
+• Canonical name: 🐕 ARGOS — Academic Research Governance, Opposition & Synthesis.
+• Persistent UI state symbols and v1.7 research architecture.
+• WORK → VALIDATE → SAVE → CONTINUE.
+COMPATIBILITY
+Backward-compatible feature expansion from v1.7.
+
+============================================================
+
+VERSION v1.8
+DATE 2026-09-17
+
+CHANGED
+• Replaced previous ARGOS symbol behavior with an explicit persistent UI state system:
+  🐂 identity
+  🐕 active
+  🐾 researching
+  ⚖ validating
+  ✓ complete
+• One primary symbol is displayed at a time.
+• State-symbol selection is tied to actual authoritative workflow state.
+• ✓ COMPLETE requires the applicable validation gate to pass.
+
+COMPATIBILITY
+• Research architecture and UIbasic integration remain backward-compatible with v1.6.
+• v1.6 remains preserved as the last known-good predecessor.
+
+============================================================
+
+VERSION v1.8
+DATE 2026-09-17
+
+ADDED
+• Dog activity/invocation symbol: 🐕‍🦺.
+• Active/called identity: ♉🐕‍🦺 ARGOS.
+• [DOG] fallback for environments unable to render the symbol.
+
+CHANGED
+• ♉ remains the persistent ARGOS identity.
+• 🐕‍🦺 is added whenever ARGOS is called or actively operating.
+• Inactive/completed ARGOS can return to ♉ ARGOS.
+
+COMPATIBILITY
+• Backward-compatible with v1.5.
+• v1.5 remains preserved as the known-good predecessor.
+
+============================================================
+
+VERSION v1.8
+DATE 2026-09-17
+ADDED
+• Persistent bull/Taurus identity: ♉ ARGOS.
+• Integration across UIbasic TINY, COMPACT, FULL and AUTO states.
+• Invocation, checkpoint, QA, recovery, milestone, completion and handoff rules.
+• [BULL] ARGOS fallback where the symbol cannot render.
+
+CHANGED
+• Active ARGOS UI/status now carries the persistent bull identity marker.
+
+COMPATIBILITY
+• Backward-compatible with v1.4; validated v1.4 work remains preserved.
+
+============================================================
+
+VERSION
+v1.8
+
+DATE
+2026-09-17
+
+ADDED
+• UIbasic v1.0 integration through an ARGOS adapter.
+• TINY, COMPACT, FULL, and AUTO status modes.
+• Truthful workflow-state and measurable-progress presentation rules.
+• Persistent checkpoint/recovery presentation.
+• State-aware next-step engine with RECOMMENDED / OPTIONAL / REQUIRES INPUT / AUTO-CONTINUE.
+• ARGOS/UIbasic shared status mapping.
+• UIbasic status templates.
+• QA checks for UI state, progress, persistence, recovery, artifacts, and regression.
+
+CHANGED
+• UI AUTO is now the default ARGOS presentation behavior.
+• Autonomous processing can use TINY status without interrupting continuation.
+• Milestones, blockers, QA gates, failures, and completion use FULL presentation.
+• Existing ARGOS persistent state remains authoritative; UIbasic cannot create duplicate state/progress systems.
+
+COMPATIBILITY NOTES
+• v1.8 is backward-compatible with v1.3 research architecture.
+• UIbasic is an external protocol integrated by adapter.
+• Existing validated ARGOS work remains authoritative.
+
+
+VERSION
+v1.8
+
+DATE
+2026-09-16
+
+ADDED
+• ARGOS Design Mantra module derived from the supplied Design Mantra v1.0.
+• Whole-research-product design doctrine.
+• One-authoritative-state rule for questions, evidence, analysis, citations, conclusions, and publications.
+• Persistent WORK → VALIDATE → SAVE → CONTINUE checkpoint loop.
+• ARGOS Product Test for release readiness.
+• Explicit validation ladder and explainability requirements.
+
+CHANGED
+• Master prompt now treats the Design Mantra as a governing rule.
+• Research execution prioritizes reuse of validated work and elimination of duplicate work.
+• Publication workflow applies progressive disclosure and hierarchy-before-decoration.
+• QA now requires actual validation state rather than assumed completion.
+• Complexity is removed before new modules, sections, sources, or publication elements are added.
+
+COMPATIBILITY NOTES
+• v1.8 is backward-compatible with ARGOS v1.2.
+• Existing validated ARGOS work remains authoritative unless specifically superseded.
+
+ARGOS — Academic Research Governance, Opposition & Synthesis — v1.8
+
+FUNCTIONAL MEANING
+ARGOS expands to Academic Research Governance, Opposition & Synthesis.
+
+CONCEPTUAL MEANING
+Argos evokes the watchful guardian of Greek mythology: observant, difficult to deceive, and able to keep many things under scrutiny at once. The name fits a research framework that watches evidence from multiple expert perspectives, verifies sources, challenges assumptions, searches for contradictions, and keeps the full research problem in view before synthesizing conclusions.
+
+PROJECT PURPOSE
+ARGOS is the CASPER-derived academic, scientific, technical, R&D, policy, standards, and official-research framework. It accepts a question and/or source material, assembles an appropriate 10–15-expert panel, researches and validates evidence, opposes premature conclusions through adversarial review, and produces streamlined professional publications.
+
+============================================================
+CHANGELOG
+============================================================
+
+VERSION
+v1.8
+
+DATE
+2026-09-16
+
+ADDED
+• Full alignment with Universal Project Naming & Packaging Standard v1.1.
+• Mandatory README.txt entry point.
+• MODULES documentation.
+• Purposeful prompts/, modules/, templates/, and docs/ structure.
+• Explicit functional and conceptual meanings.
+• Package validation report.
+
+CHANGED
+• Human-readable material now defaults to .txt.
+• Root directory uses canonical expanded filesystem-safe name.
+• Internal filenames are concise and versioned.
+• Archive filename follows the universal package standard.
+• Internal modules and external frameworks are explicitly separated.
+• MASTER is the single authoritative current prompt.
+
+FIXED
+• Removed Markdown as default human-facing documentation.
+• Removed obsolete release filename patterns and duplicate master formats.
+
+REMOVED
+• Obsolete Markdown documentation copies from the release artifact.
+
+COMPATIBILITY NOTES
+• v1.8 is a backward-compatible packaging/documentation enhancement of v1.1.
+• Core ARGOS research architecture and existing invocations remain compatible.
+• CASPER remains the parent framework.

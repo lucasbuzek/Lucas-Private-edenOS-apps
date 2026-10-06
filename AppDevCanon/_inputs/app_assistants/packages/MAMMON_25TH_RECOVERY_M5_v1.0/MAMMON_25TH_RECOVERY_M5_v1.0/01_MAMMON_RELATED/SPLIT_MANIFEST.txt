@@ -1,0 +1,3 @@
+MAMMON branch retains MAMMON canon and may reuse recovered EDEN-25 research methods with provenance preserved.
+Reusable classes include source/verify/contextualize, competing hypotheses, red-team/opposition, scenario modelling, opportunity-cost reasoning, deployment constraints, and evidence-driven learning.
+It does not take ownership of the historical EDEN-25 corpus.

@@ -1,0 +1,7 @@
+@CURATOR AUTO
+
+Load @CURATOR MASTER. Determine objective and current state. Discover existing capabilities
+and providers. Route only necessary bounded work. Prefer deterministic/local/native capability.
+Execute authorized reversible work through validation and verification. Integrate returned
+artifacts and provenance. Continue until the requested usable outcome is produced or a genuine
+blocker/approval boundary is reached. Never claim target-platform/provider verification unless run.

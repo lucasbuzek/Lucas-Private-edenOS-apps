@@ -1,0 +1,68 @@
+ARGOS — Academic Research Governance, Opposition & Synthesis — v1.8
+
+FUNCTIONAL MEANING
+ARGOS expands to Academic Research Governance, Opposition & Synthesis.
+
+CONCEPTUAL MEANING
+Argos evokes the watchful guardian of Greek mythology: observant, difficult to deceive, and able to keep many things under scrutiny at once. The name fits a research framework that watches evidence from multiple expert perspectives, verifies sources, challenges assumptions, searches for contradictions, and keeps the full research problem in view before synthesizing conclusions.
+
+PROJECT PURPOSE
+ARGOS is the CASPER-derived academic, scientific, technical, R&D, policy, standards, and official-research framework. It accepts a question and/or source material, assembles an appropriate 10–15-expert panel, researches and validates evidence, opposes premature conclusions through adversarial review, and produces streamlined professional publications.
+
+============================================================
+PACKAGE VALIDATION
+============================================================
+
+PASS  Canonical project name is consistent.
+PASS  Acronym expansion is consistent.
+PASS  Conceptual meaning is documented.
+PASS  Version is consistent.
+PASS  README.txt is present.
+PASS  MASTER is present.
+PASS  INSTRUCTIONS.txt is present.
+PASS  QUICKSTART.txt is present.
+PASS  MODULES.txt is present.
+PASS  CHANGELOG.txt is present.
+PASS  Required project files and user documentation are included.
+PASS  External frameworks are distinguished from internal modules.
+PASS  No unresolved project-name placeholders remain.
+PASS  No obsolete master prompt is packaged as current.
+PASS  Human-readable documents use .txt.
+PASS  Root directory follows canonical filesystem-safe naming.
+PASS  Archive contains one self-contained root directory.
+PASS  Package is understandable without the originating conversation.
+
+VALIDATION STATUS
+PASSED
+
+PASS  Design Mantra is integrated as a governing module.
+PASS  Persistent validated-state loop is integrated.
+PASS  One-authoritative-state rule is integrated.
+PASS  Research/product validation ladder is explicit.
+PASS  Remove-before-add and lean-execution rules are integrated.
+
+PASS  UIbasic v1.0 is integrated through an adapter.
+PASS  TINY / COMPACT / FULL / AUTO modes are defined.
+PASS  UIbasic maps to authoritative ARGOS state rather than duplicating it.
+PASS  Truthful state and non-invented progress rules are explicit.
+PASS  Checkpoint/recovery and next-action behavior are integrated.
+PASS  FULL ending sections are defined.
+PASS  UI status templates are included.
+
+PASS  Dog symbol is defined for called/active ARGOS state.
+PASS  ♉ remains the persistent ARGOS identity.
+PASS  ♉🐕‍🦺 ARGOS is integrated into active UI templates.
+PASS  Symbol behavior does not override truthful state reporting.
+
+PASS  v1.8 authoritative state-symbol mapping defined.
+PASS  🐂 identity / 🐕 active / 🐾 researching / ⚖ validating / ✓ complete.
+PASS  UIbasic templates use one state-dependent primary symbol.
+PASS  Complete symbol requires actual completion and validation.
+
+PASS  Canonical ARGOS identity retained.
+PASS  About/subordinates TXT present.
+PASS  Dedicated master prompt present.
+PASS  15/15 subordinate prompt files present.
+PASS  New human-facing documentation uses TXT.
+PASS  No stale v1.7 filenames remain.
+PASS  v1.7 predecessor remains untouched.

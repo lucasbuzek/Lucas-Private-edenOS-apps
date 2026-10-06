@@ -1,0 +1,8 @@
+{
+  "canonical_name": "AOS",
+  "status": "SUPERSEDED",
+  "superseded_by": "HEIMDALL.CONDUCTOR",
+  "relationship": "predecessor",
+  "runtime_authority": false,
+  "note": "Preserve historical execution concepts/provenance; do not restore as current peer."
+}

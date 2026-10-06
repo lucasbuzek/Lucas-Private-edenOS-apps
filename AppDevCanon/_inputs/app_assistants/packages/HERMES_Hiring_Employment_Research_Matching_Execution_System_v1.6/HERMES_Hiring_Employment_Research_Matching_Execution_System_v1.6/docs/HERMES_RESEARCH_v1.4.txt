@@ -1,0 +1,31 @@
+ARGOS RESEARCH NOTES — HERMES v1.6 — 2026-09-16
+
+DESIGN MANTRA The supplied Design Mantra informed the architecture:
+whole-product design, one authoritative implementation, progressive
+disclosure, status at a glance, explainable automation, user-owned data,
+adapters rather than owners, local-first thinking, measured quality,
+successful defaults and removal of unnecessary complexity.
+
+PUBLIC IMPLEMENTATION PATTERNS REVIEWED - JobSync: self-hosted
+application tracking, resume management/import/export, AI
+review/matching, automated Greenhouse/Lever/Ashby discovery, backups and
+MCP integration. - freehire: normalized/deduplicated direct ATS
+discovery, application tracking, CV tooling, append-oriented event
+concepts, API/MCP/browser-extension patterns. - job-agent: controlled
+autonomy with review-by-default and a master live-submit switch. -
+CareerPulse / JobNavigator / Job Sentinel: multi-source discovery, AI
+matching, document tailoring, tracking and adapter-oriented source
+integration. - OpenTenders / TenderLayer: tender dashboard, bid stages,
+deadlines and local-first tender tracking.
+
+HOSTING/AUTH RESEARCH - Netlify supports scheduled functions and
+longer-running background functions. - Netlify scheduled functions have
+bounded execution and are best treated as triggers. - Supabase Auth
+supports Google and Apple sign-in for web/mobile contexts. - Supabase
+Auth integrates with Postgres Row Level Security, appropriate for
+per-user isolation.
+
+ARCHITECTURAL CONCLUSION Do not make scraping, AI, authentication or a
+specific ATS/procurement source the owner of HERMES. All are replaceable
+adapters around authoritative user truth, canonical opportunities,
+immutable application/bid snapshots and an auditable workflow.

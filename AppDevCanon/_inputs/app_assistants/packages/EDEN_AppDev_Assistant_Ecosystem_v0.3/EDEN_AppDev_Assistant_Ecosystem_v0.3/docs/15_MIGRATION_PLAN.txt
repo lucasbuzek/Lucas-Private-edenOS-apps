@@ -1,0 +1,3 @@
+MIGRATION PLAN — v0.1
+1 INVENTORY existing packages without renaming. 2 Identify canonical MASTER/AUTO and conflicts. 3 Convert metadata into Assistant Specification. 4 Wrap legacy prompts as compatibility adapters. 5 Add I/O and handoff contracts. 6 Route state/assets through LUCAS+HEIMDALL. 7 Add lifecycle/checkpoints. 8 Add delivery adapters. 9 Regression-test representative tasks. 10 release one assistant at a time.
+Priority: CONDUCTOR/LUCAS/HEIMDALL foundation → ARGOS/CASPER/FORGE → WEAVER/IRIS/LINGUA/AOS → MIRROR/READ/ARTEMIS/THREAD → remaining discovered assistants.

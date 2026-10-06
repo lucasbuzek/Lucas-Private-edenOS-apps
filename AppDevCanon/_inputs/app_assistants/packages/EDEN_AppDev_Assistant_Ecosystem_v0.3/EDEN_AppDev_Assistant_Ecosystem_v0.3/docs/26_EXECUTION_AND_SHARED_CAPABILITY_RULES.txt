@@ -1,0 +1,22 @@
+AI EXECUTION
+RECOMMENDED / NATIVE / LOCAL / CONNECTED / CUSTOM.
+NATIVE ≠ LOCAL ≠ CONNECTED.
+Deterministic by default; intelligence on demand.
+
+SHARED CAPABILITY INDEPENDENCE
+A capability useful to multiple Apps should, where practical, be independently
+consumable through a stable contract.
+
+APP A ─┐
+APP B ─┼→ SHARED CAPABILITY → provider/platform adapters
+BIFROST┘
+
+Not by default: APP → BIFROST → SHARED CAPABILITY.
+
+BIFROST may discover, expose, coordinate, permission, synchronize or enhance
+without becoming a mandatory runtime dependency.
+
+Reuse ladder:
+REUSE → COMPOSE → EXTEND → ADAPT → EXTRACT → BUILD NEW.
+Integration:
+LINK → TAB / WEBAPP → EMBED → NATIVE.

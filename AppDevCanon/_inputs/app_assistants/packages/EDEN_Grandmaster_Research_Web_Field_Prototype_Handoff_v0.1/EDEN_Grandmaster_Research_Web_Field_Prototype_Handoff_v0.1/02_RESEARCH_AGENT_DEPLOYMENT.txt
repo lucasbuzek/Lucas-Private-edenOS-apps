@@ -1,0 +1,27 @@
+EDEN — RESEARCH AGENT DEPLOYMENT — v0.1
+
+PURPOSE
+Provide bounded web/chat research agents that can start comprehensive research without creating new top-level Apps.
+
+AGENTS / HELPERS
+ARGOS.EVIDENCE — source acquisition, verification, opposition, standards, literature, licensing.
+ORACLE.DATA — calculations, statistics, price normalization, scenarios, models.
+PROVIDER.SCOUT — content/API/provider capability, terms, cost, rate limits, exportability, privacy, locality.
+NATIVE.SCOUT — macOS/iOS/Linux/Windows/Android native handlers, URL schemes, share sheets, file handlers, automation hooks, CLI/API availability.
+HW.SCOUT — boards, sensors, actuators, buses, power, safety, suppliers, availability, alternates.
+BOM.SCOUT — current supplier pricing, currency/date/source, MOQ, shipping/tax exclusions, substitute parts.
+FIELD.SCOUT — field methods, biological/environmental requirements, standards and validation protocols.
+FUNDING.SCOUT — grant/investor/funder requirements and evidence expectations; do not fabricate eligibility.
+LICENSE.SCOUT — software/hardware/content licensing and attribution/provenance.
+WEAVER.SCOUT — web standards, SEO, accessibility, performance, deployment and provider integrations.
+
+DEPLOYMENT CONTRACT
+Each agent receives:
+PROJECT / QUESTION / JURISDICTION / TARGET DATE / BUDGET CLASS / REQUIRED EVIDENCE / EXCLUSIONS.
+Each returns:
+FINDING | SOURCE | DATE | VERSION | PRICE/CURRENCY if applicable | LICENSE | CONFIDENCE | OPPOSITION | OPEN QUESTION | RECOMMENDED TEST.
+
+Research is not canonical merely because an agent found it. ARGOS verifies; the owning specialist decides domain requirements; ORACLE analyzes; CONDUCTOR coordinates promotion.
+
+WEB AGENT START PROMPT
+'Recover EDEN canon. Research only the assigned scope. Prefer primary/official sources, standards bodies, manufacturers and peer-reviewed/credible technical sources. Record dates and versions. For prices record seller, exact SKU, currency, stock/availability, tax/shipping assumptions and retrieval date. Search alternatives. Actively look for evidence against the leading option. Do not select a winner solely from marketing claims. Return structured evidence ready for HEIMDALL ingestion and BIFROST provenance.'

@@ -1,0 +1,24 @@
+EDEN — edenOS DP0.7 v1.5 EVERYTHING-IN TEST MATRIX
+
+POLICY
+Include the complete current vision before runtime testing. Do not pre-remove features merely because they may be expensive or immature. Measure first. A failing feature may then be disabled, replaced, deferred or removed with the reason recorded.
+
+TEST ORDER
+1. Package/static integrity
+2. ARM64 VM boot
+3. Automatic eden session
+4. Wayland/graphical bootstrap
+5. edenShell desktop
+6. Adaptive geometry at multiple window sizes
+7. All visible application surfaces launch
+8. Contextual workflow controls respond
+9. HEIMDALL/object/search contracts load
+10. Identity/profile/session contracts load
+11. Connect/sync/share/server contracts load
+12. gardenOS/Nandi/Atlas/Research/Education integration surfaces
+13. Recovery/diagnostics/update/backup surfaces
+14. Resource measurements: image size, boot time, idle RAM, shell latency
+15. Failure ledger: KEEP / FIX / REPLACE / DEFER / REMOVE
+
+IMPORTANT
+DP0.7 uses real interactive GUI demonstrator surfaces plus architecture contracts. A surface marked included does not imply its final service backend is already production-complete.

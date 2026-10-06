@@ -1,0 +1,28 @@
+◉ IRIS — Intelligent Realism & Image Synthesis — v1.8
+
+CROSS-PLATFORM IMPLEMENTATION
+
+SUPPORTED DESKTOP HOSTS
+- macOS: .command, .sh, or Python launcher
+- Windows: .bat, PowerShell, or Python launcher
+- Linux: .sh or Python launcher
+
+PORTABLE CORE
+The authoritative launcher uses Python 3 standard-library components only. It binds only to 127.0.0.1 and serves the local Batch Studio or Visual Workspace. It searches a small local port range if the preferred port is occupied.
+
+START
+macOS: double-click IRIS_v1.8_RUN.command or run ./IRIS_v1.8_RUN.sh visual
+Windows: IRIS_v1.8_RUN.bat visual
+PowerShell: ./IRIS_v1.8_RUN.ps1 visual
+Linux: ./IRIS_v1.8_RUN.sh visual
+Portable: python IRIS_v1.8_LAUNCH.py visual
+Batch Studio: replace visual with batch.
+
+MOBILE / TABLET
+iOS/iPadOS and Android can use the static HTML workspaces when hosted by an authorized local/server environment, but this package does not claim native background Python execution on those platforms. The web UI remains responsive/browser-compatible; native packaging is a separate deployment target.
+
+PROVIDER BOUNDARY
+Image generation remains provider-adapter based. Cross-platform launch support does not falsely claim that a generation provider is configured.
+
+GLOBAL FORGE DELEGATION
+Global EDEN FORGE remains the technical/deterministic implementation specialist. IRIS contains no active local IRIS.FORGE or FOUNDRY worker.

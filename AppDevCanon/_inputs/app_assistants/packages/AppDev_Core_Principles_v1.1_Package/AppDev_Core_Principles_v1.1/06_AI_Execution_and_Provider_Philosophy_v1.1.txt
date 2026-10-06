@@ -1,0 +1,75 @@
+AI EXECUTION & PROVIDER PHILOSOPHY — v1.1 Owner: Lucas Buzek
+
+ENGLISH
+
+CANONICAL RULE USE THE LOWEST SUFFICIENT CAPABILITY.
+
+ESCALATION 0 DETERMINISTIC / EXISTING SOFTWARE 1 TINY SPECIALIST
+CAPABILITY 2 LOCAL AI 3 LAN / SHARED AI 4 EXTERNAL AI/API 5 HYBRID
+
+This is an escalation ladder, not a mandatory sequence. Skip levels when
+requirements justify it, but do not default to heavyweight AI without
+need.
+
+REFERENCE CASE — SUBTITLES / LANGUAGE MICRO A subtitle workflow
+demonstrates the philosophy: DOWNLOAD/IMPORT → INSPECT → IDENTIFY → FIND
+SUBTITLE → VALIDATE → TRANSLATE IF NEEDED → SYNC/REPAIR → MUX → METADATA
+→ LIBRARY. Parsing, timestamps, encoding validation, muxing, metadata
+and file movement are normally deterministic/existing-tool functions.
+Translation can use a compact dedicated language capability. Speech
+recognition is a separate optional capability. A general LLM/API can
+remain available for difficult contextual cases. Exact package/model
+sizes are implementation-specific and must be measured rather than
+treated as permanent architecture.
+
+CAPABILITY CONTRACTS Examples: translation.text speech.transcribe
+vision.analyze embeddings.text reasoning.general code.generate
+structured.extract image.generate image.transform
+
+PROVIDER RECORD provider_id provider_type = deterministic | native_app |
+os | tiny_model | local_model | lan_model | external_api | hybrid
+capabilities hardware/resource requirements languages multimodality
+context limits structured-output/tool-use support latency
+privacy/data-egress class license availability quality/verification
+state cost where relevant fallbacks
+
+APP RECORD NO_AI_CORE AI_OPTIONAL_FUNCTIONS AI_REQUIRED_FUNCTIONS
+OFFLINE_STATE ACCEPTABLE_CAPABILITIES PRIVACY_POLICY FALLBACK_POLICY
+
+PRIVACY Prefer local processing for sensitive/private material when
+capability is sufficient. External transmission requires an allowed
+provider and appropriate data handling. Never silently send data
+externally merely because a cloud model is stronger.
+
+MODEL MANAGEMENT Reuse already installed suitable runtimes/models. Avoid
+duplicate model downloads. Preserve verified model assets across
+updates. Allow first-use installation of optional heavyweight
+capabilities. Do not couple application schemas to a specific model.
+
+SLOVENSKY
+
+KANONICKÉ PRAVIDLO POUŽI NAJNIŽŠIU POSTAČUJÚCU SCHOPNOSŤ.
+
+ESKALÁCIA 0 DETERMINISTICKÉ / EXISTUJÚCE 1 TINY ŠPECIALISTA 2 LOKÁLNA AI
+3 LAN / ZDIEĽANÁ AI 4 EXTERNÁ AI/API 5 HYBRID
+
+Nie je to povinná sekvencia. Úroveň preskoč, ak to požiadavka
+odôvodňuje, ale nepoužívaj ťažkú AI automaticky.
+
+REFERENČNÝ PRÍPAD — TITULKY / LANGUAGE MICRO Import → kontrola →
+identifikácia → nájdenie titulkov → validácia → preklad podľa potreby →
+synchronizácia/oprava → mux → metadata → knižnica. Parsing, časovanie,
+encoding, mux a presun sú prevažne deterministické. Preklad môže
+používať malý špecializovaný jazykový capability. Speech recognition je
+samostatná voliteľná schopnosť. Všeobecný LLM/API ostáva pre náročné
+kontextové prípady. Veľkosti modelov sú implementačné údaje, ktoré sa
+majú merať.
+
+APP deklaruje NO_AI_CORE, voliteľné/povinné AI funkcie, offline stav,
+prijateľné capabilities, privacy a fallback. Provider deklaruje typ,
+schopnosti, zdroje, jazyky, multimodalitu, latenciu, privacy, licenciu,
+dostupnosť, kvalitu a fallback.
+
+Preferuj lokálne spracovanie citlivých dát, ak postačuje. Dáta
+neposielaj externe potichu. Znovu používaj existujúce modely/runtime a
+zbytočne ich nesťahuj znova.

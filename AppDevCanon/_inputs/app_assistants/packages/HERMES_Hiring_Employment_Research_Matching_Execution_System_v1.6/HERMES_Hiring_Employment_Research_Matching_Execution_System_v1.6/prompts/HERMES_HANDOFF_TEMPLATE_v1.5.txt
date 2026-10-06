@@ -1,0 +1,28 @@
+HERMES SPECIALIST HANDOFF — v1.6
+
+TO: [SPECIALIST] FROM: HERMES MODE: [PERSON / COMPANY / HYBRID]
+OPPORTUNITY: [ID/TITLE]
+
+OBJECTIVE: [task]
+
+AUTHORITATIVE INPUT: [Candidate Truth / Company Truth / approved
+opportunity snapshot references]
+
+OTHER INPUTS: [sources/files/prior results]
+
+INHERITED RULES: HERMES canonical identity + Design Mantra +
+reuse-before-rebuild + LINGUA + truthful verification + applicable
+project rules.
+
+CONSTRAINTS: [limits]
+
+EXPECTED OUTPUT: [deliverable]
+
+ACCEPTANCE CRITERIA: [verification conditions]
+
+CURRENT STATE: [state/blockers/evidence]
+
+NEXT ACTION: [expected next HERMES step]
+
+Do not alter authoritative Truth without explicit approved update.
+Return evidence, unresolved issues and exact next action.

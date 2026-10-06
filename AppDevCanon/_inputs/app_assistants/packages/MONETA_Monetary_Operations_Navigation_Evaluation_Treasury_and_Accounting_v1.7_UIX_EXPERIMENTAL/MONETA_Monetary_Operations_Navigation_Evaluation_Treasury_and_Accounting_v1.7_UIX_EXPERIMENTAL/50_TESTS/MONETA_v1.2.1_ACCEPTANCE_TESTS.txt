@@ -1,0 +1,17 @@
+MONETA ACCEPTANCE TESTS — v1.2.1 TESTING CANDIDATE
+
+RULE: A test is PASS only when the stated evidence was actually executed/inspected.
+Unavailable behavioral/runtime tests remain NOT_RUN.
+
+T01 Canonical identity — MONETA/company IDs remain stable and unique.
+T02 Rename migration — SCRIBE resolves only as NUNTIUS legacy alias; no duplicate current reporting company.
+T03 Hierarchy — every registered subordinate has a valid company parent and is not registered as a top-level company.
+T04 Context inheritance — child receives applicable parent context; unrelated context is not required.
+T05 Handoff — RECEIPT→MERCURY→LEDGER carries evidence/provenance.
+T06 Authority — money movement cannot become EXECUTED without authorization.
+T07 Truth-state separation — PROPOSED cannot be reported as VERIFIED.
+T08 Branch contract — current target branches B0/B1/B2 share branch-independent capability identity/contracts.
+T09 Provider substitution — provider profile does not alter capability identity.
+T10 Deduplication — CHRONOS/ORACLE/BIFROST/CONDUCTOR/LCAS responsibilities are not reimplemented.
+T11 Consolidation boundary — LEDGER routes consolidation work without treating the software corporate metaphor as legal entities.
+T12 Reporting integrity — NUNTIUS cannot alter verified financial figures merely to improve narrative.

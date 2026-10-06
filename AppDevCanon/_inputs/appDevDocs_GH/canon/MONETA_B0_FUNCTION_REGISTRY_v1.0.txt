@@ -1,0 +1,201 @@
+MONETA — B0 CANONICAL FUNCTION REGISTRY — v1.0
+Status: ACTIVE DEVELOPMENT CONTRACT
+Applies to: B0 in-chat; future B1/B2/B3 adapters must preserve capability/function identity and schemas.
+
+GLOBAL FUNCTION FIELDS
+capability_id
+function_id
+version
+parent_id
+request_schema
+result_schema
+required_context
+optional_context
+evidence_schema
+confidence
+authority
+approval_required
+side_effect_class
+dependencies
+handoff_contract
+error_contract
+audit_events
+test_ids
+
+REFERENCE SLICE FUNCTIONS
+
+1. RECEIPT / DOCUMENT EVIDENCE
+capability_id: moneta.receipt.document_evidence
+function_id: receipt.extract_financial_evidence
+version: 1.0
+parent_id: MONETA.RECEIPT
+purpose: recognize and normalize financial evidence from an authorized source without changing the authoritative source.
+inputs: source_ref, source_type, content/accessible representation, financial_entity, period context
+outputs: DocumentEvidence
+side_effect_class: internal/reversible
+approval_required: false for analysis
+required evidence: source identity + evidence state
+errors: SOURCE_UNAVAILABLE, UNSUPPORTED_FORMAT, EXTRACTION_AMBIGUOUS, ACCESS_REVOKED
+expected audit: EVIDENCE_OBSERVED, EXTRACTION_COMPLETED, EXTRACTION_EXCEPTION
+tests: T01-T08,H01
+
+DocumentEvidence schema:
+document_id; source_ref; source_revision; document_type; document_date; counterparty; amount; currency; reference; supplied_category; extracted_fields; evidence_state; truth_state; confidence; duplicate_of; exceptions.
+
+2. RECEIPT / DUPLICATE DETECTION
+capability_id: moneta.receipt.duplicate_detection
+function_id: receipt.detect_duplicate_document
+version: 1.0
+parent_id: MONETA.RECEIPT
+purpose: detect duplicate financial evidence without deleting originals.
+inputs: DocumentEvidence[]
+outputs: duplicate groups + basis + confidence
+side_effect_class: internal/reversible
+approval_required: false
+errors: INSUFFICIENT_EVIDENCE
+expected audit: DUPLICATE_CANDIDATE, DUPLICATE_CONFIRMED
+ tests: T05
+
+3. MERCURY / TRANSACTION NORMALIZATION
+capability_id: moneta.mercury.transaction_normalization
+function_id: mercury.normalize_transaction
+version: 1.0
+parent_id: MONETA.MERCURY
+purpose: normalize transaction evidence while preserving source identity and original values.
+inputs: provider/source transaction
+outputs: TransactionCandidate
+side_effect_class: internal/reversible
+approval_required: false
+errors: INVALID_AMOUNT, INVALID_CURRENCY, INVALID_DATE, SOURCE_CONFLICT
+tests: T01-T08,H02
+
+TransactionCandidate schema:
+transaction_id; source_ref; posting_date; transaction_date; counterparty; amount; currency; memo; provider_reference; normalized_fields; evidence_state; truth_state; confidence; exceptions.
+
+4. LEDGER / RECONCILIATION PROPOSAL
+capability_id: moneta.ledger.reconciliation
+function_id: ledger.propose_reconciliation
+version: 1.0
+parent_id: MONETA.LEDGER
+purpose: deterministically match where possible and produce explicit proposals/exceptions otherwise.
+inputs: DocumentEvidence[], TransactionCandidate[]
+outputs: ReconciliationProposal[]
+side_effect_class: internal/reversible
+approval_required: false for proposal
+matching order: exact deterministic → deterministic tolerant rules → ambiguous candidate proposal → exception
+errors: NO_CANDIDATE, MULTIPLE_CANDIDATES, AMOUNT_MISMATCH, CURRENCY_MISMATCH, EVIDENCE_MISSING
+tests: T01-T08,H03
+
+ReconciliationProposal schema:
+proposal_id; document_refs; transaction_refs; match_class; match_basis; amount_delta; date_delta; currency_state; confidence; truth_state=CALCULATED/INFERRED/PROPOSED as applicable; exceptions; review_required; evidence_refs.
+
+5. LEDGER / RECONCILIATION REVIEW
+capability_id: moneta.ledger.reconciliation_review
+function_id: ledger.review_reconciliation
+version: 1.0
+parent_id: MONETA.LEDGER
+purpose: resolve proposals requiring human or policy review.
+inputs: ReconciliationProposal + reviewer decision/authority where required
+outputs: ReconciliationResult or unresolved exception
+side_effect_class: internal state transition
+approval_required: conditional
+errors: APPROVAL_REQUIRED, INSUFFICIENT_AUTHORITY, UNRESOLVED_EXCEPTION
+tests: T04,T06,T09,H04
+
+ReconciliationResult schema:
+reconciliation_id; proposal_id; status; document_refs; transaction_refs; approved_by/authority; truth_state; effective_classification; prior_state_refs; evidence_refs; exceptions; verified_state.
+
+6. LEDGER / CORRECTION EVENT
+capability_id: moneta.ledger.correction
+function_id: ledger.apply_correction_event
+version: 1.0
+parent_id: MONETA.LEDGER
+purpose: apply an authorized internal correction while retaining prior state and triggering downstream recomputation.
+inputs: target_state_ref, proposed_change, authority, reason, evidence_refs
+outputs: CorrectionEvent + affected_state_refs
+side_effect_class: internal state mutation with audit
+approval_required: conditional according to operation
+errors: APPROVAL_REQUIRED, INVALID_TARGET, CONFLICTING_REVISION
+expected audit: CORRECTION_PROPOSED, CORRECTION_APPROVED, CORRECTION_APPLIED
+tests: T06,T09
+
+CorrectionEvent schema:
+correction_id; target_ref; previous_value; proposed_value; approved_value; reason; authority; truth_state; evidence_refs; created_at; affected_downstream_refs.
+
+7. NUNTIUS / RECONCILIATION REPORTING
+capability_id: moneta.nuntius.reconciliation_reporting
+function_id: nuntius.create_reporting_event
+version: 1.0
+parent_id: MONETA.NUNTIUS
+purpose: expose reconciliation/correction outcome for reporting without losing provenance.
+inputs: ReconciliationResult/CorrectionEvent[] + reporting period
+outputs: ReportingEvent
+side_effect_class: internal/reversible until publication/export
+approval_required: false for internal draft; publication/export may require separate authority
+errors: INCOMPLETE_PROVENANCE, PERIOD_MISMATCH
+tests: T09,H05
+
+ReportingEvent schema:
+reporting_event_id; period; financial_entity; source_result_refs; correction_refs; values; currency; truth_states; evidence_refs; generated_at; publication_state.
+
+8. MONETA / CAPABILITY RESOLUTION
+capability_id: moneta.core.capability_resolution
+function_id: moneta.resolve_capability
+version: 1.0
+parent_id: MONETA
+purpose: resolve internal, native/shared, EDEN specialist and plugin/provider capability using Existing Capability First.
+outputs: selected capability + availability/authorization state + fallback + whether user connection is required.
+side_effect_class: none unless user separately authorizes connection
+approval_required: user action for external connection/install
+errors: CAPABILITY_UNKNOWN, CONNECTION_REQUIRED, AUTHORIZATION_REQUIRED, REQUIRED_EXTERNAL_UNAVAILABLE
+tests: C04
+
+9. MONETA / DOMAIN DELEGATION
+capability_id: moneta.core.domain_delegation
+function_id: moneta.delegate_domain_work
+version: 1.0
+parent_id: MONETA
+purpose: make bounded calls to authoritative specialists and preserve caller/return ownership.
+inputs: call contract + active call_chain
+outputs: specialist return contract or safe fallback
+side_effect_class: contextual
+approval_required: only if connection/external consequential action requires it
+errors: LOOP_DETECTED, SPECIALIST_UNAVAILABLE, AUTHORIZATION_REQUIRED
+tests: T10
+
+10. MONETA / CONTROL GATE
+capability_id: moneta.core.control_gate
+function_id: moneta.evaluate_control
+version: 1.0
+parent_id: MONETA
+purpose: classify requested operation as AUTONOMOUS, AUTONOMOUS+LOG, REVIEW, APPROVAL, or PROHIBITED WITHOUT AUTHORIZATION.
+inputs: operation, authority, side_effect_class, financial consequence, externality
+outputs: control state + allowed next action
+errors: INSUFFICIENT_AUTHORITY
+tests: C01-C05
+
+11. MONETA / WORK OBJECT
+capability_id: moneta.core.work_object
+function_id: moneta.update_work_object
+version: 1.0
+parent_id: MONETA
+purpose: maintain resumable financial work state and provenance.
+required fields: work_id; objective; caller; financial_entity; period; currency; authority; inputs; sources; active_functions; evidence; truth_state; decisions; exceptions; approvals; outputs; return_target.
+side_effect_class: internal state/log
+approval_required: false
+
+SHARED INVARIANTS
+- deterministic-first for deterministic financial operations
+- no fabricated evidence
+- no silent source authority transfer
+- no silent correction overwrite
+- no consequential external side effect under analytical AUTO
+- preserve caller/return chain
+- preserve currency; conversions require rate provenance
+- canonical IDs and schemas are branch-independent
+- provider implementation does not alter capability identity
+
+CURRENT EVIDENCE
+Contract-level synthetic reference tests exist in tests/MONETA_B0_REFERENCE_WORKFLOW_TESTS_v1.0.txt.
+Executable packaged/runtime implementation: UNKNOWN / not established by this registry.
+Future B1/B2/B3 implementations must reuse these IDs/contracts or record an explicit canonical migration.

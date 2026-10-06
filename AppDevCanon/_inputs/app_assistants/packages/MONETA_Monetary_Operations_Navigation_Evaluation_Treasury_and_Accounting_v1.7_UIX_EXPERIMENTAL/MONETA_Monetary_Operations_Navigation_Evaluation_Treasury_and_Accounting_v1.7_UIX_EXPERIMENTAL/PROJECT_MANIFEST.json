@@ -1,0 +1,80 @@
+{
+  "project": "MONETA",
+  "version": "1.7",
+  "maturity": "EXPERIMENTAL",
+  "release_type": "developer_test_preview",
+  "canonical_companies": [
+    "LEDGER",
+    "MERCURY",
+    "ALLOCATE",
+    "VAULT",
+    "MARGIN",
+    "NUNTIUS",
+    "PATRON",
+    "RECEIPT",
+    "TRIBUTE"
+  ],
+  "surfaces": {
+    "web": {
+      "status": "EXECUTABLE_TESTED",
+      "requirements": [
+        "Node.js 20+"
+      ]
+    },
+    "desktop_tauri": {
+      "status": "SOURCE_SCAFFOLD_NOT_BUILD_VERIFIED"
+    },
+    "chat": {
+      "status": "PROMPT_LAUNCHER"
+    }
+  },
+  "providers": [
+    "local",
+    "hybrid",
+    "cloud"
+  ],
+  "production_allowed": false,
+  "prohibited_in_this_build": [
+    "money_movement",
+    "bank_changes",
+    "journal_posting",
+    "tax_filing",
+    "external_financial_reporting",
+    "production_financial_actions"
+  ],
+  "open_gates": [
+    "typed_handoffs",
+    "persistence_migration",
+    "authorization",
+    "behavioral_context",
+    "integrity_harnesses",
+    "security_review",
+    "native_builds",
+    "rollback",
+    "import_export"
+  ],
+  "boundary_contract": "10_SHARED/MONETA_HERMES_ORACLE_THEMIS_BOUNDARY_v1.3.json",
+  "prompt_system": {
+    "master": 1,
+    "company_prompts": 9,
+    "function_prompts": 59
+  },
+  "cross_platform": {
+    "shared_core": "90_CROSS_PLATFORM/core",
+    "web_pwa": "EXECUTABLE_VERIFIED",
+    "desktop_tauri": "SOURCE_PREPARED_NOT_BUILD_VERIFIED",
+    "mobile": "PWA_EXECUTABLE_NATIVE_NOT_BUILT"
+  },
+  "uix": {
+    "status": "IMPLEMENTED_PWA_EXPERIMENTAL",
+    "language": "ONE_EDEN_UIX_LANGUAGE",
+    "depths": [
+      "SIMPLE",
+      "ADVANCED",
+      "EXPERT"
+    ],
+    "diagnostic": "SEPARATE",
+    "accessibility_verification": "NOT_RUN",
+    "native_validation": "NOT_RUN"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "version":"1.0",
+  "hierarchy":["workspace","project","helper","module","function","task"],
+  "state_authority":"LCAS",
+  "orchestrator":"CONDUCTOR",
+  "persistence":"local-first",
+  "portable":true,
+  "presentation":{"default":"Desktop","optional":"Workspace"},
+  "file_experience":{"default":"Files","optional":"Explore"}
+}

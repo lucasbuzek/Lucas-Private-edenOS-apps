@@ -1,0 +1,27 @@
+LUCAS BUZEK — PERSONAL WEB PORTAL MASTER — v0.1
+
+OBJECTIVE
+Accelerate one coherent web presence with three interoperating functions, while allowing each to deploy independently.
+
+1. PROFESSIONAL / CREATIVE MEDIA PORTFOLIO
+Professional identity, services, photography/video/creative portfolio, engineering/sustainability work, store/landing pages, books/other works, contact and publishing workflows.
+
+2. EDEN PORTAL
+Public explanation of EDEN — Engineering, Development, Exploration & Nature; projects, evidence, research, prototypes, documentation, funding-ready project pages and future live demonstrations where safe.
+
+3. PERSONAL / FAMILY CLOUD INTEROPERABILITY
+Authenticated gateway for approved Custom/Personal/Family projects: BIFROST-backed identity/interoperability, HEIMDALL content/workspaces, LCAS status/control where appropriate, and optional AI-provider/local-AI features.
+
+ARCHITECTURE
+Public Web → Portfolio + EDEN public.
+Authenticated Gateway → Personal/Family services.
+Never expose private project state merely because it shares a domain.
+Use one design system and shared components, but preserve security boundaries.
+
+WEAVER PROCESS
+DISCOVER → INFORMATION ARCHITECTURE → CONTENT MODEL → DESIGN → BUILD → VALIDATE → ACCESSIBILITY/PERFORMANCE/SEO → SECURITY/PRIVACY → PREVIEW → PACKAGE → DEPLOY → OBSERVE.
+
+REUSE PRIORITY
+Existing site/content → WebApp/PWA → provider integrations → native/device handlers → custom code only when required.
+
+The portal must support progressive LINK → TAB/WebApp → EMBED → NATIVE composition rather than rebuilding external tools prematurely.

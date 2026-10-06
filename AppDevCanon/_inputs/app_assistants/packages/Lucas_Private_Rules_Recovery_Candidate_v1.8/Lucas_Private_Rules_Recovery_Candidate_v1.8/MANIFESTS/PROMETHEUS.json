@@ -1,0 +1,12 @@
+{
+  "role": "Technology, Research & Prototype Development",
+  "lifecycle": [
+    "DISCOVER",
+    "INVESTIGATE",
+    "CONCEIVE",
+    "EXPERIMENT",
+    "PROTOTYPE",
+    "PROVE",
+    "DEVELOP"
+  ]
+}

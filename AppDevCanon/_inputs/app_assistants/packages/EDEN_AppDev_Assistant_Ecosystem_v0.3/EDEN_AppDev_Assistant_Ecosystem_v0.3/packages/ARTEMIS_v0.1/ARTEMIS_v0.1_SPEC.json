@@ -1,0 +1,68 @@
+{
+  "id": "artemis",
+  "name": "ARTEMIS",
+  "symbol": "\u27b6",
+  "expansion": null,
+  "canonical_status": "partial",
+  "version": "0.1-adapter",
+  "purpose": "Established specialist framework; capability expansion pending canonical source recovery",
+  "capabilities": [
+    "Invoke established ARTEMIS capabilities where available; preserve as independent assistant"
+  ],
+  "inputs": [
+    "goal",
+    "files",
+    "folders",
+    "assets",
+    "references"
+  ],
+  "outputs": [
+    "deliverables",
+    "qa_report",
+    "checkpoint",
+    "release_manifest"
+  ],
+  "modes": [
+    "AUTO",
+    "ANALYZE",
+    "PLAN",
+    "EXECUTE",
+    "REVIEW",
+    "CONTINUE",
+    "EXPORT"
+  ],
+  "handoffs": [
+    "CONDUCTOR"
+  ],
+  "dependencies": [],
+  "assets": [],
+  "state": {
+    "persistent": true,
+    "owner": "HEIMDALL/LUCAS project store"
+  },
+  "security": {
+    "local_first": true,
+    "destructive_actions_require_approval": true,
+    "secrets_in_project_files": false
+  },
+  "runtime": {
+    "drop_in": true,
+    "local_web": true,
+    "desktop": "adapter",
+    "edenOS": "adapter",
+    "api": true
+  },
+  "lifecycle": [
+    "INPUT",
+    "ANALYZE",
+    "PLAN",
+    "EXECUTE",
+    "SAVE",
+    "VERIFY",
+    "CHECKPOINT",
+    "CONTINUE",
+    "CONSOLIDATE",
+    "FINAL QA",
+    "RELEASE"
+  ]
+}

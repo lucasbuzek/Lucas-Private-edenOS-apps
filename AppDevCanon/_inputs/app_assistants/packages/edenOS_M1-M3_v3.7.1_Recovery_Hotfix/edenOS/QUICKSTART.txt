@@ -1,0 +1,18 @@
+edenOS M1–M3 v3.7 — TESTING QUICKSTART
+
+Canonical workspace: ~/Downloads/edenOS
+
+If this ZIP extracts as edenOS 2 / edenOS 3 etc:
+1. Double-click APPLY_UPDATE.command in the newly extracted edenOS folder.
+2. The release validates itself, transactionally updates ~/Downloads/edenOS, preserves persistent material, then validates the installed tree.
+
+Fastest test path after update:
+  ~/Downloads/edenOS/RUN_TEST_PIPELINE.command
+
+Individual stages remain available:
+  TEST_PACKAGE.command
+  CHECK_LOCAL_TOOLS.command
+  BUILD_EDENOS.command
+
+Do not run BUILD_EDENOS.command with sudo.
+ARM64 boot/graphics are not PASS until observed on Apple Silicon.

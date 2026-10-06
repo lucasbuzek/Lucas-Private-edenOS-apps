@@ -1,0 +1,32 @@
+CURRENT AUTHORITY MAP
+
+BIFROST — EDEN Base App/Gateway; CONNECT & KEEP. Identity, metadata,
+relationships, provenance, registries, capabilities, providers, connections,
+persistence, interoperability and package/install/update state. Headless/API
+capable. BIFROST FIRST ≠ mandatory.
+
+HEIMDALL — ORGANIZE & UNDERSTAND. Workspaces and information composition.
+
+♬ CONDUCTOR — Coordinated Operations, Navigation, Delivery, Unified Control,
+Tracking, Oversight & Review. Shared orchestration/intelligence fabric.
+
+LCAS — Live Control, Activity & Status. Truthful observation/control/status.
+AOS — persistent autonomous execution, sequencing, dependencies and recovery.
+FORGE — deterministic implementation/build/test/verification/package.
+PENELOPE — source continuity and fragmented source/version-family reconciliation.
+ARGOS — Academic Research Governance, Opposition & Synthesis.
+APPLE — shared architecture/product/performance/lean-engineering review.
+WEAVER — web/WebApp/PWA implementation workspace; delegates engineering to FORGE.
+ARTEMIS — Asset Realization, Transformation, Engineering, Management & Integration System.
+HERMES — jobs/opportunities authority including tenders/procurement.
+MONETA — financial-state/semantics authority.
+MAMMON — income/opportunity value-realization strategy; does not replace HERMES/MONETA.
+SKALD — standalone Media & Entertainment/media-content specialist.
+CURATOR — professional photography/media-management.
+THEMIS — legal domain App.
+HESPERA — canonical agriculture/growing Application.
+HESTIA — canonical agriculture/growing Product / physical local-first control system.
+NANDI — modular agricultural helper/agriBot/field robotics/mobility platform.
+THREAD — wider EDEN history/context/genealogy/provenance recovery.
+GrandMasterRegister — authoritative identity/capability registry artifact/service, not an App.
+gardenOS/GardenOScore — legacy/internal provenance and architectural reference.

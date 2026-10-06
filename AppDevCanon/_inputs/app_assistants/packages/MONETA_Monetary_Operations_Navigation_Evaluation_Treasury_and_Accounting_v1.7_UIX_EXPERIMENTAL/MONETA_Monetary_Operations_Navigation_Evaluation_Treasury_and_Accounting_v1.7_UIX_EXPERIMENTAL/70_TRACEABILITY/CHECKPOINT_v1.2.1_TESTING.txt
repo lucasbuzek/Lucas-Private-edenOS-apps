@@ -1,0 +1,10 @@
+MONETA v1.2.1 TESTING CHECKPOINT
+Static/package test preparation: COMPLETE
+B1 unit tests: PASS
+B1 JS syntax: PASS
+B1 HTTP smoke: PASS
+Static acceptance T01/T02/T03/T07/T08/T09: EXECUTED
+Behavioral acceptance T04/T05/T06/T10/T11/T12: NOT_RUN
+B2 macOS build/runtime: NOT_RUN
+B2 Windows build/runtime: NOT_RUN
+Status: TESTING CANDIDATE, NOT RELEASE.

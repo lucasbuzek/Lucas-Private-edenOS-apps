@@ -1,0 +1,13 @@
+MONETA v1.1 — MODULES
+
+LEDGER: 8 subordinate capabilities
+MERCURY: 7 subordinate capabilities
+ALLOCATE: 6 subordinate capabilities
+VAULT: 7 subordinate capabilities
+MARGIN: 6 subordinate capabilities
+NUNTIUS: 6 subordinate capabilities
+PATRON: 6 subordinate capabilities
+RECEIPT: 7 subordinate capabilities
+TRIBUTE: 6 subordinate capabilities
+
+Total subordinate capability prompts: 59

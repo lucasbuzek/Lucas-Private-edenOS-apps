@@ -1,0 +1,15 @@
+MONETA v1.1 — QUICKSTART
+@MONETA AUTO <financial objective>
+
+Direct companies:
+@LEDGER @MERCURY @ALLOCATE @VAULT @MARGIN @NUNTIUS @PATRON @RECEIPT @TRIBUTE
+
+Typical evidence flow:
+RECEIPT → MERCURY → LEDGER → MONETA
+
+Typical full flow:
+RECEIPT → MERCURY → LEDGER → ALLOCATE/VAULT/MARGIN/TRIBUTE → NUNTIUS → MONETA
+
+Control:
+@CONDUCTOR AUTO — orchestration
+@LCAS FULL — complete status/control view

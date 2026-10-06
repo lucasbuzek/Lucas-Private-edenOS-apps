@@ -1,0 +1,40 @@
+MIRROR — Multidisciplinary Independent Review, Ranking, Observation & Reference — v1.5
+
+1. WHAT DO I OPEN FIRST?
+Open MIRROR_v1.5_MASTER.txt and load it as the operating framework.
+
+2. WHAT DO I PROVIDE?
+Provide the work to review: manuscript, chapter, proposal, research, design, plan, or other material.
+
+3. WHAT COMMAND DO I USE?
+General:
+@MIRROR REVIEW
+
+Fiction:
+@MIRROR BOOK
+
+4. WHAT HAPPENS NEXT?
+MIRROR classifies the work, selects relevant specialists, reviews it independently, challenges the findings, compares it
+where useful, prioritizes issues, and produces an actionable result.
+
+5. HOW DO I CONTINUE?
+@MIRROR CONTINUE — continue with more material.
+@MIRROR CASPER — create a revision handoff.
+@MIRROR DELTA — verify a revision.
+@MIRROR FINAL — final readiness gate.
+
+COPY/PASTE EXAMPLE
+@MIRROR BOOK
+Review the attached manuscript autonomously. Begin blind, build the Story Bible, run the full literary panel, identify
+continuity/plot/character/pacing/originality issues, compare with meaningful books and screen works, and produce a
+bounded CASPER revision directive.
+
+LCAS
+Use UI AUTO for the recommended adaptive status interface.
+Use UI FULL at any time for the complete review/pipeline/QA/next-action view.
+
+ACTIVE UI
+◈ MIRROR identifies MIRROR as the active review framework.
+
+DEFAULT UI
+LCAS | [PROJECT] | ◈ MIRROR > [HELPER] > [ROLE] | [STEP] | [PROGRESS] | [STATE] | Next: [NEXT]

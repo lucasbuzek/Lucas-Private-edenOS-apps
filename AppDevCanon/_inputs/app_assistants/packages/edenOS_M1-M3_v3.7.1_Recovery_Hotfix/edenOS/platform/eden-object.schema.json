@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "edenObject DP0.7",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "owner",
+    "provenance"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "permissions": {
+      "type": "array"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "location": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "relationships": {
+      "type": "array"
+    },
+    "attachments": {
+      "type": "array"
+    },
+    "history": {
+      "type": "array"
+    },
+    "sync": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+FORGE HANDOFF — HERMES v1.6
+
+MISSION Turn the included starter into the production HERMES service
+without duplicating authoritative paths.
+
+IMPLEMENTATION ORDER 1. Verify auth + RLS isolation. 2. Complete
+Candidate Truth / Company Truth schemas and file storage. 3. Complete
+canonical opportunity normalizer. 4. Implement structured source
+adapters first. 5. Add saved searches + scheduler + dedup. 6. Add frozen
+opportunity snapshots. 7. Add AI provider abstraction and validated
+structured outputs. 8. Add document generation/export. 9. Add
+application/bid state machine and event ledger. 10. Add optional
+email/calendar connectors. 11. Add assisted browser/action adapter only
+after policy gates. 12. Add observability, quotas, retries, idempotency
+and backups. 13. Run verification ladder before release claims.
+
+AGENT EXECUTION Netlify scheduled functions are suitable as triggers,
+not as an unlimited crawler. Longer bounded tasks can use background
+functions. For large-scale or continuous agents, introduce a durable
+queue/worker service while retaining Netlify for the user-facing app.
+
+DO NOT Ship real developer data. Expose secrets to VITE_* variables.
+Trust client-provided owner IDs. Silently auto-submit. Invent facts.
+Couple core data to one AI provider or one job/tender source.

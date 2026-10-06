@@ -1,0 +1,6 @@
+MONETA B0 CHAT LAUNCHER — v1.2
+Load MASTER + SHARED CONTRACTS + EXISTING-SOLUTION-FIRST gate.
+@CONDUCTOR AUTO
+@LCAS AUTO
+@MONETA AUTO <objective>
+Run the gate before every material implementation/change. Preserve canonical capability IDs across B0/B1/B2.

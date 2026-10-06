@@ -1,0 +1,10 @@
+EDEN Versioning — Active Rule
+Keep independent where applicable:
+app_version
+appdev_schema
+profile_version
+package_version
+source_revision
+build_id
+migration_level
+Never infer one dimension from another.

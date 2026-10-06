@@ -1,0 +1,7 @@
+REFERENCE: ros2_control
+URL: https://control.ros.org/
+ROLE IN EDEN DESIGN
+Reference for actuator/sensor/system abstraction, hardware lifecycle and reusable command/state interfaces. Advanced adapter/reference, not minimum Core dependency.
+
+STATUS
+Reference / integration candidate. Not a canonical dependency until architecture, license, safety and prototype validation are completed.

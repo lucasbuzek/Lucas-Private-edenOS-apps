@@ -1,0 +1,228 @@
+EDEN — Engineering, Development, Exploration & Nature
+edenOS — Vízia v1.0
+Slovenčina
+
+ÚČEL
+
+edenOS je navrhovaný ako spoločné digitálne operačné prostredie pre ekosystém EDEN. Nemá byť iba ďalšou linuxovou distribúciou alebo grafickým rozhraním. Jeho cieľom je prepojiť ľudí, vedomosti, zariadenia, výskum, poľnohospodárstvo, robotiku, vzdelávanie, médiá a výpočtové zdroje v rámci jednej ucelenej platformy fungujúcej prednostne lokálne.
+
+Vaše prostredie, vedomosti a práca patria vám — nie konkrétnemu počítaču, aplikácii ani cloudovej službe.
+
+1. JEDNO OPERAČNÉ PROSTREDIE PRE RÔZNE ZARIADENIA
+
+edenOS je navrhnutý tak, aby sa dokázal prispôsobiť zariadeniam od malých vstavaných systémov a ARM dosiek až po notebooky, stolné počítače, výskumné pracovné stanice a viacužívateľské servery. Malé zariadenia môžu používať iba základné služby, zatiaľ čo výkonnejšie systémy môžu poskytovať celé grafické prostredie. Spoločný objektový model, služby a API EDEN zostávajú konzistentné.
+
+2. ADAPTÍVNE POUŽÍVATEĽSKÉ PROSTREDIE
+
+edenUI a edenAdaptive tvoria plánovanú vrstvu používateľského prostredia. Aplikácie iba nezmenšujú desktopové rozhranie na menšiu obrazovku. Rozhranie sa preusporiada podľa dostupnej plochy, vzdialenosti používateľa od obrazovky, orientácie, výkonu zariadenia a dostupných spôsobov ovládania.
+
+Systém môže podporovať režimy Compact, Medium, Expanded, Large a Distant a vstupy cez dotyk, myš, trackpad, klávesnicu, stylus, gamepad, diaľkové ovládanie, hlas alebo asistenčné prepínače.
+
+Prezentačné profily môžu zahŕňať režimy Standard, Simple, Child, Accessibility a Kiosk.
+
+3. UCELENÉ DESKTOPOVÉ PROSTREDIE
+
+Na bežnom počítači poskytuje edenShell známe prvky operačného prostredia: horné menu, pracovnú plochu, okná, Dock, Overview, vyhľadávanie, upozornenia a Control Center.
+
+Cieľom nie je kopírovať macOS, Windows alebo existujúce linuxové desktopové prostredie. edenOS môže využiť osvedčené princípy interakcie a zároveň vytvoriť vlastnú identitu EDEN.
+
+Používateľ by mal predovšetkým vidieť svoju prácu, informácie a fyzické prostredie, nie vnútornú architektúru operačného systému.
+
+4. OBJEKTY NAD RÁMEC SÚBOROV
+
+Tradičné operačné systémy pracujú najmä s názvami súborov a priečinkami. edenOS pridáva spoločnú objektovú vrstvu.
+
+edenObject môže predstavovať dokument, fotografiu, knihu, dataset, výskumný projekt, rastlinu, zviera, záhradu, senzor, zariadenie, budovu, lokalitu, experiment, mediálny obsah, CAD model, osobu, organizáciu, úlohu alebo pozorovanie.
+
+Objekty môžu obsahovať identitu, vlastníctvo, oprávnenia, pôvod, umiestnenie, vzťahy, prílohy, históriu a stav synchronizácie.
+
+Používateľ tak môže vyhľadať všetko súvisiace s projektom bez toho, aby si musel pamätať fyzické umiestnenie každého súboru.
+
+5. HEIMDALL — INFORMAČNÝ A DÁTOVÝ ZÁKLAD EDEN
+
+HEIMDALL poskytuje spoločnú informačnú infraštruktúru pod aplikáciami ako Files, Research, Photos a Documents.
+
+Spravuje identitu informačných objektov, metadáta, úložiská, reprezentácie, verzie, pôvod, vzťahy, kolekcie, projekty, indexovanie, import, konverzné úlohy, integritu, dostupnosť a rozhrania poskytovateľov.
+
+Dokument preto môže byť chápaný ako informačný objekt, nie iba ako cesta k súboru na disku.
+
+HEIMDALL zámerne neurčuje význam každej odbornej oblasti. Atlas poskytuje biologické vedomosti, Research vedecké pracovné postupy, gardenOS riadi poľnohospodárske systémy a Nandi robotické systémy. HEIMDALL spravuje spoločné informácie a digitálne aktíva, ktoré tieto systémy používajú.
+
+6. UNIVERZÁLNE VYHĽADÁVANIE
+
+edenSearch má prehľadávať celé používateľské prostredie EDEN, nielen názvy súborov.
+
+Vyhľadanie slova „paradajka“ môže v budúcnosti zobraziť poznatky z Plant Atlas, skutočné rastliny registrované v gardenOS, súvisiaci výskum, dokumenty, fotografie, históriu senzorov a relevantné zariadenia.
+
+Aplikácie poskytujú vyhľadávacie zdroje do jedného spoločného vyhľadávacieho prostredia.
+
+7. VEDOMOSTI PREPOJENÉ S REÁLNYM SVETOM
+
+Atlas je štruktúrované vedomostné prostredie EDEN. Plant Atlas a Animal Atlas predstavujú jeho špecializované súčasti.
+
+Informácie o rastlinách môžu zahŕňať taxonómiu, identifikáciu, pestovateľské požiadavky, klímu, pôdu, vodu, svetlo, rozmnožovanie, škodcov, choroby, vhodné kombinácie rastlín, toxicitu, využitie a vedecké zdroje.
+
+Strojovo čitateľné pestovateľské informácie môže gardenOS použiť pri správe reálnych rastlín a pestovateľského prostredia.
+
+8. gardenOS
+
+gardenOS je poľnohospodárske a environmentálne automatizačné prostredie EDEN.
+
+Môže zahŕňať zavlažovanie, čerpadlá, vlhkosť pôdy, teplotu a vlhkosť vzduchu, hladinu vody, osvetlenie, počasie, pestovateľské zóny, automatizačné pravidlá a historické monitorovanie.
+
+Plant Atlas poskytuje vedomosti. Research poskytuje experimentálny kontext. HEIMDALL uchováva informácie a datasety. gardenOS komunikuje so skutočnými senzormi a akčnými členmi.
+
+Bezpečnostne kritické lokálne riadenie musí zostať funkčné aj bez internetového pripojenia.
+
+9. NANDI
+
+Nandi predstavuje prostredie EDEN pre fyzickú automatizáciu a robotiku.
+
+Robotické systémy môžu zdieľať koncepty EDEN, ako sú lokality, mapy, zariadenia, senzory, misie, úlohy a pozorovania.
+
+To umožňuje pracovné postupy, pri ktorých iný systém EDEN zistí problém, automatizácia vytvorí inšpekčnú úlohu, Nandi vykoná pozorovanie, HEIMDALL uloží výsledné informácie a Research ich analyzuje.
+
+10. RESEARCH
+
+Research je navrhovaný ako viac než aplikácia na písanie dokumentov.
+
+Výskumný projekt EDEN môže obsahovať otázky alebo hypotézy, literatúru, poznámky, protokoly, experimenty, vzorky, pozorovania, datasety, kód, hardvér, analýzy, výsledky, grafiku, publikácie a informácie o pôvode.
+
+Môže fungovať ako elektronický laboratórny a terénny denník a zároveň zachovávať väzbu medzi dôkazmi a výslednými publikáciami.
+
+11. EDUCATION
+
+Education využíva rovnakú vedomostnú a objektovú infraštruktúru.
+
+Študent môže prejsť od lekcie k reálnemu experimentu, zozbierať údaje pomocou gardenOS alebo iného zariadenia EDEN, analyzovať merania, použiť zdroje Atlas alebo Research a vytvoriť správu.
+
+Vzniká tak priame prepojenie medzi vzdelávaním a skutočným pozorovaním. Dôležitou súčasťou vízie sú aj školské nasadenia fungujúce bez internetu.
+
+12. KONTEXTOVÁ INTELIGENCIA A PRACOVNÉ POSTUPY
+
+ARGOS, CASPER, READ, IRIS, LINGUA, FORGE a WEAVER je vhodnejšie chápať ako kontextové schopnosti a pracovné postupy EDEN než ako stále rastúci počet samostatných aplikácií.
+
+Podľa kontextu môže používateľ zvoliť napríklad Research, Review, Translate, Create Image, Build alebo Publish.
+
+Aplikácia poskytne kontext a edenOS pripojí vhodnú schopnosť alebo poskytovateľa.
+
+13. EDEN CONNECT
+
+edenConnect poskytuje autentifikované vyhľadávanie a komunikáciu medzi systémami EDEN.
+
+Plánovaný postup je:
+
+Discover → Identify → Authenticate → Authorize → Negotiate capabilities → Connect.
+
+Samotné objavenie zariadenia nikdy automaticky neudeľuje oprávnenie.
+
+Táto vrstva môže podporovať synchronizáciu, vzdialené služby, zdieľanie, správu a distribuované výpočty.
+
+14. NEARBY, SHARE A CAST
+
+Dôveryhodné systémy EDEN môžu ponúkať jednoduché akcie vyššej úrovne, napríklad zdieľanie do blízkeho zariadenia, zobrazenie na inej obrazovke alebo spustenie úlohy na výskumnom serveri.
+
+Natívna komunikácia EDEN používa ako základ edenConnect. Webové, QR a platformovo špecifické mechanizmy môžu zabezpečiť kompatibilitu so zariadeniami mimo ekosystému EDEN.
+
+15. PRENOSNÉ POUŽÍVATEĽSKÉ PROSTREDIE
+
+edenProfile opisuje prenosné logické prostredie používateľa: identitu, nastavenia, prístupnosť, organizáciu aplikácií, usporiadanie Docku, projekty, obľúbené položky, stav pracovného prostredia, oprávnenia a pravidlá synchronizácie.
+
+Logické pracovné prostredie môže používateľa nasledovať medzi kompatibilnými systémami EDEN, pričom zobrazenie sa znovu vytvorí podľa aktuálneho zariadenia.
+
+Desktop dostane desktopové rozloženie. Tablet dostane tabletové rozhranie. Nie je potrebné prenášať doslovné súradnice okien.
+
+Práca nasleduje používateľa; rozhranie sa prispôsobuje zariadeniu.
+
+16. VIACUŽÍVATEĽSKÝ edenOS SERVER
+
+edenOS Server môže poskytovať centralizovanú identitu, profily, informácie HEIMDALL, synchronizáciu, zálohovanie, spoločné služby, automatizáciu a výpočtové zdroje.
+
+Koncové zariadenia bežne vykresľujú vlastné rozhranie edenUI, zatiaľ čo server poskytuje dáta, stav a služby. Grafická relácia priamo na serveri zostáva voliteľná.
+
+Nie je potrebný samostatný nesúvisiaci serverový operačný systém; server je profil nasadenia rovnakej architektúry.
+
+17. DISTRIBUOVANÉ VÝPOČTY
+
+edenCompute umožňuje umiestniť výpočtovú úlohu podľa dostupných schopností namiesto predpokladu, že všetko musí vykonať aktuálne zariadenie používateľa.
+
+Notebook môže ponechať používateľské rozhranie lokálne, zatiaľ čo pracovná stanica alebo EDEN server vykoná náročnú analýzu datasetu, renderovanie, inžiniersku úlohu alebo AI operáciu.
+
+Spustenie aplikácie, stav, dáta a prezentácia tak môžu byť oddelené.
+
+18. LOKÁLNE FUNGOVANIE AKO ZÁKLAD
+
+Základným princípom EDEN je lokálna autonómia s voliteľnou spoluprácou v rámci ekosystému.
+
+Kľúčové funkcie majú zostať dostupné lokálne všade, kde je to praktické. Internet môže pridať synchronizáciu, externé informácie a vzdialené výpočtové zdroje, ale nemá byť podmienkou základnej prevádzky.
+
+Bezpečnostne kritické systémy, napríklad zavlažovanie, si zachovávajú lokálne riadenie a bezpečnostné hranice.
+
+19. OFFLINE VEDOMOSTI
+
+HEIMDALL Knowledge Packs môžu sprístupniť vybrané informácie bez internetového pripojenia.
+
+Nasadenie môže obsahovať regionálny Plant Atlas a Animal Atlas, poľnohospodárske materiály, návody k zariadeniam, vzdelávacie zdroje, mapy, vedecké referencie a lokálnu dokumentáciu.
+
+To je mimoriadne dôležité pre terénne, vidiecke a infraštruktúrne obmedzené nasadenia.
+
+20. APLIKÁCIE ZALOŽENÉ NA SCHOPNOSTIACH
+
+Aplikácie majú požadovať schopnosti systému namiesto závislosti od konkrétneho modelu hardvéru.
+
+Namiesto predpokladu konkrétneho počítača alebo dosky sa softvér môže opýtať, či je dostupné GPIO, kamera, GPU, lokalizačná služba, dotykové ovládanie, vzdialený výpočtový zdroj alebo iná schopnosť.
+
+Hardvér sa tak môže meniť bez potreby prerábať architektúru aplikácií pre jednotlivé zariadenia.
+
+21. MODULÁRNE NASADENIE
+
+Rovnaká architektúra môže podporovať viacero profilov:
+
+edenOS Recovery — malé obnovovacie prostredie.
+edenOS Core — bezhlavý vstavaný systém.
+edenOS Server — viacužívateľské služby, informácie a výpočty.
+edenOS Desktop — grafická osobná pracovná stanica.
+edenOS Full — rozšírené aplikácie a voliteľní poskytovatelia.
+
+Vďaka tomu môžu nízkonákladové nasadenia aj výkonné komerčné systémy zdieľať rovnaké architektonické základy.
+
+22. POUŽÍVATEĽSKÉ DÁTA PREŽIJÚ OPERAČNÝ SYSTÉM
+
+Operačný systém je nahraditeľný; používateľské informácie nie.
+
+Systémový softvér, aplikácie a používateľské informácie sú preto koncepčne oddelené. Aktualizácie majú v budúcnosti podporovať overenie, obnovu a návrat na predchádzajúcu verziu bez ohrozenia dát používateľa.
+
+23. PÔVOD A HISTÓRIA INFORMÁCIÍ
+
+EDEN by mal čoraz lepšie vedieť odpovedať na otázky:
+
+Odkiaľ táto informácia pochádza?
+Kto ju zmenil?
+Ktorý zdroj ju vytvoril?
+Aké parametre boli použité?
+Ktorá verzia bola použitá?
+Ktoré ďalšie objekty od nej závisia?
+
+To je dôležité pre výskum, inžinierstvo, publikovanie aj bežnú správu informácií.
+
+24. OD VEDOMOSTÍ K ČINNOSTI
+
+Širší ekosystém EDEN získava najväčšiu hodnotu vtedy, keď jeho jednotlivé časti spolupracujú.
+
+Možný poľnohospodársky cyklus:
+
+Plant Atlas → Education → gardenOS → HEIMDALL → Research → nové dôkazy → lepšie vedomosti.
+
+Inžiniersky cyklus:
+
+Research → FORGE → prototyp → gardenOS alebo Nandi → nasadenie → pozorovania → analýza → lepší návrh.
+
+Platforma má zachovať reťazec:
+
+vedomosti → učenie → pozorovanie → dôkazy → výskum → nové vedomosti
+
+ŠIRŠIA VÍZIA
+
+Cieľom nie je iba vytvoriť ďalší linuxový desktop. Linux môže poskytnúť praktické jadro a hardvérový základ, zatiaľ čo edenOS nad ním definuje operačné prostredie EDEN.
+
+V konečnej podobe má byť edenOS lokálne orientované, adaptívne a distribuované prostredie, v ktorom ľudia, informácie, vedomosti, výpočtové zdroje a fyzické systémy tvoria jeden ucelený ekosystém — od malého poľnohospodárskeho kontroléra až po výskumnú pracovnú stanicu alebo viacužívateľský server.

@@ -1,0 +1,10 @@
+@THREAD EXTRACT
+
+TARGET:
+[EXACT PROMPT / EXACT WORDING / EXACT CODE / EXACT CONVERSATION MATERIAL]
+
+Retrieve exact historical text where available.
+Do not replace unavailable exact text with invented wording.
+If exact material cannot be retrieved, state:
+EXACT SOURCE NOT CURRENTLY RETRIEVED
+Then provide any available reconstruction separately.

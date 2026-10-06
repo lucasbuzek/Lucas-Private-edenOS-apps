@@ -1,0 +1,4 @@
+async function init(){let a=await (await fetch('/api/assistants')).json();assistant.innerHTML=a.map(x=>`<option value="${x.id}">${x.symbol} ${x.name}</option>`).join('');assistant.value='conductor'}
+async function start(){if(!goal.value.trim())return alert('Describe what you would like to do.');status.textContent='Creating project…';let p=await (await fetch('/api/projects',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name.value,goal:goal.value,assistant:assistant.value})})).json();status.textContent=`${p.name} · ${p.status}`;await fetch('/api/run/'+p.id,{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});await show(p.id)}
+async function show(id){let d=await (await fetch('/api/project/'+id)).json();status.textContent=`${d.manifest.name} · ${d.manifest.status}`;events.innerHTML=d.events.map(e=>`<div class="ev"><b>${e.type}</b> ${e.payload.step||e.payload.note||''}</div>`).join('')}
+init();

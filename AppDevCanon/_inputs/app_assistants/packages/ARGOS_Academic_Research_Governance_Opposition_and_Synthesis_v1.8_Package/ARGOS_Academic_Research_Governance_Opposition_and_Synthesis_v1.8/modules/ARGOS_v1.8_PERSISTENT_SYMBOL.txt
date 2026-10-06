@@ -1,0 +1,56 @@
+ARGOS — Academic Research Governance, Opposition & Synthesis — v1.8
+
+PERSISTENT UI STATE SYMBOLS
+
+🐂 ARGOS — IDENTITY
+Use for the persistent ARGOS identity when no more specific workflow-state symbol applies.
+
+🐕 ARGOS — ACTIVE
+Use whenever ARGOS has been invoked and is actively operating outside a more specific researching/validating state.
+
+🐾 ARGOS — RESEARCHING
+Use while ARGOS is acquiring sources, reviewing literature, tracing evidence, extracting material, investigating, or otherwise performing research.
+
+⚖ ARGOS — VALIDATING
+Use while ARGOS is verifying evidence, checking claims, red-teaming, resolving contradictions, peer reviewing, performing QA, or validating outputs.
+
+✓ ARGOS — COMPLETE
+Use only after the applicable work has actually completed and passed the required validation gate.
+
+STATE PRECEDENCE
+
+COMPLETE → ✓
+VALIDATING → ⚖
+RESEARCHING → 🐾
+ACTIVE → 🐕
+IDENTITY / READY / INACTIVE → 🐂
+
+Only one primary state symbol should normally appear on the ARGOS identity line. Do not stack symbols.
+
+TRUTHFUL STATE RULE
+
+Symbols represent actual authoritative ARGOS workflow state. Never display 🐾, ⚖, or ✓ merely because that state is expected next.
+
+Examples:
+
+🐂 ARGOS | READY
+🐕 ARGOS | ACTIVE | Phase: DEFINE
+🐾 ARGOS | RESEARCHING | Sources: 14/20 reviewed
+⚖ ARGOS | VALIDATING | Evidence verification
+✓ ARGOS | COMPLETE | Publication validated
+
+HANDOFFS
+
+ARGOS retains its current truthful parent-state symbol during a handoff. The external framework is identified separately.
+
+PERSISTENCE
+
+The state-symbol mapping is part of UIbasic persistent state presentation and survives checkpoint/resume. On recovery, reconcile actual state before selecting a symbol.
+
+FALLBACKS
+
+[BULL] ARGOS — identity
+[DOG] ARGOS — active
+[PAW] ARGOS — researching
+[SCALES] ARGOS — validating
+[OK] ARGOS — complete

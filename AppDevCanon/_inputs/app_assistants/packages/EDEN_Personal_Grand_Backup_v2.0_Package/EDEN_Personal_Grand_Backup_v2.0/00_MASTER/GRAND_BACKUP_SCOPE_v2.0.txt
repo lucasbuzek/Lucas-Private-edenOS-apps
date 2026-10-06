@@ -1,0 +1,34 @@
+EDEN PERSONAL GRAND BACKUP — SCOPE v2.0
+
+OWNER: Lucas Buzek DATE: 2026-09-22
+
+This is not merely an App registry. It is a consolidated personal
+working-data and AppDev seed backup intended to reconstruct useful
+EDEN/edenOS Workspaces, workflows, Apps, Helpers, specialists and
+agents.
+
+INCLUDE: • EDEN identity, philosophy, Design Mantra, AppDevRules and
+canon. • GrandMasterRegister and interaction profiles. • established
+Apps, Products, Helpers, agents, subordinate specialists and
+relationships. • HESPERA/HESTIA/GardenOS prototyping and engineering
+history. • professional profile, portfolio, website, job/opportunity and
+tender work. • hardware, electronics, repair, solar, automation and
+embedded-system work. • travel research and planning. • agriculture,
+greenhouse, poultry, agrivoltaics and sustainable-community work. •
+publishing, media, creative and digital workflows. • private personal
+context useful for personal Workspaces. • pseudonymous/anonymous
+private-health Workspace schema. • reusable specialist/workflow
+definitions so personal data can become broader edenOS/AppDev
+capability.
+
+DATA CLASSES: PUBLIC — deliberately shareable professional/project
+material. PERSONAL — private operational context. PRIVATE — sensitive
+personal material. PSEUDONYMOUS — sensitive records stored under a
+private alias/token for specialist workflows. SECRET — passwords,
+credentials, tokens and equivalent secrets. Do NOT duplicate into
+general backups.
+
+RULE: Personal data is source material for Lucas’s private Workspaces;
+it is not automatically public EDEN product data. Broader edenOS
+capabilities should be generalized from workflows and schemas, not by
+shipping Lucas’s private records.

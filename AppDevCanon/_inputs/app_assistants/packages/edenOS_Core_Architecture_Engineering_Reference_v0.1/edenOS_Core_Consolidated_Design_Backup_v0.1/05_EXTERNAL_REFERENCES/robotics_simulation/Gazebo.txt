@@ -1,0 +1,7 @@
+REFERENCE: Gazebo
+URL: https://gazebosim.org/
+ROLE IN EDEN DESIGN
+Physics/sensor simulation platform with ROS 2 integration. Use for physical/navigation simulation rather than building an EDEN physics engine.
+
+STATUS
+Reference / integration candidate. Not a canonical dependency until architecture, license, safety and prototype validation are completed.

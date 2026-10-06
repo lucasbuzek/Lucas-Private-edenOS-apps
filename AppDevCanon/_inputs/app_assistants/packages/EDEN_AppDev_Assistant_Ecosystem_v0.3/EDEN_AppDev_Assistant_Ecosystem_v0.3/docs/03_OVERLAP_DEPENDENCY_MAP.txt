@@ -1,0 +1,11 @@
+OVERLAP / DEPENDENCY MAP — v0.1
+
+CONDUCTOR owns orchestration; LUCAS owns user interaction/state presentation; HEIMDALL owns local objects/assets. None replaces specialist reasoning.
+ARGOS researches/validates evidence; CASPER critiques/reconciles; MIRROR compares; READ evaluates audience response. These overlap in QA but remain distinct lenses.
+FORGE implements runtime/code; WEAVER implements web experience; IRIS owns visual system; LINGUA owns language adaptation; AOS owns autonomous sequential execution.
+THREAD recovers prior project material before new work.
+
+Authoritative flow:
+LUCAS → CONDUCTOR → specialist(s) → HEIMDALL persistence → QA → checkpoint → LUCAS review/export.
+
+No silent merge rule: overlap is resolved through explicit handoff contracts, not deletion of established assistants.

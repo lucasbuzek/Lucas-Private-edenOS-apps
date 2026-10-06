@@ -1,0 +1,13 @@
+{
+ "version":"1.0",
+ "framework":"HEIMDALL",
+ "information_engine":"BIFROST",
+ "apps":[
+  {"id":"skald","name":"SKALD","domain":"media","mode":"hybrid","surfaces":["native","web_content","external_browser_fallback"],"status":"starter-preview"},
+  {"id":"atlas","name":"Atlas","domain":"nature/reference","mode":"native-provider","status":"starter-preview"},
+  {"id":"workshop","name":"Workshop","domain":"education","mode":"native-provider","status":"starter-preview"},
+  {"id":"prototype","name":"Prototype","domain":"engineering","mode":"native-provider","status":"starter-preview"},
+  {"id":"ledger","name":"Ledger","domain":"productivity","mode":"native-provider","status":"starter-preview"}
+ ],
+ "rule":"integrate-before-implement; adapt-before-rewrite; custom-build-only-where-EDEN-adds-unique-value"
+}

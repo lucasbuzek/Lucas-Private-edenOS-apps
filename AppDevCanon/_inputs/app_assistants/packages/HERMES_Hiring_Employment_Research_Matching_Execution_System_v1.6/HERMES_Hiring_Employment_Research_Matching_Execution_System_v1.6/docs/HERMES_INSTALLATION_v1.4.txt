@@ -1,0 +1,34 @@
+HERMES WEB INSTALLATION — v1.6
+
+PREREQUISITES - Git - Node.js 20+ recommended - A Netlify-compatible
+hosting account - A Supabase project - OAuth credentials for Google
+and/or Apple if those providers are enabled
+
+LOCAL cd web cp .env.example .env # fill VITE_SUPABASE_URL and
+VITE_SUPABASE_ANON_KEY npm install npm run dev
+
+DATABASE Open Supabase SQL editor and run supabase/schema.sql.
+
+GOOGLE AUTH Configure Google OAuth in Supabase Auth and add local +
+production redirect URLs.
+
+APPLE AUTH Configure Sign in with Apple in Supabase Auth and add
+production redirect URLs. Apple configuration requires Apple Developer
+setup and deployment-specific identifiers/secrets.
+
+NETLIFY Set Base directory to web if repository root contains the full
+HERMES package, or deploy web as the repository root. Build command: npm
+run build Publish directory: dist Functions directory: netlify/functions
+
+ENVIRONMENT Browser-safe: VITE_SUPABASE_URL VITE_SUPABASE_ANON_KEY
+
+Server-only examples: SUPABASE_SERVICE_ROLE_KEY OPENAI_API_KEY / other
+configured provider keys connector credentials
+
+Never expose service-role or AI/provider secrets using VITE_ prefixes.
+
+POST-DEPLOY TEST - Google/Apple login and logout. - Unauthorized user
+cannot read another user’s rows. - Person/Company/Hybrid mode
+persists. - Opportunity creation persists. - PWA can be added to home
+screen. - External opportunity links open/copy correctly. - Scheduled
+agent function logs an execution without exposing secrets.

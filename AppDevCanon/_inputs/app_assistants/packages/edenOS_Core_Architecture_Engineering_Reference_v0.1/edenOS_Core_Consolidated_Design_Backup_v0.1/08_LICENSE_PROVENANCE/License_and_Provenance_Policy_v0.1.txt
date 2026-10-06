@@ -1,0 +1,13 @@
+LICENSE & PROVENANCE POLICY v0.1
+
+1. A public Git repository is not automatically safe to copy into EDEN.
+2. Record project, repository URL, exact commit/tag, retrieved date, license file and relevant subcomponent license before code/design reuse.
+3. Distinguish: inspiration/reference; API/protocol interoperability; dependency; modified source; copied design; redistributed binary; copied documentation/media.
+4. Preserve notices/attribution where required.
+5. Do not mix incompatible licensing obligations into edenOS Core without explicit review.
+6. Mechanical/CAD/PCB/media licenses may differ from software licenses in the same project.
+7. OpenMower specifically requires component-level review because its ecosystem contains multiple repositories/materials and licensing conditions.
+8. Before public/commercial distribution, run a fresh dependency/license audit.
+
+PROVENANCE RECORD FIELDS
+Name | URL | repository | commit/tag | date | license | artifact type | intended EDEN use | modifications | attribution | redistribution status | reviewer.

@@ -1,0 +1,11 @@
+UIbasic — Basic Persistent User Interface Protocol — v1.0 CHANGELOG
+
+v1.0 - Recreated the previous persistent UI update package as
+independent UIbasic. - Preserved TINY, COMPACT, FULL and AUTO modes. -
+Preserved truthful state/progress requirements. - Preserved persistent
+mode selection. - Preserved functional controls and next-step engine. -
+Preserved failure/recovery/blocker behavior. - Preserved
+responsive/mobile-first requirements. - Preserved QA gate and AFTER
+UPDATE packaging behavior. - Removed AOS-specific project identity from
+the package itself; AOS remains usable as an orchestrator when
+available.

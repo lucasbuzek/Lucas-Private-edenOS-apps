@@ -1,0 +1,14 @@
+# IRIS Architecture v1.1
+
+Planner → Research → Provenance → Lock/Continuity → Compiler → Fusion → Calibration → Generation → 10-Expert QA → Red Team → Local Correction → Regression Test → Best-Version Selection → Delivery.
+
+Batch generation remains sequential by default with one self-contained prompt per image.
+
+
+DESIGN-MANTRA ARCHITECTURE
+Core owns orchestration and canonical state. Specialist modules perform focused operations. Batch Studio is an interaction layer. Provider adapters translate external generation services. Project data, provenance, locks and outputs remain independent from UI/runner implementation.
+
+
+VISUAL FIDELITY PATH
+Source adapters → SCAN → Visual DNA → Provenance → Fidelity Lock → Reconstruction adapter → Compare → QA/Red Team → Export.
+Visual Workspace is a presentation/control surface; it does not become a duplicate rendering or document engine. Provider/document/web implementations remain adapters to authoritative IRIS state.

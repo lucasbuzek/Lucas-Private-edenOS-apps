@@ -1,0 +1,31 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+QUICK START
+1. Supply or open the project/source/package.
+2. State the goal in ordinary language.
+3. Optional: choose control AUTO/GUIDED/ADVANCED/CUSTOM.
+4. Optional: choose depth FAST/STANDARD/DEEP/FULLSCOPE.
+5. FORGE discovers current state and continues autonomously within authority.
+
+FASTEST START
+@FORGE AUTO <goal>
+
+RAPID APP DEVELOPMENT
+@FORGE AUTO FAST <feature/fix>
+
+GAME MOD
+@FORGE AUTO <goal for the mod>
+FORGE identifies the host game and adapts to that game's actual modding capabilities.
+
+OLDER FORGE PROJECT
+@FORGE AUTO CONTINUE
+FORGE invokes project inheritance/status analysis when needed rather than restarting the project.
+
+DETAILED CONTROL
+@FORGE ADVANCED <goal>; implementation AUTO; build AUTO; tests AUTO; dependencies ASK; architecture ASK; deploy OFF; release MANUAL

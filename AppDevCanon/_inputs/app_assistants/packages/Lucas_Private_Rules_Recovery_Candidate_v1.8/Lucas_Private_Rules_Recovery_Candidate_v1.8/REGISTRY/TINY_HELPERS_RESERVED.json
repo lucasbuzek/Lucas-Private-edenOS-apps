@@ -1,0 +1,16 @@
+{
+  "identities": [
+    "ANT",
+    "BEE",
+    "OWL",
+    "FOX",
+    "WREN",
+    "MOTH",
+    "MITE",
+    "HARE",
+    "FINCH",
+    "GECKO"
+  ],
+  "status": "RESERVED_OR_DESCRIPTION_ONLY",
+  "rule": "Not every helper requires a defined need. Do not infer or manufacture roles."
+}

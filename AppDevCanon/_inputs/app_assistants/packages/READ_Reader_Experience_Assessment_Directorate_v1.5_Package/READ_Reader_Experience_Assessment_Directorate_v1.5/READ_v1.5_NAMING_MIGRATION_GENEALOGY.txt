@@ -1,0 +1,44 @@
+READ — Reader Experience Assessment Directorate — v1.5
+NAMING MIGRATION GENEALOGY / PROVENANCE
+
+SOURCE
+READ — Reader Experience Assessment Directorate — v1.4
+Artifact: READ_Reader_Experience_Assessment_Directorate_v1.4_Package.zip
+
+MIGRATION TYPE
+Local READ naming/namespace reconciliation. No system-wide BIFROST,
+GrandMasterRegister, CONDUCTOR, LCAS or edenOS propagation was performed.
+
+GENEALOGY
+READ.LORE → READ.SHORTSPAN
+Preserved function: Logic, Ontology, Rules & Environment.
+
+READ.THREAD → READ.BOOKMARK
+Preserved function: Timeline, Handoffs, References, Events, Alignment & Development.
+
+READ.MIRROR → READ.TWINLIKENESS
+Preserved function: Manuscript Inspection, Reflection, Review, Originality & Resonance.
+
+READ.SCOPE → READ.READSIDEBYSIDE
+Preserved function: Similarity, Convention, Originality & Positioning Evaluation.
+
+READ.PRISM → READ.READROUNDtable
+Preserved function: Panel Reconciliation, Interpretation & Synthesis Matrix.
+Canonical spelling is exactly READROUNDtable.
+
+READ.QUILL → READ.SCRIBELET
+Preserved function: Quality, Usability, Integrity & Literary Logic.
+
+UNCHANGED
+READ.LEAF
+READ.PAGE
+READ.CAST
+READ.ECHO — Emotional & Cognitive Highlight Observer
+
+MIGRATION DISCIPLINE
+DETECT → VALIDATE → BACKUP/STAGE → MIGRATE → VERIFY → COMMIT
+Rollback target: untouched READ v1.4 source package/build.
+
+HISTORICAL NAME POLICY
+Former READ identities may appear in this genealogy and changelog only as
+historical/provenance records. They are not active subordinate identities.

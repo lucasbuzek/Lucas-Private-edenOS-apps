@@ -1,0 +1,31 @@
+{
+  "canonical_display_name": "🐕 ARGOS — Academic Research Governance, Opposition & Synthesis",
+  "acronym": "ARGOS",
+  "expanded_functional_meaning": "Academic Research Governance, Opposition & Synthesis",
+  "version": "1.8",
+  "parent_framework": "CASPER",
+  "root_directory": "ARGOS_Academic_Research_Governance_Opposition_and_Synthesis_v1.8",
+  "authoritative_master": "ARGOS_v1.8_MASTER.txt",
+  "validation": "PASSED",
+  "design_mantra": "modules/ARGOS_v1.8_DESIGN_MANTRA.txt",
+  "persistent_work_loop": "WORK → VALIDATE → SAVE → CONTINUE",
+  "uibasic_integration": "modules/ARGOS_v1.8_UIbasic_ADAPTER.txt",
+  "uibasic_version": "1.0",
+  "ui_default": "AUTO",
+  "persistent_symbol": "♉",
+  "persistent_identity": "♉ ARGOS",
+  "symbol_module": "modules/ARGOS_v1.8_PERSISTENT_SYMBOL.txt",
+  "active_symbol": "🐕‍🦺",
+  "active_identity": "♉🐕‍🦺 ARGOS",
+  "persistent_ui_symbols": {
+    "identity": "🐂",
+    "active": "🐕",
+    "researching": "🐾",
+    "validating": "⚖",
+    "complete": "✓"
+  },
+  "about_and_subordinates": "ARGOS_v1.8_ABOUT_AND_SUBORDINATES.txt",
+  "master_prompt": "prompts/ARGOS_v1.8_MASTER_PROMPT.txt",
+  "subordinate_prompt_count": 15,
+  "subordinate_prompt_directory": "prompts/subordinates"
+}

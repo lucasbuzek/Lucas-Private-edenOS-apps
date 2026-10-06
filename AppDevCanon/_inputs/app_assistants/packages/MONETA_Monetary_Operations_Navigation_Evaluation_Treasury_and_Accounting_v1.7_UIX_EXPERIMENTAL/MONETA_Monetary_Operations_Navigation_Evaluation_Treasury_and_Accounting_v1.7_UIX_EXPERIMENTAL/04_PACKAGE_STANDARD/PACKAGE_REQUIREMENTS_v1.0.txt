@@ -1,0 +1,11 @@
+PACKAGE REQUIREMENTS — MONETA v1.1
+
+One self-contained root directory.
+Human-readable docs are TXT.
+MASTER is standalone and authoritative for MONETA corporate behavior.
+Separate company prompts are loadable independently with shared contracts.
+Subordinate prompts are separate and remain subordinate.
+Include registry, workflows, tests, research notes, migration notes, history/checkpoint/traceability.
+No placeholder claims of runtime execution.
+No branch is marked VERIFIED unless actually tested in that branch.
+Archive suffix: _Package.zip.

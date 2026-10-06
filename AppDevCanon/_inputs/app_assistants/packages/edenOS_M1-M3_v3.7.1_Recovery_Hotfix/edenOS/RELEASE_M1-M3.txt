@@ -1,0 +1,19 @@
+edenOS — M1-M3 Implementation Candidate v3.1
+2026-09-21
+
+M1: Investor Vision System
+M2: Workspaces
+M3: Starter Apps
+
+v3.1 build hardening:
+- fixes pre-log ownership failure on macOS
+- adds bounded workspace repair helper
+- builder refuses root execution
+- detects stale non-user-owned log/build artifacts before mutation
+- preserves verified Alpine cache and persistent outputs
+- cleans only disposable overlay staging during repair
+
+Runtime truth status:
+Static/integration contracts: PASS (carried forward from user-run v3.0 validation)
+macOS zsh syntax: PASS (carried forward from user-run v3.0 validation)
+ARM64 VM boot/graphics: NOT YET VERIFIED

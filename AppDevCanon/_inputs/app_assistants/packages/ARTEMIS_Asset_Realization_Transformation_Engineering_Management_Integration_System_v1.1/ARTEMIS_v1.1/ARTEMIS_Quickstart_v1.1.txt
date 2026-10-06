@@ -1,0 +1,11 @@
+➶ ARTEMIS QUICKSTART
+
+Supply the project/package and run:
+➶ @ARTEMIS AUTO
+
+ARTEMIS inspects before producing, creates/reconciles requirements and specifications, validates representative outputs, then continues through production, QA, repair, optimization, audit and packaging.
+
+After interruption:
+➶ @ARTEMIS CONTINUE
+
+Individual subordinate prompts are included for direct specialist invocation.

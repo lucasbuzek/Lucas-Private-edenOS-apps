@@ -1,0 +1,8 @@
+CURRENT PRIVATE IDENTITIES — v1.7
+Owner: Lucas Buzek
+Garden of EDEN = personal/private front door/experience layer.
+cloud9 = private Digital Home Base/environment.
+HEIMDALL = doorway to EDEN.
+HEIMDALL.CONDUCTOR = HEIMDALL-owned EDEN-wide voice/command interface.
+BIFROST = system gateway/infrastructure: CONNECT & KEEP.
+LCAS = in-Chat UI only; Apps/edenOS runtime role retired.

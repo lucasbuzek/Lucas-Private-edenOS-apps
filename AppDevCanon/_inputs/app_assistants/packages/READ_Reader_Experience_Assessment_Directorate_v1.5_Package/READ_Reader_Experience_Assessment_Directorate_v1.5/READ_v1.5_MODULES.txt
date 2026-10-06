@@ -1,0 +1,63 @@
+READ — v1.1 MODULES
+
+INTERNAL MODULES
+
+INGEST
+Purpose: source inventory and structural mapping.
+Output: source map and completeness state.
+
+STORY MAP
+Purpose: characters, chronology, locations, rules, plot events, promises and motifs.
+Output: assessment reference model.
+
+READER PANEL
+Purpose: model differentiated reader reactions.
+Output: persona/segment reactions with confidence and evidence.
+
+EXPERIENCE ASSESSMENT
+Purpose: engagement, comprehension, emotion, pacing, expectations and memorability.
+Output: reader-experience findings.
+
+CONSISTENCY
+Purpose: continuity, chronology, motivation, setup/payoff, contradictions and unresolved threads.
+Output: consistency ledger.
+
+COMPARATIVE
+Purpose: compare with relevant books/film/TV when requested or justified and sources exist.
+Output: similarities, distinctions, conventions and positioning observations.
+
+SYNTHESIS
+Purpose: cluster findings, preserve minority reactions and remove duplicates.
+Output: consolidated findings.
+
+RECOMMENDATION
+Purpose: convert supported findings into minimal actionable revision directions.
+Output: prioritized revision opportunities and trade-offs.
+
+VERIFY
+Purpose: evidence and internal-consistency QA.
+Output: VERIFIED / NOT RUN / NOT APPLICABLE / FAILED checks.
+
+LCAS ADAPTER
+Purpose: TINY/COMPACT/FULL/AUTO status presentation without duplicating READ state.
+External basis: LCAS — Live Control, Activity & Status.
+
+EXTERNAL FRAMEWORKS
+ARGOS — research/source verification.
+CASPER — deep analytical challenge/review.
+FORGE — implementation/package work.
+AOS — autonomous orchestration when explicitly invoked.
+
+
+NAMED HELPER MAPPING — v1.5
+READER PANEL → LEAF
+PACING/ENGAGEMENT → PAGE
+CHARACTER → CAST
+WORLDBUILDING/RULES → SHORTSPAN
+CONSISTENCY → BOOKMARK
+EMOTIONAL RESPONSE → ECHO
+COMPARATIVE → TWINLIKENESS / READSIDEBYSIDE
+SYNTHESIS → READROUNDtable
+QA → SCRIBELET
+
+All named helpers may operate independently or subordinate to READ. See READ_v1.5_HELPERS.txt.

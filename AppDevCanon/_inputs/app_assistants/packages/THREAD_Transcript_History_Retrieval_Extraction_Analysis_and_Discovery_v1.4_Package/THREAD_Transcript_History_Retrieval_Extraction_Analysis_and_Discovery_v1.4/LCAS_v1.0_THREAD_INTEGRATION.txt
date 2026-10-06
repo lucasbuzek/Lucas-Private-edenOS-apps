@@ -1,0 +1,40 @@
+LCAS — Live Control, Activity & Status
+THREAD Integration Profile — v1.0
+
+STATUS
+CANONICAL CONTROL / ACTIVITY / STATUS LAYER FOR THIS PROJECT.
+
+NORMALIZATION RULE
+Treat all superseded THREAD control/status naming as LCAS.
+Do not rename unrelated established assistants or frameworks.
+
+DEFAULT COMMAND
+@LCAS AUTO
+
+LCAS AUTO MUST SHOW
+• overall % complete / remaining, only when evidence supports a denominator;
+• current stage and step;
+• completed steps;
+• active work;
+• remaining pipeline;
+• blockers;
+• QA/testing state;
+• artifacts;
+• next action.
+
+PROGRESS RULE
+Never invent percentages.
+For the current normalization/package operation, completion may be calculated from a finite validation checklist.
+For open-ended retrieval/research work without a defensible denominator, report INDETERMINATE rather than a percentage.
+
+THREAD IDENTITY
+🧵 THREAD — Transcript History Retrieval, Extraction, Analysis & Discovery remains canonical.
+
+LCAS ROLE
+LCAS presents and controls live project state. It does not replace THREAD retrieval logic and does not create a second authoritative state engine.
+
+PERSISTENT WORK
+WORK → VALIDATE → SAVE → CONTINUE
+
+FINAL
+VALIDATE → SAVE → PACKAGE FINAL OUTPUT

@@ -1,0 +1,10 @@
+{
+  "version": "6.19",
+  "state": "ACTIVE_NOT_FINAL",
+  "canonical_rebase": "Journey 01 replaced by later library QA candidate with repetition/publication PASS evidence",
+  "journey01": {"english_words": 3324, "pending_slovak_units": 143},
+  "narrative": {"english_books": 10, "slovak_complete_books": 7, "slovak_active_books": 3},
+  "technical": {"books_T00_T24": 25, "status": "PRESERVED_FROM_v6.11_PASS"},
+  "terminal_complete": false,
+  "next_gate": "complete Slovak semantic translation for Journey 01-03, bilingual/global QA, final web/package, verified GitHub final snapshot"
+}

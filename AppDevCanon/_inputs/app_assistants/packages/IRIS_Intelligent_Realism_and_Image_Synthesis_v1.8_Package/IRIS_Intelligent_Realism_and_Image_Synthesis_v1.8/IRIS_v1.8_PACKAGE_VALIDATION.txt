@@ -1,0 +1,19 @@
+◉ IRIS — Intelligent Realism & Image Synthesis — v1.8
+
+PACKAGE VALIDATION
+
+PASS — Canonical visual workstation UIX implemented.
+PASS — Persistent ◉ IRIS identity present.
+PASS — LCAS status presentation present.
+PASS — SOURCE / RESULT / SIDE-BY-SIDE / OVERLAY / DIFFERENCE controls present.
+PASS — Visual DNA inspector present.
+PASS — Fidelity QA dimensions present.
+PASS — EDIT-LOCKED allowed-change-set behavior present.
+PASS — SIMPLE / ADVANCED / EXPERT / DIAGNOSTIC depth present.
+PASS — Responsive mobile interaction present.
+PASS — Batch Studio migrated from legacy presentation-depth terminology.
+PASS — Static UI does not falsely claim provider execution.
+PASS — Python compilation.
+PASS — JSON parsing.
+PASS — HTML script/container structural checks.
+PASS — Global FORGE delegation architecture preserved; no local IRIS.FORGE/FOUNDRY worker created.

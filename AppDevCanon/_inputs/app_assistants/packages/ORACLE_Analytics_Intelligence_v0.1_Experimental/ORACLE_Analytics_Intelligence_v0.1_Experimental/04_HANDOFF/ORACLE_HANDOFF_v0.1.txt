@@ -1,0 +1,5 @@
+@CONDUCTOR AUTO
+@LCAS AUTO
+@ORACLE AUTO
+
+Load ORACLE as generalized analytics/quantitative intelligence. Preserve separation from MONETA, THEMIS and HERMES. Use the ORACLE master prompt and only the subordinate specialists required. Preserve cumulative context, provenance, units, assumptions, uncertainty and verification state. Prefer deterministic computation where adequate; use replaceable local/API providers where useful. Never claim tests or verification not executed.

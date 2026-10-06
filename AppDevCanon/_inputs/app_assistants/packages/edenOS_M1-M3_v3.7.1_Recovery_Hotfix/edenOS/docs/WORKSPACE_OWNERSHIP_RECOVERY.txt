@@ -1,0 +1,25 @@
+edenOS — Workspace Ownership Recovery
+Version 3.1
+
+PURPOSE
+Fix the macOS build failure where a previous sudo/root build left ~/Downloads/edenOS/logs or ~/Downloads/edenOS/build owned by root.
+
+SYMPTOMS
+- tee: .../logs/...: Permission denied
+- rm: .../build/dp07-apkovl/...: Permission denied
+
+IMPLEMENTED FIX
+1. BUILD_EDENOS.command performs the ownership/writability gate BEFORE opening its log and BEFORE deleting staging.
+2. BUILD_EDENOS.command refuses to run as root.
+3. If stale ownership is detected it exits with a precise instruction to run REPAIR_WORKSPACE.command.
+4. REPAIR_WORKSPACE.command limits sudo chown to ~/Downloads/edenOS, restores user write access, and removes only disposable dp07-apkovl staging.
+5. cache/alpine, downloaded ISO/checksum, images, releases, logs and other persistent data are preserved.
+6. The build continues to follow LOCAL -> CACHE -> NETWORK and verifies cached Alpine media before download.
+
+MAC RECOVERY FLOW
+  cd ~/Downloads/edenOS_M1-M3
+  ./REPAIR_WORKSPACE.command
+  ./TEST_PACKAGE.command
+  ./BUILD_EDENOS.command
+
+Do NOT run sudo ./BUILD_EDENOS.command.

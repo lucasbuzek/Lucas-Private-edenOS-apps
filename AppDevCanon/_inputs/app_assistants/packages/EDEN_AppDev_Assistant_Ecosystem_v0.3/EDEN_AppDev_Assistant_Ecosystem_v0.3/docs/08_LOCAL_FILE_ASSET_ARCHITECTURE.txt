@@ -1,0 +1,6 @@
+LOCAL FILE / ASSET ARCHITECTURE — v0.1
+HEIMDALL is authoritative. Ingestion: DETECT → IDENTIFY → PREVIEW → IMPORT/INDEX → VALIDATE → REGISTER.
+Logical object != physical file. One object may have originals, versions, generated representations and previews.
+Required metadata: object_id, project_id, type, title, physical_location, checksum where practical, created/modified, source, provenance, relationships, tags, version lineage, verification state.
+Never destroy originals automatically. Index-in-place is supported. Imports copy by default unless the user explicitly chooses move.
+Suggested project tree: manifest.json, objects/, originals/, generated/, previews/, checkpoints/, exports/, logs/, .lucas/events.jsonl.

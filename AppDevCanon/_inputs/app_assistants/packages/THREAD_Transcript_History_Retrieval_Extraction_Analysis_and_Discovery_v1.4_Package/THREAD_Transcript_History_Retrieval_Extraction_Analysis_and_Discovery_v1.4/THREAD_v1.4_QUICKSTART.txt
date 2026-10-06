@@ -1,0 +1,46 @@
+THREAD — v1.4.1 — QUICKSTART
+
+1. OPEN
+THREAD_v1.4_MASTER.txt
+
+2. PROVIDE
+A project, topic, filename, decision, version, phrase or question.
+
+3. USE
+@THREAD AUTO reconstruct everything available about [SUBJECT].
+
+4. THREAD WILL
+Search direct terms → aliases → relationships → discovered terms → chronology → gaps → consistency.
+
+5. CONTINUE / MODIFY
+@THREAD CONTINUE [PROJECT]
+@THREAD TIMELINE [PROJECT]
+@THREAD DECISIONS [SUBJECT]
+@THREAD VERSION [PROJECT]
+@THREAD FILES [PROJECT]
+@THREAD DEEP [SUBJECT]
+
+EXACT WORDING
+@THREAD EXTRACT Find the exact original prompt/instructions for [SUBJECT]. Do not reconstruct wording if the exact source cannot be retrieved.
+
+HANDOFF EXAMPLE
+@THREAD CONTINUE gardenOS and hand the reconstructed latest state to @FORGE.
+
+RESUME WITHOUT REPEATING WORK
+@THREAD RESUME [PROJECT OR SUBJECT]
+
+DEFAULT LOOP
+WORK → VALIDATE → SAVE → CONTINUE
+
+UI
+Default: UI AUTO
+UI TINY
+UI COMPACT
+UI FULL
+
+Example:
+@THREAD AUTO reconstruct everything about gardenOS
+UI AUTO
+
+PERSISTENT UI IDENTITY
+🧵 THREAD is the canonical active/invoked THREAD marker.

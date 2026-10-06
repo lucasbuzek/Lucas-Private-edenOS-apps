@@ -1,0 +1,6 @@
+@IRIS UPDATE
+Apply EDEN Atomic Name Migration 002.
+Rename the active IRIS.FORGE module to IRIS.FOUNDRY while preserving its exact existing
+behavior. Update the complete underlying IRIS implementation tree, verify the migration,
+purge the old active identity only after verification, and return the required confirmation
+plus the complete updated IRIS package. Do not modify independent EDEN FORGE.

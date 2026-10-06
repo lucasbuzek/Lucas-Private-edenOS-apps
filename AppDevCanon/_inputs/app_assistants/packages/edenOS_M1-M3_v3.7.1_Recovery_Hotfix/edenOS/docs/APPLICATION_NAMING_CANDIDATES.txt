@@ -1,0 +1,38 @@
+edenOS — SKALD-Level Application Naming Candidates
+Version: DP0.7 v2.0 Finalization Candidate
+
+Status: working application names remain replaceable until explicitly locked.
+SKALD is established and is not renamed by this candidate exercise.
+Random selection seed: 20092026 (reproducible).
+
+OFFICE
+Candidates: Scribe, Ledger, Quill, Folio, Deskwork, Papertrail, Draft, Page, Column, Clerk, Notary, Canvas, Compose, Brief, Record, Archive, Letter, Table, Form, Office
+Selected for build: Ledger
+
+RESEARCH
+Candidates: Inquiry, Scholar, Method, Proof, Thesis, Source, Evidence, Survey, Study, Beacon, Lens, Fieldnote, Cite, Probe, Measure, Discovery, Notebook, Review, Index, Reference
+Selected for build: Thesis
+
+EDUCATION
+Candidates: Learn, Lesson, Academy, Studyroom, Tutor, Course, Classroom, Workshop, Primer, Pathway, Campus, Schoolhouse, Practice, Curriculum, Lecture, Seminar, Library, Labbook, Mentor, Lessonbook
+Selected for build: Workshop
+
+ENGINEERING
+Candidates: Workshop, Bench, Drafting, Works, Blueprint, Assembly, Instrument, Measure, Prototype, Circuit, Fabricate, Structure, Mechanism, Toolbox, Build, Model, Design, Caliper, Workbench, Foundry
+Selected for build: Prototype
+
+HEALTH
+Candidates: Care, Clinic, Record, Rounds, Chart, Healthbook, Practice, Ward, Pulse, Vitals, Casebook, Carepath, Patient, Medical, Roundsheet, Wellness, Healthdesk, Chartbook, Consult, Careline
+Selected for build: Pulse
+
+AGRICULTURE
+Candidates: Field, Harvest, Grow, Plot, Crop, Orchard, Seed, Soil, Farmbook, Fieldbook, Cultivate, Grove, Bed, Pasture, Greenhouse, Season, Yield, Planting, Agronomy, Terrace
+Selected for build: Field
+
+GEO
+Candidates: Meridian, Terrain, Maproom, Compass, Surveyor, Cartograph, Latitude, AtlasView, Ground, Waypoint, Contour, Region, Traverse, GeoDesk, Landmark, Mapbook, Coordinate, Horizon, Topography, FieldMap
+Selected for build: Latitude
+
+CREATIVE
+Candidates: Studio, Frame, Palette, Cut, Edit, Sketch, Scene, Reel, Gallery, Canvaswork, Soundstage, Draftroom, Image, Motion, Render, PhotoLab, Timeline, Mix, Storyboard, Create
+Selected for build: Reel

@@ -1,0 +1,18 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+MODE PROFILES
+GAME: gameplay, architecture, controls, AI/NPC, combat, physics, world/level, narrative, missions, economy, progression, balance, networking, rendering, VFX, animation, UI/HUD, audio, persistence, modding, performance, accessibility, playtesting, build/distribution.
+MOBILE: iOS/Swift/SwiftUI, Android/Kotlin/Compose, cross-platform, touch, accessibility, storage, networking, sync, notifications, background execution, battery/performance, privacy/permissions, signing/distribution.
+EMBEDDED: firmware, MCU, memory, timing, GPIO, I2C/SPI/UART, sensors, actuators, power, networking, storage, OTA, watchdog/recovery, HIL QA.
+HARDWARE: systems, electronics, PCB, power, mechanical, thermal, RF/connectivity, safety, manufacturability, calibration, serviceability, alternatives.
+WEB: architecture, frontend/backend, responsive UX, accessibility, browser compatibility, security, performance, SEO, PWA, API, DB, deployment; use WEAVER when appropriate.
+SERVER: backend, API, DB, cache, queues, networking, auth, security, concurrency, scalability, observability, backup, deployment.
+AI: provider/model routing, local AI, prompts/context, RAG, tools, evaluation, privacy, latency, cost/resources, deterministic substitution.
+AUTOMATION: orchestration, state machines, schedules/events, tools/connectors, dependencies, checkpointing, retry/recovery, idempotency, authorization, audit/provenance.
+Other modes activate equivalent relevant specialists only when useful.

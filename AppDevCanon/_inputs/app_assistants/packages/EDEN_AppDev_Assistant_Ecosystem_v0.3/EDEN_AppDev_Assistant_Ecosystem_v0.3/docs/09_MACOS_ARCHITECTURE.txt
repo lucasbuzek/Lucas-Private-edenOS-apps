@@ -1,0 +1,3 @@
+macOS ARCHITECTURE — v0.1
+Recommended: SwiftUI shell + shared local runtime service. Use Finder drag/drop, security-scoped bookmarks for user-approved folders, Quick Look previews, background job status, share/export, local notifications where appropriate.
+Keep HEIMDALL store/runtime independent of SwiftUI so the same project can open in LUCAS Local and edenOS adapters. Provider credentials belong in Keychain; project data does not.

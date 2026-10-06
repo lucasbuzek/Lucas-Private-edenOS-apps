@@ -1,0 +1,44 @@
+MANIFEST v2.0
+
+00_MASTER/CHANGELOG_v1.1.txt 00_MASTER/GRANDMASTER_v1.1_MASTER.txt
+00_MASTER/GRAND_BACKUP_SCOPE_v2.0.txt 01_GRAND_PACKS/Family_v1.1.txt
+01_GRAND_PACKS/Friends_v1.1.txt
+01_GRAND_PACKS/LucasPersonalGrandMaster_v1.1.txt
+01_GRAND_PACKS/Official_Public_v1.1.txt 02_APPS/BIFROST_v1.1.txt
+02_APPS/CAMEL_v1.1.txt 02_APPS/CASPER_v1.1.txt 02_APPS/CURATOR_v1.1.txt
+02_APPS/DAEDALUS_v1.1.txt 02_APPS/HEIMDALL_v1.1.txt
+02_APPS/HERMES_v1.1.txt 02_APPS/HESPERA_v1.1.txt 02_APPS/HESTIA_v1.1.txt
+02_APPS/LINGUA_v1.1.txt 02_APPS/MONETA_v1.1.txt 02_APPS/NANDI_v1.1.txt
+02_APPS/PROMETHEUS_v1.1.txt 02_APPS/SKALD_v1.1.txt
+02_APPS/THEMIS_v1.1.txt 02_APPS/cloud9_v1.1.txt 03_HELPERS/AOS_v1.1.txt
+03_HELPERS/APPLE_v1.1.txt 03_HELPERS/ARGOS_v1.1.txt
+03_HELPERS/ARTEMIS_v1.1.txt 03_HELPERS/CHRONOS_v1.1.txt
+03_HELPERS/CONDUCTOR_v1.1.txt 03_HELPERS/FORGE_v1.1.txt
+03_HELPERS/IRIS_v1.1.txt 03_HELPERS/LCAS_v1.1.txt
+03_HELPERS/MIRROR_v1.1.txt 03_HELPERS/ORACLE_v1.1.txt
+03_HELPERS/READ_v1.1.txt 03_HELPERS/Subordinate_Helpers_v1.1.txt
+03_HELPERS/THREAD_v1.1.txt 03_HELPERS/TINY_HELPERS_v1.1.txt
+03_HELPERS/WEAVER_v1.1.txt
+04_RULES/AppDevRules_and_Design_Mantra_v2.0.txt
+04_RULES/NamingRules_v1.1.txt
+04_RULES/edenOS_AppDev_Install_Test_Release_Strategy_v1.1.txt
+05_LINGUA/LINGUA_Language_Coverage_Master_v1.1.txt
+06_BACKUP/BACKUP_PROVENANCE_v1.1.txt
+06_BACKUP/PRIVACY_AND_RECONSTRUCTION_RULES_v2.0.txt
+06_BACKUP/UNRESOLVED_v1.1.txt 07_REGISTRY/GrandMasterRegister_v1.1.json
+08_PERSONAL_DATA/Agriculture_and_Sustainability_v2.0.txt
+08_PERSONAL_DATA/Hardware_Electronics_Repairs_v2.0.txt
+08_PERSONAL_DATA/Professional_Portfolio_and_Work_v2.0.txt
+08_PERSONAL_DATA/Travel_and_Mobility_v2.0.txt
+09_WORKSPACES/Career_and_Opportunities_Workspace_v2.0.txt
+09_WORKSPACES/Creative_and_Publishing_Workspace_v2.0.txt
+09_WORKSPACES/EDEN_AppDev_Workspace_v2.0.txt
+09_WORKSPACES/Engineering_and_Repair_Workspace_v2.0.txt
+09_WORKSPACES/Growing_and_Farm_Workspace_v2.0.txt
+09_WORKSPACES/Private_Wellbeing_Workspace_v2.0.txt
+09_WORKSPACES/Travel_and_Mobility_Workspace_v2.0.txt
+10_WORKFLOWS/Personal_to_Product_Workflow_v2.0.txt
+11_SPECIALIST_PROFILES/Custom_Specialist_Router_v2.0.txt
+12_PROJECT_DATA/HESPERA_HESTIA_GardenOS_Prototype_History_v2.0.txt
+13_PRIVATE_PSEUDONYMOUS/PRIVATE_HEALTH_WORKSPACE_SCHEMA_v2.0.txt
+README.txt README_v2.0.txt

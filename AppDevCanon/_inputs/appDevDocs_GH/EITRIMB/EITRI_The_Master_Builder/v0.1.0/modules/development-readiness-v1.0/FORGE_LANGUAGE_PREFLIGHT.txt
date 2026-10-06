@@ -1,0 +1,14 @@
+FORGE LANGUAGE-AWARE CODE CORRECTNESS PRE-FLIGHT v1.0
+
+When this module is active, before build identify language/version, compiler/interpreter/version, target OS/platform/architecture, SDK/framework versions, dependency versions, build system and active configuration.
+
+DETECT → VALIDATE → STATIC ANALYZE → RESOLVE → BUILD → TEST → VERIFY.
+
+Validate as applicable: syntax; imports/modules; symbols; types/signatures; scope/access; API/platform availability; dependencies; project/build config; generated resources/manifests; nullability; ownership/lifetimes; concurrency; deprecated/incompatible APIs; target constraints.
+
+Use strongest practical deterministic native checker. Model inspection supplements but does not replace available deterministic checks.
+
+Diagnostics: ERROR blocks until resolved; WARNING investigate/fix/justify; RISK document mitigation/verification; STYLE correct when relevant but do not misclassify.
+
+On failure: CAPTURE → ROOT CAUSE → FIX AUTHORITATIVE SOURCE → RE-RUN PREFLIGHT → CLEAN BUILD.
+Never suppress diagnostics merely to obtain a successful build. Never claim PASS for a stage that did not run.

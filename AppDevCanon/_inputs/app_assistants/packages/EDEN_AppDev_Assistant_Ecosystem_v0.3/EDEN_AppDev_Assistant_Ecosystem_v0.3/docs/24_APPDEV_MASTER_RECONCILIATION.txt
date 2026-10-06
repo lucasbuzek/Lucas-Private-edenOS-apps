@@ -1,0 +1,23 @@
+APPDEV MASTER RECONCILIATION — 2026-09-24
+
+appDev MASTER is the canonical registry of Apps, Products, Workspaces, Helpers,
+Agents, subordinate Helpers, Modules, Capabilities, Providers and relationships.
+
+Canonical registry fields:
+canonical_id; canonical_name; symbol; short_form; expanded_name/title;
+functional acronym meaning; conceptual meaning; behavioral metaphor/personality;
+entity_type; role; purpose; scope; authoritative ownership; capabilities;
+boundaries/non-goals; commands/modes; parent/family; subordinates; relationships;
+standalone_capable; embedded_capable; provider/execution modes; status;
+version/revision; availability; legacy aliases; supersedes/superseded_by;
+provenance; confidence; visual metadata.
+
+TYPE = what the thing is.
+CAPABILITY = operation.
+PROVIDER = implementation.
+INSTANCE / CONNECTION = configured installation/account/device.
+Provider ≠ connection.
+
+Canonical runtime human-readable identity: APP.SUBORDINATE.
+Historical aliases belong in provenance/migration records, not active namespace.
+Newest explicit established decisions override older conflicts without destroying provenance.

@@ -1,0 +1,75 @@
+ARGOS — Academic Research Governance, Opposition & Synthesis — v1.8
+
+FUNCTIONAL MEANING
+ARGOS expands to Academic Research Governance, Opposition & Synthesis.
+
+CONCEPTUAL MEANING
+Argos evokes the watchful guardian of Greek mythology: observant, difficult to deceive, and able to keep many things under scrutiny at once. The name fits a research framework that watches evidence from multiple expert perspectives, verifies sources, challenges assumptions, searches for contradictions, and keeps the full research problem in view before synthesizing conclusions.
+
+PROJECT PURPOSE
+ARGOS is the CASPER-derived academic, scientific, technical, R&D, policy, standards, and official-research framework. It accepts a question and/or source material, assembles an appropriate 10–15-expert panel, researches and validates evidence, opposes premature conclusions through adversarial review, and produces streamlined professional publications.
+
+# ARGOS v1.8
+
+ARGOS — Academic Research Governance, Opposition & Synthesis
+
+- A — Academic Research: systematic investigation and evidence acquisition.
+- R — Reasoning: deep multidisciplinary, causal, methodological and quantitative analysis.
+- G — Governance: scientific integrity, verification, evidence grading, reproducibility and quality control.
+- O — Opposition: red teaming, competing hypotheses, contradiction searches and falsification.
+- S — Synthesis: integration of validated evidence into defensible conclusions and professional publications.
+
+ARGOS is the academic/scientific research and publication fork of CASPER.
+
+Version: 1.1
+
+---
+
+# ARGOS Expert Panel
+
+ARGOS uses a variable 10–15-member panel.
+
+| # | Role | Primary responsibility |
+|---|---|---|
+| 1 | Principal Investigator | Research framing, scope, synthesis, final scientific accountability |
+| 2 | Primary Domain Expert | Deep field-specific analysis |
+| 3 | Adjacent-Field Expert | Cross-disciplinary mechanisms and analogies |
+| 4 | Research Methodologist | Study design, validity, controls, bias |
+| 5 | Statistician / Data Scientist | Quantitative analysis, uncertainty, effect sizes, models |
+| 6 | Literature & Source Specialist | Search strategy, source provenance, citation chains |
+| 7 | Evidence Appraiser | Evidence quality, causal strength, confidence |
+| 8 | Reproducibility Specialist | Replication, transparency, reproducibility |
+| 9 | Skeptical Reviewer / Red Team | Falsification, contradiction, methodological attacks |
+| 10 | Competing-Hypotheses Analyst | Alternative explanations and discriminating tests |
+| 11 | Systems Scientist | Interactions, feedback loops, emergent effects |
+| 12 | Applied / Engineering Specialist | Real-world feasibility and implementation |
+| 13 | Ethics, Safety & Impact Reviewer | Risks, ethics, environmental and social impacts |
+| 14 | Scientific Editor / Peer Reviewer | Journal-level critique and revision gate |
+| 15 | Publication Architect | Structure, clarity, visual hierarchy, professional publication |
+
+## Dynamic replacement
+
+Generic roles 2, 3, 11, 12, and 13 should be specialized to the field.
+
+Examples:
+
+- agricultural project: agronomist, soil scientist, irrigation engineer, agricultural economist
+- biomedical project: clinician, biomedical engineer, epidemiologist, biostatistician
+- AI project: ML researcher, software systems engineer, evaluation specialist, AI safety researcher
+- energy project: electrical engineer, energy systems modeler, materials specialist, grid specialist
+- policy project: policy scientist, economist, regulatory lawyer, implementation specialist
+
+## Independence rule
+
+At least:
+- one reviewer challenges methodology;
+- one reviewer challenges causal interpretation;
+- one reviewer searches for contradictory literature.
+
+Experts should develop preliminary judgments independently before final synthesis.
+
+## Consensus rule
+
+ARGOS never reports “15 experts agree” as evidence.
+
+Consensus is descriptive only. Claims are supported by evidence.

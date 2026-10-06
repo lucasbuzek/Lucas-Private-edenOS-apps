@@ -1,0 +1,38 @@
+EDEN ATOMIC NAME MIGRATION 001 — CASPER
+STATUS: READY FOR OWNING-CHAT EXECUTION
+
+OLD: CASPER.READ — Reader Experience Assessment & Diagnostics
+NEW: CASPER.AUDITOR — Audience Understanding, Diagnostics, Inspection, Testing, Observation & Response
+
+Reason: shared EDEN READ already owns the active READ name. New NamingRules prohibit
+active name duplication even under different parent namespaces.
+
+@CASPER UPDATE
+1 Search the CASPER implementation/package for identity references to CASPER.READ.
+2 Rename that subordinate to CASPER.AUDITOR.
+3 Preserve its established reader-experience assessment/diagnostic function.
+4 Update underlying agents, prompts, routers, workflows, capability maps, configs,
+  tests, UI labels, documentation and manifests.
+5 Do NOT modify the separate shared EDEN READ specialist.
+6 Do not replace ordinary prose uses of the verb/read word.
+7 Verify available regression/static/package checks.
+8 Search for stale CASPER.READ identity references.
+9 Only after verification, purge the old active CASPER.READ record/alias.
+10 Keep recovery only in the pre-migration checkpoint/package, not the live registry.
+11 Return the updated CASPER package plus the exact confirmation below.
+
+REQUIRED CONFIRMATION
+CASPER NAME MIGRATION 001 — CONFIRMED
+READ → AUDITOR
+Underlying agents updated: PASS / FAIL / UNKNOWN
+Workflows/routing updated: PASS / FAIL / UNKNOWN
+Config/manifests updated: PASS / FAIL / UNKNOWN
+Documentation/UI updated: PASS / FAIL / UNKNOWN
+Regression checks: PASS / FAIL / UNKNOWN
+Stale active CASPER.READ references: <number or UNKNOWN>
+Old active identity purged: YES / NO
+Updated package: <filename>
+Notes/blockers: <if any>
+
+Rules: one active identity = one unique name; owning chat migrates its own tree;
+verify before purge; UNKNOWN is never PASS; historical chat text is not rewritten.

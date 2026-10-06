@@ -1,0 +1,18 @@
+ARGOS × FORGE — BUILD RESILIENCE ANALYSIS — DP0.7 v1.3
+
+OBSERVED: v1.2 remained alive in Homebrew `brew list qemu`; Homebrew attempted API metadata refresh before edenOS reached Alpine download.
+
+ROOT CAUSE: dependency detection was coupled to package-manager network state, violating local-first behavior and providing poor progress feedback.
+
+IMPLEMENTED:
+- executable-first QEMU detection
+- Homebrew auto-update disabled during builder execution
+- Homebrew install only as fallback when QEMU is genuinely missing
+- persistent Downloads cache retained
+- curl resume, retry, timeout and progress-bar behavior
+- live log created at build start
+- separate CHECK_LOCAL_TOOLS.command
+
+NEXT: after bootstrap proof, generate a deterministic standalone ARM64 VM artifact (qcow2/raw) with automated boot sentinel and smoke test.
+
+TEST/REMOVE: KEEP architecture/data/recovery boundaries; OPTIMIZE temporary dependencies; REPLACE Chromium/Weston if measured cost is excessive; REMOVE duplicate engines/daemons/providers/decorative effects that fail value tests.

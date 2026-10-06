@@ -1,0 +1,41 @@
+EDEN — INITIAL DELIVERABLE REGISTER — v0.1
+
+P0 — Architecture/canon
+[ ] Freeze Grandmaster prompt
+[ ] Merge new Specialist/Relational rules into AppDevRules
+[ ] Freeze provider/native-handler contract
+[ ] Freeze handoff schema
+
+P1 — Web acceleration
+[ ] Inventory existing Lucas site/content/assets
+[ ] Inventory existing EDEN web packages
+[ ] Portal IA for three functions
+[ ] Public/private security boundary
+[ ] First deployable static/public shell
+[ ] Authenticated gateway proof-of-concept
+[ ] Publishing workflow proof-of-concept
+
+P1 — Prototype/funding preparation
+[ ] Baseline lab/tool inventory
+[ ] gardenOS 5-prototype BOM refresh
+[ ] edenOS Core baseline research BOM
+[ ] Nandi baseline research BOM
+[ ] field-science instrument baseline
+[ ] dated supplier/source matrix
+[ ] investor simplified price lists
+[ ] funding tiers
+
+P2 — Research readiness
+[ ] HEIMDALL research corpus taxonomy
+[ ] specialist Helper/Workspace templates
+[ ] web research agents
+[ ] provider scouts
+[ ] field validation templates
+[ ] provenance/evidence ingestion
+
+P2 — Interoperability
+[ ] BIFROST provider registry
+[ ] native handler inventory
+[ ] AI capability/provider routing
+[ ] Personal/Family permissions model
+[ ] graceful-degradation tests

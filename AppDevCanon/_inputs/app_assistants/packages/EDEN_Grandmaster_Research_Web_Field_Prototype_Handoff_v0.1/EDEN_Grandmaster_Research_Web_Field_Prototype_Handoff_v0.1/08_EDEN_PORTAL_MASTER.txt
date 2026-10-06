@@ -1,0 +1,26 @@
+EDEN — PUBLIC PORTAL MASTER — v0.1
+
+PUBLIC PURPOSE
+Explain EDEN clearly; show evidence and maturity honestly; expose projects, research, prototypes and funding opportunities without presenting concepts as validated products.
+
+CORE SECTIONS
+Vision & principles
+Projects / project register
+Research & evidence
+gardenOS / edenOS
+Machines & Nandi
+Deployable infrastructure / Capability Boxes
+Field science and validation
+Publications/documentation
+Funding / support / collaboration
+Updates
+About Lucas Buzek / contact
+Public downloads
+
+MATURITY LABELS
+VISION / RESEARCH / CONCEPT / EXPERIMENTAL / PROTOTYPE / VALIDATING / PILOT / RELEASE-CANDIDATE / RELEASED as applicable. Do not promote status without evidence.
+
+PROJECT PAGE CONTRACT
+Identity; purpose; problem; current maturity; evidence; architecture; prototype plan; requirements; BOM/funding need; milestones; risks/unknowns; publications; media; change history; ways to collaborate.
+
+WEAVER must optimize accessibility, mobile use, performance, SEO/schema metadata, share previews, valid links, provenance and low-bandwidth usability.

@@ -1,0 +1,16 @@
+HERMES v1.6 QUICKSTART
+
+Canonical name: HERMES — Hiring, Employment, Research, Matching &
+Execution System.
+
+Canonical subordinate roster: DOSSIER · CAREERPLAN · VACANCYDESK ·
+SCRUFFY · MATCHSHEET · OpportunityFACTCHECK · CareerFORMFILLER · REVIEW
+· expressSHIP · STATUSFILE · SWITCHBOARD · AFTERFILE
+
+Load prompts/HERMES_MASTER_v1.6.txt for the portable helper. Load a
+subordinate prompt only when that subordinate is invoked.
+
+Web/PWA remains the primary reference implementation.
+Private/custom/testing builds: EN/SK through LINGUA.
+
+See docs/HERMES_NAMING_RECONCILIATION_v1.6.txt for migration genealogy.

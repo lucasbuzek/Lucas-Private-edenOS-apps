@@ -1,0 +1,4 @@
+@MIRROR AUTO
+Goal: [describe outcome]
+Inputs: [attach files/folders/assets if needed]
+Continue autonomously through the shared lifecycle until RELEASE or genuinely BLOCKED.

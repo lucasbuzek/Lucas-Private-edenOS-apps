@@ -1,0 +1,7 @@
+EDEN AppDev WORKSPACE — v2.0
+
+GrandMasterRegister, canon, Apps, Helpers, code/build/package status,
+test evidence, release rings and migration.
+
+WORKSPACE RULE: reuse authoritative Apps/Helpers through contracts; do
+not duplicate their truth stores.

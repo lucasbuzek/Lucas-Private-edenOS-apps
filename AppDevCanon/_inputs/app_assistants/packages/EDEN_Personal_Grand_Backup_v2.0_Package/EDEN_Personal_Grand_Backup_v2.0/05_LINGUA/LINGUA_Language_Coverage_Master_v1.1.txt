@@ -1,0 +1,74 @@
+LINGUA — LANGUAGE COVERAGE & LOCALIZATION MASTER — v1.1
+
+English is the canonical/reference language and universal fallback.
+
+Private/Custom/Experimental baseline: English + Slovak.
+
+Official/Public: Multilingual-by-design. Language coverage is extensible
+through LINGUA and compatible providers.
+
+LANGUAGE DIMENSIONS ARE DISTINCT: UI LANGUAGE ≠ PERSONAL PREFERRED
+LANGUAGE ≠ HOME LANGUAGE ≠ CONVERSATION LANGUAGE ≠ DOCUMENT LANGUAGE ≠
+SOURCE LANGUAGE ≠ OUTPUT LANGUAGE ≠ LOCALITY.
+
+LOCALITY: May recommend and order languages/packs during setup. Must
+never silently determine ethnicity, identity or home language. Must
+never lock the user to a region. All regional packs remain selectable.
+Individual languages may be added/removed. Packs reference shared
+language resources rather than duplicating translations.
+
+TRANSLATION STATE: VERIFIED / CURRENT / STALE / MACHINE / COMMUNITY /
+MISSING. Missing or insufficient translation falls back gracefully to
+canonical English.
+
+USER-FACING NAMING: Literary title → clear geographic/cultural subtitle
+→ visible language list.
+
+CURRENT COVERAGE-PACK DIRECTION:
+
+Common Tongues — World / universal Current core direction: English,
+Spanish, French, Portuguese, German, Russian, Arabic.
+
+Atlantic Light — Western Europe English, Spanish, French, Portuguese,
+German, Italian, Dutch.
+
+Amber Road — Central & Eastern Europe English, Russian, Polish,
+Ukrainian, Czech, Slovak, Romanian.
+
+Africa Connect — cross-African universal English, French, Arabic,
+Portuguese, Swahili, Hausa, Amharic.
+
+Atlas & Cedar — North Africa Arabic, French, English, Tamazight,
+Spanish, Italian, Portuguese.
+
+Baobab Roads — West Africa English, French, Hausa, Yoruba, Igbo,
+Fulfulde, Akan/Twi.
+
+River of Many Voices — Central Africa French, English, Lingala, Swahili,
+Portuguese, Sango, Kituba.
+
+Jasmine Coast — East Africa & the Indian Ocean Swahili, English,
+Amharic, Somali, Oromo, Luganda, Kinyarwanda.
+
+Under Southern Stars — Southern Africa English, Afrikaans, isiZulu,
+isiXhosa, Sesotho, Setswana, Chichewa. Country/locality layers can
+surface additional languages such as siSwati without forcing them into
+the regional seven.
+
+Silk & Sand — Arabic & Persian crossroads Arabic, Persian/Farsi,
+Turkish, Hebrew, Kurdish, Urdu, English.
+
+Monsoon Letters — India Hindi, Bengali, Telugu, Marathi, Tamil, Urdu,
+English.
+
+Bamboo & Ink — East Asia Coverage title established; exact final seven
+should be verified before release.
+
+Islands of Morning — Southeast / maritime Asia Coverage title
+established; exact final seven should be verified before release.
+
+My Own Road — custom mix Any available combination of packs and
+individual languages.
+
+IMPORTANT: These are Language Coverage Packs, not claims that seven
+languages define a culture or region.

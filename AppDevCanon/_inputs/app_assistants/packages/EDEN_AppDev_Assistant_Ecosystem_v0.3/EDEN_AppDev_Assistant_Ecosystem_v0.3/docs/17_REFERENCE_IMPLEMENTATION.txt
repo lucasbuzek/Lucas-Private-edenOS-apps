@@ -1,0 +1,3 @@
+WORKING REFERENCE IMPLEMENTATION — v0.1
+Run: python3 runtime/lucas_runtime.py then open the printed localhost address. The server uses only Python standard library.
+It can create/open local projects, select assistants, enter a goal, start a simulated lifecycle job, preserve event history/checkpoints, and show results. It is an architectural reference, not a production AI-provider integration.

@@ -1,0 +1,8 @@
+{
+  "profile_id": "PRIVATE_LUCAS",
+  "profile_version": "1.6",
+  "requires_appdev": ">=1.6,<2.0",
+  "environment": "cloud9",
+  "personal_front_door": "Garden of EDEN",
+  "secrets": "external/secure"
+}

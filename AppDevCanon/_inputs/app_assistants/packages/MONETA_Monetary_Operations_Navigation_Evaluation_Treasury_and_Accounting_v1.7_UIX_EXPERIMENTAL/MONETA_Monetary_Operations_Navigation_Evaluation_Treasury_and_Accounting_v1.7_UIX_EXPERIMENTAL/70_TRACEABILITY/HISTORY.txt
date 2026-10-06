@@ -1,0 +1,3 @@
+HISTORY
+v1.0 — MONETA existed inside MONETA + THEMIS Helper Ecosystem prompt package.
+v1.1 — Finance package expanded to corporate Helper architecture; NUNTIUS replaces Finance SCRIBE canonically.

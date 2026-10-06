@@ -1,0 +1,15 @@
+MONETA v1.5 — APPDEVRULES ALIGNMENT
+- Existing-Solution-First / implement-integrate before recreate.
+- One authoritative capability; multiple surfaces/providers.
+- Scale by composition, not by forking.
+- Full unified composition on capable hardware; selected specialists/combinations on
+  constrained hardware without separate lite forks.
+- Local/hybrid/remote provider choice is independent of application composition.
+- Recommended / Lean / Full / Custom installation profiles.
+- Reuse OS/native capabilities, installed apps, providers and mature components.
+- Local-first where practical; user data outlives software.
+- Integrations are adapters, not owners.
+- Preserve last-known-good state; recovery/rollback are product features.
+- Stable IDs survive renames/platform/provider changes.
+- Generated ≠ Saved ≠ Tested ≠ Verified ≠ Consolidated ≠ Delivered.
+- Specialist domain ownership survives composition into a future larger Business app.

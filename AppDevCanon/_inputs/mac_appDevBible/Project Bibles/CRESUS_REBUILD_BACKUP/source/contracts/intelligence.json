@@ -1,0 +1,7 @@
+{
+ "version":2,"routeOrder":["deterministic","device","cloud"],
+ "expertExecution":{"contract":"complete_or_exhaust","requiredEvidence":["identity","price","priceAsOf","fundamentals","balanceSheet","income","dividend","dividendDates","valuation","riskDrivers","recentEvents","sources"],"rules":["build_evidence_matrix_before_synthesis","same_comparison_clock_or_explicitly_noncomparable","missing_field_creates_research_queue_item","retry_must_change_source_or_method","continue_until_complete_or_source_exhausted","never_present_incomplete_comparison_as_completed_expert_report","surface_missing_fields_and_exhausted_sources","first_party_company_sources_preferred_for_company_fundamentals","current_market_observation_required_for_current_valuation"]},
+ "classes":{"deterministic":{"requiresSubscription":false,"mayTransmitPrivateData":false},"device":{"requiresSubscription":false,"requiresFull":true,"mayTransmitPrivateData":false},"cloud":{"requiresSubscription":true,"requiresAccount":true,"minimumNecessaryContext":true}},
+ "cloudCapabilities":["research","reasoning","documents","evidence-discovery","gilded-order"],
+ "rules":["provider_keys_server_side_only","external_model_output_is_not_authoritative_state","user_private_context_is_bounded_per_task","provider_is_replaceable"]
+}

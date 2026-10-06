@@ -1,0 +1,34 @@
+MIRROR — STORY BIBLE TEMPLATE — v1.5
+
+PROJECT / TITLE:
+VERSION:
+
+CHARACTERS
+Name / aliases / age / appearance / role / relationships / knowledge / injuries / possessions / skills / arc facts.
+
+LOCATIONS
+Name / geography / layout / travel relationships / relevant rules.
+
+TIMELINE
+Date/time/order / event / participants / duration / dependencies.
+
+WORLD RULES
+Technology / magic / science / politics / institutions / constraints / exceptions.
+
+OBJECTS / PROPS
+Object / owner / location / state / transfers / story significance.
+
+SETUPS / PAYOFFS
+Setup / location / expected payoff / actual payoff / status.
+
+MYSTERIES / CLUES
+Question / clues known to reader / clues known to characters / reveal / fairness status.
+
+RELATIONSHIPS
+Participants / state / changes / causes / unresolved tensions.
+
+OPEN THREADS
+Thread / introduced / last referenced / expected resolution / status.
+
+CANON CONFLICTS
+Finding / evidence / classification: CONFIRMED / LIKELY / POSSIBLE / INTENTIONAL-EXPLAINED.

@@ -1,0 +1,8 @@
+{
+  "version":1,
+  "Security":{"required":["securityId","name"]},
+  "Listing":{"required":["securityId","mic","ticker","tradingCurrency"]},
+  "EvidenceRecord":{"required":["evidenceId","effectiveAt","knownAt","observedAt","source"]},
+  "DividendEvent":{"required":["eventId","securityId","status","amount","currency","effectiveAt","knownAt","observedAt"],"status":["estimated","declared","entitled","payable","paid","reconciled","changed","deferred","cancelled"]},
+  "InvestmentThesis":{"required":["thesisId","securityId","createdAt","state","whyOwn","invalidationConditions"],"state":["active","questioned","broken","closed"]}
+}

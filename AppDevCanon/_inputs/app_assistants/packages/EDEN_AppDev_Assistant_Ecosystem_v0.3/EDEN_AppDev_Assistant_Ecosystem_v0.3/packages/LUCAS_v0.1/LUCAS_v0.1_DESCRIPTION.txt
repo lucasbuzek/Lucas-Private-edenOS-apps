@@ -1,0 +1,1 @@
+LUCAS: Persistent novice-facing UI and project-state layer. Projects, assets, progress, approvals, checkpoints, resume, export

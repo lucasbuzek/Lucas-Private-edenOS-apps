@@ -1,0 +1,4 @@
+INSTRUCTIONS
+Novice: read docs/18_NOVICE_USER_GUIDE.txt.
+Developer: read docs/19_DEVELOPER_GUIDE.txt and docs/20_BUILD_PACKAGE_INSTRUCTIONS.txt.
+Assistant packages are under packages/. Machine specs are under specs/assistants/.

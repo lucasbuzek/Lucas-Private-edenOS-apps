@@ -1,0 +1,15 @@
+READ — v1.1 EXAMPLES
+
+BASIC
+@READ AUTO
+Assess the attached novel for publication readiness.
+
+FOCUSED
+@READ AUTO
+Audience: adult fantasy readers.
+Focus on opening hook, pacing, character motivation, timeline continuity and ending payoff.
+Do not rewrite prose unless a finding requires a short illustrative example.
+
+COMPARATIVE
+@READ COMPARE
+Assess the manuscript first, then compare its reader experience with the named comparable works using available source evidence. Preserve distinctions between common genre conventions and unusually close similarities.

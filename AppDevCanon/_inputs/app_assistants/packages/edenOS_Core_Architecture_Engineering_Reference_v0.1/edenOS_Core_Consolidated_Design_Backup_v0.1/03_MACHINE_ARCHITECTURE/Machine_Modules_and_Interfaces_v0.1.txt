@@ -1,0 +1,27 @@
+EDENOS MACHINE MODULE MODEL v0.1
+
+MODULE CLASSES
+Sensor; Actuator; Motion; Energy; Payload; Positioning; Communications; Safety; Compute; Storage; Service.
+
+PAYLOAD CLASSES
+0 Passive mechanical
+1 Powered
+2 Controlled
+3 Sensed
+4 Intelligent
+
+MOBILITY PROVIDERS
+Differential; Ackermann; tracked; articulated; legged; multirotor; fixed-wing; VTOL; surface vessel; underwater; stationary mechanism.
+
+GENERIC MOTION/MISSION PRIMITIVES
+stop; move; move_to; follow_route; hold_position; return_home; execute_payload_action.
+
+LOCALIZATION STATE
+Position + source + quality/confidence + age. Mission permissions may depend on localization quality.
+
+CAPABILITY DEGRADATION
+Loss of RTK may disable precision work while GNSS remains; loss of GNSS may retain Teach/Replay through odometry/IMU; further sensor failures progressively restrict operation toward safe manual/stop.
+
+MODULE REPLACEMENT
+DISCOVER → IDENTIFY → COMPARE → PROPOSE REPLACEMENT → TEST → CALIBRATE → ACCEPT.
+Unknown hardware must not auto-actuate.

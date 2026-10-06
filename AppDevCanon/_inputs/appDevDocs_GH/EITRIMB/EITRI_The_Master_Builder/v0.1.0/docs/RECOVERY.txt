@@ -1,0 +1,6 @@
+RECOVERY / LKG
+This v0.1.0 package is the initial packaged EITRIMB Governor prompt baseline.
+LKG runtime state: UNKNOWN until integrated and verified in the intended EITRI/LCAS FULL environment.
+Recovery source: MASTER.txt + manifests + contracts/templates + docs.
+Rollback: retain the previously accepted EITRI prompt/package; do not overwrite a demonstrated LKG merely because this package is newer.
+No secrets or user data are required by this package.

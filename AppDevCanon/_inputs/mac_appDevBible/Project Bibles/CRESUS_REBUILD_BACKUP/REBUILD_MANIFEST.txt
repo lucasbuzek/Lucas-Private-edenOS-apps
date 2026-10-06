@@ -1,0 +1,9 @@
+CRESUS REBUILD PACKAGE
+Authority: lucasbuzek/Lucas-private-appDevDocs Project Bibles/CRESUS.txt
+Implementation: lucasbuzek/Lucas-Private-edenOS-apps branch dev/cresus-cross-platform-v0.2
+Verified branch tree commit: a08339bb2907a540104802df2c9d4f94cffc5811
+Verified CRESUS tree: 85775be4672c4ea8a5ec07b81a822015bde919a9
+Includes canon, contracts, Core, native Apple/Android current source, tests, build docs, and reconstruction authority.
+Full targets per current canon: iOS/iPadOS, Android, macOS, Windows.
+Alpha: all implemented capabilities unlocked; only genuine provider/device/platform limits.
+Private Apple: full native Apple capabilities plus optional Silent ChatGPT provider; deterministic CRESUS remains authoritative.

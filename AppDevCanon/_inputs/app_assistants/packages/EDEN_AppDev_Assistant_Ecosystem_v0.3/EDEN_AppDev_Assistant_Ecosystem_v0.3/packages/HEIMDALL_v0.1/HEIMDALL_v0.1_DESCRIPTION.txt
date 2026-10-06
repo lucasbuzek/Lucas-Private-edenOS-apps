@@ -1,0 +1,1 @@
+HEIMDALL: Shared local-first library, project and asset architecture. Persistent object identity, metadata, versions, provenance, relationships, search, ingestion, validation, backup/export

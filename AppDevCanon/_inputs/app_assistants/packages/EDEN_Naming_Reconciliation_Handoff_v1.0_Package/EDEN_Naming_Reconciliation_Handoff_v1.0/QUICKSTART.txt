@@ -1,0 +1,10 @@
+EDEN NAMING RECONCILIATION — NEW CHAT QUICK START
+
+Upload/open EDEN_Naming_Reconciliation_Handoff_v1.0.txt and send:
+
+@CONDUCTOR @ARGOS @THREAD AUTO Load the handoff as authoritative
+starting context. Recover source evidence for unresolved/colliding
+identities. Do not redesign Apps. Create the complete canonical identity
+table, collision analysis, source-recovery queue and proposed
+GrandMasterRegister DELTA. Do not rename established identities without
+evidence or my approval.

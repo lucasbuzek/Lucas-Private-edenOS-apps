@@ -1,0 +1,44 @@
+HERMES — Hiring, Employment, Research, Matching & Execution System — v1.6
+HERMES SIGNAL IDENTITY
+
+PURPOSE
+The HERMES Signal is the persistent visual representation of the HERMES orchestrator. Its conceptual inspiration is the administrative, procedural and slightly playful role associated with Hermes Conrad, while the artwork is original and does not reproduce Futurama character art, Planet Express branding, clothing, face, body, typography or other protected visual assets.
+
+VISUAL SYSTEM
+The mark combines three ideas:
+1. Messenger/wing — opportunity discovery and handoff.
+2. Document/check — applications, tenders, compliance and administration.
+3. Restrained red-gold-green bands — a subtle Rasta-inspired signature.
+
+The interface is NOT a red-gold-green theme. These colors identify HERMES itself. Operational success/warning/error states remain separately communicated with text, icons and accessible state labels so brand colors never become the sole state encoding.
+
+AUTHORITATIVE BEHAVIOR
+The signal reads the same authoritative workflow state consumed by UIbasic. Do not create a parallel animation state.
+
+IDLE: static.
+QUEUED: static/subdued.
+ACTIVE: restrained motion; confirmed work is executing.
+WAITING: static; explicit WAITING label.
+BLOCKED: static; blocker shown in Activity Drawer.
+QA: static unless QA work is actually executing.
+COMPLETE: brief completion may be added later, then static.
+FAILED: static; explicit failure information.
+RECOVERING: restrained motion while recovery is actually executing.
+
+PERSISTENCE
+Desktop: visible in sidebar and UIbasic status panel.
+Mobile: persistent floating signal above bottom navigation.
+PWA: same original mark used as application icon.
+Active/invoked workflows: status identifies current worker, e.g. ARGOS, CASPER, IRIS, FORGE or WEAVER.
+
+INTERACTION
+Tap/click the signal to open HERMES Activity Drawer. Drawer shows worker, state, phase, current action, QA, blockers/issues, next recommended action and pipeline.
+
+ACCESSIBILITY
+Motion is disabled under prefers-reduced-motion.
+State is never conveyed by color or motion alone.
+Signal buttons have accessible labels.
+Red/gold/green are brand accents, not semantic status colors.
+
+DESIGN MANTRA ALIGNMENT
+The signal has a job. It consolidates identity + current orchestrator state + entry point to activity detail. It replaces decorative branding and redundant spinners rather than adding another independent status system.

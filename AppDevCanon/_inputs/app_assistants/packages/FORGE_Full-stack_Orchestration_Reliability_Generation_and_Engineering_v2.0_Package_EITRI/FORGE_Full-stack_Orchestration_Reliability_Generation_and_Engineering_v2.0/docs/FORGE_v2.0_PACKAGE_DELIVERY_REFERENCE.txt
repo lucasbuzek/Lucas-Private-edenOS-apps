@@ -1,0 +1,12 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+PACKAGE DELIVERY REFERENCE
+FORGE v2.0 incorporates the established EDEN/AppDev Package Delivery Rules by reference and contract. It does not redefine a competing delivery standard.
+Canonical expectations implemented by this FORGE package: versioned canonical root, TXT-first human documentation, README/MASTER/INSTRUCTIONS/QUICKSTART/MODULES/CHANGELOG, manifest/checksums, validation report, migration notes and known-good predecessor identification.
+For software/product delivery, apply all additional current EDEN/AppDev requirements appropriate to that product, including manifests/contracts for shared capabilities, recovery/rollback, installation/update/repair/verify/uninstall guidance and localization/release gates where applicable.

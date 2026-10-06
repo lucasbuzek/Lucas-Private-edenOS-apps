@@ -1,0 +1,16 @@
+➶ ARTEMIS PACKAGE — v1.1
+
+- ARTEMIS_About_v1.1.txt
+- ARTEMIS_Handoff_v1.1.txt
+- ARTEMIS_Master_Prompt_v1.1.txt
+- ARTEMIS_Quickstart_v1.1.txt
+- ARTEMIS_Subordinate_Asset_Director_Prompt_v1.1.txt
+- ARTEMIS_Subordinate_Optimization_Specialist_Prompt_v1.1.txt
+- ARTEMIS_Subordinate_QA_Defect_Specialist_Prompt_v1.1.txt
+- ARTEMIS_Subordinate_Readability_Specialist_Prompt_v1.1.txt
+- ARTEMIS_Subordinate_Recovery_Continuity_Prompt_v1.1.txt
+- ARTEMIS_Subordinate_Requirements_Analyst_Prompt_v1.1.txt
+- ARTEMIS_Subordinate_Target_Context_Reviewer_Prompt_v1.1.txt
+- ARTEMIS_Subordinate_Technical_Asset_Engineer_Prompt_v1.1.txt
+- ARTEMIS_Subordinate_Visual_Consistency_Prompt_v1.1.txt
+- ARTEMIS_Subordinates_v1.1.txt

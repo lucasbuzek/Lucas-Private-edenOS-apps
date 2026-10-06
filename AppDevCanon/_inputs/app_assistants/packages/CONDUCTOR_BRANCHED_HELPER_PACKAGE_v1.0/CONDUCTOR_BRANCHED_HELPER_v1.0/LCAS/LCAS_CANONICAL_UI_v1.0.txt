@@ -1,0 +1,20 @@
+@LCAS AUTO
+LCAS — CANONICAL PERSISTENT UI
+
+┌─ LCAS · [PROJECT NAME] ─────────────────────────
+│ Goal      [active goal]
+│ Progress  [evidence-based XX% / NOT YET CALCULABLE]
+│ Verify    [verification state]
+│ Health    [CLEAR / ATTENTION / BLOCKED / UNKNOWN]
+│ Stage     [stage] → [step]
+│ Active    [Helper/Role] · [task]
+│ Tiny      [contextual subordinate(s) / —]
+│ Next      [next executable action]
+│ Suggest   [optional useful action / —]
+│ Blocked   [none / blocker]
+│ AUTO      [RUNNING / WAITING / BLOCKED]
+└─────────────────────────────────────────────────
+
+One Project → One Canonical LCAS State → Many Contextual Helper/Role Views.
+Switching Helpers or B0-B3 branches never resets LCAS.
+Generated ≠ Saved ≠ Verified ≠ Consolidated ≠ Released.

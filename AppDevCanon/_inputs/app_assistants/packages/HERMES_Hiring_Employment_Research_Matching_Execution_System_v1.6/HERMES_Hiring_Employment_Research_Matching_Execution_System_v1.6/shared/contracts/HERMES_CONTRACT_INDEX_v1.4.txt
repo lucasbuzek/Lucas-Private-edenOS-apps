@@ -1,0 +1,5 @@
+HERMES SHARED CONTRACT INDEX — v1.6
+Canonical objects: CandidateTruth, CompanyTruth, Opportunity, SearchProfile, DocumentSnapshot, ApplicationSnapshot, BidSnapshot, ComplianceRecord, AgentRun, Event, Provider, Model, Capability, WorkflowState, HermesSignalState.
+Canonical branch IDs: B0_CHAT, B1_HOSTED_WEB, B2_STANDALONE, B3_LOCAL_HYBRID.
+Canonical execution states: QUEUED, ACTIVE, WAITING, BLOCKED, QA, COMPLETE, FAILED, RECOVERING.
+Provider implementations must be replaceable adapters.

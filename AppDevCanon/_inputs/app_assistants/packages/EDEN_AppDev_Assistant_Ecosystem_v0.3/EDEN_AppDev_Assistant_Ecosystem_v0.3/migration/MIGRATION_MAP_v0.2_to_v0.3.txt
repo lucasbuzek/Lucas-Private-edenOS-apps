@@ -1,0 +1,9 @@
+LUCAS Ecosystem package identity → EDEN/AppDev Assistant Ecosystem.
+LUCAS/UIbasic → provenance; LCAS current control/status identity.
+gardenOS/GardenOScore → legacy; HESPERA App + HESTIA Product current.
+APPLE Chat-only interpretation → application-level/shared EDEN capability.
+CONDUCTOR orchestration preserved; AOS persistent execution explicitly separated.
+FORGE deterministic implementation/build/test/package clarified.
+PENELOPE added for source/version continuity.
+“My EDEN” → provenance; Garden of EDEN current private front door.
+cloud9 → private implementation/test environment.

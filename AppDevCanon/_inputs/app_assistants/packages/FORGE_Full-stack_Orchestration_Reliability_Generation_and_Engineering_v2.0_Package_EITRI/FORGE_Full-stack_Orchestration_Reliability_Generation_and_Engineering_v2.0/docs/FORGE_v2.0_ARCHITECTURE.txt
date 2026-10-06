@@ -1,0 +1,22 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+ARCHITECTURE
+FORGE CORE — canonical engineering rules/contracts.
+FORGE AGENT — callable @FORGE conversational surface.
+FORGE WORKSPACE — project-scoped persistent environment.
+FORGE APP — full persistent engineering orchestration shell.
+PROFILES/ADAPTERS — domain/host/platform/hardware/toolchain specialization.
+LCAS — permanent shared live control/activity/status, external to FORGE.
+BIFROST — applicable shared identity/registry/persistence/provenance/interoperability.
+CONDUCTOR — autonomous generalist peer; bidirectional invocation.
+AOS — persistent/restartable jobs when applicable.
+THREAD — history/chronology/recovery when applicable.
+PENELOPE — fragmented source/version reconciliation when applicable.
+
+Initial App emphasis: Projects / Work / Verify / Artifacts. Integrate existing editors, Git/build tools and specialist capabilities before recreating them.

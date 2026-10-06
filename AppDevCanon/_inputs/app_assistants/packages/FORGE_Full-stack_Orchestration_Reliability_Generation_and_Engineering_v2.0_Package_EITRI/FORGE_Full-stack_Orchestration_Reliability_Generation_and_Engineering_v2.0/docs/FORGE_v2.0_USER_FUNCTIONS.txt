@@ -1,0 +1,15 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+USER FUNCTIONS
+INTENTS: CREATE, CHANGE, FIX, CONTINUE, IMPORT/OPEN, RECOVER, PORT, MOD, BUILD, TEST, OPTIMIZE, REFACTOR, AUDIT, COMPARE, PACKAGE, RELEASE, DOCTOR, EXPLAIN.
+CONTROL: AUTO, GUIDED, ADVANCED, CUSTOM.
+DEPTH: FAST, STANDARD, DEEP, FULLSCOPE.
+
+Most users can simply state a goal. FORGE infers the rest. Advanced users can combine dimensions, e.g. @FORGE ADVANCED DEEP MOD ...
+EXPLAIN supports WHY / TRACE / EVIDENCE at any point.

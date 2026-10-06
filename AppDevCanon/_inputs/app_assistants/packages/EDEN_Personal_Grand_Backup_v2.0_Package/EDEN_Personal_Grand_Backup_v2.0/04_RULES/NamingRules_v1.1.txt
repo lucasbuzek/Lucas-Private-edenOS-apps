@@ -1,0 +1,47 @@
+NAMINGRULES — UPDATE v1.1
+
+Preserve established canonical names and expansions unless explicitly
+changed. Names are labels; canonical IDs define identity. Prefer real
+semantic bridges; avoid forced backronyms. Strong naming has three
+layers where useful: FUNCTIONAL — what it means/does. CONCEPTUAL — why
+the metaphor/name fits. BEHAVIORAL — how that metaphor informs
+interaction.
+
+LITERARY / POETIC USER-FACING NAMING RULE
+
+Where appropriate, user-facing names should favor memorable, evocative,
+literary or poetic language over dry administrative or geographic
+terminology, provided clarity is preserved.
+
+Pattern: EVOCATIVE TITLE → CLEAR FUNCTIONAL / GEOGRAPHIC / CULTURAL
+SUBTITLE → EXPLICIT CONTENT OR CAPABILITY DESCRIPTION.
+
+Internal canonical IDs remain precise, stable and functional. Poetic
+naming must never obscure what something does, create identity
+ambiguity, or replace technical identifiers.
+
+A name may evoke journeys, landscapes, literature, nature, history,
+exploration or human connection without claiming that the metaphor
+literally defines the people, culture or geography represented.
+
+DIRECTION, NOT DESTINATION: An inspiration such as “Jasmine Road”
+establishes naming character and vocabulary. It does not require literal
+reuse or derivative names.
+
+Especially applicable to LINGUA coverage packs, collections, discovery
+surfaces and user-facing experiences. Technical components should remain
+functional where poetry would reduce clarity.
+
+Example: Jasmine Coast East Africa & the Indian Ocean [visible included
+language list]
+
+PACKAGE RULE
+
+Canonical display: [ACRONYM] — [Expanded Functional Meaning] —
+v[VERSION]
+
+Root: [ACRONYM]_[Expanded_Name]_v[VERSION]/
+
+Human-readable docs default to TXT. Every package includes README.txt.
+MASTER must be self-contained/current where applicable. Do not package
+obsolete or contradictory masters as current.

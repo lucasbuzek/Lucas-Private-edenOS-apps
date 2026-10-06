@@ -1,0 +1,9 @@
+◉ IRIS — Intelligent Realism & Image Synthesis — v1.8
+
+QUICKSTART
+
+1. Open prompts/IRIS_v1.8_MASTER_PROMPT.txt.
+2. Provide the objective and any images/documents/web screenshots/style samples/asset lists.
+3. Invoke @IRIS AUTO or ◉ IRIS CREATE / SCAN / EDIT-LOCKED / DOCUMENT CLONE / STYLE MATCH / ASSET SERIES / FIDELITY QA.
+4. IRIS delegates to subordinates, preserves locks and continues through applicable QA.
+5. For source-preserving work, state the requested change; everything else is locked by default unless explicitly permitted.

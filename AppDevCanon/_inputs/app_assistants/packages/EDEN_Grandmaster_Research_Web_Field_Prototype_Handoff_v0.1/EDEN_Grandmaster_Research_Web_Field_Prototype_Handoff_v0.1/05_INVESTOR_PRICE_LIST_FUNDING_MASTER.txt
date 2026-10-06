@@ -1,0 +1,31 @@
+EDEN — INVESTOR PRICE LIST & FUNDING PACKAGE MASTER — v0.1
+
+GOAL
+Turn verified prototype requirements into transparent, updateable funding asks.
+
+FUNDING TIERS
+1. MINIMUM VALIDATION — prove critical technical assumptions safely.
+2. BASELINE PROTOTYPE — complete functional prototype(s) with instrumentation.
+3. FIELD-READY PILOT — ruggedization, spares, calibration, field test costs.
+4. MULTI-PROTOTYPE / DEMONSTRATOR — repeatability, comparative testing, investor/demo assets.
+5. DEVELOPMENT HEADROOM — contingency, replacement, logistics and unavoidable test failures.
+
+EVERY COST MUST BE CLASSIFIED
+Hardware / tools / fabrication / software-service / cloud-provider / testing / consumables / logistics / compliance / documentation-media / contingency.
+
+INVESTOR TABLE
+Item | Why needed | Qty | Unit | Subtotal | Source/date | Alternative | Essential/Optional | Reusable? | Prototype stage | Evidence status.
+
+FINANCIAL RULES
+- Separate ZAR source price from converted foreign prices.
+- Record exchange-rate date/source when converting.
+- State VAT/shipping/import assumptions.
+- Keep contingency visible rather than hiding it in line items.
+- Distinguish one-time tools from per-prototype cost.
+- Distinguish already-owned equipment from funding required.
+- Preserve supplier alternatives.
+- No fabricated quote or availability.
+- Generate investor summary from the authoritative detailed BOM, never maintain two independent price truths.
+
+DELIVERABLES
+Detailed BOM; investor simplified BOM; stage funding table; existing-assets contribution; assumptions; procurement risks; replacement/spares allowance; funding narrative; evidence links; dated snapshot.

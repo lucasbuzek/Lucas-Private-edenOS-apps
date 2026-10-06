@@ -1,0 +1,19 @@
+CRESUS REBUILD PACKAGE
+
+AUTHORITATIVE CANON: CRESUS_PROJECT_BIBLE.txt
+RECOVERED IMPLEMENTATION SNAPSHOT: source/
+SOURCE AUTHORITY: lucasbuzek/Lucas-Private-edenOS-apps, branch dev/cresus-cross-platform-v0.2, recovered commit a08339bb2907a540104802df2c9d4f94cffc5811.
+APPDEV AUTHORITY: lucasbuzek/Lucas-private-appDevDocs.
+
+IMPORTANT: The recovered implementation is an early skeleton, not the final product. The Project Bible supersedes stale Phase-1/Phase-2 wording. Full targets are iOS/iPadOS, Android, macOS and Windows. Private Apple includes full practical Apple-native integrations and optional Silent ChatGPT. DEVELOPMENT_ALPHA is fully unlocked; only genuine provider/device/platform limits apply.
+
+REBUILD ORDER
+1. Read CRESUS_PROJECT_BIBLE.txt.
+2. Load current AppDev/EITRIMB authority from Lucas-private-appDevDocs.
+3. Use source/ as recovered implementation evidence/LKG, not as complete product scope.
+4. Preserve contracts/tests/Core behavior that remains valid.
+5. Implement the full feature scope and all four native target families defined by the Bible.
+6. Keep deterministic financial state authoritative; AI remains replaceable reasoning/research capability.
+7. Update Bible/docs whenever a rebuild-critical project fact is established.
+
+No credentials, API keys, signing secrets or provider secrets are included in this package.

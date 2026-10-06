@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "id": "org.eden.portal-contract",
+  "status": "DP0.7 finalization baseline",
+  "rule": "Integrate before implement; web portals are application surfaces, not owners of edenOS state.",
+  "presentation_modes": [
+    "native",
+    "integrated-web",
+    "external-browser"
+  ],
+  "components": {
+    "web_content_view": "system-managed embedded portal surface",
+    "authentication_session": "system/browser authentication flow",
+    "external_browser": "fallback for unsupported or policy-restricted flows"
+  },
+  "security": [
+    "explicit per-app portal allowlist",
+    "no arbitrary navigation promoted to application authority",
+    "credentials are not stored in web-view source",
+    "provider data remains provider-owned; BIFROST references remain portable",
+    "offline/error/loading states use edenOS chrome"
+  ],
+  "testing": {
+    "network_downloads_required": false,
+    "default_mode": "preview",
+    "live_portals_enabled": false
+  }
+}

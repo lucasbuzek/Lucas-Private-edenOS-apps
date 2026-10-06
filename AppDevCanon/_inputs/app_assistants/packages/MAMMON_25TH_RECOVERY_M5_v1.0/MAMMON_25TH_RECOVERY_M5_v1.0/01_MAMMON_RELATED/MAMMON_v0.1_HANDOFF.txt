@@ -1,0 +1,495 @@
+MAMMON — Money Acquisition, Monetisation & Making-Ends-Meet Operations Network — v0.1
+PRIVATE CLOUD9 / EDEN DEVELOPMENT HANDOFF
+Owner: Lucas Buzek
+Status: Experimental / Private
+Purpose: Continue MAMMON development in a new chat without redesigning established canon.
+
+STARTING INSTRUCTION
+Continue MAMMON from this handoff. Do not restart product design. Preserve established EDEN authorities, identities, privacy boundaries, provenance and unresolved historical canon. Apply:
+IMPLEMENT / INTEGRATE EXISTING CAPABILITY BEFORE RECREATING IT.
+MAXIMUM USEFUL MODULARITY — MINIMUM DUPLICATION.
+MANY APPS, ONE AUTHORITY PER CAPABILITY, MINIMAL DUPLICATION.
+DETERMINISTIC BY DEFAULT; INTELLIGENCE ON DEMAND.
+EVERY UNKNOWN SHOULD BECOME A QUESTION, A SEARCH, OR A DELEGATION — NEVER AN INVENTION.
+
+1. PRODUCT IDENTITY
+MAMMON is a small independent private EDEN App focused on personal/family income-generation campaigns and economic opportunity strategy.
+Expanded satirical name:
+Money Acquisition, Monetisation & Making-Ends-Meet Operations Network.
+Concept/tagline:
+“MAMMON doesn’t manage your money. It helps you go get some.”
+
+MAMMON is NOT:
+- HERMES replacement.
+- MONETA replacement.
+- accounting authority.
+- generic job board.
+- generic research engine.
+- autonomous authority for consequential commitments.
+
+MAMMON owns:
+- income-generation campaign strategy;
+- opportunity intelligence synthesis;
+- monetisation hypotheses;
+- cross-domain opportunity matching;
+- economic strategy around opportunities;
+- strategic experiments and feedback from outcomes.
+
+2. USER-FACING WORKSPACE
+HEIMDALL Workspace: MAKE MONEY.
+MAMMON is the App/strategy authority behind this private Workspace.
+Possible satirical private UI language established:
+Coffers; Hunt; Schemes; Tribute Due; Grind; Probably Not Worth It; Graveyard; Loot.
+
+3. PRIVACY / AUDIENCE
+Private cloud9 capability only for Lucas, his wife and explicitly authorized family members.
+Do not treat MAMMON/MAKE MONEY as a public or default Family & Friends feature.
+Keep identities, permissions and financial/opportunity data separated.
+Shared family views/data are explicit opt-in.
+Consequential submissions, contracts, purchases, bids, commitments or irreversible external actions require appropriate user approval.
+
+4. CORE MISSION
+Continuously observe the world, detect potentially monetizable change, model the opportunity, challenge the hypothesis, determine actionable strategy, execute through appropriate EDEN Apps, and measure whether it actually produced money.
+
+Potential signals include:
+- emerging markets and technologies;
+- trends;
+- social-media virality/statistics;
+- news and breaking events;
+- world/geopolitical events;
+- jobs, freelance, contracts and tenders;
+- business/procurement opportunities;
+- products, services and content opportunities;
+- search trends;
+- cultural movements;
+- communities/forums;
+- industry changes;
+- shortages/demand;
+- new APIs/software/providers;
+- regulatory changes;
+- geography-specific needs;
+- EDEN capability reuse opportunities.
+Rumour/gossip/social signals are low-confidence leads, not facts, and must be verified before being treated as evidence.
+
+5. AUTHORITY MAP / INTEGRATIONS
+MAMMON — strategy/campaign intelligence and monetisation.
+HERMES — authoritative jobs/opportunities, applications, bids/engagement records and opportunity pursuit.
+MONETA — authoritative financial semantics/state: budgets, costs, pricing, cash flow, profitability, invoices/payments, tax/treasury/reporting as applicable.
+ARGOS — research, evidence quality, verification, opposition/red-team and synthesis.
+THREAD — historical context, provenance and recovery of prior project material.
+CONDUCTOR — intent interpretation, decomposition, orchestration and capability/provider resolution.
+BIFROST — interoperability, discovery, provider connections, routing, events and transport abstraction.
+HEIMDALL — MAKE MONEY Workspace composition/presentation/configuration.
+CASPER — larger/general writing and documentation.
+SKALD — writing within its established narrower purpose.
+LINGUA — translation/localization.
+FORGE — implementation/build/test/package/release.
+WEAVER — web implementation.
+GrandMasterRegister + Capability Manifests — canonical identity, authority, capability and provider contracts.
+
+BRIDGED ≠ DEPENDENT. Apps remain independently useful and degrade gracefully.
+
+6. MAMMON STRATEGIC PIPELINE
+High-level opportunity cycle:
+DISCOVER → VERIFY → MODEL → STRATEGIZE → RESPOND → WIN → PLAN → EXECUTE → ADAPT → VALIDATE → DELIVER → INVOICE → COLLECT → LEARN
+
+For a concrete task offer:
+1. INGEST original offer, source, client, deadline, compensation, requirements, attachments and communications.
+2. VERIFY with ARGOS: legitimacy, scam indicators, contradictions, unknowns and evidence quality.
+3. DECOMPOSE with CONDUCTOR: requirements → deliverables → acceptance criteria → dependencies → capabilities → resources → deadlines.
+4. CAPABILITY MATCH through EDEN; BIFROST resolves providers.
+5. ECONOMICS through MONETA: compensation minus costs, fees, external services, compute/API costs, labour/time and other relevant inputs.
+6. RESPONSE via HERMES plus appropriate writing capability; commitments require user approval.
+7. Build executable workflow graph with ordered/parallel tasks, checkpoints, QA, client preview/revisions, delivery, invoice/payment and outcome analysis.
+8. Dynamically replan around blockers, missing inputs, provider failure, scope changes and effort overruns.
+
+Canonical rule:
+WORKFLOW STEPS ARE CAPABILITY REQUESTS, NOT JUST TEXT IN A TO-DO LIST.
+
+7. OPPORTUNITY MODEL
+Each opportunity should be representable with:
+- Signal
+- Evidence
+- Confidence
+- Timing window
+- Domain/market/geography
+- Actors
+- Competition
+- Lucas/family capability match
+- Required resources
+- Missing capabilities
+- Candidate providers
+- Initial cost
+- Time requirement
+- Potential return
+- Downside/risk
+- Dependencies
+- Alternative strategies
+- Information gaps
+- Next cheapest experiment
+- Stop / continue / pivot conditions
+- Actual outcome
+
+Track estimated vs actual effort/return, conversion, revenue, margin, payment delay, failures and provider performance.
+
+8. CROSS-DOMAIN OPPORTUNITY DISCOVERY
+EDEN must not be restricted to humanitarian/community applications. MAMMON should search for legitimate value across domains.
+
+Application domains currently identified include:
+Humanitarian & Development; Agriculture & Food; Environment & Conservation; Water; Energy; Housing & Construction; Manufacturing & Industry; Transport & Logistics; Healthcare & Biomedical; Education & Research; Communications & Connectivity; Computing & AI; Media & Creative Industries; Commerce & Entrepreneurship; Finance & Economic Development; Tourism & Hospitality; Government & Civic Infrastructure; Emergency & Disaster Response; Security & Resilience; Defence-support & Peacekeeping; Geopolitics & Strategic Intelligence; Space & Remote Exploration; Marine Systems; Mining & Resources; Household/Personal Technology.
+
+Do NOT automatically create one App per domain. Use:
+EDEN capability → domain application → opportunity → Workspace/project → existing Apps/Specialists → execution.
+
+Opportunity Matrix dimensions:
+DOMAIN × GEOGRAPHY × PROBLEM × CUSTOMER × TECHNOLOGY × TREND × REGULATION × EVENT × AVAILABLE CAPABILITY × RESOURCE × TIMING
+
+Bidirectional search:
+A. Capability → where else can this create value or income?
+B. Problem/opportunity → what existing EDEN capabilities can solve it?
+
+9. SWEATSHOP — TASK EXECUTION WORKERS
+SWEATSHOP is the intentionally satirical private/internal name for a pool of NON-HUMAN software task workers/agents. Formal documentation may use “Task Execution Workers.”
+It is not a human-labour concept.
+
+Purpose:
+Take bounded objectives/work packages from MAMMON/CONDUCTOR and execute persistently within explicit capability, data, permission, budget, deadline, resource and stop-condition constraints.
+
+Workers should be:
+- specialized;
+- cheap/ephemeral where practical;
+- parallelizable;
+- observable;
+- cancellable;
+- replaceable;
+- disposable after completion;
+- capable of deterministic execution as well as AI-assisted execution.
+
+Workers may use deterministic scripts/tools, existing EDEN Apps/Specialists, local/LAN/online AI, native applications, external services and repositories through authorized BIFROST providers.
+
+Worker lifecycle:
+SPAWN → RECEIVE OBJECTIVE → EXECUTE → REPORT → VALIDATE → DELIVER ARTIFACT → TERMINATE
+
+Blocked:
+BLOCKED → REFRAME → ALTERNATE PROVIDER → ESCALATE TO CONDUCTOR/USER
+
+Execution Contract:
+- Objective
+- Inputs
+- Expected output
+- Allowed capabilities
+- Allowed data
+- Provider policy
+- Budget
+- Deadline
+- Resource ceiling
+- Validation criteria
+- Escalation conditions
+- Stop conditions
+
+A worker need not be an LLM. It may be a script, CLI process, existing App automation, native AI, local/LAN/online model, Specialist delegation or provider workflow.
+
+Private satirical UI terms proposed:
+Open the Sweatshop = active workers
+Hire = spawn
+Fire = terminate
+Overtime = resource allocation
+Foreman = CONDUCTOR orchestration
+Assembly Line = workflow graph
+Output = artifacts
+Productivity = execution metrics
+Wages = compute/API/provider cost
+Strike = blocked workers
+
+Canonical relationship:
+MAMMON finds the opportunity.
+CONDUCTOR devises/orchestrates the strategy.
+SWEATSHOP supplies task-specific digital workers for execution.
+EDEN Specialists provide expertise.
+MONETA determines whether it was worth doing.
+
+10. SWEATSHOP RESEARCH / LOCAL MODEL OPTIMIZATION LOOP
+SWEATSHOP output is also empirical optimization data, subject to privacy/rights controls.
+
+Capture where permitted:
+- objective/task class;
+- inputs or privacy-safe descriptors;
+- chosen capability/provider/model;
+- prompts/instructions/templates where applicable;
+- tool calls;
+- deterministic steps;
+- latency;
+- resource/API cost;
+- retries;
+- failures/blockers;
+- validation results;
+- human corrections/acceptance;
+- final outcome;
+- downstream economic result.
+
+ARGOS analyzes the corpus to find:
+- repeatable task patterns;
+- failure modes;
+- unnecessary AI usage;
+- prompt/context inefficiencies;
+- deterministic substitutions;
+- provider/model strengths;
+- tasks suitable for local-model specialization.
+
+Optimization order:
+1. remove unnecessary AI calls;
+2. improve task decomposition;
+3. improve context/retrieval;
+4. improve prompts/contracts/tools;
+5. improve provider routing;
+6. optimize local inference/model/quantization/caching/batching/hardware use;
+7. only then consider fine-tuning/distillation/specialization.
+
+Keep separate:
+Execution Log
+Research Corpus
+Evaluation Corpus
+Training Corpus
+
+Private/client/family data does NOT automatically become training data.
+Training/distillation/fine-tuning data must be curated, deduplicated, provenance-tracked, quality-scored, privacy-filtered and rights/consent checked.
+Maintain holdout/evaluation sets.
+Benchmark quality, latency, memory/compute, energy and cost.
+Promote model/config changes only on measured improvement without unacceptable regressions.
+
+Closed loop:
+EXECUTE → CAPTURE → VERIFY → RESEARCH/OPPOSE → CLASSIFY → OPTIMIZE → BENCHMARK → PROMOTE/REJECT → ROUTE BETTER → EXECUTE
+
+11. GENERALS / ROGUES STRATEGIC PROVIDERS
+Do NOT invent a new generic strategist roster where existing project assets already exist.
+
+Existing strategic bodies:
+A. Modern Generals — Generals roster.
+B. Rogues Gallery.
+
+Use them as strategy/personality providers through EDEN/BIFROST while preserving their own project identities and provenance.
+
+Strategic War Room concept:
+GENERALS — competing strategic doctrines and approaches.
+ROGUES — unconventional/asymmetric angles and overlooked paths.
+ARGOS — verifies evidence and attacks assumptions.
+MAMMON — converts surviving strategies into economic scenarios.
+CONDUCTOR — turns scenario into executable strategy/capability graph.
+SWEATSHOP — executes bounded work.
+
+Pipeline:
+INTELLIGENCE → GENERALS → ROGUES → ARGOS OPPOSITION → GAME THEORY/SIMULATION → MAMMON → CONDUCTOR → SWEATSHOP → RESULTS → ARGOS ANALYSIS → LOCAL MODEL OPTIMIZATION
+
+12. MODERN GENERALS / GAME-THEORY INSPIRATION
+Reuse strategic mechanics as modelling inspiration, NOT as factual economic truth.
+
+Useful mappings:
+market/environment = map
+actors/competitors = players
+skills/capabilities = available units
+equipment/software = assets
+new capabilities = tech tree
+market/customer access = territory/access
+capital/cash flow = resources/resource generation
+time = strategic pressure
+unknowns = fog of war
+dependencies/logistics = supply lines
+build cost = investment
+income = resource generation
+expansion = market/capability expansion
+counter-strategy = competitor/adversarial response
+win condition = objective
+retreat = stop/pivot
+
+Previously identified Modern Generals strategic research themes include economy/income generation, production flow, resource expansion, AI priorities, grouping, retaliation, supply safety and behavior-based AI rather than crude stat inflation.
+
+Keep fictional/game data strictly separated from real-world evidence and financial truth.
+
+13. GENERALS GENERATIONS — IMPORTANT CANON
+Generals “Generations” are NOT technology tiers or upgrade levels.
+They represent multiple conceptual/doctrinal evolutions in how gameplay describes combat, strategy and geopolitical dynamics.
+
+The established direction includes movement from narrower conventional-force framing toward broader systems thinking: resources, logistics, infrastructure, information, alliances, economics, legitimacy, technological dependence, population needs, resilience, influence, adaptation, regeneration, distributed capability and long-term outcomes.
+
+Earlier EDEN Generals material recovered in current context includes:
+Architect, Gardener, Shepherd, Voyager, Guardian, Falconer and Tinkerer.
+A documented strategic cycle was:
+SEED → GENERATE → FABRICATE → ADAPT → RECLAIM → EXPAND → RELOCATE
+
+CRITICAL:
+The exact historical multi-generation sequence/names/order have NOT yet been reliably recovered.
+Treat them as UNRESOLVED HISTORICAL CANON.
+Use THREAD/source recovery to reconstruct the original lineage.
+DO NOT manufacture “Generation 1/2/3…” replacements.
+When recovered, expose the Generals generations as reusable strategic lenses for Modern Generals, MAMMON, AEGIS, ARGOS, CONDUCTOR and simulation/decision Workspaces while preserving provenance.
+
+14. ROGUE / ROGUES GALLERY
+ROGUE was discussed as the archetype that asks:
+“What is the clever route everyone else missed?”
+However, the existing Rogues Gallery/roster must take precedence over creating duplicate permanent strategist identities.
+
+Potential rogue-like functional lenses discussed:
+SCOUT — obscure sources/emerging opportunities.
+THIEF — satirical label for extracting maximum LEGITIMATE value from open/authorized resources via reuse, repurpose, arbitrage and salvage; never theft.
+INFILTRATOR — difficult ecosystems, integrations, legacy/platform constraints via authorized means.
+TRICKSTER — unconventional combinations.
+SMUGGLER — legitimate movement/conversion/export/import between awkward systems.
+LOCKPICK — compatibility/integration blockers through supported/authorized interfaces.
+FENCE — legitimate channels for monetizing/licensing/publishing/marketplace assets.
+PICKPOCKET — tiny efficiencies/savings/revenue opportunities.
+GRIFTER — defensive study of scams/hype/manipulation.
+
+Boundary:
+ROGUE may break assumptions, conventions and inefficient workflows — not authorization, law, consent or system boundaries.
+
+Do not duplicate these as permanent specialists if the existing Rogues Gallery already covers them.
+
+15. AEGIS / MILITARY-GEOPOLITICAL APPLICATION BRANCH
+A new EDEN application branch was proposed:
+AEGIS — Applied Engineering, Geopolitical Intelligence & Security.
+
+This is ONE branch among many, not the total non-humanitarian expansion.
+
+Purpose:
+Protect people, infrastructure, information and essential capability under difficult or contested conditions.
+
+Focus areas:
+- geopolitical intelligence/scenario analysis;
+- critical-infrastructure resilience;
+- field engineering/logistics;
+- communications/distributed/off-grid computing;
+- situational awareness and defensive security;
+- recovery/continuity planning.
+
+Potential practical applications:
+portable solar/microgrids, water monitoring, emergency communications, LoRa telemetry, offline maps/knowledge, equipment/inventory tracking, logistics optimization, infrastructure fault detection, environmental sensing, search-and-rescue support, disaster assessment, cyber-defensive monitoring, portable servers, resilient agriculture, field repair systems, evacuation/logistics planning and infrastructure restoration.
+
+Intelligence cycle:
+OBSERVE → SOURCE → VERIFY → CONTEXTUALIZE → COMPARE HYPOTHESES → RED TEAM → ASSESS CONFIDENCE → MODEL SCENARIOS → IDENTIFY PRACTICAL CONSEQUENCES → PLAN RESILIENCE
+
+Engineering emphasis:
+protection, sensing, communications, logistics, resilience, recovery and decision support.
+Military/geopolitical research and doctrine may be studied, but EDEN engineering output should remain oriented toward legitimate protective/resilience/support applications rather than systems whose primary function is harming people.
+
+16. 25TH ANNIVERSARY RESEARCH CORPUS
+MAMMON is intended to reuse relevant research methods/inputs from the prior “25th anniversary” project.
+
+Current state:
+The exact full historical scope has NOT been recovered reliably in this handoff.
+Do not invent its content.
+
+Required THREAD task:
+IMPORT / RECOVER: 25TH_ANNIVERSARY_RESEARCH_CORPUS
+→ preserve original sources, methods and inputs
+→ classify reusable intelligence/research methods
+→ expose suitable methods to MAMMON/ARGOS
+→ preserve provenance
+→ clearly distinguish recovered source material from new interpretation.
+
+17. DETERMINISTIC + AI EXECUTION
+Target pattern:
+USER INTENT → AI INTERPRETATION → STRUCTURED PLAN → DETERMINISTIC RESOLUTION → EXECUTION → DETERMINISTIC VALIDATION
+
+Unknown handling:
+deterministic attempt → identify unresolved variables → normalize/reframe → retry → resolve provider → provider assistance → deterministic validation → execute or present unresolved choice
+
+AI is appropriate for ambiguity, semantic interpretation, novel planning, research, code/content and semantic merges.
+Deterministic systems should own registry/IDs, capability matching, compatibility, dependencies, policy filters, permissions, builds, testing, packaging, formal sync/routing rules and measurable validation where possible.
+
+18. PROVIDER / DEVICE MODEL
+MAMMON/SWEATSHOP must request capabilities, not hard-code model/provider names.
+BIFROST/CONDUCTOR resolve providers from:
+native OS capabilities;
+installed applications;
+application-native AI;
+EDEN components;
+local/LAN AI nodes;
+scripts/CLI/workflows;
+self-hosted services;
+online/cloud/API providers;
+repositories/package sources.
+
+Every capable device can be client and provider.
+Routing should consider task fit, privacy, authorization, availability, cost, latency, resource use and quality.
+Discovery never equals authorization.
+
+19. ECONOMIC LEARNING
+MAMMON must learn from actual outcomes, initially through deterministic statistics/configuration rather than assuming model retraining.
+
+Feedback:
+Signal → hypothesis → decision → action → cost/time → result → revenue/margin → assumption review
+
+Measure:
+- opportunity category;
+- predicted vs actual effort;
+- predicted vs actual return;
+- conversion;
+- revenue;
+- margin;
+- payment delay;
+- failures;
+- provider performance;
+- worker/model/tool cost.
+
+20. HISTORICAL INCOME CONTEXT TO RETAIN
+Prior income-support work included:
+- target of at least US$200/week remote income;
+- technical/creative service opportunities;
+- biomedical/engineering/renewable-energy documentation;
+- consulting;
+- photo/video/multimedia;
+- web/content work;
+- opportunity scoring by pay, fit, ease, automation, competition, recurring potential and effective $/hour after automation;
+- useful categories: high-value specialist, creative, simple/automatable and recurring;
+- labels previously proposed: HIGH PAY, FAST CASH, AUTOMATABLE, RECURRING, SA ACCESSIBLE.
+These can inform MAMMON but should not constrain it to freelancing.
+
+21. OPEN / UNRESOLVED ITEMS
+- Recover exact Generals Generations lineage, names/order and source descriptions.
+- Recover/import exact “25th anniversary” corpus.
+- Audit GrandMasterRegister for existing strategist/rogue/scout identities before creating new permanent Specialists.
+- Define MAMMON Capability Manifest.
+- Define SWEATSHOP worker schema + Execution Contract machine-readable schema.
+- Define event contracts for task/workflow lifecycle.
+- Define MAMMON opportunity schema and economic feedback schema.
+- Define Strategic War Room interface to Generals/Rogues providers.
+- Define ARGOS research-corpus promotion/privacy gates.
+- Implement first end-to-end real income opportunity.
+- Benchmark local-vs-LAN-vs-online AI using real SWEATSHOP tasks.
+- Integrate cross-domain Opportunity Matrix.
+- Reconcile AEGIS into EDEN Application Domains without unnecessary App duplication.
+
+22. IMMEDIATE DEVELOPMENT TARGET
+Do not add more speculative architecture before proving the loop.
+
+First vertical slice:
+REAL OPPORTUNITY
+→ MAMMON ingest/model
+→ ARGOS verification
+→ Generals/Rogues strategic analysis where useful
+→ MONETA economics
+→ CONDUCTOR decomposition
+→ BIFROST capability/provider resolution
+→ SWEATSHOP workers
+→ deterministic QA
+→ user approval for consequential actions
+→ HERMES engagement/delivery tracking as appropriate
+→ MONETA actual outcome
+→ ARGOS post-analysis
+→ local-model/provider optimization evidence
+
+Acceptance test:
+A legitimate opportunity is discovered or supplied, evaluated, converted into an executable workflow, completed using real EDEN capabilities/providers, economically measured, and fed back into the research/optimization loop.
+
+23. HANDOFF COMMAND FOR NEW CHAT
+@CONDUCTOR @MAMMON @ARGOS @THREAD
+
+Load this handoff as established project canon.
+Do not redesign MAMMON from scratch.
+First:
+1. audit/recover unresolved historical canon (Generals Generations + 25th anniversary corpus) where source access exists;
+2. reconcile against GrandMasterRegister to avoid duplicates;
+3. produce MAMMON Capability Manifest + SWEATSHOP Execution Contract schemas;
+4. choose/ingest the first real opportunity;
+5. run the complete vertical-slice workflow;
+6. capture execution evidence for ARGOS/local-model optimization.

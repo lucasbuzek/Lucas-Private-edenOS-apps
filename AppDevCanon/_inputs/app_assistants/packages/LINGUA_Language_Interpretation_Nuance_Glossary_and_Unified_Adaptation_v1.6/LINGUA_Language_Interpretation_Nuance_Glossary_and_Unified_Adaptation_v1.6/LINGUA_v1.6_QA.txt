@@ -1,0 +1,18 @@
+LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation — v1.6
+QA & RELEASE ENGINE
+
+FUSED UNIT QA
+Semantic fidelity + omissions/additions + protected entities + glossary + target-language quality.
+
+ROUTING
+HIGH confidence → pass.
+MEDIUM → automatic targeted second review.
+LOW → automatic retranslation/review with wider context.
+BLOCKED → user input only when no safe autonomous resolution exists.
+
+FINAL GLOBAL QA
+Completeness; terminology consistency; names/protected integrity; continuity; source-vs-target semantic review; structure/format; artifact existence/integrity.
+
+RELEASE GATE
+Report VERIFIED / FAILED / NOT RUN / NOT APPLICABLE.
+Never label COMPLETE if required source units or required gates failed.

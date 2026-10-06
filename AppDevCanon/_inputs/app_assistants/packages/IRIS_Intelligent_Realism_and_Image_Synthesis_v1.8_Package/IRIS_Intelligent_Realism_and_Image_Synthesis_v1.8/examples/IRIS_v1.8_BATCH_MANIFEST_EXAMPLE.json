@@ -1,0 +1,33 @@
+{
+  "batch_id": "modern_generals_demo",
+  "output_dir": "outputs/modern_generals_demo",
+  "global_prompt": "Use IRIS MASTER. Professional near-photographic realism, physically plausible construction, accurate scale and materials, restrained grading, no obvious AI artifacts.",
+  "asset_lock": "Preserve each asset's silhouette, proportions, functional geometry, markings and materials across all views. Distinct shapes must remain recognizable after conversion to isometric game graphics.",
+  "qa_prompt": "Run the IRIS 10-expert panel. Reject critical/major geometry, material, lighting, continuity or compositing errors. Prefer local correction.",
+  "max_retries": 2,
+  "sequential": true,
+  "items": [
+    {
+      "asset_id": "example_tank_01",
+      "view": "front_three_quarter_hd",
+      "prompt": "Full modern 3D high-resolution reference preview of the asset, front three-quarter view, neutral operational background, clear silhouette.",
+      "reference_images": [],
+      "negative_prompt": "no duplicate wheels, no malformed tracks, no fake text, no excessive HDR",
+      "metadata": {
+        "faction": "example",
+        "class": "vehicle"
+      }
+    },
+    {
+      "asset_id": "example_tank_01",
+      "view": "isometric_ingame",
+      "prompt": "Convert the locked asset into a clean RTS isometric in-game representation while preserving identity and readable silhouette.",
+      "reference_images": [],
+      "negative_prompt": "no redesign, no changed proportions, no extra turrets",
+      "metadata": {
+        "faction": "example",
+        "class": "vehicle"
+      }
+    }
+  ]
+}

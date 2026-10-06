@@ -1,0 +1,88 @@
+{
+  "package": "EDEN Grandmaster Research Web Field Prototype Handoff",
+  "version": "0.1",
+  "owner": "Lucas Buzek",
+  "created": "2026-09-22",
+  "files": [
+    {
+      "file": "00_README.txt",
+      "sha256": "47273dae991361485e7e7ff0b64807dc13e1d39665e0e45f0c4fb1da2a12ee7c",
+      "bytes": 2327
+    },
+    {
+      "file": "01_GRANDMASTER_PROMPT.txt",
+      "sha256": "3d21353917a8c7053301b48d56697b0145007eb7d7f492b0463c1f6b6d22f1b7",
+      "bytes": 3104
+    },
+    {
+      "file": "02_RESEARCH_AGENT_DEPLOYMENT.txt",
+      "sha256": "65e9b3bbb26527b02690186d4cf46d8153e5c0053f2fa980b4fa4024619ad32d",
+      "bytes": 2246
+    },
+    {
+      "file": "03_FIELD_SCIENCES_PROTOTYPE_RESEARCH.txt",
+      "sha256": "0cec44bf49c1d06e738cd306a3e06ac25932bf8949aa8e86361a43178e028597",
+      "bytes": 1358
+    },
+    {
+      "file": "04_BASELINE_PROTOTYPE_HW_RESEARCH.txt",
+      "sha256": "8c69a94c51d656e545ce817be31ca7623e4ff3604c010e1465250c57dc326f6e",
+      "bytes": 1942
+    },
+    {
+      "file": "05_INVESTOR_PRICE_LIST_FUNDING_MASTER.txt",
+      "sha256": "643f90c437fe10d1e68d048f6d28c2cb6d66cd213a716d79b5fe7c8ba2ee07c1",
+      "bytes": 1674
+    },
+    {
+      "file": "06_LUCAS_WEB_PORTAL_MASTER.txt",
+      "sha256": "d44aea906e40fb38ed212d177c779aa121caf8fbc24f5789b2812f953217a2bc",
+      "bytes": 1641
+    },
+    {
+      "file": "07_CREATIVE_PORTFOLIO_PUBLISHING_MASTER.txt",
+      "sha256": "cf4293737db5eb78078313e114df3ad9db5195b42752e0ba405b486a4256b203",
+      "bytes": 1288
+    },
+    {
+      "file": "08_EDEN_PORTAL_MASTER.txt",
+      "sha256": "a8fe3558d8cd6eefbf717fd6235f6038eb0f5f848799cebf05ae0e9a2fef98cc",
+      "bytes": 1093
+    },
+    {
+      "file": "09_PERSONAL_FAMILY_CLOUD_INTEROP_MASTER.txt",
+      "sha256": "c44f4abbb074000cf5ff0c42827ae4fc680a66e511ca4f9674198d7ca69d739a",
+      "bytes": 1438
+    },
+    {
+      "file": "10_PROVIDER_NATIVE_HANDLER_ARCHITECTURE.txt",
+      "sha256": "082e329690445653cdcbcfbddc507b7e1299874b228fadde56b9a81a4e47ec80",
+      "bytes": 1496
+    },
+    {
+      "file": "11_SPECIALIST_WORKSPACE_FUTURE_RULE.txt",
+      "sha256": "e1ded618c4492ff0c6959a2df5364af236dfe3e31d2a8e9dc150ad116469a2ea",
+      "bytes": 1453
+    },
+    {
+      "file": "12_CONVERSATION_HANDOFF_PROTOCOL.txt",
+      "sha256": "8de43fbc3062d348c6eaecb212b3ca421ec2cbf1736a4a31811c59d9d7f3f47e",
+      "bytes": 1054
+    },
+    {
+      "file": "13_WORKSTREAM_LAUNCH_PROMPTS.txt",
+      "sha256": "b483f6b31c0264f49dcf52a74071b8291557110b47f0dae73749c9c195d5a94d",
+      "bytes": 2448
+    },
+    {
+      "file": "14_DELIVERABLE_REGISTER.txt",
+      "sha256": "dd6acf13ed6a819322c24ca2e67a93865eb389bac88b6941892adf8d28e1abd3",
+      "bytes": 1250
+    },
+    {
+      "file": "15_QUICKSTART_SK.txt",
+      "sha256": "0debd53f4bd4505d04e12a4c4c81ab2599e8a6c7721ba88b1ebccb5762c8cd63",
+      "bytes": 1181
+    }
+  ]
+}

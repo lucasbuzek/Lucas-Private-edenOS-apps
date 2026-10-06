@@ -1,0 +1,7 @@
+REFERENCE: Open-RMF
+URL: https://github.com/open-rmf/rmf
+ROLE IN EDEN DESIGN
+Multi-fleet orchestration reference. Learn from adapter/fleet concepts; likely too heavy for early small Nandi deployments.
+
+STATUS
+Reference / integration candidate. Not a canonical dependency until architecture, license, safety and prototype validation are completed.

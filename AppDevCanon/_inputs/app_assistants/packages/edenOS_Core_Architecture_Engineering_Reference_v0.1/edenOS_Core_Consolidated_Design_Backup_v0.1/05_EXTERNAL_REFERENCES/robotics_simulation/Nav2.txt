@@ -1,0 +1,7 @@
+REFERENCE: Nav2
+URL: https://docs.nav2.org/
+ROLE IN EDEN DESIGN
+Advanced navigation reference/integration target including waypoint execution and task plugins. Do not recreate high-level navigation without evaluating it.
+
+STATUS
+Reference / integration candidate. Not a canonical dependency until architecture, license, safety and prototype validation are completed.

@@ -1,0 +1,4 @@
+COMMON GUI/UX — v0.1
+Default screen: “What would you like to do?” + goal field + Add Files + Add Folder + Add Assets + Start.
+Primary navigation: Projects, Current Work, Results, Library, Settings. Advanced reveals assistant routing, provider/model, logs, manifests, schemas and diagnostics.
+Every screen answers: what is this, what matters now, is it OK, what can I do, what happened after I acted. Confirmed state replaces optimistic state. This follows the supplied design doctrine.

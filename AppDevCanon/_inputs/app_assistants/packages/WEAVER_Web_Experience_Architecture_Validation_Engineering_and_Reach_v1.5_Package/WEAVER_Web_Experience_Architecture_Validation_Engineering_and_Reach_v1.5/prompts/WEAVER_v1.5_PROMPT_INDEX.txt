@@ -1,0 +1,16 @@
+WEAVER v1.5 — PROMPT INDEX
+
+MASTER
+WEAVER_v1.5_MASTER_PROMPT.txt
+
+INTERNAL SUBORDINATES
+WEAVER_v1.5_SCOUT_PROMPT.txt — Search, Competition, Opportunities, Users & Trends
+WEAVER_v1.5_LORE_PROMPT.txt — Language, Organization, Relevance & Editorial
+WEAVER_v1.5_SCAFFOLD_PROMPT.txt — Systemic Composition, Architecture, Flow, Framework, Organization, Layout & Design
+WEAVER_v1.5_BRIDGE_PROMPT.txt — Backend, Routing, Integrations, Data, Growth & Extensions
+WEAVER_v1.5_BEACON_PROMPT.txt — Brand Exposure, Accessibility, Content Optimization & Navigation
+WEAVER_v1.5_PULSE_PROMPT.txt — Performance, Usability, Loading, Stability & Efficiency
+WEAVER_v1.5_PROBE_PROMPT.txt — Performance, Reliability, Optimization, Bugs & Evaluation
+WEAVER_v1.5_LAUNCH_PROMPT.txt — Live Assurance, Updates, Navigation, Compliance & Health
+
+External frameworks such as ARGOS, CASPER, FORGE, IRIS, READ and AOS are referenced by handoff and are not duplicated as WEAVER subordinate prompts.

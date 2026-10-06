@@ -1,0 +1,40 @@
+{
+  "schema": 2,
+  "id": "heimdall.experience",
+  "role": "experience/UI layer",
+  "engine": "BIFROST",
+  "edenos_surfaces": [
+    "Search",
+    "Explore",
+    "Workspace"
+  ],
+  "rules": [
+    "Files remains conventional filesystem UI",
+    "Desktop remains default shell mode",
+    "HEIMDALL enriches edenOS but is not required for basic operation",
+    "web portals may be integrated as SKALD-level application surfaces"
+  ],
+  "bifrost_contract": {
+    "owns": [
+      "persistent information identity",
+      "metadata",
+      "relationships",
+      "locations",
+      "representations",
+      "provenance",
+      "indexing",
+      "jobs",
+      "provider-independent state"
+    ],
+    "authority": "headless information/data/orchestration"
+  },
+  "skald": {
+    "role": "media-oriented hybrid application",
+    "presentation_modes": [
+      "native",
+      "integrated-web",
+      "external-browser"
+    ],
+    "status": "established name"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "workflows": [
+    {
+      "id": "argos",
+      "label": "Research / Investigate"
+    },
+    {
+      "id": "iris",
+      "label": "Create / Analyze Image"
+    },
+    {
+      "id": "casper-read",
+      "label": "Review"
+    },
+    {
+      "id": "lingua",
+      "label": "Translate"
+    },
+    {
+      "id": "forge",
+      "label": "Build"
+    },
+    {
+      "id": "weaver",
+      "label": "Publish Website"
+    }
+  ]
+}

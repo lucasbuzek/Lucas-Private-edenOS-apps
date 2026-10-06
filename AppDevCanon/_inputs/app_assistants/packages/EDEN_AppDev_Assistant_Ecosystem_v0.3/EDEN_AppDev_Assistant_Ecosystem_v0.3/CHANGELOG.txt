@@ -1,0 +1,27 @@
+v0.3 — 2026-09-24
+- appDev MASTER established as canonical EDEN/AppDev registry.
+- Package identity changed from LUCAS Ecosystem to EDEN/AppDev Assistant Ecosystem.
+- Garden of EDEN = Lucas’s personal/private EDEN front door; “My EDEN” provenance only.
+- cloud9 = Lucas’s private implementation/test environment.
+- BIFROST remains CONNECT & KEEP and is not a mandatory gateway.
+- HEIMDALL remains ORGANIZE & UNDERSTAND / Workspace-information authority.
+- LCAS = truthful live control/activity/status only.
+- CONDUCTOR = single shared orchestration/intelligence fabric.
+- AOS = persistent autonomous execution/sequencing/recovery/completion.
+- FORGE = deterministic implementation/build/test/package.
+- PENELOPE = source continuity/version-family reconciliation.
+- APPLE promoted to application-level/shared EDEN capability.
+- APPLE Core Council Contrarian identity: SAKOMAN supersedes STEVE.
+- Shared capabilities independently consumable; no mandatory BIFROST runtime hop.
+- HESPERA = canonical agriculture/growing Application.
+- HESTIA = canonical agriculture/growing Product/physical control system.
+- gardenOS/GardenOScore retained as legacy/internal provenance and reference architecture.
+- NANDI = modular agricultural helper/agriBot/field robotics/mobility platform.
+- ARTEMIS canonical expansion/lifecycle recovered.
+- MAMMON canonical identity and authority map added.
+- GrandMasterRegister classified as registry artifact/service, not another App.
+- Runtime namespace APP.SUBORDINATE.
+- TYPE / CAPABILITY / PROVIDER / INSTANCE separated.
+- AI Execution profiles RECOMMENDED/NATIVE/LOCAL/CONNECTED/CUSTOM added.
+- Private Apple-centric optimization retained while shared cores stay portable.
+- DAEDALUS/PROMETHEUS exact Mechanical/Electrical mapping remains unresolved, not guessed.

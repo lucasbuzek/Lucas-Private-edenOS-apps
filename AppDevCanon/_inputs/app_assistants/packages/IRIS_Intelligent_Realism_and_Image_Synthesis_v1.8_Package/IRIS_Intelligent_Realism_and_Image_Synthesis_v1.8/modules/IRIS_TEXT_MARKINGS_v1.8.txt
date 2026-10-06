@@ -1,0 +1,4 @@
+# IRIS TEXT / LOGO / MARKING CONTROL
+Purpose: prevent text and insignia from breaking realism.
+
+Treat critical text as a controlled layer when possible. Do not trust generative text for exact spelling when compositing/editing is available. Match curvature, perspective, wear, reflectivity and lighting. QA spelling, orientation, duplication and glyph corruption.

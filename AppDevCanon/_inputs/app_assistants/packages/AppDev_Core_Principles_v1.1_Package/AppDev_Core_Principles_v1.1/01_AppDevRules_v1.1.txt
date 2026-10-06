@@ -1,0 +1,165 @@
+APPDEVRULES — v1.1 Owner: Lucas Buzek Status: Canonical shared
+development rules
+
+ENGLISH
+
+1.  FOUNDATION EDEN = Engineering, Development, Exploration & Nature.
+    Beauty, capability and dignity should not be premium features.
+    IMPLEMENT / INTEGRATE EXISTING CAPABILITY BEFORE RECREATING IT.
+
+2.  PRIOR-ART PREFLIGHT REQUIREMENT → CHECK PRIOR ART → VERIFY MATURITY
+    / FIT / LICENSE / RESOURCES / SAFETY → COMPARE KEEP / REMOVE /
+    SIMPLIFY / REUSE / ADAPT / BUILD / REPLACE → REUSE / INTEGRATE /
+    ADAPT WHEN SUITABLE → CUSTOM BUILD ONLY WHEN JUSTIFIED → VERIFY.
+
+3.  LOWEST SUFFICIENT CAPABILITY For every function, prefer:
+    DETERMINISTIC / EXISTING SOFTWARE → TINY SPECIALIST CAPABILITY →
+    LOCAL AI → LAN / SHARED AI → EXTERNAL AI/API → HYBRID. Do not
+    install or invoke a general-purpose LLM when a smaller deterministic
+    or specialist capability adequately performs the task.
+
+4.  AI IS A PROVIDER, NOT AN OWNER Applications request capabilities,
+    not brands/models. Examples: reasoning.general, vision.analyze,
+    translation, embeddings.text, speech.transcribe, code.generate,
+    structured.extract. Providers may be deterministic code, OS/native
+    capability, installed software, a TINY model, local model, LAN
+    model/server, external API, or hybrid composition. Provider ≠
+    capability ≠ application ≠ configured connection.
+
+5.  NO-AI OPERATION Every App must explicitly declare: NO_AI_CORE;
+    AI_OPTIONAL; AI_REQUIRED; OFFLINE_STATE; FALLBACK. Essential local
+    and safety functions must not depend on AI, Internet, cloud,
+    HEIMDALL, remote server or a connected phone.
+
+6.  LOCAL FIRST User-critical state and essential operation remain local
+    where practical. Cloud/API capabilities may improve convenience or
+    quality but must not silently become mandatory for core operation
+    where a local deterministic path is required.
+
+7.  BUILD A SMALL CORE AND MOVE WEIGHT OUTWARD Core: safety, immediate
+    execution, authoritative local state, hardware abstraction, local
+    configuration and recovery. Companion/Workspace: rich interaction
+    and visualization. Server/LAN: heavier history, coordination,
+    analytics and shared models. External provider: optional capability
+    when justified.
+
+8.  INSTALL PROFILES INSTALL / RECOMMENDED — balanced, device-aware,
+    reuse adequate existing software, install only useful missing
+    capabilities, defer heavyweight optional components. LEAN — minimum
+    useful everyday experience. FULL — all appropriate supported
+    capabilities without pointless duplication. CUSTOM — explicit user
+    control. TINY is a capability/deployment characteristic, not a
+    replacement for LEAN.
+
+9.  DATA AND MIGRATION DATA BELONGS TO THE USER, NOT THE FIRMWARE IMAGE.
+    MIGRATE, DO NOT RESET. DETECT → VALIDATE → BACKUP/STAGE → MIGRATE →
+    VERIFY → COMMIT → ROLLBACK.
+
+10. INTEGRATIONS INTEGRATIONS ARE ADAPTERS, NOT OWNERS. Reuse native OS,
+    WebApps/PWAs, installed apps, providers, open-source components and
+    EDEN sibling Apps before recreating equivalent functionality.
+
+11. AUTHORITY AND OVERLAP Each App declares authoritative domain/state,
+    what it owns, what it does not own, handoff contracts and overlaps.
+    Do not create a new App merely because a feature uses a different AI
+    model, provider, UI or package.
+
+12. EXECUTION AI reasons; deterministic services execute. Consequential
+    action: REQUEST → VALIDATE → SAFETY CHECK → EXECUTE → CONFIRM.
+
+13. QUALITY Generated ≠ Saved ≠ Verified ≠ Consolidated ≠ Released.
+    Static checks ≠ compile. Compile ≠ physical verification. PASS /
+    FAIL / UNKNOWN / SKIPPED / N/A. UNKNOWN never means PASS.
+
+14. UX POLISH IS FUNCTIONAL. Defaults should be good enough to succeed.
+    Design for the common case; retain expert power. Use progressive
+    disclosure. Show state. Confirm consequence. Make automation
+    explainable. REMOVE BEFORE ADDING. ONE AUTHORITATIVE PATH. DETAIL ON
+    DEMAND.
+
+15. SECURITY AND PRIVACY Use the strongest security the hardware can
+    reliably support. Classify data before sending it to external
+    providers. A provider must not gain ownership of authoritative EDEN
+    state merely because it processes that state.
+
+16. LOCALIZATION English is canonical/reference and universal fallback.
+    Custom/Private/Experimental builds: EN/SK baseline. Final/Public:
+    multilingual-by-design through LINGUA from one codebase.
+
+17. STATUS / OBSERVABILITY LCAS — Live Control, Activity & Status — is
+    the current shared truthful observation/control/status layer.
+    UIbasic is legacy/provenance and is superseded by LCAS.
+
+SLOVENSKY
+
+1.  ZÁKLAD EDEN = Engineering, Development, Exploration & Nature. Krása,
+    schopnosti a dôstojnosť nemajú byť prémiové funkcie. NAJPRV
+    IMPLEMENTUJ / INTEGRUJ EXISTUJÚCU SCHOPNOSŤ, AŽ POTOM JU ZNOVU
+    VYTVÁRAJ.
+
+2.  KONTROLA EXISTUJÚCICH RIEŠENÍ POŽIADAVKA → EXISTUJÚCE RIEŠENIA →
+    ZRELOSŤ / VHODNOSŤ / LICENCIA / ZDROJE / BEZPEČNOSŤ → PONECHAŤ /
+    ODSTRÁNIŤ / ZJEDNODUŠIŤ / ZNOVU POUŽIŤ / PRISPÔSOBIŤ / VYTVORIŤ /
+    NAHRADIŤ → OVERIŤ.
+
+3.  NAJNIŽŠIA POSTAČUJÚCA SCHOPNOSŤ DETERMINISTICKÉ / EXISTUJÚCE → TINY
+    ŠPECIALISTA → LOKÁLNA AI → LAN/ZDIEĽANÁ AI → EXTERNÉ API → HYBRID.
+    Nepoužívaj veľký všeobecný LLM, ak úlohu dostatočne zvládne menšie
+    deterministické alebo špecializované riešenie.
+
+4.  AI JE POSKYTOVATEĽ, NIE VLASTNÍK Aplikácia žiada schopnosť, nie
+    konkrétnu značku alebo model. Poskytovateľ môže byť kód, OS,
+    existujúca aplikácia, TINY model, lokálny model, LAN server, externé
+    API alebo hybrid.
+
+5.  PREVÁDZKA BEZ AI Každá aplikácia uvádza NO_AI_CORE, AI_OPTIONAL,
+    AI_REQUIRED, OFFLINE_STATE a FALLBACK. Bezpečnostné a základné
+    lokálne funkcie nesmú závisieť od AI, internetu, cloudu, HEIMDALLu,
+    vzdialeného servera ani telefónu.
+
+6.  LOCAL FIRST Kritický stav používateľa a základná prevádzka ostávajú
+    lokálne, kde je to praktické.
+
+7.  MALÉ JADRO, HMOTNOSŤ SMEROM VON Jadro rieši bezpečnosť, okamžité
+    vykonanie, autoritatívny lokálny stav a obnovu. Companion/Workspace
+    rieši bohaté UI. LAN/server rieši ťažšie funkcie. Externý provider
+    je voliteľný.
+
+8.  PROFILY INSTALL/RECOMMENDED = vyvážený a podľa zariadenia. LEAN =
+    minimum pre užitočnú každodennú prevádzku. FULL = všetky vhodné
+    podporované schopnosti. CUSTOM = explicitná voľba. TINY opisuje
+    ľahkú schopnosť/nasadenie, nie náhradu profilu LEAN.
+
+9.  DÁTA DÁTA PATRIA POUŽÍVATEĽOVI, NIE FIRMWARE. MIGRUJ, NERESETUJ.
+    DETEKCIA → VALIDÁCIA → ZÁLOHA/STAGING → MIGRÁCIA → OVERENIE → COMMIT
+    → ROLLBACK.
+
+10. INTEGRÁCIE INTEGRÁCIE SÚ ADAPTÉRY, NIE VLASTNÍCI. Najprv znovu použi
+    OS, WebApp/PWA, existujúcu aplikáciu, provider, open-source
+    komponent alebo inú EDEN aplikáciu.
+
+11. AUTORITA A PREKRYV Každá App deklaruje autoritatívnu doménu/stav,
+    hranice, handoff a prekryv. Nová AI, provider, UI alebo balík sám
+    osebe nevytvára novú App.
+
+12. VYKONANIE AI uvažuje; deterministické služby vykonávajú. POŽIADAVKA
+    → VALIDÁCIA → BEZPEČNOSTNÁ KONTROLA → VYKONANIE → POTVRDENIE.
+
+13. KVALITA Vygenerované ≠ uložené ≠ overené ≠ konsolidované ≠ vydané.
+    UNKNOWN nikdy neznamená PASS.
+
+14. UX POLISH JE FUNKCIA. Dobré predvolené nastavenia, progresívne
+    odhaľovanie, viditeľný stav, potvrdenie následkov, vysvetliteľná
+    automatizácia. ODSTRAŇUJ PRED PRIDÁVANÍM.
+
+15. BEZPEČNOSŤ A SÚKROMIE Pred odoslaním externému providerovi
+    klasifikuj dáta. Provider spracovaním nezískava vlastníctvo
+    autoritatívneho EDEN stavu.
+
+16. LOKALIZÁCIA Angličtina je referenčný jazyk a univerzálny fallback.
+    Custom/Private/Experimental: EN/SK. Final/Public: viacjazyčné cez
+    LINGUA z jedného codebase.
+
+17. STAV LCAS — Live Control, Activity & Status — je aktuálna spoločná
+    vrstva stavu a kontroly. UIbasic je legacy/provenance a bol
+    nahradený LCAS.

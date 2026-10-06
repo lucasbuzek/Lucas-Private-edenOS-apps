@@ -1,0 +1,47 @@
+EDEN — Engineering, Development, Exploration & Nature
+edenOS DP0.7 v1.8 — Experience Integration Lock
+
+STATUS: HARD ARCHITECTURE / IMPLEMENTATION RULE
+
+PRIMARY RULE
+Keep the proven machinery. Replace or adapt the experience. Integrate it until it feels like one system.
+
+edenOS is not a clean-room recreation of Linux, mature applications, codecs, network stacks, document engines, media engines, scientific stacks or other proven functionality.
+
+edenOS owns:
+- the coherent user experience;
+- shell and interaction model;
+- design system and adaptive presentation;
+- first-run experience;
+- user-selected experience depth;
+- composable deployment/application profiles;
+- application integration contracts;
+- common commands, search, preview, sharing, notifications and settings experience;
+- portable user environment and roaming behavior;
+- provider/adaptor boundaries where integration is required.
+
+Existing mature software owns functionality wherever it already satisfies EDEN requirements. Prefer direct standards integration; add adapters only where needed. Replace mature software only for a demonstrated constraint such as footprint, security, offline operation, portability, licensing, reliability or integration failure.
+
+REFERENCE MODEL
+Apple/macOS is the primary reference for architecture, ecosystem coherence and integration quality. It is not a visual specification. edenOS must develop its own visual identity.
+
+USER MODEL
+- User data and logical environment are independent of a specific device.
+- Device configuration remains device-owned.
+- Logical workspace roams; physical layout is reconstructed for the current device.
+- Experience depth is a persistent user choice and can be changed later.
+- Areas/fields are composable configuration profiles, not separate OS editions.
+- Profiles simplify deployment while remaining versioned, upgradeable, removable and customizable.
+- Explicit managed policy is distinct from ordinary defaults and preferences.
+
+ACCESS PRINCIPLE
+Beauty, capability and dignity should not be premium features. Low-cost, donated, refurbished and constrained hardware receives the same coherent design language and platform model, with functionality adapting only to genuine hardware/resource capability.
+
+HEIMDALL
+HEIMDALL is developed separately. edenOS maintains clean future integration contracts but DP0.7 does not implement or bundle HEIMDALL.
+
+DP0.7 PRIORITY
+Prove the experience and integration model vertically:
+BOOT -> SETUP -> SESSION -> SHELL -> FILES -> SETTINGS -> APPLICATIONS -> COMMANDS -> SEARCH -> PREVIEW -> PROVIDERS -> PERSISTENCE.
+
+Do not add conceptual applications merely to increase application count.

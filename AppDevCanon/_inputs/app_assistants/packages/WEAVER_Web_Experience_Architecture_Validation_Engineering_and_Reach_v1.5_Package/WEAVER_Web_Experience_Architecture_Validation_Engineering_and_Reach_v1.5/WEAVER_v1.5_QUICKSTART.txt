@@ -1,0 +1,34 @@
+WEAVER — QUICKSTART — v1.5
+
+1. WHAT DO I OPEN FIRST?
+Use WEAVER_v1.5_MASTER.txt as the framework and this file for the shortest invocation pattern.
+
+2. WHAT DO I PROVIDE?
+Provide any available project description, existing website URL/files, brand assets, content, target audience, desired features, platform/hosting constraints, and deployment requirements. Missing noncritical details may be researched or clearly marked rather than invented.
+
+3. BASIC COMMAND
+@WEAVER AUTO
+PROJECT: [name]
+OBJECTIVE: [what the website must accomplish]
+INPUT: [files, URL, requirements, assets]
+Build the complete website through research, content, UX, imagery, engineering, SEO, accessibility, performance, QA and launch readiness. Use specialist frameworks where useful. Continue autonomously until complete or genuine user input/authorization is required.
+
+4. EXISTING WEBSITE
+Use prompts/WEAVER_v1.5_REBUILD.txt.
+
+5. WHAT HAPPENS NEXT?
+WEAVER plans the site, delegates specialist work, integrates results, validates the result and performs a repair loop before delivery.
+
+6. HOW DO I CONTINUE?
+@WEAVER CONTINUE — continue the current project using existing decisions and artifacts.
+@WEAVER AUDIT — audit the current result and repair material defects.
+@WEAVER REBUILD — analyze and reconstruct an existing website while preserving valuable identity/content.
+
+
+STATUS AT A GLANCE
+
+🪰 = WEAVER request queued
+🕷️ = WEAVER active
+🕸️ = WEAVER complete
+
+Other assistants use their own symbols when invoked.

@@ -1,0 +1,7 @@
+REFERENCE: ArduPilot Rover
+URL: https://ardupilot.org/rover/
+ROLE IN EDEN DESIGN
+Mature open autopilot for rovers/boats and autonomous missions. Evaluate as an autonomy provider behind edenOS adapter for capable Ground/Water variants.
+
+STATUS
+Reference / integration candidate. Not a canonical dependency until architecture, license, safety and prototype validation are completed.

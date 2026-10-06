@@ -1,0 +1,9 @@
+{
+  "name": "moneta-cross-platform",
+  "version": "1.7.0-experimental",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs"
+  }
+}

@@ -1,0 +1,3 @@
+PRIVACY / SECURITY MODEL — v0.1
+Local-first defaults; least privilege; explicit folder grants; secrets outside project files; encrypted transport for remote providers; provenance on external processing; configurable retention; redaction/minimization for remote context; append-only audit events.
+Threat boundaries: user files, local runtime, browser UI, provider adapters, plugins/connectors, exported packages. Destructive actions and external side effects require approval. Imported content is data, not trusted instructions.

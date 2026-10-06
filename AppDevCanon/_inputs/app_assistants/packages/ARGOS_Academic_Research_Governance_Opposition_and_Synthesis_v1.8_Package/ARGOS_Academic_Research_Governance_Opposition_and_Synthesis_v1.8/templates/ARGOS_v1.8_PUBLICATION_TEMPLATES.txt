@@ -1,0 +1,147 @@
+ARGOS — Academic Research Governance, Opposition & Synthesis — v1.8
+
+FUNCTIONAL MEANING
+ARGOS expands to Academic Research Governance, Opposition & Synthesis.
+
+CONCEPTUAL MEANING
+Argos evokes the watchful guardian of Greek mythology: observant, difficult to deceive, and able to keep many things under scrutiny at once. The name fits a research framework that watches evidence from multiple expert perspectives, verifies sources, challenges assumptions, searches for contradictions, and keeps the full research problem in view before synthesizing conclusions.
+
+PROJECT PURPOSE
+ARGOS is the CASPER-derived academic, scientific, technical, R&D, policy, standards, and official-research framework. It accepts a question and/or source material, assembles an appropriate 10–15-expert panel, researches and validates evidence, opposes premature conclusions through adversarial review, and produces streamlined professional publications.
+
+# ARGOS v1.8
+
+ARGOS — Academic Research Governance, Opposition & Synthesis
+
+- A — Academic Research: systematic investigation and evidence acquisition.
+- R — Reasoning: deep multidisciplinary, causal, methodological and quantitative analysis.
+- G — Governance: scientific integrity, verification, evidence grading, reproducibility and quality control.
+- O — Opposition: red teaming, competing hypotheses, contradiction searches and falsification.
+- S — Synthesis: integration of validated evidence into defensible conclusions and professional publications.
+
+ARGOS is the academic/scientific research and publication fork of CASPER.
+
+Version: 1.1
+
+---
+
+# ARGOS Output Templates
+
+## Template A — White Paper
+
+# Title
+Subtitle
+
+Author / Organization  
+Version  
+Date
+
+## Abstract
+150–300 words.
+
+## Executive Summary
+Core finding, evidence strength, implications, recommendation.
+
+## 1. Problem
+Why the issue matters.
+
+## 2. Scope and Research Questions
+Exact boundary of analysis.
+
+## 3. Method
+Sources, selection logic, evidence grading, analytical approach.
+
+## 4. State of Knowledge
+Concise synthesis.
+
+## 5. Analysis
+Main technical/scientific reasoning.
+
+## 6. Findings
+Evidence-led findings.
+
+## 7. Alternative Explanations and Contradictory Evidence
+What challenges the main interpretation.
+
+## 8. Limitations
+Known boundaries.
+
+## 9. Implications
+Scientific, technical, policy, economic, environmental, or operational.
+
+## 10. Recommendations
+Evidence-supported next actions.
+
+## 11. Research Gaps
+Most valuable unresolved work.
+
+## Conclusion
+Short and decisive.
+
+## References
+
+## Appendices
+Only where useful.
+
+---
+
+## Template B — Scientific Research Report
+
+# Title
+## Abstract
+## Introduction
+## Research Question
+## Hypotheses
+## Methods
+## Results
+## Statistical Analysis
+## Discussion
+## Competing Explanations
+## Limitations
+## Reproducibility
+## Conclusion
+## References
+## Supplementary Material
+
+---
+
+## Template C — Technical / R&D Report
+
+# Title
+## Executive Summary
+## Objective
+## Requirements
+## Scientific / Technical Background
+## State of the Art
+## Standards / Constraints
+## Design Alternatives
+## Engineering Analysis
+## Trade Study
+## Selected Architecture
+## Risk and FMEA
+## Verification
+## Validation
+## Cost / Scale
+## Research Gaps
+## Recommendations
+## Conclusion
+## References
+## Appendices
+
+---
+
+## Template D — Policy / Official Paper
+
+# Title
+## Executive Summary
+## Issue
+## Evidence Base
+## Current Situation
+## Options
+## Comparative Assessment
+## Risks
+## Legal / Regulatory / Institutional Considerations
+## Implementation
+## Recommendations
+## Monitoring / Evaluation
+## References

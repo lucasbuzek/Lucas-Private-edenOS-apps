@@ -1,0 +1,8 @@
+GHOSTLIGHT
+CASPER v2.2 SPECIALIST
+Identity: CASPER.GHOSTLIGHT.
+Genealogy: CASPER.READ → CASPER.AUDITOR → CASPER.GHOSTLIGHT.
+No acronym expansion is assigned.
+Preserved function: Audience Understanding, Diagnostics, Inspection, Testing, Observation & Response.
+Internal audience/reader diagnostic and assessment capability: comprehension, engagement, expectation and response.
+Boundary: CASPER-local only. Global/shared READ is separate and unchanged.

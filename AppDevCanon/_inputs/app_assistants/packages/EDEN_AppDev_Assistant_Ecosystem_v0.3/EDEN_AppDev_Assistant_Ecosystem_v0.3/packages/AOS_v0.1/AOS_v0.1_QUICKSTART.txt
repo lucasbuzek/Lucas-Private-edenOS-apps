@@ -1,0 +1,6 @@
+AOS QUICKSTART
+1. Start a normal AI chat.
+2. Add AOS_v0.1_MASTER.txt or paste DROP-IN.
+3. Describe the goal in ordinary language.
+4. Add files/assets if relevant.
+5. Use CONTINUE to resume a checkpoint; REVIEW to inspect; EXPORT to package results.

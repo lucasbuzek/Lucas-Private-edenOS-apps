@@ -1,0 +1,228 @@
+EDEN — Engineering, Development, Exploration & Nature
+edenOS — Vision v1.0
+English
+
+PURPOSE
+
+edenOS is envisioned as the common digital operating environment for the EDEN ecosystem. It is not intended to be merely another Linux distribution or desktop interface. Its purpose is to connect people, knowledge, devices, research, agriculture, robotics, education, media and computing resources through one coherent, local-first platform.
+
+Your environment, knowledge and work belong to you — not to a particular computer, application or cloud service.
+
+1. ONE OPERATING ENVIRONMENT ACROSS MANY DEVICES
+
+edenOS is designed to scale from small embedded systems and ARM boards to laptops, desktops, research workstations and multi-user servers. Small devices may run only core services. More capable systems can provide the complete graphical environment. The underlying EDEN object model, services and APIs remain consistent.
+
+2. ADAPTIVE USER EXPERIENCE
+
+edenUI and edenAdaptive form the planned experience layer. Applications do not simply shrink a desktop interface to fit smaller displays. They recompose according to available surface, viewing distance, orientation, performance and input capabilities.
+
+The system can support Compact, Medium, Expanded, Large and Distant presentation surfaces, together with touch, mouse, trackpad, keyboard, stylus, gamepad, remote control, voice and accessibility-switch input.
+
+Presentation profiles can include Standard, Simple, Child, Accessibility and Kiosk modes.
+
+3. A COHERENT DESKTOP
+
+On conventional computers, edenShell provides the familiar operating environment: Menu Bar, Desktop, windows, Dock, Overview, Search, Notifications and Control Center.
+
+The objective is not to copy macOS, Windows or a Linux desktop environment. edenOS can learn from successful interaction patterns while developing a distinct EDEN identity.
+
+The user should primarily see their work, information and physical environment rather than the internal architecture of the operating system.
+
+4. OBJECTS BEYOND FILES
+
+Traditional operating systems primarily expose filenames and folders. edenOS adds a shared object layer.
+
+An edenObject may represent a document, photograph, book, dataset, research project, plant, animal, garden, sensor, device, building, location, experiment, media item, CAD model, person, organization, task or observation.
+
+Objects can carry identity, ownership, permissions, provenance, location, relationships, attachments, history and synchronization state.
+
+This makes it possible to ask for everything related to a project without requiring the user to remember where every individual file is stored.
+
+5. HEIMDALL — EDEN'S INFORMATION AND ASSET FOUNDATION
+
+HEIMDALL provides common information infrastructure beneath applications such as Files, Research, Photos and Documents.
+
+It manages object-backed information identity, metadata, storage locations, representations, versions, provenance, relationships, collections, projects, indexing, ingestion, conversion jobs, integrity, availability and provider interfaces.
+
+A document can therefore be understood as an information object rather than merely a path on a disk.
+
+HEIMDALL deliberately does not own every domain's meaning. Atlas provides biological knowledge, Research provides scientific workflow, gardenOS manages agricultural systems, and Nandi manages robotic systems. HEIMDALL manages the underlying information and assets shared by them.
+
+6. UNIVERSAL SEARCH
+
+edenSearch is intended to search across the user's EDEN environment rather than only filenames.
+
+A search for “tomato” could eventually return Plant Atlas knowledge, actual plants registered in gardenOS, related research, documents, photographs, sensor history and relevant devices.
+
+Applications contribute search providers to one coherent search experience.
+
+7. KNOWLEDGE CONNECTED TO THE REAL WORLD
+
+Atlas is EDEN's structured knowledge environment. Plant Atlas and Animal Atlas provide dedicated first-party experiences within it.
+
+Plant knowledge may include taxonomy, identification, cultivation requirements, climate, soil, water, light, propagation, pests, diseases, companion planting, toxicity, uses and scientific references.
+
+Machine-readable cultivation knowledge can be used by gardenOS when managing real plants and growing environments.
+
+8. gardenOS
+
+gardenOS is EDEN's agriculture and environmental automation environment.
+
+It can encompass irrigation, pumps, soil moisture, temperature and humidity, water levels, lighting, weather, growing zones, automation rules and historical monitoring.
+
+Plant Atlas supplies knowledge. Research supplies experimental context. HEIMDALL preserves information and datasets. gardenOS interacts with real sensors and actuators.
+
+Safety-critical local control should remain functional without dependence on an Internet connection.
+
+9. NANDI
+
+Nandi represents the physical automation and robotics environment of EDEN.
+
+Robotic systems can share EDEN concepts such as locations, maps, devices, sensors, missions, tasks and observations.
+
+This enables workflows in which another EDEN system detects a problem, automation creates an inspection task, Nandi performs observations, HEIMDALL records the resulting information and Research analyses it.
+
+10. RESEARCH
+
+Research is envisioned as more than a document-writing application.
+
+An EDEN Research Project can contain questions or hypotheses, literature, notes, protocols, experiments, samples, observations, datasets, code, hardware, analysis, results, figures, publications and provenance.
+
+It can function as an electronic laboratory and field notebook while preserving the relationship between evidence and resulting publications.
+
+11. EDUCATION
+
+Education shares the same knowledge and object infrastructure.
+
+A learner could progress from a lesson to a real experiment, collect data through gardenOS or another EDEN device, analyse the measurements, consult Atlas or Research resources and create a report.
+
+This creates a continuous relationship between learning and real observation. Offline classroom deployments are an important part of the vision.
+
+12. CONTEXTUAL INTELLIGENCE AND WORKFLOWS
+
+ARGOS, CASPER, READ, IRIS, LINGUA, FORGE and WEAVER are better understood as contextual EDEN capabilities and workflows rather than a growing collection of unrelated applications.
+
+Depending on context, a user could choose actions such as Research, Review, Translate, Create Image, Build or Publish.
+
+Applications expose the context; edenOS can connect the appropriate capability or provider.
+
+13. EDEN CONNECT
+
+edenConnect provides authenticated discovery and communication between EDEN systems.
+
+The intended sequence is:
+
+Discover → Identify → Authenticate → Authorize → Negotiate capabilities → Connect.
+
+Discovery alone never grants authority.
+
+This foundation can support synchronization, remote services, sharing, administration and distributed computation.
+
+14. NEARBY, SHARE AND CAST
+
+Trusted EDEN systems can expose simple higher-level actions such as Share to a nearby device, Display on another screen, or Run on a research server.
+
+EDEN-native communication uses edenConnect as its foundation. Web, QR and platform-specific mechanisms can provide compatibility with devices outside the EDEN ecosystem.
+
+15. ROAMING USER ENVIRONMENTS
+
+edenProfile describes a user's portable logical environment: identity, preferences, accessibility, application organization, Dock organization, projects, favorites, workspace state, permissions and synchronization policy.
+
+The logical workspace can follow the user between compatible EDEN systems while presentation is reconstructed for the current device.
+
+A desktop receives a desktop layout. A tablet receives a tablet presentation. Literal window coordinates do not need to roam.
+
+The work follows the user; the presentation adapts to the device.
+
+16. MULTI-USER edenOS SERVER
+
+edenOS Server can provide centralized identity, profiles, HEIMDALL information, synchronization, backup, shared services, automation and computing resources.
+
+Endpoints normally render their own edenUI interface while the server supplies data, state and services. A server-side graphical session remains optional.
+
+There is no need for an unrelated server operating system; server operation is a deployment profile of the same architecture.
+
+17. DISTRIBUTED COMPUTING
+
+edenCompute allows work to be placed according to capabilities rather than assuming that every operation must execute on the user's current device.
+
+A laptop could keep the interface local while a workstation or EDEN server performs an expensive dataset, rendering, engineering or AI task.
+
+Execution, application state, data and presentation are therefore separable.
+
+18. LOCAL-FIRST OPERATION
+
+A fundamental EDEN principle is local autonomy with optional ecosystem cooperation.
+
+Essential functionality should remain available locally wherever practical. Internet access can add synchronization, external information and remote computing resources without becoming a prerequisite for basic operation.
+
+Safety-critical systems such as irrigation retain local control and safety boundaries.
+
+19. OFFLINE KNOWLEDGE
+
+HEIMDALL Knowledge Packs can make selected information available without Internet connectivity.
+
+A deployment could contain regional Plant and Animal Atlas material, agricultural references, equipment manuals, educational resources, maps, scientific references and local documentation.
+
+This is particularly important for field, rural and infrastructure-constrained deployments.
+
+20. CAPABILITY-BASED APPLICATIONS
+
+Applications should request capabilities rather than depend on a specific hardware model.
+
+Instead of assuming a particular computer or board, software can ask whether GPIO, a camera, GPU, location service, touch interface, remote compute resource or another capability is available.
+
+This allows hardware to evolve without requiring the application architecture to be rebuilt around individual devices.
+
+21. MODULAR DEPLOYMENT
+
+The same architecture can support several deployment profiles:
+
+edenOS Recovery — compact recovery environment.
+edenOS Core — headless embedded system.
+edenOS Server — multi-user services, information and compute.
+edenOS Desktop — graphical personal workstation.
+edenOS Full — expanded applications and optional providers.
+
+This allows low-cost deployments and powerful commercial systems to share the same fundamental architecture.
+
+22. USER DATA SURVIVES THE OPERATING SYSTEM
+
+The operating system is replaceable; user information is not.
+
+System software, applications and user information are therefore conceptually separated. Updates should ultimately support verification, recovery and rollback while preserving user-owned information.
+
+23. PROVENANCE EVERYWHERE
+
+EDEN should increasingly be able to answer:
+
+Where did this information come from?
+Who changed it?
+Which source produced it?
+Which parameters were used?
+Which version was involved?
+What other objects depend on it?
+
+This is valuable for research, engineering, publishing and ordinary information management.
+
+24. KNOWLEDGE TO ACTION
+
+The wider EDEN ecosystem becomes most valuable when its components cooperate.
+
+One possible agricultural cycle is:
+
+Plant Atlas → Education → gardenOS → HEIMDALL → Research → new evidence → improved knowledge.
+
+An engineering cycle can be:
+
+Research → FORGE → prototype → gardenOS or Nandi → deployment → observations → analysis → improved design.
+
+The platform should preserve the chain:
+
+knowledge → learning → observation → evidence → research → new knowledge
+
+THE LARGER VISION
+
+The objective is not simply to create another Linux desktop. Linux can provide a practical kernel and hardware foundation, while edenOS defines the EDEN operating environment above it.
+
+At maturity, edenOS is envisioned as a local-first, adaptive and distributed environment in which people, information, knowledge, computing and physical systems participate in one coherent ecosystem — from a small agricultural controller to a research workstation or multi-user server.

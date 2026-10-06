@@ -1,0 +1,17 @@
+{
+  "from": "1.6",
+  "to": "1.7",
+  "migration": "reconciliation",
+  "breaking_runtime_changes": [
+    "LCAS removed from Apps/edenOS runtime",
+    "CONDUCTOR becomes HEIMDALL.CONDUCTOR interaction layer"
+  ],
+  "preserved": [
+    "BIFROST independence",
+    "local-first",
+    "install profiles",
+    "EN/SK private baseline",
+    "Apple-centric private profile",
+    "LKG/recovery"
+  ]
+}

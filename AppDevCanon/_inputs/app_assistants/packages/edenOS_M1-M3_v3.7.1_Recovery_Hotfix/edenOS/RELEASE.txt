@@ -1,0 +1,13 @@
+edenOS — Engineering, Development, Exploration & Nature
+Release: M1-M3 v3.7.1 — Testing Pipeline Hotfix
+Date: 2026-09-24
+
+Recovery provenance:
+- Forward repair of recovered edenOS M1-M3 v3.7 source.
+- Corrects TEST_PACKAGE release gate from stale 3.6 to 3.7.1.
+- Reconciles stale v3.4/v3.5 build/release display identities.
+- Preserves canonical ~/Downloads/edenOS workspace and transactional update model.
+
+Runtime truth:
+Static/package validation can run anywhere with required tools.
+ARM64 VM boot and graphical runtime remain UNKNOWN until executed on Apple Silicon macOS.

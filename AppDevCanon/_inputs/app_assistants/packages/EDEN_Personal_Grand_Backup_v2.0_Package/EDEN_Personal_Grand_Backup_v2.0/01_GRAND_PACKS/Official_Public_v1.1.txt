@@ -1,0 +1,33 @@
+Official_Public — v1.1
+
+Canonical ID: eden.profile.public Type: Official/Public Distribution
+Profile English is canonical/default/fallback. Official releases ship
+multilingual-by-design through LINGUA. Setup recommends language
+coverage from locality but never restricts selection. Additional
+languages are installable individually, through coverage packs, or via
+compatible LINGUA providers.
+
+EDEN / APPDEV CANONICAL FOUNDATION
+
+Owner: Lucas Buzek Snapshot date: 2026-09-22 Package version: v1.1
+
+EDEN = Engineering, Development, Exploration & Nature.
+
+Core principle: Beauty, capability and dignity should not be premium
+features.
+
+Core implementation rule: IMPLEMENT / INTEGRATE EXISTING CAPABILITY
+BEFORE RECREATING IT.
+
+Architecture: BIFROST = CONNECT & KEEP. HEIMDALL = ORGANIZE &
+UNDERSTAND. SPECIALIST APPS = SPECIALIZE & DO. CONDUCTOR = shared
+orchestration. AOS = substantial pipeline execution and continuation.
+LCAS = truthful observation, control and status.
+
+Quality: Generated ≠ Saved ≠ Verified ≠ Consolidated ≠ Released. Static
+checks ≠ compile. Compile ≠ physical verification. Tests: PASS / FAIL /
+UNKNOWN / SKIPPED / N/A. UNKNOWN is never PASS.
+
+Data: LOCAL FIRST. USER DATA OUTLIVES SOFTWARE. INTEGRATIONS ARE
+ADAPTERS, NOT OWNERS. MIGRATE, DO NOT RESET. RECOVERY IS A PRODUCT
+FEATURE.

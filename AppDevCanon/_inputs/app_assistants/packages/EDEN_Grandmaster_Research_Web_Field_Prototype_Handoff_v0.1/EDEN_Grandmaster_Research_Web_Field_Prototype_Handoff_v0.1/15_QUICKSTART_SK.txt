@@ -1,0 +1,19 @@
+EDEN — RÝCHLY ŠTART PRE NOVÉ KONVERZÁCIE — v0.1
+
+1. Prilož 00_README.txt a 01_GRANDMASTER_PROMPT.txt.
+2. Prilož MASTER súbor pre konkrétny segment.
+3. Prilož existujúce balíky alebo zdrojové súbory, ktoré patria k úlohe.
+4. Použi:
+„Načítaj EDEN handoff. Najprv obnov všetok relevantný kontext projektu. Zachovaj existujúcu architektúru a pravidlá. Pracuj iba v rozsahu tohto segmentu. Aktuálne externé fakty over výskumom. Zachovaj pôvod, dôkazy a stavy UNKNOWN. Na konci vytvor aktualizovaný master handoff pre ďalšiu konverzáciu.“
+
+ZÁKLAD
+BIFROST = CONNECT & KEEP.
+HEIMDALL = ORGANIZE & UNDERSTAND.
+CONDUCTOR = koordinácia.
+ARGOS = výskum, dôkazy a opozícia.
+ORACLE = analýza, modelovanie a simulácia.
+FORGE = implementácia a testovanie softvéru.
+LCAS = Live Control, Activity & Status.
+WEAVER = webová architektúra, vývoj, validácia a dosah.
+
+Nevytváraj novú aplikáciu iba preto, že existuje nová odborná oblasť. Obsah patrí do HEIMDALL Library; úzka odbornosť začína ako Helper; projektová kompozícia ako Workspace; samostatná App až keď je potrebné nezávislé vlastníctvo stavu, služieb a schopností.

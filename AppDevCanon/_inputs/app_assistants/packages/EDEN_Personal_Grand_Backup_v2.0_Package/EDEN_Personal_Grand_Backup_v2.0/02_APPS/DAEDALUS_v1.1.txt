@@ -1,0 +1,30 @@
+DAEDALUS — Canonical Identity Backup — v1.1
+
+Companion standalone Engineering App/Workspace. Exact Mechanical vs
+Electrical/Electronic assignment remains UNRESOLVED and must not be
+guessed.
+
+EDEN / APPDEV CANONICAL FOUNDATION
+
+Owner: Lucas Buzek Snapshot date: 2026-09-22 Package version: v1.1
+
+EDEN = Engineering, Development, Exploration & Nature.
+
+Core principle: Beauty, capability and dignity should not be premium
+features.
+
+Core implementation rule: IMPLEMENT / INTEGRATE EXISTING CAPABILITY
+BEFORE RECREATING IT.
+
+Architecture: BIFROST = CONNECT & KEEP. HEIMDALL = ORGANIZE &
+UNDERSTAND. SPECIALIST APPS = SPECIALIZE & DO. CONDUCTOR = shared
+orchestration. AOS = substantial pipeline execution and continuation.
+LCAS = truthful observation, control and status.
+
+Quality: Generated ≠ Saved ≠ Verified ≠ Consolidated ≠ Released. Static
+checks ≠ compile. Compile ≠ physical verification. Tests: PASS / FAIL /
+UNKNOWN / SKIPPED / N/A. UNKNOWN is never PASS.
+
+Data: LOCAL FIRST. USER DATA OUTLIVES SOFTWARE. INTEGRATIONS ARE
+ADAPTERS, NOT OWNERS. MIGRATE, DO NOT RESET. RECOVERY IS A PRODUCT
+FEATURE.

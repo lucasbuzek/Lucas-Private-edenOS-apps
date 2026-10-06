@@ -1,0 +1,4 @@
+NOVICE USER GUIDE — v0.1
+Open LUCAS. Choose New Project. Type what you want to achieve. Add files/folders/assets if needed. Press Start.
+LUCAS chooses CONDUCTOR by default; CONDUCTOR can route specialists. Watch progress. Review Results. Approve only when LUCAS shows a consequential decision. Use Continue after interruption. Export creates a versioned release without deleting originals.
+You do not need to understand prompts, agents, models, JSON, APIs or terminal commands in the intended packaged app.

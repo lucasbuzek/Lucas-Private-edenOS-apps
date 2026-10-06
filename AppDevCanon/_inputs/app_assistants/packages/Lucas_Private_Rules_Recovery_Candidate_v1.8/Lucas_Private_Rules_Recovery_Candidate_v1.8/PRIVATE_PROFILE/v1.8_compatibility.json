@@ -1,0 +1,7 @@
+{
+  "predecessor": "v1.7",
+  "migration": "non-destructive canon/ownership reconciliation",
+  "preserve_v1_7": true,
+  "full_backup": false,
+  "runtime_verification": "UNKNOWN"
+}

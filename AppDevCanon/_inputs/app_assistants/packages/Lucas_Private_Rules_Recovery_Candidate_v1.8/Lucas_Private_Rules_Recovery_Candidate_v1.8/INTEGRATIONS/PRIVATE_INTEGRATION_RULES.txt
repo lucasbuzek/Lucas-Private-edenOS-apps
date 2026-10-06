@@ -1,0 +1,9 @@
+Apple-centric optimization is preferred where materially useful without
+locking shared cores. WebApp/PWA progression: LINK → TAB/WEBAPP → EMBED
+→ NATIVE, choosing smallest adequate form. External mature capability is
+reused: native OS/app, provider, redirect/handoff, standard/protocol,
+library/CLI/API. BIFROST connects/keeps but is not mandatory gateway.
+HEIMDALL composes but does not own specialist logic. Authentication may
+use mature providers; EDEN identity/authorization remains stable and
+provider-independent. Google/Apple productivity services may be
+linked/redirected/integrated rather than recreated.

@@ -1,0 +1,34 @@
+WEAVER NAMING RECONCILIATION — VERIFICATION REPORT
+Source build: WEAVER v1.5 package
+Target build: WEAVER v1.6
+
+MIGRATION RESULTS
+PASS — WEAVER.WEBSEEKER registered; former WEAVER.SCOUT function preserved
+PASS — WEAVER.TANGLEORB registered; former WEAVER.LORE function preserved
+PASS — WEAVER.SPINNERET registered; former WEAVER.BRIDGE function preserved
+PASS — WEAVER.SIGNALWEB registered; former WEAVER.BEACON function preserved
+PASS — WEAVER.WEBPULSE registered; former WEAVER.PULSE function preserved
+PASS — WEAVER.WEBPROBE registered; former WEAVER.PROBE function preserved
+PASS — WEAVER.SILKFLIGHT registered; former WEAVER.LAUNCH function preserved
+PASS — WEAVER.SCAFFOLD registered and unchanged in scope
+PASS — FRAME remains legacy-only
+PASS — protected external identity names preserved in migration safeguards
+PASS — zero active stale WEAVER subordinate references outside explicit history/provenance
+
+CANONICAL PROMPT FILES
+PASS — WEBSEEKER prompt present
+PASS — TANGLEORB prompt present
+PASS — SCAFFOLD prompt present
+PASS — SPINNERET prompt present
+PASS — SIGNALWEB prompt present
+PASS — WEBPULSE prompt present
+PASS — WEBPROBE prompt present
+PASS — SILKFLIGHT prompt present
+
+STALE-REFERENCE SCAN
+Active stale references found: 0
+PASS — complete active package scan found zero former subordinate tokens.
+
+NOTE
+Historical names remain only in CHANGELOG and MIGRATION_GENEALOGY as explicitly permitted provenance.
+No BIFROST, GrandMasterRegister, CONDUCTOR, LCAS or edenOS system-wide propagation was performed.

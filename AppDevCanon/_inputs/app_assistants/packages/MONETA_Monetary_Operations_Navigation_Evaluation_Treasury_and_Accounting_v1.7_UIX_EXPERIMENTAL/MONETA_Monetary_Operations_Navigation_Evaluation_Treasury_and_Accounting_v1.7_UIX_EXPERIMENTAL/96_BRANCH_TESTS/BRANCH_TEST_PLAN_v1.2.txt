@@ -1,0 +1,6 @@
+BRANCH TEST PLAN — v1.2
+B1 router unit tests: executable now.
+B2 macOS clean build: NOT_RUN.
+B2 Windows clean build: NOT_RUN.
+Cross-branch tests still required: canonical IDs; provider substitution; gate enforcement; NUNTIUS ownership;
+approval boundary; provenance handoff; schema equivalence.

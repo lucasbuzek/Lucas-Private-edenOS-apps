@@ -1,0 +1,22 @@
+# IRIS LOCK
+Purpose: preserve identity and continuity across views, edits and batches.
+
+LOCK:
+- asset ID
+- canonical silhouette
+- dimensional ratios
+- major components
+- component positions
+- materials
+- colors
+- markings
+- character/face identity where relevant
+- wear/damage state when required
+
+RULES
+- Camera changes do not redesign the asset.
+- Scene changes do not redesign the asset.
+- Lighting changes do not redesign the asset.
+- Condition changes may alter dirt/wear but not identity.
+- A new reference may update the lock only when evidence or user intent justifies it.
+- If a rerender regresses locked features, reject it and revert.

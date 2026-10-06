@@ -1,0 +1,26 @@
+{
+  "owner": "HEIMDALL",
+  "role": "EDEN-wide conversational/voice/command interface",
+  "baseline": [
+    "deterministic",
+    "offline-capable"
+  ],
+  "interaction": [
+    "text",
+    "voice",
+    "keyboard/UI",
+    "automation/API"
+  ],
+  "intelligence": [
+    "deterministic",
+    "native",
+    "local_ai",
+    "provider_ai"
+  ],
+  "rules": [
+    "VOICE != AI",
+    "AI != CLOUD",
+    "OFFLINE != TEXT-ONLY",
+    "A voice is not an owner"
+  ]
+}

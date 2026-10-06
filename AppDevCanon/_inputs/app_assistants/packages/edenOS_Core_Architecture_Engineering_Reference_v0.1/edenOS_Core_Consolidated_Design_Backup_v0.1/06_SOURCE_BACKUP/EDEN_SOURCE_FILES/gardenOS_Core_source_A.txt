@@ -1,0 +1,17 @@
+Revised. I’ve changed the working model so **morning is deliberately startup time**—breakfast, two coffees, personal tasks, no expectation of serious engineering. The strongest development blocks move into the afternoon and evening.
+
+[Download the revised gardenOS Core SW/HW development strategy](sandbox:/mnt/data/gardenOS_Core_SW_HW_NightOwl_Strategy.zip)
+
+The strategy now develops **software and physical hardware together**, rather than finishing firmware first. It uses the existing Wemos D1 R1/R2, DHT11, soil channels, PCF8574 and pump/relay architecture as the starting point. fileciteturn6file1L1-L24 The physical test sequence deliberately starts with harmless I²C and low-voltage tests before connecting the pump; outputs remain OFF by default and the pump remains separately powered. fileciteturn6file4L1-L14
+
+A major addition is a formal I²C Node development sequence:
+
+**SCAN → DISCOVER → IDENTIFY → PROPOSE → USER ACCEPTS → CONFIGURE → HEALTH MONITOR**
+
+A PCF8574 at `0x20`, for example, becomes **Node 1 containing multiple configurable channels**, rather than gardenOS treating each attached sensor/relay as a node. Newly discovered outputs are never automatically activated.
+
+I've also accounted for not having every component available. Each feature gets a **software/mock test and a physical validation stage**. Missing hardware becomes `BLOCKED-HARDWARE`, not a failed feature. That means we can develop multi-node discovery, persistence, the UI, spatial assignments and automation using virtual nodes while waiting for a second PCF8574 or another suitable I²C device.
+
+The revised working rhythm is roughly **12:30–15:00 deep work, 16:00–18:00 hardware/build testing, 20:30–23:30 the main difficult coding/design session**, with the morning and 18:00–20:30 left free and Sunday protected. This should fit a night-owl rhythm much better than forcing the hardest work into 09:30.
+
+I haven't overwritten the previous calendar yet. Once we settle this hardware/software sequence, the next useful step is to generate a **revised Apple Calendar `.ics` around this night schedule**, with individual Core software, wiring, I²C discovery, component testing and rest blocks rather than generic “gardenOS work.” memcite

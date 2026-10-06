@@ -1,0 +1,14 @@
+◉ LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation — v1.6
+CHANGELOG
+
+v1.6 — MASTER + SUBORDINATE PROMPT PACKAGE
+- Canonical project name locked as:
+  ◉ LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation
+- Version retained only as release metadata.
+- Added ABOUT SELF AND SUBORDINATES TXT.
+- Added explicit canonical MASTER PROMPT.
+- Added executable subordinate prompts for Context, Protection/Glossary, Adaptive Translator, QA, Consolidator/Checkpoint, Recovery, Export and Release.
+- Added controlled handoff prompts for ARGOS, CASPER/READ, FORGE, IRIS and WEAVER.
+- Added consolidated DEVELOPMENT HANDOFF.
+- Preserves v1.5 adaptive maximum-safe batching and cumulative checkpoint/save pipeline.
+- Preserves v1.4 Project auto-launch and persistent text UI.

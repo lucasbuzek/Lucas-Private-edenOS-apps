@@ -1,0 +1,10 @@
+APPDEV CORE PRINCIPLES — v1.1 — MANIFEST Owner: Lucas Buzek Status:
+Experimental / canonical reconciliation update
+
+01_AppDevRules_v1.1.txt 8202 bytes 02_Design_Mantra_v1.1.txt 2788 bytes
+03_NamingRules_v1.1.txt 3737 bytes 04_Software_Development_v1.1.txt 4763
+bytes 05_edenOS_Core_Philosophy_v1.1.txt 3394 bytes
+06_AI_Execution_and_Provider_Philosophy_v1.1.txt 3611 bytes
+07_App_Identity_and_Overlap_Reconciliation_v1.1.txt 2324 bytes
+08_Packaging_and_Release_Rules_v1.1.txt 2628 bytes README_v1.1.txt 1621
+bytes

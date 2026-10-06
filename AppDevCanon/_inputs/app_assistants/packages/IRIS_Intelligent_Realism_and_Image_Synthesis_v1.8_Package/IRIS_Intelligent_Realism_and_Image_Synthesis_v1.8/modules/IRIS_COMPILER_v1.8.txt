@@ -1,0 +1,29 @@
+# IRIS COMPILER
+Purpose: translate research, design locks and user intent into a precise self-contained image-generation instruction.
+
+Every image prompt must contain:
+1. JOB ID
+2. ASSET ID
+3. PURPOSE
+4. DESIGN LOCK SUMMARY
+5. SUBJECT
+6. ENVIRONMENT
+7. COMPOSITION
+8. CAMERA
+9. LIGHTING
+10. MATERIALS
+11. CONDITION / WEAR
+12. SCALE CUES
+13. PHYSICAL INTERACTIONS
+14. REQUIRED REFERENCE FEATURES
+15. PROHIBITED CHANGES
+16. NEGATIVE / FAILURE CONSTRAINTS
+17. CONTINUITY REQUIREMENTS
+18. QA TARGETS
+
+RULES
+- Never depend on hidden context when a batch item can be made self-contained.
+- Never allow aesthetic language to override locked geometry.
+- Keep constraints specific and testable.
+- Remove redundant adjectives that do not improve output.
+- Prefer measurable descriptions where known.

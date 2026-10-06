@@ -1,0 +1,18 @@
+EITRIMB DEVELOPMENT READINESS DROP-IN — MANIFEST — v1.0
+
+FILES
+README.txt
+EITRIMB_Readiness_Workflow_v1.0.txt
+FORGE_Language_Preflight_v1.0.txt
+Safety_Recovery_Gate_v1.0.txt
+
+INTEGRATION
+Optional EITRIMB workflow module.
+May be added to a new or existing software project.
+Does not supersede project canon or universal AppDev governance.
+CONDUCTOR coordinates using its authoritative canon.
+FORGE executes using its authoritative canon plus the active pre-flight rules.
+EITRI owns governance, EDC/IAC integration, routing, evidence/state evaluation and continuation decisions.
+
+COMPATIBILITY PRINCIPLE
+DROP IN → RECOVER → RECONCILE → APPLY ONLY MISSING RULES → VERIFY.

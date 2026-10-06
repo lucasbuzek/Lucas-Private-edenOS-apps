@@ -1,0 +1,21 @@
+# IRIS PLANNER
+Purpose: convert a vague or large visual request into an executable production plan without unnecessary user interaction.
+
+INPUT
+- objective
+- available references/files
+- requested outputs
+- known constraints
+- continuity requirements
+
+AUTONOMOUS STEPS
+1. Decompose the request into assets, scenes, views and dependencies.
+2. Detect reusable/common elements.
+3. Determine which assets require research before rendering.
+4. Determine which elements require DESIGN LOCK before downstream images.
+5. Order work so foundational references are created first.
+6. Assign each task to the relevant IRIS specialist(s).
+7. Generate the minimum number of images needed to satisfy the objective well.
+8. Expand into additional views only where useful for continuity, QA, game assets, publication or user intent.
+9. Mark tasks as FOUNDATION / DEPENDENT / OPTIONAL / QA-CORRECTION.
+10. Proceed automatically unless a genuinely user-owned decision blocks the pipeline.

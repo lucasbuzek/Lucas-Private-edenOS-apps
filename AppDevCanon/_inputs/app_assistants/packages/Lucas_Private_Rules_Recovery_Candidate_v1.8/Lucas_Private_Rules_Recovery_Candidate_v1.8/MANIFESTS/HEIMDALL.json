@@ -1,0 +1,17 @@
+{
+  "role": "Doorway to EDEN",
+  "verbs": [
+    "ORGANIZE",
+    "UNDERSTAND",
+    "ACCESS",
+    "COMPOSE"
+  ],
+  "owns": [
+    "Workspaces",
+    "information composition",
+    "Custom App composition"
+  ],
+  "mandatory_gateway": false,
+  "historical_scope_warning": "Historical HEIMDALL was broader; transferred specialist capabilities are not automatically current HEIMDALL ownership.",
+  "current_boundary": "Doorway, discovery/access, Workspaces/context/information composition, Custom Apps and CONDUCTOR; specialist Apps retain domain authority."
+}

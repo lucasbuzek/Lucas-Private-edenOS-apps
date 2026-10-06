@@ -1,0 +1,12 @@
+MONETA v1.2 CHECKPOINT
+Existing-solution architecture gate: PASS
+B0 launcher: IMPLEMENTED
+B1 runnable router scaffold: IMPLEMENTED
+B1 router unit tests: PASS
+B2 Tauri source scaffold: IMPLEMENTED
+B2 macOS build: NOT_RUN
+B2 Windows build: NOT_RUN
+Agents SDK integration: NOT IMPLEMENTED
+MCP integration: NOT IMPLEMENTED
+Local-model adapter: NOT IMPLEMENTED
+OS file/app adapters: NOT IMPLEMENTED

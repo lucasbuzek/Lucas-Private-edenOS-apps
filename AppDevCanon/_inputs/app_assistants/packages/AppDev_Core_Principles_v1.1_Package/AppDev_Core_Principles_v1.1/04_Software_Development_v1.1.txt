@@ -1,0 +1,102 @@
+SOFTWARE DEVELOPMENT — v1.1 Owner: Lucas Buzek
+
+ENGLISH
+
+ARCHITECTURE APPLICATION → EDEN/DOMAIN API → PLATFORM CORE → PLATFORM
+ADAPTER → DRIVER → HARDWARE.
+
+REUSE BEFORE REBUILD Check EDEN Apps, WebApps/PWAs, native OS
+capabilities, installed applications, external providers/services,
+open-source components and existing project implementations. Integrate
+through stable contracts, links, adapters, tabs, embedded views or
+provider APIs. Rebuild only when functionality, reliability, offline
+operation, privacy, safety, performance, licensing, platform support or
+required integration justifies it.
+
+EXECUTION TIERS 0 DETERMINISTIC / EXISTING 1 TINY SPECIALIST 2 LOCAL AI
+3 LAN / SHARED AI 4 EXTERNAL AI/API 5 HYBRID Select the lowest
+sufficient tier per capability.
+
+MODEL SELECTION Do not standardize only by parameter count. Match
+capability, hardware/resources, latency, context, language,
+multimodality, tool use, structured output, privacy, license and
+measured quality. A smaller specialist model may be preferable to a
+larger general model.
+
+DETERMINISTIC AUTHORITY Persistent state, transactions, hardware actions
+and consequential operations use deterministic validated services
+wherever practical. AI proposes/interprets/reasons; authoritative
+services validate and execute.
+
+PROVIDER ABSTRACTION Apps request capability contracts and declare
+acceptable providers/fallbacks. A provider may be local, LAN, cloud/API,
+native app, OS or deterministic library. Providers must be replaceable
+without migrating the App’s authoritative identity.
+
+FAILURE / FALLBACK Every AI-assisted capability defines behavior for:
+model unavailable; API unavailable; Internet unavailable; insufficient
+resources; privacy restriction; invalid output; timeout; low confidence.
+Fallback may be deterministic, TINY, local, another provider, deferred
+execution or explicit unavailable state. Never fabricate success.
+
+INSTALLATION INSTALL/RECOMMENDED detects device/resources/native
+capabilities/existing software. Reuse adequate software. Avoid duplicate
+runtimes/models. LEAN installs core essentials. FULL installs all
+appropriate supported capabilities. CUSTOM exposes choices. Heavy
+optional models should be install-on-first-use where practical.
+
+UPDATES CHECK → DOWNLOAD/STAGE → VERIFY → BACKUP → UPDATE →
+TEST/REGRESSION → COMMIT. Preserve user data, downloads, models and
+unchanged dependencies where valid. Do not redownload unchanged verified
+components unnecessarily.
+
+TESTING PASS / FAIL / UNKNOWN / SKIPPED / N/A. Generated ≠ tested.
+Static checks ≠ compile. Compile ≠ runtime. Runtime ≠ hardware
+verification. Record build ID, version, installation path/ID,
+manifest/integrity and last-known-good.
+
+LOCALIZATION One codebase. English reference/fallback. EN/SK baseline
+for private/custom/ experimental distributions. Public releases are
+multilingual-by-design through LINGUA.
+
+OBSERVABILITY LCAS exposes truthful state/control/activity. It does not
+invent progress. CONDUCTOR orchestrates; LCAS
+observes/controls/statuses.
+
+SLOVENSKY
+
+ARCHITEKTÚRA APPLICATION → EDEN/DOMAIN API → PLATFORM CORE → PLATFORM
+ADAPTER → DRIVER → HARDWARE.
+
+NAJPRV ZNOVU POUŽIŤ Skontroluj EDEN App, WebApp/PWA, OS, nainštalované
+aplikácie, providerov, open-source a existujúcu implementáciu. Integruj
+cez stabilné kontrakty/adaptéry. Vytváraj nanovo len pri odôvodnení
+funkčnosťou, spoľahlivosťou, offline, súkromím, bezpečnosťou, výkonom,
+licenciou alebo platformou.
+
+ÚROVNE VYKONANIA 0 DETERMINISTICKÉ / EXISTUJÚCE 1 TINY ŠPECIALISTA 2
+LOKÁLNA AI 3 LAN / ZDIEĽANÁ AI 4 EXTERNÁ AI/API 5 HYBRID Vyber najnižšiu
+postačujúcu úroveň.
+
+VÝBER MODELU Nerozhoduj iba podľa počtu parametrov. Hodnoť schopnosť,
+hardware, latenciu, kontext, jazyky, multimodalitu, tool-use, structured
+output, súkromie, licenciu a nameranú kvalitu.
+
+AUTORITA AI navrhuje/interpretuje/uvažuje; validované deterministické
+služby vykonávajú autoritatívne zmeny a fyzické akcie, kde je to
+praktické.
+
+FALLBACK Každá AI schopnosť definuje správanie pri nedostupnom
+modeli/API/internete, nedostatku zdrojov, privacy obmedzení, neplatnom
+výstupe, timeout alebo nízkej dôvere. Nikdy nepredstieraj úspech.
+
+INŠTALÁCIA RECOMMENDED je device-aware a znovu používa vhodné existujúce
+komponenty. LEAN = minimum; FULL = vhodné všetko; CUSTOM = voľba. Ťažké
+voliteľné modely inštaluj pri prvom použití, ak je to praktické.
+
+AKTUALIZÁCIE A TESTY Zachovaj dáta, modely a nezmenené overené
+závislosti. PASS/FAIL/UNKNOWN/SKIPPED/N/A. UNKNOWN nie je PASS.
+
+LOKALIZÁCIA A STAV Jeden codebase; EN referencia, EN/SK baseline,
+verejné verzie cez LINGUA. LCAS ukazuje pravdivý stav; CONDUCTOR
+orchestruje.

@@ -1,0 +1,22 @@
+APPDEV RULES — CURRENT EXPERIMENTAL BASELINE
+
+• Implement/integrate before recreating.
+• Preserve independent packages and stable contracts.
+• Reuse adequate installed/native/external capability.
+• LINK → TAB/WebApp → EMBED → NATIVE.
+• Build once around authoritative services; adapters translate.
+• One obvious Install action uses RECOMMENDED profile.
+• Also support LEAN / FULL / CUSTOM.
+• Build → Test → Preview → Package → Deploy.
+• Detect → Stage → Validate → Resolve → Install/Update/Repair → Verify → Register → Launch.
+• Never automatically destroy originals.
+• User data outlives software.
+• Local first where practical.
+• Recovery is a product feature.
+• Simple outside; rigorous inside.
+• Detail on demand.
+• Resources are a design budget.
+• Verify before destructive action.
+• Generated ≠ Saved ≠ Verified ≠ Consolidated ≠ Delivered.
+• UNKNOWN is never PASS.
+• Private/Experimental releases require EN/SK.

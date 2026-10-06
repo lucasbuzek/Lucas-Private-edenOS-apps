@@ -1,0 +1,25 @@
+NANDI — TINY UNIVERSAL HELPER LINEAGE v0.1
+
+NANDI is not edenOS Core. NANDI is the tiny starter/helper product lineage for each physical domain, using edenOS Core.
+
+DESIGN DNA
+Tiny; affordable; low energy; approachable; modular payload; easy transport; local operation; simple repair; graceful degradation.
+
+DOMAIN EXAMPLES
+Nandi Ground — Roomba-sized tractor/utility helper rover.
+Nandi Air — Mavic Mini-class helper aircraft concept.
+Nandi Surface/Marine — compact helper surface craft.
+Future domains may be added without redefining Core.
+
+NANDI GROUND P0
+Approx. 400 x 450 mm; 12 V prototype power; MCU/Core prototype; differential drive; encoders; IMU; obstacle sensing; bumper/E-stop; battery monitoring; payload/tool interface; Wi-Fi/BLE; machine bus.
+
+FUNCTIONAL PROGRESSION
+Manual → Teach → Replay → programmed rows → obstacle-safe deterministic automation → Return Home → assisted/precision navigation only when justified.
+
+DETERMINISTIC FIELD LOOP
+Manually position → enter field length/width/row spacing/speed → start → run row → turn → shift one row → return → repeat → stop.
+No AI, cloud, GPS or ROS is required for this useful baseline.
+
+DEDICATED MACHINES
+Do not enlarge Nandi indefinitely. Mechanical Mule and other larger/specialist machines retain their own lineages while sharing edenOS Core architecture and compatible contracts.

@@ -1,0 +1,68 @@
+◉ IRIS — Intelligent Realism & Image Synthesis — v1.8
+
+UIX — CANONICAL INTERACTION MODEL
+
+PURPOSE
+IRIS is a visual-production workstation. Content is primary; controls, telemetry
+and technical detail remain subordinate and appear on demand.
+
+PRIMARY WORKSPACES
+1. VISUAL WORKSPACE — single visual/document/web analysis, reconstruction,
+   transformation, comparison and fidelity work.
+2. BATCH STUDIO — ordered asset-series and high-volume production.
+
+PERSISTENT IDENTITY / LCAS
+The canonical identity is ◉ IRIS — Intelligent Realism & Image Synthesis.
+LCAS owns concise live activity/status presentation. IRIS exposes truthful
+READY / SCANNING / EDIT-LOCKED / QA / BLOCKED / COMPLETE-style states through
+that presentation layer. UIbasic remains legacy provenance and is not the active
+UI framework.
+
+VISUAL WORKSPACE
+Desktop uses three panes:
+- Sources / style references / pages on the left.
+- Large visual canvas in the center.
+- Inspector / Visual DNA / Fidelity QA / export on the right.
+
+The central comparison switch is:
+SOURCE | RESULT | SIDE-BY-SIDE | OVERLAY | DIFFERENCE
+
+The primary command field accepts natural-language change requests. For
+EDIT-LOCKED operations, unchanged regions are locked by default and the request
+becomes the explicit allowed-change set.
+
+DOCUMENT UX
+Document sources expose page/asset navigation when a host parser provides
+structure. Style references may contain multiple sample documents. IRIS derives
+reusable Visual DNA/style rules without confusing source-specific content with
+house style.
+
+FIDELITY UX
+Fidelity is reported by dimension: geometry, typography, colour, imagery/crop,
+spacing, structure, unchanged regions and requested content. Unsupported or
+unexecuted measurements remain NOT MEASURED. IRIS must not fabricate a single
+confidence percentage.
+
+CONFIGURATION DEPTH
+Canonical depth is SIMPLE → ADVANCED → EXPERT. DEVELOPMENT/DIAGNOSTIC remains
+separate. Responsive collapse is presentation behavior, not a configuration
+mode. SIMPLE keeps the visual canvas and primary action obvious. ADVANCED adds
+locks/style/inspection controls. EXPERT exposes provenance and detailed visual
+constraints. DIAGNOSTIC exposes provider/runtime evidence without replacing the
+normal product UI.
+
+MOBILE
+On narrow screens the canvas and command remain primary. Sources, Inspector and
+Compare become explicit compact actions. Persistent ◉ IRIS + LCAS state remains
+visible.
+
+BATCH STUDIO
+Batch Studio presents queue status at a glance, selection/range controls,
+ordered asset/view jobs, retry/resume, design locks, continuity, Fidelity QA,
+Red Team and export. Selecting a job exposes its prompt, references, locks,
+revision and QA detail without leaving the queue.
+
+TRUTHFUL EXECUTION
+Static/local UI must never claim that generation, document reconstruction or
+fidelity comparison occurred if no provider/adapter performed it. UI state must
+reflect actual execution evidence.

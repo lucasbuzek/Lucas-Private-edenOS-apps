@@ -1,0 +1,76 @@
+NAMING RULES — v1.1 Owner: Lucas Buzek
+
+ENGLISH
+
+1.  Preserve established canonical names. Do not casually rename a
+    validated identity.
+2.  A strong EDEN name should carry functional meaning, conceptual
+    meaning and, where established, behavioral metaphor/personality.
+3.  Do not force a backronym when it weakens the identity.
+4.  Canonical display convention where appropriate: [ACRONYM] —
+    [Expanded Functional Meaning] — v[VERSION] Version is
+    release/package metadata and is not automatically part of identity.
+5.  Distinguish: APP / PRODUCT / WORKSPACE / HELPER / AGENT / MODULE /
+    CAPABILITY / PROVIDER / INSTANCE-CONNECTION / ORCHESTRATOR.
+6.  Same display name does not prove same identity. Namespace internal
+    identities: READ.THREAD, CASPER.THREAD, ORACLE.MODELLER, IRIS.FORGE,
+    etc.
+7.  Generic functions do not need artificial personalities.
+8.  A package or prompt does not automatically make its subject a
+    top-level App.
+9.  A different AI model/provider does not create a new product
+    identity.
+10. Capability names should be provider-neutral where practical:
+    translation, vision.analyze, reasoning.general, embeddings.text,
+    etc.
+11. Provider identities name implementations; connections identify
+    configured accounts/devices/installations.
+12. Preserve aliases and historical names as provenance.
+13. Supersession must be explicit: UIbasic → SUPERSEDED BY → LCAS.
+14. Do not silently merge duplicate names. Record relationships and
+    confidence.
+15. Unresolved identities remain UNRESOLVED; do not invent
+    expansions/personas.
+16. App reconciliation asks: What authoritative state does it own? Does
+    another App already own it? Is it actually a
+    Workspace/Helper/Module/Capability/Provider?
+17. Products and physical systems remain distinct from their controlling
+    Apps when that distinction is established.
+18. File/package naming: root: [ACRONYM]_[Expanded_Name]_v[VERSION]/
+    concise versioned internal filenames; human docs default TXT;
+    code/config native.
+19. Every package includes README.txt and a clear manifest/inventory
+    where useful.
+20. English is canonical/reference; EN/SK baseline applies to
+    Custom/Private/ Experimental shipped documentation.
+
+SLOVENSKY
+
+1.  Zachovaj etablované kanonické názvy; validovanú identitu bez dôvodu
+    nepremenúvaj.
+2.  Silný EDEN názov nesie funkčný význam, konceptuálny význam a podľa
+    potreby metaforu.
+3.  Nevynucuj backronym, ak zhoršuje identitu.
+4.  Vhodný formát: [AKRONYM] — [Rozšírený funkčný význam] — v[VERZIA].
+5.  Rozlišuj APP / PRODUCT / WORKSPACE / HELPER / AGENT / MODULE /
+    CAPABILITY / PROVIDER / INSTANCE-CONNECTION / ORCHESTRATOR.
+6.  Rovnaký názov neznamená rovnakú identitu. Interné identity
+    namespacuj.
+7.  Generické funkcie nepotrebujú umelú osobnosť.
+8.  Balík alebo prompt automaticky nevytvára top-level App.
+9.  Iný AI model/provider nevytvára novú produktovú identitu.
+10. Capability názvy majú byť podľa možnosti nezávislé od providera.
+11. Provider je implementácia; connection je konkrétne nakonfigurované
+    spojenie.
+12. Historické názvy a aliasy zachovaj ako provenance.
+13. Supersession musí byť explicitný: UIbasic → LCAS.
+14. Duplicitné názvy automaticky nezlučuj.
+15. Nejasná identita ostáva UNRESOLVED.
+16. Pri App sa pýtaj, aký autoritatívny stav vlastní a či ho už
+    nevlastní iná App.
+17. Produkt/fyzický systém odlišuj od riadiacej aplikácie, ak je to
+    etablované.
+18. Root balíka: [ACRONYM]_[Expanded_Name]_v[VERSION]/.
+19. Každý balík obsahuje README.txt.
+20. Angličtina je referencia; Custom/Private/Experimental dokumentácia
+    má EN/SK baseline.

@@ -1,0 +1,11 @@
+edenOS DP0.7 v1.6 — HEIMDALL CONSOLIDATION
+
+Decision
+Cloud9 was an internal development reference. It is not an edenOS product name, application, public provider, capability name, investor-facing identity or UI label.
+
+HEIMDALL Media now owns the applicable media ingestion/library/metadata/subtitle/processing/playback/tracking/provider concepts.
+
+Books and Documents are first-class HEIMDALL information capabilities. calibre remains an optional HEIMDALL provider.
+
+Testing rule
+Test the real HEIMDALL capabilities, not legacy project names. Keep everything in before runtime testing; classify measured results later as KEEP / FIX / REPLACE / DEFER / REMOVE.

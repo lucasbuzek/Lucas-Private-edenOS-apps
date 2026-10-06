@@ -1,0 +1,137 @@
+edenOSrules — ACTIVE CLEAN CANON
+Version: 1.8
+Date: 2026-09-24
+Owner: Lucas Buzek
+Status: ACTIVE CANON
+Depends on: AppDevRules v1.8
+
+SCOPE
+Universal edenOS platform rules. Defines HOW entities participate in edenOS.
+Does NOT enumerate Apps, Specialists, Helpers, Tiny Helpers, Agents or Products.
+GrandMasterRegister lookup is user opt-in.
+
+FOUNDATION
+edenOS is the reusable platform/system layer of EDEN, not one giant application.
+Apps retain domain ownership; edenOS provides common substrate for install, integration, discovery, capability exchange, provider relationships, interoperability and composition.
+Hierarchy: EDEN -> AppDev -> edenOS -> Apps / Products / Workspaces / shared capabilities.
+
+LOCAL-FIRST
+Essential local operation/safety must not depend on Internet, cloud AI, remote server, HEIMDALL, another App or phone unless the task inherently requires it.
+Real-time/safety-critical control remains local where appropriate.
+Remote commands cannot bypass local safety.
+
+BIFROST
+BIFROST is “My Gateway to EDEN” — CONNECT & KEEP.
+It owns/manages EDEN-generic connective state where required: canonical identity/metadata, representations/locations, relationships/provenance, registries, capability/provider/connection discovery and state, interoperability, persistent EDEN-specific connective state, package/install/update STATE/relationships, and Node discovery/registration/availability/relationships.
+BIFROST FIRST does not mean mandatory.
+Discovering/hosting/managing a capability does not make BIFROST its domain owner or mandatory execution gateway.
+BIFROST works without AI and may be headless/API-capable.
+
+DEPLOYMENT COMPOSITION & HANDOFF
+BIFROST provides the common user-facing deployment composition/handoff interface across registered targets/Nodes where appropriate.
+It may resolve:
+- target Node/device/package
+- release channel: OFFICIAL / DEVELOPMENT / EXPERIMENTAL
+- authority: STANDARD / ADMIN
+- audience: PRIVATE / FAMILY / FRIENDS / PUBLIC
+- nested audience groups/users
+- RECOMMENDED / CUSTOM profile
+- inherited preferences and user-specific deltas
+- target capabilities/providers/representations
+BIFROST then opens/invokes the authoritative Apps/shared capabilities required to prepare, validate and perform the work.
+BIFROST records deployment identity, relationships and resulting connective/package state; it does not acquire specialist domain ownership.
+Deployment UI is capability-aware: simple controllers show only relevant operations/status; full composition appears only when the target/operation needs it.
+
+NODES
+A Node is a durable EDEN identity representing an authorized device/system capable of supplying and/or consuming capabilities.
+Node != IP address != hostname != capability != service.
+Addresses/interfaces/endpoints are mutable locations/representations.
+Nodes may advertise/disclose capabilities.
+BIFROST may discover/register Nodes, capabilities, availability and current representations.
+A device may be consumer and provider. No mandatory master Node is implied.
+
+NETWORK / EXPOSURE
+DEVICE / LAN / PRIVATE REMOTE / PUBLIC are reachability/exposure policies, not Node identities and not the same as deployment audience.
+LAN discovery and Internet publication are distinct.
+Public exposure is explicit/selective.
+Do not expose BIFROST administration/control plane publicly by default.
+Reuse mature secure networking/authentication/TLS/provider capabilities.
+
+CONTROL PLANE / DATA PLANE
+BIFROST may establish identity, discovery, authorization, provider/location resolution and relationship state.
+After authorized resolution, payload/runtime traffic may flow directly between consumer/shared capability/provider.
+Do not force BIFROST to become a bandwidth/runtime bottleneck.
+
+INFORMATION / DATA FABRIC
+BIFROST may know canonical identity/object -> representations -> locations -> providers -> connections -> permissions -> availability -> provenance.
+The authoritative payload need not live in BIFROST.
+Access device, execution device, storage provider and presentation device may differ.
+Stable logical identity should survive mutable network/provider locations where practical.
+
+NATIVE / USER-INSTALLED / PROVIDER INTEGRATION
+Suitable native, user-installed, network and provider software are first-class implementations and/or authoritative information stores.
+Prefer native APIs, protocols, files, providers and handoffs.
+Do not create an EDEN replacement merely because integration is possible.
+
+CREDENTIALS / IDENTITY / AUTHORIZATION
+Keychain is an Apple credential provider, not the EDEN credential architecture.
+APP -> shared secure credential/authentication capability -> selected platform/provider adapter.
+AUTHENTICATION != EDEN IDENTITY != AUTHORIZATION.
+PROVIDER != INSTANCE/CONNECTION.
+Do not indiscriminately replicate raw secrets across Nodes.
+Changing/removing an external authentication/provider connection must not inherently destroy canonical EDEN identity or durable relationships.
+
+HEIMDALL BOUNDARY
+HEIMDALL owns Workspaces, information organization and human-facing composition/Custom Apps.
+Historical HEIMDALL ownership of EDEN-generic canonical identity, global type/capability registry, generic provider state, physical locations, representations and platform-wide provenance is SUPERSEDED.
+
+CONDUCTOR BOUNDARY
+CONDUCTOR owns orchestration/coordination where required: intent, decomposition, capability/provider resolution, sequencing/dependencies, persistent/restartable coordination where applicable, retries/checkpoints/recovery and completion.
+It does not take specialist domain ownership.
+AOS as a separate current global execution owner is SUPERSEDED AS CURRENT OWNER; preserve its historical identity/provenance unless explicitly restored/redefined.
+
+LCAS BOUNDARY
+LCAS — Live Control, Activity & Status — is Chat UI/development interaction functionality only.
+It is NOT an edenOS App, runtime service, Node service, mandatory monitoring dependency or system-wide operational-state authority.
+Actual Apps/services/capabilities maintain/report their own state through their real contracts.
+Older runtime/system ownership statements for LCAS are SUPERSEDED.
+
+SPECIALIST OPERATIONS / EXPERIMENTAL BRIDGES
+Specialist applications specialize and do.
+Firmware/hardware engineering operations belong to the appropriate registered engineering owner.
+Exact PROMETHEUS/DAEDALUS Mechanical/Electrical mapping remains UNRESOLVED until authoritative recovery/decision; do not guess.
+Current direct BIFROST App update and direct device OTA paths may exist as EXPERIMENTAL BRIDGES for bootstrap/testing.
+An Experimental Bridge never establishes permanent architectural ownership.
+
+WEB / HOSTING
+Web Access and Web Server/Hosting are shared capabilities.
+BIFROST may discover/register/manage relationships, routes, availability and exposure policy without becoming mandatory runtime gateway.
+Apps/sites retain domain/content ownership.
+
+APP / CAPABILITY STATE
+AVAILABLE != SELECTED != AUTHORIZED != INSTALLED != EXECUTING != DATA ACCESS.
+Choosing/enabling an App does not automatically share provider data.
+Connecting a provider does not expose everything.
+A Web representation is not automatically a new App.
+
+RELEASE / AUTHORITY / AUDIENCE
+edenOS preserves three independent dimensions where applicable:
+Release channel: OFFICIAL / DEVELOPMENT / EXPERIMENTAL.
+Authority: STANDARD / ADMIN.
+Deployment audience: PRIVATE / FAMILY / FRIENDS / PUBLIC.
+Audience may contain nested groups/users and inherited/custom preferences.
+These dimensions are not forced onto simple Nodes/controllers when irrelevant.
+
+GRANDMASTERREGISTER OPT-IN
+GrandMasterRegister is the authoritative catalogue/relationship registry for EDEN entities.
+edenOSrules does not duplicate the entity list.
+When user opt-in is enabled, edenOS/BIFROST may consult it for identity, type, ownership, capabilities and relationships.
+The platform remains able to operate with locally registered/explicit capabilities when full GrandMasterRegister integration is not enabled.
+
+PRIVATE TXT ACCESS
+Lucas’s Private build must expose human-readable TXT for active AppDevRules, edenOSrules, GrandMasterRegister export, access/profile definitions, Private profile, capability contracts, Design Mantra, versioning and supersession/provenance relevant to the environment.
+Machine-readable state may exist in parallel but must not be the only readable representation.
+
+RECOVERY
+RECOVER / REUSE LAST KNOWN GOOD BEFORE REDESIGN.
+Do not rebuild what can be recovered, reset what can be migrated, replace what can be repaired, fork what can share a core, duplicate what can be composed, or claim verification without evidence.

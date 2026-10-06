@@ -1,0 +1,18 @@
+READ — Reader Experience Assessment Directorate — v1.5
+CHANGELOG
+
+v1.5 — NAMING RECONCILIATION
+• READ.LORE → READ.SHORTSPAN
+• READ.THREAD → READ.BOOKMARK
+• READ.MIRROR → READ.TWINLIKENESS
+• READ.SCOPE → READ.READSIDEBYSIDE
+• READ.PRISM → READ.READROUNDtable
+• READ.QUILL → READ.SCRIBELET
+• LEAF, PAGE, CAST and ECHO unchanged.
+• Functions preserved; no forced acronym expansions added to replacement names.
+• Added canonical subordinate registry and migration genealogy.
+• No system-wide EDEN propagation performed.
+
+HISTORICAL NOTE
+The following v1.4 names are retained here only as release history:
+LORE, THREAD, MIRROR, SCOPE, PRISM, QUILL.

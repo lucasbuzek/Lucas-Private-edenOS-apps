@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.3",
+  "authority": "appDev MASTER",
+  "owner": "Lucas Buzek",
+  "foundation": {
+    "EDEN": "Engineering, Development, Exploration & Nature",
+    "personal_front_door": "Garden of EDEN",
+    "private_environment": "cloud9"
+  },
+  "core": [
+    "BIFROST",
+    "HEIMDALL",
+    "CONDUCTOR",
+    "LCAS",
+    "AOS",
+    "FORGE",
+    "PENELOPE",
+    "ARGOS",
+    "APPLE"
+  ],
+  "applications": [
+    "SKALD",
+    "MONETA",
+    "HERMES",
+    "CURATOR",
+    "THEMIS",
+    "HESPERA",
+    "MAMMON"
+  ],
+  "products": [
+    "HESTIA"
+  ],
+  "other": [
+    "NANDI",
+    "ARTEMIS",
+    "IRIS",
+    "LINGUA",
+    "READ",
+    "MIRROR",
+    "THREAD",
+    "WEAVER",
+    "GrandMasterRegister"
+  ],
+  "legacy": {
+    "LUCAS/UIbasic": "LCAS",
+    "gardenOS/GardenOScore": "HESPERA/HESTIA lineage"
+  },
+  "unresolved": [
+    "DAEDALUS/PROMETHEUS exact Mechanical/Electrical mapping"
+  ]
+}

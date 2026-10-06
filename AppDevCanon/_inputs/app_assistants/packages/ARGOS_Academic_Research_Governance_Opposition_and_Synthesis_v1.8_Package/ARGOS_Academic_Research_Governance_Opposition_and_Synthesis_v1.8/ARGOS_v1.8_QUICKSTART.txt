@@ -1,0 +1,76 @@
+ARGOS — Academic Research Governance, Opposition & Synthesis — v1.8
+
+FUNCTIONAL MEANING
+ARGOS expands to Academic Research Governance, Opposition & Synthesis.
+
+CONCEPTUAL MEANING
+Argos evokes the watchful guardian of Greek mythology: observant, difficult to deceive, and able to keep many things under scrutiny at once. The name fits a research framework that watches evidence from multiple expert perspectives, verifies sources, challenges assumptions, searches for contradictions, and keeps the full research problem in view before synthesizing conclusions.
+
+PROJECT PURPOSE
+ARGOS is the CASPER-derived academic, scientific, technical, R&D, policy, standards, and official-research framework. It accepts a question and/or source material, assembles an appropriate 10–15-expert panel, researches and validates evidence, opposes premature conclusions through adversarial review, and produces streamlined professional publications.
+
+============================================================
+QUICKSTART
+============================================================
+
+1. OPEN
+ARGOS_v1.8_MASTER.txt
+
+2. PROVIDE
+A subject/question and, when available, files, datasets, papers, URLs, notes, or prior work.
+
+3. INVOKE
+
+@ARGOS AUTO
+Research: [SUBJECT OR QUESTION]
+Materials: [FILES / SOURCES, IF ANY]
+Purpose: [WHAT THE RESEARCH SHOULD ACHIEVE]
+Output: Recommend the most appropriate publication and proceed autonomously.
+
+@ARGOS INVESTIGATE
+Question: [QUESTION]
+Use supplied materials plus authoritative research where permitted. Verify major claims, test competing hypotheses, red-team findings, peer review, revise, and publish.
+
+@ARGOS WHITE PAPER
+Subject: [SUBJECT]
+Audience: [AUDIENCE OR recommend]
+Proceed autonomously through the final professional white paper.
+
+@ARGOS REVIEW
+Treat supplied files as the initial evidence corpus. Identify claims, methods, contradictions, missing evidence, and required external research. Recommend and produce the appropriate final publication.
+
+4. NEXT
+ARGOS defines scope, recommends output if needed, selects 10–15 experts, researches and validates, challenges conclusions, peer-reviews, and publishes.
+
+5. CONTINUE / MODIFY
+@ARGOS CONTINUE
+@ARGOS AUDIT
+@ARGOS RED TEAM
+@ARGOS PUBLICATION
+@ARGOS REBUILD
+
+
+DESIGN MANTRA
+ARGOS v1.8 applies modules/ARGOS_v1.8_DESIGN_MANTRA.txt as a persistent governing doctrine: whole-product research, one authoritative state, lean execution, explainability, measured validation, preservation of validated work, and remove-before-add discipline.
+
+UI QUICKSTART
+
+Default:
+@ARGOS UI AUTO
+
+Minimal:
+@ARGOS UI TINY
+
+Normal:
+@ARGOS UI COMPACT
+
+Milestone / control:
+@ARGOS UI FULL
+
+
+PERSISTENT IDENTITY
+♉ ARGOS is displayed whenever ARGOS is invoked or active.
+
+ACTIVE SYMBOL
+♉ ARGOS = persistent ARGOS identity.
+♉🐕‍🦺 ARGOS = ARGOS has been called or is actively operating.

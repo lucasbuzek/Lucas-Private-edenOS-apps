@@ -1,0 +1,89 @@
+{
+  "status": "RECOVERY_CANDIDATE",
+  "rule": "recover functionality, not obsolete ownership",
+  "migrations": [
+    {
+      "from": "AOS",
+      "to": "HEIMDALL.CONDUCTOR",
+      "relationship": "superseded_by",
+      "confidence": "confirmed_by_user",
+      "note": "AOS predecessor to CONDUCTOR; execution mechanics may survive as scoped capabilities."
+    },
+    {
+      "from": "HEIMDALL.MEDIA_CENTER",
+      "to": "SKALD",
+      "relationship": "ownership_migrated",
+      "confidence": "confirmed_by_user",
+      "requirements": [
+        "Transmission integration",
+        "magnet/torrent intake",
+        "subtitles",
+        "safe remux",
+        "media naming",
+        "library reconciliation",
+        "entertainment media management",
+        "Apple media integration where applicable"
+      ]
+    },
+    {
+      "from": "HEIMDALL.READING",
+      "to": "LECTOR",
+      "relationship": "ownership_migrated",
+      "confidence": "high_recent_canon",
+      "requirements": [
+        "books",
+        "reading",
+        "Calibre-facing experience",
+        "reading state",
+        "book discovery/organization"
+      ]
+    },
+    {
+      "from": "HEIMDALL.PRO_PHOTO",
+      "to": "CURATOR",
+      "relationship": "ownership_migrated",
+      "confidence": "high_recent_canon",
+      "requirements": [
+        "professional photography management",
+        "photo asset workflows"
+      ]
+    }
+  ],
+  "retained_heimdall": [
+    "doorway to EDEN",
+    "universal discovery/access",
+    "Workspaces",
+    "information/context composition",
+    "Custom Apps",
+    "cross-App composition",
+    "HEIMDALL.CONDUCTOR"
+  ],
+  "reserved": [
+    {
+      "id": "CHRONOS",
+      "status": "FUNCTIONAL_DESCRIPTION_ONLY",
+      "do_not_invent": [
+        "expansion",
+        "personality",
+        "authority boundaries",
+        "implementation"
+      ]
+    },
+    {
+      "ids": [
+        "ANT",
+        "BEE",
+        "OWL",
+        "FOX",
+        "WREN",
+        "MOTH",
+        "MITE",
+        "HARE",
+        "FINCH",
+        "GECKO"
+      ],
+      "status": "RESERVED_DESCRIPTION_ONLY_WHERE_APPLICABLE",
+      "rule": "no role invented without need"
+    }
+  ]
+}

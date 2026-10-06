@@ -1,0 +1,16 @@
+HERMES v1.6 — B2 STANDALONE APPLICATION TARGETS
+
+TARGETS
+macOS; Windows; Linux; iOS; Android.
+
+PRINCIPLE
+One canonical HERMES core and contracts, multiple platform shells. Avoid five independent rewrites. Desktop/mobile packaging technology remains an implementation choice until verified; do not encode framework-specific behavior into canonical schemas.
+
+REQUIRED COMMON FEATURES
+Secure profile; Candidate/Company Truth; PERSON/COMPANY/HYBRID; opportunity discovery; workspaces; documents; Compliance Vault; activity; HERMES Signal; UIbasic; export/import; provider selection; B3 pairing; offline-safe local cache; migration; update/repair; accessibility.
+
+PLATFORM ADAPTATION
+Desktop may expose richer diagnostics, file-system integration and local-server controls. Mobile prioritizes quick review, copy/open, notifications, uploads/scans and approval. All branches preserve the same state and audit semantics.
+
+STATUS v1.6
+Cross-platform target and contracts: DEFINED. Native distributable binaries: NOT INCLUDED / NOT VERIFIED. Current runnable UI source remains the hosted/PWA starter inherited from B1.

@@ -1,0 +1,7 @@
+REFERENCE: AgOpenGPS
+URL: https://github.com/AgOpenGPS-Official
+ROLE IN EDEN DESIGN
+Open precision-agriculture guidance, mapping, section control, steering boards and software. Evaluate before implementing precision guidance/autosteer.
+
+STATUS
+Reference / integration candidate. Not a canonical dependency until architecture, license, safety and prototype validation are completed.

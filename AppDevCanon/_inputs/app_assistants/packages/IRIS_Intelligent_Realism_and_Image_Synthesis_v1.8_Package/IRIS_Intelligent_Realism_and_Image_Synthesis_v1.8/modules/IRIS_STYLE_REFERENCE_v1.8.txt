@@ -1,0 +1,10 @@
+IRIS — Intelligent Realism & Image Synthesis — v1.8
+MODULE: STYLE REFERENCE SET
+
+PURPOSE
+Use one or more sample documents/images/pages/sites to infer a reusable visual style.
+
+METHOD
+Parse each sample independently → identify repeated invariants → separate content-specific exceptions → establish confidence → create Visual DNA → user/pipeline style lock → apply to new content → compare against samples.
+
+Conflicting samples remain explicit; do not silently average incompatible styles.

@@ -1,0 +1,23 @@
+{
+  "project": "CURATOR",
+  "version": "1.0",
+  "type": "assistant_prompt_package",
+  "languages": [
+    "en",
+    "sk"
+  ],
+  "master": "prompts/CURATOR_v1.0_MASTER.txt",
+  "auto": "prompts/CURATOR_v1.0_AUTO.txt",
+  "subordinates": [
+    "LIBRARY",
+    "CULLING",
+    "BRIDGE",
+    "LIGHTROOM",
+    "EDITING",
+    "VIDEO",
+    "ARCHIVE",
+    "PUBLISHING",
+    "AUTOMATION",
+    "APPLE"
+  ]
+}

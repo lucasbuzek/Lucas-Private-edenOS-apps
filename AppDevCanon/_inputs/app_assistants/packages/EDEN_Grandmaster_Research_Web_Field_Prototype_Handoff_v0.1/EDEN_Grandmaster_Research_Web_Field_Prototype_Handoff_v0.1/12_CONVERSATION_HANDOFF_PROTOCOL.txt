@@ -1,0 +1,34 @@
+EDEN — MULTI-CONVERSATION HANDOFF PROTOCOL — v0.1
+
+Every new workstream starts by attaching/pasting:
+1. 00_README
+2. 01_GRANDMASTER_PROMPT
+3. the segment MASTER file
+4. relevant existing project/package/source files.
+
+START MESSAGE
+'Load the attached EDEN handoff. Recover all relevant prior project context before redesign. Treat established canon as inherited. Work only within this segment's ownership. Research current external facts where required. Preserve evidence/provenance and UNKNOWN states. Produce an updated segment master handoff at the end.'
+
+END-OF-CONVERSATION MASTER
+PROJECT/SEGMENT
+VERSION/DATE
+OWNER
+PURPOSE
+INHERITED CANON
+DECISIONS MADE
+ESTABLISHED vs PROPOSED vs UNKNOWN
+RESEARCH EVIDENCE
+ARCHITECTURE
+PROVIDERS/INTEGRATIONS
+DATA/STATE OWNERSHIP
+SECURITY/PRIVACY
+TESTS ACTUALLY RUN + results
+BOM/COST snapshot if relevant
+ARTIFACTS
+OPEN RISKS
+BLOCKERS
+NEXT ACTIONS
+NEXT CONVERSATION PROMPT
+CHANGELOG
+
+Do not make the next conversation reconstruct decisions from a transcript if a compact authoritative handoff can carry them.

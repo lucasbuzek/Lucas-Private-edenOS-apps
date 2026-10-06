@@ -1,0 +1,19 @@
+◉ IRIS — Intelligent Realism & Image Synthesis — v1.8
+
+IRIS NAME RECONCILIATION 003
+Build identity: IRIS v1.8 / Name Reconciliation 003 / 2026-09-23
+Date: 2026-09-23
+
+DECISION
+IRIS.FORGE → REMOVE AS ACTIVE INTERNAL IDENTITY
+Temporary IRIS.FOUNDRY replacement → REMOVE
+Global EDEN FORGE → UNCHANGED
+
+INSPECTION EVIDENCE
+The latest packaged IRIS implementation defined the temporary FOUNDRY role as constructing render-ready scene specifications and building subject, environment, composition, camera, lighting, materials, condition, scale references, physical interactions and negative constraints. Those functions fall within retained IRIS visual intelligence/generation/rendering responsibilities and overlap existing IRIS Compiler, Fusion, Calibration, generation and QA stages. The implementation did not establish a necessary independent deterministic worker boundary. Therefore the stop-deletion condition was not met.
+
+RESULT
+No local replacement worker is created. Visual scene/specification work remains within IRIS's existing visual pipeline. Deterministic technical processing/tooling is delegated to global EDEN FORGE through the EDEN capability/provider relationship.
+
+HISTORICAL PROVENANCE
+Earlier IRIS.FORGE → IRIS.FOUNDRY migration records are retained as superseded historical provenance only.

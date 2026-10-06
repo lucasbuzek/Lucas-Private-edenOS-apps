@@ -1,0 +1,26 @@
+WEAVER NAMING RECONCILIATION — MIGRATION GENEALOGY / PROVENANCE
+Release: v1.6
+
+Historical lineage only. The former names below are NOT active WEAVER subordinate identities.
+
+WEAVER.SCOUT → WEAVER.WEBSEEKER
+WEAVER.LORE → WEAVER.TANGLEORB
+WEAVER.BRIDGE → WEAVER.SPINNERET
+WEAVER.BEACON → WEAVER.SIGNALWEB
+WEAVER.PULSE → WEAVER.WEBPULSE
+WEAVER.PROBE → WEAVER.WEBPROBE
+WEAVER.LAUNCH → WEAVER.SILKFLIGHT
+
+FRAME → SCAFFOLD
+Legacy genealogy only; FRAME is not restored as an independent active subordinate.
+
+Protected external identities were explicitly excluded from migration:
+HERMES.SCOUT
+CASPER.LORE
+READ.SHORTSPAN
+CAMEL.BEACON
+CASPER.SPECTER
+
+Migration discipline:
+DETECT → VALIDATE → BACKUP/STAGE → MIGRATE → VERIFY → COMMIT
+Rollback target on failure: source v1.5 package.

@@ -1,0 +1,1 @@
+MIRROR: Comparison and review framework. Compare artifacts against peers/references and review on multiple dimensions

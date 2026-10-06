@@ -1,0 +1,70 @@
+{
+  "id": "argos",
+  "name": "ARGOS",
+  "symbol": "\u25c8",
+  "expansion": null,
+  "canonical_status": "established",
+  "version": "0.1-adapter",
+  "purpose": "Research and analytical validation",
+  "capabilities": [
+    "Research, source validation, evidence ledgers, academic/scientific analysis, red-team research"
+  ],
+  "inputs": [
+    "goal",
+    "files",
+    "folders",
+    "assets",
+    "references"
+  ],
+  "outputs": [
+    "deliverables",
+    "qa_report",
+    "checkpoint",
+    "release_manifest"
+  ],
+  "modes": [
+    "AUTO",
+    "ANALYZE",
+    "PLAN",
+    "EXECUTE",
+    "REVIEW",
+    "CONTINUE",
+    "EXPORT"
+  ],
+  "handoffs": [
+    "CASPER",
+    "FORGE",
+    "WEAVER"
+  ],
+  "dependencies": [],
+  "assets": [],
+  "state": {
+    "persistent": true,
+    "owner": "HEIMDALL/LUCAS project store"
+  },
+  "security": {
+    "local_first": true,
+    "destructive_actions_require_approval": true,
+    "secrets_in_project_files": false
+  },
+  "runtime": {
+    "drop_in": true,
+    "local_web": true,
+    "desktop": "adapter",
+    "edenOS": "adapter",
+    "api": true
+  },
+  "lifecycle": [
+    "INPUT",
+    "ANALYZE",
+    "PLAN",
+    "EXECUTE",
+    "SAVE",
+    "VERIFY",
+    "CHECKPOINT",
+    "CONTINUE",
+    "CONSOLIDATE",
+    "FINAL QA",
+    "RELEASE"
+  ]
+}

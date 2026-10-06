@@ -1,0 +1,11 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+RAPID DEVELOPMENT SESSIONS
+Establish project baseline once, keep bounded current context, execute multiple requested changes incrementally, build/test affected scope, checkpoint verified milestones and consolidate/package only when requested or policy requires it.
+FAST depth favors minimum sufficient checks for low-risk iteration while never fabricating verification. Escalate depth automatically when risk/impact grows.

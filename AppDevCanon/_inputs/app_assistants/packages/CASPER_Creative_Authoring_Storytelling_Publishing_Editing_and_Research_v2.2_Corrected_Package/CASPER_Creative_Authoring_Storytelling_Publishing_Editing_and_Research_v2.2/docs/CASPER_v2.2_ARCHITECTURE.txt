@@ -1,0 +1,20 @@
+👻 CASPER the GhostWriter — Creative Authoring, Storytelling, Publishing, Editing & Research — v2.2
+
+ONE CASPER · MULTIPLE OPERATING SURFACES
+
+                    👻 CASPER CORE
+                         │
+               TOME + publication state
+                         │
+        ┌────────────────┼─────────────────┐
+        │                │                 │
+      CHAT           CASPER APP       EDEN/BIFROST
+        │                │                 │
+       LCAS         LCAS + native      LCAS ↔ BIFROST
+                    persistence             │
+                                           EDEN
+
+CASPER owns publication semantics/state.
+LCAS owns truthful activity/status/control semantics.
+BIFROST connects & keeps in EDEN.
+PENELOPE owns document consolidation/reconciliation/recovery.

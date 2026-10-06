@@ -1,0 +1,7 @@
+Growing and Farm WORKSPACE — v2.0
+
+HESPERA/Hestia, greenhouse, poultry, water, crop plans, agrivoltaics and
+NANDI field automation.
+
+WORKSPACE RULE: reuse authoritative Apps/Helpers through contracts; do
+not duplicate their truth stores.

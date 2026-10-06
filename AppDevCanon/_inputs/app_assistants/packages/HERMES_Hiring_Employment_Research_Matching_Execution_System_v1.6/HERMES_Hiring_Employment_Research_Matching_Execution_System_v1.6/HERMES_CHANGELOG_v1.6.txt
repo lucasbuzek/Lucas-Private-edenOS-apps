@@ -1,0 +1,19 @@
+HERMES v1.6 CHANGELOG
+
+-   Executed Naming & Personality Reconciliation against latest
+    composite HERMES state.
+-   Canonical subordinate roster migrated to DOSSIER, CAREERPLAN,
+    VACANCYDESK, SCRUFFY, MATCHSHEET, OpportunityFACTCHECK,
+    CareerFORMFILLER, REVIEW, expressSHIP, STATUSFILE, SWITCHBOARD and
+    AFTERFILE.
+-   REVIEW retained unchanged as Quality Control.
+-   Exact capitalization preserved for OpportunityFACTCHECK,
+    CareerFORMFILLER and expressSHIP.
+-   Tender/procurement authority preserved in HERMES.
+-   HERMES/MONETA boundary preserved.
+-   ARGOS remains deeper research/evidence capability.
+-   CASPER.SCRIBE and WEAVER.WEBSEEKER protected and untouched.
+-   Added canonical registry, subordinate prompts, migration genealogy
+    and regression report.
+-   No BIFROST, GrandMasterRegister, CONDUCTOR, LCAS or edenOS
+    propagation performed.

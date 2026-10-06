@@ -1,0 +1,16 @@
+ APPLE — Architecture, Product, Performance & Lean Engineering
+PACKAGE MANIFEST — v2.2
+
+ABOUT/APPLE_My_Subordinates_v2.2.txt
+ABOUT/APPLE_Tell_Me_About_Yourself_v2.2.txt
+INSTRUCTIONS/APPLE_Quickstart_v2.2.txt
+PROMPTS/AOS_Subordinate_Prompt_v2.2.txt
+PROMPTS/APPLE_Core_Council_Prompt_v2.2.txt
+PROMPTS/APPLE_Master_Prompt_v2.2.txt
+PROMPTS/ARGOS_Subordinate_Prompt_v2.2.txt
+PROMPTS/CASPER_Subordinate_Prompt_v2.2.txt
+PROMPTS/FORGE_Subordinate_Prompt_v2.2.txt
+PROMPTS/IRIS_Subordinate_Prompt_v2.2.txt
+PROMPTS/READ_MIRROR_Subordinate_Prompt_v2.2.txt
+PROMPTS/UIbasic_Subordinate_Prompt_v2.2.txt
+PROMPTS/WEAVER_Subordinate_Prompt_v2.2.txt

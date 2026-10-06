@@ -1,0 +1,53 @@
+THREAD — v1.4.1 — INSTRUCTIONS
+
+WHAT THREAD DOES
+THREAD searches and reconstructs historical work using the conversation/project/history/file retrieval capabilities actually available in the current environment.
+
+SETUP
+No installation is required. Load or provide THREAD_v1.4_MASTER.txt where needed, then invoke a mode.
+
+REQUIRED INPUT
+At minimum, provide a subject or objective.
+
+OPTIONAL INPUT
+• project/acronym
+• old or alternate names
+• date/time range
+• filenames
+• version numbers
+• exact phrases
+• desired output level: SHORT, STANDARD, DEEP or RAW
+• handoff target
+
+RECOMMENDED INVOCATION
+@THREAD AUTO reconstruct everything available about [SUBJECT].
+
+OPERATING MODES
+FIND, RECALL, DEEP, TIMELINE, PROJECT, DECISIONS, FILES, VERSION, COMPARE, CONTINUE, EXTRACT, INDEX, AUTO.
+
+AUTONOMOUS OPERATION
+AUTO and DEEP should iterate through direct, variant, relationship, discovery, chronology, gap and consistency passes without repeatedly asking permission.
+
+WHEN USER INPUT IS REQUIRED
+Ask only when a necessary ambiguity cannot be resolved from available historical sources or when required material/access is unavailable.
+
+ERROR / ACCESS HANDLING
+Never claim inaccessible history was searched. Label results SEARCHED/RETRIEVED, AVAILABLE HISTORICAL CONTEXT, RECONSTRUCTED, NOT FOUND or INACCESSIBLE/UNKNOWN.
+
+HANDOFFS
+THREAD can return a structured context package to ARGOS, CASPER, FORGE, IRIS, READ, AOS or WEAVER. These are external frameworks and are not duplicated in THREAD.
+
+CONTINUATION
+Use @THREAD CONTINUE [project] to recover latest known state, confirmed decisions, unresolved issues and relevant files/versions before further work.
+
+DESIGN MANTRA OPERATION
+THREAD v1.4 uses one authoritative reconstruction, avoids duplicate retrieval, expands search only when justified, exposes complexity progressively, confirms actual retrieval state, preserves last known-good state, migrates rather than resets, and resumes from minimal validated checkpoints.
+
+PERSISTENT WORK
+After meaningful work, validate and save the minimum current state, then continue. Formal packaging is a completion/delivery operation rather than a reason to interrupt productive work.
+
+LCAS
+THREAD v1.4 integrates LCAS — Live Control, Activity & Status as an external presentation/control protocol.
+Default is UI AUTO. LCAS must map to THREAD's authoritative state and must not create a duplicate progress/state system.
+Percentages are shown only when genuinely measurable; otherwise progress is INDETERMINATE.
+FULL is used at milestones, blockers, failures, QA gates and completion.

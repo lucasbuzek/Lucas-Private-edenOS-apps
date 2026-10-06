@@ -1,0 +1,29 @@
+CURRENT PRODUCT FAMILY
+
+LCAS
+User-facing control, activity, status, progress, approvals and project-state UI.
+
+CONDUCTOR
+Orchestration/project-management intelligence.
+
+BIFROST
+EDEN Base App / Gateway — CONNECT & KEEP.
+
+HEIMDALL
+Workspace/information layer — ORGANIZE & UNDERSTAND.
+
+SPECIALIST APPLICATIONS
+SPECIALIZE & DO.
+
+DELIVERY SURFACES
+- Drop-in assistants
+- Local WebApp/PWA
+- Native/hybrid desktop applications
+- macOS applications
+- edenOS applications
+- optional hosted interfaces
+- headless/server/API operation
+- hybrid local/cloud processing
+
+Shared components should be reused across surfaces rather than forked into
+unrelated implementations.

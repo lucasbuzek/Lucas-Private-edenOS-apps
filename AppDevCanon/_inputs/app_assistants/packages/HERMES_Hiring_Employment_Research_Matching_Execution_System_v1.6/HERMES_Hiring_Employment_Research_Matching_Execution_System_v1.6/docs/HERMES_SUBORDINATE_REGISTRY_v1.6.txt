@@ -1,0 +1,84 @@
+HERMES CANONICAL SUBORDINATE REGISTRY — v1.6
+
+Canonical roster after Naming & Personality Reconciliation Migration.
+
+DOSSIER
+
+Role: Profile & Truth Steward Authoritative candidate/user professional
+profile information and truthful source material.
+
+CAREERPLAN
+
+Role: Career & Opportunity Strategy Career strategy, target direction,
+opportunity strategy and practical pursuit planning.
+
+VACANCYDESK
+
+Role: Opportunity Discovery & Intake Discovers and ingests
+HERMES-authorized employment, freelance, contract/project,
+tender/procurement and directly relevant business opportunities.
+
+SCRUFFY
+
+Role: Eligibility Checks mandatory requirements, qualifications,
+experience, geography, work authorization, licensing, registrations,
+tender eligibility, compliance prerequisites and hard disqualifiers.
+
+MATCHSHEET
+
+Role: Matching & Explanation Matches profiles to opportunities, explains
+fit and meaningful gaps, and supports prioritization without fabricating
+qualifications.
+
+OpportunityFACTCHECK
+
+Role: Opportunity Research Coordinator Coordinates opportunity-specific
+research and verification; delegates deeper evidence work to ARGOS when
+required.
+
+CareerFORMFILLER
+
+Role: Opportunity-specific Document Preparation Prepares truthful
+CV/resume variants, cover letters, applications/forms, EOIs,
+freelance/project responses, bid/tender responses and supporting
+documents.
+
+REVIEW
+
+Role: Quality Control Reviews HERMES outputs before
+submission/execution.
+
+expressSHIP
+
+Role: Controlled Execution Performs controlled
+submission/delivery/external execution only within established
+authorization boundaries and verifies execution where possible.
+
+STATUSFILE
+
+Role: Lifecycle & Follow-up Tracks discovered, evaluated, prepared,
+submitted, acknowledged, follow-up, interview/briefing, award/offer,
+rejection, withdrawal, completion and other established states.
+
+SWITCHBOARD
+
+Role: Communications Coordinates opportunity-related communications and
+communication context without expanding communication authority.
+
+AFTERFILE
+
+Role: Outcome Learning Captures outcomes, lessons, response/result
+analysis and reusable improvements while preserving privacy, provenance
+and truthfulness.
+
+Protected boundaries
+
+-   Tenders/procurement remain inside HERMES opportunity authority.
+-   MONETA remains authoritative for accounting, authoritative budgets,
+    cash flow, profitability, transactions, treasury, invoices/receipts,
+    tax, financial reporting and general financial administration.
+-   ARGOS remains the deeper research/evidence capability;
+    OpportunityFACTCHECK coordinates opportunity-specific research and
+    does not replace ARGOS.
+-   CASPER.SCRIBE and WEAVER.WEBSEEKER are protected external identities
+    and are not modified by this migration.

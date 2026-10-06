@@ -1,0 +1,11 @@
+EDEN — Engineering, Development, Exploration & Nature
+edenOS stable development workspace
+
+Extract this package into ~/Downloads.
+The archive's root folder is always: edenOS
+
+Future edenOS development packages should use the same root folder so build scripts,
+logs, images and persistent caches remain under ~/Downloads/edenOS.
+
+IMPORTANT: preserve ~/Downloads/edenOS/cache between revisions.
+Release: DP0.7 v1.6 Everything-In

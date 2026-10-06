@@ -1,0 +1,94 @@
+THREAD — v1.4.1 — MODULES
+
+INTERNAL MODULES
+
+AUTO
+Purpose: choose and execute the retrieval strategy automatically.
+Input: objective/topic.
+Output: reconstructed answer with source-state distinctions.
+
+FIND
+Purpose: locate where a subject appears.
+Input: subject/phrase.
+Output: locations/context available to retrieval.
+
+RECALL
+Purpose: broad recovery of available historical information.
+Input: subject.
+Output: consolidated history.
+
+DEEP
+Purpose: exhaustive multi-pass reconstruction.
+Input: subject/project.
+Output: chronology, decisions, versions, conflicts, gaps and current state.
+
+TIMELINE
+Purpose: chronological reconstruction.
+Input: subject/project.
+Output: ordered development history.
+
+PROJECT
+Purpose: full project reconstruction.
+Input: project identity.
+Output: requirements through latest known state.
+
+DECISIONS
+Purpose: recover decision history and status.
+Input: subject/project.
+Output: requested/proposed/approved/implemented/tested/rejected/superseded distinctions.
+
+FILES
+Purpose: recover file/package/archive/code references.
+Input: subject/project.
+Output: file references and known roles/versions.
+
+VERSION
+Purpose: trace releases, branches and supersession.
+Input: project/component.
+Output: version lineage and latest confirmed state.
+
+COMPARE
+Purpose: compare historical statements/versions.
+Input: two or more targets.
+Output: differences, conflicts and evolution.
+
+CONTINUE
+Purpose: recover state needed to resume work.
+Input: project.
+Output: latest state plus handoff-ready context.
+
+EXTRACT
+Purpose: retrieve specified historical material, including exact text when available.
+Input: extraction target.
+Output: exact retrieved material or clearly labeled reconstruction.
+
+INDEX
+Purpose: create structured map of available history.
+Input: project/domain.
+Output: topics, conversations/context, files, versions and relationships.
+
+
+RESUME
+Purpose: restore the minimum validated state required to continue without repeating completed work.
+Input: project/subject.
+Output: authoritative current state, unresolved gaps and next useful action.
+
+EXTERNAL FRAMEWORKS
+ARGOS — research and verification
+CASPER — broad expert analysis
+FORGE — technical implementation
+IRIS — image/visual work
+READ — manuscript/reviewer analysis
+AOS — translation workflow
+WEAVER — website workflow
+
+THREAD retrieves and hands off; it does not silently duplicate external frameworks.
+
+DESIGN DOCTRINE
+THREAD v1.4 applies: one authoritative state; do less work; progressive disclosure; explicit state confirmation; recovery-first continuation; migrate rather than reset; validate before claiming completion; remove unnecessary retrieval overhead.
+
+LCAS ADAPTER
+Purpose: map THREAD's authoritative retrieval/checkpoint state into LCAS TINY, COMPACT, FULL and AUTO views without creating duplicate state.
+Input: current THREAD state.
+Output: truthful status/control presentation.
+External dependency: LCAS — Basic Persistent User Interface Protocol — v1.0.

@@ -1,0 +1,7 @@
+REFERENCE: FarmBot
+URL: https://farm.bot/pages/genesis
+ROLE IN EDEN DESIGN
+Open hardware/software agricultural machine. Universal Tool Mount is key prior art for combined mechanical retention, power, I/O and fluid/tool-changing concepts.
+
+STATUS
+Reference / integration candidate. Not a canonical dependency until architecture, license, safety and prototype validation are completed.

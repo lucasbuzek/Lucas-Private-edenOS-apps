@@ -1,0 +1,76 @@
+MONETA v1.5 PACKAGE VERIFICATION
+
+PASS — prompt completeness 69/69
+PASS — python3 96_BRANCH_TESTS/run_boundary_reconciliation.py
+BND01	PASS	MONETA financial-state ownership declared
+BND02	PASS	HERMES opportunity lifecycle retained
+BND03	PASS	ORACLE generalized analytics retained
+BND04	PASS	THEMIS legal semantics retained
+BND05	PASS	59 existing MONETA subordinate IDs preserved without duplication
+BND06	PASS	all established MONETA companies preserved
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 772, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/connection.py", line 37, in get_or_create_client
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/daemon.py", line 124, in start_daemon
+TimeoutError: Timed out waiting for artifact tool daemon socket. Set ARTIFACT_TOOL_RPC_DAEMON_STARTUP_TIMEOUT_S=<seconds> to increase the limit.
+PASS — node --test src/router.test.mjs
+TAP version 13
+# Subtest: receipt routes MONETA RECEIPT
+ok 1 - receipt routes MONETA RECEIPT
+  ---
+  duration_ms: 0.99358
+  type: 'test'
+  ...
+# Subtest: treasury routes MONETA VAULT
+ok 2 - treasury routes MONETA VAULT
+  ---
+  duration_ms: 1.111638
+  type: 'test'
+  ...
+# Subtest: tender discovery stays HERMES
+ok 3 - tender discovery stays HERMES
+  ---
+  duration_ms: 0.164827
+  type: 'test'
+  ...
+# Subtest: tender budget is MONETA ALLOCATE
+ok 4 - tender budget is MONETA ALLOCATE
+  ---
+  duration_ms: 0.097617
+  type: 'test'
+  ...
+# Subtest: bid profitability is MONETA MARGIN
+ok 5 - bid profitability is MONETA MARGIN
+  ---
+  duration_ms: 0.211637
+  type: 'test'
+  ...
+# Subtest: tax is MONETA TRIBUTE
+ok 6 - tax is MONETA TRIBUTE
+  ---
+  duration_ms: 0.12018
+  type: 'test'
+  ...
+# Subtest: fallback MONETA
+ok 7 - fallback MONETA
+  ---
+  duration_ms: 0.288052
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 133.737997
+PASS — node --check src/router.mjs
+
+PASS — node --check src/server.mjs
+
+
+STATUS: EXPERIMENTAL. Production financial side effects remain disabled.

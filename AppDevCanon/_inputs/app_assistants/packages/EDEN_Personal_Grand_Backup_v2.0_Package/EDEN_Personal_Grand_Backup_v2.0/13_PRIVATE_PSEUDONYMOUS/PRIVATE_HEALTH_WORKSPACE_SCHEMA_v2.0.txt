@@ -1,0 +1,30 @@
+PRIVATE HEALTH / PSYCHOLOGICAL WORKSPACE — PSEUDONYMOUS SCHEMA v2.0
+
+PURPOSE: Provide a safe private structure for Lucas’s personal
+psychological and medical information without placing identifiable
+health details into general/public AppDev registries.
+
+DEFAULT STORAGE: PSEUDONYMOUS subject ID, e.g. PERSON-001. Identity
+mapping stored separately from health content. No public profile
+linkage. No health data exported into public EDEN packages by default.
+
+RECORD TYPES: • user-reported symptom / concern • mood / wellbeing note
+• event/context note • medication/supplement record • appointment /
+clinician note • lab/test/result • medical document •
+sleep/activity/nutrition context • question/research item •
+safety/escalation note • source/provenance • uncertainty/confidence •
+date/time and longitudinal trend
+
+SPECIALIST WORKFLOW: CAPTURE → CLASSIFY SOURCE → TIMELINE → IDENTIFY RED
+FLAGS → RESEARCH/EXPLAIN → PREPARE QUESTIONS → TRACK → REVIEW.
+
+RULES: Never convert a user concern into a diagnosis without evidence.
+Clearly distinguish USER-REPORTED, CLINICIAN-DOCUMENTED, TEST-MEASURED,
+INFERRED and UNKNOWN. Do not let an LLM overwrite source records.
+Emergency/safety escalation must remain available. Health data requires
+stronger access control, encryption-at-rest where available, minimal
+disclosure, auditability and explicit export controls.
+
+THIS BACKUP: Contains the schema and workflow, not a fabricated
+reconstruction of sensitive medical facts that were not recovered from
+source files in this packaging pass.

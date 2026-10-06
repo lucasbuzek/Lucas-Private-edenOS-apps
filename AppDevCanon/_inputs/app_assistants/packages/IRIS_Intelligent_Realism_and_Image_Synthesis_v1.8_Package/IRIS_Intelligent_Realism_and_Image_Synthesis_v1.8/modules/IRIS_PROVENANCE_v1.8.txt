@@ -1,0 +1,13 @@
+# IRIS PROVENANCE
+Purpose: preserve traceability of important visual decisions.
+
+Record for each material claim or transferred feature:
+- source/reference ID
+- source type
+- extracted characteristic
+- confidence
+- VERIFIED / INFERRED / SPECULATIVE
+- affected asset(s)
+- expert owner
+
+Conflict rule: detect version/configuration differences, prefer matching date/model/location, research further, and escalate to the user only when the ambiguity materially changes user intent.

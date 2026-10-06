@@ -1,0 +1,133 @@
+IRIS — INTELLIGENT REALISM & IMAGE SYNTHESIS — v1.8
+DESIGN MANTRA / PRODUCTION DOCTRINE
+
+PURPOSE
+This doctrine adapts the supplied Design Mantra principles to IRIS visual research, synthesis, batch production, UI, continuity and QA. It does not copy gardenOS-specific architecture; it applies the supported design principles to IRIS.
+
+======================================================================
+THE MANTRA
+======================================================================
+
+DESIGN THE WHOLE VISUAL PRODUCT, NOT THE IMAGE.
+Research, evidence, asset identity, composition, generation, editing, continuity, QA, export, recovery and reuse are one production system. An image is not complete merely because it renders. It is complete when it serves its intended purpose, remains coherent with its references and related assets, survives QA, exports correctly and can be reproduced or revised.
+
+ONE ASSET. ONE AUTHORITATIVE IDENTITY.
+Every recurring subject has one canonical Design Lock. Variants, views and derived assets inherit from it. Do not maintain competing definitions of geometry, markings, materials or identity. TRACE → CONSOLIDATE → SIMPLIFY → FIX AUTHORITATIVE DEFINITION → VERIFY → REMOVE DRIFT.
+
+DO LESS WORK.
+Do not regenerate what can be preserved. Do not research what is already verified. Do not create redundant views. Cache research and locks deliberately. Correct locally where possible. Reuse validated evidence, canonical assets, scene specifications and QA results.
+
+RESOURCES ARE A PRODUCTION BUDGET.
+Generation calls, research time, context, storage, retries, reference images and human attention are finite resources. Every additional render or module must justify its cost. Measure batch failures, retries, QA defects and continuity regressions.
+
+RACE TO A USEFUL FOUNDATION.
+Establish the minimum verified canonical foundation first. Lock it, then derive dependent outputs. Do not generate a large batch from an unstable identity.
+
+SIMPLE OUTSIDE, RIGOROUS INSIDE.
+The user should describe the desired result, not operate the internal expert panel. Hide routine research, camera, optics, PBR, compositing and QA decisions. Expose advanced controls progressively when useful.
+
+HIERARCHY BEFORE DECORATION.
+Every image must immediately communicate the intended subject, important state and purpose. Composition, scale, lighting and detail support that hierarchy. Decorative spectacle must not compete with accuracy or function.
+
+CONSISTENCY CREATES RECOGNITION.
+The same asset keeps the same identity, naming, proportions, signature features and visual language across views, scenes and batches. Platform/output adaptations may change presentation but not identity.
+
+PROGRESSIVE DISCLOSURE.
+Batch Studio shows common actions first: open, select, generate/export, status. Advanced controls for locks, provenance, retries, QA, provider settings and diagnostics remain available without cluttering the primary workflow.
+
+SHOW STATE. CONFIRM CONSEQUENCE.
+Every batch action must expose meaningful state: pending, ready, running, generated, QA pending, passed, correction required, failed, skipped or exported. Never mark a job complete merely because a generation request was sent.
+
+MAKE AUTOMATION EXPLAINABLE.
+IRIS should be able to explain why it selected a reference, changed a prompt, rejected a render, retried a job or preserved a locked feature. Important autonomous decisions are recorded in provenance/QA state.
+
+QUALITY IS ARCHITECTURE.
+Research accuracy, physical plausibility, continuity, artifact control, text/marking correctness, export integrity and recovery are first-class concepts rather than a final cosmetic pass.
+
+RECOVERY IS A PRODUCTION FEATURE.
+A failed render, interrupted batch, invalid output or rejected QA result must not destroy completed work or reorder jobs. Persist manifests and status. Resume safely. Retry only affected jobs by default. Preserve best-known versions.
+
+DATA BELONGS TO THE PROJECT, NOT THE RUNNER.
+Separate canonical project definitions, references/provenance, user configuration, transient runtime state and outputs. Updating the runner or UI must not replace project data.
+
+MIGRATE, DO NOT RESET.
+When manifest/schema versions change: DETECT → VALIDATE → BACKUP/STAGE → MIGRATE → VERIFY → COMMIT → ROLLBACK ON FAILURE. Preserve unknown user data where possible.
+
+BUILD A SMALL CORE AND MOVE WEIGHT OUTWARD.
+IRIS Core owns orchestration, identity, state and QA rules. Specialist modules own focused work. Provider adapters translate generation requests but do not own project identity or bypass QA. Batch Studio manages interaction rather than duplicating orchestration logic.
+
+INTEGRATIONS ARE ADAPTERS, NOT OWNERS.
+Image providers, external research systems, editors and export tools consume IRIS specifications and return results. They do not redefine canonical assets or silently bypass Design Lock, provenance or QA.
+
+LOCAL PROJECT FIRST.
+A saved IRIS project/manifest should remain understandable and reusable without the original conversation. External services may improve capability but project identity, prompts, provenance and status remain portable.
+
+QUALITY IS MEASURED, NOT ASSUMED.
+Use explicit QA gates. Track reference fidelity, geometry, physics, materials, lighting, continuity, text/markings, compositing, artifact freedom and output integrity. Never claim a test or QA stage passed unless it actually ran.
+
+POLISH IS FUNCTIONAL.
+Wrong filenames, unclear status, inconsistent terminology, broken selection, stale progress, poor exports, accidental redesign and difficult recovery are production defects, not cosmetic issues.
+
+DEFAULTS SHOULD SUCCEED.
+A user should be able to open a list, choose a range or preset, preserve Design Lock, run/export a batch and understand its state without editing source code. Advanced configuration comes after a working default path.
+
+DESIGN FOR THE COMMON CASE; RETAIN POWER FOR THE EXPERT.
+Keep common batch operations obvious. Keep provenance, calibration, provider configuration, detailed QA and diagnostic information accessible on demand.
+
+REMOVE BEFORE ADDING.
+Before adding a module or workflow ask: Does this already exist? Can the authoritative module be extended? Can duplicate logic be removed? What permanent complexity does this add? Does it belong in Core, a specialist module, Batch Studio or a provider adapter?
+
+======================================================================
+IRIS PRODUCT TEST
+======================================================================
+Before accepting a feature or workflow ask:
+USEFUL — Does it solve a real visual-production problem?
+COHERENT — Does it fit the IRIS pipeline and asset model?
+NATIVE — Does it belong in this module/layer?
+SIMPLE — Is the user-facing result simpler than the implementation?
+LEAN — Can work, retries, context or duplication be eliminated?
+FAST — Does it reach a useful foundation efficiently?
+RECOVERABLE — Can interrupted work resume without loss?
+PERSISTENT — Do project data and locks survive updates?
+EXPLAINABLE — Can IRIS explain important autonomous decisions?
+MEASURABLE — Is quality actually checked?
+CONSISTENT — Does it preserve canonical identity and terminology?
+POLISHED — Are naming, status, errors, exports and edge cases finished?
+NECESSARY — If removed, would IRIS materially worsen?
+
+======================================================================
+UI MANTRA
+======================================================================
+CONTENT FIRST.
+STATUS AT A GLANCE.
+ONE OBVIOUS PRIMARY ACTION.
+DETAIL ON DEMAND.
+CONSISTENT NAVIGATION.
+IMMEDIATE FEEDBACK.
+CONFIRMED STATE, NOT OPTIMISTIC FICTION.
+ACCESSIBLE CONTROLS.
+RESPONSIVE FROM PHONE TO DESKTOP.
+ANIMATION ONLY WHEN IT COMMUNICATES STATE.
+TECHNICAL COMPLEXITY STAYS IN ADVANCED/DIAGNOSTICS.
+NO VISUAL ELEMENT WITHOUT A JOB.
+
+======================================================================
+SHORT FORM
+======================================================================
+DESIGN THE WHOLE VISUAL PRODUCT.
+ONE AUTHORITATIVE ASSET IDENTITY.
+DO LESS WORK.
+BUILD A USEFUL FOUNDATION FIRST.
+SIMPLE OUTSIDE; RIGOROUS INSIDE.
+QUALITY BEFORE QUANTITY.
+RECOVERY BEFORE CONVENIENCE.
+PROJECT DATA OUTLIVES THE RUNNER.
+INTEGRATIONS ADAPT; THEY DO NOT OWN.
+DEFAULTS WORK.
+DETAIL ON DEMAND.
+REMOVE BEFORE ADDING.
+VERIFY WHAT ACTUALLY RAN.
+POLISH THE EDGE CASES.
+
+And always:
+TRACE → CONSOLIDATE → SIMPLIFY → FIX AUTHORITATIVE DEFINITION → VERIFY → REMOVE BLOAT.

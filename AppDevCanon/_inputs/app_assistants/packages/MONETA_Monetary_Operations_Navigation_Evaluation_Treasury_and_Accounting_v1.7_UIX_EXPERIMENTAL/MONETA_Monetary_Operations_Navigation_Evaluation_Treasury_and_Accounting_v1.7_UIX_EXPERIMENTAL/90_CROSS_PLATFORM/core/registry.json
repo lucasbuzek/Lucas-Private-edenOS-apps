@@ -1,0 +1,281 @@
+{
+  "app": "MONETA",
+  "version": "1.7",
+  "maturity": "EXPERIMENTAL",
+  "companies": [
+    {
+      "name": "LEDGER",
+      "id": ""
+    },
+    {
+      "name": "MERCURY",
+      "id": ""
+    },
+    {
+      "name": "ALLOCATE",
+      "id": ""
+    },
+    {
+      "name": "VAULT",
+      "id": ""
+    },
+    {
+      "name": "MARGIN",
+      "id": ""
+    },
+    {
+      "name": "NUNTIUS",
+      "id": ""
+    },
+    {
+      "name": "PATRON",
+      "id": ""
+    },
+    {
+      "name": "RECEIPT",
+      "id": ""
+    },
+    {
+      "name": "TRIBUTE",
+      "id": ""
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "moneta.ledger.general_accounting",
+      "company": "LEDGER"
+    },
+    {
+      "id": "moneta.ledger.accounts_payable",
+      "company": "LEDGER"
+    },
+    {
+      "id": "moneta.ledger.accounts_receivable",
+      "company": "LEDGER"
+    },
+    {
+      "id": "moneta.ledger.reconciliation",
+      "company": "LEDGER"
+    },
+    {
+      "id": "moneta.ledger.close_and_period_control",
+      "company": "LEDGER"
+    },
+    {
+      "id": "moneta.ledger.consolidation",
+      "company": "LEDGER"
+    },
+    {
+      "id": "moneta.ledger.fixed_assets",
+      "company": "LEDGER"
+    },
+    {
+      "id": "moneta.ledger.financial_statement_mapping",
+      "company": "LEDGER"
+    },
+    {
+      "id": "moneta.mercury.transaction_intake",
+      "company": "MERCURY"
+    },
+    {
+      "id": "moneta.mercury.classification",
+      "company": "MERCURY"
+    },
+    {
+      "id": "moneta.mercury.matching",
+      "company": "MERCURY"
+    },
+    {
+      "id": "moneta.mercury.counterparty_intelligence",
+      "company": "MERCURY"
+    },
+    {
+      "id": "moneta.mercury.recurring_transactions",
+      "company": "MERCURY"
+    },
+    {
+      "id": "moneta.mercury.exception_detection",
+      "company": "MERCURY"
+    },
+    {
+      "id": "moneta.mercury.transaction_qa",
+      "company": "MERCURY"
+    },
+    {
+      "id": "moneta.allocate.budgeting",
+      "company": "ALLOCATE"
+    },
+    {
+      "id": "moneta.allocate.forecasting",
+      "company": "ALLOCATE"
+    },
+    {
+      "id": "moneta.allocate.scenario_planning",
+      "company": "ALLOCATE"
+    },
+    {
+      "id": "moneta.allocate.variance_analysis",
+      "company": "ALLOCATE"
+    },
+    {
+      "id": "moneta.allocate.resource_allocation",
+      "company": "ALLOCATE"
+    },
+    {
+      "id": "moneta.allocate.business_planning",
+      "company": "ALLOCATE"
+    },
+    {
+      "id": "moneta.vault.cash_management",
+      "company": "VAULT"
+    },
+    {
+      "id": "moneta.vault.liquidity",
+      "company": "VAULT"
+    },
+    {
+      "id": "moneta.vault.banking",
+      "company": "VAULT"
+    },
+    {
+      "id": "moneta.vault.cash_forecasting",
+      "company": "VAULT"
+    },
+    {
+      "id": "moneta.vault.funding",
+      "company": "VAULT"
+    },
+    {
+      "id": "moneta.vault.fx_and_exposure",
+      "company": "VAULT"
+    },
+    {
+      "id": "moneta.vault.treasury_risk",
+      "company": "VAULT"
+    },
+    {
+      "id": "moneta.margin.revenue_analysis",
+      "company": "MARGIN"
+    },
+    {
+      "id": "moneta.margin.cost_analysis",
+      "company": "MARGIN"
+    },
+    {
+      "id": "moneta.margin.pricing",
+      "company": "MARGIN"
+    },
+    {
+      "id": "moneta.margin.unit_economics",
+      "company": "MARGIN"
+    },
+    {
+      "id": "moneta.margin.margin_analysis",
+      "company": "MARGIN"
+    },
+    {
+      "id": "moneta.margin.profitability",
+      "company": "MARGIN"
+    },
+    {
+      "id": "moneta.nuntius.management_reporting",
+      "company": "NUNTIUS"
+    },
+    {
+      "id": "moneta.nuntius.financial_reporting",
+      "company": "NUNTIUS"
+    },
+    {
+      "id": "moneta.nuntius.kpi_reporting",
+      "company": "NUNTIUS"
+    },
+    {
+      "id": "moneta.nuntius.executive_and_board_reporting",
+      "company": "NUNTIUS"
+    },
+    {
+      "id": "moneta.nuntius.dashboard_intelligence",
+      "company": "NUNTIUS"
+    },
+    {
+      "id": "moneta.nuntius.reporting_qa",
+      "company": "NUNTIUS"
+    },
+    {
+      "id": "moneta.patron.funding_intelligence",
+      "company": "PATRON"
+    },
+    {
+      "id": "moneta.patron.grant_finance",
+      "company": "PATRON"
+    },
+    {
+      "id": "moneta.patron.investor_finance",
+      "company": "PATRON"
+    },
+    {
+      "id": "moneta.patron.capital_requirements",
+      "company": "PATRON"
+    },
+    {
+      "id": "moneta.patron.use_of_funds",
+      "company": "PATRON"
+    },
+    {
+      "id": "moneta.patron.funding_conditions",
+      "company": "PATRON"
+    },
+    {
+      "id": "moneta.receipt.invoice_office",
+      "company": "RECEIPT"
+    },
+    {
+      "id": "moneta.receipt.receipt_office",
+      "company": "RECEIPT"
+    },
+    {
+      "id": "moneta.receipt.statement_office",
+      "company": "RECEIPT"
+    },
+    {
+      "id": "moneta.receipt.purchase_order_office",
+      "company": "RECEIPT"
+    },
+    {
+      "id": "moneta.receipt.quotation_office",
+      "company": "RECEIPT"
+    },
+    {
+      "id": "moneta.receipt.extraction_and_normalization",
+      "company": "RECEIPT"
+    },
+    {
+      "id": "moneta.receipt.document_matching",
+      "company": "RECEIPT"
+    },
+    {
+      "id": "moneta.tribute.tax_records",
+      "company": "TRIBUTE"
+    },
+    {
+      "id": "moneta.tribute.tax_evidence",
+      "company": "TRIBUTE"
+    },
+    {
+      "id": "moneta.tribute.period_preparation",
+      "company": "TRIBUTE"
+    },
+    {
+      "id": "moneta.tribute.jurisdiction_desk",
+      "company": "TRIBUTE"
+    },
+    {
+      "id": "moneta.tribute.missing_evidence",
+      "company": "TRIBUTE"
+    },
+    {
+      "id": "moneta.tribute.professional_handoff",
+      "company": "TRIBUTE"
+    }
+  ]
+}

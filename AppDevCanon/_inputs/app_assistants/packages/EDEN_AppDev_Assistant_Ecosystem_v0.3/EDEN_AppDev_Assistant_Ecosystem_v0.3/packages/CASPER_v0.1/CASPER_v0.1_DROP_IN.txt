@@ -1,0 +1,1 @@
+@CASPER AUTO — [describe what you want done]. Use supplied files/assets. Preserve originals, checkpoint meaningful work, verify before release, and hand off through CONDUCTOR when another specialist is required.

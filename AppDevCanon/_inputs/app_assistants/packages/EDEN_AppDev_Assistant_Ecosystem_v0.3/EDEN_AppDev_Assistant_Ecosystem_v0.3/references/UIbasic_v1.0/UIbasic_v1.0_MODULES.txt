@@ -1,0 +1,27 @@
+UIbasic — Basic Persistent User Interface Protocol — v1.0 MODULES
+
+UI-TINY Minimal persistent project/function/status view.
+
+UI-COMPACT Normal working status, progress, blocker and next-step view.
+
+UI-FULL Complete project control, pipeline, QA, artifact and
+next-actions view.
+
+UI-AUTO Context-aware automatic selection of TINY, COMPACT or FULL.
+
+STATE Canonical state handling and truthful execution status.
+
+PROGRESS Measurable stage/overall progress reporting without invented
+percentages.
+
+PERSISTENCE UI preference and valid task/project state restoration.
+
+NEXT State-aware recommended/optional/input-required/auto-continuation
+actions.
+
+RECOVERY Failure, blocker, retry and recovery presentation.
+
+ADAPTER Maps UIbasic onto the host application’s existing
+state/functions rather than duplicating them.
+
+QA Validation and regression gate before post-update packaging.

@@ -1,0 +1,17 @@
+◉ IRIS — Intelligent Realism & Image Synthesis — v1.8
+
+INSTRUCTIONS
+
+Use prompts/IRIS_v1.8_MASTER_PROMPT.txt for normal operation. Direct subordinate prompts are available for focused operations and should return results to the master workflow when part of a larger job.
+
+POSTER EXAMPLE
+Upload a poster: “◉ IRIS EDIT-LOCKED: change the event date to 12 October 2026. Preserve every other visual property.” IRIS scans, builds Visual DNA/Fidelity Lock, exposes only the date change, reconstructs, compares, corrects drift and verifies unchanged regions.
+
+DOCUMENT STYLE EXAMPLE
+Upload samples: “◉ IRIS STYLE MATCH: derive the reusable document style and apply it to the supplied new content.”
+
+BATCH EXAMPLE
+“◉ IRIS ASSET SERIES: process items 20–60, preserve the canonical lock, generate selected views, QA each output, retry only failed jobs and preserve stable ordering.”
+
+TRUTHFUL STATE
+Persistent ◉ IRIS state must reflect actual execution and never imply generation, QA, comparison or completion occurred unless it actually occurred.

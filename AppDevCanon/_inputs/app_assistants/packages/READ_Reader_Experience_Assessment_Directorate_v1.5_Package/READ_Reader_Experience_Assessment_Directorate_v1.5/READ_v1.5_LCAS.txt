@@ -1,0 +1,29 @@
+LCAS — Live Control, Activity & Status
+READ INTEGRATION PROFILE — v1.5
+
+STATUS
+LCAS is the canonical project tracking, control and activity/status layer for READ.
+Any legacy UIbasic or LUCAS reference is normalized to LCAS.
+
+DEFAULT BEHAVIOR
+LCAS is persistent whenever READ or a READ helper is active/invoked.
+It tracks project identity, helper identity, parent/child handoffs, stage, step, completed work, active work, remaining work, blockers, QA/testing, artifacts and next action.
+
+PROGRESS
+Percentages are permitted only when both completed and total measurable units are supported by evidence.
+Otherwise display INDETERMINATE.
+Never infer progress from prose volume, elapsed time or confidence.
+
+VIEWS
+TINY — one-line operational state.
+COMPACT — project/helper state, progress, done, active, remaining, blockers, QA, artifacts, next.
+FULL — complete pipeline, hierarchy, handoffs, evidence state, decisions, checkpoints, outputs and release/package state.
+AUTO — selects the least verbose view that still exposes material state changes or blockers.
+
+PERSISTENT IDENTITY
+Parent: 📖 READ — Reader Experience Assessment Directorate
+Control layer: LCAS — Live Control, Activity & Status
+Helper: show helper name/acronym whenever one is active.
+
+HANDOFF
+Every handoff records FROM, TO, READSIDEBYSIDE, INPUTS, EXPECTED OUTPUT, STATE and RETURN TARGET.

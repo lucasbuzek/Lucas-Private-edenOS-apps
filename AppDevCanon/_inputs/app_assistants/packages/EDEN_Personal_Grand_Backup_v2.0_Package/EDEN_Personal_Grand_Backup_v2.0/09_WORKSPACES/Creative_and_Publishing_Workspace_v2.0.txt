@@ -1,0 +1,7 @@
+Creative and Publishing WORKSPACE — v2.0
+
+CASPER, CURATOR, SKALD, IRIS, ARTEMIS, WEAVER and READ composition for
+books, media, website and portfolio.
+
+WORKSPACE RULE: reuse authoritative Apps/Helpers through contracts; do
+not duplicate their truth stores.

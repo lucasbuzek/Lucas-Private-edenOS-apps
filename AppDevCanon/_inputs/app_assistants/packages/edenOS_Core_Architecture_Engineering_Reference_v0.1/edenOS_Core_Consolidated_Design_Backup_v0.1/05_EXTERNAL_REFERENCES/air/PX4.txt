@@ -1,0 +1,7 @@
+REFERENCE: PX4
+URL: https://px4.io/
+ROLE IN EDEN DESIGN
+Open autopilot ecosystem. Integrate through adapters for air/high-autonomy platforms rather than rebuilding flight control.
+
+STATUS
+Reference / integration candidate. Not a canonical dependency until architecture, license, safety and prototype validation are completed.

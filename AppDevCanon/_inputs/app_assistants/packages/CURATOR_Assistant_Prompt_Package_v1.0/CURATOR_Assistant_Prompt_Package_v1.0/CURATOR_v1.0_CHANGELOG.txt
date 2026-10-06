@@ -1,0 +1,4 @@
+CURATOR Assistant/Prompt Package v1.0
+DATE: 2026-09-22
+ADDED: EN/SK About, MASTER, AUTO, module register, 10 subordinate prompts, Quick Start.
+STATUS: prompt/documentation package; no native-runtime verification claim.

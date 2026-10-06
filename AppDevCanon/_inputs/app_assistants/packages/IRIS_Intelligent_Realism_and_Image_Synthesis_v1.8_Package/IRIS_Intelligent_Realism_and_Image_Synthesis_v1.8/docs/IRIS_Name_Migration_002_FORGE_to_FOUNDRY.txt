@@ -1,0 +1,27 @@
+HISTORICAL PROVENANCE — SUPERSEDED
+
+This document records an earlier migration decision and is retained only for provenance. It is NOT an active identity or routing authority.
+
+Superseded by: IRIS Name Reconciliation 003, 2026-09-23.
+Current result: the former local IRIS.FORGE identity is closed; the temporary IRIS.FOUNDRY replacement is also removed. Applicable deterministic technical work delegates to global EDEN FORGE. No replacement local worker exists.
+
+--- ORIGINAL HISTORICAL RECORD ---
+
+EDEN ATOMIC NAME MIGRATION 002 — IRIS
+
+STATUS: EXECUTED
+
+OLD ACTIVE NAME
+IRIS.FORGE
+
+NEW CANONICAL NAME
+IRIS.FOUNDRY
+
+FUNCTIONAL MEANING
+FOUNDRY — Final Output Unification, Normalization, Derivation, Rendering & Yield
+
+CONCEPTUAL MEANING
+A foundry turns prepared material into a finished formed output. Within IRIS, FOUNDRY is the local visual-production/assembly stage that turns prepared visual instructions and components into renderable output. It does not take over independent EDEN FORGE.
+
+MIGRATION SCOPE
+Identity/name only. Existing IRIS.FORGE behavior, inputs, outputs and routing semantics were preserved. Internal prompts, modules, workflows and documentation were updated. Independent EDEN FORGE remains unchanged.

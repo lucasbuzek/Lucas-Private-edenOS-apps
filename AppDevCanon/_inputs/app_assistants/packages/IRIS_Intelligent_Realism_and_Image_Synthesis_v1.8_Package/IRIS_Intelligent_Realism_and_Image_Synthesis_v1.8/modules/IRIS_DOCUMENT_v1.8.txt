@@ -1,0 +1,10 @@
+IRIS — Intelligent Realism & Image Synthesis — v1.8
+MODULE: DOCUMENT
+
+PURPOSE
+Analyze and reconstruct document layout/style from PDF, DOCX/word-processing documents, presentations, scans and reference samples.
+
+MODES
+READ/ANALYZE; RECREATE; STYLE MATCH; TEMPLATE FROM SAMPLE; EDIT-LOCKED; NEW DOCUMENT IN STYLE.
+
+Preserve semantic content separately from presentation. Build page/master rules before populating new content. Render and compare pages after implementation. Use native document tooling when editable output is required; rendered visual similarity alone is not proof of structural equivalence.

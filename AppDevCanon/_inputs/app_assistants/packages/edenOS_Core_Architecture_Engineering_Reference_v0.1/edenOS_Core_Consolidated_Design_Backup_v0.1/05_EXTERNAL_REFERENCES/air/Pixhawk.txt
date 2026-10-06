@@ -1,0 +1,7 @@
+REFERENCE: Pixhawk Standards
+URL: https://pixhawk.org/standards/
+ROLE IN EDEN DESIGN
+Open hardware reference standards for autopilot, payload bus, connectors and smart batteries. Study before freezing EDEN Air electrical/connector standards.
+
+STATUS
+Reference / integration candidate. Not a canonical dependency until architecture, license, safety and prototype validation are completed.

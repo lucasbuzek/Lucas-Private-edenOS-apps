@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+ <rect width="512" height="512" rx="118" fill="#111318"/>
+ <defs><clipPath id="w"><path d="M92 279C165 143 272 81 420 88c-40 46-83 81-132 103 54-7 96-2 130 15-55 58-114 90-187 98 43 19 75 45 98 78-96 7-169-23-220-73z"/></clipPath></defs>
+ <g clip-path="url(#w)"><path d="M70 70h390v120H70z" fill="#b3232d"/><path d="M70 190h390v110H70z" fill="#d5a92b"/><path d="M70 300h390v145H70z" fill="#167343"/></g>
+ <path d="M92 279C165 143 272 81 420 88c-40 46-83 81-132 103 54-7 96-2 130 15-55 58-114 90-187 98 43 19 75 45 98 78-96 7-169-23-220-73z" fill="none" stroke="#fff" stroke-width="18" stroke-linejoin="round"/>
+ <rect x="128" y="248" width="146" height="170" rx="18" fill="#fff" stroke="#111318" stroke-width="16"/><path d="m158 337 34 34 55-72" fill="none" stroke="#111318" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

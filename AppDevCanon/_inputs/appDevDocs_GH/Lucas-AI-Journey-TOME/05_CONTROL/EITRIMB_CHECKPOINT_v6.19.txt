@@ -1,0 +1,20 @@
+Lucas AI Journey TOME — EITRIMB checkpoint v6.19
+
+Narrative ownership repair executed after examining the three remaining untranslated English narrative manuscripts.
+
+Changes:
+- I Have an Idea. Now What?: 465 -> 398 reader-facing units. Preserved units 1–392 plus final synthesis 460–465; removed recovered/source-quarry duplication.
+- When the Code Fights Back: 932 -> 430 reader-facing units. Removed the merged "When Software Meets Reality" continuation and recovered duplication because that subject is owned by later principal/technical volumes.
+- From Projects to Systems: 1061 -> 419 reader-facing units. Removed the merged "What I Learned Building with AI" continuation and recovered duplication because that subject is owned by Beyond the Prompt and later volumes.
+
+Remaining Slovak fresh-translation units after repair:
+- I Have an Idea. Now What?: 398
+- When the Code Fights Back: 430
+- From Projects to Systems: 419
+Total: 1,247.
+
+State truth:
+- T00–T24 technical/research master remains preserved at v6.11 PASS.
+- 7/10 Slovak narrative books are translation-complete candidates.
+- 3/10 Slovak narrative books remain ACTIVE.
+- Global TOME is NOT COMPLETE.

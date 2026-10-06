@@ -1,0 +1,110 @@
+EDEN / AppDev — Reconciled Canonical Rules v1.7
+Owner: Lucas Buzek
+Status: RECONCILED CANDIDATE — current rules baseline for rapid deployment
+Date: 2026-09-24
+
+0. GOVERNANCE / RECONCILIATION
+Newest explicit Lucas Buzek decisions override older conflicts. Preserve superseded decisions as provenance; do not silently delete history. Recover/reuse Last Known Good before redesign. Do not invent unresolved names, expansions, personalities or authority. Generated != Saved != Implemented != Verified != Integrated != Released.
+
+1. FOUNDATION
+EDEN = Engineering, Development, Exploration & Nature.
+edenOS is a reusable platform/system layer/distribution, not EDEN itself and not one giant App.
+Garden of EDEN is Lucas Buzek's personal/private EDEN front door/experience layer. cloud9 is the private Digital Home Base/environment.
+Beauty, capability and dignity should not be premium features.
+
+2. IMPLEMENT / INTEGRATE BEFORE RECREATE
+REQUIREMENT -> CHECK PRIOR ART -> VERIFY MATURITY/FIT/LICENSE/RESOURCES/SAFETY -> COMPARE KEEP/REMOVE/SIMPLIFY/REUSE/ADAPT/BUILD/REPLACE -> REUSE/INTEGRATE/ADAPT WHEN SUITABLE -> CUSTOM BUILD ONLY WHEN JUSTIFIED -> VERIFY.
+Fresh architecture. Proven components. Integrate -> Adapt -> Optimize -> Customize UX.
+
+3. OWN THE DOMAIN. SHARE THE CAPABILITY.
+Apps own domain intent, professional workflow, domain state and domain UX. Shared capabilities own reusable contracts. Providers/adapters implement platform/external services. Presentation does not transfer authoritative ownership. A capability useful to multiple Apps should, where practical, be independently consumable through a stable contract. BIFROST may discover/connect/permission/coordinate it without becoming a mandatory gateway or single point of failure.
+
+4. SMALL CORE, RICH COMPOSITION
+Small by default. Rich by composition. Modular underneath. Simple on the surface. Create a Helper when narrow expertise is needed; create a Workspace when disciplines cooperate; promote to App only when a coherent domain requires persistent independent ownership. Apps represent coherent professional work; specialists represent expertise.
+
+5. BIFROST — CONNECT & KEEP
+BIFROST is the EDEN Base App/system gateway and infrastructure authority for canonical identity, registry, metadata, locations, relationships, provenance, capabilities, providers/connections, persistence, interoperability and package/install/update state. BIFROST works without AI and may be headless/API-capable. BIFROST FIRST does not mean BIFROST mandatory.
+
+6. HEIMDALL — DOORWAY TO EDEN
+HEIMDALL is the user's universal doorway to EDEN: ORGANIZE, UNDERSTAND, ACCESS & COMPOSE. It provides discovery and access across Apps, capabilities, projects, Workspaces, libraries, collections, objects, relationships and authorized resources. HEIMDALL owns Workspaces/information composition and may create Custom User Apps by composing authorized views, actions, data contexts, workflows and capabilities from existing authoritative Apps without duplicating their domain logic. It may initiate creation of genuinely new Apps through the appropriate engineering workflow. Universal access through HEIMDALL does not make HEIMDALL a mandatory runtime dependency. Specialist Apps retain direct access to their own domain objects. HEIMDALL shows EDEN; specialist Apps show the work.
+
+7. HEIMDALL.CONDUCTOR — HEIMDALL'S VOICE
+HEIMDALL is the doorway to EDEN; CONDUCTOR is its voice. CONDUCTOR is owned by HEIMDALL but may be available contextually EDEN-wide. It is the conversational/voice/command interaction layer, not the authoritative owner of the domains it speaks for. A voice is not an owner.
+CONDUCTOR must be deterministic and offline-capable at baseline for registered commands/actions/workflows. Actual voice is independent of AI and may operate offline using local/native speech input/output where available. Interaction, intelligence, connectivity and execution are independent composable capability axes. VOICE != AI. AI != CLOUD. OFFLINE != TEXT-ONLY. Optional native intelligence, local AI and authorized provider AI may enhance understanding/reasoning but are not prerequisites for voice or essential operation. Deterministic validation, permissions and safety remain authoritative before consequential execution. Use the lowest sufficient capability.
+
+8. AI / INTELLIGENCE
+AI enhances EDEN; AI must not be required for essential EDEN operation where a practical deterministic path exists. Deterministic services execute deterministic work. Prefer platform/native/deterministic/local capability before unnecessary remote AI. Native AI, local AI and provider AI are independently selectable providers/capabilities, not mutually exclusive operating modes.
+
+9. ORCHESTRATION / EXECUTION
+Orchestration != ownership != execution. Domain Apps may orchestrate their own bounded workflows. Domain orchestrators are introduced only where complexity justifies them; do not create one for every App. AOS handles persistent/restartable autonomous execution, sequencing, dependencies, recovery and completion where applicable. Workflow steps are capability requests, not merely text in a to-do list.
+
+10. ENGINEERING
+EITRI = Engineering, Integration, Testing, Refinement & Implementation; Engineering Master Smith / Engineering Orchestrator. EITRI coordinates complex Engineering work and routes to appropriate Apps, specialists and capabilities.
+PROMETHEUS = Technology, Research & Prototype Development: DISCOVER -> INVESTIGATE -> CONCEIVE -> EXPERIMENT -> PROTOTYPE -> PROVE -> DEVELOP.
+DAEDALUS = Engineering Design, Systems & Realization: DEFINE -> ARCHITECT -> ENGINEER -> INTEGRATE -> VERIFY -> REALIZE.
+FORGE v2.0 is the authoritative general Software Engineering environment: implementation, build, test, diagnose, repair, regression, package, deployment and maintenance. FORGE is software engineering, not all engineering. EITRI may invoke FORGE for software portions of PROMETHEUS/DAEDALUS and other Engineering work.
+
+11. UIX — ACTUAL APP / EDENOS UI
+LCAS is retired from Apps and edenOS runtime architecture. LCAS remains an in-Chat Live Control, Activity & Status UI/presentation identity only; legacy runtime references are provenance and must migrate to actual UIX + truthful state contracts. Runtime tells the truth; UIX presents the truth.
+One EDEN UIX language; different professional environments. Shared interaction grammar/components; strong App identities. Identity changes recognition, not usability. Character influences atmosphere; function controls interface. Semantic status color outranks App signature color.
+Content first. Status at a glance. One obvious primary action. Detail on demand. Consistent navigation. Immediate feedback. Confirmed state, not optimistic fiction. Accessible controls. Responsive layout. Purposeful motion. No visual element without a job.
+Desktop may use Navigation/Library | Primary Work | Inspector/Context. Phone is not compressed desktop; expose domain objects directly and adapt navigation progressively. Tablet adapts between them. Branch the experience, not the truth.
+Support focused/immersive states where the professional task benefits. Provider complexity normally stays behind the professional App experience. The user should work with their subject, not EDEN's architecture.
+UIX maturity: DEFINED -> IMPLEMENTED -> ACCESSIBILITY-VERIFIED -> RESPONSIVE-VERIFIED -> APP-VALIDATED -> SHARED. Fix authoritative shared components rather than duplicating defective ones.
+
+12. DIRECT DOMAIN ACCESS
+An App owns direct access to the things its professional function is about. Examples: LECTOR -> books/library; CURATOR -> photographs/media; CASPER -> manuscripts/publications; FORGE -> software projects/repos; HERMES -> opportunities/applications; WEAVER -> sites/web projects; PROMETHEUS -> experiments/prototypes; DAEDALUS -> engineering projects/systems. HEIMDALL may expose and compose these objects but is not the mandatory route to them.
+
+13. OBJECT IDENTITY / PRESENTATION
+One logical EDEN object may have multiple representations, locations, views and appearances without becoming multiple authoritative objects. Different Apps/Workspaces/Custom Apps may present the same object. Preserve identity, versions, provenance, relationships and source-vs-derived distinctions. Presentation does not transfer ownership.
+
+14. LOCAL FIRST / EDGE AUTONOMY
+Essential functionality continues without cloud where technically practical. Essential local operation and safety must not depend on Internet, HEIMDALL, a remote server or phone. Real-time control stays local; information/history/context may travel separately. Portability: APPLICATION -> EDEN/DOMAIN API -> PLATFORM CORE -> PLATFORM ADAPTER -> DRIVER -> HARDWARE.
+
+15. INSTALLATION
+One obvious primary Install action. Install does not mean install everything. INSTALL/RECOMMENDED = balanced, device-aware, reuse adequate existing capabilities, add useful missing components and defer heavyweight/infrequent optional components where practical. LEAN = minimum useful everyday core. FULL = all appropriate supported capabilities while avoiding pointless duplication/incompatibility. CUSTOM = explicit control.
+
+16. CONFIGURATION
+Depth: SIMPLE -> ADVANCED -> EXPERT. DEVELOPMENT/DIAGNOSTIC remains separate. RECOMMENDED/GUIDED/AUTOMATED are assistance layers, not another expertise depth.
+
+17. MIGRATION / UPDATE / RECOVERY
+Migration: DETECT -> VALIDATE -> BACKUP/STAGE -> MIGRATE -> VERIFY -> COMMIT -> ROLLBACK ON FAILURE.
+Bootstrap: UNPACK -> VERIFY -> DETECT EXISTING EDEN/INSTALL -> DISCOVER SUITABLE EXISTING CAPABILITIES -> BACKUP/STAGE -> TRANSACTIONAL INSTALL/UPDATE -> PRESERVE STATE -> VERIFY -> ATOMIC COMMIT -> LAUNCH INSTALLED COPY -> HEALTH CHECK -> OPEN UI -> RETURN CONTROL.
+Update: CHECK -> DOWNLOAD/STAGE -> VERIFY -> BACKUP -> UPDATE -> TEST/REGRESSION -> COMMIT. Failure returns to Last Known Good. Recovery before features. Migrate, do not reset.
+
+18. SAFETY / CONSEQUENTIAL ACTIONS
+REQUEST -> VALIDATE -> SAFETY CHECK -> EXECUTE -> CONFIRM. Desired state is not confirmed state. Unknown outputs do not automatically activate. Expired dangerous commands are not replayed. Remote commands cannot bypass local safety. AI interpretation cannot bypass deterministic validation, authorization or safety.
+
+19. TESTING / TRUTHFUL STATE / MATURITY
+Test vocabulary: PASS / FAIL / UNKNOWN / SKIPPED / N/A. UNKNOWN is never PASS. PASS requires evidence. Platform behavior is UNKNOWN until tested on target. Localhost response is not proof that the intended build is running. Expose object/product ID, version, build ID, installation identity/path and manifest/integrity identity where applicable.
+Capability maturity: DECLARED -> IMPLEMENTED -> BUILD-VERIFIED -> TESTED -> INTEGRATION-VERIFIED -> PERSONAL-READY -> ALPHA-READY -> RELEASE-READY. A manifest entry is not proof of operational capability. Package exists != builds. Build succeeds != feature works. Feature works != integration works. Integration works != release-ready.
+
+20. AUTOMATIC DEVELOPMENT WORKFLOW
+GOAL/CHANGE -> LOAD BOUNDED CANON + PROJECT CONTEXT -> INSPECT CURRENT SOURCE/STATE -> PLAN/DECOMPOSE -> SEARCH/REUSE BEFORE CREATING -> IMPLEMENT -> FORMAT/STATIC CHECKS -> BUILD -> TEST -> ANALYZE FAILURES -> BOUNDED SAFE AUTO-REPAIR/RETRY -> REGRESSION -> PACKAGE -> BIFROST REGISTER SOURCE REVISION/BUILD/HASH/PROVENANCE/EVIDENCE -> DISTRIBUTE VERIFIED PRIVATE ARTIFACT -> AUTHORIZED DEPLOYMENT -> POST-DEPLOYMENT HEALTH/SMOKE TEST -> ACTUAL STATE THROUGH UIX/STATE CONTRACT -> CHECKPOINT/LKG/ROLLBACK. EITRI coordinates Engineering; FORGE handles software implementation/build/test/package; AOS persists suitable jobs; ARGOS handles difficult evidence/research; APPLE reviews architecture/product/UX; BIFROST integrates/registers. CONDUCTOR may initiate/interpret requests through HEIMDALL but is not required to execute the engineering pipeline.
+
+21. QUIET AUTOMATION
+Routine successful automation generally remains quiet. Surface concise human summaries at natural moments, exceptions, safety problems, failures, meaningful changes, decisions requiring the user and useful next actions. Detailed state/diagnostics are available on demand through actual UIX.
+
+22. DATA OWNERSHIP / DURABILITY / PROVENANCE
+User data outlives software. Data belongs to the user, not firmware or providers. Preserve data across App/firmware/edenOS replacement, provider changes, machine migration and integration removal. Important artifacts retain identity, origin, version, producer/change provenance, verification, dependencies and recoverability. Source and derived representations remain distinguishable.
+
+23. LOCALIZATION
+English is canonical/reference and universal fallback. Private/Custom/Experimental builds are EN/SK baseline, including user-facing UI where possible and shipped operational documentation. Final/Public is multilingual-by-design through LINGUA from one codebase. UI, input, source/content and output/document language remain independently selectable where applicable.
+
+24. PRIVATE / APPLE-CENTRIC WITHOUT LOCK-IN
+Lucas Private is Apple-centric by default: macOS, iPhone/iOS, iPad/iPadOS, Safari and appropriate native Apple capabilities receive first-class optimization where useful. Shared cores/contracts remain portable/open/cross-platform; Apple implementations are first-class adapters, not architecture lock-in.
+
+25. CUSTOM APP / APP CREATION MATURITY
+CUSTOM APP = HEIMDALL composition over existing authorized capabilities/views/actions/data contexts. GENERATED APP = largely assembled from existing components/contracts. ENGINEERED APP = genuinely new implementation required. PROFESSIONAL APP = persistent authoritative domain owner matured into the EDEN catalogue. Not every Custom/Generated App becomes a canonical professional App.
+
+26. ENGINEERING MAINTENANCE MANTRA
+TRACE -> CONSOLIDATE -> SIMPLIFY -> FIX AUTHORITATIVE IMPLEMENTATION -> VERIFY -> REMOVE BLOAT. One authoritative implementation/path. Do not patch every consumer when the defect belongs in shared code. Build for actual target hardware; static/simulator validation does not replace target verification where target-specific behavior matters.
+
+27. BACKUP TRUTHFULNESS
+CONFIGURATION/CANON BACKUP preserves rules, registry, manifests, profiles, identities, relationships, configuration and provenance. FULL RECOVERABLE BACKUP additionally preserves authoritative source/project files, required assets/schemas/scripts/tests/build configuration/version identities and sufficient material to reconstruct the working environment, excluding secrets according to security policy. Do not label metadata-only archives as fully recoverable environments.
+
+28. RELEASE / GOVERNANCE
+One code/package ecosystem; no unnecessary maturity forks. Lifecycle may include DEVELOPMENT / EXPERIMENTAL / ALPHA_CANDIDATE / ALPHA / PREVIEW / STABLE; promotion requires evidence. Completion, verification and health are separate. Preserve requirement -> plan/workstream -> task/job -> artifact -> test/evidence -> verification -> release traceability.
+
+29. OPERATING SUMMARY
+LOCAL FIRST. USER-OWNED DURABLE DATA. SMALL CORE, RICH COMPOSITION. OWN THE DOMAIN; SHARE THE CAPABILITY. HEIMDALL IS THE DOORWAY TO EDEN; CONDUCTOR IS ITS VOICE. ACCESS THROUGH HEIMDALL IS UNIVERSAL; DEPENDENCY ON HEIMDALL IS NOT. VOICE != AI. AI != CLOUD. OFFLINE != TEXT-ONLY. USE THE LOWEST SUFFICIENT CAPABILITY. ORCHESTRATE ONLY WHERE COOPERATION REQUIRES IT. UIX PRESENTS ACTUAL STATE. RECOVER BEFORE REDESIGN. MIGRATE, DO NOT RESET. VERIFY REALITY BEFORE CLAIMING CAPABILITY. BEAUTY, CAPABILITY AND DIGNITY SHOULD NOT BE PREMIUM FEATURES.

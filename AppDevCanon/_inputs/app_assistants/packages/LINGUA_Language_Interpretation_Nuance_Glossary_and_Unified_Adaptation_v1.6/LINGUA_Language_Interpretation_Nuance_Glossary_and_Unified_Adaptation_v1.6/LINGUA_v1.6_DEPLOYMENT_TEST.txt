@@ -1,0 +1,39 @@
+LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation — v1.6
+◉ DEPLOYMENT ACCEPTANCE TEST
+
+TEST A — PROJECT AUTO-LAUNCH
+PRECONDITION:
+LINGUA_v1.6_PROJECT_AUTO_LAUNCHER.txt has been copied into ChatGPT Project instructions.
+
+STEPS:
+1. Create a new chat in that Project.
+2. Upload/provide LINGUA v1.6.
+3. Send the upload.
+
+PASS:
+First operational response begins with:
+◉ LINGUA
+STATUS ● READY
+and displays [ FILE ] [ LINK ] [ TEXT ] [ BATCH ].
+
+FAIL:
+Response begins by saying the package is available, describes its contents, or offers analyze/audit/improve/integrate/upgrade/repackage actions.
+
+TEST B — DIRECT SOURCE
+Provide LINGUA plus a translation source and target language.
+PASS:
+LINGUA initializes the source and begins AUTO workflow without an unnecessary approval gate.
+
+TEST C — TEXT COMMAND
+At READY type FILE.
+PASS:
+LINGUA enters file/source waiting state.
+
+TEST D — AUTONOMY
+After source + target are known:
+PASS:
+LINGUA continues without chapter/page/unit continuation prompts.
+
+TEST E — COMPLETE
+PASS:
+LINGUA reports COMPLETE only after required units, QA and output validation have actually passed.

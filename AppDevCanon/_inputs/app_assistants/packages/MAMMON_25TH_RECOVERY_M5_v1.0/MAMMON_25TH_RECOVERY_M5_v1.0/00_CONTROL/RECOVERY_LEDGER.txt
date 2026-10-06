@@ -1,0 +1,16 @@
+M0 Recovery Control Established — COMPLETE
+M1 Corpus Recovery — COMPLETE — C02
+M2 Canonical Consolidation — COMPLETE — C03
+M3 Split & Provenance Validation — COMPLETE — C04
+M4 Final assembly / manifest / integrity verification — NOT YET COMPLETE
+Delivery status: M3 checkpoint package.
+
+Provenance classes:
+RECOVERED_SOURCE = recovered project/library material.
+DERIVED_OVERLAY = later framework applied without rewriting historical provenance.
+UNRESOLVED = referenced but not independently recovered.
+
+EDEN 25 files: RECOVERED_SOURCE
+MAMMON v0.1 handoff: RECOVERED_SOURCE
+APPLE Master v2.0: DERIVED_OVERLAY for MAMMON x APPLE branch
+Independent named 25th-anniversary white paper: UNRESOLVED

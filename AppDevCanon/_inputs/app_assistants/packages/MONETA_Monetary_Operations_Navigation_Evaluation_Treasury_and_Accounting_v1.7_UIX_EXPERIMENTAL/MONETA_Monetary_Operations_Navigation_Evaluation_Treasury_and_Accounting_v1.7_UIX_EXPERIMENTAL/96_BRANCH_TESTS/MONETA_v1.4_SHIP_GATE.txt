@@ -1,0 +1,95 @@
+MONETA v1.4 EXPERIMENTAL — SHIP GATE
+
+PASS — python3 96_BRANCH_TESTS/run_boundary_reconciliation.py
+BND01	PASS	MONETA financial-state ownership declared
+BND02	PASS	HERMES opportunity lifecycle retained
+BND03	PASS	ORACLE generalized analytics retained
+BND04	PASS	THEMIS legal semantics retained
+BND05	PASS	59 existing MONETA subordinate IDs preserved without duplication
+BND06	PASS	all established MONETA companies preserved
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+
+PASS — node --test src/router.test.mjs
+TAP version 13
+# Subtest: receipt routes MONETA RECEIPT
+ok 1 - receipt routes MONETA RECEIPT
+  ---
+  duration_ms: 0.779711
+  type: 'test'
+  ...
+# Subtest: treasury routes MONETA VAULT
+ok 2 - treasury routes MONETA VAULT
+  ---
+  duration_ms: 1.280604
+  type: 'test'
+  ...
+# Subtest: tender discovery stays HERMES
+ok 3 - tender discovery stays HERMES
+  ---
+  duration_ms: 0.164957
+  type: 'test'
+  ...
+# Subtest: tender budget is MONETA ALLOCATE
+ok 4 - tender budget is MONETA ALLOCATE
+  ---
+  duration_ms: 0.094652
+  type: 'test'
+  ...
+# Subtest: bid profitability is MONETA MARGIN
+ok 5 - bid profitability is MONETA MARGIN
+  ---
+  duration_ms: 0.190206
+  type: 'test'
+  ...
+# Subtest: tax is MONETA TRIBUTE
+ok 6 - tax is MONETA TRIBUTE
+  ---
+  duration_ms: 0.093721
+  type: 'test'
+  ...
+# Subtest: fallback MONETA
+ok 7 - fallback MONETA
+  ---
+  duration_ms: 0.298118
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 76.039183
+
+PASS — node --check src/router.mjs
+
+
+PASS — node --check src/server.mjs
+
+
+PASS — GET /: 200
+PASS — GET /health: {"ok":true,"branch":"B1","maturity":"EXPERIMENTAL"}
+PASS — POST /api/route: {"branch":"B1","owner":"ALLOCATE","application":"MONETA","objective":"authoritative tender budget","stage":"","status":"PROPOSED","existing_solution_gate":"REQUIRED_BEFORE_IMPLEMENTATION","side_effects":"NONE"}
+
+SHIP DECISION: PASS — EXPERIMENT / TEST PACKAGE
+PRODUCTION DECISION: NOT READY
+
+NOT_RUN / OPEN:
+- native macOS Tauri build
+- native Windows Tauri build
+- BIFROST provenance/persistence runtime
+- cross-app typed handoff runtime
+- authorization/approval enforcement
+- update/repair/rollback runtime
+- production finance side effects (intentionally disabled)

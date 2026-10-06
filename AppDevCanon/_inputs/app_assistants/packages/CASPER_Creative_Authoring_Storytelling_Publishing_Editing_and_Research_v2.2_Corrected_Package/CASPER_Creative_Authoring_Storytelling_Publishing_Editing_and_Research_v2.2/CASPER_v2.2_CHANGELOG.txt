@@ -1,0 +1,49 @@
+👻 CASPER the GhostWriter — Creative Authoring, Storytelling, Publishing, Editing & Research — v2.2
+
+
+v2.1
+• CANONICAL NAME MIGRATION 003: CASPER.THREAD → CASPER.CORD.
+• CORD registered as CASPER's small internal publication-continuity subordinate.
+• Existing chronology/timeline/events/relationships/history/state/alignment function preserved.
+• Global EDEN THREAD explicitly remains unchanged and outside CORD ownership.
+• Active CASPER-local THREAD subordinate identity removed; historical provenance retained.
+• Prompts, registry, routing/capability references, UI-facing labels, documentation and package updated.
+
+v2.0
+• Promoted the consolidated CASPER architecture to major release v2.0.
+• No functional rollback: TOME, LEVEL, DENSITY, three-surface operation, LCAS relationship,
+  CASPER ↔ PENELOPE cooperation, AUDITOR migration and established helper architecture retained.
+
+v1.8.1
+• Atomic naming migration 001 completed.
+• CASPER.READ renamed to CASPER.AUDITOR — Audience Understanding, Diagnostics, Inspection, Testing, Observation & Response.
+• Reader-experience assessment/diagnostic function preserved.
+• Shared EDEN READ remains unchanged and independent.
+• Old active CASPER.READ identity/alias purged from the live package after verification.
+
+v1.8
+• Consolidation revision; no CASPER redesign.
+• Added TOME IN/OUT and SCOPE.
+• SCOPE = BASIC/STANDARD/MEDIUM/FULL/COMPLETE/RECOMMEND.
+• NONE removed from normal user choices; retained only as exclusion/result state.
+• Added LEVEL = ELEMENTARY/GENERAL/PROFESSIONAL/ACADEMIC/EXPERT/ORGANIZATIONAL/RECOMMEND.
+• Added Included/Manage/More Suggestions/Compare.
+• Formalized ONE CASPER · MULTIPLE OPERATING SURFACES.
+• Chat is independent with CASPER ↔ LCAS.
+• App is independent persistent visual/workspace operation.
+• EDEN/BIFROST provides integrated ecosystem operation.
+• Clarified LCAS follows CASPER everywhere and is not BIFROST.
+• Formalized CASPER ↔ PENELOPE first-class cooperation.
+• Embedded DENSITY.
+• Preserved canon/publication graph/impact/regression/checkpoint/edition architecture.
+• Added no unnecessary helper identities.
+
+v1.7
+Prior consolidated baseline with master, LCAS UI, helper prompts and publication architecture.
+v2.2 — CASPER NAMING RECONCILIATION
+CASPER.ECHO → CASPER.RESONANCE.
+CASPER.AUDITOR → CASPER.GHOSTLIGHT; genealogy CASPER.READ → CASPER.AUDITOR → CASPER.GHOSTLIGHT.
+CASPER.PULSE → CASPER.SPECTER.
+CASPER.THREAD → CASPER.CORD remains preserved from Migration 003.
+Functions preserved; no forced expansions for RESONANCE, GHOSTLIGHT or SPECTER.
+Global/shared READ, global THREAD, READ.ECHO, MIRROR.ECHO, WEAVER.PULSE and HERMES.SCRIBE unchanged.

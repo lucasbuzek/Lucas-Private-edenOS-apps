@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "hard_rule": "INTEGRATE BEFORE IMPLEMENT \u2192 ADAPT BEFORE REWRITE \u2192 CUSTOM-BUILD ONLY WHERE EDEN ADDS UNIQUE VALUE. Keep the proven machinery. Replace or adapt the experience. Integrate it until it feels like one system.",
+  "integration_tiers": {
+    "0_run": "Existing software runs unchanged where appropriate.",
+    "1_present": "edenOS supplies launcher, identity, window presentation and file associations.",
+    "2_integrate": "Add system search, preview, commands, notifications, sharing, permissions and settings integration.",
+    "3_native_experience": "Keep mature engine/provider underneath; edenOS supplies the complete user-facing experience."
+  },
+  "preferred_existing_foundations": [
+    "Linux kernel/userspace",
+    "Wayland",
+    "XDG portals/D-Bus",
+    "PipeWire",
+    "BlueZ",
+    "NetworkManager or iwd",
+    "CUPS",
+    "SQLite",
+    "FFmpeg",
+    "established browser engine",
+    "established document/image/archive libraries",
+    "GDAL/PROJ",
+    "Python/R scientific ecosystems"
+  ],
+  "rule": "Do not wrap or rename a mature standard unless an EDEN integration requirement justifies it.",
+  "version": "1.8",
+  "selection_order": [
+    "existing_standard",
+    "existing_library_or_service",
+    "adapter",
+    "custom_implementation"
+  ],
+  "custom_implementation_requires_reason": true
+}

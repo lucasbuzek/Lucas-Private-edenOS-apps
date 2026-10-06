@@ -1,0 +1,24 @@
+HERMES SECURITY & PRIVACY — v1.6
+
+REQUIRED FOR PUBLIC HOSTING - Authentication before private user data is
+accessible. - Database Row Level Security on every user-owned table. -
+Server derives identity from validated session/token. -
+Service-role/database-admin secrets are server-only. - AI/API/provider
+keys are server-only unless a deliberate BYOK design securely encrypts
+them. - Private file storage; signed or authenticated retrieval. - HTTPS
+only in production. - CSRF-safe OAuth flow and strict redirect allow
+lists. - Input validation and output encoding. - Treat job/tender text
+as untrusted prompt input. - Rate limiting for costly or abuse-prone
+functions. - Audit consequential operations. - Data export and
+deletion. - Minimal retention of transient scraped/generated data. - No
+personal data in source control, fixtures, logs or distributable
+packages.
+
+OAUTH Google and Apple are recommended initial providers for a
+consumer-facing hosted app. Email magic-link/passwordless can be a
+fallback. Provider setup is deployment-specific.
+
+AGENT SAFETY Default to assisted/review mode. No autonomous binding
+prices, declarations, contract acceptance, job-offer acceptance,
+withdrawal, or other consequential action. Never bypass CAPTCHA, access
+controls, anti-bot systems or source restrictions.

@@ -1,0 +1,14 @@
+SOURCE INDEX — appDev MASTER v1.0
+
+Consolidated from current conversation canon and accessible EDEN/AppDev
+material, including: namingrules.txt / namingrules variants Design
+Mantra_v1.0 CONDUCTOR_MASTER_v1.4 CONDUCTOR Project Constitution v1.5
+material APPLE_Master_v2.0 EDEN_RnD_Reference_v1.0 Current canonical
+Lucas Buzek definitions for ARTEMIS and ARGOS Current canonical CASPER
+and MIRROR families Current
+BIFROST/HEIMDALL/HESPERA/HESTIA/AppDevRules/install/localization/release
+architecture.
+
+Precedence: Newest explicit Lucas Buzek decisions override older
+conflicting material. Historical conflicts remain provenance rather than
+silently becoming current canon.

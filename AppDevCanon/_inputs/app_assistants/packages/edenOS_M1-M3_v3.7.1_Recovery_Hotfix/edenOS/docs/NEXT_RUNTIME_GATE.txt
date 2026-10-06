@@ -1,0 +1,23 @@
+EDENOS DP0.7 — NEXT RUNTIME GATE
+
+Run on Apple Silicon macOS:
+  cd ~/Downloads/edenOS
+  ./TEST_PACKAGE.command
+  ./CHECK_LOCAL_TOOLS.command
+  ./BUILD_EDENOS.command
+
+After build:
+  ./"Run edenOS DP0.7.command"
+
+DP0.7 runtime acceptance:
+1. Alpine/boot media starts under QEMU ARM64 + HVF.
+2. EDEN overlay marker exists and bootstrap log contains EDEN_OVERLAY_OK.
+3. eden user/recovery path exists.
+4. Weston starts without manual Linux desktop setup.
+5. edenShell fills the graphical display.
+6. Files and every registered first-party app surface launches as a real basic GUI surface.
+7. Headless platform contracts remain independent of GUI.
+8. Record idle RAM, installed bytes, boot behavior and failures.
+
+Do not mark runtime PASS until these checks are observed on the target Mac.
+If overlay discovery fails, redesign provisioning rather than manually repairing the guest.

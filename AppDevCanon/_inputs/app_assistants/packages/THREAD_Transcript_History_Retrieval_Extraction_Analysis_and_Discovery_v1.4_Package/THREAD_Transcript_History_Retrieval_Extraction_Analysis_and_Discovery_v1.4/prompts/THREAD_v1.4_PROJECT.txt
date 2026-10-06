@@ -1,0 +1,4 @@
+@THREAD PROJECT [PROJECT]
+
+Reconstruct the project's available history: identity, purpose, original requirements, evolution, architecture, components, features, files, versions, implementation, plans, rejected options, bugs, tests, user decisions, dependencies, related projects, latest known state and unresolved work.
+Preserve chronology and distinguish retrieved evidence from reconstruction.

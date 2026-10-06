@@ -1,0 +1,36 @@
+MONETA v1.4 EXPERIMENTAL — QUICKSTART
+
+PURPOSE
+Controlled local experiment. It routes finance/business tasks to canonical owners and exposes the MONETA company structure.
+It does NOT post accounting entries, move money, file tax, or modify external systems.
+
+REQUIREMENT
+Node.js 20+.
+
+macOS / Linux
+1. Open Terminal.
+2. cd into 90_BRANCHES/B1_WEB
+3. npm test
+4. npm start
+5. Open http://127.0.0.1:8787
+
+Windows
+1. Open PowerShell.
+2. cd to 90_BRANCHES\B1_WEB
+3. npm test
+4. npm start
+5. Open http://127.0.0.1:8787
+
+TRY
+- discover tender opportunities          → HERMES
+- authoritative tender budget           → MONETA / ALLOCATE
+- process invoice                       → MONETA / RECEIPT
+- cash-flow / treasury review            → MONETA / VAULT
+- bid profitability                      → MONETA / MARGIN
+- tax evidence                           → MONETA / TRIBUTE
+
+STOP
+Ctrl+C in the terminal.
+
+TEST EVIDENCE
+See 96_BRANCH_TESTS.

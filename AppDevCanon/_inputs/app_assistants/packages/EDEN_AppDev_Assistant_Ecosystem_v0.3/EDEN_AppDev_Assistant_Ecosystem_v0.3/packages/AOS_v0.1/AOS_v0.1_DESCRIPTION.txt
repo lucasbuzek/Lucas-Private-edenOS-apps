@@ -1,0 +1,1 @@
+AOS: Autonomous sequential processing framework. Long-running staged pipelines, chapter/file sequencing, translation/publishing automation

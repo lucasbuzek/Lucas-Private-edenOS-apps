@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "milestone": "DP0.7",
+  "release": "v2.0-finalization-candidate",
+  "architecture": "aarch64",
+  "primary_target": "Apple Silicon QEMU ARM64 VM",
+  "base": "Alpine 3.24.2 development bootstrap",
+  "cpus": 2,
+  "ram_mb": 1024,
+  "profile": "FULL development",
+  "experience_depth_default": "full",
+  "shell_default": "desktop",
+  "files_default": "files",
+  "workspace_optional": true,
+  "explore_optional": true,
+  "heimdall_required_for_boot": false,
+  "bifrost_required_for_basic_files": false,
+  "portal_testing": "preview-only/no portal downloads",
+  "dependency_policy": "PREEXISTING -> VERIFY -> CACHE -> DOWNLOAD -> VERIFY -> BUILD -> LAUNCH",
+  "runtime_acceptance": "requires observed target boot"
+}

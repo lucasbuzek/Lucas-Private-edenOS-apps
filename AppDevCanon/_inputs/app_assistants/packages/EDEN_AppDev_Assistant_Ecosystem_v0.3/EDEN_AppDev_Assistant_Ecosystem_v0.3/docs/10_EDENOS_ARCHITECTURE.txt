@@ -1,0 +1,3 @@
+edenOS ARCHITECTURE — v0.1
+LUCAS/assistants become capability-driven edenOS members. Shared services: edenUI presentation tokens/components; edenAPI contracts; HEIMDALL objects/assets; EDEN Connect provider/integration adapters.
+Local-first, offline-capable where practical, headless-capable, multi-user ready, recoverable and modular. Integrations are adapters, never owners of canonical state.

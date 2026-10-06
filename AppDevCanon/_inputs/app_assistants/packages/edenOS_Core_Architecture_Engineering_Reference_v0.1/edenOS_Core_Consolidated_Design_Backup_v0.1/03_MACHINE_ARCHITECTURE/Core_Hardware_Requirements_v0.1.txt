@@ -1,0 +1,29 @@
+EDENOS CORE — SHARED HARDWARE REQUIREMENTS v0.1
+
+UNIVERSAL LOGICAL REQUIREMENTS
+32-bit deterministic control MCU; identity/HW revision; watchdog; safe-state path; E-stop/interlock input; flexible motion interface; digital/analog/bus sensor expansion; payload interface; voltage/current/power-state monitoring; wired + wireless communications appropriate to variant; configuration/calibration/log storage; diagnostics; recoverable update; protected credentials/identity appropriate to hardware; physical debug/programming.
+
+MCU CAPABILITIES
+Hardware watchdog, timers, PWM, pulse/encoder counting, ADC, I2C, SPI, UART, CAN native or external, NVM, low-power modes; secure boot/update where economical. Dual core desirable but not mandatory.
+
+BUS HIERARCHY
+Local: GPIO/ADC/PWM/I2C/SPI/UART.
+Machine: CAN and/or RS-485.
+Compute: UART/USB/CAN/Ethernet/high-speed where justified.
+Radio: BLE/Wi-Fi and optional domain radios.
+I2C is for short controlled runs; do not treat it as a field bus.
+
+SAFETY
+Physical E-stop; interlock; bumper/limit input; actuator enable; fault input; watchdog/heartbeat; independent drive/power disable where risk warrants it. High-energy machines may add independent safety controller while retaining same logical architecture.
+
+POWER
+Do not assume 12 V. Support platform-specific 5/12/24/36/48 V or other machine power via protected conversion to logic rails. Monitor supply, brownout and relevant thermal/current states; support BMS integration on capable variants.
+
+PAYLOAD INTERFACE
+Subset as appropriate: power, ground, CAN, RS-485, short-run I2C/UART, GPIO, analog, enable, identity/detect, safety interlock. Passive tools remain valid.
+
+HARDWARE ENVELOPES (TEMPORARY ENGINEERING LABELS)
+Core-L: low-cost Nandi-sized MCU control/safety/sensors/wireless/machine bus.
+Core-M: richer I/O/protection/storage/security/GNSS interfaces for utility machines.
+Core-H: same Core architecture plus standardized high-compute expansion for vision/ROS/advanced navigation/AI.
+These are not separate architectures.

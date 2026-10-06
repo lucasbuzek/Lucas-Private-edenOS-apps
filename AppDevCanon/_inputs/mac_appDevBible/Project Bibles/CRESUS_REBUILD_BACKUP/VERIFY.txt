@@ -1,0 +1,17 @@
+./.DS_Store: OK
+./BACKUP_MANIFEST.txt: OK
+./CRESUS_PROJECT_BIBLE.txt: OK
+./REBUILD_MANIFEST.txt: OK
+./RESTORE.txt: OK
+./RESTORE_AND_REBUILD.txt: OK
+./source/.DS_Store: OK
+./source/README.md: OK
+./source/contracts/capabilities.json: OK
+./source/contracts/domain.schema.json: OK
+./source/contracts/intelligence.json: OK
+./source/core/dividends.js: OK
+./source/core/entitlements.js: OK
+./source/core/expertCompletion.js: OK
+./source/package.json: OK
+./source/platforms/android/app/src/main/java/com/eden/cresus/MainActivity.kt: OK
+./source/platforms/apple/CRESUSApp.swift: OK

@@ -1,0 +1,6 @@
+◉ LUCAS SPECIFICATION — v0.1
+LUCAS is the persistent user-interface/project-state layer. It does not own specialist intelligence.
+Core objects: Project, Goal, Asset, Assistant, Job, Step, Decision, Deliverable, Version, Checkpoint, Export.
+Novice actions: NEW PROJECT / OPEN PROJECT / ADD FILES / ADD FOLDER / ADD ASSETS / GOAL / START / CONTINUE / REVIEW / RESULTS / EXPORT.
+Approval gates: destructive operations, publication/release, external side effects, material scope/identity changes, secrets/credentials, irreversible migrations.
+Resume: reconstruct from project manifest + append-only events + latest verified checkpoint.

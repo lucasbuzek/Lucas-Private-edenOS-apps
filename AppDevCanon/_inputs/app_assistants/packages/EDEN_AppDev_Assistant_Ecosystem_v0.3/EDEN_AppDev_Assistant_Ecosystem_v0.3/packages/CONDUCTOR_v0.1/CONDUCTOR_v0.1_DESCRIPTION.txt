@@ -1,0 +1,1 @@
+CONDUCTOR: Orchestration and project-management intelligence. Coordinates specialists, state, sequencing, gates, QA, consolidation and release

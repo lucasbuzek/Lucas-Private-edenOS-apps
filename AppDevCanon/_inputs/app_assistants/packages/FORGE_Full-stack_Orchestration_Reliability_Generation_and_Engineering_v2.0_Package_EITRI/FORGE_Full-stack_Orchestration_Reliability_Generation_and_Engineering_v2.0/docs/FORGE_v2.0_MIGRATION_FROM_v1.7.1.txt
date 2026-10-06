@@ -1,0 +1,22 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+MIGRATION FROM v1.7.1
+Authoritative source inspected: FORGE v1.7.1 package supplied by the user.
+
+RETAINED
+v1.7.1 autonomous operating contract, reuse/prior-art gate, repository intelligence, streamlined role pool, consensus escalation, traceability/evidence, lean/performance, reliability/security and truthful QA/release semantics remain foundational.
+
+RECONCILED
+v1.7.1 contained contradictory UIbasic descriptions (external in module registry, internalized in master/readme notes). v2.0 resolves this by treating UIbasic as lineage/provenance only and LCAS as the permanent shared Live Control, Activity & Status capability.
+
+MAJOR v2.0 ADDITIONS
+Current-state model; project inheritance; capability resolver and peer-level CONDUCTOR calls; THREAD/PENELOPE routing; AUTO/GUIDED/ADVANCED/CUSTOM; execution depth; adaptive modes/specialists; universal host-adaptive MOD; adapters; branches/workstreams; rapid sessions; evidence bundles; Variant Registry; Core/Agent/Workspace/App architecture; mandatory shared Package Delivery contract.
+
+ROLLBACK
+Keep the original v1.7.1 authoritative package unchanged as the predecessor/rollback reference. v2.0 does not overwrite it.

@@ -1,0 +1,44 @@
+EITRIMB — PLUGIN / APP CAPABILITY ROUTING MODULE v1.0
+
+PURPOSE
+Prevent avoidable workflow blockers by discovering available external capabilities when native/local/installed capabilities are insufficient, while preserving human authorization and offline/local-first operation.
+
+TRIGGER
+Activate when a meaningful development workflow problem could materially benefit from an external App/plugin/connector/provider: missing capability; inaccessible environment; build/test/debug limitation; deployment; runtime inspection; design/assets; backend/data; documentation; analytics/observability; automation; hosting; CI; project management; or comparable execution gap.
+
+ROUTING
+1 DIAGNOSE actual capability gap.
+2 CHECK existing project implementation.
+3 CHECK native/local tools and installed software.
+4 CHECK installed/connected plugins/Apps/connectors.
+5 SEARCH available plugin ecosystem when an external provider could materially help.
+6 EVALUATE candidates for relevance, duplication, permissions, connectivity, recoverability and fallback.
+7 OFFER the best installation/connection option directly to the human owner with concise reason.
+8 REQUIRE explicit approval before install/connect/authorization.
+9 IF APPROVED, connect/install through supported product flow and resume pipeline.
+10 IF DECLINED/UNAVAILABLE/OFFLINE, try alternate local/provider/reduced-capability path.
+11 DECLARE BLOCKER only after reasonable alternatives are exhausted.
+
+CANONICAL UX
+EITRI discovers → EITRI offers → Lucas approves/declines → EITRI adapts → pipeline continues.
+
+LCAS FULL ACTIONS
+Find Plugin/App
+Compare Providers
+Install/Connect Suggested Provider
+Use Local Alternative
+Use Existing Provider
+Continue Reduced Capability
+Research Alternative
+Retry Connection
+Open Permissions
+Save/Backup Before Provider Change
+
+AUTHORIZATION
+Never silently install, connect, authorize, subscribe, purchase, grant permissions or expose credentials. User approval is mandatory. Prefer least privilege. Plugin output remains subject to EITRI evidence gates.
+
+OFFLINE RULE
+Connectivity loss must not turn an optional plugin into a project blocker when an adequate local/native route exists. Record availability as runtime state, not permanent truth.
+
+ANTI-BLOAT
+Do not recommend plugins mechanically. Do not collect overlapping providers without a project need. Existing capability first; install only when it materially improves or unblocks the governed workflow.

@@ -1,0 +1,31 @@
+{
+  "batch_id": "modern_generals_asset_set",
+  "project_context": "Generate distinctive modern RTS assets with HD reference previews and matching isometric in-game views.",
+  "global_prompt": "Use IRIS v1.1 autonomous workflow. Research where needed; preserve functional realism and distinct silhouettes.",
+  "asset_lock": "Canonical design established by the first HD foundation view is inherited by all dependent views.",
+  "qa_threshold": 95,
+  "max_retries": 2,
+  "views": [
+    "front_three_quarter_hd",
+    "rear_three_quarter_hd",
+    "left_profile_hd",
+    "isometric_ingame"
+  ],
+  "negative_prompt": "no duplicate components, malformed wheels/tracks, fake text, or random redesign",
+  "assets": [
+    {
+      "asset_id": "example_vehicle_01",
+      "description": "Modern military logistics vehicle with distinctive silhouette and realistic functional construction.",
+      "locked_features": [
+        "wheel count",
+        "cab silhouette",
+        "body proportions",
+        "sensor placement"
+      ],
+      "reference_images": [],
+      "metadata": {
+        "class": "vehicle"
+      }
+    }
+  ]
+}

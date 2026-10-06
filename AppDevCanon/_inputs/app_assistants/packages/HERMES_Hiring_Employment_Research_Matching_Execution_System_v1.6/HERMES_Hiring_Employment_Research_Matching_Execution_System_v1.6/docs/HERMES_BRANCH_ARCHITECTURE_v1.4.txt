@@ -1,0 +1,35 @@
+HERMES — Hiring, Employment, Research, Matching & Execution System — v1.6
+BRANCHED DEVELOPMENT STANDARD
+
+CANONICAL RULE
+HERMES is one product and one capability model projected into multiple delivery branches. Branches are not separate products and must not independently redefine schemas, capability IDs, workflow states, security semantics, or the HERMES identity.
+
+CANONICAL IDENTITY
+Name: HERMES — Hiring, Employment, Research, Matching & Execution System
+Inspiration: Hermes Conrad from Futurama. Original HERMES logos, Signal Mark, iconography, red–gold–green accents, UI personality, motion and administrative motifs are original reinterpretations inspired by that source; do not copy Futurama artwork or Planet Express assets.
+
+BRANCHES
+B0 — CHAT / IN-CHAT HELPER
+Portable master prompt and specialist handoffs. Runs inside ChatGPT or a comparable capable LLM host. It is the reference conversational behavior and can operate without the HERMES hosted/native runtime.
+
+B1 — HOSTED WEB / CONTEXTUAL GUI + API
+Responsive authenticated web/PWA deployment for phone, tablet and desktop. Netlify-compatible deployment is the current starter target. Supabase is the current starter auth/data adapter. Agent work must use bounded triggers plus durable jobs/workers rather than treating a scheduled web function as an unlimited crawler.
+
+B2 — STANDALONE APPS
+Native/distributable clients for macOS, Windows, Linux, iOS and Android. Reuse the canonical capability layer and contracts. Platform shells may differ, but user data semantics and workflow behavior may not drift. The web/PWA is not itself proof that native packages exist.
+
+B3 — LOCAL / HYBRID LLM SERVER
+Dedicated local service with full GUI, local model management, model selection and per-task scope/routing. Supports LOCAL ONLY, LOCAL PREFERRED, BALANCED, CLOUD PREFERRED and PER-TASK policies. Cloud providers are optional adapters. Private-data egress must obey explicit policy. Downloaded models should be preserved across updates unless the user explicitly removes them.
+
+SHARED CANONICAL LAYER
+Candidate Truth; Company Truth; opportunity schema; document/application/bid snapshots; Compliance Vault; event ledger; capability registry; provider contracts; workflow states; HERMES Signal state; authentication/authorization semantics; import/export format; migrations; QA fixtures; branch parity tests.
+
+BRANCH RULES
+1. One capability ID means one capability across B0–B3.
+2. Integrations/providers are adapters, never authoritative owners.
+3. Branch-specific UI may adapt presentation, never silently alter meaning.
+4. New shared capability begins in canonical contracts, then receives branch adapters.
+5. Drift is a defect: reconcile to canonical behavior and record migration/change.
+6. Truthful status is mandatory: READY, PARTIAL, PLANNED, BLOCKED, VERIFIED are evidence-based.
+7. Security boundaries remain explicit; local execution is not permission to exfiltrate data.
+8. Update/repair must preserve user data, settings, downloaded models and generated documents.

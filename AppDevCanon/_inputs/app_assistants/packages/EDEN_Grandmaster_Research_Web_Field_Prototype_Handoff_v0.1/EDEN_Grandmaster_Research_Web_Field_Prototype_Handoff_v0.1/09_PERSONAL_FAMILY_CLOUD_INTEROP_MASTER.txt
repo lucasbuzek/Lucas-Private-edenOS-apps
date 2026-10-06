@@ -1,0 +1,30 @@
+EDEN — PERSONAL/FAMILY CLOUD INTEROPERABILITY MASTER — v0.1
+
+ROLE
+A middle layer for Lucas's Custom/Personal projects and later approved Family/Friends access. BIFROST is the gateway/identity/interoperability owner; this web layer is a surface, not a replacement.
+
+FUNCTIONS
+- authenticated access to approved projects/apps/workspaces;
+- capability/provider registry;
+- links/tabs/WebApps/embedded surfaces where safe;
+- HEIMDALL content/workspace access;
+- LCAS status/activity/control for authorized capabilities;
+- optional remote file/project access;
+- notifications;
+- AI feature routing;
+- local/native handoff when a device has a better handler.
+
+AI PROVIDER MODEL
+Capability: summarize / search / translate / classify / generate / analyze / vision etc.
+Provider: local model, ChatGPT/OpenAI-compatible provider, other approved API.
+Routing considers privacy, connectivity, cost, latency, capability and user choice.
+Secrets remain server-side/secure-store; never ship API keys in public client code.
+
+GRACEFUL DEGRADATION
+No AI → core project access still works.
+No cloud → local-capable projects continue locally.
+No external provider → supported native/local handler may take over.
+Provider failure → truthful unavailable/degraded state, not silent substitution for safety-critical work.
+
+ACCESS TIERS
+Lucas/Owner; explicitly invited Family/Friends; future broader roles only after authorization model is validated.

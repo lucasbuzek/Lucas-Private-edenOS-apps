@@ -1,0 +1,11 @@
+Capability Contracts — Core Rules
+Version: 1.0
+
+Shared capability: independently consumable stable contract where practical.
+Provider/adapter: implementation of a capability for platform/external system.
+Connection/instance: configured account/device/install/provider instance.
+Node: durable EDEN device/system identity; not IP/hostname/service.
+Representation: one available form/location/interface of an identity/object/capability.
+Authoritative owner: owns domain semantics/intent.
+BIFROST may discover/register/permission/relate without becoming mandatory gateway.
+Experimental bridge: temporary implementation permitted for bootstrap/testing; never establishes ownership.

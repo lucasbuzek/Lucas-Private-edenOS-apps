@@ -1,0 +1,157 @@
+import SwiftUI
+
+struct ConnectionsView: View {
+    @EnvironmentObject var system: BifrostSystem
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            BifrostHeader(title: "Connections", subtitle: "Live providers and controls.")
+            GroupBox("Remote Desktop Commander") {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(system.remote.state.rawValue).font(.headline)
+                        Text(system.remote.detail).foregroundStyle(.secondary)
+                    }
+                    Spacer()
+                    Button("Start") { system.remote.start(); system.refresh() }
+                        .disabled(system.remote.state == .running)
+                    Button("Stop") { system.remote.stop(); system.refresh() }
+                        .disabled(system.remote.state != .running)
+                }.padding(10)
+            }
+        }.frame(maxWidth: 960, alignment: .leading)
+    }
+}
+
+struct CapabilitiesView: View {
+    @EnvironmentObject var system: BifrostSystem
+    @ObservedObject var capabilities: CapabilityRegistry
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            BifrostHeader(title: "Capabilities", subtitle: "Real capabilities and providers visible to this Mac.")
+            HStack {
+                Text("\(capabilities.items.filter { $0.available }.count) available")
+                    .foregroundStyle(.secondary)
+                Spacer()
+                Button("Refresh") { system.refresh() }
+            }
+            List(capabilities.items) { capability in
+                HStack {
+                    Image(systemName: capability.available ? "checkmark.circle.fill" : "circle.dashed")
+                    VStack(alignment: .leading) {
+                        Text(capability.name).font(.headline)
+                        Text("\(capability.provider) · \(capability.kind.rawValue) · \(capability.detail)")
+                            .font(.caption).foregroundStyle(.secondary)
+                    }
+                    Spacer()
+                    Text(capability.available ? "Available" : "Unavailable")
+                        .foregroundStyle(.secondary)
+                }
+            }
+            GroupBox("Shortcuts") {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(capabilities.shortcutsStatus)
+                        .font(.caption).foregroundStyle(.secondary)
+                    if !capabilities.shortcuts.isEmpty {
+                        ScrollView {
+                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 180))], alignment: .leading) {
+                                ForEach(capabilities.shortcuts, id: \.self) {
+                                    Label($0, systemImage: "command")
+                                }
+                            }
+                        }
+                    }
+                }.padding(8)
+            }
+        }.frame(maxWidth: 960, alignment: .leading)
+    }
+}
+
+struct RepresentationsView: View {
+    @EnvironmentObject var system: BifrostSystem
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            BifrostHeader(title: "Representations", subtitle: "Observed endpoints are evidence, not automatically trusted identities.")
+            ForEach(Dictionary(grouping: system.discovery.services, by: { $0.name }).keys.sorted(), id: \.self) { name in
+                let services = system.discovery.services.filter { $0.name == name }
+                GroupBox { nameRow(name, services) }
+            }
+        }.frame(maxWidth: 960, alignment: .leading)
+    }
+
+    private func nameRow(_ name: String, _ services: [NearbyService]) -> some View {
+        HStack {
+            Image(systemName: "network").font(.title2)
+            VStack(alignment: .leading) {
+                Text(name).font(.headline)
+                Text(services.map { $0.type }.joined(separator: " · "))
+                    .font(.caption).foregroundStyle(.secondary)
+            }
+            Spacer()
+            Text("Observed").foregroundStyle(.secondary)
+        }.padding(6)
+    }
+}
+
+struct ManagementView: View {
+    let title: String
+    @EnvironmentObject var system: BifrostSystem
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            BifrostHeader(
+                title: title,
+                subtitle: title == "App Management"
+                    ? "Installed EDEN apps remain independent capability owners."
+                    : "Build and release governance is supporting BIFROST functionality."
+            )
+            if title == "App Management" {
+                HStack {
+                    Text("Registered applications").font(.headline)
+                    Spacer()
+                    Button("Refresh") { system.refresh() }
+                }
+                List(system.apps.apps) { app in
+                    HStack {
+                        Image(systemName: app.installed ? "checkmark.seal.fill" : "square.dashed")
+                        VStack(alignment: .leading) {
+                            Text(app.name).font(.headline)
+                            Text(app.path ?? "Not registered on this Mac")
+                                .font(.caption).foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                        if app.installed { Button("Open") { system.apps.open(app) } }
+                    }
+                }
+            } else {
+                GroupBox("Current project") {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Label("BIFROST", systemImage: "hammer")
+                        Text("Canonical workspace: ~/edenOS/Projects/BIFROST")
+                            .font(.caption).foregroundStyle(.secondary)
+                        Text("Release actions appear only when backed by actual build evidence.")
+                            .font(.caption)
+                    }
+                }
+            }
+        }.frame(maxWidth: 960, alignment: .leading)
+    }
+}
+
+struct SettingsView: View {
+    @EnvironmentObject var system: BifrostSystem
+
+    var body: some View {
+        Form {
+            Picker("Interface complexity", selection: $system.complexity) {
+                ForEach(Complexity.allCases) { Text($0.rawValue).tag($0) }
+            }
+            Toggle("Keep Mac awake", isOn: Binding(get: { system.keepAwake }, set: system.setKeepAwake))
+            LabeledContent("Remote bridge", value: system.remote.state.rawValue)
+            LabeledContent("Discovered services", value: "\(system.discovery.services.count)")
+            LabeledContent("Available capabilities", value: "\(system.capabilities.items.filter { $0.available }.count)")
+        }.padding().frame(minWidth: 540)
+    }
+}

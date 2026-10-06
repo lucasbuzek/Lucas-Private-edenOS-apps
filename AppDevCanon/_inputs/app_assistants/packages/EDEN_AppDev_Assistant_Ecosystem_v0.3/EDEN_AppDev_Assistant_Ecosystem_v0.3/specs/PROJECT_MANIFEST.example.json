@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.2",
+  "project_id": "example-project",
+  "owner": "Lucas Buzek",
+  "state": "READY",
+  "verification": "UNKNOWN",
+  "health": "UNKNOWN",
+  "constitution_version": "0.2",
+  "principles": [
+    "IMPLEMENT_INTEGRATE_BEFORE_RECREATE",
+    "LOCAL_FIRST",
+    "USER_DATA_OUTLIVES_SOFTWARE"
+  ],
+  "rules": [],
+  "preferences": [],
+  "approval_boundaries": [],
+  "definition_of_done": [],
+  "requirements": [],
+  "tasks": [],
+  "artifacts": [],
+  "tests": [],
+  "evidence": [],
+  "releases": [],
+  "checkpoints": []
+}

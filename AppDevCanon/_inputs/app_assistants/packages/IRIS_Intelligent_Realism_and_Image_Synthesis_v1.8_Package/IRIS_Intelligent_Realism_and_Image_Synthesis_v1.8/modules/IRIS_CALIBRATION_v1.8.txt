@@ -1,0 +1,6 @@
+# IRIS CAMERA & SCALE CALIBRATION
+Purpose: reduce perspective and scale errors.
+
+Establish where relevant: known dimensions, camera height, distance estimate, focal-length class, horizon/vanishing behavior, and scale anchors.
+
+Use real-camera perspective. Avoid unjustified ultra-wide distortion or telephoto compression. For technical imagery prioritize dimensional readability over drama. For RTS isometric assets preserve recognizable silhouette and gameplay readability without redesign.

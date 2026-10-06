@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "surface": [
+    "compact",
+    "medium",
+    "expanded",
+    "large",
+    "distant"
+  ],
+  "input": [
+    "touch",
+    "mouse",
+    "trackpad",
+    "keyboard",
+    "stylus",
+    "gamepad",
+    "remote",
+    "voice",
+    "switch"
+  ],
+  "context": [
+    "local",
+    "remote",
+    "field",
+    "kiosk"
+  ],
+  "presentation": [
+    "standard",
+    "simple",
+    "child",
+    "accessibility",
+    "kiosk"
+  ],
+  "compute": [
+    "local",
+    "hybrid",
+    "remote"
+  ],
+  "rule": "Capability, not device class."
+}

@@ -1,0 +1,165 @@
+{
+  "project": "CASPER",
+  "version": "2.2",
+  "build_identity": "CASPER-v2.2-naming-reconciliation-final",
+  "status": "LOCAL CLOSED",
+  "canonical_roster": [
+    "QUILL",
+    "LORE",
+    "VERITY",
+    "ARCH",
+    "MYTH",
+    "MUSE",
+    "CORD",
+    "DRAFT",
+    "SCRIBE",
+    "RESONANCE",
+    "GHOSTLIGHT",
+    "SPECTER",
+    "IMPRINT",
+    "PRESS"
+  ],
+  "stale_active_references": 0,
+  "files": [
+    {
+      "path": "CASPER_REGISTRY.json",
+      "bytes": 699,
+      "sha256": "3112513aeab544cf6955c72249f029406cfa91862618518068169534e78d5d46"
+    },
+    {
+      "path": "CASPER_v2.2_ABOUT_AND_SUBORDINATES.txt",
+      "bytes": 482,
+      "sha256": "24c3081fe70e7536a0bd2a04066d3eaf81afc8bd50094baceb2c5fb866e08538"
+    },
+    {
+      "path": "CASPER_v2.2_CHANGELOG.txt",
+      "bytes": 2736,
+      "sha256": "d83d579a5b016ed6ead016f2efc7b7c66bacf501dbe8c11ba8938a10d222b029"
+    },
+    {
+      "path": "CASPER_v2.2_INSTRUCTIONS.txt",
+      "bytes": 875,
+      "sha256": "3fe27f8e08546292cba6c3abf8fc36f1b7b706a2eadc71cf2b634748abacd041"
+    },
+    {
+      "path": "CASPER_v2.2_LCAS_UI.txt",
+      "bytes": 804,
+      "sha256": "281a23c1e773fc8c6feab1c9b3d0f26af8fb23d9c59509bdc16c5f4d4d62157c"
+    },
+    {
+      "path": "CASPER_v2.2_MASTER.txt",
+      "bytes": 6169,
+      "sha256": "4acebb94a7a1ac21e0559eed85e80ec2706c631ea74327fd539b7cb27dd619a0"
+    },
+    {
+      "path": "CASPER_v2.2_MODULES.txt",
+      "bytes": 787,
+      "sha256": "0c20c275c60682c1427a1380c5a35e840ac8963098dcc2f22f6c65feecd79139"
+    },
+    {
+      "path": "CASPER_v2.2_QUICKSTART.txt",
+      "bytes": 706,
+      "sha256": "6e676e3590d86aa5866df00821dbed075f96438e0f9197dd783d81ebd4efafb6"
+    },
+    {
+      "path": "CASPER_v2.2_TOME.txt",
+      "bytes": 1111,
+      "sha256": "5f9c79dfe8deb6ab6d2d10b3cb304c2f52da48496403d92bfa17c7f78453c0e5"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 1184,
+      "sha256": "5a131b729125460cd6ad94c063119f35ee9c2df44a88e12080c02df30f638789"
+    },
+    {
+      "path": "VALIDATION.txt",
+      "bytes": 1148,
+      "sha256": "71f086b86ef1ae947523c8fab77cfd58b9c626a8a536089fe76b9755d3f7dd57"
+    },
+    {
+      "path": "docs/CASPER_v2.2_ARCHITECTURE.txt",
+      "bytes": 898,
+      "sha256": "3d2cc98150d3d1829221b807d4eca1fd122a8e7b144ccc7d06a6d65e39394a97"
+    },
+    {
+      "path": "docs/CASPER_v2.2_PENELOPE_INTEGRATION.txt",
+      "bytes": 1017,
+      "sha256": "acb0097b80437b099031998bc1541274a4b763227de502042d12964b9323dea4"
+    },
+    {
+      "path": "prompts/ARCH_v2.2.txt",
+      "bytes": 490,
+      "sha256": "50e7a0493336b78a7e9678323c6118bf1bd0114b75041f99dd4d081743b797e1"
+    },
+    {
+      "path": "prompts/CORD_v2.2.txt",
+      "bytes": 1024,
+      "sha256": "0f1cfac874f43baad942b92ffec4bd4e8b194e14d37823396b06fcf1d800bf6b"
+    },
+    {
+      "path": "prompts/DRAFT_v2.2.txt",
+      "bytes": 499,
+      "sha256": "eb7f7e38b529439c065a34c347340c9bcbc7b4af8b765c255e7cef01c456281a"
+    },
+    {
+      "path": "prompts/GHOSTLIGHT_v2.2.txt",
+      "bytes": 455,
+      "sha256": "eac3a49650ae1caaaa65e822b30dfa50e2536674ecd1ed2c3f8afb0053a39a93"
+    },
+    {
+      "path": "prompts/IMPRINT_v2.2.txt",
+      "bytes": 514,
+      "sha256": "be48d01a8d494aba287882e6f1d0332873adccacaf3856c0dd2d1763ae8b1e24"
+    },
+    {
+      "path": "prompts/LORE_v2.2.txt",
+      "bytes": 507,
+      "sha256": "21d934189ad2ae15c618d85b6ad53dabd12626368e8f1f43c5d07da8baac5d3f"
+    },
+    {
+      "path": "prompts/MUSE_v2.2.txt",
+      "bytes": 477,
+      "sha256": "f2930de3c9116107f2df8668213164f2aa54d8d8fb73c5395044ee1ca87e1ca8"
+    },
+    {
+      "path": "prompts/MYTH_v2.2.txt",
+      "bytes": 478,
+      "sha256": "789b9261ca169ea9e2a03ebea84f63f51ed90b287c8b06d810f4cbd3f5d1dff2"
+    },
+    {
+      "path": "prompts/PRESS_v2.2.txt",
+      "bytes": 501,
+      "sha256": "cd5c1a99da7bc9c8d33943ce544d9aa1fd712ee39e2c7ae5ac11f16c78c14569"
+    },
+    {
+      "path": "prompts/QUILL_v2.2.txt",
+      "bytes": 536,
+      "sha256": "aa928ba71ac69bbb67fbfdcfa49504d625f9a95cc198a74bdbad9a0a736ae99f"
+    },
+    {
+      "path": "prompts/RESONANCE_v2.2.txt",
+      "bytes": 493,
+      "sha256": "354756cfc745e1403a4ebdab9f0b9eb2d4479ae09e8684f1143c665c4e8bc05b"
+    },
+    {
+      "path": "prompts/SCRIBE_v2.2.txt",
+      "bytes": 503,
+      "sha256": "7fefd7bac031070b9eba86a8396b7346a5a2fb37cd74a9e67dd3b5f25e695078"
+    },
+    {
+      "path": "prompts/SPECTER_v2.2.txt",
+      "bytes": 388,
+      "sha256": "bb17f15f951784afa8bd347ac9e438005ddf734114885faf02da4e15cdf3e234"
+    },
+    {
+      "path": "prompts/VERITY_v2.2.txt",
+      "bytes": 517,
+      "sha256": "140978c66d9b187faf6930d8c8ce37d960321eb70f23a09918c0f7f4203ec5ec"
+    },
+    {
+      "path": "templates/TOME_TEMPLATE.txt",
+      "bytes": 131,
+      "sha256": "df771d34ee3927db8da65c035faca57785c333ad53021fdad9977d426d7374f3"
+    }
+  ]
+}

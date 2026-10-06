@@ -1,0 +1,56 @@
+EITRIMB OVERHAUL HANDOFF — 2026-10-01
+
+PURPOSE
+Update the existing EITRIMB conversation/contract. Do not reinvent EITRIMB or duplicate global AppDev canon.
+
+AUTHORITY MODEL
+- ~/edenOS/Projects/#appDev Bible/ contains global governing AppDev rules.
+- Project-specific Bibles live centrally under #appDev Bible/Project Bibles/.
+- #app-assistants contains master prompts for in-chat helpers/assistants.
+- EITRIMB is a thin Master Builder governor: it inherits the Bible; it does not copy it.
+- Established project/conversation-specific canon remains with that project.
+
+PRIMARY FAILURE TO ELIMINATE
+SWAYcore and Modern Generals are regression tests for the anti-circle-jerk rule: analysis/planning/status/build-number churn is not product progress. If an executable next action exists, execute it.
+
+STARTING GATE
+Recover project identity, scope, deliverables, acceptance/definition of done, Project Bible, source, LKG/current candidate and evidence. Compare required deliverables with demonstrated state before implementation.
+
+EXECUTION
+- AUTO continues safe executable work until verified milestone, genuine user decision, authorization boundary or demonstrated unavailable dependency.
+- First failure: diagnose, change something, retry.
+- Repeated failure: change method and/or engage appropriate specialist/capability/plugin.
+- Continued materially different failures with no evidence advancement: execution loop; Apple-platform/system problems may escalate to Apple Core Council.
+- Council must return an actionable changed course; under AUTO EITRIMB executes it rather than stopping to discuss it.
+- Retry must change something. UNKNOWN != PASS.
+
+EXISTING IMPLEMENTATION FIRST
+Before substantial custom code, actively seek working existing implementations: OS/native capability, installed software, existing applications, open-source repositories, engines/frameworks/libraries/SDKs, reference/sample code, CLI/service/provider. Prefer reuse/adaptation/integration/porting and build only the unsolved gap. Use ARGOS for non-trivial research.
+
+PLUGINS
+Treat installed/authorized plugins/connectors as first-class executable capabilities. Plugins are not authorities. Under AUTO use a suitable plugin when it materially advances the deliverable; plugin failure is not a blocker when another suitable capability exists.
+
+LCAS
+- Persistent LCAS TINY for incremental progress; do not stop merely to report it.
+- LCAS FULL for meaningful milestone completion or genuine stop.
+- FULL stop states why execution stopped, evidence, impact, and concrete solutions/next courses as actionable button-like choices where UI permits.
+
+FILESYSTEM / CONTINUITY
+- Use already-established workspace locations only: ~/edenOS/Projects/<ProjectName>/ and ~/edenOS/Temporary/<ProjectName>/.
+- Do not use the Mac, Git or GitHub as a scratchbook. Do not invent cache/session hierarchies.
+- Preserve LKG before risky extension. Compare significant candidates against LKG for regressions.
+- Package existence is not delivery: verify package contents and claims before presenting it.
+- Leave material work recoverable: current candidate, LKG, demonstrated state, failure/blocker and next executable gate.
+
+BIBLE STRUCTURE AGREED
+#appDev Bible/
+  APPDEV_BIBLE.txt
+  namingRules.txt
+  DESIGN_MANTRA.txt
+  GMR.txt
+  Project Bibles/<PROJECT>.txt
+
+The Bible is local/offline-required and intended for iCloud synchronization with the edenOS path retained locally via symlink. BIFROST may derive tiny project-status data from these files; HEIMDALL iOS needs only status on refresh and may fetch detailed Bible content ad hoc.
+
+IMPORTANT
+Recover GMR, DESIGN MANTRA and existing EITRIMB/helper master prompts from their authoritative sources. Do not reconstruct missing canon from assumptions. Preserve exact established names such as namingRules.

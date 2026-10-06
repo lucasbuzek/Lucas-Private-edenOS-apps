@@ -1,0 +1,13 @@
+M1-M3 INVESTOR DEMO FLOW
+1. Boot edenOS and enter the custom Desktop.
+2. Open Files and perform a real local filesystem action.
+3. Switch Files -> Explore; show relationships without moving underlying files.
+4. Open Search and demonstrate files/apps/projects/commands as distinct providers.
+5. Switch Desktop -> Workspace; open EDEN Field Deployment.
+6. Show Workspace -> Project -> Helper -> Module -> Function -> Task structure and LCAS status.
+7. Launch SKALD; demonstrate native experience plus integrated-web-provider boundary.
+8. Launch Atlas, Workshop, Prototype and Ledger starter experiences.
+9. Open Settings; show detail level, Areas/Fields, profiles and jurisdiction/deployment layers.
+10. Return to Desktop. Explain that M4 deepens integration, M5 connects HESPERA/gardenOS, M6 expands and polishes.
+
+Demo truth rule: real functions are labelled REAL; deterministic sample-backed functions PREVIEW; future concepts FUTURE. Never imply preview data is live hardware/provider data.

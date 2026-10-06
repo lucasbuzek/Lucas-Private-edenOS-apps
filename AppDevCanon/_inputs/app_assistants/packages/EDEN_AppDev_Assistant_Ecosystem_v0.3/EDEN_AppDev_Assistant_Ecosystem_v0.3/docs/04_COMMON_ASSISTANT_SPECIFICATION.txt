@@ -1,0 +1,5 @@
+COMMON ASSISTANT SPECIFICATION — v0.1
+The JSON schema at specs/assistant.schema.json is authoritative for machine-readable definitions.
+Every assistant defines identity, canonical-status, purpose, capabilities, I/O, modes, dependencies, handoffs, assets, persistent state, security, runtime adapters and lifecycle.
+One definition powers chat/drop-in, LUCAS, local web, desktop, edenOS, remote agent and API adapters.
+Unknown acronym expansions remain null/provisional until canonical material is recovered.

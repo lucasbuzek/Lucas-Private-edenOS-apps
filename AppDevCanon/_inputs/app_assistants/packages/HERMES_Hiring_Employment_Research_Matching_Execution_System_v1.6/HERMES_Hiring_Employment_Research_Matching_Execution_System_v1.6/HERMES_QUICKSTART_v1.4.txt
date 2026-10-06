@@ -1,0 +1,51 @@
+HERMES — QUICKSTART — v1.6
+
+PACKAGE CONTENTS 1. HERMES_MASTER_v1.6.txt Paste into ChatGPT or another
+capable LLM as the master project/system instruction.
+
+2.  docs/ Product, architecture, security, deployment and handoff notes.
+
+3.  web/ Deployable HERMES web-app starter for Netlify-compatible
+    hosting. It is a secure authenticated PWA shell with Person /
+    Company / Hybrid modes, opportunity/workspace/profile/document
+    screens, Supabase authentication/database hooks, and Netlify
+    scheduled/background-function scaffolding for future agent
+    execution.
+
+FASTEST WEB SETUP A. Create a Supabase project. B. Run
+web/supabase/schema.sql in the Supabase SQL editor. C. Configure Google
+and/or Apple sign-in in Supabase Auth. D. Copy web/.env.example to
+web/.env and fill the public Supabase URL + publishable key. E. In
+Netlify, import the web directory from Git or deploy it with Netlify
+CLI. F. Add the same environment variables in Netlify. G. Add
+server-only secrets only in Netlify environment settings, never in
+VITE_* variables. H. Deploy. I. Test sign-in, sign-out, per-user data
+isolation, PWA install, and mobile layouts.
+
+IMPORTANT The web package is an implementation-ready v1 starter, not a
+claim that every external job board, tender portal, document generator,
+browser agent or submission workflow is already integrated. Those are
+modular adapters added behind the included contracts.
+
+HOSTED AUTH Authentication is necessary for a public hosted HERMES
+because profiles and documents contain sensitive personal/company
+information. Google and Apple are the recommended initial providers.
+Supabase also supports other providers and passwordless options.
+
+PWA On compatible Android browsers use Install/Add to Home Screen. On
+iPhone/iPad use Safari Share -> Add to Home Screen. HERMES should behave
+like an app but remains a web application unless later wrapped as
+native.
+
+AGENT The package contains Netlify scheduled/background function
+scaffolding. Enable external connectors and AI providers only after
+adding server-side credentials and validating source permissions, rate
+limits, data handling and user authorization.
+
+
+BRANCH QUICKSTART
+B0: load HERMES_MASTER_v1.6.txt into the chosen capable chat/LLM host.
+B1: use web/ as the current Netlify-compatible hosted/PWA starter and configure Supabase credentials.
+B2: use docs/HERMES_STANDALONE_TARGETS_v1.6.txt as the native packaging target; binaries are not yet included.
+B3: use docs/HERMES_LOCAL_LLM_SERVER_v1.6.txt as the dedicated local/hybrid runtime contract; server/runtime is not yet included.
+Always consult HERMES_BRANCH_STATUS_v1.6.txt before claiming a branch is operational.

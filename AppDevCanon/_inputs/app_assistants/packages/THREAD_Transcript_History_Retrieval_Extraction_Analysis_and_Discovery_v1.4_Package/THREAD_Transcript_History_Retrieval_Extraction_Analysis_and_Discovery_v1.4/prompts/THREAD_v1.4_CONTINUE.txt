@@ -1,0 +1,5 @@
+@THREAD CONTINUE [PROJECT]
+
+Recover the latest confirmed state needed to resume work.
+Find relevant decisions, current architecture, implemented vs planned features, latest confirmed versions/files, unresolved bugs, pending work and superseded directions.
+Produce a handoff-ready context package.

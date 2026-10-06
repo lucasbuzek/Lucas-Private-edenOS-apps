@@ -1,0 +1,173 @@
+MONETA v1.7 UIX — VERIFICATION
+
+PASS — node --test tests/core.test.mjs tests/uix.test.mjs
+TAP version 13
+# Subtest: 9 companies
+ok 1 - 9 companies
+  ---
+  duration_ms: 2.027411
+  type: 'test'
+  ...
+# Subtest: 59 capabilities
+ok 2 - 59 capabilities
+  ---
+  duration_ms: 0.237566
+  type: 'test'
+  ...
+# Subtest: budget to ALLOCATE
+ok 3 - budget to ALLOCATE
+  ---
+  duration_ms: 0.22642
+  type: 'test'
+  ...
+# Subtest: tender discovery stays HERMES
+ok 4 - tender discovery stays HERMES
+  ---
+  duration_ms: 0.171077
+  type: 'test'
+  ...
+# Subtest: full profile
+ok 5 - full profile
+  ---
+  duration_ms: 0.313109
+  type: 'test'
+  ...
+# Subtest: lean profile
+ok 6 - lean profile
+  ---
+  duration_ms: 0.149264
+  type: 'test'
+  ...
+# Subtest: LCAS visible
+ok 7 - LCAS visible
+  ---
+  duration_ms: 1.028373
+  type: 'test'
+  ...
+# Subtest: Simple Advanced Expert
+ok 8 - Simple Advanced Expert
+  ---
+  duration_ms: 1.061071
+  type: 'test'
+  ...
+# Subtest: mobile domain navigation
+ok 9 - mobile domain navigation
+  ---
+  duration_ms: 0.188813
+  type: 'test'
+  ...
+# Subtest: safety state visible
+ok 10 - safety state visible
+  ---
+  duration_ms: 0.154752
+  type: 'test'
+  ...
+# Subtest: inspector present
+ok 11 - inspector present
+  ---
+  duration_ms: 0.169965
+  type: 'test'
+  ...
+# Subtest: domain companies direct
+ok 12 - domain companies direct
+  ---
+  duration_ms: 0.136435
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 76.942359
+
+PASS — node --check core/moneta-core.mjs
+
+
+PASS — node --check server.mjs
+
+
+PASS — python3 96_BRANCH_TESTS/run_boundary_reconciliation.py
+BND01	PASS	MONETA financial-state ownership declared
+BND02	PASS	HERMES opportunity lifecycle retained
+BND03	PASS	ORACLE generalized analytics retained
+BND04	PASS	THEMIS legal semantics retained
+BND05	PASS	59 existing MONETA subordinate IDs preserved without duplication
+BND06	PASS	all established MONETA companies preserved
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+
+PASS — node --test src/router.test.mjs
+TAP version 13
+# Subtest: receipt routes MONETA RECEIPT
+ok 1 - receipt routes MONETA RECEIPT
+  ---
+  duration_ms: 0.722683
+  type: 'test'
+  ...
+# Subtest: treasury routes MONETA VAULT
+ok 2 - treasury routes MONETA VAULT
+  ---
+  duration_ms: 1.011246
+  type: 'test'
+  ...
+# Subtest: tender discovery stays HERMES
+ok 3 - tender discovery stays HERMES
+  ---
+  duration_ms: 0.162754
+  type: 'test'
+  ...
+# Subtest: tender budget is MONETA ALLOCATE
+ok 4 - tender budget is MONETA ALLOCATE
+  ---
+  duration_ms: 0.096906
+  type: 'test'
+  ...
+# Subtest: bid profitability is MONETA MARGIN
+ok 5 - bid profitability is MONETA MARGIN
+  ---
+  duration_ms: 0.154922
+  type: 'test'
+  ...
+# Subtest: tax is MONETA TRIBUTE
+ok 6 - tax is MONETA TRIBUTE
+  ---
+  duration_ms: 0.161662
+  type: 'test'
+  ...
+# Subtest: fallback MONETA
+ok 7 - fallback MONETA
+  ---
+  duration_ms: 0.241452
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 65.479631
+
+PASS — HTTP 200 / (10206 bytes)
+PASS — HTTP 200 /core/registry.json (5669 bytes)
+PASS — HTTP 200 /web/manifest.webmanifest (268 bytes)
+
+UIX IMPLEMENTATION: PASS — responsive PWA experimental surface.
+ACCESSIBILITY AUDIT: NOT_RUN.
+NATIVE PLATFORM UI VALIDATION: NOT_RUN.
+PRODUCTION FINANCIAL SIDE EFFECTS: DISABLED.
+MATURITY: EXPERIMENTAL.

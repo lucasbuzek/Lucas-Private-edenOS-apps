@@ -1,0 +1,13 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+LCAS INTEGRATION
+LCAS is permanent and owns Live Control, Activity & Status across EDEN. FORGE emits clean execution/state/evidence/control contracts to LCAS and consumes LCAS where applicable.
+FORGE must not create a parallel activity/status engine or LCAS-specific fork.
+UIbasic is v1.x lineage/provenance only.
+AUTO routine success may remain quiet; exceptions, failures, approvals and material decisions surface appropriately. GUIDED and ADVANCED may expose richer LCAS controls/evidence.

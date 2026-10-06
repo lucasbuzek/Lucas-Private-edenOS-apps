@@ -1,0 +1,4 @@
+DEVELOPER GUIDE — v0.1
+Assistant definitions live in specs/assistants/*.json and validate conceptually against specs/assistant.schema.json.
+Runtime invariants: immutable original, versioned derived artifact, append-only event history, explicit verification state, idempotent resume, adapter isolation, no silent assistant merge.
+Add assistant: create spec → package prompt adapter → register → add regression fixture → define handoffs → define supported delivery classes.

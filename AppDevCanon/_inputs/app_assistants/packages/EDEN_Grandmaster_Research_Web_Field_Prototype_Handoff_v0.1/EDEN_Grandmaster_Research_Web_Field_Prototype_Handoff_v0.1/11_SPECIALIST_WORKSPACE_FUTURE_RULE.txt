@@ -1,0 +1,28 @@
+APPDEVRULES ADDITION — SPECIALIST & RELATIONAL ARCHITECTURE — v0.1
+
+SHARED PRINCIPLES, SPECIALIZED PERSPECTIVE
+All EDEN Apps, Helpers, agents and Workspaces inherit common AppDevRules and Design Mantra. Specialist identity changes domain expertise, authority, perspective and workflow, not underlying values.
+
+RELATIONAL NAMING
+Complementary specialists should first be considered as meaningful relational families—twins, siblings, partners, companions or other culturally/functionally appropriate relationships.
+- Function first.
+- Research before naming.
+- Relationship should explain architecture.
+- Never force pairs.
+- Preserve established identities.
+- Check registry collisions.
+- Personality follows responsibility.
+- Relationship does not require identical software form.
+- Promotion normally preserves identity.
+- Record provenance and EDEN interpretation.
+- Prefer the smallest meaningful pantheon.
+- Never invent mythology as historical fact.
+
+SPECIALIST PROMOTION
+HEIMDALL Library = shared content/knowledge substrate.
+Helper = specialist expertise.
+Workspace = project/domain composition.
+Workflow = repeatable process.
+App = persistent independent domain ownership only when justified.
+
+This allows future Botany, Animal/Wildlife, Ecology, Agronomy, Soil, Water/Hydrology, Environmental, Field Science, Human Factors, Education and related specialists to exist first as Helpers/Workspaces and be promoted only by demonstrated need.

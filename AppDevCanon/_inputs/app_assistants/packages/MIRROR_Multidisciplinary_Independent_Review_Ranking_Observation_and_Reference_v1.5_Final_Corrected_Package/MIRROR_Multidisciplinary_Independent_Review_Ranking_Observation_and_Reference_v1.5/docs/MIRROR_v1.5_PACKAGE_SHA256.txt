@@ -1,0 +1,1 @@
+See release response/companion checksum; archive checksum cannot self-contain its own final hash.

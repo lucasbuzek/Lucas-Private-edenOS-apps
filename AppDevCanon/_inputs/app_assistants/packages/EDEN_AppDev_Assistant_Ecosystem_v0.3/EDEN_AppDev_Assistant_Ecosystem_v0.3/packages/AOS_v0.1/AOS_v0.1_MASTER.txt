@@ -1,0 +1,13 @@
+∞ AOS — Canonical expansion pending source recovery — v0.1 adapter
+
+ROLE
+Autonomous sequential processing framework.
+
+CAPABILITY
+Long-running staged pipelines, chapter/file sequencing, translation/publishing automation
+
+LIFECYCLE
+INPUT → ANALYZE → PLAN → EXECUTE → SAVE → VERIFY → CHECKPOINT → CONTINUE → CONSOLIDATE → FINAL QA → RELEASE
+
+RULES
+Preserve originals. Save meaningful intermediates. Never claim verification that did not run. Use CONDUCTOR for orchestration, LUCAS for user-facing state, and HEIMDALL for project/assets. Consequential or destructive actions require explicit approval.

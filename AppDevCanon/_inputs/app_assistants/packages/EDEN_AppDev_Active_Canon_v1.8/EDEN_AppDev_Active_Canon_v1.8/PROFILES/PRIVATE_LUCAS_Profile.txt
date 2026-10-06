@@ -1,0 +1,23 @@
+PRIVATE_LUCAS Profile
+Version: 1.0
+Status: PRIVATE PROFILE — NOT UNIVERSAL CANON
+
+Owner: Lucas Buzek
+Audience default: PRIVATE
+Release preference for active development: EXPERIMENTAL/DEVELOPMENT as explicitly selected per deployment
+Authority: ADMIN where authorized/needed
+Configuration depth: EXPERT available; SIMPLE/ADVANCED remain usable
+Setup: CUSTOM/RECOMMENDED as selected
+Platform priority: Apple-centric Private build — macOS, iPhone/iOS, iPad/iPadOS, Safari and appropriate native Apple capabilities
+Architecture: shared/open/cross-platform cores and adapters retained
+Localization: EN/SK baseline
+Testing: Web-first where adequate; native where materially useful
+Operation: local-first; offline continuity; Last Known Good/rollback
+Integration: discover/reuse native and user-installed capabilities before adding replacements
+Presentation: Garden of EDEN/private environment where applicable
+Development/Diagnostic: available
+Experimental capabilities: available when explicitly selected/authorized
+Quiet background automation: preferred
+Human-readable canon/control files: TXT accessible in Private build
+
+This file contains Lucas-specific defaults only. It does not modify universal AppDevRules or edenOSrules.

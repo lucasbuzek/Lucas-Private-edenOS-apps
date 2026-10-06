@@ -1,0 +1,11 @@
+{
+ "current":"M1-M3 implementation candidate",
+ "milestones":{
+  "M1":{"name":"Investor Vision System","status":"implemented-prebuild","runtime_verified":false},
+  "M2":{"name":"Workspaces","status":"implemented-local-foundation","runtime_verified":false},
+  "M3":{"name":"Starter Apps","status":"implemented-preview-contracts","runtime_verified":false},
+  "M4":{"name":"Deeper Integration","status":"planned"},
+  "M5":{"name":"HESPERA / gardenOS Integration","status":"planned"},
+  "M6":{"name":"Expanded Apps & Polish","status":"planned"}
+ }
+}

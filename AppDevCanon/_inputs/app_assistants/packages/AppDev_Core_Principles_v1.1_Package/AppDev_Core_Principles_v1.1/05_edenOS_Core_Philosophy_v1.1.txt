@@ -1,0 +1,73 @@
+edenOS CORE PHILOSOPHY — v1.1 Owner: Lucas Buzek
+
+ENGLISH
+
+edenOS is an optional/future lightweight EDEN platform/distribution. It
+is not EDEN itself.
+
+PURPOSE Provide the smallest dependable platform layer required to
+connect EDEN capabilities to devices and operating environments without
+turning the Core into every application.
+
+CORE PRINCIPLES 1. LOCAL FIRST. 2. ESSENTIAL OPERATION WITHOUT AI. 3.
+ESSENTIAL OPERATION WITHOUT INTERNET. 4. SMALL CORE; MOVE WEIGHT
+OUTWARD. 5. USER DATA OUTLIVES SOFTWARE. 6. INTEGRATIONS ARE ADAPTERS,
+NOT OWNERS. 7. MIGRATE, DO NOT RESET. 8. RECOVERY IS A PRODUCT FEATURE.
+9. SAFETY IS ARCHITECTURE. 10. QUALITY IS MEASURED. 11. PROVIDERS ARE
+REPLACEABLE. 12. CAPABILITIES ARE DISCOVERABLE. 13. ONE AUTHORITATIVE
+PATH. 14. GRACEFUL DEGRADATION.
+
+EXECUTION TOPOLOGY DEVICE/CORE — deterministic safety, hardware, local
+state, immediate automation. COMPANION — rich UI and interaction.
+LAN/EDEN SERVER — shared history, analytics, coordination, local models.
+EXTERNAL PROVIDERS — optional API intelligence/services. Apps remain
+authoritative for their domains.
+
+AI edenOS does not require a bundled general LLM. It may expose/discover
+capability providers: deterministic; TINY specialist; local model; LAN
+model; external API; hybrid. The system selects according to declared
+capability, resources, privacy and policy. A TINY translation or
+transcription capability may be preferable to a multi-GB general LLM for
+a narrow task.
+
+EMBEDDED Constrained hardware must not pretend to be a workstation.
+Embedded Core retains sensing, safety, immediate control, recovery and
+local configuration. Heavy reasoning/history/generation moves to
+companion/LAN/provider when available. Loss of those layers must not
+break essential safe operation.
+
+PORTABILITY APPLICATION → EDEN/DOMAIN API → PLATFORM CORE → PLATFORM
+ADAPTER → DRIVER → HARDWARE.
+
+STATE Expose product/object ID, version, build ID, installation ID/path,
+integrity/manifest and health truthfully through LCAS-compatible status
+surfaces.
+
+SLOVENSKY
+
+edenOS je voliteľná/budúca ľahká EDEN platforma/distribúcia. Nie je to
+samotný EDEN.
+
+ÚČEL Poskytnúť najmenšiu spoľahlivú platformovú vrstvu pre zariadenia a
+prostredia bez toho, aby Core obsahoval každú aplikáciu.
+
+PRINCÍPY LOCAL FIRST; základná prevádzka bez AI a internetu; malé jadro;
+dáta prežijú software; integrácie sú adaptéry; migruj, neresetuj;
+recovery je funkcia; bezpečnosť je architektúra; kvalita sa meria;
+provideri sú vymeniteľní; schopnosti sú objaviteľné; jedna autoritatívna
+cesta; graceful degradation.
+
+TOPOLOGIA DEVICE/CORE — bezpečnosť, hardware, lokálny stav, okamžitá
+automatizácia. COMPANION — bohaté UI. LAN/EDEN SERVER — história,
+analytika, koordinácia, lokálne modely. EXTERNÍ PROVIDERI — voliteľné
+API/služby. Aplikácie si zachovávajú autoritu svojich domén.
+
+AI edenOS nevyžaduje zabudovaný všeobecný LLM. Môže objavovať
+deterministických, TINY, lokálnych, LAN, API a hybrid providerov. Pre
+úzku úlohu je malý prekladový/transkripčný capability vhodnejší než
+multi-GB LLM.
+
+EMBEDDED Obmedzený hardware sa nesmie tváriť ako workstation. Core
+zachová sensing, safety, okamžité riadenie, recovery a lokálnu
+konfiguráciu. Ťažké funkcie idú smerom von a ich strata nesmie rozbiť
+bezpečnú základnú prevádzku.

@@ -1,0 +1,18 @@
+name: BIFROST
+options:
+  bundleIdPrefix: eden.private
+  deploymentTarget:
+    macOS: "15.0"
+targets:
+  BIFROST:
+    type: application
+    platform: macOS
+    sources: [Sources]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: eden.private.bifrost
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: BIFROST
+        SWIFT_VERSION: 6.0
+        CODE_SIGN_STYLE: Automatic
+        ENABLE_HARDENED_RUNTIME: YES

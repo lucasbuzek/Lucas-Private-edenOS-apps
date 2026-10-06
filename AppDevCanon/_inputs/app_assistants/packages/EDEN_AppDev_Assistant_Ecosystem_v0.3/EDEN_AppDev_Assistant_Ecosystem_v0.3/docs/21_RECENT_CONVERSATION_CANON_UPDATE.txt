@@ -1,0 +1,75 @@
+RECENT CONVERSATION CANON UPDATE — 2026-09-22
+
+1. CONTROL ARCHITECTURE
+USER → LCAS → CONDUCTOR → CAPABILITIES/PROVIDERS → EXECUTION SERVICES.
+
+LCAS presents control/activity/status and persistent user-facing project state.
+CONDUCTOR owns intent interpretation, planning, orchestration, sequencing,
+dependency resolution, decisions, QA coordination, consolidation and release.
+
+2. BIFROST
+Canonical phrase: CONNECT & KEEP.
+BIFROST is “My Gateway to EDEN.”
+Owns gateway/base-app concerns including identity, persistence,
+interoperability, applications/packages and provider connections.
+BIFROST remains useful without AI and must not become a compulsory dependency
+for independently usable specialist apps.
+
+3. HEIMDALL
+Canonical phrase: ORGANIZE & UNDERSTAND.
+Owns Workspaces and shared information organization: files, assets, indexing,
+metadata, relationships, collections, search, representations, provenance,
+versions, storage abstraction, import/validation and information access.
+
+4. SPECIALIST APPS
+Canonical phrase: SPECIALIZE & DO.
+Examples include SKALD, HERMES, MONETA, CURATOR, GardenOS, PROMETHEUS and
+other domain applications. Preserve independent packages and contracts.
+
+5. REUSE
+IMPLEMENT / INTEGRATE EXISTING CAPABILITY BEFORE RECREATING IT.
+Progressive integration path:
+LINK → TAB/WEBAPP → EMBED → NATIVE.
+Reuse EDEN apps, native OS capabilities, installed applications, WebApps/PWAs,
+external providers, open-source components and shared helpers before rebuilding.
+
+6. RELEASE EVIDENCE
+Never infer PASS from existence.
+Use PASS / FAIL / UNKNOWN / NOT_APPLICABLE.
+UNKNOWN is never PASS.
+Private experimental development precedes Family & Friends Alpha.
+Only verified working components are promoted.
+
+7. LOCALIZATION
+Private / Custom / Experimental: English + Slovak.
+Public/final/distributable: multilingual by design through LINGUA.
+English is canonical/reference and fallback; Slovak is baseline.
+
+8. INSTALLATION
+INSTALL / RECOMMENDED = balanced, device-aware primary action.
+LEAN = minimum core.
+FULL = all appropriate supported capabilities.
+CUSTOM = explicit component/provider choices.
+Install must not mean install everything.
+
+9. PROJECT GOVERNANCE
+One authoritative PROJECT_MANIFEST.json.
+One append-only [PROJECT]_CHAT_HISTORY.txt.
+Stable IDs and traceability:
+requirement → task/job → artifact → test/evidence → verification → release.
+Lifecycle:
+NOT_STARTED → READY → ACTIVE → PRODUCED → REVIEW → CORRECTION → VERIFIED → COMPLETE.
+Completion, verification and health remain distinct.
+
+10. CONSTITUTION
+Hard rules are explicitly separated from suggestions/preferences.
+Confirmed rules are versioned, never silently rewritten.
+Rule changes trigger dependency impact analysis and reverification.
+Release requires a Release Constitution Gate.
+
+11. LEGACY MIGRATIONS
+LUCAS/UIbasic → LCAS where referring to the canonical control/status UI layer.
+WEAVER/FRAME → SCAFFOLD where referring to the shared application/UI
+scaffolding role established in recent AppDev work.
+Do not rename independent established frameworks merely because a migration
+exists elsewhere; retain provenance and aliases.

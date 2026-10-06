@@ -1,0 +1,21 @@
+AGRICULTURE / SUSTAINABILITY WORKING DOMAIN — v2.0
+
+RETAIN AS PERSONAL/PROJECT DATA: • greenhouse planning, raised beds,
+paths, crop allocation, trellising and hanging planters. •
+vegetables/herbs/fruit including onions, garlic, spring onions, carrots,
+beets, tomatoes, peppers/chillies, cabbage, parsley, strawberries,
+pumpkins/squash, potatoes, corn, beans and peas. • annual yield,
+sufficiency and crop-cycle modelling. • poultry planning for eggs/meat,
+flock sizing, feed fields and fodder. • lucerne/oats/beans and feed-crop
+planning. • irrigation, borehole/pump questions and water-system design.
+• greenhouse plastic/netting, fencing and material costing. •
+agrivoltaics, renewable energy, resilient food systems and
+community-scale concepts. • agricultural robotics and
+NANDI/HESPERA/HESTIA relationships. • sustainable-community and
+practical education concepts.
+
+WORKSPACE FLOW: SITE/CONTEXT → WATER/SOIL/CLIMATE → GOALS →
+CROPS/ANIMALS → INFRASTRUCTURE → ENERGY → AUTOMATION → YIELD/RESOURCE
+MODEL → COST → SAFETY/REGULATION → BUILD/TEST → OBSERVE → ADAPT.
+
+Separate measured site facts from assumptions and scenarios.

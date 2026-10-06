@@ -1,0 +1,25 @@
+GrandMasterRegister — ROLE & TXT EXPORT CONTRACT
+Version: 1.1
+Status: REGISTRY CONTRACT
+
+GrandMasterRegister is the authoritative catalogue/relationship registry for EDEN identities.
+It contains Apps, Products, Workspaces, Specialists, Helpers, Tiny Helpers/Tiny Apps, Agents, subordinate Helpers, Modules, Capabilities, Providers and other registered entity types/relationships.
+
+AppDevRules and edenOSrules DO NOT duplicate this list.
+Their integration with GrandMasterRegister is USER OPT-IN.
+
+Canonical registry fields include where applicable:
+canonical_id; canonical_name; symbol; short_form; expanded_name/title; functional acronym meaning; conceptual meaning; behavioral metaphor/personality; entity_type; role; purpose; scope; authoritative ownership; capabilities; boundaries/non-goals; commands/modes; parent/family; subordinates; relationships; standalone_capable; embedded_capable; provider/execution modes; status; version/revision; availability; legacy aliases; supersedes/superseded_by; provenance; confidence; visual metadata.
+
+Relationship types may include:
+parent; module_of; subordinate_of; capability_provider_for; invoked_by; available_to; depends_on; integrates_with; representation_of; supersedes; superseded_by; legacy_aliases.
+
+TYPE = what the thing is.
+CAPABILITY = operation.
+PROVIDER = implementation.
+INSTANCE/CONNECTION = configured installation/account/device.
+Provider != connection.
+
+Private build requirement:
+Provide a synchronized human-readable GrandMasterRegister.txt export of the authoritative registry.
+Do not maintain the TXT export as an independent competing registry.

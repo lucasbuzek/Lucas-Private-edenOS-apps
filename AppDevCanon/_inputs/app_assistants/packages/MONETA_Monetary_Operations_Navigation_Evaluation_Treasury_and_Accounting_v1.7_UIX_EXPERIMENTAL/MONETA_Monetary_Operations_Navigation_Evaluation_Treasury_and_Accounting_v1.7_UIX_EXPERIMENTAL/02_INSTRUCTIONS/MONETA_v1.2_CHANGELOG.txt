@@ -1,0 +1,7 @@
+MONETA v1.2
+- Current target frozen to B0 Chat / B1 Web / B2 Private Desktop macOS+Windows.
+- Mandatory Existing-Solution-First gate added.
+- Architecture prior-art check completed before implementation.
+- B0 launcher, B1 runnable routing scaffold, B2 Tauri source scaffold added.
+- Shared branch contract and branch test plan added.
+- No unrun desktop build is claimed as verified.

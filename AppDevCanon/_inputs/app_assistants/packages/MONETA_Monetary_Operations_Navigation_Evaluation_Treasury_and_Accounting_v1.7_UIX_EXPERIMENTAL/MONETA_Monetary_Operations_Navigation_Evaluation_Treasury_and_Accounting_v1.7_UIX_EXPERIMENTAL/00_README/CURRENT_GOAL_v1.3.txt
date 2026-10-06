@@ -1,0 +1,7 @@
+MONETA v1.3 CURRENT GOAL
+Continue MONETA as the authoritative EDEN finance application after HERMES/MONETA boundary reconciliation.
+Preserve LEDGER, MERCURY, ALLOCATE, VAULT, MARGIN, NUNTIUS, PATRON, RECEIPT and TRIBUTE.
+HERMES remains authoritative for jobs/opportunities lifecycle.
+MONETA becomes authoritative when opportunity-specific commercial inputs become financial records, plans, administration or analysis.
+ORACLE remains generalized quantitative analysis; THEMIS remains legal/compliance.
+No merged product and no duplicated capability implementation.

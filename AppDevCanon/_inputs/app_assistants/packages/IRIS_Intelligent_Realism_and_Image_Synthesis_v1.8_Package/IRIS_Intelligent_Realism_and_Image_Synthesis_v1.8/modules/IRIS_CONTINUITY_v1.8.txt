@@ -1,0 +1,6 @@
+# IRIS CONTINUITY GRAPH
+Purpose: prevent identity drift across large projects and batches.
+
+Track canonical asset IDs, parent/derived variants, required features, optional features, prohibited mutations, shared chassis/materials/environments, and must-differ relationships.
+
+A parent update triggers review of dependent images. A correction to one view does not redefine the canonical asset unless the lock is intentionally updated.

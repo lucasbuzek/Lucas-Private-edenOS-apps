@@ -1,0 +1,9 @@
+{
+  "name": "MONETA \u2014 Financial Workspace",
+  "short_name": "MONETA",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f4f6",
+  "theme_color": "#111111",
+  "description": "MONETA v1.7 cross-platform UIX experimental financial workspace"
+}

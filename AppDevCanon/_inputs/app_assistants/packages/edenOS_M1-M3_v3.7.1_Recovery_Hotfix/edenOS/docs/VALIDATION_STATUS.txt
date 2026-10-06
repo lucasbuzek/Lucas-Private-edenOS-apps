@@ -1,0 +1,12 @@
+edenOS DP0.7 v2.0 validation status
+
+PASS: JSON contracts parse.
+PASS: integration-preflight.py.
+PASS: static-preflight.sh.
+PASS: v1.8 integration-lock compatibility preflight updated for HEIMDALL experience-layer integration.
+PASS: shell JavaScript syntax checked with Node.js.
+PASS: package ZIP integrity (performed after packaging).
+NOT RUN: zsh syntax validation in this Linux packaging environment (zsh unavailable here).
+NOT RUN: Apple Silicon QEMU runtime boot; requires target Mac.
+NOT RUN: live web portals; intentionally disabled in preview/finalization package.
+NOT RUN: HEIMDALL/BIFROST/SKALD external provider downloads; intentionally not required for preview.

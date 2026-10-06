@@ -1,0 +1,7 @@
+RETURN TO NAMING CHAT — MIGRATION 001
+Conflict: READ
+Name owner retained: shared EDEN READ.
+Migrating: CASPER.READ → CASPER.AUDITOR.
+State: HANDOFF READY.
+Gate: owning-chat confirmation + updated CASPER package + stale-reference result.
+Do not close this conflict until those are returned.

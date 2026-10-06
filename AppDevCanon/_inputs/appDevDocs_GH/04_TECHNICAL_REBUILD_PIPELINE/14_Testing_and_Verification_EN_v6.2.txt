@@ -1,0 +1,49 @@
+LUCAS AI JOURNEY TOME — TECHNICAL & RESEARCH 14
+TESTING & VERIFICATION — v6.2
+
+STATUS: substantive reconstruction checkpoint; final cross-volume editorial/publication review remains.
+
+CORE RULE
+The verification method must reach the layer where the claim lives.
+
+AI-assisted development makes production cheap; production is not evidence. Distinguish GENERATED, SAVED, REVIEWED, STATICALLY CHECKED, COMPILED, RUN, INTEGRATION TESTED, HARDWARE TESTED, RECOVERY TESTED, VERIFIED, RELEASE CANDIDATE and RELEASED.
+
+RECOVERED VERIFICATION LADDER
+SOURCE REVIEWED → STATIC CHECKS → CLEAN COMPILE → FLASH/BOOT → UI+API REGRESSION → HARDWARE VALIDATION → FAULT INJECTION → POWER/NETWORK RECOVERY → OTA+DATA MIGRATION → 24-HOUR TEST → 7-DAY SOAK → FIELD PILOT → RELEASE CANDIDATE → RELEASE.
+
+Never label a stage as passed unless it actually ran.
+
+CLAIM–EVIDENCE MODEL
+CLAIM → METHOD → OBSERVATION → RESULT → LIMIT.
+
+A compile proves acceptance by a named toolchain/configuration, not runtime behavior. A rendered UI control does not prove a physical actuator changed state. A migration claim requires migration and recovery evidence.
+
+TEST DESIGN
+Convert requirements into observable acceptance checks before implementation. Include positive, boundary, failure and recovery cases. Preserve environment, artifact identity, expected result, observed result and limitations.
+
+TEST LAYERS
+Unit tests isolate deterministic logic. Integration tests verify boundaries. System tests exercise the connected product. Physical tests are required when hardware can invalidate a plausible software model.
+
+REGRESSION
+High-value invariants include recoverable boot, intact user data, core UI/API paths, safety interlocks, confirmed state, migration integrity and recovery availability.
+
+FAULT INJECTION
+Deliberately test network loss, provider unavailability, invalid input, sensor failure, staged migration interruption and other safe failure cases. The objective is to establish behavior when assumptions fail.
+
+RESOURCE VERIFICATION
+Treat flash, heap, stack, CPU, network airtime, filesystem writes, GPIO, bus bandwidth and electrical power as finite resources. Establish baselines and measure before/after changes.
+
+EVIDENCE RECORD
+Preserve evidence ID, claim ID, artifact/build identity, environment, method, expected result, observation, PASS/FAIL/BLOCKED/UNKNOWN, artifacts, limitations and follow-up.
+
+AI ROLE
+AI can design cases, generate harnesses and analyze logs. It must not self-certify its generated artifact. Deterministic tools and the target environment produce the observations used for promotion.
+
+RELEASE
+A release gate defines verification depth, defect policy, migration/recovery readiness, supported environments, artifact identity/hashes, documentation and rollback.
+
+RESEARCH QUESTIONS
+How should evidence depth scale with consequence? How can AI-generated tests avoid merely restating implementation? How should hardware-in-the-loop evidence be archived reproducibly?
+
+PROVENANCE
+Recovered project evidence: Design Mantra v1.0 verification ladder/resource doctrine and TOME Journey distinctions between generated/reviewed/compiled/runtime/hardware/integration/released states. This volume does not claim every historical project completed every ladder stage.

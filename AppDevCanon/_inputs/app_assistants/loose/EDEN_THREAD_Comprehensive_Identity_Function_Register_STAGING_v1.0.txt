@@ -1,0 +1,510 @@
+EDEN / AppDev — THREAD Comprehensive Identity & Function Register
+
+Staging master — READY FOR PACKAGING REVIEW
+
+Date: 2026-09-23
+
+Purpose: one recovered list of EDEN/AppDev Apps, frameworks, products,
+shared systems, subordinate identities/modules, their functions,
+namespace boundaries, legacy/supersession state, and cross-App name
+conflicts.
+
+Status vocabulary used here: - RECOVERED — directly supported by a
+current/recent package or master record. - VERIFIED MIGRATION — local
+package evidence already confirmed in the naming-reconciliation work. -
+SELECTED / PENDING APP MIGRATION — Lucas selected the successor name,
+but owning App migration is not yet verified. - HISTORICAL / LEGACY —
+retained for provenance, not an active identity. - ISOLATED NAMESPACE —
+documented but excluded from general EDEN subordinate collision
+resolution.
+
+====================================================================== 1.
+ROOT / PLATFORM / SHARED OPERATIONAL LAYER
+======================================================================
+
+EDEN — Engineering, Development, Exploration & Nature Function: root
+ecosystem / initiative identity.
+
+AppDev Function: EDEN software/application-development domain.
+
+edenOS Function: EDEN platform/distribution environment.
+
+BIFROST — EDEN Base App & Gateway Function: CONNECT & KEEP. Canonical
+persistence/interoperability foundation; identity, metadata,
+representations, locations, relationships, provenance, registries,
+capabilities, providers/connections, package/install/update state.
+
+GrandMasterRegister Type: authoritative registry artifact, not an App.
+Function: canonical EDEN/AppDev identity, authority and relationship
+registry. BIFROST is keeper/owner; CONDUCTOR orchestrates; LCAS exposes
+state/control.
+
+HEIMDALL Function: ORGANIZE & UNDERSTAND. Workspace/information
+organization and composition. Recovered distributions: Private, Desktop
+and edenOS; shared core includes persistent object identity, metadata,
+type/capability registries, storage abstraction, representations,
+provenance, relationships, projects/collections, search, permissions,
+events, persistent jobs, automation, ingestion, conversion, validation,
+backup/export and provider APIs.
+
+CONDUCTOR — Coordinated Operations, Navigation, Delivery, Unified
+Control, Tracking, Oversight & Review — v1.4 Function: shared
+orchestration/intelligence fabric; translates intent into traceable
+executable projects and coordinates specialist capabilities.
+
+LCAS — Live Control, Activity & Status Function: truthful
+control/activity/status layer; does not own orchestration intelligence.
+Legacy: UIbasic is superseded as current shared identity and retained
+only as provenance.
+
+AOS Function: autonomous
+routing/sequencing/dependencies/recovery/QA/checkpointing/production
+completion.
+
+THREAD — Transcript, History, Retrieval, Extraction, Analysis &
+Discovery — v1.4 package recovered Function: wider-system
+history/context/genealogy/provenance and recovery. Global THREAD retains
+the shared name.
+
+APPLE — Architecture, Product, Performance & Lean Engineering Function:
+universal architecture/product/quality/principles layer; specialist
+integration, challenge, lean engineering, quality gates. Recovered
+council/role lenses: Vision Steward; Chief Architect; Design & Craft
+Steward; Product Experience Lead; Systems Steward; Performance &
+Efficiency Lead; Lean Engineering/Execution Lead; Integration Lead;
+Standards & Quality Lead; Contrarian/Think Different Lead; Production &
+Delivery Steward.
+
+======================================================================
+2. SPECIALIST APPS / FRAMEWORKS AND THEIR SUBORDINATES
+======================================================================
+
+CASPER — Creative Authoring, Storytelling, Publishing, Editing &
+Research — v2.1 Type: publication App / dedicated publication Workspace
+/ authoritative publication-domain owner. Current recovered
+subordinates: - QUILL — Quality, Unity, Imagination, Language &
+Literature. Literary quality, language, imagination and unity. - LORE —
+Literature, Origins, Research & Evidence. Publication/source/content
+research and evidence. - VERITY — Verification, Evidence, Reliability,
+Integrity, Truth & Yield. Verification/evidence integrity. - ARCH —
+Architecture, Rhythm, Coherence & Hierarchy. Structural
+architecture/coherence. - MYTH — Mythology, Yielded-worldbuilding,
+Texture & History. Worldbuilding/myth/history. - MUSE — Motivation,
+Understanding, Speech & Evolution. Character
+motivation/voice/evolution. - CORD — publication continuity subordinate.
+Tracks chronology, events, relationships, dependencies and manuscript
+continuity. Successor to CASPER.THREAD; no forced acronym. - DRAFT —
+Development, Revision, Architecture, Flow & Tension. Developmental
+revision/flow/tension. - SCRIBE — Syntax, Clarity, Readability,
+Integrity, Brevity & Editing. Line/copy clarity and editing. - ECHO —
+Evaluation, Comparison, Harmony & Overlap. Internal comparison,
+repetition/overlap and harmony. SELECTED successor: RESONANCE; migration
+not yet verified. - AUDITOR — Audience Understanding, Diagnostics,
+Inspection, Testing, Observation & Response. Successor to CASPER.READ;
+VERIFIED LOCAL MIGRATION. - PULSE — Positioning, User-market, Launch,
+Strategy & Evaluation. Publication positioning/market/launch. - IMPRINT
+— Identity, Metadata, Publication, Rights, Identifiers, Navigation &
+Tracking. Publication identity/metadata/rights/identifiers. - PRESS —
+Production, Release, Export, Standards & Specifications.
+Production/export/release specifications.
+
+READ — Reader Experience Assessment Directorate — v1.4 Type:
+reader/audience experience assessment specialist. Function: assesses
+engagement, audience response, pacing, character experience, emotional
+impact, worldbuilding, continuity, chronology, setup/payoff, genre
+expectations, comparable works, originality and publication-readiness.
+Recovered READ-native helpers: - LEAF — Literary Experience & Audience
+Feedback. Enjoyment, accessibility, confusion, audience fit and
+differentiated reader reactions. - PAGE — Pacing, Attention, Grip &
+Engagement. Momentum, pacing, chapter/scene pull, repetition, drag,
+escalation and disengagement points. - CAST — Character Assessment &
+Story Trajectory. Motivation, credibility, relationships, voice,
+development, arcs and reader attachment. - LORE — Logic, Ontology, Rules
+& Environment. Story-world, setting, exposition, fictional rules and
+environmental consistency. - THREAD — Timeline, Handoffs, References,
+Events, Alignment & Development. Chronology, references, setup/payoff,
+unresolved threads, contradictions and cross-manuscript consistency. -
+ECHO — Emotional & Cognitive Highlight Observer. Tension, empathy,
+surprise, confusion, emotional peaks, memorable moments and intended
+effect. - MIRROR — Manuscript Inspection, Reflection, Review,
+Originality & Resonance. Comparable stories, genre conventions,
+similarities, resonance and originality concerns. - SCOPE — Similarity,
+Convention, Originality & Positioning Evaluation. Focused
+similarity/convention/originality/positioning investigation. - PRISM —
+Panel Reconciliation, Interpretation & Synthesis Matrix. Reconciles
+conflicting findings while preserving meaningful minority reactions. -
+QUILL — Quality, Usability, Integrity & Literary Logic. QA/challenge;
+tests evidence, contradictions, overconfidence and usefulness. SELECTED
+successor: SCRIBELET; migration pending. Internal functional modules:
+INGEST; STORY MAP; READER PANEL; EXPERIENCE ASSESSMENT; CONSISTENCY;
+COMPARATIVE; SYNTHESIS; RECOMMENDATION; VERIFY; LCAS ADAPTER.
+
+MIRROR — Multidisciplinary Independent Review, Ranking, Observation &
+Reference — v1.4 Type: independent
+review/critique/comparison/validation/QA framework. Recovered helper
+families: - PRISM — Panel Review, Inspection & Synthesis Matrix.
+Strategy/review synthesis. - SCOPE — Subject Competence & Operational
+Practice Experts. Subject/domain/practitioner competence. - LENS —
+Literature, Evidence & Neutrality Specialist. Evidence, source
+verification and literature/precedent. - PARALLAX — Pattern, Analogy,
+Reference & Lateral Landscape Analysis eXperts. Benchmarking/comparative
+landscape. - FOCUS — Form, Organization, Clarity & User-facing
+Structure. Editing, communication and information architecture. -
+SPECTRA — Story, Perception, Emotion, Culture, Tone & Response Analysis.
+Creative/narrative/audience/cultural response. - SIGNAL — Strategy,
+Industry, Growth, Navigation, Audience & Launch.
+Market/product/commercialization/positioning. - SHADOW — Skeptical
+Hazard, Adversarial & Weakness Observation Directorate.
+Adversarial/failure/risk/reputation challenge. - FIELD — Feasibility,
+Implementation, Economics, Logistics & Deployment.
+Implementation/cost/operations/scalability/field experience. - ECHO —
+Evaluation, Consistency, Handoff & Outcome.
+QA/consistency/contradiction/improvement/final review. SELECTED
+successor: TICKTAG; migration pending.
+
+WEAVER — Web Experience Architecture, Validation, Engineering & Reach —
+v1.5 Type: web-production specialist/orchestrator. Recovered internal
+subordinates: - SCOUT — Search, Competition, Opportunities, Users &
+Trends. Audience/search intent/comparable sites/industry
+conventions/user expectations/opportunities. - LORE — Language,
+Organization, Relevance & Editorial. Production website copy, metadata,
+microcopy, FAQs, labels, calls to action, captions and content
+hierarchy. TANGLEORB was proposed during reconciliation but is NOT
+functionally equivalent enough to lock without App-level decision. -
+SCAFFOLD — Systemic Composition, Architecture, Flow, Framework,
+Organization, Layout & Design. Sitemap, IA, journeys, navigation,
+responsive UX/layout, components, interaction and design-system
+foundations. FRAME is legacy alias. - BRIDGE — Backend, Routing,
+Integrations, Data, Growth & Extensions.
+CMS/forms/APIs/databases/auth/analytics/consent/maps/feeds/social/commerce/search/integrations. -
+BEACON — Brand Exposure, Accessibility, Content Optimization &
+Navigation. Technical/on-page SEO, semantics, metadata, structured data,
+linking, crawlability, sitemaps, robots, social
+previews/discoverability. - PULSE — Performance, Usability, Loading,
+Stability & Efficiency. Performance budgets, assets, requests, fonts,
+JS/CSS, loading, caching, layout stability and responsiveness. - PROBE —
+Performance, Reliability, Optimization, Bugs & Evaluation. QA, failure
+classification, routing defects to responsible specialist, retesting. -
+LAUNCH — Live Assurance, Updates, Navigation, Compliance & Health.
+Launch readiness, environments, domains/HTTPS, redirects, production
+metadata, secrets, paths, deployment docs, post-launch verification.
+Optional future modules recorded by source: GUARD; MAP; WATCH.
+
+HERMES — Hiring, Employment, Research, Matching & Execution System Type:
+jobs/opportunities App. Authority: employment/careers,
+freelance/contracts/projects, tenders/procurement/business
+opportunities, and opportunity-linked recruitment/hiring. Recovered
+internal workers: - PROFILE — Profile & Truth Steward.
+Professional/company/candidate facts and provenance. - PATHFINDER —
+Career & Opportunity Strategy. Career/opportunity paths, preferences and
+locations. - SCOUT — Opportunity Discovery & Intake. Jobs, projects,
+contracts, tenders/procurement and hiring items. - GATEKEEPER —
+Eligibility. Mandatory requirements before softer matching. - MATCH —
+Matching & Explanation. Fit, evidence, strengths, gaps and unknowns. -
+RESEARCH — Opportunity Research Coordinator. Frames opportunity-specific
+research and invokes shared research capability. - SCRIBE — Documents.
+Truthful CV variants, cover letters, applications, bid/tender responses
+and opportunity documents. - REVIEW — Quality Control. Truthfulness,
+completeness and requirements coverage. - COURIER — Controlled
+Execution. Authorized submissions/actions and verification. - TRACKER —
+Lifecycle & Follow-up. Status, deadlines, interviews, clarifications,
+follow-ups and outcomes. - LIAISON — Communications. Contacts, mail,
+calendar and communications. - LEARN — Outcome Learning. Uses verified
+outcomes to improve profile, strategy and future pursuit.
+
+MONETA — Monetary Operations, Navigation, Evaluation, Treasury &
+Accounting — v1.5 Experimental Type: finance specialist App. Authority:
+financial state, semantics and administration. Nine major divisions: -
+LEDGER — Accounting & Controllership. - MERCURY — Transaction
+Intelligence. - ALLOCATE — Budgeting, Forecasting & Planning. - VAULT —
+Treasury, Cash & Liquidity. - MARGIN — Commercial Finance &
+Profitability. - NUNTIUS — Financial Reporting & Intelligence. - PATRON
+— Funding Finance. - RECEIPT — Financial Documents. - TRIBUTE — Tax.
+Recovered second-level capabilities include accounting/AP/AR/fixed
+assets/reconciliation/close/consolidation/statement mapping; transaction
+intake/classification/matching/recurring/exception/counterparty
+intelligence; budgeting/forecasting/business planning/resource
+allocation/scenarios/variance;
+pricing/cost/revenue/margin/profitability/unit economics; document
+extraction/matching/invoice/purchase-order/statement offices; and
+corresponding treasury/reporting/funding/tax capability families.
+
+ORACLE — Analytics Intelligence — v0.1 Experimental Type: generalized
+analytics/modelling capability/App. Function: generalized analytics,
+quantitative intelligence, modelling, forecasting, scenarios,
+optimization, trends, dashboards and structured decision support.
+Experimental subordinates: - DATA — Data Preparation & Quality
+Specialist. - STATISTICIAN — Statistical Analysis Specialist. - MODELLER
+— Quantitative Modelling Specialist. - FORECASTER — Forecasting & Trend
+Specialist. - SCENARIO — Scenario & Sensitivity Specialist. - OPTIMIZER
+— Optimization Specialist. - SIMULATOR — Simulation Specialist. -
+VISUALIZER — Analytical Visualization Specialist. - INTERPRETER —
+Decision-Support Interpreter. - VALIDATOR — Analytical Validation
+Specialist.
+
+CAMEL — Cargo, Assets, Movement, Execution & Logistics — v0.3 Type:
+logistics specialist App. Recovered subordinate family: - CARAVAN —
+logistics/transport movement planning and coordinated journey/workflow
+capability. - DROVER — fleet/driver/vehicle operational coordination
+capability. - CARGO — load/cargo requirements, handling and movement
+capability. - BEACON — logistics tracking/status/visibility
+capability. - WAYFARER — route/journey/geographic movement capability.
+(Descriptions retained at package-level function; exact expansions
+should be preserved from CAMEL prompts during packaging.)
+
+IRIS — Intelligent Realism and Image Synthesis — v1.6 Type: visual/image
+intelligence specialist. Function: visual/image research, generation,
+reconstruction, transformation, compositing, visual consistency,
+specialist rendering and visual QA. Recovered active module family:
+PLANNER; RESEARCH; SCAN; VISUAL_DNA; PROVENANCE; LOCK; CONTINUITY;
+FIDELITY_LOCK; STYLE_REFERENCE; COMPILER; FUSION; CALIBRATION;
+TEXT_MARKINGS; DOCUMENT; WEB; COMPARE; PANEL; QA; REDTEAM; VARIANTS;
+BATCH. FORGE was present historically inside IRIS but has been removed
+as an active IRIS identity; IRIS delegates deterministic technical
+processing to global FORGE. FOUNDRY migration is VOID.
+
+FORGE Type: independent software/technical/deterministic implementation
+and verification specialist. Function: scripts, conversion, automation,
+configuration integration, pipelines, validation tools, manifests and
+package integration.
+
+ARTEMIS — Asset Realization, Transformation, Engineering, Management &
+Integration System — v1.1 Type: autonomous asset-production domain
+owner. Internal roles recovered: Asset Director; Requirements Analyst;
+Visual Consistency Specialist; Technical Asset Engineer; Target-Context
+Reviewer; Readability Specialist; Optimization Specialist; QA/Defect
+Specialist; Recovery & Continuity Specialist. Delegates research to
+ARGOS, visual work to IRIS, deterministic processing/integration to
+FORGE and long-running sequencing to AOS.
+
+ARGOS — Academic Research Governance, Opposition & Synthesis — v1.7
+Type: multidisciplinary research framework. Function:
+academic/scientific/engineering/technical/evidence research with
+deliberate Opposition. Dynamic panel roles: Principal Investigator;
+Primary Domain Expert; Adjacent-Discipline Expert; Research
+Methodologist; Statistician/Data Scientist; Literature & Source
+Specialist; Evidence Quality Appraiser; Replication & Reproducibility
+Specialist; Skeptical Reviewer/Red Team; Competing-Hypotheses Analyst;
+Systems Scientist; Applied Engineering/Implementation Specialist;
+Ethics, Safety & Societal Impact Reviewer; Scientific Editor/Peer
+Reviewer; Publication Architect.
+
+LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation
+— v1.6 Type: localization/translation/multilingual specialist. Function:
+shared translation/localization pipeline; English canonical/fallback,
+Slovak baseline for private/custom/experimental, locality-aware
+multilingual public distribution.
+
+CURATOR Type: professional photography/media-management specialist.
+Function: professional photography/media management; integrates mature
+tools/capabilities rather than recreating them.
+
+SKALD Type: standalone Media & Entertainment/media-content specialist
+App. Function: media/content domain; not merely writing and not merely a
+HEIMDALL Workspace.
+
+THEMIS Type: legal/compliance App. Established subordinate concepts:
+COVENANT; CLAUSE; OBLIGO; JURIS; LEXICON; MANDATE; COMPLY. Function:
+legal/compliance semantics and workflows. Exact subordinate
+expansions/functions are preserved for the THEMIS owning package/chat
+during its App-level reconciliation.
+
+HESPERA Type: agriculture/growing Application. Function: authoritative
+agriculture/growing software domain.
+
+HESTIA Type: agriculture/growing physical Product. Function: local-first
+growing-control system operated with/through HESPERA. Legacy provenance:
+GardenOS / GardenOScore.
+
+NANDI Type: agricultural helper/product/platform. Function: modular
+agricultural helper/agriBot and field robotics/mobility platform.
+
+PROMETHEUS / DAEDALUS Type: companion Engineering Apps/Workspaces.
+Function: engineering-domain applications. Existing records deliberately
+avoid guessing which owns Mechanical vs Electrical until owning
+development state is reconciled.
+
+CHRONOS Type: temporal/time specialist. Function: temporal/time
+capability. Established identity retained; no invented expansion.
+
+======================================================================
+3. MAMMON — ISOLATED NAMESPACE
+======================================================================
+
+MAMMON Type: private strategy/campaign intelligence and monetisation
+App. Function: observe potentially monetizable change, model
+opportunity, challenge hypotheses, determine strategy, execute through
+appropriate EDEN Apps and measure economic outcome. Namespace rule:
+MAMMON retains its unique identity. SWEATSHOP workers, Generals, Rogues
+and other MAMMON-internal identities remain isolated under MAMMON.* and
+DO NOT force renames against shared EDEN identities. THREAD still
+inventories their functions/provenance, but shared collision resolution
+excludes them unless an identity is deliberately promoted/exported into
+the shared EDEN namespace.
+
+======================================================================
+4. TINY HELPERS / OTHER RECOVERED IDENTITIES
+======================================================================
+
+Known Tiny Helper names: ANT; BEE; OWL; FOX; WREN; MOTH; MITE; HARE;
+FINCH; GECKO. Rule: do not invent jobs, expansions or personas merely
+from the names.
+
+Historical/reserved/occupied identity inventory retained for namespace
+protection and genealogy: YGGDRASIL; CARD; ARK / ARK-I; ALCYON;
+PATHFINDER; OSPREY; SENTINEL; RAPTOR; WARDEN; RECLAIMER; SEEDER;
+GARDENER; AGRIBOT; ATLAS / Atlas Heavy Platform; ARGUS. These are not
+automatically active Apps. They remain namespace/genealogy records until
+classified by their owning development state.
+
+======================================================================
+5. GLOBAL COLLISION / CONFUSION MATRIX
+======================================================================
+
+READ - Global READ: reader/audience/document experience assessment. -
+Former CASPER.READ: Reader Experience Assessment & Diagnostics.
+Resolution: CASPER.READ → CASPER.AUDITOR. LOCAL VERIFIED. Global READ
+retained.
+
+THREAD - Global THREAD: system
+history/context/genealogy/provenance/recovery. - READ.THREAD:
+reader-side continuity — chronology, references, setup/payoff,
+unresolved threads, contradictions. - Former CASPER.THREAD: publication
+continuity. Resolution: global THREAD retained; CASPER.THREAD →
+CASPER.CORD LOCAL VERIFIED. READ.THREAD remains a distinct READ-native
+helper and must be considered during READ whole-App reconciliation.
+
+FORGE - Global FORGE: deterministic/software implementation and
+verification. - Historical IRIS.FORGE: duplicate/internal reference
+without independently necessary identity. Resolution: global FORGE
+retained; IRIS.FORGE removed; IRIS delegates to global FORGE. FOUNDRY
+proposal VOID.
+
+ECHO - READ.ECHO: Emotional & Cognitive Highlight Observer — reader
+emotional/cognitive response. - CASPER.ECHO: Evaluation, Comparison,
+Harmony & Overlap — publication internal comparison/harmony/overlap. -
+MIRROR.ECHO: Evaluation, Consistency, Handoff & Outcome — review
+QA/consistency/handoff/outcome. Selected decisions: READ keeps ECHO;
+CASPER.ECHO → RESONANCE; MIRROR.ECHO → TICKTAG. The latter two await
+whole-App migration/verification.
+
+LORE - CASPER.LORE: Literature, Origins, Research & Evidence —
+publication research/evidence. - READ.LORE: Logic, Ontology, Rules &
+Environment — story-world/rules/environment consistency. - WEAVER.LORE:
+Language, Organization, Relevance & Editorial — website
+copy/editorial/content hierarchy. Important correction from full
+recovery: these are THREE DISTINCT FUNCTIONS. Earlier
+SHORTSPAN/TANGLEORB ideas were made before the exact READ/WEAVER
+functions were recovered and must be reconsidered during whole-App
+reconciliation rather than treated as locked migrations.
+
+QUILL - CASPER.QUILL: Quality, Unity, Imagination, Language & Literature
+— literary craft/quality. - READ.QUILL: Quality, Usability, Integrity &
+Literary Logic — assessment QA/challenge. Decision: CASPER keeps QUILL;
+READ successor SCRIBELET selected, pending READ whole-App migration.
+
+SCRIBE - CASPER.SCRIBE: Syntax, Clarity, Readability, Integrity, Brevity
+& Editing. - HERMES.SCRIBE: opportunity documents — CVs, cover letters,
+applications, bid/tender responses. Classification pending whole-App
+reconciliation.
+
+SCOUT - WEAVER.SCOUT: Search, Competition, Opportunities, Users & Trends
+— web/audience/search research. - HERMES.SCOUT: Opportunity Discovery &
+Intake — jobs/contracts/tenders/procurement/hiring discovery.
+MAMMON-internal scout terminology is excluded by isolated namespace
+rule. Classification pending whole-App reconciliation.
+
+BEACON - WEAVER.BEACON: Brand Exposure, Accessibility, Content
+Optimization & Navigation — SEO/discoverability. - CAMEL.BEACON:
+logistics tracking/status/visibility. Classification pending whole-App
+reconciliation.
+
+PULSE - CASPER.PULSE: Positioning, User-market, Launch, Strategy &
+Evaluation — publication market/launch. - WEAVER.PULSE: Performance,
+Usability, Loading, Stability & Efficiency — web performance.
+Classification pending whole-App reconciliation.
+
+PRISM - READ.PRISM: Panel Reconciliation, Interpretation & Synthesis
+Matrix — synthesis of reader findings. - MIRROR.PRISM: Panel Review,
+Inspection & Synthesis Matrix — multidisciplinary review synthesis.
+Classification pending READ/MIRROR whole-App reconciliation.
+
+SCOPE - READ.SCOPE: Similarity, Convention, Originality & Positioning
+Evaluation. - MIRROR.SCOPE: Subject Competence & Operational Practice
+Experts. - fullSCOPE: system terminology/mode, not automatically an
+identity. Classification pending whole-App reconciliation plus
+terminology boundary check.
+
+MIRROR - Top-level MIRROR review framework. - READ.MIRROR: Manuscript
+Inspection, Reflection, Review, Originality & Resonance —
+READ-associated comparative helper. Requires explicit
+representation/relationship decision; do not silently conflate.
+
+RESEARCH - HERMES.RESEARCH: opportunity-specific research coordinator. -
+IRIS.RESEARCH: visual/reference research module. - ARGOS: shared deep
+research framework (different human-readable name but overlapping
+capability boundary). Requires capability/ownership boundary check, not
+necessarily rename.
+
+FOCUS - MIRROR.FOCUS: Form, Organization, Clarity & User-facing
+Structure. - FOCUS also appears historically as immersive-experience
+terminology. Requires identity-vs-mode/terminology check.
+
+PATHFINDER - HERMES.PATHFINDER: Career & Opportunity Strategy. -
+PATHFINDER appears in historical EDEN product/vehicle terminology.
+Requires namespace/type/genealogy check.
+
+ARGOS / ARGUS - ARGOS is canonical active research framework. - ARGUS
+appears historically. Requires legacy/typo/separate-identity genealogy;
+ARGUS must not be casually reused.
+
+ATLAS - Historical EDEN identities/platform terminology already occupy
+ATLAS. Reserved/occupied pending genealogy; do not reuse casually.
+
+UIbasic / LCAS - UIbasic: legacy control/UI identity. - LCAS: current
+Live Control, Activity & Status. Resolution: LCAS supersedes UIbasic for
+current shared control/status use; UIbasic retained as provenance.
+
+======================================================================
+6. APP-BY-APP RECONCILIATION QUEUE
+======================================================================
+
+1.  CASPER — reconcile all CASPER collisions together: ECHO/RESONANCE,
+    LORE, QUILL, SCRIBE, PULSE, plus verified AUDITOR and CORD
+    migrations.
+2.  READ — reconcile all READ collisions together: LORE, THREAD, ECHO,
+    MIRROR, SCOPE, PRISM, QUILL/SCRIBELET.
+3.  MIRROR — reconcile PRISM, SCOPE, FOCUS, ECHO/TICKTAG and READ.MIRROR
+    relationship.
+4.  WEAVER — reconcile SCOUT, LORE, BEACON, PULSE and legacy
+    FRAME→SCAFFOLD.
+5.  HERMES — reconcile PATHFINDER, SCOUT, RESEARCH, SCRIBE and generic
+    namespace boundaries.
+6.  CAMEL — reconcile BEACON and namespace/type overlaps.
+7.  IRIS — verify removal of IRIS.FORGE across shared system and inspect
+    generic module-name overlaps.
+8.  THEMIS — recover/verify subordinate expansions/functions from owning
+    state, then namespace audit.
+9.  ORACLE — audit
+    DATA/STATISTICIAN/MODELLER/FORECASTER/SCENARIO/OPTIMIZER/SIMULATOR/VISUALIZER/INTERPRETER/VALIDATOR
+    against shared namespace.
+10. MONETA — audit nine divisions and second-level capability namespace.
+11. Remaining Apps/frameworks/products/helpers.
+12. MAMMON — inventory only; isolated namespace, no general subordinate
+    renames.
+
+======================================================================
+7. PACKAGING READINESS
+======================================================================
+
+This staging master is ready to be packaged as the THREAD recovery
+baseline after Lucas reviews the recovered list/collision descriptions.
+
+Before package finalization, packaging should include: - this
+comprehensive human-readable master; - machine-readable identity
+register; - collision matrix; - migration decision ledger; -
+provenance/source map; - isolated-namespace rules; -
+legacy/reserved-name register; - App-by-App reconciliation queue.
+
+No additional subordinate rename should be executed before the relevant
+whole-App reconciliation pass.

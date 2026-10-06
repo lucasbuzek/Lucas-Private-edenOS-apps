@@ -1,0 +1,66 @@
+CAMEL — Cargo, Assets, Movement, Execution & Logistics — v0.3
+TELL ME ABOUT YOURSELF AND YOUR SUBORDINATES
+
+I AM CAMEL.
+
+I am EDEN's logistics-domain application. My responsibility is to turn logistics work into controlled operational execution: from a customer requirement or awarded opportunity through cargo planning, resource assignment, movement, tracking, delivery, proof of delivery and operational history.
+
+I do not try to become every other EDEN application. I own logistics semantics and operational state. I cooperate with the canonical owner whenever work crosses into another domain.
+
+MY CORE PURPOSE
+CONNECT LOGISTICS INTENT TO REAL-WORLD EXECUTION.
+
+I manage and understand:
+- customers and operational logistics requirements;
+- jobs, shipments, consignments, loads, movements and stops;
+- vehicles, trailers, drivers and transport combinations;
+- cargo requirements, capacity and compatibility;
+- dispatch and scheduling;
+- collection, transit, delivery and proof of delivery;
+- tracking, ETA, geofences, exceptions and incidents;
+- fleet availability, defects, maintenance and operational readiness;
+- driver/field execution;
+- logistics documents and their operational relationships;
+- logistics history, events, evidence and provenance.
+
+MY SUBORDINATES
+
+1. CARAVAN — Dispatch, Movements, Jobs & Routes
+CARAVAN coordinates operational movement. It handles jobs, dispatch, assignments, stops, scheduling, routes and movement execution plans. It answers: What needs to move, when, where, and with which assigned resources?
+
+2. DROVER — Fleet, Resources & Maintenance
+DROVER manages the operational resources that make movement possible: vehicles, trailers, drivers, equipment, combinations, availability, defects, inspections, maintenance and readiness. It answers: What resources do we have, what can they do, and are they ready?
+
+3. CARGO — Loads, Consignments & Capacity
+CARGO understands what is being transported. It manages shipments, consignments, loads, dimensions, mass, handling requirements, capacity constraints and compatibility with transport combinations. It answers: What are we carrying and what does it require?
+
+4. WAYMARK — Tracking, Status & Movement Visibility
+WAYMARK observes execution and marks progress/position along the journey. It handles position/tracking inputs, ETA, geofences, milestones, delays, exceptions and incident visibility. It answers: Where is it, what is happening, and is intervention required?
+
+5. WAYFARER — Driver & Field Execution
+WAYFARER is the simplified mobile/field experience. It gives drivers and field users only the authorized operational information and actions they need: today's assignment, route/stops, navigation handoff, cargo summary, status updates, files, incidents and POD capture. It is offline-capable where practical.
+
+HOW I COOPERATE WITH EDEN
+- HERMES owns opportunities, tenders and bid lifecycle. Awarded logistics work can become CAMEL contracts/jobs.
+- MONETA owns financial truth: accounting, transactions, invoices, payments, tax, budgets, cash flow and authoritative profitability.
+- ORACLE supplies quantitative analysis, optimization, forecasting and scenarios.
+- THEMIS supplies legal/compliance expertise.
+- CONDUCTOR is the universal AI interface and orchestration layer. My contextual AI actions use CONDUCTOR rather than a separate CAMEL AI stack.
+- BIFROST will reconcile and maintain shared identity, relationships, content provenance and interoperability. I remain able to operate before BIFROST and reconcile later.
+- HEIMDALL composes my capabilities with other EDEN capabilities inside Workspaces.
+
+MY OPERATING PRINCIPLES
+- Implement/integrate existing capability before recreating it.
+- One canonical owner per capability/data type; many consumers.
+- Modular underneath, integrated to the user.
+- Domain authority stays with the domain owner.
+- AI proposes/reasons/orchestrates; authoritative actions pass through the owning domain and permissions.
+- Preserve provenance, evidence, stable IDs and event history.
+- Local/offline operation must remain possible where operationally necessary.
+- TINY/LEAN must be useful now and compatible with later BIFROST/HEIMDALL/edenOS consolidation.
+- Beauty, capability and dignity are not premium features.
+
+MY FIRST TINY/LEAN VERTICAL
+Customer -> Job -> Cargo -> Pickup/Delivery -> Vehicle + Trailer + Driver -> Movement -> Status/Events -> Delivery -> POD -> Complete.
+
+I am not a monolith. I am the logistics authority in a larger EDEN ecosystem, with specialist subordinates for the major operational concerns and shared EDEN services for everything that should not be recreated inside logistics.

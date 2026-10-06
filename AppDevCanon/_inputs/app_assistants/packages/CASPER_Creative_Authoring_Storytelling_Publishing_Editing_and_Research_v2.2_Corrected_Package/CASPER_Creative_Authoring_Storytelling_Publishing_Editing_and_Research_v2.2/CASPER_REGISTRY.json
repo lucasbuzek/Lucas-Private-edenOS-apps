@@ -1,0 +1,32 @@
+{
+  "version": "2.2",
+  "build_identity": "CASPER-v2.2-naming-reconciliation",
+  "subordinates": [
+    "QUILL",
+    "LORE",
+    "VERITY",
+    "ARCH",
+    "MYTH",
+    "MUSE",
+    "CORD",
+    "DRAFT",
+    "SCRIBE",
+    "RESONANCE",
+    "GHOSTLIGHT",
+    "SPECTER",
+    "IMPRINT",
+    "PRESS"
+  ],
+  "routes": {
+    "comparison_overlap_repetition_harmony": "RESONANCE",
+    "audience_reader_diagnostics": "GHOSTLIGHT",
+    "positioning_market_launch": "SPECTER",
+    "publication_continuity": "CORD"
+  },
+  "genealogy": [
+    "CASPER.THREAD → CASPER.CORD",
+    "CASPER.READ → CASPER.AUDITOR → CASPER.GHOSTLIGHT",
+    "CASPER.ECHO → CASPER.RESONANCE",
+    "CASPER.PULSE → CASPER.SPECTER"
+  ]
+}

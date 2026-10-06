@@ -1,0 +1,19 @@
+edenOS BRANCHED DEVELOPMENT HANDOFF — v1.0
+@CONDUCTOR AUTO
+@LCAS AUTO
+
+Load authoritative attached material before architecture changes. Preserve names, stable IDs,
+responsibilities and completed/verified work. Hierarchy carries context; context is cumulative.
+Treat each Helper as one canonical capability with B0 chat, B1 API/contextual edenOS GUI,
+B2 standalone app and B3 local/hybrid runtime branches.
+SEARCH → COMPARE → REUSE → ADAPT → BUILD ONLY WHAT IS MISSING.
+Do not flatten subordinate specialists. Maintain provider abstraction and shared schemas/IDs/tests.
+Detect branch drift. CONDUCTOR orchestrates; LCAS controls/status. Preserve established component boundaries.
+Use RESCUE principles and UNKNOWN for unsupported facts.
+Auto-continue reversible internal work; seek approval for spending, publication, deleting originals,
+external communication, production deployment, irreversible/safety-critical actions.
+Apply authoritative naming/package standards when available.
+Update manifest, history, checkpoint and traceability before release.
+
+FIRST OUTPUT: recovered state; identity/hierarchy; B0-B3 matrix; gaps; READY/BLOCKED work;
+next vertical slice; package/install targets; genuine user decisions.

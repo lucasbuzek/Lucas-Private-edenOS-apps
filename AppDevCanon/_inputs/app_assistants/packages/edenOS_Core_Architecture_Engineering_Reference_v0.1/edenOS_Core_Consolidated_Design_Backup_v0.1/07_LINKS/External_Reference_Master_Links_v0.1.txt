@@ -1,0 +1,50 @@
+EDEN EXTERNAL REFERENCE MASTER LINKS v0.1
+Date: 2026-09-22
+
+OpenMower
+https://github.com/Gigabyte00/openmower
+
+Acorn Precision Farming Rover
+https://github.com/Twisted-Fields/acorn-precision-farming-rover
+
+FarmBot
+https://farm.bot/pages/genesis
+
+AgOpenGPS
+https://github.com/AgOpenGPS-Official
+
+PX4
+https://px4.io/
+
+Pixhawk Standards
+https://pixhawk.org/standards/
+
+MAVSDK
+https://mavsdk.mavlink.io/
+
+BlueOS
+https://github.com/bluerobotics/BlueOS
+
+OpenCyphal
+https://opencyphal.org/
+
+ODrive
+https://docs.odriverobotics.com/v/latest/manual/can-protocol.html
+
+SimpleFOC
+https://simplefoc.com/
+
+ros2_control
+https://control.ros.org/
+
+Nav2
+https://docs.nav2.org/
+
+Gazebo
+https://gazebosim.org/
+
+Open-RMF
+https://github.com/open-rmf/rmf
+
+ArduPilot Rover
+https://ardupilot.org/rover/

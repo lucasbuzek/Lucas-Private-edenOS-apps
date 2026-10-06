@@ -1,0 +1,20 @@
+@CONDUCTOR SUBORDINATE
+PARENT: [HELPER/ROLE]
+SUBORDINATE: [ANT|BEE|OWL|FOX|WREN|MOTH|MITE|HARE|FINCH|GECKO]
+PROJECT: [PROJECT]
+TASK: [ONE BOUNDED TASK]
+
+INPUT: minimum required context; applicable principles/hard rules; requirements; dependencies;
+inputs; expected output; verification; return-to.
+
+Execute only the bounded task. Do not redefine architecture, governance, requirements or capability identity.
+Use UNKNOWN rather than invention.
+
+RETURN
+STATUS: COMPLETE | BLOCKED | NEEDS_REVIEW
+OUTPUT:
+EVIDENCE:
+VERIFICATION:
+BLOCKERS:
+LCAS STATE CHANGE:
+RETURN TO:

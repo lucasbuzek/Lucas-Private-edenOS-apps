@@ -1,0 +1,89 @@
+MONETA TEST EXECUTION REPORT — v1.2.1 TESTING CANDIDATE
+Date: 2026-09-21
+
+PREPARATION
+PASS — v1.1 acceptance branch test T08 was stale (B0/B1/B2/B3). It was corrected to the current approved target B0/B1/B2 before execution.
+PASS — Existing-Solution-First gate retained.
+PASS — No B2 build claim made: Rust/Cargo are unavailable in this execution environment.
+
+STATIC ACCEPTANCE EXECUTION
+T01	PASS	company IDs=9, unique=9; names=9, unique=9
+T02	PASS	alias=NUNTIUS; current SCRIBE files=[]; NUNTIUS current=True
+T03	PASS	subordinates=59; invalid parents=[]; top-level collisions=[]
+T04	NOT_RUN	Requires behavioral context-inheritance harness.
+T05	NOT_RUN	Requires executable cross-company handoff/provenance implementation.
+T06	NOT_RUN	Requires executable authorization/side-effect policy implementation.
+T07	PASS	Inspected executable B1 router truth-state output.
+T08	PASS	branches=['B0', 'B1', 'B2']; branch-independent capability invariant present=True
+T09	PASS	provider profiles=['cloud', 'local', 'hybrid']; ownership invariant=True
+T10	NOT_RUN	Requires cross-project capability/ownership comparison against authoritative CHRONOS/ORACLE/BIFROST/CONDUCTOR/LCAS registries.
+T11	NOT_RUN	Requires behavioral consolidation-routing test.
+T12	NOT_RUN	Requires behavioral reporting-integrity test with verified source figures.
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 772, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/connection.py", line 37, in get_or_create_client
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/daemon.py", line 124, in start_daemon
+TimeoutError: Timed out waiting for artifact tool daemon socket. Set ARTIFACT_TOOL_RPC_DAEMON_STARTUP_TIMEOUT_S=<seconds> to increase the limit.
+
+
+B1 UNIT TESTS
+RESULT: PASS
+TAP version 13
+# Subtest: receipt
+ok 1 - receipt
+  ---
+  duration_ms: 0.999806
+  type: 'test'
+  ...
+# Subtest: treasury
+ok 2 - treasury
+  ---
+  duration_ms: 0.140813
+  type: 'test'
+  ...
+# Subtest: fallback
+ok 3 - fallback
+  ---
+  duration_ms: 0.17931
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 83.857885
+
+
+B1 JAVASCRIPT SYNTAX
+PASS — src/router.mjs
+PASS — src/server.mjs
+PASS — src/router.test.mjs
+
+B1 SERVER SMOKE
+PASS — health: {"ok":true,"branch":"B1"}
+PASS — route: {"branch":"B1","owner":"RECEIPT","objective":"extract receipt","status":"PROPOSED","existing_solution_gate":"REQUIRED_BEFORE_IMPLEMENTATION","side_effects":"NONE"}
+
+JSON VALIDATION
+PASS — 10_SHARED/MONETA_v1.2_BRANCH_CONTRACT.json
+PASS — 10_SHARED/MONETA_v1.1_CAPABILITY_REGISTRY.json
+PASS — 90_BRANCHES/B1_WEB/package.json
+PASS — 90_BRANCHES/B2_DESKTOP/src-tauri/tauri.conf.json
+
+RUNTIME LIMITS
+NOT_RUN — B2 macOS clean build/runtime.
+NOT_RUN — B2 Windows clean build/runtime.
+NOT_RUN — T04 context inheritance behavior.
+NOT_RUN — T05 provenance handoff behavior.
+NOT_RUN — T06 authorization enforcement behavior.
+NOT_RUN — T10 cross-project deduplication until authoritative registries/packages are mounted together.
+NOT_RUN — T11 consolidation behavior.
+NOT_RUN — T12 reporting-integrity behavior.
+
+RELEASE STATUS
+TESTING CANDIDATE — NOT PRODUCTION RELEASE.

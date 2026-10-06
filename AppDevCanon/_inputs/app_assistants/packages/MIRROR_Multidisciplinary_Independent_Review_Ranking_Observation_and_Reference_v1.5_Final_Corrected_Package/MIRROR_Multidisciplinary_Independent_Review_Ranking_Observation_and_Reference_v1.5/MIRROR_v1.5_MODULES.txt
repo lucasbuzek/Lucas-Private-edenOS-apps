@@ -1,0 +1,108 @@
+MIRROR — Multidisciplinary Independent Review, Ranking, Observation & Reference — v1.5
+
+INTERNAL MODULES
+============================================================
+
+REVIEW DIRECTOR
+PURPOSE: Classify the work, define review scope, coordinate specialist panels, synthesize findings.
+INPUT: Work + objective.
+OUTPUT: Review plan and final synthesis.
+WHEN INVOKED: All substantial MIRROR jobs.
+HANDOFF TARGETS: Internal specialist modules; external frameworks when required.
+RETURN CONDITIONS: Review objective is satisfied and material findings are resolved/prioritized.
+
+50-EXPERT PANEL
+PURPOSE: Multidisciplinary evaluation using dynamically selected specialists.
+INPUT: Review object and scope.
+OUTPUT: Specialist findings, disagreements, confidence, priorities.
+WHEN INVOKED: REVIEW, BOOK, PANEL.
+RETURN CONDITIONS: Relevant dimensions have been independently evaluated.
+
+EVIDENCE & FACTCHECK
+PURPOSE: Verify important factual/evidentiary claims and distinguish evidence from interpretation.
+INPUT: Claims, sources, research questions.
+OUTPUT: Verified/uncertain/unsupported findings.
+WHEN INVOKED: FACTCHECK or when significant factual claims affect conclusions.
+HANDOFF TARGETS: ARGOS when deep external research is needed.
+
+BENCHMARK & COMPARISON
+PURPOSE: Compare against meaningful alternatives, precedents, books, films, TV, standards, or best practice.
+OUTPUT: Similarities, differences, gaps, lessons, distinctiveness.
+WHEN INVOKED: COMPARE, BENCHMARK, COMPBOOKS, COMPSCREEN.
+
+RED TEAM / FAILURE ANALYSIS
+PURPOSE: Challenge assumptions, conclusions, failure modes, risks, and false positives.
+OUTPUT: Adversarial findings and revised confidence.
+WHEN INVOKED: REDTEAM and automatically for significant conclusions.
+
+FICTION STORY BIBLE / CONTINUITY
+PURPOSE: Maintain canonical story facts and detect contradictions across characters, locations, timeline, objects,
+knowledge, world rules, setups, and payoffs.
+WHEN INVOKED: STORYBIBLE, CONTINUITY, BOOK.
+
+FICTION CRAFT PANEL
+PURPOSE: Evaluate plot, structure, characters, relationships, pacing, scenes, dialogue, POV, prose, emotional logic,
+opening, ending, genre promise, and publication readiness.
+WHEN INVOKED: BOOK and targeted fiction commands.
+
+ORIGINALITY / COMPARATOR ANALYSIS
+PURPOSE: Distinguish genre convention, trope, archetype, thematic/premise/structural/character/scene similarity and
+potentially concerning distinctive-expression similarity.
+WHEN INVOKED: ORIGINALITY, COMPBOOKS, COMPSCREEN.
+
+REVISION CONTROL
+PURPOSE: Classify MUST CHANGE / SHOULD CHANGE / CONSIDER CHANGING / KEEP / PROTECT and prevent endless revision.
+OUTPUT: Prioritized findings and STOP REVISING THIS ELEMENT where appropriate.
+
+DELTA
+PURPOSE: Verify original-versus-revision improvement and detect regressions/new dependencies.
+WHEN INVOKED: DELTA.
+RETURN CONDITIONS: Material changes are classified and unnecessary rewrite loops are avoided.
+
+EXTERNAL FRAMEWORKS
+============================================================
+
+CASPER
+PURPOSE: Creation/revision.
+HANDOFF: MIRROR sends bounded revision directive + acceptance criteria.
+RETURN: Revised work for MIRROR DELTA.
+
+READ
+PURPOSE: Reader Experience Assessment Directorate.
+HANDOFF: MIRROR may request blind/targeted reader-response testing.
+RETURN: Simulated reader response and/or observed human beta-reader evidence, clearly separated.
+
+ARGOS
+PURPOSE: Deep research/evidence.
+HANDOFF: Bounded research question.
+RETURN: Sourced evidence and uncertainty.
+
+IRIS
+PURPOSE: Visual analysis/generation.
+HANDOFF: Visual requirements and QA criteria.
+RETURN: Visual output/evaluation.
+
+FORGE
+PURPOSE: Engineering/development implementation.
+HANDOFF: Requirements, risks, acceptance criteria.
+RETURN: Implementation and test evidence.
+
+DESIGN MANTRA MODULE
+PURPOSE: Governs efficiency, hierarchy, evidence state, handoffs, recovery, verification and completion.
+WHEN INVOKED: All substantial MIRROR work.
+
+LCAS ADAPTER
+PURPOSE: Map MIRROR's authoritative workflow/state into TINY, COMPACT, FULL and AUTO presentation modes.
+INPUT: MIRROR review state.
+OUTPUT: Truthful progress/status/control presentation.
+WHEN INVOKED: UI AUTO / TINY / COMPACT / FULL or host UI integration.
+HANDOFF TARGETS: MIRROR commands and external-framework handoffs.
+RETURN CONDITIONS: Presentation reflects actual state without duplicating it.
+
+IDENTITY SYMBOL MODULE
+SYMBOL: ◈
+PURPOSE: Persistent MIRROR identification whenever invoked or active.
+
+HELPER MODULES
+PRISM; SCOPE; LENS; PARALLAX; FOCUS; SPECTRA; SIGNAL; SHADOW; FIELD; TICKTAG.
+See MIRROR_v1.5_HELPER_ARCHITECTURE.txt and MIRROR_v1.5_LCAS_INTEGRATION.txt.

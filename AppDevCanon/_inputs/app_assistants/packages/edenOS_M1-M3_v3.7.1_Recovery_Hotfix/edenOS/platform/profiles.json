@@ -1,0 +1,23 @@
+{
+  "schema": 2,
+  "principle": "Deploy a useful configuration, not a different operating system.",
+  "experience_depth": {
+    "default": "full",
+    "choices": ["essential", "full", "advanced"],
+    "rule": "Depth changes presentation and discoverability, never deletes data or silently changes configured services."
+  },
+  "areas": {
+    "built_in": ["general", "education", "engineering", "science_research", "agriculture", "medical_health", "creative", "development", "business_administration"],
+    "composable": true,
+    "custom_profiles": true,
+    "rule": "Areas are composable configuration profiles, not separate edenOS editions."
+  },
+  "layers": ["system", "device", "deployment", "application", "organization", "user", "session"],
+  "roaming": {
+    "user_owned": ["identity_reference", "experience_depth", "areas", "preferences", "accessibility", "favorites", "logical_workspaces", "application_state", "data_references"],
+    "device_owned": ["drivers", "physical_storage", "display_hardware", "network_interfaces", "boot_configuration", "local_caches"],
+    "rule": "Logical workspace roams; physical presentation is regenerated locally."
+  },
+  "policy_rule": "Explicit managed policy is distinct from user preference.",
+  "upgrade_rule": "Base OS, providers, profiles and user overrides upgrade independently; preserve provenance and user customization."
+}

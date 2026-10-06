@@ -1,0 +1,46 @@
+{
+  "model": "one canonical catalogue; availability/selection/authorization/maturity are separate",
+  "version": "1.7",
+  "known_private_capabilities_apps": [
+    "BIFROST",
+    "HEIMDALL",
+    "HEIMDALL.CONDUCTOR",
+    "EITRI",
+    "FORGE",
+    "PROMETHEUS",
+    "DAEDALUS",
+    "ARGOS",
+    "APPLE",
+    "LINGUA",
+    "IRIS",
+    "READ",
+    "MIRROR",
+    "PENELOPE",
+    "SKALD",
+    "LECTOR",
+    "MONETA",
+    "HERMES",
+    "CURATOR",
+    "MAMMON",
+    "WEAVER",
+    "HESPERA",
+    "HESTIA",
+    "NANDI"
+  ],
+  "retired_or_legacy_runtime": [
+    {
+      "id": "LCAS",
+      "current": "in-chat UI only",
+      "legacy": "Apps/edenOS runtime status layer"
+    },
+    {
+      "id": "UIbasic",
+      "current": "legacy provenance",
+      "superseded_by": "actual UIX"
+    }
+  ],
+  "notes": [
+    "Catalogue metadata does not assert installation or verification.",
+    "CONDUCTOR canonical runtime identity is HEIMDALL.CONDUCTOR."
+  ]
+}

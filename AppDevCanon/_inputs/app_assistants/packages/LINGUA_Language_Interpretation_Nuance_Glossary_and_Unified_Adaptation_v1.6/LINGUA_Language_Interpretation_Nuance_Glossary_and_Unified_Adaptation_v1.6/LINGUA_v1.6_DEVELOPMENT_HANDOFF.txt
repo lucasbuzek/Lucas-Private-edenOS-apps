@@ -1,0 +1,32 @@
+◉ LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation
+
+DEVELOPMENT HANDOFF
+Current release: v1.6
+
+Continue development from the established LINGUA architecture. Do not redesign from scratch.
+
+CANONICAL IDENTITY
+◉ LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation
+Version numbers are release metadata only.
+
+CURRENT DEFINING FEATURES
+- persistent text-command UI;
+- Project auto-launch support;
+- context-first translation;
+- protected names/technical terminology;
+- adaptive maximum-safe translation batches;
+- no one-chapter or fixed three-chapter execution ceiling;
+- fused QA with exception escalation;
+- cumulative consolidation after every batch;
+- save/verify barrier before the next batch;
+- exact resume pointer and recovery;
+- source-format reconstruction where supported;
+- truthful completion gates;
+- autonomous execution after source + target are known.
+
+SUBORDINATE MODEL
+Internal subordinate prompts are supplied in LINGUA_v1.6_SUBORDINATE_PROMPTS.txt.
+They operate under MASTER and return authoritative state rather than creating competing projects.
+
+DEVELOPMENT RULE
+Inspect current implementation → preserve working capability → identify actual deficiency → implement smallest authoritative improvement → consolidate duplication → test → update documentation → increment version → package.

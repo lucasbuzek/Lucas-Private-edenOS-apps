@@ -1,0 +1,17 @@
+PROJECT BIBLE — SWAYcore
+Status: RECOVERY IN PROGRESS — do not invent missing canon
+
+PROJECT
+SWAYcore iOS/iPadOS movement/workout application. Target devices include iPhone 15 Pro Max development device, iPhone 13 minimum and iPad support; Xcode 27 established.
+
+RECOVERED PRODUCT REQUIREMENTS
+Functional menu; production-quality instructor/COACH assets with runtime-consumed separated body parts rather than flattened concept sheets; User Avatar component library; movement/tracking/Beats convergence; production UI/UX; workout screen; camera tracking; working music integration/analysis; multiple COACH styles. DesignReferences must not be inside Xcode. No placeholders for production rig/assets.
+
+DELIVERABLE / ACCEPTANCE
+Established target sequence: P1A Lucia production rig → P1B user-avatar component library → P2 movement/tracking/Beats convergence → P3 production UIX → P4 engineering/extensibility verification → P5 functional Alpha tested by Lucas in Xcode/on iPhone. P5 is Lucas testing the updated package in Xcode; package existence alone is not acceptance.
+
+SOURCE / LKG / EVIDENCE
+Canonical ~/edenOS/Projects/SWAYcore source is currently absent. Recovery evidence exists outside canonical workspace in Downloads, including BUILD143 working ZIP, BUILD148 candidate, BUILD151 alpha-avatar-convergence ZIP, BUILD153 full-feature-alpha ZIP and final product specification. These are recovery inputs only; do not promote newest number as LKG without verification. Historical evidence says Build 122 was IMPLEMENTED + STATIC PASS + PACKAGE PASS but not accepted Alpha/LKG; physical gates remained Xcode/iOS compile, iPhone visual comparison, character quality/layout, camera tracking and MusicKit runtime.
+
+KNOWN REGRESSION / NEXT EXECUTABLE GATE
+Earlier Build 110 regression evidence: static cut images returned; menu unchanged; drummers only tone; analysis broken; Apple Music broken; camera tracking missing, while earlier pre-100 builds had more working. Recover authoritative source and compare BUILD143/148/151/153 plus final product spec; identify the most advanced coherent functional line and preserve its LKG before extension. Do not increment build numbers or package again until demonstrated functionality advances.

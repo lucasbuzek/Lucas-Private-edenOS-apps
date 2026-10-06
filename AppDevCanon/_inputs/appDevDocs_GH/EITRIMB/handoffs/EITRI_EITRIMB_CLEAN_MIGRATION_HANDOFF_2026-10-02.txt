@@ -1,0 +1,67 @@
+EITRI / EITRIMB CLEAN MIGRATION — 2026-10-02
+
+@eitrimb full auto
+
+PURPOSE
+Migrate an existing AppDev conversation to the CURRENT EITRI/EITRIMB operating system and authoritative rulebook. This is replacement, not an additive update.
+
+PRESERVE FROM THE OLD CONVERSATION ONLY
+1. ACTIVE PROJECT / PROJECT IDENTITY.
+2. CURRENT GOAL / CURRENT REQUESTED MILESTONE / USER INTENT, including the unfinished product outcome Lucas is presently trying to achieve.
+The current goal is the continuity anchor.
+
+DO NOT PRESERVE OLD GOVERNANCE
+Do not carry forward old EITRI/EITRIMB master instructions, corrective handoffs, AppDev workflow descriptions, execution/AUTO/evidence interpretations, recovery procedures, filesystem assumptions, Mac/Remote Desktop workflow, Git/GitHub/Codex workflow, copied package rules, copied specialist routing, LCAS governance assumptions, duplicated canon, obsolete Bible copies, old storage assumptions, old assistant definitions, procedural scaffolding or status conventions.
+Do not merge old and new governance. NEW AUTHORITATIVE RULEBOOK WINS.
+
+CURRENT AUTHORITY
+Working AppDev/EITRI-family authority: GitHub lucasbuzek/Lucas-private-appDevDocs.
+Project/application data: GitHub lucasbuzek/Lucas-Private-edenOS-apps, unless the project has an explicitly established separate authoritative repository.
+Local Mac copies are backup/recovery copies and local execution material, not routine working memory.
+Do not reconstruct current authority from old conversation instructions.
+
+MIGRATION
+1. Identify this conversation's established ACTIVE PROJECT.
+2. Preserve only its current goal/current requested milestone and minimum project identity needed to preserve that goal.
+3. Supersede old conversational EITRI/EITRIMB operating behavior.
+4. Load CURRENT authoritative EITRI/EITRIMB/AppDev authority from DevDocs.
+5. Locate the CURRENT Project Bible/settings.
+6. Locate current implementation/data in edenOS-apps or the project's explicit repo.
+7. Establish actual implementation/evidence state only as required to continue the preserved goal.
+8. Apply the CURRENT rulebook.
+9. Continue from the first safe executable action required by the preserved goal.
+Do not perform broad conversation-history or Mac filesystem reconstruction.
+
+CONFLICTS
+Old EITRI/EITRIMB behavior vs current rulebook → CURRENT RULEBOOK WINS.
+Old project statement vs current Project Bible → CURRENT PROJECT BIBLE WINS, except an explicit current user goal remains requested until Lucas changes it.
+Old status vs actual evidence → ACTUAL EVIDENCE WINS.
+REFERENCE != INHERITANCE. Do not import another project's canon.
+
+ACTIVE CONTEXT
+Keep compact: PROJECT; CURRENT GOAL; CURRENT DELIVERABLE/MILESTONE; ACCEPTANCE; AUTHORITATIVE BASELINE; LKG; CURRENT CANDIDATE; DEMONSTRATED STATE; UNVERIFIED STATE; KNOWN FAILURES/REGRESSIONS; RELEVANT CONSTRAINTS; AVAILABLE CAPABILITIES; CURRENT GAP; NEXT EXECUTABLE ACTION.
+The historical conversation is not another rulebook.
+
+EXECUTION
+AUTO remains active. If the preserved goal is incomplete and safe executable work exists, EXECUTE. Migration is supporting work unless migration itself is the requested deliverable. Do not stop merely to summarize migration, produce another plan, or list executable remaining work.
+
+MACHINE / GIT / CODEX
+Do not use Remote Desktop Commander for ordinary migration, rulebook loading, GitHub persistence or conversational recovery. Use it only for genuinely local execution such as compilation, native build/test, physical-device/runtime work or asset rendering after required project files are available.
+Normal coding/Codex path: LOCAL WORKSPACE FIRST → IMPLEMENT → VERIFY → COMMIT → PUSH.
+GitHub persistence/activity is not implementation evidence. Do not recreate repositories with blob/API churn when ordinary local Git is available.
+Codex handoff must use current EITRIMB handoff capability and answer: WHAT SHOULD CODEX EXECUTE NEXT?
+
+EVIDENCE
+Use only current authoritative evidence rules. GENERATED != IMPLEMENTED != BUILT != TESTED != VERIFIED != RELEASED. UNKNOWN != PASS. Repository activity, build numbers, plans, generated assets, compilation, installation or launch do not prove higher product functionality unless that functionality itself was demonstrated.
+
+MIGRATION COMPLETE WHEN
+ACTIVE PROJECT identity and CURRENT GOAL are preserved; current DevDocs authority governs; current Project Bible governs project canon; current project source/evidence defines what exists; old EITRI/EITRIMB operating instructions are superseded; current EITRIMB governs; AUTO continues against the preserved goal.
+Do not continually rerun migration.
+
+FINAL INVARIANT
+OLD CONVERSATION PROVIDES THE CURRENT GOAL.
+CURRENT PROJECT BIBLE DEFINES THE PROJECT.
+CURRENT APPDEV RULEBOOK DEFINES HOW DEVELOPMENT OPERATES.
+CURRENT PROJECT SOURCE/EVIDENCE DEFINES WHAT ACTUALLY EXISTS.
+CURRENT EITRIMB GOVERNS EXECUTION.
+AUTO EXECUTES THE REMAINING GAP.

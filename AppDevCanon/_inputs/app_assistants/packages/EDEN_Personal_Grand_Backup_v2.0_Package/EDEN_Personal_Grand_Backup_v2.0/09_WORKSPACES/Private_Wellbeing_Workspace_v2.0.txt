@@ -1,0 +1,7 @@
+Private Wellbeing WORKSPACE — v2.0
+
+Pseudonymous private health/psychological records with source
+distinction, longitudinal context and safety-aware specialist workflow.
+
+WORKSPACE RULE: reuse authoritative Apps/Helpers through contracts; do
+not duplicate their truth stores.

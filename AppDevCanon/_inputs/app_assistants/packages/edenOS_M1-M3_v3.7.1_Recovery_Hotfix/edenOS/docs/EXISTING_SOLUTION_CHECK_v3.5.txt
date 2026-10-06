@@ -1,0 +1,19 @@
+edenOS M1-M3 v3.5 — Existing Working Solution Check
+Date: 2026-09-21
+
+MANDATORY RULE
+Before implementing or replacing functionality:
+REQUIREMENT -> CHECK CURRENT IMPLEMENTATION -> CHECK EXISTING WORKING SOLUTIONS -> VERIFY FIT -> INTEGRATE -> ADAPT -> EXTEND -> CUSTOM-BUILD ONLY IF NECESSARY -> TEST.
+
+CHECK PERFORMED FOR v3.5
+1. v3.4 canonical workspace retained rather than creating another workspace model.
+2. Existing macOS rsync is used for safe in-place release overlays when available.
+3. macOS ditto is retained as the native fallback rather than inventing a copy engine.
+4. Existing Alpine verified-cache flow retained.
+5. Existing QEMU ARM64/HVF flow retained.
+6. Existing ownership gate and repair workflow retained.
+7. Existing cleanup/consolidation workflow retained.
+8. Historical DP0.7 documents/contracts retained as evidence; active runtime/build naming moved to M1-M3 so current tooling no longer presents the historical checkpoint as the current product milestone.
+
+CUSTOM CODE JUSTIFICATION
+APPLY_UPDATE.command is only the thin edenOS policy layer needed to distinguish release-managed files from persistent workspace state. File transfer itself delegates to proven macOS tooling.

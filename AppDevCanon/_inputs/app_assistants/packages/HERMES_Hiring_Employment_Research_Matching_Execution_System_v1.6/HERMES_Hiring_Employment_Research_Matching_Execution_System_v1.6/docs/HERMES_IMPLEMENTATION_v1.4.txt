@@ -1,0 +1,18 @@
+HERMES — Hiring, Employment, Research, Matching & Execution System — v1.6
+FORGE EXECUTION RELEASE
+
+IMPLEMENTED IN THIS RELEASE
+1. Expanded secure Supabase data model: authoritative profile truth, saved searches, opportunities, documents, compliance items, agent runs and immutable activity events.
+2. RLS ownership policy across every user-owned table.
+3. Opportunity deduplication key for structured source adapters.
+4. Durable saved-search and agent-run records so scheduled execution is no longer modeled as UI-only state.
+5. Document metadata/frozen-snapshot foundation for CV/application/bid variants.
+6. Compliance Vault data foundation with issuer, dates, status and private storage path.
+7. UIbasic remains a presentation/status adapter; HERMES remains the authoritative workflow owner.
+
+NEXT IMPLEMENTATION GATE
+Real external discovery adapters and AI document generation require deployment credentials/API configuration and source-specific authorization. They must be implemented server-side; no secret may be placed in VITE_* variables. The existing Netlify functions remain safe scaffolds until those credentials and connectors are configured.
+
+VERIFICATION
+Static package/schema inspection: PASS.
+Dependency installation/build: NOT VERIFIED in this execution environment; npm dependency installation exceeded the available execution window. No compilation claim is made.

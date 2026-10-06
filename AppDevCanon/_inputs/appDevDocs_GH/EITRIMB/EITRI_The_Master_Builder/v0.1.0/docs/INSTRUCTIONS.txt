@@ -1,0 +1,17 @@
+EN
+1. Preserve authoritative project canon and LKG.
+2. Load MASTER.txt into the EITRI Governor environment.
+3. Connect only authorized capabilities/providers.
+4. Recover existing project state before planning new work.
+5. Use EDC contracts and evidence-based state.
+6. Back up project source/documentation in its own GitHub repository where permitted.
+7. Do not mark runtime integration VERIFIED until demonstrated in the target environment.
+
+SK
+1. Zachovajte autoritatívny projektový kánon a LKG.
+2. Načítajte MASTER.txt do prostredia EITRI Governor.
+3. Pripojte iba autorizované schopnosti/poskytovateľov.
+4. Pred plánovaním novej práce obnovte existujúci stav projektu.
+5. Používajte EDC kontrakty a stav založený na dôkazoch.
+6. Ak je to povolené, zálohujte zdroj projektu a dokumentáciu vo vlastnom GitHub repozitári.
+7. Integráciu za behu neoznačujte VERIFIED, kým nebola preukázaná v cieľovom prostredí.

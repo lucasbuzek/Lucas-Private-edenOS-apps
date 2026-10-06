@@ -1,0 +1,20 @@
+TRAVEL / MOBILITY WORKING DOMAIN — v2.0
+
+PERSONAL TRAVEL WORKSPACE SHOULD SUPPORT: • nationality/residency/visa
+context stored privately and updated with validity dates. • visa/entry
+research and official-source verification. • South Africa ↔ Slovakia /
+EU mobility. • UK/US/Schengen and regional Southern African travel
+research. • airport/transit/airline connection rules. • pet-travel
+planning, veterinary/document timelines and airline requirements. •
+volunteering / conservation travel. • travel-company research and
+itinerary/product design. • cost, documents, deadlines, baggage,
+insurance, accommodation and local transport. • locality-aware language
+support through LINGUA.
+
+WORKFLOW: TRIP INTENT → TRAVELLER/PET PROFILE → ROUTE → ENTRY/TRANSIT
+RULES → DOCUMENT CHECKLIST → TRANSPORT → ACCOMMODATION → HEALTH/SAFETY
+REQUIREMENTS → COST → TIMELINE → FINAL PRE-DEPARTURE VERIFICATION.
+
+Immigration, airline and health-entry rules are time-sensitive: record
+source and verification date rather than treating old answers as
+permanent truth.

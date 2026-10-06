@@ -1,0 +1,21 @@
+PRIVATE ENVIRONMENT CANON
+
+Garden of EDEN — Lucas Buzek’s personal/private EDEN front door.
+cloud9 — Lucas’s private implementation and test environment.
+BIFROST — CONNECT & KEEP.
+CONDUCTOR — orchestration.
+LCAS — live truthful evidence/control/status.
+
+Preserve the previously working edenOS Local Development Control source.
+Canonical recent local source: ~/Downloads/edenOS
+Existing authoritative UI/flow:
+Setup / Manage / Configure / Status
+Apply Update → Test Package → Build & Launch
+
+Do not replace this working implementation with mock installers, reconstructed
+interfaces or invented PASS states. Recover and extend existing source.
+
+PRIVATE APPLE-CENTRIC BUILD
+Prioritize macOS, iPhone/iOS, iPad/iPadOS, Safari and appropriate native Apple
+capabilities where materially useful. Preserve shared cores, open contracts and
+non-Apple adapters/distributions.

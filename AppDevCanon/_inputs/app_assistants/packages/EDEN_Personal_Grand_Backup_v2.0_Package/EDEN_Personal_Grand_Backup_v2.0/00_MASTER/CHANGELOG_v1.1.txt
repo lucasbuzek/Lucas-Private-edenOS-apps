@@ -1,0 +1,17 @@
+CHANGELOG — v1.1 — 2026-09-22
+
+ADDED: Grand profile backups. Updated App and Helper identity cards.
+LINGUA coverage-pack architecture. Literary/poetic user-facing
+NamingRule. Locality recommendation and user-choice rules.
+Translation-state/fallback rules. South African Family language
+handling. Machine-readable GrandMasterRegister snapshot.
+
+CHANGED: Localization architecture expanded beyond the older EN/SK +
+public multilingual baseline. Official release language design now
+separates universal, regional, locality and personal preference layers.
+User-facing pack names are literary while internal identity remains
+precise.
+
+PRESERVED: Unresolved identities remain unresolved. Existing authority
+boundaries are not redesigned. No source-code or physical verification
+is claimed.

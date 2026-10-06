@@ -1,0 +1,19 @@
+{
+  "status": "candidate-provider-map-not-a-bundle-list",
+  "principle": "Existing software is implementation machinery; edenOS is the coherent experience.",
+  "capabilities": [
+    {"capability":"filesystem","strategy":"existing Linux/POSIX","eden_surface":"Files"},
+    {"capability":"display-session","strategy":"Wayland ecosystem","eden_surface":"Shell"},
+    {"capability":"audio-video-routing","strategy":"existing Linux media services","eden_surface":"system controls/apps"},
+    {"capability":"networking","strategy":"existing Linux network services","eden_surface":"Settings / Control Center"},
+    {"capability":"bluetooth","strategy":"existing Linux Bluetooth stack","eden_surface":"Settings / Control Center"},
+    {"capability":"printing","strategy":"existing printing stack","eden_surface":"system print experience"},
+    {"capability":"application-portals","strategy":"standard Linux portal interfaces where suitable","eden_surface":"native edenOS dialogs/permissions"},
+    {"capability":"browser","strategy":"mature browser engine","eden_surface":"Browser"},
+    {"capability":"documents","strategy":"mature renderers/converters","eden_surface":"Documents / Preview"},
+    {"capability":"media","strategy":"mature codec/playback libraries","eden_surface":"media experiences"},
+    {"capability":"database","strategy":"mature embedded database","eden_surface":"invisible platform service"},
+    {"capability":"scientific-compute","strategy":"existing scientific runtimes/libraries","eden_surface":"Research / Engineering"},
+    {"capability":"gis","strategy":"existing geospatial libraries","eden_surface":"Atlas / Research"}
+  ]
+}

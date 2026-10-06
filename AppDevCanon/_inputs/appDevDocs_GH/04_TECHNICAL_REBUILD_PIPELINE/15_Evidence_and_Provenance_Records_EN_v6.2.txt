@@ -1,0 +1,45 @@
+LUCAS AI JOURNEY TOME — TECHNICAL & RESEARCH 15
+EVIDENCE & PROVENANCE RECORDS — v6.2
+
+STATUS: substantive reconstruction checkpoint; final cross-volume editorial/publication review remains.
+
+AI can produce many plausible candidates quickly. Provenance establishes which artifact is authoritative, where it came from, what changed and what was actually tested.
+
+TRUTH CLASSES
+EVIDENCED EVENT — directly supported by preserved evidence.
+RECONSTRUCTION — best-effort restoration from surviving artifacts/context.
+INTERPRETATION — conclusion drawn from evidence.
+LORE — remembered/repeated project story without sufficient evidence for a stronger class.
+UNKNOWN — available material does not justify a conclusion.
+
+AUTHORITATIVE IDENTITY
+Preserve stable deliverable ID, authoritative path, version, source hash where practical, parent/baseline, state, owner and evidence links.
+
+TRACEABILITY
+REQUIREMENT → PLAN/DECISION → TASK/CHANGE → ARTIFACT → TEST/EVIDENCE → VERIFICATION STATE → RELEASE.
+
+STATUS LANGUAGE
+“Fixed,” “working,” “complete” and “ready” are conclusions. Prefer bounded statements such as “source updated; compile not run” or “clean compile passed; hardware behavior not verified.”
+
+FAILURE EVIDENCE
+Preserve the first meaningful failure before changing the system. Compiler evidence should include exact error, file/line, environment, dependency identity and source state. Runtime evidence should preserve trigger, expectation, observation and logs. Hardware evidence should preserve actual component identity and wiring assumptions.
+
+EVIDENCE RECORD
+evidence_id, claim_id, artifact_id, artifact_hash, source_version, environment, method, expected, observed, result, limitations, attachments, created_at, created_by, supersedes, notes.
+
+Use PASS, FAIL, BLOCKED and UNKNOWN. Not-run is never PASS.
+
+SUPERSESSION
+Evidence against one version does not automatically verify the next. Preserve old evidence and mark supersession rather than rewriting history.
+
+RECOVERY
+Recovered historical source and evidence-based reconstruction are different. Preserve/hash surviving originals. Document reconstruction methods. Record conflicts. If authority cannot resolve a conflict, mark UNKNOWN.
+
+AI-SPECIFIC RISKS
+Invented filenames/citations, reconstructed code presented as original, incompatible versions merged by summary, unsupported completion language, repeated content mistaken for corroboration and context drift.
+
+PUBLICATION ANALYSIS GATE
+Historical claims need provenance classes; quotations trace to sources; reconstructions are labelled; current canon is not projected backward; superseded decisions remain visible; source inventory/evidence ledger are retained.
+
+PROVENANCE
+This volume synthesizes recovered TOME/EDEN governance: authoritative working copy, evidence-based state, stable IDs, hashes/checkpoints and explicit UNKNOWN. It is methodology, not proof that a particular historical test occurred.

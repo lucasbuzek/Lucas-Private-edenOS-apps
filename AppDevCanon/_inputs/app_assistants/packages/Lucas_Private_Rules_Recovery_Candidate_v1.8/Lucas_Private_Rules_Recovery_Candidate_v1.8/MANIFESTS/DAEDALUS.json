@@ -1,0 +1,11 @@
+{
+  "role": "Engineering Design, Systems & Realization",
+  "lifecycle": [
+    "DEFINE",
+    "ARCHITECT",
+    "ENGINEER",
+    "INTEGRATE",
+    "VERIFY",
+    "REALIZE"
+  ]
+}

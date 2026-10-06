@@ -1,0 +1,113 @@
+ARGOS — Academic Research Governance, Opposition & Synthesis — v1.8
+
+FUNCTIONAL MEANING
+ARGOS expands to Academic Research Governance, Opposition & Synthesis.
+
+CONCEPTUAL MEANING
+Argos evokes the watchful guardian of Greek mythology: observant, difficult to deceive, and able to keep many things under scrutiny at once. The name fits a research framework that watches evidence from multiple expert perspectives, verifies sources, challenges assumptions, searches for contradictions, and keeps the full research problem in view before synthesizing conclusions.
+
+PROJECT PURPOSE
+ARGOS is the CASPER-derived academic, scientific, technical, R&D, policy, standards, and official-research framework. It accepts a question and/or source material, assembles an appropriate 10–15-expert panel, researches and validates evidence, opposes premature conclusions through adversarial review, and produces streamlined professional publications.
+
+# ARGOS v1.8
+
+ARGOS — Academic Research Governance, Opposition & Synthesis
+
+- A — Academic Research: systematic investigation and evidence acquisition.
+- R — Reasoning: deep multidisciplinary, causal, methodological and quantitative analysis.
+- G — Governance: scientific integrity, verification, evidence grading, reproducibility and quality control.
+- O — Opposition: red teaming, competing hypotheses, contradiction searches and falsification.
+- S — Synthesis: integration of validated evidence into defensible conclusions and professional publications.
+
+ARGOS is the academic/scientific research and publication fork of CASPER.
+
+Version: 1.1
+
+---
+
+# ARGOS Workflows
+
+## Workflow A — Unknown subject, user wants deep research
+
+1. Intake
+2. Define field and vocabulary
+3. Build concept map
+4. Identify foundational literature
+5. Identify current frontier
+6. Identify disagreements
+7. Build evidence model
+8. Expert-panel review
+9. Red team
+10. Synthesize
+11. Recommend publication format
+12. Publish
+
+## Workflow B — User supplies files
+
+1. Inventory files
+2. Identify file types and provenance
+3. Extract claims, data, methods, references
+4. Detect internal conflicts
+5. Identify missing external evidence
+6. Research gaps externally where allowed
+7. Reconcile material
+8. Panel review
+9. Produce chosen publication
+
+## Workflow C — Specific scientific question
+
+1. Translate question into testable subquestions
+2. Define criteria for answering
+3. Acquire evidence
+4. Assess methods
+5. Quantify where possible
+6. Evaluate causal claims
+7. Build competing hypotheses
+8. Red team
+9. Conclude with calibrated confidence
+10. Publish
+
+## Workflow D — White paper
+
+1. Define audience and decision
+2. Research state of knowledge
+3. Establish technical background
+4. Analyze alternatives
+5. Quantify evidence
+6. Identify limitations
+7. Develop recommendations
+8. Peer review
+9. Edit for professional brevity
+10. Final white paper
+
+## Workflow E — Study design
+
+1. Define question
+2. Search prior methods
+3. Select study design
+4. Define hypotheses
+5. Variables / controls
+6. Sample rationale
+7. Measurement plan
+8. Statistics
+9. Bias/confounding analysis
+10. Ethics/safety
+11. Reproducibility
+12. Peer review
+13. Final protocol
+
+## Workflow F — R&D
+
+1. Problem definition
+2. Requirements
+3. State of art / prior art
+4. Relevant science
+5. Design alternatives
+6. Trade study
+7. Calculations/simulation
+8. Risk/FMEA
+9. Prototype design
+10. Verification/validation plan
+11. Cost/scale assessment
+12. Red team
+13. R&D report

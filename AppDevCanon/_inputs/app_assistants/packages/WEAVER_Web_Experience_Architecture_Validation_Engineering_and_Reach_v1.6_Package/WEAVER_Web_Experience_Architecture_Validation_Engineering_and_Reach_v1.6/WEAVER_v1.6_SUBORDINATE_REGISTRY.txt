@@ -1,0 +1,52 @@
+🕷️ WEAVER — Web Experience Architecture, Validation, Engineering & Reach
+Release: v1.6
+
+CANONICAL SUBORDINATE REGISTRY
+
+WEBSEEKER
+External research, search intent, users, competition, trends, conventions and opportunities.
+Preserved functional scope: Search, Competition, Opportunities, Users & Trends.
+WEBSEEKER is a canonical name; no forced acronym expansion is assigned.
+
+TANGLEORB
+Language, editorial content, website copy, metadata copy, microcopy, FAQs, labels, calls to action, captions, content hierarchy, relevance and language quality.
+Preserved functional scope: Language, Organization, Relevance & Editorial.
+TANGLEORB is a canonical name; no forced acronym expansion is assigned.
+
+SCAFFOLD — Systemic Composition, Architecture, Flow, Framework, Organization, Layout & Design
+Sitemap, information architecture, user journeys, navigation, responsive UX/layout, components, interaction and design-system foundations.
+FRAME is a legacy alias only.
+
+SPINNERET
+Backend capability, routing, CMS, forms, APIs, databases, authentication, analytics, consent integrations, maps, feeds, social integrations, commerce, search integrations, external services and extensions.
+Preserved functional scope: Backend, Routing, Integrations, Data, Growth & Extensions.
+SPINNERET is a canonical name; no forced acronym expansion is assigned.
+
+SIGNALWEB
+Technical/on-page SEO, semantics, metadata, structured data, internal linking, crawlability, sitemaps, robots directives, social previews, discoverability and established accessibility/navigation responsibilities.
+Preserved functional scope: Brand Exposure, Accessibility, Content Optimization & Navigation.
+SIGNALWEB is a canonical name; no forced acronym expansion is assigned.
+
+WEBPULSE
+Performance, usability, loading behaviour, stability, efficiency, performance budgets, asset/request efficiency, fonts, JavaScript/CSS performance, loading strategy, caching, layout stability and responsiveness.
+Preserved functional scope: Performance, Usability, Loading, Stability & Efficiency.
+WEBPULSE is a canonical name; no forced acronym expansion is assigned.
+
+WEBPROBE
+QA/testing, reliability, optimization, defect identification, failure classification, defect routing, evaluation, retesting and verification after corrections.
+Preserved functional scope: Performance, Reliability, Optimization, Bugs & Evaluation.
+WEBPROBE is a canonical name; no forced acronym expansion is assigned.
+
+SILKFLIGHT
+Launch/deployment readiness, environments, domains, HTTPS, redirects, production metadata, secrets handling within scope, production paths, deployment documentation, compliance checks within scope, post-launch verification and production health.
+Preserved functional scope: Live Assurance, Updates, Navigation, Compliance & Health.
+SILKFLIGHT is a canonical name; no forced acronym expansion is assigned.
+
+PROTECTED EXTERNAL IDENTITIES
+HERMES.SCOUT
+CASPER.LORE
+READ.SHORTSPAN
+CAMEL.BEACON
+CASPER.SPECTER
+
+These identities are outside WEAVER and are not renamed by this migration.

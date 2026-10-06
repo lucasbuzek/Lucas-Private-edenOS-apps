@@ -1,0 +1,8 @@
+MONETA v1.6 — CROSS-PLATFORM FORGE CHECKPOINT
+FORGE implementation target: one canonical shared MONETA capability core.
+Verified executable surface: responsive Web/PWA + Node local server, usable from
+macOS/Windows/Linux and mobile browsers.
+Prepared native desktop adapter: Tauri 2 source for macOS/Windows/Linux.
+Native binaries are NOT_RUN because Rust/Cargo is not available in this execution environment.
+Mobile native shells are not built; PWA is the current executable mobile surface.
+Production financial side effects remain disabled.

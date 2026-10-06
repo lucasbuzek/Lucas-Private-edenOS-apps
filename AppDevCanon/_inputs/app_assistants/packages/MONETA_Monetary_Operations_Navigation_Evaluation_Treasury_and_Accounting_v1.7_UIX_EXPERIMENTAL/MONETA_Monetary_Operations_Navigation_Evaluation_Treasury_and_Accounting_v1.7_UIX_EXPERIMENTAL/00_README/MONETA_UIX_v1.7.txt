@@ -1,0 +1,40 @@
+MONETA v1.7 — UIX EXPERIMENTAL
+
+UIX LANGUAGE
+Familiar by default. More powerful by choice.
+Small by default. Rich by composition.
+Modular underneath. Simple on the surface.
+Simple outside → rigorous inside.
+Branch the experience, not the truth.
+
+IMPLEMENTED
+- Domain-first MONETA home; HEIMDALL is not a doorway requirement.
+- Finance companies/objects exposed directly.
+- Persistent LCAS identity/state/maturity context.
+- Desktop: Navigation + Primary Work + Inspector/Context + LCAS.
+- Mobile: direct Overview/Companies/Work/Status flow.
+- SIMPLE → ADVANCED → EXPERT disclosure depth.
+- DIAGNOSTIC remains conceptually separate from normal configuration depth.
+- Quiet/default overview: attention first, telemetry/details on demand.
+- Responsive desktop/tablet/mobile layout.
+- Keyboard-focusable company cards and semantic controls.
+- Explicit Experimental and side-effect-disabled states.
+- Hardware-aware composition recommendation remains advisory.
+- Same canonical MONETA Core; UIX does not duplicate finance logic.
+
+NOT YET VERIFIED / IMPLEMENTED
+- Formal accessibility audit (WCAG/platform assistive technology).
+- Native macOS/Windows/Linux UI verification.
+- Native iOS/iPadOS/Android shell verification.
+- Real financial object views backed by BIFROST persistence.
+- Live approval workflows and authorization engine.
+- Live HERMES/ORACLE/THEMIS handoffs.
+- Charts based on real verified financial data.
+- Localization/LINGUA surface.
+- Production financial side effects.
+
+UIX MATURITY
+IMPLEMENTED at responsive PWA experimental level.
+Accessibility verification: NOT_RUN.
+Native app validation: NOT_RUN.
+Shared-component promotion: NOT_READY.

@@ -1,0 +1,43 @@
+GARDENOS → EDENOS CORE EXTRACTION MAP v0.1
+
+RETAIN / GENERALIZE FROM GARDENOS
+- identity and hardware capability model
+- hardware abstraction
+- sensor/actuator services
+- Node/module discovery concepts
+- safe outputs and unknown-hardware non-actuation
+- local deterministic rules/automation
+- configuration and persistence
+- calibration
+- networking/discovery
+- API concepts
+- OTA/update/recovery
+- diagnostics/health/events
+- local-first operation
+- resource discipline
+- authoritative implementation principle
+- user-data separation and migration
+- adapter-not-owner integrations
+
+REMAIN IN GARDENOS
+- plants and plant database
+- beds/zones/garden spatial semantics
+- irrigation/watering strategies
+- crop/soil biological knowledge
+- agriculture-specific automation semantics
+- garden-specific UI language
+
+EXTEND IN EDENOS CORE FOR MACHINES
+- motion provider abstraction
+- energy provider/state
+- payload/tool interface
+- machine safety/interlocks
+- position/localization quality
+- mission/job runtime
+- Home/Dock
+- machine buses
+- service/maintenance metrics
+- graceful capability degradation
+
+MIGRATION RULE
+TRACE → CONSOLIDATE → GENERALIZE ONLY WHAT IS REUSABLE → EXTRACT CONTRACT → VERIFY GARDENOS → REUSE → REMOVE DUPLICATION.

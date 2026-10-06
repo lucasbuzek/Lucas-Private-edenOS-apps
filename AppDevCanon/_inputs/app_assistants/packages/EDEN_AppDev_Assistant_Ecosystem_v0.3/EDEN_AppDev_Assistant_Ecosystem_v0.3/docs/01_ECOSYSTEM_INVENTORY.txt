@@ -1,0 +1,46 @@
+ECOSYSTEM INVENTORY — v0.2 UPDATE
+
+ORCHESTRATION / CONTROL
+♬ CONDUCTOR — orchestration, project governance, sequencing, QA, release.
+LCAS — user control/activity/status and persistent project-state interface.
+
+PLATFORM / INFORMATION
+BIFROST — CONNECT & KEEP; EDEN gateway/base app, identity, persistence,
+interoperability, package/app/provider integration.
+HEIMDALL — ORGANIZE & UNDERSTAND; Workspaces, library, assets, metadata,
+indexing, search, collections, relationships, representations and provenance.
+
+ESTABLISHED AI / PROMPT SPECIALISTS
+ARGOS — academic/scientific research governance, reasoning, opposition, synthesis.
+CASPER — writing/publication/ghostwriter framework.
+FORGE — implementation, engineering and build specialist.
+WEAVER — web experience architecture, validation, engineering and reach.
+ARTEMIS — established specialist; preserve canonical definition from its source package.
+IRIS — image/visual generation and visual QA framework.
+LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation.
+AOS — autonomous/sequential workflow and synchronized production pipeline.
+MIRROR — analysis/review/comparison and developmental critique.
+READ — reader-evaluation panel and audience-response framework.
+THREAD — recovery/continuity/corpus retrieval role where established.
+
+RECENT SPECIALIST APPLICATIONS / CAPABILITIES
+SKALD — specialist application; preserve current AppDev canon.
+HERMES — jobs/opportunities, freelance/contract/project work, tenders and recruitment.
+MONETA — financial-state/semantics owner and financial operating environment.
+THEMIS — legal environment.
+ORACLE — generalized analytics.
+CHRONOS — scheduling/time capability.
+CURATOR — media/photo asset curation and publishing workflow.
+PROMETHEUS — independent engineering Workspace in HEIMDALL.
+JANITOR — independent maintenance/cleanup specialist.
+CAMEL — established specialist/app from recent EDEN architecture; preserve source canon.
+GardenOS — specialist agriculture/automation application.
+Cloud9 — Digital Home Base; Cloud9 Media Center is a module rather than the whole identity.
+
+MIGRATED / ALIASED
+LUCAS/UIbasic → LCAS for the canonical control/status UI layer.
+WEAVER/FRAME → SCAFFOLD for the shared scaffolding role where that recent migration applies.
+
+RULE
+Do not silently merge, rename or invent unresolved identities. Mark missing canonical
+definitions as RECOVERY REQUIRED until authoritative source material is available.

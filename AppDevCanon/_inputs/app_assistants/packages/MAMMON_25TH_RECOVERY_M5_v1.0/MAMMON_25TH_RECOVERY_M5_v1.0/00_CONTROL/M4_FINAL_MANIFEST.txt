@@ -1,0 +1,52 @@
+MAMMON / EDEN 25TH ANNIVERSARY RECOVERY — M4 FINAL MANIFEST
+Version: v0.4
+Date: 2026-09-24
+Owner: Lucas Buzek
+Status: M4 COMPLETE / DELIVERY-READY RECOVERY PACKAGE
+
+PURPOSE
+Final integrity/provenance checkpoint for the split recovery package. This package does not invent missing historical canon.
+
+BRANCHES
+01_MAMMON_RELATED
+- MAMMON v0.1 handoff and MAMMON-owned/reused economic-opportunity context.
+- 25th-anniversary material may be consumed only as provenance-preserved reusable methods/inputs.
+
+02_MAMMON_APPLE
+- APPLE is a derived review/quality/architecture overlay for MAMMON-related work.
+- APPLE material is NOT retroactively part of the original 25th-anniversary historical corpus.
+
+03_25TH_ANNIVERSARY
+- Authoritative recovered historical/research branch.
+- Identity: Eden Initiative — Twenty-Five Years After 9/11 — 2001–2026 / 2026–2051.
+- Recovered: project master, Step 2 Alternative-History Research Review, Enhanced Manifesto/Research Thesis text representation.
+
+PROVENANCE BOUNDARIES
+- Recovered source material remains distinguishable from later interpretation.
+- MAMMON reuse does not transfer ownership of the historical corpus to MAMMON.
+- APPLE review does not rewrite historical provenance.
+- GrandMasterRegister records identity/authority/provenance; it must not be used to invent unresolved history.
+
+UNRESOLVED / PROVENANCE-BLOCKED
+1. Exact Generals Generations lineage, names/order and source descriptions.
+2. Complete original 25th-anniversary conversation/thread and every original numerical table/intermediate calculation.
+3. Separately named Eden_Initiative_White_Paper_25_Years_After_9-11_2026 artifact was referenced historically but is not physically present in this recovery archive.
+4. Any claimed direct Generals Generations ↔ 25th-anniversary relationship remains unverified unless recovered from source history.
+5. GrandMasterRegister strategist/rogue/scout collision audit remains an implementation/reconciliation task; no replacement identities were invented here.
+
+RECOVERY PRINCIPLES
+IMPLEMENT / INTEGRATE EXISTING CAPABILITY BEFORE RECREATING IT.
+MAXIMUM USEFUL MODULARITY — MINIMUM DUPLICATION.
+MANY APPS, ONE AUTHORITY PER CAPABILITY, MINIMAL DUPLICATION.
+DETERMINISTIC BY DEFAULT; INTELLIGENCE ON DEMAND.
+EVERY UNKNOWN SHOULD BECOME A QUESTION, A SEARCH, OR A DELEGATION — NEVER AN INVENTION.
+
+MILESTONE STATE
+M0 Recovery control established — COMPLETE
+M1 Corpus recovery — COMPLETE for delivery checkpoint; unresolved provenance explicitly retained
+M2 Canonical consolidation — COMPLETE
+M3 Split & provenance validation — COMPLETE
+M4 Package/manifest/integrity validation — COMPLETE
+
+NEXT STATE
+PACKAGE DELIVERY. Further discoveries are additive recovery revisions, not blockers to this M4 delivery snapshot.

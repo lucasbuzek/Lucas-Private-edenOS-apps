@@ -1,0 +1,16 @@
+capability_registry_schema: "1.0"
+project_id: ""
+last_refreshed: "UNKNOWN"
+providers:
+  - capability_id: ""
+    provider: ""
+    provider_class: "LOCAL|NATIVE|APP|PLUGIN|CLOUD"
+    platform_environment: []
+    availability: "AVAILABLE|DEGRADED|OFFLINE|UNKNOWN"
+    authorization_state: "CONNECTED|NOT_CONNECTED|APPROVAL_REQUIRED|UNKNOWN"
+    permissions: []
+    connectivity_required: "UNKNOWN"
+    cost_class: "UNKNOWN"
+    evidence_strength: "UNKNOWN"
+    fallback_provider: ""
+    last_verified: "UNKNOWN"

@@ -1,0 +1,341 @@
+MODERN GENERALS NATIVE — PROJECT BIBLE
+Authority date: 2026-10-03
+Status: AUTHORITATIVE PROJECT CANON — RECOVERED/RECONCILED
+Governor: EITRI — The Master Builder Governor v0.2.0
+Mode: LCAS FULL · permanent
+Repository authority: lucasbuzek/Modern-Generals-native-iOS-macOS-
+
+1. IDENTITY
+Modern Generals Native is the definitive native Apple implementation of Modern Generals, a spiritual successor to the classic Westwood-era Command & Conquer / Generals design lineage.
+
+Product thesis:
+- Modernize the technology. Preserve the soul.
+- The Mod proves the game. Native realizes it.
+- One game, one canon, two implementations during development.
+
+Rusted Warfare / Mod-LAB is the rapid gameplay laboratory/reference. Accepted gameplay and content evidence migrate into Native. Native is the definitive independent implementation where native 3D/spatial simulation, destruction, Apple-platform presentation and later AR apply.
+
+Do not restart from placeholders or generic RTS demos when established Modern Generals capability exists.
+
+2. FINAL PRODUCT SCOPE — CORRECTION
+The governing target is the COMPLETE FINAL v1 GAME, not a Dragon vertical slice and not a three-faction product architecture.
+
+v1:
+- 36 playable doctrine-distinct Generals.
+- complete game mechanics, economy, construction, production, technology, upgrades, powers, logistics, repair/recovery, radar/ISR, EW/counter-UAS, air defence, artillery/fires, infantry, ground, air/UAV, naval, strategic systems, AI, pathfinding, objectives, fog, victory/defeat, save/reload/replay, campaign and WDC systems.
+- complete established content and asset requirements for the 36-General release.
+
+v2:
+- 75 total playable Generals = retained original 36 + 39 additional.
+- campaign target approximately 150–200 missions / alternative Generals and perspectives.
+
+Temporary Dragon, USA/Vanguard, GLA/Nomad, M56, Alpha, C-series and other test builds are DEVELOPMENT/TEST EVIDENCE AND DONOR MATERIAL. They do not define final product scope.
+
+Dragon is a mature test/integration lineage and donor/reference implementation. It is NOT the product's governing vertical-slice architecture and must not delay parallel recovery/production for the full 36-General release.
+
+3. CAMPAIGN / MODES
+Recovered authoritative campaign goals:
+- 36 doctrine-distinct Generals.
+- campaign era approximately 2000–2035+.
+- 150 unique canonical-mission architecture was established in earlier campaign planning; later v2 expansion target is approximately 150–200 missions. Preserve chronology rather than flattening these into one unsupported number.
+- short shared Grand Campaign approximately 25–35 missions plus deeper faction campaigns and alternative victories were established goals.
+- MG-CAM-141–150 convergence and MG-CAM-150 full story-valid alliance roster via production were established campaign architecture targets.
+- Story Pipeline v2.0 remains canonical.
+- MAPGEN remains canonical and locality-aware.
+- authored Story Campaign and dynamic World Domination Campaign are separate ways to play. They share systems/assets but never progression/state.
+- no predetermined campaign winner; campaign state/alliance consequences retained.
+
+WDC = World Domination Campaign.
+Current recovered WDC foundation/target: 512x512 tiles, 20px tile scale, 8-player-capable architecture, strategic-scale geography, normal-sized terrain tiles, irregular coast/waterways, shallow/deep water, roads, bridges/crossings, forest/rough/rock/mountain, urban/industrial regions, resources, naval space and multiple strategic corridors. Earlier small-map/oversized-tile implementations are rejected.
+
+EDEN Initiative:
+- independent bonus faction for v1 Skirmish/WDC;
+- AI actor in approximately the final 2–3 Story missions;
+- does not replace one of the canonical 36 playable-General slots.
+
+Civilians / rogue actors / NPC factions are Story actors, not canonical playable-General slots.
+
+Rogues Gallery is an optional Modern Generals add-on/mod-of-the-mod/meme-generator layer. It is distinct from the curated canonical roster and never fills a canonical v1 General slot.
+
+4. PLATFORM AUTHORITY
+Platform hierarchy:
+iPadOS PRIMARY → macOS EXPANDED → iOS PORTABLE.
+
+Principle:
+“iPad first. Mac expanded. iPhone portable. One Modern Generals.”
+
+Same simulation, canon, campaign and save model across devices. Device-appropriate interfaces only.
+
+iPad: full RTS, touch-first, Pencil useful, keyboard/trackpad/mouse/controller where appropriate.
+macOS: same game/simulation/content, denser interface, larger view, mouse/keyboard/right-click/control groups/drag/edge scrolling, highest practical graphics/unit scale.
+iPhone: same simulation/factions/Generals/campaign/saves with streamlined contextual UI; gameplay rules are not reduced.
+
+5. CORE GAME ARCHITECTURE
+Primary Native implementation:
+- Swift + SwiftUI
+- RealityKit primary native 3D runtime / scene presentation
+- Reality Composer Pro where useful
+- GameplayKit/custom deterministic logic for AI/state/spatial support
+- Metal/MetalFX only where specialized escalation is justified
+- simulation remains renderer-independent
+
+Shared architectural intent:
+- MGCore — deterministic gameplay truth
+- MGContent — definitions/content
+- MGWorld — world/map state
+- MGRenderer — presentation
+- MGAI — AI
+- MGCampaign — campaign
+- MGSaveReplay — platform-neutral save/replay
+- MGInterface — shared UI contracts
+- platform adapters
+- shared assets
+
+RealityKit consumes authoritative battle state. Renderer/presentation does not own authoritative gameplay state.
+
+Navigation:
+- MGNavigation GameplayKit grid baseline exists.
+- Recast Navigation + Detour remain intended proven large-RTS production navigation backend.
+- Recast/Detour answer where movement is possible; MGCore/AI decide what to do.
+- Recast/meshoptimizer are optional provisioning dependencies and must not force network access during ordinary local build/test.
+
+6. CANONICAL GAMEPLAY / CONTENT MODEL
+Recovered core hierarchy:
+WORLD/BLOC/NATION/FACTION
+→ GENERAL
+→ DOCTRINE
+→ TECH/TIER
+→ CHASSIS/PLATFORM ACCESS
+→ BUILDING SPECIALIZATION
+→ MISSION PACKAGE
+→ VALID CONFIGURATION
+→ EQUIPMENT UPGRADES
+→ GENERAL/DOCTRINE MODIFIERS.
+
+NO EMPTY BUILDINGS:
+BUILD → PRODUCE/SUPPORT → SPECIALIZE → OPERATE → ADAPT.
+
+Technology progression goals include T1 Legacy → T2 Current → T3 Advanced/Prototype → T4 Experimental/Strategic. Earlier planning also established higher-tier building/progression families and advanced-builder requirements; implementation details must be recovered rather than reinvented.
+
+Veterancy is locked:
+Regular → Veteran → Elite.
+Veteran receives modest automatic improvements. Only Elite may add one appropriate new capability. No Heroic tier.
+
+Retained warfare domains:
+economy, resources, power, construction, production, combat, native/proven AI behavior, technology, chassis/platforms, specializations, mission packages/configurations, equipment upgrades, doctrines, logistics, repair/recovery, radar/ISR, EW/counter-UAS, air defence, artillery/fires, infantry, ground, air/UAV, naval and strategic systems.
+
+Real-world reference rule:
+canon → real-world reference → gameplay abstraction → proven engine/native capability.
+
+7. ROSTER RECOVERY STATE
+Final v1 count is AUTHORITATIVE: 36 playable Generals.
+Final v2 count is AUTHORITATIVE: 75 total.
+
+A historical 25-name faction/General roster recovered from conversations includes:
+USA/Vanguard
+China/Dragon
+Russia/Hammer
+UK/Lancer
+France/Chevalier
+Germany/Panzer
+Poland/Hussar
+Ukraine/Trident
+Türkiye/Anatolia
+India/Rajput
+Pakistan/Falcon
+Japan/Shogun
+Korea/Tiger
+Israel/Merkava
+Iran/Zagros
+Saudi Arabia/Desert Falcon
+Egypt/Nile
+South Africa/Springbok
+Nigeria/Eagle
+Brazil/Jaguar
+Mexico/Aztec
+Australia/Wallaby
+Indonesia/Garuda Nusantara
+GLA/Nomad
+EDEN/Warden
+
+IMPORTANT: this historical 25-name table is recovery evidence, not proof that it equals the final 36-General table. Do not invent the remaining identities or silently force a one-General-per-faction mapping.
+
+Earlier development also established broader representation/allocation work including Europe, Russia and Africa expansions. Exact mapping into the final 36 remains RECOVERY PENDING where not explicitly evidenced.
+
+EDEN conceptual identities recovered elsewhere include Architect, Gardener, Shepherd, Voyager, Guardian, Falconer and Tinkerer, with conceptual cycle SEED → GENERATE → FABRICATE → ADAPT → RECLAIM → EXPAND → RELOCATE. These 'Generations' are doctrinal/conceptual evolutions, not technology tiers. Exact historical ordering/relationship remains unresolved and must not be invented.
+
+8. DRAGON DONOR / TEST LINEAGE
+Dragon / China Combined Arms has strong recovered mechanics/content evidence and remains valuable donor/reference material.
+
+Recovered Dragon target:
+- 15 buildings including Naval Yard extension
+- 6 infantry
+- 15 ground roles target
+- 5 chassis families
+- 8 air/UAV
+- 6 naval
+- 5 Vehicle Factory specializations: Mechanized / Armor / Fires / Air Defense / Support
+
+Established infantry roles include Rifle, AT, MANPADS, Engineer, Recon/Scout and Special Forces.
+
+Power Plant progression:
+Core Grid / Basic Power
+→ Grid Expansion (+Capacity)
+→ Hardened Grid (+Resilience)
+→ High-Output Grid (+Output)
+→ Strategic Grid (late game).
+
+Technology Center T1/T2/T3/T4 state progression exists in the Mod lineage. Unsafe global cross-unit tier hiding/gating was deliberately deferred where safe team-state behavior was not proven.
+
+Recovered alpha economy evidence, NOT final balance:
+HQ +4/60
+Power Plant +2/60
+Supply Network I +8/40
+Supply Network II +14/40
+Supply Network III +22/40
+FOB +5/50
+Strategic Center +6/60
+Supply vehicle = logistics/repair support.
+
+Construction lineage includes Engineer start/build capability, HQ replacement Engineer capability, separate Barracks and Vehicle Works production, Rifle Squad x4 and native AI builder logic. Richer visible Construction Crew/worksite presentation was requested/planned where implementation evidence is incomplete; do not mislabel it as verified.
+
+9. MOD/LAB RECOVERY LINEAGE
+Modern Generals Mod/LAB is implemented on Rusted Warfare. Do not rebuild proven Rusted Warfare systems for the mod.
+
+Recovered lineage includes:
+- early v0.1.x / v0.4.x working engine-facing/basic graphics contracts
+- Vanguard/Dragon/Nomad three-faction test foundation
+- CT02-R2 construction/production mechanics
+- A1 / A1-R1 Full Dragon architecture/economy/technology
+- A2 visual/physical integration and Engineer/dozer/footprint work
+- A3-COMPLETE complete Dragon static/integration evidence
+- M56 large donor/recovery lineage; recovered evidence includes 405 INIs, 493 PNGs and 57 TMX maps
+- C2/C3 large WDC convergence/device evidence
+- Construction Crew and Power Grid recovery work
+
+These are test/recovery lineages, not final-game scope definitions.
+
+Known visual regressions include missing/wrong HQ graphics, effectively invisible builders, tiny infantry readability issues, wrong-but-usable/attractive building graphics, duplicate-hash building donors, placeholder Supply Depot/AA infantry and Alpha 5–9 aggregate visual regressions. Recover capability-by-capability rather than promoting newest package wholesale.
+
+10. ASSET / REAL-WORLD MODEL STRATEGY
+The final asset program covers the full 36-General v1 game, not Dragon only.
+
+Modern Generals models recognizable real-world-inspired military equipment. Existing 3D models/examples are valuable references/production inputs so Blender/DÜRER does not have to infer complex real-world equipment from prose alone.
+
+Asset workflow:
+RECOVER ESTABLISHED CANON / EQUIPMENT MAPPING
+→ identify established real-world inspiration
+→ collect photographs/technical references/existing 3D model examples
+→ DÜRER/Blender master asset or adaptation as legally appropriate
+→ preserve recognizable real-world identity/proportions/role
+→ optimize for the established large-army RTS presentation
+→ derive established variants/modules/configurations
+→ integrate through RealityKit
+→ physical/runtime verification.
+
+Do not invent new polygon budgets, LOD counts, unit-count targets, equipment mappings or General content merely because they are common RTS practice. Such values require recovered canon or measured/tested evidence.
+
+The game needs large armies; excessive showcase-model detail is not the objective. Preserve recognizable silhouette, proportions, role and established equipment identity at gameplay distance.
+
+Existing model availability removes the previous reason to serialize asset production behind Dragon. Full 36-General canon recovery and asset/reference production may proceed in parallel with mechanics/runtime work. Dragon remains useful donor/test evidence, not a product-scope gate.
+
+Native production chain remains:
+FORGE runtime requirement → EITRI identifies consumer → IAC → AWO → ARTEMIS production → IRIS where visual capability is required → DÜRER for 3D/technical geometry → EITRI contract/structure validation → FORGE integration → FORGE runtime verification.
+
+11. PRESENTATION / UI
+Baseline gameplay presentation is fixed/isometric RTS. Full 3D and AR are later presentation capabilities after the core final game is complete enough to justify them; architecture remains presentation-agnostic/3D-capable so gameplay does not require rewrite.
+
+Recovered UI direction includes TINY / low-clutter. Do not invent a replacement final UI skin where historical detail has not yet been recovered.
+
+Required RTS interaction/content contracts include established selection, movement, combat, construction, production and world interaction. Native visible command evidence has included SELECT / MOVE / ATTACK / BUILD / PRODUCE.
+
+12. CURRENT NATIVE IMPLEMENTATION EVIDENCE
+Source lineage includes deterministic MGCore state/orders/ticks, movement, deterministic combat, construction, economy/resources, power, production, save round-trip, deterministic state verification, Dragon content catalog, baseline Skirmish AI issuing public commands, MGNavigation grid baseline, RealityKit battlefield presentation, architectural fixedRTS/free3D/arWarTable modes, Dragon asset bindings, generated test assets, Automatic Signing without forced DEVELOPMENT_TEAM, iPad landscape/full-screen and offline-build separation.
+
+Physical evidence previously demonstrated:
+PASS: physical iPad launch, persistent SwiftUI HUD, runtime READY, MGCore tick advances, multiple Dragon geometry entities render, economy/power visible.
+Rejected/failed visual evidence: horizon-dominant framing, white/pale materials, primitive/block geometry, poor role silhouette distinction, insufficiently recognizable HQ/Power/Factory, flat gray scaffold battlefield.
+Unverified from that evidence: complete selection/movement/building-placement/command loop.
+
+13. NATIVE SOURCE/LKG SNAPSHOT
+Recorded 2026-10-01 candidate before later continuity-document commits:
+3d9c627dbc3e045de29fae0fbf5d14bca4ad383d
+
+Recorded LKG by both Native Fast Verify + Native RTS Verification:
+8be540e608b8458c5a885d1f136040bcaa1407ac
+“Enforce signing and anti-placeholder asset contracts in CI”
+
+At that snapshot HEAD was 18 commits ahead. Latest cloud workflows had runner_id 0 / zero executed steps / no usable logs; source failure was therefore not demonstrated. Resolve actual current HEAD before execution.
+
+14. DEVELOPMENT PIPELINE — FULL FINAL GAME
+The governing pipeline is NOT:
+Dragon/test slice → someday build the 36-General game.
+
+It is:
+RECOVER COMPLETE ESTABLISHED CANON
+→ authoritative 36-General content database
+→ complete game-system/economy/mechanics contracts
+→ complete real-world equipment/reference/asset matrix
+→ mechanics + AI + economy + world + campaign + maps + asset production in dependency-aware parallel work
+→ integrate all 36 Generals
+→ full-game regression
+→ physical iPad/macOS/iPhone verification
+→ v1 release candidate
+→ promote only from evidence.
+
+Temporary faction/test builds remain evidence donors and regression fixtures.
+
+Historical milestone work often paired each General pass with a playable map and cumulative builds preserving prior validated content. Preserve that evidence and recover the exact final development mapping before inventing replacements.
+
+15. EVIDENCE / GOVERNANCE
+Evidence truth:
+GENERATED ≠ SAVED ≠ IMPLEMENTED ≠ BUILT ≠ TESTED ≠ VERIFIED ≠ RELEASED.
+NEWEST ≠ LKG.
+UNKNOWN ≠ PASS.
+
+AUTO continues safe available work while the requested final-game deliverable remains incomplete and safe executable work remains. Failed/incomplete intermediate gates are not automatically blockers. Retry must change something.
+
+Authority order:
+1. explicit current user-locked canon
+2. authoritative recovered Project Bible/conversation canon
+3. device/runtime evidence
+4. audited implementation evidence
+5. production manifests/test contracts
+6. older conversation/recovery evidence
+7. external research for genuine gaps only
+
+Superseded experiments remain evidence; never silently promote them.
+
+16. OFFLINE / BUILD
+Connectivity is unreliable. Ordinary local development after provisioning must remain offline-capable where practical:
+source/LKG → implementation → Blender/local assets → static tests → MGCore/MGNavigation → XcodeGen → Xcode → Simulator/device → evidence.
+
+Automatic Signing is canonical; do not force DEVELOPMENT_TEAM from certificate identifiers.
+
+Cloud/GitHub/plugins are accelerators/persistence/coordination, not mandatory runtime/build dependencies when adequate local capability exists.
+
+17. GITHUB AUTHORITY
+AppDev/EITRI governance and Project Bibles:
+lucasbuzek/Lucas-private-appDevDocs
+
+Native source/state:
+lucasbuzek/Modern-Generals-native-iOS-macOS-
+
+Rusted Warfare Mod/LAB source/recovery:
+lucasbuzek/modern-generals-RWMOD
+
+Mac copies are backup/recovery and bounded local-execution copies, not routine conversational authority.
+
+18. UNRESOLVED / RECOVERY REQUIRED
+Do not invent these:
+- exact authoritative final 36-General identity table where not yet recovered
+- exact final mapping of historical faction/General names into the locked 36
+- exact final per-General doctrines/equipment matrices where not yet recovered
+- exact final economy balance
+- exact final Power Grid numeric balance
+- complete final production art
+- unrecovered campaign mission details
+- unrecovered final UI visual styling
+- any historical hashes/build claims not backed by preserved evidence
+
+Recovery of these is part of final-game development, not permission to replace them with generic RTS design.

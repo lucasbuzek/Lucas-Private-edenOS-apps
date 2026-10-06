@@ -1,0 +1,71 @@
+BIFROST — MASTER DEVELOPMENT PROMPT — v0.1
+Owner: Lucas Buzek
+Project: EDEN / AppDev
+Mode: @CONDUCTOR AUTO
+
+MISSION
+Continue development of BIFROST from the established architecture. Do not restart product design from scratch.
+
+BIFROST is the durable, local-first information and interoperability fabric of edenOS. It connects applications, open-source engines, files, databases, devices and services through stable identity, metadata, relationships, representations, locations, provenance, capabilities and provider contracts.
+
+CANONICAL RULE
+IMPLEMENT / INTEGRATE EXISTING CAPABILITY BEFORE RECREATING IT.
+
+Do not build BIFROST-specific replacements for mature software unless existing capability fails documented requirements for functionality, reliability, offline operation, privacy, safety, performance, licensing, platform support or required integration.
+
+BOUNDARIES
+BIFROST owns cross-system identity, metadata interpretation, relationships, representations, locations, provenance, provider abstraction, indexing/discovery, interoperability contracts and appropriate shared jobs/events.
+HEIMDALL owns shared human experience/presentation.
+CONDUCTOR owns project orchestration.
+CHRONOS owns temporal/scenario concerns where appropriate.
+Domain applications own specialist domain rules.
+ERP and specialist engines provide mature domain machinery where suitable.
+
+INFORMATION PRINCIPLES
+- User data outlives software.
+- Existing portable metadata remains authoritative where appropriate.
+- Do not silently replace authoritative sources with derived representations.
+- Do not require information to be imported into one proprietary BIFROST store merely to be understood.
+- Maintain logical object identity independently of physical representation/location.
+- Track provenance proportionately to risk/value.
+- Providers must be replaceable behind stable contracts.
+- Local operation must remain possible for core functions.
+
+OBJECT MODEL
+Every logical object may have:
+identity; type; capabilities; metadata; representations; locations; relationships; version; provenance; permissions; state.
+
+EXECUTION
+1. @THREAD — recover/reconcile relevant BIFROST and edenOS decisions before changing architecture.
+2. @ARGOS — investigate current standards, open-source components, alternatives, licensing, interoperability and technical risks. Challenge assumptions.
+3. @CONDUCTOR — maintain requirements, decisions, dependencies, workstreams, evidence and checkpoints.
+4. @FORGE — implement the smallest working architecture; reuse providers; compile/test; remove unnecessary code.
+5. @CASPER — maintain authoritative specifications, quick-start, installation, provider SDK and developer documentation.
+6. @IRIS — create diagrams/visual architecture only where they materially improve comprehension.
+7. @WEAVER — create web/admin interfaces only where a browser surface is justified; do not duplicate HEIMDALL unnecessarily.
+8. @LINGUA — ensure Custom/Private/Experimental shipped user-facing material is EN/SK; design public releases for LINGUA multilingual localization.
+
+RESEARCH REQUIREMENTS
+Compare mature open-source ERP, metadata/catalog, DMS/legal, workflow, database, search, media and specialist engines before implementing equivalents. Record license, deployment model, APIs, offline/local suitability, data portability, maturity, integration cost and replacement risk.
+
+FIRST IMPLEMENTATION TARGET — DP0.1
+Build a kernel that can point at an arbitrary directory and:
+DISCOVER → IDENTIFY → READ METADATA → NORMALIZE → CLASSIFY → FINGERPRINT/HASH → RELATE → PERSIST → INDEX → API
+without modifying originals.
+
+DP0.1 minimum:
+Object + Identity + Metadata + Type Registry + Capability Registry + Representation + Location + Relationship + Provenance + Provider Registry + SQLite + Filesystem Provider + Search baseline + API.
+
+QUALITY GATES
+- No destructive modification of originals during discovery/indexing.
+- Stable IDs survive path moves when evidence permits resolution.
+- Duplicate/representation inference must expose confidence/evidence rather than pretending certainty.
+- Provider-specific concepts must not leak unnecessarily into canonical contracts.
+- Tests cover migration/replacement of at least one provider.
+- Export/recovery path exists for authoritative BIFROST state.
+- Generated ≠ saved ≠ verified ≠ released.
+
+DELIVERY
+Maintain one authoritative project manifest, append-only project history, stable requirement/decision/task/artifact IDs, evidence-linked tests and recoverable checkpoints.
+
+Continue automatically through reversible internal work. Stop only for a genuine blocker, unavailable capability, required approval, destructive/external action, or a decision that would materially change established project identity/scope.

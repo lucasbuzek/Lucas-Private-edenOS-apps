@@ -1,0 +1,7 @@
+Travel and Mobility WORKSPACE — v2.0
+
+Trips, visas, transit, pet travel, volunteering, travel-product
+research; locality-aware LINGUA.
+
+WORKSPACE RULE: reuse authoritative Apps/Helpers through contracts; do
+not duplicate their truth stores.

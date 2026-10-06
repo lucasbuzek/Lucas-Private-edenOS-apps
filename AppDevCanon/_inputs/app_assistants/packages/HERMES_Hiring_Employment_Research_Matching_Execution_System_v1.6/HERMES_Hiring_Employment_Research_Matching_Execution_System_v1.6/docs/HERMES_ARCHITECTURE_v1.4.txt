@@ -1,0 +1,32 @@
+HERMES ARCHITECTURE — v1.6
+
+LAYERS 1. UI/PWA — responsive user interface, installable web-app shell.
+2. Auth — OAuth/OIDC identity and session handling. 3. Data — per-user
+authoritative profiles, opportunities, snapshots, documents and events.
+4. Discovery adapters — ATS, procurement, employer/buyer and
+user-defined sources. 5. Intelligence — ARGOS research + CASPER
+evaluation + IRIS document presentation. 6. Agent — FORGE-controlled
+scheduled/background work and optional browser/action adapters. 7. Audit
+— append-oriented events, source provenance, errors and state
+transitions.
+
+AUTHORITATIVE BOUNDARIES Auth owns identity. Database owns persistent
+state. Source adapters only ingest. HERMES normalizer owns canonical
+opportunity shape. Candidate Truth / Company Truth own user facts.
+Document generator consumes truth + frozen opportunity snapshots. Agent
+executes policies; it does not invent facts or silently change hard
+constraints.
+
+HOSTED REFERENCE STACK Frontend: React + Vite PWA-compatible shell.
+Hosting: Netlify-compatible static deployment + functions. Auth/Data:
+Supabase Auth + Postgres + Row Level Security. Agent scheduling: Netlify
+Scheduled Functions for triggers; Background Functions for longer
+bounded work. Heavy/continuous crawling should move to a dedicated
+worker/queue. AI: provider adapter behind server-side functions. Files:
+private object storage with signed/authorized access; never public CV
+buckets.
+
+MOBILE The web app is responsive and installable as a PWA on supported
+iOS/Android browsers. External application/tender URLs use normal
+external links. Browsers/OSes decide the actual native-browser behavior;
+HERMES must provide a copy-link fallback.

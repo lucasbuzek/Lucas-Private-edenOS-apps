@@ -1,0 +1,154 @@
+◉ IRIS — Intelligent Realism & Image Synthesis — v1.8
+
+2026-09-23 — CROSS-PLATFORM IMPLEMENTATION
+- Added portable Python launcher for Visual Workspace and Batch Studio.
+- Added macOS, Windows, PowerShell and Linux launch paths.
+- Repaired stale launcher filenames from earlier package revisions.
+- Repaired Batch Studio serving path.
+- Repaired versioned provider-adapter loading in Batch Runner.
+- Added free-port fallback while preserving localhost-only binding.
+- Documented mobile/browser boundary and truthful provider status.
+- Preserved global FORGE delegation; no IRIS.FORGE/FOUNDRY worker introduced.
+
+◉ IRIS — Intelligent Realism & Image Synthesis — v1.8
+
+NAME RECONCILIATION 003 — 2026-09-23
+Build identity: IRIS v1.8 / Name Reconciliation 003 / 2026-09-23
+
+- Closed IRIS.FORGE as an active internal identity.
+- Removed the temporary IRIS.FOUNDRY replacement identity, prompt and module.
+- No replacement worker created.
+- Preserved IRIS authority for visual intelligence, research, generation, reconstruction, transformation, compositing, visual consistency, specialist rendering and visual QA.
+- Added explicit delegation to global EDEN FORGE for deterministic technical processing, conversion, automation, scripts/tooling, pipelines, validation tooling, manifests and technical/package integration.
+- Global EDEN FORGE remains unchanged and external.
+- Retained earlier migration record as superseded historical provenance.
+
+◉ IRIS — Intelligent Realism & Image Synthesis — v1.8
+
+CHANGELOG ADDENDUM — 2026-09-22
+ADDED
+• Canonical ◉ IRIS identity documentation.
+• Tell Me About Yourself and Your Subordinates TXT.
+• Master prompt and individual subordinate prompt files.
+• Updated modules, quickstart and instructions.
+
+IRIS — INTELLIGENT REALISM & IMAGE SYNTHESIS — v1.8
+CHANGELOG
+
+VERSION
+v1.8
+
+DATE
+2026-09-16
+
+ADDED
+• Batch Studio UI for list-oriented batch management.
+• Open/import list workflow for JSON, CSV and TXT.
+• range and selection-oriented batch controls.
+• output/export-oriented batch workflow.
+• dedicated Planner, Compiler, Provenance, Continuity, Calibration,
+  Text/Markings, Red-Team and Controlled-Variants modules.
+• stronger dependency-aware batch architecture.
+
+CHANGED
+• normalized package to Universal Project Naming & Packaging Standard v1.1.
+• human-facing documentation now defaults to plain text (.txt).
+• root directory now uses full canonical filesystem-safe project identity.
+• internal filenames are concise and versioned where appropriate.
+
+FIXED
+• removed obsolete generic package identity from the release layout.
+• removed Markdown as the default human-facing documentation format.
+• clarified that standalone batch execution requires a connected image provider.
+
+REMOVED
+• obsolete duplicated README/architecture/changelog Markdown release documents.
+
+COMPATIBILITY NOTES
+v1.8 retains the v1.1 prompt architecture and expands it. Existing manifest
+concepts remain usable, but paths/names in this normalized package differ.
+
+
+VERSION v1.8
+DATE 2026-09-16
+ADDED
+• IRIS-specific Design Mantra / production doctrine.
+• Whole-visual-product completion model.
+• One-authoritative-asset-identity rule.
+• Foundation-first batch rule.
+• Confirmed-state and explainable-automation requirements.
+• Recovery, project-data persistence and migration principles.
+• IRIS Product Test and UI Mantra.
+
+CHANGED
+• Master now treats Design Mantra as mandatory operating doctrine.
+• Architecture clarifies Core, specialist module, Batch Studio and provider-adapter ownership.
+• Instructions emphasize reuse, local correction and validated foundation outputs.
+
+COMPATIBILITY NOTES
+• Backward-compatible with v1.2 manifests and prompt concepts.
+• This is a meaningful feature/doctrine enhancement, therefore version advances to v1.8 rather than v2.0.
+
+
+VERSION v1.8
+DATE 2026-09-17
+ADDED
+• UIbasic-compatible AUTO/TINY/COMPACT/FULL UI modes.
+• Persistent IRIS operation-mode selector: AUTO, CREATE, RECONSTRUCT, FUSION, MATCH, VARIANTS, ASSET SERIES, QA, FORENSIC.
+• Truthful status and next-action presentation doctrine.
+• UI mode/IRIS mode fields in Batch Studio exports.
+CHANGED
+• Batch Studio extended rather than replaced; IRIS remains authoritative state owner.
+COMPATIBILITY
+• Backward-compatible feature expansion from v1.3. Existing batch concepts remain valid.
+
+
+VERSION v1.8
+DATE 2026-09-17
+ADDED
+• Persistent IRIS iris/pupil identity symbol.
+• Active/invoked visual state behavior.
+• Mode + workflow-state label linked to the persistent symbol.
+• TINY-mode symbol-only identity with accessible title.
+• Working, blocked/failed and complete visual states.
+CHANGED
+• IRIS Batch Studio header now treats IRIS identity as persistent workflow state rather than decoration.
+• Repaired Batch Studio external JS script boundary so local UI JavaScript executes correctly.
+COMPATIBILITY NOTES
+• Existing v1.4 manifests remain conceptually compatible.
+
+
+VERSION v1.8
+DATE 2026-09-17
+ADDED
+• SCAN, VISUAL DNA, FIDELITY LOCK, DOCUMENT, WEB MATCH, COMPARE/FIDELITY QA and STYLE REFERENCE SET modules.
+• Visual Workspace with source/style uploads, persistent IRIS mode/state, SOURCE/RECONSTRUCTION/SIDE-BY-SIDE/OVERLAY/DIFFERENCE controls, page/range, zoom, inspector, requested-change lock, fidelity categories and project manifest export.
+• EDIT-LOCKED preservation workflow and multi-sample style-reference workflow.
+CHANGED
+• MASTER now treats unchanged source regions as locked by default.
+• Fidelity claims are evidence-based and componentized rather than assumed.
+COMPATIBILITY NOTES
+• Existing v1.5 batch workflows remain available.
+• Browser preview supports images/PDF/text directly; editable office-format parsing/export depends on a suitable host/document adapter.
+
+NAME MIGRATION 002 — 2026-09-23
+CHANGED
+• Internal IRIS.FORGE identity renamed to IRIS.FOUNDRY.
+• FOUNDRY functional meaning: Final Output Unification, Normalization, Derivation, Rendering & Yield.
+• Internal prompt, module, master workflow, module registry, documentation and file indexes updated.
+• Existing module behavior preserved.
+• Independent EDEN FORGE remains unchanged and external.
+
+REMOVED
+• Old active IRIS.FORGE module/prompt identity and alias.
+
+v1.8 — UIX WORKSTATION IMPLEMENTATION
+- Rebuilt Visual Workspace around content-first three-pane workstation UIX.
+- Added canonical SOURCE / RESULT / SIDE-BY-SIDE / OVERLAY / DIFFERENCE views.
+- Added persistent ◉ IRIS identity with LCAS status presentation.
+- Added SIMPLE / ADVANCED / EXPERT / DIAGNOSTIC depth model.
+- Added responsive mobile canvas-first interaction model.
+- Added explicit allowed-change-set presentation for EDIT-LOCKED work.
+- Added Visual DNA, Fidelity QA, locks/provenance and export inspector areas.
+- Updated Batch Studio away from legacy TINY/COMPACT/FULL presentation model.
+- Preserved truthful provider-required states rather than simulating execution.

@@ -1,0 +1,51 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+RELEASE: v2.0
+DATE: 2026-09-23
+TYPE: Major architectural update from authoritative v1.7.1 baseline.
+
+PRESERVED
+• autonomous engineering organization and truthful evidence doctrine;
+• reuse-first/no-reinvent engineering;
+• streamlined core engineering role pool;
+• repository intelligence, reliability/security, lean/performance, QA/release and conditional consensus panel;
+• APPLE oversight principles;
+• v1.7.1 retained as known-good predecessor.
+
+ADDED / EXPANDED
+• peer-level specialist autonomy with bidirectional CONDUCTOR invocation;
+• capability resolver including THREAD and registry-discovered EDEN capabilities;
+• current-state model and project inheritance from previous FORGE work;
+• KEEP/VERIFY/OPTIMIZE/REPAIR/RECONCILE/MIGRATE/REMOVE/CREATE classification;
+• AUTO/GUIDED/ADVANCED/CUSTOM controls;
+• AUTO/POLICY/ASK/MANUAL/OFF stage policies;
+• FAST/STANDARD/DEEP/FULLSCOPE depth;
+• confidence-aware AUTO behavior;
+• adaptive product/domain modes and dynamic specialists;
+• universal host-adaptive GAME→MOD architecture;
+• Host/Platform/Hardware/Engine/Toolchain adapter model;
+• branch/workstream model and cross-platform shared-core rule;
+• rapid development sessions;
+• change budgets, checkpoints, failure knowledge and evidence bundles;
+• DOCTOR and universal EXPLAIN WHY/TRACE/EVIDENCE;
+• Variant Registry for Core/Agent/Workspace/App/profiles/adapters;
+• FORGE Core + Agent + Workspace + App architecture;
+• canonical Package Delivery Rules integrated as mandatory shared contract.
+
+CHANGED
+• UIbasic is no longer an active FORGE state framework. It is retained only as v1.x lineage/provenance. LCAS is the permanent canonical Live Control, Activity & Status capability.
+• packaging is no longer treated as proof of verification/release.
+• MOD no longer assumes any particular game or genre; host game defines capability envelope.
+
+IDENTITY AMENDMENT — 2026-09-23
+• established EITRI — Engineering, Integration, Testing, Refinement & Implementation;
+• established Eitri as The Master Smith, FORGE's autonomous engineering persona;
+• preserved ⚒ FORGE — Full-stack Orchestration, Reliability, Generation & Engineering as the canonical parent identity;
+• defined the relationship: FORGE is the engineering workshop; EITRI is the Master Smith operating through the same authoritative FORGE Core;
+• added docs/FORGE_v2.0_EITRI_IDENTITY.txt.

@@ -1,0 +1,48 @@
+MIRROR — PERSISTENT IDENTITY SYMBOL — v1.5
+
+CANONICAL SYMBOL
+◈
+
+CONCEPT
+The diamond-within-diamond suggests reflection, symmetry, an observed object and its returned image. It is compact
+enough for persistent text/UI status and visually relates to MIRROR without depending on platform-specific emoji.
+
+AUTHORITATIVE RULE
+Whenever MIRROR is explicitly invoked or remains active, the primary persistent UI/status identity MUST be:
+◈ MIRROR
+
+The symbol supplements the word MIRROR; it never replaces it.
+
+LCAS FORMS
+TINY
+◈ MIRROR | [OPERATION] [STEP] | [PROGRESS] | [STATE] | Next: [NEXT]
+
+COMPACT
+◈ MIRROR v1.5
+Project: [PROJECT]
+Phase: [PHASE]
+State: [STATE]
+Progress: [MEASURABLE VALUE or INDETERMINATE]
+Recommended: [NEXT]
+
+FULL
+◈ MIRROR — Multidisciplinary Independent Review, Ranking, Observation & Reference — v1.5
+
+AUTO
+Carry ◈ MIRROR through TINY/COMPACT/FULL whenever MIRROR is the active framework.
+
+INVOCATION
+After @MIRROR AUTO, REVIEW, BOOK, BLIND, CASPER, DELTA, FINAL, or another MIRROR command, the first MIRROR
+status/header uses ◈ MIRROR.
+
+HANDOFF
+If MIRROR remains review authority:
+◈ MIRROR | HANDOFF → [FRAMEWORK] | WAITING
+If control fully transfers, do not falsely show MIRROR as ACTIVE.
+
+ACCESSIBILITY / FALLBACK
+Always retain the word MIRROR. If ◈ cannot render, use [MIRROR].
+The symbol is never the sole carrier of identity or state.
+
+TRUTHFULNESS
+The symbol indicates identity/activity only. It does not imply progress, success, validation, completion, or execution.

@@ -1,0 +1,5 @@
+EITRIMB QUICK START — EN
+Use MASTER.txt as the governing EITRI prompt. Start with project recovery/evidence, not regeneration. EITRI should run AUTO safely, route by capability, create proportional EDCs, verify before advancing state, preserve LKG, and use LCAS FULL action controls only when autonomous rectification cannot proceed.
+
+RÝCHLY ŠTART — SK
+Použite MASTER.txt ako riadiaci prompt EITRI. Začnite obnovou projektu a dôkazmi, nie opätovným generovaním. EITRI má bezpečne pokračovať v režime AUTO, smerovať prácu podľa schopností, vytvárať primerané EDC kontrakty, overovať stav pred jeho povýšením, zachovať LKG a použiť akčné ovládacie prvky LCAS FULL iba vtedy, keď autonómna náprava nemôže bezpečne pokračovať.

@@ -1,0 +1,13 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+ADAPTERS + VARIANTS
+Prefer shared Core plus adapters for hosts/platforms/hardware/engines/toolchains.
+Variant Registry: capability → Core → Agent → Workspace → App → mode profiles → adapters → docs → validation.
+One canonical change set propagates to all affected variants. Validation is independent per variant. NOT RUN or FAIL in one variant is never hidden by PASS elsewhere.
+Cross-platform: ONE PRODUCT / ONE CANON / ONE SHARED CORE / NATIVE ADAPTERS.

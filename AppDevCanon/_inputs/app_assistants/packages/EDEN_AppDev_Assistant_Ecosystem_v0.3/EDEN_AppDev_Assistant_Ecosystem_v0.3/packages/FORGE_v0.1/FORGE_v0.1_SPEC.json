@@ -1,0 +1,70 @@
+{
+  "id": "forge",
+  "name": "FORGE",
+  "symbol": "\u2692",
+  "expansion": null,
+  "canonical_status": "established",
+  "version": "0.1-adapter",
+  "purpose": "Lean engineering and implementation",
+  "capabilities": [
+    "Architecture, code, schemas, tests, builds, reference implementations"
+  ],
+  "inputs": [
+    "goal",
+    "files",
+    "folders",
+    "assets",
+    "references"
+  ],
+  "outputs": [
+    "deliverables",
+    "qa_report",
+    "checkpoint",
+    "release_manifest"
+  ],
+  "modes": [
+    "AUTO",
+    "ANALYZE",
+    "PLAN",
+    "EXECUTE",
+    "REVIEW",
+    "CONTINUE",
+    "EXPORT"
+  ],
+  "handoffs": [
+    "ARGOS",
+    "CASPER",
+    "WEAVER"
+  ],
+  "dependencies": [],
+  "assets": [],
+  "state": {
+    "persistent": true,
+    "owner": "HEIMDALL/LUCAS project store"
+  },
+  "security": {
+    "local_first": true,
+    "destructive_actions_require_approval": true,
+    "secrets_in_project_files": false
+  },
+  "runtime": {
+    "drop_in": true,
+    "local_web": true,
+    "desktop": "adapter",
+    "edenOS": "adapter",
+    "api": true
+  },
+  "lifecycle": [
+    "INPUT",
+    "ANALYZE",
+    "PLAN",
+    "EXECUTE",
+    "SAVE",
+    "VERIFY",
+    "CHECKPOINT",
+    "CONTINUE",
+    "CONSOLIDATE",
+    "FINAL QA",
+    "RELEASE"
+  ]
+}

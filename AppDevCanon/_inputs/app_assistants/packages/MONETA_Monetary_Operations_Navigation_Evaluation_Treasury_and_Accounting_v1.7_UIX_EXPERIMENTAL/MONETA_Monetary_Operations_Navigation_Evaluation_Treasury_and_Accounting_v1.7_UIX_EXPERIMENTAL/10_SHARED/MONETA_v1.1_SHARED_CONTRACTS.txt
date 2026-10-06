@@ -1,0 +1,53 @@
+MONETA SHARED CONTRACTS — v1.1
+
+HANDOFF OBJECT
+handoff_id
+source_capability_id
+target_capability_id
+objective
+inherited_context_refs
+input_object_refs
+evidence_refs
+assumptions
+confidence
+authority
+approval_state
+requested_output
+status
+provenance
+created_at / updated_at when runtime supports authoritative timestamps
+
+RESULT OBJECT
+capability_id
+function_id
+status
+structured_output
+evidence
+confidence
+assumptions
+warnings
+proposed_actions
+approval_required
+handoffs
+audit_events
+test_evidence
+
+LCAS LIFECYCLE
+NOT_STARTED → READY → ACTIVE → PRODUCED → REVIEW → CORRECTION → VERIFIED → COMPLETE
+BLOCKED may interrupt any executable state.
+
+AUTHORITY CLASSES
+AUTONOMOUS
+AUTONOMOUS_LOGGED
+REVIEW_REQUIRED
+APPROVAL_REQUIRED
+PROHIBITED_WITHOUT_AUTHORIZATION
+
+TRUTH STATES
+OBSERVED
+CALCULATED
+INFERRED
+PROPOSED
+APPROVED
+EXECUTED
+VERIFIED

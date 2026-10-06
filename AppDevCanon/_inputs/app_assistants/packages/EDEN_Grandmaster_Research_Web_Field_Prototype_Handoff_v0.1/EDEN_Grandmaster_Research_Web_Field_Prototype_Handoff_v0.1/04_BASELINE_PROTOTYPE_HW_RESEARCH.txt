@@ -1,0 +1,32 @@
+EDEN — BASELINE PROTOTYPE HARDWARE RESEARCH MASTER — v0.1
+
+OBJECTIVE
+Establish a reusable baseline prototyping inventory and research method for gardenOS/edenOS Core, Nandi, deployable infrastructure and future field-science trials. This is a research baseline, not a frozen procurement list.
+
+RESEARCH CATEGORIES
+A. COMPUTE/CONTROL: MCU boards, SBC where justified, debug/programming.
+B. BUSES/EXPANSION: I2C/SPI/UART, CAN, RS-485, protected transceivers, connectors.
+C. SENSING: environmental, soil/water, motion/position, electrical, safety.
+D. ACTUATION: relays/MOSFETs, motor drivers/ESCs, servos, valves/pumps.
+E. POWER: bench supplies, batteries/BMS, DC-DC, protection, fusing, current measurement.
+F. SAFETY: E-stop, interlocks, limits, watchdog/enable paths, isolation.
+G. COMMS: Wi-Fi/BLE, Ethernet where appropriate, optional radios.
+H. TEST: multimeter, logic analyzer, oscilloscope class, USB power meter, load/testing tools.
+I. FABRICATION: wiring/crimping/soldering, enclosures, prototyping PCBs, mechanical fixtures.
+J. FIELD: rugged cases, weatherproof connectors, calibration/reference instruments.
+K. SPARES/CONSUMABLES: wire, terminals, fuses, fasteners, heat-shrink, connectors.
+
+CORE HW CONTRACT RESEARCH QUESTIONS
+- What capability is mandatory across Core variants?
+- What is optional by environment/machine class?
+- What electrical protection is required?
+- Which interfaces should be standardized before PCB design?
+- What is the minimum safe bench prototype?
+- What becomes production-only?
+- Which components are locally available in South Africa and which need import?
+- Which substitutes preserve capability?
+
+PRICE RECORD
+Part | Capability | Exact model/SKU | Supplier | Country | Unit price | Currency | VAT | Shipping assumption | MOQ | Stock | Lead time | Alternative | Date checked | Evidence link | Confidence.
+
+Do not mix prototype price, low-volume production price and target mass-production price.

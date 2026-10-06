@@ -1,0 +1,11 @@
+IRIS — Intelligent Realism & Image Synthesis — v1.8
+MODULE: VISUAL DNA
+
+PURPOSE
+Represent a source's reusable visual system independently from its content.
+
+CAPTURE
+Document geometry; grid; alignment rules; typography roles; color tokens; spacing rhythm; borders; radii; effects; image treatment; iconography; recurring page masters; component relationships; content hierarchy; exceptions.
+
+OUTPUT
+A structured style/layout specification with confidence and source provenance. Separate invariant house style from source-specific content. Multiple samples may be combined into a STYLE REFERENCE SET.

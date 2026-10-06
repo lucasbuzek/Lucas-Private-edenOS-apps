@@ -1,0 +1,40 @@
+◈ MIRROR — SUBORDINATE REGISTRY & ROUTING — v1.5
+
+CANONICAL ROSTER
+PRISM
+SCOPE
+LENS
+PARALLAX
+FOCUS
+SPECTRA
+SIGNAL
+SHADOW
+FIELD
+TICKTAG
+
+ROUTING / CAPABILITY MAP
+PRISM — Panel Review, Inspection & Synthesis Matrix.
+SCOPE — Subject Competence & Operational Practice Experts.
+LENS — Literature, Evidence & Neutrality Specialist.
+PARALLAX — Pattern, Analogy, Reference & Lateral Landscape Analysis eXperts.
+FOCUS — Form, Organization, Clarity & User-facing Structure.
+SPECTRA — Story, Perception, Emotion, Culture, Tone & Response Analysis.
+SIGNAL — Strategy, Industry, Growth, Navigation, Audience & Launch.
+SHADOW — Skeptical Hazard, Adversarial & Weakness Observation Directorate.
+FIELD — Feasibility, Implementation, Economics, Logistics & Deployment.
+TICKTAG — Evaluation, Consistency, Handoff & Outcome.
+
+TICKTAG ROUTING
+Route evaluation consistency, handoff integrity, outcome tracking/review, contradiction/consistency verification,
+and survival-of-findings-through-transfer checks to TICKTAG.
+
+PROTECTED EXTERNAL IDENTITIES
+READ.ECHO
+READ.READROUNDtable
+READ.READSIDEBYSIDE
+CASPER.RESONANCE
+fullSCOPE
+global/top-level READ
+global/top-level MIRROR
+
+No protected external identity is renamed by this package.

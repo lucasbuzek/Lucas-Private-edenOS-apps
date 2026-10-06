@@ -1,0 +1,3 @@
+import http from"node:http";import fs from"node:fs";import path from"path";import{fileURLToPath}from"url";
+const root=path.dirname(fileURLToPath(import.meta.url));const mime={".html":"text/html; charset=utf-8",".js":"text/javascript",".mjs":"text/javascript",".json":"application/json",".webmanifest":"application/manifest+json"};
+http.createServer((q,r)=>{let u=q.url==="/"?"web/index.html":q.url.replace(/^\/+/,"");let f=path.resolve(root,u);if(!f.startsWith(root)||!fs.existsSync(f)){r.statusCode=404;return r.end("Not found")}r.setHeader("content-type",mime[path.extname(f)]||"application/octet-stream");fs.createReadStream(f).pipe(r)}).listen(process.env.PORT||8790,()=>console.log("MONETA http://127.0.0.1:"+(process.env.PORT||8790)));

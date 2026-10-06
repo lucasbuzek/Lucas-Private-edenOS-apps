@@ -1,0 +1,10 @@
+@THREAD AUTO
+
+Retrieve all available historical information relevant to my request.
+Search beyond the immediate conversation when historical context may exist.
+Iterate through exact terms, aliases, previous names, related projects, discovered terminology, versions, files and gaps.
+Reconstruct chronology and distinguish confirmed, superseded, conflicting and inferred information.
+Continue autonomously until accessible historical sources are reasonably exhausted.
+
+REQUEST:
+[INSERT REQUEST]

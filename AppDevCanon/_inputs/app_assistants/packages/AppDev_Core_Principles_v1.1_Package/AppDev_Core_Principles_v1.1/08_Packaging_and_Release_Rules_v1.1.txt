@@ -1,0 +1,61 @@
+PACKAGING & RELEASE RULES — v1.1 Owner: Lucas Buzek
+
+ENGLISH
+
+PACKAGE IDENTITY Retain established acronym, expansion, conceptual
+meaning, version and purpose. Do not rename established projects without
+explicit instruction.
+
+ROOT [ACRONYM]_[Expanded_Name]_v[VERSION]/
+
+CONTENTS README.txt is mandatory. Human-readable documentation defaults
+to TXT. Code/configuration remains in native formats. Include
+manifest/checksums where useful. A MASTER document should be
+self-contained/current when the project uses one.
+
+LANGUAGE Custom / Private / Experimental builds: bilingual EN/SK for
+user-facing UI where possible and shipped quick-start, installation,
+update/recovery, troubleshooting, cleanup/uninstall, privacy/data and
+relevant release documentation. Final/Public: multilingual-by-design
+through LINGUA; English canonical/fallback.
+
+INSTALL One obvious primary Install action. Install means balanced
+RECOMMENDED, not install-everything. Profiles: RECOMMENDED / LEAN / FULL
+/ CUSTOM. Detect existing adequate software/providers/models and reuse
+them. Do not redownload unchanged verified dependencies/model assets
+unnecessarily.
+
+RELEASE STATE DEVELOPMENT → EXPERIMENTAL → ALPHA_CANDIDATE → ALPHA →
+PREVIEW → STABLE. Distribution audiences may include LUCAS/PRIVATE,
+ALPHA, PREVIEW, FINAL/PUBLIC. Do not create maturity forks; promote the
+same ecosystem based on evidence.
+
+TRACEABILITY REQUIREMENT → PLAN/WORKSTREAM → TASK/JOB → ARTIFACT →
+TEST/EVIDENCE → VERIFICATION → RELEASE.
+
+TASK STATE NOT_STARTED → READY → ACTIVE → PRODUCED → REVIEW → CORRECTION
+→ VERIFIED → COMPLETE; BLOCKED allowed. Produced ≠ verified. Completion,
+verification and health are separate.
+
+SLOVENSKY
+
+IDENTITA BALÍKA Zachovaj etablovaný akronym, expansion, koncept, verziu
+a účel. Bez explicitného pokynu projekt nepremenúvaj.
+
+ROOT [ACRONYM]_[Expanded_Name]_v[VERSION]/
+
+OBSAH README.txt je povinný. Dokumentácia pre ľudí predvolene TXT;
+kód/config v natívnom formáte. Manifest/checksums podľa potreby.
+
+JAZYK Custom/Private/Experimental: EN/SK pre UI kde je možné a pre
+dodanú dokumentáciu. Final/Public: viacjazyčné cez LINGUA; angličtina je
+referencia/fallback.
+
+INŠTALÁCIA Jedno zjavné tlačidlo/akcia Install. Install = vyvážený
+RECOMMENDED, nie všetko. RECOMMENDED / LEAN / FULL / CUSTOM. Znovu použi
+vhodné existujúce aplikácie/providerov/modely. Nezmenené overené
+komponenty zbytočne nesťahuj znova.
+
+RELEASE DEVELOPMENT → EXPERIMENTAL → ALPHA_CANDIDATE → ALPHA → PREVIEW →
+STABLE. Produced nie je Verified; stav, verifikácia a health sú
+samostatné.

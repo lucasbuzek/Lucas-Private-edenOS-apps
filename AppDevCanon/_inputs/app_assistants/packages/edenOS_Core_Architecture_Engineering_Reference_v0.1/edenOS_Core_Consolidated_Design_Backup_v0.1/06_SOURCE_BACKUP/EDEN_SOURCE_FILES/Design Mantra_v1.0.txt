@@ -1,0 +1,352 @@
+gardenOS — APPLE-INSPIRED DESIGN MANTRA
+Version 1.0 — 2026-09-16
+Purpose: Product, hardware, firmware, data, UI and QA design doctrine for gardenOS.
+
+IMPORTANT
+This is not an attempt to copy Apple products, proprietary implementation, branding, or visual assets.
+It extracts publicly documented engineering and interface principles and adapts them to gardenOS: constrained hardware, local-first agriculture, safety-critical actuation, modular Nodes, Server and Companion.
+
+======================================================================
+THE MANTRA
+======================================================================
+
+DESIGN THE WHOLE PRODUCT, NOT THE PARTS.
+
+Hardware, firmware, data, interface, recovery, safety, installation and service are one system.
+A feature is not complete merely because the code works.
+It is complete when the hardware supports it naturally, the software uses the hardware efficiently, the interface makes it understandable, failure is safe, recovery is predictable, and the user does not need to understand the implementation.
+
+BUILD FOR THE HARDWARE YOU ACTUALLY SHIP.
+
+Do not write a generic system and hope it fits every controller.
+Define the capability and resource envelope of each gardenOS device, then optimize its software for that envelope.
+Core-Lite should feel complete because its software is deliberately designed for ESP8266 constraints—not like a larger product with features randomly removed.
+ESP32-S3 Core may expose richer capabilities, but it must preserve the same gardenOS concepts and protocol.
+Server and Companion extend the system; they do not compensate for a badly designed Core.
+
+ONE DEVICE. ONE AUTHORITATIVE PATH FOR EACH FUNCTION.
+
+Never maintain competing implementations of networking, storage, automation, hardware control, discovery, safety, API or UI state.
+Trace → consolidate → simplify → fix authoritative implementation → verify → remove bloat.
+Compatibility layers translate into the authoritative implementation; they do not become permanent duplicate systems.
+
+DO LESS WORK.
+
+The fastest and most efficient work is work that never needs to happen.
+Avoid unnecessary polling, timers, redraws, writes, allocations, parsing, network traffic and background activity.
+Sleep or remain idle when there is nothing useful to do.
+Batch work where appropriate.
+Cache deliberately.
+Write persistent storage only when state actually changes.
+Stream large responses instead of constructing them in scarce RAM.
+Update UI elements only when visible or changed.
+
+RACE TO USEFUL, RETURN TO IDLE.
+
+Boot only what is necessary to become recoverable and controllable.
+Bring up serial/filesystem/recovery networking/API first.
+Defer noncritical datasets and subsystems.
+Respond to real work quickly, finish it, then return to the lowest practical activity level.
+
+RESOURCES ARE A DESIGN BUDGET.
+
+Flash, heap, stack, CPU time, network airtime, filesystem writes, GPIO, bus bandwidth and electrical power are finite product resources.
+Every feature has to justify its continuing cost.
+Measure before and after significant changes.
+A feature that causes unreliable boot, fragmented heap, poor responsiveness or recovery failure is not successfully implemented.
+
+CAPABILITY, NOT BOARD NAME.
+
+Software asks what a device can do, not what marketing name is printed on its MCU.
+Hardware variants expose stable identities and capabilities.
+The same gardenOS object, automation and API concepts should survive movement from Wemos ESP8266 to ESP32-S3 and later hardware.
+
+SIMPLE OUTSIDE, RIGOROUS INSIDE.
+
+The user should see the garden, not the firmware architecture.
+Hide buses, addresses, relay channels and protocol details during normal operation.
+Expose technical detail progressively in System, Diagnostics and Technician views.
+Common actions should be obvious; advanced controls should be discoverable without cluttering the primary interface.
+
+HIERARCHY BEFORE DECORATION.
+
+Every screen must answer immediately:
+1. What is this?
+2. What is important now?
+3. Is everything OK?
+4. What can I do?
+5. What happened after I acted?
+
+Status and content dominate. Controls support them. Decoration never competes with them.
+Use spacing, grouping, typography, scale and restrained semantic color to establish hierarchy.
+Every visible element must earn its place.
+
+CONSISTENCY CREATES LEARNABILITY.
+
+The same concept gets the same name, icon, state model and interaction everywhere.
+Core Web, Companion, Server and integrations may adapt to screen size and platform conventions, but gardenOS concepts must remain recognizable.
+Do not make the user relearn Nodes, Gardens, Zones, Plants, Automation or Safety on each interface.
+
+PROGRESSIVE DISCLOSURE.
+
+Overview shows what matters.
+Monitor explains current conditions.
+Garden describes the physical/biological system.
+Automation explains what gardenOS intends to do and why.
+System exposes configuration, hardware, networking, data, maintenance and diagnostics.
+Do not place expert configuration on the main dashboard merely because it exists.
+
+SHOW STATE. CONFIRM CONSEQUENCE.
+
+Every user command produces immediate visible feedback.
+For meaningful commands distinguish requested, accepted/rejected, executing, confirmed, failed, timed out or cancelled.
+Never make an actuator appear ON merely because a button was pressed.
+Display confirmed system state.
+Dangerous or irreversible actions require proportionate confirmation and clear recovery behavior.
+
+MAKE AUTOMATION EXPLAINABLE.
+
+gardenOS must be able to answer: “Why did you water?” and “Why did you refuse to water?”
+
+Decision order:
+Hard safety
+→ system/device health
+→ water/flow/interlocks
+→ plant requirements
+→ selected growing strategy
+→ environmental adjustment
+→ user rules
+→ requested action
+
+Automation presets are parameterizations of ONE engine, not independent engines.
+The UI should show selected strategy, effective thresholds, important modifiers and any safety override in human language.
+
+SAFETY IS ARCHITECTURE.
+
+Safety is not scattered if-statements added after automation.
+Safe state, actuator limits, cooldowns, water-source protection, flow confirmation, interlocks, sensor quality, command expiry, watchdog/recovery behavior and fault handling are first-class system concepts.
+Unknown hardware never auto-actuates.
+A lost UI, Server, Internet connection or HomeKit session must not make the garden unsafe.
+
+RECOVERY IS A PRODUCT FEATURE.
+
+Design startup, update, configuration and storage around failure.
+A gardenOS Core must remain reachable after ordinary configuration mistakes and network failures.
+Use known-good defaults, transactional writes, validation, verification and rollback where practical.
+Boot/recovery paths must be smaller and more dependable than optional feature paths.
+
+DATA BELONGS TO THE USER, NOT THE FIRMWARE IMAGE.
+
+Preserve macOS-like separation:
+/system/  firmware-owned defaults, schemas, migrations
+/data/    reference datasets and biological definitions
+/user/    garden, plants, rules, presets, calibration, Nodes, preferences
+/runtime/ transient state, health, events and caches
+/ui/      web application and localization resources
+
+Firmware updates change the operating layer.
+Data updates change reference knowledge.
+UI updates change presentation.
+None should unnecessarily replace the others.
+User-created environments survive software replacement whenever schema compatibility permits.
+
+MIGRATE, DO NOT RESET.
+
+For persistent schema changes:
+DETECT → VALIDATE → BACKUP/STAGE → MIGRATE → VERIFY → COMMIT → ROLLBACK ON FAILURE.
+
+Version schemas explicitly.
+Never silently discard unknown or user-created data simply because firmware changed.
+
+BUILD A SMALL CORE AND MOVE WEIGHT OUTWARD.
+
+Core owns local sensing, safety, immediate automation, hardware abstraction, local configuration and recoverability.
+Server owns site-scale history, richer analytics, fleet coordination, users, long-term storage and heavyweight integrations.
+Companion owns rich interaction and visualization.
+Do not force Core-Lite to carry Server-class functionality.
+
+INTEGRATIONS ARE ADAPTERS, NOT OWNERS.
+
+HomeKit Lite, Matter, MQTT and future integrations consume gardenOS state and submit gardenOS commands.
+They never directly own relay channels, duplicate automation logic or bypass safety.
+Expose a curated garden-level representation rather than mirroring the entire sensor/relay topology.
+
+LOCAL FIRST.
+
+Core must operate without Server.
+Server must operate without Internet where practical.
+Automation must not depend on a phone being connected.
+Cloud features may improve convenience but cannot be required for basic agricultural operation or safety.
+
+SECURITY STARTS AT THE ARCHITECTURE.
+
+Use the strongest security the hardware can reliably support without pretending constrained hardware has capabilities it does not.
+Identity, provisioning, update integrity, secrets, authorization and recovery must be designed together.
+Higher-capability hardware should progressively add stronger roots of trust, signed updates, rollback and protected credentials without fragmenting the gardenOS protocol.
+
+QUALITY IS MEASURED, NOT ASSUMED.
+
+Establish a baseline before optimization.
+Track firmware size, free heap, minimum heap, boot time, response latency, filesystem writes, reconnect/recovery behavior, sensor loop timing and long-run stability.
+Optimization without measurement is speculation.
+
+Verification ladder:
+SOURCE REVIEWED
+→ STATIC CHECKS
+→ CLEAN COMPILE
+→ FLASH / BOOT
+→ UI + API REGRESSION
+→ HARDWARE VALIDATION
+→ FAULT INJECTION
+→ POWER / NETWORK RECOVERY
+→ OTA + DATA MIGRATION
+→ 24-HOUR TEST
+→ 7-DAY SOAK
+→ FIELD PILOT
+→ RELEASE CANDIDATE
+→ RELEASE
+
+Never label a stage as passed unless it actually ran.
+
+POLISH IS FUNCTIONAL.
+
+Misaligned controls, inconsistent terminology, unexplained delays, stale values, ambiguous states and unnecessary steps are engineering defects, not merely cosmetic defects.
+A finished product feels calm because edge cases have been handled.
+
+DEFAULTS SHOULD BE GOOD ENOUGH TO SUCCEED.
+
+A new user should be able to install supported hardware, power the Core, connect from a phone, identify/configure devices, describe the garden, choose an appropriate strategy and reach safe useful automation without editing source code.
+Advanced customization comes after a working default path.
+
+DESIGN FOR THE COMMON CASE; RETAIN POWER FOR THE EXPERT.
+
+Do not force beginners through technician workflows.
+Do not prevent experts from inspecting channels, addresses, raw values, event logs and diagnostics.
+Use progressive disclosure rather than separate competing products wherever possible.
+
+REMOVE BEFORE ADDING.
+
+Before adding a subsystem ask:
+- Does this capability already exist?
+- Can the authoritative implementation be extended?
+- Can obsolete code be removed first?
+- What permanent runtime/resource cost does this add?
+- Does this belong on Core, Server, Companion or an adapter?
+
+A smaller implementation with equal behavior is preferred.
+
+======================================================================
+gardenOS PRODUCT TEST
+======================================================================
+
+Before accepting a design or feature, ask:
+
+USEFUL — Does it solve a real garden/user problem?
+COHERENT — Does it fit the existing gardenOS object and interaction model?
+NATIVE — Is it appropriate for this hardware tier?
+SIMPLE — Is the user-facing result simpler than the implementation?
+LEAN — Can we eliminate code, data movement or background work?
+FAST — Does the interaction feel immediate on the actual target hardware?
+SAFE — What happens if the sensor, network, storage, Node or user command fails?
+RECOVERABLE — Can the user get back to a working state without development tools?
+PERSISTENT — Will user data survive reboot/update/migration?
+EXPLAINABLE — Can the system explain its state and automated decisions?
+MEASURABLE — Do we have before/after resource and reliability evidence?
+CONSISTENT — Does it behave like the rest of gardenOS?
+POLISHED — Are naming, layout, feedback, edge cases and error states finished?
+NECESSARY — If removed, would the product meaningfully worsen?
+
+If several answers are “no”, the feature is not ready to merge.
+
+======================================================================
+CORE-LITE HARD RULE
+======================================================================
+
+DO NOT MAKE ESP8266 PRETEND TO BE A SERVER.
+
+Core-Lite wins by being small, deterministic, recoverable and exceptionally well optimized for its exact job.
+Its limitations should create disciplined design—not a degraded experience.
+
+For every Core-Lite feature:
+1. establish resource baseline;
+2. implement through existing authoritative services;
+3. avoid duplicate state;
+4. avoid unnecessary dynamic allocation;
+5. minimize persistent writes and network chatter;
+6. keep recovery path independent of optional features;
+7. measure flash/heap/timing after implementation;
+8. remove anything whose continuing cost exceeds its value.
+
+======================================================================
+UI MANTRA
+======================================================================
+
+CONTENT FIRST.
+STATUS AT A GLANCE.
+ONE OBVIOUS PRIMARY ACTION.
+DETAIL ON DEMAND.
+CONSISTENT NAVIGATION.
+IMMEDIATE FEEDBACK.
+CONFIRMED STATE, NOT OPTIMISTIC FICTION.
+ACCESSIBLE TYPE AND CONTROLS.
+RESPONSIVE FROM PHONE TO DESKTOP.
+ANIMATION ONLY WHEN IT COMMUNICATES STATE.
+TECHNICAL COMPLEXITY STAYS IN SYSTEM/DIAGNOSTICS.
+NO VISUAL ELEMENT WITHOUT A JOB.
+
+The gardenOS Web UI may be inspired by the clarity, hierarchy and restraint associated with modern Apple platform design, but it should remain gardenOS—not imitate proprietary Apple UI pixel-for-pixel.
+
+======================================================================
+ENGINEERING MANTRA — SHORT FORM
+======================================================================
+
+DESIGN THE WHOLE PRODUCT.
+BUILD FOR THE ACTUAL HARDWARE.
+ONE AUTHORITATIVE IMPLEMENTATION.
+DO LESS WORK.
+RACE TO USEFUL; RETURN TO IDLE.
+MEASURE EVERYTHING THAT COSTS RESOURCES.
+SIMPLE OUTSIDE; RIGOROUS INSIDE.
+SAFETY BEFORE AUTOMATION.
+RECOVERY BEFORE FEATURES.
+USER DATA OUTLIVES FIRMWARE.
+INTEGRATIONS ADAPT; THEY DO NOT OWN.
+LOCAL FIRST.
+DEFAULTS WORK.
+DETAIL ON DEMAND.
+REMOVE BEFORE ADDING.
+VERIFY ON REAL HARDWARE.
+POLISH THE EDGE CASES.
+
+And always:
+TRACE → CONSOLIDATE → SIMPLIFY → FIX AUTHORITATIVE IMPLEMENTATION → VERIFY → REMOVE BLOAT.
+
+======================================================================
+SOURCE BASIS / ARGOS NOTES
+======================================================================
+
+Public Apple guidance reviewed for this doctrine emphasizes:
+- integrated hardware/software/security design;
+- hardware-backed security and a chain of trust for boot/update;
+- minimizing CPU, timers, I/O, network and unnecessary UI refresh work;
+- becoming idle when no useful work exists;
+- measuring launch, memory, CPU, responsiveness and energy rather than assuming performance;
+- strong visual hierarchy, clarity, simplicity, consistency and accessibility;
+- using platform-specific qualities while maintaining a coherent design language;
+- treating execution quality and responsiveness as part of perceived product quality.
+
+Primary public references researched 2026-09-16:
+Apple Developer — Human Interface Guidelines / Design resources
+https://developer.apple.com/design/
+Apple Developer — Principles of great design (WWDC26)
+https://developer.apple.com/videos/play/wwdc2026/250/
+Apple Developer — Testing and performance
+https://developer.apple.com/documentation/technologyoverviews/testing-and-performance
+Apple Developer — Performance and metrics
+https://developer.apple.com/documentation/xcode/performance-and-metrics
+Apple Developer Archive — Energy Efficiency Guide for Mac Apps
+https://developer.apple.com/library/archive/documentation/Performance/Conceptual/power_efficiency_guidelines_osx/
+Apple Platform Security — March 2026
+https://support.apple.com/guide/security/welcome/web
+
+These sources inform principles; gardenOS-specific rules above are ARGOS/FORGE adaptations and engineering inferences, not statements that Apple uses the exact gardenOS architecture or terminology.

@@ -1,0 +1,16 @@
+VALIDATION STATUS — 2026-09-21
+
+PASS — all JSON contracts parse.
+PASS — v1.7/v1.8/v2.0 integration preflights.
+PASS — static package preflight.
+PASS — milestone model present: M1, M2, M3 with M4-M6 roadmap.
+PASS — M2 Workspace hierarchy contract present.
+PASS — M3 starter-app contract present.
+PASS — package ZIP integrity.
+
+NOT RUN — Apple Silicon ARM64 image build.
+NOT RUN — VM boot.
+NOT RUN — graphical runtime acceptance.
+NOT RUN — real external provider connectivity.
+
+Therefore this artifact is an IMPLEMENTATION CANDIDATE, not a runtime-verified M3 release.

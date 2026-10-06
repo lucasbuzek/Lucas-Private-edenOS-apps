@@ -1,0 +1,3 @@
+MODULES
+LUCAS UI/state; CONDUCTOR orchestration; HEIMDALL assets/state; assistant registry; job lifecycle; provider adapters (interface target); web UI; export/package.
+External established assistants remain independent and are invoked through handoff contracts.

@@ -1,0 +1,12 @@
+{
+  "id": "eden.eitrimb",
+  "display_name": "EITRI — The Master Builder",
+  "role": "Software Development Governor",
+  "version": "0.1.0",
+  "channel": "EXPERIMENTAL",
+  "audience": "PRIVATE — Lucas",
+  "authority": "Development/Admin",
+  "ui": "LCAS FULL",
+  "status": "PRODUCED",
+  "runtime_verification": "UNKNOWN"
+}

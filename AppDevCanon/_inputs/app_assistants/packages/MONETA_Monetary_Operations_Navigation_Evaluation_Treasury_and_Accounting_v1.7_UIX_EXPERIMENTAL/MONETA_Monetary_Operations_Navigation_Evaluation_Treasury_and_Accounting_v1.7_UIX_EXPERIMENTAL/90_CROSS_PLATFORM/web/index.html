@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5f5f7"><link rel="manifest" href="manifest.webmanifest"><title>MONETA</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#171719;background:#f5f5f7}
+*{box-sizing:border-box}body{margin:0;min-height:100vh}button,input,textarea,select{font:inherit}
+.shell{display:grid;grid-template-columns:230px minmax(0,1fr) 310px;min-height:100vh}
+.side{background:#fbfbfc;border-right:1px solid #dddde2;padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-size:22px;font-weight:780;letter-spacing:-.03em;padding:4px 8px 18px}.brand small{display:block;font-size:11px;font-weight:600;color:#777}
+.navbtn{width:100%;text-align:left;border:0;background:transparent;padding:10px 11px;border-radius:10px;color:#34343a;margin:2px 0}
+.navbtn.active,.navbtn:hover{background:#e9e9ed}.sectionlabel{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#888;padding:18px 10px 6px}
+.main{min-width:0;padding:22px 24px 90px}.top{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-bottom:20px}
+h1{font-size:30px;letter-spacing:-.035em;margin:0}h2{font-size:18px;margin:24px 0 10px}p{line-height:1.45}
+.status{display:flex;align-items:center;gap:8px;font-size:13px;color:#555}.dot{width:8px;height:8px;border-radius:50%;background:#777}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.card{background:#fff;border:1px solid #dedee3;border-radius:15px;padding:15px;box-shadow:0 1px 2px #00000008}
+.company{cursor:pointer;min-height:105px}.company:hover,.company:focus{border-color:#999;outline:none}.company b{font-size:16px}.muted{color:#73737a}.tiny{font-size:12px}
+.workspace{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:12px}.textarea{width:100%;min-height:115px;border:1px solid #c9c9cf;border-radius:12px;padding:12px;resize:vertical;background:#fff}
+.primary{border:0;border-radius:10px;padding:10px 14px;background:#171719;color:#fff;font-weight:650}.secondary{border:1px solid #cfcfd5;border-radius:10px;padding:9px 12px;background:#fff}
+.result{white-space:pre-wrap;word-break:break-word;background:#f2f2f4;border-radius:11px;padding:12px;min-height:86px}
+.inspector{border-left:1px solid #dddde2;background:#fbfbfc;padding:18px 16px;position:sticky;top:0;height:100vh;overflow:auto}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.pill{padding:6px 9px;border-radius:999px;background:#ededf0;font-size:12px}
+.truth{display:grid;grid-template-columns:1fr auto;gap:8px;font-size:13px;padding:7px 0;border-bottom:1px solid #e7e7ea}
+.depth{display:flex;background:#eaeaee;padding:3px;border-radius:10px}.depth button{border:0;background:transparent;padding:6px 9px;border-radius:8px;font-size:12px}.depth button.active{background:#fff;box-shadow:0 1px 2px #0002}
+.mobilebar{display:none}.danger-note{border-left:3px solid #777;padding-left:10px}
+dialog{border:0;border-radius:16px;max-width:560px;width:calc(100% - 30px);box-shadow:0 20px 60px #0004;padding:20px}dialog::backdrop{background:#0005}
+@media(max-width:980px){.shell{grid-template-columns:190px minmax(0,1fr)}.inspector{display:none}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.shell{display:block}.side{display:none}.main{padding:16px 14px 82px}.cards{grid-template-columns:1fr 1fr}.workspace{display:block}.top{align-items:flex-start}.mobilebar{display:flex;position:fixed;bottom:0;left:0;right:0;background:#fbfbfceF;backdrop-filter:blur(16px);border-top:1px solid #ddd;z-index:5;justify-content:space-around;padding:7px 6px max(7px,env(safe-area-inset-bottom))}.mobilebar button{border:0;background:transparent;padding:8px;font-size:12px}.company{min-height:95px}}
+@media(max-width:390px){.cards{grid-template-columns:1fr}}
+</style></head><body>
+<div class="shell">
+<aside class="side" aria-label="MONETA navigation"><div class="brand">MONETA<small>Financial workspace · v1.7</small></div>
+<button class="navbtn active">Overview</button><button class="navbtn">Activity</button><button class="navbtn">Reports</button>
+<div class="sectionlabel">Companies</div><div id="sideCompanies"></div>
+<div class="sectionlabel">Experience</div><div class="depth"><button class="active" data-depth="simple">Simple</button><button data-depth="advanced">Advanced</button><button data-depth="expert">Expert</button></div>
+</aside>
+<main class="main">
+<div class="top"><div><h1>Financial overview</h1><div class="status"><span class="dot"></span><span>LCAS · Active · Experimental</span></div></div>
+<div class="row"><span class="pill">Local surface</span><span class="pill" id="profilePill">Recommended</span></div></div>
+
+<section class="card"><b>What needs attention</b><p class="muted">No connected financial datastore yet. This experiment can inspect MONETA structure, route work and demonstrate the cross-platform UIX without posting financial actions.</p>
+<div class="row"><button class="secondary" id="detailsBtn">View implementation status</button><span class="tiny muted">Quiet by default · detail on demand</span></div></section>
+
+<h2>Finance companies</h2><div id="companies" class="cards"></div>
+
+<h2>Work</h2><div class="workspace"><section class="card">
+<label for="q"><b>What do you want MONETA to do?</b></label><p class="muted tiny">Describe the financial task naturally. MONETA will identify the authoritative owner.</p>
+<textarea id="q" class="textarea" placeholder="Prepare an authoritative budget for the awarded tender"></textarea>
+<p class="row"><button id="go" class="primary">Route task</button><button id="clear" class="secondary">Clear</button></p>
+<div id="out" class="result" aria-live="polite">Ready.</div></section>
+<aside class="card"><b>Current context</b><p class="tiny muted">No financial record selected.</p><div class="truth"><span>Truth state</span><b>—</b></div><div class="truth"><span>Approval</span><b>Not required</b></div><div class="truth"><span>Side effects</span><b>None</b></div></aside></div>
+
+<section id="advancedPanel" hidden><h2>Advanced</h2><div class="card"><b>Capability & provider context</b><p class="muted">Advanced mode exposes routing, composition and provider details without changing the canonical financial truth.</p><div id="capSummary"></div></div></section>
+<section id="expertPanel" hidden><h2>Expert</h2><div class="card"><b>Diagnostic contract view</b><pre id="expertData" class="result"></pre></div></section>
+</main>
+<aside class="inspector"><b>Inspector</b><p class="tiny muted">Context and controls for the selected financial object or company.</p>
+<div class="sectionlabel">LCAS</div><div class="truth"><span>Identity</span><b>MONETA</b></div><div class="truth"><span>State</span><b>Active</b></div><div class="truth"><span>Maturity</span><b>Experimental</b></div>
+<div class="sectionlabel">Safety</div><p class="tiny danger-note">Money movement, bank changes, journal posting, tax filing and external reporting remain disabled.</p>
+<div class="sectionlabel">Configuration</div><p class="tiny muted">Recommended assistance may propose settings; Simple/Advanced/Expert controls disclosure depth. Diagnostic remains separate.</p>
+</aside></div>
+<nav class="mobilebar" aria-label="Mobile navigation"><button>Overview</button><button>Companies</button><button>Work</button><button>Status</button></nav>
+<dialog id="statusDialog"><h2>Implementation status</h2><p><b>Implemented:</b> shared MONETA registry/core, responsive PWA UIX, local routing and resource-profile recommendation.</p><p><b>Not yet implemented:</b> durable BIFROST persistence, live HERMES/ORACLE/THEMIS handoffs, authorization engine, native signed binaries and production financial side effects.</p><p><button class="primary" onclick="this.closest('dialog').close()">Close</button></p></dialog>
+<script type="module">
+import {registry,route,resourceProfile} from "../core/moneta-core.mjs";
+const roles={LEDGER:"Accounting & controllership",MERCURY:"Transaction intelligence",ALLOCATE:"Budgeting & forecasting",VAULT:"Treasury & cash",MARGIN:"Profitability",NUNTIUS:"Financial reporting",PATRON:"Funding finance",RECEIPT:"Financial documents",TRIBUTE:"Tax"};
+const counts=Object.fromEntries(registry.companies.map(c=>[c.name,registry.capabilities.filter(x=>x.company===c.name).length]));
+companies.innerHTML=registry.companies.map(c=>`<button class="card company" data-company="${c.name}"><b>${c.name}</b><p class="muted">${roles[c.name]}</p><span class="tiny muted">${counts[c.name]} capabilities</span></button>`).join("");
+sideCompanies.innerHTML=registry.companies.map(c=>`<button class="navbtn" data-company="${c.name}">${c.name}</button>`).join("");
+document.querySelectorAll("[data-company]").forEach(b=>b.onclick=()=>{const n=b.dataset.company;out.textContent=`${n} — ${roles[n]}\n${counts[n]} registered capabilities.\nSelect or describe a task to continue.`;});
+go.onclick=()=>{const r=route(q.value);out.textContent=JSON.stringify(r,null,2)};
+clear.onclick=()=>{q.value="";out.textContent="Ready."};
+detailsBtn.onclick=()=>statusDialog.showModal();
+const cores=navigator.hardwareConcurrency||4,mem=navigator.deviceMemory||8,p=resourceProfile({memoryGB:mem,cores});profilePill.textContent=p.profile;
+capSummary.textContent=`${registry.companies.length} companies · ${registry.capabilities.length} registered capabilities · ${p.profile} composition recommended for this browser-reported resource profile.`;
+expertData.textContent=JSON.stringify({application:registry.app,version:registry.version,maturity:registry.maturity,companies:registry.companies.length,capabilities:registry.capabilities.length,provider:"local surface",side_effects:"disabled"},null,2);
+document.querySelectorAll("[data-depth]").forEach(b=>b.onclick=()=>{document.querySelectorAll("[data-depth]").forEach(x=>x.classList.toggle("active",x===b));const d=b.dataset.depth;advancedPanel.hidden=d==="simple";expertPanel.hidden=d!=="expert";});
+if("serviceWorker"in navigator)navigator.serviceWorker.register("./sw.js");
+</script></body></html>

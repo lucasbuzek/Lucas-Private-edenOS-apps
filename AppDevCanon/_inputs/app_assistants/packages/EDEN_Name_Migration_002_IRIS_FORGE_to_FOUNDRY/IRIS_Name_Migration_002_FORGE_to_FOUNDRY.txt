@@ -1,0 +1,68 @@
+EDEN ATOMIC NAME MIGRATION 002 — IRIS
+STATUS: READY FOR OWNING-CHAT EXECUTION
+
+OLD ACTIVE NAME
+IRIS.FORGE
+
+NEW CANONICAL NAME
+IRIS.FOUNDRY
+
+FUNCTIONAL MEANING
+FOUNDRY — Final Output Unification, Normalization, Derivation, Rendering & Yield
+
+CONCEPTUAL MEANING
+A foundry turns prepared material into a finished formed output. Within IRIS, FOUNDRY
+is the local visual-production/assembly stage that turns prepared visual instructions and
+components into renderable output. It does not take over the independent EDEN FORGE
+specialist's deterministic software/processing/integration authority.
+
+WHY THIS IDENTITY MOVES
+FORGE is already an established independent EDEN framework/specialist for deterministic
+processing, conversion, automation, pipelines, manifests and integration. NamingRules
+explicitly distinguishes external frameworks from internal modules and even uses the
+example that a project may call FORGE without duplicating FORGE internally.
+The UNIQUE NAME rule therefore requires IRIS.FORGE to move.
+
+IMPORTANT EVIDENCE LIMIT
+Recovered registry material establishes IRIS.FORGE as an IRIS module name, but the search
+available to this migration did not recover a sufficiently detailed authoritative module
+description to justify changing its behavior. Therefore:
+PRESERVE CURRENT IRIS.FORGE BEHAVIOR EXACTLY.
+This migration changes identity/name only.
+The owning IRIS chat/package is authoritative for its exact implementation.
+
+MIGRATION REQUIREMENTS
+1. Apply this as an atomic identity migration, not an IRIS redesign.
+2. Locate the active IRIS.FORGE module and its exact current implementation.
+3. Rename IRIS.FORGE → IRIS.FOUNDRY.
+4. Preserve all current functionality, inputs, outputs, routing and behavior.
+5. Update underlying prompts, agents, routers, workflows, capability maps, configs,
+   tests, UI labels, documentation, manifests and package metadata.
+6. Do NOT rename or modify independent EDEN FORGE.
+7. Do NOT replace ordinary prose uses of “forge” that are not the IRIS identity.
+8. Verify available regression/static/package checks.
+9. Search the resulting active package for stale IRIS.FORGE identity references.
+10. After verification, purge the old active IRIS.FORGE identity/alias.
+11. Historical recovery belongs only in pre-migration checkpoint/source history.
+12. Return confirmation plus the complete updated IRIS package.
+
+REQUIRED CONFIRMATION
+IRIS NAME MIGRATION 002 — CONFIRMED
+IRIS.FORGE → IRIS.FOUNDRY
+Underlying agents/modules updated: PASS / FAIL / UNKNOWN
+Workflows/routing updated: PASS / FAIL / UNKNOWN
+Config/manifests updated: PASS / FAIL / UNKNOWN
+Documentation/UI updated: PASS / FAIL / UNKNOWN
+Regression checks: PASS / FAIL / UNKNOWN
+Stale active IRIS.FORGE references: <number or UNKNOWN>
+Independent EDEN FORGE unchanged: YES / NO / UNKNOWN
+Old active identity purged: YES / NO
+Updated package: <filename>
+Notes/blockers: <if any>
+
+GLOBAL RULES
+One active identity = one unique canonical name.
+Owning chat migrates its own implementation tree.
+Verify before purge.
+UNKNOWN is never PASS.
+Historical chat text is not rewritten.

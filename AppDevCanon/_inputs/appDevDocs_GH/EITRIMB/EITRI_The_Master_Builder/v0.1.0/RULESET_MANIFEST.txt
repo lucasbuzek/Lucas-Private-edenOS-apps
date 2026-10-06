@@ -1,0 +1,11 @@
+EITRIMB RULESET MANIFEST
+Universal EDEN/AppDev package rules: REFERENCED — authoritative external canon
+LCAS FULL: REQUIRED — authoritative resolved canon
+CONDUCTOR: REFERENCED — authoritative original canon
+FORGE: REFERENCED — authoritative original canon
+ARGOS: REFERENCED — authoritative original canon
+THREAD: REFERENCED — authoritative original canon
+ARTEMIS: REFERENCED — authoritative original canon
+IRIS: REFERENCED — authoritative original canon
+PENELOPE: REFERENCED AS APP — authoritative original canon
+Status: This package does not duplicate those full internal canons.

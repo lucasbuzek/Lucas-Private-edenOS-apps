@@ -1,0 +1,7 @@
+REFERENCE: OpenCyphal
+URL: https://opencyphal.org/
+ROLE IN EDEN DESIGN
+Open distributed real-time protocol for cyber-physical systems over CAN/CAN-FD and UDP. Evaluate before inventing EDEN machine/module bus protocol.
+
+STATUS
+Reference / integration candidate. Not a canonical dependency until architecture, license, safety and prototype validation are completed.

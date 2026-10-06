@@ -1,0 +1,23 @@
+# IRIS FUSION
+Purpose: clone / borrow / reconstruct selected features from one or more references and integrate them seamlessly.
+
+WORKFLOW
+SOURCE IDENTIFICATION
+→ FEATURE ISOLATION
+→ IDENTITY EXTRACTION
+→ GEOMETRY RECONSTRUCTION
+→ DESTINATION SCALE/PERSPECTIVE
+→ MATERIAL REBUILD
+→ DESTINATION LIGHTING
+→ SHADOW / CONTACT / REFLECTION
+→ OCCLUSION
+→ ATMOSPHERIC MATCH
+→ EDGE / MICRODETAIL BLENDING
+→ FORENSIC QA
+
+RULES
+- Transfer only the requested/appropriate feature, not unrelated source details.
+- Neutralize incompatible source lighting.
+- Prefer physically coherent reconstruction over literal pixel pasting.
+- Preserve destination asset lock unless the transfer intentionally updates it.
+- Added objects must affect and be affected by the environment.

@@ -1,0 +1,28 @@
+EDEN Deployment Audience Profiles
+Version: 1.0
+Status: PROFILE/POLICY — NOT UNIVERSAL CANON
+
+PURPOSE
+Defines deployment audience semantics. Named people, group membership and personal preferences are configuration data, not AppDevRules/edenOSrules.
+
+PRIVATE — owner/personal deployment context and explicitly authorized personal resources.
+FAMILY — explicitly authorized family audience/resources.
+FRIENDS — explicitly authorized friend audience/resources.
+PUBLIC — deliberately public audience/resources.
+
+NESTING
+FAMILY and FRIENDS may contain groups and named users.
+Profiles inherit:
+Audience base -> optional group defaults -> person -> optional user delta -> target-device adaptation.
+Store only deltas where practical.
+
+SETUP
+Default: RECOMMENDED.
+Optional: CUSTOM.
+RECOMMENDED should minimize hassle: SIMPLE configuration, device-aware detection, reuse adequate existing software/providers, install only useful missing components, safe defaults, advanced controls hidden unless needed.
+CUSTOM may progressively expose Apps/capabilities, preferences, integrations/providers, storage/data locations, language/locality, configuration depth, Development/Experimental access and advanced deployment options.
+
+IMPORTANT
+Audience != authentication != EDEN identity != authorization != data access.
+Selecting FAMILY/FRIENDS does not automatically expose all resources.
+Actual authorization remains explicit.

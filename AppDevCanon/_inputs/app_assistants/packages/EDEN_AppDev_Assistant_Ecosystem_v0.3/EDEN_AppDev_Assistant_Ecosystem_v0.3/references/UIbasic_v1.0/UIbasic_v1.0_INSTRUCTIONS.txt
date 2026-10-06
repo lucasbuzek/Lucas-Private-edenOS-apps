@@ -1,0 +1,20 @@
+UIbasic — Basic Persistent User Interface Protocol — v1.0 INSTRUCTIONS
+
+UIbasic is a reusable UI layer/update protocol. It does not replace the
+identity of the application receiving it.
+
+Use UIbasic_v1.0_MASTER.txt against the current source/project.
+
+Workflow: CURRENT PROJECT → INVENTORY → UPDATE → TEST → QA → VERSION →
+PACKAGE AFTER UPDATE
+
+Commands: UI AUTO UI TINY UI COMPACT UI FULL
+
+AUTO is the recommended default.
+
+TINY = minimum persistent live status. COMPACT = everyday
+project/function/progress interface. FULL = complete
+control/progress/QA/next-actions interface.
+
+When integrating, reuse the host application’s existing state, settings,
+navigation, task and progress architecture whenever possible.

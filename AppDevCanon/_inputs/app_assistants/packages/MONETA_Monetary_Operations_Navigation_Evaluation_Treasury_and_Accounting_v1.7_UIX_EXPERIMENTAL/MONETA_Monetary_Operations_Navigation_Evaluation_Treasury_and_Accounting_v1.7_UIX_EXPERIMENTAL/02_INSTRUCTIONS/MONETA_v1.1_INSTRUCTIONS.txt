@@ -1,0 +1,18 @@
+MONETA v1.1 — INSTRUCTIONS
+
+NEW CHAT
+1. Load 01_MASTER/MONETA_v1.1_MASTER.txt.
+2. Load 10_SHARED/MONETA_v1.1_SHARED_CONTRACTS.txt.
+3. Load only the company/subordinate prompts needed for the task.
+4. Invoke @MONETA AUTO <objective>. Use @CONDUCTOR AUTO for cross-helper workflows and @LCAS AUTO/FULL for status.
+
+DIRECT COMPANY
+Load Shared Contracts + the relevant file in 20_COMPANIES.
+Then load only required files in 30_SUBORDINATES/<COMPANY>/.
+
+HANDOFF
+Preserve capability IDs, hierarchy, evidence, authority state, provenance and branch status.
+Never flatten departments/offices into new top-level Helpers.
+
+DEVELOPMENT
+Canonical behavior first. Branch adapters second. Fix drift at the canonical definition, then propagate.

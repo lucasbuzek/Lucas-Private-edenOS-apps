@@ -1,0 +1,20 @@
+package_format: EDEN-AppDev
+package_format_version: "1"
+app_id: "eden.eitrimb"
+app_name: "EITRI — The Master Builder"
+app_version: "0.1.0"
+source_revision: "eitrimb-governor-master-prompt-2026-09-28"
+build_id: "2026.09.28.1"
+package_version: "0.1.0"
+release_channel: "EXPERIMENTAL"
+authority: "Development/Admin"
+audience: "PRIVATE — Lucas"
+profile_version: "Private-Lucas"
+schema_version: "0.1"
+migration_version: "0"
+ui: "LCAS FULL"
+languages: ["en", "sk"]
+source_state: "PRODUCED"
+runtime_verification: "UNKNOWN"
+lkg_runtime: "UNKNOWN"
+secrets_in_package: false

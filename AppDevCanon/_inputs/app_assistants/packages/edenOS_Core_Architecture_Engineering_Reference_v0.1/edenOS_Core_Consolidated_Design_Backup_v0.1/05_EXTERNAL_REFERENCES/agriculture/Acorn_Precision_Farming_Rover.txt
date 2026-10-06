@@ -1,0 +1,7 @@
+REFERENCE: Acorn Precision Farming Rover
+URL: https://github.com/Twisted-Fields/acorn-precision-farming-rover
+ROLE IN EDEN DESIGN
+Open agricultural rover reference for larger utility/workhorse lineage, modular rover structure, electronics/mechanics/software and agricultural tooling.
+
+STATUS
+Reference / integration candidate. Not a canonical dependency until architecture, license, safety and prototype validation are completed.

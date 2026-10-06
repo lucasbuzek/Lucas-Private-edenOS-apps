@@ -1,0 +1,23 @@
+THREAD — v1.4.1 — PERSISTENT STATE / RESUME PROMPT
+
+@THREAD RESUME [PROJECT OR SUBJECT]
+
+Recover and continue from the latest validated THREAD state.
+
+Use the minimum state necessary:
+• objective
+• latest confirmed findings
+• approved user corrections
+• authoritative current reconstruction
+• relevant aliases / search terms already used
+• sources or files already checked
+• unresolved conflicts / gaps
+• next useful action
+
+Do not restart validated searches unless new evidence, conflict, verification needs or user instruction requires it.
+
+AUTO LOOP:
+WORK → VALIDATE → SAVE → CONTINUE
+
+On completion:
+VALIDATE → SAVE → PACKAGE FINAL OUTPUT only when formal packaging is useful, required or requested.

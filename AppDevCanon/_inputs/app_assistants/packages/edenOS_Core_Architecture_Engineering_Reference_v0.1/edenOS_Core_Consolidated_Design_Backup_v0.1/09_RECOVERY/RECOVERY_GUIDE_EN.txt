@@ -1,0 +1,11 @@
+RECOVERY GUIDE
+
+1. Start with 00_START_HERE/README_EN.txt.
+2. Treat 01_CANONICAL_DESIGN as the consolidated design baseline.
+3. Restore original EDEN/gardenOS reference material from 06_SOURCE_BACKUP/EDEN_SOURCE_FILES.
+4. Use 07_LINKS to recover upstream project locations.
+5. Run backup_external_sources.sh to create a fresh local mirror of selected external repositories.
+6. Record exact commits and licenses before incorporating anything into EDEN.
+7. Rebuild in this order: gardenOS proven services → edenOS Core generic contracts → Nandi P0 → dedicated lineages/adapters.
+8. Never require cloud/AI/Server for basic safe Core operation.
+9. Verify all migrations and hardware behavior on real target hardware.

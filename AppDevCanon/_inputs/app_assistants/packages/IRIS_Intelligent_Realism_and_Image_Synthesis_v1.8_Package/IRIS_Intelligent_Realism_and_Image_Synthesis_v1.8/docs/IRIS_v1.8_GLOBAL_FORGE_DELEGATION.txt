@@ -1,0 +1,36 @@
+◉ IRIS — Intelligent Realism & Image Synthesis — v1.8
+
+GLOBAL FORGE CAPABILITY DELEGATION
+Build identity: IRIS v1.8 / Name Reconciliation 003 / 2026-09-23
+
+STATUS
+Global EDEN FORGE remains unchanged and external to the IRIS subordinate registry.
+
+IRIS AUTHORITY
+- visual/image intelligence
+- visual research
+- generation
+- reconstruction
+- transformation
+- compositing
+- visual consistency
+- specialist rendering
+- visual QA
+
+DELEGATE TO GLOBAL FORGE
+- deterministic technical processing
+- conversion
+- automation
+- scripts/tooling
+- pipelines
+- validation tooling
+- manifests
+- technical/package integration
+
+ROUTING RULE
+When one of the deterministic capabilities above is required, IRIS requests global FORGE through the established EDEN capability/provider relationship. FORGE returns the deterministic artifact/evidence/result to IRIS, and IRIS continues the visual workflow.
+
+PROHIBITED LOCAL IDENTITIES
+IRIS.FORGE is not active.
+IRIS.FOUNDRY is not active.
+No replacement worker is created for the reconciled local identity.

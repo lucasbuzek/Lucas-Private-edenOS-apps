@@ -1,0 +1,1589 @@
+# gardenOS Companion — master development strategy
+
+After re-evaluating the companion-app discussions together with the wider gardenOS Core/Server/Node work and the Nandi/agricultural robotics material, I would expand the original concept substantially.
+
+**gardenOS Companion should become the universal human interface to the gardenOS ecosystem**, not merely a native replacement for the ESP web interface.
+
+Your own robotics specification already anticipates GPS/RTK navigation, multiple coordinated ground vehicles, aerial-drone mapping, fleet-management software and remote diagnostics. fileciteturn1file0L51-L72 The broader project roadmap also deliberately progresses from remote control → assisted navigation → sensor fusion/AI → swarm deployment. fileciteturn1file7L621-L629
+
+That changes how I would build the app.
+
+---
+
+# 1. Recommended architecture
+
+The target ecosystem should become:
+
+```text id="uofddm"
+                         OPTIONAL CLOUD
+                              │
+                     ┌────────┴────────┐
+                     │ gardenOS Cloud │
+                     └────────┬────────┘
+                              │ encrypted
+                              │
+                    ┌─────────▼─────────┐
+                    │  gardenOS Server  │
+                    │  Site/Farm Edge   │
+                    └──────┬─────┬─────┘
+                           │     │
+             ┌─────────────┘     └─────────────┐
+             │                                 │
+       gardenOS Core                     ROBOTICS LAYER
+             │                                 │
+      ┌──────┴───────┐              ┌──────────┼──────────┐
+      │              │              │          │          │
+    Node           Node          Nandi 01   Nandi 02    Drone
+      │              │              │          │          │
+ Sensors/        Relays/         sensors    tools       camera
+ actuators       pumps           RTK/GPS                mapping
+
+                 ▲
+                 │
+       ┌─────────┴──────────┐
+       │ gardenOS Companion │
+       │                    │
+       │ iPhone             │
+       │ iPad               │
+       │ Android phone      │
+       │ Android tablet     │
+       └────────────────────┘
+```
+
+The crucial architectural rule is:
+
+> **The app supervises the system. It must not itself become the safety-critical controller.**
+
+Motor stabilization, collision avoidance, E-stop handling, geofence enforcement, communications-loss behaviour, pump safety and drone failsafes belong on the hardware/controller/vehicle.
+
+This follows the direction already present in the rover proposal: start with manual plus assisted navigation, preserve safety-stop functionality, operate offline and introduce autonomy progressively after basic mobility has been proven. fileciteturn1file6L531-L567
+
+---
+
+# 2. Flutter remains my recommendation — with an important qualification
+
+I re-evaluated Flutter against native Swift/Kotlin and other cross-platform options.
+
+I would still choose:
+
+**Flutter + native platform integrations**
+
+rather than three independent applications.
+
+Current Flutter supports a single codebase across Android and iOS, with platform-specific Swift/Kotlin integration available where required. ([docs.flutter.dev](https://docs.flutter.dev/platform-integration?utm_source=chatgpt.com)) Current Flutter 3.47 supports Android API 24–37 and iOS 15–26. ([docs.flutter.dev](https://docs.flutter.dev/reference/supported-platforms?utm_source=chatgpt.com))
+
+But I would **not** attempt to implement the entire robotics stack in Dart.
+
+Instead:
+
+```text id="oomczz"
+Flutter
+│
+├── UI
+├── state management
+├── dashboards
+├── maps
+├── configuration
+├── missions
+├── fleet interface
+├── Core management
+└── normal garden automation
+       │
+       ▼
+Native integration layer
+│
+├── iOS: Swift
+├── Android: Kotlin
+├── MAVSDK bridge
+├── BLE / accessory discovery
+├── local networking
+├── video
+└── hardware-specific integrations
+```
+
+This gives gardenOS the maintainability of one application while leaving an escape hatch for robotics libraries.
+
+---
+
+# 3. Four connection modes
+
+The companion application should understand four fundamentally different situations.
+
+| Mode | App connects to | Intended use |
+|---|---|---|
+| **Direct Core** | gardenOS Core | Home garden / single controller |
+| **Direct Vehicle** | Nandi/robot/drone | Setup, testing, field service |
+| **Site Mode** | gardenOS Server | Farm + multiple Core units + fleet |
+| **Remote Mode** | Server through secure relay/cloud | Remote monitoring/control |
+
+This is particularly important.
+
+A home user should **not need gardenOS Server**.
+
+Their system can remain:
+
+```text id="ldkiu8"
+Phone
+  │
+Wi-Fi
+  │
+gardenOS Core
+  │
+Nodes
+```
+
+Your existing Core philosophy already supports standalone operation, configuration backups, automation presets, OTA and a browser UI. fileciteturn1file1L138-L164
+
+A farm might instead have:
+
+```text id="0jckqz"
+                    gardenOS Server
+                   /      |       \
+                 /        |        \
+             Core 1     Core 2    Fleet
+               │          │       / | \
+             Nodes       Nodes   R1 R2 D1
+```
+
+The same Companion app controls both.
+
+---
+
+# 4. gardenOS Server becomes much more important
+
+For irrigation alone, Server can be optional.
+
+For **fleet operation**, it becomes the preferred architecture.
+
+The phone should not coordinate five robots because:
+
+- iOS/Android may suspend the application.
+- Wi-Fi connections disappear.
+- batteries die.
+- users walk away.
+- incoming calls and OS conditions occur.
+- a mobile device shouldn't be the authoritative scheduler.
+
+So:
+
+### gardenOS Server should own
+
+```text id="5vvfq4"
+Site state
+Mission queue
+Robot task allocation
+Fleet positions
+Maps
+Geofences
+RTK correction source/bridge
+Telemetry history
+Alerts
+Device registry
+User permissions
+Automation
+Mission logs
+Charging state
+Maintenance records
+```
+
+The phone becomes the operator console.
+
+---
+
+# 5. The app information architecture
+
+I would make the main navigation something like:
+
+```text id="mbbxj5"
+gardenOS
+
+OVERVIEW
+│
+├── Home / Site
+├── Alerts
+└── Activity
+
+GARDEN
+│
+├── Zones
+├── Plants
+├── Irrigation
+├── Environment
+└── Automation
+
+FLEET
+│
+├── Map
+├── Vehicles
+├── Missions
+├── Tasks
+└── Charging
+
+DEVICES
+│
+├── Core
+├── Nodes
+├── Sensors
+├── Actuators
+└── Gateways
+
+DATA
+│
+├── History
+├── Maps
+├── Reports
+└── Logs
+
+SYSTEM
+│
+├── Automation
+├── Integrations
+├── Firmware
+├── Backups
+└── Settings
+```
+
+The interface should change dynamically.
+
+A user with one Core and no robot should **never see an intimidating robotics console**.
+
+A commercial farm with four Nandis and two drones gets the Fleet section automatically.
+
+---
+
+# 6. Fleet management
+
+This is where the previous companion-app concept needs the largest expansion.
+
+A fleet view should show:
+
+```text id="ru7nct"
+NANDI FLEET                    10:42
+
+● Nandi 01     WEEDING
+  Battery 82%
+  ETA 24 min
+  RTK FIX
+  █████████░
+
+● Nandi 02     CHARGING
+  Battery 43%
+  Dock A
+  ETA 1h 12m
+
+● Nandi 03     AVAILABLE
+  Battery 96%
+
+● Survey 01    DRONE
+  Mapping field B
+  Battery 67%
+
+─────────────────────────────
+
+Map
+┌───────────────────────────┐
+│      Field A              │
+│  R1 → → →                 │
+│                           │
+│             R3            │
+│                           │
+│      Field B       D1 ✈   │
+└───────────────────────────┘
+
+[ + New Mission ]
+```
+
+For a small local fleet, Companion should support approximately:
+
+**1–20 vehicles initially.**
+
+Nothing prevents later expansion, but designing for hundreds of autonomous machines would unnecessarily complicate the first architecture.
+
+---
+
+# 7. Vehicle abstraction
+
+Do not make the app know every individual motor-controller implementation.
+
+Create a common gardenOS vehicle model:
+
+```text id="subi5d"
+Vehicle
+├── identity
+├── type
+│    ├── rover
+│    ├── tractor
+│    ├── drone
+│    └── stationary
+│
+├── pose
+├── velocity
+├── heading
+├── battery
+├── connectivity
+├── navigation state
+├── capabilities
+├── payload/tool
+├── mission
+├── safety state
+└── telemetry
+```
+
+Capabilities can advertise themselves.
+
+Example:
+
+```json id="vkiqo9"
+{
+  "vehicleId": "nandi-03",
+  "type": "rover",
+  "capabilities": [
+    "navigate",
+    "rtk",
+    "camera",
+    "tow",
+    "cultivate",
+    "soil_scan"
+  ]
+}
+```
+
+The UI then generates suitable controls automatically.
+
+That supports your modular-machine philosophy far better than hardcoding every Nandi variant.
+
+---
+
+# 8. Implements should be first-class devices
+
+This will matter enormously later.
+
+The app should understand that:
+
+```text id="qwsfur"
+Nandi
+   +
+Cultivator
+```
+
+is operationally different from:
+
+```text id="b0p3uw"
+Nandi
+   +
+Sprayer
+```
+
+or:
+
+```text id="zrfg14"
+Nandi
+   +
+Sensor mast
+```
+
+The underlying project already calls for a universal mount, power/data interface and interchangeable sprayer, seeder, sensor, cargo and weeding payloads. fileciteturn1file6L527-L558
+
+So create:
+
+```text id="gkfd9h"
+Vehicle
+   │
+   └── Tool
+        ├── identity
+        ├── capabilities
+        ├── operating limits
+        ├── calibration
+        ├── service hours
+        └── consumables
+```
+
+Then Companion can display:
+
+```text id="hyke8g"
+Nandi 02
+
+Tool:
+Rotary Cultivator
+
+Working width: 650 mm
+Depth: 80 mm
+Status: READY
+Hours: 18.6
+
+Recommended speed:
+0.4–0.8 m/s
+```
+
+---
+
+# 9. Missions rather than direct driving
+
+Most routine interaction should be mission-oriented.
+
+Example:
+
+```text id="k8h7m1"
+MISSION
+
+Field: Vegetable Field 2
+Vehicle: Auto select
+Task: Cultivate
+
+Area:
+████████████████
+
+Spacing: 600 mm
+Speed: 0.6 m/s
+
+Avoid:
+☑ Trees
+☑ Irrigation
+☑ Human zones
+
+When complete:
+Return to charging station
+
+[ Validate ]
+
+[ Start Mission ]
+```
+
+The server chooses the appropriate vehicle.
+
+Eventually:
+
+```text id="dpv3m3"
+Task
+     ↓
+Scheduler
+     ↓
+Capability matching
+     ↓
+Vehicle assignment
+     ↓
+Route planning
+     ↓
+Execution
+```
+
+That is the beginning of actual fleet orchestration.
+
+---
+
+# 10. Manual rover control
+
+There should still be a manual control page.
+
+But the app should send something like:
+
+```text id="nitn3i"
+requested_velocity:
+  linear: 0.35
+  angular: -0.12
+```
+
+not:
+
+```text id="br9j05"
+left_motor_pwm = 136
+right_motor_pwm = 204
+```
+
+The robot owns its drivetrain.
+
+And manual driving needs:
+
+```text id="5ag4e8"
+Hold-to-drive / dead-man control
+Connection-loss stop
+Local E-stop
+App emergency stop
+Speed limiting
+Obstacle override protection
+Geofence
+Operator presence
+Command timeout
+```
+
+If control packets stop, the rover stops.
+
+No exceptions.
+
+---
+
+# 11. Drone integration
+
+I would not invent a gardenOS drone protocol.
+
+Use **MAVLink + MAVSDK**.
+
+MAVSDK is specifically intended to manage MAVLink drones/vehicles from ground stations and mobile devices, supports one or multiple vehicles and provides telemetry, missions, movement/action APIs and other controls. It currently supports iOS and Android. ([mavsdk.mavlink.io](https://mavsdk.mavlink.io/?utm_source=chatgpt.com))
+
+That makes the logical architecture:
+
+```text id="7pko0a"
+gardenOS Companion
+        │
+gardenOS vehicle API
+        │
+ MAVSDK / MAVLink bridge
+        │
+      Drone
+        │
+ ┌──────┴──────┐
+ │ PX4/ArduPilot│
+ └─────────────┘
+```
+
+I would **not expose raw MAVLink throughout the gardenOS application**.
+
+Keep it behind an adapter.
+
+That means gardenOS can later support a different vehicle protocol without rewriting the UI.
+
+---
+
+# 12. Drone control should primarily be mission based
+
+Example:
+
+```text id="48gcu5"
+DRONE MISSION
+
+Survey Field 3
+
+Altitude       40 m
+Overlap        75%
+Side overlap   70%
+Speed          6 m/s
+
+Camera:
+RGB Survey Cam
+
+Area:
+┌─────────────────────┐
+│ ↔↔↔↔↔↔↔↔↔↔↔        │
+│ ↔↔↔↔↔↔↔↔↔↔↔        │
+│ ↔↔↔↔↔↔↔↔↔↔↔        │
+└─────────────────────┘
+
+Estimated:
+Flight       11:32
+Distance     4.7 km
+Battery      48%
+
+[ Upload ]
+[ Start ]
+```
+
+The drone's autopilot handles actual flight stability.
+
+MAVSDK's mission system already provides mission and telemetry primitives, while its action system handles operations such as arming/takeoff/landing. ([mavsdk.mavlink.io](https://mavsdk.mavlink.io/main/en/cpp/guide/telemetry.html?utm_source=chatgpt.com))
+
+---
+
+# 13. Robotics stack
+
+For Nandi's higher-end onboard computer, I recommend designing around:
+
+**ROS 2 compatibility.**
+
+Not necessarily putting ROS on every cheap rover immediately.
+
+The Community Nandi can use a lighter vehicle agent.
+
+But the advanced platform should be able to expose:
+
+```text id="qarro2"
+ROS 2
+│
+├── drivetrain
+├── IMU
+├── GPS
+├── RTK
+├── camera
+├── LiDAR/depth
+├── obstacle detection
+├── navigation
+├── tool controller
+├── diagnostics
+└── autonomy
+```
+
+ROS 2 currently uses an abstract middleware layer with DDS implementations such as Fast DDS and Cyclone DDS and also supports non-DDS middleware including Zenoh. ([docs.ros.org](https://docs.ros.org/en/jazzy/Installation/RMW-Implementations.html?utm_source=chatgpt.com))
+
+However:
+
+### Do NOT connect the Flutter app directly to the ROS graph.
+
+Instead:
+
+```text id="fhi9fu"
+ROS 2
+  │
+gardenOS Robot Agent
+  │
+gardenOS Protocol
+  │
+Server / Companion
+```
+
+This protects us from:
+
+- ROS version changes
+- DDS discovery complexity
+- multicast issues
+- enormous topic sets
+- vendor differences
+- mobile-platform networking restrictions
+
+---
+
+# 14. OpenRMF — learn from it, don't adopt all of it yet
+
+I also reviewed OpenRMF.
+
+Its fleet-adapter architecture is extremely relevant. Fleet adapters translate high-level task assignments into implementation-specific robot commands while feeding robot state back to the fleet manager. ([github.com](https://github.com/open-rmf/rmf_ros2/blob/main/rmf_fleet_adapter_python/README.md?utm_source=chatgpt.com))
+
+That is almost exactly the abstraction gardenOS eventually needs:
+
+```text id="j8y9gn"
+gardenOS Scheduler
+      │
+      │ generic task
+      ▼
+Vehicle Adapter
+      │
+      ├── Nandi adapter
+      ├── MAVLink adapter
+      ├── third-party rover
+      └── future robot
+```
+
+But I **wouldn't install full OpenRMF in v1**.
+
+For 2–10 farm robots it is probably unnecessary complexity.
+
+Instead, imitate its good architectural principle.
+
+If gardenOS eventually operates tens/hundreds of heterogeneous autonomous machines, integration with or migration toward OpenRMF becomes reasonable.
+
+---
+
+# 15. Network protocol strategy
+
+I would formalize several layers.
+
+| Connection | Recommended protocol |
+|---|---|
+| Companion ↔ Core | HTTP/REST + realtime WebSocket |
+| Companion ↔ Server | HTTPS + WebSocket |
+| Server ↔ Core | REST/WebSocket or MQTT |
+| Server ↔ Robot Agent | MQTT/Protobuf or similar persistent transport |
+| Companion ↔ direct robot | gardenOS vehicle API |
+| Robot internal | ROS 2 |
+| Drone internal | MAVLink |
+| Video | WebRTC |
+| Device discovery | mDNS / Bonjour |
+| Core ↔ hardware Nodes | existing field bus / RS-485 direction |
+| Internet remote access | TLS through Server/Cloud |
+
+REST handles things like:
+
+```text id="xezy5k"
+GET device
+GET configuration
+POST rule
+POST mission
+POST calibration
+```
+
+WebSocket handles:
+
+```text id="r3wnqy"
+telemetry
+vehicle position
+sensor updates
+mission state
+alerts
+events
+```
+
+Video should remain independent.
+
+---
+
+# 16. gardenOS API v1
+
+This should be created **before the mobile application becomes large**.
+
+Suggested namespaces:
+
+```text id="j6s86l"
+/api/v1/
+
+system/
+sites/
+devices/
+nodes/
+sensors/
+actuators/
+zones/
+plants/
+automation/
+alerts/
+
+vehicles/
+fleet/
+missions/
+tasks/
+tools/
+maps/
+geofences/
+telemetry/
+
+users/
+permissions/
+
+firmware/
+backup/
+diagnostics/
+```
+
+Then:
+
+```text id="qj9rfu"
+GET /api/v1/vehicles
+```
+
+might return:
+
+```json id="4y6fk9"
+[
+  {
+    "id": "nandi-01",
+    "name": "Nandi 01",
+    "class": "rover",
+    "state": "working",
+    "battery": 82,
+    "position": {
+      "lat": -26.0,
+      "lon": 28.0
+    },
+    "mission": "mission-241"
+  }
+]
+```
+
+The app never needs to know what CPU is inside it.
+
+---
+
+# 17. Keep compatibility with the existing Core API
+
+Don't rewrite functioning firmware unnecessarily.
+
+The existing Core already contains:
+
+```text id="ebtfnd"
+browser UI
+Wi-Fi/AP management
+HTTP/JSON handlers
+LittleFS persistence
+plant data
+rules
+automation
+OTA
+```
+
+fileciteturn1file5L448-L477
+
+So implement a compatibility layer:
+
+```text id="mf8zsz"
+OLD
+
+/api/status
+/api/rules
+/api/garden
+/api/device
+
+         ↓ internally mapped ↓
+
+NEW
+
+/api/v1/system/status
+/api/v1/automation/rules
+/api/v1/garden
+/api/v1/devices/core
+```
+
+Eventually the old interface can disappear, but not now.
+
+---
+
+# 18. Device discovery
+
+Use:
+
+**mDNS / Bonjour**
+
+with something such as:
+
+```text id="8rozbx"
+_gardenos._tcp.local
+```
+
+Each device advertises:
+
+```text id="s1j7or"
+name
+device type
+device UUID
+API version
+firmware
+capabilities
+```
+
+iOS requires permission for local-network access, and Bonjour service types should be declared in the app configuration. ([developer.apple.com](https://developer.apple.com/documentation/technotes/tn3179-understanding-local-network-privacy?changes=__3&utm_source=chatgpt.com))
+
+Android is moving in the same direction: Android 17 introduces an `ACCESS_LOCAL_NETWORK` runtime permission for apps targeting API 37 that discover or communicate with LAN devices. ([developer.android.com](https://developer.android.com/reference/android/Manifest.permission?utm_source=chatgpt.com))
+
+So this abstraction should be implemented now rather than relying on IP scanning.
+
+---
+
+# 19. Provisioning needs to change
+
+One area I would change from current Core.
+
+The existing development firmware intentionally uses an open `GardenOS-Setup` AP. fileciteturn1file1L181-L191 The project's own documentation correctly warns not to expose the open setup AP/controller to the public Internet. fileciteturn1file3L373-L379
+
+That is fine for prototypes.
+
+It shouldn't be the production onboarding architecture.
+
+I recommend each production Core/robot gets a QR label containing:
+
+```text id="al49te"
+Device ID
+Setup token
+Public-key fingerprint
+Optional setup Wi-Fi credentials
+```
+
+Then:
+
+```text id="hapbj4"
+Scan QR
+   ↓
+Connect
+   ↓
+Verify device identity
+   ↓
+Select farm/home Wi-Fi
+   ↓
+Provision credentials
+   ↓
+Exchange certificates
+   ↓
+Device joins gardenOS
+```
+
+BLE-assisted provisioning can be added where hardware allows it.
+
+---
+
+# 20. Security model
+
+For a pump controller, weak authentication is inconvenient.
+
+For a 300 kg autonomous rover, it is unacceptable.
+
+gardenOS therefore needs device identity from the beginning.
+
+I recommend:
+
+```text id="zz1mxc"
+Unique device UUID
+Unique cryptographic identity
+QR onboarding
+TLS
+certificate/key rotation
+role-based access
+command auditing
+signed firmware
+signed OTA packages
+encrypted secret storage
+secure remote relay
+```
+
+Roles might become:
+
+```text id="am8vm4"
+Owner
+Administrator
+Operator
+Technician
+Viewer
+```
+
+A Viewer can observe telemetry.
+
+A Technician can calibrate a sensor.
+
+An Operator can launch approved missions.
+
+Only appropriate roles can change geofences, disable safety systems or update firmware.
+
+---
+
+# 21. Safety architecture
+
+This part should be designed into the API now.
+
+Every vehicle should report something equivalent to:
+
+```text id="11rtcb"
+safetyState:
+  NORMAL
+  CAUTION
+  STOPPED
+  ESTOP
+  FAULT
+```
+
+The application should clearly separate:
+
+```text id="2fkwvl"
+STOP MISSION
+```
+
+from:
+
+```text id="9fj71w"
+EMERGENCY STOP
+```
+
+Emergency stopping should operate at multiple levels:
+
+```text id="ohj3wk"
+Physical E-stop
+        ↓
+Vehicle safety controller
+
+App E-stop
+        ↓
+Vehicle agent
+        ↓
+Safety controller
+
+Site E-stop
+        ↓
+Server
+        ↓
+Entire fleet
+```
+
+A network failure must **not be capable of defeating the local E-stop**.
+
+---
+
+# 22. Lost communications
+
+Every rover should have autonomous communications-loss policy.
+
+Example:
+
+```text id="24fsrc"
+No command 500 ms:
+manual motion stops
+
+Server lost 5 s:
+mission pauses
+
+Server lost 30 s:
+return / stop safely according to mission policy
+
+Localization invalid:
+stop
+
+Geofence violation:
+stop
+
+E-stop:
+immediate hardware shutdown
+```
+
+The exact timings will depend on the eventual machine.
+
+But the architecture belongs onboard.
+
+---
+
+# 23. Video
+
+For robots/drones, include live camera views.
+
+Use WebRTC rather than forcing camera video through the general telemetry connection.
+
+Example iPad layout:
+
+```text id="gzw6p0"
+┌─────────────────────────────────────────────┐
+│ Nandi 01                         ● ONLINE   │
+├──────────────────────┬──────────────────────┤
+│                      │ Battery       72%    │
+│     LIVE CAMERA      │ RTK           FIX    │
+│                      │ Speed       0.6 m/s  │
+│                      │ Mission       WEED   │
+├──────────────────────┼──────────────────────┤
+│ MAP                  │ Tool                 │
+│                      │ Rotary Weeder        │
+│        ● N01         │                      │
+│   ───────▶           │ [Pause] [Stop]       │
+└──────────────────────┴──────────────────────┘
+```
+
+---
+
+# 24. Mapping becomes a core feature
+
+The app should eventually store layers rather than a simple Google/Apple map.
+
+A farm map might contain:
+
+```text id="0yr6rr"
+Property
+Field boundaries
+Beds
+Crop rows
+Buildings
+Roads
+Trees
+Irrigation
+Water lines
+Power
+Charging stations
+No-go zones
+Drone zones
+Rover zones
+Hazards
+RTK base
+gardenOS Core units
+Sensors
+```
+
+That map becomes shared context between:
+
+**irrigation + automation + rover + drone + user.**
+
+This is where gardenOS can become genuinely interesting as a unified agricultural system.
+
+---
+
+# 25. Drone-generated maps
+
+Drone imagery should eventually update:
+
+```text id="443s8n"
+crop health
+weed areas
+water stress
+planting gaps
+field boundaries
+terrain
+```
+
+Then gardenOS can create rover tasks.
+
+For example:
+
+```text id="51ux65"
+Drone surveys Field 2
+        ↓
+gardenOS identifies suspected weed zones
+        ↓
+operator reviews
+        ↓
+Create Weed Mission
+        ↓
+Nandi executes mission
+        ↓
+completion map stored
+```
+
+That's a far more powerful architecture than separately controlling a drone and a rover.
+
+---
+
+# 26. Automation can eventually include machines
+
+Your current Core already has automation concepts such as Balanced, Water Saver and moisture-sensitive behaviour. fileciteturn1file1L193-L209
+
+Extend the same philosophy:
+
+```text id="vkxuf9"
+IF
+Field 2 soil moisture < 20%
+
+AND
+Rain forecast probability < threshold
+
+THEN
+Irrigation Zone 2
+
+AND AFTER
+schedule Nandi soil survey
+```
+
+Later:
+
+```text id="o2qbtb"
+IF
+drone vegetation scan indicates anomaly
+
+THEN
+create inspection task
+
+AND
+assign available Nandi rover
+```
+
+This is where gardenOS Server becomes the central orchestration engine.
+
+---
+
+# 27. Offline-first remains essential
+
+This is not merely a nice feature.
+
+Your agricultural robotics plan explicitly calls for offline operation and simple interfaces. fileciteturn1file6L551-L554
+
+Therefore:
+
+```text id="7el4ch"
+No Internet
+      ≠
+gardenOS unavailable
+```
+
+A farm LAN should continue operating.
+
+```text id="codkbt"
+Internet offline
+
+Phone
+  │
+Wi-Fi
+  │
+gardenOS Server
+  ├── Core
+  ├── Nodes
+  ├── Rovers
+  └── Drones
+```
+
+All local functionality continues.
+
+Cloud should add:
+
+```text id="p2be9n"
+remote access
+backup
+optional analytics
+fleet history synchronization
+notifications
+multi-site management
+```
+
+—not basic operation.
+
+---
+
+# 28. iPhone versus iPad
+
+The same application, different UX.
+
+### iPhone
+
+Optimize for:
+
+```text id="41dlbl"
+quick status
+alerts
+basic controls
+single vehicle
+camera
+manual rover driving
+mission approval
+device setup
+```
+
+### iPad/tablet
+
+Turn it into a **field command console**:
+
+```text id="7mdiuh"
+fleet map
+multi-camera
+mission planning
+drag/drop task allocation
+field maps
+graphs
+multi-Core overview
+maintenance
+automation editor
+```
+
+Apple itself recommends that iPhone apps work on iPad whenever practical. ([developer.apple.com](https://developer.apple.com/app-store/review/guidelines/?utm_source=chatgpt.com))
+
+---
+
+# 29. HomeKit / Matter
+
+I would change the strategic role of HomeKit.
+
+Do **not** make HomeKit the primary gardenOS protocol.
+
+Use it as an optional consumer integration layer:
+
+```text id="vfooxb"
+gardenOS
+   │
+   ├── Apple Home
+   ├── Matter
+   ├── Home Assistant
+   └── MQTT
+```
+
+The existing ESP8266 implementation already demonstrates why: full HomeKit increases memory and network load. fileciteturn1file2L247-L264
+
+For Core installations:
+
+**gardenOS API is authoritative.**
+
+HomeKit/Matter is convenience.
+
+Robots should generally not appear as ordinary HomeKit switches.
+
+---
+
+# 30. App Store implications of vehicle control
+
+Apple explicitly calls out location-based autonomous control of vehicles/aircraft and limits how Location Services should be used; lightweight drones/toys are treated differently. ([developer.apple.com](https://developer.apple.com/app-store/review/guidelines/?utm_source=chatgpt.com))
+
+That strengthens the architectural decision to have:
+
+```text id="aohmvn"
+phone → mission/supervision
+
+rather than
+
+phone GPS → autonomous navigation controller
+```
+
+For actual drone deployments, aviation rules need to be treated as deployment requirements rather than simply software features.
+
+For example, SACAA currently states that South African non-private/commercial UAS operations fall under Part 101 requirements, including aircraft/operator approvals and registration requirements. ([caa.co.za](https://www.caa.co.za/industry-information/uas/?utm_source=chatgpt.com))
+
+So the app should ultimately support configurable jurisdictional/compliance features rather than assuming one country's flight rules.
+
+---
+
+# 31. Recommended software repository structure
+
+I would create something approximately like:
+
+```text id="qt7was"
+gardenos/
+│
+├── core-firmware/
+│
+├── node-firmware/
+│
+├── server/
+│
+├── robot-agent/
+│   ├── core/
+│   ├── ros2/
+│   ├── mavlink/
+│   └── simulator/
+│
+├── companion/
+│   ├── lib/
+│   │   ├── api/
+│   │   ├── auth/
+│   │   ├── discovery/
+│   │   ├── garden/
+│   │   ├── devices/
+│   │   ├── fleet/
+│   │   ├── missions/
+│   │   ├── maps/
+│   │   ├── telemetry/
+│   │   ├── video/
+│   │   ├── automation/
+│   │   └── settings/
+│   │
+│   ├── ios/
+│   └── android/
+│
+├── protocol/
+│   ├── openapi/
+│   ├── protobuf/
+│   └── schemas/
+│
+├── simulator/
+│
+└── docs/
+```
+
+Keeping `/protocol` separate is especially important.
+
+The protocol must outlive any one app implementation.
+
+---
+
+# 32. Build a simulator very early
+
+This will accelerate development enormously.
+
+Create fake:
+
+```text id="mqj2qk"
+gardenOS Core
+Nandi rover
+Drone
+weather
+soil sensors
+battery
+missions
+faults
+```
+
+Then Companion development doesn't need physical machines connected constantly.
+
+You could simulate:
+
+```text id="s0s851"
+Nandi 01
+Battery 62%
+RTK FIX
+0.5 m/s
+Mission 48%
+
+Nandi 02
+Battery 12%
+FAULT: LEFT MOTOR
+
+Drone 01
+Airborne
+Battery 43%
+```
+
+and build/test the fleet interface immediately.
+
+---
+
+# 33. Revised development roadmap
+
+I would now divide Companion development into six major generations:
+
+| Generation | Deliverable |
+|---|---|
+| **0.1** | App shell + Core discovery + current Core monitoring |
+| **0.2** | Full Core control/config/rules/backups/OTA |
+| **0.3** | Multi-Core + gardenOS Server + site dashboard |
+| **0.4** | First Nandi rover + telemetry + manual control + maps |
+| **0.5** | Missions + tools + local 2–5 rover fleet |
+| **0.6** | Drone/MAVSDK + imagery + combined fleet |
+| **0.7** | Assisted navigation + RTK + mission scheduler |
+| **0.8** | Automation between garden/fleet systems |
+| **0.9** | Remote connectivity + permissions + production security |
+| **1.0** | Public iOS/iPadOS/Android release |
+| **2.x** | advanced fleet/autonomy/swarm features |
+
+This sequence deliberately matches the existing Nandi philosophy of proving remote/manual mobility before progressively introducing autonomy. fileciteturn1file6L537-L567
+
+---
+
+# 34. What I would build first
+
+The first development target should therefore be considerably more disciplined than simply recreating the current webpage in Flutter.
+
+### gardenOS Companion 0.1
+
+Build:
+
+```text id="zosjor"
+Flutter application
+
+iPhone
+iPad
+Android phone
+Android tablet
+
+        ↓
+
+gardenOS Discovery
+
+        ↓
+
+gardenOS API compatibility layer
+
+        ↓
+
+Current gardenOS Core
+```
+
+Initial screens:
+
+```text id="yozakt"
+Welcome / onboarding
+Device discovery
+Site selection
+Overview
+Garden
+Zones
+Automation
+Devices
+Alerts
+Settings
+```
+
+But underneath it, establish the models for:
+
+```text id="vxy6ty"
+Site
+Device
+Core
+Node
+Sensor
+Actuator
+Vehicle
+Tool
+Mission
+Task
+Map
+Geofence
+Alert
+Telemetry
+```
+
+even if Vehicle/Mission aren't shown in 0.1.
+
+That prevents us from having to rewrite the entire application when Nandi is connected.
+
+---
+
+# 35. Then connect the first Nandi very early
+
+I would **not wait for Companion to be “finished.”**
+
+As soon as the Core app works:
+
+```text id="5chzqv"
+Companion 0.4 prototype
+       +
+Nandi prototype
+```
+
+Implement only:
+
+```text id="tgknsv"
+discover vehicle
+connect
+battery
+GPS position
+heading
+speed
+camera
+manual driving
+E-stop
+diagnostics
+```
+
+Then:
+
+```text id="m6dyeh"
+waypoint
+route
+simple mission
+```
+
+Then two rovers.
+
+That gives us real fleet requirements from actual hardware instead of designing everything theoretically.
+
+---
+
+# 36. Store launch
+
+Flutter lets us maintain one application while building native iOS and Android targets. ([docs.flutter.dev](https://docs.flutter.dev/platform-integration?utm_source=chatgpt.com))
+
+Current direct store costs include:
+
+**Apple Developer Program: US$99/year.** ([developer.apple.com](https://developer.apple.com/get-started/?utm_source=chatgpt.com))
+
+Google's developer registration remains a **US$25 one-time fee** for full distribution, with identity verification requirements. ([support.google.com](https://support.google.com/googleplay/android-developer/answer/14659200?hl=en&utm_source=chatgpt.com))
+
+But I would not prioritize either store immediately.
+
+Development progression should be:
+
+```text id="piy47g"
+local dev builds
+        ↓
+internal iPhone/Android testing
+        ↓
+Nandi prototype testing
+        ↓
+TestFlight / Android testing
+        ↓
+small farm pilot
+        ↓
+public stores
+```
+
+---
+
+# 37. The key strategic change
+
+Originally we could reasonably describe Companion as:
+
+> “A mobile interface for gardenOS Core.”
+
+I don't think that's the right product anymore.
+
+It should be:
+
+> **gardenOS Companion — the local and remote control, monitoring, mapping and fleet-management interface for the gardenOS agricultural automation ecosystem.**
+
+With:
+
+```text id="jv45yv"
+                         gardenOS
+                            │
+          ┌─────────────────┼─────────────────┐
+          │                 │                 │
+        GROW             AUTOMATE          MOVE
+          │                 │                 │
+        Core              Server            Nandi
+        Nodes             Rules             Rovers
+        Sensors           Data              Drones
+        Water             AI                Tools
+          │                 │                 │
+          └─────────────────┼─────────────────┘
+                            │
+                    gardenOS Companion
+```
+
+And perhaps the most important design principle for the entire project becomes:
+
+**Core operates without Server.  
+Vehicles operate safely without the app.  
+Server operates without the Internet.  
+Companion gives the human one coherent interface to everything.**
+
+That architecture is considerably stronger, scales from a single home greenhouse to a small autonomous farm fleet, and remains consistent with your project's original affordability/modularity/repairability objectives. The Nandi material explicitly defines those machines as modular, upgradeable, energy-efficient and suitable for locally maintainable deployment, so the software architecture should follow the same principles. fileciteturn1file0L100-L117 memcite

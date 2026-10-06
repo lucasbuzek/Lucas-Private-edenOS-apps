@@ -1,0 +1,1 @@
+use serde::Serialize;#[derive(Serialize)]struct Status{branch:&'static str,platform:String}#[tauri::command]fn branch_status()->Status{Status{branch:"B2",platform:std::env::consts::OS.to_string()}}fn main(){tauri::Builder::default().invoke_handler(tauri::generate_handler![branch_status]).run(tauri::generate_context!()).expect("MONETA desktop error");}

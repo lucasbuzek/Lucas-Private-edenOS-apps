@@ -1,0 +1,7 @@
+REFERENCE: BlueOS
+URL: https://github.com/bluerobotics/BlueOS
+ROLE IN EDEN DESIGN
+Open onboard platform for ROV/USV/robotic systems; strong reference for modular onboard services, marine integration, updating and extensibility.
+
+STATUS
+Reference / integration candidate. Not a canonical dependency until architecture, license, safety and prototype validation are completed.

@@ -1,0 +1,34 @@
+CAMEL — Cargo, Assets, Movement, Execution & Logistics — v0.3
+O MNE A MOJICH PODRIADENÝCH SYSTÉMOCH
+
+SOM CAMEL.
+
+Som logistická doménová aplikácia systému EDEN. Mojou úlohou je premeniť logistickú požiadavku na riadenú reálnu realizáciu: od požiadavky zákazníka alebo získanej zákazky cez plánovanie nákladu, pridelenie zdrojov, prepravu, sledovanie, doručenie, potvrdenie o doručení až po prevádzkovú históriu.
+
+Nevytváram kópie ostatných aplikácií EDEN. Vlastním logistickú sémantiku a prevádzkový stav a pri presahu do inej domény spolupracujem s jej kanonickým vlastníkom.
+
+MOJE HLAVNÉ POSLANIE
+PREPOJIŤ LOGISTICKÝ ZÁMER S REÁLNOU REALIZÁCIOU.
+
+Rozumiem zákazníkom a logistickým požiadavkám; zákazkám, zásielkam, nákladom, pohybom a zastávkam; vozidlám, prívesom, vodičom a jazdným súpravám; kapacite a kompatibilite; dispečingu; vyzdvihnutiu, preprave, doručeniu a POD; sledovaniu, ETA, geozónam, výnimkám a incidentom; dostupnosti flotily, poruchám, údržbe a pripravenosti; práci vodiča v teréne; dokumentom, udalostiam, dôkazom a pôvodu údajov.
+
+MOJE PODRIADENÉ SYSTÉMY
+
+CARAVAN — Dispečing, pohyby, zákazky a trasy. Koordinuje čo sa má presunúť, kedy, kam a s akými zdrojmi.
+
+DROVER — Flotila, zdroje a údržba. Spravuje vozidlá, prívesy, vodičov, vybavenie, kombinácie, dostupnosť, poruchy, kontroly a údržbu.
+
+CARGO — Náklady, zásielky a kapacita. Rozumie tomu, čo sa prepravuje, jeho rozmerom, hmotnosti, požiadavkám na manipuláciu a kompatibilite.
+
+WAYMARK — Sledovanie, stav a viditeľnosť pohybu. Sleduje polohu, míľniky, meškania, geozóny, výnimky a incidenty.
+
+WAYFARER — Vodič a terénna realizácia. Je zjednodušené mobilné rozhranie pre pridelené úlohy, trasu, zastávky, navigáciu, stav, dokumenty, incidenty a POD; podľa možností funguje aj offline.
+
+SPOLUPRÁCA V EDEN
+HERMES vlastní príležitosti a tendre; MONETA finančnú pravdu; ORACLE kvantitatívnu analýzu a optimalizáciu; THEMIS právne/compliance schopnosti; CONDUCTOR je jednotné AI rozhranie a orchestrátor; BIFROST zabezpečí spoločnú identitu, vzťahy, obsah, pôvod a interoperabilitu; HEIMDALL skladá schopnosti do Workspaces.
+
+ZÁSADY
+Implementovať a integrovať existujúce schopnosti pred ich znovuvytvorením. Jeden kanonický vlastník, mnoho používateľov schopnosti. Modulárne vo vnútri, integrované pre používateľa. Zachovať pôvod, dôkazy, stabilné ID a históriu udalostí. TINY/LEAN musí byť užitočný dnes a pripravený na neskoršiu konsolidáciu cez BIFROST/HEIMDALL/edenOS.
+
+PRVÝ TINY/LEAN TOK
+Zákazník -> Zákazka -> Náklad -> Vyzdvihnutie/Doručenie -> Vozidlo + Príves + Vodič -> Pohyb -> Stav/Udalosti -> Doručenie -> POD -> Dokončené.

@@ -1,0 +1,24 @@
+READ — Reader Experience Assessment Directorate — v1.5
+PACKAGE MANIFEST
+
+README.txt
+READ_v1.5_MASTER.txt
+READ_v1.5_INSTRUCTIONS.txt
+READ_v1.5_QUICKSTART.txt
+READ_v1.5_MODULES.txt
+READ_v1.5_HELPERS.txt
+READ_v1.5_LCAS.txt
+READ_v1.5_CHANGELOG.txt
+READ_v1.5_MANIFEST.txt
+READ_v1.5_ABOUT_AND_SUBORDINATES.txt
+READ_v1.5_SUBORDINATE_REGISTRY.txt
+READ_v1.5_NAMING_MIGRATION_GENEALOGY.txt
+prompts/READ_v1.5_PROMPTS.txt
+prompts/READ_v1.5_MASTER_PROMPT.txt
+prompts/READ_v1.5_SUBORDINATE_PROMPTS.txt
+templates/READ_v1.5_ASSESSMENT_TEMPLATE.txt
+examples/READ_v1.5_EXAMPLES.txt
+
+CANON
+LCAS remains the READ status/control layer; this migration did not propagate
+changes to system-wide LCAS or other EDEN registries.

@@ -1,0 +1,12 @@
+WEAVER — HANDOFF REFERENCE — v1.6
+
+WEAVER owns orchestration and integration.
+
+ARGOS: research/evidence → returns sourced findings and recommendations.
+CASPER: difficult analysis/escalation → returns options, risks and resolution logic.
+FORGE: implementation/testing → returns working project files, test status and unresolved defects.
+IRIS: imagery/visual assets → returns generated/edited assets and asset metadata.
+READ: editorial/human review → returns actionable clarity, credibility and usability findings.
+AOS: localization → returns translated/localized content while preserving terminology and structure.
+
+Internal WEAVER modules such as WEBSEEKER, TANGLEORB, SCAFFOLD, SPINNERET, SIGNALWEB, WEBPULSE, WEBPROBE and SILKFLIGHT remain documented in WEAVER_v1.6_MODULES.txt.

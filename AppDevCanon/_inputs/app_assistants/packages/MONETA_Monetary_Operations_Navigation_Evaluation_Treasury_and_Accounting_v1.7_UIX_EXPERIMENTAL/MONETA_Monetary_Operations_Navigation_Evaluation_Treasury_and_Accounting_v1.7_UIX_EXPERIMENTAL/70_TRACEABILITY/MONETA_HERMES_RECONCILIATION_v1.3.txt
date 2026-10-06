@@ -1,0 +1,45 @@
+MONETA ↔ HERMES RECONCILIATION — v1.3
+
+STATUS
+Canonical boundary reconciled for continuing MONETA development.
+
+PRESERVED MONETA OWNERSHIP
+LEDGER — accounting and authoritative accounting relationships/state.
+MERCURY — financial transactions.
+ALLOCATE — authoritative budgets, forecasts and financial planning.
+VAULT — treasury, cash, liquidity and cash-flow consequences.
+MARGIN — pricing economics, costs, margins and profitability.
+NUNTIUS — financial reporting and finance dashboards.
+PATRON — funding finance, grant finance, capital requirements, use of funds and financial funding conditions.
+RECEIPT — invoices, receipts, statements, purchase orders, quotations and financial-document evidence.
+TRIBUTE — tax records/evidence/preparation and professional handoff.
+
+HERMES RETAINS
+Jobs/opportunities; employment/careers; freelance/contract/project opportunities; tenders; procurement opportunities; RFQs/RFPs; discovery; eligibility; matching; opportunity research; application/bid preparation; opportunity-specific commercial requirements; proposed bid price/rate/remuneration; submission; verification; tracking; awards/offers/outcomes; recruitment/hiring workflows tied to opportunities.
+
+TRANSFER / RECONCILIATION INTO MONETA
+Any generic authoritative budget previously described under HERMES → ALLOCATE.
+Any generic financial forecast/cash-flow planning under HERMES → ALLOCATE + VAULT.
+Any generic transaction/payment state under HERMES → MERCURY (+ LEDGER for accounting recognition).
+Any accounting/bookkeeping under HERMES → LEDGER.
+Any invoice/receipt/statement financial-document processing under HERMES → RECEIPT.
+Any generic pricing economics, margin or profitability analysis under HERMES → MARGIN.
+Any treasury/cash/liquidity state under HERMES → VAULT.
+Any tax financial record/evidence/preparation under HERMES → TRIBUTE.
+Any financial reporting/dashboard state under HERMES → NUNTIUS.
+Any funding/grant/investor financial administration under HERMES → PATRON.
+
+SHARED/HANDOFF CASES
+Tender budget constraint: HERMES source requirement → ALLOCATE planning constraint.
+Proposed bid price/rate: HERMES opportunity context → MARGIN/MONETA calculation support → HERMES proposal.
+Award/offer value: HERMES records opportunity outcome → MONETA records authoritative financial plan/state when accepted/recognized.
+Procurement amount: HERMES opportunity context until financial commitment/record → MONETA thereafter.
+Salary/rate: HERMES recruitment/opportunity context → MONETA for financial planning/records.
+Contract value: HERMES opportunity outcome + THEMIS legal contract meaning → MONETA financial representation.
+Quantitative modelling: MONETA defines finance semantics → ORACLE executes generalized modelling → MONETA interprets financial result.
+
+NO DUPLICATION
+Do not recreate HERMES discovery/matching/bidding/submission/tracking in MONETA.
+Do not recreate MONETA accounting/budget/cash/transactions/documents/tax/reporting in HERMES.
+Do not recreate ORACLE generalized modelling in MONETA.
+Do not recreate THEMIS legal interpretation/compliance in MONETA.

@@ -1,0 +1,26 @@
+◉ IRIS — Intelligent Realism & Image Synthesis — v1.8
+
+LCAS UI INTEGRATION
+
+Canonical shared capability: LCAS — Live Control, Activity & Status.
+UIbasic is retained only as historical provenance and is not an active IRIS UI
+dependency.
+
+PERSISTENT IDENTITY
+• ◉ IRIS remains visible whenever IRIS owns the active visual-production stage.
+• LCAS presents actual mode/state without taking ownership of IRIS workflow.
+• Normal states include READY, SCANNING, EDIT-LOCKED, GENERATING, QA, BLOCKED,
+  RECOVERING and COMPLETE when supported by actual execution evidence.
+• Narrow/mobile presentation may collapse the identity visually, but accessible
+  identity and state remain available.
+
+CONFIGURATION DEPTH
+• SIMPLE — normal content-first operation.
+• ADVANCED — additional locks, style and inspection controls.
+• EXPERT — provenance and detailed visual constraints.
+• DEVELOPMENT / DIAGNOSTIC — separate technical/runtime evidence layer.
+
+RESPONSIVE RULE
+Responsive collapse is not a user-facing TINY/COMPACT/FULL mode system. The UI
+adapts automatically while preserving one obvious primary action, truthful
+state and detail on demand.

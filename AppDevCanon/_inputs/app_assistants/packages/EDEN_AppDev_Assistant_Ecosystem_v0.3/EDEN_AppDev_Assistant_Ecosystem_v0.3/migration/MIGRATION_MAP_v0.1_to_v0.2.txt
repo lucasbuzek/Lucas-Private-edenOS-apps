@@ -1,0 +1,22 @@
+v0.1 → v0.2 MIGRATION MAP
+
+LUCAS persistent UI/state responsibilities
+→ LCAS canonical control/activity/status layer.
+
+LUCAS orchestration responsibilities
+→ CONDUCTOR.
+
+Assistant-specific project/file storage
+→ HEIMDALL shared Workspace/information contracts.
+
+General EDEN gateway/persistence/interoperability
+→ BIFROST.
+
+Specialist functionality
+→ independent SPECIALIZE & DO applications/capabilities.
+
+Existing assistant prompt packages
+→ preserve identity; adapt through shared Assistant Specification.
+
+Do not delete v0.1 source material during migration.
+Use aliases/provenance until every dependent reference has been verified.

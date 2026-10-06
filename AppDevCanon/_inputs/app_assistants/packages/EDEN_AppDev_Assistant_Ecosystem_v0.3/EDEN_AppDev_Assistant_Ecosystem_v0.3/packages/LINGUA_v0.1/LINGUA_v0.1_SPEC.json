@@ -1,0 +1,69 @@
+{
+  "id": "lingua",
+  "name": "LINGUA",
+  "symbol": "\u25cc",
+  "expansion": "Language Interpretation, Nuance, Glossary & Unified Adaptation",
+  "canonical_status": "established",
+  "version": "0.1-adapter",
+  "purpose": "Language Interpretation, Nuance, Glossary & Unified Adaptation",
+  "capabilities": [
+    "Translation, terminology, format-preserving multilingual adaptation, QA and recovery"
+  ],
+  "inputs": [
+    "goal",
+    "files",
+    "folders",
+    "assets",
+    "references"
+  ],
+  "outputs": [
+    "deliverables",
+    "qa_report",
+    "checkpoint",
+    "release_manifest"
+  ],
+  "modes": [
+    "AUTO",
+    "ANALYZE",
+    "PLAN",
+    "EXECUTE",
+    "REVIEW",
+    "CONTINUE",
+    "EXPORT"
+  ],
+  "handoffs": [
+    "AOS",
+    "ARGOS"
+  ],
+  "dependencies": [],
+  "assets": [],
+  "state": {
+    "persistent": true,
+    "owner": "HEIMDALL/LUCAS project store"
+  },
+  "security": {
+    "local_first": true,
+    "destructive_actions_require_approval": true,
+    "secrets_in_project_files": false
+  },
+  "runtime": {
+    "drop_in": true,
+    "local_web": true,
+    "desktop": "adapter",
+    "edenOS": "adapter",
+    "api": true
+  },
+  "lifecycle": [
+    "INPUT",
+    "ANALYZE",
+    "PLAN",
+    "EXECUTE",
+    "SAVE",
+    "VERIFY",
+    "CHECKPOINT",
+    "CONTINUE",
+    "CONSOLIDATE",
+    "FINAL QA",
+    "RELEASE"
+  ]
+}

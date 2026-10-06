@@ -1,0 +1,1 @@
+THREAD: Project/conversation recovery and corpus reconstruction. Recover prior work, claims, artifacts and project state before specialist execution

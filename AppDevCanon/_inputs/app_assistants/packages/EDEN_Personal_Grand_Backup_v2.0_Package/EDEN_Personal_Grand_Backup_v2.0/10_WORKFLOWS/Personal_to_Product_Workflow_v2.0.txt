@@ -1,0 +1,12 @@
+PERSONAL DATA → EDEN PRODUCT WORKFLOW v2.0
+
+PRIVATE PERSONAL RECORD → identify recurring task/problem → extract
+generic capability requirement → remove identifying/private data → ARGOS
+evidence/research → map existing EDEN capability/provider →
+reuse/integrate if adequate → define App/Helper ownership → prototype in
+personal Workspace → test with real private data locally → create
+synthetic/de-identified test fixtures → verify → package reusable
+capability → Family & Friends gate → broader edenOS/AppDev integration.
+
+RULE: Personal data may validate a workflow but must not become the
+distributable dataset.

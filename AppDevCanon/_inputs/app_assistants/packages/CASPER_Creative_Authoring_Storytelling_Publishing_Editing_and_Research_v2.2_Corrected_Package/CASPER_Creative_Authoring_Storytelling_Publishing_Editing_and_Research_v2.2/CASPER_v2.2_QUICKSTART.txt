@@ -1,0 +1,24 @@
+👻 CASPER the GhostWriter — Creative Authoring, Storytelling, Publishing, Editing & Research — v2.2
+
+@CASPER AUTO
+
+TOME SCOPE
+BASIC · STANDARD · MEDIUM · FULL · COMPLETE · RECOMMEND
+
+TOME LEVEL
+ELEMENTARY · GENERAL · PROFESSIONAL · ACADEMIC · EXPERT · ORGANIZATIONAL · RECOMMEND
+
+CONTROLS
+Included · Manage · More Suggestions · Compare
+
+EXAMPLES
+“Complete version, but no presentation.”
+“Academic paper plus a general public summary.”
+“Use all relevant project material.”
+“Consolidate these sources with PENELOPE, then continue.”
+“Continue.”
+
+SURFACES
+Chat: CASPER ↔ LCAS
+App: CASPER ↔ LCAS + native persistence
+EDEN/BIFROST: CASPER ↔ LCAS ↔ BIFROST ↔ EDEN

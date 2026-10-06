@@ -1,0 +1,60 @@
+PROJECT BIBLE — edenOS Embedded
+Target baseline: 0.1 / Samsung SM-T110 (goyawifi)
+Updated: 2026-10-03
+
+IDENTITY
+edenOS Embedded is the lightweight Android-compatible embedded EDEN profile for constrained/reused hardware. First target: Samsung Galaxy Tab 3 Lite 7.0 Wi-Fi SM-T110/goyawifi, ARMv7, ~1 GB RAM, 1024x600. Preserve Android hardware/runtime and normal APK compatibility while adding EDEN system/service capabilities.
+
+CURRENT GOAL
+Build the first custom edenOS Embedded testbed as an always-on household edge appliance that remains a usable tablet. SKALD is primary server workload; NOSTOS is secondary lightweight household server; BIFROST Embedded manages device/service/connective state; SMB provides managed file access.
+
+AUTHORITY / GOVERNANCE
+Global authority remains ~/edenOS/Projects/#appDev Bible/. This file is project-specific authority. Recover before recreate; existing capability first; functionality before presentation; preserve LKG. GENERATED != IMPLEMENTED != BUILT != TESTED != VERIFIED != RELEASED; UNKNOWN != PASS. AUTO continues safe work until milestone or genuine unavailable dependency. Pipeline: REFERENCE -> BASELINE -> IMPLEMENT -> STATIC VERIFY -> ENVIRONMENT VERIFY -> REGRESSION VERIFY -> PACKAGE -> PACKAGE VERIFY -> PHYSICAL GATE -> PROMOTE.
+
+PLATFORM
+Preserve Android/Samsung hardware support for 0.1. Retain Package Manager/APKs, display, touch, Wi-Fi, audio/media, storage and power. No Google Play dependency. APK sideload/import required. Third-party APKs remain normal Android apps and are not rewritten/themed/wrapped by EDEN.
+
+FIRST APK SET
+Independent APKs: edenOS Home; BIFROST Embedded; SKALD Android representation/control; NOSTOS Android representation/control; edenOS Files. No monolith. Prefer platform APIs/tiny deterministic dependencies; avoid heavyweight modern UI frameworks. ARMv7 and 1024x600.
+
+DEVICE MODE
+TABLET MODE restores normal tablet power behavior. SERVER MODE keeps configured headless services available with screen off while preserving normal tablet use. BIFROST supervises service state/restart/reboot. Server Mode != Kiosk. Desired control is Samsung/Android Quick Settings where safe; exact SystemUI integration waits for installed Android/build identification.
+
+EXPERIENCE MODE
+System-wide EDEN-owned UI profile: Standard default, Simple, Child, Accessible, Kiosk. Presets may control complexity, scale, density, navigation, labels, motion, contrast and advanced-control prominence. Simple is optional and not synonymous with age/disability. Third-party APK UI remains unchanged.
+
+BIFROST EMBEDDED
+BIFROST = CONNECT / KEEP / RESOLVE. Manage device identity, App/service discovery, real running/stopped/unknown state, measurable health, lifecycle, representation endpoints, storage/network/resources where available, logs, package/version/update, APK compatibility/Package Manager handoff, remote management and Server Mode supervision. REGISTERED != WORKING. Do not absorb SKALD/NOSTOS domain logic.
+
+SKALD
+SKALD is primary server workload and remains standalone Media & Entertainment/media-content specialist. Android UI is lightweight representation/control over authoritative headless service. Preserve unified library, Movies/TV, browse/search, identification, metadata, artwork, subtitles, downloads/ingest, jobs/activity, review, storage, settings/diagnostics, watched/progress, collections, background library management, direct/remote serving, Travel Packs, Daily Episodes and modular providers where recovered.
+
+SKALD EMBEDDED MEDIA CONTRACT
+MKV commonly source. Inspect streams; obtain/apply metadata/artwork/subtitles; remux compatible sources to Apple-compatible MP4/M4V using video stream copy only; preserve compatible audio, chapters and track metadata where possible; verify output before atomic promotion; retain source until verification succeeds. NO VIDEO TRANSCODING on SM-T110. Outcomes: REMUXED, SOURCE PRESERVED, TRANSCODE REQUIRED/deferred. Reuse verified ARMv7/API-compatible FFmpeg/ffprobe. Prefer microSD for Downloads/Processing/Library. SMB may expose managed Incoming, Downloads, Library/Movies and Library/TV, never credentials/internal DB/runtime secrets/private config/temp.
+
+NOSTOS
+NOSTOS is EDEN Home & Household specialist and runs here as lightweight headless household-information server. Established responsive Web UI remains main management interface. Core: household/family information; sites/structures/spaces; possessions/assets/inventory; provisions/supplies; chores/tasks; maintenance schedules/records; household documents/records; utilities where applicable; history; search; settings; multi-user access where established; local-first persistence; backup/restore. Android APK is lightweight local representation over same service/data, not competing implementation.
+
+NOSTOS EMBEDDED EXCLUSIONS
+For this profile do not add Home Assistant, Homebridge, Matterbridge, Node-RED, HomeKit, Matter, MQTT, smart-home automation, alarm/security/camera processing or AI merely because broader NOSTOS concepts may support them elsewhere.
+
+EDENOS HOME / FILES
+Home is lightweight launcher/status and consumes rather than owns service state. It launches EDEN and normal third-party APKs and exposes Device/Experience modes. Files gives lightweight access to internal user storage, microSD, Downloads/Documents and permitted SKALD paths; reuse mature SMB/network providers.
+
+OPTIONAL TABLET APPS
+Prefer existing lightweight third-party APKs for browser, IMAP/SMTP email, office compatibility, PDF/EPUB, text/Markdown, gallery/media player, archives and basic utilities. Capability on disk must not imply resident RAM. No Play Store requirement.
+
+RESOURCE PRIORITY
+Server Mode resident set approximately Android core + BIFROST Embedded + SKALD headless + NOSTOS headless + SMB + essential network/storage. SKALD has workload priority. Measure actual RAM/CPU/storage/startup/throughput/UI responsiveness/stability; never invent measurements.
+
+REMOTE MANAGEMENT
+BIFROST manages machine/service state; SKALD manages media; NOSTOS manages household information. Normal administration should not require SSH; ADB/SSH remain expert/development/recovery. SMB must not be directly public-Internet exposed.
+
+CURRENT BUILD MILESTONE
+Produce installable ARMv7 APK candidates: edenOS-Home.apk, BIFROST-Embedded.apk, SKALD.apk, NOSTOS.apk, edenOS-Files.apk. Each builds on macOS, installs independently, has truthful metadata, renders at 1024x600, avoids ARM64/Google Play/AI/cloud requirements, and reports UNKNOWN/UNAVAILABLE rather than fake backend success.
+
+PHYSICAL GATE
+Exact installed Android version/build and Samsung Quick Settings/SystemUI remain pending. Once known: finalize minSdk/platform adapter; select safe Server Mode toggle integration; ADB-install; verify screen-off persistence, Wi-Fi, microSD, SMB, SKALD download/remux/serve, NOSTOS Web/local representation, third-party APK install/launch/uninstall and endurance. Do not flash custom ROM merely to satisfy APK milestone.
+
+DO NOT DRIFT
+Do not redesign EDEN; absorb SKALD/NOSTOS into BIFROST; recreate established Web UIs without need; create separate senior NOSTOS; modify third-party APK UI; require Play/AI; transcode video on SM-T110; pull smart-home/security scope into this NOSTOS profile; treat placeholders/registration as functionality; or promote without evidence.

@@ -1,0 +1,32 @@
+SUPERSESSION / OWNERSHIP MIGRATION RECORD — v1.8 RECOVERY CANDIDATE
+
+Status: RECOVERY_CANDIDATE. Newest explicit Lucas decisions override older conflicts. Historical definitions remain provenance.
+
+1. AOS
+OLD/CURRENT-HISTORICAL: persistent autonomous execution identity/service.
+CURRENT: AOS is predecessor to CONDUCTOR and SUPERSEDED as a current authority. Preserve execution concepts as lineage; do not resurrect AOS as a peer.
+
+2. HEIMDALL
+HISTORICAL: broad universal library/media/reading/photo/conversion/information environment.
+CURRENT: Doorway to EDEN; ORGANIZE · UNDERSTAND · ACCESS · COMPOSE; Workspaces/context/information composition; universal discovery/access; Custom Apps; HEIMDALL.CONDUCTOR. Historical specialist functionality must be ownership-audited before restoration.
+
+3. SKALD
+CURRENT: standalone Media & Entertainment/media-content specialist App. Historical HEIMDALL media-center requirements migrate to SKALD where still applicable, including Transmission/torrent intake, subtitle/media-processing, safe remux, media naming/reconciliation and entertainment-library concerns.
+
+4. LECTOR
+CURRENT: professional Books & Reading specialist. Historical HEIMDALL reading/Calibre-facing user experience migrates to LECTOR where applicable. Shared provider/object capabilities may remain independently reusable.
+
+5. CURATOR
+CURRENT: professional photography/media-management specialist. Historical HEIMDALL professional photo-management requirements migrate to CURATOR where applicable.
+
+6. CHRONOS
+CURRENT: reserved temporal/time specialist identity; functionality may be described, but expansion/personality/authority/implementation are not yet canonical.
+
+7. TINY HELPERS
+CURRENT: some identities intentionally exist only as names/descriptions. Undefined need is not missing recovery. Do not invent roles.
+
+8. LCAS
+CURRENT: in-Chat Live Control, Activity & Status presentation identity only. Apps/edenOS use actual UIX + truthful state contracts.
+
+9. CONDUCTOR
+CURRENT: HEIMDALL-owned, EDEN-wide conversational/voice/command capability; deterministic/offline baseline; voice independent of AI/cloud; incorporates relevant recovered governance/lineage concepts without making voice an owner.

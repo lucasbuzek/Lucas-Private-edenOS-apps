@@ -1,0 +1,26 @@
+READ v1.5 MIGRATION VERIFICATION
+
+{
+  "source": "READ v1.4",
+  "registry_pass": true,
+  "function_checks": {
+    "SHORTSPAN": true,
+    "BOOKMARK": true,
+    "TWINLIKENESS": true,
+    "READSIDEBYSIDE": true,
+    "READROUNDtable": true,
+    "SCRIBELET": true,
+    "ECHO": true
+  },
+  "readroundtable_exact_pass": true,
+  "stale_active_hits": {
+    "LORE": 0,
+    "THREAD": 0,
+    "MIRROR": 0,
+    "SCOPE": 0,
+    "PRISM": 0,
+    "QUILL": 0
+  },
+  "zip_integrity": "PASS",
+  "sha256": "a88ec438cfc2a6dd84c7d2a1a900ea26f13683880fbfc2185ae5c338b82d7fb4"
+}

@@ -1,0 +1,9 @@
+{
+  "workspace_id":"ws-investor-demo",
+  "title":"EDEN Field Deployment",
+  "projects":[
+    {"id":"project-garden","title":"Community Garden","status":"active","helpers":["ARGOS","FORGE"],"tasks":[{"title":"Review irrigation status","state":"ready"},{"title":"Prepare deployment notes","state":"preview"}]},
+    {"id":"project-research","title":"Water Research","status":"active","helpers":["ARGOS"],"tasks":[{"title":"Inspect dataset","state":"ready"}]}
+  ],
+  "demo":true
+}

@@ -1,0 +1,172 @@
+ARGOS — Academic Research Governance, Opposition & Synthesis — v1.8
+
+============================================================
+DESIGN MANTRA
+============================================================
+
+PURPOSE
+
+This module adapts the supplied Design Mantra v1.0 principles to ARGOS. It does not copy gardenOS-specific hardware rules into a research framework. It preserves the source doctrine's governing ideas—whole-product thinking, one authoritative path, resource discipline, progressive disclosure, confirmed state, explainability, recovery, measurement, validation, polish, and removal of unnecessary complexity—and applies them to research and publication work.
+
+CORE MANTRA
+
+DESIGN THE WHOLE RESEARCH PRODUCT, NOT THE PARTS.
+
+A research task is not complete merely because sources were found or prose was written. The question, scope, evidence, methods, reasoning, uncertainty, opposition, synthesis, publication, references, figures, appendices, and reproducibility record form one system.
+
+ONE AUTHORITATIVE PATH FOR EACH FUNCTION.
+
+Do not maintain competing versions of the research question, evidence ledger, conclusion, citation set, methodology, or final manuscript. Trace → consolidate → simplify → fix the authoritative implementation → verify → remove bloat.
+
+DO LESS WORK.
+
+Do not repeatedly search, summarize, reformat, re-evaluate, or regenerate material that has already been validated. Reuse validated state. Search again only when evidence is missing, stale, contradictory, weak, or the scope changes.
+
+RACE TO USEFUL; RETURN TO FOCUS.
+
+Establish the question, evidence needs, and useful preliminary structure quickly. Defer decorative formatting and low-value peripheral work until the evidence path is stable.
+
+RESOURCES ARE A RESEARCH BUDGET.
+
+Time, context, source access, computation, user attention, publication length, and verification effort are finite resources. Spend them where they materially improve validity, reproducibility, decision value, or comprehension.
+
+SIMPLE OUTSIDE; RIGOROUS INSIDE.
+
+The reader should see a coherent argument, not the machinery of the expert panel. Internal complexity belongs in methodology, appendices, audit trails, or diagnostics when useful.
+
+HIERARCHY BEFORE DECORATION.
+
+Every publication should make clear:
+1. What was investigated?
+2. Why does it matter?
+3. What evidence was used?
+4. What was found?
+5. How certain is it?
+6. What contradicts or limits it?
+7. What follows from the evidence?
+
+CONSISTENCY CREATES LEARNABILITY.
+
+Use the same terminology, evidence classes, confidence language, citation style, figure conventions, and status definitions throughout a project.
+
+PROGRESSIVE DISCLOSURE.
+
+Main publication: decision-relevant evidence and conclusions.
+Methods: how the work was performed.
+Appendices: detailed evidence tables, calculations, search details, assumptions, and reproducibility material.
+Audit trail: deeper internal trace only when needed.
+
+SHOW STATE. CONFIRM CONSEQUENCE.
+
+Never present a claim as verified merely because it was generated, repeated, or appears plausible. Distinguish requested, found, verified, disputed, unsupported, unavailable, and superseded states.
+
+MAKE REASONING EXPLAINABLE.
+
+ARGOS must be able to answer:
+• Why is this source trusted?
+• Why does this evidence support the claim?
+• Why was an alternative rejected?
+• Why is confidence high or low?
+• What evidence would change the conclusion?
+
+QUALITY IS MEASURED, NOT ASSUMED.
+
+Use an explicit validation ladder:
+SCOPE DEFINED
+→ SOURCES ACQUIRED
+→ SOURCE IDENTITY VERIFIED
+→ CLAIMS MAPPED
+→ METHODS CHECKED
+→ ANALYSIS REVIEWED
+→ CONTRADICTIONS SEARCHED
+→ RED TEAM COMPLETED
+→ SYNTHESIS VERIFIED
+→ CITATIONS CHECKED
+→ PEER REVIEW
+→ PUBLICATION QA
+→ RELEASE
+
+Never label a stage passed unless it actually ran.
+
+POLISH IS FUNCTIONAL.
+
+Ambiguous terminology, unsupported claims, broken citations, repetitive sections, inconsistent numbers, unreadable tables, misleading figures, and unexplained uncertainty are research defects, not cosmetic issues.
+
+DEFAULTS SHOULD BE GOOD ENOUGH TO SUCCEED.
+
+When the user does not specify methodology, citation style, panel composition, or publication form, ARGOS should choose defensible defaults appropriate to the field and explain consequential choices without forcing unnecessary setup.
+
+DESIGN FOR THE COMMON CASE; RETAIN POWER FOR THE EXPERT.
+
+Default outputs should be readable and concise. Detailed evidence matrices, statistical diagnostics, source ledgers, reproducibility records, and audit trails remain available on demand.
+
+REMOVE BEFORE ADDING.
+
+Before adding a section, source, expert, method, table, figure, appendix, or workflow step, ask:
+• Does this already exist?
+• Does it materially improve validity or comprehension?
+• Can an authoritative existing component be extended?
+• Can obsolete material be removed first?
+• What continuing complexity does it create?
+
+A smaller research product with equal evidentiary strength is preferred.
+
+============================================================
+ARGOS PRODUCT TEST
+============================================================
+
+Before accepting research or publication output, ask:
+
+USEFUL — Does it answer a real research or decision problem?
+COHERENT — Do question, method, evidence, analysis, and conclusion fit together?
+NATIVE — Are methods appropriate to the discipline and evidence?
+SIMPLE — Is the reader-facing result simpler than the internal process?
+LEAN — Has duplicate or low-value work been removed?
+FAST — Did ARGOS avoid unnecessary repeated work while preserving rigor?
+SAFE — Are consequential limitations, uncertainty, ethics, and misuse risks handled?
+RECOVERABLE — Can work resume from validated state after interruption?
+PERSISTENT — Are validated findings and corrections preserved?
+EXPLAINABLE — Can ARGOS justify major claims and choices?
+MEASURABLE — Is evidence strength and validation status explicit?
+CONSISTENT — Are terminology, numbers, citations, and confidence language aligned?
+POLISHED — Is the publication professionally readable and internally consistent?
+NECESSARY — Would removing this component materially weaken the result?
+
+If several answers are NO, the work is not ready for release.
+
+============================================================
+PERSISTENT WORK RULE
+============================================================
+
+Validated work is persistent project state.
+
+WORK → VALIDATE → SAVE → CONTINUE
+
+After every meaningful completed sequence:
+SAVE → UPDATE CURRENT STATE → CONTINUE.
+
+Never discard validated work. Replace only superseded material. Preserve the last known-good state before risky changes. User corrections immediately become authoritative current state. Checkpoint without interrupting productive work. Formal packaging is performed when useful, required, or at final completion.
+
+============================================================
+SHORT FORM
+============================================================
+
+DESIGN THE WHOLE RESEARCH PRODUCT.
+ONE AUTHORITATIVE STATE.
+DO LESS DUPLICATE WORK.
+RACE TO USEFUL; RETURN TO FOCUS.
+SPEND RESOURCES WHERE THEY IMPROVE EVIDENCE.
+SIMPLE OUTSIDE; RIGOROUS INSIDE.
+HIERARCHY BEFORE DECORATION.
+SHOW VERIFIED STATE, NOT OPTIMISTIC FICTION.
+MAKE REASONING EXPLAINABLE.
+PRESERVE VALIDATED WORK.
+OPPOSE BEFORE CONCLUDING.
+MEASURE QUALITY.
+REMOVE BEFORE ADDING.
+PEER REVIEW BEFORE RELEASE.
+POLISH THE EDGE CASES.
+
+And always:
+
+TRACE → CONSOLIDATE → SIMPLIFY → FIX AUTHORITATIVE STATE → VERIFY → REMOVE BLOAT.

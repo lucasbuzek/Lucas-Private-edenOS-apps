@@ -1,0 +1,47 @@
+MIRROR — COMMAND REFERENCE — v1.5
+
+GENERAL
+@MIRROR AUTO — autonomously select the appropriate review workflow.
+@MIRROR REVIEW — complete general review.
+@MIRROR COMPARE — direct comparison.
+@MIRROR BENCHMARK — benchmark against relevant alternatives.
+@MIRROR REDTEAM — adversarial review.
+@MIRROR PANEL — full expert-panel deliberation.
+@MIRROR FACTCHECK — factual/evidence audit.
+@MIRROR IMPROVE — prioritized improvement plan.
+@MIRROR CASPER — CASPER-ready revision directive.
+@MIRROR DELTA — original/revision regression test.
+@MIRROR FINAL — final readiness gate.
+@MIRROR CONTINUE — continue current review.
+
+FICTION
+@MIRROR BOOK
+@MIRROR BLIND
+@MIRROR STORYBIBLE
+@MIRROR CONTINUITY
+@MIRROR CHARACTERS
+@MIRROR PLOTHOLES
+@MIRROR PACING
+@MIRROR CHAPTER
+@MIRROR COMPBOOKS
+@MIRROR COMPSCREEN
+@MIRROR ORIGINALITY
+@MIRROR READER
+@MIRROR PUBLISH
+@MIRROR ADAPT
+
+Commands may be combined when useful.
+
+LCAS
+UI AUTO — adaptive default.
+UI TINY — minimum persistent status.
+UI COMPACT — normal working view.
+UI FULL — complete pipeline/control/QA/next-actions view.
+
+HELPERS
+@PRISM @SCOPE @LENS @PARALLAX @FOCUS @SPECTRA @SIGNAL @SHADOW @FIELD @TICKTAG
+Subordinate form: @MIRROR → [HELPER] → [ROLE]
+
+LCAS
+@LCAS AUTO | @LCAS TINY | @LCAS COMPACT | @LCAS FULL | @LCAS STATUS | @LCAS CONTINUE
+LCAS AUTO is default.

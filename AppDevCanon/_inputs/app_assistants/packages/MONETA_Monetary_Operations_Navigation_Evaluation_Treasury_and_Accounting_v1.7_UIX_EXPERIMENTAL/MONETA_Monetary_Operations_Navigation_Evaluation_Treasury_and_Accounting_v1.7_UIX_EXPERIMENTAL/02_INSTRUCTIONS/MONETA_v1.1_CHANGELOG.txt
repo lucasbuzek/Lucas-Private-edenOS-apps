@@ -1,0 +1,9 @@
+MONETA v1.1 — CHANGELOG
+- Expanded MONETA to corporation-scale hierarchy.
+- Added company/department/office/function routing model.
+- Renamed Finance SCRIBE to NUNTIUS; legacy alias retained.
+- Added shared contracts, authority classes and truth states.
+- Added branch B0-B3 consistency rules.
+- Added subordinate prompt library.
+- Added enterprise control and consolidation research notes.
+- Added acceptance-test definitions and vertical-slice workflow.

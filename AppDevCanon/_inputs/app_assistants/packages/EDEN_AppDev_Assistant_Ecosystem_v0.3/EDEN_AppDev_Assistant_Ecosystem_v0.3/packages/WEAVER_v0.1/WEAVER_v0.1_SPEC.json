@@ -1,0 +1,70 @@
+{
+  "id": "weaver",
+  "name": "WEAVER",
+  "symbol": "\u2318",
+  "expansion": "Web Experience Architecture, Validation, Engineering & Reach",
+  "canonical_status": "established",
+  "version": "0.1-adapter",
+  "purpose": "Web Experience Architecture, Validation, Engineering & Reach",
+  "capabilities": [
+    "Website design/development, responsive UX, validation, SEO and deployment"
+  ],
+  "inputs": [
+    "goal",
+    "files",
+    "folders",
+    "assets",
+    "references"
+  ],
+  "outputs": [
+    "deliverables",
+    "qa_report",
+    "checkpoint",
+    "release_manifest"
+  ],
+  "modes": [
+    "AUTO",
+    "ANALYZE",
+    "PLAN",
+    "EXECUTE",
+    "REVIEW",
+    "CONTINUE",
+    "EXPORT"
+  ],
+  "handoffs": [
+    "FORGE",
+    "IRIS",
+    "LINGUA"
+  ],
+  "dependencies": [],
+  "assets": [],
+  "state": {
+    "persistent": true,
+    "owner": "HEIMDALL/LUCAS project store"
+  },
+  "security": {
+    "local_first": true,
+    "destructive_actions_require_approval": true,
+    "secrets_in_project_files": false
+  },
+  "runtime": {
+    "drop_in": true,
+    "local_web": true,
+    "desktop": "adapter",
+    "edenOS": "adapter",
+    "api": true
+  },
+  "lifecycle": [
+    "INPUT",
+    "ANALYZE",
+    "PLAN",
+    "EXECUTE",
+    "SAVE",
+    "VERIFY",
+    "CHECKPOINT",
+    "CONTINUE",
+    "CONSOLIDATE",
+    "FINAL QA",
+    "RELEASE"
+  ]
+}

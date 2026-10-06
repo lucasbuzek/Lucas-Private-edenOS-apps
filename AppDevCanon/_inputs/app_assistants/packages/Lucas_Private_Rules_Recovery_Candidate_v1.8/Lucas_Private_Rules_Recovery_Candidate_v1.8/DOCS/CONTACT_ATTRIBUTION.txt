@@ -1,0 +1,6 @@
+Copyright © 2026 Lucas Buzek. EDEN Project. EDEN = Engineering,
+Development, Exploration & Nature. Concept, architecture and original
+contributions: Lucas Buzek. Project: www.lucasbuzek.com Contact:
+lucasbuzek@gmail.com Unless a component states otherwise, third-party
+components retain their own copyrights and licenses. This notice does
+not replace third-party license obligations.

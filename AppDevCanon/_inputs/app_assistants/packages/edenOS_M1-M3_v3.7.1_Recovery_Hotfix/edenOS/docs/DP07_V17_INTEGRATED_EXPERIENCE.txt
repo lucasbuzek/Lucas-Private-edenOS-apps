@@ -1,0 +1,40 @@
+EDEN — Engineering, Development, Exploration & Nature
+edenOS DP0.7 v1.7 — Integrated Experience Foundation
+
+AUTHORITATIVE DIRECTION
+
+1. PURPOSE
+Build a coherent, beautiful, functional computing environment that can scale from inexpensive/refurbished hardware to powerful systems without creating an inferior low-cost edition.
+
+2. ARCHITECTURAL REFERENCE
+Use Apple/macOS as a reference for integration architecture, ecosystem coherence, lifecycle, user/device separation, application participation in system services, continuity, recovery and system-wide capabilities. Do not visually clone macOS. edenOS retains an original visual identity.
+
+3. IMPLEMENTATION RULE
+INTEGRATE BEFORE IMPLEMENT.
+ADAPT BEFORE REWRITE.
+CUSTOM-BUILD ONLY WHERE EDEN ADDS UNIQUE VALUE.
+Use mature Linux services, standards, libraries and applications underneath edenOS where practical. Prefer standards directly when an extra wrapper adds no value.
+
+4. USER EXPERIENCE
+User chooses a persistent experience depth during setup and can change it later. Working labels: Essential, Full, Advanced. Depth controls presentation/discoverability, not ownership of data or silent service configuration.
+
+5. AREAS / CONFIGURATION PROFILES
+Education, Engineering, Agriculture, Medical/Health, Research, Creative, Development and other areas are composable profiles, not editions. Applications, organizations and EDEN deployments may ship custom profiles. The system remains fully customizable subject to explicit managed policy.
+
+6. DEPLOYMENT
+Deploy a useful configuration, not a different OS. Base system, providers, deployment profiles, policy and user overrides are separate. Profiles are versioned, reversible and upgradeable. User customization is preserved.
+
+7. ROAMING USER ENVIRONMENT
+Identity, user profile, data, application state and logical workspace are independent from a specific device. Hardware configuration stays with the device. Logical workspaces may roam; physical window geometry is regenerated for the receiving device and input environment. Data may be everywhere, on-demand, offline-pinned, device-local or server-only.
+
+8. HEIMDALL
+HEIMDALL is developed separately. It is a future integration/provider and architectural reference, not a DP0.7 runtime dependency. Future contextual awareness may use HEIMDALL; V1 uses explicit user choices and profiles.
+
+9. NAMING
+Most current eden-prefixed subsystem names are engineering placeholders. User-facing interfaces prefer ordinary language: Files, Search, Share, Backup, Accounts, Devices, Settings. Brand only where branding adds meaning.
+
+10. DIGNITY
+Beauty, capability and dignity should not be premium features. Cost reduction comes from efficient engineering, mature software reuse and scalable capability profiles—not degraded design quality.
+
+DP0.7 V1.7 GATE
+Prove the experience model in a bootable ARM64 VM with real shell behavior and progressively real system integrations. Files and Settings are the first vertical-slice proof surfaces. HEIMDALL is not required for this gate.

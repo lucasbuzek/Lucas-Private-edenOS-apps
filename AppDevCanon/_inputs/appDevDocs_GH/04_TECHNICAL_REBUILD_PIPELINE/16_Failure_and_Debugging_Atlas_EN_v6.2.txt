@@ -1,0 +1,51 @@
+LUCAS AI JOURNEY TOME — TECHNICAL & RESEARCH 16
+FAILURE & DEBUGGING ATLAS — v6.2
+
+STATUS: substantive reconstruction checkpoint; final cross-volume editorial/publication review remains.
+
+DEBUGGING CYCLE
+OBSERVE → PRESERVE → CLASSIFY → HYPOTHESIZE → CHANGE ONE THING → TEST → RECORD.
+
+FAILURE CLASSES
+SOURCE — syntax/type/ownership/lifetime/duplicate declaration.
+DEPENDENCY — wrong/duplicate/incompatible library or API.
+CONFIGURATION — board, build flag, pin, credential, filesystem or feature setting.
+ENVIRONMENT — toolchain, SDK, path, permission or runtime mismatch.
+HARDWARE — wrong component, wiring, voltage, unavailable peripheral or physical limitation.
+INTEGRATION — contract/state/timing/ownership disagreement.
+DATA/MIGRATION — schema/persistence/migration/rollback failure.
+RESOURCE — flash/heap/stack/CPU/storage/network/power budget.
+STATE/ASYNCHRONY — optimistic state, race, timeout or stale state.
+
+READ THE FIRST ERROR
+Compiler output is evidence. Preserve it before a large rewrite. If a pointer type is incompatible, inspect the actual types. If multiple libraries are found, establish which dependency the toolchain selected. If a property is duplicated, determine whether responsibilities have been duplicated.
+
+RECOVERED ESP8266/HOMEKIT PATTERNS
+Historical evidence includes temporary-array/lifetime problems, duplicate .category assignment, string-constant/mutable-char conversion, pointer mismatch and multiple HomeKit library copies. These expose ownership, API contract, configuration authority and dependency identity.
+
+ACTUAL HARDWARE WINS
+The recovered project corrected an assumed CD4051 against the actual CD4021BE. They are not interchangeable. Identify actual component → verify function/datasheet → verify wiring → verify platform capability → adapt software. ESP8266 ADC/resource limits likewise cannot be wished away by software.
+
+SOURCE VS ENVIRONMENT
+Ask whether the edited file is the compiled file, whether the selected board is correct, which library path won, whether stale artifacts run, and where runtime configuration actually comes from.
+
+ONE CHANGE ANSWERS A QUESTION
+Prefer a bounded experiment over a rewrite. A changed next error can be progress.
+
+LAST KNOWN GOOD
+Preserve source/package identity, environment, verified behavior and known limitations before risky changes.
+
+STATE FAILURES
+Use REQUESTED, ACCEPTED, EXECUTING, CONFIRMED, FAILED, TIMED OUT and CANCELLED where consequence matters. A button press proves REQUESTED, not CONFIRMED.
+
+PERSISTENCE
+Distinguish UI state, runtime state, staged configuration and durable state. Recovered migration sequence: DETECT → VALIDATE → BACKUP/STAGE → MIGRATE → VERIFY → COMMIT → ROLLBACK ON FAILURE.
+
+RESOURCE FAILURE
+Measure firmware size, free/minimum heap, boot time, latency, writes, reconnect behavior, sensor timing and stability. A feature that prevents reliable boot or recovery is not successfully implemented.
+
+DEBUGGING WITH AI
+Provide exact first error, relevant source, environment/toolchain, dependency versions/paths, LKG, actual hardware, recent change and test state. Ask AI to separate DIRECT EVIDENCE, LIKELY CAUSES, UNKNOWN ASSUMPTIONS and the SMALLEST DISCRIMINATING TEST.
+
+PROVENANCE
+Recovered support includes HomeKit/ESP8266 compile logs, multiple-library evidence, release notes correcting CD4051 to actual CD4021BE, ESP8266 constraints and the gardenOS actual-hardware/resource doctrine.

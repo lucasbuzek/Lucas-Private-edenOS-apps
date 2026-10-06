@@ -1,0 +1,8 @@
+Engineering and Repair WORKSPACE — v2.0
+
+Hardware inventory, electronics, repairs, embedded/IoT, solar and field
+troubleshooting. ARGOS researches; PROMETHEUS/DAEDALUS engineer; ORACLE
+models; FORGE implements; LCAS reports state.
+
+WORKSPACE RULE: reuse authoritative Apps/Helpers through contracts; do
+not duplicate their truth stores.

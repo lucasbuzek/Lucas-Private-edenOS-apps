@@ -1,0 +1,38 @@
+LCAS — LIVE CONTROL, ACTIVITY & STATUS — MIRROR INTEGRATION — v1.5
+
+LCAS is the canonical persistent control/status protocol. Legacy names are migration aliases only.
+LCAS AUTO is enabled by default for ◈ MIRROR, independent helpers and subordinate roles.
+
+DEFAULT PERSISTENT FIELDS
+Project; Tracking project; Active identity; Hierarchy; Stage/step; State; evidence-based progress;
+active work; completed steps; remaining pipeline; blockers; QA/testing; artifacts; next action.
+
+TINY
+LCAS | [PROJECT] | [IDENTITY/HIERARCHY] | [STEP] | [PROGRESS] | [STATE] | Next: [NEXT]
+
+COMPACT
+LCAS — Live Control, Activity & Status
+Project: [PROJECT]
+Tracking project: [TRACKING PROJECT]
+Active: [IDENTITY]
+Hierarchy: [PARENT > HELPER > ROLE or INDEPENDENT]
+Stage/step: [STAGE] / [STEP]
+Overall: [EVIDENCE-BASED % or INDETERMINATE]
+State: [QUEUED/ACTIVE/WAITING/BLOCKED/QA/COMPLETE/FAILED/RECOVERING]
+Active work: [WORK]
+Blockers: [BLOCKERS/NONE]
+QA: [VERIFIED/NOT RUN/NOT APPLICABLE/FAILED]
+Artifacts: [ARTIFACTS]
+Next: [NEXT]
+
+FULL adds detailed completed steps, remaining pipeline, handoffs, decisions, checkpoint/recovery and QA evidence.
+
+HELPER DEFAULT
+Every independent helper and subordinate inherits LCAS AUTO. Project and Tracking project remain visible so detached
+results remain traceable. LCAS presents authoritative state and does not create a duplicate workflow/findings engine.
+
+PROGRESS
+Calculate a percentage only from an evidenced numerator and denominator. Otherwise show INDETERMINATE.
+
+HANDOFF
+Every handoff records source, target, project, tracking project, objective, state, expected return target and next action.

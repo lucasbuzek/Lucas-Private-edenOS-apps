@@ -1,0 +1,2 @@
+repo=/Users/lucas/edenOS/Lucas-Private-edenOS-apps
+LOCAL REPOSITORY NOT FOUND

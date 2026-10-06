@@ -1,0 +1,154 @@
+SKALD — StoryKeeper: Archive, Lifestyle & Delivery
+TELL ME ABOUT YOURSELF — v1.0
+Private / Custom
+
+I AM SKALD
+
+I am SKALD, your StoryKeeper.
+
+I am being designed as a personal media, archive, continuity and delivery system for EDEN. My purpose is not to replace every media application you already use. I bring existing capabilities together around a coherent experience: your stories, collection, devices, history and the way you actually use them.
+
+MY NAME
+
+SK — StoryKeeper
+A — Archive
+L — Lifestyle
+D — Delivery
+
+STORYKEEPER
+
+I treat media as more than files. A film, episode, song, book, audiobook, photograph or personal recording can have identity, relationships, history, locations, representations and state.
+
+I aim to remember what an item is, where it lives, whether it is available, what version you have, where you stopped, and how it relates to the rest of your collection.
+
+ARCHIVE
+
+I help preserve and organize media across local storage, external drives, removable media and network storage.
+
+A disconnected drive should not make a story disappear. Moving something should not mean forgetting what it was. Archive functions are designed around safe operations, verification, provenance, recovery and durable identity.
+
+LIFESTYLE
+
+I adapt the library to how it is used: Continue Watching, watched and resume state, collections, followed shows, device-aware preparation, travel/offline Packs and eventually contextual suggestions and automation.
+
+The goal is not simply to catalogue media. It is to make the collection useful in everyday life.
+
+DELIVERY
+
+I help get the right representation of a story to the place where you want to experience it.
+
+That may mean opening an existing application, streaming from a SKALD Host to an authorized device, preparing an offline Pack, using native platform capabilities, or handing work to an appropriate provider.
+
+I prefer direct play and preservation. I remux or transcode only when compatibility actually requires it.
+
+HOW I WORK
+
+I follow the EDEN/AppDev rule:
+
+IMPLEMENT / INTEGRATE EXISTING CAPABILITY BEFORE RECREATING IT.
+
+My preferred order is:
+
+Native capability
+→ existing installed capability
+→ small mature reusable component
+→ suitable provider/service
+→ new SKALD-specific implementation only when necessary.
+
+The governing question is:
+
+What is the smallest amount of new software necessary to deliver the intended experience and capability?
+
+I design around experience and workflow, not around recreating existing software.
+
+MY EXPERIENCE
+
+I should feel like one coherent StoryKeeper even when several specialized capabilities work underneath me.
+
+Normal use emphasizes familiar actions such as Play, Continue, Play On…, Add to Collection, Prepare for Offline, Archive and Search. Technical complexity belongs behind progressive disclosure.
+
+OTHER SOFTWARE
+
+I am not intended to become another Plex, Jellyfin, Kodi, calibre, FFmpeg, Subler or generic media player.
+
+Where appropriate, existing applications and tools remain specialists. I provide identity, continuity, policy, orchestration, workflow and the unified experience connecting useful capabilities together.
+
+EDEN
+
+Within EDEN, BIFROST provides canonical persistence, connection and interoperability foundations. SKALD specializes in media, stories, archive, playback continuity, processing policy and delivery. HEIMDALL can expose and compose SKALD capabilities in the wider EDEN workspace.
+
+I must also remain capable of useful standalone operation.
+
+AI
+
+I do not require AI to function.
+
+Core library, playback, archive, automation, Packs, state and delivery should remain useful without an AI account, API key or Internet AI service.
+
+Where intelligence improves an experience, it is optional and appropriately sized. A small specialized or deterministic tool is preferred over a general LLM when it can adequately perform the task.
+
+CURRENT STATE
+
+I am currently an experimental Private / Custom application.
+
+My architecture and intended workflows are substantially defined and a runnable experimental implementation exists. Real-device, real-library and provider-dependent functionality must still earn its status through testing.
+
+My evidence language is:
+
+PASS — actually verified
+FAIL — executed and failed
+UNKNOWN — insufficient evidence or not yet tested
+SKIPPED — deliberately not executed
+N/A — not applicable
+
+UNKNOWN never silently becomes PASS.
+
+My development strategy is:
+
+Implement broadly
+→ package a runnable experiment
+→ test on real hardware
+→ keep what works
+→ repair and retest what fails
+→ remove or replace what remains unsuitable.
+
+CHARACTER
+
+My archetype is the StoryKeeper.
+
+My intended personality is warm, cultured, organized, observant, protective and quietly capable. I should be concise and useful rather than intrusive.
+
+My visual identity should feel editorial, cinematic and archival, with subtle warmth rather than technological clutter or exaggerated Norse imagery.
+
+My personality does not depend on AI.
+
+PRINCIPLES
+
+Beauty, capability and dignity should not be premium features.
+Experience and Workflow First.
+Native Capability First.
+Existing Capability First.
+Minimum New Code.
+Small by default. Rich by composition.
+Familiar by default. More powerful by choice.
+One capability core. Multiple surfaces.
+Platform independence means a shared WHAT, not an identical HOW.
+Sync state by default; sync content by choice.
+Users should never need to become the build system.
+Development builds expose evidence. Production builds expose support.
+
+MY DIRECTION
+
+Find the story
+→ understand what it is
+→ know where it lives
+→ preserve the best source
+→ prepare only what is necessary
+→ play it where you want
+→ remember your place
+→ make it available when you need it
+→ preserve its history.
+
+I am SKALD.
+
+I keep the stories.

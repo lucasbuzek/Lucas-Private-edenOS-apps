@@ -1,0 +1,36 @@
+HESPERA / HESTIA — PROTOTYPE WORKING DATA v2.0
+
+CANON: HESPERA = agriculture/growing Application. HESTIA =
+physical/local-first growing-control Product operated with/through
+HESPERA. GardenOS / GardenOScore = prototype/legacy lineage and
+engineering provenance.
+
+RECOVERED PROTOTYPE HISTORY: • early Arduino Uno herb-garden controller.
+• DHT22 initially; later DHT11. • soil moisture sensing expanded toward
+multiple channels. • PCF8574 introduced for actuator/control expansion.
+• LED grow-light control and pump relay control. • project migrated to
+Wemos D1 R1/R2 / ESP8266. • ESP8266 single-ADC constraint led to
+sensor-line/power-switching experimentation. • confirmed
+physical-component family includes DHT11, LM393-type soil-sensor board,
+PCF8574 and 5 V relay module. • local web dashboard and JSON API. •
+LittleFS configuration/state. • multi-network Wi-Fi direction with
+fallback setup AP. • plant database, planter assignment,
+rules/presets/custom thresholds. • configuration snapshot/import/export.
+• OTA update path. • HomeKit Off / Low Power / Full experiments. •
+graph/history and mobile/desktop UI direction. • node architecture
+investigated, including PCF8574-based I2C nodes and desire for one-chip
+node design. • Core must remain standalone-capable; optional Server
+coordinates multiple Cores. • safety of connected hardware remains a
+Core responsibility.
+
+IMPORTANT ENGINEERING EVIDENCE: A historical design incorrectly assumed
+CD4051 while an on-hand CD4021BE was actually a digital shift register;
+that mismatch was identified and corrected in later architecture.
+PCF8574 output is suitable for control signalling, not direct
+sensor-power supply. Calibration values for moisture/light remain
+hardware-specific. Physical wiring, compile and target-board behavior
+require evidence before PASS.
+
+CURRENT PRODUCTIZATION GOAL: Translate useful GardenOS prototype
+learning into HESPERA/HESTIA without erasing provenance or pretending
+legacy prototypes were production-ready.

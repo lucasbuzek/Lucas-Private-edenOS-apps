@@ -1,0 +1,10 @@
+IRIS — Intelligent Realism & Image Synthesis — v1.8
+MODULE: COMPARE / FIDELITY QA
+
+VIEWS
+SOURCE | RECONSTRUCTION | SIDE-BY-SIDE | OVERLAY | DIFFERENCE.
+
+MEASURE SEPARATELY
+Geometry; typography; color; imagery/crop; spacing; structural layout; unchanged-region preservation; text/content accuracy.
+
+Do not hide all errors behind one score. Overall similarity may be reported only with the component metrics and method. Classify deviations CRITICAL / MAJOR / MINOR / COSMETIC. Correct only affected regions where possible and regression-check locked regions.

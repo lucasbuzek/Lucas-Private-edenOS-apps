@@ -1,0 +1,23 @@
+BACKUP / PROVENANCE INDEX — v1.1
+
+Primary recovered baseline: APPDEV MASTER — RECONCILIATION HANDOFF —
+v1.0 Owner: Lucas Buzek
+
+Recovered NamingRules baseline: namingrules.txt / namingrules variants
+from the EDEN/AppDev Library.
+
+Current-session additions incorporated: • GrandMasterRegister
+classification and ownership • LucasPersonalGrandMaster • Family and
+Friends interaction profiles • official/public language architecture •
+locality recommendation rule • LINGUA provider expansion • World /
+regional language coverage structure • literary/poetic user-facing
+naming rule • Common Tongues / Atlantic Light / Amber Road • Africa
+Connect / Atlas & Cedar / Baobab Roads / River of Many Voices / Jasmine
+Coast / Under Southern Stars • Silk & Sand / Monsoon Letters / Bamboo &
+Ink / Islands of Morning / My Own Road • South African Family language
+handling: do not infer personal home language from surname/location
+
+This package is a documentation/registry backup. It intentionally does
+not claim source-code rebuilds, binary verification, physical-device
+testing or migration of external application data that was not present
+in the package.

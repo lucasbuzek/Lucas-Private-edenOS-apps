@@ -1,0 +1,5 @@
+@THREAD INDEX [PROJECT OR DOMAIN]
+
+Build a structured index of all accessible historical material relevant to the target.
+Group by topics, projects, aliases, dates/chronology, versions, files, decisions, dependencies and related frameworks.
+Identify likely gaps and useful follow-up searches.

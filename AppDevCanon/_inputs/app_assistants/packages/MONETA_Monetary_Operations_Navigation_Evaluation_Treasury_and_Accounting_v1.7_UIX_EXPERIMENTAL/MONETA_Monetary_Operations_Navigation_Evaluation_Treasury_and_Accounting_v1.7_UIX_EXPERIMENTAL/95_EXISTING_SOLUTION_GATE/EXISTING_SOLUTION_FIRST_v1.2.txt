@@ -1,0 +1,11 @@
+EXISTING-SOLUTION-FIRST GATE — v1.2
+Gate: PASS | FAIL | NOT_RUN | NOT_APPLICABLE
+Decision: KEEP | REMOVE | SIMPLIFY | REUSE | INTEGRATE | ADAPT | EXTEND | REPLACE | BUILD_NEW
+
+Before IMPLEMENT record: requested change; authoritative owner; internal solutions checked; external working
+solutions checked; standards/reference implementations; comparison; decision; reason; migration/rollback need;
+verification plan; gate status.
+
+FAIL or NOT_RUN blocks IMPLEMENT unless genuinely NOT_APPLICABLE.
+BUILD_NEW requires a material gap.
+REPLACE keeps the working path authoritative until replacement parity or approved removal is verified.

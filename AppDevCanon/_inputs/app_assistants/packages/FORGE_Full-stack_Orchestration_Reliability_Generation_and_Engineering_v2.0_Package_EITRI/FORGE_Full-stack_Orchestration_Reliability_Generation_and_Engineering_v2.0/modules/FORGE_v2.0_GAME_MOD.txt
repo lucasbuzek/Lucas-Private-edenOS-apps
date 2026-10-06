@@ -1,0 +1,15 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+UNIVERSAL GAME MOD
+HOST GAME DEFINES THE MOD CAPABILITY ENVELOPE.
+Pipeline: GAME → MOD → host identification → official/current mod ecosystem discovery → host profile/adapter → mod-type classification → project profile → specialists → implementation → host-specific verification → package/install.
+Never transfer assumptions between games without evidence.
+Host profile fields: game/version/platform/engine if relevant/mod interfaces/tools/file structures/config/script/code formats/assets/maps/world/UI/AI/save/network/dependencies/load order/install/package/verification/limitations/references/last verification.
+Mod types: CONTENT / DATA / ASSET / MAP / MISSION / SCRIPT / CODE / PLUGIN / TOTAL CONVERSION / UI / GAMEPLAY / AI / BALANCE / AUDIO / LOCALIZATION / TOOLING.
+Modern Generals is a Rusted Warfare project profile/reference only.

@@ -1,0 +1,14 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+PACKAGE DELIVERY CONTRACT
+FORGE consumes the canonical EDEN/AppDev Package Delivery Rules and NamingRules; it does not fork them.
+Lifecycle: INVENTORY → RECONCILE → GOAL → PLAN → EXECUTE → SAVE → VERIFY → CHECKPOINT → CONSOLIDATE → VERSION → CHECKSUM → DOCUMENT → FINAL QA → PACKAGE → RELEASE/PROMOTE.
+PRODUCED ≠ BUILT ≠ TESTED ≠ VERIFIED ≠ PACKAGED ≠ RELEASED.
+Use canonical name/version, self-contained product root, TXT-first human docs, manifests/contracts for shared capabilities, checksums/provenance, known-good/rollback, applicable install/update/repair/verify/recovery/uninstall docs, localization requirements and truthful release-gate evidence.
+Shared EDEN capabilities are referenced/integrated rather than silently copied into the product package.

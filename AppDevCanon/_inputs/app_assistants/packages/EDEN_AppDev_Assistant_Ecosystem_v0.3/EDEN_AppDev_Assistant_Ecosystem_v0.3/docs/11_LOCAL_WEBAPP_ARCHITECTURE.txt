@@ -1,0 +1,3 @@
+LOCAL WEBAPP ARCHITECTURE — v0.1
+Browser UI served from localhost; no CLI required after launch. Backend exposes project/assistant/job endpoints; frontend uses plain responsive HTML/CSS/JS in reference build.
+Production path: signed desktop launcher starts local service and opens browser. LAN access is OFF by default; enabling it requires authentication and explicit bind/network configuration.

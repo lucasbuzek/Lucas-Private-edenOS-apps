@@ -1,0 +1,23 @@
+HERMES v1.6 REGRESSION VERIFICATION
+
+PASS — DOSSIER registered PASS — DOSSIER prompt present PASS —
+CAREERPLAN registered PASS — CAREERPLAN prompt present PASS —
+VACANCYDESK registered PASS — VACANCYDESK prompt present PASS — SCRUFFY
+registered PASS — SCRUFFY prompt present PASS — MATCHSHEET registered
+PASS — MATCHSHEET prompt present PASS — OpportunityFACTCHECK registered
+PASS — OpportunityFACTCHECK prompt present PASS — CareerFORMFILLER
+registered PASS — CareerFORMFILLER prompt present PASS — REVIEW
+registered PASS — REVIEW prompt present PASS — expressSHIP registered
+PASS — expressSHIP prompt present PASS — STATUSFILE registered PASS —
+STATUSFILE prompt present PASS — SWITCHBOARD registered PASS —
+SWITCHBOARD prompt present PASS — AFTERFILE registered PASS — AFTERFILE
+prompt present PASS — REVIEW unchanged role PASS — OpportunityFACTCHECK
+exact spelling PASS — CareerFORMFILLER exact spelling PASS — expressSHIP
+exact spelling PASS — HERMES tender/procurement authority preserved PASS
+— HERMES/MONETA boundary preserved PASS — ARGOS authority untouched PASS
+— CASPER.SCRIBE untouched/protected PASS — zero active superseded
+identity refs
+
+Active stale-reference hits: 0
+
+UNKNOWN IS NOT PASS.

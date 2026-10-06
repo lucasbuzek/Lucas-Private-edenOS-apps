@@ -1,0 +1,12 @@
+UIbasic — Basic Persistent User Interface Protocol — v1.0 QUICKSTART
+
+1.  Open or attach the application/project to update.
+2.  Run UIbasic_v1.0_MASTER.txt.
+3.  Default to UI AUTO.
+4.  Allow UIbasic to inventory and integrate with the existing
+    architecture.
+5.  Run applicable QA.
+6.  Package the complete updated project only AFTER the update is
+    implemented and verified.
+
+Manual display commands: UI TINY UI COMPACT UI FULL UI AUTO

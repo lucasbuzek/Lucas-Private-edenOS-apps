@@ -1,0 +1,15 @@
+edc_schema: "0.1"
+contract_id: ""
+project_id: ""
+profile: "MICRO|STANDARD|CRITICAL"
+requirement: ""
+deliverable_type: ""
+required_capabilities: []
+selected_providers: []
+dependencies: []
+authoritative_inputs: []
+constraints: []
+acceptance_criteria: []
+evidence_required: []
+integration_consumer: ""
+status: "NOT_STARTED"

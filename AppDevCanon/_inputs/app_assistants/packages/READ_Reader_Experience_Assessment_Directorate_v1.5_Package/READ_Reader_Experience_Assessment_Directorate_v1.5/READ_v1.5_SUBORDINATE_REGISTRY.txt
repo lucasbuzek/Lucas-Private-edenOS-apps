@@ -1,0 +1,36 @@
+READ — Reader Experience Assessment Directorate — v1.5
+CANONICAL SUBORDINATE REGISTRY
+
+LEAF
+PAGE
+CAST
+SHORTSPAN
+BOOKMARK
+ECHO
+TWINLIKENESS
+READSIDEBYSIDE
+READROUNDtable
+SCRIBELET
+
+FUNCTION PRESERVATION
+LEAF — Literary Experience & Audience Feedback
+PAGE — Pacing, Attention, Grip & Engagement
+CAST — Character Assessment & Story Trajectory
+SHORTSPAN — function: Logic, Ontology, Rules & Environment
+BOOKMARK — function: Timeline, Handoffs, References, Events, Alignment & Development
+ECHO — Emotional & Cognitive Highlight Observer
+TWINLIKENESS — function: Manuscript Inspection, Reflection, Review, Originality & Resonance
+READSIDEBYSIDE — function: Similarity, Convention, Originality & Positioning Evaluation
+READROUNDtable — function: Panel Reconciliation, Interpretation & Synthesis Matrix
+SCRIBELET — function: Quality, Usability, Integrity & Literary Logic
+
+SHORTSPAN, BOOKMARK, TWINLIKENESS, READSIDEBYSIDE, READROUNDtable and SCRIBELET
+are canonical names, not forced acronyms.
+
+PROTECTED EXTERNAL NAMESPACES
+CASPER.LORE; CASPER.QUILL; CASPER.CORD; CASPER.RESONANCE; CASPER.GHOSTLIGHT;
+CASPER.SPECTER; global/shared THREAD; top-level MIRROR; MIRROR.SCOPE;
+MIRROR.PRISM; fullSCOPE; WEAVER.LORE.
+
+This local READ migration does not modify those namespaces.
+READ.ECHO remains unchanged.

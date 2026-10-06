@@ -1,0 +1,26 @@
+WEAVER HANDOFF — HERMES v1.6
+
+PRIMARY UI HOME | OPPORTUNITIES | WORKSPACE | DOCUMENTS | PROFILE |
+ACTIVITY | SETTINGS
+
+CONTEXT PERSON | COMPANY | HYBRID
+
+MOBILE FIRST Bottom navigation on small screens. Compact opportunity
+cards. Large tap targets. Sticky state-appropriate primary action. No
+hover-only interactions. Respect safe areas. Documents and URLs must be
+easy to copy/open on mobile. Use responsive tables only where cards
+cannot communicate the information.
+
+HOME Show deadlines, missing facts/documents, agent failures,
+interviews/clarifications, ready-to-submit packages and new
+high-relevance opportunities. Avoid vanity metrics.
+
+OPPORTUNITY CARD Title Organization/buyer Location Job/tender/contract
+type Salary/value if known Freshness/deadline Why surfaced Confirmed
+constraints/gaps Status Primary action
+
+VISUAL DOCTRINE Content first. Status at a glance. One obvious primary
+action. Detail on demand. Immediate feedback. Confirmed state.
+Accessible typography/controls. Responsive phone through desktop.
+Animation only when it communicates state. No visual element without a
+job.

@@ -1,0 +1,22 @@
+HERMES NAMING & PERSONALITY RECONCILIATION — v1.6
+
+Source state used: - HERMES v1.5 Prompt Package (latest prompt state) -
+HERMES v1.4 Branched Development Package (latest full
+implementation/package state available locally)
+
+Migration discipline: DETECT → VALIDATE → BACKUP/STAGE → MIGRATE →
+VERIFY → COMMIT → ROLLBACK ON FAILURE
+
+Genealogy (historical/provenance only): HERMES.PROFILE → HERMES.DOSSIER
+HERMES.PATHFINDER → HERMES.CAREERPLAN HERMES.SCOUT → HERMES.VACANCYDESK
+HERMES.GATEKEEPER → HERMES.SCRUFFY HERMES.MATCH → HERMES.MATCHSHEET
+HERMES.RESEARCH → HERMES.OpportunityFACTCHECK HERMES.SCRIBE →
+HERMES.CareerFORMFILLER HERMES.COURIER → HERMES.expressSHIP
+HERMES.TRACKER → HERMES.STATUSFILE HERMES.LIAISON → HERMES.SWITCHBOARD
+HERMES.LEARN → HERMES.AFTERFILE HERMES.REVIEW → unchanged
+
+Authority preserved: - Tenders/procurement remain in HERMES. - MONETA
+financial authority remains separate. - ARGOS authority remains
+unchanged. - CASPER.SCRIBE and WEAVER.WEBSEEKER remain untouched. -
+Stable machine IDs may remain stable where an implementation explicitly
+uses them; this migration changes canonical human-readable identities.

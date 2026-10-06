@@ -1,0 +1,2 @@
+HERMES BRANCH PARITY TEST PLAN — v1.6
+For each shared capability verify: same capability ID; compatible input/output schema; equivalent state transitions; same authorization consequence; same persistence semantics; import/export round-trip; HERMES Signal reflects authoritative state; provider substitution does not mutate canonical records; migration preserves data; unsupported branch behavior is explicit rather than silently omitted.

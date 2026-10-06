@@ -1,0 +1,7 @@
+REFERENCE: OpenMower
+URL: https://github.com/Gigabyte00/openmower
+ROLE IN EDEN DESIGN
+Tiny ground-machine reference: low-cost mower conversion, custom hardware, RTK/map-aware autonomy, safety and separated firmware/navigation/UI. Benchmark for Nandi Ground; verify component-specific licenses before reuse.
+
+STATUS
+Reference / integration candidate. Not a canonical dependency until architecture, license, safety and prototype validation are completed.

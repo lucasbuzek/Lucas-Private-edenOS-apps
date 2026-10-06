@@ -1,0 +1,31 @@
+MAMMON / EDEN 25TH ANNIVERSARY RECOVERY
+M5 — DELIVERY RECORD
+Version: v1.0
+Date: 2026-09-24
+
+STATUS: DELIVERED
+PIPELINE: M0 COMPLETE | M1 COMPLETE | M2 COMPLETE | M3 COMPLETE | M4 COMPLETE | M5 COMPLETE
+CONSOLIDATION CHECKPOINT: C06 LOCKED
+
+DELIVERY CONTENT
+01_MAMMON_RELATED
+02_MAMMON_APPLE
+03_25TH_ANNIVERSARY
+00_CONTROL
+
+PROVENANCE POLICY
+Recovered source material remains distinct from derived overlays and later interpretation.
+Missing historical artifacts are not reconstructed and represented as originals.
+Unresolved items remain explicitly unresolved in the M4 manifest/provenance record.
+
+M5 ACTIONS
+- Promoted validated M4 archive to final delivery baseline.
+- Preserved three-way split and source provenance boundaries.
+- Preserved M4 manifest, provenance map and recovery ledger.
+- Added final delivery record and release notes.
+- Recomputed final per-file SHA-256 inventory.
+- Performed final archive decompression/integrity test.
+
+FINAL STATE
+This archive is the delivery baseline for the recovered MAMMON / APPLE / EDEN 25 corpus.
+Future research, reconstruction, publication or application work should branch from this baseline without rewriting recovered provenance.

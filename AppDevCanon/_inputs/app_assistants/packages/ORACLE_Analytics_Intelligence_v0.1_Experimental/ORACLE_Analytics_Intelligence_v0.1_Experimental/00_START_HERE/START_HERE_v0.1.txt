@@ -1,0 +1,4 @@
+ORACLE v0.1 Experimental
+Start with 01_IDENTITY/TELL_ME_ABOUT_YOURSELF_AND_SUBORDINATES_v0.1.txt.
+Use 02_MASTER_PROMPT for ORACLE itself and 03_SUBORDINATE_PROMPTS for internal specialists.
+The subordinate roster is explicitly Experimental; ORACLE's top-level analytics identity and separation from MONETA/THEMIS/HERMES are preserved.

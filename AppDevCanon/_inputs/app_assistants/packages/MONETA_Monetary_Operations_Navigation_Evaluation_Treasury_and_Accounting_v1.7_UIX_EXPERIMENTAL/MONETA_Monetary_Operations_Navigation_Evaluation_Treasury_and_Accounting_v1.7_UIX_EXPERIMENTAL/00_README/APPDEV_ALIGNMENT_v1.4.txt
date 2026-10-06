@@ -1,0 +1,37 @@
+MONETA v1.4 EXPERIMENTAL — APPDEV ALIGNMENT
+
+CANONICAL DEVELOPMENT RULES APPLIED
+- Existing-Solution-First.
+- One canonical capability core; multiple surfaces/providers.
+- Scale by composition, not by forking.
+- Specialist applications remain independently deployable.
+- HERMES / MONETA / ORACLE / THEMIS remain separate cooperating applications.
+- MONETA owns financial state, semantics and administration.
+- Web/PWA is a surface, not the canonical architecture.
+- Local / hybrid / remote are provider profiles, not capability forks.
+- Build → Test → Preview → Package → Deploy.
+- Generated ≠ Saved ≠ Tested ≠ Verified ≠ Consolidated ≠ Delivered.
+- Preserve last known-good state; updates require validation and rollback.
+- User data must survive application updates/replacement.
+- Stable capability IDs survive UI/provider/platform changes.
+- Constrained hardware reduces composition/execution load, not product dignity or canonical identity.
+
+EXPERIMENTAL SHIP DECISION
+YES for controlled EXPERIMENT / TEST.
+NO for production, financial posting, banking actions, tax filing, external financial reporting or real-money movement.
+
+WHY
+The canonical company/capability registry exists; HERMES/MONETA/ORACLE/THEMIS boundary is explicit;
+B1 routing is executable; zero-dependency Web surface can be run on macOS/Windows/Linux with Node;
+tests are packaged and repeatable.
+
+OPEN GATES BEFORE BETA
+- typed cross-app handoffs with provenance;
+- durable BIFROST/local persistence and migration;
+- authorization/approval enforcement;
+- behavioral context inheritance;
+- accounting/consolidation/reporting integrity harnesses;
+- secrets/privacy/security review;
+- native desktop build verification on macOS and Windows;
+- recovery/update/rollback test;
+- real data import/export with synthetic-data test suite first.

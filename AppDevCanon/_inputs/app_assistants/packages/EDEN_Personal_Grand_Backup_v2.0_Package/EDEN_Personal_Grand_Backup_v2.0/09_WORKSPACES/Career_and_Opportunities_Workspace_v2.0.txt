@@ -1,0 +1,8 @@
+Career and Opportunities WORKSPACE — v2.0
+
+Professional evidence, portfolio, CV variants, job/freelance/tender
+discovery, qualification, application/bid, tracking. HERMES owns
+opportunity state; MONETA owns finance; CAMEL owns logistics execution.
+
+WORKSPACE RULE: reuse authoritative Apps/Helpers through contracts; do
+not duplicate their truth stores.

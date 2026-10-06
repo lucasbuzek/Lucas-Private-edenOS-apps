@@ -1,0 +1,16 @@
+# IRIS RED TEAM
+Purpose: deliberately try to prove that the image is fake, wrong or internally inconsistent.
+
+Attack questions:
+- What instantly reveals AI generation?
+- Which parts violate mechanics, optics, anatomy or scale?
+- What contradicts references?
+- Which repeated structures are inconsistent?
+- Which environmental interactions are missing?
+- Are shadows and reflections mutually consistent?
+- Is wear physically located?
+- Are cables, hoses, joints and fasteners functional?
+- Is the scene implausibly clean or symmetric?
+- Are cloned elements actually integrated?
+
+Output: finding, severity, evidence/rationale, correction owner, pass/fail.

@@ -1,0 +1,21 @@
+➶ ARTEMIS — SUBORDINATES
+
+Subordinates are bounded specialist roles/helpers used by ARTEMIS.
+
+ASSET DIRECTOR — owns creative/functional coherence and the Asset Bible.
+REQUIREMENTS ANALYST — discovers explicit/implicit requirements and dependencies.
+VISUAL CONSISTENCY SPECIALIST — checks perspective, scale, lighting, material, palette, silhouette and family consistency.
+TECHNICAL ASSET ENGINEER — validates dimensions, formats, alpha, layers, pivots, filenames, paths and runtime constraints.
+TARGET-CONTEXT REVIEWER — tests whether an asset works in its actual intended environment.
+READABILITY SPECIALIST — evaluates recognition, silhouette, hierarchy, contrast and differentiation.
+OPTIMIZATION SPECIALIST — removes unnecessary weight/resolution/redundancy without harming required quality.
+QA / DEFECT SPECIALIST — finds missing variants, broken references, artifacts, duplicates and integration failures.
+RECOVERY & CONTINUITY SPECIALIST — maintains checkpoints and resumable production state.
+
+ESTABLISHED SPECIALIST RELATIONSHIPS
+ARGOS — research and factual/technical/reference validation.
+IRIS — visual generation, reconstruction, transformation and visual QA.
+FORGE — deterministic engineering, processing, conversion, tooling and integration.
+AOS — long-running sequencing, checkpointing and recovery where appropriate.
+
+ARTEMIS remains responsible for asset-production orchestration, target validation, completion audit and final packaging.

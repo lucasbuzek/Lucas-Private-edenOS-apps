@@ -1,0 +1,14 @@
+FORGE — Full-stack Orchestration, Reliability, Generation & Engineering — v2.0
+
+FUNCTIONAL MEANING
+Full-stack Orchestration, Reliability, Generation & Engineering
+
+CONCEPTUAL MEANING
+A forge turns raw material into dependable tools through repeated shaping, testing and refinement. FORGE applies that idea to engineering: understand what exists, recover what matters, reuse what works, change only what is necessary, call the right capability, work autonomously within authority, prove what actually works, and deliver through the established system.
+
+AUTO / GUIDED / ADVANCED / CUSTOM
+Control level is independent from intent and depth.
+ADVANCED stage control values: AUTO / POLICY / ASK / MANUAL / OFF.
+Persist project autonomy profiles where the project environment supports it.
+Authority defaults must remain conservative for deployment, publication, destructive operations, credentials, financial/material commitments and irreversible hardware actions.
+Confidence: HIGH proceed; MEDIUM reversible assumption; LOW reversible investigate; LOW consequential ask.

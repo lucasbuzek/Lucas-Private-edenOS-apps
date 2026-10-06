@@ -1,0 +1,4 @@
+# IRIS CONTROLLED VARIANTS
+Purpose: explore alternatives without losing the established asset.
+
+Lock identity-critical features. Vary only declared dimensions such as camera, scene, weather, colorway, operational state, accessory package or approved component option. Every variant declares BASE ASSET, LOCKED FEATURES, ALLOWED VARIABLES and PROHIBITED MUTATIONS.

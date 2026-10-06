@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IRIS Batch Manifest",
+  "type": "object",
+  "required": [
+    "batch_id",
+    "global_prompt",
+    "items"
+  ],
+  "properties": {
+    "batch_id": {
+      "type": "string"
+    },
+    "output_dir": {
+      "type": "string",
+      "default": "outputs"
+    },
+    "global_prompt": {
+      "type": "string"
+    },
+    "asset_lock": {
+      "type": "string",
+      "default": ""
+    },
+    "qa_prompt": {
+      "type": "string",
+      "default": ""
+    },
+    "max_retries": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 2
+    },
+    "sequential": {
+      "type": "boolean",
+      "const": true
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "asset_id",
+          "view",
+          "prompt"
+        ],
+        "properties": {
+          "asset_id": {
+            "type": "string"
+          },
+          "view": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "reference_images": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "negative_prompt": {
+            "type": "string",
+            "default": ""
+          },
+          "metadata": {
+            "type": "object",
+            "default": {}
+          }
+        }
+      }
+    }
+  }
+}

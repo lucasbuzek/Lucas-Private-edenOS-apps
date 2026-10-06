@@ -1,0 +1,5 @@
+BACKUP POLICY — v1.7
+CONFIGURATION/CANON BACKUP: rules, registry, manifests, profiles, identities, relationships, configuration and provenance.
+FULL RECOVERABLE BACKUP: all Configuration/Canon material PLUS authoritative source/project files, required assets/schemas/scripts/tests/build configuration/version identities and sufficient material to reconstruct the working environment. Secrets remain excluded/referenced through secure stores.
+Never label a metadata-only archive as a fully recoverable environment.
+The predecessor v1.6 archive remains untouched as provenance/LKG input.

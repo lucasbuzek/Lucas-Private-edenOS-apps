@@ -1,0 +1,33 @@
+READ — v1.1 REUSABLE PROMPTS
+
+@READ AUTO
+Run the complete READ assessment autonomously to completion using UI AUTO.
+
+@READ REVIEW
+Review the supplied work using the READ framework. Focus on the requested dimensions and preserve reader/editorial distinction.
+
+@READ AUDIT
+Audit the existing assessment against the source work. Identify unsupported, duplicated, contradictory or missed findings.
+
+@READ CONTINUE
+Reconcile the latest actual checkpoint and continue the authoritative READ pipeline from the first incomplete stage.
+
+@READ COMPARE
+Compare the supplied work with specified or appropriately researched comparable works. Separate genre/trope similarity from distinctive execution and do not infer plagiarism from similarity alone.
+
+PERSISTENT UI RULE
+All READ invocation/status modes use the canonical identity marker 📖 READ while READ is active.
+
+
+HELPER COMMANDS
+@LEAF AUTO — Run LEAF independently for its defined specialty using persistent LCAS status.
+@PAGE AUTO — Run PAGE independently for its defined specialty using persistent LCAS status.
+@CAST AUTO — Run CAST independently for its defined specialty using persistent LCAS status.
+@SHORTSPAN AUTO — Run SHORTSPAN independently for its defined specialty using persistent LCAS status.
+@BOOKMARK AUTO — Run BOOKMARK independently for its defined specialty using persistent LCAS status.
+@ECHO AUTO — Run ECHO independently for its defined specialty using persistent LCAS status.
+@TWINLIKENESS AUTO — Run TWINLIKENESS independently for its defined specialty using persistent LCAS status.
+@READSIDEBYSIDE AUTO — Run READSIDEBYSIDE independently for its defined specialty using persistent LCAS status.
+@READROUNDtable AUTO — Run READROUNDtable independently for its defined specialty using persistent LCAS status.
+@SCRIBELET AUTO — Run SCRIBELET independently for its defined specialty using persistent LCAS status.
+@READ AUTO — READ may delegate to the named helper roster and must expose active helper/handoff state through LCAS.

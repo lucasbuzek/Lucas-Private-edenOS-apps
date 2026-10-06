@@ -1,0 +1,28 @@
+# IRIS QA
+Purpose: forensic review and correction routing.
+
+CHECK:
+- reference fidelity
+- anatomy
+- geometry
+- perspective
+- scale
+- physics
+- materials
+- shadows
+- reflections
+- environment
+- compositing seams
+- text/logos
+- duplicates
+- continuity
+- AI artifacts
+
+CLASSIFY:
+CRITICAL / MAJOR / MINOR / COSMETIC
+
+CORRECT:
+Prefer local editing.
+Regression-test every fix.
+Retain best-known prior result.
+Stop after diminishing returns and no unresolved critical/major errors.

@@ -1,0 +1,43 @@
+MIRROR — EXAMPLE PROMPTS — v1.5
+
+EXAMPLE — GENERAL REVIEW
+@MIRROR REVIEW
+Review the attached project independently. Classify its objective, benchmark it against meaningful alternatives,
+red-team major assumptions, identify strengths/weaknesses/risks, and produce prioritized improvements.
+
+EXAMPLE — FULL NOVEL
+@MIRROR BOOK
+Review the attached novel autonomously. Begin blind. Build the Story Bible. Run the 50-specialist literary panel.
+Audit continuity, plot logic, character arcs, relationships, pacing, dialogue, POV, prose, emotional logic, opening,
+ending, originality, and publication readiness. Compare against meaningful books and screen works where appropriate.
+
+EXAMPLE — CASPER HANDOFF
+@MIRROR CASPER
+Convert only evidence-supported MUST CHANGE and SHOULD CHANGE findings into a bounded revision directive.
+Protect authorial voice and all PROTECT elements. Include acceptance criteria.
+
+EXAMPLE — READ HANDOFF
+Use READ as an external framework to test target-reader response to the areas MIRROR identified as uncertain.
+Keep simulated reader response distinct from observed human beta-reader evidence. Return findings for MIRROR synthesis.
+
+EXAMPLE — DELTA
+@MIRROR DELTA
+Compare the original and revised versions. Classify each material change as IMPROVED, NEUTRAL, REGRESSED,
+NEW PROBLEM INTRODUCED, or DEPENDENCY REQUIRES REVIEW. Do not invent new stylistic work for unchanged sections.
+
+EXAMPLE — FINAL
+@MIRROR FINAL
+Treat the attached final manuscript as a publication gate, not a brainstorming session. Report only material remaining
+barriers, regressions, unresolved consistency problems, and final readiness.
+
+EXAMPLE — UI AUTO
+@MIRROR BOOK
+UI AUTO
+Review the attached manuscript autonomously. Keep the interface compact during normal interaction, TINY during active
+processing, and show FULL at major review gates, blockers, CASPER/READ handoffs, DELTA and completion.
+
+EXAMPLE — UI FULL
+UI FULL
+Show MIRROR's actual current pipeline, completed/pending stages, authoritative findings, evidence/QA state, blockers,
+artifacts, handoffs, checkpoint/DELTA state, one recommended next action, optional actions, required input, and whether
+safe auto-continuation is available. Do not invent progress.

@@ -1,0 +1,11 @@
+NÁVOD NA OBNOVU
+
+1. Začnite súborom 00_START_HERE/README_SK.txt.
+2. 01_CANONICAL_DESIGN je konsolidovaný základ architektúry.
+3. Pôvodné EDEN/gardenOS podklady obnovte z 06_SOURCE_BACKUP/EDEN_SOURCE_FILES.
+4. 07_LINKS obsahuje umiestnenia externých projektov.
+5. backup_external_sources.sh vytvorí čerstvú lokálnu kópiu vybraných repozitárov.
+6. Pred použitím v EDEN zaznamenajte presný commit a licenciu.
+7. Poradie obnovy: overené služby gardenOS → všeobecné kontrakty edenOS Core → Nandi P0 → špecializované línie/adaptéry.
+8. Základná bezpečná prevádzka Core nesmie vyžadovať cloud, AI ani Server.
+9. Migrácie a HW správanie overujte na skutočnom cieľovom hardvéri.

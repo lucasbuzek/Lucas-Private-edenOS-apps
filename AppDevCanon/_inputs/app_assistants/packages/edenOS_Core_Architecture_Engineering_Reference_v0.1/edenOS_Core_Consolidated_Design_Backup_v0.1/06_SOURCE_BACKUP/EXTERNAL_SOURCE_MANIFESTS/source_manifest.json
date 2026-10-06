@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "date": "2026-09-22",
+  "repositories": [
+    {
+      "name": "OpenMower",
+      "repo": "https://github.com/Gigabyte00/openmower.git",
+      "role": "Nandi Ground reference"
+    },
+    {
+      "name": "Acorn",
+      "repo": "https://github.com/Twisted-Fields/acorn-precision-farming-rover.git",
+      "role": "agricultural workhorse reference"
+    },
+    {
+      "name": "AgOpenGPS",
+      "repo": "https://github.com/AgOpenGPS-Official/AgOpenGPS.git",
+      "role": "precision agriculture"
+    },
+    {
+      "name": "BlueOS",
+      "repo": "https://github.com/bluerobotics/BlueOS.git",
+      "role": "marine/onboard platform"
+    },
+    {
+      "name": "Open-RMF",
+      "repo": "https://github.com/open-rmf/rmf.git",
+      "role": "fleet architecture reference"
+    }
+  ]
+}

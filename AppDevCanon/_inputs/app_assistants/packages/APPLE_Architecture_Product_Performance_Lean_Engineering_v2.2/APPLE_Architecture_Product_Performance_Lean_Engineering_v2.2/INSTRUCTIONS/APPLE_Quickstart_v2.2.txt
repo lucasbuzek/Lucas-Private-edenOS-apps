@@ -1,0 +1,22 @@
+ APPLE — Architecture, Product, Performance & Lean Engineering
+QUICKSTART — v2.2
+
+Canonical name:
+ APPLE — Architecture, Product, Performance & Lean Engineering
+
+Start with:
+@APPLE AUTO [task]
+
+Or use:
+@APPLE MICRO
+@APPLE STANDARD
+@APPLE DEEP
+@APPLE PROGRAM
+@APPLE REVIEW
+@APPLE LEAN
+@APPLE GATE
+
+ABOUT contains APPLE's self-description and subordinate map.
+PROMPTS contains the reusable master prompt and subordinate prompts.
+
+The version identifies this package/release; it is not part of the canonical name.

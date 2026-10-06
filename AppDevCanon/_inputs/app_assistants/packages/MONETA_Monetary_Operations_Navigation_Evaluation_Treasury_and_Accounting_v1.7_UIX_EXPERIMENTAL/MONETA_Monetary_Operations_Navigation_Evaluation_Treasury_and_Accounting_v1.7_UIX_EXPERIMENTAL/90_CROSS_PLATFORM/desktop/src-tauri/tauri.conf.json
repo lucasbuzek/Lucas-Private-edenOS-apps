@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MONETA",
+  "version": "1.6.0",
+  "identifier": "org.eden.moneta",
+  "build": {
+    "frontendDist": "../../web"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "MONETA",
+        "width": 1180,
+        "height": 780,
+        "minWidth": 760,
+        "minHeight": 560
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+TRACEABILITY — v1.1
+Source baseline: attached MONETA_THEMIS_Helper_Ecosystem_v1.0 package.
+User-approved change: Finance SCRIBE renamed NUNTIUS.
+User correction: LEDGER is not treated as canonical spreadsheet identity.
+Architecture instruction: MONETA parent corporation; existing specialists as companies; subordinate departments/offices/functions.
+Research basis: COSO internal control; IFRS 10 consolidation; current CFO finance-transformation guidance.
+Naming/package basis: user's established Universal Project Naming & Packaging Standard / namingrules.
