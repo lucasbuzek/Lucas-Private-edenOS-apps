@@ -1,0 +1,16 @@
+{
+  "name": "cresus-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "bundle": "node scripts/bundle-prompt.mjs",
+    "db:init": "wrangler d1 execute cresus-agent --remote --file=schema.sql",
+    "deploy": "wrangler deploy",
+    "build": "node scripts/bundle-prompt.mjs canon"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0e0d0b" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7f3ea" media="(prefers-color-scheme: light)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="CRESUS">
+  <title>CRESUS</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="seal" viewBox="0 0 32 32">
+      <circle cx="16" cy="16" r="15" fill="currentColor"/>
+      <circle cx="16" cy="16" r="12.2" fill="none" stroke="var(--seal-ink)" stroke-width="1.1" opacity=".55"/>
+      <path d="M9.2 20.4h13.6l1.2-8.2-4.1 3.3L16 10l-3.9 5.5-4.1-3.3z" fill="var(--seal-ink)"/>
+      <rect x="9.2" y="21.6" width="13.6" height="1.8" rx=".5" fill="var(--seal-ink)"/>
+    </symbol>
+  </svg>
+
+  <div class="app">
+    <aside id="drawer" class="drawer" aria-label="Chats and account">
+      <div class="drawer-head">
+        <div class="brand"><svg class="seal" aria-hidden="true"><use href="#seal"/></svg><span>CRESUS</span></div>
+        <button id="closeDrawer" class="icon-btn only-mobile" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <button id="newBtnSide" class="new-chat">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        New inquiry
+      </button>
+      <div class="section-label">Inquiries</div>
+      <nav id="convList" class="conv-list" aria-label="Previous chats"></nav>
+      <div class="account">
+        <div id="whoami" class="whoami"></div>
+        <div id="quota" class="quota"></div>
+        <div class="account-actions">
+          <button id="adminBtn" class="text-btn" hidden>Manage access</button>
+          <button id="exportBtn" class="text-btn">Export my chats</button>
+          <a class="text-btn" href="/cdn-cgi/access/logout">Sign out</a>
+        </div>
+      </div>
+    </aside>
+    <div id="scrim" class="scrim" hidden></div>
+
+    <div class="main">
+      <header class="bar">
+        <button id="menuBtn" class="icon-btn only-mobile" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+        <div class="brand only-mobile"><svg class="seal" aria-hidden="true"><use href="#seal"/></svg><span>CRESUS</span></div>
+        <div id="convTitle" class="conv-title only-desktop"></div>
+        <div class="bar-right">
+          <span id="netState" class="net" role="status" hidden>Offline</span>
+          <button id="newBtn" class="icon-btn only-mobile" aria-label="New inquiry">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <main id="chat" class="chat">
+        <section id="empty" class="empty">
+          <svg class="seal seal-lg" aria-hidden="true"><use href="#seal"/></svg>
+          <h1 class="wordmark">CRESUS</h1>
+          <p class="tagline">Research · organize · calculate · explain. <span>You decide.</span></p>
+          <div id="modeCard" class="mode-card"></div>
+          <div id="starters" class="starters"></div>
+        </section>
+        <div id="messages" class="messages" aria-live="polite"></div>
+      </main>
+
+      <div class="dock">
+        <div id="modes" class="modes" role="group" aria-label="Depth"></div>
+        <form id="composer" class="composer">
+          <label for="input" class="sr-only">Ask CRESUS</label>
+          <textarea id="input" rows="1" placeholder="Ask CRESUS…" autocomplete="off" enterkeyhint="send"></textarea>
+          <button id="sendBtn" class="send" type="submit" aria-label="Send">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </button>
+        </form>
+        <p class="fineprint">CRESUS researches and explains. It is not a broker or adviser.</p>
+      </div>
+    </div>
+  </div>
+
+  <dialog id="adminDlg" class="sheet" aria-labelledby="adminTitle">
+    <div class="sheet-head">
+      <h2 id="adminTitle">Access</h2>
+      <form method="dialog"><button class="icon-btn" aria-label="Close">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button></form>
+    </div>
+    <div class="limits">
+      <label>Seats <input id="maxUsers" type="number" inputmode="numeric" min="1" max="50"></label>
+      <label>Messages per person per day <input id="dailyLimit" type="number" inputmode="numeric" min="1" max="1000"></label>
+      <button id="saveLimits" class="btn">Save limits</button>
+    </div>
+    <p id="seatInfo" class="muted"></p>
+    <ul id="userList" class="user-list"></ul>
+    <form id="addUser" class="add-user">
+      <label for="newEmail" class="sr-only">Email</label>
+      <input id="newEmail" type="email" placeholder="name@example.com" required autocomplete="off">
+      <select id="newRole" aria-label="Role"><option value="member">Member</option><option value="admin">Admin</option></select>
+      <button class="btn">Add</button>
+    </form>
+    <p id="syncNote" class="muted small"></p>
+    <p id="adminMsg" class="notice" role="status"></p>
+  </dialog>
+
+  <dialog id="confirmDlg" class="sheet confirm" aria-labelledby="confirmTitle">
+    <h2 id="confirmTitle"></h2>
+    <p id="confirmBody" class="muted"></p>
+    <div class="confirm-actions">
+      <button id="confirmNo" class="btn ghost">Cancel</button>
+      <button id="confirmYes" class="btn danger">Confirm</button>
+    </div>
+  </dialog>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
