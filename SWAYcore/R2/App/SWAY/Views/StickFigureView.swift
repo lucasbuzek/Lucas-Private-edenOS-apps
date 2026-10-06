@@ -100,14 +100,29 @@ enum SwayCoachPoseEngine {
         case "cha-cha":
             let q=beatIndex%4; let shift=[-0.05,0.0,0.05,0.0][q]; p.hip.x += shift+0.025*side; p.leftFoot.x += shift*1.4; p.rightFoot.x += shift*1.4; p.leftElbow.y -= 0.04*pulse; p.rightElbow.y -= 0.04*pulse
         case "squat-pulse":
-            let drop=0.10*pulse; p.hip.y += drop; p.neck.y += drop*0.55; p.leftKnee.x -= 0.055*pulse; p.rightKnee.x += 0.055*pulse; p.leftHand.y=0.50; p.rightHand.y=0.50
+            // Production depth: hips descend below the former proof pose while the
+            // torso stays lifted and knees visibly track over widened feet.
+            let drop=0.155*pulse; p.hip.y += drop; p.neck.y += drop*0.68
+            p.leftKnee.x -= 0.090*pulse; p.rightKnee.x += 0.090*pulse
+            p.leftFoot.x -= 0.025*pulse; p.rightFoot.x += 0.025*pulse
+            p.leftHand.y=0.48; p.rightHand.y=0.48
         case "side-lunge":
-            let dir=side>=0 ? 1.0 : -1.0; let amt=0.11*abs(side); p.hip.x += dir*amt*0.45
-            if dir>0 { p.rightFoot.x += amt; p.rightKnee.x += amt*0.45 } else { p.leftFoot.x -= amt; p.leftKnee.x -= amt*0.45 }
+            // Separate travel from level change so the loaded side reads as a lunge,
+            // rather than the shallow lateral tap used by the proof candidate.
+            let dir=side>=0 ? 1.0 : -1.0; let amt=0.18*abs(side); let sink=0.075*abs(side)
+            p.hip.x += dir*amt*0.48; p.hip.y += sink; p.neck.x += dir*amt*0.20; p.neck.y += sink*0.55
+            if dir>0 { p.rightFoot.x += amt; p.rightKnee.x += amt*0.30; p.leftKnee.x += amt*0.10 }
+            else { p.leftFoot.x -= amt; p.leftKnee.x -= amt*0.30; p.rightKnee.x -= amt*0.10 }
         case "cross-step":
             let cross=0.10*side; p.hip.x += cross*0.35; p.leftFoot.x += max(0,cross); p.rightFoot.x += min(0,cross); p.leftHand.y -= 0.10*pulse; p.rightHand.y -= 0.10*pulse
         case "body-roll":
-            let wave=sin(beatPosition * .pi); p.hip.x += 0.025*wave; p.neck.x -= 0.035*wave; p.hip.y += 0.025*pulse; p.leftHand.y=0.50; p.rightHand.y=0.50
+            // Counter-moving upper and lower landmarks create a readable travelling
+            // torso wave in both the reference projection and the articulated bake.
+            let wave=sin(beatPosition * .pi); let fold=abs(wave)
+            p.neck.x -= 0.060*wave; p.neck.y -= 0.045*fold
+            p.hip.x += 0.050*wave; p.hip.y += 0.060*pulse
+            p.leftShoulder.y -= 0.025*fold; p.rightShoulder.y -= 0.025*fold
+            p.leftHand.y=0.48; p.rightHand.y=0.48
         case "jumping-jack":
             let open=pulse; p.leftFoot.x -= 0.12*open; p.rightFoot.x += 0.12*open; p.leftHand=CGPoint(x:0.31-0.08*open,y:0.58-0.43*open); p.rightHand=CGPoint(x:0.69+0.08*open,y:0.58-0.43*open)
         case "skater":
@@ -115,7 +130,7 @@ enum SwayCoachPoseEngine {
             if dir<0 { p.rightFoot.x=0.48; p.rightFoot.y-=0.04*pulse } else { p.leftFoot.x=0.52; p.leftFoot.y-=0.04*pulse }
         case "pivot-turn":
             let turn=sin(beatPosition * .pi/2); p.leftShoulder.x += 0.055*turn; p.rightShoulder.x -= 0.055*turn; p.leftFoot.x += 0.045*side; p.rightFoot.x += 0.045*side; p.hip.x += 0.02*side
-            p.bodyYaw = turn * .pi / 3
+            p.bodyYaw = turn * .pi * 5 / 12
         case "kick-ball-change":
             let q=beatIndex%4; let kick=(q==0 || q==2) ? 0.14*pulse : 0.04*pulse
             if q<2 { p.leftFoot.y -= kick; p.leftFoot.x -= 0.04*pulse } else { p.rightFoot.y -= kick; p.rightFoot.x += 0.04*pulse }; p.hip.x += 0.035*side

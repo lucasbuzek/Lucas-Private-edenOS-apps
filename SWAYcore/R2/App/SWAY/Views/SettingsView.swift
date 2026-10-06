@@ -317,7 +317,7 @@ struct SwayAvatarPreview:View {
     var paused:Bool=true
     var smile:Double=0; var brow:Double=0
     var body: some View {
-        SWAYAvatarStageView(role:.user,moveID:moveID,elapsed:musicalTime,bpm:100,paused:paused,mirrored:false,cutout:AnyView(SWAYSkeletal2DAvatarView(role:.user,moveID:moveID,musicalTime:musicalTime,bpm:100,paused:paused,mirrored:false,profile:character)))
+        SWAYAvatarStageView(role:.user,moveID:moveID,elapsed:musicalTime,bpm:100,paused:paused,mirrored:false,cutout:AnyView(SWAYSkeletal2DAvatarView(role:.user,moveID:moveID,musicalTime:musicalTime,bpm:100,paused:paused,mirrored:false,profile:character)),profile:character)
             .accessibilityLabel("Custom SWAY dancer preview")
     }
 }

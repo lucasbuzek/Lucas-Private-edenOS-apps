@@ -64,6 +64,16 @@ if native:
         if parent not in objs:objs.append(parent)
         parent=parent.parent
 base = A.get("asset-base", cid.capitalize() + "Reality")
+modules = load(A["modules"]) if A.get("modules") else None
+if modules:
+    declared = {n for choices in modules["slots"].values() for value in choices.values()
+                for n in (value if isinstance(value, list) else [value])}
+    present = {o.name for o in objs if o.type == "MESH"}
+    missing = sorted(declared - present)
+    if missing: fail("module contract meshes absent from export: " + ", ".join(missing))
+    for root_name in modules.get("transformParameters", {}).values():
+        root = bpy.data.objects.get(root_name) or fail("module transform root absent: " + root_name)
+        if root not in objs: objs.append(root)
 
 def select_export(path, animation):
     bpy.ops.object.select_all(action="DESELECT")
@@ -74,7 +84,7 @@ def select_export(path, animation):
     world_options={'convert_world_material':False} if 'convert_world_material' in properties else {}
     filtered(bpy.ops.wm.usd_export, filepath=path, selected_objects_only=True, export_animation=animation, export_armatures=True,
              export_meshes=True, export_materials=True, overwrite_textures=True, relative_paths=True,
-             export_lights=False, export_cameras=False, **texture_options, **world_options,
+             export_lights=False, export_cameras=False, visible_objects_only=False, **texture_options, **world_options,
              generate_preview_surface=True, convert_orientation=True, export_global_up_selection="Y", export_global_forward_selection="NEGATIVE_Z")
 
 arm.animation_data_create(); arm.animation_data.action = None
@@ -95,6 +105,8 @@ man = {"characterID": cid, "displayName": A.get("display-name", cid), "version":
        "runtimeApproved": False, "visualQuality": arm.get("sway_visual_quality", "UNREVIEWED"),
        "motionSource": arm.get("sway_motion_source", "unknown"), "sourceLedgerId": arm.get("sway_source_ledger_id", "none"),
        "blenderVersion": bpy.app.version_string, "animations": res}
+if modules:
+    man["moduleContract"] = modules
 if native_adapter:
     man['nativeHelpersPreserved']=True
     man['exportedSkeleton']='SWAYRuntimeSkeleton'

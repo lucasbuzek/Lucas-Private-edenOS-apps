@@ -7,8 +7,8 @@ import coach_pose_port as cp
 
 class PivotHeading(unittest.TestCase):
     def test_pivot_turns_both_sides_and_wraps_at_authored_cycle(self):
-        self.assertAlmostEqual(cp.heading('pivot-turn', .5, 120), math.pi / 3)
-        self.assertAlmostEqual(cp.heading('pivot-turn', 1.5, 120), -math.pi / 3)
+        self.assertAlmostEqual(cp.heading('pivot-turn', .5, 120), math.pi * 5 / 12)
+        self.assertAlmostEqual(cp.heading('pivot-turn', 1.5, 120), -math.pi * 5 / 12)
         self.assertAlmostEqual(cp.heading('pivot-turn', 2, 120), 0)
 
     def test_heading_uses_the_same_tempo_and_floor_as_pose(self):
@@ -25,6 +25,6 @@ class PivotHeading(unittest.TestCase):
         previous = cp.heading('pivot-turn', 0, 120)
         for frame in range(1, 49):
             current = cp.heading('pivot-turn', frame / 24, 120)
-            self.assertLess(abs(current - previous), math.radians(9))
+            self.assertLess(abs(current - previous), math.radians(11))
             self.assertEqual(current, cp.heading('pivot-turn', frame / 24, 120))
             previous = current

@@ -4,7 +4,7 @@ this port lets the asset factory sample that truth without a Swift toolchain. DR
 sha256 of the Swift file, otherwise `assert_in_sync` fails and clip baking refuses to run until the port is re-verified."""
 import math, hashlib, os
 
-PINNED_SOURCE_SHA256 = "d1ae4f6a38a7657f7410bd65dcb8542e437f35cab3ecc2ee05c2cc689f3c0d72"
+PINNED_SOURCE_SHA256 = "42bc99cebd9bf6ada10f95e42ff07fbe4a1b51f4f856c80feced4a8a0806c3bf"
 AUTHORED = ["march","step-touch","double-step","side-tap","hip-sway","heel-dig","knee","grapevine","arm-reach","v-step","box-step",
             "mambo","cha-cha","squat-pulse","side-lunge","cross-step","body-roll","jumping-jack","skater","pivot-turn"]
 JOINTS = ["head","neck","leftShoulder","rightShoulder","leftElbow","rightElbow","leftHand","rightHand","hip","leftKnee","rightKnee","leftFoot","rightFoot"]
@@ -81,18 +81,24 @@ def pose(move_id, t, bpm):
         q = bi % 4; shift = [-0.05,0.0,0.05,0.0][q]; p["hip"][X] += shift+0.025*side
         p["leftFoot"][X] += shift*1.4; p["rightFoot"][X] += shift*1.4; p["leftElbow"][Y] -= 0.04*pulse; p["rightElbow"][Y] -= 0.04*pulse
     elif move_id == "squat-pulse":
-        drop = 0.10*pulse; p["hip"][Y] += drop; p["neck"][Y] += drop*0.55; p["leftKnee"][X] -= 0.055*pulse; p["rightKnee"][X] += 0.055*pulse
-        p["leftHand"][Y] = 0.50; p["rightHand"][Y] = 0.50
+        drop = 0.155*pulse; p["hip"][Y] += drop; p["neck"][Y] += drop*0.68
+        p["leftKnee"][X] -= 0.090*pulse; p["rightKnee"][X] += 0.090*pulse
+        p["leftFoot"][X] -= 0.025*pulse; p["rightFoot"][X] += 0.025*pulse
+        p["leftHand"][Y] = 0.48; p["rightHand"][Y] = 0.48
     elif move_id == "side-lunge":
-        d = 1.0 if side >= 0 else -1.0; amt = 0.11*abs(side); p["hip"][X] += d*amt*0.45
-        if d > 0: p["rightFoot"][X] += amt; p["rightKnee"][X] += amt*0.45
-        else: p["leftFoot"][X] -= amt; p["leftKnee"][X] -= amt*0.45
+        d = 1.0 if side >= 0 else -1.0; amt = 0.18*abs(side); sink = 0.075*abs(side)
+        p["hip"][X] += d*amt*0.48; p["hip"][Y] += sink; p["neck"][X] += d*amt*0.20; p["neck"][Y] += sink*0.55
+        if d > 0: p["rightFoot"][X] += amt; p["rightKnee"][X] += amt*0.30; p["leftKnee"][X] += amt*0.10
+        else: p["leftFoot"][X] -= amt; p["leftKnee"][X] -= amt*0.30; p["rightKnee"][X] -= amt*0.10
     elif move_id == "cross-step":
         c = 0.10*side; p["hip"][X] += c*0.35; p["leftFoot"][X] += max(0,c); p["rightFoot"][X] += min(0,c)
         p["leftHand"][Y] -= 0.10*pulse; p["rightHand"][Y] -= 0.10*pulse
     elif move_id == "body-roll":
-        wave = math.sin(bp * math.pi); p["hip"][X] += 0.025*wave; p["neck"][X] -= 0.035*wave; p["hip"][Y] += 0.025*pulse
-        p["leftHand"][Y] = 0.50; p["rightHand"][Y] = 0.50
+        wave = math.sin(bp * math.pi); fold = abs(wave)
+        p["neck"][X] -= 0.060*wave; p["neck"][Y] -= 0.045*fold
+        p["hip"][X] += 0.050*wave; p["hip"][Y] += 0.060*pulse
+        p["leftShoulder"][Y] -= 0.025*fold; p["rightShoulder"][Y] -= 0.025*fold
+        p["leftHand"][Y] = 0.48; p["rightHand"][Y] = 0.48
     elif move_id == "jumping-jack":
         o = pulse; p["leftFoot"][X] -= 0.12*o; p["rightFoot"][X] += 0.12*o
         p["leftHand"] = [0.31-0.08*o, 0.58-0.43*o]; p["rightHand"] = [0.69+0.08*o, 0.58-0.43*o]
@@ -115,4 +121,4 @@ def heading(move_id, t, bpm):
     if move_id != 'pivot-turn':
         return 0.0
     beat_position = max(0.0, t) / (60.0 / max(20.0, bpm))
-    return math.sin(beat_position * math.pi / 2) * math.pi / 3
+    return math.sin(beat_position * math.pi / 2) * math.pi * 5 / 12
