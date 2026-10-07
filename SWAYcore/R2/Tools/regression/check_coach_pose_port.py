@@ -11,7 +11,7 @@ import coach_pose_port as cp
 path = root / 'App/SWAY/Views/StickFigureView.swift'
 source = path.read_text()
 pose = source[source.index('struct SwayCoachPose {'):source.index('/// Display-refresh-driven COACH renderer.')]
-with tempfile.TemporaryDirectory(prefix='sway-pose-port-', dir='/private/tmp') as directory:
+with tempfile.TemporaryDirectory(prefix='sway-pose-port-') as directory:
     temporary = pathlib.Path(directory)
     (temporary / 'Pose.swift').write_text('import Foundation\n' + pose)
     moves = json.dumps(cp.AUTHORED)

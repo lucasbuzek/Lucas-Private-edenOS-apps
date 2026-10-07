@@ -5,7 +5,7 @@ Run from R2 with blender --background --factory-startup --python THIS_FILE.
 import bpy,pathlib,runpy,sys,tempfile
 from mathutils import Vector
 root=pathlib.Path.cwd()
-with tempfile.TemporaryDirectory(prefix='sway-hidden-skin-',dir='/private/tmp') as tmp:
+with tempfile.TemporaryDirectory(prefix='sway-hidden-skin-') as tmp:
  tmp=pathlib.Path(tmp);bpy.ops.wm.read_factory_settings(use_empty=True)
  bpy.ops.object.armature_add(enter_editmode=True);arm=bpy.context.object;arm.name='NativeFixture'
  for b in list(arm.data.edit_bones):arm.data.edit_bones.remove(b)

@@ -27,8 +27,11 @@ Pin:
 - CANDIDATE=Build 153 lineage/remediation successor
 - COACHES=Lucia,Nandi,Thabo,Zuri,Kyle
 - TARGETS=iPhone+iPad portrait+iPad landscape
-- PROHIBITED FINAL FALLBACKS=primitive mannequin, raw Vision skeleton, static PNG/cutout, 2.5D placeholder
+- PROHIBITED FINAL FALLBACKS=primitive mannequin, raw Vision skeleton, flattened concept-sheet cutout
 - EVIDENCE=GENERATED != IMPLEMENTED != BUILT != TESTED != VERIFIED != RELEASED; UNKNOWN != PASS
+
+### Accepted character direction — 2026-10-07
+Lucas's 2026-10-07 00:33 decision supersedes older character-acceptance text: a production-quality 2.5D avatar satisfies the Alpha. Full 3D (RealityKit/Blender and the `YD_*` modular meshes) is future SWAYcore engine work and must remain dormant—not routed by the Alpha app. The Alpha still requires a runtime-consumed, separated body-part/User Avatar component library (P1B); a flattened concept-sheet cutout is not acceptable.
 
 ## Governance
 Use EITRIMB as thin Master Builder governor.

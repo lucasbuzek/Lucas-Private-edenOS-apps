@@ -202,27 +202,33 @@ struct SwayConfigurationGuideView: View {
 struct SwayAvatarCreatorView: View {
     @EnvironmentObject var store:SwayStore
     @Environment(\.dismiss) private var dismiss
-    @State private var category: Category = .skin
+    @State private var category: Category = .style
     @State private var previewMove = "step-touch"
     @State private var previewStart = Date()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     enum Category:String,CaseIterable,Identifiable {
-        case body="Body", skin="Skin", hair="Hair Style", hairColor="Hair Colour", face="Face", outfit="Outfit", footwear="Shoes", accessory="Accessory"
+        case style="Style", hair="Hair", face="Face", outfit="Outfit", body="Body", shoes="Shoes"
         var id:String { rawValue }
         var symbol:String {
-            switch self { case .body:return "figure.stand"; case .skin:return "face.smiling"; case .hair:return "person.crop.circle"; case .hairColor:return "paintpalette.fill"; case .face:return "face.smiling.inverse"; case .outfit:return "tshirt.fill"; case .footwear:return "shoe.fill"; case .accessory:return "sparkles" }
+            switch self { case .style:return "sparkles"; case .hair:return "person.crop.circle"; case .face:return "face.smiling"; case .outfit:return "tshirt.fill"; case .body:return "figure.stand"; case .shoes:return "shoe.fill" }
         }
     }
 
     private let bodyNames=["Neutral","Feminine","Masculine"]
+    private let bodyStyles:[SwayBodyStyle]=[.neutral,.female,.male]
     private let skinNames=["Light","Warm","Medium","Deep","Dark"]
     private let hairNames=["Short","Long","Braids","Afro","Bun"]
     private let faceNames=["Soft","Oval","Angular"]
+    private let threeStyleNames=["Bright","Classic","Wide"]
+    private let browNames=["Soft","Arched","Bold"]
+    private let noseNames=["Button","Straight","Broad"]
+    private let mouthNames=["Smile","Soft","Grin"]
+    private let facialHairNames=["None","Stubble","Moustache","Beard"]
     private let hairColorNames=["Espresso","Brown","Black","Auburn","Copper","Blonde"]
     private let outfitNames=["Studio","Power","Classic","Bright","Sport"]
     private let footwearNames=["Trainer","High-top","Dance","Barefoot"]
-    private let accessoryNames=["None","Glasses","Headband","Wristband"]
+    private let accessoryNames=["None","Cap","Headband","Wristbands","Gloves","Glasses"]
 
     var body:some View {
         NavigationStack {
@@ -232,61 +238,38 @@ struct SwayAvatarCreatorView: View {
                         SwayTheme.stageGradient
                         TimelineView(.animation(minimumInterval:1.0/30.0,paused:reduceMotion)) { timeline in
                             SwayAvatarPreview(character:store.character,moveID:previewMove,musicalTime:reduceMotion ? 0 : timeline.date.timeIntervalSince(previewStart),paused:reduceMotion)
-                        }
-                            .frame(maxWidth:.infinity,maxHeight:.infinity)
-                            .padding(.horizontal,12).padding(.vertical,4)
-                        Text("YOUR DANCER").font(.caption.bold()).tracking(1.4)
-                            .foregroundStyle(.white.opacity(0.76)).padding(16)
+                        }.frame(maxWidth:.infinity,maxHeight:.infinity).padding(.horizontal,12).padding(.vertical,4)
+                        Text("YOUR DANCER").font(.caption.bold()).tracking(1.4).foregroundStyle(.white.opacity(0.76)).padding(16)
                     }
                     .frame(maxWidth:.infinity,minHeight:300,idealHeight:360,maxHeight:420)
                     .clipShape(RoundedRectangle(cornerRadius:28))
                     .overlay(RoundedRectangle(cornerRadius:28).stroke(Color.white.opacity(0.10)))
                     .padding(.horizontal,16).padding(.top,8)
-    
+
                     VStack(spacing:14) {
                         ScrollView(.horizontal,showsIndicators:false) {
-                        HStack(spacing:8) {
-                            ForEach(Category.allCases) { item in
-                                Button {
-                                    withAnimation(.easeInOut(duration:0.16)) { category=item }
-                                } label: {
-                                    Label(item.rawValue,systemImage:item.symbol)
-                                        .font(.caption.bold())
-                                        .padding(.horizontal,12)
-                                        .frame(minHeight:44)
-                                        .background(category == item ? SwayTheme.accent:SwayTheme.surfaceStrong,in:Capsule())
-                                }.buttonStyle(.plain)
+                            HStack(spacing:8) {
+                                ForEach(Category.allCases) { item in
+                                    Button { withAnimation(.easeInOut(duration:0.16)) { category=item } } label: {
+                                        Label(item.rawValue,systemImage:item.symbol).font(.caption.bold()).padding(.horizontal,12).frame(minHeight:44)
+                                            .background(category == item ? SwayTheme.accent:SwayTheme.surfaceStrong,in:Capsule())
+                                    }.buttonStyle(.plain)
+                                }
                             }
-                        }
                         }
                         VStack(alignment:.leading,spacing:8) {
                             Text("PREVIEW MOVEMENT").font(.caption.bold()).foregroundStyle(.secondary)
                             HStack(spacing:8) {
                                 ForEach([("Idle","idle"),("March","march"),("Groove","step-touch")],id:\.1) { item in
-                                    Button(item.0) { previewMove=item.1; previewStart=Date() }
-                                        .buttonStyle(.bordered)
+                                    Button(item.0) { previewMove=item.1; previewStart=Date() }.buttonStyle(.bordered)
                                         .tint(previewMove == item.1 ? SwayTheme.accent:SwayTheme.cyan)
                                 }
                             }
                         }
-                        Group {
-                            switch category {
-                            case .body: choiceRow(bodyNames,selection:SwayBodyStyle.allCases.firstIndex(of:store.character.bodyStyle) ?? 0){ store.character.bodyStyle=SwayBodyStyle.allCases[$0] }
-                            case .skin: choiceRow(skinNames,selection:store.character.skinTone){store.character.skinTone=$0}
-                            case .hair: choiceRow(hairNames,selection:store.character.hairStyle){store.character.hairStyle=$0}
-                            case .hairColor: choiceRow(hairColorNames,selection:store.character.hairColor){store.character.hairColor=$0}
-                            case .face: choiceRow(faceNames,selection:store.character.faceShape){store.character.faceShape=$0}
-                            case .outfit: choiceRow(outfitNames,selection:store.character.outfitStyle){store.character.outfitStyle=$0}
-                            case .footwear: choiceRow(footwearNames,selection:store.character.footwearStyle){store.character.footwearStyle=$0}
-                            case .accessory: choiceRow(accessoryNames,selection:store.character.accessoryStyle){store.character.accessoryStyle=$0}
-                            }
-                        }
-                        .frame(minHeight:54)
-                        Text("Make your dancer yours. Changes are saved to your profile.")
+                        optionControls
+                        Text("Every choice is a separated component in every dance pose. Changes save to your profile.")
                             .font(.caption2).foregroundStyle(.secondary)
-                    }
-                    .padding(16)
-                    .background(SwayTheme.surface.opacity(0.96))
+                    }.padding(16).background(SwayTheme.surface.opacity(0.96))
                 }
             }
             .background(SwayTheme.background.ignoresSafeArea())
@@ -295,13 +278,49 @@ struct SwayAvatarCreatorView: View {
         }.preferredColorScheme(.dark)
     }
 
+    @ViewBuilder private var optionControls: some View {
+        VStack(alignment:.leading,spacing:10) {
+            switch category {
+            case .style:
+                labeled("ACCESSORY") { choiceRow(accessoryNames,selection:store.character.accessoryStyle){store.character.accessoryStyle=$0} }
+                labeled("ACCENT") { choiceRow(outfitNames,selection:store.character.appearancePreset){store.character.appearancePreset=$0} }
+            case .hair:
+                labeled("HAIRSTYLE") { choiceRow(hairNames,selection:store.character.hairStyle){store.character.hairStyle=$0} }
+                labeled("HAIR COLOUR") { choiceRow(hairColorNames,selection:store.character.hairColor){store.character.hairColor=$0} }
+                labeled("FACIAL HAIR") { choiceRow(facialHairNames,selection:store.character.facialHairStyle){store.character.facialHairStyle=$0} }
+                scaleSlider("Hair size",value:$store.character.hairScale,range:0.9...1.12)
+            case .face:
+                labeled("FACE SHAPE") { choiceRow(faceNames,selection:store.character.faceShape){store.character.faceShape=$0} }
+                labeled("EYES") { choiceRow(threeStyleNames,selection:store.character.eyeStyle){store.character.eyeStyle=$0} }
+                labeled("BROWS") { choiceRow(browNames,selection:store.character.browStyle){store.character.browStyle=$0} }
+                labeled("NOSE") { choiceRow(noseNames,selection:store.character.noseStyle){store.character.noseStyle=$0} }
+                labeled("MOUTH") { choiceRow(mouthNames,selection:store.character.mouthStyle){store.character.mouthStyle=$0} }
+                scaleSlider("Head size",value:$store.character.headScale,range:0.92...1.1)
+            case .outfit:
+                choiceRow(outfitNames,selection:store.character.outfitStyle){store.character.outfitStyle=$0}
+            case .body:
+                labeled("BODY TYPE") { choiceRow(bodyNames,selection:bodyStyles.firstIndex(of:store.character.bodyStyle) ?? 0){ store.character.bodyStyle=bodyStyles[$0] } }
+                labeled("SKIN TONE") { choiceRow(skinNames,selection:store.character.skinTone){store.character.skinTone=$0} }
+                scaleSlider("Body size",value:$store.character.bodyScale,range:0.92...1.08)
+                scaleSlider("Limb proportion",value:$store.character.limbScale,range:0.94...1.08)
+            case .shoes:
+                choiceRow(footwearNames,selection:store.character.footwearStyle){store.character.footwearStyle=$0}
+            }
+        }.frame(minHeight:54)
+    }
+
+    private func labeled<Content:View>(_ title:String,@ViewBuilder content:()->Content)->some View {
+        VStack(alignment:.leading,spacing:5) { Text(title).font(.caption2.bold()).foregroundStyle(.secondary); content() }
+    }
+    private func scaleSlider(_ title:String,value:Binding<Double>,range:ClosedRange<Double>)->some View {
+        VStack(alignment:.leading) { Text(title).font(.caption2.bold()).foregroundStyle(.secondary); Slider(value:value,in:range).onChange(of:value.wrappedValue){_,_ in store.save()} }
+    }
     private func choiceRow(_ labels:[String],selection:Int,onSelect:@escaping(Int)->Void)->some View {
         ScrollView(.horizontal,showsIndicators:false) {
             HStack(spacing:10) {
                 ForEach(labels.indices,id:\.self) { i in
                     Button { onSelect(i); store.save() } label: {
-                        Text(labels[i]).font(.subheadline.bold()).padding(.horizontal,16)
-                            .frame(minHeight:44)
+                        Text(labels[i]).font(.subheadline.bold()).padding(.horizontal,16).frame(minHeight:44)
                             .background(selection==i ? SwayTheme.accent:SwayTheme.surfaceStrong,in:Capsule())
                     }.buttonStyle(.plain)
                 }

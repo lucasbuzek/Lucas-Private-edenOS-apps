@@ -1,5 +1,5 @@
 # SWAYcore — Active Handoff
-Updated: 2026-10-03
+Updated: 2026-10-07
 
 PROJECT: SWAYcore
 CURRENT PRODUCT: SWAYcore Dance & Fitness
@@ -20,9 +20,9 @@ AUTHORITATIVE BASELINE / LKG
 CURRENT CANDIDATE STATUS
 Recovered analysis demonstrates that the candidate can reach build/install/launch gates but remains materially short of product acceptance.
 Known current architecture gaps:
-- production 3D coaches not demonstrated;
+- production-quality 2.5D character acceptance remains to be demonstrated by human visual review;
 - all-five-coach runtime character registry not demonstrated complete;
-- current Blender path remains proof-quality/primitive rather than final character art;
+- the Blender/RealityKit `YD_*` path is a dormant future engine provider and is not routed in the Alpha app;
 - YOUR DANCER production customization not demonstrated visually functional;
 - final UI/UIX authority and rendered comparison gate incomplete;
 - runtime/integration test coverage inadequate;
@@ -41,7 +41,8 @@ PROTECTED PRODUCT INVARIANTS
 - Raw Vision skeleton is diagnostics only.
 - Five coaches: Lucia, Nandi, Thabo, Zuri, Kyle.
 - YOUR DANCER is real production functionality.
-- No PNG/cutout/primitive mannequin/2.5D fallback may satisfy final character acceptance.
+- Production-quality 2.5D may satisfy Alpha character acceptance. Primitive mannequins, raw skeletons and flattened concept-sheet cutouts may not.
+- YOUR DANCER must consume separated body-part/component layers at runtime (P1B), not a flattened concept sheet.
 - Offline/local-first core.
 - iPhone + iPad portrait/landscape.
 
@@ -66,8 +67,14 @@ LKG=Build 143 graphical/runtime + Build 147 tracking; Build 148 rejected
 CANDIDATE=Build 153 lineage/remediation successor
 COACHES=Lucia,Nandi,Thabo,Zuri,Kyle
 TARGETS=iPhone+iPad portrait+iPad landscape
-PROHIBITED_FINAL_FALLBACKS=primitive mannequin,raw skeleton,static PNG/cutout,2.5D placeholder
+PROHIBITED_FINAL_FALLBACKS=primitive mannequin,raw skeleton,flattened concept-sheet cutout
 EVIDENCE=GENERATED!=IMPLEMENTED!=BUILT!=TESTED!=VERIFIED!=RELEASED; UNKNOWN!=PASS
+
+ACCEPTED CHARACTER DECISION (Lucas, 2026-10-07 00:33)
+- A production-quality 2.5D avatar satisfies character acceptance for this Alpha.
+- Full 3D is the next update / future SWAYcore engine work.
+- Keep the RealityKit/Blender `YD_*` modular-mesh contract and authoring script dormant and tested, but do not route them in the Alpha app.
+- P1B remains binding: runtime-consumed separated body parts/User Avatar components are required; flattened concept-sheet cutouts are prohibited.
 
 EXACT NEXT EXECUTABLE ACTION
 Use the persisted GitHub authority to create/continue a remediation candidate that:

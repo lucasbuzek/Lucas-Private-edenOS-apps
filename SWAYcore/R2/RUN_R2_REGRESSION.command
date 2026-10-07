@@ -8,8 +8,8 @@ CACHE="$FX_BUILD/cache/regression"
 mkdir -p "$CACHE"
 export CLANG_MODULE_CACHE_PATH="$CACHE/clang" SWIFTPM_MODULECACHE_OVERRIDE="$CACHE/clang"
 fx_gate "app deterministic function contracts" python3 App/Tests/run_contract_tests.py
-fx_gate "asset complete suite including labelled fixtures" python3 -m unittest discover -s AssetFactory/tests -v
-fx_gate "protected and builder contracts" python3 -m unittest discover -s Tools/regression -p 'test_*.py' -v
+fx_gate "asset complete suite including labelled fixtures (zero tests fails)" python3 Tools/regression/run_unittest_suite.py -s AssetFactory/tests -p 'test*.py'
+fx_gate "protected and builder contracts (zero tests fails)" python3 Tools/regression/run_unittest_suite.py -s Tools/regression -p 'test_*.py'
 fx_gate "DeviceSupport guard scenarios" bash Tools/regression/test_devicesupport_guard.sh
 fx_gate "historical avatar contract boundary" python3 Tools/regression/check_avatar_contract.py
 fx_gate "actual RealityKit renderer iOS SDK typecheck" python3 Tools/regression/check_avatar_sdk.py

@@ -5,7 +5,7 @@ import tempfile
 root=pathlib.Path(__file__).resolve().parents[2]
 source=(root/'App/SWAY/Services/NativeCapabilities.swift').read_text()
 policy=source[source.index('enum SwayCameraFrameOrientation {'):source.index('final class CameraPoseService:')]
-with tempfile.TemporaryDirectory(prefix='sway-camera-policy-',dir='/private/tmp') as directory:
+with tempfile.TemporaryDirectory(prefix='sway-camera-policy-') as directory:
  temporary=pathlib.Path(directory)
  path=temporary/'Policy.swift'
  path.write_text('import Foundation\nimport ImageIO\n'+policy)

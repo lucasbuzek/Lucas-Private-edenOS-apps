@@ -1,0 +1,421 @@
+{
+  "format": "SWAY-YOUR-DANCER-2.5D-COMPONENTS",
+  "version": 1,
+  "poseCount": 12,
+  "assetNamePattern": "YD2D_{assetStem}_P{pose:02d}",
+  "canvas": {
+    "width": 389,
+    "height": 410,
+    "alignment": "pixel-aligned to UserPoseNN"
+  },
+  "palettes": {
+    "skinTone": [
+      "#F6C8AA",
+      "#DB9E75",
+      "#AD6D4C",
+      "#784733",
+      "#4F2E23"
+    ],
+    "hairColor": [
+      "#29140D",
+      "#452112",
+      "#080707",
+      "#611F14",
+      "#A3471F",
+      "#BA914C"
+    ],
+    "outfitColor": [
+      "#D11F7A",
+      "#24A6C7",
+      "#7A4FDC",
+      "#F27A2B",
+      "#1FB878"
+    ],
+    "accent": [
+      "#F5D547",
+      "#42D7E8",
+      "#FF6BAA",
+      "#FFFFFF",
+      "#9168E8"
+    ]
+  },
+  "layers": [
+    {
+      "id": "hairBack",
+      "drawOrder": 10,
+      "profileField": "hairStyle",
+      "tintRole": "hair",
+      "scaleGroup": "hair",
+      "options": [
+        {
+          "id": "short",
+          "name": "Short",
+          "assetStem": "hairBack_short"
+        },
+        {
+          "id": "long",
+          "name": "Long",
+          "assetStem": "hairBack_long"
+        },
+        {
+          "id": "braids",
+          "name": "Braids",
+          "assetStem": "hairBack_braids"
+        },
+        {
+          "id": "afro",
+          "name": "Afro",
+          "assetStem": "hairBack_afro"
+        },
+        {
+          "id": "bun",
+          "name": "Bun",
+          "assetStem": "hairBack_bun"
+        }
+      ]
+    },
+    {
+      "id": "body",
+      "drawOrder": 20,
+      "profileField": "bodyStyle",
+      "tintRole": "skin",
+      "scaleGroup": "body",
+      "options": [
+        {
+          "id": "balanced",
+          "name": "Balanced",
+          "assetStem": "body_balanced"
+        },
+        {
+          "id": "soft",
+          "name": "Soft",
+          "assetStem": "body_soft"
+        },
+        {
+          "id": "athletic",
+          "name": "Athletic",
+          "assetStem": "body_athletic"
+        }
+      ]
+    },
+    {
+      "id": "outfitBottom",
+      "drawOrder": 30,
+      "profileField": "outfitStyle",
+      "tintRole": "outfit",
+      "scaleGroup": "body",
+      "options": [
+        {
+          "id": "studio",
+          "name": "Studio",
+          "assetStem": "outfitBottom_studio"
+        },
+        {
+          "id": "power",
+          "name": "Power",
+          "assetStem": "outfitBottom_power"
+        },
+        {
+          "id": "classic",
+          "name": "Classic",
+          "assetStem": "outfitBottom_classic"
+        },
+        {
+          "id": "bright",
+          "name": "Bright",
+          "assetStem": "outfitBottom_bright"
+        },
+        {
+          "id": "sport",
+          "name": "Sport",
+          "assetStem": "outfitBottom_sport"
+        }
+      ]
+    },
+    {
+      "id": "footwear",
+      "drawOrder": 40,
+      "profileField": "footwearStyle",
+      "tintRole": "outfit",
+      "scaleGroup": "body",
+      "options": [
+        {
+          "id": "trainer",
+          "name": "Trainer",
+          "assetStem": "footwear_trainer"
+        },
+        {
+          "id": "highTop",
+          "name": "High-top",
+          "assetStem": "footwear_highTop"
+        },
+        {
+          "id": "dance",
+          "name": "Dance",
+          "assetStem": "footwear_dance"
+        },
+        {
+          "id": "barefoot",
+          "name": "Barefoot",
+          "assetStem": "footwear_barefoot"
+        }
+      ]
+    },
+    {
+      "id": "outfitTop",
+      "drawOrder": 50,
+      "profileField": "outfitStyle",
+      "tintRole": "outfit",
+      "scaleGroup": "body",
+      "options": [
+        {
+          "id": "studio",
+          "name": "Studio",
+          "assetStem": "outfitTop_studio"
+        },
+        {
+          "id": "power",
+          "name": "Power",
+          "assetStem": "outfitTop_power"
+        },
+        {
+          "id": "classic",
+          "name": "Classic",
+          "assetStem": "outfitTop_classic"
+        },
+        {
+          "id": "bright",
+          "name": "Bright",
+          "assetStem": "outfitTop_bright"
+        },
+        {
+          "id": "sport",
+          "name": "Sport",
+          "assetStem": "outfitTop_sport"
+        }
+      ]
+    },
+    {
+      "id": "face",
+      "drawOrder": 60,
+      "profileField": "faceShape",
+      "tintRole": "skin",
+      "scaleGroup": "head",
+      "options": [
+        {
+          "id": "soft",
+          "name": "Soft",
+          "assetStem": "face_soft"
+        },
+        {
+          "id": "oval",
+          "name": "Oval",
+          "assetStem": "face_oval"
+        },
+        {
+          "id": "angular",
+          "name": "Angular",
+          "assetStem": "face_angular"
+        }
+      ]
+    },
+    {
+      "id": "eyes",
+      "drawOrder": 70,
+      "profileField": "eyeStyle",
+      "tintRole": null,
+      "scaleGroup": "head",
+      "options": [
+        {
+          "id": "bright",
+          "name": "Bright",
+          "assetStem": "eyes_bright"
+        },
+        {
+          "id": "classic",
+          "name": "Classic",
+          "assetStem": "eyes_classic"
+        },
+        {
+          "id": "wide",
+          "name": "Wide",
+          "assetStem": "eyes_wide"
+        }
+      ]
+    },
+    {
+      "id": "brows",
+      "drawOrder": 80,
+      "profileField": "browStyle",
+      "tintRole": "hair",
+      "scaleGroup": "head",
+      "options": [
+        {
+          "id": "soft",
+          "name": "Soft",
+          "assetStem": "brows_soft"
+        },
+        {
+          "id": "arched",
+          "name": "Arched",
+          "assetStem": "brows_arched"
+        },
+        {
+          "id": "bold",
+          "name": "Bold",
+          "assetStem": "brows_bold"
+        }
+      ]
+    },
+    {
+      "id": "nose",
+      "drawOrder": 90,
+      "profileField": "noseStyle",
+      "tintRole": "skinDetail",
+      "scaleGroup": "head",
+      "options": [
+        {
+          "id": "button",
+          "name": "Button",
+          "assetStem": "nose_button"
+        },
+        {
+          "id": "straight",
+          "name": "Straight",
+          "assetStem": "nose_straight"
+        },
+        {
+          "id": "broad",
+          "name": "Broad",
+          "assetStem": "nose_broad"
+        }
+      ]
+    },
+    {
+      "id": "mouth",
+      "drawOrder": 100,
+      "profileField": "mouthStyle",
+      "tintRole": null,
+      "scaleGroup": "head",
+      "options": [
+        {
+          "id": "smile",
+          "name": "Smile",
+          "assetStem": "mouth_smile"
+        },
+        {
+          "id": "soft",
+          "name": "Soft",
+          "assetStem": "mouth_soft"
+        },
+        {
+          "id": "grin",
+          "name": "Grin",
+          "assetStem": "mouth_grin"
+        }
+      ]
+    },
+    {
+      "id": "facialHair",
+      "drawOrder": 110,
+      "profileField": "facialHairStyle",
+      "tintRole": "hair",
+      "scaleGroup": "head",
+      "options": [
+        {
+          "id": "none",
+          "name": "None",
+          "assetStem": "facialHair_none"
+        },
+        {
+          "id": "stubble",
+          "name": "Stubble",
+          "assetStem": "facialHair_stubble"
+        },
+        {
+          "id": "moustache",
+          "name": "Moustache",
+          "assetStem": "facialHair_moustache"
+        },
+        {
+          "id": "beard",
+          "name": "Beard",
+          "assetStem": "facialHair_beard"
+        }
+      ]
+    },
+    {
+      "id": "hairFront",
+      "drawOrder": 120,
+      "profileField": "hairStyle",
+      "tintRole": "hair",
+      "scaleGroup": "hair",
+      "options": [
+        {
+          "id": "short",
+          "name": "Short",
+          "assetStem": "hairFront_short"
+        },
+        {
+          "id": "long",
+          "name": "Long",
+          "assetStem": "hairFront_long"
+        },
+        {
+          "id": "braids",
+          "name": "Braids",
+          "assetStem": "hairFront_braids"
+        },
+        {
+          "id": "afro",
+          "name": "Afro",
+          "assetStem": "hairFront_afro"
+        },
+        {
+          "id": "bun",
+          "name": "Bun",
+          "assetStem": "hairFront_bun"
+        }
+      ]
+    },
+    {
+      "id": "accessory",
+      "drawOrder": 140,
+      "profileField": "accessoryStyle",
+      "tintRole": "accent",
+      "scaleGroup": "body",
+      "options": [
+        {
+          "id": "none",
+          "name": "None",
+          "assetStem": "accessory_none"
+        },
+        {
+          "id": "cap",
+          "name": "Cap",
+          "assetStem": "accessory_cap"
+        },
+        {
+          "id": "headband",
+          "name": "Headband",
+          "assetStem": "accessory_headband"
+        },
+        {
+          "id": "wristbands",
+          "name": "Wristbands",
+          "assetStem": "accessory_wristbands"
+        },
+        {
+          "id": "gloves",
+          "name": "Gloves",
+          "assetStem": "accessory_gloves"
+        },
+        {
+          "id": "glasses",
+          "name": "Glasses",
+          "assetStem": "accessory_glasses"
+        }
+      ]
+    }
+  ]
+}

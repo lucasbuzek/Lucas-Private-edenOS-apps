@@ -10,7 +10,7 @@ path = root / 'App/SWAY/Avatar/SWAYAvatarRendering.swift'
 source = path.read_text()
 renderer = source[:source.index('// Production-stage view.')]
 sdk = subprocess.check_output(['xcrun', '--sdk', 'iphoneos', '--show-sdk-path'], text=True).strip()
-with tempfile.TemporaryDirectory(prefix='sway-avatar-sdk-', dir='/private/tmp') as directory:
+with tempfile.TemporaryDirectory(prefix='sway-avatar-sdk-') as directory:
     temporary = pathlib.Path(directory)
     options = ['-target', 'arm64-apple-ios26.0', '-sdk', sdk, '-module-cache-path', str(temporary / 'cache')]
     sources = sorted((root / 'Packages/SWAYcoreEngine/Sources/SWAYcoreEngine').glob('*.swift'))
