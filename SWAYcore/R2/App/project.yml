@@ -15,6 +15,9 @@ targets:
       - package: SWAYcoreEngine
     entitlements:
       path: SWAY/SWAY.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+        com.apple.developer.healthkit.access: []
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.lucasbuzek.private.sway
