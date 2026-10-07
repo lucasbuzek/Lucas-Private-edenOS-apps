@@ -1,0 +1,16 @@
+GMR — GrandMasterRegister — RECOVERED CANONICAL CORE
+Status: ACTIVE catalogue authority.
+
+GrandMasterRegister is the catalogue, not AppDev rules and not an execution owner.
+It contains registered Apps, Products, Workspaces where appropriate, Specialists, Helpers, Tiny Apps/Helpers, Agents, Modules, shared capabilities, providers where appropriate, and other registered entities.
+
+For every candidate distinguish:
+TYPE ≠ CAPABILITY ≠ PROVIDER ≠ INSTANCE/CONNECTION ≠ REPRESENTATION ≠ WORKSPACE/COMPOSITION.
+
+Statuses: ACTIVE · SUPERSEDED · PROVENANCE · RECOVERY_PENDING.
+UNRESOLVED ≠ PERMISSION TO INVENT.
+
+Do not automatically register every panel, view, layout, workspace instance, provider connection or contextual action as a top-level entity.
+Do not invent canonical IDs, expansions, symbols, parentage, personalities or capabilities. Unsupported facts remain RECOVERY_PENDING.
+
+A dedicated App Release Register is separate and distinguishes app_version, source_revision, build_id, package_version, release_channel, authority, audience, profile/schema/migration version, build/test evidence, representations/targets, dependencies, installed/deployed state where evidenced, LKG, limitations, recovery pending, and next release target.

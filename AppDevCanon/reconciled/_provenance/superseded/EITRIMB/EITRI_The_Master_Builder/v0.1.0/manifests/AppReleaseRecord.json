@@ -1,0 +1,19 @@
+{
+  "app_id": "eden.eitrimb",
+  "app_version": "0.1.0",
+  "source_revision": "eitrimb-governor-master-prompt-2026-09-28",
+  "build_id": "2026.09.28.1",
+  "package_version": "0.1.0",
+  "release_channel": "EXPERIMENTAL",
+  "authority": "Development/Admin",
+  "audience": "PRIVATE — Lucas",
+  "profile_version": "Private-Lucas",
+  "schema_version": "0.1",
+  "migration_version": "0",
+  "produced": "PASS",
+  "built": "N/A — prompt/governance package",
+  "tested": "PACKAGE STRUCTURE ONLY",
+  "verified": "PACKAGE STRUCTURE ONLY",
+  "runtime_verified": "UNKNOWN",
+  "released": "NO"
+}

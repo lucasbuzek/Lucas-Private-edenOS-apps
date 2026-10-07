@@ -1,0 +1,17 @@
+PROJECT BIBLE — Modern Generals Native
+Status: RECOVERED CURRENT CANON
+
+PROJECT
+Modern Generals Native. Dedicated Native project; RWMOD remains separate Mod/LAB reference, not Native source authority. Platform hierarchy: iPadOS primary → macOS expanded → iOS portable.
+
+SCOPE / DELIVERABLE
+Full native RTS. Current acceptance target is a complete Dragon-vs-AI Modern Generals battle playable on physical iPad using production-intent assets. Current Goal 1 requires the complete Dragon/China Combined Arms roster: 15 buildings, 6 infantry, 15 ground, 8 air/UAV, 6 naval. Infrastructure, demos, partial rosters and technology prototypes do not satisfy the deliverable.
+
+ACCEPTANCE / DEFINITION OF DONE
+G10 PHYSICAL BASELINE ALPHA: complete Dragon-vs-AI battle playable on iPad. Physical sequence: launch → shell → world → camera/terrain → assets → selection → movement → combat → construction → production → AI → battle completion. Asset physical pass requires geometry + authored material + correct scale + correct orientation + role readability at RTS camera distance. fixedRTS is current baseline; free3D and arWarTable are later presentation adapters and cannot block G1-G10 gameplay.
+
+SOURCE / LKG / EVIDENCE
+Canonical workspace: ~/edenOS/Projects/Modern Generals Native/. GitHub persistence is required for meaningful source milestones, LKG and evidence, but current root has no .git metadata locally; vendor repos are not project authority. TEST_CANDIDATE records base verified commit 0c2d91c1f2acb14ff6aba5317c5ed977ab9d3e6a and Full Native RTS Verification PASS/Fast Verify PASS for its stated candidate. Physical iPad evidence: launch PASS; HUD PASS; READY PASS; MGCore tick PASS; Dragon geometry/multiple entities PASS; RTS camera FAIL; authored materials FAIL; selection/movement/placement unverified; building presentation not implemented/verified.
+
+CURRENT GAP / NEXT EXECUTABLE GATE
+Do not restart architecture. Preserve current candidate. Repair the demonstrated physical presentation failures first: usable fixedRTS battlefield camera and authored Dragon materials; then physically verify selection/movement before G1 promotion. Continue through the authoritative EITRI contract gates toward G10. Build/package/version churn is not progress.

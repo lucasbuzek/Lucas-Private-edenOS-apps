@@ -1,0 +1,9 @@
+SAFETY & RECOVERY GATE v1.0
+
+For each affected capability determine safe normal state, safe failure state, failure detection, containment, feedback, recovery path, data/state preservation, rollback/LKG where applicable, and verification method.
+
+SAFE OPERATION → FAILURE CONTAINMENT → RECOVERY → FUNCTIONALITY → OPTIMIZATION → POLISH.
+
+Incomplete when foreseeable failure can leave corrupted/silently discarded user data, unsafe actuation, unrecoverable configuration, duplicate/conflicting services, broken upgrade/migration state, or an unusable installation without recovery.
+
+Apply proportionally. Every feature needs appropriate failure/recovery behavior; not every feature is safety-critical.

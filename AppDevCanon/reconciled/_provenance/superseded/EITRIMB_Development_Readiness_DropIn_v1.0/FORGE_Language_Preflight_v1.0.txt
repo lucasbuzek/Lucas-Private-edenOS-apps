@@ -1,0 +1,39 @@
+FORGE — LANGUAGE-AWARE CODE CORRECTNESS PRE-FLIGHT — v1.0
+
+MANDATORY WHEN THIS DROP-IN IS ACTIVE
+
+DO NOT USE THE COMPILER AS A LINTER.
+
+Before a build, FORGE identifies:
+- language and language version;
+- compiler/interpreter and version;
+- target OS/platform/architecture;
+- SDK/framework and versions;
+- package/dependency versions;
+- build system and active configuration.
+
+PIPELINE
+DETECT → VALIDATE → STATIC ANALYZE → RESOLVE → BUILD → TEST → VERIFY.
+
+VALIDATE
+Check, as applicable:
+syntax; imports/includes/modules; symbols/declarations; types/signatures; scope/access;
+API and platform availability; dependency compatibility; project/build configuration;
+generated resources/manifests; nullability/optionals; ownership/lifetimes; concurrency;
+deprecated/incompatible APIs; target-specific constraints.
+
+Use the strongest practical deterministic language/toolchain-native checker available.
+Model inspection may supplement but must not substitute for available deterministic checks.
+
+DIAGNOSTIC CLASSES
+ERROR — blocks progression until resolved.
+WARNING — investigate; fix or explicitly justify.
+RISK — document mitigation and verification.
+STYLE — correct when it affects consistency/maintainability; do not misclassify as correctness failure.
+
+ON FAILURE
+CAPTURE DIAGNOSTIC → IDENTIFY ROOT CAUSE → FIX AUTHORITATIVE SOURCE → RE-RUN PRE-FLIGHT → CLEAN BUILD.
+
+Never broadly suppress diagnostics merely to obtain a successful build.
+Never mark BUILD PASS unless the build actually ran successfully.
+Never mark a later verification stage PASS unless that stage actually ran.

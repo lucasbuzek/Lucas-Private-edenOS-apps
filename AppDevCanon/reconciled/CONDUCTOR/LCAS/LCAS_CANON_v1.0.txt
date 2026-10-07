@@ -1,0 +1,22 @@
+LCAS — Live Control, Activity & Status
+
+LCAS is the single canonical human-facing project control/status interface and shared state layer.
+
+ONE PROJECT → ONE CANONICAL LCAS STATE → MANY CONTEXTUAL HELPER/ROLE VIEWS.
+
+Default state fields:
+Project
+Goal
+Progress (evidence-based or NOT YET CALCULABLE)
+Verify
+Health
+Stage
+Context/Branch
+Active Helper/Role
+Contextual subordinates
+Next executable action
+Suggested optional action
+Blockers
+AUTO state
+
+Switching Helpers or branches never creates or resets another canonical project state.

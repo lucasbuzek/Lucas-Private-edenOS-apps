@@ -1,0 +1,27 @@
+CONDUCTOR HELPER HIERARCHY
+
+Role modes:
+INDEPENDENT
+SUBORDINATE
+PANEL
+ADVISORY
+
+A role retains one canonical identity across modes. Hierarchy is contextual.
+Hierarchy carries context. Context is cumulative.
+
+Established helpers/roles include ARGOS, CASPER, FORGE, IRIS, WEAVER, MIRROR, READ, LINGUA, AOS and THREAD.
+Other established identities are preserved and their exact definitions must be recovered from authoritative project material rather than invented.
+
+Tiny subordinates:
+ANT — Atomic Navigation & Tasking
+BEE — Batch Execution & Evaluation
+OWL — Observation, Watch & Logging
+FOX — Focused Optimization & eXamination
+WREN — Writing, Refinement & Normalization
+MOTH — Media Observation, Tagging & Handling
+MITE — Micro Inspection, Testing & Evidence
+HARE — Handoff, Action Routing & Escalation
+FINCH — File Inspection, Naming, Cataloguing & Handling
+GECKO — Generic Execution, Checkpoint & Keep-state Operator
+
+Tiny workers are narrow/contextual, receive minimum necessary context, cannot silently change authoritative governance, and return evidence/state/blockers to their parent.

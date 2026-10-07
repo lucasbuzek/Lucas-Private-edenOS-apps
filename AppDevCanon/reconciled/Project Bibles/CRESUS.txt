@@ -1,0 +1,522 @@
+CRESUS — PROJECT BIBLE
+Status: AUTHORITATIVE PROJECT RECONSTRUCTION BASELINE
+Date: 2026-10-03
+
+# 1. IDENTITY
+
+CRESUS — Capital Research & Equity Strategy
+
+CRESUS is a worldwide investment research, information, organization, portfolio, income and strategy-analysis application family.
+
+Inspiration: Croesus, King of Lydia, whose name became synonymous with immense wealth.
+
+Design mantra:
+CRESUS THE KING.
+
+The product experience must feel sovereign, refined, authoritative, intelligent, premium and enduring. It must not look like a casino/trading gimmick, crypto-neon dashboard, generic fintech template, developer console or faux-medieval costume UI.
+
+UI/UIX is a primary product requirement and is developed together with functionality.
+
+# 2. PRODUCT PURPOSE
+
+CRESUS researches, organizes, calculates, compares and explains. The user decides.
+
+The product is not a broker, automated investment manager or trading bot.
+
+Primary lifecycle:
+Research -> Evidence -> Thesis -> Portfolio -> ZACCHAEUS -> Strategy Lab -> Intelligence.
+
+# 3. WORLDWIDE SCOPE
+
+CRESUS is worldwide by design.
+
+Core financial/domain behavior must not assume a single:
+- country
+- exchange
+- market
+- MIC
+- currency
+- tax jurisdiction
+- market-data provider
+- AI provider
+
+Identity model must support:
+LegalEntity -> Issuer -> Security -> Listing
+
+Listings support, as applicable:
+- MIC/exchange
+- ticker
+- listing currency
+- timezone
+- trading calendar
+- ISIN
+- FIGI
+- LEI
+- provider identifiers
+- cross-listings
+
+# 4. TARGET APPLICATIONS
+
+Full-feature applications are required for:
+- iOS / iPadOS
+- Android
+- macOS
+- Windows
+
+These are not merely compatibility shells.
+
+All consume the same authoritative CRESUS semantics and deterministic financial engines while using platform-native UI/UX and native integrations.
+
+Build host for current development is macOS.
+
+Headless/server/Linux/web/PWA compatibility may exist architecturally, but must not displace the full native application requirement.
+
+# 5. PRIVATE / CUSTOM APPLE BUILD
+
+The Private/Custom Apple build uses the fullest practical Apple-native capability set where useful.
+
+Apple-native first:
+- Swift / SwiftUI
+- native persistence
+- Keychain
+- App Intents
+- Shortcuts
+- Siri / voice invocation
+- Spotlight
+- notifications
+- share sheet / Services where applicable
+- deep links
+- background task APIs where supported
+- Files / document integration
+- native networking
+- native charts/components
+- native accessibility
+- native device intelligence / Foundation Models or successor APIs where available
+- Apple platform lifecycle/power capabilities as appropriate
+
+Full Apple-native AI is an implementation target for supported Apple hardware.
+
+# 6. SILENT CHATGPT — PRIVATE APPLE CANON
+
+Private CRESUS may use ChatGPT silently as an optional behind-the-scenes intelligence provider.
+
+Silent ChatGPT means:
+- no separate ChatGPT-style UI is required;
+- CRESUS invokes the provider only when its capabilities are useful;
+- on-device/native processing happens first where adequate;
+- minimize external context to the smallest text/structured representation needed;
+- do not silently transmit raw screenshots, photos, files or unrelated private data;
+- user portfolio/account/provider data is not treated as a generic AI prompt;
+- provider output is analysis input, never authoritative financial state;
+- deterministic CRESUS state and calculations remain authoritative;
+- secrets/tokens remain in appropriate secure storage;
+- the provider is replaceable and must not become a runtime dependency for core local functions.
+
+# 7. DEVELOPMENT_ALPHA
+
+Current development/test invariant:
+
+DEVELOPMENT_ALPHA = EVERYTHING IMPLEMENTED UNLOCKED.
+
+CRESUS imposes:
+- no IAP enforcement
+- no subscription enforcement
+- no portfolio limits
+- no watchlist limits
+- no Expert limits
+- no Strategy Lab limits
+- no AI quotas
+- no CRESUS-side model restrictions
+- no feature paywalls
+
+The only current AI limitations are genuine external/provider/platform/device limitations such as:
+- provider account limits
+- provider API quotas
+- provider model availability
+- provider rate limits
+- context limits
+- regional/provider restrictions
+- connectivity
+- hardware/OS capability
+
+Commercial entitlement architecture remains dormant during Alpha.
+
+# 8. FIRST OFFICIAL ALPHA — AI PROVIDER CONNECTIONS
+
+The first official Alpha includes real AI-provider connection/login architecture for testing.
+
+CRESUS must provide an AI Providers surface supporting, as adapters are implemented:
+- Apple native AI on supported Apple devices
+- CRESUS-managed Intelligence gateway
+- OpenAI
+- Anthropic
+- Google/Gemini
+- Mistral
+- additional provider adapters without changing CRESUS Core
+
+Provider configuration must expose:
+- connected/available/unavailable state
+- supported capabilities
+- privacy route
+- secure credential/token handling
+- provider/account limitations when discoverable
+- usage information where the provider exposes it
+
+Current Alpha does not impose CRESUS commercial gates on these providers.
+
+# 9. COMMERCIAL RELEASE MODEL
+
+The abandoned early percentage-contribution / 10% model is obsolete and must not be reintroduced.
+
+Current model:
+
+FREE
+- deliberately bounded discovery/organization product
+
+FULL
+- permanent one-time IAP
+- complete supported local/on-device CRESUS product
+- complete supported native/device AI capability
+
+INTELLIGENCE
+- recurring IAP/subscription
+- continuously supplied CRESUS-managed online research / external evidence / cloud AI capacity
+
+OPTIONAL USER-CONNECTED PROVIDERS
+- users may connect supported provider accounts/credentials where appropriate
+- provider usage remains subject to that provider's own terms/account limits
+
+Core commercial principle:
+Pay once for software. Subscribe for services that continuously cost money to provide.
+
+Cancelling INTELLIGENCE must never remove:
+- purchased FULL
+- local user data
+- local research
+- local portfolios/watchlists
+- supported native/device AI that belongs to FULL
+
+# 10. CRESUS INTELLIGENCE ECONOMICS
+
+CRESUS Intelligence is a managed service, not resale of one consumer chatbot subscription per customer.
+
+Architecture:
+CRESUS users -> CRESUS Intelligence budget/capacity -> provider-independent gateway -> multiple upstream provider APIs/capacity pools
+
+CRESUS may route by:
+- capability
+- quality
+- latency
+- cost
+- availability
+- privacy requirement
+- task class
+
+Use native/device AI when adequate before consuming marginal cloud capacity.
+
+Official commercial research should support negotiated API capacity, enterprise/volume arrangements, batching/caching and provider diversification where useful.
+
+# 11. CORE DOMAIN
+
+CRESUS Core owns portable semantics and deterministic calculations.
+
+Required major models include:
+- LegalEntity
+- Issuer
+- Security
+- Listing
+- Portfolio
+- Account
+- PositionLot
+- Watchlist
+- DividendEvent
+- CorporateAction
+- PriceObservation
+- FXObservation
+- FundamentalObservation
+- EvidenceRecord
+- EvidenceConflict
+- ResearchSnapshot
+- InvestmentThesis
+- ThesisRevision
+- KillCondition / invalidation condition
+- StrategyDefinition
+- BacktestRun
+- ExpertJob
+- CalculationLedgerEntry
+
+# 12. TEMPORAL / EVIDENCE TRUTH
+
+Preserve, where applicable:
+- effectiveAt
+- knownAt
+- observedAt
+- sourcePublishedAt
+- supersededAt
+- revisionOf
+- source
+
+Historical/point-in-time analysis must never leak later information backward.
+
+External AI prose is not authoritative evidence.
+
+Evidence classes should distinguish:
+- VERIFIED FACT
+- CALCULATION
+- INFERENCE
+- SCENARIO
+- UNCERTAINTY
+- MISSING / UNVERIFIED
+
+# 13. ZACCHAEUS
+
+ZACCHAEUS — Dividend & Income Collector
+Identity: The Collector
+Core question: Where's my money?
+
+Owns dividend/investment-income tracking and calendar.
+
+Dividend/income states must remain separate:
+- REALIZED
+- DECLARED
+- FORWARD INDICATED
+- ESTIMATED
+
+Never silently blend them.
+
+Lifecycle may include:
+Estimated -> Declared/Announced -> Confirmed -> Ex-Date Passed -> Record Established -> Payable -> Paid -> Reconciled
+with exceptions such as changed, deferred, cancelled, missed/unreconciled.
+
+# 14. EXPERT — COMPLETE OR EXHAUST
+
+Expert is a completion contract.
+
+One invocation continues the safe research cycle until:
+A. COMPLETE
+or
+B. EXHAUSTED / PARTIALLY COMPARABLE after meaningful changed-source/method attempts.
+
+Required behavior:
+- define research universe
+- build evidence matrix before synthesis
+- identify missing/stale evidence
+- internal research queue
+- retry with changed source/query/route/method
+- post-results event sweep
+- synchronized comparison-clock integrity
+- deterministic calculations
+- evidence challenge
+- explicit completion gate
+- Research Snapshot
+
+Do not hand known next research actions back to the user when CRESUS can safely execute them.
+
+# 15. RESEARCH SNAPSHOTS
+
+Every substantial Expert examination should be reproducible.
+
+ResearchSnapshot should capture:
+- securities/universe
+- requested time
+- evidence used
+- prices
+- FX
+- macro observations
+- calculation engine version
+- provider/model identity where relevant
+- evidence matrix
+- missing/exhausted evidence
+- completion state
+- outputs and evidence references
+
+# 16. PORTFOLIO / THESIS / RESEARCH
+
+Portfolio supports:
+- holdings
+- quantity
+- cost basis
+- listing/currency
+- current value
+- realized/unrealized return
+- income
+- allocation/exposure
+- sector/geography/currency exposure
+- linked research
+- linked theses
+- notes
+
+Thesis supports:
+- rationale
+- supporting evidence
+- counter-evidence
+- valuation assumptions
+- catalysts
+- risks
+- invalidation conditions
+- income expectations
+- review state
+- version history
+
+# 17. STRATEGY LAB
+
+Strategy Lab uses a SimulationClock.
+
+For each simulated time:
+advance clock -> reveal only evidence known at/before clock -> evaluate strategy -> execute simulated trades -> apply costs/taxes/FX -> process corporate actions/dividends -> record state.
+
+Must guard against:
+- look-ahead bias
+- survivorship bias
+- delisting omission
+- corporate-action errors
+- revised-fundamental leakage
+- dividend/adjusted-price double counting
+- stale FX
+- tax/cost/slippage omissions
+- benchmark mismatch
+
+# 18. AI ARCHITECTURE
+
+Canonical reasoning path:
+Deterministic CRESUS -> native/device AI -> CRESUS-managed cloud intelligence -> optional user-connected provider
+
+CRESUS asks for capabilities, not hard-coded provider brands.
+
+Representative capabilities:
+- structured.extract
+- explanation.generate
+- research.reason
+- documents.analyse
+- evidence.challenge
+- thesis.synthesise
+- scenario.interpret
+- deep_examination
+
+AI outputs should use structured schemas where practical and remain validation/reasoning proposals.
+
+# 19. UI / UIX
+
+Primary product areas:
+- Home / Overview
+- Research
+- Watchlists
+- Portfolio
+- Calendar / Income / ZACCHAEUS
+- Strategy Lab
+- Ask CRESUS
+- Saved Research / Evidence
+- Settings / Providers
+
+Simple and Expert are two presentation depths over the same truth.
+
+No placeholder production screens.
+
+Design system must define:
+- typography
+- spacing
+- materials
+- restrained royal/gilded identity
+- semantic financial colors
+- evidence states
+- stale/unverified states
+- chart conventions
+- cards/tables/metric rows
+- loading/empty/error/retry states
+- accessibility
+
+# 20. DATA / PROVIDER MODEL
+
+Private/Custom:
+- may use the user's available sources, APIs, local datasets, browser research and provider credentials
+- no artificial CRESUS licensing restriction for personal/private use
+
+Official:
+- provider-neutral
+- users may connect their own data-provider entitlements/credentials where appropriate
+- CRESUS must still respect obligations for any data it itself bundles, hosts or redistributes
+
+Provider metadata may track:
+- personal-use status
+- user-supplied credential status
+- redistributable status
+- CRESUS-licensed status
+- unknown/needs-review
+
+# 21. OFFLINE / OWNERSHIP
+
+Useful deterministic/local features should continue offline using stored data.
+
+User data remains user-owned.
+
+Support export/recovery for:
+- portfolios
+- holdings
+- watchlists
+- theses
+- notes
+- saved research
+- evidence references
+- dividend records
+- settings
+- Strategy Lab definitions/results where practical
+
+# 22. BUILD / RECONSTRUCTION TARGET
+
+All development currently compiles/orchestrates from macOS.
+
+Required build/rebuild data must be sufficient to reconstruct:
+- iOS/iPadOS app
+- Android app
+- macOS app
+- Windows app
+- CRESUS Core/contracts
+- provider adapters
+- data schemas/migrations
+- tests
+- design system/UIX requirements
+- AI/provider integration
+- one-click macOS builder/preflight
+- environment/dependency checks
+- packaging and verification instructions
+
+Do not claim native Windows verification from macOS without an appropriate Windows build environment.
+
+# 23. REPOSITORY / AUTHORITY
+
+Authoritative AppDev rulebook/Bibles:
+lucasbuzek/Lucas-private-appDevDocs
+
+Authoritative project/application source/data:
+lucasbuzek/Lucas-Private-edenOS-apps
+
+Known CRESUS branch:
+dev/cresus-cross-platform-v0.2
+
+Known CRESUS source root:
+apps/cresus/
+
+Current source evidence must always outrank stale conversational status claims.
+
+# 24. CURRENT REBUILD REQUIREMENT
+
+The Project Bible plus repository source/contracts/tests must be sufficient for another capable developer/agent to rebuild CRESUS without relying on old conversation history.
+
+Missing implementation details discovered during rebuild must be added back into this Bible or project documentation so the project becomes progressively self-contained.
+
+# 25. NON-NEGOTIABLE SUMMARY
+
+CRESUS is a worldwide, provider-neutral temporal investment evidence and strategy engine with full native applications on iOS/iPadOS, Android, macOS and Windows.
+
+Private Apple builds exploit native Apple capabilities fully and may use Silent ChatGPT as an optional behind-the-scenes provider with minimized, structured external context.
+
+Alpha is fully unlocked; only genuine external provider/device/platform limits apply.
+
+The obsolete 10% model is abandoned.
+
+Commercial release remains:
+FREE -> permanent FULL IAP -> recurring INTELLIGENCE -> optional user-connected providers.
+
+CRESUS THE KING governs UI/UIX identity.
+
+Deterministic financial truth remains authoritative.

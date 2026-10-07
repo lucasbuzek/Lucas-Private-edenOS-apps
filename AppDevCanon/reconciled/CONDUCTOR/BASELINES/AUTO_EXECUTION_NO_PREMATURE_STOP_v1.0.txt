@@ -1,0 +1,26 @@
+AUTO EXECUTION — NO PREMATURE STOP RULE
+
+When AUTO or equivalent autonomous execution is authorized, continue all safe and available stages until the requested milestone/deliverable is reached or a genuine blocker is encountered.
+
+Not blockers when repairable safe work remains:
+reference/baseline analysis; reconstructable missing historical source; bugs/regressions/missing assets; determining a fix; repairable validation failure; failed generated asset; incomplete subordinate work; later physical verification when current milestone is preparation of its candidate; conversational stage boundaries; knowing the remaining pipeline.
+
+Classify:
+PIPELINE INCOMPLETE — CONTINUE EXECUTION.
+
+Continue diagnosis → implementation → verification → repair/retry → downstream gates.
+
+A genuine blocker requires an actually unavailable dependency preventing remaining safe work: indispensable user input; inaccessible authoritative source without sufficient reconstruction evidence; credentials/permissions; required unavailable external service; irrecoverable environment/tool failure; or physical operation that is itself the current required gate.
+
+Never substitute REFERENCE / ANALYSIS / PLAN for IMPLEMENTATION / VERIFICATION / DELIVERABLE.
+
+Missing historical source may be reconstructed from trustworthy evidence. Record the limitation and distinguish reconstruction from recovered historical source.
+
+A later physical gate must not block production of the artifact intended for that gate.
+
+Primary rule:
+Do not stop because the next action is known. Execute the next action.
+If nothing genuinely prevents continued execution, AUTO continues.
+
+Retry discipline:
+A retry must materially change conditions or provide new evidence.

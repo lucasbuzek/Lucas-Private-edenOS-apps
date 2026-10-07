@@ -1,0 +1,39 @@
+HEIMDALL iOS — PROJECT BIBLE
+Status: ACTIVE — authoritative current iPhone project baseline
+Target: iPhone / iOS only. iPadOS and macOS are separate future/platform projects.
+
+PURPOSE
+HEIMDALL is the iPhone-native user-facing EDEN surface for organizing, understanding, coordinating and executing useful work through native/system capabilities and specialist applications. It must be functional and task/context oriented, never an assistant registry.
+
+AUTHORITY
+Newest explicit project decisions and established HEIMDALL conversations govern this Project Bible. Global engineering rules are inherited from ../APPDEV_BIBLE.txt and are not duplicated here. Existing source/builds are implementation evidence, not requirements authority.
+
+CURRENT DOMAIN OWNERS
+JANITOR: maintenance, Files/Photos/media cleanup and device analysis.
+LINGUA: language, translation and interpreter capability.
+CASPER: writing/content/Chronicle and Journal-oriented workflows.
+ARGOS: research/evidence capability.
+APPLE Core Council: serious Apple/system analysis and established Council behavior.
+CONDUCTOR coordinates goals, dependencies, routing, retries, recovery and continuation; specialists retain domain ownership.
+IPHONE EXECUTION FABRIC
+Siri/voice is a primary entry surface. Action Button invokes HEIMDALL/Siri, never CONDUCTOR directly. App Intents/App Shortcuts expose HEIMDALL actions. Shortcuts is an execution/intelligence bus. a-Shell is a required Custom-build provider for established local CLI/script workflows. Native/on-device intelligence is first-class and core operation must not require an OpenAI API.
+
+APPLE SYSTEM INTELLIGENCE CANON
+For text/images/files, HEIMDALL processes locally/on-device first whenever adequate. Images/screenshots are not sent to ChatGPT merely for text extraction/understanding. Derive the minimum relevant text/structured context locally; only small/minimized text should escalate through the user's Apple-system ChatGPT Extension when stronger reasoning is needed. Never bypass Apple's confirmation when an actual attachment genuinely must be transmitted. Direct Siri→ChatGPT attachment behavior is a fallback, not evidence of HEIMDALL routing.
+
+CONTEXT / EXECUTION
+Share Sheet accepts legitimate user-shared text, URLs, images and files. Files/iCloud authorization is brokered and reusable within Apple's security model. Photos/media operations belong to JANITOR. Focus, notifications, durable Activity/results, Advisor, and established supported Calendar/Reminders/Notes-Journal/Mail/Messages/Maps/Contacts workflows are required.
+
+CAPABILITY ORDER
+Prefer lowest sufficient capability: native iOS/system → installed suitable capability → reusable library/engine → App Intent/Shortcut → a-Shell/local tooling → connected Mac/device → optional external provider. Reuse before replacement.
+
+REMOTE / SYSTEM BOUNDARY
+Remote Desktop Commander is the current intermittent development/remote-Mac bridge. BIFROST is system architecture/future connectivity infrastructure and is NOT a HEIMDALL iOS release dependency. Connection loss must be resumable and must not trigger requirements rediscovery.
+UX / ACCEPTANCE
+Rejected assistant/card/list builds are non-reference designs. Production HEIMDALL must be task/context oriented, voice-friendly, progressively disclose Simple/Advanced/Expert capability, expose only truthful functioning actions, and show real execution state/results. A successful compile, install, launch, attractive screen, route stub or registry entry is not completion.
+
+CURRENT PHYSICAL EVIDENCE — 2026-10-01
+A signed native candidate bundle org.eden.heimdall.ios builds, installs and launches on the target iPhone 15 Pro Max. The displayed foundation UI is not v1/final. Siri independently captured a screenshot translation request and attempted direct ChatGPT attachment upload; this is NOT a HEIMDALL pass and demonstrates the routing/local-analysis gap.
+
+RELEASE DEFINITION
+Every REQUIRED HEIMDALL ledger capability must have implementation evidence plus applicable automated/environment/physical evidence. GENERATED != IMPLEMENTED != BUILT != TESTED != VERIFIED != RELEASED. UNKNOWN != PASS. Preserve LKG before risky extension and regression-check significant candidates.

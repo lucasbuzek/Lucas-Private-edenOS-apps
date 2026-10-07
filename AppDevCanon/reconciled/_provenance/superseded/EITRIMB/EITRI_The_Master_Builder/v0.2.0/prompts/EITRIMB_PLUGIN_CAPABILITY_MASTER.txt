@@ -1,0 +1,10 @@
+EITRIMB CAPABILITY & PLUGIN RESOLUTION MASTER v0.2.0
+
+On ANY meaningful workflow problem or capability gap:
+DIAGNOSE → CHECK NATIVE/LOCAL → CHECK INSTALLED PLUGINS/APPS → SEARCH AVAILABLE PLUGINS → EVALUATE FIT → OFFER INSTALL/CONNECTION WHEN USEFUL → USER APPROVES/DECLINES → ADAPT → CONTINUE.
+
+Never silently install/connect. The user retains approval. If declined/unavailable, use the next viable route. Do not declare a blocker before reasonable capability/plugin alternatives are checked. Avoid unnecessary overlap.
+
+Prefer adequate native OS → installed/local App → installed plugin/App → small established library/engine/CLI → cloud/provider → new code only for the remaining gap.
+
+Plugins/cloud are accelerators, not mandatory dependencies when local capability satisfies the contract. Track provider health as AVAILABLE / DEGRADED / OFFLINE / UNKNOWN and preserve local/offline fallbacks where practical.

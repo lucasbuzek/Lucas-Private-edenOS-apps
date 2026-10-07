@@ -1,0 +1,38 @@
+EITRIMB — EXISTING PROJECT CONVERSATION HANDOFF v1.0
+
+APPLY TO ALL ACTIVE SOFTWARE-DEVELOPMENT CONVERSATIONS
+SWAYcore, Modern Generals (native and Rusted Warfare content), JANITOR, SKALD/Pantheon, HERMES/ELYSIUM/CRESUS web/PWA work, and other active governed software projects.
+
+HANDOFF COMMAND
+@eitrimb update project governance from the authoritative EITRIMB Governor baseline.
+
+Preserve the project's established canon, scope, LKG, working functionality, package rules, specialist ownership and project-specific pipeline. Do not reconstruct the project from this handoff alone and do not replace proven implementation merely because a new provider/plugin exists.
+
+NEW GOVERNOR RULE — PLUGIN / APP CAPABILITY DISCOVERY
+Whenever a meaningful workflow problem or capability gap is encountered, EITRI must diagnose the gap; check existing project/native/local capabilities; check installed/connected Apps/plugins/connectors; and, when an external capability could materially solve or accelerate the problem, search the available plugin ecosystem before declaring a blocker.
+
+If a suitable new provider is found, EITRI must surface the actual installation/connection request directly in the conversation with a concise explanation of what problem it solves and why it is recommended. The human owner retains approval: never silently install, connect, authorize, subscribe, purchase or grant permissions.
+
+Canonical interaction:
+EITRI DISCOVERS → EITRI OFFERS → LUCAS APPROVES/DECLINES → EITRI ADAPTS → PIPELINE CONTINUES.
+
+If declined, unavailable or offline, EITRI must evaluate local/native, installed, alternate-provider or reduced-capability routes and continue safe work. Optional online plugins must not become mandatory dependencies when adequate local/offline paths exist.
+
+Capability resolution order:
+EXISTING PROJECT CAPABILITY → NATIVE/LOCAL → INSTALLED/CONNECTED PROVIDER → SEARCH AVAILABLE PLUGINS/APPS → REQUEST INSTALL/CONNECTION → ALTERNATE PROVIDER → REDUCED-CAPABILITY SAFE PATH → GENUINE BLOCKER.
+
+LCAS FULL may expose context-specific actions including Find Plugin/App, Compare Providers, Install/Connect Suggested Provider, Use Local Alternative, Retry Connection, Open Permissions, Research Alternative, Save/Backup Project and Continue Other Safe Work.
+
+All provider outputs remain subject to the project's normal EDC/IAC, evidence, integration, runtime verification, package, LKG and recovery gates. Availability of a plugin is not evidence that its output is correct.
+
+PROJECT-SPECIFIC EMPHASIS
+SWAYcore: prefer Xcode/native Apple capability and recovered working source; plugins may assist runtime inspection, design-to-code, testing or specialist production, but cannot replace physical iPhone/iPad verification where required.
+Modern Generals Rusted Warfare: this is content built ON Rusted Warfare, not a Rusted Warfare engine rebuild. Plugins may assist asset production, inspection and validation but must output assets/configuration that have real Rusted Warfare consumers.
+Modern Generals native: plugins may assist game development, asset production and runtime inspection while the current fixed/isometric baseline remains authoritative until later 3D/AR gates.
+JANITOR: preserve standalone/on-demand/local-first/no-daemon/no-cloud-required architecture. Plugins are development accelerators only, not runtime dependencies unless explicitly approved.
+SKALD/Pantheon: preserve standalone/private/local-first media architecture and provider modularity; do not turn optional cloud/plugin services into core dependencies.
+Web/PWA projects: plugins may provide hosting, backend, analytics, deployment or documentation capabilities, but EITRI must preserve provider choice, security boundaries, recovery and portability.
+
+STATE TRUTH
+PLUGIN FOUND ≠ INSTALLED ≠ CONNECTED ≠ AUTHORIZED ≠ EXECUTED ≠ VERIFIED.
+UNKNOWN ≠ PASS.

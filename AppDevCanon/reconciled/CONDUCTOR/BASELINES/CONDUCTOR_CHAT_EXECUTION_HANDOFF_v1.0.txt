@@ -1,0 +1,57 @@
+CONDUCTOR CHAT EXECUTION HANDOFF
+AUTO Turn-Continuation & Premature-Final Prevention
+
+This supplements Evidence Governance, FORGE Evidence-Gated Execution, AUTO No Premature Stop, AppDevRules, LKG, recovery and Universal Branched Development.
+
+Observed failure class:
+PREMATURE ASSISTANT TURN TERMINATION.
+
+Correct state whenever applicable:
+AUTO: ACTIVE
+PIPELINE: INCOMPLETE
+SAFE EXECUTABLE WORK: AVAILABLE
+BLOCKER: NONE
+REQUIRED ACTION: CONTINUE EXECUTION
+
+AUTO FINAL-RESPONSE GATE
+While AUTO is active, a normal final response is prohibited unless:
+A. requested milestone is reached with evidence; or
+B. a genuine blocker is established.
+
+AUTO ACTIVE + SAFE EXECUTABLE WORK AVAILABLE = DO NOT FINALIZE.
+
+User refinements update the active target; they do not cancel AUTO unless the user explicitly stops/pauses/cancels.
+
+Acknowledgement is not execution.
+Do not report self-created incompleteness as a project limitation.
+Tool continuity: CALL → INSPECT → NEXT SAFE ACTION → CALL.
+Distinguish TOOL FAILURE from TOOL NOT INVOKED.
+Progress updates do not terminate AUTO.
+Analysis is not an implementation deliverable unless analysis itself is the requested milestone.
+
+For package milestones:
+SOURCE IMPLEMENTED → AVAILABLE CHECKS → REGRESSIONS → PACKAGE CREATED → PACKAGE EXISTS → CONTENTS VERIFIED → INTEGRITY VERIFIED.
+Later physical verification may remain pending.
+
+Feature-complete means implement every currently defined technically achievable capability and honestly classify platform restrictions. Unsupported individual capabilities do not stop remaining implementation.
+
+CONVERSATIONAL COMPLETION TRAP:
+implementation requested → path understood → explanation emitted → no implementation.
+Recovery: STOP EXPLAINING → EXECUTE.
+
+Pre-final I CAN test:
+If another safe tool action can materially advance the milestone, do it.
+
+Persona boundaries are not pipeline boundaries.
+AUTO persists across search, retrieval, analysis, implementation, repair, test, retest, package and verification.
+Target changes preserve useful work, reconcile the new requirement and continue.
+Task size/complexity is not a blocker.
+Every retry must materially change conditions or provide new evidence.
+
+Final AUTO response only after MILESTONE REACHED or GENUINE BLOCKER.
+
+Definitive invariant:
+AUTO ACTIVE
++ MILESTONE NOT REACHED
++ SAFE EXECUTABLE WORK AVAILABLE
+= CONTINUE TOOL EXECUTION.

@@ -1,0 +1,149 @@
+SWAYcore — PROJECT BIBLE
+Authoritative recovered canon updated: 2026-10-03
+
+PROJECT
+SWAYcore
+
+PRODUCT / PURPOSE
+ONE CORE. MULTIPLE EXPERIENCES.
+SWAYcore family:
+1. SWAYcore Engine/Core — reusable movement/timing/tracking/content foundation.
+2. SWAYcore Dance & Fitness — current consumer iOS/iPadOS product and first Alpha target.
+3. SWAYcore SWAYZ — professional dance-instructor/choreography product.
+4. SWAYcore Kid Dancers — child-focused movement/dance product.
+5. SWAYcore Studio Management — studio/business operations product.
+Future products may reuse Core for Yoga, Martial Arts, Tai Chi, Fitness and other movement disciplines.
+
+CURRENT GOAL
+Deliver the first complete coherent full-feature production-UI SWAYcore Dance & Fitness Alpha while preserving the wider family architecture and all demonstrated working functionality.
+
+CURRENT ALPHA DELIVERABLE
+Final consumer UI/UIX; production Blender character pipeline; fully rendered/scalable Lucia; common architecture for Lucia, Nandi, Thabo, Zuri, Kyle and YOUR DANCER; production YOUR DANCER; graphical tracked YOU; recovered Vision tracking/calibration; Moves/Learn; user-controlled Learn tempo; Beats/music/MusicKit/Shazam analysis; synchronized choreography; synchronized natural COACH text/speech; Create Move; .swaypack sharing/import/export; Record Me/Record SWAY; scoring/results/progression/mastery; Health integration; adaptive/accessibility behavior; offline/local-first operation; iPhone and iPad portrait/landscape.
+
+ACCEPTANCE
+The complete Alpha product journey must be demonstrated, not inferred from generation/build/install/launch. Required physical targets are iPhone and iPad portrait/landscape. Compilation, signing, packaging, installation and launch prove only those gates.
+
+PROTECTED RECOVERY REFERENCES / LKG
+- Build 143: graphical/runtime LKG recovery reference; preserve demonstrated illustrated-character/runtime behavior.
+- Build 147: protected tracking-recovery reference; do not casually rewrite its recovered tracking path.
+- Build 148: REJECTED by physical testing; never promote.
+- Build 153: incomplete current-candidate lineage with useful engineering/build/install evidence. NOT an accepted Alpha and NOT product authority.
+
+BUILD 153 RECOVERED ENGINEERING EVIDENCE
+- One-click pipeline identified as SWAYcore Build 153.
+- Blender evidence used Blender 5.2.2 LTS.
+- Common runtime contract: SWAYHumanoid-v1 with 23 unique joints.
+- Ten recovered proof clips:
+  sway_idle_v1
+  sway_march_v1
+  sway_step_touch_v1
+  sway_grapevine_v1
+  sway_knee_lift_v1
+  sway_squat_v1
+  sway_side_lunge_v1
+  sway_jumping_jack_v1
+  sway_body_roll_v1
+  sway_pivot_turn_v1
+- Recovered validators reported 10 Lucia RealityKit animation bindings, 10 user bindings, and shared SWAYHumanoid-v1 manifests.
+- Recovered Xcode identity: scheme/project SWAY, bundle identifier com.lucasbuzek.private.sway, iPhone+iPad target family, arm64 iOS build.
+- Recovered implementation paths included SWAYAvatarRendering.swift, SWAYSkeletal2DAvatarView.swift, SwayFaceTracking.swift, SwayStore.swift, RootView.swift, SWAYApp.swift, SettingsView.swift, StickFigureView.swift, WorkoutPlayerView.swift, CameraLabView.swift, CreateMoveView.swift, HomeView.swift, Move.swift, MoveLibraryView.swift, NativeCapabilities.swift, NativeLabView.swift, ProfileSharing.swift and ProgressViewScreen.swift.
+- Recovered framework/toolchain evidence included SwiftUI/UIKit, Vision, RealityKit/RealityCore, ModelIO, MusicKit, ShazamKit, AVFoundation, HealthKit, Photos/PhotosUI, ReplayKit, MultipeerConnectivity, GroupActivities, SceneKit/SpriteKit and ARKit.
+These are implementation/build evidence only, not proof that every feature works.
+
+CURRENT FAILURE FINDINGS — 2026-10-03
+Deep analysis of the current candidate established:
+- Current production character path is still proof-quality, not final production art.
+- Current Blender generator produces primitive geometry suitable for rig/export proof, not final coaches.
+- RealityKit production manifests remain unapproved in the recovered candidate lineage.
+- Runtime architecture was effectively Lucia/user-centric and did not prove independent production RealityKit identities for all five coaches.
+- YOUR DANCER data/customization model is ahead of the actual production renderer; persisted customization values are not enough unless they visibly alter the production avatar.
+- Final mockup/UI authority was not fully recovered into the active project tree; do not infer final UI from late broken builds.
+- Test coverage is too structural/textual and insufficiently runtime/visual; zero-test discovery must be treated as failure.
+- Xcode resource duplication/collision occurred historically with duplicated animation basenames.
+- One-click automation had fragmented/contradictory launchers and inconsistent device/dependency behavior.
+- Build success drifted away from product success.
+
+HARD PRODUCT INVARIANTS
+Primary navigation: HOME · MOVES · BEATS · PROFILE.
+Experience loop: WATCH → COPY → MATCH → COMBO → SCORE → UNLOCK → DANCE.
+Content hierarchy: Move → Variation → Combination → Routine → Workout → Challenge → Program.
+Mastery: Discovered → Learning → Familiar → Mastered.
+One authoritative movement/choreography truth shared by Learn, Workout, tracking, scoring and all instructors.
+One authoritative musical timeline drives beat/downbeat/bar/phrase, count, move, repetition, COACH animation, visual/spoken cues, expected YOU and scoring.
+Tracking calibration:
+STEP INTO VIEW → WAVE LEFT → WAVE RIGHT → LIFT LEFT FOOT → LIFT RIGHT FOOT → JUMP → READY TO SWAY.
+No workout timeline/choreography/scoring/motivational speech before READY.
+One performance space: COACH and YOU share the normalized stage; camera is input, not a permanent competing consumer window.
+Vision skeleton is diagnostic tracking data, not the production YOU graphic.
+Learn tempo is user-controlled and drives the authoritative practice clock.
+Core operation remains offline/local-first; network providers extend rather than own the core experience.
+
+CHARACTERS / ASSET PIPELINE
+Established instructors: Lucia, Nandi, Thabo, Zuri, Kyle.
+Alpha may finish Lucia first only if the architecture remains genuinely multi-character.
+Target visual direction: friendly polished stylized/Memoji-like, not photorealistic.
+ARTEMIS → visual/reference assets.
+IRIS → visual design/acceptance.
+DÜRER → Blender geometry/topology/rigging/skinning/deformation/export.
+FORGE → runtime integration/verification.
+Common SWAY humanoid rig must support all five instructors and YOUR DANCER.
+YOUR DANCER is baseline Alpha functionality and should ultimately drive graphical YOU.
+No primitive mannequin, static PNG/cutout, raw Vision skeleton or 2.5D placeholder may satisfy final COACH/YOU/YOUR DANCER acceptance.
+
+PRODUCTION UIX
+Final consumer UI, not development cards.
+Home: strong Lucia presence, obvious Start/Resume.
+Moves: visual library tied to demonstration/Learn/Practice/Create.
+Learn: character-dominant, counts 1–8, direct tempo/play controls.
+Beats: hides provider internals.
+Workout setup: short and clear.
+Calibration: owns the shared stage until READY.
+Workout: cleanest screen, large COACH, translucent graphical YOU, current move/count/NEXT, obvious Pause, no diagnostics.
+Results: score/mastery/progression/next action.
+Profile: YOUR DANCER, history, integrations, progressively disclosed settings.
+iPad adapts composition rather than merely enlarging iPhone.
+
+CONTEXT CONTINUITY / ANTI-HALLUCINATION RULE
+Context loss must cause retrieval, never reconstruction.
+If an agent loses track of canon, requirements, current state, LKG, accepted UI, known failures, or project identity, it must re-read the current GitHub authority, Project Bible, project HANDOFF/AGENTS, current source/evidence and relevant recovered artifacts before acting.
+UNKNOWN must cause lookup or remain UNKNOWN; UNKNOWN must never be filled by invention.
+Local success must never override project invariants.
+Immediate bug-fixing context does not supersede the Project Bible.
+The system must not depend on conversational memory to preserve project canon.
+
+ACTIVE CONTRACT RULE
+Every coding/repair session must load and enforce the project's machine-readable or concise active contract before implementation.
+At minimum pin:
+- active project/product
+- current milestone
+- authoritative baseline/LKG
+- current candidate
+- hard product invariants
+- required characters/providers/platforms
+- protected capabilities
+- prohibited regressions/fallbacks
+- acceptance gates
+- exact next executable action
+Any implementation that violates the active contract is a regression even if it compiles.
+
+EVIDENCE RULE
+GENERATED != IMPLEMENTED != BUILT != TESTED != VERIFIED != RELEASED.
+UNKNOWN != PASS.
+Compilation/build/install/launch must never be promoted as functional or visual acceptance.
+Preserve LKG and demonstrated working functionality before risky extension.
+
+EXECUTION RULE
+AUTO continues safe available implementation work until the requested milestone is reached or a genuine unavailable dependency blocks it.
+Intermediate failures, incomplete gates, missing generated assets, failed tests, incomplete package state or knowing the next action are not blockers when repairable work remains.
+A retry must change something relevant.
+
+MAC / GITHUB ROLE
+GitHub is durable project authority and continuity.
+Local workspace first → implement → verify → commit → push.
+GitHub activity, commits, blobs, build numbers and status updates are not product progress.
+MacBook is for bounded local compile/Xcode/Blender/render/device operations and backup/recovery, not routine scratch discovery.
+
+CURRENT REQUIRED GAP
+Converge the protected working subsystems into the requested Alpha.
+Acceptance-critical gaps include genuinely production Lucia/Blender output, production YOUR DANCER and graphical tracked YOU, complete final UI/UIX across Alpha surfaces, timing/tracking/music/cue convergence, real automated tests, deterministic one-click build automation, and complete functional/regression/physical verification.
+Do not create version/build churn as a substitute for this product state.

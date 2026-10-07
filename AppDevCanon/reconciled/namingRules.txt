@@ -1,0 +1,12 @@
+EDEN NAMING RULES — PRIVATE AUTHORITATIVE SOURCE
+Version: 2026.09.22
+Status: ACTIVE
+
+1. Preserve established project identities. Do not rename an established project without explicit instruction.
+2. Canonical project display: [ACRONYM] — [Expanded Functional Meaning] — v[VERSION].
+3. Machine identity is stable ASCII. Display identity, acronym, personality, aliases and legacy names are separate fields.
+4. Functional responsibility is authoritative. Personality/decorative naming never changes hierarchy or ownership.
+5. Legacy identity is preserved for provenance, then resolved to its canonical successor. New work uses the current identity.
+6. Names should be functional, conceptual, behavioral, technical, portable, distinct, traceable and honest.
+7. MEMORABLE TO HUMANS. STABLE TO MACHINES. MEANINGFUL IN CONTEXT. INDEPENDENT OF DECORATION. TRACEABLE THROUGH HISTORY.
+8. Do not invent a new app/system identity where an existing identity or capability already owns the scope. THREAD recovery precedes invention when historical identity may exist.

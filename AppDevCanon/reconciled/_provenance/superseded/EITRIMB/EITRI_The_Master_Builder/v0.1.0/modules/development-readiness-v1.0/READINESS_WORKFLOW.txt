@@ -1,0 +1,42 @@
+EITRIMB OPTIONAL DEVELOPMENT READINESS WORKFLOW v1.0
+
+ENTRY
+Recover project truth first. Classify STARTER / UPDATE / AUDIT / FEATURE.
+
+READINESS DOMAINS
+A Identity/purpose
+B Ownership/authority/non-ownership
+C Users/roles/operating context
+D Core use cases/outcomes
+E Functional requirements
+F Non-functional requirements/resource budgets
+G Target platforms/hardware/capability envelope
+H Existing capability discovery/reuse
+I Architecture/dependency boundaries
+J Canonical data/state model
+K Interfaces/APIs/protocols/contracts
+L UX/UI interaction/state model
+M Installation/configuration/deployment/removal
+N Security/privacy/trust boundaries
+O Safety/recovery
+P Compatibility/migration/lifecycle
+Q Observability/diagnostics
+R Acceptance criteria
+S Verification plan
+T Definition of Done
+
+PRIORITY
+SAFETY → RECOVERY → AUTHORITATIVE STATE/OWNERSHIP → CORRECTNESS → FUNCTIONALITY → PERFORMANCE → POLISH.
+
+STATE
+READY
+READY WITH TRACKED GAPS
+NOT READY
+BLOCKED
+
+FAILED GATE and UNVERIFIED are states, not automatic stopping conditions. Continue safe repair work when possible.
+
+STARTER: define only enough to prevent architectural guessing; produce/update EDC/IAC before implementation.
+UPDATE: recover → compare → preserve → flag → repair safe gaps → route specialist gaps → re-evaluate.
+AUDIT: read-only unless separately authorized.
+FEATURE: apply proportionally; do not reopen unrelated settled architecture.

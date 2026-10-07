@@ -1,0 +1,8 @@
+v0.1.0 — 2026-09-28
+- Established EITRI — The Master Builder as software-development Governor.
+- Permanent LCAS FULL requirement.
+- EDC proportional contracting and capability-first routing.
+- IAC/AWO asset bridge for FORGE ↔ ARTEMIS/IRIS workflows.
+- Corrected PENELOPE classification: App, not in-chat helper.
+- AUTO no-premature-stop behavior.
+- GitHub per-project repository continuity and recovery governance.

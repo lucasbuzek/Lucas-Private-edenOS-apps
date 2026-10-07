@@ -1,0 +1,27 @@
+SAFETY & RECOVERY GATE — v1.0
+
+Safety and recovery are architecture, not cleanup work.
+
+For every affected capability determine:
+1. Safe normal state.
+2. Safe failure state.
+3. Failure detection.
+4. Failure containment.
+5. User/system feedback.
+6. Recovery path.
+7. Data/state preservation.
+8. Rollback / Last Known Good where applicable.
+9. Verification method.
+
+ORDER
+SAFE OPERATION → FAILURE CONTAINMENT → RECOVERY → FUNCTIONALITY → OPTIMIZATION → POLISH.
+
+A capability is incomplete if ordinary or foreseeable failure can leave:
+- corrupted or silently discarded user data;
+- unsafe actuation or uncontrolled hardware;
+- unrecoverable configuration;
+- duplicate/conflicting services;
+- broken upgrade/migration state;
+- unusable installation without a defined recovery path.
+
+Use proportionality: not every UI feature is safety-critical, but every feature must have an appropriate failure/recovery behavior.

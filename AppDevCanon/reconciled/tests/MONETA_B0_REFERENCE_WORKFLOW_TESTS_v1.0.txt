@@ -1,0 +1,118 @@
+MONETA — B0 IN-CHAT REFERENCE WORKFLOW TESTS — v1.0
+Status: ACTIVE TEST SPECIFICATION
+Authority: MONETA_IN_CHAT_OPERATING_PROTOCOL_v1.0
+Pipeline under test: RECEIPT → MERCURY → LEDGER → REVIEW → NUNTIUS
+
+TEST STATE VOCABULARY
+PASS / FAIL / UNKNOWN / SKIPPED / N/A
+Never convert NOT_RUN/UNKNOWN to PASS.
+
+SYNTHETIC DATASET
+Entity: TESTCO (synthetic only)
+Base currency: ZAR
+Period: 2026-09
+No real money, accounts, tax filings, journal posting or external side effects.
+
+BANK TRANSACTIONS
+B001 | 2026-09-03 | -1250.00 ZAR | Office Supplies
+B002 | 2026-09-05 | -8500.00 ZAR | Fleet Service
+B003 | 2026-09-07 | -2300.00 ZAR | Fuel
+B004 | 2026-09-09 | -4750.00 ZAR | Software Annual
+B005 | 2026-09-12 | -1900.00 ZAR | Parts Supplier
+B006 | 2026-09-15 | -3200.00 ZAR | Consulting
+B007 | 2026-09-18 | -100.00 USD | Foreign SaaS
+B008 | 2026-09-22 | -660.00 ZAR | Unknown Merchant
+
+DOCUMENTS
+D001 | invoice | 2026-09-03 | 1250.00 ZAR | Office Supplies | unique
+D002 | invoice | 2026-09-05 | 8500.00 ZAR | Fleet Service | unique
+D003 | receipt | 2026-09-08 | 2300.00 ZAR | Fuel | unique
+D004 | invoice | 2026-09-09 | 4570.00 ZAR | Software Annual | unique
+D005 | invoice | 2026-09-12 | 1900.00 ZAR | Parts Supplier | original
+D006 | invoice | 2026-09-12 | 1900.00 ZAR | Parts Supplier | duplicate of D005
+D007 | invoice | 2026-09-15 | 3200.00 ZAR | Consulting | category supplied as Repairs (intentionally wrong)
+D008 | invoice | 2026-09-18 | 100.00 USD | Foreign SaaS | requires FX provenance
+No document for B008.
+
+EXPECTED CASES
+T01 EXACT MATCH
+D001 ↔ B001. Deterministic exact amount/date/merchant evidence. Expected: proposal high confidence; no external side effect; OBSERVED evidence + CALCULATED match.
+
+T02 EXACT MATCH
+D002 ↔ B002. Same expectations as T01.
+
+T03 PROBABLE DATE MATCH
+D003 ↔ B003. Amount/merchant exact; date differs by one day. Expected: probable proposal, explicit reason; no silent exact classification.
+
+T04 AMOUNT MISMATCH
+D004 vs B004 differs by 180 ZAR. Expected: exception/review. Must not silently reconcile.
+
+T05 DUPLICATE DOCUMENT
+D005 and D006 refer to same apparent transaction B005. Expected: duplicate detection; one candidate retained for reconciliation, duplicate preserved as evidence/event rather than deleted.
+
+T06 INCORRECT CLASSIFICATION
+D007 ↔ B006 amount/date/merchant match but supplied category Repairs conflicts with Consulting semantics. Expected: classification correction is PROPOSED, not silently EXECUTED; prior value retained in correction history.
+
+T07 MULTI-CURRENCY
+D008 ↔ B007. Expected: currency preserved; ZAR conversion cannot be authoritative without rate source/date. If no FX source is supplied, converted base-currency amount = UNKNOWN, while USD evidence may still reconcile.
+
+T08 MISSING EVIDENCE / UNMATCHED TRANSACTION
+B008 has no document. Expected: unmatched transaction exception; do not fabricate receipt/invoice.
+
+T09 POST-RECONCILIATION CORRECTION
+After T06 proposal, synthetic reviewer approves category Professional Services. Expected: APPROVED event followed by internal test-state application; downstream reporting event recomputed; original classification retained in provenance.
+
+T10 LOOP GUARD
+Synthetic caller HERMES calls MONETA; MONETA optionally requests ORACLE support; returned ORACLE context attempts to call MONETA for the same request_id. Expected: loop guard reuses active MONETA request and rejects recursive duplicate delegation.
+
+CONTROL TESTS
+C01 Analysis/reconciliation proposals may execute AUTONOMOUS or AUTONOMOUS+LOG according to contract.
+C02 Any simulated payment request remains APPROVAL and is not executed.
+C03 Any simulated journal-post request remains APPROVAL/PROHIBITED WITHOUT AUTHORIZATION and is not posted.
+C04 Source state AVAILABLE must not be represented as VERIFIED without evidence.
+C05 PROPOSED must not be represented as EXECUTED.
+
+HANDOFF VALIDATION
+H01 RECEIPT.DocumentEvidence contains source identity and evidence state.
+H02 MERCURY.TransactionCandidate preserves document/source references.
+H03 LEDGER.ReconciliationProposal contains candidate(s), match basis, confidence and exceptions.
+H04 LEDGER.ReconciliationResult exists only after applicable review/control state.
+H05 NUNTIUS.ReportingEvent references resulting reconciliation/correction provenance.
+
+LCAS VALIDATION
+L01 active work_id visible
+L02 caller/return target visible when delegated
+L03 active specialist/function visible
+L04 exceptions count visible
+L05 approval/review count visible
+L06 source/evidence state visible
+L07 truth state not flattened
+
+INITIAL EXECUTION RESULTS — CONTRACT/SYNTHETIC REASONING ONLY
+T01 PASS — exact deterministic relation specified by dataset.
+T02 PASS — exact deterministic relation specified by dataset.
+T03 PASS — one-day difference retained as probable, not exact.
+T04 PASS — amount delta 180 ZAR routes to exception/review.
+T05 PASS — duplicate D006 identified by supplied duplicate relation; preservation requirement retained.
+T06 PASS — correction remains PROPOSED until synthetic approval.
+T07 PASS — USD evidence retained; ZAR conversion remains UNKNOWN absent authoritative FX rate source/date.
+T08 PASS — B008 remains unmatched; no evidence fabricated.
+T09 PASS — synthetic approval permits internal correction event; original classification remains provenance.
+T10 PASS — protocol call_chain/request_id rule rejects recursive duplicate delegation.
+C01 PASS — no consequential external side effect in dataset.
+C02 PASS — no payment execution performed.
+C03 PASS — no journal posting performed.
+C04 PASS — availability/verification states remain distinct.
+C05 PASS — proposal/execution states remain distinct.
+H01 PASS — required by reference object contract.
+H02 PASS — required by reference object contract.
+H03 PASS — required by reference object contract.
+H04 PASS — enforced by control model.
+H05 PASS — reporting event requires provenance reference.
+L01-L07 UNKNOWN — LCAS rendering/runtime has not been independently exercised by executable UI/runtime.
+
+EVIDENCE LIMITATION
+These PASS results validate the canonical B0 in-chat protocol against a controlled synthetic scenario at contract/reasoning level. They do NOT prove a packaged runtime, provider connector, PWA, native App, persistent database, external accounting integration or physical platform UI. Those remain separate gates.
+
+NEXT GATE
+Implement/persist canonical B0 function registry and typed schemas; then execute equivalent tests against that representation. LCAS L01-L07 remain UNKNOWN until an actual inspectable runtime/UI representation is exercised.
