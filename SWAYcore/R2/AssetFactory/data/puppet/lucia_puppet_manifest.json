@@ -1,0 +1,675 @@
+{
+  "schemaVersion": 1,
+  "characterID": "lucia",
+  "rig": "SWAYHumanoid-v1",
+  "jointNames": [
+    "root",
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "leftShoulder",
+    "leftElbow",
+    "leftWrist",
+    "leftHand",
+    "rightShoulder",
+    "rightElbow",
+    "rightWrist",
+    "rightHand",
+    "leftHip",
+    "leftKnee",
+    "leftAnkle",
+    "leftFoot",
+    "rightHip",
+    "rightKnee",
+    "rightAnkle",
+    "rightFoot",
+    "nose"
+  ],
+  "sourcePolicy": "reuse-only-no-generated-geometry",
+  "anglesInYawOrder": [
+    "front",
+    "front_three_quarter_right",
+    "side_right",
+    "back_three_quarter_right",
+    "back",
+    "back_three_quarter_left",
+    "side_left",
+    "front_three_quarter_left"
+  ],
+  "angles": {
+    "front": {
+      "availability": "available",
+      "fallbackAngle": null,
+      "mirrored": false,
+      "drawOrder": [
+        "hairBack",
+        "leftUpperArm",
+        "rightUpperArm",
+        "leftLowerArm",
+        "rightLowerArm",
+        "leftHand",
+        "rightHand",
+        "leftThigh",
+        "rightThigh",
+        "leftCalf",
+        "rightCalf",
+        "leftShoe",
+        "rightShoe",
+        "pelvis",
+        "torso",
+        "head",
+        "hairFront"
+      ]
+    },
+    "front_three_quarter_right": {
+      "availability": "missing_fallback",
+      "fallbackAngle": "front",
+      "mirrored": false,
+      "drawOrder": [
+        "hairBack",
+        "leftUpperArm",
+        "rightUpperArm",
+        "leftLowerArm",
+        "rightLowerArm",
+        "leftHand",
+        "rightHand",
+        "leftThigh",
+        "rightThigh",
+        "leftCalf",
+        "rightCalf",
+        "leftShoe",
+        "rightShoe",
+        "pelvis",
+        "torso",
+        "head",
+        "hairFront"
+      ]
+    },
+    "side_right": {
+      "availability": "missing_fallback",
+      "fallbackAngle": "front",
+      "mirrored": false,
+      "drawOrder": [
+        "hairBack",
+        "leftUpperArm",
+        "rightUpperArm",
+        "leftLowerArm",
+        "rightLowerArm",
+        "leftHand",
+        "rightHand",
+        "leftThigh",
+        "rightThigh",
+        "leftCalf",
+        "rightCalf",
+        "leftShoe",
+        "rightShoe",
+        "pelvis",
+        "torso",
+        "head",
+        "hairFront"
+      ]
+    },
+    "back_three_quarter_right": {
+      "availability": "missing_fallback",
+      "fallbackAngle": "front",
+      "mirrored": false,
+      "drawOrder": [
+        "hairBack",
+        "leftUpperArm",
+        "rightUpperArm",
+        "leftLowerArm",
+        "rightLowerArm",
+        "leftHand",
+        "rightHand",
+        "leftThigh",
+        "rightThigh",
+        "leftCalf",
+        "rightCalf",
+        "leftShoe",
+        "rightShoe",
+        "pelvis",
+        "torso",
+        "head",
+        "hairFront"
+      ]
+    },
+    "back": {
+      "availability": "missing_fallback",
+      "fallbackAngle": "front",
+      "mirrored": false,
+      "drawOrder": [
+        "hairBack",
+        "leftUpperArm",
+        "rightUpperArm",
+        "leftLowerArm",
+        "rightLowerArm",
+        "leftHand",
+        "rightHand",
+        "leftThigh",
+        "rightThigh",
+        "leftCalf",
+        "rightCalf",
+        "leftShoe",
+        "rightShoe",
+        "pelvis",
+        "torso",
+        "head",
+        "hairFront"
+      ]
+    },
+    "back_three_quarter_left": {
+      "availability": "missing_fallback",
+      "fallbackAngle": "front",
+      "mirrored": false,
+      "drawOrder": [
+        "hairBack",
+        "leftUpperArm",
+        "rightUpperArm",
+        "leftLowerArm",
+        "rightLowerArm",
+        "leftHand",
+        "rightHand",
+        "leftThigh",
+        "rightThigh",
+        "leftCalf",
+        "rightCalf",
+        "leftShoe",
+        "rightShoe",
+        "pelvis",
+        "torso",
+        "head",
+        "hairFront"
+      ]
+    },
+    "side_left": {
+      "availability": "missing_fallback",
+      "fallbackAngle": "front",
+      "mirrored": false,
+      "drawOrder": [
+        "hairBack",
+        "leftUpperArm",
+        "rightUpperArm",
+        "leftLowerArm",
+        "rightLowerArm",
+        "leftHand",
+        "rightHand",
+        "leftThigh",
+        "rightThigh",
+        "leftCalf",
+        "rightCalf",
+        "leftShoe",
+        "rightShoe",
+        "pelvis",
+        "torso",
+        "head",
+        "hairFront"
+      ]
+    },
+    "front_three_quarter_left": {
+      "availability": "missing_fallback",
+      "fallbackAngle": "front",
+      "mirrored": false,
+      "drawOrder": [
+        "hairBack",
+        "leftUpperArm",
+        "rightUpperArm",
+        "leftLowerArm",
+        "rightLowerArm",
+        "leftHand",
+        "rightHand",
+        "leftThigh",
+        "rightThigh",
+        "leftCalf",
+        "rightCalf",
+        "leftShoe",
+        "rightShoe",
+        "pelvis",
+        "torso",
+        "head",
+        "hairFront"
+      ]
+    }
+  },
+  "options": {
+    "hair": {
+      "base": {
+        "availability": "available",
+        "partNames": [
+          "hairBack",
+          "hairFront"
+        ]
+      },
+      "alternate": {
+        "availability": "missing",
+        "fallbackOption": "base",
+        "reason": "No separately cut, reviewed source asset is present; primitive fabrication prohibited."
+      }
+    },
+    "top": {
+      "base": {
+        "availability": "available",
+        "partNames": [
+          "torso"
+        ]
+      },
+      "alternate": {
+        "availability": "missing",
+        "fallbackOption": "base",
+        "reason": "No separately cut, reviewed source asset is present; primitive fabrication prohibited."
+      }
+    },
+    "bottom": {
+      "base": {
+        "availability": "available",
+        "partNames": [
+          "pelvis"
+        ]
+      },
+      "alternate": {
+        "availability": "missing",
+        "fallbackOption": "base",
+        "reason": "No separately cut, reviewed source asset is present; primitive fabrication prohibited."
+      }
+    },
+    "shoes": {
+      "base": {
+        "availability": "available",
+        "partNames": [
+          "leftShoe",
+          "rightShoe"
+        ]
+      },
+      "alternate": {
+        "availability": "missing",
+        "fallbackOption": "base",
+        "reason": "No separately cut, reviewed source asset is present; primitive fabrication prohibited."
+      }
+    }
+  },
+  "parts": {
+    "hairBack": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_hairBack.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/hairBack.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/hairBack.svg",
+      "sourceSize": [
+        60,
+        66
+      ],
+      "rasterSize": [
+        931,
+        1024
+      ],
+      "pivots": {
+        "head": [
+          0.5,
+          0.55
+        ]
+      }
+    },
+    "leftUpperArm": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_leftUpperArm.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/leftUpperArm.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/leftUpperArm.svg",
+      "sourceSize": [
+        30,
+        60
+      ],
+      "rasterSize": [
+        512,
+        1024
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.06
+        ],
+        "distal": [
+          0.5,
+          0.94
+        ]
+      }
+    },
+    "rightUpperArm": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_rightUpperArm.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/rightUpperArm.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/rightUpperArm.svg",
+      "sourceSize": [
+        31,
+        60
+      ],
+      "rasterSize": [
+        529,
+        1024
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.06
+        ],
+        "distal": [
+          0.5,
+          0.94
+        ]
+      }
+    },
+    "leftLowerArm": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_leftLowerArm.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/leftLowerArm.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/leftLowerArm.svg",
+      "sourceSize": [
+        30,
+        60
+      ],
+      "rasterSize": [
+        512,
+        1024
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.06
+        ],
+        "distal": [
+          0.5,
+          0.94
+        ]
+      }
+    },
+    "rightLowerArm": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_rightLowerArm.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/rightLowerArm.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/rightLowerArm.svg",
+      "sourceSize": [
+        31,
+        60
+      ],
+      "rasterSize": [
+        529,
+        1024
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.06
+        ],
+        "distal": [
+          0.5,
+          0.94
+        ]
+      }
+    },
+    "leftHand": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_leftHand.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/leftHand.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/leftHand.svg",
+      "sourceSize": [
+        28,
+        60
+      ],
+      "rasterSize": [
+        478,
+        1024
+      ],
+      "pivots": {
+        "wrist": [
+          0.5,
+          0.1
+        ]
+      }
+    },
+    "rightHand": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_rightHand.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/rightHand.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/rightHand.svg",
+      "sourceSize": [
+        27,
+        60
+      ],
+      "rasterSize": [
+        461,
+        1024
+      ],
+      "pivots": {
+        "wrist": [
+          0.5,
+          0.1
+        ]
+      }
+    },
+    "leftThigh": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_leftThigh.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/leftThigh.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/leftThigh.svg",
+      "sourceSize": [
+        28,
+        78
+      ],
+      "rasterSize": [
+        368,
+        1024
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.05
+        ],
+        "distal": [
+          0.5,
+          0.95
+        ]
+      }
+    },
+    "rightThigh": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_rightThigh.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/rightThigh.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/rightThigh.svg",
+      "sourceSize": [
+        29,
+        78
+      ],
+      "rasterSize": [
+        381,
+        1024
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.05
+        ],
+        "distal": [
+          0.5,
+          0.95
+        ]
+      }
+    },
+    "leftCalf": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_leftCalf.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/leftCalf.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/leftCalf.svg",
+      "sourceSize": [
+        28,
+        78
+      ],
+      "rasterSize": [
+        368,
+        1024
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.05
+        ],
+        "distal": [
+          0.5,
+          0.95
+        ]
+      }
+    },
+    "rightCalf": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_rightCalf.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/rightCalf.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/rightCalf.svg",
+      "sourceSize": [
+        28,
+        78
+      ],
+      "rasterSize": [
+        368,
+        1024
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.05
+        ],
+        "distal": [
+          0.5,
+          0.95
+        ]
+      }
+    },
+    "leftShoe": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_leftShoe.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/leftShoe.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/leftShoe.svg",
+      "sourceSize": [
+        35,
+        53
+      ],
+      "rasterSize": [
+        676,
+        1024
+      ],
+      "pivots": {
+        "ankle": [
+          0.35,
+          0.25
+        ]
+      }
+    },
+    "rightShoe": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_rightShoe.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/rightShoe.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/rightShoe.svg",
+      "sourceSize": [
+        34,
+        53
+      ],
+      "rasterSize": [
+        657,
+        1024
+      ],
+      "pivots": {
+        "ankle": [
+          0.65,
+          0.25
+        ]
+      }
+    },
+    "pelvis": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_pelvis.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/pelvis.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/pelvis.svg",
+      "sourceSize": [
+        52,
+        60
+      ],
+      "rasterSize": [
+        887,
+        1024
+      ],
+      "pivots": {
+        "spine": [
+          0.5,
+          0.1
+        ],
+        "leftHip": [
+          0.32,
+          0.75
+        ],
+        "rightHip": [
+          0.68,
+          0.75
+        ]
+      }
+    },
+    "torso": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_torso.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/torso.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/torso.svg",
+      "sourceSize": [
+        55,
+        60
+      ],
+      "rasterSize": [
+        939,
+        1024
+      ],
+      "pivots": {
+        "neck": [
+          0.5,
+          0.08
+        ],
+        "leftShoulder": [
+          0.18,
+          0.18
+        ],
+        "rightShoulder": [
+          0.82,
+          0.18
+        ],
+        "pelvis": [
+          0.5,
+          0.92
+        ]
+      }
+    },
+    "head": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_head.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/head.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/head.svg",
+      "sourceSize": [
+        65,
+        66
+      ],
+      "rasterSize": [
+        1008,
+        1024
+      ],
+      "pivots": {
+        "neck": [
+          0.5,
+          0.92
+        ]
+      }
+    },
+    "hairFront": {
+      "sourcePNG": "App/ProductionAssets/Lucia/lucia_hairFront.png",
+      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/hairFront.png",
+      "svgPreservationCopy": "AssetFactory/vector/lucia/front/hairFront.svg",
+      "sourceSize": [
+        60,
+        66
+      ],
+      "rasterSize": [
+        931,
+        1024
+      ],
+      "pivots": {
+        "head": [
+          0.5,
+          0.55
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "visualQuality": "UNREVIEWED",
+    "threeQuarterViews": "MISSING",
+    "sideAndBackViews": "MISSING",
+    "alternateOptions": "MISSING",
+    "note": "Runtime must use declared nearest-angle/base-option fallback and must not report missing art as implemented."
+  }
+}

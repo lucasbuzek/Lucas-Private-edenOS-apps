@@ -322,7 +322,7 @@ struct SWAYCoachAvatarView:View {
     let mirrored:Bool
 
     var body:some View {
-        SWAYAvatarStageView(role:.coach,moveID:moveID,elapsed:musicalTime,bpm:bpm,paused:paused,mirrored:mirrored,
-            cutout:AnyView(SWAYSkeletal2DAvatarView(role:.coach,moveID:moveID,musicalTime:musicalTime,bpm:bpm,paused:paused,mirrored:mirrored)))
+        SWAYCoachPuppetView(moveID:moveID,musicalTime:musicalTime,bpm:bpm)
+            .scaleEffect(x:mirrored ? -1:1,y:1)
     }
 }

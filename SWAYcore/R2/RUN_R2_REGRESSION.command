@@ -12,7 +12,8 @@ fx_gate "asset complete suite including labelled fixtures (zero tests fails)" py
 fx_gate "protected and builder contracts (zero tests fails)" python3 Tools/regression/run_unittest_suite.py -s Tools/regression -p 'test_*.py'
 fx_gate "DeviceSupport guard scenarios" bash Tools/regression/test_devicesupport_guard.sh
 fx_gate "historical avatar contract boundary" python3 Tools/regression/check_avatar_contract.py
-fx_gate "actual RealityKit renderer iOS SDK typecheck" python3 Tools/regression/check_avatar_sdk.py
+fx_gate "OSI dependency and provenance manifest" python3 Tools/regression/check_oss_dependencies.py
+fx_gate "complete SWAY app module iOS SDK typecheck" python3 Tools/regression/check_avatar_sdk.py
 fx_gate "actual shared Swift pose versus Blender bake port" python3 Tools/regression/check_coach_pose_port.py
 fx_gate "ReplayKit callback iOS SDK typecheck" python3 Tools/regression/check_replaykit_sdk.py
 fx_gate "actual product model lifecycle" python3 Tools/regression/run_model_lifecycle.py

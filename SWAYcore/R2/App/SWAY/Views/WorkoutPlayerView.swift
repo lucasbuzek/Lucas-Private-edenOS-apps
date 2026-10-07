@@ -204,10 +204,7 @@ struct WorkoutPlayerView: View {
                             .padding(.vertical,2)
                     }
                     if trackingThisWorkout && store.showYouOverlay {
-                        SwayUserSilhouetteView(
-                            pose:pose.bodyPose,
-                            visible:pose.personTrackingState.isTracking
-                        )
+                        SWAYTrackedPuppetView(pose:pose.bodyPose,visible:pose.personTrackingState.isTracking,profile:store.character)
                         .padding(.horizontal,stageHorizontal)
                         .padding(.vertical,2)
                         .transition(.opacity)

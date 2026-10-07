@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "dependencies": [
+    {
+      "modules": ["PIL"],
+      "name": "Pillow",
+      "kind": "build-test-tool",
+      "licence_id": "HPND",
+      "licence_url": "https://github.com/python-pillow/Pillow/blob/main/LICENSE",
+      "upstream": "https://github.com/python-pillow/Pillow"
+    },
+    {
+      "modules": ["bmesh", "bpy", "mathutils"],
+      "name": "Blender Python API",
+      "kind": "build-tool",
+      "licence_id": "GPL-3.0-or-later",
+      "licence_url": "https://www.blender.org/about/license/",
+      "upstream": "https://projects.blender.org/blender/blender"
+    },
+    {
+      "modules": ["pxr"],
+      "name": "OpenUSD Python API",
+      "kind": "build-test-tool",
+      "licence_id": "Apache-2.0",
+      "licence_url": "https://github.com/PixarAnimationStudios/OpenUSD/blob/release/LICENSE.txt",
+      "upstream": "https://github.com/PixarAnimationStudios/OpenUSD"
+    }
+  ]
+}
