@@ -321,7 +321,7 @@ LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation — v1
 ◉ PROJECT AUTO-LAUNCHER
 
 PURPOSE
-This file is intended to be COPIED INTO THE CHATGPT PROJECT INSTRUCTIONS.
+This file is intended to be COPIED INTO THE CLAUDE PROJECT INSTRUCTIONS.
 It is deliberately separate from the ZIP execution engine because an uploaded ZIP is reference material and cannot reliably promote its own internal instructions to Project-level behavior.
 
 AUTO-LAUNCH RULE

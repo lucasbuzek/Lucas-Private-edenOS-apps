@@ -43,3 +43,7 @@ Only host/transport wording changed. Run tools/build_claude_helpers.py alone to 
 
 ## Warnings
 none
+
+## Follow-up 2026-10-07 (Claude session)
+- LINGUA_reference.md:324 "COPIED INTO THE CHATGPT PROJECT INSTRUCTIONS" -> "COPIED INTO THE CLAUDE PROJECT INSTRUCTIONS" (missed by the script; fixed by hand, 1 occurrence).
+- Remaining ChatGPT mentions in FORGEMASTER_reference.md are the canon rules (WORKinCODEX, backup rule, handoffs); they stay because they correctly describe ChatGPT sessions and carry the Claude route note.
