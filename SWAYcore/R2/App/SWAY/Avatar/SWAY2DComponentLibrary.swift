@@ -91,13 +91,20 @@ enum SWAY2DComponentResolver {
             default: return 0
             }
         }
-        let resolved = manifest.layers.map { layer -> SWAYResolved2DLayer in
-            let option = layer.options[wrapped(selection(for: layer.profileField), count: layer.options.count)]
-            return .init(category: layer.id, optionID: option.id,
-                         assetName: "YD2D_\(option.assetStem)_P\(String(format: "%02d", safePose))",
-                         drawOrder: layer.drawOrder, tintRole: layer.tintRole, scaleGroup: layer.scaleGroup)
-        }.sorted { lhs, rhs in
-            lhs.drawOrder == rhs.drawOrder ? lhs.category < rhs.category : lhs.drawOrder < rhs.drawOrder
+        let poseSuffix: String = safePose < 10 ? "0" + String(safePose) : String(safePose)
+        var unsorted: [SWAYResolved2DLayer] = []
+        for layer in manifest.layers {
+            let optionIndex: Int = wrapped(selection(for: layer.profileField), count: layer.options.count)
+            let option = layer.options[optionIndex]
+            let assetName: String = "YD2D_" + option.assetStem + "_P" + poseSuffix
+            let item = SWAYResolved2DLayer(category: layer.id, optionID: option.id,
+                                           assetName: assetName,
+                                           drawOrder: layer.drawOrder, tintRole: layer.tintRole, scaleGroup: layer.scaleGroup)
+            unsorted.append(item)
+        }
+        let resolved: [SWAYResolved2DLayer] = unsorted.sorted { (lhs: SWAYResolved2DLayer, rhs: SWAYResolved2DLayer) -> Bool in
+            if lhs.drawOrder == rhs.drawOrder { return lhs.category < rhs.category }
+            return lhs.drawOrder < rhs.drawOrder
         }
         func palette(_ key: String, _ index: Int) -> String {
             let values = manifest.palettes[key] ?? ["#FFFFFF"]

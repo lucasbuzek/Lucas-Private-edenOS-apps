@@ -219,7 +219,7 @@ final class SWAYRealityAvatarRenderer: ObservableObject, SWAYAvatarRendering {
             let slot=(name.contains("body") || name.contains("face") || name.contains("barefoot")) ? "skin" : name.contains("hair") ? "hair" : (name.contains("top") || name.contains("bottom")) ? "outfit" : nil
             guard let slot, let colors=palettes[slot], let token=appearance.materialTokens[slot], let index=Int(token.split(separator:"_").last ?? "0") else { return }
             let preset=Int(appearance.materialTokens["appearance"]?.split(separator:"_").last ?? "0") ?? 0
-            component.materials=[SimpleMaterial(color:colors[index % colors.count],roughness:Float(0.48 + Double(preset) * 0.1),isMetallic:false)]
+            component.materials=[SimpleMaterial(color:colors[index % colors.count],roughness:.float(Float(0.48 + Double(preset) * 0.1)),isMetallic:false)]
             (child as? ModelEntity)?.model=component
         }
     }
