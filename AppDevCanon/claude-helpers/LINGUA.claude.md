@@ -7,7 +7,7 @@
 **Version used:** v1.6  
 **Superseded/omitted versions:** none  
 
-> **READ MIRROR - GitHub `lucasbuzek/Lucas-private-appDevDocs` and the Mac `~/edenOS/AppDev` are canonical.** Generated 2026-10-07 by `AppDevCanon/tools/build_claude_helpers.py`; the section "ORIGINAL DEFINITION" below is the helper's own text, embedded verbatim and unmodified. Only this framing header is Claude-specific.
+> **READ MIRROR - GitHub `lucasbuzek/Lucas-private-appDevDocs` and the Mac `~/edenOS/AppDev` are canonical.** Generated 2026-10-07 by `AppDevCanon/tools/build_claude_helpers.py`; the section "ORIGINAL DEFINITION" below is the helper's own text, embedded verbatim EXCEPT for host/transport wording adapted from ChatGPT to Claude on 2026-10-07 (every edit is listed in ADAPTATION_LOG.md; behaviour is unchanged). Otherwise only this framing header is Claude-specific.
 
 ## How to run it in Claude (claude.ai Project "edenOS App Development")
 - **Invoke** with `@LINGUA` (as in its own commands). Claude adopts the role in-chat; Lucas's current instruction always wins.
@@ -232,7 +232,7 @@ LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation — v1
 ◉ PROJECT AUTO-LAUNCHER
 
 PURPOSE
-This file is intended to be COPIED INTO THE CHATGPT PROJECT INSTRUCTIONS.
+This file is intended to be COPIED INTO THE CLAUDE PROJECT INSTRUCTIONS.
 It is deliberately separate from the ZIP execution engine because an uploaded ZIP is reference material and cannot reliably promote its own internal instructions to Project-level behavior.
 
 AUTO-LAUNCH RULE
@@ -296,7 +296,7 @@ If an existing LINGUA translation project/checkpoint is available, reconcile it 
 LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation — v1.6
 ◉ QUICKSTART
 
-DEDICATED CHATGPT PROJECT (recommended)
+DEDICATED CLAUDE PROJECT (recommended)
 1. Put LINGUA v1.6 files in the Project.
 2. Copy LINGUA_v1.6_PROJECT_INSTRUCTIONS.txt into the Project's instructions.
 3. Start a new chat in that Project.

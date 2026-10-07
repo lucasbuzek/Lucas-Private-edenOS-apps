@@ -67,7 +67,7 @@ LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation — v1
 
 TEST A — PROJECT AUTO-LAUNCH
 PRECONDITION:
-LINGUA_v1.6_PROJECT_AUTO_LAUNCHER.txt has been copied into ChatGPT Project instructions.
+LINGUA_v1.6_PROJECT_AUTO_LAUNCHER.txt has been copied into Claude Project instructions.
 
 STEPS:
 1. Create a new chat in that Project.
@@ -234,9 +234,9 @@ MAXIMUM SAFE THROUGHPUT means the largest translation batch that still leaves su
 LINGUA — Language Interpretation, Nuance, Glossary & Unified Adaptation — v1.6
 ◉ INSTALLATION — START-PAGE DEPLOYMENT
 
-RECOMMENDED: CHATGPT PROJECT
+RECOMMENDED: CLAUDE PROJECT
 
-1. Open the ChatGPT Project in which LINGUA should run.
+1. Open the Claude Project in which LINGUA should run.
 2. Open the Project instructions.
 3. Copy the complete contents of:
    LINGUA_v1.6_PROJECT_AUTO_LAUNCHER.txt
@@ -271,7 +271,7 @@ PURPOSE
 Initialize LINGUA as an operational translation environment rather than discussing its implementation.
 
 TRIGGER
-When the surrounding ChatGPT/Project instructions activate LINGUA, or when the user says LINGUA / RUN LINGUA / LOAD LINGUA / START LINGUA, initialize immediately.
+When the surrounding Claude Project instructions activate LINGUA, or when the user says LINGUA / RUN LINGUA / LOAD LINGUA / START LINGUA, initialize immediately.
 
 FIRST OPERATIONAL RESPONSE
 Do not summarize, audit, compare, explain, or offer to inspect LINGUA.

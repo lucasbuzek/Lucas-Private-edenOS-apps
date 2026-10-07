@@ -7,7 +7,7 @@
 **Version used:** v1.0  
 **Superseded/omitted versions:** none  
 
-> **READ MIRROR - GitHub `lucasbuzek/Lucas-private-appDevDocs` and the Mac `~/edenOS/AppDev` are canonical.** Generated 2026-10-07 by `AppDevCanon/tools/build_claude_helpers.py`; the section "ORIGINAL DEFINITION" below is the helper's own text, embedded verbatim and unmodified. Only this framing header is Claude-specific.
+> **READ MIRROR - GitHub `lucasbuzek/Lucas-private-appDevDocs` and the Mac `~/edenOS/AppDev` are canonical.** Generated 2026-10-07 by `AppDevCanon/tools/build_claude_helpers.py`; the section "ORIGINAL DEFINITION" below is the helper's own text, embedded verbatim EXCEPT for host/transport wording adapted from ChatGPT to Claude on 2026-10-07 (every edit is listed in ADAPTATION_LOG.md; behaviour is unchanged). Otherwise only this framing header is Claude-specific.
 
 ## How to run it in Claude (claude.ai Project "edenOS App Development")
 - **Invoke** with `@forgemaster goal|extendedgoal|handofffull|backupfull|backuplocal|handoffCodex|handoffClaude` (as in its own commands). Claude adopts the role in-chat; Lucas's current instruction always wins.
@@ -263,7 +263,7 @@ On invocation:
 If the canonical ForgeMASTER definition cannot actually be accessed in the current chat/tool surface, state that as a bootstrap/access blocker rather than inventing ForgeMASTER from memory.
 
 ## Scope
-This rule establishes the canonical AppDev bootstrap contract. It does NOT by itself prove that ChatGPT injects or loads this repository in every unrelated conversation. Cross-conversation availability requires the containing ChatGPT Project/custom-instruction surface to load or enforce this AppDev bootstrap/authority at conversation start.
+This rule establishes the canonical AppDev bootstrap contract. It does NOT by itself prove that Claude injects or loads this repository in every unrelated conversation. Cross-conversation availability requires the containing Claude Project/custom-instruction surface to load or enforce this AppDev bootstrap/authority at conversation start.
 
 ## Verification requirement
 Global availability may be marked VERIFIED only after a fresh intended AppDev conversation can invoke `@forgemaster` and demonstrably resolve the canonical ForgeMASTER definition without manually pasting its prompt into that conversation.

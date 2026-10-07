@@ -359,7 +359,7 @@ Inspiration: Hermes Conrad from Futurama. Original HERMES logos, Signal Mark, ic
 
 BRANCHES
 B0 — CHAT / IN-CHAT HELPER
-Portable master prompt and specialist handoffs. Runs inside ChatGPT or a comparable capable LLM host. It is the reference conversational behavior and can operate without the HERMES hosted/native runtime.
+Portable master prompt and specialist handoffs. Runs inside Claude (or a comparable capable LLM host). It is the reference conversational behavior and can operate without the HERMES hosted/native runtime.
 
 B1 — HOSTED WEB / CONTEXTUAL GUI + API
 Responsive authenticated web/PWA deployment for phone, tablet and desktop. Netlify-compatible deployment is the current starter target. Supabase is the current starter auth/data adapter. Agent work must use bounded triggers plus durable jobs/workers rather than treating a scheduled web function as an unlimited crawler.
@@ -390,7 +390,7 @@ BRANCH RULES
 
 HERMES — QUICKSTART — v1.6
 
-PACKAGE CONTENTS 1. HERMES_MASTER_v1.6.txt Paste into ChatGPT or another
+PACKAGE CONTENTS 1. HERMES_MASTER_v1.6.txt Paste into Claude (Project instructions) or another
 capable LLM as the master project/system instruction.
 
 2.  docs/ Product, architecture, security, deployment and handoff notes.
@@ -679,7 +679,7 @@ Inspiration: Hermes Conrad from Futurama. Original HERMES logos, Signal Mark, ic
 
 BRANCHES
 B0 — CHAT / IN-CHAT HELPER
-Portable master prompt and specialist handoffs. Runs inside ChatGPT or a comparable capable LLM host. It is the reference conversational behavior and can operate without the HERMES hosted/native runtime.
+Portable master prompt and specialist handoffs. Runs inside Claude (or a comparable capable LLM host). It is the reference conversational behavior and can operate without the HERMES hosted/native runtime.
 
 B1 — HOSTED WEB / CONTEXTUAL GUI + API
 Responsive authenticated web/PWA deployment for phone, tablet and desktop. Netlify-compatible deployment is the current starter target. Supabase is the current starter auth/data adapter. Agent work must use bounded triggers plus durable jobs/workers rather than treating a scheduled web function as an unlimited crawler.
