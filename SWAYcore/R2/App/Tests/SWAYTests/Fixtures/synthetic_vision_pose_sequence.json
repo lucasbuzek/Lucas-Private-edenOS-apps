@@ -1,0 +1,48 @@
+{
+  "provenance": "synthetic-hand-authored-from-coach-pose-atlas",
+  "coordinateSystem": "normalized-display-top-left",
+  "frames": [
+    {
+      "timestamp": 0.0,
+      "sequence": 1,
+      "dropped": [],
+      "joints": {
+        "root": {"x": 0.50, "y": 0.62, "confidence": 0.98},
+        "neck": {"x": 0.50, "y": 0.30, "confidence": 0.97},
+        "nose": {"x": 0.50, "y": 0.20, "confidence": 0.96},
+        "leftShoulder": {"x": 0.40, "y": 0.32, "confidence": 0.95},
+        "leftElbow": {"x": 0.32, "y": 0.44, "confidence": 0.93},
+        "leftWrist": {"x": 0.29, "y": 0.55, "confidence": 0.91},
+        "rightShoulder": {"x": 0.60, "y": 0.32, "confidence": 0.95},
+        "rightElbow": {"x": 0.68, "y": 0.44, "confidence": 0.93},
+        "rightWrist": {"x": 0.71, "y": 0.55, "confidence": 0.91},
+        "leftHip": {"x": 0.45, "y": 0.62, "confidence": 0.95},
+        "leftKnee": {"x": 0.44, "y": 0.78, "confidence": 0.94},
+        "leftAnkle": {"x": 0.43, "y": 0.94, "confidence": 0.92},
+        "rightHip": {"x": 0.55, "y": 0.62, "confidence": 0.95},
+        "rightKnee": {"x": 0.56, "y": 0.78, "confidence": 0.94},
+        "rightAnkle": {"x": 0.57, "y": 0.94, "confidence": 0.92}
+      }
+    },
+    {
+      "timestamp": 0.033,
+      "sequence": 2,
+      "dropped": [],
+      "joints": {
+        "root": {"x": 0.51, "y": 0.62, "confidence": 0.98},
+        "neck": {"x": 0.51, "y": 0.30, "confidence": 0.97},
+        "leftElbow": {"x": 0.30, "y": 0.41, "confidence": 0.90}
+      }
+    },
+    {
+      "timestamp": 0.066,
+      "sequence": 3,
+      "dropped": ["leftElbow"],
+      "joints": {
+        "root": {"x": 0.52, "y": 0.62, "confidence": 0.98},
+        "neck": {"x": 0.52, "y": 0.30, "confidence": 0.97},
+        "leftElbow": {"x": 0.10, "y": 0.10, "confidence": 0.10}
+      }
+    }
+  ]
+}

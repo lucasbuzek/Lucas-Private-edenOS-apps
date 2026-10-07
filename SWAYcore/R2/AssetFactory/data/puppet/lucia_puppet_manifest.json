@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "characterID": "lucia",
   "rig": "SWAYHumanoid-v1",
   "jointNames": [
@@ -27,7 +27,13 @@
     "rightFoot",
     "nose"
   ],
-  "sourcePolicy": "reuse-only-no-generated-geometry",
+  "sources": [
+    "Reference/ArtDirection/LUCIA_RIG_REFERENCE_TURNAROUND.jpeg",
+    "Reference/ArtDirection/136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.png"
+  ],
+  "segmentation": "deterministic-hand-authored-polygons",
+  "segmentationMasks": "AssetFactory/data/puppet/lucia_segmentation_masks.json",
+  "jointOverlapSourcePixels": 12,
   "anglesInYawOrder": [
     "front",
     "front_three_quarter_right",
@@ -64,8 +70,8 @@
       ]
     },
     "front_three_quarter_right": {
-      "availability": "missing_fallback",
-      "fallbackAngle": "front",
+      "availability": "nearest_angle_fallback",
+      "fallbackAngle": "side_right",
       "mirrored": false,
       "drawOrder": [
         "hairBack",
@@ -88,8 +94,8 @@
       ]
     },
     "side_right": {
-      "availability": "missing_fallback",
-      "fallbackAngle": "front",
+      "availability": "available",
+      "fallbackAngle": null,
       "mirrored": false,
       "drawOrder": [
         "hairBack",
@@ -112,8 +118,8 @@
       ]
     },
     "back_three_quarter_right": {
-      "availability": "missing_fallback",
-      "fallbackAngle": "front",
+      "availability": "nearest_angle_fallback",
+      "fallbackAngle": "back",
       "mirrored": false,
       "drawOrder": [
         "hairBack",
@@ -136,8 +142,8 @@
       ]
     },
     "back": {
-      "availability": "missing_fallback",
-      "fallbackAngle": "front",
+      "availability": "available",
+      "fallbackAngle": null,
       "mirrored": false,
       "drawOrder": [
         "hairBack",
@@ -160,9 +166,9 @@
       ]
     },
     "back_three_quarter_left": {
-      "availability": "missing_fallback",
-      "fallbackAngle": "front",
-      "mirrored": false,
+      "availability": "nearest_angle_fallback",
+      "fallbackAngle": "back",
+      "mirrored": true,
       "drawOrder": [
         "hairBack",
         "leftUpperArm",
@@ -184,9 +190,9 @@
       ]
     },
     "side_left": {
-      "availability": "missing_fallback",
-      "fallbackAngle": "front",
-      "mirrored": false,
+      "availability": "available",
+      "fallbackAngle": null,
+      "mirrored": true,
       "drawOrder": [
         "hairBack",
         "leftUpperArm",
@@ -208,9 +214,9 @@
       ]
     },
     "front_three_quarter_left": {
-      "availability": "missing_fallback",
-      "fallbackAngle": "front",
-      "mirrored": false,
+      "availability": "nearest_angle_fallback",
+      "fallbackAngle": "side_left",
+      "mirrored": true,
       "drawOrder": [
         "hairBack",
         "leftUpperArm",
@@ -235,441 +241,944 @@
   "options": {
     "hair": {
       "base": {
-        "availability": "available",
-        "partNames": [
-          "hairBack",
-          "hairFront"
-        ]
+        "availability": "available"
       },
       "alternate": {
-        "availability": "missing",
+        "availability": "MISSING",
         "fallbackOption": "base",
-        "reason": "No separately cut, reviewed source asset is present; primitive fabrication prohibited."
+        "reason": "Board 136 presents a parts kit, but no independently separated alternate was source-safe to refit without fabricating occluded geometry."
       }
     },
     "top": {
       "base": {
-        "availability": "available",
-        "partNames": [
-          "torso"
-        ]
+        "availability": "available"
       },
       "alternate": {
-        "availability": "missing",
+        "availability": "MISSING",
         "fallbackOption": "base",
-        "reason": "No separately cut, reviewed source asset is present; primitive fabrication prohibited."
+        "reason": "Board 136 presents a parts kit, but no independently separated alternate was source-safe to refit without fabricating occluded geometry."
       }
     },
     "bottom": {
       "base": {
-        "availability": "available",
-        "partNames": [
-          "pelvis"
-        ]
+        "availability": "available"
       },
       "alternate": {
-        "availability": "missing",
+        "availability": "MISSING",
         "fallbackOption": "base",
-        "reason": "No separately cut, reviewed source asset is present; primitive fabrication prohibited."
+        "reason": "Board 136 presents a parts kit, but no independently separated alternate was source-safe to refit without fabricating occluded geometry."
       }
     },
     "shoes": {
       "base": {
-        "availability": "available",
-        "partNames": [
-          "leftShoe",
-          "rightShoe"
-        ]
+        "availability": "available"
       },
       "alternate": {
-        "availability": "missing",
+        "availability": "MISSING",
         "fallbackOption": "base",
-        "reason": "No separately cut, reviewed source asset is present; primitive fabrication prohibited."
+        "reason": "Board 136 presents a parts kit, but no independently separated alternate was source-safe to refit without fabricating occluded geometry."
       }
     }
   },
-  "parts": {
-    "hairBack": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_hairBack.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/hairBack.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/hairBack.svg",
-      "sourceSize": [
-        60,
-        66
-      ],
-      "rasterSize": [
-        931,
-        1024
-      ],
-      "pivots": {
-        "head": [
-          0.5,
-          0.55
-        ]
-      }
-    },
-    "leftUpperArm": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_leftUpperArm.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/leftUpperArm.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/leftUpperArm.svg",
-      "sourceSize": [
-        30,
-        60
-      ],
-      "rasterSize": [
-        512,
-        1024
-      ],
-      "pivots": {
-        "proximal": [
-          0.5,
-          0.06
+  "partsByAngle": {
+    "back": {
+      "hairBack": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_hairBack.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_hairBack.svg",
+        "rasterSize": [
+          795,
+          1024
         ],
-        "distal": [
-          0.5,
-          0.94
-        ]
-      }
-    },
-    "rightUpperArm": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_rightUpperArm.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/rightUpperArm.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/rightUpperArm.svg",
-      "sourceSize": [
-        31,
-        60
-      ],
-      "rasterSize": [
-        529,
-        1024
-      ],
-      "pivots": {
-        "proximal": [
-          0.5,
-          0.06
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "ad54e8602bddc84061aea3d6505c1cb58ae606be7a7545c1d060de9cb35299bf"
+      },
+      "leftUpperArm": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_leftUpperArm.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_leftUpperArm.svg",
+        "rasterSize": [
+          653,
+          1024
         ],
-        "distal": [
-          0.5,
-          0.94
-        ]
-      }
-    },
-    "leftLowerArm": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_leftLowerArm.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/leftLowerArm.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/leftLowerArm.svg",
-      "sourceSize": [
-        30,
-        60
-      ],
-      "rasterSize": [
-        512,
-        1024
-      ],
-      "pivots": {
-        "proximal": [
-          0.5,
-          0.06
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "0328ad4e6974732b6c68fed04b94e2c8e366297c94c2af1d7f046d3408f03ed4"
+      },
+      "rightUpperArm": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_rightUpperArm.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_rightUpperArm.svg",
+        "rasterSize": [
+          653,
+          1024
         ],
-        "distal": [
-          0.5,
-          0.94
-        ]
-      }
-    },
-    "rightLowerArm": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_rightLowerArm.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/rightLowerArm.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/rightLowerArm.svg",
-      "sourceSize": [
-        31,
-        60
-      ],
-      "rasterSize": [
-        529,
-        1024
-      ],
-      "pivots": {
-        "proximal": [
-          0.5,
-          0.06
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "1d06060e3641edab2bbfe42e9062b9d4fc2d6480858e61ec1acbb9a0959791a1"
+      },
+      "leftLowerArm": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_leftLowerArm.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_leftLowerArm.svg",
+        "rasterSize": [
+          652,
+          1024
         ],
-        "distal": [
-          0.5,
-          0.94
-        ]
-      }
-    },
-    "leftHand": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_leftHand.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/leftHand.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/leftHand.svg",
-      "sourceSize": [
-        28,
-        60
-      ],
-      "rasterSize": [
-        478,
-        1024
-      ],
-      "pivots": {
-        "wrist": [
-          0.5,
-          0.1
-        ]
-      }
-    },
-    "rightHand": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_rightHand.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/rightHand.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/rightHand.svg",
-      "sourceSize": [
-        27,
-        60
-      ],
-      "rasterSize": [
-        461,
-        1024
-      ],
-      "pivots": {
-        "wrist": [
-          0.5,
-          0.1
-        ]
-      }
-    },
-    "leftThigh": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_leftThigh.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/leftThigh.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/leftThigh.svg",
-      "sourceSize": [
-        28,
-        78
-      ],
-      "rasterSize": [
-        368,
-        1024
-      ],
-      "pivots": {
-        "proximal": [
-          0.5,
-          0.05
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "73f7246519d36c87f7f5160581dbc1b43f9ed2b82cfefd317143f6ff2665e3a7"
+      },
+      "rightLowerArm": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_rightLowerArm.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_rightLowerArm.svg",
+        "rasterSize": [
+          652,
+          1024
         ],
-        "distal": [
-          0.5,
-          0.95
-        ]
-      }
-    },
-    "rightThigh": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_rightThigh.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/rightThigh.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/rightThigh.svg",
-      "sourceSize": [
-        29,
-        78
-      ],
-      "rasterSize": [
-        381,
-        1024
-      ],
-      "pivots": {
-        "proximal": [
-          0.5,
-          0.05
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "3e041dd1d4c30b1c1772a281711798c0ba9f7e5e6f0c60a8a19fc80830610841"
+      },
+      "leftHand": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_leftHand.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_leftHand.svg",
+        "rasterSize": [
+          775,
+          1024
         ],
-        "distal": [
-          0.5,
-          0.95
-        ]
-      }
-    },
-    "leftCalf": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_leftCalf.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/leftCalf.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/leftCalf.svg",
-      "sourceSize": [
-        28,
-        78
-      ],
-      "rasterSize": [
-        368,
-        1024
-      ],
-      "pivots": {
-        "proximal": [
-          0.5,
-          0.05
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "3721b73b684e209187b17addccc1eea6cf39b60ba8c8adfa9a8e7e1169d1ece1"
+      },
+      "rightHand": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_rightHand.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_rightHand.svg",
+        "rasterSize": [
+          775,
+          1024
         ],
-        "distal": [
-          0.5,
-          0.95
-        ]
-      }
-    },
-    "rightCalf": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_rightCalf.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/rightCalf.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/rightCalf.svg",
-      "sourceSize": [
-        28,
-        78
-      ],
-      "rasterSize": [
-        368,
-        1024
-      ],
-      "pivots": {
-        "proximal": [
-          0.5,
-          0.05
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "81f27e9304d32b356eb47499b00a32655c91f6a412ac8b17413a742cabe40cb4"
+      },
+      "leftThigh": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_leftThigh.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_leftThigh.svg",
+        "rasterSize": [
+          588,
+          1024
         ],
-        "distal": [
-          0.5,
-          0.95
-        ]
-      }
-    },
-    "leftShoe": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_leftShoe.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/leftShoe.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/leftShoe.svg",
-      "sourceSize": [
-        35,
-        53
-      ],
-      "rasterSize": [
-        676,
-        1024
-      ],
-      "pivots": {
-        "ankle": [
-          0.35,
-          0.25
-        ]
-      }
-    },
-    "rightShoe": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_rightShoe.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/rightShoe.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/rightShoe.svg",
-      "sourceSize": [
-        34,
-        53
-      ],
-      "rasterSize": [
-        657,
-        1024
-      ],
-      "pivots": {
-        "ankle": [
-          0.65,
-          0.25
-        ]
-      }
-    },
-    "pelvis": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_pelvis.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/pelvis.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/pelvis.svg",
-      "sourceSize": [
-        52,
-        60
-      ],
-      "rasterSize": [
-        887,
-        1024
-      ],
-      "pivots": {
-        "spine": [
-          0.5,
-          0.1
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "990c9fb97a737ad10b9e5618c301b6b2774c67b36eb1ce7ada90841c13f13c2a"
+      },
+      "rightThigh": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_rightThigh.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_rightThigh.svg",
+        "rasterSize": [
+          588,
+          1024
         ],
-        "leftHip": [
-          0.32,
-          0.75
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "ceec091ebc587eedc2fbe30c9d6817f3c8f1970f419fa30ffb366bd443e913a8"
+      },
+      "leftCalf": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_leftCalf.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_leftCalf.svg",
+        "rasterSize": [
+          555,
+          1024
         ],
-        "rightHip": [
-          0.68,
-          0.75
-        ]
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "2a542b3b25beee3aca12474e15b21216e11f95edc5b7234e1d9e0e0fb40b51be"
+      },
+      "rightCalf": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_rightCalf.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_rightCalf.svg",
+        "rasterSize": [
+          548,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "09f98a70b7ed6dc75651ef9b7ad6e5ab0632d3afb0242a0d775246a58d029c5e"
+      },
+      "leftShoe": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_leftShoe.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_leftShoe.svg",
+        "rasterSize": [
+          1024,
+          714
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "c9b291286296642d956e839df9d3eb74ed63b0778aa243470d22f915052b9f8c"
+      },
+      "rightShoe": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_rightShoe.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_rightShoe.svg",
+        "rasterSize": [
+          1024,
+          714
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "487e0d0113d423ef65b6e7b37c960f451f05cf7fe7d6e45347e9282ab78f6fee"
+      },
+      "pelvis": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_pelvis.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_pelvis.svg",
+        "rasterSize": [
+          1024,
+          649
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "d79f90672b33711dcb971a7844f3346b64ea19fbce060962b34608faf7aa2fb7"
+      },
+      "torso": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_torso.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_torso.svg",
+        "rasterSize": [
+          760,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "d0e1f82d32a6fb85819bf0ea93adddfb67bf2068482f51b0f07cba81b296ea1b"
+      },
+      "head": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_head.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_head.svg",
+        "rasterSize": [
+          853,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "a73471fae4e4156d1266bbee456f28ecc2b0b3e2ce78799842c6aca1aaa2eae9"
+      },
+      "hairFront": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/back/base/lucia_back_base_hairFront.png",
+        "svg": "AssetFactory/vector/lucia/back/base/lucia_back_base_hairFront.svg",
+        "rasterSize": [
+          1024,
+          953
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "4c77fa8106c36584a099a569757235c3bd9078f9fda5e5039912669e2238b5ec"
       }
     },
-    "torso": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_torso.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/torso.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/torso.svg",
-      "sourceSize": [
-        55,
-        60
-      ],
-      "rasterSize": [
-        939,
-        1024
-      ],
-      "pivots": {
-        "neck": [
-          0.5,
-          0.08
+    "front": {
+      "hairBack": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_hairBack.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_hairBack.svg",
+        "rasterSize": [
+          795,
+          1024
         ],
-        "leftShoulder": [
-          0.18,
-          0.18
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "1a30264170165d05a0418ca1f4fda20e2dcedfd48466a0bc4dd79102cfca40d2"
+      },
+      "leftUpperArm": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_leftUpperArm.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_leftUpperArm.svg",
+        "rasterSize": [
+          699,
+          1024
         ],
-        "rightShoulder": [
-          0.82,
-          0.18
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "9c3a2f59dbdb9aa7f7d66ed4a2d40634eeb1a99f406c1c0a025c7ff757adb52f"
+      },
+      "rightUpperArm": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_rightUpperArm.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_rightUpperArm.svg",
+        "rasterSize": [
+          689,
+          1024
         ],
-        "pelvis": [
-          0.5,
-          0.92
-        ]
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "60be61d6392b32ac4fabb13b145b8e15253fe5dffcc7572675a8ae07b6b298e5"
+      },
+      "leftLowerArm": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_leftLowerArm.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_leftLowerArm.svg",
+        "rasterSize": [
+          686,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "6777d6a9a4b9e86bee87ff9bb04ecbc7353a76962fa09a60a855ed4376962d3d"
+      },
+      "rightLowerArm": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_rightLowerArm.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_rightLowerArm.svg",
+        "rasterSize": [
+          686,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "b3ad4afa9a27b2fb7eebf2d9f5670275c95c07d994d3de022c392eef073e1cbd"
+      },
+      "leftHand": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_leftHand.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_leftHand.svg",
+        "rasterSize": [
+          775,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "a0de4f58aa586ae9a4d57334131bf8673fc6b8438a8db2acbb92ff15c61283dc"
+      },
+      "rightHand": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_rightHand.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_rightHand.svg",
+        "rasterSize": [
+          775,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "30f5dc6c92260618599e14d7c60d28eb6fb2244d3c29988e3a630d430908d31a"
+      },
+      "leftThigh": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_leftThigh.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_leftThigh.svg",
+        "rasterSize": [
+          616,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "9d80b26baa474a229c0a8c7206236b1c0d467d6c9c3da6ba7c8e5b88c9761799"
+      },
+      "rightThigh": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_rightThigh.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_rightThigh.svg",
+        "rasterSize": [
+          616,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "9d8c12c34fba40086bd16ba69497fed968af10e857e3b54a008d3938679eb66d"
+      },
+      "leftCalf": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_leftCalf.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_leftCalf.svg",
+        "rasterSize": [
+          557,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "3187191fced80fbf613e3dadfbfa792b01bf95e03321aa7af4979cb2968eb1e2"
+      },
+      "rightCalf": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_rightCalf.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_rightCalf.svg",
+        "rasterSize": [
+          570,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "b97046141b92b9ebd4361cbfe9be650b0b528bd8b1a1e690674f229c398dfd4b"
+      },
+      "leftShoe": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_leftShoe.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_leftShoe.svg",
+        "rasterSize": [
+          1024,
+          714
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "f3480299507156d087d022623a0cb7bebf71bd18335368903ffe4c99fae57e07"
+      },
+      "rightShoe": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_rightShoe.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_rightShoe.svg",
+        "rasterSize": [
+          1024,
+          714
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "73668778161adb921ae4e19bd04aa750d6f5c2c5ea86ed5211b21923924627c2"
+      },
+      "pelvis": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_pelvis.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_pelvis.svg",
+        "rasterSize": [
+          1024,
+          638
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "361ea3e7d08e9b8281eee07b0eb439a805bb09ce48c272ad507cf43b473ca2cc"
+      },
+      "torso": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_torso.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_torso.svg",
+        "rasterSize": [
+          758,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "9a5eb8f86d31f5f1bfd4c5c6c4cae4c1e0165b4bd0147a32c9ff26c95d69cb5d"
+      },
+      "head": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_head.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_head.svg",
+        "rasterSize": [
+          853,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "43d148f4ad0e997681f491d33112fdcf55e794a1ef1134cf10065585dc965877"
+      },
+      "hairFront": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/lucia_front_base_hairFront.png",
+        "svg": "AssetFactory/vector/lucia/front/base/lucia_front_base_hairFront.svg",
+        "rasterSize": [
+          1024,
+          953
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "42256905d196c4a59da8a1b3aa949f96effdb5de091f28d703525233e89532c7"
       }
     },
-    "head": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_head.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/head.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/head.svg",
-      "sourceSize": [
-        65,
-        66
-      ],
-      "rasterSize": [
-        1008,
-        1024
-      ],
-      "pivots": {
-        "neck": [
-          0.5,
-          0.92
-        ]
+    "side_left": {
+      "hairBack": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_hairBack.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_hairBack.svg",
+        "rasterSize": [
+          679,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "7a07940878e9188bb87eb8fb337fb053c66734fa50c92f71bda796f1f67d6bae"
+      },
+      "leftUpperArm": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_leftUpperArm.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_leftUpperArm.svg",
+        "rasterSize": [
+          563,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "6c4036e4adae3b80686d2a2201e81410ad438c8863c38f14891587098b3ee73e"
+      },
+      "rightUpperArm": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_rightUpperArm.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_rightUpperArm.svg",
+        "rasterSize": [
+          573,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "01b8934f3108d9c931d49bd3bedc2bdddb5d09cda8c57292330a671a282e30c8"
+      },
+      "leftLowerArm": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_leftLowerArm.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_leftLowerArm.svg",
+        "rasterSize": [
+          566,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "633b5f8f910655fc9f5c5822dc2fc973755bb758e02ad5c43fa5ee9f1b51e23e"
+      },
+      "rightLowerArm": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_rightLowerArm.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_rightLowerArm.svg",
+        "rasterSize": [
+          545,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "379cd000a87045edb559c11578c0735eb4a63c2c1b2a4c43103078f003c15583"
+      },
+      "leftHand": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_leftHand.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_leftHand.svg",
+        "rasterSize": [
+          775,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "f61196a88fda8abe109c163c784bebb3ea62e645d55d5acaacedddd5e365e047"
+      },
+      "rightHand": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_rightHand.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_rightHand.svg",
+        "rasterSize": [
+          775,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "40f9117bc683b53b1029d2122859b8f406154b59f211548ec1c284fb48f8f8db"
+      },
+      "leftThigh": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_leftThigh.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_leftThigh.svg",
+        "rasterSize": [
+          571,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "ea2e17e0b3a5da5bcdc886a2f45e2feccd308f58c579b47dea7b9e43fc3055ac"
+      },
+      "rightThigh": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_rightThigh.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_rightThigh.svg",
+        "rasterSize": [
+          584,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "7b504c7b2431dd3bc6de80f7a1215080c13d1e2d304489b35f837144f251f895"
+      },
+      "leftCalf": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_leftCalf.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_leftCalf.svg",
+        "rasterSize": [
+          533,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "0c74f2593158a1d8e20d529ad124e1417e5f8625c54fa2e22c318702057e4d0c"
+      },
+      "rightCalf": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_rightCalf.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_rightCalf.svg",
+        "rasterSize": [
+          588,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "e1fa564fe09ccfbbf8debdaea0468df109ab4937542f289edc242655113eaa59"
+      },
+      "leftShoe": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_leftShoe.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_leftShoe.svg",
+        "rasterSize": [
+          1024,
+          714
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "636ab7f286570c04525c81ded9a0ab1100e8595f2540122ec5bb6ebd6d84937c"
+      },
+      "rightShoe": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_rightShoe.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_rightShoe.svg",
+        "rasterSize": [
+          1024,
+          714
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "5c99d0861dbcbe8e94abdf3e7ca18d6278023cfe9c25884c3c07732e3c358cca"
+      },
+      "pelvis": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_pelvis.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_pelvis.svg",
+        "rasterSize": [
+          1024,
+          961
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "bc10ef143138e7988de1b91fe511c2e52dbc0f685651ab15d7aa9c3e6c0c7b96"
+      },
+      "torso": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_torso.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_torso.svg",
+        "rasterSize": [
+          421,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "b28fd0e1906f2c06584319c1b8b03370e4202534ee89a3d3c56bae82dcaae7d1"
+      },
+      "head": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_head.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_head.svg",
+        "rasterSize": [
+          707,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "b3bc0ff51332f047f2a32e7ef10afd3967aec2dcd8ff40605d09a3c522ee477d"
+      },
+      "hairFront": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_left/base/lucia_side_left_base_hairFront.png",
+        "svg": "AssetFactory/vector/lucia/side_left/base/lucia_side_left_base_hairFront.svg",
+        "rasterSize": [
+          917,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "d6dcbcd6026f1fe708ff03b4eeb97b12cff339de531d8a3d6f5e2f0b5b6a4421"
       }
     },
-    "hairFront": {
-      "sourcePNG": "App/ProductionAssets/Lucia/lucia_hairFront.png",
-      "png1024": "App/SWAY/Resources/Puppets/Lucia/front/base/hairFront.png",
-      "svgPreservationCopy": "AssetFactory/vector/lucia/front/hairFront.svg",
-      "sourceSize": [
-        60,
-        66
-      ],
-      "rasterSize": [
-        931,
-        1024
-      ],
-      "pivots": {
-        "head": [
-          0.5,
-          0.55
-        ]
+    "side_right": {
+      "hairBack": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_hairBack.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_hairBack.svg",
+        "rasterSize": [
+          679,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "bcc8e11fe1a9311bfa52cb41f666e95c86e47dc6a6994218c4258afa6341a80e"
+      },
+      "leftUpperArm": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_leftUpperArm.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_leftUpperArm.svg",
+        "rasterSize": [
+          618,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "13b130f7413bf19de439368a9c824264cd168f7f4924cc33867bea9b9709d199"
+      },
+      "rightUpperArm": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_rightUpperArm.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_rightUpperArm.svg",
+        "rasterSize": [
+          626,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "c21c5bec8710cd75220adb050fc5d9aaaa19f069181cf4285decb19a8c7e0639"
+      },
+      "leftLowerArm": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_leftLowerArm.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_leftLowerArm.svg",
+        "rasterSize": [
+          539,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "a7a525fe041b06c592a2554e585db04988e7b26a08d46c793e8f7f37a11bd89f"
+      },
+      "rightLowerArm": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_rightLowerArm.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_rightLowerArm.svg",
+        "rasterSize": [
+          550,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "dcf53b05a3e68f3cf37aaf7f3e5cfa18f417ad966a3fd3387db2089789adb429"
+      },
+      "leftHand": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_leftHand.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_leftHand.svg",
+        "rasterSize": [
+          775,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "6b9a9592327654cbfcf7d385fe749a9d03ffd0c018e5052753ef866575f9d568"
+      },
+      "rightHand": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_rightHand.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_rightHand.svg",
+        "rasterSize": [
+          775,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "5d7f875b4064d5b9baa909c5900793adc4b6f2708a72974e437799e8c28cf4ab"
+      },
+      "leftThigh": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_leftThigh.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_leftThigh.svg",
+        "rasterSize": [
+          557,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "24c60424877c445f4336db82db2965e5411016e12d964c7b0cfa911f68a2f46d"
+      },
+      "rightThigh": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_rightThigh.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_rightThigh.svg",
+        "rasterSize": [
+          591,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "1e4c0a0a640a1cd2a5d01fddab77c2de073e09867863bcc94f30dea0f7fb44f7"
+      },
+      "leftCalf": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_leftCalf.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_leftCalf.svg",
+        "rasterSize": [
+          540,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "c54f15e54cd6a9d2d64d5829aea1dcb63f40d5376ba8439d2b6ec61f5f78e3a5"
+      },
+      "rightCalf": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_rightCalf.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_rightCalf.svg",
+        "rasterSize": [
+          589,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.08
+        },
+        "sha256": "cd00531e01ca656298053fbef55ff9928ff5d42a7c3ff6f0623330ce65c1a515"
+      },
+      "leftShoe": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_leftShoe.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_leftShoe.svg",
+        "rasterSize": [
+          1024,
+          714
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "edb8155e0713e550ebb21f6933e00289337ff30296dd399005e54c4bb6f39f1b"
+      },
+      "rightShoe": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_rightShoe.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_rightShoe.svg",
+        "rasterSize": [
+          1024,
+          714
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "3f36eea652d66817225a42c87b490b51ec099421d4fd069b7e029987e6100690"
+      },
+      "pelvis": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_pelvis.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_pelvis.svg",
+        "rasterSize": [
+          1024,
+          949
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "c9122f6231d43287fdf4b38b05add10900d66fd9a79d81d066ca712605750f2d"
+      },
+      "torso": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_torso.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_torso.svg",
+        "rasterSize": [
+          444,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "93dc56f1d9cbf542c2411f66e80de65140220e57d8166d6f7c101ad07a4de3cc"
+      },
+      "head": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_head.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_head.svg",
+        "rasterSize": [
+          707,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "70e12d3d72a78ca178fdb62905adb22d472953bdcdd1e8c3148908bd5332318b"
+      },
+      "hairFront": {
+        "png1024": "App/SWAY/Resources/Puppets/Lucia/side_right/base/lucia_side_right_base_hairFront.png",
+        "svg": "AssetFactory/vector/lucia/side_right/base/lucia_side_right_base_hairFront.svg",
+        "rasterSize": [
+          917,
+          1024
+        ],
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "sha256": "6fb5ed5c374dd3e02d0237a8a409d64789581a6e32c919a9641c9a221d45e574"
       }
     }
   },
   "evidence": {
     "visualQuality": "UNREVIEWED",
-    "threeQuarterViews": "MISSING",
-    "sideAndBackViews": "MISSING",
+    "sam2": "NOT USED \u2014 deterministic masks avoid unavailable model weights",
+    "threeQuarterViews": "MISSING_WITH_NEAREST_ANGLE_FALLBACK",
     "alternateOptions": "MISSING",
-    "note": "Runtime must use declared nearest-angle/base-option fallback and must not report missing art as implemented."
+    "vectorTrace": "vtracer MIT true path SVG"
   }
 }

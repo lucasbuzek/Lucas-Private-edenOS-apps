@@ -1,0 +1,12 @@
+{
+  "canvas": [1000, 800],
+  "proximal": [0.2, 0.2],
+  "distal": [0.6, 0.6],
+  "widthFraction": 0.08,
+  "expectedCenter": [400, 320],
+  "expectedSize": [80, 512.2499389946279],
+  "expectedRotationRadians": -0.8960553845713439,
+  "assetSize": [120, 240],
+  "assetPivot": [0.5, 0.25],
+  "expectedPivotedCenter": [200, 220]
+}

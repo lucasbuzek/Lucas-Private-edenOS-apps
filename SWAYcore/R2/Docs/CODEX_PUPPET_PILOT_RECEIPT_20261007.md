@@ -1,60 +1,34 @@
-# CODEX Lucia Puppet Pilot receipt — 2026-10-07
+# CODEX Lucia Puppet Pilot repair receipt — 2026-10-07
 
-## Evidence rules
+## Evidence discipline
 
-This receipt follows CONDUCTOR evidence semantics: GENERATED is not IMPLEMENTED,
-BUILT, TESTED, VERIFIED, or RELEASED; UNKNOWN is not PASS. Nothing in this work
-promotes an LKG. Linux checks are not simulator or physical-iPhone evidence.
+GENERATED is not IMPLEMENTED, BUILT, TESTED, VERIFIED, or RELEASED. UNKNOWN is not PASS. This candidate does not promote an LKG.
 
-## Implemented candidate
+## Repair implementation
 
-* A native SwiftUI cut-out puppet renderer attaches separated Lucia parts to the
-  SWAYHumanoid-v1 hierarchy. Coach poses come from `SwayCoachPoseEngine`; tracked
-  YOU poses map Vision joints, retain last-good dropped joints, and report lost
-  tracking as UNKNOWN.
-* An eight-direction yaw selector uses a 10-degree hysteresis band. Angle and
-  customisation asset names are resolved per part without a third-party runtime.
-* The workout coach, NEXT preview (through the shared coach view), and YOU panel
-  consume the puppet path.
-* The source-only asset pipeline emits 1024 px PNG fallbacks, SVG preservation
-  containers, manifest pivots/draw order, provenance, and review contact sheets.
-  It does not claim that raster-preserving SVG containers are traced vectors.
-* The SDK typecheck now compiles the complete app source set rather than an
-  obsolete extracted renderer fragment. An OSI provenance regression gate is
-  part of `RUN_R2_REGRESSION.command`.
+* Swift parser defect `)-.pi` and ambiguous compact subtraction expressions were replaced with explicitly typed, spaced geometry. `SWAYPuppetMath` is now the single renderer placement contract.
+* All puppet PNG bundle basenames include character, view, option and part. A pure-Python strict PNG test checks signature, chunk boundaries, every CRC, complete zlib decode and IEND for all shipped PNGs.
+* The deterministic Lucia pipeline uses reviewable hand-authored polygon masks against the high-resolution turnaround. SAM 2 was not used: model weights were not provisioned and deterministic masks avoid a network/model dependency. Pillow creates transparent, reduced-palette raster fallbacks and MIT-licensed vtracer creates real SVG paths.
+* FRONT, SIDE RIGHT, BACK and SIDE LEFT are sourced from the turnaround. Three-quarter views use declared nearest-angle fallbacks. Board 136 alternates remain MISSING because the overlapping kit does not expose sufficient pixels for a non-fabricated refit.
+* A pure-Python compositor emits all-angle neutral evidence and eight-frame Step Touch, Squat and spin strips plus exact JSON joint tracks. Its midpoint/atan2 placement contract has a shared JSON parity fixture checked by XCTest to 0.5 px.
+* Three provenance-labelled synthetic Vision frames exercise YOU mapping and last-good retention for a dropped/low-confidence elbow.
 
-## Acceptance-gate ledger
+## Acceptance ledger
 
-| Gate | State | Evidence / reason |
+| Gate | State | Evidence |
 |---|---|---|
-| 1. Pivot alignment for every Step Touch, Squat, spin frame | **UNKNOWN** | Manifest pivot arithmetic is tested, but app XCTest and rendered-frame measurement require macOS/Xcode. No claim of a 0.5 px rendered result is made. |
-| 2. 0–360 angle order and ±10° hysteresis | **TESTED (parse/static); app XCTest UNKNOWN** | XCTest cases cover order and dead-band behavior; Swift parses on Linux. Execution under XCTest is pending macOS. |
-| 3. Hair/top/bottom/shoe option swap at every angle | **MISSING / UNKNOWN** | Resolver naming exists, but alternate authored art is unavailable. Manifest entries explicitly use base fallback. |
-| 4. Recorded Vision fixture drive and dropped joints | **PARTIALLY IMPLEMENTED; UNKNOWN** | Vision mapping and last-good retention exist with unit coverage, but no approved recorded Vision fixture set or app XCTest execution was available. |
-| 5. OSI licence/provenance gate | **TESTED — PASS on Linux** | `check_oss_dependencies.py` passed and is wired into the regression command. |
-| 6. Contact sheets | **GENERATED; visualQuality UNREVIEWED** | Lucia angle/option sheet is committed. Missing views are visibly labelled. Motion strips remain missing because rendered runtime capture requires the Apple runtime. |
-| 7. Regression | **PARTIAL** | SWAYcoreEngine: 31/31 PASS. Puppet asset tests: 5/5 PASS. Full R2 result was 4 FAIL / 2 UNKNOWN: three Apple/Xcode commands are unavailable on Linux, while the pre-existing build-identity contract cannot find the ungenerated `SWAY.xcodeproj`. These are not reported as passes. |
-| 8. Receipt | **IMPLEMENTED** | This document records the evidence without promotion or release claims. |
+| 1. Pivot alignment ≤0.5 px | **IMPLEMENTED; XCTest execution UNKNOWN** | Swift/Python parity fixture asserts endpoint midpoint, dimensions, rotation and normalized pivot center with 0.5 px tolerance. Linux cannot execute UIKit XCTest. |
+| 2. Yaw order / ±10° hysteresis | **IMPLEMENTED; XCTest execution UNKNOWN** | Existing XCTest covers all eight directions and boundary noise. |
+| 3. Option swap every angle | **MISSING** | Runtime-safe base fallback exists. Alternate source extraction could not be completed honestly. |
+| 4. Tracking fixtures / dropped joints | **IMPLEMENTED; XCTest execution UNKNOWN** | Three synthetic frames are committed and the XCTest drives mapper retention. |
+| 5. OSI gate | **TESTED** | `check_oss_dependencies.py` is part of regression; local result recorded in command output for this commit. |
+| 6. Posed evidence | **GENERATED; UNREVIEWED** | Neutral eight-angle sheet and three motion strips are committed. Human visual quality remains UNREVIEWED. |
+| 7. Regression | **PARTIAL / UNKNOWN** | Python/core gates run locally; iOS SDK build and XCTest require Lucas's Mac. |
+| 8. Receipt | **IMPLEMENTED** | This file is the repair receipt. |
 
-## Explicit UNKNOWN / MISSING list
+## Explicit UNKNOWN / MISSING
 
-* SIDE, BACK, 3/4 FRONT, and 3/4 BACK authored Lucia parts: **MISSING**; the
-  manifest falls back to FRONT. Mirrored art is not claimed as newly authored.
-* Second hairstyle, top, bottom, and shoe option: **MISSING**; base fallback only.
-* True vector tracing: **MISSING**. Current SVGs are honest preservation wrappers.
-* Step Touch, Squat, and spin rendered motion strips: **MISSING**.
-* Simulator build and app XCTest execution: **UNKNOWN** (Linux has no Xcode or
-  iPhoneOS SDK).
-* Physical iPhone behavior, camera tracking, performance, and joint alignment:
-  **UNKNOWN**.
-* Lucas visual acceptance of character quality/contact sheets:
-  **UNREVIEWED / UNKNOWN**.
-* Release, LKG promotion, and all non-pilot characters: **NOT PERFORMED**.
-
-## Required next evidence
-
-On the Mac, run the full regression command and app XCTest target, capture the
-three runtime motion strips, and measure rendered pivot-to-joint deltas. Lucas
-must review the committed contact sheet before any visual-quality status changes.
-Only authored, source-approved angle and option art may replace the declared
-fallbacks.
+* iOS 27 SDK `xcodebuild`, simulator launch, app XCTest, camera behavior, physical-device behavior and performance: **UNKNOWN on Linux**.
+* Human visual acceptance: **UNREVIEWED**.
+* Neutral three-quarter source art and alternate hair/top/bottom/shoe art: **MISSING**, with declared fallbacks.
+* Release and LKG promotion: **NOT PERFORMED**.

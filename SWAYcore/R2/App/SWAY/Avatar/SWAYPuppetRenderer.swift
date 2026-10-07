@@ -10,10 +10,12 @@ enum SWAYPuppetAngle: Int, CaseIterable, Equatable {
     var authoredName: String {
         switch self {
         case .front: return "front"
-        case .frontRight, .frontLeft: return "threeQuarterFront"
-        case .right, .left: return "side"
-        case .backRight, .backLeft: return "threeQuarterBack"
+        case .frontRight: return "side_right" // reviewed nearest-angle fallback
+        case .right: return "side_right"
+        case .backRight, .backLeft: return "back" // reviewed nearest-angle fallback
         case .back: return "back"
+        case .left: return "side_left"
+        case .frontLeft: return "side_left" // reviewed nearest-angle fallback
         }
     }
     var mirrored: Bool { self == .frontLeft || self == .left || self == .backLeft }
@@ -39,6 +41,59 @@ struct SWAYPuppetAngleSelector {
     }
 }
 
+/// Platform-independent geometry shared by the renderer and its reference
+/// compositor. Values are in canvas pixels; the asset pivot is normalized to
+/// the unrotated asset bounds.
+struct SWAYPuppetPartPlacement: Equatable {
+    let center: CGPoint
+    let size: CGSize
+    let rotationRadians: Double
+}
+
+enum SWAYPuppetMath {
+    static func canvasPoint(_ normalized: CGPoint, canvasSize: CGSize) -> CGPoint {
+        CGPoint(x: normalized.x * canvasSize.width, y: normalized.y * canvasSize.height)
+    }
+
+    static func pivotedPlacement(
+        joint: CGPoint,
+        canvasSize: CGSize,
+        assetSize: CGSize,
+        assetPivot: CGPoint
+    ) -> SWAYPuppetPartPlacement {
+        let target = canvasPoint(joint, canvasSize: canvasSize)
+        let centerOffset = CGPoint(
+            x: (0.5 - assetPivot.x) * assetSize.width,
+            y: (0.5 - assetPivot.y) * assetSize.height
+        )
+        return SWAYPuppetPartPlacement(
+            center: CGPoint(x: target.x + centerOffset.x, y: target.y + centerOffset.y),
+            size: assetSize,
+            rotationRadians: 0
+        )
+    }
+
+    static func limbPlacement(
+        proximal: CGPoint,
+        distal: CGPoint,
+        canvasSize: CGSize,
+        widthFraction: CGFloat
+    ) -> SWAYPuppetPartPlacement {
+        let start: CGPoint = canvasPoint(proximal, canvasSize: canvasSize)
+        let end: CGPoint = canvasPoint(distal, canvasSize: canvasSize)
+        let deltaX: CGFloat = end.x - start.x
+        let deltaY: CGFloat = end.y - start.y
+        let length: CGFloat = hypot(deltaX, deltaY)
+        let center = CGPoint(x: (start.x + end.x) / 2, y: (start.y + end.y) / 2)
+        let rotation = Double(atan2(deltaY, deltaX) - .pi / 2)
+        return SWAYPuppetPartPlacement(
+            center: center,
+            size: CGSize(width: canvasSize.width * widthFraction, height: length),
+            rotationRadians: rotation
+        )
+    }
+}
+
 /// Converts Vision's estimator-specific names into the 23-joint contract and
 /// retains the last reliable value for dropped joints. Never invents toes.
 struct SWAYVisionPuppetMapper {
@@ -59,7 +114,8 @@ struct SWAYVisionPuppetMapper {
         guard let ls=pose.joints[.leftShoulder], let rs=pose.joints[.rightShoulder],
               let lh=pose.joints[.leftHip], let rh=pose.joints[.rightHip],
               [ls,rs,lh,rh].allSatisfy({$0.confidence >= 0.25}) else { return nil }
-        let shoulder = abs(Double(rs.point.x-ls.point.x)), hip = abs(Double(rh.point.x-lh.point.x))
+        let shoulder = abs(Double(rs.point.x - ls.point.x))
+        let hip = abs(Double(rh.point.x - lh.point.x))
         let width = max(shoulder, hip)
         let ratio = min(1, width / 0.28)
         let magnitude = acos(ratio)
@@ -101,18 +157,23 @@ struct SWAYPuppetRenderer: View {
     }
 
     private func asset(_ part:String)->String {
-        // Option suffixes are adopted automatically when catalog art exists; the
-        // established Lucia art is the honest fallback, never a primitive shape.
-        let option:Int? = part.contains("hair") ? profile?.hairStyle : (part == "torso" ? profile?.outfitStyle : (part.contains("Shoe") ? profile?.footwearStyle:nil))
-        if let option, UIImage(named:"Puppet_lucia_\(angle.authoredName)_\(part)_\(option)") != nil { return "Puppet_lucia_\(angle.authoredName)_\(part)_\(option)" }
-        let angled="Puppet_lucia_\(angle.authoredName)_\(part)"
-        return UIImage(named:angled) != nil ? angled : "Rig_lucia_\(part)"
+        // Filenames include character, view and option because Xcode copies folder
+        // resources into a flat bundle. Missing alternates honestly use base art.
+        "lucia_\(angle.authoredName)_base_\(part)"
     }
-    private func point(_ p:CGPoint,_ size:CGSize)->CGPoint { CGPoint(x:p.x*size.width,y:p.y*size.height) }
-    private func limb(_ part:String,_ a:CGPoint,_ b:CGPoint,size:CGSize,width:CGFloat=0.08)->some View {
-        let p=point(a,size), q=point(b,size), length=hypot(q.x-p.x,q.y-p.y)
-        return Image(asset(part)).resizable().scaledToFill().frame(width:size.width*width,height:length).clipped()
-            .rotationEffect(.radians(Double(atan2(q.y-p.y,q.x-p.x)-.pi/2))).position(p)
+    private func point(_ p: CGPoint, _ size: CGSize) -> CGPoint {
+        SWAYPuppetMath.canvasPoint(p, canvasSize: size)
+    }
+    private func limb(_ part: String, _ a: CGPoint, _ b: CGPoint, size: CGSize, width: CGFloat = 0.08) -> some View {
+        let placement: SWAYPuppetPartPlacement = SWAYPuppetMath.limbPlacement(
+            proximal: a,
+            distal: b,
+            canvasSize: size,
+            widthFraction: width
+        )
+        return Image(asset(part)).resizable().scaledToFill()
+            .frame(width: placement.size.width, height: placement.size.height).clipped()
+            .rotationEffect(.radians(placement.rotationRadians)).position(placement.center)
     }
     private func pivoted(_ name:String,at p:CGPoint,size:CGSize,width:CGFloat)->some View {
         Image(name).resizable().scaledToFit().frame(width:size.width*width).position(point(p,size))
@@ -124,8 +185,8 @@ extension SwayCoachPose {
         let chest=CGPoint(x:(leftShoulder.x+rightShoulder.x)/2,y:(leftShoulder.y+rightShoulder.y)/2)
         return ["Root":hip,"Hips":hip,"Spine":CGPoint(x:(hip.x+chest.x)/2,y:(hip.y+chest.y)/2),"Chest":chest,"Neck":neck,"Head":head,
                 "LeftUpperArm":leftShoulder,"LeftLowerArm":leftElbow,"LeftHand":leftHand,"RightUpperArm":rightShoulder,"RightLowerArm":rightElbow,"RightHand":rightHand,
-                "LeftUpperLeg":CGPoint(x:hip.x-0.04,y:hip.y),"LeftLowerLeg":leftKnee,"LeftFoot":leftFoot,
-                "RightUpperLeg":CGPoint(x:hip.x+0.04,y:hip.y),"RightLowerLeg":rightKnee,"RightFoot":rightFoot]
+                "LeftUpperLeg":CGPoint(x:hip.x - 0.04,y:hip.y),"LeftLowerLeg":leftKnee,"LeftFoot":leftFoot,
+                "RightUpperLeg":CGPoint(x:hip.x + 0.04,y:hip.y),"RightLowerLeg":rightKnee,"RightFoot":rightFoot]
     }
 }
 

@@ -2,7 +2,9 @@
   "schema": 1,
   "dependencies": [
     {
-      "modules": ["PIL"],
+      "modules": [
+        "PIL"
+      ],
       "name": "Pillow",
       "kind": "build-test-tool",
       "licence_id": "HPND",
@@ -10,7 +12,11 @@
       "upstream": "https://github.com/python-pillow/Pillow"
     },
     {
-      "modules": ["bmesh", "bpy", "mathutils"],
+      "modules": [
+        "bmesh",
+        "bpy",
+        "mathutils"
+      ],
       "name": "Blender Python API",
       "kind": "build-tool",
       "licence_id": "GPL-3.0-or-later",
@@ -18,12 +24,24 @@
       "upstream": "https://projects.blender.org/blender/blender"
     },
     {
-      "modules": ["pxr"],
+      "modules": [
+        "pxr"
+      ],
       "name": "OpenUSD Python API",
       "kind": "build-test-tool",
       "licence_id": "Apache-2.0",
       "licence_url": "https://github.com/PixarAnimationStudios/OpenUSD/blob/release/LICENSE.txt",
       "upstream": "https://github.com/PixarAnimationStudios/OpenUSD"
+    },
+    {
+      "modules": [
+        "vtracer"
+      ],
+      "name": "VTracer Python bindings",
+      "kind": "build-tool",
+      "licence_id": "MIT",
+      "licence_url": "https://github.com/visioncortex/vtracer/blob/master/LICENSE",
+      "upstream": "https://github.com/visioncortex/vtracer"
     }
   ]
 }
