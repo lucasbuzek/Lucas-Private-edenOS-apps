@@ -24,7 +24,11 @@ final class WorkoutTimelineTests: XCTestCase {
 final class CorruptSaveRecoveryTests: XCTestCase {
     private struct Fixture: Codable, Equatable { let name: String; let count: Int }
 
-    func testTruncatedJSONIsBackedUpAndDefaultsCanContinue() throws {
+    func testTruncatedJSONIsBackedUpAndDefaultsCanContinue() {
+        do { try runTruncatedJSONCase() } catch { XCTFail("unexpected error: \(error)") }
+    }
+
+    private func runTruncatedJSONCase() throws {
         let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
         defer { try? FileManager.default.removeItem(at: directory) }
