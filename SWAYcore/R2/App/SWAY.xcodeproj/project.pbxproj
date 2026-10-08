@@ -1,0 +1,1315 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0484E33B3BFE10C0EBD09272 /* SWAYAvatarRendering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29179DDB6239F2BA1FD42A5C /* SWAYAvatarRendering.swift */; };
+		0524654AF2CAC3798B2A1976 /* lucia_front_rig.json in Resources */ = {isa = PBXBuildFile; fileRef = B5A58D4E028FD1DF55348B18 /* lucia_front_rig.json */; };
+		0729008F901D00E173AB0EB1 /* lucia_side_left_base_head.png in Resources */ = {isa = PBXBuildFile; fileRef = F27CB78D8BF41A1DDD9EBC55 /* lucia_side_left_base_head.png */; };
+		07E5D5E51A12DF1CE3297A2C /* SWAYApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703CC6B967AB598AE4C6E64E /* SWAYApp.swift */; };
+		08187FB31ADEE8650CA2FB2E /* lucia_back_base_rightCalf.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D78DAA81E0CEC7E02E2FED2 /* lucia_back_base_rightCalf.png */; };
+		0B002616FB4F7D9600584EF2 /* SwayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D69F4FC85D2EB85ED871A38 /* SwayStore.swift */; };
+		0B0B0C98ED546A07A2428679 /* lucia_back_base_leftThigh.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE24877547BD0BCFA1CB5B9 /* lucia_back_base_leftThigh.png */; };
+		0BB03B844018FEDA94B3C7AC /* lucia_front_base_leftLowerArm.png in Resources */ = {isa = PBXBuildFile; fileRef = B25EE22EDE0572C32AAF2A0C /* lucia_front_base_leftLowerArm.png */; };
+		0DEE95494CBDB0ACF308D97B /* lucia_front_base_rightLowerArm.png in Resources */ = {isa = PBXBuildFile; fileRef = ECACE5D58B6F9403CD3882A1 /* lucia_front_base_rightLowerArm.png */; };
+		1064DF8DED9BF80B80323DFC /* lucia_front_rightCalf.png in Resources */ = {isa = PBXBuildFile; fileRef = 9223E316ECCA44FB1D4107FF /* lucia_front_rightCalf.png */; };
+		13BD608CE888F467973877D5 /* lucia_back_base_rightHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 106F873CAFDD11C847B157CE /* lucia_back_base_rightHand.png */; };
+		15502BF9D1FA26AD5A0F3B5E /* lucia_front_base_pelvis.png in Resources */ = {isa = PBXBuildFile; fileRef = AE43EBF6DB7C6FFF1D312B10 /* lucia_front_base_pelvis.png */; };
+		16278968A2E632F4CB54F48E /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC3840885E15F2496EB0854 /* Move.swift */; };
+		162AD79E0864A81DA0A6DE5F /* synthetic_vision_pose_sequence.json in Resources */ = {isa = PBXBuildFile; fileRef = FCEB323B4F52008CE99AE123 /* synthetic_vision_pose_sequence.json */; };
+		1708E0277C95EE991325474B /* lucia_front_base_rightThigh.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F2AB2831C9553C2723AB026 /* lucia_front_base_rightThigh.png */; };
+		183DE8E00F0469BA981BB223 /* SWAY2DComponentLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5728995BCC228CC518CBD92A /* SWAY2DComponentLibraryTests.swift */; };
+		1D4BE9010D9D82E452ED8AEF /* lucia_back_rightUpperArm.png in Resources */ = {isa = PBXBuildFile; fileRef = F2802F5507AD652653FA8A49 /* lucia_back_rightUpperArm.png */; };
+		205EF0C6E7902CA1CD10798C /* lucia_front_base_hairBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 928808623E43BC332B4DE475 /* lucia_front_base_hairBack.png */; };
+		228D74F1ADDDF42916C66C79 /* MoveLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E902A09FAF37BC1AF9C5CF /* MoveLibraryView.swift */; };
+		23E9148DA1E94AAF5A526FF8 /* lucia_front_leftCalf.png in Resources */ = {isa = PBXBuildFile; fileRef = A0C5644623CAF9693D59ADA3 /* lucia_front_leftCalf.png */; };
+		24F23153B4DB9964EED52246 /* WorkoutPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5345EE0DA820B55F6CFD1A5 /* WorkoutPlayerView.swift */; };
+		280DA7AEE198EC88DAA39F21 /* lucia_back_base_leftCalf.png in Resources */ = {isa = PBXBuildFile; fileRef = 2199D6ED1EAE0A9A7358B98D /* lucia_back_base_leftCalf.png */; };
+		284ADF832C979EEF7E5C3AAC /* lucia_back_leftLowerArm.png in Resources */ = {isa = PBXBuildFile; fileRef = 6900D0D5887D58B677716681 /* lucia_back_leftLowerArm.png */; };
+		2AB7822BB0177562ECB28DF4 /* sway_body_roll_v1.usdc in Resources */ = {isa = PBXBuildFile; fileRef = C0D1989D51C4B4D525DF9EA9 /* sway_body_roll_v1.usdc */; };
+		2F349C22B647B34087E57B02 /* lucia_front_leftHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 65A4C99D071D744FAA5253BE /* lucia_front_leftHand.png */; };
+		31813939292004CA838EE063 /* lucia_front_base_rightShoe.png in Resources */ = {isa = PBXBuildFile; fileRef = 781BAA7F01C3B2D686116EF2 /* lucia_front_base_rightShoe.png */; };
+		3352880AE97F2B9F0EFFFF21 /* sway_march_v1.usdc in Resources */ = {isa = PBXBuildFile; fileRef = C117C7F3F635B648B4DFC318 /* sway_march_v1.usdc */; };
+		3702BB6173AC6DCA70977A8C /* lucia_front_base_leftThigh.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4171A6B03B45A811FE78ED /* lucia_front_base_leftThigh.png */; };
+		3A577384B15FD144360BC019 /* lucia.character.json in Resources */ = {isa = PBXBuildFile; fileRef = 748126F1CE5B3250C642CCE9 /* lucia.character.json */; };
+		3ABEA1B475A4C360C2D71741 /* lucia_front_base_torso.png in Resources */ = {isa = PBXBuildFile; fileRef = 15221114536E03F954802962 /* lucia_front_base_torso.png */; };
+		3B0CAC13D9C0ACD84597F14D /* CameraLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B6D1042A5477F1F103BEFA /* CameraLabView.swift */; };
+		3B938A98C19662FF0BD82973 /* lucia_side_left_base_torso.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F268E8C0616D64AD5CA0D02 /* lucia_side_left_base_torso.png */; };
+		3C14062973227F6B337AE297 /* lucia_side_left_base_rightHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A195C38A581DE3FCAC2404B /* lucia_side_left_base_rightHand.png */; };
+		3D91EE69EEB358CA4CC1C30D /* lucia_front_leftThigh.png in Resources */ = {isa = PBXBuildFile; fileRef = 31ADB9A29409AB034C6502D5 /* lucia_front_leftThigh.png */; };
+		3F51D166BECE527F0B85BAF9 /* lucia_side_right_base_rightShoe.png in Resources */ = {isa = PBXBuildFile; fileRef = EF2724CE17CB197041894AF6 /* lucia_side_right_base_rightShoe.png */; };
+		422B62E33073627D5C4D5787 /* lucia_side_right_base_rightUpperArm.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BC2D1913D0203ABEEFA8AB2 /* lucia_side_right_base_rightUpperArm.png */; };
+		42460F5161EEDF335EB2D73D /* lucia_side_left_base_leftHand.png in Resources */ = {isa = PBXBuildFile; fileRef = D247BFD7DFF37D9143DF32EC /* lucia_side_left_base_leftHand.png */; };
+		449D1044E427DB1DFD6DA3AF /* lucia_front_rightLowerArm.png in Resources */ = {isa = PBXBuildFile; fileRef = 180DF0979AF0D9997E3C5725 /* lucia_front_rightLowerArm.png */; };
+		46E7220FCF661AEDF91CE4D6 /* lucia_front_base_leftHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 2662A663671368C520AFFC29 /* lucia_front_base_leftHand.png */; };
+		486C0C5AC7D0AA8DBD958971 /* lucia_back_pelvis.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F39AA4732BB5FA9259E995 /* lucia_back_pelvis.png */; };
+		48D5F8185A08C4EBEF5A1078 /* lucia_front_base_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D86976040888C6FF78AF4AD /* lucia_front_base_head.png */; };
+		4AE018B74EDA61EF257EF542 /* lucia_back_leftThigh.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB5B480E7587732403D3630 /* lucia_back_leftThigh.png */; };
+		4C36FC7301582A66CA43C99F /* lucia_front_rightHand.png in Resources */ = {isa = PBXBuildFile; fileRef = F84896535CBC638224AE031F /* lucia_front_rightHand.png */; };
+		4EBD7A15F38E13FFF5FBD47C /* NativeLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB40EF5B5F14D28021415241 /* NativeLabView.swift */; };
+		52D1BD4CDE1C78F0AC8D9A1C /* lucia_back_base_hairBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 0950A8BDAF28B1FF4C3C9473 /* lucia_back_base_hairBack.png */; };
+		53F53585729D760B0E5AD0EC /* lucia_back_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 3938A1F89AFB5DDC4DF49C68 /* lucia_back_head.png */; };
+		54798C55798E883E161DD3DF /* lucia_front_rightUpperArm.png in Resources */ = {isa = PBXBuildFile; fileRef = 6176D5C1540F6807AE5BC80B /* lucia_front_rightUpperArm.png */; };
+		54D4B92557126187A15360D3 /* lucia_back_base_hairFront.png in Resources */ = {isa = PBXBuildFile; fileRef = 77764B9CDB71F3FBD05E2EC5 /* lucia_back_base_hairFront.png */; };
+		55D762788DE160CF77EDE97A /* lucia_side_left_base_rightLowerArm.png in Resources */ = {isa = PBXBuildFile; fileRef = F494FCF5882F8A24A811F1BC /* lucia_side_left_base_rightLowerArm.png */; };
+		56F3D5784BD60D73C405EEAB /* lucia_front_chest.png in Resources */ = {isa = PBXBuildFile; fileRef = 4158B73F210494DE3BCB79F3 /* lucia_front_chest.png */; };
+		581A76DD3BA32541C5A51C54 /* lucia_side_right_base_pelvis.png in Resources */ = {isa = PBXBuildFile; fileRef = 66E69FAEFAA2082E3DF46EAB /* lucia_side_right_base_pelvis.png */; };
+		5C2D3A247927E29C15E91C30 /* lucia_back_leftHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C41C1F5F24E9C7317C58AE3 /* lucia_back_leftHand.png */; };
+		5C4E7CBC85F69874ED0F67C3 /* sway_side_lunge_v1.usdc in Resources */ = {isa = PBXBuildFile; fileRef = 8856E0B010F2D95260D6BF12 /* sway_side_lunge_v1.usdc */; };
+		5CAFD6E04A2CD3187BFAAC2B /* lucia_side_right_base_leftThigh.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A146EE04CF0A4D3A01FE68 /* lucia_side_right_base_leftThigh.png */; };
+		5D78389BFB7430D69EE32156 /* lucia_side_left_base_leftUpperArm.png in Resources */ = {isa = PBXBuildFile; fileRef = 2875F2B8FCADA520533EC2E6 /* lucia_side_left_base_leftUpperArm.png */; };
+		5D86D3AC824A1BF065B4815D /* lucia_side_right_base_rightCalf.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C3BAA0DB38887FFD6F260A /* lucia_side_right_base_rightCalf.png */; };
+		5EBB10C0935CD9F447C5CFDE /* color_0C0C0C.exr in Resources */ = {isa = PBXBuildFile; fileRef = 534AF98737FA22B2F6D5EB06 /* color_0C0C0C.exr */; };
+		691763F7BBEBDFBC766D93AD /* lucia_front_base_rightHand.png in Resources */ = {isa = PBXBuildFile; fileRef = FC86829D1DCB9BA044DB3582 /* lucia_front_base_rightHand.png */; };
+		6AE1DAB70513977DB2743377 /* lucia_back_base_leftShoe.png in Resources */ = {isa = PBXBuildFile; fileRef = EB934FCE0FF598042D9D7E22 /* lucia_back_base_leftShoe.png */; };
+		6CCB4CE8877F9BB28C4F4573 /* lucia_front_rightShoe.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A8B91445C9B73BA4ACB349C /* lucia_front_rightShoe.png */; };
+		6CE623D299D657BC4BADB9FD /* lucia_side_right_base_rightLowerArm.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B4368829CD2ADCB2748913 /* lucia_side_right_base_rightLowerArm.png */; };
+		6EA7D996FFEE247550DBD67D /* lucia_side_left_base_pelvis.png in Resources */ = {isa = PBXBuildFile; fileRef = E56DBC76E79535477584D07A /* lucia_side_left_base_pelvis.png */; };
+		7485BD77B035B5E0FCBA9A27 /* lucia_side_right_base_leftShoe.png in Resources */ = {isa = PBXBuildFile; fileRef = 342978A5B47199D6AF999921 /* lucia_side_right_base_leftShoe.png */; };
+		74E2F590543B1BFA29FD24BC /* lucia_back_base_rightLowerArm.png in Resources */ = {isa = PBXBuildFile; fileRef = F7FE00EE1E7974B4A81EBDB9 /* lucia_back_base_rightLowerArm.png */; };
+		75C356D3958434DBBFB61658 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DD33373D86E8B3500A8D98 /* HomeView.swift */; };
+		7972B36627A2EA72779EFC29 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9283842A48F850CC1EA1B /* SettingsView.swift */; };
+		79CE681470BC4B600391F64A /* ProfileSharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E60A8C95014BEA0A7767BA /* ProfileSharing.swift */; };
+		7A0F73412654CC5AEBFE727A /* lucia_front_rightThigh.png in Resources */ = {isa = PBXBuildFile; fileRef = CE47AB9CDF4E7106CB516E1F /* lucia_front_rightThigh.png */; };
+		7A721AEB41D7B26990FA7955 /* lucia_front_base_leftCalf.png in Resources */ = {isa = PBXBuildFile; fileRef = 535EBB451232ED9473D757DB /* lucia_front_base_leftCalf.png */; };
+		7B1FBA10299119754742709D /* lucia_back_base_torso.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F5A21EABD2AF272F0CD201 /* lucia_back_base_torso.png */; };
+		7D3109B285A0A8F43A00CE7D /* NativeCapabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85654B317C8DB0847BFA1BBA /* NativeCapabilities.swift */; };
+		7D523F7395DE7CC8B9EA41F9 /* lucia_back_base_leftHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E22CFC85B2FC23A1E5B24 /* lucia_back_base_leftHand.png */; };
+		8072434CFC083F3E34DF63AE /* lucia_side_right_base_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E9B77483B6B2ABD3606125 /* lucia_side_right_base_head.png */; };
+		834703376714007B2D0780FF /* lucia_front_base_rightUpperArm.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3C854E810ED5C38EA5261C /* lucia_front_base_rightUpperArm.png */; };
+		84D064CFD57570C579406D5E /* sway_squat_v1.usdc in Resources */ = {isa = PBXBuildFile; fileRef = 0B27BA8480CFAA1547315087 /* sway_squat_v1.usdc */; };
+		86921890201D8F1CE1149882 /* lucia_side_right_base_rightThigh.png in Resources */ = {isa = PBXBuildFile; fileRef = CAD893DBB62EA68B71E56D4D /* lucia_side_right_base_rightThigh.png */; };
+		87035B02824769D8F5B2DE91 /* lucia_front_base_leftShoe.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF764D7DC5AF5EBAFA5ED1D /* lucia_front_base_leftShoe.png */; };
+		8743D7477499932D53C1EAA7 /* sway_grapevine_v1.usdc in Resources */ = {isa = PBXBuildFile; fileRef = F7EE05A9D4E74297A71A10BA /* sway_grapevine_v1.usdc */; };
+		87BC6D830A28254165F319A6 /* lucia_back_base_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD241F947613D19397EB66 /* lucia_back_base_head.png */; };
+		8AD3C710D472DCCE6DE475AC /* SWAYcoreEngine in Frameworks */ = {isa = PBXBuildFile; productRef = DC7EFC562612A3CA8D8E1C46 /* SWAYcoreEngine */; };
+		8B45340BFCB73DC848AA18E5 /* lucia_side_right_base_leftUpperArm.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D41D42107E2B86CA697A63 /* lucia_side_right_base_leftUpperArm.png */; };
+		8C1F9469DCD7F2769C191654 /* CreateMoveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F55EEE2295CEB706D7A673 /* CreateMoveView.swift */; };
+		8EE11EDA59B875C5E1CD467A /* lucia_side_right_base_leftLowerArm.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DDFDD033A9A6860B4355A82 /* lucia_side_right_base_leftLowerArm.png */; };
+		91381B5FC08AE12D181B2C99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8EACB061CAFDCBFB5B998CC /* Assets.xcassets */; };
+		92316183733B75248E9953FB /* lucia_back_leftCalf.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF08108D9A8BF1B255B6D60 /* lucia_back_leftCalf.png */; };
+		943A5C278C84DA630B214CB3 /* lucia_side_left_base_rightThigh.png in Resources */ = {isa = PBXBuildFile; fileRef = E191CB39BC605747038C284C /* lucia_side_left_base_rightThigh.png */; };
+		94930490EA6F2CB8F47BBC9F /* lucia_back_leftUpperArm.png in Resources */ = {isa = PBXBuildFile; fileRef = FF4271DF9736EF8D2CED5BF6 /* lucia_back_leftUpperArm.png */; };
+		94BE682518E03C428E8D25C3 /* LuciaAlpha.swayavatar in Resources */ = {isa = PBXBuildFile; fileRef = 6683B897CB6DE8F81742B9A3 /* LuciaAlpha.swayavatar */; };
+		957869B68E9B83798683FCE2 /* SWAYPuppetRuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCAA0BAC8DE23C1EC2E00F8 /* SWAYPuppetRuntimeTests.swift */; };
+		9B7A01F34BA75858DFA79F5F /* lucia_side_left_base_leftThigh.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E77873F979552852358D3C /* lucia_side_left_base_leftThigh.png */; };
+		A2804E0157343504C0C17D1C /* lucia_front_leftUpperArm.png in Resources */ = {isa = PBXBuildFile; fileRef = 7561201C444C06FAFA45A223 /* lucia_front_leftUpperArm.png */; };
+		A7129DF9F355125F7F8FB51A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E6F8FE7BCC91DF9195BD4 /* RootView.swift */; };
+		A75A4372C8582ADEF729906B /* sway_pivot_turn_v1.usdc in Resources */ = {isa = PBXBuildFile; fileRef = D60ADE080ED09998667BF864 /* sway_pivot_turn_v1.usdc */; };
+		AADEE572C5CBD9E5566D8287 /* lucia_back_base_rightThigh.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EB03BCC09C81B22F6B0DD7C /* lucia_back_base_rightThigh.png */; };
+		AB97C0903684551B5429CB4F /* lucia_front_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3DF9800AC2EAB5FC77F4AF /* lucia_front_head.png */; };
+		AD12D0D13384BB3CF971F90E /* lucia_side_left_base_leftCalf.png in Resources */ = {isa = PBXBuildFile; fileRef = 750DCA07583A2671B03C723D /* lucia_side_left_base_leftCalf.png */; };
+		AE0D836D1F9C475BE1BD4FB3 /* lucia_front_leftShoe.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A3807519C08E64BB6EDC80 /* lucia_front_leftShoe.png */; };
+		AF2D57B93F7A5E4E06337386 /* lucia_side_left_base_leftShoe.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D7F43639B44862486017A0 /* lucia_side_left_base_leftShoe.png */; };
+		B0CF2CEBF4B0D7F8ABCDDFD1 /* lucia_back_base_rightUpperArm.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E8DD9D88597E5B5234DC33F /* lucia_back_base_rightUpperArm.png */; };
+		B312B6E4F67B5A128C1ACAA6 /* lucia_back_base_pelvis.png in Resources */ = {isa = PBXBuildFile; fileRef = 45095B86479D72AAD358F0C1 /* lucia_back_base_pelvis.png */; };
+		B35FA308ABDD05F610486DBA /* lucia_side_left_base_rightShoe.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E1671BB95E4FA8C14E1B6B /* lucia_side_left_base_rightShoe.png */; };
+		B535A56F94D79B15F96093BE /* LuciaReality.usdc in Resources */ = {isa = PBXBuildFile; fileRef = 211C2B25E253468703AE04FF /* LuciaReality.usdc */; };
+		B6F87F216BE671ABA1E6BEDA /* lucia_front_base_hairFront.png in Resources */ = {isa = PBXBuildFile; fileRef = E8C5C579FCFB55217E6076EF /* lucia_front_base_hairFront.png */; };
+		B742BD9D3B2B8CACEC29AA6F /* StickFigureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141ED536DF194C5C67FBFC65 /* StickFigureView.swift */; };
+		B7BE272A077DD872676C2381 /* sway_knee_lift_v1.usdc in Resources */ = {isa = PBXBuildFile; fileRef = D6D3DF63E78ACBE39B9E0CB7 /* sway_knee_lift_v1.usdc */; };
+		B9378A6FF1A966AF662D9932 /* SwayFaceTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B3AE5CC34670201745987 /* SwayFaceTracking.swift */; };
+		B99A72A6A0006451F104F492 /* SWAYRigPuppet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7859A429D44929774A0EA056 /* SWAYRigPuppet.swift */; };
+		BC030C718E4B2BC801BD86F0 /* lucia_side_left_base_hairBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D689815B2D54134D80EADF2 /* lucia_side_left_base_hairBack.png */; };
+		C0A2A287E2C349EEDFEC0CF1 /* lucia_back_rightHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E1B85BD09194DEDA5BDB93D /* lucia_back_rightHand.png */; };
+		C2CAC5C3B48CD6DEC128A95C /* UserAvatarReality.usdc in Resources */ = {isa = PBXBuildFile; fileRef = CDA29608E4E38D9DEF11FA3B /* UserAvatarReality.usdc */; };
+		C434092278EFB6DF3E6392AA /* lucia.cutout.manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AC3C6B9C163CBC5223431CC /* lucia.cutout.manifest.json */; };
+		C60BA805FC42C95D7C9B9346 /* SWAYAvatarGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D86A0625F5238E85A3CC67E /* SWAYAvatarGalleryView.swift */; };
+		C6B779D2176B8C7DAE68EBFF /* lucia_back_base_leftLowerArm.png in Resources */ = {isa = PBXBuildFile; fileRef = C389FA4619013757B6B6C1FA /* lucia_back_base_leftLowerArm.png */; };
+		C7693BF485693727E3880FCC /* lucia_side_right_base_hairFront.png in Resources */ = {isa = PBXBuildFile; fileRef = FBB6FDE470BC35108DF779F0 /* lucia_side_right_base_hairFront.png */; };
+		C9B64905667B583D79E82978 /* lucia_side_left_base_rightCalf.png in Resources */ = {isa = PBXBuildFile; fileRef = 917344BBE0BAD7068B13C552 /* lucia_side_left_base_rightCalf.png */; };
+		CA6011CB1273F887454182D2 /* lucia_back_rightShoe.png in Resources */ = {isa = PBXBuildFile; fileRef = 40B4AE0BAAE13ACE10A3C06C /* lucia_back_rightShoe.png */; };
+		CA78AC48675DB363EECF3085 /* lucia_side_right_base_leftHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 3261701DCDD5F68DFB66D3F3 /* lucia_side_right_base_leftHand.png */; };
+		CC9D967F00C224D00ACD9FCA /* user.character.json in Resources */ = {isa = PBXBuildFile; fileRef = D96537C2FEF415A2AD518B36 /* user.character.json */; };
+		CDCA5B5E405EC7FE82DCCEB4 /* lucia_side_right_base_hairBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 05D042FB557585E99D284152 /* lucia_side_right_base_hairBack.png */; };
+		D0260E1B6EC3BF1ECF09BAFC /* lucia_side_left_base_rightUpperArm.png in Resources */ = {isa = PBXBuildFile; fileRef = B824377A388AF5CFB692BDDB /* lucia_side_left_base_rightUpperArm.png */; };
+		D03CC5DDABD41489FE730A60 /* lucia_front_base_rightCalf.png in Resources */ = {isa = PBXBuildFile; fileRef = AF9F5BF7BC7321FA5CBAB376 /* lucia_front_base_rightCalf.png */; };
+		D0EA2A4335095387804D7172 /* ProgressViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F73CCCF04748334742F360 /* ProgressViewScreen.swift */; };
+		D2488F0E36A0D24FC2FC81E2 /* lucia_back_base_rightShoe.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A6C59887A2440521A863F50 /* lucia_back_base_rightShoe.png */; };
+		D278F0AEC33AFDCA3F6A5A5C /* lucia_side_right_base_torso.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DDBB97AEB0822F234682FD /* lucia_side_right_base_torso.png */; };
+		D3B384AACDC90B248F72C986 /* lucia_back_base_leftUpperArm.png in Resources */ = {isa = PBXBuildFile; fileRef = 30462BC7B9BF81E12CCBCAF4 /* lucia_back_base_leftUpperArm.png */; };
+		D546D018BAF3129904114753 /* SWAYSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4328BF4B50B77AABEFD4EA /* SWAYSmokeTests.swift */; };
+		D5742561E8367E97F3326243 /* sway_jumping_jack_v1.usdc in Resources */ = {isa = PBXBuildFile; fileRef = 1F9B8E7A36321BE36E0B35F2 /* sway_jumping_jack_v1.usdc */; };
+		D6A61B6831A7C8A6108A450B /* SWAYCharacterStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BCE8A8B9572D3022A58A0 /* SWAYCharacterStage.swift */; };
+		D88B21423485CB83ABFFADC4 /* lucia_back_rightLowerArm.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AC2BC5E99A0EDEB28D6A0B2 /* lucia_back_rightLowerArm.png */; };
+		D8B12C7B7B94EBA354C1B65F /* lucia_front_pelvis.png in Resources */ = {isa = PBXBuildFile; fileRef = C084EFE33398FB517FB2640B /* lucia_front_pelvis.png */; };
+		D8E147621508B2D55D0EADEE /* SWAYCharacterAppearanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE6E95D65CDBAA188156FB /* SWAYCharacterAppearanceTests.swift */; };
+		E00D5889CAA0D9DFBAC69682 /* lucia_back_rightThigh.png in Resources */ = {isa = PBXBuildFile; fileRef = BA90CC48CE93EA9466511A2B /* lucia_back_rightThigh.png */; };
+		E0F3DDF6B43460FF1E54C1D8 /* lucia_back_rightCalf.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A6414FC85E3190239D4A08E /* lucia_back_rightCalf.png */; };
+		E49CE15025C5CC8971A69170 /* lucia_front_base_leftUpperArm.png in Resources */ = {isa = PBXBuildFile; fileRef = CE29C0078C451ED4BC3BEDB3 /* lucia_front_base_leftUpperArm.png */; };
+		E7756AAA4F6533C746FB97AC /* SWAY2DComponentLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91741F3BD736171BF6FB7612 /* SWAY2DComponentLibrary.swift */; };
+		E7C958C5E27F1A617409098E /* sway_step_touch_v1.usdc in Resources */ = {isa = PBXBuildFile; fileRef = FC49EE8A2A3169C8610D0BA8 /* sway_step_touch_v1.usdc */; };
+		EAB4079DEF1D5E5A1F0ADF02 /* lucia_side_right_base_rightHand.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E2012A483528C12D1A30F8 /* lucia_side_right_base_rightHand.png */; };
+		EE768FA73A21928F473D5DE9 /* SWAYSkeletal2DAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096AC48461870263259CE97 /* SWAYSkeletal2DAvatarView.swift */; };
+		EEAD251A8F7A423B64F8484D /* lucia_back_chest.png in Resources */ = {isa = PBXBuildFile; fileRef = 5408A0FAD15F32CF4828AF3E /* lucia_back_chest.png */; };
+		EEDD917BFC0A8541A986123A /* lucia_back_leftShoe.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAA79CAEC494D79257B17B5 /* lucia_back_leftShoe.png */; };
+		EFD837ADF29C36E98D689497 /* lucia_side_left_base_leftLowerArm.png in Resources */ = {isa = PBXBuildFile; fileRef = EB46D73F56AD87FA99335BA8 /* lucia_side_left_base_leftLowerArm.png */; };
+		F2A6FDEFED8F6F5DF75562C5 /* SWAYcoreEngine in Frameworks */ = {isa = PBXBuildFile; productRef = DA04FE86753C20E096A32762 /* SWAYcoreEngine */; };
+		F604C65766C92CF1417B41F7 /* lucia_side_right_base_leftCalf.png in Resources */ = {isa = PBXBuildFile; fileRef = F0641B092359B1448BA5D0E7 /* lucia_side_right_base_leftCalf.png */; };
+		F6808435EE2E39174B9689DF /* lucia.swayavatar.json in Resources */ = {isa = PBXBuildFile; fileRef = C5C0BB310A9051A1B7CE8ADF /* lucia.swayavatar.json */; };
+		F6E705CE70120D2DF9DA0254 /* SWAY-DURER-2.5D-v1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3364FE4B833B22004A2770C9 /* SWAY-DURER-2.5D-v1.json */; };
+		F9A3146B13B2520567177D1C /* lucia_side_left_base_hairFront.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D55D590904EEC26DFA4B223 /* lucia_side_left_base_hairFront.png */; };
+		FA826CD563D788B657E868B7 /* your_dancer_2_5d_components.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E9EDD3ED515C0022EA6118D /* your_dancer_2_5d_components.json */; };
+		FB656B714F844598F0784D8B /* SWAYPuppetRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C718508F56AF1CD1022DE /* SWAYPuppetRenderer.swift */; };
+		FC6C8615DC8F29E9683E253C /* puppet_pivot_parity.json in Resources */ = {isa = PBXBuildFile; fileRef = BCC0505143C56B0BCE3EAA15 /* puppet_pivot_parity.json */; };
+		FC83D7FB54FEB6B1192E64A5 /* lucia_back_rig.json in Resources */ = {isa = PBXBuildFile; fileRef = 45B04FE56D47AF256B9DB340 /* lucia_back_rig.json */; };
+		FE871C8EDD1B1DAFC659028C /* sway_idle_v1.usdc in Resources */ = {isa = PBXBuildFile; fileRef = B49323C1CE4062DD0ACA786E /* sway_idle_v1.usdc */; };
+		FF48EEB7CAD9062C69BFC0C4 /* lucia_front_leftLowerArm.png in Resources */ = {isa = PBXBuildFile; fileRef = BC09699D358A8283ACA8012B /* lucia_front_leftLowerArm.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		61939C6627438642D092C493 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 057DD9042098DB138C7CAFC9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CFAE2916289A43F5FB6FE24;
+			remoteInfo = SWAY;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01E1671BB95E4FA8C14E1B6B /* lucia_side_left_base_rightShoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_rightShoe.png; sourceTree = "<group>"; };
+		01F39AA4732BB5FA9259E995 /* lucia_back_pelvis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_pelvis.png; sourceTree = "<group>"; };
+		03A146EE04CF0A4D3A01FE68 /* lucia_side_right_base_leftThigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_leftThigh.png; sourceTree = "<group>"; };
+		05D042FB557585E99D284152 /* lucia_side_right_base_hairBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_hairBack.png; sourceTree = "<group>"; };
+		0950A8BDAF28B1FF4C3C9473 /* lucia_back_base_hairBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_hairBack.png; sourceTree = "<group>"; };
+		0AC3840885E15F2496EB0854 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
+		0B27BA8480CFAA1547315087 /* sway_squat_v1.usdc */ = {isa = PBXFileReference; path = sway_squat_v1.usdc; sourceTree = "<group>"; };
+		0D55D590904EEC26DFA4B223 /* lucia_side_left_base_hairFront.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_hairFront.png; sourceTree = "<group>"; };
+		0E9EDD3ED515C0022EA6118D /* your_dancer_2_5d_components.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = your_dancer_2_5d_components.json; sourceTree = "<group>"; };
+		106F873CAFDD11C847B157CE /* lucia_back_base_rightHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_rightHand.png; sourceTree = "<group>"; };
+		10DD33373D86E8B3500A8D98 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		141ED536DF194C5C67FBFC65 /* StickFigureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickFigureView.swift; sourceTree = "<group>"; };
+		14407DA965ACFDC976B0DA89 /* SWAYcoreEngine */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SWAYcoreEngine; path = ../Packages/SWAYcoreEngine; sourceTree = SOURCE_ROOT; };
+		15221114536E03F954802962 /* lucia_front_base_torso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_torso.png; sourceTree = "<group>"; };
+		180DF0979AF0D9997E3C5725 /* lucia_front_rightLowerArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_rightLowerArm.png; sourceTree = "<group>"; };
+		1D689815B2D54134D80EADF2 /* lucia_side_left_base_hairBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_hairBack.png; sourceTree = "<group>"; };
+		1EB03BCC09C81B22F6B0DD7C /* lucia_back_base_rightThigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_rightThigh.png; sourceTree = "<group>"; };
+		1F9B8E7A36321BE36E0B35F2 /* sway_jumping_jack_v1.usdc */ = {isa = PBXFileReference; path = sway_jumping_jack_v1.usdc; sourceTree = "<group>"; };
+		2096AC48461870263259CE97 /* SWAYSkeletal2DAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAYSkeletal2DAvatarView.swift; sourceTree = "<group>"; };
+		211C2B25E253468703AE04FF /* LuciaReality.usdc */ = {isa = PBXFileReference; path = LuciaReality.usdc; sourceTree = "<group>"; };
+		2199D6ED1EAE0A9A7358B98D /* lucia_back_base_leftCalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_leftCalf.png; sourceTree = "<group>"; };
+		21B6D1042A5477F1F103BEFA /* CameraLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLabView.swift; sourceTree = "<group>"; };
+		22C3BAA0DB38887FFD6F260A /* lucia_side_right_base_rightCalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_rightCalf.png; sourceTree = "<group>"; };
+		2662A663671368C520AFFC29 /* lucia_front_base_leftHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_leftHand.png; sourceTree = "<group>"; };
+		2875F2B8FCADA520533EC2E6 /* lucia_side_left_base_leftUpperArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_leftUpperArm.png; sourceTree = "<group>"; };
+		29179DDB6239F2BA1FD42A5C /* SWAYAvatarRendering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAYAvatarRendering.swift; sourceTree = "<group>"; };
+		2D0E22CFC85B2FC23A1E5B24 /* lucia_back_base_leftHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_leftHand.png; sourceTree = "<group>"; };
+		2DDFDD033A9A6860B4355A82 /* lucia_side_right_base_leftLowerArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_leftLowerArm.png; sourceTree = "<group>"; };
+		30462BC7B9BF81E12CCBCAF4 /* lucia_back_base_leftUpperArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_leftUpperArm.png; sourceTree = "<group>"; };
+		31ADB9A29409AB034C6502D5 /* lucia_front_leftThigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_leftThigh.png; sourceTree = "<group>"; };
+		3261701DCDD5F68DFB66D3F3 /* lucia_side_right_base_leftHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_leftHand.png; sourceTree = "<group>"; };
+		32DDBB97AEB0822F234682FD /* lucia_side_right_base_torso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_torso.png; sourceTree = "<group>"; };
+		3364FE4B833B22004A2770C9 /* SWAY-DURER-2.5D-v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "SWAY-DURER-2.5D-v1.json"; sourceTree = "<group>"; };
+		342978A5B47199D6AF999921 /* lucia_side_right_base_leftShoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_leftShoe.png; sourceTree = "<group>"; };
+		38EE6E95D65CDBAA188156FB /* SWAYCharacterAppearanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAYCharacterAppearanceTests.swift; sourceTree = "<group>"; };
+		3938A1F89AFB5DDC4DF49C68 /* lucia_back_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_head.png; sourceTree = "<group>"; };
+		3BF08108D9A8BF1B255B6D60 /* lucia_back_leftCalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_leftCalf.png; sourceTree = "<group>"; };
+		3D69F4FC85D2EB85ED871A38 /* SwayStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwayStore.swift; sourceTree = "<group>"; };
+		40A3807519C08E64BB6EDC80 /* lucia_front_leftShoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_leftShoe.png; sourceTree = "<group>"; };
+		40B4AE0BAAE13ACE10A3C06C /* lucia_back_rightShoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_rightShoe.png; sourceTree = "<group>"; };
+		4158B73F210494DE3BCB79F3 /* lucia_front_chest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_chest.png; sourceTree = "<group>"; };
+		43E9B77483B6B2ABD3606125 /* lucia_side_right_base_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_head.png; sourceTree = "<group>"; };
+		45095B86479D72AAD358F0C1 /* lucia_back_base_pelvis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_pelvis.png; sourceTree = "<group>"; };
+		45B04FE56D47AF256B9DB340 /* lucia_back_rig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lucia_back_rig.json; sourceTree = "<group>"; };
+		4E3DF9800AC2EAB5FC77F4AF /* lucia_front_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_head.png; sourceTree = "<group>"; };
+		51D41D42107E2B86CA697A63 /* lucia_side_right_base_leftUpperArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_leftUpperArm.png; sourceTree = "<group>"; };
+		534AF98737FA22B2F6D5EB06 /* color_0C0C0C.exr */ = {isa = PBXFileReference; path = color_0C0C0C.exr; sourceTree = "<group>"; };
+		535EBB451232ED9473D757DB /* lucia_front_base_leftCalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_leftCalf.png; sourceTree = "<group>"; };
+		5408A0FAD15F32CF4828AF3E /* lucia_back_chest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_chest.png; sourceTree = "<group>"; };
+		5728995BCC228CC518CBD92A /* SWAY2DComponentLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAY2DComponentLibraryTests.swift; sourceTree = "<group>"; };
+		5A6414FC85E3190239D4A08E /* lucia_back_rightCalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_rightCalf.png; sourceTree = "<group>"; };
+		5A6C59887A2440521A863F50 /* lucia_back_base_rightShoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_rightShoe.png; sourceTree = "<group>"; };
+		5D86976040888C6FF78AF4AD /* lucia_front_base_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_head.png; sourceTree = "<group>"; };
+		5E1B85BD09194DEDA5BDB93D /* lucia_back_rightHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_rightHand.png; sourceTree = "<group>"; };
+		5F2AB2831C9553C2723AB026 /* lucia_front_base_rightThigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_rightThigh.png; sourceTree = "<group>"; };
+		5FCAA0BAC8DE23C1EC2E00F8 /* SWAYPuppetRuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAYPuppetRuntimeTests.swift; sourceTree = "<group>"; };
+		6176D5C1540F6807AE5BC80B /* lucia_front_rightUpperArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_rightUpperArm.png; sourceTree = "<group>"; };
+		65A4C99D071D744FAA5253BE /* lucia_front_leftHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_leftHand.png; sourceTree = "<group>"; };
+		65D7F43639B44862486017A0 /* lucia_side_left_base_leftShoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_leftShoe.png; sourceTree = "<group>"; };
+		6683B897CB6DE8F81742B9A3 /* LuciaAlpha.swayavatar */ = {isa = PBXFileReference; path = LuciaAlpha.swayavatar; sourceTree = "<group>"; };
+		66E69FAEFAA2082E3DF46EAB /* lucia_side_right_base_pelvis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_pelvis.png; sourceTree = "<group>"; };
+		6900D0D5887D58B677716681 /* lucia_back_leftLowerArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_leftLowerArm.png; sourceTree = "<group>"; };
+		6AC2BC5E99A0EDEB28D6A0B2 /* lucia_back_rightLowerArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_rightLowerArm.png; sourceTree = "<group>"; };
+		6BF764D7DC5AF5EBAFA5ED1D /* lucia_front_base_leftShoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_leftShoe.png; sourceTree = "<group>"; };
+		6D86A0625F5238E85A3CC67E /* SWAYAvatarGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAYAvatarGalleryView.swift; sourceTree = "<group>"; };
+		6F4328BF4B50B77AABEFD4EA /* SWAYSmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAYSmokeTests.swift; sourceTree = "<group>"; };
+		703CC6B967AB598AE4C6E64E /* SWAYApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAYApp.swift; sourceTree = "<group>"; };
+		71B4368829CD2ADCB2748913 /* lucia_side_right_base_rightLowerArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_rightLowerArm.png; sourceTree = "<group>"; };
+		748126F1CE5B3250C642CCE9 /* lucia.character.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lucia.character.json; sourceTree = "<group>"; };
+		750DCA07583A2671B03C723D /* lucia_side_left_base_leftCalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_leftCalf.png; sourceTree = "<group>"; };
+		7561201C444C06FAFA45A223 /* lucia_front_leftUpperArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_leftUpperArm.png; sourceTree = "<group>"; };
+		77764B9CDB71F3FBD05E2EC5 /* lucia_back_base_hairFront.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_hairFront.png; sourceTree = "<group>"; };
+		781BAA7F01C3B2D686116EF2 /* lucia_front_base_rightShoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_rightShoe.png; sourceTree = "<group>"; };
+		7859A429D44929774A0EA056 /* SWAYRigPuppet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAYRigPuppet.swift; sourceTree = "<group>"; };
+		7A8B91445C9B73BA4ACB349C /* lucia_front_rightShoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_rightShoe.png; sourceTree = "<group>"; };
+		7AC3C6B9C163CBC5223431CC /* lucia.cutout.manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lucia.cutout.manifest.json; sourceTree = "<group>"; };
+		7CAA79CAEC494D79257B17B5 /* lucia_back_leftShoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_leftShoe.png; sourceTree = "<group>"; };
+		7D9BCE8A8B9572D3022A58A0 /* SWAYCharacterStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAYCharacterStage.swift; sourceTree = "<group>"; };
+		7E8DD9D88597E5B5234DC33F /* lucia_back_base_rightUpperArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_rightUpperArm.png; sourceTree = "<group>"; };
+		85654B317C8DB0847BFA1BBA /* NativeCapabilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeCapabilities.swift; sourceTree = "<group>"; };
+		8856E0B010F2D95260D6BF12 /* sway_side_lunge_v1.usdc */ = {isa = PBXFileReference; path = sway_side_lunge_v1.usdc; sourceTree = "<group>"; };
+		8BC2D1913D0203ABEEFA8AB2 /* lucia_side_right_base_rightUpperArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_rightUpperArm.png; sourceTree = "<group>"; };
+		8C41C1F5F24E9C7317C58AE3 /* lucia_back_leftHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_leftHand.png; sourceTree = "<group>"; };
+		8D78DAA81E0CEC7E02E2FED2 /* lucia_back_base_rightCalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_rightCalf.png; sourceTree = "<group>"; };
+		8F268E8C0616D64AD5CA0D02 /* lucia_side_left_base_torso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_torso.png; sourceTree = "<group>"; };
+		917344BBE0BAD7068B13C552 /* lucia_side_left_base_rightCalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_rightCalf.png; sourceTree = "<group>"; };
+		91741F3BD736171BF6FB7612 /* SWAY2DComponentLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAY2DComponentLibrary.swift; sourceTree = "<group>"; };
+		9223E316ECCA44FB1D4107FF /* lucia_front_rightCalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_rightCalf.png; sourceTree = "<group>"; };
+		928808623E43BC332B4DE475 /* lucia_front_base_hairBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_hairBack.png; sourceTree = "<group>"; };
+		99E902A09FAF37BC1AF9C5CF /* MoveLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveLibraryView.swift; sourceTree = "<group>"; };
+		9A195C38A581DE3FCAC2404B /* lucia_side_left_base_rightHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_rightHand.png; sourceTree = "<group>"; };
+		9C5A79580E9074F698098058 /* SWAY.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SWAY.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DFD241F947613D19397EB66 /* lucia_back_base_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_head.png; sourceTree = "<group>"; };
+		A0583F7E386A54FCF32EB71A /* SWAY.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SWAY.entitlements; sourceTree = "<group>"; };
+		A0C5644623CAF9693D59ADA3 /* lucia_front_leftCalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_leftCalf.png; sourceTree = "<group>"; };
+		A3F73CCCF04748334742F360 /* ProgressViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewScreen.swift; sourceTree = "<group>"; };
+		A5F5A21EABD2AF272F0CD201 /* lucia_back_base_torso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_torso.png; sourceTree = "<group>"; };
+		AE43EBF6DB7C6FFF1D312B10 /* lucia_front_base_pelvis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_pelvis.png; sourceTree = "<group>"; };
+		AF9F5BF7BC7321FA5CBAB376 /* lucia_front_base_rightCalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_rightCalf.png; sourceTree = "<group>"; };
+		B25EE22EDE0572C32AAF2A0C /* lucia_front_base_leftLowerArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_leftLowerArm.png; sourceTree = "<group>"; };
+		B49323C1CE4062DD0ACA786E /* sway_idle_v1.usdc */ = {isa = PBXFileReference; path = sway_idle_v1.usdc; sourceTree = "<group>"; };
+		B5A58D4E028FD1DF55348B18 /* lucia_front_rig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lucia_front_rig.json; sourceTree = "<group>"; };
+		B62C718508F56AF1CD1022DE /* SWAYPuppetRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAYPuppetRenderer.swift; sourceTree = "<group>"; };
+		B824377A388AF5CFB692BDDB /* lucia_side_left_base_rightUpperArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_rightUpperArm.png; sourceTree = "<group>"; };
+		BA90CC48CE93EA9466511A2B /* lucia_back_rightThigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_rightThigh.png; sourceTree = "<group>"; };
+		BAE24877547BD0BCFA1CB5B9 /* lucia_back_base_leftThigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_leftThigh.png; sourceTree = "<group>"; };
+		BB40EF5B5F14D28021415241 /* NativeLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeLabView.swift; sourceTree = "<group>"; };
+		BBB5B480E7587732403D3630 /* lucia_back_leftThigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_leftThigh.png; sourceTree = "<group>"; };
+		BC09699D358A8283ACA8012B /* lucia_front_leftLowerArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_leftLowerArm.png; sourceTree = "<group>"; };
+		BCC0505143C56B0BCE3EAA15 /* puppet_pivot_parity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = puppet_pivot_parity.json; sourceTree = "<group>"; };
+		C084EFE33398FB517FB2640B /* lucia_front_pelvis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_pelvis.png; sourceTree = "<group>"; };
+		C0D1989D51C4B4D525DF9EA9 /* sway_body_roll_v1.usdc */ = {isa = PBXFileReference; path = sway_body_roll_v1.usdc; sourceTree = "<group>"; };
+		C117C7F3F635B648B4DFC318 /* sway_march_v1.usdc */ = {isa = PBXFileReference; path = sway_march_v1.usdc; sourceTree = "<group>"; };
+		C389FA4619013757B6B6C1FA /* lucia_back_base_leftLowerArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_leftLowerArm.png; sourceTree = "<group>"; };
+		C561FB15D53938693A7294F3 /* SWAYTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SWAYTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5C0BB310A9051A1B7CE8ADF /* lucia.swayavatar.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lucia.swayavatar.json; sourceTree = "<group>"; };
+		C71B3AE5CC34670201745987 /* SwayFaceTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwayFaceTracking.swift; sourceTree = "<group>"; };
+		C9E77873F979552852358D3C /* lucia_side_left_base_leftThigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_leftThigh.png; sourceTree = "<group>"; };
+		CA6E6F8FE7BCC91DF9195BD4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		CAD893DBB62EA68B71E56D4D /* lucia_side_right_base_rightThigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_rightThigh.png; sourceTree = "<group>"; };
+		CDA29608E4E38D9DEF11FA3B /* UserAvatarReality.usdc */ = {isa = PBXFileReference; path = UserAvatarReality.usdc; sourceTree = "<group>"; };
+		CE29C0078C451ED4BC3BEDB3 /* lucia_front_base_leftUpperArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_leftUpperArm.png; sourceTree = "<group>"; };
+		CE47AB9CDF4E7106CB516E1F /* lucia_front_rightThigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_rightThigh.png; sourceTree = "<group>"; };
+		D247BFD7DFF37D9143DF32EC /* lucia_side_left_base_leftHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_leftHand.png; sourceTree = "<group>"; };
+		D5345EE0DA820B55F6CFD1A5 /* WorkoutPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlayerView.swift; sourceTree = "<group>"; };
+		D5F55EEE2295CEB706D7A673 /* CreateMoveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMoveView.swift; sourceTree = "<group>"; };
+		D60ADE080ED09998667BF864 /* sway_pivot_turn_v1.usdc */ = {isa = PBXFileReference; path = sway_pivot_turn_v1.usdc; sourceTree = "<group>"; };
+		D6D3DF63E78ACBE39B9E0CB7 /* sway_knee_lift_v1.usdc */ = {isa = PBXFileReference; path = sway_knee_lift_v1.usdc; sourceTree = "<group>"; };
+		D96537C2FEF415A2AD518B36 /* user.character.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user.character.json; sourceTree = "<group>"; };
+		E191CB39BC605747038C284C /* lucia_side_left_base_rightThigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_rightThigh.png; sourceTree = "<group>"; };
+		E1E60A8C95014BEA0A7767BA /* ProfileSharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSharing.swift; sourceTree = "<group>"; };
+		E56DBC76E79535477584D07A /* lucia_side_left_base_pelvis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_pelvis.png; sourceTree = "<group>"; };
+		E8C5C579FCFB55217E6076EF /* lucia_front_base_hairFront.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_hairFront.png; sourceTree = "<group>"; };
+		E8EACB061CAFDCBFB5B998CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EB4171A6B03B45A811FE78ED /* lucia_front_base_leftThigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_leftThigh.png; sourceTree = "<group>"; };
+		EB46D73F56AD87FA99335BA8 /* lucia_side_left_base_leftLowerArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_leftLowerArm.png; sourceTree = "<group>"; };
+		EB934FCE0FF598042D9D7E22 /* lucia_back_base_leftShoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_leftShoe.png; sourceTree = "<group>"; };
+		ECACE5D58B6F9403CD3882A1 /* lucia_front_base_rightLowerArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_rightLowerArm.png; sourceTree = "<group>"; };
+		EF2724CE17CB197041894AF6 /* lucia_side_right_base_rightShoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_rightShoe.png; sourceTree = "<group>"; };
+		F0641B092359B1448BA5D0E7 /* lucia_side_right_base_leftCalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_leftCalf.png; sourceTree = "<group>"; };
+		F27CB78D8BF41A1DDD9EBC55 /* lucia_side_left_base_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_head.png; sourceTree = "<group>"; };
+		F2802F5507AD652653FA8A49 /* lucia_back_rightUpperArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_rightUpperArm.png; sourceTree = "<group>"; };
+		F494FCF5882F8A24A811F1BC /* lucia_side_left_base_rightLowerArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_left_base_rightLowerArm.png; sourceTree = "<group>"; };
+		F4E2012A483528C12D1A30F8 /* lucia_side_right_base_rightHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_rightHand.png; sourceTree = "<group>"; };
+		F7EE05A9D4E74297A71A10BA /* sway_grapevine_v1.usdc */ = {isa = PBXFileReference; path = sway_grapevine_v1.usdc; sourceTree = "<group>"; };
+		F7FE00EE1E7974B4A81EBDB9 /* lucia_back_base_rightLowerArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_base_rightLowerArm.png; sourceTree = "<group>"; };
+		F84896535CBC638224AE031F /* lucia_front_rightHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_rightHand.png; sourceTree = "<group>"; };
+		FBB6FDE470BC35108DF779F0 /* lucia_side_right_base_hairFront.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_side_right_base_hairFront.png; sourceTree = "<group>"; };
+		FC49EE8A2A3169C8610D0BA8 /* sway_step_touch_v1.usdc */ = {isa = PBXFileReference; path = sway_step_touch_v1.usdc; sourceTree = "<group>"; };
+		FC86829D1DCB9BA044DB3582 /* lucia_front_base_rightHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_rightHand.png; sourceTree = "<group>"; };
+		FCEB323B4F52008CE99AE123 /* synthetic_vision_pose_sequence.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = synthetic_vision_pose_sequence.json; sourceTree = "<group>"; };
+		FF3C854E810ED5C38EA5261C /* lucia_front_base_rightUpperArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_front_base_rightUpperArm.png; sourceTree = "<group>"; };
+		FF4271DF9736EF8D2CED5BF6 /* lucia_back_leftUpperArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucia_back_leftUpperArm.png; sourceTree = "<group>"; };
+		FFC9283842A48F850CC1EA1B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C62B26BCA9BB64ED67FDAD15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AD3C710D472DCCE6DE475AC /* SWAYcoreEngine in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD61057564095A10102DF8B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2A6FDEFED8F6F5DF75562C5 /* SWAYcoreEngine in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00AAE85BDD182C750742E1BC /* LuciaRig */ = {
+			isa = PBXGroup;
+			children = (
+				5408A0FAD15F32CF4828AF3E /* lucia_back_chest.png */,
+				3938A1F89AFB5DDC4DF49C68 /* lucia_back_head.png */,
+				3BF08108D9A8BF1B255B6D60 /* lucia_back_leftCalf.png */,
+				8C41C1F5F24E9C7317C58AE3 /* lucia_back_leftHand.png */,
+				6900D0D5887D58B677716681 /* lucia_back_leftLowerArm.png */,
+				7CAA79CAEC494D79257B17B5 /* lucia_back_leftShoe.png */,
+				BBB5B480E7587732403D3630 /* lucia_back_leftThigh.png */,
+				FF4271DF9736EF8D2CED5BF6 /* lucia_back_leftUpperArm.png */,
+				01F39AA4732BB5FA9259E995 /* lucia_back_pelvis.png */,
+				45B04FE56D47AF256B9DB340 /* lucia_back_rig.json */,
+				5A6414FC85E3190239D4A08E /* lucia_back_rightCalf.png */,
+				5E1B85BD09194DEDA5BDB93D /* lucia_back_rightHand.png */,
+				6AC2BC5E99A0EDEB28D6A0B2 /* lucia_back_rightLowerArm.png */,
+				40B4AE0BAAE13ACE10A3C06C /* lucia_back_rightShoe.png */,
+				BA90CC48CE93EA9466511A2B /* lucia_back_rightThigh.png */,
+				F2802F5507AD652653FA8A49 /* lucia_back_rightUpperArm.png */,
+				4158B73F210494DE3BCB79F3 /* lucia_front_chest.png */,
+				4E3DF9800AC2EAB5FC77F4AF /* lucia_front_head.png */,
+				A0C5644623CAF9693D59ADA3 /* lucia_front_leftCalf.png */,
+				65A4C99D071D744FAA5253BE /* lucia_front_leftHand.png */,
+				BC09699D358A8283ACA8012B /* lucia_front_leftLowerArm.png */,
+				40A3807519C08E64BB6EDC80 /* lucia_front_leftShoe.png */,
+				31ADB9A29409AB034C6502D5 /* lucia_front_leftThigh.png */,
+				7561201C444C06FAFA45A223 /* lucia_front_leftUpperArm.png */,
+				C084EFE33398FB517FB2640B /* lucia_front_pelvis.png */,
+				B5A58D4E028FD1DF55348B18 /* lucia_front_rig.json */,
+				9223E316ECCA44FB1D4107FF /* lucia_front_rightCalf.png */,
+				F84896535CBC638224AE031F /* lucia_front_rightHand.png */,
+				180DF0979AF0D9997E3C5725 /* lucia_front_rightLowerArm.png */,
+				7A8B91445C9B73BA4ACB349C /* lucia_front_rightShoe.png */,
+				CE47AB9CDF4E7106CB516E1F /* lucia_front_rightThigh.png */,
+				6176D5C1540F6807AE5BC80B /* lucia_front_rightUpperArm.png */,
+			);
+			path = LuciaRig;
+			sourceTree = "<group>";
+		};
+		036EEAB2E90A1C0A44B54743 /* Puppets */ = {
+			isa = PBXGroup;
+			children = (
+				2CB1192BA9D367B08EA87831 /* Lucia */,
+				00AAE85BDD182C750742E1BC /* LuciaRig */,
+			);
+			path = Puppets;
+			sourceTree = "<group>";
+		};
+		082F64CD6B2B947BA9217549 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				BCC0505143C56B0BCE3EAA15 /* puppet_pivot_parity.json */,
+				FCEB323B4F52008CE99AE123 /* synthetic_vision_pose_sequence.json */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		0D49B6A08BEF40ADB71592AB /* Lucia2_5D */ = {
+			isa = PBXGroup;
+			children = (
+				C5C0BB310A9051A1B7CE8ADF /* lucia.swayavatar.json */,
+				6683B897CB6DE8F81742B9A3 /* LuciaAlpha.swayavatar */,
+			);
+			path = Lucia2_5D;
+			sourceTree = "<group>";
+		};
+		15435F4550BED692B7B51EB7 /* Avatar */ = {
+			isa = PBXGroup;
+			children = (
+				91741F3BD736171BF6FB7612 /* SWAY2DComponentLibrary.swift */,
+				6D86A0625F5238E85A3CC67E /* SWAYAvatarGalleryView.swift */,
+				29179DDB6239F2BA1FD42A5C /* SWAYAvatarRendering.swift */,
+				7D9BCE8A8B9572D3022A58A0 /* SWAYCharacterStage.swift */,
+				B62C718508F56AF1CD1022DE /* SWAYPuppetRenderer.swift */,
+				7859A429D44929774A0EA056 /* SWAYRigPuppet.swift */,
+				2096AC48461870263259CE97 /* SWAYSkeletal2DAvatarView.swift */,
+			);
+			path = Avatar;
+			sourceTree = "<group>";
+		};
+		15A6E0A31CB57E321DC3F742 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0AC3840885E15F2496EB0854 /* Move.swift */,
+				E1E60A8C95014BEA0A7767BA /* ProfileSharing.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2CB1192BA9D367B08EA87831 /* Lucia */ = {
+			isa = PBXGroup;
+			children = (
+				A3CDD577D1FD3755AB87E839 /* back */,
+				AACD6CDF8E19F1AE3C6836A6 /* front */,
+				A98C7785E878AF80C41CF297 /* side_left */,
+				5A2018C5A1DED72B4B828116 /* side_right */,
+			);
+			path = Lucia;
+			sourceTree = "<group>";
+		};
+		311B360E240329B1DD8AEC49 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C5A79580E9074F698098058 /* SWAY.app */,
+				C561FB15D53938693A7294F3 /* SWAYTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		33165FEC64772BED0B2F3808 /* User2_5D */ = {
+			isa = PBXGroup;
+			children = (
+				0E9EDD3ED515C0022EA6118D /* your_dancer_2_5d_components.json */,
+			);
+			path = User2_5D;
+			sourceTree = "<group>";
+		};
+		3EF746B5BF9785DFA22FDA8F /* UserAvatar */ = {
+			isa = PBXGroup;
+			children = (
+				D96537C2FEF415A2AD518B36 /* user.character.json */,
+				CDA29608E4E38D9DEF11FA3B /* UserAvatarReality.usdc */,
+			);
+			path = UserAvatar;
+			sourceTree = "<group>";
+		};
+		41EF1D887D32ED94E3B1AEA9 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				0950A8BDAF28B1FF4C3C9473 /* lucia_back_base_hairBack.png */,
+				77764B9CDB71F3FBD05E2EC5 /* lucia_back_base_hairFront.png */,
+				9DFD241F947613D19397EB66 /* lucia_back_base_head.png */,
+				2199D6ED1EAE0A9A7358B98D /* lucia_back_base_leftCalf.png */,
+				2D0E22CFC85B2FC23A1E5B24 /* lucia_back_base_leftHand.png */,
+				C389FA4619013757B6B6C1FA /* lucia_back_base_leftLowerArm.png */,
+				EB934FCE0FF598042D9D7E22 /* lucia_back_base_leftShoe.png */,
+				BAE24877547BD0BCFA1CB5B9 /* lucia_back_base_leftThigh.png */,
+				30462BC7B9BF81E12CCBCAF4 /* lucia_back_base_leftUpperArm.png */,
+				45095B86479D72AAD358F0C1 /* lucia_back_base_pelvis.png */,
+				8D78DAA81E0CEC7E02E2FED2 /* lucia_back_base_rightCalf.png */,
+				106F873CAFDD11C847B157CE /* lucia_back_base_rightHand.png */,
+				F7FE00EE1E7974B4A81EBDB9 /* lucia_back_base_rightLowerArm.png */,
+				5A6C59887A2440521A863F50 /* lucia_back_base_rightShoe.png */,
+				1EB03BCC09C81B22F6B0DD7C /* lucia_back_base_rightThigh.png */,
+				7E8DD9D88597E5B5234DC33F /* lucia_back_base_rightUpperArm.png */,
+				A5F5A21EABD2AF272F0CD201 /* lucia_back_base_torso.png */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		503B1C78C7F22C7263CD1579 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				C0D1989D51C4B4D525DF9EA9 /* sway_body_roll_v1.usdc */,
+				F7EE05A9D4E74297A71A10BA /* sway_grapevine_v1.usdc */,
+				B49323C1CE4062DD0ACA786E /* sway_idle_v1.usdc */,
+				1F9B8E7A36321BE36E0B35F2 /* sway_jumping_jack_v1.usdc */,
+				D6D3DF63E78ACBE39B9E0CB7 /* sway_knee_lift_v1.usdc */,
+				C117C7F3F635B648B4DFC318 /* sway_march_v1.usdc */,
+				D60ADE080ED09998667BF864 /* sway_pivot_turn_v1.usdc */,
+				8856E0B010F2D95260D6BF12 /* sway_side_lunge_v1.usdc */,
+				0B27BA8480CFAA1547315087 /* sway_squat_v1.usdc */,
+				FC49EE8A2A3169C8610D0BA8 /* sway_step_touch_v1.usdc */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		526025F02E68DAF90E4FCAC0 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				14407DA965ACFDC976B0DA89 /* SWAYcoreEngine */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		5A2018C5A1DED72B4B828116 /* side_right */ = {
+			isa = PBXGroup;
+			children = (
+				7763FE0BAFC4756FAA1E5ADA /* base */,
+			);
+			path = side_right;
+			sourceTree = "<group>";
+		};
+		66FAA071B6584D711328AC9B /* Lucia */ = {
+			isa = PBXGroup;
+			children = (
+				748126F1CE5B3250C642CCE9 /* lucia.character.json */,
+				7AC3C6B9C163CBC5223431CC /* lucia.cutout.manifest.json */,
+				211C2B25E253468703AE04FF /* LuciaReality.usdc */,
+				503B1C78C7F22C7263CD1579 /* Animations */,
+				B367D69CEA62258AF7EF08DD /* textures */,
+			);
+			path = Lucia;
+			sourceTree = "<group>";
+		};
+		71E5453B4F1BE914EC53DC3F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				703CC6B967AB598AE4C6E64E /* SWAYApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7763FE0BAFC4756FAA1E5ADA /* base */ = {
+			isa = PBXGroup;
+			children = (
+				05D042FB557585E99D284152 /* lucia_side_right_base_hairBack.png */,
+				FBB6FDE470BC35108DF779F0 /* lucia_side_right_base_hairFront.png */,
+				43E9B77483B6B2ABD3606125 /* lucia_side_right_base_head.png */,
+				F0641B092359B1448BA5D0E7 /* lucia_side_right_base_leftCalf.png */,
+				3261701DCDD5F68DFB66D3F3 /* lucia_side_right_base_leftHand.png */,
+				2DDFDD033A9A6860B4355A82 /* lucia_side_right_base_leftLowerArm.png */,
+				342978A5B47199D6AF999921 /* lucia_side_right_base_leftShoe.png */,
+				03A146EE04CF0A4D3A01FE68 /* lucia_side_right_base_leftThigh.png */,
+				51D41D42107E2B86CA697A63 /* lucia_side_right_base_leftUpperArm.png */,
+				66E69FAEFAA2082E3DF46EAB /* lucia_side_right_base_pelvis.png */,
+				22C3BAA0DB38887FFD6F260A /* lucia_side_right_base_rightCalf.png */,
+				F4E2012A483528C12D1A30F8 /* lucia_side_right_base_rightHand.png */,
+				71B4368829CD2ADCB2748913 /* lucia_side_right_base_rightLowerArm.png */,
+				EF2724CE17CB197041894AF6 /* lucia_side_right_base_rightShoe.png */,
+				CAD893DBB62EA68B71E56D4D /* lucia_side_right_base_rightThigh.png */,
+				8BC2D1913D0203ABEEFA8AB2 /* lucia_side_right_base_rightUpperArm.png */,
+				32DDBB97AEB0822F234682FD /* lucia_side_right_base_torso.png */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		79830F3F7DDC67754BBE423C /* SWAYTests */ = {
+			isa = PBXGroup;
+			children = (
+				5728995BCC228CC518CBD92A /* SWAY2DComponentLibraryTests.swift */,
+				38EE6E95D65CDBAA188156FB /* SWAYCharacterAppearanceTests.swift */,
+				5FCAA0BAC8DE23C1EC2E00F8 /* SWAYPuppetRuntimeTests.swift */,
+				6F4328BF4B50B77AABEFD4EA /* SWAYSmokeTests.swift */,
+				082F64CD6B2B947BA9217549 /* Fixtures */,
+			);
+			name = SWAYTests;
+			path = Tests/SWAYTests;
+			sourceTree = "<group>";
+		};
+		86E8845DF6A1688621F87BE8 /* Durer2_5D */ = {
+			isa = PBXGroup;
+			children = (
+				3364FE4B833B22004A2770C9 /* SWAY-DURER-2.5D-v1.json */,
+			);
+			path = Durer2_5D;
+			sourceTree = "<group>";
+		};
+		8762E432BFB7B5B648CFD703 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DF223B69049C45F5A5DDD5A9 /* Avatars */,
+				F32015C8D38DC49D73B5028F /* Characters */,
+				036EEAB2E90A1C0A44B54743 /* Puppets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A3CDD577D1FD3755AB87E839 /* back */ = {
+			isa = PBXGroup;
+			children = (
+				41EF1D887D32ED94E3B1AEA9 /* base */,
+			);
+			path = back;
+			sourceTree = "<group>";
+		};
+		A781795328D36B79A46CC1A7 /* SWAY */ = {
+			isa = PBXGroup;
+			children = (
+				E8EACB061CAFDCBFB5B998CC /* Assets.xcassets */,
+				A0583F7E386A54FCF32EB71A /* SWAY.entitlements */,
+				71E5453B4F1BE914EC53DC3F /* App */,
+				15435F4550BED692B7B51EB7 /* Avatar */,
+				15A6E0A31CB57E321DC3F742 /* Models */,
+				8762E432BFB7B5B648CFD703 /* Resources */,
+				F2B0C09A2E0F15287EB49B25 /* Services */,
+				CF8B16D425D569545A4E781A /* Views */,
+			);
+			path = SWAY;
+			sourceTree = "<group>";
+		};
+		A98C7785E878AF80C41CF297 /* side_left */ = {
+			isa = PBXGroup;
+			children = (
+				C50DF9049A84434DBDD8FAAF /* base */,
+			);
+			path = side_left;
+			sourceTree = "<group>";
+		};
+		AA05FA6B6F999B1F3316267C = {
+			isa = PBXGroup;
+			children = (
+				526025F02E68DAF90E4FCAC0 /* Packages */,
+				A781795328D36B79A46CC1A7 /* SWAY */,
+				79830F3F7DDC67754BBE423C /* SWAYTests */,
+				311B360E240329B1DD8AEC49 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AACD6CDF8E19F1AE3C6836A6 /* front */ = {
+			isa = PBXGroup;
+			children = (
+				EFAC3B0D6EFCB2E11398E6FC /* base */,
+			);
+			path = front;
+			sourceTree = "<group>";
+		};
+		B367D69CEA62258AF7EF08DD /* textures */ = {
+			isa = PBXGroup;
+			children = (
+				534AF98737FA22B2F6D5EB06 /* color_0C0C0C.exr */,
+			);
+			path = textures;
+			sourceTree = "<group>";
+		};
+		C50DF9049A84434DBDD8FAAF /* base */ = {
+			isa = PBXGroup;
+			children = (
+				1D689815B2D54134D80EADF2 /* lucia_side_left_base_hairBack.png */,
+				0D55D590904EEC26DFA4B223 /* lucia_side_left_base_hairFront.png */,
+				F27CB78D8BF41A1DDD9EBC55 /* lucia_side_left_base_head.png */,
+				750DCA07583A2671B03C723D /* lucia_side_left_base_leftCalf.png */,
+				D247BFD7DFF37D9143DF32EC /* lucia_side_left_base_leftHand.png */,
+				EB46D73F56AD87FA99335BA8 /* lucia_side_left_base_leftLowerArm.png */,
+				65D7F43639B44862486017A0 /* lucia_side_left_base_leftShoe.png */,
+				C9E77873F979552852358D3C /* lucia_side_left_base_leftThigh.png */,
+				2875F2B8FCADA520533EC2E6 /* lucia_side_left_base_leftUpperArm.png */,
+				E56DBC76E79535477584D07A /* lucia_side_left_base_pelvis.png */,
+				917344BBE0BAD7068B13C552 /* lucia_side_left_base_rightCalf.png */,
+				9A195C38A581DE3FCAC2404B /* lucia_side_left_base_rightHand.png */,
+				F494FCF5882F8A24A811F1BC /* lucia_side_left_base_rightLowerArm.png */,
+				01E1671BB95E4FA8C14E1B6B /* lucia_side_left_base_rightShoe.png */,
+				E191CB39BC605747038C284C /* lucia_side_left_base_rightThigh.png */,
+				B824377A388AF5CFB692BDDB /* lucia_side_left_base_rightUpperArm.png */,
+				8F268E8C0616D64AD5CA0D02 /* lucia_side_left_base_torso.png */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		CF8B16D425D569545A4E781A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				21B6D1042A5477F1F103BEFA /* CameraLabView.swift */,
+				D5F55EEE2295CEB706D7A673 /* CreateMoveView.swift */,
+				10DD33373D86E8B3500A8D98 /* HomeView.swift */,
+				99E902A09FAF37BC1AF9C5CF /* MoveLibraryView.swift */,
+				BB40EF5B5F14D28021415241 /* NativeLabView.swift */,
+				A3F73CCCF04748334742F360 /* ProgressViewScreen.swift */,
+				CA6E6F8FE7BCC91DF9195BD4 /* RootView.swift */,
+				FFC9283842A48F850CC1EA1B /* SettingsView.swift */,
+				141ED536DF194C5C67FBFC65 /* StickFigureView.swift */,
+				D5345EE0DA820B55F6CFD1A5 /* WorkoutPlayerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DF223B69049C45F5A5DDD5A9 /* Avatars */ = {
+			isa = PBXGroup;
+			children = (
+				86E8845DF6A1688621F87BE8 /* Durer2_5D */,
+				0D49B6A08BEF40ADB71592AB /* Lucia2_5D */,
+				33165FEC64772BED0B2F3808 /* User2_5D */,
+			);
+			path = Avatars;
+			sourceTree = "<group>";
+		};
+		EFAC3B0D6EFCB2E11398E6FC /* base */ = {
+			isa = PBXGroup;
+			children = (
+				928808623E43BC332B4DE475 /* lucia_front_base_hairBack.png */,
+				E8C5C579FCFB55217E6076EF /* lucia_front_base_hairFront.png */,
+				5D86976040888C6FF78AF4AD /* lucia_front_base_head.png */,
+				535EBB451232ED9473D757DB /* lucia_front_base_leftCalf.png */,
+				2662A663671368C520AFFC29 /* lucia_front_base_leftHand.png */,
+				B25EE22EDE0572C32AAF2A0C /* lucia_front_base_leftLowerArm.png */,
+				6BF764D7DC5AF5EBAFA5ED1D /* lucia_front_base_leftShoe.png */,
+				EB4171A6B03B45A811FE78ED /* lucia_front_base_leftThigh.png */,
+				CE29C0078C451ED4BC3BEDB3 /* lucia_front_base_leftUpperArm.png */,
+				AE43EBF6DB7C6FFF1D312B10 /* lucia_front_base_pelvis.png */,
+				AF9F5BF7BC7321FA5CBAB376 /* lucia_front_base_rightCalf.png */,
+				FC86829D1DCB9BA044DB3582 /* lucia_front_base_rightHand.png */,
+				ECACE5D58B6F9403CD3882A1 /* lucia_front_base_rightLowerArm.png */,
+				781BAA7F01C3B2D686116EF2 /* lucia_front_base_rightShoe.png */,
+				5F2AB2831C9553C2723AB026 /* lucia_front_base_rightThigh.png */,
+				FF3C854E810ED5C38EA5261C /* lucia_front_base_rightUpperArm.png */,
+				15221114536E03F954802962 /* lucia_front_base_torso.png */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		F2B0C09A2E0F15287EB49B25 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				85654B317C8DB0847BFA1BBA /* NativeCapabilities.swift */,
+				C71B3AE5CC34670201745987 /* SwayFaceTracking.swift */,
+				3D69F4FC85D2EB85ED871A38 /* SwayStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F32015C8D38DC49D73B5028F /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				66FAA071B6584D711328AC9B /* Lucia */,
+				3EF746B5BF9785DFA22FDA8F /* UserAvatar */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06650CB9BC1AD6FDF708D39A /* SWAYTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A0C90803E2A367562E09EEB /* Build configuration list for PBXNativeTarget "SWAYTests" */;
+			buildPhases = (
+				9A7C40673D61249F772C4BC1 /* Sources */,
+				BF18A313DB420D29C08308D2 /* Resources */,
+				C62B26BCA9BB64ED67FDAD15 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48E293CCCCDE0E123E23678B /* PBXTargetDependency */,
+			);
+			name = SWAYTests;
+			packageProductDependencies = (
+				DC7EFC562612A3CA8D8E1C46 /* SWAYcoreEngine */,
+			);
+			productName = SWAYTests;
+			productReference = C561FB15D53938693A7294F3 /* SWAYTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6CFAE2916289A43F5FB6FE24 /* SWAY */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A94217CF6FEB3CFF34F57264 /* Build configuration list for PBXNativeTarget "SWAY" */;
+			buildPhases = (
+				26E584DA8BD1562F18E6F977 /* Sources */,
+				664A7593C60ED9FFCDE3729D /* Resources */,
+				CD61057564095A10102DF8B9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SWAY;
+			packageProductDependencies = (
+				DA04FE86753C20E096A32762 /* SWAYcoreEngine */,
+			);
+			productName = SWAY;
+			productReference = 9C5A79580E9074F698098058 /* SWAY.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		057DD9042098DB138C7CAFC9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					6CFAE2916289A43F5FB6FE24 = {
+						DevelopmentTeam = XZ4VRP5S5G;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FE5B42998FB9C635937BBAA0 /* Build configuration list for PBXProject "SWAY" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = AA05FA6B6F999B1F3316267C;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3C5F52613B9EA1C6BB76EB3F /* XCLocalSwiftPackageReference "../Packages/SWAYcoreEngine" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 311B360E240329B1DD8AEC49 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6CFAE2916289A43F5FB6FE24 /* SWAY */,
+				06650CB9BC1AD6FDF708D39A /* SWAYTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		664A7593C60ED9FFCDE3729D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91381B5FC08AE12D181B2C99 /* Assets.xcassets in Resources */,
+				94BE682518E03C428E8D25C3 /* LuciaAlpha.swayavatar in Resources */,
+				B535A56F94D79B15F96093BE /* LuciaReality.usdc in Resources */,
+				F6E705CE70120D2DF9DA0254 /* SWAY-DURER-2.5D-v1.json in Resources */,
+				C2CAC5C3B48CD6DEC128A95C /* UserAvatarReality.usdc in Resources */,
+				5EBB10C0935CD9F447C5CFDE /* color_0C0C0C.exr in Resources */,
+				3A577384B15FD144360BC019 /* lucia.character.json in Resources */,
+				C434092278EFB6DF3E6392AA /* lucia.cutout.manifest.json in Resources */,
+				F6808435EE2E39174B9689DF /* lucia.swayavatar.json in Resources */,
+				52D1BD4CDE1C78F0AC8D9A1C /* lucia_back_base_hairBack.png in Resources */,
+				54D4B92557126187A15360D3 /* lucia_back_base_hairFront.png in Resources */,
+				87BC6D830A28254165F319A6 /* lucia_back_base_head.png in Resources */,
+				280DA7AEE198EC88DAA39F21 /* lucia_back_base_leftCalf.png in Resources */,
+				7D523F7395DE7CC8B9EA41F9 /* lucia_back_base_leftHand.png in Resources */,
+				C6B779D2176B8C7DAE68EBFF /* lucia_back_base_leftLowerArm.png in Resources */,
+				6AE1DAB70513977DB2743377 /* lucia_back_base_leftShoe.png in Resources */,
+				0B0B0C98ED546A07A2428679 /* lucia_back_base_leftThigh.png in Resources */,
+				D3B384AACDC90B248F72C986 /* lucia_back_base_leftUpperArm.png in Resources */,
+				B312B6E4F67B5A128C1ACAA6 /* lucia_back_base_pelvis.png in Resources */,
+				08187FB31ADEE8650CA2FB2E /* lucia_back_base_rightCalf.png in Resources */,
+				13BD608CE888F467973877D5 /* lucia_back_base_rightHand.png in Resources */,
+				74E2F590543B1BFA29FD24BC /* lucia_back_base_rightLowerArm.png in Resources */,
+				D2488F0E36A0D24FC2FC81E2 /* lucia_back_base_rightShoe.png in Resources */,
+				AADEE572C5CBD9E5566D8287 /* lucia_back_base_rightThigh.png in Resources */,
+				B0CF2CEBF4B0D7F8ABCDDFD1 /* lucia_back_base_rightUpperArm.png in Resources */,
+				7B1FBA10299119754742709D /* lucia_back_base_torso.png in Resources */,
+				EEAD251A8F7A423B64F8484D /* lucia_back_chest.png in Resources */,
+				53F53585729D760B0E5AD0EC /* lucia_back_head.png in Resources */,
+				92316183733B75248E9953FB /* lucia_back_leftCalf.png in Resources */,
+				5C2D3A247927E29C15E91C30 /* lucia_back_leftHand.png in Resources */,
+				284ADF832C979EEF7E5C3AAC /* lucia_back_leftLowerArm.png in Resources */,
+				EEDD917BFC0A8541A986123A /* lucia_back_leftShoe.png in Resources */,
+				4AE018B74EDA61EF257EF542 /* lucia_back_leftThigh.png in Resources */,
+				94930490EA6F2CB8F47BBC9F /* lucia_back_leftUpperArm.png in Resources */,
+				486C0C5AC7D0AA8DBD958971 /* lucia_back_pelvis.png in Resources */,
+				FC83D7FB54FEB6B1192E64A5 /* lucia_back_rig.json in Resources */,
+				E0F3DDF6B43460FF1E54C1D8 /* lucia_back_rightCalf.png in Resources */,
+				C0A2A287E2C349EEDFEC0CF1 /* lucia_back_rightHand.png in Resources */,
+				D88B21423485CB83ABFFADC4 /* lucia_back_rightLowerArm.png in Resources */,
+				CA6011CB1273F887454182D2 /* lucia_back_rightShoe.png in Resources */,
+				E00D5889CAA0D9DFBAC69682 /* lucia_back_rightThigh.png in Resources */,
+				1D4BE9010D9D82E452ED8AEF /* lucia_back_rightUpperArm.png in Resources */,
+				205EF0C6E7902CA1CD10798C /* lucia_front_base_hairBack.png in Resources */,
+				B6F87F216BE671ABA1E6BEDA /* lucia_front_base_hairFront.png in Resources */,
+				48D5F8185A08C4EBEF5A1078 /* lucia_front_base_head.png in Resources */,
+				7A721AEB41D7B26990FA7955 /* lucia_front_base_leftCalf.png in Resources */,
+				46E7220FCF661AEDF91CE4D6 /* lucia_front_base_leftHand.png in Resources */,
+				0BB03B844018FEDA94B3C7AC /* lucia_front_base_leftLowerArm.png in Resources */,
+				87035B02824769D8F5B2DE91 /* lucia_front_base_leftShoe.png in Resources */,
+				3702BB6173AC6DCA70977A8C /* lucia_front_base_leftThigh.png in Resources */,
+				E49CE15025C5CC8971A69170 /* lucia_front_base_leftUpperArm.png in Resources */,
+				15502BF9D1FA26AD5A0F3B5E /* lucia_front_base_pelvis.png in Resources */,
+				D03CC5DDABD41489FE730A60 /* lucia_front_base_rightCalf.png in Resources */,
+				691763F7BBEBDFBC766D93AD /* lucia_front_base_rightHand.png in Resources */,
+				0DEE95494CBDB0ACF308D97B /* lucia_front_base_rightLowerArm.png in Resources */,
+				31813939292004CA838EE063 /* lucia_front_base_rightShoe.png in Resources */,
+				1708E0277C95EE991325474B /* lucia_front_base_rightThigh.png in Resources */,
+				834703376714007B2D0780FF /* lucia_front_base_rightUpperArm.png in Resources */,
+				3ABEA1B475A4C360C2D71741 /* lucia_front_base_torso.png in Resources */,
+				56F3D5784BD60D73C405EEAB /* lucia_front_chest.png in Resources */,
+				AB97C0903684551B5429CB4F /* lucia_front_head.png in Resources */,
+				23E9148DA1E94AAF5A526FF8 /* lucia_front_leftCalf.png in Resources */,
+				2F349C22B647B34087E57B02 /* lucia_front_leftHand.png in Resources */,
+				FF48EEB7CAD9062C69BFC0C4 /* lucia_front_leftLowerArm.png in Resources */,
+				AE0D836D1F9C475BE1BD4FB3 /* lucia_front_leftShoe.png in Resources */,
+				3D91EE69EEB358CA4CC1C30D /* lucia_front_leftThigh.png in Resources */,
+				A2804E0157343504C0C17D1C /* lucia_front_leftUpperArm.png in Resources */,
+				D8B12C7B7B94EBA354C1B65F /* lucia_front_pelvis.png in Resources */,
+				0524654AF2CAC3798B2A1976 /* lucia_front_rig.json in Resources */,
+				1064DF8DED9BF80B80323DFC /* lucia_front_rightCalf.png in Resources */,
+				4C36FC7301582A66CA43C99F /* lucia_front_rightHand.png in Resources */,
+				449D1044E427DB1DFD6DA3AF /* lucia_front_rightLowerArm.png in Resources */,
+				6CCB4CE8877F9BB28C4F4573 /* lucia_front_rightShoe.png in Resources */,
+				7A0F73412654CC5AEBFE727A /* lucia_front_rightThigh.png in Resources */,
+				54798C55798E883E161DD3DF /* lucia_front_rightUpperArm.png in Resources */,
+				BC030C718E4B2BC801BD86F0 /* lucia_side_left_base_hairBack.png in Resources */,
+				F9A3146B13B2520567177D1C /* lucia_side_left_base_hairFront.png in Resources */,
+				0729008F901D00E173AB0EB1 /* lucia_side_left_base_head.png in Resources */,
+				AD12D0D13384BB3CF971F90E /* lucia_side_left_base_leftCalf.png in Resources */,
+				42460F5161EEDF335EB2D73D /* lucia_side_left_base_leftHand.png in Resources */,
+				EFD837ADF29C36E98D689497 /* lucia_side_left_base_leftLowerArm.png in Resources */,
+				AF2D57B93F7A5E4E06337386 /* lucia_side_left_base_leftShoe.png in Resources */,
+				9B7A01F34BA75858DFA79F5F /* lucia_side_left_base_leftThigh.png in Resources */,
+				5D78389BFB7430D69EE32156 /* lucia_side_left_base_leftUpperArm.png in Resources */,
+				6EA7D996FFEE247550DBD67D /* lucia_side_left_base_pelvis.png in Resources */,
+				C9B64905667B583D79E82978 /* lucia_side_left_base_rightCalf.png in Resources */,
+				3C14062973227F6B337AE297 /* lucia_side_left_base_rightHand.png in Resources */,
+				55D762788DE160CF77EDE97A /* lucia_side_left_base_rightLowerArm.png in Resources */,
+				B35FA308ABDD05F610486DBA /* lucia_side_left_base_rightShoe.png in Resources */,
+				943A5C278C84DA630B214CB3 /* lucia_side_left_base_rightThigh.png in Resources */,
+				D0260E1B6EC3BF1ECF09BAFC /* lucia_side_left_base_rightUpperArm.png in Resources */,
+				3B938A98C19662FF0BD82973 /* lucia_side_left_base_torso.png in Resources */,
+				CDCA5B5E405EC7FE82DCCEB4 /* lucia_side_right_base_hairBack.png in Resources */,
+				C7693BF485693727E3880FCC /* lucia_side_right_base_hairFront.png in Resources */,
+				8072434CFC083F3E34DF63AE /* lucia_side_right_base_head.png in Resources */,
+				F604C65766C92CF1417B41F7 /* lucia_side_right_base_leftCalf.png in Resources */,
+				CA78AC48675DB363EECF3085 /* lucia_side_right_base_leftHand.png in Resources */,
+				8EE11EDA59B875C5E1CD467A /* lucia_side_right_base_leftLowerArm.png in Resources */,
+				7485BD77B035B5E0FCBA9A27 /* lucia_side_right_base_leftShoe.png in Resources */,
+				5CAFD6E04A2CD3187BFAAC2B /* lucia_side_right_base_leftThigh.png in Resources */,
+				8B45340BFCB73DC848AA18E5 /* lucia_side_right_base_leftUpperArm.png in Resources */,
+				581A76DD3BA32541C5A51C54 /* lucia_side_right_base_pelvis.png in Resources */,
+				5D86D3AC824A1BF065B4815D /* lucia_side_right_base_rightCalf.png in Resources */,
+				EAB4079DEF1D5E5A1F0ADF02 /* lucia_side_right_base_rightHand.png in Resources */,
+				6CE623D299D657BC4BADB9FD /* lucia_side_right_base_rightLowerArm.png in Resources */,
+				3F51D166BECE527F0B85BAF9 /* lucia_side_right_base_rightShoe.png in Resources */,
+				86921890201D8F1CE1149882 /* lucia_side_right_base_rightThigh.png in Resources */,
+				422B62E33073627D5C4D5787 /* lucia_side_right_base_rightUpperArm.png in Resources */,
+				D278F0AEC33AFDCA3F6A5A5C /* lucia_side_right_base_torso.png in Resources */,
+				2AB7822BB0177562ECB28DF4 /* sway_body_roll_v1.usdc in Resources */,
+				8743D7477499932D53C1EAA7 /* sway_grapevine_v1.usdc in Resources */,
+				FE871C8EDD1B1DAFC659028C /* sway_idle_v1.usdc in Resources */,
+				D5742561E8367E97F3326243 /* sway_jumping_jack_v1.usdc in Resources */,
+				B7BE272A077DD872676C2381 /* sway_knee_lift_v1.usdc in Resources */,
+				3352880AE97F2B9F0EFFFF21 /* sway_march_v1.usdc in Resources */,
+				A75A4372C8582ADEF729906B /* sway_pivot_turn_v1.usdc in Resources */,
+				5C4E7CBC85F69874ED0F67C3 /* sway_side_lunge_v1.usdc in Resources */,
+				84D064CFD57570C579406D5E /* sway_squat_v1.usdc in Resources */,
+				E7C958C5E27F1A617409098E /* sway_step_touch_v1.usdc in Resources */,
+				CC9D967F00C224D00ACD9FCA /* user.character.json in Resources */,
+				FA826CD563D788B657E868B7 /* your_dancer_2_5d_components.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF18A313DB420D29C08308D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC6C8615DC8F29E9683E253C /* puppet_pivot_parity.json in Resources */,
+				162AD79E0864A81DA0A6DE5F /* synthetic_vision_pose_sequence.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26E584DA8BD1562F18E6F977 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B0CAC13D9C0ACD84597F14D /* CameraLabView.swift in Sources */,
+				8C1F9469DCD7F2769C191654 /* CreateMoveView.swift in Sources */,
+				75C356D3958434DBBFB61658 /* HomeView.swift in Sources */,
+				16278968A2E632F4CB54F48E /* Move.swift in Sources */,
+				228D74F1ADDDF42916C66C79 /* MoveLibraryView.swift in Sources */,
+				7D3109B285A0A8F43A00CE7D /* NativeCapabilities.swift in Sources */,
+				4EBD7A15F38E13FFF5FBD47C /* NativeLabView.swift in Sources */,
+				79CE681470BC4B600391F64A /* ProfileSharing.swift in Sources */,
+				D0EA2A4335095387804D7172 /* ProgressViewScreen.swift in Sources */,
+				A7129DF9F355125F7F8FB51A /* RootView.swift in Sources */,
+				E7756AAA4F6533C746FB97AC /* SWAY2DComponentLibrary.swift in Sources */,
+				07E5D5E51A12DF1CE3297A2C /* SWAYApp.swift in Sources */,
+				C60BA805FC42C95D7C9B9346 /* SWAYAvatarGalleryView.swift in Sources */,
+				0484E33B3BFE10C0EBD09272 /* SWAYAvatarRendering.swift in Sources */,
+				D6A61B6831A7C8A6108A450B /* SWAYCharacterStage.swift in Sources */,
+				FB656B714F844598F0784D8B /* SWAYPuppetRenderer.swift in Sources */,
+				B99A72A6A0006451F104F492 /* SWAYRigPuppet.swift in Sources */,
+				EE768FA73A21928F473D5DE9 /* SWAYSkeletal2DAvatarView.swift in Sources */,
+				7972B36627A2EA72779EFC29 /* SettingsView.swift in Sources */,
+				B742BD9D3B2B8CACEC29AA6F /* StickFigureView.swift in Sources */,
+				B9378A6FF1A966AF662D9932 /* SwayFaceTracking.swift in Sources */,
+				0B002616FB4F7D9600584EF2 /* SwayStore.swift in Sources */,
+				24F23153B4DB9964EED52246 /* WorkoutPlayerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A7C40673D61249F772C4BC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				183DE8E00F0469BA981BB223 /* SWAY2DComponentLibraryTests.swift in Sources */,
+				D8E147621508B2D55D0EADEE /* SWAYCharacterAppearanceTests.swift in Sources */,
+				957869B68E9B83798683FCE2 /* SWAYPuppetRuntimeTests.swift in Sources */,
+				D546D018BAF3129904114753 /* SWAYSmokeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		48E293CCCCDE0E123E23678B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CFAE2916289A43F5FB6FE24 /* SWAY */;
+			targetProxy = 61939C6627438642D092C493 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1686C344E1B1C57B9ADBF768 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		544905DE3AC5CF89E6FF8319 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AA8A850AABE7926B2B7A10F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucasbuzek.private.sway.tests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SWAY.app/SWAY";
+			};
+			name = Release;
+		};
+		E0E4356A465EA45190B83AD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SWAY/SWAY.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 153;
+				DEVELOPMENT_TEAM = XZ4VRP5S5G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "SWAYcore Dance & Fitness";
+				INFOPLIST_KEY_CFBundleShortVersionString = 0.9;
+				INFOPLIST_KEY_CFBundleVersion = 153;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "SWAYcore uses your music library so you can dance to music you choose.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "SWAYcore uses the camera for optional on-device movement recognition.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "SWAYcore reads workout and heart-rate data only when you choose to connect Health.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "SWAYcore can save completed workouts when you choose to connect Health.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "SWAYcore uses the microphone for music recognition and, when you explicitly choose Record SWAY, to include your performance audio.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "SWAYcore uses motion sensors to enhance rhythm and movement feedback.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucasbuzek.private.sway;
+				PRODUCT_NAME = SWAY;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F81EF11F0FCE66A5785BF59A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucasbuzek.private.sway.tests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SWAY.app/SWAY";
+			};
+			name = Debug;
+		};
+		FFEA6835CFD5BD37FBBB4B1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SWAY/SWAY.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 153;
+				DEVELOPMENT_TEAM = XZ4VRP5S5G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "SWAYcore Dance & Fitness";
+				INFOPLIST_KEY_CFBundleShortVersionString = 0.9;
+				INFOPLIST_KEY_CFBundleVersion = 153;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "SWAYcore uses your music library so you can dance to music you choose.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "SWAYcore uses the camera for optional on-device movement recognition.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "SWAYcore reads workout and heart-rate data only when you choose to connect Health.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "SWAYcore can save completed workouts when you choose to connect Health.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "SWAYcore uses the microphone for music recognition and, when you explicitly choose Record SWAY, to include your performance audio.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "SWAYcore uses motion sensors to enhance rhythm and movement feedback.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucasbuzek.private.sway;
+				PRODUCT_NAME = SWAY;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A0C90803E2A367562E09EEB /* Build configuration list for PBXNativeTarget "SWAYTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F81EF11F0FCE66A5785BF59A /* Debug */,
+				AA8A850AABE7926B2B7A10F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A94217CF6FEB3CFF34F57264 /* Build configuration list for PBXNativeTarget "SWAY" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFEA6835CFD5BD37FBBB4B1F /* Debug */,
+				E0E4356A465EA45190B83AD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FE5B42998FB9C635937BBAA0 /* Build configuration list for PBXProject "SWAY" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1686C344E1B1C57B9ADBF768 /* Debug */,
+				544905DE3AC5CF89E6FF8319 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		3C5F52613B9EA1C6BB76EB3F /* XCLocalSwiftPackageReference "../Packages/SWAYcoreEngine" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Packages/SWAYcoreEngine;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DA04FE86753C20E096A32762 /* SWAYcoreEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SWAYcoreEngine;
+		};
+		DC7EFC562612A3CA8D8E1C46 /* SWAYcoreEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SWAYcoreEngine;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 057DD9042098DB138C7CAFC9 /* Project object */;
+}

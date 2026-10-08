@@ -97,13 +97,14 @@ for i,p in enumerate(parts):
     if own.sum()==0: print("EMPTY",p["name"]);continue
     dbg[own]=cols[i]
     ext=own.copy()
+    capok=sil if "capFrom" not in p else sil&np.isin(owner,[names.index(n) for n in p["capFrom"]])
     for jn,r in p.get("caps",[]):   # caps only on the part drawn UNDER at that joint
         if jn not in J: continue
         if isinstance(r,str):        # "auto[+N]": round joint = limb half-width, NOT clipped
             jx,jy=J[jn].astype(int);hw=float(EDT[max(0,jy-12):jy+13,max(0,jx-12):jx+13].max());r=hw+float(r[4:] or 0)
-            ext|=(np.hypot(xx-J[jn][0],yy-J[jn][1])<=r)&SILC
+            ext|=(np.hypot(xx-J[jn][0],yy-J[jn][1])<=r)&(SILC if "capFrom" not in p else capok)
         elif r>0:
-            ext|=(np.hypot(xx-J[jn][0],yy-J[jn][1])<=r)&sil
+            ext|=(np.hypot(xx-J[jn][0],yy-J[jn][1])<=r)&capok
     for fr in p.get("fillRows",[]):   # {"y":[y0,y1],"to":x}: span from real outer edge to x
         y0,y1=fr["y"];tx=fr["to"]
         for yv in range(y0,y1):
@@ -114,6 +115,11 @@ for i,p in enumerate(parts):
     for poly in p.get("fillPolys",[]):   # reconstruct outline hidden behind other parts
         pm=Image.new("L",(W,H),0);ImageDraw.Draw(pm).polygon([tuple(q) for q in poly],fill=255)
         ext|=np.array(pm)>0
+    # drop islands: cap discs can catch detached outline slivers (e.g. pants edge behind a hand)
+    lab_w,_nw=ndi.label(own)
+    if _nw>1 and (p.get("main") or p.get("open")):
+        szw=ndi.sum(own,lab_w,range(1,_nw+1));own=own&(lab_w==(1+int(np.argmax(szw))))
+    lab_e,_ne=ndi.label(ext);keep=np.unique(lab_e[own]);ext=np.isin(lab_e,keep[keep>0])
     # colour ext from nearest own pixel
     src_fill=own&SKIN if (p.get("skinFill") and (own&SKIN).sum()>100) else own
     _,(iy,ix)=ndi.distance_transform_edt(~src_fill,return_indices=True)

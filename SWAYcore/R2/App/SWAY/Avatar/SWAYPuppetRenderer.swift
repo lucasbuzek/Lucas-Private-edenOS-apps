@@ -131,6 +131,9 @@ struct SWAYPuppetRenderer: View {
     let angle: SWAYPuppetAngle
     var profile: SwayCharacterProfile? = nil
     var trackingAvailable = true
+    /// Rig set name (SWAYCharacterID.rawValue). Characters without an authored rig yet
+    /// fall back to the Lucia rig; `hasOwnRig` reports which one is drawn.
+    var character: String = "lucia"
 
     private let segments:[(String,String,String)] = [
         ("leftUpperArm","LeftUpperArm","LeftLowerArm"),("leftLowerArm","LeftLowerArm","LeftHand"),
@@ -139,14 +142,20 @@ struct SWAYPuppetRenderer: View {
         ("rightThigh","RightUpperLeg","RightLowerLeg"),("rightCalf","RightLowerLeg","RightFoot")]
 
     /// Authored cut-out rig for the current heading (front/back now; side when authored).
+    private var rigName: String {
+        SWAYRigLibrary.rig(character: character, view: "front") != nil ? character : "lucia"
+    }
+    var hasOwnRig: Bool { rigName == character }
+
     private var rig: SWAYRig? {
+        let name = rigName
         let view: String
         switch angle {
         case .back, .backLeft, .backRight: view = "back"
-        case .left, .right: view = SWAYRigLibrary.rig(character: "lucia", view: "side") != nil ? "side" : "front"
+        case .left, .right: view = SWAYRigLibrary.rig(character: name, view: "side") != nil ? "side" : "front"
         default: view = "front"
         }
-        return SWAYRigLibrary.rig(character: "lucia", view: view) ?? SWAYRigLibrary.rig(character: "lucia", view: "front")
+        return SWAYRigLibrary.rig(character: name, view: view) ?? SWAYRigLibrary.rig(character: name, view: "front")
     }
 
     var body: some View {
@@ -214,22 +223,24 @@ extension SwayCoachPose {
 
 struct SWAYCoachPuppetView: View {
     let moveID:String; let musicalTime:TimeInterval; let bpm:Double
+    var character:String = "lucia"
     @State private var selector=SWAYPuppetAngleSelector()
     var body: some View {
         let pose=SwayCoachPoseEngine.pose(moveID:moveID,musicalTime:musicalTime,bpm:bpm)
         let selected=selector.angle
-        SWAYPuppetRenderer(joints:pose.puppetJoints,angle:selected)
+        SWAYPuppetRenderer(joints:pose.puppetJoints,angle:selected,character:character)
             .onChange(of:pose.bodyYaw) { _, yaw in _=selector.select(yawRadians:yaw) }
     }
 }
 
 struct SWAYTrackedPuppetView: View {
     let pose:SwayBodyPose; let visible:Bool; var profile:SwayCharacterProfile?=nil
+    var character:String = "lucia"
     @State private var mapper=SWAYVisionPuppetMapper()
     @State private var selector=SWAYPuppetAngleSelector()
     var body: some View {
         let mapped=mapper.lastGood.mapValues { CGPoint(x:$0.point.x,y:$0.point.y) }
-        SWAYPuppetRenderer(joints:mapped,angle:selector.angle,profile:profile,trackingAvailable:visible)
+        SWAYPuppetRenderer(joints:mapped,angle:selector.angle,profile:profile,trackingAvailable:visible,character:character)
             .opacity(mapped.isEmpty ? 0 : 1)
             .onAppear { update() }
             .onChange(of:pose.sequence) { _, _ in

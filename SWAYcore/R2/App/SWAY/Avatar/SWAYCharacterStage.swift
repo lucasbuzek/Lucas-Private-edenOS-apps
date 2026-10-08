@@ -41,16 +41,16 @@ struct SWAYCharacterStage: View {
         content.scaleEffect(x: mirrored ? -1 : 1, y: 1)
     }
 
-    // Placeholder routing until Task 1 replaces it: every character currently renders the
-    // Lucia puppet pilot. Task 1 must route `character` to its own part set.
+    // Routes `character` to its own rig set (Resources/Puppets/<Name>Rig). Characters whose
+    // rig is not authored yet render the Lucia rig (SWAYPuppetRenderer.hasOwnRig == false).
     @ViewBuilder private var content: some View {
         switch source {
         case let .move(id, musicalTime, bpm, _):
-            SWAYCoachPuppetView(moveID: id, musicalTime: musicalTime, bpm: bpm)
+            SWAYCoachPuppetView(moveID: id, musicalTime: musicalTime, bpm: bpm, character: character.rawValue)
         case let .tracked(pose, visible):
-            SWAYTrackedPuppetView(pose: pose, visible: visible, profile: profile)
+            SWAYTrackedPuppetView(pose: pose, visible: visible, profile: profile, character: character.rawValue)
         case .idle:
-            SWAYCoachPuppetView(moveID: "step-touch", musicalTime: 0, bpm: 100)
+            SWAYCoachPuppetView(moveID: "step-touch", musicalTime: 0, bpm: 100, character: character.rawValue)
         }
     }
 }

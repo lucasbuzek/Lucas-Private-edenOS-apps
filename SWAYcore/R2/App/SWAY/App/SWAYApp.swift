@@ -7,6 +7,15 @@ struct SWAYApp: App {
     @StateObject private var sharedSessions = SwaySharedSessionCoordinator()
     var body: some Scene {
         WindowGroup {
+            #if DEBUG
+            if SWAYAvatarGalleryView.requested { SWAYAvatarGalleryView() } else { app }
+            #else
+            app
+            #endif
+        }
+    }
+
+    private var app: some View {
             RootView()
                 .environmentObject(store)
                 .environmentObject(session)
@@ -19,6 +28,5 @@ struct SWAYApp: App {
                     defer { if access { url.stopAccessingSecurityScopedResource() } }
                     do { try store.prepareImport(from:url) } catch { store.importMessage=error.localizedDescription }
                 }
-        }
     }
 }
