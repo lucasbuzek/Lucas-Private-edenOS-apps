@@ -16,10 +16,10 @@ export default {async fetch(request,env){
  if(request.method==="POST"&&url.pathname==="/tasks"){
   let input;try{input=await request.json()}catch{return reply({error:"invalid_json"},400,origin)}
   if(typeof input?.title!=="string"||typeof input?.instruction!=="string"||input.title.length<3||input.title.length>120||input.instruction.length<10||input.instruction.length>16000) return reply({error:"invalid_task"},400,origin);
-  const result=await github("/issues",{method:"POST",body:JSON.stringify({title:"[BIFROST ZERO] "+input.title,body:"## Requested task\\n\\n"+input.instruction+"\\n\\n## Execution\\nStatus: QUEUED_FOR_EXECUTOR — Codex execution is NOT connected.\\nSource: authorized PWA gateway.",labels:[]})});
+  const result=await github("/issues",{method:"POST",body:JSON.stringify({title:"[BIFROST ZERO] "+input.title,body:"## Requested task\n\n"+input.instruction+"\n\n## Execution\nStatus: QUEUED_FOR_EXECUTOR — Codex execution is NOT connected.\nSource: authorized PWA gateway.",labels:[]})});
   return reply(result.status===201?{id:result.body.number,url:result.body.html_url,status:"QUEUED_FOR_EXECUTOR"}:{error:"github_failed",details:result.body.message},result.status===201?201:502,origin);
  }
- const match=url.pathname.match(/^\\/tasks\\/(\\d+)$/);
+ const match=url.pathname.match(/^\/tasks\/(\d+)$/);
  if(request.method==="GET"&&match){const result=await github("/issues/"+match[1]);return reply(result.status===200?{id:result.body.number,title:result.body.title,url:result.body.html_url,state:result.body.state,status:"QUEUED_FOR_EXECUTOR",note:"GitHub issue state is not Codex execution state"}:{error:"not_found"},result.status===200?200:404,origin);}
  return reply({error:"not_found"},404,origin);
 }};
