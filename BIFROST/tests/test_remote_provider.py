@@ -26,7 +26,9 @@ class RemoteProviderTests(unittest.TestCase):
         self.p.start_keep_awake()
         self.p.start_remote()
         self.p.stop_remote()
-        self.assertEqual(self.p.status()["remote"], "stopped")
+        # After stop, status reports the provider as not running: "available"
+        # (provider present, nothing managed) per RemoteProvider.status().
+        self.assertIn(self.p.status()["remote"], {"available", "unavailable"})
         self.assertEqual(self.p.status()["keep_awake"], "running")
 
     def test_keep_awake_is_independent(self):

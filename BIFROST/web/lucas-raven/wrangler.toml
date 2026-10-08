@@ -1,0 +1,13 @@
+#:schema node_modules/wrangler/config-schema.json
+# Lucas Raven — BIFROST ZERO Web representation (Cloudflare Pages provider).
+# Secrets (set with `wrangler pages secret put`, never committed):
+#   OPERATOR_KEY_SHA256  sha256 of the operator key (browser/iPhone)
+#   NODE_KEY_SHA256      sha256 of the BIFROST node key (Mac bridge)
+name = "lucas-raven"
+pages_build_output_dir = "./public"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "lucas-raven"
+database_id = "7c4c6ff1-99ee-4144-9577-9b968b9412ff"

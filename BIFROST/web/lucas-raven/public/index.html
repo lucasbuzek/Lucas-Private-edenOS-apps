@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d10">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Raven">
+<meta name="referrer" content="no-referrer">
+<title>Lucas Raven · BIFROST ZERO</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main class="wrap">
+  <div class="eyebrow">BIFROST · ZERO</div>
+  <div class="top">
+    <h1>Lucas Raven</h1>
+    <div class="badge" id="nodeBadge"><span class="dot off"></span><span>Not paired</span></div>
+  </div>
+
+  <section id="pair" class="panel" hidden>
+    <h2>Pair this device</h2>
+    <p>On the Mac run <code>bifrostctl.py raven-pair</code>, then open or paste the copied link here. The key stays on this device only.</p>
+    <form id="pairForm" class="row">
+      <input id="pairInput" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Pairing link or operator key" aria-label="Pairing link or operator key">
+      <button type="submit">Pair</button>
+    </form>
+    <p class="err" id="pairErr" hidden></p>
+  </section>
+
+  <section id="app" hidden>
+    <section class="panel control">
+      <div class="panel-head">
+        <h2>Keep Mac awake</h2>
+        <span class="chip" id="kaChip">—</span>
+      </div>
+      <p id="kaLine" class="muted">—</p>
+      <div class="seg" id="kaMinutes" role="group" aria-label="Duration">
+        <button type="button" data-min="30">30 min</button>
+        <button type="button" data-min="60" class="on">1 h</button>
+        <button type="button" data-min="120">2 h</button>
+        <button type="button" data-min="240">4 h</button>
+      </div>
+      <div class="row">
+        <button id="kaStart" class="primary" type="button">Keep awake</button>
+        <button id="kaStop" type="button">Release</button>
+        <button id="refresh" type="button" class="ghost">Refresh state</button>
+      </div>
+      <p class="muted small" id="actionLine"></p>
+    </section>
+
+    <h3 class="section">Capabilities</h3>
+    <section class="grid" id="caps"></section>
+
+    <h3 class="section">Activity</h3>
+    <section class="panel" id="activity"><p class="muted">No actions yet.</p></section>
+  </section>
+
+  <div class="footer">
+    Lucas Raven is a BIFROST Web representation. It holds no provider credentials and has no shell access:
+    it can only request bounded, allowlisted actions that the BIFROST node validates and executes.
+    <button type="button" id="unpair" class="link" hidden>Unpair this device</button>
+  </div>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>

@@ -6,6 +6,7 @@ import os
 import shutil
 import signal
 import subprocess
+import time
 from pathlib import Path
 
 
@@ -34,6 +35,14 @@ class RemoteProvider:
         if self.dry_run:
             return True
         try:
+            # Reap our own exited children (e.g. a bounded caffeinate that
+            # reached its -t limit) so a zombie is not reported as running.
+            reaped, _ = os.waitpid(int(pid), os.WNOHANG)
+            if reaped:
+                return False
+        except (ChildProcessError, ValueError):
+            pass
+        try:
             os.kill(int(pid), 0)
             return True
         except (OSError, ValueError):
@@ -54,8 +63,10 @@ class RemoteProvider:
             remote = "available"
         else:
             remote = "unavailable"
-        return {"remote": remote, "keep_awake": "running" if self._alive(awake_pid) else "stopped",
-                "remote_pid": remote_pid, "keep_awake_pid": awake_pid}
+        awake = self._alive(awake_pid)
+        return {"remote": remote, "keep_awake": "running" if awake else "stopped",
+                "remote_pid": remote_pid, "keep_awake_pid": awake_pid,
+                "keep_awake_until": state.get("keep_awake_until") if awake else None}
 
     def _spawn(self, command):
         if self.dry_run:
@@ -91,16 +102,34 @@ class RemoteProvider:
         self.stop_remote()
         return self.start_remote()
 
-    def start_keep_awake(self):
+    def start_keep_awake(self, seconds: int | None = None):
+        """Start the independent BIFROST Keep Awake assertion.
+
+        ``seconds`` bounds the native assertion with ``caffeinate -t`` so a
+        remotely requested assertion releases itself even if BIFROST dies.
+        ``None`` keeps the original unbounded behaviour for local callers.
+        """
+        if seconds is not None:
+            seconds = int(seconds)
+            if seconds < 1:
+                raise ValueError("seconds must be positive")
         state = self._load()
         if self._alive(state.get("keep_awake_pid")):
-            return {"status": "running", "pid": state["keep_awake_pid"], "changed": False}
+            return {"status": "running", "pid": state["keep_awake_pid"], "changed": False,
+                    "until": state.get("keep_awake_until")}
         if not self.dry_run and not Path("/usr/bin/caffeinate").exists():
             return {"status": "unavailable", "reason": "macOS caffeinate is unavailable"}
-        pid = self._spawn(["/usr/bin/caffeinate", "-i", "-s"])
+        command = ["/usr/bin/caffeinate", "-i", "-s"]
+        if seconds is not None:
+            command += ["-t", str(seconds)]
+        pid = self._spawn(command)
         state["keep_awake_pid"] = pid
+        state["keep_awake_until"] = (time.time() + seconds) if seconds is not None else None
         self._save(state)
-        return {"status": "running", "pid": pid, "changed": True}
+        return {"status": "running", "pid": pid, "changed": True, "until": state["keep_awake_until"]}
 
     def stop_keep_awake(self):
+        state = self._load()
+        state.pop("keep_awake_until", None)
+        self._save(state)
         return self._stop_key("keep_awake_pid")
