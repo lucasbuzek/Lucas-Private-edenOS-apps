@@ -1,7 +1,6 @@
 import { verifyAccessJwt } from './auth.js';
-import { generate } from './providers.js';
 import { CRESUS_SYSTEM_PROMPT } from './prompt.js';
-import { providerChoices, providerForUser, setProviderForUser, generateForProvider } from './provider-choice.js';
+import { providerChoices, providerForUser, setProviderForUser, generateForProvider, ProviderSelectionError } from './provider-choice.js';
 
 const HISTORY_TURNS = 12;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -138,6 +137,7 @@ async function handleChat(request, env, user) {
     await env.DB.prepare('DELETE FROM messages WHERE conversation_id = ? AND client_id = ?')
       .bind(conversationId, clientId).run();
     const msg = String(err?.message || err);
+    if (err instanceof ProviderSelectionError) return json({error:msg,retryable:false},err.status);
     const quota = /neuron|4006|daily|quota|limit/i.test(msg);
     return json({
       error: quota
@@ -309,6 +309,7 @@ export default {
 
       return json({ error: 'Not found' }, 404);
     } catch (err) {
+      if (err instanceof ProviderSelectionError) return json({error:err.message,retryable:false},err.status);
       return json({ error: 'Server error', retryable: true }, 500);
     }
   },
