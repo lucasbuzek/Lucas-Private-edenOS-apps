@@ -1,0 +1,496 @@
+{
+ "view": "side",
+ "canvas": [
+  300,
+  1400
+ ],
+ "joints": {
+  "Hips": [
+   150,
+   827
+  ],
+  "Spine": [
+   150,
+   735
+  ],
+  "Neck": [
+   150,
+   452
+  ],
+  "HeadTop": [
+   150,
+   102
+  ],
+  "RightUpperArm": [
+   117,
+   511
+  ],
+  "RightLowerArm": [
+   117,
+   695
+  ],
+  "RightHand": [
+   117,
+   854
+  ],
+  "RightHandTip": [
+   117,
+   946
+  ],
+  "LeftUpperArm": [
+   182,
+   511
+  ],
+  "LeftLowerArm": [
+   182,
+   695
+  ],
+  "LeftHand": [
+   182,
+   854
+  ],
+  "LeftHandTip": [
+   182,
+   946
+  ],
+  "RightUpperLeg": [
+   133,
+   840
+  ],
+  "RightLowerLeg": [
+   126,
+   1078
+  ],
+  "RightFoot": [
+   123,
+   1315
+  ],
+  "RightToe": [
+   103,
+   1374
+  ],
+  "LeftUpperLeg": [
+   166,
+   840
+  ],
+  "LeftLowerLeg": [
+   173,
+   1078
+  ],
+  "LeftFoot": [
+   176,
+   1315
+  ],
+  "LeftToe": [
+   196,
+   1374
+  ]
+ },
+ "parts": [
+  {
+   "name": "head",
+   "file": "nandi_side_head.png",
+   "z": 95,
+   "bone": [
+    "Neck",
+    "HeadTop"
+   ],
+   "origin": [
+    22,
+    74
+   ],
+   "size": [
+    278,
+    380
+   ],
+   "pivot": [
+    128.0,
+    378.0
+   ],
+   "pivotNorm": [
+    0.460431654676259,
+    0.9947368421052631
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 350.0
+  },
+  {
+   "name": "chest",
+   "file": "nandi_side_chest.png",
+   "z": 40,
+   "bone": [
+    "Spine",
+    "Neck"
+   ],
+   "origin": [
+    24,
+    450
+   ],
+   "size": [
+    246,
+    333
+   ],
+   "pivot": [
+    126.0,
+    285.0
+   ],
+   "pivotNorm": [
+    0.5121951219512195,
+    0.8558558558558559
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 283.0
+  },
+  {
+   "name": "pelvis",
+   "file": "nandi_side_pelvis.png",
+   "z": 50,
+   "bone": [
+    "Hips",
+    "Spine"
+   ],
+   "origin": [
+    118,
+    737
+   ],
+   "size": [
+    64,
+    114
+   ],
+   "pivot": [
+    32.0,
+    90.0
+   ],
+   "pivotNorm": [
+    0.5,
+    0.7894736842105263
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 92.0
+  },
+  {
+   "name": "rightUpperArm",
+   "file": "nandi_side_rightUpperArm.png",
+   "z": -10,
+   "bone": [
+    "RightUpperArm",
+    "RightLowerArm"
+   ],
+   "origin": [
+    21,
+    471
+   ],
+   "size": [
+    137,
+    196
+   ],
+   "pivot": [
+    96.0,
+    40.0
+   ],
+   "pivotNorm": [
+    0.7007299270072993,
+    0.20408163265306123
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 184.0
+  },
+  {
+   "name": "rightLowerArm",
+   "file": "nandi_side_rightLowerArm.png",
+   "z": 25,
+   "bone": [
+    "RightLowerArm",
+    "RightHand"
+   ],
+   "origin": [
+    0,
+    695
+   ],
+   "size": [
+    117,
+    170
+   ],
+   "pivot": [
+    117.0,
+    0.0
+   ],
+   "pivotNorm": [
+    1.0,
+    0.0
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 159.0
+  },
+  {
+   "name": "rightHand",
+   "file": "nandi_side_rightHand.png",
+   "z": 35,
+   "bone": [
+    "RightHand",
+    "RightHandTip"
+   ],
+   "origin": [
+    117,
+    832
+   ],
+   "size": [
+    34,
+    123
+   ],
+   "pivot": [
+    0.0,
+    22.0
+   ],
+   "pivotNorm": [
+    0.0,
+    0.17886178861788618
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 92.0
+  },
+  {
+   "name": "leftUpperArm",
+   "file": "nandi_side_leftUpperArm.png",
+   "z": 35,
+   "bone": [
+    "LeftUpperArm",
+    "LeftLowerArm"
+   ],
+   "origin": [
+    124,
+    453
+   ],
+   "size": [
+    175,
+    269
+   ],
+   "pivot": [
+    58.0,
+    58.0
+   ],
+   "pivotNorm": [
+    0.3314285714285714,
+    0.21561338289962825
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 184.0
+  },
+  {
+   "name": "leftLowerArm",
+   "file": "nandi_side_leftLowerArm.png",
+   "z": 70,
+   "bone": [
+    "LeftLowerArm",
+    "LeftHand"
+   ],
+   "origin": [
+    128,
+    640
+   ],
+   "size": [
+    161,
+    224
+   ],
+   "pivot": [
+    54.0,
+    55.0
+   ],
+   "pivotNorm": [
+    0.33540372670807456,
+    0.24553571428571427
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 159.0
+  },
+  {
+   "name": "leftHand",
+   "file": "nandi_side_leftHand.png",
+   "z": 80,
+   "bone": [
+    "LeftHand",
+    "LeftHandTip"
+   ],
+   "origin": [
+    138,
+    799
+   ],
+   "size": [
+    100,
+    156
+   ],
+   "pivot": [
+    44.0,
+    55.0
+   ],
+   "pivotNorm": [
+    0.44,
+    0.3525641025641026
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 92.0
+  },
+  {
+   "name": "rightThigh",
+   "file": "nandi_side_rightThigh.png",
+   "z": -15,
+   "bone": [
+    "RightUpperLeg",
+    "RightLowerLeg"
+   ],
+   "origin": [
+    7,
+    840
+   ],
+   "size": [
+    126,
+    73
+   ],
+   "pivot": [
+    126.0,
+    0.0
+   ],
+   "pivotNorm": [
+    1.0,
+    0.0
+   ],
+   "restAngle": 1.6001996149989017,
+   "restLength": 238.10291892372928
+  },
+  {
+   "name": "rightCalf",
+   "file": "nandi_side_rightCalf.png",
+   "z": -35,
+   "bone": [
+    "RightLowerLeg",
+    "RightFoot"
+   ],
+   "origin": [
+    0,
+    1078
+   ],
+   "size": [
+    126,
+    228
+   ],
+   "pivot": [
+    126.0,
+    0.0
+   ],
+   "pivotNorm": [
+    1.0,
+    0.0
+   ],
+   "restAngle": 1.5834538786289485,
+   "restLength": 237.01898658124415
+  },
+  {
+   "name": "rightShoe",
+   "file": "nandi_side_rightShoe.png",
+   "z": -25,
+   "bone": [
+    "RightFoot",
+    "RightToe"
+   ],
+   "origin": [
+    0,
+    1247
+   ],
+   "size": [
+    145,
+    150
+   ],
+   "pivot": [
+    123.0,
+    68.0
+   ],
+   "pivotNorm": [
+    0.8482758620689655,
+    0.4533333333333333
+   ],
+   "restAngle": 1.8976229797248374,
+   "restLength": 62.297672508690084
+  },
+  {
+   "name": "leftThigh",
+   "file": "nandi_side_leftThigh.png",
+   "z": 30,
+   "bone": [
+    "LeftUpperLeg",
+    "LeftLowerLeg"
+   ],
+   "origin": [
+    148,
+    840
+   ],
+   "size": [
+    133,
+    260
+   ],
+   "pivot": [
+    18.0,
+    0.0
+   ],
+   "pivotNorm": [
+    0.13533834586466165,
+    0.0
+   ],
+   "restAngle": 1.5413930385908916,
+   "restLength": 238.10291892372928
+  },
+  {
+   "name": "leftCalf",
+   "file": "nandi_side_leftCalf.png",
+   "z": 10,
+   "bone": [
+    "LeftLowerLeg",
+    "LeftFoot"
+   ],
+   "origin": [
+    127,
+    1032
+   ],
+   "size": [
+    91,
+    219
+   ],
+   "pivot": [
+    46.0,
+    46.0
+   ],
+   "pivotNorm": [
+    0.5054945054945055,
+    0.2100456621004566
+   ],
+   "restAngle": 1.5581387749608446,
+   "restLength": 237.01898658124415
+  },
+  {
+   "name": "leftShoe",
+   "file": "nandi_side_leftShoe.png",
+   "z": 20,
+   "bone": [
+    "LeftFoot",
+    "LeftToe"
+   ],
+   "origin": [
+    141,
+    1247
+   ],
+   "size": [
+    159,
+    138
+   ],
+   "pivot": [
+    35.0,
+    68.0
+   ],
+   "pivotNorm": [
+    0.22012578616352202,
+    0.4927536231884058
+   ],
+   "restAngle": 1.243969673864956,
+   "restLength": 62.297672508690084
+  }
+ ]
+}

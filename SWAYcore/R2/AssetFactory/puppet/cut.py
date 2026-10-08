@@ -124,6 +124,9 @@ for i,p in enumerate(parts):
     src_fill=own&SKIN if (p.get("skinFill") and (own&SKIN).sum()>100) else own
     _,(iy,ix)=ndi.distance_transform_edt(~src_fill,return_indices=True)
     rgb=im[...,:3][iy,ix];rgb[own]=im[...,:3][own]
+    # Profile art uses a single visible limb.  A source-preserving dark duplicate is
+    # the TV-animation convention for the far arm/leg and keeps it behind the torso.
+    if "darken" in p: rgb=np.clip(rgb.astype(float)*float(p["darken"]),0,255).astype(np.uint8)
     a=np.where(own,alpha,0).astype(np.uint8);a[ext&~own]=255
     ys,xs=np.nonzero(a>0);x0,x1,y0,y1=xs.min(),xs.max()+1,ys.min(),ys.max()+1
     pad=2;x0=max(0,x0-pad);y0=max(0,y0-pad);x1=min(W,x1+pad);y1=min(H,y1+pad)

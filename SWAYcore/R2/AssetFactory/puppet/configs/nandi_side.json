@@ -1,0 +1,377 @@
+{
+  "src": "mattes/nandi_side_rgba.png",
+  "out": "parts",
+  "prefix": "nandi",
+  "view": "side",
+  "neckY": 452,
+  "headHalfWidth": 125,
+  "despill": 28,
+  "despillMaxY": 1400,
+  "joints": {
+    "Hips": [
+      150,
+      827
+    ],
+    "Spine": [
+      150,
+      735
+    ],
+    "Neck": [
+      150,
+      452
+    ],
+    "HeadTop": [
+      150,
+      102
+    ],
+    "RightUpperArm": [
+      117,
+      511
+    ],
+    "RightLowerArm": [
+      117,
+      695
+    ],
+    "RightHand": [
+      117,
+      854
+    ],
+    "RightHandTip": [
+      117,
+      946
+    ],
+    "LeftUpperArm": [
+      182,
+      511
+    ],
+    "LeftLowerArm": [
+      182,
+      695
+    ],
+    "LeftHand": [
+      182,
+      854
+    ],
+    "LeftHandTip": [
+      182,
+      946
+    ],
+    "RightUpperLeg": [
+      133,
+      840
+    ],
+    "RightLowerLeg": [
+      126,
+      1078
+    ],
+    "RightFoot": [
+      123,
+      1315
+    ],
+    "RightToe": [
+      103,
+      1374
+    ],
+    "LeftUpperLeg": [
+      166,
+      840
+    ],
+    "LeftLowerLeg": [
+      173,
+      1078
+    ],
+    "LeftFoot": [
+      176,
+      1315
+    ],
+    "LeftToe": [
+      196,
+      1374
+    ]
+  },
+  "force": [
+    {
+      "part": "rightHand",
+      "box": [
+        84,
+        834,
+        150,
+        953
+      ]
+    },
+    {
+      "part": "leftHand",
+      "box": [
+        149,
+        834,
+        215,
+        953
+      ]
+    },
+    {
+      "part": "rightShoe",
+      "box": [
+        90,
+        1249,
+        156,
+        1447
+      ]
+    },
+    {
+      "part": "leftShoe",
+      "box": [
+        143,
+        1249,
+        209,
+        1447
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "name": "head",
+      "bone": [
+        "Neck",
+        "HeadTop"
+      ],
+      "radius": 8,
+      "z": 95,
+      "caps": [],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "chest",
+      "bone": [
+        "Spine",
+        "Neck"
+      ],
+      "radius": 48,
+      "z": 40,
+      "caps": [
+        [
+          "Spine",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "pelvis",
+      "bone": [
+        "Hips",
+        "Spine"
+      ],
+      "radius": 45,
+      "z": 50,
+      "caps": [
+        [
+          "Hips",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "rightUpperArm",
+      "bone": [
+        "RightUpperArm",
+        "RightLowerArm"
+      ],
+      "radius": 21,
+      "z": -10,
+      "caps": [
+        [
+          "RightUpperArm",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1,
+      "darken": 0.85
+    },
+    {
+      "name": "rightLowerArm",
+      "bone": [
+        "RightLowerArm",
+        "RightHand"
+      ],
+      "radius": 18,
+      "z": 25,
+      "caps": [
+        [
+          "RightLowerArm",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1,
+      "darken": 0.85
+    },
+    {
+      "name": "rightHand",
+      "bone": [
+        "RightHand",
+        "RightHandTip"
+      ],
+      "radius": 13,
+      "z": 35,
+      "caps": [
+        [
+          "RightHand",
+          "auto"
+        ]
+      ],
+      "darken": 0.85
+    },
+    {
+      "name": "leftUpperArm",
+      "bone": [
+        "LeftUpperArm",
+        "LeftLowerArm"
+      ],
+      "radius": 21,
+      "z": 35,
+      "caps": [
+        [
+          "LeftUpperArm",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "leftLowerArm",
+      "bone": [
+        "LeftLowerArm",
+        "LeftHand"
+      ],
+      "radius": 18,
+      "z": 70,
+      "caps": [
+        [
+          "LeftLowerArm",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "leftHand",
+      "bone": [
+        "LeftHand",
+        "LeftHandTip"
+      ],
+      "radius": 13,
+      "z": 80,
+      "caps": [
+        [
+          "LeftHand",
+          "auto"
+        ]
+      ]
+    },
+    {
+      "name": "rightThigh",
+      "bone": [
+        "RightUpperLeg",
+        "RightLowerLeg"
+      ],
+      "radius": 33,
+      "z": -15,
+      "caps": [
+        [
+          "RightUpperLeg",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1,
+      "darken": 0.85
+    },
+    {
+      "name": "rightCalf",
+      "bone": [
+        "RightLowerLeg",
+        "RightFoot"
+      ],
+      "radius": 28,
+      "z": -35,
+      "caps": [
+        [
+          "RightLowerLeg",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1,
+      "darken": 0.85
+    },
+    {
+      "name": "rightShoe",
+      "bone": [
+        "RightFoot",
+        "RightToe"
+      ],
+      "radius": 27,
+      "z": -25,
+      "caps": [],
+      "darken": 0.85
+    },
+    {
+      "name": "leftThigh",
+      "bone": [
+        "LeftUpperLeg",
+        "LeftLowerLeg"
+      ],
+      "radius": 33,
+      "z": 30,
+      "caps": [
+        [
+          "LeftUpperLeg",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "leftCalf",
+      "bone": [
+        "LeftLowerLeg",
+        "LeftFoot"
+      ],
+      "radius": 28,
+      "z": 10,
+      "caps": [
+        [
+          "LeftLowerLeg",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "leftShoe",
+      "bone": [
+        "LeftFoot",
+        "LeftToe"
+      ],
+      "radius": 27,
+      "z": 20,
+      "caps": []
+    }
+  ],
+  "source": {
+    "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+    "cropAt1x": [
+      435,
+      510
+    ]
+  }
+}

@@ -1,0 +1,496 @@
+{
+ "view": "back",
+ "canvas": [
+  280,
+  1400
+ ],
+ "joints": {
+  "Hips": [
+   140,
+   835
+  ],
+  "Spine": [
+   140,
+   746
+  ],
+  "Neck": [
+   140,
+   473
+  ],
+  "HeadTop": [
+   140,
+   136
+  ],
+  "RightUpperArm": [
+   54,
+   530
+  ],
+  "RightLowerArm": [
+   44,
+   708
+  ],
+  "RightHand": [
+   38,
+   861
+  ],
+  "RightHandTip": [
+   37,
+   950
+  ],
+  "LeftUpperArm": [
+   225,
+   530
+  ],
+  "LeftLowerArm": [
+   235,
+   708
+  ],
+  "LeftHand": [
+   241,
+   861
+  ],
+  "LeftHandTip": [
+   242,
+   950
+  ],
+  "RightUpperLeg": [
+   98,
+   848
+  ],
+  "RightLowerLeg": [
+   91,
+   1077
+  ],
+  "RightFoot": [
+   88,
+   1306
+  ],
+  "RightToe": [
+   70,
+   1363
+  ],
+  "LeftUpperLeg": [
+   181,
+   848
+  ],
+  "LeftLowerLeg": [
+   188,
+   1077
+  ],
+  "LeftFoot": [
+   191,
+   1306
+  ],
+  "LeftToe": [
+   209,
+   1363
+  ]
+ },
+ "parts": [
+  {
+   "name": "head",
+   "file": "yourDancer_back_head.png",
+   "z": 95,
+   "bone": [
+    "Neck",
+    "HeadTop"
+   ],
+   "origin": [
+    0,
+    109
+   ],
+   "size": [
+    250,
+    366
+   ],
+   "pivot": [
+    140.0,
+    364.0
+   ],
+   "pivotNorm": [
+    0.56,
+    0.994535519125683
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 337.0
+  },
+  {
+   "name": "chest",
+   "file": "yourDancer_back_chest.png",
+   "z": 40,
+   "bone": [
+    "Spine",
+    "Neck"
+   ],
+   "origin": [
+    7,
+    471
+   ],
+   "size": [
+    261,
+    409
+   ],
+   "pivot": [
+    133.0,
+    275.0
+   ],
+   "pivotNorm": [
+    0.5095785440613027,
+    0.6723716381418093
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 273.0
+  },
+  {
+   "name": "pelvis",
+   "file": "yourDancer_back_pelvis.png",
+   "z": 50,
+   "bone": [
+    "Hips",
+    "Spine"
+   ],
+   "origin": [
+    51,
+    746
+   ],
+   "size": [
+    179,
+    179
+   ],
+   "pivot": [
+    89.0,
+    89.0
+   ],
+   "pivotNorm": [
+    0.4972067039106145,
+    0.4972067039106145
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 89.0
+  },
+  {
+   "name": "rightUpperArm",
+   "file": "yourDancer_back_rightUpperArm.png",
+   "z": 35,
+   "bone": [
+    "RightUpperArm",
+    "RightLowerArm"
+   ],
+   "origin": [
+    0,
+    416
+   ],
+   "size": [
+    123,
+    308
+   ],
+   "pivot": [
+    54.0,
+    114.0
+   ],
+   "pivotNorm": [
+    0.43902439024390244,
+    0.37012987012987014
+   ],
+   "restAngle": 1.626917109496073,
+   "restLength": 178.2806775845324
+  },
+  {
+   "name": "rightLowerArm",
+   "file": "yourDancer_back_rightLowerArm.png",
+   "z": 70,
+   "bone": [
+    "RightLowerArm",
+    "RightHand"
+   ],
+   "origin": [
+    0,
+    650
+   ],
+   "size": [
+    103,
+    233
+   ],
+   "pivot": [
+    44.0,
+    58.0
+   ],
+   "pivotNorm": [
+    0.42718446601941745,
+    0.24892703862660945
+   ],
+   "restAngle": 1.6099919287219513,
+   "restLength": 153.11760186209813
+  },
+  {
+   "name": "rightHand",
+   "file": "yourDancer_back_rightHand.png",
+   "z": 80,
+   "bone": [
+    "RightHand",
+    "RightHandTip"
+   ],
+   "origin": [
+    0,
+    809
+   ],
+   "size": [
+    91,
+    208
+   ],
+   "pivot": [
+    38.0,
+    52.0
+   ],
+   "pivotNorm": [
+    0.4175824175824176,
+    0.25
+   ],
+   "restAngle": 1.5820318090528593,
+   "restLength": 89.00561780022652
+  },
+  {
+   "name": "leftUpperArm",
+   "file": "yourDancer_back_leftUpperArm.png",
+   "z": 35,
+   "bone": [
+    "LeftUpperArm",
+    "LeftLowerArm"
+   ],
+   "origin": [
+    181,
+    471
+   ],
+   "size": [
+    91,
+    252
+   ],
+   "pivot": [
+    44.0,
+    59.0
+   ],
+   "pivotNorm": [
+    0.4835164835164835,
+    0.23412698412698413
+   ],
+   "restAngle": 1.51467554409372,
+   "restLength": 178.2806775845324
+  },
+  {
+   "name": "leftLowerArm",
+   "file": "yourDancer_back_leftLowerArm.png",
+   "z": 70,
+   "bone": [
+    "LeftLowerArm",
+    "LeftHand"
+   ],
+   "origin": [
+    190,
+    663
+   ],
+   "size": [
+    81,
+    181
+   ],
+   "pivot": [
+    45.0,
+    45.0
+   ],
+   "pivotNorm": [
+    0.5555555555555556,
+    0.24861878453038674
+   ],
+   "restAngle": 1.5316007248678418,
+   "restLength": 153.11760186209813
+  },
+  {
+   "name": "leftHand",
+   "file": "yourDancer_back_leftHand.png",
+   "z": 80,
+   "bone": [
+    "LeftHand",
+    "LeftHandTip"
+   ],
+   "origin": [
+    209,
+    840
+   ],
+   "size": [
+    48,
+    121
+   ],
+   "pivot": [
+    32.0,
+    21.0
+   ],
+   "pivotNorm": [
+    0.6666666666666666,
+    0.17355371900826447
+   ],
+   "restAngle": 1.559560844536934,
+   "restLength": 89.00561780022652
+  },
+  {
+   "name": "rightThigh",
+   "file": "yourDancer_back_rightThigh.png",
+   "z": 30,
+   "bone": [
+    "RightUpperLeg",
+    "RightLowerLeg"
+   ],
+   "origin": [
+    0,
+    793
+   ],
+   "size": [
+    154,
+    312
+   ],
+   "pivot": [
+    98.0,
+    55.0
+   ],
+   "pivotNorm": [
+    0.6363636363636364,
+    0.1762820512820513
+   ],
+   "restAngle": 1.601354497072396,
+   "restLength": 229.10696191953662
+  },
+  {
+   "name": "rightCalf",
+   "file": "yourDancer_back_rightCalf.png",
+   "z": 10,
+   "bone": [
+    "RightLowerLeg",
+    "RightFoot"
+   ],
+   "origin": [
+    0,
+    1077
+   ],
+   "size": [
+    91,
+    224
+   ],
+   "pivot": [
+    91.0,
+    0.0
+   ],
+   "pivotNorm": [
+    1.0,
+    0.0
+   ],
+   "restAngle": 1.5838960141146736,
+   "restLength": 229.01964981197574
+  },
+  {
+   "name": "rightShoe",
+   "file": "yourDancer_back_rightShoe.png",
+   "z": 20,
+   "bone": [
+    "RightFoot",
+    "RightToe"
+   ],
+   "origin": [
+    0,
+    1294
+   ],
+   "size": [
+    88,
+    87
+   ],
+   "pivot": [
+    88.0,
+    12.0
+   ],
+   "pivotNorm": [
+    1.0,
+    0.13793103448275862
+   ],
+   "restAngle": 1.8766751981997487,
+   "restLength": 59.77457653551382
+  },
+  {
+   "name": "leftThigh",
+   "file": "yourDancer_back_leftThigh.png",
+   "z": 30,
+   "bone": [
+    "LeftUpperLeg",
+    "LeftLowerLeg"
+   ],
+   "origin": [
+    115,
+    782
+   ],
+   "size": [
+    133,
+    318
+   ],
+   "pivot": [
+    66.0,
+    66.0
+   ],
+   "pivotNorm": [
+    0.49624060150375937,
+    0.20754716981132076
+   ],
+   "restAngle": 1.540238156517397,
+   "restLength": 229.10696191953662
+  },
+  {
+   "name": "leftCalf",
+   "file": "yourDancer_back_leftCalf.png",
+   "z": 10,
+   "bone": [
+    "LeftLowerLeg",
+    "LeftFoot"
+   ],
+   "origin": [
+    138,
+    1034
+   ],
+   "size": [
+    86,
+    210
+   ],
+   "pivot": [
+    50.0,
+    43.0
+   ],
+   "pivotNorm": [
+    0.5813953488372093,
+    0.20476190476190476
+   ],
+   "restAngle": 1.5576966394751195,
+   "restLength": 229.01964981197574
+  },
+  {
+   "name": "leftShoe",
+   "file": "yourDancer_back_leftShoe.png",
+   "z": 20,
+   "bone": [
+    "LeftFoot",
+    "LeftToe"
+   ],
+   "origin": [
+    149,
+    1240
+   ],
+   "size": [
+    112,
+    145
+   ],
+   "pivot": [
+    42.0,
+    66.0
+   ],
+   "pivotNorm": [
+    0.375,
+    0.45517241379310347
+   ],
+   "restAngle": 1.2649174553900444,
+   "restLength": 59.77457653551382
+  }
+ ]
+}

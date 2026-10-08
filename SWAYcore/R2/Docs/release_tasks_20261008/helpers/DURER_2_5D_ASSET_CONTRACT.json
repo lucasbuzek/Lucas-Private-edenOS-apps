@@ -1,16 +1,21 @@
 {
-  "contract": "SWAY-DURER-2.5D-v1",
+  "contract": "SWAY-DURER-2.5D-v2",
   "authority": "DURER",
-  "target": "Recovery/fallback illustrated 2.5D character while Blender production assets are validated",
-  "runtime": "SWAYSkeletal2DAvatarView",
+  "target": "Production illustrated 2.5D cut-out character for the Alpha",
+  "runtime": "SWAYRigPuppetCanvas",
   "requirements": {
     "singleVisibleAuthority": true,
     "coherentSilhouette": true,
     "jointOverlap": true,
     "directionalVariantsAllowed": true,
     "weightedMeshTarget": false,
-    "legacyCutoutProductionFallback": true,
-    "full3DRequired": true
+    "legacyCutoutProductionFallback": false,
+    "full3DRequired": false,
+    "separatedRuntimeParts": true,
+    "frontBackSideViews": true,
+    "mirroredSideAllowed": true,
+    "artDefinesBoneLengths": true,
+    "motionDefinesBoneDirections": true
   },
   "acceptanceMoves": [
     "idle",

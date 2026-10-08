@@ -1,0 +1,6577 @@
+{
+  "schema": 1,
+  "assetBible": "ASSET_BIBLE.md",
+  "sourceAuthority": "board 136 x4",
+  "parts": [
+    {
+      "id": "kyle.back.head",
+      "character": "kyle",
+      "view": "back",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_back_head.png",
+      "pivot": [
+        140.0,
+        364.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.back.chest",
+      "character": "kyle",
+      "view": "back",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_back_chest.png",
+      "pivot": [
+        133.0,
+        275.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.back.pelvis",
+      "character": "kyle",
+      "view": "back",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_back_pelvis.png",
+      "pivot": [
+        89.0,
+        89.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.back.rightUpperArm",
+      "character": "kyle",
+      "view": "back",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_back_rightUpperArm.png",
+      "pivot": [
+        54.0,
+        114.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.back.rightLowerArm",
+      "character": "kyle",
+      "view": "back",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_back_rightLowerArm.png",
+      "pivot": [
+        44.0,
+        58.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.back.rightHand",
+      "character": "kyle",
+      "view": "back",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_back_rightHand.png",
+      "pivot": [
+        38.0,
+        52.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.back.leftUpperArm",
+      "character": "kyle",
+      "view": "back",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_back_leftUpperArm.png",
+      "pivot": [
+        44.0,
+        59.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.back.leftLowerArm",
+      "character": "kyle",
+      "view": "back",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_back_leftLowerArm.png",
+      "pivot": [
+        45.0,
+        45.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.back.leftHand",
+      "character": "kyle",
+      "view": "back",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_back_leftHand.png",
+      "pivot": [
+        32.0,
+        21.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.back.rightThigh",
+      "character": "kyle",
+      "view": "back",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_back_rightThigh.png",
+      "pivot": [
+        98.0,
+        55.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.back.rightCalf",
+      "character": "kyle",
+      "view": "back",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_back_rightCalf.png",
+      "pivot": [
+        91.0,
+        0.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.back.rightShoe",
+      "character": "kyle",
+      "view": "back",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_back_rightShoe.png",
+      "pivot": [
+        88.0,
+        12.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.back.leftThigh",
+      "character": "kyle",
+      "view": "back",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_back_leftThigh.png",
+      "pivot": [
+        66.0,
+        66.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.back.leftCalf",
+      "character": "kyle",
+      "view": "back",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_back_leftCalf.png",
+      "pivot": [
+        50.0,
+        43.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.back.leftShoe",
+      "character": "kyle",
+      "view": "back",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_back_leftShoe.png",
+      "pivot": [
+        42.0,
+        66.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.front.head",
+      "character": "kyle",
+      "view": "front",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_front_head.png",
+      "pivot": [
+        151.0,
+        375.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.front.chest",
+      "character": "kyle",
+      "view": "front",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_front_chest.png",
+      "pivot": [
+        151.0,
+        283.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.front.pelvis",
+      "character": "kyle",
+      "view": "front",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_front_pelvis.png",
+      "pivot": [
+        82.0,
+        90.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.front.rightUpperArm",
+      "character": "kyle",
+      "view": "front",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_front_rightUpperArm.png",
+      "pivot": [
+        69.0,
+        62.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.front.rightLowerArm",
+      "character": "kyle",
+      "view": "front",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_front_rightLowerArm.png",
+      "pivot": [
+        56.0,
+        70.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.front.rightHand",
+      "character": "kyle",
+      "view": "front",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_front_rightHand.png",
+      "pivot": [
+        49.0,
+        58.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.front.leftUpperArm",
+      "character": "kyle",
+      "view": "front",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_front_leftUpperArm.png",
+      "pivot": [
+        73.0,
+        83.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.front.leftLowerArm",
+      "character": "kyle",
+      "view": "front",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_front_leftLowerArm.png",
+      "pivot": [
+        70.0,
+        70.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.front.leftHand",
+      "character": "kyle",
+      "view": "front",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_front_leftHand.png",
+      "pivot": [
+        57.0,
+        57.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.front.rightThigh",
+      "character": "kyle",
+      "view": "front",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_front_rightThigh.png",
+      "pivot": [
+        88.0,
+        83.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.front.rightCalf",
+      "character": "kyle",
+      "view": "front",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_front_rightCalf.png",
+      "pivot": [
+        97.0,
+        22.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.front.rightShoe",
+      "character": "kyle",
+      "view": "front",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_front_rightShoe.png",
+      "pivot": [
+        113.0,
+        67.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.front.leftThigh",
+      "character": "kyle",
+      "view": "front",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_front_leftThigh.png",
+      "pivot": [
+        78.0,
+        78.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.front.leftCalf",
+      "character": "kyle",
+      "view": "front",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_front_leftCalf.png",
+      "pivot": [
+        13.0,
+        24.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.front.leftShoe",
+      "character": "kyle",
+      "view": "front",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_front_leftShoe.png",
+      "pivot": [
+        7.0,
+        67.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.side.head",
+      "character": "kyle",
+      "view": "side",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_side_head.png",
+      "pivot": [
+        140.0,
+        363.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.side.chest",
+      "character": "kyle",
+      "view": "side",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_side_chest.png",
+      "pivot": [
+        124.0,
+        312.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.side.pelvis",
+      "character": "kyle",
+      "view": "side",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_side_pelvis.png",
+      "pivot": [
+        57.0,
+        87.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.side.rightUpperArm",
+      "character": "kyle",
+      "view": "side",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_side_rightUpperArm.png",
+      "pivot": [
+        93.0,
+        75.0
+      ],
+      "z": -10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.side.rightLowerArm",
+      "character": "kyle",
+      "view": "side",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_side_rightLowerArm.png",
+      "pivot": [
+        92.0,
+        75.0
+      ],
+      "z": 25,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.side.rightHand",
+      "character": "kyle",
+      "view": "side",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_side_rightHand.png",
+      "pivot": [
+        74.0,
+        74.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.side.leftUpperArm",
+      "character": "kyle",
+      "view": "side",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_side_leftUpperArm.png",
+      "pivot": [
+        0.0,
+        35.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.side.leftLowerArm",
+      "character": "kyle",
+      "view": "side",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_side_leftLowerArm.png",
+      "pivot": [
+        0.0,
+        0.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.side.leftHand",
+      "character": "kyle",
+      "view": "side",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_side_leftHand.png",
+      "pivot": [
+        32.0,
+        23.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.side.rightThigh",
+      "character": "kyle",
+      "view": "side",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_side_rightThigh.png",
+      "pivot": [
+        106.0,
+        69.0
+      ],
+      "z": -15,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.side.rightCalf",
+      "character": "kyle",
+      "view": "side",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_side_rightCalf.png",
+      "pivot": [
+        101.0,
+        15.0
+      ],
+      "z": -35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.side.rightShoe",
+      "character": "kyle",
+      "view": "side",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_side_rightShoe.png",
+      "pivot": [
+        113.0,
+        65.0
+      ],
+      "z": -25,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.side.leftThigh",
+      "character": "kyle",
+      "view": "side",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_side_leftThigh.png",
+      "pivot": [
+        0.0,
+        0.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.side.leftCalf",
+      "character": "kyle",
+      "view": "side",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_side_leftCalf.png",
+      "pivot": [
+        0.0,
+        0.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "kyle.side.leftShoe",
+      "character": "kyle",
+      "view": "side",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/KyleRig/kyle_side_leftShoe.png",
+      "pivot": [
+        32.0,
+        16.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.back.head",
+      "character": "lucia",
+      "view": "back",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_back_head.png",
+      "pivot": [
+        99.0,
+        347.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "matte": "lucia_back_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.back.chest",
+      "character": "lucia",
+      "view": "back",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_back_chest.png",
+      "pivot": [
+        96.0,
+        289.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "matte": "lucia_back_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.back.pelvis",
+      "character": "lucia",
+      "view": "back",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_back_pelvis.png",
+      "pivot": [
+        123.0,
+        74.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "matte": "lucia_back_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.back.leftUpperArm",
+      "character": "lucia",
+      "view": "back",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_back_leftUpperArm.png",
+      "pivot": [
+        56.0,
+        52.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "matte": "lucia_back_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.back.leftLowerArm",
+      "character": "lucia",
+      "view": "back",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_back_leftLowerArm.png",
+      "pivot": [
+        47.0,
+        0.0
+      ],
+      "z": 90,
+      "sourceCrop": {
+        "matte": "lucia_back_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.back.leftHand",
+      "character": "lucia",
+      "view": "back",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_back_leftHand.png",
+      "pivot": [
+        28.0,
+        19.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "matte": "lucia_back_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.back.rightUpperArm",
+      "character": "lucia",
+      "view": "back",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_back_rightUpperArm.png",
+      "pivot": [
+        46.0,
+        52.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "matte": "lucia_back_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.back.rightLowerArm",
+      "character": "lucia",
+      "view": "back",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_back_rightLowerArm.png",
+      "pivot": [
+        38.0,
+        0.0
+      ],
+      "z": 90,
+      "sourceCrop": {
+        "matte": "lucia_back_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.back.rightHand",
+      "character": "lucia",
+      "view": "back",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_back_rightHand.png",
+      "pivot": [
+        31.0,
+        21.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "matte": "lucia_back_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.back.leftThigh",
+      "character": "lucia",
+      "view": "back",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_back_leftThigh.png",
+      "pivot": [
+        79.0,
+        84.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "matte": "lucia_back_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.back.leftCalf",
+      "character": "lucia",
+      "view": "back",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_back_leftCalf.png",
+      "pivot": [
+        84.0,
+        60.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "matte": "lucia_back_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.back.leftShoe",
+      "character": "lucia",
+      "view": "back",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_back_leftShoe.png",
+      "pivot": [
+        62.0,
+        0.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "matte": "lucia_back_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.back.rightThigh",
+      "character": "lucia",
+      "view": "back",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_back_rightThigh.png",
+      "pivot": [
+        84.0,
+        84.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "matte": "lucia_back_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.back.rightCalf",
+      "character": "lucia",
+      "view": "back",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_back_rightCalf.png",
+      "pivot": [
+        64.0,
+        60.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "matte": "lucia_back_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.back.rightShoe",
+      "character": "lucia",
+      "view": "back",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_back_rightShoe.png",
+      "pivot": [
+        47.0,
+        0.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "matte": "lucia_back_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.front.head",
+      "character": "lucia",
+      "view": "front",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_front_head.png",
+      "pivot": [
+        120.0,
+        395.0
+      ],
+      "z": 60,
+      "sourceCrop": {
+        "matte": "lucia_front_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.front.chest",
+      "character": "lucia",
+      "view": "front",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_front_chest.png",
+      "pivot": [
+        95.0,
+        287.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "matte": "lucia_front_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.front.pelvis",
+      "character": "lucia",
+      "view": "front",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_front_pelvis.png",
+      "pivot": [
+        129.0,
+        68.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "matte": "lucia_front_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.front.rightUpperArm",
+      "character": "lucia",
+      "view": "front",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_front_rightUpperArm.png",
+      "pivot": [
+        69.0,
+        44.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "matte": "lucia_front_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.front.rightLowerArm",
+      "character": "lucia",
+      "view": "front",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_front_rightLowerArm.png",
+      "pivot": [
+        53.0,
+        0.0
+      ],
+      "z": 90,
+      "sourceCrop": {
+        "matte": "lucia_front_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.front.rightHand",
+      "character": "lucia",
+      "view": "front",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_front_rightHand.png",
+      "pivot": [
+        31.0,
+        25.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "matte": "lucia_front_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.front.leftUpperArm",
+      "character": "lucia",
+      "view": "front",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_front_leftUpperArm.png",
+      "pivot": [
+        46.0,
+        44.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "matte": "lucia_front_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.front.leftLowerArm",
+      "character": "lucia",
+      "view": "front",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_front_leftLowerArm.png",
+      "pivot": [
+        22.0,
+        0.0
+      ],
+      "z": 90,
+      "sourceCrop": {
+        "matte": "lucia_front_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.front.leftHand",
+      "character": "lucia",
+      "view": "front",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_front_leftHand.png",
+      "pivot": [
+        27.0,
+        24.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "matte": "lucia_front_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.front.rightThigh",
+      "character": "lucia",
+      "view": "front",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_front_rightThigh.png",
+      "pivot": [
+        107.0,
+        84.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "matte": "lucia_front_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.front.rightCalf",
+      "character": "lucia",
+      "view": "front",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_front_rightCalf.png",
+      "pivot": [
+        111.0,
+        59.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "matte": "lucia_front_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.front.rightShoe",
+      "character": "lucia",
+      "view": "front",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_front_rightShoe.png",
+      "pivot": [
+        97.0,
+        0.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "matte": "lucia_front_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.front.leftThigh",
+      "character": "lucia",
+      "view": "front",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_front_leftThigh.png",
+      "pivot": [
+        84.0,
+        84.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "matte": "lucia_front_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.front.leftCalf",
+      "character": "lucia",
+      "view": "front",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_front_leftCalf.png",
+      "pivot": [
+        38.0,
+        48.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "matte": "lucia_front_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.front.leftShoe",
+      "character": "lucia",
+      "view": "front",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_front_leftShoe.png",
+      "pivot": [
+        30.0,
+        0.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "matte": "lucia_front_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.side.head",
+      "character": "lucia",
+      "view": "side",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_side_head.png",
+      "pivot": [
+        120.0,
+        358.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "matte": "lucia_side_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.side.chest",
+      "character": "lucia",
+      "view": "side",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_side_chest.png",
+      "pivot": [
+        92.0,
+        271.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "matte": "lucia_side_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.side.pelvis",
+      "character": "lucia",
+      "view": "side",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_side_pelvis.png",
+      "pivot": [
+        76.0,
+        85.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "matte": "lucia_side_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.side.rightUpperArm",
+      "character": "lucia",
+      "view": "side",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_side_rightUpperArm.png",
+      "pivot": [
+        77.0,
+        70.0
+      ],
+      "z": -10,
+      "sourceCrop": {
+        "matte": "lucia_side_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.side.rightLowerArm",
+      "character": "lucia",
+      "view": "side",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_side_rightLowerArm.png",
+      "pivot": [
+        62.0,
+        67.0
+      ],
+      "z": 25,
+      "sourceCrop": {
+        "matte": "lucia_side_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.side.rightHand",
+      "character": "lucia",
+      "view": "side",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_side_rightHand.png",
+      "pivot": [
+        57.0,
+        66.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "matte": "lucia_side_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.side.leftUpperArm",
+      "character": "lucia",
+      "view": "side",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_side_leftUpperArm.png",
+      "pivot": [
+        37.0,
+        37.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "matte": "lucia_side_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.side.leftLowerArm",
+      "character": "lucia",
+      "view": "side",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_side_leftLowerArm.png",
+      "pivot": [
+        54.0,
+        54.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "matte": "lucia_side_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.side.leftHand",
+      "character": "lucia",
+      "view": "side",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_side_leftHand.png",
+      "pivot": [
+        55.0,
+        55.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "matte": "lucia_side_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.side.rightThigh",
+      "character": "lucia",
+      "view": "side",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_side_rightThigh.png",
+      "pivot": [
+        71.0,
+        75.0
+      ],
+      "z": -15,
+      "sourceCrop": {
+        "matte": "lucia_side_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.side.rightCalf",
+      "character": "lucia",
+      "view": "side",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_side_rightCalf.png",
+      "pivot": [
+        11.0,
+        21.0
+      ],
+      "z": -35,
+      "sourceCrop": {
+        "matte": "lucia_side_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.side.rightShoe",
+      "character": "lucia",
+      "view": "side",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_side_rightShoe.png",
+      "pivot": [
+        95.0,
+        49.0
+      ],
+      "z": -25,
+      "sourceCrop": {
+        "matte": "lucia_side_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.side.leftThigh",
+      "character": "lucia",
+      "view": "side",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_side_leftThigh.png",
+      "pivot": [
+        68.0,
+        68.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "matte": "lucia_side_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.side.leftCalf",
+      "character": "lucia",
+      "view": "side",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_side_leftCalf.png",
+      "pivot": [
+        50.0,
+        55.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "matte": "lucia_side_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "lucia.side.leftShoe",
+      "character": "lucia",
+      "view": "side",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/LuciaRig/lucia_side_leftShoe.png",
+      "pivot": [
+        28.0,
+        65.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "matte": "lucia_side_rgba.png"
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.back.head",
+      "character": "nandi",
+      "view": "back",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_back_head.png",
+      "pivot": [
+        64.0,
+        384.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          510,
+          580
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.back.chest",
+      "character": "nandi",
+      "view": "back",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_back_chest.png",
+      "pivot": [
+        114.0,
+        289.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          510,
+          580
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.back.pelvis",
+      "character": "nandi",
+      "view": "back",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_back_pelvis.png",
+      "pivot": [
+        64.0,
+        93.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          510,
+          580
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.back.rightUpperArm",
+      "character": "nandi",
+      "view": "back",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_back_rightUpperArm.png",
+      "pivot": [
+        24.0,
+        46.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          510,
+          580
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.back.rightLowerArm",
+      "character": "nandi",
+      "view": "back",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_back_rightLowerArm.png",
+      "pivot": [
+        26.0,
+        27.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          510,
+          580
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.back.rightHand",
+      "character": "nandi",
+      "view": "back",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_back_rightHand.png",
+      "pivot": [
+        22.0,
+        33.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          510,
+          580
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.back.leftUpperArm",
+      "character": "nandi",
+      "view": "back",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_back_leftUpperArm.png",
+      "pivot": [
+        68.0,
+        110.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          510,
+          580
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.back.leftLowerArm",
+      "character": "nandi",
+      "view": "back",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_back_leftLowerArm.png",
+      "pivot": [
+        57.0,
+        57.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          510,
+          580
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.back.leftHand",
+      "character": "nandi",
+      "view": "back",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_back_leftHand.png",
+      "pivot": [
+        43.0,
+        43.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          510,
+          580
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.back.rightThigh",
+      "character": "nandi",
+      "view": "back",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_back_rightThigh.png",
+      "pivot": [
+        80.0,
+        80.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          510,
+          580
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.back.rightCalf",
+      "character": "nandi",
+      "view": "back",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_back_rightCalf.png",
+      "pivot": [
+        44.0,
+        42.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          510,
+          580
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.back.rightShoe",
+      "character": "nandi",
+      "view": "back",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_back_rightShoe.png",
+      "pivot": [
+        69.0,
+        69.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          510,
+          580
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.back.leftThigh",
+      "character": "nandi",
+      "view": "back",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_back_leftThigh.png",
+      "pivot": [
+        43.0,
+        46.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          510,
+          580
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.back.leftCalf",
+      "character": "nandi",
+      "view": "back",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_back_leftCalf.png",
+      "pivot": [
+        0.0,
+        0.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          510,
+          580
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.back.leftShoe",
+      "character": "nandi",
+      "view": "back",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_back_leftShoe.png",
+      "pivot": [
+        28.0,
+        69.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          510,
+          580
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.front.head",
+      "character": "nandi",
+      "view": "front",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_front_head.png",
+      "pivot": [
+        120.0,
+        385.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          340,
+          435
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.front.chest",
+      "character": "nandi",
+      "view": "front",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_front_chest.png",
+      "pivot": [
+        99.0,
+        291.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          340,
+          435
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.front.pelvis",
+      "character": "nandi",
+      "view": "front",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_front_pelvis.png",
+      "pivot": [
+        74.0,
+        92.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          340,
+          435
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.front.rightUpperArm",
+      "character": "nandi",
+      "view": "front",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_front_rightUpperArm.png",
+      "pivot": [
+        17.0,
+        63.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          340,
+          435
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.front.rightLowerArm",
+      "character": "nandi",
+      "view": "front",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_front_rightLowerArm.png",
+      "pivot": [
+        29.0,
+        15.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          340,
+          435
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.front.rightHand",
+      "character": "nandi",
+      "view": "front",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_front_rightHand.png",
+      "pivot": [
+        29.0,
+        22.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          340,
+          435
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.front.leftUpperArm",
+      "character": "nandi",
+      "view": "front",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_front_leftUpperArm.png",
+      "pivot": [
+        77.0,
+        144.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          340,
+          435
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.front.leftLowerArm",
+      "character": "nandi",
+      "view": "front",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_front_leftLowerArm.png",
+      "pivot": [
+        48.0,
+        16.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          340,
+          435
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.front.leftHand",
+      "character": "nandi",
+      "view": "front",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_front_leftHand.png",
+      "pivot": [
+        59.0,
+        59.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          340,
+          435
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.front.rightThigh",
+      "character": "nandi",
+      "view": "front",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_front_rightThigh.png",
+      "pivot": [
+        65.0,
+        55.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          340,
+          435
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.front.rightCalf",
+      "character": "nandi",
+      "view": "front",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_front_rightCalf.png",
+      "pivot": [
+        91.0,
+        43.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          340,
+          435
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.front.rightShoe",
+      "character": "nandi",
+      "view": "front",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_front_rightShoe.png",
+      "pivot": [
+        120.0,
+        69.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          340,
+          435
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.front.leftThigh",
+      "character": "nandi",
+      "view": "front",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_front_leftThigh.png",
+      "pivot": [
+        58.0,
+        63.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          340,
+          435
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.front.leftCalf",
+      "character": "nandi",
+      "view": "front",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_front_leftCalf.png",
+      "pivot": [
+        0.0,
+        0.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          340,
+          435
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.front.leftShoe",
+      "character": "nandi",
+      "view": "front",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_front_leftShoe.png",
+      "pivot": [
+        0.0,
+        20.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          340,
+          435
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.side.head",
+      "character": "nandi",
+      "view": "side",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_side_head.png",
+      "pivot": [
+        128.0,
+        378.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          435,
+          510
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.side.chest",
+      "character": "nandi",
+      "view": "side",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_side_chest.png",
+      "pivot": [
+        126.0,
+        285.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          435,
+          510
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.side.pelvis",
+      "character": "nandi",
+      "view": "side",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_side_pelvis.png",
+      "pivot": [
+        32.0,
+        90.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          435,
+          510
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.side.rightUpperArm",
+      "character": "nandi",
+      "view": "side",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_side_rightUpperArm.png",
+      "pivot": [
+        96.0,
+        40.0
+      ],
+      "z": -10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          435,
+          510
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.side.rightLowerArm",
+      "character": "nandi",
+      "view": "side",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_side_rightLowerArm.png",
+      "pivot": [
+        117.0,
+        0.0
+      ],
+      "z": 25,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          435,
+          510
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.side.rightHand",
+      "character": "nandi",
+      "view": "side",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_side_rightHand.png",
+      "pivot": [
+        0.0,
+        22.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          435,
+          510
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.side.leftUpperArm",
+      "character": "nandi",
+      "view": "side",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_side_leftUpperArm.png",
+      "pivot": [
+        58.0,
+        58.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          435,
+          510
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.side.leftLowerArm",
+      "character": "nandi",
+      "view": "side",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_side_leftLowerArm.png",
+      "pivot": [
+        54.0,
+        55.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          435,
+          510
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.side.leftHand",
+      "character": "nandi",
+      "view": "side",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_side_leftHand.png",
+      "pivot": [
+        44.0,
+        55.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          435,
+          510
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.side.rightThigh",
+      "character": "nandi",
+      "view": "side",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_side_rightThigh.png",
+      "pivot": [
+        126.0,
+        0.0
+      ],
+      "z": -15,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          435,
+          510
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.side.rightCalf",
+      "character": "nandi",
+      "view": "side",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_side_rightCalf.png",
+      "pivot": [
+        126.0,
+        0.0
+      ],
+      "z": -35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          435,
+          510
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.side.rightShoe",
+      "character": "nandi",
+      "view": "side",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_side_rightShoe.png",
+      "pivot": [
+        123.0,
+        68.0
+      ],
+      "z": -25,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          435,
+          510
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.side.leftThigh",
+      "character": "nandi",
+      "view": "side",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_side_leftThigh.png",
+      "pivot": [
+        18.0,
+        0.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          435,
+          510
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.side.leftCalf",
+      "character": "nandi",
+      "view": "side",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_side_leftCalf.png",
+      "pivot": [
+        46.0,
+        46.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          435,
+          510
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "nandi.side.leftShoe",
+      "character": "nandi",
+      "view": "side",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/NandiRig/nandi_side_leftShoe.png",
+      "pivot": [
+        35.0,
+        68.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          435,
+          510
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.back.head",
+      "character": "thabo",
+      "view": "back",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_back_head.png",
+      "pivot": [
+        126.0,
+        374.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          825,
+          900
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.back.chest",
+      "character": "thabo",
+      "view": "back",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_back_chest.png",
+      "pivot": [
+        49.0,
+        284.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          825,
+          900
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.back.pelvis",
+      "character": "thabo",
+      "view": "back",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_back_pelvis.png",
+      "pivot": [
+        68.0,
+        93.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          825,
+          900
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.back.rightUpperArm",
+      "character": "thabo",
+      "view": "back",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_back_rightUpperArm.png",
+      "pivot": [
+        57.0,
+        105.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          825,
+          900
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.back.rightLowerArm",
+      "character": "thabo",
+      "view": "back",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_back_rightLowerArm.png",
+      "pivot": [
+        47.0,
+        0.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          825,
+          900
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.back.rightHand",
+      "character": "thabo",
+      "view": "back",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_back_rightHand.png",
+      "pivot": [
+        41.0,
+        47.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          825,
+          900
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.back.leftUpperArm",
+      "character": "thabo",
+      "view": "back",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_back_leftUpperArm.png",
+      "pivot": [
+        14.0,
+        110.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          825,
+          900
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.back.leftLowerArm",
+      "character": "thabo",
+      "view": "back",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_back_leftLowerArm.png",
+      "pivot": [
+        38.0,
+        0.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          825,
+          900
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.back.leftHand",
+      "character": "thabo",
+      "view": "back",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_back_leftHand.png",
+      "pivot": [
+        43.0,
+        43.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          825,
+          900
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.back.rightThigh",
+      "character": "thabo",
+      "view": "back",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_back_rightThigh.png",
+      "pivot": [
+        104.0,
+        65.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          825,
+          900
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.back.rightCalf",
+      "character": "thabo",
+      "view": "back",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_back_rightCalf.png",
+      "pivot": [
+        98.0,
+        30.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          825,
+          900
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.back.rightShoe",
+      "character": "thabo",
+      "view": "back",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_back_rightShoe.png",
+      "pivot": [
+        95.0,
+        67.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          825,
+          900
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.back.leftThigh",
+      "character": "thabo",
+      "view": "back",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_back_leftThigh.png",
+      "pivot": [
+        52.0,
+        52.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          825,
+          900
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.back.leftCalf",
+      "character": "thabo",
+      "view": "back",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_back_leftCalf.png",
+      "pivot": [
+        1.0,
+        13.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          825,
+          900
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.back.leftShoe",
+      "character": "thabo",
+      "view": "back",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_back_leftShoe.png",
+      "pivot": [
+        0.0,
+        15.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          825,
+          900
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.front.head",
+      "character": "thabo",
+      "view": "front",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_front_head.png",
+      "pivot": [
+        122.0,
+        383.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          650,
+          760
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.front.chest",
+      "character": "thabo",
+      "view": "front",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_front_chest.png",
+      "pivot": [
+        153.0,
+        289.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          650,
+          760
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.front.pelvis",
+      "character": "thabo",
+      "view": "front",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_front_pelvis.png",
+      "pivot": [
+        99.0,
+        96.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          650,
+          760
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.front.rightUpperArm",
+      "character": "thabo",
+      "view": "front",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_front_rightUpperArm.png",
+      "pivot": [
+        25.0,
+        62.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          650,
+          760
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.front.rightLowerArm",
+      "character": "thabo",
+      "view": "front",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_front_rightLowerArm.png",
+      "pivot": [
+        8.0,
+        0.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          650,
+          760
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.front.rightHand",
+      "character": "thabo",
+      "view": "front",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_front_rightHand.png",
+      "pivot": [
+        0.0,
+        22.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          650,
+          760
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.front.leftUpperArm",
+      "character": "thabo",
+      "view": "front",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_front_leftUpperArm.png",
+      "pivot": [
+        98.0,
+        110.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          650,
+          760
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.front.leftLowerArm",
+      "character": "thabo",
+      "view": "front",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_front_leftLowerArm.png",
+      "pivot": [
+        83.0,
+        83.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          650,
+          760
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.front.leftHand",
+      "character": "thabo",
+      "view": "front",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_front_leftHand.png",
+      "pivot": [
+        56.0,
+        56.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          650,
+          760
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.front.rightThigh",
+      "character": "thabo",
+      "view": "front",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_front_rightThigh.png",
+      "pivot": [
+        83.0,
+        83.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          650,
+          760
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.front.rightCalf",
+      "character": "thabo",
+      "view": "front",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_front_rightCalf.png",
+      "pivot": [
+        59.0,
+        54.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          650,
+          760
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.front.rightShoe",
+      "character": "thabo",
+      "view": "front",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_front_rightShoe.png",
+      "pivot": [
+        94.0,
+        69.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          650,
+          760
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.front.leftThigh",
+      "character": "thabo",
+      "view": "front",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_front_leftThigh.png",
+      "pivot": [
+        67.0,
+        40.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          650,
+          760
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.front.leftCalf",
+      "character": "thabo",
+      "view": "front",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_front_leftCalf.png",
+      "pivot": [
+        0.0,
+        0.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          650,
+          760
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.front.leftShoe",
+      "character": "thabo",
+      "view": "front",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_front_leftShoe.png",
+      "pivot": [
+        0.0,
+        27.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          650,
+          760
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.side.head",
+      "character": "thabo",
+      "view": "side",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_side_head.png",
+      "pivot": [
+        86.0,
+        367.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          760,
+          825
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.side.chest",
+      "character": "thabo",
+      "view": "side",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_side_chest.png",
+      "pivot": [
+        66.0,
+        277.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          760,
+          825
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.side.pelvis",
+      "character": "thabo",
+      "view": "side",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_side_pelvis.png",
+      "pivot": [
+        75.0,
+        92.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          760,
+          825
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.side.rightUpperArm",
+      "character": "thabo",
+      "view": "side",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_side_rightUpperArm.png",
+      "pivot": [
+        101.0,
+        36.0
+      ],
+      "z": -10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          760,
+          825
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.side.rightLowerArm",
+      "character": "thabo",
+      "view": "side",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_side_rightLowerArm.png",
+      "pivot": [
+        101.0,
+        0.0
+      ],
+      "z": 25,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          760,
+          825
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.side.rightHand",
+      "character": "thabo",
+      "view": "side",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_side_rightHand.png",
+      "pivot": [
+        45.0,
+        48.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          760,
+          825
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.side.leftUpperArm",
+      "character": "thabo",
+      "view": "side",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_side_leftUpperArm.png",
+      "pivot": [
+        0.0,
+        20.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          760,
+          825
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.side.leftLowerArm",
+      "character": "thabo",
+      "view": "side",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_side_leftLowerArm.png",
+      "pivot": [
+        4.0,
+        0.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          760,
+          825
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.side.leftHand",
+      "character": "thabo",
+      "view": "side",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_side_leftHand.png",
+      "pivot": [
+        67.0,
+        67.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          760,
+          825
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.side.rightThigh",
+      "character": "thabo",
+      "view": "side",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_side_rightThigh.png",
+      "pivot": [
+        80.0,
+        61.0
+      ],
+      "z": -15,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          760,
+          825
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.side.rightCalf",
+      "character": "thabo",
+      "view": "side",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_side_rightCalf.png",
+      "pivot": [
+        74.0,
+        61.0
+      ],
+      "z": -35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          760,
+          825
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.side.rightShoe",
+      "character": "thabo",
+      "view": "side",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_side_rightShoe.png",
+      "pivot": [
+        106.0,
+        66.0
+      ],
+      "z": -25,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          760,
+          825
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.side.leftThigh",
+      "character": "thabo",
+      "view": "side",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_side_leftThigh.png",
+      "pivot": [
+        75.0,
+        75.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          760,
+          825
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.side.leftCalf",
+      "character": "thabo",
+      "view": "side",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_side_leftCalf.png",
+      "pivot": [
+        25.0,
+        25.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          760,
+          825
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "thabo.side.leftShoe",
+      "character": "thabo",
+      "view": "side",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/ThaboRig/thabo_side_leftShoe.png",
+      "pivot": [
+        30.0,
+        66.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          760,
+          825
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.back.head",
+      "character": "yourDancer",
+      "view": "back",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_back_head.png",
+      "pivot": [
+        140.0,
+        364.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.back.chest",
+      "character": "yourDancer",
+      "view": "back",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_back_chest.png",
+      "pivot": [
+        133.0,
+        275.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.back.pelvis",
+      "character": "yourDancer",
+      "view": "back",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_back_pelvis.png",
+      "pivot": [
+        89.0,
+        89.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.back.rightUpperArm",
+      "character": "yourDancer",
+      "view": "back",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_back_rightUpperArm.png",
+      "pivot": [
+        54.0,
+        114.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.back.rightLowerArm",
+      "character": "yourDancer",
+      "view": "back",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_back_rightLowerArm.png",
+      "pivot": [
+        44.0,
+        58.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.back.rightHand",
+      "character": "yourDancer",
+      "view": "back",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_back_rightHand.png",
+      "pivot": [
+        38.0,
+        52.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.back.leftUpperArm",
+      "character": "yourDancer",
+      "view": "back",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_back_leftUpperArm.png",
+      "pivot": [
+        44.0,
+        59.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.back.leftLowerArm",
+      "character": "yourDancer",
+      "view": "back",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_back_leftLowerArm.png",
+      "pivot": [
+        45.0,
+        45.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.back.leftHand",
+      "character": "yourDancer",
+      "view": "back",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_back_leftHand.png",
+      "pivot": [
+        32.0,
+        21.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.back.rightThigh",
+      "character": "yourDancer",
+      "view": "back",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_back_rightThigh.png",
+      "pivot": [
+        98.0,
+        55.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.back.rightCalf",
+      "character": "yourDancer",
+      "view": "back",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_back_rightCalf.png",
+      "pivot": [
+        91.0,
+        0.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.back.rightShoe",
+      "character": "yourDancer",
+      "view": "back",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_back_rightShoe.png",
+      "pivot": [
+        88.0,
+        12.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.back.leftThigh",
+      "character": "yourDancer",
+      "view": "back",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_back_leftThigh.png",
+      "pivot": [
+        66.0,
+        66.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.back.leftCalf",
+      "character": "yourDancer",
+      "view": "back",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_back_leftCalf.png",
+      "pivot": [
+        50.0,
+        43.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.back.leftShoe",
+      "character": "yourDancer",
+      "view": "back",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_back_leftShoe.png",
+      "pivot": [
+        42.0,
+        66.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1410,
+          1480
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.front.head",
+      "character": "yourDancer",
+      "view": "front",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_front_head.png",
+      "pivot": [
+        151.0,
+        375.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.front.chest",
+      "character": "yourDancer",
+      "view": "front",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_front_chest.png",
+      "pivot": [
+        151.0,
+        283.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.front.pelvis",
+      "character": "yourDancer",
+      "view": "front",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_front_pelvis.png",
+      "pivot": [
+        82.0,
+        90.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.front.rightUpperArm",
+      "character": "yourDancer",
+      "view": "front",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_front_rightUpperArm.png",
+      "pivot": [
+        69.0,
+        62.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.front.rightLowerArm",
+      "character": "yourDancer",
+      "view": "front",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_front_rightLowerArm.png",
+      "pivot": [
+        56.0,
+        70.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.front.rightHand",
+      "character": "yourDancer",
+      "view": "front",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_front_rightHand.png",
+      "pivot": [
+        49.0,
+        58.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.front.leftUpperArm",
+      "character": "yourDancer",
+      "view": "front",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_front_leftUpperArm.png",
+      "pivot": [
+        73.0,
+        83.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.front.leftLowerArm",
+      "character": "yourDancer",
+      "view": "front",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_front_leftLowerArm.png",
+      "pivot": [
+        70.0,
+        70.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.front.leftHand",
+      "character": "yourDancer",
+      "view": "front",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_front_leftHand.png",
+      "pivot": [
+        57.0,
+        57.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.front.rightThigh",
+      "character": "yourDancer",
+      "view": "front",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_front_rightThigh.png",
+      "pivot": [
+        88.0,
+        83.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.front.rightCalf",
+      "character": "yourDancer",
+      "view": "front",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_front_rightCalf.png",
+      "pivot": [
+        97.0,
+        22.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.front.rightShoe",
+      "character": "yourDancer",
+      "view": "front",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_front_rightShoe.png",
+      "pivot": [
+        113.0,
+        67.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.front.leftThigh",
+      "character": "yourDancer",
+      "view": "front",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_front_leftThigh.png",
+      "pivot": [
+        78.0,
+        78.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.front.leftCalf",
+      "character": "yourDancer",
+      "view": "front",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_front_leftCalf.png",
+      "pivot": [
+        13.0,
+        24.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.front.leftShoe",
+      "character": "yourDancer",
+      "view": "front",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_front_leftShoe.png",
+      "pivot": [
+        7.0,
+        67.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1250,
+          1340
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.side.head",
+      "character": "yourDancer",
+      "view": "side",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_side_head.png",
+      "pivot": [
+        140.0,
+        363.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.side.chest",
+      "character": "yourDancer",
+      "view": "side",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_side_chest.png",
+      "pivot": [
+        124.0,
+        312.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.side.pelvis",
+      "character": "yourDancer",
+      "view": "side",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_side_pelvis.png",
+      "pivot": [
+        57.0,
+        87.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.side.rightUpperArm",
+      "character": "yourDancer",
+      "view": "side",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_side_rightUpperArm.png",
+      "pivot": [
+        93.0,
+        75.0
+      ],
+      "z": -10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.side.rightLowerArm",
+      "character": "yourDancer",
+      "view": "side",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_side_rightLowerArm.png",
+      "pivot": [
+        92.0,
+        75.0
+      ],
+      "z": 25,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.side.rightHand",
+      "character": "yourDancer",
+      "view": "side",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_side_rightHand.png",
+      "pivot": [
+        74.0,
+        74.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.side.leftUpperArm",
+      "character": "yourDancer",
+      "view": "side",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_side_leftUpperArm.png",
+      "pivot": [
+        0.0,
+        35.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.side.leftLowerArm",
+      "character": "yourDancer",
+      "view": "side",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_side_leftLowerArm.png",
+      "pivot": [
+        0.0,
+        0.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.side.leftHand",
+      "character": "yourDancer",
+      "view": "side",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_side_leftHand.png",
+      "pivot": [
+        32.0,
+        23.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.side.rightThigh",
+      "character": "yourDancer",
+      "view": "side",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_side_rightThigh.png",
+      "pivot": [
+        106.0,
+        69.0
+      ],
+      "z": -15,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.side.rightCalf",
+      "character": "yourDancer",
+      "view": "side",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_side_rightCalf.png",
+      "pivot": [
+        101.0,
+        15.0
+      ],
+      "z": -35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.side.rightShoe",
+      "character": "yourDancer",
+      "view": "side",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_side_rightShoe.png",
+      "pivot": [
+        113.0,
+        65.0
+      ],
+      "z": -25,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.side.leftThigh",
+      "character": "yourDancer",
+      "view": "side",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_side_leftThigh.png",
+      "pivot": [
+        0.0,
+        0.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.side.leftCalf",
+      "character": "yourDancer",
+      "view": "side",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_side_leftCalf.png",
+      "pivot": [
+        0.0,
+        0.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "yourDancer.side.leftShoe",
+      "character": "yourDancer",
+      "view": "side",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/YourDancerRig/yourDancer_side_leftShoe.png",
+      "pivot": [
+        32.0,
+        16.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1340,
+          1410
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.back.head",
+      "character": "zuri",
+      "view": "back",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_back_head.png",
+      "pivot": [
+        130.0,
+        359.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1120,
+          1195
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.back.chest",
+      "character": "zuri",
+      "view": "back",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_back_chest.png",
+      "pivot": [
+        85.0,
+        272.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1120,
+          1195
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.back.pelvis",
+      "character": "zuri",
+      "view": "back",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_back_pelvis.png",
+      "pivot": [
+        68.0,
+        86.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1120,
+          1195
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.back.rightUpperArm",
+      "character": "zuri",
+      "view": "back",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_back_rightUpperArm.png",
+      "pivot": [
+        34.0,
+        59.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1120,
+          1195
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.back.rightLowerArm",
+      "character": "zuri",
+      "view": "back",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_back_rightLowerArm.png",
+      "pivot": [
+        36.0,
+        37.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1120,
+          1195
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.back.rightHand",
+      "character": "zuri",
+      "view": "back",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_back_rightHand.png",
+      "pivot": [
+        25.0,
+        21.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1120,
+          1195
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.back.leftUpperArm",
+      "character": "zuri",
+      "view": "back",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_back_leftUpperArm.png",
+      "pivot": [
+        45.0,
+        123.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1120,
+          1195
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.back.leftLowerArm",
+      "character": "zuri",
+      "view": "back",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_back_leftLowerArm.png",
+      "pivot": [
+        48.0,
+        48.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1120,
+          1195
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.back.leftHand",
+      "character": "zuri",
+      "view": "back",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_back_leftHand.png",
+      "pivot": [
+        55.0,
+        55.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1120,
+          1195
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.back.rightThigh",
+      "character": "zuri",
+      "view": "back",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_back_rightThigh.png",
+      "pivot": [
+        67.0,
+        67.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1120,
+          1195
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.back.rightCalf",
+      "character": "zuri",
+      "view": "back",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_back_rightCalf.png",
+      "pivot": [
+        68.0,
+        41.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1120,
+          1195
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.back.rightShoe",
+      "character": "zuri",
+      "view": "back",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_back_rightShoe.png",
+      "pivot": [
+        86.0,
+        65.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1120,
+          1195
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.back.leftThigh",
+      "character": "zuri",
+      "view": "back",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_back_leftThigh.png",
+      "pivot": [
+        24.0,
+        51.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1120,
+          1195
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.back.leftCalf",
+      "character": "zuri",
+      "view": "back",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_back_leftCalf.png",
+      "pivot": [
+        0.0,
+        0.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1120,
+          1195
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.back.leftShoe",
+      "character": "zuri",
+      "view": "back",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_back_leftShoe.png",
+      "pivot": [
+        0.0,
+        15.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1120,
+          1195
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.front.head",
+      "character": "zuri",
+      "view": "front",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_front_head.png",
+      "pivot": [
+        158.0,
+        371.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          958,
+          1050
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.front.chest",
+      "character": "zuri",
+      "view": "front",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_front_chest.png",
+      "pivot": [
+        94.0,
+        280.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          958,
+          1050
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.front.pelvis",
+      "character": "zuri",
+      "view": "front",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_front_pelvis.png",
+      "pivot": [
+        81.0,
+        88.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          958,
+          1050
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.front.rightUpperArm",
+      "character": "zuri",
+      "view": "front",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_front_rightUpperArm.png",
+      "pivot": [
+        21.0,
+        60.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          958,
+          1050
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.front.rightLowerArm",
+      "character": "zuri",
+      "view": "front",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_front_rightLowerArm.png",
+      "pivot": [
+        32.0,
+        21.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          958,
+          1050
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.front.rightHand",
+      "character": "zuri",
+      "view": "front",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_front_rightHand.png",
+      "pivot": [
+        23.0,
+        21.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          958,
+          1050
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.front.leftUpperArm",
+      "character": "zuri",
+      "view": "front",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_front_leftUpperArm.png",
+      "pivot": [
+        69.0,
+        163.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          958,
+          1050
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.front.leftLowerArm",
+      "character": "zuri",
+      "view": "front",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_front_leftLowerArm.png",
+      "pivot": [
+        46.0,
+        43.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          958,
+          1050
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.front.leftHand",
+      "character": "zuri",
+      "view": "front",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_front_leftHand.png",
+      "pivot": [
+        63.0,
+        63.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          958,
+          1050
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.front.rightThigh",
+      "character": "zuri",
+      "view": "front",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_front_rightThigh.png",
+      "pivot": [
+        60.0,
+        60.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          958,
+          1050
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.front.rightCalf",
+      "character": "zuri",
+      "view": "front",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_front_rightCalf.png",
+      "pivot": [
+        84.0,
+        42.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          958,
+          1050
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.front.rightShoe",
+      "character": "zuri",
+      "view": "front",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_front_rightShoe.png",
+      "pivot": [
+        115.0,
+        67.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          958,
+          1050
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.front.leftThigh",
+      "character": "zuri",
+      "view": "front",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_front_leftThigh.png",
+      "pivot": [
+        15.0,
+        61.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          958,
+          1050
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.front.leftCalf",
+      "character": "zuri",
+      "view": "front",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_front_leftCalf.png",
+      "pivot": [
+        0.0,
+        0.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          958,
+          1050
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.front.leftShoe",
+      "character": "zuri",
+      "view": "front",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_front_leftShoe.png",
+      "pivot": [
+        0.0,
+        18.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          958,
+          1050
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.side.head",
+      "character": "zuri",
+      "view": "side",
+      "part": "head",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_side_head.png",
+      "pivot": [
+        140.0,
+        364.0
+      ],
+      "z": 95,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1050,
+          1120
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.side.chest",
+      "character": "zuri",
+      "view": "side",
+      "part": "chest",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_side_chest.png",
+      "pivot": [
+        42.0,
+        276.0
+      ],
+      "z": 40,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1050,
+          1120
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.side.pelvis",
+      "character": "zuri",
+      "view": "side",
+      "part": "pelvis",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_side_pelvis.png",
+      "pivot": [
+        30.0,
+        87.0
+      ],
+      "z": 50,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1050,
+          1120
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.side.rightUpperArm",
+      "character": "zuri",
+      "view": "side",
+      "part": "rightUpperArm",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_side_rightUpperArm.png",
+      "pivot": [
+        109.0,
+        38.0
+      ],
+      "z": -10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1050,
+          1120
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.side.rightLowerArm",
+      "character": "zuri",
+      "view": "side",
+      "part": "rightLowerArm",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_side_rightLowerArm.png",
+      "pivot": [
+        109.0,
+        0.0
+      ],
+      "z": 25,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1050,
+          1120
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.side.rightHand",
+      "character": "zuri",
+      "view": "side",
+      "part": "rightHand",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_side_rightHand.png",
+      "pivot": [
+        0.0,
+        21.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1050,
+          1120
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.side.leftUpperArm",
+      "character": "zuri",
+      "view": "side",
+      "part": "leftUpperArm",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_side_leftUpperArm.png",
+      "pivot": [
+        49.0,
+        57.0
+      ],
+      "z": 35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1050,
+          1120
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.side.leftLowerArm",
+      "character": "zuri",
+      "view": "side",
+      "part": "leftLowerArm",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_side_leftLowerArm.png",
+      "pivot": [
+        67.0,
+        68.0
+      ],
+      "z": 70,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1050,
+          1120
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.side.leftHand",
+      "character": "zuri",
+      "view": "side",
+      "part": "leftHand",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_side_leftHand.png",
+      "pivot": [
+        55.0,
+        63.0
+      ],
+      "z": 80,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1050,
+          1120
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.side.rightThigh",
+      "character": "zuri",
+      "view": "side",
+      "part": "rightThigh",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_side_rightThigh.png",
+      "pivot": [
+        23.0,
+        0.0
+      ],
+      "z": -15,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1050,
+          1120
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.side.rightCalf",
+      "character": "zuri",
+      "view": "side",
+      "part": "rightCalf",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_side_rightCalf.png",
+      "pivot": [
+        17.0,
+        28.0
+      ],
+      "z": -35,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1050,
+          1120
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.side.rightShoe",
+      "character": "zuri",
+      "view": "side",
+      "part": "rightShoe",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_side_rightShoe.png",
+      "pivot": [
+        115.0,
+        66.0
+      ],
+      "z": -25,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1050,
+          1120
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.side.leftThigh",
+      "character": "zuri",
+      "view": "side",
+      "part": "leftThigh",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_side_leftThigh.png",
+      "pivot": [
+        17.0,
+        0.0
+      ],
+      "z": 30,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1050,
+          1120
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.side.leftCalf",
+      "character": "zuri",
+      "view": "side",
+      "part": "leftCalf",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_side_leftCalf.png",
+      "pivot": [
+        42.0,
+        42.0
+      ],
+      "z": 10,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1050,
+          1120
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    },
+    {
+      "id": "zuri.side.leftShoe",
+      "character": "zuri",
+      "view": "side",
+      "part": "leftShoe",
+      "file": "App/SWAY/Resources/Puppets/ZuriRig/zuri_side_leftShoe.png",
+      "pivot": [
+        32.0,
+        66.0
+      ],
+      "z": 20,
+      "sourceCrop": {
+        "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+        "cropAt1x": [
+          1050,
+          1120
+        ]
+      },
+      "qa": {
+        "asset": "VALIDATED",
+        "family": "TESTED_BY_POSE_SHEET",
+        "project": "IMPLEMENTED",
+        "targetContext": "UNKNOWN"
+      }
+    }
+  ]
+}

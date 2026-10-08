@@ -1,0 +1,496 @@
+{
+ "view": "side",
+ "canvas": [
+  260,
+  1400
+ ],
+ "joints": {
+  "Hips": [
+   130,
+   839
+  ],
+  "Spine": [
+   130,
+   749
+  ],
+  "Neck": [
+   130,
+   474
+  ],
+  "HeadTop": [
+   130,
+   135
+  ],
+  "RightUpperArm": [
+   101,
+   531
+  ],
+  "RightLowerArm": [
+   101,
+   711
+  ],
+  "RightHand": [
+   101,
+   864
+  ],
+  "RightHandTip": [
+   101,
+   954
+  ],
+  "LeftUpperArm": [
+   158,
+   531
+  ],
+  "LeftLowerArm": [
+   158,
+   711
+  ],
+  "LeftHand": [
+   158,
+   864
+  ],
+  "LeftHandTip": [
+   158,
+   954
+  ],
+  "RightUpperLeg": [
+   115,
+   851
+  ],
+  "RightLowerLeg": [
+   109,
+   1082
+  ],
+  "RightFoot": [
+   106,
+   1312
+  ],
+  "RightToe": [
+   90,
+   1370
+  ],
+  "LeftUpperLeg": [
+   144,
+   851
+  ],
+  "LeftLowerLeg": [
+   150,
+   1082
+  ],
+  "LeftFoot": [
+   153,
+   1312
+  ],
+  "LeftToe": [
+   169,
+   1370
+  ]
+ },
+ "parts": [
+  {
+   "name": "head",
+   "file": "thabo_side_head.png",
+   "z": 95,
+   "bone": [
+    "Neck",
+    "HeadTop"
+   ],
+   "origin": [
+    44,
+    107
+   ],
+   "size": [
+    206,
+    369
+   ],
+   "pivot": [
+    86.0,
+    367.0
+   ],
+   "pivotNorm": [
+    0.4174757281553398,
+    0.994579945799458
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 339.0
+  },
+  {
+   "name": "chest",
+   "file": "thabo_side_chest.png",
+   "z": 40,
+   "bone": [
+    "Spine",
+    "Neck"
+   ],
+   "origin": [
+    64,
+    472
+   ],
+   "size": [
+    158,
+    312
+   ],
+   "pivot": [
+    66.0,
+    277.0
+   ],
+   "pivotNorm": [
+    0.4177215189873418,
+    0.8878205128205128
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 275.0
+  },
+  {
+   "name": "pelvis",
+   "file": "thabo_side_pelvis.png",
+   "z": 50,
+   "bone": [
+    "Hips",
+    "Spine"
+   ],
+   "origin": [
+    55,
+    747
+   ],
+   "size": [
+    151,
+    168
+   ],
+   "pivot": [
+    75.0,
+    92.0
+   ],
+   "pivotNorm": [
+    0.4966887417218543,
+    0.5476190476190477
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 90.0
+  },
+  {
+   "name": "rightUpperArm",
+   "file": "thabo_side_rightUpperArm.png",
+   "z": -10,
+   "bone": [
+    "RightUpperArm",
+    "RightLowerArm"
+   ],
+   "origin": [
+    0,
+    495
+   ],
+   "size": [
+    101,
+    243
+   ],
+   "pivot": [
+    101.0,
+    36.0
+   ],
+   "pivotNorm": [
+    1.0,
+    0.14814814814814814
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 180.0
+  },
+  {
+   "name": "rightLowerArm",
+   "file": "thabo_side_rightLowerArm.png",
+   "z": 25,
+   "bone": [
+    "RightLowerArm",
+    "RightHand"
+   ],
+   "origin": [
+    0,
+    711
+   ],
+   "size": [
+    101,
+    164
+   ],
+   "pivot": [
+    101.0,
+    0.0
+   ],
+   "pivotNorm": [
+    1.0,
+    0.0
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 153.0
+  },
+  {
+   "name": "rightHand",
+   "file": "thabo_side_rightHand.png",
+   "z": 35,
+   "bone": [
+    "RightHand",
+    "RightHandTip"
+   ],
+   "origin": [
+    56,
+    816
+   ],
+   "size": [
+    94,
+    146
+   ],
+   "pivot": [
+    45.0,
+    48.0
+   ],
+   "pivotNorm": [
+    0.4787234042553192,
+    0.3287671232876712
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 90.0
+  },
+  {
+   "name": "leftUpperArm",
+   "file": "thabo_side_leftUpperArm.png",
+   "z": 35,
+   "bone": [
+    "LeftUpperArm",
+    "LeftLowerArm"
+   ],
+   "origin": [
+    158,
+    511
+   ],
+   "size": [
+    102,
+    227
+   ],
+   "pivot": [
+    0.0,
+    20.0
+   ],
+   "pivotNorm": [
+    0.0,
+    0.0881057268722467
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 180.0
+  },
+  {
+   "name": "leftLowerArm",
+   "file": "thabo_side_leftLowerArm.png",
+   "z": 70,
+   "bone": [
+    "LeftLowerArm",
+    "LeftHand"
+   ],
+   "origin": [
+    154,
+    711
+   ],
+   "size": [
+    71,
+    162
+   ],
+   "pivot": [
+    4.0,
+    0.0
+   ],
+   "pivotNorm": [
+    0.056338028169014086,
+    0.0
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 153.0
+  },
+  {
+   "name": "leftHand",
+   "file": "thabo_side_leftHand.png",
+   "z": 80,
+   "bone": [
+    "LeftHand",
+    "LeftHandTip"
+   ],
+   "origin": [
+    91,
+    797
+   ],
+   "size": [
+    134,
+    165
+   ],
+   "pivot": [
+    67.0,
+    67.0
+   ],
+   "pivotNorm": [
+    0.5,
+    0.40606060606060607
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 90.0
+  },
+  {
+   "name": "rightThigh",
+   "file": "thabo_side_rightThigh.png",
+   "z": -15,
+   "bone": [
+    "RightUpperLeg",
+    "RightLowerLeg"
+   ],
+   "origin": [
+    35,
+    790
+   ],
+   "size": [
+    142,
+    318
+   ],
+   "pivot": [
+    80.0,
+    61.0
+   ],
+   "pivotNorm": [
+    0.5633802816901409,
+    0.1918238993710692
+   ],
+   "restAngle": 1.596764514006453,
+   "restLength": 231.07790893982056
+  },
+  {
+   "name": "rightCalf",
+   "file": "thabo_side_rightCalf.png",
+   "z": -35,
+   "bone": [
+    "RightLowerLeg",
+    "RightFoot"
+   ],
+   "origin": [
+    35,
+    1021
+   ],
+   "size": [
+    133,
+    293
+   ],
+   "pivot": [
+    74.0,
+    61.0
+   ],
+   "pivotNorm": [
+    0.556390977443609,
+    0.20819112627986347
+   ],
+   "restAngle": 1.5838390654255043,
+   "restLength": 230.0195643852931
+  },
+  {
+   "name": "rightShoe",
+   "file": "thabo_side_rightShoe.png",
+   "z": -25,
+   "bone": [
+    "RightFoot",
+    "RightToe"
+   ],
+   "origin": [
+    0,
+    1246
+   ],
+   "size": [
+    127,
+    146
+   ],
+   "pivot": [
+    106.0,
+    66.0
+   ],
+   "pivotNorm": [
+    0.8346456692913385,
+    0.4520547945205479
+   ],
+   "restAngle": 1.8399638195805972,
+   "restLength": 60.166435825965294
+  },
+  {
+   "name": "leftThigh",
+   "file": "thabo_side_leftThigh.png",
+   "z": 30,
+   "bone": [
+    "LeftUpperLeg",
+    "LeftLowerLeg"
+   ],
+   "origin": [
+    69,
+    776
+   ],
+   "size": [
+    151,
+    322
+   ],
+   "pivot": [
+    75.0,
+    75.0
+   ],
+   "pivotNorm": [
+    0.4966887417218543,
+    0.2329192546583851
+   ],
+   "restAngle": 1.5448281395833403,
+   "restLength": 231.07790893982056
+  },
+  {
+   "name": "leftCalf",
+   "file": "thabo_side_leftCalf.png",
+   "z": 10,
+   "bone": [
+    "LeftLowerLeg",
+    "LeftFoot"
+   ],
+   "origin": [
+    125,
+    1057
+   ],
+   "size": [
+    43,
+    155
+   ],
+   "pivot": [
+    25.0,
+    25.0
+   ],
+   "pivotNorm": [
+    0.5813953488372093,
+    0.16129032258064516
+   ],
+   "restAngle": 1.557753588164289,
+   "restLength": 230.0195643852931
+  },
+  {
+   "name": "leftShoe",
+   "file": "thabo_side_leftShoe.png",
+   "z": 20,
+   "bone": [
+    "LeftFoot",
+    "LeftToe"
+   ],
+   "origin": [
+    123,
+    1246
+   ],
+   "size": [
+    122,
+    142
+   ],
+   "pivot": [
+    30.0,
+    66.0
+   ],
+   "pivotNorm": [
+    0.2459016393442623,
+    0.4647887323943662
+   ],
+   "restAngle": 1.3016288340091962,
+   "restLength": 60.166435825965294
+  }
+ ]
+}
