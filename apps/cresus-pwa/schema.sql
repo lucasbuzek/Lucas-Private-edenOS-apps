@@ -41,3 +41,10 @@ CREATE TABLE IF NOT EXISTS usage (
   count INTEGER NOT NULL DEFAULT 0,
   PRIMARY KEY (email, day)
 );
+
+-- User-scoped intelligence selection. NULL/unset means onboarding has not been completed.
+CREATE TABLE IF NOT EXISTS intelligence_preferences (
+  email TEXT PRIMARY KEY,
+  provider TEXT NOT NULL,
+  updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
