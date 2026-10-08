@@ -1,0 +1,74 @@
+# HISTORICAL MASTER PROMPT RECONCILIATION
+Status: historical source bytes verified; latest conversation authority NOT VERIFIED
+Selection: version-labelled original prompt evidence, not automatic authoritative promotion
+
+## APPLE
+- APPLE_Architecture_Product_Performance_Lean_Engineering_v2.2.zip :: APPLE_Architecture_Product_Performance_Lean_Engineering_v2.2/PROMPTS/APPLE_Master_Prompt_v2.2.txt | SHA256 5c0b679ded7d3bfd7828908ba125382e5903c832d2a58f35f21f8ab31e8c8b64 | 2225 bytes
+Same text hash among these version-labelled candidates; naming/version changes may still matter.
+
+## ARGOS
+- ARGOS_Academic_Research_Governance_Opposition_and_Synthesis_v1.8_Package.zip :: ARGOS_Academic_Research_Governance_Opposition_and_Synthesis_v1.8/prompts/ARGOS_v1.8_MASTER_PROMPT.txt | SHA256 45efacfdbf10d476b49119b7211a89bb32a352c67714564bd4b7ea32526ea209 | 3287 bytes
+Same text hash among these version-labelled candidates; naming/version changes may still matter.
+
+## ARTEMIS
+- ARTEMIS_Asset_Realization_Transformation_Engineering_Management_Integration_System_v1.1.zip :: ARTEMIS_v1.1/ARTEMIS_Master_Prompt_v1.1.txt | SHA256 50904fc7a0adea2044acc9a10d97fa263db6eb60fe3793703be0dc86906aa4ee | 2070 bytes
+Same text hash among these version-labelled candidates; naming/version changes may still matter.
+
+## BIFROST
+- BIFROST_Project_Prompt_Package_v0.1.zip :: BIFROST_Project_Prompt_Package_v0.1/prompts/BIFROST_MASTER_PROMPT.txt | SHA256 e278ae0636d26b02ac7e3cd2a1b21852f5526e733251d4a47a217df265b4cf1d | 4803 bytes
+Same text hash among these version-labelled candidates; naming/version changes may still matter.
+
+## CAMEL
+- CAMEL_Cargo_Assets_Movement_Execution_Logistics_v0.3.1_Naming_Reconciled.zip :: CAMEL_Cargo_Assets_Movement_Execution_Logistics_v0.3.1_Naming_Reconciled/prompts/CAMEL_MASTER_PROMPT.txt | SHA256 56c976ac589dd4755317b01495029cb11c1ec28a8a029556a1b9af12d3db2674 | 3482 bytes
+- CAMEL_Cargo_Assets_Movement_Execution_Logistics_v0.3_Prompt_Package.zip :: CAMEL_Cargo_Assets_Movement_Execution_Logistics_v0.3_Prompt_Package/prompts/CAMEL_MASTER_PROMPT.txt | SHA256 2b057d889e0f893bc6ab1ccb54b529e09755665a8b7062eb9d313befb9d52ba9 | 3480 bytes
+Distinct text hashes: 2; reconciliation pending against conversation canon.
+
+## CONDUCTOR
+- CONDUCTOR_IDENTITY_HELPERS_SUBORDINATES_v1.1.zip :: CONDUCTOR_IDENTITY_HELPERS_SUBORDINATES_v1.1/02_PROMPTS/CONDUCTOR_MASTER_PROMPT_v1.1.txt | SHA256 c7948f8075b6866dcf7ca4dfa5cdbaa8c5fce3107b40a450c838d328a00360b8 | 3492 bytes
+Same text hash among these version-labelled candidates; naming/version changes may still matter.
+
+## EDEN
+- EDEN_Grandmaster_Research_Web_Field_Prototype_Handoff_v0.1.zip :: EDEN_Grandmaster_Research_Web_Field_Prototype_Handoff_v0.1/01_GRANDMASTER_PROMPT.txt | SHA256 3d21353917a8c7053301b48d56697b0145007eb7d7f492b0463c1f6b6d22f1b7 | 3104 bytes
+Same text hash among these version-labelled candidates; naming/version changes may still matter.
+
+## FORGE
+- FORGE_Full-stack_Orchestration_Reliability_Generation_and_Engineering_v1.7.1_Package.zip :: FORGE_Full-stack_Orchestration_Reliability_Generation_and_Engineering_v1.7.1/prompts/FORGE_v1.7.1_MASTER_PROMPT.txt | SHA256 030dab6150226c54a20b64226e5f3ff6ad793ce91278dd4a2e49b21c63f05779 | 2309 bytes
+Same text hash among these version-labelled candidates; naming/version changes may still matter.
+
+## IRIS
+- IRIS_Intelligent_Realism_and_Image_Synthesis_v1.6_Package.zip :: IRIS_Intelligent_Realism_and_Image_Synthesis_v1.6/prompts/IRIS_v1.6_MASTER_PROMPT.txt | SHA256 ff218cd2c4f5c67731db7637d7c5a26206b7c6683a0d3e0d15504cb3e5ec264e | 1973 bytes
+- IRIS_Intelligent_Realism_and_Image_Synthesis_v1.7_Package.zip :: IRIS_Intelligent_Realism_and_Image_Synthesis_v1.7/prompts/IRIS_v1.7_MASTER_PROMPT.txt | SHA256 c4bcc8aaf7523d6dd54682455a2a11e0312bab7d6b0ed31447ed50028ed53ad2 | 1973 bytes
+- IRIS_Intelligent_Realism_and_Image_Synthesis_v1.8_Package.zip :: IRIS_Intelligent_Realism_and_Image_Synthesis_v1.8/prompts/IRIS_v1.8_MASTER_PROMPT.txt | SHA256 5002d8a7cb7a48aeee56a7e4ca67be36244531ed181cbe43f9e7b5967d17eb98 | 1973 bytes
+- Reconciliation /IRIS_Intelligent_Realism_and_Image_Synthesis_v1.6_Package.zip :: IRIS_Intelligent_Realism_and_Image_Synthesis_v1.6/prompts/IRIS_v1.6_MASTER_PROMPT.txt | SHA256 6bee642dcc3f6aa8a5315127777cd92e20334699b89d69f5de168116f9e13be0 | 1990 bytes
+Distinct text hashes: 4; reconciliation pending against conversation canon.
+
+## LINGUA
+- LINGUA_Language_Interpretation_Nuance_Glossary_and_Unified_Adaptation_v1.6.zip :: LINGUA_Language_Interpretation_Nuance_Glossary_and_Unified_Adaptation_v1.6/LINGUA_v1.6_MASTER_PROMPT.txt | SHA256 84c4bb64fe3ec3cd13a4b14015c14334dbe521a97ebb77a9a238012abce1c9b5 | 2366 bytes
+Same text hash among these version-labelled candidates; naming/version changes may still matter.
+
+## MIRROR
+- MIRROR_FORGE_Cross_Platform_v0.1.0_Package.zip :: MIRROR_FORGE_v0.1.0/source/MIRROR_Multidisciplinary_Independent_Review_Ranking_Observation_and_Reference_v1.5/prompts/MIRROR_v1.5_MASTER_PROMPT.txt | SHA256 d4b8f2068714055dcbda7be4162cfbf4e6f6f681fbfcaa7ce974838c93557b77 | 1314 bytes
+- MIRROR_Multidisciplinary_Independent_Review_Ranking_Observation_and_Reference_v1.5_Final_Corrected_Package.zip :: MIRROR_Multidisciplinary_Independent_Review_Ranking_Observation_and_Reference_v1.5/prompts/MIRROR_v1.5_MASTER_PROMPT.txt | SHA256 d4b8f2068714055dcbda7be4162cfbf4e6f6f681fbfcaa7ce974838c93557b77 | 1314 bytes
+- MIRROR_Multidisciplinary_Independent_Review_Ranking_Observation_and_Reference_v1.5_Package.zip :: MIRROR_Multidisciplinary_Independent_Review_Ranking_Observation_and_Reference_v1.5/prompts/MIRROR_v1.5_MASTER_PROMPT.txt | SHA256 d4b8f2068714055dcbda7be4162cfbf4e6f6f681fbfcaa7ce974838c93557b77 | 1314 bytes
+- MIRROR_v1.4_Profile_and_Prompts_Package.zip :: MIRROR_v1.4_Profile_and_Prompts/prompts/MIRROR_v1.4_MASTER_PROMPT.txt | SHA256 03b9ab4384da2026cc266d2e85d0fb26e12568f4e5df0ca283f8d78efdd91d46 | 1308 bytes
+Distinct text hashes: 2; reconciliation pending against conversation canon.
+
+## MONETA
+- MONETA_Monetary_Operations_Navigation_Evaluation_Treasury_and_Accounting_v1.5_EXPERIMENTAL.zip :: MONETA_Monetary_Operations_Navigation_Evaluation_Treasury_and_Accounting_v1.5_EXPERIMENTAL/05_PROMPTS/MONETA_MASTER_PROMPT_v1.5.txt | SHA256 642c4df5c027b0f476c92e320071f494f10985dd98b338f0ea69d54329aae68d | 2304 bytes
+- MONETA_Monetary_Operations_Navigation_Evaluation_Treasury_and_Accounting_v1.7_UIX_EXPERIMENTAL.zip :: MONETA_Monetary_Operations_Navigation_Evaluation_Treasury_and_Accounting_v1.7_UIX_EXPERIMENTAL/05_PROMPTS/MONETA_MASTER_PROMPT_v1.5.txt | SHA256 642c4df5c027b0f476c92e320071f494f10985dd98b338f0ea69d54329aae68d | 2304 bytes
+Same text hash among these version-labelled candidates; naming/version changes may still matter.
+
+## ORACLE
+- ORACLE_Analytics_Intelligence_v0.1_Experimental.zip :: ORACLE_Analytics_Intelligence_v0.1_Experimental/02_MASTER_PROMPT/ORACLE_MASTER_PROMPT_v0.1.txt | SHA256 b3e0043d8b1ba9b6d659b784aac069177581d67a6d4fb333f5ee9ba6110efa56 | 1846 bytes
+Same text hash among these version-labelled candidates; naming/version changes may still matter.
+
+## READ
+- READ_Reader_Experience_Assessment_Directorate_v1.4_Package.zip :: READ_Reader_Experience_Assessment_Directorate_v1.4/prompts/READ_v1.4_MASTER_PROMPT.txt | SHA256 6515d7ac2d6036ad2e9941f54a4091a3a0ae3f24a0b6498433337a9e594e22b1 | 3176 bytes
+- READ_Reader_Experience_Assessment_Directorate_v1.5_Package.zip :: READ_Reader_Experience_Assessment_Directorate_v1.5/prompts/READ_v1.5_MASTER_PROMPT.txt | SHA256 5362e7a39d094cf20ac52df63d13e477bc7ee71e54d48213cd3b622fd4272568 | 3312 bytes
+Distinct text hashes: 2; reconciliation pending against conversation canon.
+
+## WEAVER
+- WEAVER_Web_Experience_Architecture_Validation_Engineering_and_Reach_v1.5_Package.zip :: WEAVER_Web_Experience_Architecture_Validation_Engineering_and_Reach_v1.5/prompts/WEAVER_v1.5_MASTER_PROMPT.txt | SHA256 6c199b89231975091497b6def1644fdae31b563abaef96f383ee576cdad13d50 | 11932 bytes
+- WEAVER_Web_Experience_Architecture_Validation_Engineering_and_Reach_v1.6_Package.zip :: WEAVER_Web_Experience_Architecture_Validation_Engineering_and_Reach_v1.6/prompts/WEAVER_v1.6_MASTER_PROMPT.txt | SHA256 8dc9860d16453ec2735f73eace36bdd0af379f84384ba70a64d7100231e16469 | 12010 bytes
+Distinct text hashes: 2; reconciliation pending against conversation canon.
+
