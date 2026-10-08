@@ -3,6 +3,9 @@ import Foundation
 public struct SwayMusicalPosition: Equatable, Sendable {
     public var beat: Int, count: Int, bar: Int, phrase: Int
     public var beatPhase: Double
+    public init(beat: Int, count: Int, bar: Int, phrase: Int, beatPhase: Double) {
+        self.beat = beat; self.count = count; self.bar = bar; self.phrase = phrase; self.beatPhase = beatPhase
+    }
 }
 
 /// Pure musical-time → beat/count/bar/phrase mapping used by SwayTimelineEngine (behaviour recovered from Build 149/153).

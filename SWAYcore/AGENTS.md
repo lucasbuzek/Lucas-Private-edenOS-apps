@@ -34,7 +34,7 @@ Pin:
 Lucas's 2026-10-07 00:33 decision supersedes older character-acceptance text: a production-quality 2.5D avatar satisfies the Alpha. Full 3D (RealityKit/Blender and the `YD_*` modular meshes) is future SWAYcore engine work and must remain dormant—not routed by the Alpha app. The Alpha still requires a runtime-consumed, separated body-part/User Avatar component library (P1B); a flattened concept-sheet cutout is not acceptable.
 
 ## Governance
-Use EITRIMB as thin Master Builder governor.
+Use ForgeMASTER as the sole AppDev governor. EITRI/EITRIMB names are superseded provenance only.
 AUTO continues safe available implementation work until the requested milestone is reached or a genuine unavailable dependency blocks it.
 Analysis, planning, status reports, commits, blobs and build-number changes are not substitutes for implementation.
 Preserve Last Known Good before extending.
