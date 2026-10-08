@@ -1,0 +1,371 @@
+{
+  "source": "/Users/lucas/edenOS/AppDev/#app-assistants/appDev main",
+  "status": "ORIGINAL_BYTES_PRESERVED_NOT_RECONCILED",
+  "files": [
+    {
+      "path": "APPDEV_MASTER_v1.0_HANDOFF.txt",
+      "bytes": 20823,
+      "sha256": "a67f797e6f0441a273e9a330ba037bc7fa00030fee672ca4ae555a2d42b6be15"
+    },
+    {
+      "path": "APPLE_Architecture_Product_Performance_Lean_Engineering_v2.2.zip",
+      "bytes": 12420,
+      "sha256": "47fc3cb5be48fa1656cb006de6f626573e0f8912b1990a8923efeb169abb132f"
+    },
+    {
+      "path": "APPLE_Core_Council_Roles_Meaning_Inspiration.txt",
+      "bytes": 20674,
+      "sha256": "d93793430510c3a4ba5ae9ee987f56b2c337e4ded6ff8ce473c155d8c64feda7"
+    },
+    {
+      "path": "ARGOS_Academic_Research_Governance_Opposition_and_Synthesis_v1.8_Package.zip",
+      "bytes": 68906,
+      "sha256": "d662ed0702163cb57ff8e1fce5ac9da6339fd608ec8a79e04bc1d63533ba0b38"
+    },
+    {
+      "path": "ARTEMIS_Asset_Realization_Transformation_Engineering_Management_Integration_System_v1.1.zip",
+      "bytes": 10552,
+      "sha256": "ee8718bc05601a064b391e0428e8e16f668005e377ad897f9af8f05c21df6d79"
+    },
+    {
+      "path": "AppDevRules_Web_Browser_Bridge_Canon_v1.1.txt",
+      "bytes": 24228,
+      "sha256": "2789ed918466885952094b82c591a60807719f5b8fa7fa9b3cac48184dfed392"
+    },
+    {
+      "path": "AppDev_Core_Principles_v1.1_Package.zip",
+      "bytes": 21231,
+      "sha256": "a977a25b9e5d7b50294613cdfda794ad7a6cd1f7f7f9d4c0c6be1ecd07a3f587"
+    },
+    {
+      "path": "BIFROST_Project_Prompt_Package_v0.1.zip",
+      "bytes": 14426,
+      "sha256": "13854d7d836c4801cb2652dbe6970896e6a8f0b77e7a41bcfb9c6e7a4751aad2"
+    },
+    {
+      "path": "CAMEL_Cargo_Assets_Movement_Execution_Logistics_v0.3.1_Naming_Reconciled.zip",
+      "bytes": 15000,
+      "sha256": "b7e6697a34ee5fa6472b1cca92c0421aabf7be5e371f5a45c7206f8f5f198a98"
+    },
+    {
+      "path": "CAMEL_Cargo_Assets_Movement_Execution_Logistics_v0.3_Prompt_Package.zip",
+      "bytes": 12897,
+      "sha256": "60b66237ddaef1b9b0172b9874dd566255e892b362a73dd78047ba268155d534"
+    },
+    {
+      "path": "CASPER_Creative_Authoring_Storytelling_Publishing_Editing_and_Research_v1.7_Package.zip",
+      "bytes": 19598,
+      "sha256": "0ba007a9b5f02bb79926071198379a09bc69703d91b1d8e5e9d9143df2afec99"
+    },
+    {
+      "path": "CASPER_Creative_Authoring_Storytelling_Publishing_Editing_and_Research_v2.0_Package.zip",
+      "bytes": 23469,
+      "sha256": "f33a2864b2367fb52c280183323e9c8da845dac7e1da341f094e59b279815f27"
+    },
+    {
+      "path": "CASPER_Creative_Authoring_Storytelling_Publishing_Editing_and_Research_v2.1_Package.zip",
+      "bytes": 24037,
+      "sha256": "ae872011d70e7ce7e9b33277b968d5e46eb712455375d1128f8a8ceba1336a40"
+    },
+    {
+      "path": "CASPER_Creative_Authoring_Storytelling_Publishing_Editing_and_Research_v2.2_Corrected_Package.zip",
+      "bytes": 24761,
+      "sha256": "4ede9536ffe38846ae673a0dc8e588a705db5dda501fcc0b49ceee6d8ddbf59b"
+    },
+    {
+      "path": "CASPER_Creative_Authoring_Storytelling_Publishing_Editing_and_Research_v2.2_Package.zip",
+      "bytes": 24535,
+      "sha256": "2a4cde2d753e3aa508799ba44faa15138bb55499614ec388f32502d04aaa5f04"
+    },
+    {
+      "path": "CONDUCTOR_BRANCHED_HELPER_PACKAGE_v1.0.zip",
+      "bytes": 13335,
+      "sha256": "0d96ac2c3cc24735ad34c7ac25f9a08e0ecbbf826cfc448b7471bad127739071"
+    },
+    {
+      "path": "CONDUCTOR_IDENTITY_HELPERS_SUBORDINATES_v1.1.zip",
+      "bytes": 7308,
+      "sha256": "955a8ecac80fe6ce6eb0b22d5a10c889990d86cf355efee7924e2f51b7acab65"
+    },
+    {
+      "path": "CURATOR_Assistant_Prompt_Package_v1.0.zip",
+      "bytes": 16397,
+      "sha256": "f28c8b8e4fce333916586cec892f4ecb0b1384f3b453c080461211fef8cb409c"
+    },
+    {
+      "path": "CURATOR_Private_v1.0-uix-experimental_Source.zip",
+      "bytes": 43728,
+      "sha256": "79d0072506b4ef28f0b9bd8b73870718028165e6c8503b3280cc0f107c8e81ae"
+    },
+    {
+      "path": "EDEN_AppDev_Assistant_Ecosystem_v0.3.zip",
+      "bytes": 118030,
+      "sha256": "24b8c8ff23ddf8354414101693e06a69e89aed1c655ae1193cde31cfe61b1502"
+    },
+    {
+      "path": "EDEN_Grandmaster_Research_Web_Field_Prototype_Handoff_v0.1.zip",
+      "bytes": 21149,
+      "sha256": "072d866ecf62f14c42ab476ac1439e19d9fe8e398fa218f74b6729c020731262"
+    },
+    {
+      "path": "EDEN_Naming_Reconciliation_Handoff_v1.0_Package.zip",
+      "bytes": 7945,
+      "sha256": "c119060288880817f95a2abaf5ba6c8fa33492b2dfc404713cd8da7e4893003e"
+    },
+    {
+      "path": "EDEN_Personal_Grand_Backup_v2.0_Package.zip",
+      "bytes": 64401,
+      "sha256": "c6840f645bf9db7c76c0e846f138081e859b10ad41ed07b673b15f75dd7c8541"
+    },
+    {
+      "path": "EDEN_THREAD_Comprehensive_Identity_Function_Register_STAGING_v1.0.txt",
+      "bytes": 27824,
+      "sha256": "ab4287aa91fe247b900d566b8bc97e1017abe9e8abf1eec1e8cb01ca52d3393a"
+    },
+    {
+      "path": "FORGE_Full-stack_Orchestration_Reliability_Generation_and_Engineering_v1.7.1_Package.zip",
+      "bytes": 49561,
+      "sha256": "c4a1cfb61ede90cf41fa47b01363ca654ec1188b9fb22d840654267a68385c1a"
+    },
+    {
+      "path": "FORGE_Full-stack_Orchestration_Reliability_Generation_and_Engineering_v2.0_Package_EITRI.zip",
+      "bytes": 49315,
+      "sha256": "7c4a3ed5df346a8c77bf49c2e872f30664f145fe52cad8bf34bdb8f8c62a3802"
+    },
+    {
+      "path": "HERMES_App_Prompt_Package_v0.1.0.zip",
+      "bytes": 10547,
+      "sha256": "da34217f898269e8bdd0c9d2425a6b79c0ff595b4c49efd7d5271d8e6f41bf23"
+    },
+    {
+      "path": "HERMES_Hiring_Employment_Research_Matching_Execution_System_v1.5_Prompt_Package.zip",
+      "bytes": 14405,
+      "sha256": "0382656104a27d0a02b66a80a81a053ee8eea74b2b6711df5e75efc79a1eabf8"
+    },
+    {
+      "path": "HERMES_Hiring_Employment_Research_Matching_Execution_System_v1.6.zip",
+      "bytes": 78496,
+      "sha256": "c222b85e0dcc339190a6b3eff7e716eebc83566dbf2cb13632dd5290104a6d0c"
+    },
+    {
+      "path": "IRIS_Intelligent_Realism_and_Image_Synthesis_v1.6_Package.zip",
+      "bytes": 83578,
+      "sha256": "e8e6dcec0b00232a429e77782d9e4fa03c8abfe8c8484a8fdab319fd201a077b"
+    },
+    {
+      "path": "IRIS_Intelligent_Realism_and_Image_Synthesis_v1.7_Package.zip",
+      "bytes": 82033,
+      "sha256": "091e400390cd0073723f4500af8ce49523b4be68fb1158103b42c4cc076f88a1"
+    },
+    {
+      "path": "IRIS_Intelligent_Realism_and_Image_Synthesis_v1.8_Package.zip",
+      "bytes": 107160,
+      "sha256": "9df8f36b5646131106fb5b77b336fbb4a35f78f23f32a73201fa6460df3e117a"
+    },
+    {
+      "path": "LINGUA_Language_Interpretation_Nuance_Glossary_and_Unified_Adaptation_v1.6.zip",
+      "bytes": 24362,
+      "sha256": "3b357ee5311a4440c0aafbf00f5f150b08be2e5be4c3885e1b8208d52ccecf3b"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/00_CONTROL/DELIVERY_STATUS.txt",
+      "bytes": 176,
+      "sha256": "0664e7d7c69ee406a106fb805131e294216b58d2529d5c743994fa1c4eb43083"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/00_CONTROL/M4_FINAL_MANIFEST.txt",
+      "bytes": 2787,
+      "sha256": "2677213ac3c8d4b9312474415dab21bf452545c733c112a6866a9fd9be40c078"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/00_CONTROL/M5_DELIVERY_RECORD.txt",
+      "bytes": 1187,
+      "sha256": "686d5290cae218a894c5ea2625a8251129a65a431af680d68c760f517c12c2e6"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/00_CONTROL/PROVENANCE_MAP.txt",
+      "bytes": 1373,
+      "sha256": "a21eccca750c725962039be7231e46c59f8598aed6e0f8864b7755fd979cbd6c"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/00_CONTROL/README.txt",
+      "bytes": 766,
+      "sha256": "6d81c51f3fe6485da240b892fedf502489645c70e1de89b909f5bbf428530d91"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/00_CONTROL/RECOVERY_LEDGER.txt",
+      "bytes": 709,
+      "sha256": "f800690f8f6d1345ceff79f53a11874e2411e010e0b878769992ffa3129a0004"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/00_CONTROL/RELEASE_NOTES_v1.0.txt",
+      "bytes": 590,
+      "sha256": "2978a4b80e08efaf2d2743672a790d7bd679dcd589e5175aa3839a73897bff6d"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/00_CONTROL/SHA256SUMS.txt",
+      "bytes": 1398,
+      "sha256": "0c8c81f14fa2dd637b9094f0f8d28d6a463fe3ce8287bded820fe5164deaec79"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/00_CONTROL/SHA256SUMS_FINAL.txt",
+      "bytes": 1696,
+      "sha256": "26f94a50418d7ee9550dd197be87d2afb94f157510d7c22f057e5cea3db4e8d3"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/01_MAMMON_RELATED/MAMMON_v0.1_HANDOFF.txt",
+      "bytes": 22808,
+      "sha256": "bcb976d0e3e829a15106cf2adec571aba2f2bd6869d8167177460e39f8237ed0"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/01_MAMMON_RELATED/SPLIT_MANIFEST.txt",
+      "bytes": 371,
+      "sha256": "171cc095be6e3a33991ede49235d3e684a30961e8a71b6fb2d4ce368f2416ee8"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/02_MAMMON_APPLE/APPLE_Master_v2.0.txt",
+      "bytes": 14198,
+      "sha256": "1a3ba1cbdbd1f1b5b43739898775fdba537dd7356791d99990e6cb9d7f605bff"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/02_MAMMON_APPLE/SPLIT_MANIFEST.txt",
+      "bytes": 313,
+      "sha256": "ee22562f990d7a8b18140630e5c5aeef90925bfd4475cc84ab956f9a72ab570d"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/03_25TH_ANNIVERSARY/SOURCES/EDEN_25_Master.txt",
+      "bytes": 7827,
+      "sha256": "c5422ab596eb04bc65ffcac55fe07177bf9924d2664af29273df23b3e5f0444f"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/03_25TH_ANNIVERSARY/SOURCES/EDEN_25_Step2_Alternative_History.txt",
+      "bytes": 25217,
+      "sha256": "d3bdb2f9930a1180a94a0a22a520db84ddafbf072860b0478c4cfb9b26f23527"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/03_25TH_ANNIVERSARY/SOURCES/EDEN_Manifesto_Research_Thesis.txt",
+      "bytes": 84985,
+      "sha256": "484b0eba419d2ccacbcba327e5baa0093140dde00409bbcb4026c8d29bc8dab8"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0/03_25TH_ANNIVERSARY/SPLIT_MANIFEST.txt",
+      "bytes": 328,
+      "sha256": "eb84c7a2bda341d3f82516dbe3f13e3e777dabe46bff76a08d2d53ab143d8472"
+    },
+    {
+      "path": "MAMMON_25TH_RECOVERY_M5_v1.0.zip",
+      "bytes": 54587,
+      "sha256": "375874a98180cad293a96a426e90e8f5d8ff6a27a3c17dd1c33f59665f7cc7c4"
+    },
+    {
+      "path": "MAMMON_v0.1_HANDOFF_PACKAGE.zip",
+      "bytes": 57570,
+      "sha256": "b004f1598c9a573aef683946fe414d8bfb97a9daf3ea3bacc23613edaffc2e1e"
+    },
+    {
+      "path": "MIRROR_FORGE_Cross_Platform_v0.1.0_Package.zip",
+      "bytes": 58946,
+      "sha256": "090da39e57a9e12739c2ee3eec75dbee5873e1fd87a68757e0551376fa155c43"
+    },
+    {
+      "path": "MIRROR_Multidisciplinary_Independent_Review_Ranking_Observation_and_Reference_v1.5_Final_Corrected_Package.zip",
+      "bytes": 52567,
+      "sha256": "ec9be7d437ccc2661b70e5d8f93083a99d7c6ef7bd8476b663f135cd118c9e90"
+    },
+    {
+      "path": "MIRROR_Multidisciplinary_Independent_Review_Ranking_Observation_and_Reference_v1.5_Package.zip",
+      "bytes": 52347,
+      "sha256": "ed20b3ec70c9c761aaefcf9bb8397e83f1864e5cca5ee60b8707df699e88e103"
+    },
+    {
+      "path": "MIRROR_v1.4_Profile_and_Prompts_Package.zip",
+      "bytes": 12206,
+      "sha256": "254754fa93e7f3792b3cde722086511a5a33080e1e03a5d56f4bbe2d8dc32551"
+    },
+    {
+      "path": "MONETA_Monetary_Operations_Navigation_Evaluation_Treasury_and_Accounting_v1.5_EXPERIMENTAL.zip",
+      "bytes": 221934,
+      "sha256": "ca61bd652afd0535fa0ede0d71fd762a39b72a69c1e9240bb4196159c548fdbf"
+    },
+    {
+      "path": "MONETA_Monetary_Operations_Navigation_Evaluation_Treasury_and_Accounting_v1.7_UIX_EXPERIMENTAL.zip",
+      "bytes": 242798,
+      "sha256": "99a3ac89bb3836d72a6d27b99bbe264466da2e82aada9e82ba7346b1fae60ecc"
+    },
+    {
+      "path": "ORACLE_Analytics_Intelligence_v0.1_Experimental.zip",
+      "bytes": 15686,
+      "sha256": "a952b6f070f9580813c9ae23c5183d4db4e3fb0ab3c90c5709483b34e3b4e149"
+    },
+    {
+      "path": "READ_Reader_Experience_Assessment_Directorate_v1.4_Package.zip",
+      "bytes": 30068,
+      "sha256": "594757135219ccbdb38ddf731b4b37253423f0deef50086ff5d369b1cdf96689"
+    },
+    {
+      "path": "READ_Reader_Experience_Assessment_Directorate_v1.5_Package.zip",
+      "bytes": 32692,
+      "sha256": "b2d43c459fab36a6c6bca7b95889efd9a4e3dc5c789fe8f6acaf3d9bf230d04c"
+    },
+    {
+      "path": "Reconciliation /EDEN_Name_Migration_001_CASPER_READ_to_AUDITOR.zip",
+      "bytes": 1472,
+      "sha256": "ddec294212161218599fe7e106aa3d22065ad5cfb4c77a1c5c017632ec41c95e"
+    },
+    {
+      "path": "Reconciliation /EDEN_Name_Migration_002_IRIS_FORGE_to_FOUNDRY.zip",
+      "bytes": 2071,
+      "sha256": "ea6ce788cc55ca6dfb0169d32630d569570453f4807d0e1f0833a7c7d2cb8191"
+    },
+    {
+      "path": "Reconciliation /IRIS_Intelligent_Realism_and_Image_Synthesis_v1.6_Package.zip",
+      "bytes": 82028,
+      "sha256": "2bdca145f623f3a347ce0478fbb26f7c4bd3ad2675047427ef04ac5956e0d574"
+    },
+    {
+      "path": "SKALD_Tell_Me_About_Yourself_v1.0.zip",
+      "bytes": 3283,
+      "sha256": "418544c4b77b3ea0a5a0730e2e53967cd5f902ab9a9dcc569578e1d3787bd18d"
+    },
+    {
+      "path": "THREAD_Transcript_History_Retrieval_Extraction_Analysis_and_Discovery_v1.4_Package.zip",
+      "bytes": 35047,
+      "sha256": "ff8bd76a82ad12fcb1136abe89d4e3f27220ca65a25fc1eedf67191aeeb119f1"
+    },
+    {
+      "path": "WEAVER_Web_Experience_Architecture_Validation_Engineering_and_Reach_v1.5_Package.zip",
+      "bytes": 39400,
+      "sha256": "7768fcfa69d6e85d406d9db0c66a1d9d8eae46eb759044ecca076fb905da85bd"
+    },
+    {
+      "path": "WEAVER_Web_Experience_Architecture_Validation_Engineering_and_Reach_v1.6_Package.zip",
+      "bytes": 43755,
+      "sha256": "23d3aaba0328accb79a414f566158d6f4aabf2cf65a7704a1b019a598d02d0fe"
+    },
+    {
+      "path": "appDev_MASTER_v1.0_Package.zip",
+      "bytes": 10438,
+      "sha256": "4f6e460beeb8f6b0233a35e07d9b619b64634a62a95f1577ea0e4b1a68918101"
+    },
+    {
+      "path": "edenOS_Core_Architecture_Engineering_Reference_v0.1.zip",
+      "bytes": 48173,
+      "sha256": "d8f0bd4ccd2998a8c7cb8d99824c9420d5b4a96828354c680e0464769510f256"
+    },
+    {
+      "path": "edenOS_M1-M3_v3.7.1_Recovery_Hotfix.zip",
+      "bytes": 98673,
+      "sha256": "86b83f43c243d64e97c40f0a073858b93fccf499b45355bab7abd2dfdba1e45e"
+    },
+    {
+      "path": "edenOSrules.txt",
+      "bytes": 10403,
+      "sha256": "32347fafd630a9aa53dc2937f139af187c9aaece2a542528be261b54883e7d65"
+    },
+    {
+      "path": "edenOSrules_v1.2.txt",
+      "bytes": 19705,
+      "sha256": "16d06817dfcc867c510e5cd3de6ac67a402ea8743d31ccf53bd79906514f4b80"
+    }
+  ]
+}
