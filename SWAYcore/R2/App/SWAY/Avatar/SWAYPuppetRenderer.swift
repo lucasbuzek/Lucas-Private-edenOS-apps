@@ -138,7 +138,29 @@ struct SWAYPuppetRenderer: View {
         ("leftThigh","LeftUpperLeg","LeftLowerLeg"),("leftCalf","LeftLowerLeg","LeftFoot"),
         ("rightThigh","RightUpperLeg","RightLowerLeg"),("rightCalf","RightLowerLeg","RightFoot")]
 
+    /// Authored cut-out rig for the current heading (front/back now; side when authored).
+    private var rig: SWAYRig? {
+        let view: String
+        switch angle {
+        case .back, .backLeft, .backRight: view = "back"
+        case .left, .right: view = SWAYRigLibrary.rig(character: "lucia", view: "side") != nil ? "side" : "front"
+        default: view = "front"
+        }
+        return SWAYRigLibrary.rig(character: "lucia", view: view) ?? SWAYRigLibrary.rig(character: "lucia", view: "front")
+    }
+
     var body: some View {
+        if let rig {
+            ZStack {
+                SWAYRigPuppetCanvas(rig: rig, joints: joints)
+                if !trackingAvailable { Text("TRACKING UNKNOWN").font(.caption.bold()).padding(8).background(.black.opacity(0.7),in:Capsule()) }
+            }.accessibilityLabel(trackingAvailable ? "Articulated puppet" : "Puppet tracking unknown")
+        } else {
+            legacyBody
+        }
+    }
+
+    private var legacyBody: some View {
         GeometryReader { geometry in
             ZStack {
                 ForEach(Array(segments.enumerated()), id: \.offset) { _, part in
