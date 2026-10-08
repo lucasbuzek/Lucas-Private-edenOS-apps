@@ -35,7 +35,7 @@ struct MoveLibraryView: View {
                     ForEach(visible) { move in
                         NavigationLink { SwayMoveDetailView(move:move) } label: {
                             VStack(alignment:.leading,spacing:8) {
-                                ZStack { SwayTheme.stageGradient; SWAYCoachAvatarView(moveID:move.id,musicalTime:0,bpm:Double(max(move.bpmMin,100)),paused:true,mirrored:false).padding(8) }
+                                ZStack { SwayTheme.stageGradient; SWAYCharacterStage(character: .lucia, source: .move(id: move.id, musicalTime: 0, bpm: Double(max(move.bpmMin, 100)), paused: true), profile: nil, mirrored: false).padding(8) }
                                     .frame(height:145).clipShape(RoundedRectangle(cornerRadius:20))
                                 Text(move.name).font(.headline).lineLimit(1)
                                 HStack { Text(move.style).font(.caption).foregroundStyle(.secondary); Spacer(); Label("\(move.counts)",systemImage:"metronome").font(.caption.bold()).foregroundStyle(SwayTheme.cyan) }
@@ -77,7 +77,7 @@ struct SwayMoveDetailView:View {
                 TimelineView(.animation(minimumInterval:1.0/30.0,paused:!previewPlaying || reduceMotion)) { timeline in
                     ZStack(alignment:.topTrailing) {
                         SwayTheme.stageGradient
-                        SWAYCoachAvatarView(moveID:move.id,musicalTime:elapsed(at:timeline.date),bpm:bpm,paused:!previewPlaying || reduceMotion,mirrored:false).padding(.horizontal,42).padding(.vertical,12)
+                        SWAYCharacterStage(character: .lucia, source: .move(id: move.id, musicalTime: elapsed(at: timeline.date), bpm: bpm, paused: !previewPlaying || reduceMotion), profile: nil, mirrored: false).padding(.horizontal,42).padding(.vertical,12)
                         Text("COUNT \(displayCount(at:timeline.date))")
                             .font(.caption.bold()).foregroundStyle(SwayTheme.cyan)
                             .padding(.horizontal,10).padding(.vertical,6)
@@ -118,7 +118,7 @@ struct SwayMoveDetailView:View {
                                     VStack(spacing:4) {
                                         ZStack {
                                             SwayTheme.stageGradient
-                                            SWAYCoachAvatarView(moveID:move.id,musicalTime:Double(n-1)*secondsPerBeat,bpm:bpm,paused:true,mirrored:false).padding(4)
+                                            SWAYCharacterStage(character: .lucia, source: .move(id: move.id, musicalTime: Double(n - 1) * secondsPerBeat, bpm: bpm, paused: true), profile: nil, mirrored: false).padding(4)
                                         }.frame(width:66,height:92).clipShape(RoundedRectangle(cornerRadius:12))
                                             .overlay(RoundedRectangle(cornerRadius:12).stroke(n == selectedCount ? SwayTheme.accent : Color.white.opacity(0.12),lineWidth:n == selectedCount ? 3:1))
                                         Text("\(n)").font(.caption.bold()).foregroundStyle(n == selectedCount ? SwayTheme.cyan : .white)

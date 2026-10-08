@@ -24,7 +24,7 @@ struct NativeLabView: View {
             Section("Health") { LabeledContent("HealthKit", value:health); Button("Connect Health") { Task { do { try await HealthService().request(); health="Authorized / permission-scoped" } catch { health="Unavailable or denied" } } } }
             Section("Native capability policy") { Text("Camera and Health are optional. Core workouts remain usable without either permission. Pose analysis is performed on-device by Vision in this build.") }
         }.navigationTitle("Native Lab")
-        .tint(SwayTheme.cyan)
+        .tint(SwayTheme.accent)
         .preferredColorScheme(.dark).onAppear{motion.start()}.onDisappear{motion.stop();pose.stop()}
     }
 }

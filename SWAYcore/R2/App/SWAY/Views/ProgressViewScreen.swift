@@ -17,8 +17,8 @@ struct ProgressViewScreen: View {
     }
     private var overview:some View {
         VStack(alignment:.leading,spacing:18) {
-            HStack(spacing:8) { stat("flame.fill","\(store.sessionsCompleted)","Workouts",.orange); stat("bolt.fill","\(dayStreak)","Day Streak",.yellow); stat("clock.fill","\(store.totalMinutes)","Minutes",SwayTheme.accent) }
-            SwayCard { VStack(alignment:.leading,spacing:14) { Text("Weekly Activity").font(.headline); HStack(alignment:.bottom,spacing:12) { ForEach(0..<7,id:\.self) { n in VStack { RoundedRectangle(cornerRadius:4).fill(n==6 ? SwayTheme.accent:Color.white.opacity(0.15)).frame(height:weeklyBarHeight(n)); Text(weeklyDayLabels[n]).font(.caption2).foregroundStyle(.secondary) }.frame(maxWidth:.infinity) } }.frame(height:110,alignment:.bottom) } }
+            HStack(spacing: 8) { SwayStatTile(value: "\(store.sessionsCompleted)", label: "Workouts", symbol: "flame.fill"); SwayStatTile(value: "\(dayStreak)", label: "Day Streak", symbol: "bolt.fill"); SwayStatTile(value: "\(store.totalMinutes)", label: "Minutes", symbol: "clock.fill") }
+            SwayCard { VStack(alignment:.leading,spacing:14) { Text("Weekly Activity").font(.headline); HStack(alignment:.bottom,spacing:12) { ForEach(0..<7,id:\.self) { n in VStack { RoundedRectangle(cornerRadius:4).fill(n==6 ? SwayTheme.accent:Color.white.opacity(0.15)).frame(height:weeklyBarHeight(n)); Text(weeklyDayLabels[n]).font(.caption2).foregroundStyle(.secondary) }.frame(maxWidth:.infinity) } }.frame(height: 110, alignment: .bottom).accessibilityElement(children: .ignore).accessibilityLabel("Weekly activity").accessibilityValue(weeklyActivityDescription) } }
             Text("Recent Workouts").font(.headline)
             activity
         }
@@ -45,5 +45,8 @@ struct ProgressViewScreen: View {
         return max(8,CGFloat(values[index])/CGFloat(peak)*88)
     }
 
+    private var weeklyActivityDescription: String {
+        zip(weeklyDayLabels, weeklyMinutes).map { "\($0) \($1) minutes" }.joined(separator: ", ")
+    }
     private var dayStreak:Int { let c=Calendar.current; let days=Set(store.sessionResults.map{c.startOfDay(for:$0.endedAt)}); guard !days.isEmpty else{return 0}; var cursor=c.startOfDay(for:Date()); if !days.contains(cursor),let y=c.date(byAdding:.day,value:-1,to:cursor),days.contains(y){cursor=y};var streak=0;while days.contains(cursor){streak += 1;guard let p=c.date(byAdding:.day,value:-1,to:cursor) else{break};cursor=p};return streak }
 }

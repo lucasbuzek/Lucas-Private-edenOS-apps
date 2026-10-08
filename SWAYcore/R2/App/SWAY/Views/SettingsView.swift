@@ -119,6 +119,11 @@ struct SettingsView: View {
              .onChange(of:store.showWorkoutCounts){_,_ in store.save()}
              .onChange(of:store.showNextMove){_,_ in store.save()}
              .onChange(of:store.showCoachMessages){_,_ in store.save()}
+            Section("Diagnostics") {
+                NavigationLink { CameraLabView() } label: { Label("Camera & Calibration Lab", systemImage: "camera.metering.center.weighted") }
+                NavigationLink { NativeLabView() } label: { Label("Native Services Lab", systemImage: "wrench.and.screwdriver") }
+                Text("Developer tools are intentionally kept out of everyday navigation.").font(.caption).foregroundStyle(.secondary)
+            }
             Section("Progress") {
                 Button("Reset workout progress",role:.destructive) { confirmReset=true }
                 Text("Resets sessions, dance time, learned moves, awards and session results. Profile and preferences stay intact.")
@@ -134,7 +139,7 @@ struct SettingsView: View {
         .sheet(isPresented:$creatingAvatar) { SwayAvatarCreatorView().environmentObject(store) }
         .navigationTitle("Settings")
         .onAppear { appleMusic.refreshAuthorization() }
-        .tint(SwayTheme.cyan)
+        .tint(SwayTheme.accent)
         .preferredColorScheme(.dark)
         .confirmationDialog("Reset SWAY progress?",isPresented:$confirmReset,titleVisibility:.visible) {
             Button("Reset Progress",role:.destructive) { store.resetProgress(); message="Progress reset" }
@@ -200,150 +205,88 @@ struct SwayConfigurationGuideView: View {
 }
 
 struct SwayAvatarCreatorView: View {
-    @EnvironmentObject var store:SwayStore
+    @EnvironmentObject var store: SwayStore
     @Environment(\.dismiss) private var dismiss
-    @State private var category: Category = .style
-    @State private var previewMove = "step-touch"
-    @State private var previewStart = Date()
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var category: SWAYAvatarCategory = .body
 
-    enum Category:String,CaseIterable,Identifiable {
-        case style="Style", hair="Hair", face="Face", outfit="Outfit", body="Body", shoes="Shoes"
-        var id:String { rawValue }
-        var symbol:String {
-            switch self { case .style:return "sparkles"; case .hair:return "person.crop.circle"; case .face:return "face.smiling"; case .outfit:return "tshirt.fill"; case .body:return "figure.stand"; case .shoes:return "shoe.fill" }
-        }
-    }
-
-    private let bodyNames=["Neutral","Feminine","Masculine"]
-    private let bodyStyles:[SwayBodyStyle]=[.neutral,.female,.male]
-    private let skinNames=["Light","Warm","Medium","Deep","Dark"]
-    private let hairNames=["Short","Long","Braids","Afro","Bun"]
-    private let faceNames=["Soft","Oval","Angular"]
-    private let threeStyleNames=["Bright","Classic","Wide"]
-    private let browNames=["Soft","Arched","Bold"]
-    private let noseNames=["Button","Straight","Broad"]
-    private let mouthNames=["Smile","Soft","Grin"]
-    private let facialHairNames=["None","Stubble","Moustache","Beard"]
-    private let hairColorNames=["Espresso","Brown","Black","Auburn","Copper","Blonde"]
-    private let outfitNames=["Studio","Power","Classic","Bright","Sport"]
-    private let footwearNames=["Trainer","High-top","Dance","Barefoot"]
-    private let accessoryNames=["None","Cap","Headband","Wristbands","Gloves","Glasses"]
-
-    var body:some View {
+    var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(spacing:0) {
-                    ZStack(alignment:.bottomLeading) {
-                        SwayTheme.stageGradient
-                        TimelineView(.animation(minimumInterval:1.0/30.0,paused:reduceMotion)) { timeline in
-                            SwayAvatarPreview(character:store.character,moveID:previewMove,musicalTime:reduceMotion ? 0 : timeline.date.timeIntervalSince(previewStart),paused:reduceMotion)
-                        }.frame(maxWidth:.infinity,maxHeight:.infinity).padding(.horizontal,12).padding(.vertical,4)
-                        Text("YOUR DANCER").font(.caption.bold()).tracking(1.4).foregroundStyle(.white.opacity(0.76)).padding(16)
-                    }
-                    .frame(maxWidth:.infinity,minHeight:300,idealHeight:360,maxHeight:420)
-                    .clipShape(RoundedRectangle(cornerRadius:28))
-                    .overlay(RoundedRectangle(cornerRadius:28).stroke(Color.white.opacity(0.10)))
-                    .padding(.horizontal,16).padding(.top,8)
-
-                    VStack(spacing:14) {
-                        ScrollView(.horizontal,showsIndicators:false) {
-                            HStack(spacing:8) {
-                                ForEach(Category.allCases) { item in
-                                    Button { withAnimation(.easeInOut(duration:0.16)) { category=item } } label: {
-                                        Label(item.rawValue,systemImage:item.symbol).font(.caption.bold()).padding(.horizontal,12).frame(minHeight:44)
-                                            .background(category == item ? SwayTheme.accent:SwayTheme.surfaceStrong,in:Capsule())
-                                    }.buttonStyle(.plain)
-                                }
-                            }
-                        }
-                        VStack(alignment:.leading,spacing:8) {
-                            Text("PREVIEW MOVEMENT").font(.caption.bold()).foregroundStyle(.secondary)
-                            HStack(spacing:8) {
-                                ForEach([("Idle","idle"),("March","march"),("Groove","step-touch")],id:\.1) { item in
-                                    Button(item.0) { previewMove=item.1; previewStart=Date() }.buttonStyle(.bordered)
-                                        .tint(previewMove == item.1 ? SwayTheme.accent:SwayTheme.cyan)
-                                }
-                            }
-                        }
-                        optionControls
-                        Text("Every choice is a separated component in every dance pose. Changes save to your profile.")
-                            .font(.caption2).foregroundStyle(.secondary)
-                    }.padding(16).background(SwayTheme.surface.opacity(0.96))
+            GeometryReader { geometry in
+                let wide = geometry.size.width >= 700
+                Group {
+                    if wide { HStack(spacing: 20) { preview; controls } }
+                    else { VStack(spacing: 14) { preview; controls } }
                 }
+                .padding(SwayTheme.pageInset)
             }
-            .background(SwayTheme.background.ignoresSafeArea())
+            .background(SwayScreenBackground())
             .navigationTitle("Your Dancer").navigationBarTitleDisplayMode(.inline)
-            .toolbar { ToolbarItem(placement:.confirmationAction){Button("Done"){store.save();dismiss()}} }
+            .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { store.save(); dismiss() } } }
         }.preferredColorScheme(.dark)
     }
 
-    @ViewBuilder private var optionControls: some View {
-        VStack(alignment:.leading,spacing:10) {
-            switch category {
-            case .style:
-                labeled("ACCESSORY") { choiceRow(accessoryNames,selection:store.character.accessoryStyle){store.character.accessoryStyle=$0} }
-                labeled("ACCENT") { choiceRow(outfitNames,selection:store.character.appearancePreset){store.character.appearancePreset=$0} }
-            case .hair:
-                labeled("HAIRSTYLE") { choiceRow(hairNames,selection:store.character.hairStyle){store.character.hairStyle=$0} }
-                labeled("HAIR COLOUR") { choiceRow(hairColorNames,selection:store.character.hairColor){store.character.hairColor=$0} }
-                labeled("FACIAL HAIR") { choiceRow(facialHairNames,selection:store.character.facialHairStyle){store.character.facialHairStyle=$0} }
-                scaleSlider("Hair size",value:$store.character.hairScale,range:0.9...1.12)
-            case .face:
-                labeled("FACE SHAPE") { choiceRow(faceNames,selection:store.character.faceShape){store.character.faceShape=$0} }
-                labeled("EYES") { choiceRow(threeStyleNames,selection:store.character.eyeStyle){store.character.eyeStyle=$0} }
-                labeled("BROWS") { choiceRow(browNames,selection:store.character.browStyle){store.character.browStyle=$0} }
-                labeled("NOSE") { choiceRow(noseNames,selection:store.character.noseStyle){store.character.noseStyle=$0} }
-                labeled("MOUTH") { choiceRow(mouthNames,selection:store.character.mouthStyle){store.character.mouthStyle=$0} }
-                scaleSlider("Head size",value:$store.character.headScale,range:0.92...1.1)
-            case .outfit:
-                choiceRow(outfitNames,selection:store.character.outfitStyle){store.character.outfitStyle=$0}
-            case .body:
-                labeled("BODY TYPE") { choiceRow(bodyNames,selection:bodyStyles.firstIndex(of:store.character.bodyStyle) ?? 0){ store.character.bodyStyle=bodyStyles[$0] } }
-                labeled("SKIN TONE") { choiceRow(skinNames,selection:store.character.skinTone){store.character.skinTone=$0} }
-                scaleSlider("Body size",value:$store.character.bodyScale,range:0.92...1.08)
-                scaleSlider("Limb proportion",value:$store.character.limbScale,range:0.94...1.08)
-            case .shoes:
-                choiceRow(footwearNames,selection:store.character.footwearStyle){store.character.footwearStyle=$0}
-            }
-        }.frame(minHeight:54)
+    private var preview: some View {
+        ZStack(alignment: .bottomLeading) {
+            SwayTheme.stageGradient
+            SWAYCharacterStage(character: .yourDancer, source: .idle, profile: store.character, mirrored: false)
+                .padding(.horizontal, 12).accessibilityLabel("Your Dancer preview")
+            Text("YOUR DANCER").font(.caption.bold()).tracking(1.4).padding(16)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity).frame(minHeight: 280)
+        .clipShape(RoundedRectangle(cornerRadius: SwayTheme.radius, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: SwayTheme.radius).stroke(SwayTheme.divider))
     }
 
-    private func labeled<Content:View>(_ title:String,@ViewBuilder content:()->Content)->some View {
-        VStack(alignment:.leading,spacing:5) { Text(title).font(.caption2.bold()).foregroundStyle(.secondary); content() }
-    }
-    private func scaleSlider(_ title:String,value:Binding<Double>,range:ClosedRange<Double>)->some View {
-        VStack(alignment:.leading) { Text(title).font(.caption2.bold()).foregroundStyle(.secondary); Slider(value:value,in:range).onChange(of:value.wrappedValue){_,_ in store.save()} }
-    }
-    private func choiceRow(_ labels:[String],selection:Int,onSelect:@escaping(Int)->Void)->some View {
-        ScrollView(.horizontal,showsIndicators:false) {
-            HStack(spacing:10) {
-                ForEach(labels.indices,id:\.self) { i in
-                    Button { onSelect(i); store.save() } label: {
-                        Text(labels[i]).font(.subheadline.bold()).padding(.horizontal,16).frame(minHeight:44)
-                            .background(selection==i ? SwayTheme.accent:SwayTheme.surfaceStrong,in:Capsule())
-                    }.buttonStyle(.plain)
+    private var controls: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
+                    ForEach(SWAYAvatarCategory.allCases, id: \.self) { item in
+                        Button { category = item } label: { SwayPill(text: item.displayName, selected: category == item) }.buttonStyle(.plain)
+                    }
                 }
             }
-        }
+            Text(category.displayName.uppercased()).font(.caption.bold()).foregroundStyle(SwayTheme.textSecondary)
+            let options = SWAYAvatarCatalog.options(category)
+            if options.isEmpty {
+                Text("No delivered options in this category yet.").foregroundStyle(SwayTheme.textSecondary)
+            } else {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 112), spacing: 10)], spacing: 10) {
+                    ForEach(options) { option in
+                        let selected = SWAYAvatarCatalog.selectedIndex(category, in: store.character) == option.index
+                        Button { if option.available { SWAYAvatarCatalog.apply(option, to: &store.character); store.save() } } label: {
+                            VStack(spacing: 8) {
+                                Image(systemName: selected ? "checkmark.circle.fill" : "circle").font(.title2)
+                                Text(option.displayName).font(.subheadline.bold()).multilineTextAlignment(.center)
+                            }.frame(maxWidth: .infinity, minHeight: 88)
+                                .background(selected ? SwayTheme.accent.opacity(0.32) : SwayTheme.surfaceStrong, in: RoundedRectangle(cornerRadius: SwayTheme.compactRadius))
+                        }.buttonStyle(.plain).disabled(!option.available).opacity(option.available ? 1 : 0.4)
+                            .accessibilityValue(selected ? "Selected" : (option.available ? "Available" : "Unavailable"))
+                    }
+                }
+            }
+            Text("Only delivered separated-component options are selectable. Your choice saves to this device.")
+                .font(.caption).foregroundStyle(SwayTheme.textSecondary)
+            Spacer(minLength: 0)
+        }.frame(maxWidth: .infinity, alignment: .top).padding(16)
+            .background(SwayTheme.surface, in: RoundedRectangle(cornerRadius: SwayTheme.radius))
     }
 }
 
-struct SwayAvatarPreview:View {
-    let character:SwayCharacterProfile
-    var moveID:String="step-touch"
-    var musicalTime:TimeInterval=0.22
-    var paused:Bool=true
-    var smile:Double=0; var brow:Double=0
+struct SwayAvatarPreview: View {
+    let character: SwayCharacterProfile
+    var moveID: String = "step-touch"
+    var musicalTime: TimeInterval = 0.22
+    var paused: Bool = true
+    var smile: Double = 0
+    var brow: Double = 0
     var body: some View {
-        SWAYAvatarStageView(role:.user,moveID:moveID,elapsed:musicalTime,bpm:100,paused:paused,mirrored:false,cutout:AnyView(SWAYSkeletal2DAvatarView(role:.user,moveID:moveID,musicalTime:musicalTime,bpm:100,paused:paused,mirrored:false,profile:character)),profile:character)
+        SWAYCharacterStage(character: .yourDancer, source: .move(id: moveID, musicalTime: musicalTime, bpm: 100, paused: paused), profile: character, mirrored: false)
             .accessibilityLabel("Custom SWAY dancer preview")
     }
 }
 
-
-private extension Array { subscript(safe index:Int)->Element? { indices.contains(index) ? self[index]:nil } }
-
+private extension Array { subscript(safe index: Int) -> Element? { indices.contains(index) ? self[index] : nil } }
 
 struct SwayImportPreviewView:View {
     @EnvironmentObject var store:SwayStore

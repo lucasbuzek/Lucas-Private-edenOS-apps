@@ -19,7 +19,7 @@ struct CreateMoveView: View {
                 if mode == .move {
                     ZStack {
                         SwayTheme.stageGradient
-                        SWAYCoachAvatarView(moveID:baseMoveID,musicalTime:0.65,bpm:105,paused:true,mirrored:false)
+                        SWAYCharacterStage(character: .lucia, source: .move(id: baseMoveID, musicalTime: 0.65, bpm: 105, paused: true), profile: nil, mirrored: false)
                             .padding(.vertical,12)
                     }.frame(height:270).clipShape(RoundedRectangle(cornerRadius:26))
                     Text("Preview uses the same articulated movement system as Learn and Workout.").font(.caption).foregroundStyle(.secondary)
@@ -50,7 +50,7 @@ struct CreateMoveView: View {
                         if !selected.isEmpty { Button("Remove last",role:.destructive){_ = selected.popLast()} }
                     }.padding(18).background(SwayTheme.surface,in:RoundedRectangle(cornerRadius:22))
                 }
-                Button { save() } label:{Label("SAVE \(mode.rawValue.uppercased())",systemImage:"checkmark.circle.fill").frame(maxWidth:.infinity,minHeight:54)}.buttonStyle(.borderedProminent).tint(SwayTheme.accent).disabled(name.trimmingCharacters(in:.whitespacesAndNewlines).isEmpty || (mode != .move && selected.isEmpty))
+                Button { save() } label:{Label("SAVE \(mode.rawValue.uppercased())",systemImage:"checkmark.circle.fill").frame(maxWidth:.infinity,minHeight:54)}.buttonStyle(SwayPrimaryButtonStyle()).disabled(name.trimmingCharacters(in:.whitespacesAndNewlines).isEmpty || (mode != .move && selected.isEmpty))
                 if !store.creations.isEmpty {
                     VStack(alignment:.leading,spacing:8){
                         Text("MY COMBINATIONS & ROUTINES").font(.caption.bold()).foregroundStyle(SwayTheme.cyan)
@@ -83,8 +83,8 @@ struct SwayCreationPracticeView: View {
                 VStack(spacing:18) {
                     Text(creation.name).font(.largeTitle.bold())
                     Text("\(creation.kind.rawValue) · \(steps.count) moves").foregroundStyle(.secondary)
-                    SWAYCoachAvatarView(moveID:steps[0].move.id,musicalTime:0.6,bpm:100,paused:true,mirrored:store.mirrored).frame(height:320)
-                    NavigationLink { WorkoutPlayerView(steps:steps,minutes:max(3,Int(ceil(Double(steps.count)*8.0/100.0))),music:music) } label:{ Label("PRACTICE",systemImage:"play.fill").frame(maxWidth:.infinity,minHeight:52) }.buttonStyle(.borderedProminent).tint(SwayTheme.accent)
+                    SWAYCharacterStage(character: .lucia, source: .move(id: steps[0].move.id, musicalTime: 0.6, bpm: 100, paused: true), profile: nil, mirrored: store.mirrored).frame(height:320)
+                    NavigationLink { WorkoutPlayerView(steps:steps,minutes:max(3,Int(ceil(Double(steps.count)*8.0/100.0))),music:music) } label:{ Label("PRACTICE",systemImage:"play.fill").frame(maxWidth:.infinity,minHeight:52) }.buttonStyle(SwayPrimaryButtonStyle())
                     Text("Practice uses the same articulated choreography and workout timeline as the rest of SWAY.").font(.caption).foregroundStyle(.secondary)
                 }.padding(18)
             }

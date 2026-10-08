@@ -20,9 +20,10 @@ struct HomeView: View {
                         Text("DANCE • MOVE • FEEL GOOD").font(.caption2.bold()).tracking(1.2).foregroundStyle(.white.opacity(0.58))
                     }
                     Spacer()
-                    NavigationLink { SettingsView() } label:{ Image(systemName:"person.crop.circle.fill").font(.title).frame(width:44,height:44).foregroundStyle(.white) }
+                    NavigationLink { SettingsView() } label:{ Image(systemName: "gearshape.fill").font(.title3).frame(width: 44, height: 44).foregroundStyle(.white).background(SwayTheme.surfaceStrong, in: Circle()) }.accessibilityLabel("Settings")
                 }
                 workoutHero
+                destinationShortcuts
                 HStack { Text("Your Progress").font(.headline); Spacer(); NavigationLink("Details") { ProgressViewScreen() }.font(.caption.bold()).foregroundStyle(SwayTheme.cyan) }
                 HStack(spacing:9) {
                     metric("flame.fill","\(store.sessionsCompleted)","Workouts",.orange)
@@ -41,7 +42,7 @@ struct HomeView: View {
                     ForEach(Array(featuredMoves.enumerated()),id:\.element.id) { index,move in
                         NavigationLink { SwayMoveDetailView(move:move) } label:{
                             VStack(spacing:4) {
-                                SWAYCoachAvatarView(moveID:move.id,musicalTime:previewTime(for:move.id,index:index),bpm:100,paused:true,mirrored:false)
+                                SWAYCharacterStage(character: .lucia, source: .move(id: move.id, musicalTime: previewTime(for: move.id, index: index), bpm: 100, paused: true), profile: nil, mirrored: false)
                                     .frame(height:96)
                                 Text(move.name).font(.caption2.bold()).lineLimit(1)
                             }.frame(maxWidth:.infinity).padding(6).background(Color.white.opacity(0.06),in:RoundedRectangle(cornerRadius:14))
@@ -60,13 +61,22 @@ struct HomeView: View {
     private var workoutHero: some View {
         ZStack(alignment:.leading) {
             SwayTheme.stageGradient
-            HStack { Spacer(); SWAYAvatarStageView(role:.coach,moveID:"step-touch",elapsed:0.6,bpm:100,paused:true,mirrored:false,cutout:AnyView(SWAYSkeletal2DAvatarView(role:.coach,moveID:"step-touch",musicalTime:0.6,bpm:100,paused:true,mirrored:false))).frame(width:190,height:230).padding(.trailing,8) }
+            HStack { Spacer(); SWAYCharacterStage(character: .lucia, source: .move(id: "step-touch", musicalTime: 0.6, bpm: 100, paused: true), profile: nil, mirrored: false).frame(width: 190, height: 230).padding(.trailing, 8) }
             VStack(alignment:.leading,spacing:6) {
                 Text("LET'S DANCE").font(.system(size:28,weight:.heavy,design:.rounded))
-                Text("Foundation Flow • 15 min").font(.caption.bold()).foregroundStyle(.white.opacity(0.72))
-                NavigationLink { SwayFitnessSetupView() } label:{ Label("START DANCING",systemImage:"play.fill").font(.headline.bold()).frame(minWidth:150,minHeight:48) }.buttonStyle(.borderedProminent).tint(SwayTheme.accent)
+                Text("Move • Feel • Progress").font(.caption.bold()).foregroundStyle(.white.opacity(0.72))
+                NavigationLink { SwayFitnessSetupView() } label:{ Label("Set Up & Start",systemImage:"play.fill").font(.headline.bold()).frame(minWidth:150,minHeight:48) }.buttonStyle(.borderedProminent).tint(SwayTheme.accent)
             }.padding(18)
         }.frame(height:230).clipShape(RoundedRectangle(cornerRadius:25,style:.continuous))
+    }
+
+    private var destinationShortcuts: some View {
+        HStack(spacing: 9) {
+            NavigationLink { MoveLibraryView() } label: { quickLabel("Moves", "figure.dance") }.buttonStyle(.plain)
+            NavigationLink { SwayBeatsHubView() } label: { quickLabel("Beats", "music.note") }.buttonStyle(.plain)
+            NavigationLink { ProgressViewScreen() } label: { quickLabel("Progress", "chart.bar.fill") }.buttonStyle(.plain)
+            NavigationLink { SwayProfileHubView() } label: { quickLabel("Profile", "person.crop.circle") }.buttonStyle(.plain)
+        }.accessibilityElement(children: .contain).accessibilityLabel("SWAY shortcuts")
     }
 
     private var musicChoices: some View {

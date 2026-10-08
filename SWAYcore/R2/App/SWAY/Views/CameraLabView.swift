@@ -237,7 +237,7 @@ struct CameraTrackingSetupView: View {
                 CameraTrackingStage(session:pose.session,pose:pose.bodyPose,showPose:false,previewOpacity:0.16)
                     .ignoresSafeArea().allowsHitTesting(false)
                 LinearGradient(colors:[.black.opacity(0.20),.clear,.black.opacity(0.72)],startPoint:.top,endPoint:.bottom).ignoresSafeArea()
-                SwayGraphicalCoachView(moveID:calibrationMove,count:max(1,step.rawValue),waiting:false)
+                SWAYCharacterStage(character: .lucia, source: .move(id: calibrationMove, musicalTime: Double(max(1, step.rawValue)), bpm: 100, paused: false), profile: nil, mirrored: false)
                     .frame(maxWidth:min(proxy.size.width*0.72,520),maxHeight:proxy.size.height*0.72)
                     .padding(.top,28)
                 SwayUserSilhouetteView(pose:pose.bodyPose,visible:pose.personTrackingState.isTracking)

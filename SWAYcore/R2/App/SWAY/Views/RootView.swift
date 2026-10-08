@@ -6,21 +6,24 @@ struct RootView: View {
     @EnvironmentObject var store:SwayStore
     @State private var booting = true
     @State private var showWelcome = false
+    @State private var selectedTab = 0
 
     var body: some View {
         Group {
             if booting {
                 SwayLaunchView()
             } else {
-                TabView {
-                    NavigationStack { HomeView() }.tabItem { Label("Home", systemImage:"house.fill") }
-                    NavigationStack { MoveLibraryView() }.tabItem { Label("Moves", systemImage:"square.grid.2x2.fill") }
-                    NavigationStack { SwayBeatsHubView() }.tabItem { Label("Beats", systemImage:"waveform") }
-                    NavigationStack { SwayProfileHubView() }.tabItem { Label("Profile", systemImage:"person.crop.circle") }
+                TabView(selection: $selectedTab) {
+                    NavigationStack { HomeView() }.tabItem { Label("Home", systemImage: "house.fill") }.tag(0)
+                    NavigationStack { MoveLibraryView() }.tabItem { Label("Moves", systemImage: "figure.dance") }.tag(1)
+                    NavigationStack { SwayBeatsHubView() }.tabItem { Label("Beats", systemImage: "music.note") }.tag(2)
+                    NavigationStack { SwayProfileHubView() }.tabItem { Label("Profile", systemImage: "person.crop.circle") }.tag(3)
                 }
+                .accessibilityIdentifier("sway.main.tabs")
                 .tint(SwayTheme.accent)
                 .toolbarBackground(SwayTheme.background.opacity(0.96), for: .tabBar)
                 .toolbarBackground(.visible, for: .tabBar)
+                .dynamicTypeSize(.xSmall ... .accessibility3)
                 .fullScreenCover(isPresented:$showWelcome) { SwayWelcomeView() }
             }
         }
@@ -53,11 +56,11 @@ private let swayInstructorLineup: [SwayInstructorPreset] = [
 struct SwayAvatarEnsemble: View {
     var backstage = false
     var body: some View {
-        HStack(alignment:.bottom,spacing:-12) {
-            ForEach(swayInstructorLineup) { instructor in
-                SwayHumanFigureView(moveID:instructor.move,elapsed:instructor.phase,bpm:100,paused:true,mirrored:false,characterMode:!backstage,skinTone:instructor.skin,hairStyle:instructor.hair,outfitStyle:instructor.outfit,appearancePreset:instructor.assetPreset,instructorPreset:instructor.assetPreset)
-                    .frame(width:76,height:154)
-                    .accessibilityLabel("SWAY instructor \(instructor.name)")
+        HStack(alignment: .bottom, spacing: -12) {
+            ForEach(Array(SWAYCharacterID.allCases.prefix(5)), id: \.self) { character in
+                SWAYCharacterStage(character: character, source: .idle, profile: nil, mirrored: false)
+                    .frame(width: 76, height: 154)
+                    .accessibilityLabel("SWAY instructor \(character.displayName)")
             }
         }
     }
@@ -146,77 +149,6 @@ struct SwayWelcomeView:View {
 
 struct CameraSetupView: View {
     var body:some View { CameraTrackingSetupLauncher() }
-}
-
-// MARK: - SWAY Visual Language 0.4
-enum SwayTheme {
-    static let background = Color(red: 0.018, green: 0.020, blue: 0.026)
-    static let surface = Color.white.opacity(0.065)
-    static let surfaceStrong = Color.white.opacity(0.105)
-    static let accent = Color(red: 1.0, green: 0.10, blue: 0.48)
-    static let violet = Color(red: 0.55, green: 0.28, blue: 1.0)
-    static let coral = Color(red: 1.0, green: 0.40, blue: 0.28)
-    static let stageGradient = LinearGradient(colors:[Color(red:0.045,green:0.025,blue:0.085),Color(red:0.13,green:0.025,blue:0.10),Color(red:0.025,green:0.035,blue:0.055)],startPoint:.topLeading,endPoint:.bottomTrailing)
-    static let cyan = Color(red: 0.20, green: 0.88, blue: 1.0)
-    static let lime = Color(red: 0.72, green: 1.0, blue: 0.34)
-    static let textSecondary = Color.white.opacity(0.66)
-    static let radius: CGFloat = 22
-    static func styleAccent(_ style:String)->Color {
-        let key=style.lowercased()
-        if key.contains("house") { return cyan }
-        if key.contains("disco") { return Color(red:1.0,green:0.66,blue:0.18) }
-        if key.contains("hip") { return Color(red:0.25,green:0.72,blue:1.0) }
-        if key.contains("afro") || key.contains("amapiano") { return Color(red:1.0,green:0.48,blue:0.18) }
-        if key.contains("latin") { return Color(red:1.0,green:0.22,blue:0.42) }
-        if key.contains("contemporary") { return Color(red:0.55,green:0.68,blue:1.0) }
-        if key.contains("groove") { return violet }
-        return cyan
-    }
-}
-
-struct SwayPill: View {
-    let text: String
-    let selected: Bool
-
-    var body: some View {
-        Text(text)
-            .font(.subheadline.weight(.semibold))
-            .foregroundStyle(selected ? Color.black : Color.white)
-            .padding(.horizontal, 14)
-            .padding(.vertical, 8)
-            .background(selected ? SwayTheme.cyan : SwayTheme.surfaceStrong, in: Capsule())
-            .overlay(Capsule().stroke(Color.white.opacity(selected ? 0 : 0.10), lineWidth: 1))
-            .contentShape(Capsule())
-            .accessibilityAddTraits(selected ? .isSelected : [])
-    }
-}
-
-struct SwayCard<Content: View>: View {
-    @ViewBuilder var content: Content
-    var body: some View {
-        content
-            .padding(16)
-            .frame(maxWidth:.infinity, alignment:.leading)
-            .background(SwayTheme.surface, in: RoundedRectangle(cornerRadius:SwayTheme.radius, style:.continuous))
-            .overlay(RoundedRectangle(cornerRadius:SwayTheme.radius, style:.continuous)
-                .stroke(Color.white.opacity(0.08), lineWidth:1))
-    }
-}
-
-struct SwayPrimaryButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .font(.headline.weight(.semibold))
-            .foregroundStyle(.black)
-            .frame(maxWidth:.infinity)
-            .padding(.vertical,14)
-            .background(
-                LinearGradient(colors:[SwayTheme.cyan,SwayTheme.lime],
-                               startPoint:.leading,endPoint:.trailing),
-                in: Capsule()
-            )
-            .scaleEffect(configuration.isPressed ? 0.98 : 1)
-    }
 }
 
 struct SwayPinkButtonStyle: ButtonStyle {

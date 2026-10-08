@@ -14,7 +14,7 @@ struct SwayGraphicalCoachView: View {
     let count:Int
     let waiting:Bool
     var body: some View {
-        SWAYAvatarStageView(role:.coach,moveID:moveID,elapsed:waiting ? 0:Double(max(0,count-1))*0.6,bpm:100,paused:true,mirrored:false,cutout:AnyView(SWAYSkeletal2DAvatarView(role:.coach,moveID:moveID,musicalTime:waiting ? 0:Double(max(0,count-1))*0.6,bpm:100,paused:true,mirrored:false)))
+        SWAYCharacterStage(character: .lucia, source: .move(id: moveID, musicalTime: waiting ? 0 : Double(max(0, count - 1)) * 0.6, bpm: 100, paused: true), profile: nil, mirrored: false)
             .accessibilityLabel("Coach demonstrating \(moveID)")
     }
 }
@@ -186,7 +186,7 @@ struct WorkoutPlayerView: View {
     }
 
     private func coachFigure(elapsed: TimeInterval, paused: Bool) -> some View {
-        SWAYCoachAvatarView(moveID:current.move.id,musicalTime:elapsed,bpm:timeline.bpm,paused:paused,mirrored:store.mirrored)
+        SWAYCharacterStage(character: .lucia, source: .move(id: current.move.id, musicalTime: elapsed, bpm: timeline.bpm, paused: paused), profile: nil, mirrored: store.mirrored)
     }
 
     @ViewBuilder private func performanceSurface(size:CGSize)->some View {
@@ -206,7 +206,7 @@ struct WorkoutPlayerView: View {
                             .padding(.vertical,2)
                     }
                     if trackingThisWorkout && store.showYouOverlay {
-                        SWAYTrackedPuppetView(pose:pose.bodyPose,visible:pose.personTrackingState.isTracking,profile:store.character)
+                        SWAYCharacterStage(character: .yourDancer, source: .tracked(pose.bodyPose, visible: pose.personTrackingState.isTracking), profile: store.character, mirrored: false)
                         .padding(.horizontal,stageHorizontal)
                         .padding(.vertical,2)
                         .transition(.opacity)
@@ -225,6 +225,8 @@ struct WorkoutPlayerView: View {
                 }
             }
             .frame(maxWidth:.infinity,maxHeight:.infinity).clipped()
+            .accessibilityElement(children: .contain)
+            .accessibilityLabel(trackingThisWorkout ? "Coach and You dance stage" : "Coach dance stage")
             if started { essentialControls }
         }
         .padding(.horizontal,landscape ? 16:12).padding(.top,landscape ? 6:12).padding(.bottom,landscape ? 6:10)
@@ -303,10 +305,10 @@ struct WorkoutPlayerView: View {
         ZStack {
             Color.black.opacity(0.72).ignoresSafeArea()
             VStack(spacing:18){
-                Text("PAUSED").font(.system(size:34,weight:.bold,design:.rounded)).tracking(2)
+                Text("Workout Paused").font(.system(size: 34, weight: .bold, design: .rounded))
                 Button {togglePause()} label:{VStack(spacing:8){Image(systemName:"play.fill").font(.system(size:40));Text("RESUME").font(.title3.bold())}.foregroundStyle(.white).frame(maxWidth:300,minHeight:112).background(SwayTheme.accent,in:RoundedRectangle(cornerRadius:24))}.buttonStyle(.plain).accessibilityHint("Returns to the workout")
-                Button("Restart Movement"){restartMovement()}.buttonStyle(.bordered).controlSize(.large)
-                Button("Finish…",role:.destructive){showEndConfirmation=true}.buttonStyle(.bordered).controlSize(.large)
+                Button("Restart"){restartMovement()}.buttonStyle(.bordered).controlSize(.large)
+                Button("End Workout", role: .destructive){showEndConfirmation=true}.buttonStyle(.bordered).controlSize(.large)
             }.padding(28)
         }
         .transition(.opacity)

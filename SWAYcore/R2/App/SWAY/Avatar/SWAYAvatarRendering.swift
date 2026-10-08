@@ -322,7 +322,7 @@ struct SWAYCoachAvatarView:View {
     let mirrored:Bool
 
     var body:some View {
-        SWAYCoachPuppetView(moveID:moveID,musicalTime:musicalTime,bpm:bpm)
+        SWAYCharacterStage(character: .lucia, source: .move(id: moveID, musicalTime: musicalTime, bpm: bpm, paused: paused), profile: nil, mirrored: mirrored)
             .scaleEffect(x:mirrored ? -1:1,y:1)
     }
 }
