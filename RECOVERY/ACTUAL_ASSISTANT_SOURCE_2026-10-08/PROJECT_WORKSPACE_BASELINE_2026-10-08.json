@@ -1,0 +1,221 @@
+[
+  {
+    "entry": "/Users/lucas/edenOS/Projects/#App Backups",
+    "real_path": "/Users/lucas/edenOS/AppDev/#App Backups",
+    "symlink": true,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/#app-assistants",
+    "real_path": "/Users/lucas/edenOS/AppDev/#app-assistants",
+    "symlink": true,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/#appDev Bible",
+    "real_path": "/Users/lucas/edenOS/AppDev/#appDev Bible",
+    "symlink": true,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/#handoffs",
+    "real_path": "/Users/lucas/edenOS/AppDev/#handoffs",
+    "symlink": true,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/EDEN Apps",
+    "real_path": "/Users/lucas/edenOS/Projects/EDEN Apps",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/EitriFactory",
+    "real_path": "/Users/lucas/edenOS/Projects/EitriFactory",
+    "symlink": false,
+    "git_root": "/Users/lucas/edenOS/Projects/EitriFactory",
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/HEIMDALL Assistant IOS",
+    "real_path": "/Users/lucas/edenOS/Projects/HEIMDALL Assistant IOS",
+    "symlink": false,
+    "git_root": "/Users/lucas/edenOS/Projects/HEIMDALL Assistant IOS",
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/HESTIA",
+    "real_path": "/Users/lucas/edenOS/Projects/HESTIA",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/HumanSocietiesResearch",
+    "real_path": "/Users/lucas/edenOS/Projects/HumanSocietiesResearch",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/Lucas AI Journey TOME",
+    "real_path": "/Users/lucas/edenOS/Projects/Lucas AI Journey TOME",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/Modern Generals Native",
+    "real_path": "/Users/lucas/edenOS/Projects/Modern Generals Native",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/Nandi agriBot platform",
+    "real_path": "/Users/lucas/edenOS/Projects/Nandi agriBot platform",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/SWAYcore",
+    "real_path": "/Users/lucas/edenOS/Projects/SWAYcore",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/edenOS Embedded",
+    "real_path": "/Users/lucas/edenOS/Projects/edenOS Embedded",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/EDEN Apps/APELLES",
+    "real_path": "/Users/lucas/edenOS/Projects/EDEN Apps/APELLES",
+    "symlink": false,
+    "git_root": "/Users/lucas/edenOS/Projects/EDEN Apps/APELLES",
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/EDEN Apps/BIFROST",
+    "real_path": "/Users/lucas/edenOS/Projects/EDEN Apps/BIFROST",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/EDEN Apps/CRESUS",
+    "real_path": "/Users/lucas/edenOS/Projects/EDEN Apps/CRESUS",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/EDEN Apps/CRESUS-PWA",
+    "real_path": "/Users/lucas/edenOS/Projects/EDEN Apps/CRESUS-PWA",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/EDEN Apps/CURATOR",
+    "real_path": "/Users/lucas/edenOS/Projects/EDEN Apps/CURATOR",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/EDEN Apps/CURATOR-next",
+    "real_path": "/Users/lucas/edenOS/Projects/EDEN Apps/CURATOR-next",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/EDEN Apps/JANITOR",
+    "real_path": "/Users/lucas/edenOS/Projects/EDEN Apps/JANITOR",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/EDEN Apps/JANITOR-i18n",
+    "real_path": "/Users/lucas/edenOS/Projects/EDEN Apps/JANITOR-i18n",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/EDEN Apps/KUROSAWA",
+    "real_path": "/Users/lucas/edenOS/Projects/EDEN Apps/KUROSAWA",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/EDEN Apps/Lucas-Private-edenOS-apps",
+    "real_path": "/Users/lucas/edenOS/Projects/EDEN Apps/Lucas-Private-edenOS-apps",
+    "symlink": false,
+    "git_root": "/Users/lucas/edenOS/Projects/EDEN Apps/Lucas-Private-edenOS-apps",
+    "remotes": [
+      "origin\thttps://github.com/lucasbuzek/Lucas-Private-edenOS-apps.git (fetch)",
+      "origin\thttps://github.com/lucasbuzek/Lucas-Private-edenOS-apps.git (push)"
+    ],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/EDEN Apps/PENELOPE",
+    "real_path": "/Users/lucas/edenOS/Projects/EDEN Apps/PENELOPE",
+    "symlink": false,
+    "git_root": "/Users/lucas/edenOS/Projects/EDEN Apps/PENELOPE",
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/EDEN Apps/PROMETHEUS",
+    "real_path": "/Users/lucas/edenOS/Projects/EDEN Apps/PROMETHEUS",
+    "symlink": false,
+    "git_root": null,
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  },
+  {
+    "entry": "/Users/lucas/edenOS/Projects/EDEN Apps/SKALD",
+    "real_path": "/Users/lucas/edenOS/Projects/EDEN Apps/SKALD",
+    "symlink": false,
+    "git_root": "/Users/lucas/edenOS/Projects/EDEN Apps/SKALD",
+    "remotes": [],
+    "status": "DISCOVERED_NOT_BACKUP_VERIFIED"
+  }
+]
