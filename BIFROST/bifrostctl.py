@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/opt/homebrew/bin/python3
 """BIFROST control CLI.
 
   bifrostctl.py                 remote/keep-awake provider status (original behaviour)
@@ -8,11 +8,20 @@
   bifrostctl.py raven-pair      copy the Raven pairing link (operator key in URL #fragment) to the clipboard
   bifrostctl.py raven-bridge    run the ZERO bridge (add --once for a single cycle)
 """
+import os
+import platform
+import sys
+
+# Never run under Intel/Rosetta: if started by a non-arm64 Python on Apple Silicon, re-exec natively.
+if sys.platform == "darwin" and platform.machine() != "arm64" and os.environ.get("BIFROST_NO_REEXEC") != "1":
+    _py = "/opt/homebrew/bin/python3"
+    if os.path.exists(_py):
+        os.environ["BIFROST_NO_REEXEC"] = "1"
+        os.execv("/usr/bin/arch", ["/usr/bin/arch", "-arm64", _py] + sys.argv)
 import hashlib
 import json
 import secrets
 import subprocess
-import sys
 
 from bifrost.remote_provider import RemoteProvider
 

@@ -1,0 +1,10 @@
+#!/bin/sh
+# Native Apple Silicon launcher for bifrostctl.py. Never uses an Intel/Rosetta Python.
+# BIFROST needs Python 3.10+; the Intel /usr/local (3.9) and /usr/bin (3.9) Pythons are not used.
+HERE="$(cd "$(dirname "$0")" && pwd)"
+PY=/opt/homebrew/bin/python3
+if [ ! -x "$PY" ]; then
+  echo "bifrostctl: native arm64 Python not found at $PY (install with: /opt/homebrew/bin/brew install python)" >&2
+  exit 127
+fi
+exec /usr/bin/arch -arm64 "$PY" "$HERE/bifrostctl.py" "$@"

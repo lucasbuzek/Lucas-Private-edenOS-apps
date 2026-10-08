@@ -39,12 +39,12 @@ Must be rejected: capability `shell.run` (400 unknown capability); `{"capability
 
 ## Level 3 - live end to end (needs Cloudflare login; real Keep Awake for 30 min, then released)
 One-time setup:
-1. `python3 bifrostctl.py raven-provision` (creates node/operator keys in the login Keychain).
-2. Put the two key hashes in Cloudflare Pages secrets: `python3 bifrostctl.py raven-hash node` and `raven-hash operator`, then `npx wrangler pages secret put NODE_KEY_SHA256` / `OPERATOR_KEY_SHA256` (project `lucas-raven`).
+1. `./bifrostctl raven-provision` (creates node/operator keys in the login Keychain).
+2. Put the two key hashes in Cloudflare Pages secrets: `./bifrostctl raven-hash node` and `raven-hash operator`, then `npx wrangler pages secret put NODE_KEY_SHA256` / `OPERATOR_KEY_SHA256` (project `lucas-raven`).
 3. `npx wrangler d1 execute lucas-raven --remote --file=web/lucas-raven/schema.sql`, then `npx wrangler pages deploy web/lucas-raven/public --project-name lucas-raven`. (Check that Pages also picks up `functions/`; deploy from `web/lucas-raven` if the API 404s.)
-4. Bridge, one cycle: `RAVEN_URL=https://lucas-raven.pages.dev python3 bifrostctl.py raven-bridge --once`.
+4. Bridge, one cycle: `RAVEN_URL=https://lucas-raven.pages.dev ./bifrostctl raven-bridge --once`.
 
-Manual check: `python3 bifrostctl.py raven-pair` copies the pairing link; open it on your iPhone; the badge should show the node online; press Keep awake, confirm `pmset -g assertions` lists a `caffeinate`, press Release, confirm it is gone.
+Manual check: `./bifrostctl raven-pair` copies the pairing link; open it on your iPhone; the badge should show the node online; press Keep awake, confirm `pmset -g assertions` lists a `caffeinate`, press Release, confirm it is gone.
 
 Automated check (Chrome required; starts then releases a real Keep Awake):
 ```
@@ -67,11 +67,11 @@ Expired/stuck action sweeps (queue 120 s, claim 600 s), the 5-pending-action lim
 
 ## Shortest live test (once the Mac is idle)
 1. `launchctl list | grep raven` shows the job; `tail -n 5 ~/Library/Logs/BIFROST/raven-bridge.log` shows no new `edge unreachable`.
-2. `python3 bifrostctl.py raven-pair`, open the copied link on your iPhone: the node badge should show online.
+2. `./bifrostctl raven-pair`, open the copied link on your iPhone: the node badge should show online.
 3. Press Keep awake (30 min), check `pmset -g assertions` for a `caffeinate` child of the bridge, press Release, check it is gone.
 4. Optional: the Chrome script in Level 3.
 
 ## Troubleshooting
 - `edge unreachable` repeating while other sites work: check `curl -s https://lucas-raven.pages.dev/api/health`; if that answers, restart the bridge (`launchctl kickstart -k gui/$(id -u)/eden.bifrost.raven-bridge`).
-- 401 from every call: edge secrets `OPERATOR_KEY_SHA256` / `NODE_KEY_SHA256` do not match the Keychain keys (`python3 bifrostctl.py raven-hash node|operator`).
+- 401 from every call: edge secrets `OPERATOR_KEY_SHA256` / `NODE_KEY_SHA256` do not match the Keychain keys (`./bifrostctl raven-hash node|operator`).
 - Action stays `queued`: node offline (no state for 90 s) or bridge not claiming; queued actions expire after 120 s, claimed ones fail after 600 s.
