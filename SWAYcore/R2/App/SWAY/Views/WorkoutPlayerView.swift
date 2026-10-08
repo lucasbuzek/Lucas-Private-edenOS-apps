@@ -97,7 +97,7 @@ struct WorkoutPlayerView: View {
     @State private var adaptationMessage="FOLLOW ALONG"
     @State private var runtimeSteps:[WorkoutStep]=[]
     @State private var activeSeconds:TimeInterval=0
-    @State private var activeClock:Task<Void,Never>?
+    @State private var workoutTimelineStart:TimeInterval=0
     @State private var showCameraSetup=false
     @State private var lastCoachMessage=""
     @State private var showDiagnostics=false
@@ -180,7 +180,7 @@ struct WorkoutPlayerView: View {
         .onChange(of:scenePhase){_,phase in UIApplication.shared.isIdleTimerDisabled=(phase == .active && (sessionBeginning || started || showCameraSetup))}
         .onDisappear{
             UIApplication.shared.isIdleTimerDisabled=false
-            transientTask?.cancel(); activeClock?.cancel(); music.stop(); timeline.stop(); pose.stop(); shazam.stop()
+            transientTask?.cancel(); music.stop(); timeline.stop(); pose.stop(); shazam.stop()
             if recorder.isRecording { Task { await recorder.stop() } }
         }
     }
@@ -368,7 +368,7 @@ struct WorkoutPlayerView: View {
         music.pause(); timeline.stop()
         for n in stride(from:3,through:1,by:-1){countdown=n;try? await Task.sleep(nanoseconds:700_000_000);if Task.isCancelled{return}}
         started=true;health.start();music.play();timeline.start(bpm:music.bpm,beatGrid:music.analyzedBeatGrid,songPosition:music.authoritativePlaybackPosition,timeSource:{music.authoritativePlaybackPosition});adaptationMessage="FOLLOW ALONG"
-        activeClock=Task{@MainActor in while !Task.isCancelled{try? await Task.sleep(nanoseconds:1_000_000_000);if started && !paused{activeSeconds+=1}}}
+        workoutTimelineStart=timeline.elapsed;activeSeconds=0
         if !music.usingLibraryTrack{store.unlock(.firstSwayBeats)};publishSession()
     }
 
@@ -379,8 +379,9 @@ struct WorkoutPlayerView: View {
         let completedPhrases=lastHandledBeat < 0 ? 0:max(0,beat/8-lastHandledBeat/8)
         lastHandledBeat=beat;store.haptic();cues.beat(count:timeline.count,phraseStart:timeline.count==1 && timeline.bar%8==0)
         if completedPhrases>0 {
+            activeSeconds=SwayWorkoutTimeline.activeSeconds(start:workoutTimelineStart,current:timeline.elapsed)
             performedMoves += completedPhrases
-            if activeSeconds >= Double(minutes*60) { finish(outcome:.completed); return }
+            if SwayWorkoutTimeline.isComplete(start:workoutTimelineStart,current:timeline.elapsed,duration:Double(minutes*60),completedPhrase:true) { finish(outcome:.completed); return }
             if !activeSteps.isEmpty { index=(index+completedPhrases)%activeSteps.count }
         }
         if !trackingThisWorkout{adaptationMessage="FOLLOW ALONG"};publishSession()
@@ -411,7 +412,7 @@ struct WorkoutPlayerView: View {
     func adapt(easier:Bool,automatic:Bool){let id=easier ? current.move.easierID:current.move.harderID;guard let id,let replacement=store.moves.first(where:{$0.id==id}) else{return};if runtimeSteps.isEmpty{runtimeSteps=steps};if runtimeSteps.indices.contains(index){runtimeSteps[index].move=replacement};store.learned.insert(replacement.id)}
     func handle(_ command:SwaySessionCommand){switch command{case .start:break;case .pause:if started && !paused{togglePause()};case .resume:if started && paused{togglePause()};case .end:showEndConfirmation=true;case .easier:adapt(easier:true,automatic:false);case .harder:adapt(easier:false,automatic:false);case .setIntensity(let value):store.intensity=min(4,max(1,value));case .setBeatsEnabled:break;case .setBeatsVolume:break};publishSession()}
     func publishSession(){let next=index+1<activeSteps.count ? activeSteps[index+1].move.name:"";session.publish(.init(phase:started ? (paused ? .paused:.dancing):.countdown,moveName:activeSteps.isEmpty ? "":current.move.name,nextMoveName:next,count:timeline.count,bar:timeline.bar,phrase:timeline.phrase,combo:combo,flow:combo>=16,intensity:store.intensity,cameraMessage:trackingThisWorkout ? pose.personTrackingState.rawValue:"Follow-Along Mode",musicTitle:music.trackTitle,bpm:music.bpm))}
-    func finish(outcome:SwayWorkoutOutcome){activeClock?.cancel();music.stop();timeline.stop();pose.stop();shazam.stop();let valid=scoring.recent.filter{$0.state != .unknown};let avg=valid.isEmpty ? 0:valid.map(\.total).reduce(0,+)/Double(valid.count);if outcome == .completed{_=store.complete(minutes:minutes,activeSeconds:activeSeconds,steps:activeSteps,averageScore:avg,maxCombo:combo)};let summary=SwayWorkoutSummary(endedAt:Date(),activeSeconds:activeSeconds,averageScore:avg,validSamples:valid.count,unknownSamples:scoring.recent.count-valid.count);Task{await health.finish(summary:summary)};session.publish(SwaySessionSnapshot(phase:outcome == .completed ? .completed:.endedEarly));workoutOutcome=outcome;finalAverageScore=avg;finalValidSamples=valid.count;showResults=true}
+    func finish(outcome:SwayWorkoutOutcome){activeSeconds=SwayWorkoutTimeline.activeSeconds(start:workoutTimelineStart,current:timeline.elapsed);music.stop();timeline.stop();pose.stop();shazam.stop();let valid=scoring.recent.filter{$0.state != .unknown};let avg=valid.isEmpty ? 0:valid.map(\.total).reduce(0,+)/Double(valid.count);if outcome == .completed{_=store.complete(minutes:minutes,activeSeconds:activeSeconds,steps:activeSteps,averageScore:avg,maxCombo:combo)};let summary=SwayWorkoutSummary(endedAt:Date(),activeSeconds:activeSeconds,averageScore:avg,validSamples:valid.count,unknownSamples:scoring.recent.count-valid.count);Task{await health.finish(summary:summary)};session.publish(SwaySessionSnapshot(phase:outcome == .completed ? .completed:.endedEarly));workoutOutcome=outcome;finalAverageScore=avg;finalValidSamples=valid.count;showResults=true}
     private func restartWorkout(){index=0;performedMoves=0;combo=0;activeSeconds=0;started=false;paused=false;lastHandledBeat = -1;sessionBeginning=false;Task{await beginWorkout()}}
 }
 

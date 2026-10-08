@@ -1,6 +1,16 @@
 import Foundation
 import SwiftUI
 import UIKit
+import SWAYcoreEngine
+
+@MainActor final class SwayRecoveryNotices: ObservableObject {
+    static let shared = SwayRecoveryNotices()
+    @Published var message: String?
+    private init() {}
+    func recovered(_ name: String, backupURL: URL) {
+        message = "SWAY recovered \(name) defaults. Your unreadable file was preserved as \(backupURL.lastPathComponent)."
+    }
+}
 
 @MainActor final class SwayStore: ObservableObject {
     @Published var moves: [DanceMove] = SwayStore.coreMoves
@@ -207,7 +217,12 @@ import UIKit
         try? JSONEncoder.pretty.encode(state).write(to: saveURL)
     }
     private func load() {
-        guard let data = try? Data(contentsOf: saveURL), let state = try? JSONDecoder().decode(State.self, from:data) else { return }
+        let state: State
+        switch SwayCorruptSaveRecovery.load(State.self, from: saveURL) {
+        case .missing: return
+        case .loaded(let loaded): state = loaded
+        case .corrupt(let backup): SwayRecoveryNotices.shared.recovered("profile, character, library and settings", backupURL: backup); return
+        }
         moves += state.custom.filter { c in !moves.contains(where: {$0.id == c.id}) }; learned=state.learned; sessionsCompleted=state.sessions; totalMinutes=state.minutes
         if let savedCharacter=state.character { character=savedCharacter }
         if let awards=state.awards { unlockedAwards=awards }
@@ -305,8 +320,12 @@ final class SwayMusicDataStore: ObservableObject {
     }
 
     func load() {
-        guard let data = try? Data(contentsOf: url),
-              let snapshot = try? JSONDecoder().decode(Snapshot.self, from: data) else { return }
+        let snapshot: Snapshot
+        switch SwayCorruptSaveRecovery.load(Snapshot.self, from: url) {
+        case .missing: return
+        case .loaded(let loaded): snapshot = loaded
+        case .corrupt(let backup): SwayRecoveryNotices.shared.recovered("music library", backupURL: backup); return
+        }
         playlists = snapshot.playlists
         analyses = snapshot.analyses
         mix = snapshot.mix
@@ -386,8 +405,12 @@ final class SwayPackStore:ObservableObject {
         if let data=try? enc.encode(Persisted(installed:installed,state:state)){try? data.write(to:stateURL,options:.atomic)}
     }
     func load(){
-        guard let data=try? Data(contentsOf:stateURL),
-              let x=try? JSONDecoder().decode(Persisted.self,from:data) else{return}
+        let x:Persisted
+        switch SwayCorruptSaveRecovery.load(Persisted.self,from:stateURL) {
+        case .missing:return
+        case .loaded(let loaded):x=loaded
+        case .corrupt(let backup):SwayRecoveryNotices.shared.recovered("content library",backupURL:backup);return
+        }
         installed=x.installed; state=x.state
     }
     private struct Persisted:Codable { var installed:[SwayContentPack]; var state:SwayPackLibraryState }

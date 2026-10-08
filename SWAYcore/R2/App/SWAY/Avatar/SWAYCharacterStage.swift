@@ -45,8 +45,13 @@ struct SWAYCharacterStage: View {
     // rig is not authored yet render the Lucia rig (SWAYPuppetRenderer.hasOwnRig == false).
     @ViewBuilder private var content: some View {
         switch source {
-        case let .move(id, musicalTime, bpm, _):
+        case let .move(id, musicalTime, bpm, paused):
+            // Puppet poses are a pure function of musicalTime. The workout clock freezes
+            // that value while paused; also suppress incidental SwiftUI interpolation.
             SWAYCoachPuppetView(moveID: id, musicalTime: musicalTime, bpm: bpm, character: character.rawValue)
+                .transaction { transaction in
+                    if paused { transaction.animation = nil }
+                }
         case let .tracked(pose, visible):
             SWAYTrackedPuppetView(pose: pose, visible: visible, profile: profile, character: character.rawValue)
         case .idle:

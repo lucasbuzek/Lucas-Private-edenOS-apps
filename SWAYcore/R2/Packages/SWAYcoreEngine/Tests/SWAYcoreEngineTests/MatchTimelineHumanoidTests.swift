@@ -1,6 +1,48 @@
 import XCTest
 @testable import SWAYcoreEngine
 
+final class MusicalClockTests: XCTestCase {
+    func testPauseResumeHasNoWallClockDrift() {
+        var clock = SwayMusicalClock(musicalTime: 4.25, hostTime: 10)
+        XCTAssertEqual(clock.sample(hostTime: 11.5), 5.75, accuracy: 0.000_001)
+        clock.pause(hostTime: 12)
+        let frozenBeat = clock.musicalTime
+        XCTAssertEqual(clock.sample(hostTime: 3_612), frozenBeat, accuracy: 0.000_001)
+        clock.resume(hostTime: 4_000)
+        XCTAssertEqual(clock.sample(hostTime: 4_000.5), frozenBeat + 0.5, accuracy: 0.000_001)
+    }
+}
+
+final class WorkoutTimelineTests: XCTestCase {
+    func testCompletionRequiresTimelineDurationAndPhraseBoundary() {
+        XCTAssertEqual(SwayWorkoutTimeline.activeSeconds(start: 120, current: 179.5), 59.5)
+        XCTAssertFalse(SwayWorkoutTimeline.isComplete(start: 120, current: 181, duration: 60, completedPhrase: false))
+        XCTAssertTrue(SwayWorkoutTimeline.isComplete(start: 120, current: 181, duration: 60, completedPhrase: true))
+    }
+}
+
+final class CorruptSaveRecoveryTests: XCTestCase {
+    private struct Fixture: Codable, Equatable { let name: String; let count: Int }
+
+    func testTruncatedJSONIsBackedUpAndDefaultsCanContinue() throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: directory) }
+        let url = directory.appendingPathComponent("profile.json")
+        let truncated = Data("{\"name\":\"dancer\",\"count\":".utf8)
+        try truncated.write(to: url)
+
+        guard case let .corrupt(backupURL) = SwayCorruptSaveRecovery.load(Fixture.self, from: url) else {
+            return XCTFail("truncated fixture was not classified as corrupt")
+        }
+        XCTAssertEqual(try Data(contentsOf: backupURL), truncated)
+        XCTAssertTrue(backupURL.lastPathComponent.hasPrefix("profile.json.corrupt"))
+        XCTAssertFalse(FileManager.default.fileExists(atPath: url.path))
+        let defaults = Fixture(name: "default", count: 0)
+        XCTAssertEqual(defaults, Fixture(name: "default", count: 0))
+    }
+}
+
 final class MatchTruthTests: XCTestCase {
     let ref: [String: Double] = ["leftElbow": 90, "rightElbow": 90, "leftKnee": 160, "rightKnee": 160]
     func s(_ obs: [String: Double], timing: Double = 0, conf: Double = 0.9, prev: Double? = nil, age: TimeInterval? = nil) -> SwayMatchResult {
