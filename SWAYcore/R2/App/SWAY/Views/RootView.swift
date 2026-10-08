@@ -267,7 +267,7 @@ struct SwayBeatsHubView: View {
                     }
                     DisclosureGroup("Advanced",isExpanded:$advanced){NavigationLink { SwayMusicCoreView() } label:{Label("Music & Analysis Tools",systemImage:"slider.horizontal.3").frame(maxWidth:.infinity,minHeight:44)}.buttonStyle(.bordered).padding(.top,8)}
                 }}
-                Button { music.stop(); music.play(); workout=store.generate(minutes:15,difficulty:store.moveComplexity,lowImpact:store.lowImpact,smallSpace:store.smallSpace);play=true } label:{Label("DANCE WITH THIS BEAT",systemImage:"figure.dance").frame(maxWidth:.infinity,minHeight:52)}.buttonStyle(.borderedProminent).tint(SwayTheme.accent)
+                Button { music.stop(); workout=store.generate(minutes:15,difficulty:store.moveComplexity,lowImpact:store.lowImpact,smallSpace:store.smallSpace);play=true } label:{Label("DANCE WITH THIS BEAT",systemImage:"figure.dance").frame(maxWidth:.infinity,minHeight:52)}.buttonStyle(.borderedProminent).tint(SwayTheme.accent)
             } else {
                 SwayCard { VStack(alignment:.leading,spacing:12){Image(systemName:"music.note.list").font(.largeTitle).foregroundStyle(SwayTheme.accent);Text("Dance to your music").font(.title2.bold());Text("Choose music, analyze its rhythm, then drive the same choreography timeline.").foregroundStyle(.secondary);NavigationLink { SwayMusicCoreView() } label:{Label("CHOOSE MUSIC",systemImage:"music.note").frame(maxWidth:.infinity,minHeight:48)}.buttonStyle(.borderedProminent).tint(SwayTheme.accent)} }
             }

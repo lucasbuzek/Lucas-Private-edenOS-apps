@@ -127,7 +127,7 @@ struct WorkoutPlayerView: View {
     private var moveLocalElapsed:TimeInterval {
         let d=movePhraseDuration
         guard d > 0 else { return 0 }
-        return timeline.elapsed.truncatingRemainder(dividingBy:d)
+        return timeline.movementTime.truncatingRemainder(dividingBy:d)
     }
 
     var body:some View {
@@ -161,6 +161,8 @@ struct WorkoutPlayerView: View {
             session.commandHandler={command in handle(command)}
             publishSession(); await prepareSession()
         }
+        .onChange(of:music.bpm){_,bpm in if started {timeline.updateTempo(bpm)}}
+        .onReceive(music.$analyzedBeatGrid){grid in if started,let grid {timeline.updateBeatGrid(grid)}}
         .onChange(of:timeline.beat){_,beat in handleBeat(beat)}
         .onChange(of:pose.frameSequence){_,_ in ingestPose()}
                 .sheet(isPresented:$showDiagnostics){NavigationStack{workoutDiagnostics}}
@@ -347,6 +349,8 @@ struct WorkoutPlayerView: View {
 
     @MainActor func prepareSession() async {
         guard !sessionBeginning else{return}
+        // Hold any preview before setup or countdown takes ownership of playback.
+        music.pause(); timeline.stop()
         if startWithTracking {
             trackingThisWorkout=true
             showCameraSetup=true
@@ -359,19 +363,23 @@ struct WorkoutPlayerView: View {
     }
     @MainActor func beginWorkout() async {
         guard !sessionBeginning else{return};sessionBeginning=true;showCameraSetup=false
+        music.pause(); timeline.stop()
         for n in stride(from:3,through:1,by:-1){countdown=n;try? await Task.sleep(nanoseconds:700_000_000);if Task.isCancelled{return}}
-        started=true;health.start();music.play();timeline.start(bpm:music.bpm,beatGrid:music.analyzedBeatGrid,songPosition:music.playbackPosition);adaptationMessage="FOLLOW ALONG"
+        started=true;health.start();music.play();timeline.start(bpm:music.bpm,beatGrid:music.analyzedBeatGrid,songPosition:music.authoritativePlaybackPosition,timeSource:{music.authoritativePlaybackPosition});adaptationMessage="FOLLOW ALONG"
         activeClock=Task{@MainActor in while !Task.isCancelled{try? await Task.sleep(nanoseconds:1_000_000_000);if started && !paused{activeSeconds+=1}}}
         if !music.usingLibraryTrack{store.unlock(.firstSwayBeats)};publishSession()
     }
 
     func handleBeat(_ beat:Int){
         guard started,!paused,beat != lastHandledBeat else{return}
+        // Recover elapsed eight-counts even when a delayed UI tick skips the boundary.
+        // The first song observation establishes an anchor; it is not a performed move.
+        let completedPhrases=lastHandledBeat < 0 ? 0:max(0,beat/8-lastHandledBeat/8)
         lastHandledBeat=beat;store.haptic();cues.beat(count:timeline.count,phraseStart:timeline.count==1 && timeline.bar%8==0)
-        if beat>0 && beat%8==0 {
-            performedMoves += 1
+        if completedPhrases>0 {
+            performedMoves += completedPhrases
             if activeSeconds >= Double(minutes*60) { finish(outcome:.completed); return }
-            if !activeSteps.isEmpty { index=(index+1)%activeSteps.count }
+            if !activeSteps.isEmpty { index=(index+completedPhrases)%activeSteps.count }
         }
         if !trackingThisWorkout{adaptationMessage="FOLLOW ALONG"};publishSession()
     }
@@ -388,7 +396,7 @@ struct WorkoutPlayerView: View {
         for(key,name) in canonical{if let p=point(name){points[key]=p}}
         let observed=SwayPoseNormalizer.jointAngles(points);guard observed.count>=2 else{combo=0;adaptationMessage="HOLD THERE";return}
         guard let reference=SwayReferencePoseCatalog.referenceIfAvailable(moveID:current.move.id,musicalTime:moveLocalElapsed,bpm:timeline.bpm) else{return}
-        let referenceTime=max(0,moveLocalElapsed-sampleAge),aligned=SwayReferencePoseCatalog.referenceIfAvailable(moveID:current.move.id,musicalTime:referenceTime,bpm:timeline.bpm) ?? reference
+        let referenceTime=timeline.movementTime(forTransportTime:max(0,timeline.elapsed-sampleAge)).truncatingRemainder(dividingBy:movePhraseDuration),aligned=SwayReferencePoseCatalog.referenceIfAvailable(moveID:current.move.id,musicalTime:referenceTime,bpm:timeline.bpm) ?? reference
         scoring.ingest(reference:aligned,observed:observed,timingError:0,confidence:Double(pose.averageConfidence));combo=scoring.combo
         let decision=SwayPositiveCoachEngine().decision(sample:pose.engagement,match:scoring.latest,activeSeconds:activeSeconds)
         if decision.message != lastCoachMessage && Int(activeSeconds)%8==0{lastCoachMessage=decision.message;announceCoach(decision.message.uppercased())}
@@ -397,7 +405,7 @@ struct WorkoutPlayerView: View {
     func announceCoach(_ message:String){ let profile=SwayCoachProfileID.lucia; let spoken=profile.phrase(message); adaptationMessage=spoken; guard store.showCoachMessages else{return}; cues.coach(spoken) }
     func togglePause(){paused.toggle();if paused{timeline.pause();music.pause();health.pause()}else{music.play();timeline.resume();health.resume()};publishSession()}
     func revealTransientControls(){transientTask?.cancel();withAnimation(.easeOut(duration:0.18)){showTransientControls=true};transientTask=Task{@MainActor in try? await Task.sleep(nanoseconds:3_000_000_000);if !Task.isCancelled{withAnimation(.easeIn(duration:0.25)){showTransientControls=false}}}}
-    func restartMovement(){lastHandledBeat = -1;timeline.stop();timeline.start(bpm:music.bpm,beatGrid:music.analyzedBeatGrid,songPosition:music.playbackPosition);if paused{timeline.pause();music.pause()};adaptationMessage="FROM THE TOP"}
+    func restartMovement(){let anchor=timeline.currentMovePhraseStartTransportTime;lastHandledBeat = -1;music.seek(to:anchor);timeline.stop();timeline.start(bpm:music.bpm,beatGrid:music.analyzedBeatGrid,songPosition:music.authoritativePlaybackPosition,timeSource:{music.authoritativePlaybackPosition});if paused{timeline.pause();music.pause()};adaptationMessage="FROM THE TOP"}
     func adapt(easier:Bool,automatic:Bool){let id=easier ? current.move.easierID:current.move.harderID;guard let id,let replacement=store.moves.first(where:{$0.id==id}) else{return};if runtimeSteps.isEmpty{runtimeSteps=steps};if runtimeSteps.indices.contains(index){runtimeSteps[index].move=replacement};store.learned.insert(replacement.id)}
     func handle(_ command:SwaySessionCommand){switch command{case .start:break;case .pause:if started && !paused{togglePause()};case .resume:if started && paused{togglePause()};case .end:showEndConfirmation=true;case .easier:adapt(easier:true,automatic:false);case .harder:adapt(easier:false,automatic:false);case .setIntensity(let value):store.intensity=min(4,max(1,value));case .setBeatsEnabled:break;case .setBeatsVolume:break};publishSession()}
     func publishSession(){let next=index+1<activeSteps.count ? activeSteps[index+1].move.name:"";session.publish(.init(phase:started ? (paused ? .paused:.dancing):.countdown,moveName:activeSteps.isEmpty ? "":current.move.name,nextMoveName:next,count:timeline.count,bar:timeline.bar,phrase:timeline.phrase,combo:combo,flow:combo>=16,intensity:store.intensity,cameraMessage:trackingThisWorkout ? pose.personTrackingState.rawValue:"Follow-Along Mode",musicTitle:music.trackTitle,bpm:music.bpm))}

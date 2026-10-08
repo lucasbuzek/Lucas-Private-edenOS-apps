@@ -106,15 +106,17 @@ final class SwayTimelineEngine: ObservableObject {
     private var songOffset: TimeInterval = 0
     private var startedAt: ContinuousClock.Instant?
     private var pausedAtElapsed: TimeInterval = 0
+    private var authoritativeTimeSource: (() -> TimeInterval)?
     var onBeat: (() -> Void)?
 
-    func start(bpm: Double, beatGrid: SwayBeatGrid? = nil, songPosition: TimeInterval = 0) {
+    func start(bpm: Double, beatGrid: SwayBeatGrid? = nil, songPosition: TimeInterval = 0, timeSource: (() -> TimeInterval)? = nil) {
         stop(reset: true)
         self.bpm = max(20, bpm)
         accumulated = max(0, songPosition)
         pausedAtElapsed = accumulated
         songOffset = accumulated
         activeGrid = beatGrid
+        authoritativeTimeSource=timeSource
         startContinuousClock(from: accumulated)
     }
 
@@ -142,6 +144,15 @@ final class SwayTimelineEngine: ObservableObject {
         startContinuousClock(from: corrected)
     }
 
+    /// Count inspection and Learn tempo changes rebase the existing musical clock.
+    /// A paused seek publishes immediately and remains paused at the exact phase.
+    func seek(to seconds: TimeInterval) {
+        let target=max(0,seconds)
+        accumulated=target; pausedAtElapsed=target
+        elapsed=target; publishMusicalPosition(target)
+        if running { startContinuousClock(from:target) }
+    }
+
     func resume() {
         guard !running else { return }
         startContinuousClock(from: pausedAtElapsed)
@@ -149,6 +160,7 @@ final class SwayTimelineEngine: ObservableObject {
 
     func pause() {
         guard running else { return }
+        if let source=authoritativeTimeSource { let time=source(); if time.isFinite && time>=0 { elapsed=time;publishMusicalPosition(time) } }
         pausedAtElapsed = elapsed
         accumulated = elapsed
         running = false
@@ -157,6 +169,7 @@ final class SwayTimelineEngine: ObservableObject {
     }
 
     func stop(reset: Bool = false) {
+        authoritativeTimeSource=nil
         task?.cancel(); task = nil
         running = false
         startedAt = nil
@@ -175,13 +188,15 @@ final class SwayTimelineEngine: ObservableObject {
         let origin = clock.now
         startedAt = origin
         running = true
+        publishMusicalPosition(authoritativeTimeSource?() ?? accumulated)
         task = Task { @MainActor [weak self] in
             guard let self else { return }
             var previousBeat = self.beat
             while !Task.isCancelled {
                 let duration = origin.duration(to: clock.now)
                 let seconds = Double(duration.components.seconds) + Double(duration.components.attoseconds) / 1.0e18
-                let now = self.accumulated + max(0, seconds)
+                let now = self.authoritativeTimeSource?() ?? (self.accumulated + max(0, seconds))
+                if !now.isFinite || now<0 { try? await Task.sleep(for:.milliseconds(8));continue }
                 self.publishMusicalPosition(now)
                 if self.beat != previousBeat {
                     previousBeat = self.beat
@@ -191,6 +206,23 @@ final class SwayTimelineEngine: ObservableObject {
                 try? await Task.sleep(for: .milliseconds(8))
             }
         }
+    }
+
+    /// Native transport position of the current eight-count's first beat.
+    var currentMovePhraseStartTransportTime:TimeInterval {
+        let firstBeat=max(0,beat/8*8)
+        if let grid=activeGrid,let last=grid.beats.last {
+            if firstBeat<grid.beats.count {return grid.beats[firstBeat]}
+            return last+Double(firstBeat-grid.beats.count+1)*SwayTimelineMath.secondsPerBeat(bpm:grid.bpm)
+        }
+        return Double(firstBeat)*SwayTimelineMath.secondsPerBeat(bpm:bpm)
+    }
+
+    /// Beat phase owns authored movement even when analyzed beat intervals are irregular.
+    var movementTime:TimeInterval { (Double(beat)+beatPhase)*SwayTimelineMath.secondsPerBeat(bpm:bpm) }
+    func movementTime(forTransportTime time:TimeInterval)->TimeInterval {
+        let position=SwayTimelineMath.position(time:time,bpm:bpm,gridBeats:activeGrid?.beats,gridBPM:activeGrid?.bpm)
+        return (Double(position.beat)+position.beatPhase)*SwayTimelineMath.secondsPerBeat(bpm:bpm)
     }
 
     private func publishMusicalPosition(_ time: TimeInterval) {
@@ -785,19 +817,56 @@ final class SwayMusicEngine: ObservableObject {
 
     private let libraryPlayer = MPMusicPlayerController.applicationMusicPlayer
     private var player: AVAudioPlayer?
+    private var audioClockBase:TimeInterval=0
+    private var audioScheduledStart:TimeInterval?
+    private var libraryClockBase:TimeInterval=0
+    private var lastLibraryPosition:TimeInterval=0
+    private var lastLibraryTrackID:UInt64?
+    private var libraryAnalysisGeneration=UUID()
+
+    /// Musical time comes from native transport. Device time counts audio output samples.
+    var authoritativePlaybackPosition:TimeInterval {
+        let position:TimeInterval
+        if usingLibraryTrack {
+            let current=max(0,libraryPlayer.currentPlaybackTime)
+            let identity=libraryPlayer.nowPlayingItem?.persistentID
+            if let previous=lastLibraryTrackID, let identity, identity != previous {
+                libraryClockBase += lastLibraryPosition
+            }
+            lastLibraryTrackID=identity;lastLibraryPosition=current
+            position=libraryClockBase+current
+        } else if isPlaying,let player,let origin=audioScheduledStart {
+            position=audioClockBase+max(0,player.deviceCurrentTime-origin)
+        } else { position=audioClockBase }
+        return position.isFinite ? position : playbackPosition
+    }
+
+    private func resetAudioClock() {
+        audioClockBase=0;audioScheduledStart=nil
+        libraryClockBase=0;lastLibraryPosition=0;lastLibraryTrackID=nil
+        playbackPosition=0
+    }
 
     func play() {
+        guard !isPlaying else{return}
         Self.prepareAudioSessionInBackground()
         if usingLibraryTrack {
-            libraryPlayer.play()
+            libraryPlayer.play();isPlaying=true
         } else {
             if player == nil { player = makeBeatPlayer() }
-            player?.play()
+            guard let player else {lastMusicMessage="Generated Beat unavailable";return}
+            // A rebuilt voice must start at the held phase, including paused tempo changes.
+            player.currentTime=audioClockBase.truncatingRemainder(dividingBy:max(0.001,player.duration))
+            let start=player.deviceCurrentTime+0.02
+            audioScheduledStart=start
+            isPlaying=player.play(atTime:start)
+            if !isPlaying {audioScheduledStart=nil;lastMusicMessage="Generated Beat could not start"}
         }
-        isPlaying = true
     }
 
     func pause() {
+        audioClockBase=authoritativePlaybackPosition
+        playbackPosition=audioClockBase;audioScheduledStart=nil
         if usingLibraryTrack { libraryPlayer.pause() } else { player?.pause() }
         isPlaying = false
     }
@@ -805,7 +874,7 @@ final class SwayMusicEngine: ObservableObject {
     func stop() {
         if usingLibraryTrack { libraryPlayer.stop() }
         player?.stop(); player = nil
-        playbackPosition = 0
+        resetAudioClock()
         isPlaying = false
     }
 
@@ -849,6 +918,9 @@ final class SwayMusicEngine: ObservableObject {
         }
         player?.stop(); player = nil
         libraryPlayer.stop()
+        resetAudioClock()
+        libraryAnalysisGeneration=UUID()
+        let generation=libraryAnalysisGeneration
         libraryPlayer.setQueue(with: collection)
         let count = collection.items.count
         trackTitle = count > 1 ? "\(item.title ?? "My Music") + \(count - 1) more" : (item.title ?? "My Music")
@@ -869,17 +941,23 @@ final class SwayMusicEngine: ObservableObject {
                     grid=SwayAudioAnalyzer.analyze(samples:samples,sampleRate:rate)
                 } catch { grid=nil }
                 await MainActor.run {
-                    self.analyzedBeatGrid=grid
-                    if let grid {
-                        self.bpm=grid.bpm
-                        self.analysisStatus="SWAY analysis · \(Int(grid.bpm.rounded())) BPM · \(Int(grid.confidence*100))%"
-                    } else {
-                        self.analysisStatus=metadataBPM > 0 ? "Using library tempo metadata" : "Audio analysis unavailable for this recording"
-                    }
+                    self.applyLibraryAnalysis(grid,metadataBPM:metadataBPM,generation:generation)
                 }
             }
         } else {
             analysisStatus=metadataBPM > 0 ? "Using library tempo metadata" : "Protected/cloud audio — direct PCM analysis unavailable"
+        }
+    }
+
+    /// Late detached analysis belongs only to the source selection that requested it.
+    func applyLibraryAnalysis(_ grid:SwayBeatGrid?,metadataBPM:Int,generation:UUID) {
+        guard usingLibraryTrack,generation == libraryAnalysisGeneration else{return}
+        analyzedBeatGrid=grid
+        if let grid {
+            bpm=grid.bpm
+            analysisStatus="SWAY analysis · \(Int(grid.bpm.rounded())) BPM · \(Int(grid.confidence*100))%"
+        } else {
+            analysisStatus=metadataBPM > 0 ? "Using library tempo metadata" : "Audio analysis unavailable for this recording"
         }
     }
 
@@ -921,8 +999,16 @@ final class SwayMusicEngine: ObservableObject {
 
     func setOfflineTempo(_ newBPM:Double) {
         guard !usingLibraryTrack else { return }
+        let wasPlaying=isPlaying
+        let beats=authoritativePlaybackPosition*max(20,bpm)/60
         bpm=max(20,min(180,newBPM))
-        player?.stop(); player=nil
+        player?.stop(); player=nil;isPlaying=false;audioScheduledStart=nil
+        audioClockBase=beats*60/bpm;playbackPosition=audioClockBase
+        if wasPlaying {
+            player=makeBeatPlayer()
+            if let player {player.currentTime=audioClockBase.truncatingRemainder(dividingBy:max(0.001,player.duration))}
+            play()
+        }
         lastMusicMessage="\(beatStyle.rawValue) · \(Int(bpm)) BPM"
     }
 
@@ -932,16 +1018,18 @@ final class SwayMusicEngine: ObservableObject {
     func refreshOfflineBeatIfPlaying() {
         guard !usingLibraryTrack else { return }
         let wasPlaying = isPlaying
-        player?.stop()
-        player = nil
+        audioClockBase=authoritativePlaybackPosition;playbackPosition=audioClockBase
+        player?.stop();player=nil;isPlaying=false;audioScheduledStart=nil
         if wasPlaying {
-            player = makeBeatPlayer()
-            player?.play()
-            isPlaying = true
+            player=makeBeatPlayer()
+            if let player {player.currentTime=audioClockBase.truncatingRemainder(dividingBy:max(0.001,player.duration))}
+            play()
         }
     }
 
     func useOfflineBeat(style: BeatStyle = .basic) {
+        libraryAnalysisGeneration=UUID()
+        resetAudioClock()
         libraryPlayer.stop()
         player?.stop(); player = nil
         usingLibraryTrack = false
@@ -956,12 +1044,19 @@ final class SwayMusicEngine: ObservableObject {
     }
 
     func seek(to seconds: TimeInterval) {
+        guard seconds.isFinite else{return}
         if usingLibraryTrack {
             libraryPlayer.currentPlaybackTime = max(0, seconds)
-            playbackPosition = libraryPlayer.currentPlaybackTime
-        } else if let player {
-            player.currentTime = max(0, min(seconds, player.duration))
-            playbackPosition = player.currentTime
+            libraryClockBase=0;lastLibraryPosition=max(0,libraryPlayer.currentPlaybackTime)
+            playbackPosition=lastLibraryPosition
+        } else {
+            let wasPlaying=isPlaying
+            player?.pause();isPlaying=false;audioScheduledStart=nil
+            audioClockBase=max(0,seconds);playbackPosition=audioClockBase
+            if let player {
+                player.currentTime=audioClockBase.truncatingRemainder(dividingBy:max(0.001,player.duration))
+            }
+            if wasPlaying {play()}
         }
     }
 
@@ -1278,7 +1373,16 @@ final class SwayLocalAudioPlayer:ObservableObject {
     @Published var title=""
     @Published var isPlaying=false
     @Published var duration:TimeInterval=0
-    @Published var currentTime:TimeInterval=0
+    private var heldTime:TimeInterval=0
+    /// Native player timeline excludes paused intervals; unavailable samples hold position.
+    var currentTime:TimeInterval {
+        guard isPlaying,let render=node.lastRenderTime,
+              let time=node.playerTime(forNodeTime:render),time.sampleRate>0 else{return heldTime}
+        let position=Double(time.sampleTime)/time.sampleRate
+        guard position.isFinite else{return heldTime}
+        heldTime=min(duration,max(0,position))
+        return heldTime
+    }
     private let engine=AVAudioEngine()
     private let node=AVAudioPlayerNode()
     private var file:AVAudioFile?
@@ -1303,9 +1407,9 @@ final class SwayLocalAudioPlayer:ObservableObject {
         if !engine.isRunning { try engine.start() }
         node.play(); isPlaying=true
     }
-    func pause(){ node.pause(); isPlaying=false }
+    func pause(){ heldTime=currentTime; node.pause(); isPlaying=false }
     func stop(){
-        node.stop(); engine.stop(); isPlaying=false
+        node.stop(); engine.stop(); isPlaying=false;heldTime=0
         if let u=securityURL { u.stopAccessingSecurityScopedResource() }; securityURL=nil
         loadedURL=nil
     }

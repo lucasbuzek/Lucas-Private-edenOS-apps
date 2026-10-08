@@ -86,7 +86,7 @@ struct SwayMoveDetailView:View {
                             Button { select(selectedCount-1) } label:{ Image(systemName:"chevron.left").font(.title2.bold()).frame(width:52,height:52).background(.ultraThinMaterial,in:Circle()) }.disabled(selectedCount<=1)
                             Spacer()
                             Button { select(selectedCount+1) } label:{ Image(systemName:"chevron.right").font(.title2.bold()).frame(width:52,height:52).background(.ultraThinMaterial,in:Circle()) }.disabled(selectedCount>=countTotal)
-                        }.padding(16)
+                        }.padding(16).frame(maxHeight:.infinity,alignment:.center)
                     }.frame(height:390).clipShape(RoundedRectangle(cornerRadius:28))
                 }
                 HStack { Text("COUNT \(selectedCount) OF \(countTotal)").font(.caption.bold()).foregroundStyle(SwayTheme.cyan); Spacer(); Button { previewPlaying.toggle(); if previewPlaying { previewStart=Date().addingTimeInterval(-Double(selectedCount-1)*secondsPerBeat) } } label:{ Label(previewPlaying ? "Pause preview":"Play preview",systemImage:previewPlaying ? "pause.fill":"play.fill").frame(minHeight:44) }.buttonStyle(.bordered).disabled(reduceMotion) }
