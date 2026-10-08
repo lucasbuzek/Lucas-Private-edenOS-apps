@@ -33,3 +33,12 @@ Revocation terminates affected sessions/grants; unrelated users and devices rema
 9. Integrate supported multi-account provider adapters and recover commercial entitlement contracts.
 
 Evidence ladder: source changed -> unit tested -> edge deployed -> authenticated E2E -> physical verified. Do not promote across missing gates.
+
+## Gate evidence update — 2026-10-08 edge candidate
+- Gate 1: UNKNOWN for current Cloudflare state; no remote access was attempted.
+- Gate 2: GENERATED instructions only; the narrow `/api/node/*` bypass requires Lucas and is not verified.
+- Gate 3: IMPLEMENTED and TESTED offline (additive/idempotent SQL); remote D1 is UNKNOWN.
+- Gate 4: IMPLEMENTED and TESTED offline for cryptographic JWT rejection cases and legacy node isolation. Full authorization integration remains IMPLEMENTED, with physical/remote verification UNKNOWN.
+- Gate 5: IMPLEMENTED; enrollment/revocation and browser sign-in are not remotely or physically verified.
+- Gate 6: partial TESTED offline only. JWT and node identity isolation have automated coverage; full two-user D1 integration is deferred and must not be treated as PASS.
+- Gates 7–9: UNKNOWN / not performed.

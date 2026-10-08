@@ -4,7 +4,7 @@ import time
 import unittest
 from pathlib import Path
 
-from bifrost.raven_bridge import ACTIONS, ActionError, execute
+from bifrost.raven_bridge import ACTIONS, ActionError, execute, load_actions, acquire_lock
 from bifrost.remote_provider import RemoteProvider
 
 
@@ -14,7 +14,8 @@ class BridgeAllowlistTests(unittest.TestCase):
         self.ctx = {"provider": self.p, "force_slow": False}
 
     def test_only_allowlisted_actions(self):
-        self.assertEqual(set(ACTIONS), {"power.keepawake.start", "power.keepawake.stop", "bifrost.state.refresh"})
+        self.assertEqual(set(ACTIONS), {"power.keepawake.start", "power.keepawake.stop", "bifrost.state.refresh",
+                                        "lists.refresh", "codex.cloud.status", "codex.cloud.submit"})
         for bad in ("shell.exec", "remote.provider.start", "", "power.keepawake.start;rm"):
             with self.assertRaises(ActionError):
                 execute(self.ctx, bad, {})
@@ -38,6 +39,17 @@ class BridgeAllowlistTests(unittest.TestCase):
     def test_params_must_be_object(self):
         with self.assertRaises(ActionError):
             execute(self.ctx, "power.keepawake.stop", ["x"])
+
+    def test_catalog_missing_fails_closed(self):
+        actions = load_actions(Path(tempfile.mkdtemp()) / "missing.json")
+        self.assertEqual(set(actions), {"power.keepawake.start", "power.keepawake.stop", "bifrost.state.refresh"})
+
+    def test_single_instance_lock(self):
+        path = Path(tempfile.mkdtemp()) / "bridge.lock"
+        first = acquire_lock(path)
+        self.addCleanup(first.close)
+        with self.assertRaisesRegex(RuntimeError, "already running"):
+            acquire_lock(path)
 
 
 class RealProcessTests(unittest.TestCase):

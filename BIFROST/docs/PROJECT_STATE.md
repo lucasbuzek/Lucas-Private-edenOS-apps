@@ -55,3 +55,23 @@ BIFROST may govern lifecycle and availability. Authentication remains owned by t
 - GitHub continuity path exists at `Lucas-Private-edenOS-apps/BIFROST`.
 - Connected Remote Desktop Commander registry knows `Lucas-MacBook.local`, but the device was OFFLINE at the last live check.
 - Therefore target-Mac implementation/physical verification is pending; repository recovery work can continue independently.
+
+## 2026-10-08 — RavenNest multi-user edge candidate
+Branch `bifrost/raven-edge-cloud-20261008` adds the fixed capability catalog, additive multi-user schema, Access JWT verification, per-device credentials/enrollment/revocation, grants/audit routes, filtered Raven state, and the independent `lucas-cloud` cron Worker. Evidence is IMPLEMENTED and TESTED offline only; it is not BUILT/deployed, VERIFIED on Cloudflare/GitHub/Mac/iPhone, or RELEASED. Access policy, remote migration, secrets, deployment, enrollment and legacy-key retirement remain manual.
+
+## RavenNest device node candidate — 2026-10-08
+
+The Mac-side candidate now uses the shared v1 capability catalog, advertises
+only device capabilities with local handlers, publishes bounded metadata-only
+Codex/Claude Code/ChatGPT lists asynchronously, and provides guarded
+WORKinCODEX status/submission actions. Submission is unattended by default only
+after every canon guardrail passes; persisted rate/failure stops require Lucas's
+local acknowledgement. A singleton file lock prevents duplicate bridges, and
+`raven-enroll` supports edge-issued per-device credentials without removing the
+legacy Keychain path.
+
+Evidence level: **TESTED** by offline Python unit tests with filesystem, process,
+HTTP, AppleScript, clock, and Codex interactions mocked. It is not VERIFIED or
+RELEASED. Real macOS Terminal, Accessibility, Keychain, Cloudflare, and Codex
+cloud behavior remains UNKNOWN and requires the manual gates in
+`docs/RAVEN_TESTING.md`.

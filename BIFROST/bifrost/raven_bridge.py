@@ -10,6 +10,7 @@ no generic command or shell action, by design.
 """
 from __future__ import annotations
 
+import fcntl
 import json
 import logging
 import os
@@ -19,11 +20,15 @@ import sys
 import time
 import urllib.error
 import urllib.request
+import re
+import random
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
 
 from .node_state import StateCollector
 from .remote_provider import RemoteProvider
+from .list_collectors import _run
+from .workincodex import Submitter
 
 RAVEN_URL = os.environ.get("RAVEN_URL", "https://lucas-raven.pages.dev").rstrip("/")
 KEYCHAIN_SERVICE_NODE = "eden.bifrost.raven.node"
@@ -32,6 +37,8 @@ POLL_S = float(os.environ.get("RAVEN_POLL_S", "4"))
 STATE_EVERY_S = float(os.environ.get("RAVEN_STATE_EVERY_S", "30"))
 LOG_DIR = Path.home() / "Library/Logs/BIFROST"
 VERSION = "zero-0.1.0"
+CATALOG_PATH = Path(__file__).resolve().parents[1] / "catalog" / "capabilities.v1.json"
+LOCK_PATH = Path.home() / "Library/Application Support/BIFROST/raven-bridge.lock"
 
 log = logging.getLogger("bifrost.raven")
 
@@ -40,26 +47,13 @@ class ActionError(ValueError):
     pass
 
 
-def _minutes(params):
-    raw = params.get("minutes", 60)
-    if isinstance(raw, bool) or not isinstance(raw, (int, float)) or int(raw) != raw:
-        raise ActionError("minutes must be an integer")
-    m = int(raw)
-    if not 1 <= m <= 480:
-        raise ActionError("minutes must be between 1 and 480")
-    return m
-
-
 def _no_params(params):
     if params:
         raise ActionError("this action takes no parameters")
 
 
 def act_keepawake_start(ctx, params):
-    m = _minutes(params)
-    extra = set(params) - {"minutes"}
-    if extra:
-        raise ActionError(f"unexpected parameters: {sorted(extra)}")
+    m = params["minutes"]
     return ctx["provider"].start_keep_awake(seconds=m * 60)
 
 
@@ -74,21 +68,108 @@ def act_state_refresh(ctx, params):
     return {"status": "refreshed"}
 
 
+def act_lists_refresh(ctx, params):
+    _no_params(params)
+    values = ctx["collector"].refresh_lists(force=True)
+    return {"status": "refreshed", "lists": {k: {"status": v["status"], "summary": v["summary"]}
+                                                 for k, v in values.items()}}
+
+
+def act_codex_status(ctx, params):
+    code, out = _run(["codex", "cloud", "status", params["task_id"]], 60)
+    return {"status": "observed" if code == 0 else "unknown", "code": code,
+            "output": out.strip()[:4000]}
+
+
+def act_codex_submit(ctx, params):
+    return ctx["submitter"].submit(params, ctx.get("origin", "raven-action"))
+
+
 # capability id -> handler. Mirrors the edge catalogue; both sides validate.
-ACTIONS = {
+HANDLERS = {
     "power.keepawake.start": act_keepawake_start,
     "power.keepawake.stop": act_keepawake_stop,
     "bifrost.state.refresh": act_state_refresh,
+    "lists.refresh": act_lists_refresh,
+    "codex.cloud.status": act_codex_status,
+    "codex.cloud.submit": act_codex_submit,
+}
+
+FALLBACK_SPECS = {
+    "power.keepawake.start": {"executor": "device", "params": {"minutes": {"type": "int", "min": 1, "max": 480, "default": 60}}},
+    "power.keepawake.stop": {"executor": "device", "params": {}},
+    "bifrost.state.refresh": {"executor": "device", "params": {}},
 }
 
 
+def load_actions(path=CATALOG_PATH):
+    try:
+        raw = json.loads(Path(path).read_text())
+        if raw.get("version") != 1 or not isinstance(raw.get("capabilities"), dict):
+            raise ValueError("unsupported catalog")
+        specs = raw["capabilities"]
+    except Exception as exc:  # noqa: BLE001
+        log.error("capability catalog unavailable/invalid; using original fail-closed set: %s", exc)
+        specs = FALLBACK_SPECS
+    return {name: {"handler": HANDLERS[name], "params": spec.get("params", {})}
+            for name, spec in specs.items() if spec.get("executor") == "device" and name in HANDLERS}
+
+
+ACTIONS = load_actions()
+
+
+def _validate(specs, supplied):
+    unknown = set(supplied) - set(specs)
+    if unknown:
+        raise ActionError(f"unexpected parameters: {sorted(unknown)}")
+    result = {}
+    for name, spec in specs.items():
+        if name not in supplied:
+            if "default" in spec:
+                value = spec["default"]
+            else:
+                raise ActionError(f"missing parameter: {name}")
+        else:
+            value = supplied[name]
+        if spec.get("type") == "int":
+            if isinstance(value, bool) or not isinstance(value, int):
+                raise ActionError(f"{name} must be an integer")
+            if value < spec.get("min", value) or value > spec.get("max", value):
+                raise ActionError(f"{name} is outside its allowed range")
+        elif spec.get("type") == "str":
+            if not isinstance(value, str):
+                raise ActionError(f"{name} must be a string")
+            if len(value) < spec.get("minlen", 0) or len(value) > spec.get("maxlen", len(value)):
+                raise ActionError(f"{name} length is outside its allowed range")
+            if "pattern" in spec and not re.fullmatch(spec["pattern"], value):
+                raise ActionError(f"{name} has invalid format")
+        else:
+            raise ActionError(f"invalid catalog type for {name}")
+        result[name] = value
+    return result
+
+
 def execute(ctx, capability, params):
-    handler = ACTIONS.get(capability)
-    if handler is None:
+    action = ACTIONS.get(capability)
+    if action is None:
         raise ActionError(f"capability not allowed on this node: {capability}")
     if not isinstance(params, dict):
         raise ActionError("params must be an object")
-    return handler(ctx, params)
+    return action["handler"](ctx, _validate(action["params"], params))
+
+
+def acquire_lock(path=LOCK_PATH, force=False):
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    handle = Path(path).open("a+")
+    try:
+        fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        handle.close()
+        if not force:
+            raise RuntimeError("raven-bridge is already running (launchd owns the singleton)") from None
+        raise RuntimeError("raven-bridge lock is held; --force will not terminate or bypass the owner") from None
+    handle.seek(0); handle.truncate(); handle.write(str(os.getpid())); handle.flush()
+    return handle
 
 
 def keychain_secret(service):
@@ -113,7 +194,8 @@ class Edge:
             return json.loads(raw) if raw else {}
 
 
-def run_forever(once=False):
+def run_forever(once=False, force=False):
+    lock_handle = acquire_lock(force=force)  # retained for process lifetime
     LOG_DIR.mkdir(parents=True, exist_ok=True)
     handler = RotatingFileHandler(LOG_DIR / "raven-bridge.log", maxBytes=1_000_000, backupCount=3)
     logging.basicConfig(level=logging.INFO, handlers=[handler, logging.StreamHandler(sys.stdout)],
@@ -121,7 +203,7 @@ def run_forever(once=False):
     edge = Edge(RAVEN_URL, keychain_secret(KEYCHAIN_SERVICE_NODE))
     provider = RemoteProvider()
     collector = StateCollector(provider)
-    ctx = {"provider": provider, "force_slow": True}
+    ctx = {"provider": provider, "collector": collector, "submitter": Submitter(), "force_slow": True}
     meta = {"node_id": NODE_ID, "bridge_version": VERSION, "hostname": socket.gethostname(),
             "actions": sorted(ACTIONS), "pid": os.getpid()}
     log.info("bridge start node=%s edge=%s", NODE_ID, RAVEN_URL)
@@ -137,8 +219,8 @@ def run_forever(once=False):
             action = claim.get("action")
             if action:
                 aid, cap, params = action["id"], action["capability"], action.get("params") or {}
-                log.info("action claimed id=%s cap=%s params=%s origin=%s", aid, cap,
-                         json.dumps(params), action.get("origin"))
+                ctx["origin"] = action.get("origin") or "raven-action"
+                log.info("action claimed id=%s cap=%s origin=%s", aid, cap, ctx["origin"])
                 try:
                     result, ok = execute(ctx, cap, params), True
                 except ActionError as e:
@@ -157,14 +239,14 @@ def run_forever(once=False):
             backoff = POLL_S
         except urllib.error.HTTPError as e:
             log.warning("edge HTTP %s on request: %s", e.code, e.read()[:200])
-            backoff = min(backoff * 2, 120)
+            backoff = min(backoff * 2, 120) * random.uniform(0.85, 1.15)
         except (urllib.error.URLError, TimeoutError, OSError) as e:
             log.warning("edge unreachable: %s", e)
-            backoff = min(backoff * 2, 120)
+            backoff = min(backoff * 2, 120) * random.uniform(0.85, 1.15)
         if once:
             return
         time.sleep(backoff)
 
 
 if __name__ == "__main__":
-    run_forever(once="--once" in sys.argv)
+    run_forever(once="--once" in sys.argv, force="--force" in sys.argv)

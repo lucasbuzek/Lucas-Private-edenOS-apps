@@ -20,16 +20,21 @@
   </div>
 
   <section id="pair" class="panel" hidden>
-    <h2>Pair this device</h2>
+    <h2>Sign in to Raven</h2>
+    <p>Cloudflare Access uses an approved email and a One-Time PIN. If this panel remains visible, sign in through the protected Raven URL.</p>
+    <details><summary>Use a pairing key instead</summary>
+    <h3>Pair this device</h3>
     <p>On the Mac run <code>bifrostctl.py raven-pair</code>, then open or paste the copied link here. The key stays on this device only.</p>
     <form id="pairForm" class="row">
       <input id="pairInput" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Pairing link or operator key" aria-label="Pairing link or operator key">
       <button type="submit">Pair</button>
     </form>
     <p class="err" id="pairErr" hidden></p>
+    </details>
   </section>
 
   <section id="app" hidden>
+    <section class="panel"><label for="deviceSelect">Device</label> <select id="deviceSelect"></select> · <a id="signout" href="/cdn-cgi/access/logout">Sign out</a></section>
     <section class="panel control">
       <div class="panel-head">
         <h2>Keep Mac awake</h2>
@@ -52,6 +57,9 @@
 
     <h3 class="section">Capabilities</h3>
     <section class="grid" id="caps"></section>
+
+    <div class="panel-head"><h3 class="section">Codex, Claude Code and ChatGPT</h3><button id="refreshLists" type="button">Refresh lists</button></div>
+    <section class="grid" id="lists"></section>
 
     <h3 class="section">Activity</h3>
     <section class="panel" id="activity"><p class="muted">No actions yet.</p></section>

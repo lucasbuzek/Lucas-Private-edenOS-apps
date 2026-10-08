@@ -21,3 +21,15 @@ CREATE TABLE IF NOT EXISTS actions (
 );
 
 CREATE INDEX IF NOT EXISTS actions_queue ON actions (node_id, status, created_at);
+
+-- Keep this fresh-install schema in parity with additive migration 0002.
+CREATE TABLE IF NOT EXISTS users (id TEXT PRIMARY KEY, subject TEXT UNIQUE NOT NULL, email TEXT UNIQUE NOT NULL, display_name TEXT, role TEXT NOT NULL CHECK(role IN ('owner','member','viewer')), created_at INTEGER NOT NULL, disabled_at INTEGER);
+CREATE TABLE IF NOT EXISTS devices (id TEXT PRIMARY KEY, name TEXT NOT NULL, kind TEXT NOT NULL CHECK(kind IN ('device','cloud')), credential_sha256 TEXT UNIQUE, created_by TEXT NOT NULL, created_at INTEGER NOT NULL, revoked_at INTEGER);
+CREATE TABLE IF NOT EXISTS device_enrollments (id TEXT PRIMARY KEY, device_id TEXT NOT NULL, token_sha256 TEXT UNIQUE NOT NULL, expires_at INTEGER NOT NULL, used_at INTEGER, created_by TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS grants (id TEXT PRIMARY KEY, user_id TEXT NOT NULL, device_id TEXT NOT NULL, capability TEXT NOT NULL, created_at INTEGER NOT NULL, created_by TEXT NOT NULL, revoked_at INTEGER);
+CREATE UNIQUE INDEX IF NOT EXISTS grants_active_unique ON grants(user_id, device_id, capability) WHERE revoked_at IS NULL;
+CREATE INDEX IF NOT EXISTS devices_credential ON devices(credential_sha256) WHERE revoked_at IS NULL;
+CREATE INDEX IF NOT EXISTS enrollments_token ON device_enrollments(token_sha256);
+CREATE INDEX IF NOT EXISTS grants_user ON grants(user_id, revoked_at);
+CREATE TABLE IF NOT EXISTS audit (id INTEGER PRIMARY KEY AUTOINCREMENT, ts INTEGER NOT NULL, subject TEXT, node_id TEXT, capability TEXT, action_id TEXT, event TEXT NOT NULL, detail TEXT);
+CREATE INDEX IF NOT EXISTS audit_ts ON audit(ts DESC);

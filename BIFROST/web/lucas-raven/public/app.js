@@ -42,10 +42,10 @@
   async function api(path, opts = {}) {
     const res = await fetch("/api/" + path, {
       ...opts, cache: "no-store",
-      headers: { authorization: "Bearer " + key, "content-type": "application/json" },
+      headers: { ...(key ? { authorization: "Bearer " + key } : {}), "content-type": "application/json" },
     });
     const data = await res.json().catch(() => ({}));
-    if (res.status === 401) { unpair("This device's key was rejected. Pair again."); throw new Error("unauthorized"); }
+    if (res.status === 401) { if (key) unpair("This device's key was rejected. Pair again."); throw new Error("unauthorized"); }
     if (!res.ok) throw new Error(data.error || "HTTP " + res.status);
     return data;
   }
@@ -83,7 +83,12 @@
   }
 
   function render(data) {
-    const node = data.nodes.find((n) => n.node_id === NODE) || data.nodes[0];
+    $("pair").hidden = true; $("app").hidden = false; $("signout").hidden = !!data.user?.legacy;
+    const picker = $("deviceSelect");
+    const selected = picker.value;
+    picker.replaceChildren(...data.nodes.map(n => { const o=el("option",null,n.meta.hostname||n.node_id); o.value=n.node_id; return o; }));
+    if (data.nodes.some(n=>n.node_id===selected)) picker.value=selected;
+    const node = data.nodes.find((n) => n.node_id === picker.value) || data.nodes[0];
     if (!node) {
       setBadge("off", "No BIFROST node has reported");
       $("caps").replaceChildren(el("p", "muted", "Waiting for the Mac bridge to publish state."));
@@ -97,6 +102,17 @@
     $("caps").replaceChildren(...keys.map((k) => card(k, caps[k], nowSec)));
     renderKeepAwake(caps["power.keepawake"]);
     renderActivity(data);
+    renderLists(caps, nowSec);
+  }
+
+  function renderLists(caps, nowSec) {
+    const specs = [["codex.tasks","Codex tasks"],["claude_code.sessions","Claude Code sessions"],["chatgpt.chats","ChatGPT chats/projects"]];
+    $("lists").replaceChildren(...specs.map(([id,title]) => {
+      const c=caps[id]||{status:"UNKNOWN",summary:"NOT CONFIGURED",items:[]};
+      const box=el("article","card"); box.append(el("h4",null,title),el("span","chip "+(TONE[c.status]||"s-warn"),c.status||"UNKNOWN"),el("p","sum",`${(c.items||[]).length} items · ${c.summary||"NOT CONFIGURED"}`));
+      (c.items||[]).slice(0,50).forEach(item=>box.append(el("div","meta",Object.values(item).join(" · "))));
+      if(c.checked_at) box.append(el("div","when","checked "+ago((nowSec-c.checked_at)*1000))); return box;
+    }));
   }
 
   function card(id, c, nowSec) {
@@ -155,7 +171,7 @@
     try {
       pendingId = "…"; setControls(true);
       line.textContent = "Requesting " + capability + "…";
-      const r = await api("actions", { method: "POST", body: JSON.stringify({ node_id: NODE, capability, params }) });
+      const r = await api("actions", { method: "POST", body: JSON.stringify({ node_id: $("deviceSelect").value || NODE, capability, params }) });
       pendingId = r.id;
       line.textContent = "Queued " + r.id + (r.node_online ? "; waiting for the Mac…" : "; the Mac is offline.");
       for (let i = 0; i < 40; i++) {
@@ -175,7 +191,6 @@
   }
 
   async function refresh() {
-    if (!key) return;
     try { render(await api("state")); } catch (e) { if (e.message !== "unauthorized") setBadge("stale", "Raven unreachable"); }
   }
   function start() {
@@ -193,6 +208,8 @@
   $("kaStart").addEventListener("click", () => request("power.keepawake.start", { minutes }));
   $("kaStop").addEventListener("click", () => request("power.keepawake.stop", {}));
   $("refresh").addEventListener("click", () => request("bifrost.state.refresh", {}));
+  $("refreshLists").addEventListener("click", () => request("lists.refresh", {}));
+  $("deviceSelect").addEventListener("change", refresh);
   $("unpair").addEventListener("click", () => unpair());
   $("pairForm").addEventListener("submit", (e) => {
     e.preventDefault();
@@ -205,5 +222,5 @@
   const fromHash = extractKey(location.hash);
   if (fromHash) history.replaceState(null, "", location.pathname);
   const saved = fromHash || store.get();
-  if (saved) pair(saved); else showPair();
+  if (saved) pair(saved); else api("state").then(data => { render(data); start(); }).catch(() => showPair("Sign in through Cloudflare Access, or use a pairing key below."));
 })();

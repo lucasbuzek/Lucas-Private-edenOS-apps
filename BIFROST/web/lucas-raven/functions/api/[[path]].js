@@ -1,196 +1,38 @@
-// Lucas Raven edge API — BIFROST ZERO.
-// Holds no provider credentials and can run nothing itself: it relays bounded,
-// allowlisted capability actions to the BIFROST node, which validates again
-// and executes. Two separate keys (stored as SHA-256 secrets):
-//   operator — browser/iPhone: read state, request actions
-//   node     — Mac bridge: publish state, claim actions, report results
-
-const NODE_ONLINE_S = 90;
-const QUEUE_TTL_MS = 120_000;
-const CLAIM_TTL_MS = 600_000;
-const MAX_BODY = 64 * 1024;
-const NODE_RE = /^[a-z0-9][a-z0-9-]{1,40}$/;
-
-// Mirrors bifrost/raven_bridge.py ACTIONS. Both sides validate.
-const CATALOG = {
-  "power.keepawake.start": {
-    label: "Keep Mac awake", owner: "BIFROST (native caffeinate)",
-    params: { minutes: { type: "int", min: 1, max: 480, default: 60 } },
-  },
-  "power.keepawake.stop": { label: "Release Keep Awake", owner: "BIFROST (native caffeinate)", params: {} },
-  "bifrost.state.refresh": { label: "Refresh capability state", owner: "BIFROST", params: {} },
+// RavenNest edge API. Raven is the web interface; machine routes remain Bearer-only.
+const NODE_ONLINE_MS=90_000, QUEUE_TTL_MS=120_000, CLAIM_TTL_MS=600_000, MAX_BODY=65_536;
+const NODE_RE=/^[a-z0-9][a-z0-9-]{1,40}$/, ID_RE=/^[a-zA-Z0-9._@/-]{1,120}$/;
+export const CATALOG={
+ "power.keepawake.start":{label:"Keep Mac awake",executor:"device",sensitive:false,params:{minutes:{type:"int",min:1,max:480,default:60}}},
+ "power.keepawake.stop":{label:"Release Keep Awake",executor:"device",sensitive:false,params:{}},
+ "bifrost.state.refresh":{label:"Refresh Mac capability state",executor:"device",sensitive:false,params:{}},
+ "lists.refresh":{label:"Refresh Codex, Claude Code and ChatGPT lists",executor:"device",sensitive:false,params:{}},
+ "codex.cloud.status":{label:"Codex cloud task status",executor:"device",sensitive:false,params:{task_id:{type:"str",pattern:"^task_e_[a-f0-9]{32}$"}}},
+ "codex.cloud.submit":{label:"Submit a Codex cloud task (WORKinCODEX, unattended)",executor:"device",sensitive:true,params:{handoff_path:{type:"str",maxlen:400},sha256:{type:"str",pattern:"^[a-f0-9]{64}$"},env:{type:"str",pattern:"^[A-Za-z0-9_.-]{1,64}$"},branch:{type:"str",pattern:"^[A-Za-z0-9._/-]{1,120}$"},identity:{type:"int",min:1,max:9,default:1},scope_guard:{type:"str",minlen:8,maxlen:200}}},
+ "cloud.state.refresh":{label:"Refresh cloud node state",executor:"cloud",sensitive:false,params:{}},
+ "github.repos.status":{label:"GitHub repositories status (read-only)",executor:"cloud",sensitive:false,params:{}}
 };
-
-const json = (obj, status = 200) => new Response(JSON.stringify(obj), {
-  status,
-  headers: {
-    "content-type": "application/json; charset=utf-8",
-    "cache-control": "no-store",
-    "x-content-type-options": "nosniff",
-  },
-});
-const fail = (status, error) => json({ error }, status);
-
-async function sha256Hex(s) {
-  const d = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
-  return [...new Uint8Array(d)].map((b) => b.toString(16).padStart(2, "0")).join("");
-}
-
-async function keyMatches(request, expectedHex) {
-  if (!expectedHex || expectedHex.length !== 64) return false;
-  const m = (request.headers.get("authorization") || "").match(/^Bearer ([A-Za-z0-9]{32,128})$/);
-  if (!m) return false;
-  const got = new TextEncoder().encode(await sha256Hex(m[1]));
-  const want = new TextEncoder().encode(expectedHex.toLowerCase());
-  return got.byteLength === want.byteLength && crypto.subtle.timingSafeEqual(got, want);
-}
-
-async function body(request) {
-  const len = Number(request.headers.get("content-length") || 0);
-  if (len > MAX_BODY) throw new Error("body too large");
-  const text = await request.text();
-  if (text.length > MAX_BODY) throw new Error("body too large");
-  const v = text ? JSON.parse(text) : {};
-  if (!v || typeof v !== "object" || Array.isArray(v)) throw new Error("body must be an object");
-  return v;
-}
-
-function validate(capability, params) {
-  const spec = CATALOG[capability];
-  if (!spec) return { error: "unknown capability" };
-  if (params == null) params = {};
-  if (typeof params !== "object" || Array.isArray(params)) return { error: "params must be an object" };
-  const out = {};
-  for (const k of Object.keys(params)) if (!(k in spec.params)) return { error: `unexpected parameter: ${k}` };
-  for (const [k, p] of Object.entries(spec.params)) {
-    const v = k in params ? params[k] : p.default;
-    if (p.type === "int" && (!Number.isInteger(v) || v < p.min || v > p.max))
-      return { error: `${k} must be an integer ${p.min}-${p.max}` };
-    out[k] = v;
-  }
-  return { params: out };
-}
-
-function origin(request) {
-  const ua = (request.headers.get("user-agent") || "").slice(0, 120);
-  const cf = request.cf || {};
-  return JSON.stringify({ ua, country: cf.country || null, colo: cf.colo || null });
-}
-
-function actionRow(r) {
-  return {
-    id: r.id, node_id: r.node_id, capability: r.capability, status: r.status,
-    params: JSON.parse(r.params), origin: r.origin ? JSON.parse(r.origin) : null,
-    created_at: r.created_at, claimed_at: r.claimed_at, completed_at: r.completed_at,
-    result: r.result ? JSON.parse(r.result) : null,
-  };
-}
-
-async function sweep(db, now) {
-  await db.batch([
-    db.prepare("UPDATE actions SET status='expired', completed_at=?1 WHERE status='queued' AND created_at < ?2")
-      .bind(now, now - QUEUE_TTL_MS),
-    db.prepare(`UPDATE actions SET status='failed', completed_at=?1,
-                result='{"error":"node did not report a result in time"}'
-                WHERE status='claimed' AND claimed_at < ?2`).bind(now, now - CLAIM_TTL_MS),
-  ]);
-}
-
-// ------------------------------------------------------------------ node
-
-async function nodeRoutes(path, request, db, now) {
-  if (request.method !== "POST") return fail(405, "method not allowed");
-  const b = await body(request);
-  const nodeId = b.node_id;
-  if (path === "node/state") {
-    if (!NODE_RE.test(nodeId || "")) return fail(400, "invalid node_id");
-    const meta = { bridge_version: String(b.bridge_version || "").slice(0, 40), hostname: String(b.hostname || "").slice(0, 80),
-      actions: Array.isArray(b.actions) ? b.actions.filter((a) => a in CATALOG) : [] };
-    await db.prepare(`INSERT INTO node_state(node_id, meta, state, updated_at) VALUES (?1, ?2, ?3, ?4)
-                      ON CONFLICT(node_id) DO UPDATE SET meta=excluded.meta, state=excluded.state, updated_at=excluded.updated_at`)
-      .bind(nodeId, JSON.stringify(meta), JSON.stringify(b.state || {}), now).run();
-    return json({ ok: true });
-  }
-  if (path === "node/claim") {
-    if (!NODE_RE.test(nodeId || "")) return fail(400, "invalid node_id");
-    await sweep(db, now);
-    const row = await db.prepare(`UPDATE actions SET status='claimed', claimed_at=?1
-        WHERE id = (SELECT id FROM actions WHERE node_id=?2 AND status='queued' ORDER BY created_at LIMIT 1)
-          AND status='queued'
-        RETURNING id, capability, params, origin`).bind(now, nodeId).first();
-    if (!row) return json({ action: null });
-    return json({ action: { id: row.id, capability: row.capability, params: JSON.parse(row.params),
-      origin: row.origin ? JSON.parse(row.origin) : null } });
-  }
-  if (path === "node/result") {
-    if (!NODE_RE.test(nodeId || "")) return fail(400, "invalid node_id");
-    if (typeof b.id !== "string" || !/^act_[a-f0-9]{20}$/.test(b.id)) return fail(400, "invalid id");
-    if (typeof b.ok !== "boolean") return fail(400, "ok must be boolean");
-    const res = JSON.stringify(b.result ?? null).slice(0, 8000);
-    const r = await db.prepare(`UPDATE actions SET status=?1, completed_at=?2, result=?3
-        WHERE id=?4 AND node_id=?5 AND status='claimed'`).bind(b.ok ? "succeeded" : "failed", now, res, b.id, nodeId).run();
-    return r.meta.changes ? json({ ok: true }) : fail(409, "action not in claimed state");
-  }
-  return fail(404, "not found");
-}
-
-// -------------------------------------------------------------- operator
-
-async function operatorRoutes(path, request, db, now) {
-  if (path === "state" && request.method === "GET") {
-    await sweep(db, now);
-    const nodes = (await db.prepare("SELECT * FROM node_state ORDER BY updated_at DESC").all()).results;
-    const actions = (await db.prepare("SELECT * FROM actions ORDER BY created_at DESC LIMIT 15").all()).results;
-    return json({
-      now, catalog: CATALOG,
-      nodes: nodes.map((n) => ({
-        node_id: n.node_id, meta: JSON.parse(n.meta), state: JSON.parse(n.state),
-        updated_at: n.updated_at, age_s: Math.round((now - n.updated_at) / 1000),
-        online: now - n.updated_at < NODE_ONLINE_S * 1000,
-      })),
-      actions: actions.map(actionRow),
-    });
-  }
-  if (path === "actions" && request.method === "POST") {
-    const b = await body(request);
-    const nodeId = b.node_id || "lucas-macbook";
-    if (!NODE_RE.test(nodeId)) return fail(400, "invalid node_id");
-    const v = validate(b.capability, b.params);
-    if (v.error) return fail(400, v.error);
-    const node = await db.prepare("SELECT meta, updated_at FROM node_state WHERE node_id=?1").bind(nodeId).first();
-    if (!node) return fail(404, "node not registered");
-    if (!JSON.parse(node.meta).actions.includes(b.capability)) return fail(409, "node does not advertise this capability");
-    const pending = await db.prepare("SELECT COUNT(*) AS n FROM actions WHERE node_id=?1 AND status IN ('queued','claimed')")
-      .bind(nodeId).first();
-    if (pending.n >= 5) return fail(429, "too many pending actions");
-    const id = "act_" + crypto.randomUUID().replaceAll("-", "").slice(0, 20);
-    await db.prepare(`INSERT INTO actions(id, node_id, capability, params, status, origin, created_at)
-                      VALUES (?1, ?2, ?3, ?4, 'queued', ?5, ?6)`)
-      .bind(id, nodeId, b.capability, JSON.stringify(v.params), origin(request), now).run();
-    return json({ id, status: "queued", node_online: now - node.updated_at < NODE_ONLINE_S * 1000 }, 202);
-  }
-  const m = path.match(/^actions\/(act_[a-f0-9]{20})$/);
-  if (m && request.method === "GET") {
-    const r = await db.prepare("SELECT * FROM actions WHERE id=?1").bind(m[1]).first();
-    return r ? json(actionRow(r)) : fail(404, "not found");
-  }
-  return fail(404, "not found");
-}
-
-export async function onRequest({ request, env, params }) {
-  const path = (params.path || []).join("/");
-  const now = Date.now();
-  try {
-    if (path === "health") return json({ ok: true, service: "lucas-raven", zero: "0.1.0" });
-    if (path.startsWith("node/")) {
-      if (!(await keyMatches(request, env.NODE_KEY_SHA256))) return fail(401, "unauthorized");
-      return await nodeRoutes(path, request, env.DB, now);
-    }
-    if (!(await keyMatches(request, env.OPERATOR_KEY_SHA256))) return fail(401, "unauthorized");
-    return await operatorRoutes(path, request, env.DB, now);
-  } catch (e) {
-    const msg = String(e && e.message || e);
-    if (msg.includes("body") || e instanceof SyntaxError) return fail(400, msg.slice(0, 120));
-    return fail(500, "internal error");
-  }
-}
+const json=(v,s=200)=>new Response(JSON.stringify(v),{status:s,headers:{"content-type":"application/json; charset=utf-8","cache-control":"no-store","x-content-type-options":"nosniff"}});
+const fail=(s,e)=>json({error:e},s);
+const enc=new TextEncoder();
+export async function sha256Hex(s){return [...new Uint8Array(await crypto.subtle.digest("SHA-256",enc.encode(s)))].map(x=>x.toString(16).padStart(2,"0")).join("")}
+function equalHex(a,b){if(!a||!b||a.length!==b.length)return false;let x=0;for(let i=0;i<a.length;i++)x|=a.charCodeAt(i)^b.charCodeAt(i);return x===0}
+function bearer(req){return (req.headers.get("authorization")||"").match(/^Bearer ([A-Za-z0-9_-]{32,128})$/)?.[1]||null}
+async function readBody(req){let n=Number(req.headers.get("content-length")||0);if(n>MAX_BODY)throw Error("body too large");let t=await req.text();if(t.length>MAX_BODY)throw Error("body too large");let v=t?JSON.parse(t):{};if(!v||typeof v!=="object"||Array.isArray(v))throw Error("body must be an object");return v}
+const uid=(p,n=24)=>p+crypto.randomUUID().replaceAll("-","").slice(0,n);
+export function validate(cap,params={}){let s=CATALOG[cap];if(!s)return{error:"unknown capability"};if(!params||typeof params!=="object"||Array.isArray(params))return{error:"params must be an object"};let out={};for(let k of Object.keys(params))if(!(k in s.params))return{error:`unexpected parameter: ${k}`};for(let[k,p]of Object.entries(s.params)){let v=k in params?params[k]:p.default;if(v===undefined)return{error:`missing parameter: ${k}`};if(p.type==="int"&&(!Number.isInteger(v)||v<p.min||v>p.max))return{error:`invalid parameter: ${k}`};if(p.type==="str"&&(typeof v!=="string"||(p.minlen&&v.length<p.minlen)||(p.maxlen&&v.length>p.maxlen)||(p.pattern&&!new RegExp(p.pattern).test(v))))return{error:`invalid parameter: ${k}`};out[k]=v}return{params:out}}
+function b64(s){s=s.replace(/-/g,"+").replace(/_/g,"/");return Uint8Array.from(atob(s),c=>c.charCodeAt(0))}
+let jwksCache=new Map();
+async function jwkFor(env,kid,refresh=false){let domain=env.ACCESS_TEAM_DOMAIN, now=Date.now(), c=jwksCache.get(domain);if(!refresh&&c&&c.until>now&&c.keys[kid])return c.keys[kid];let r=await fetch(`https://${domain}/cdn-cgi/access/certs`);if(!r.ok)throw Error("identity unavailable");let j=await r.json(),keys=Object.fromEntries((j.keys||[]).filter(x=>x.kid).map(x=>[x.kid,x]));jwksCache.set(domain,{until:now+300_000,keys});return keys[kid]}
+export async function verifyAccessJwt(token,env,now=Date.now()){if(!token||!env.ACCESS_TEAM_DOMAIN||!env.ACCESS_AUD)throw Error("unauthorized");let p=token.split(".");if(p.length!==3)throw Error("unauthorized");let h=JSON.parse(new TextDecoder().decode(b64(p[0]))),claims=JSON.parse(new TextDecoder().decode(b64(p[1])));if(h.alg!=="RS256"||!h.kid)throw Error("unauthorized");let jwk=await jwkFor(env,h.kid);if(!jwk)jwk=await jwkFor(env,h.kid,true);if(!jwk)throw Error("unauthorized");let key=await crypto.subtle.importKey("jwk",jwk,{name:"RSASSA-PKCS1-v1_5",hash:"SHA-256"},false,["verify"]);if(!await crypto.subtle.verify("RSASSA-PKCS1-v1_5",key,b64(p[2]),enc.encode(p[0]+"."+p[1])))throw Error("unauthorized");let sec=now/1000,aud=Array.isArray(claims.aud)?claims.aud:[claims.aud];if(claims.iss!==`https://${env.ACCESS_TEAM_DOMAIN}`||!aud.includes(env.ACCESS_AUD)||!claims.sub||!claims.email||claims.exp<sec-30||(claims.nbf&&claims.nbf>sec+30))throw Error("unauthorized");return claims}
+async function legacy(req,env){let key=bearer(req);return !!(key&&env.LEGACY_OPERATOR_ENABLED!=="0"&&equalHex(await sha256Hex(key),(env.OPERATOR_KEY_SHA256||"").toLowerCase()))}
+async function human(req,env,now){if(await legacy(req,env))return{id:null,subject:"legacy-operator",email:null,role:"owner",legacy:true,grants:[]};let claims;try{claims=await verifyAccessJwt(req.headers.get("cf-access-jwt-assertion"),env,now)}catch{return null}let u=await env.DB.prepare("SELECT * FROM users WHERE subject=?1 OR email=?2").bind(claims.sub,claims.email).first();if(!u&&env.BOOTSTRAP_OWNER_EMAIL&&claims.email===env.BOOTSTRAP_OWNER_EMAIL){let any=await env.DB.prepare("SELECT id FROM users WHERE role='owner' LIMIT 1").first();if(!any){let id=uid("usr_");await env.DB.prepare("INSERT OR IGNORE INTO users(id,subject,email,display_name,role,created_at) VALUES(?1,?2,?3,?4,'owner',?5)").bind(id,claims.sub,claims.email,claims.name||claims.email,now).run();u=await env.DB.prepare("SELECT * FROM users WHERE subject=?1").bind(claims.sub).first()}}if(!u||u.disabled_at)return null;u.grants=(await env.DB.prepare("SELECT * FROM grants WHERE user_id=?1 AND revoked_at IS NULL").bind(u.id).all()).results;return u}
+function allowed(u,node,cap,write=false){if(u.role==="viewer"&&write)return false;let s=CATALOG[cap];if(!s)return false;let explicit=u.grants.some(g=>g.device_id===node&&g.capability===cap);if(s.sensitive)return explicit||(u.legacy&&cap==="codex.cloud.submit"&&u.sensitive);return u.role==="owner"||explicit||u.grants.some(g=>g.device_id===node&&g.capability==="*")}
+async function nodeIdentity(req,env){let key=bearer(req);if(!key)return null;let hash=await sha256Hex(key),d=await env.DB.prepare("SELECT * FROM devices WHERE credential_sha256=?1 AND revoked_at IS NULL").bind(hash).first();if(d&&equalHex(hash,d.credential_sha256))return d;if(equalHex(hash,(env.NODE_KEY_SHA256||"").toLowerCase()))return{id:"lucas-macbook",kind:"device",legacy:true};return null}
+async function audit(db,now,u,node,cap,action,event,detail=null){await db.prepare("INSERT INTO audit(ts,subject,node_id,capability,action_id,event,detail) VALUES(?1,?2,?3,?4,?5,?6,?7)").bind(now,u?.subject||null,node||null,cap||null,action||null,event,detail?JSON.stringify(detail).slice(0,1000):null).run()}
+async function sweep(db,now){await db.batch([db.prepare("UPDATE actions SET status='expired',completed_at=?1 WHERE status='queued' AND created_at<?2").bind(now,now-QUEUE_TTL_MS),db.prepare(`UPDATE actions SET status='failed',completed_at=?1,result='{"error":"node did not report a result in time"}' WHERE status='claimed' AND claimed_at<?2`).bind(now,now-CLAIM_TTL_MS)])}
+function action(r){return{id:r.id,node_id:r.node_id,capability:r.capability,status:r.status,params:JSON.parse(r.params),created_at:r.created_at,claimed_at:r.claimed_at,completed_at:r.completed_at,result:r.result?JSON.parse(r.result):null}}
+async function enroll(req,env,now){let b=await readBody(req),hash=await sha256Hex(String(b.enrollment_token||"")),e=await env.DB.prepare("SELECT * FROM device_enrollments WHERE token_sha256=?1 AND device_id=?2 AND used_at IS NULL AND expires_at>=?3").bind(hash,b.node_id,now).first();if(!e){await audit(env.DB,now,null,b.node_id,null,null,"enrollment_rejected");return fail(401,"invalid enrollment")};let credential=crypto.randomUUID().replaceAll("-","")+crypto.randomUUID().replaceAll("-","");let ch=await sha256Hex(credential),r=await env.DB.prepare("UPDATE device_enrollments SET used_at=?1 WHERE id=?2 AND used_at IS NULL").bind(now,e.id).run();if(!r.meta.changes)return fail(401,"invalid enrollment");await env.DB.prepare("UPDATE devices SET credential_sha256=?1 WHERE id=?2 AND revoked_at IS NULL").bind(ch,e.device_id).run();await audit(env.DB,now,null,e.device_id,null,null,"enrolled");return json({node_credential:credential})}
+async function nodeRoutes(path,req,env,now,id){let b=await readBody(req);if(b.node_id!==id.id)return fail(403,"node not enrolled");if(path==="node/state"){let meta={bridge_version:String(b.bridge_version||"").slice(0,40),hostname:String(b.hostname||"").slice(0,80),actions:Array.isArray(b.actions)?b.actions.filter(x=>CATALOG[x]&&CATALOG[x].executor===id.kind):[]};await env.DB.prepare("INSERT INTO node_state(node_id,meta,state,updated_at) VALUES(?1,?2,?3,?4) ON CONFLICT(node_id) DO UPDATE SET meta=excluded.meta,state=excluded.state,updated_at=excluded.updated_at").bind(id.id,JSON.stringify(meta),JSON.stringify(b.state||{}).slice(0,64000),now).run();return json({ok:true})}if(path==="node/claim"){await sweep(env.DB,now);let r=await env.DB.prepare("UPDATE actions SET status='claimed',claimed_at=?1 WHERE id=(SELECT id FROM actions WHERE node_id=?2 AND status='queued' ORDER BY created_at LIMIT 1) AND status='queued' RETURNING id,capability,params").bind(now,id.id).first();return json({action:r?{id:r.id,capability:r.capability,params:JSON.parse(r.params)}:null})}if(path==="node/result"){if(!/^act_[a-f0-9]{20}$/.test(b.id||"")||typeof b.ok!=="boolean")return fail(400,"invalid result");let res=JSON.stringify(b.result??null).slice(0,8000),r=await env.DB.prepare("UPDATE actions SET status=?1,completed_at=?2,result=?3 WHERE id=?4 AND node_id=?5 AND status='claimed'").bind(b.ok?"succeeded":"failed",now,res,b.id,id.id).run();if(!r.meta.changes)return fail(409,"action not in claimed state");let row=await env.DB.prepare("SELECT capability FROM actions WHERE id=?1").bind(b.id).first();if(row&&CATALOG[row.capability]?.sensitive)await audit(env.DB,now,null,id.id,row.capability,b.id,"completed",{ok:b.ok});return json({ok:true})}return fail(404,"not found")}
+async function admin(path,req,env,now,u){if(u.role!=="owner"||u.legacy)return fail(403,"forbidden");let m;if(path==="admin/users"&&req.method==="GET")return json({users:(await env.DB.prepare("SELECT id,email,display_name,role,created_at,disabled_at FROM users ORDER BY created_at").all()).results});if(path==="admin/users"&&req.method==="POST"){let b=await readBody(req);if(typeof b.email!=="string"||!/^\S+@\S+$/.test(b.email)||!['owner','member','viewer'].includes(b.role))return fail(400,"invalid user");let id=uid("usr_");await env.DB.prepare("INSERT INTO users(id,subject,email,display_name,role,created_at) VALUES(?1,?2,?3,?4,?5,?6)").bind(id,b.subject||`invited:${b.email}`,b.email,String(b.display_name||"").slice(0,100),b.role,now).run();await audit(env.DB,now,u,null,null,null,"user_created",{id});return json({id},201)}if((m=path.match(/^admin\/users\/(usr_[a-f0-9]{24})$/))&&req.method==="PATCH"){let b=await readBody(req);if(b.role!==undefined&&!['owner','member','viewer'].includes(b.role))return fail(400,"invalid role");await env.DB.prepare("UPDATE users SET role=COALESCE(?1,role),disabled_at=?2 WHERE id=?3").bind(b.role||null,b.disabled===true?now:b.disabled===false?null:undefined,m[1]).run();await audit(env.DB,now,u,null,null,null,"user_updated",{id:m[1]});return json({ok:true})}if(path==="admin/devices"&&req.method==="GET")return json({devices:(await env.DB.prepare("SELECT id,name,kind,created_at,revoked_at FROM devices ORDER BY created_at").all()).results});if(path==="admin/devices"&&req.method==="POST"){let b=await readBody(req);if(!NODE_RE.test(b.id||"")||!['device','cloud'].includes(b.kind)||typeof b.name!=="string")return fail(400,"invalid device");let token=crypto.randomUUID().replaceAll("-","")+crypto.randomUUID().replaceAll("-","");await env.DB.batch([env.DB.prepare("INSERT INTO devices(id,name,kind,created_by,created_at) VALUES(?1,?2,?3,?4,?5)").bind(b.id,b.name.slice(0,80),b.kind,u.id,now),env.DB.prepare("INSERT INTO device_enrollments(id,device_id,token_sha256,expires_at,created_by) VALUES(?1,?2,?3,?4,?5)").bind(uid("enr_"),b.id,await sha256Hex(token),now+900000,u.id)]);await audit(env.DB,now,u,b.id,null,null,"device_created");return json({id:b.id,enrollment_token:token,expires_at:now+900000},201)}if((m=path.match(/^admin\/devices\/([a-z0-9-]+)\/revoke$/))&&req.method==="POST"){await env.DB.batch([env.DB.prepare("UPDATE devices SET revoked_at=?1,credential_sha256=NULL WHERE id=?2").bind(now,m[1]),env.DB.prepare(`UPDATE actions SET status=CASE status WHEN 'queued' THEN 'expired' ELSE 'failed' END,completed_at=?1,result='{"error":"device revoked"}' WHERE node_id=?2 AND status IN ('queued','claimed')`).bind(now,m[1])]);await audit(env.DB,now,u,m[1],null,null,"device_revoked");return json({ok:true})}if(path==="admin/grants"&&req.method==="GET")return json({grants:(await env.DB.prepare("SELECT * FROM grants WHERE revoked_at IS NULL ORDER BY created_at").all()).results});if(path==="admin/grants"&&req.method==="POST"){let b=await readBody(req);if(!ID_RE.test(b.user_id||"")||!NODE_RE.test(b.device_id||"")||!(b.capability==='*'||CATALOG[b.capability]))return fail(400,"invalid grant");let id=uid("grt_");await env.DB.prepare("INSERT INTO grants(id,user_id,device_id,capability,created_at,created_by) VALUES(?1,?2,?3,?4,?5,?6)").bind(id,b.user_id,b.device_id,b.capability,now,u.id).run();await audit(env.DB,now,u,b.device_id,b.capability,null,"grant_created",{id});return json({id},201)}if((m=path.match(/^admin\/grants\/(grt_[a-f0-9]{24})$/))&&req.method==="DELETE"){await env.DB.prepare("UPDATE grants SET revoked_at=?1 WHERE id=?2 AND revoked_at IS NULL").bind(now,m[1]).run();await audit(env.DB,now,u,null,null,null,"grant_revoked",{id:m[1]});return json({ok:true})}if(path==="admin/audit"&&req.method==="GET"){let lim=Math.min(200,Math.max(1,Number(new URL(req.url).searchParams.get("limit"))||50));return json({audit:(await env.DB.prepare("SELECT * FROM audit ORDER BY ts DESC LIMIT ?1").bind(lim).all()).results})}return fail(404,"not found")}
+async function operator(path,req,env,now,u){u.sensitive=env.LEGACY_OPERATOR_SENSITIVE==="1";if(path.startsWith("admin/"))return admin(path,req,env,now,u);if(path==="catalog"&&req.method==="GET")return json({catalog:CATALOG,cloud_action_latency_s:60});if(path==="state"&&req.method==="GET"){await sweep(env.DB,now);let ds=u.role==='owner'?(await env.DB.prepare("SELECT id FROM devices WHERE revoked_at IS NULL").all()).results:u.grants.map(g=>({id:g.device_id}));if(u.legacy)ds=[{id:'lucas-macbook'}];let ids=[...new Set(ds.map(x=>x.id))],nodes=[],actions=[];for(let id of ids){let n=await env.DB.prepare("SELECT * FROM node_state WHERE node_id=?1").bind(id).first();if(n){let state=JSON.parse(n.state),caps=state.capabilities||{};state.capabilities=Object.fromEntries(Object.entries(caps).filter(([k])=>allowed(u,id,k,false)||u.role==='owner'));nodes.push({node_id:id,meta:JSON.parse(n.meta),state,updated_at:n.updated_at,age_s:Math.round((now-n.updated_at)/1000),online:now-n.updated_at<NODE_ONLINE_MS})}let rows=(await env.DB.prepare("SELECT * FROM actions WHERE node_id=?1 ORDER BY created_at DESC LIMIT 15").bind(id).all()).results;actions.push(...rows.filter(r=>allowed(u,id,r.capability,false)).map(action))}let catalog=Object.fromEntries(Object.entries(CATALOG).filter(([cap])=>ids.some(id=>allowed(u,id,cap,false))));return json({now,user:{email:u.email,role:u.role,legacy:!!u.legacy},catalog,cloud_action_latency_s:60,nodes,actions:actions.sort((a,b)=>b.created_at-a.created_at).slice(0,30)})}if(path==="actions"&&req.method==="POST"){let b=await readBody(req),v=validate(b.capability,b.params);if(v.error)return fail(400,v.error);let spec=CATALOG[b.capability],id=b.node_id||(spec.executor==='cloud'?'lucas-cloud':'lucas-macbook');if(!NODE_RE.test(id)||!allowed(u,id,b.capability,true))return fail(403,"forbidden");let d=await env.DB.prepare("SELECT * FROM devices WHERE id=?1 AND revoked_at IS NULL").bind(id).first();if(!d&&!u.legacy)return fail(404,"node not registered");let n=await env.DB.prepare("SELECT * FROM node_state WHERE node_id=?1").bind(id).first();if(!n)return fail(404,"node not registered");let advertised=JSON.parse(n.meta).actions||[];if(!advertised.includes(b.capability))return fail(409,"node does not advertise this capability");let pending=await env.DB.prepare("SELECT COUNT(*) n FROM actions WHERE node_id=?1 AND status IN ('queued','claimed')").bind(id).first();if(pending.n>=5)return fail(429,"too many pending actions");let aid=uid("act_",20);await env.DB.prepare("INSERT INTO actions(id,node_id,capability,params,status,origin,created_at) VALUES(?1,?2,?3,?4,'queued',?5,?6)").bind(aid,id,b.capability,JSON.stringify(v.params),JSON.stringify({subject:u.subject}),now).run();if(spec.sensitive)await audit(env.DB,now,u,id,b.capability,aid,"requested");return json({id:aid,status:"queued",node_online:now-n.updated_at<NODE_ONLINE_MS,expected_within_s:spec.executor==='cloud'?60:null},202)}let m=path.match(/^actions\/(act_[a-f0-9]{20})$/);if(m&&req.method==="GET"){let r=await env.DB.prepare("SELECT * FROM actions WHERE id=?1").bind(m[1]).first();return r&&allowed(u,r.node_id,r.capability,false)?json(action(r)):fail(404,"not found")}return fail(404,"not found")}
+export async function onRequest({request,env,params}){let path=(params.path||[]).join('/'),now=Date.now();try{if(path==='health')return json({ok:true,service:'lucas-raven',zero:'0.2.0'});if(path==='node/enroll'&&request.method==='POST')return enroll(request,env,now);if(path.startsWith('node/')){if(request.method!=='POST')return fail(405,'method not allowed');let id=await nodeIdentity(request,env);if(!id)return fail(401,'unauthorized');return nodeRoutes(path,request,env,now,id)}let u=await human(request,env,now);if(!u)return fail(request.headers.get('cf-access-jwt-assertion')?403:401,request.headers.get('cf-access-jwt-assertion')?'not invited':'unauthorized');return operator(path,request,env,now,u)}catch(e){let m=String(e?.message||e);if(m.includes('body')||e instanceof SyntaxError)return fail(400,m.slice(0,120));return fail(500,'internal error')}}

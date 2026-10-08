@@ -6,7 +6,9 @@
   bifrostctl.py raven-provision create Raven node/operator keys in the login Keychain (idempotent)
   bifrostctl.py raven-hash ROLE print SHA-256 of a Raven key (node|operator) for edge secrets
   bifrostctl.py raven-pair      copy the Raven pairing link (operator key in URL #fragment) to the clipboard
-  bifrostctl.py raven-bridge    run the ZERO bridge (add --once for a single cycle)
+  bifrostctl.py raven-enroll    read a one-time enrollment token from stdin and store the node credential
+  bifrostctl.py raven-submit-clear  clear submit rate/failure state after Lucas reviews it
+  bifrostctl.py raven-bridge    run the ZERO bridge (add --once; --force never bypasses a held lock)
 """
 import os
 import platform
@@ -22,6 +24,7 @@ import hashlib
 import json
 import secrets
 import subprocess
+import urllib.request
 
 from bifrost.remote_provider import RemoteProvider
 
@@ -63,6 +66,33 @@ def pair():
     print("Pairing link copied to the Mac clipboard (Universal Clipboard can paste it on iPhone).")
 
 
+def enroll(stdin=None, input_fn=input, opener=urllib.request.urlopen):
+    """Exchange a stdin-only one-time token; never display either credential."""
+    from bifrost.raven_bridge import NODE_ID, RAVEN_URL
+    stream = stdin or sys.stdin
+    if stream.isatty():
+        print("Paste the one-time enrollment token, then press Return:", file=sys.stderr)
+    token = stream.readline().strip()
+    if not token:
+        raise SystemExit("no enrollment token received on stdin")
+    existing = _get(SERVICES["node"])
+    if existing and input_fn("Replace the existing Raven node credential? [y/N] ").strip().lower() != "y":
+        raise SystemExit("enrollment cancelled; existing credential unchanged")
+    body = json.dumps({"enrollment_token": token, "node_id": NODE_ID}).encode()
+    req = urllib.request.Request(RAVEN_URL + "/api/node/enroll", data=body, method="POST",
+                                 headers={"Content-Type": "application/json", "User-Agent": "BIFROST-enroll/1"})
+    with opener(req, timeout=20) as response:
+        result = json.loads(response.read())
+    credential = result.get("node_credential") or result.get("node_key") or result.get("credential")
+    if not isinstance(credential, str) or not credential:
+        raise SystemExit("enrollment response did not contain a node credential")
+    import getpass
+    subprocess.run(["/usr/bin/security", "add-generic-password", "-U", "-s", SERVICES["node"],
+                    "-a", getpass.getuser(), "-l", "BIFROST Lucas Raven node key", "-w", credential,
+                    "-T", "/usr/bin/security"], check=True)
+    print("Raven node enrollment completed; credential stored in the login Keychain.")
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "status"
     if cmd == "status":
@@ -76,8 +106,17 @@ if __name__ == "__main__":
         key_hash(sys.argv[2])
     elif cmd == "raven-pair":
         pair()
+    elif cmd == "raven-enroll":
+        enroll()
+    elif cmd == "raven-submit-clear":
+        from bifrost.workincodex import Submitter
+        Submitter().clear_block()
+        print("WORKinCODEX submission limiter/failure state cleared after local review.")
     elif cmd == "raven-bridge":
         from bifrost.raven_bridge import run_forever
-        run_forever(once="--once" in sys.argv)
+        try:
+            run_forever(once="--once" in sys.argv, force="--force" in sys.argv)
+        except RuntimeError as exc:
+            sys.exit(str(exc))
     else:
         sys.exit(__doc__)

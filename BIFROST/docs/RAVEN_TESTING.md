@@ -10,7 +10,68 @@ Run everything from `BIFROST/` unless stated. No secret ever goes in a file, a c
 ```
 python3 -B -m unittest discover -s tests -v
 ```
-Expected: `Ran 9 tests ... OK` (bridge allow-list, parameter validation, exited-process truthfulness, remote-provider idempotence). A `ResourceWarning` about a subprocess is known and harmless.
+Expected: all Python tests pass (the original 9 plus catalog, collectors, singleton,
+enrollment, and WORKinCODEX guardrail/transport tests). A `ResourceWarning` about a
+short-lived test subprocess is known and harmless.
+
+The device catalog is `catalog/capabilities.v1.json`. If it is absent or invalid,
+the bridge logs the failure and advertises only the original three actions. List
+collectors run on a daemon thread, have a five-minute Codex back-off, cap metadata
+at 50 items, and never read Claude/ChatGPT message content.
+
+## Device enrollment and singleton bridge
+
+Read an edge-issued one-time token from stdin (never put it in shell history):
+```
+./bifrostctl raven-enroll
+```
+The CLI posts it to `/api/node/enroll`; it asks before replacing an existing
+`eden.bifrost.raven.node` Keychain item and never prints the returned credential.
+Legacy Keychain credentials continue to be read by the bridge.
+
+The launchd job owns the singleton lock. A second `./bifrostctl raven-bridge`
+exits politely. `--force` is an explicit diagnostic flag, but intentionally does
+not break a live process lock or kill its owner.
+
+Install/reload launchd on the Mac (not run by this change):
+```
+mkdir -p ~/Library/LaunchAgents ~/Library/Logs/BIFROST
+cp launchd/eden.bifrost.raven-bridge.plist ~/Library/LaunchAgents/
+launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/eden.bifrost.raven-bridge.plist 2>/dev/null || true
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/eden.bifrost.raven-bridge.plist
+launchctl kickstart -k gui/$(id -u)/eden.bifrost.raven-bridge
+```
+
+## WORKinCODEX unattended device action
+
+`codex.cloud.submit` is fail-closed. It validates the real handoff path, exact
+hash, 100,000-character limit, environment/branch allowlists, verbatim scope
+guard, secret scan, sensitive-operation scan, identity isolation, persisted
+three-per-hour limit, prior 429, and two consecutive failures before opening a
+new visible Terminal window. False positives require attended review. It saves
+and restores clipboard text and uses static AppleScript plus an argv value; it
+never uses System Events keystrokes. STARTED is returned only after a new
+`task_e_...` appears in `codex cloud list`. Applying, pushing, merging and
+deleting remain attended-only.
+
+After Lucas has reviewed a 429/two-failure stop, clear only the local submission
+history with:
+```
+./bifrostctl raven-submit-clear
+```
+
+Manual Mac checks (none are exercised by offline tests):
+```
+./bifrostctl state
+./bifrostctl raven-bridge --once
+codex cloud list --limit 20
+tail -n 20 ~/Library/Logs/BIFROST/codex-submissions.jsonl
+```
+Then queue a harmless, scoped handoff through Raven and confirm a **new** Terminal
+window appears, the prior clipboard text is restored, and the reported task id
+is visible in `codex cloud list`. Enable the optional ChatGPT adapter only after
+granting Terminal/Python access at **System Settings -> Privacy & Security ->
+Accessibility**, then set `RAVEN_CHATGPT_APP=1`; it is best-effort and fragile.
 
 ## Level 2 - edge API on your Mac only (no Cloudflare account state touched)
 Uses a local D1 and throwaway keys. `npx` will fetch wrangler into its cache (no node_modules in the repo).
@@ -58,6 +119,10 @@ Optional, only after Level 3 passes: `launchd/eden.bifrost.raven-bridge.plist` k
 ## Not covered yet
 Expired/stuck action sweeps (queue 120 s, claim 600 s), the 5-pending-action limit, bridge restart while Keep Awake is running, and any non-Mac node.
 
+Real Terminal `do script`, macOS Accessibility, Keychain writes, enrollment
+against a live edge, and real Codex cloud submission/status/list calls remain
+UNKNOWN until Lucas performs the Mac checks above. Offline mocks are TESTED only.
+
 ## Live state seen on the Mac, 2026-10-08 (read-only check)
 - Edge deployed: `https://lucas-raven.pages.dev/api/health` answered `{"ok":true,"service":"lucas-raven","zero":"0.1.0"}`.
 - Keychain items `eden.bifrost.raven.node` and `eden.bifrost.raven.operator` exist.
@@ -75,3 +140,19 @@ Expired/stuck action sweeps (queue 120 s, claim 600 s), the 5-pending-action lim
 - `edge unreachable` repeating while other sites work: check `curl -s https://lucas-raven.pages.dev/api/health`; if that answers, restart the bridge (`launchctl kickstart -k gui/$(id -u)/eden.bifrost.raven-bridge`).
 - 401 from every call: edge secrets `OPERATOR_KEY_SHA256` / `NODE_KEY_SHA256` do not match the Keychain keys (`./bifrostctl raven-hash node|operator`).
 - Action stays `queued`: node offline (no state for 90 s) or bridge not claiming; queued actions expire after 120 s, claimed ones fail after 600 s.
+
+## Multi-user edge and cloud node (2026-10-08)
+Evidence ceiling is TESTED offline. Run from the repository root:
+```sh
+BIFROST/web/lucas-raven/tests/run_all.sh
+python3 -B -m unittest discover -s BIFROST/tests -v
+```
+The node suite covers catalog parity/validation, JWT signature and claim failures, legacy-node isolation, and cloud handler isolation/error states. Browser, Cloudflare Access policy, remote D1, Pages, cron, GitHub and physical Mac/iPhone behavior remain UNKNOWN until Lucas follows `RAVEN_ACCESS_SETUP.md`.
+
+Migration idempotence check (offline SQLite):
+```sh
+rm -f /tmp/raven-migration-test.sqlite
+sqlite3 /tmp/raven-migration-test.sqlite < BIFROST/web/lucas-raven/schema.sql
+sqlite3 /tmp/raven-migration-test.sqlite < BIFROST/web/lucas-raven/migrations/0002_multiuser.sql
+sqlite3 /tmp/raven-migration-test.sqlite < BIFROST/web/lucas-raven/migrations/0002_multiuser.sql
+```

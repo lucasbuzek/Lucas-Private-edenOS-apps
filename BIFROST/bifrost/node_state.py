@@ -22,10 +22,12 @@ import re
 import shutil
 import socket
 import subprocess
+import threading
 import time
 from pathlib import Path
 
 from .remote_provider import RemoteProvider
+from . import list_collectors
 
 HOME = Path.home()
 EXTRA_PATH = ["/opt/homebrew/bin", "/usr/local/bin", "/usr/bin", "/bin", "/usr/sbin", "/sbin"]
@@ -212,6 +214,41 @@ class StateCollector:
         self.slow_ttl = slow_ttl
         self._slow: dict = {}
         self._slow_at = 0.0
+        self._lists: dict = {
+            key: _cap("UNKNOWN", "collector has not completed yet", items=[])
+            for key in ("codex.tasks", "claude_code.sessions", "chatgpt.chats")
+        }
+        self._lists_at: dict = {}
+        self._lists_thread = None
+
+    def refresh_lists(self, force=False):
+        """Refresh metadata lists; Codex retains its five-minute back-off."""
+        now = time.time()
+        jobs = {
+            "codex.tasks": list_collectors.codex_tasks,
+            "claude_code.sessions": list_collectors.claude_sessions,
+            "chatgpt.chats": list_collectors.chatgpt_chats,
+        }
+        for key, fn in jobs.items():
+            if key == "codex.tasks" and now - self._lists_at.get(key, 0) < 300:
+                continue
+            if not force and now - self._lists_at.get(key, 0) < self.slow_ttl:
+                continue
+            try:
+                self._lists[key] = fn()
+            except Exception as e:  # noqa: BLE001
+                self._lists[key] = _cap("ERROR", f"collector failed: {type(e).__name__}",
+                                        [str(e)[:120]], items=[])
+            self._lists_at[key] = now
+        return self._lists.copy()
+
+    def schedule_lists(self, force=False):
+        """Run slow list I/O away from the 30-second state publishing path."""
+        if self._lists_thread and self._lists_thread.is_alive():
+            return
+        self._lists_thread = threading.Thread(target=self.refresh_lists, args=(force,),
+                                              name="raven-list-collectors", daemon=True)
+        self._lists_thread.start()
 
     def collect(self, force_slow: bool = False):
         now = time.time()
@@ -222,6 +259,7 @@ class StateCollector:
                 except Exception as e:  # noqa: BLE001
                     self._slow[key] = _cap("ERROR", f"probe failed: {type(e).__name__}", [str(e)[:120]])
             self._slow_at = now
+        self.schedule_lists(force=force_slow)
         caps = {}
         for key, fn in (("node", probe_node),
                         ("power.keepawake", lambda: probe_keep_awake(self.provider)),
@@ -232,4 +270,5 @@ class StateCollector:
             except Exception as e:  # noqa: BLE001
                 caps[key] = _cap("ERROR", f"probe failed: {type(e).__name__}", [str(e)[:120]])
         caps.update(self._slow)
+        caps.update(self._lists)
         return {"schema": 1, "collected_at": now, "capabilities": caps}

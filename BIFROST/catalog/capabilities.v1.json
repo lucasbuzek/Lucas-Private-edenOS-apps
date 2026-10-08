@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "nodes": { "device": "lucas-macbook", "cloud": "lucas-cloud" },
+  "capabilities": {
+    "power.keepawake.start": { "label": "Keep Mac awake", "executor": "device", "sensitive": false, "params": { "minutes": { "type": "int", "min": 1, "max": 480, "default": 60 } } },
+    "power.keepawake.stop": { "label": "Release Keep Awake", "executor": "device", "sensitive": false, "params": {} },
+    "bifrost.state.refresh": { "label": "Refresh Mac capability state", "executor": "device", "sensitive": false, "params": {} },
+    "lists.refresh": { "label": "Refresh Codex, Claude Code and ChatGPT lists", "executor": "device", "sensitive": false, "params": {} },
+    "codex.cloud.status": { "label": "Codex cloud task status", "executor": "device", "sensitive": false, "params": { "task_id": { "type": "str", "pattern": "^task_e_[a-f0-9]{32}$" } } },
+    "codex.cloud.submit": { "label": "Submit a Codex cloud task (WORKinCODEX, unattended)", "executor": "device", "sensitive": true,
+      "params": {
+        "handoff_path": { "type": "str", "maxlen": 400 },
+        "sha256": { "type": "str", "pattern": "^[a-f0-9]{64}$" },
+        "env": { "type": "str", "pattern": "^[A-Za-z0-9_.-]{1,64}$" },
+        "branch": { "type": "str", "pattern": "^[A-Za-z0-9._/-]{1,120}$" },
+        "identity": { "type": "int", "min": 1, "max": 9, "default": 1 },
+        "scope_guard": { "type": "str", "minlen": 8, "maxlen": 200 }
+      } },
+    "cloud.state.refresh": { "label": "Refresh cloud node state", "executor": "cloud", "sensitive": false, "params": {} },
+    "github.repos.status": { "label": "GitHub repositories status (read-only)", "executor": "cloud", "sensitive": false, "params": {} }
+  }
+}
