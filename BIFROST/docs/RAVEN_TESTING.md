@@ -32,7 +32,7 @@ curl -s -X POST $U/api/node/state -H "authorization: Bearer $ND" -H 'content-typ
 curl -s -X POST $U/api/actions -H "authorization: Bearer $OP" -H 'content-type: application/json' \
   -d '{"capability":"bifrost.state.refresh"}'            # 202 + act_... id
 curl -s -X POST $U/api/node/claim -H "authorization: Bearer $ND" -H 'content-type: application/json' -d '{"node_id":"lucas-macbook"}'
-curl -s -X POST $U/api/node/result -H "authorization: Bearer $ND" -H 'content-type: application/json' -d '{"id":"<act id>","ok":true,"result":{}}'
+curl -s -X POST $U/api/node/result -H "authorization: Bearer $ND" -H 'content-type: application/json' -d '{"node_id":"lucas-macbook","id":"<act id>","ok":true,"result":{}}'
 curl -s $U/api/actions/<act id> -H "authorization: Bearer $OP"   # status succeeded
 ```
 Must be rejected: capability `shell.run` (400 unknown capability); `{"capability":"power.keepawake.start","params":{"minutes":9999}}` (400); operator key on `/api/node/*` (401); node key on `/api/state` (401).

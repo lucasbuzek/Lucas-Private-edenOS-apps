@@ -150,7 +150,7 @@ def run_forever(once=False):
                 state = collector.collect(force_slow=ctx["force_slow"])
                 ctx["force_slow"] = False
                 edge.call("/api/node/state", {**meta, "state": state})
-                edge.call("/api/node/result", {"id": aid, "ok": ok, "result": result})
+                edge.call("/api/node/result", {"node_id": NODE_ID, "id": aid, "ok": ok, "result": result})
                 last_state = time.time()
                 backoff = POLL_S
                 continue

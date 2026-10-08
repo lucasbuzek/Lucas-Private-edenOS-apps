@@ -123,10 +123,12 @@ async function nodeRoutes(path, request, db, now) {
       origin: row.origin ? JSON.parse(row.origin) : null } });
   }
   if (path === "node/result") {
-    if (typeof b.id !== "string" || b.id.length > 64) return fail(400, "invalid id");
+    if (!NODE_RE.test(nodeId || "")) return fail(400, "invalid node_id");
+    if (typeof b.id !== "string" || !/^act_[a-f0-9]{20}$/.test(b.id)) return fail(400, "invalid id");
+    if (typeof b.ok !== "boolean") return fail(400, "ok must be boolean");
     const res = JSON.stringify(b.result ?? null).slice(0, 8000);
     const r = await db.prepare(`UPDATE actions SET status=?1, completed_at=?2, result=?3
-        WHERE id=?4 AND status='claimed'`).bind(b.ok ? "succeeded" : "failed", now, res, b.id).run();
+        WHERE id=?4 AND node_id=?5 AND status='claimed'`).bind(b.ok ? "succeeded" : "failed", now, res, b.id, nodeId).run();
     return r.meta.changes ? json({ ok: true }) : fail(409, "action not in claimed state");
   }
   return fail(404, "not found");
