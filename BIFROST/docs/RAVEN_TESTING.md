@@ -57,3 +57,21 @@ Optional, only after Level 3 passes: `launchd/eden.bifrost.raven-bridge.plist` k
 
 ## Not covered yet
 Expired/stuck action sweeps (queue 120 s, claim 600 s), the 5-pending-action limit, bridge restart while Keep Awake is running, and any non-Mac node.
+
+## Live state seen on the Mac, 2026-10-08 (read-only check)
+- Edge deployed: `https://lucas-raven.pages.dev/api/health` answered `{"ok":true,"service":"lucas-raven","zero":"0.1.0"}`.
+- Keychain items `eden.bifrost.raven.node` and `eden.bifrost.raven.operator` exist.
+- launchd job `eden.bifrost.raven-bridge` is loaded and the bridge process is running.
+- Bridge log shows `edge unreachable` warnings (DNS failure at 05:36, then connection reset, TLS handshake timeout and read timeouts from 06:15). At that time the Mac had a load average near 200 and a 98%-full disk, so slow or dropped connections are expected. Treat a failing live test as inconclusive until the Mac is idle.
+- Whether the Chrome end-to-end (`browser_e2e.mjs`) passed has NOT been confirmed; a leftover Chrome profile from 2026-10-07 14:19 only shows it was started.
+
+## Shortest live test (once the Mac is idle)
+1. `launchctl list | grep raven` shows the job; `tail -n 5 ~/Library/Logs/BIFROST/raven-bridge.log` shows no new `edge unreachable`.
+2. `python3 bifrostctl.py raven-pair`, open the copied link on your iPhone: the node badge should show online.
+3. Press Keep awake (30 min), check `pmset -g assertions` for a `caffeinate` child of the bridge, press Release, check it is gone.
+4. Optional: the Chrome script in Level 3.
+
+## Troubleshooting
+- `edge unreachable` repeating while other sites work: check `curl -s https://lucas-raven.pages.dev/api/health`; if that answers, restart the bridge (`launchctl kickstart -k gui/$(id -u)/eden.bifrost.raven-bridge`).
+- 401 from every call: edge secrets `OPERATOR_KEY_SHA256` / `NODE_KEY_SHA256` do not match the Keychain keys (`python3 bifrostctl.py raven-hash node|operator`).
+- Action stays `queued`: node offline (no state for 90 s) or bridge not claiming; queued actions expire after 120 s, claimed ones fail after 600 s.
