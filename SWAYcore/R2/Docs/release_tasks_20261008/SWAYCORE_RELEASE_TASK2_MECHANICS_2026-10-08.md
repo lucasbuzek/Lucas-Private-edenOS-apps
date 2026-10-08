@@ -1,4 +1,4 @@
-# WORKinCODEX — SWAYcore FINAL RELEASE — TASK 2 of 3: MECHANICS & APP INNER WORKINGS (2026-10-08)
+# WORKinCODEX — SWAYcore FINAL RELEASE — TASK 2 of 4: MECHANICS & APP INNER WORKINGS (2026-10-08)
 
 New branch: `swaycore-release-mechanics-20261008` (from the base in the common contract). Scope: engine, services, models, data, persistence, integrations, build tooling. Do NOT build UI screens (Task 3) or character art/rendering (Task 1). Expose clean, testable APIs the UI binds to.
 

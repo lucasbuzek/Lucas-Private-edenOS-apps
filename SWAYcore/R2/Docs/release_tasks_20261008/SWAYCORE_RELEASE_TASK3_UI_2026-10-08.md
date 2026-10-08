@@ -1,4 +1,4 @@
-# WORKinCODEX — SWAYcore FINAL RELEASE — TASK 3 of 3: FULL COMPLETE UI (2026-10-08)
+# WORKinCODEX — SWAYcore FINAL RELEASE — TASK 3 of 4: FULL COMPLETE UI (2026-10-08)
 
 New branch: `swaycore-release-ui-20261008` (from the base in the common contract). Scope: every consumer screen, navigation, design system, layouts, accessibility. Do NOT implement engine/service logic (Task 2) or character art/rendering (Task 1). Characters render ONLY via `SWAYCharacterStage`; the YOUR DANCER creator uses ONLY `SWAYAvatarCatalog`.
 

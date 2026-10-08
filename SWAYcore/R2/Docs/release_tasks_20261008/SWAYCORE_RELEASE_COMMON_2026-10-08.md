@@ -1,7 +1,7 @@
-## COMMON CONTRACT — SWAYcore Dance & Fitness FINAL COMPLETE RELEASE (shared by Tasks 1, 2, 3; 2026-10-08)
+## COMMON CONTRACT — SWAYcore Dance & Fitness FINAL COMPLETE RELEASE (shared by Tasks 1–4; 2026-10-08)
 
 Governor: ForgeMASTER (sole AppDev governor; EITRI/EITRIMB are superseded provenance). Environment: lucas-Private-edenOS-apps. Repo: lucasbuzek/Lucas-Private-edenOS-apps, project root `SWAYcore/R2`.
-BASE for all three tasks: branch `swaycore-puppet-pilot-20261007` at the commit that adds `App/SWAY/Avatar/SWAYCharacterStage.swift` (the frozen integration contract). Each task pushes ONLY to its own new branch (named in the task). Three tasks run IN PARALLEL; Claude integrates them afterwards on the Mac.
+BASE for all three tasks: branch `swaycore-puppet-pilot-20261007` at the commit that adds `App/SWAY/Avatar/SWAYCharacterStage.swift` (the frozen integration contract). Each task pushes ONLY to its own new branch (named in the task). Tasks 1, 2, 3 run IN PARALLEL; Task 4 starts from Task 1's branch once Task 1 lands. Claude integrates them on the Mac.
 
 ### Authority (read before editing; do not reconstruct from memory)
 1. Lucas's newest decisions (section below) — they override older text.
@@ -10,7 +10,7 @@ BASE for all three tasks: branch `swaycore-puppet-pilot-20261007` at the commit 
 4. Current source and evidence. Evidence ladder: GENERATED != IMPLEMENTED != BUILT != TESTED != VERIFIED != RELEASED; UNKNOWN != PASS. Simulator != physical. Never promote an LKG.
 
 ### Lucas's decisions (newest first; binding)
-- 2026-10-08: The goal is the FINAL COMPLETE RELEASE, split into three parallel tasks: (1) 2.5D avatars, (2) mechanics and app inner workings, (3) full complete UI. Each task stays inside its own scope. Do NOT spend effort re-fixing gates that already pass; do NOT rework another task's area.
+- 2026-10-08: The goal is the FINAL COMPLETE RELEASE, split into four tasks: (1) 2.5D avatars — ALPHA characters Lucia + YOUR DANCER, (2) mechanics and app inner workings, (3) full complete UI, (4) the remaining four instructors Nandi, Thabo, Zuri, Kyle. Each task stays inside its own scope. Do NOT spend effort re-fixing gates that already pass; do NOT rework another task's area.
 - 2026-10-08: The previous passes were wrong to keep the OLD UI and to spend effort on already-working build/regression plumbing instead of the avatars.
 - 2026-10-07: Final UI direction = `R2/Reference/ArtDirection/FINAL_UI_DIRECTION_SWAY_UI_TARGET_BUILD122.jpeg` (12 screens, dark UI, hot-pink accents).
 - 2026-10-07: Characters: coaches Lucia, Nandi, Thabo, Zuri, Kyle in the look of boards `136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.png` and `125-IRIS_BUILD113_ARTICULATED_ASSET_DIRECTION.png` (soft toy-like 3D-render illustration). NOT the anime look of board 141 (141 only for its pose-silhouette rows). No real brand logos or band art on clothing.
@@ -41,6 +41,7 @@ Task 1 owns the implementation behind it. Task 3 renders characters ONLY via `SW
 
 ### File ownership (prevents merge conflicts)
 - Task 1 AVATARS: `App/SWAY/Avatar/**`, `App/SWAY/Resources/Puppets/**`, `Resources/Avatars/**`, `Resources/Characters/**`, character imagesets in `Assets.xcassets` (`Rig_*`, `YD2D_*`, `Lucia*`, `UserPose*`, new `Puppet_*`), `AssetFactory/**`, `Docs/puppet_contact_sheets/**`, avatar tests.
+- Task 4 COACHES (Nandi, Thabo, Zuri, Kyle): only their per-character data/assets — `AssetFactory/data/puppet/{nandi,thabo,zuri,kyle}_*`, `App/SWAY/Resources/Puppets/{Nandi,Thabo,Zuri,Kyle}/**`, their imagesets, their contact sheets/tests; it reuses Task 1's pipeline and renderer and changes them only via CROSS-TASK REQUESTS.
 - Task 2 MECHANICS: `App/SWAY/Services/**`, `App/SWAY/Models/**`, `App/SWAY/App/**`, `Packages/SWAYcoreEngine/**`, `App/project.yml`, `Tools/**`, `*.command`, `App/Tests/**` (non-avatar, non-UI), `SWAYcore/AGENTS.md`, `SWAYcore/HANDOFF.md`, app/build docs.
 - Task 3 UI: `App/SWAY/Views/**` (new subfolders allowed, e.g. `Views/Design`, `Views/Screens`, `Views/ViewModels`), UI colour/icon assets (`Assets.xcassets` entries named `UI_*`, `AccentColor`, `AppIcon`), UI tests/snapshots, `Docs/ui_screens/**`.
 If you genuinely need a change in another task's files, do NOT make it: write it under "CROSS-TASK REQUESTS" in your receipt with the exact API you need, and use a local adapter inside your own files meanwhile.
