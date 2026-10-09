@@ -37,10 +37,15 @@ struct StatusMenu: View {
                               value: headless.activeTasks.map(String.init) ?? "Unknown",
                               state: headless.taskStatus == "observed" ? "observed" : "unknown")
                 }
-                statusRow(title: "RavenNest", symbol: "network",
+                statusRow(title: "RavenNest agent", symbol: "network",
                           accent: BifrostUI.raven,
-                          value: headless.ravenBridge == "running" ? "Agent running" : headless.ravenBridge.capitalized,
+                          value: headless.ravenBridge == "running" ? "Running locally" :
+                                 headless.ravenBridge == "offline" ? "Not running" : "Unknown",
                           state: headless.ravenBridge)
+                statusRow(title: "Mobile pairing", symbol: "iphone.gen3.radiowaves.left.and.right",
+                          accent: BifrostUI.devices,
+                          value: "Not verified",
+                          state: "unknown")
             }
             .padding(10)
             .background(BifrostUI.panel, in: RoundedRectangle(cornerRadius: 10))
@@ -109,11 +114,25 @@ struct StatusMenu: View {
                     .foregroundStyle(BifrostUI.apps)
                     .font(.subheadline.weight(.medium))
             }
-            HStack(spacing: 9) {
-                controlButton("Open BIFROST App", symbol: "app.window",
-                              accent: BifrostUI.apps) { openWindow(id: "main") }
-                controlButton("Preferences", symbol: "gearshape",
-                              accent: BifrostUI.bridge) { openSettings() }
+            VStack(spacing: 7) {
+                HStack(spacing: 7) {
+                    controlButton("Open BIFROST", symbol: "app.window",
+                                  accent: BifrostUI.apps) { openSection("Overview") }
+                    controlButton("Devices", symbol: "macbook.and.iphone",
+                                  accent: BifrostUI.devices) { openSection("Devices") }
+                }
+                HStack(spacing: 7) {
+                    controlButton("Connections", symbol: "point.3.connected.trianglepath.dotted",
+                                  accent: BifrostUI.bridge) { openSection("Connections") }
+                    controlButton("Capabilities", symbol: "square.stack.3d.up.fill",
+                                  accent: BifrostUI.apps) { openSection("Capabilities") }
+                }
+                HStack(spacing: 7) {
+                    controlButton("JANITOR", symbol: "paintbrush.pointed.fill",
+                                  accent: BifrostUI.janitor) { openSection("JANITOR") }
+                    controlButton("Settings", symbol: "gearshape.fill",
+                                  accent: BifrostUI.bridge) { openSection("Settings") }
+                }
             }
             if !headless.feedback.isEmpty {
                 Text(headless.feedback)
@@ -132,6 +151,12 @@ struct StatusMenu: View {
         .background(BifrostUI.sidebar)
         .tint(BifrostUI.apps)
         .onAppear { headless.refresh() }
+    }
+
+    private func openSection(_ section: String) {
+        system.selectedSection = section
+        openWindow(id: "main")
+        NSApplication.shared.activate(ignoringOtherApps: true)
     }
 
     private func statusRow(title: String, symbol: String,

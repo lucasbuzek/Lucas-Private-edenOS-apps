@@ -3,7 +3,7 @@ import SwiftUI
 struct RootView: View {
     @EnvironmentObject private var system: BifrostSystem
     @EnvironmentObject private var headless: HeadlessClient
-    @State private var selection = "Overview"
+    private var selection: String { system.selectedSection }
 
     private let primary = [
         "Overview", "Devices", "App Management", "Install & Setup", "Index & Identity", "JANITOR",
@@ -13,7 +13,10 @@ struct RootView: View {
 
     var body: some View {
         NavigationSplitView {
-            List(selection: $selection) {
+            List(selection: Binding(
+                get: { system.selectedSection },
+                set: { system.selectedSection = $0 }
+            )) {
                 HStack(spacing: 12) {
                     BifrostMark(size: 42)
                     VStack(alignment: .leading, spacing: 2) {
@@ -100,7 +103,7 @@ struct RootView: View {
     @ViewBuilder private var detail: some View {
         switch selection {
         case "Overview":
-            BifrostDashboardView(onNavigate: { selection = $0 })
+            BifrostDashboardView(onNavigate: { system.selectedSection = $0 })
         case "JANITOR":
             JanitorView()
         case "Install & Setup":
