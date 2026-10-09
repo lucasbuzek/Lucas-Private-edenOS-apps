@@ -1,0 +1,28 @@
+name: CRESUS
+options:
+  bundleIdPrefix: com.eden
+  deploymentTarget:
+    iOS: '17.0'
+    macOS: '14.0'
+targets:
+  CRESUS-iOS:
+    type: application
+    platform: iOS
+    sources: [CRESUSApp.swift]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.eden.cresus
+        SWIFT_VERSION: '5.0'
+        GENERATE_INFOPLIST_FILE: YES
+        TARGETED_DEVICE_FAMILY: '1,2'
+        CODE_SIGNING_ALLOWED: NO
+  CRESUS-macOS:
+    type: application
+    platform: macOS
+    sources: [CRESUSApp.swift]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.eden.cresus.macos
+        SWIFT_VERSION: '5.0'
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGNING_ALLOWED: NO
