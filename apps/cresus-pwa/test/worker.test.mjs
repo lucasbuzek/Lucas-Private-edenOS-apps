@@ -213,3 +213,19 @@ test('provider choice is authenticated and user-scoped',async()=>{
   assert.equal((await call('/api/intelligence',{email:'wife@gmail.com'})).body.provider,'workers-ai');
   assert.equal((await call('/api/intelligence',{email:OWNER,method:'PUT',body:{provider:'workers-ai'}})).status,200);
 });
+
+test('legacy users retain the existing Workers AI provider until setup is saved',async()=>{
+  const old=await call('/api/intelligence',{email:'third@gmail.com'});
+  // Disabled users stay disabled even if they have never completed onboarding.
+  assert.equal(old.status,403);
+  const created=await call('/api/admin/users',{email:OWNER,method:'POST',body:{email:'legacy@example.com'}});
+  assert.equal(created.status,200);
+  const before=await call('/api/intelligence',{email:'legacy@example.com'});
+  assert.equal(before.status,200);
+  assert.equal(before.body.configured,false);
+  assert.equal(before.body.provider,'workers-ai');
+  const answer=await call('/api/chat',{email:'legacy@example.com',method:'POST',body:chat('legacy default works')});
+  assert.equal(answer.status,200);
+  assert.equal((await call('/api/intelligence',{email:'legacy@example.com',method:'PUT',body:{provider:'none'}})).status,200);
+  assert.equal((await call('/api/chat',{email:'legacy@example.com',method:'POST',body:chat('disabled by user choice')})).status,409);
+});
