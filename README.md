@@ -1,14 +1,7 @@
 # Lucas Private edenOS Apps
 
-Private authoritative source repository for Lucas' EDEN application builds.
+Private authoritative source and recovery repository for Lucas' EDEN application builds and related projects.
 
-## CURATOR
-**CURATOR — Creative Understanding, Review, Asset Tagging, Organization & Retrieval**
+The corrected universal storage/classification canon is recorded in `docs/UNIVERSAL_FILESYSTEM_CANON.md`. EDEN Apps are under `Projects/EDEN Apps/`; independent and HW/SW projects remain directly under `Projects/`; reconstructible assistant evidence backups are under `Projects/#app-assistants/`; durable archives are under root `Backups/`.
 
-Current development state: v1.3.5 goal/pipeline audit + repair, EXPERIMENTAL, PRIVATE — Lucas.
-
-Evidence: portable Swift PASS (40/40); macOS source syntax parse PASS; native macOS/M1 and real professional-provider round trips remain UNKNOWN.
-
-CURATOR retains creative-media domain ownership. BIFROST is optional shared interoperability/access/resolution infrastructure. Established EDEN Apps/helpers retain their original authoritative definitions.
-
-See `CURATOR/RECOVERY.md` for recoverability state and evidence.
+Start with `docs/MASTER_INVENTORY.md`, review `docs/CONFLICTS_AND_GAPS.md`, then run `python3 scripts/verify_canon.py`. Evidence truth remains mandatory: GENERATED is not IMPLEMENTED, BUILT, TESTED, VERIFIED, or RELEASED; UNKNOWN is not PASS.
