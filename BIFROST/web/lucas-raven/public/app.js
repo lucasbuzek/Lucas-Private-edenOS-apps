@@ -11,7 +11,7 @@
     set(v) { try { localStorage.setItem(KEY, v); } catch {} },
     clear() { try { localStorage.removeItem(KEY); } catch {} },
   };
-  let key = null, minutes = 60, timer = null, pendingId = null;
+  let key = null, minutes = 60, timer = null, pendingId = null, latestReply = "";
 
   const TITLES = {
     node: "Mac", "power.keepawake": "Keep Awake", "remote.provider": "Remote bridge",
@@ -198,6 +198,15 @@
     if (timer) clearInterval(timer);
     timer = setInterval(() => { if (!document.hidden) refresh(); }, 5000);
   }
+
+  // ------------------------------------------------------------ chat
+  function chatMessage(text, kind) { const n=el("div","message "+kind,text); $("chatMessages").append(n); n.scrollIntoView({block:"nearest"}); }
+  function chatCards(nodes) { (nodes||[]).forEach(n => { const caps=Object.values(n.state?.capabilities||{}); chatMessage(`${n.meta?.hostname||n.node_id}: ${n.online?"online":"offline"}\n${caps.slice(0,6).map(c=>`${c.status}: ${c.summary||""}`).join("\n")}`,"assistant"); }); }
+  async function sendChat(message) { chatMessage(message,"user"); $("chatSend").disabled=true; try { const r=await api("chat",{method:"POST",body:JSON.stringify({message})}); latestReply=r.text||"Raven assistant is unavailable."; chatMessage(latestReply,"assistant"); chatCards(r.cards); if(r.proposal){ const box=el("div","proposal"); box.append(el("div",null,`${r.proposal.label} · ${JSON.stringify(r.proposal.params)}`)); const yes=el("button",null,"Confirm"),no=el("button",null,"Cancel"); yes.type=no.type="button"; yes.addEventListener("click",()=>{yes.disabled=no.disabled=true;request(r.proposal.capability,r.proposal.params)}); no.addEventListener("click",()=>box.remove()); box.append(yes,no); $("chatMessages").append(box); } } catch(e){ latestReply="Raven assistant is unavailable. Live controls and status still work."; chatMessage(latestReply,"assistant"); } finally { $("chatSend").disabled=false; } }
+  const Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(Recognition){ $("chatVoice").hidden=false; $("chatVoice").addEventListener("click",()=>{const rec=new Recognition();rec.lang=navigator.language||"en-US";rec.interimResults=false;rec.onresult=e=>{$("chatInput").value=e.results[0][0].transcript};rec.onerror=()=>chatMessage("Voice recognition is unavailable; type your request instead.","assistant");rec.start()}); }
+  if("speechSynthesis" in window){ $("chatSpeak").hidden=false; $("chatSpeak").addEventListener("click",()=>{if(latestReply)speechSynthesis.speak(new SpeechSynthesisUtterance(latestReply))}); }
+  $("chatForm").addEventListener("submit",e=>{e.preventDefault();const m=$("chatInput").value.trim();if(m){$("chatInput").value="";sendChat(m)}});
 
   // ------------------------------------------------------------ wire up
   $("kaMinutes").addEventListener("click", (e) => {

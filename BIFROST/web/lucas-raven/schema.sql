@@ -33,3 +33,9 @@ CREATE INDEX IF NOT EXISTS enrollments_token ON device_enrollments(token_sha256)
 CREATE INDEX IF NOT EXISTS grants_user ON grants(user_id, revoked_at);
 CREATE TABLE IF NOT EXISTS audit (id INTEGER PRIMARY KEY AUTOINCREMENT, ts INTEGER NOT NULL, subject TEXT, node_id TEXT, capability TEXT, action_id TEXT, event TEXT NOT NULL, detail TEXT);
 CREATE INDEX IF NOT EXISTS audit_ts ON audit(ts DESC);
+
+-- Keep this fresh-install schema in parity with additive migration 0003.
+CREATE TABLE IF NOT EXISTS chat_daily (day INTEGER PRIMARY KEY, count INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS chat_user_minute (subject TEXT NOT NULL, minute INTEGER NOT NULL, count INTEGER NOT NULL, PRIMARY KEY(subject, minute));
+CREATE TABLE IF NOT EXISTS chat_audit (id INTEGER PRIMARY KEY AUTOINCREMENT, ts INTEGER NOT NULL, subject TEXT NOT NULL, intent TEXT, topic TEXT, capability TEXT, outcome TEXT NOT NULL, provider TEXT NOT NULL, latency_ms INTEGER NOT NULL, handoff_excerpt TEXT);
+CREATE INDEX IF NOT EXISTS chat_audit_ts ON chat_audit(ts DESC);

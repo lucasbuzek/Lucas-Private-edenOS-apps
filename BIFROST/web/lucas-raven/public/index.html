@@ -61,6 +61,17 @@
     <div class="panel-head"><h3 class="section">Codex, Claude Code and ChatGPT</h3><button id="refreshLists" type="button">Refresh lists</button></div>
     <section class="grid" id="lists"></section>
 
+    <h3 class="section">Raven assistant</h3>
+    <section class="panel chat" aria-label="Raven assistant">
+      <div id="chatMessages" class="messages" aria-live="polite"></div>
+      <form id="chatForm" class="row">
+        <input id="chatInput" maxlength="2000" autocomplete="off" placeholder="Ask about BIFROST…" aria-label="Message Raven">
+        <button id="chatSend" class="primary" type="submit">Send</button>
+        <button id="chatVoice" type="button" hidden aria-label="Push to talk">Talk</button>
+        <button id="chatSpeak" type="button" hidden aria-label="Read latest reply">Read</button>
+      </form>
+    </section>
+
     <h3 class="section">Activity</h3>
     <section class="panel" id="activity"><p class="muted">No actions yet.</p></section>
   </section>

@@ -75,3 +75,14 @@ HTTP, AppleScript, clock, and Codex interactions mocked. It is not VERIFIED or
 RELEASED. Real macOS Terminal, Accessibility, Keychain, Cloudflare, and Codex
 cloud behavior remains UNKNOWN and requires the manual gates in
 `docs/RAVEN_TESTING.md`.
+
+## 2026-10-09 — RavenNest fix pass 1
+
+The WORKinCODEX exact-command test now compares the canonical handoff path on
+both macOS and other POSIX hosts. Legacy operator and `lucas-macbook` node flows
+remain independent of the not-yet-migrated multi-user tables, including when
+Access configuration is absent; forged email headers confer no identity, and
+missing multi-user tables fail closed. Evidence is **TESTED** by 23 offline
+Python tests, 17 mocked edge tests, and 3 mocked cloud-worker tests. Nothing was
+deployed; real Cloudflare, Access, D1, Mac, and iPhone behavior remains
+**UNKNOWN**, not verified or released.

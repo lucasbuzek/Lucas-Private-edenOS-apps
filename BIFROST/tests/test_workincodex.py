@@ -99,7 +99,10 @@ class SubmitTests(unittest.TestCase):
         process = FakeProcess()
         result = self.make(process=process).submit(self.params, "operator@example.invalid")
         self.assertEqual(result["outcome"], "STARTED")
-        command = f'codex cloud exec --env lucas-Private-edenOS-apps --branch bifrost/test "$(cat \'{self.path}\')"'
+        # macOS presents /tmp through the /private/tmp symlink.  Submitter
+        # deliberately resolves the approved handoff before constructing the
+        # command, so compare the exact vector using that same canonical path.
+        command = f'codex cloud exec --env lucas-Private-edenOS-apps --branch bifrost/test "$(cat \'{self.path.resolve()}\')"'
         self.assertEqual(process.calls[1], (["/usr/bin/pbcopy"], {"input": command, "text": True, "timeout": 10, "check": True}))
         self.assertEqual(process.calls[2][0], ["/usr/bin/osascript", "-e", APPLESCRIPT, command])
         self.assertEqual(process.calls[-1][1]["input"], "old clipboard")

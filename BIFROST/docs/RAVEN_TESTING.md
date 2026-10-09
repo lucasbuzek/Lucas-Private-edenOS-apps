@@ -156,3 +156,17 @@ sqlite3 /tmp/raven-migration-test.sqlite < BIFROST/web/lucas-raven/schema.sql
 sqlite3 /tmp/raven-migration-test.sqlite < BIFROST/web/lucas-raven/migrations/0002_multiuser.sql
 sqlite3 /tmp/raven-migration-test.sqlite < BIFROST/web/lucas-raven/migrations/0002_multiuser.sql
 ```
+
+## Raven chat/voice offline and live evaluation (2026-10-09)
+
+The offline Node suite includes strict classification, grant/parameter/sensitive rejection, deterministic fallback safeguards, budget/audit structure, and the 30+ request corpus:
+
+```sh
+BIFROST/web/lucas-raven/tests/run_all.sh
+rm -f /tmp/raven-chat.sqlite
+sqlite3 /tmp/raven-chat.sqlite < BIFROST/web/lucas-raven/schema.sql
+sqlite3 /tmp/raven-chat.sqlite < BIFROST/web/lucas-raven/migrations/0003_chat.sql
+sqlite3 /tmp/raven-chat.sqlite < BIFROST/web/lucas-raven/migrations/0003_chat.sql
+```
+
+The real-provider evaluation is intentionally not part of offline tests. Follow `RAVEN_CHAT.md`; >=90% exact outcomes and zero unsafe outcomes is the go-live threshold. Real Groq/Workers AI/Gemini quality, Pages/D1 deployment, microphone behavior, and iPhone Home Screen voice support remain UNKNOWN.

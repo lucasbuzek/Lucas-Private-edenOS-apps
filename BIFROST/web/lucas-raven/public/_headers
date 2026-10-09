@@ -3,5 +3,5 @@
   X-Frame-Options: DENY
   Referrer-Policy: no-referrer
   X-Content-Type-Options: nosniff
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Permissions-Policy: camera=(), microphone=(self), geolocation=()
   Cache-Control: no-cache
