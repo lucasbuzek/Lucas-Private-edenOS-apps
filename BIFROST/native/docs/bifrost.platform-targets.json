@@ -1,0 +1,186 @@
+{
+  "schema": "bifrost-platform-contract-v1",
+  "product": "BIFROST",
+  "identity": "CONNECT \u00b7 KEEP \u00b7 RESOLVE",
+  "authority": "BIFROST_CROSS_PLATFORM_PRODUCT_CONTRACT.md",
+  "reconciliation_date": "2026-10-09",
+  "scope_rule": "Incomplete/current Mac sources or archival contents must never narrow frozen product canon.",
+  "core": {
+    "one_core": true,
+    "versioned_contracts": true,
+    "offline_first": true,
+    "shared_state": true,
+    "standalone_service": true,
+    "gui_optional": true,
+    "independent_app_domain_ownership": true,
+    "hosting_transfer_reversible": true,
+    "cloud_optional": true,
+    "windows_linux_official_dependency_free_from_apple": true
+  },
+  "deployment_targets": [
+    {
+      "id": "macos-native",
+      "platform": "macos",
+      "role": "native",
+      "required_function": "SwiftUI/AppKit UI, native App bundle, menu bar optional, real Headless client",
+      "evidence": "BUILT_PROCESS_LAUNCHED",
+      "release": false,
+      "release_artifact_verified": false
+    },
+    {
+      "id": "macos-headless",
+      "platform": "macos",
+      "role": "headless",
+      "required_function": "independent launchd service, CLI/API/Web, local provider adapters",
+      "evidence": "RUNNING_PARTIALLY_TESTED",
+      "release": false,
+      "release_artifact_verified": false
+    },
+    {
+      "id": "windows-native",
+      "platform": "windows",
+      "role": "native",
+      "required_function": "native Windows desktop representation, authorized installer/manager, shared API",
+      "evidence": "SPECIFIED_NOT_BUILT",
+      "release": false,
+      "release_artifact_verified": false
+    },
+    {
+      "id": "windows-headless",
+      "platform": "windows",
+      "role": "headless",
+      "required_function": "Windows background Node/SCM or supported user service, CLI/API/Web",
+      "evidence": "SPECIFIED_NOT_BUILT",
+      "release": false,
+      "release_artifact_verified": false
+    },
+    {
+      "id": "linux-native",
+      "platform": "linux",
+      "role": "native",
+      "required_function": "native-quality Linux desktop representation, authorized setup/management",
+      "evidence": "SPECIFIED_NOT_BUILT",
+      "release": false,
+      "release_artifact_verified": false
+    },
+    {
+      "id": "linux-headless",
+      "platform": "linux",
+      "role": "headless",
+      "required_function": "systemd or supported service manager, CLI/API/Web",
+      "evidence": "SPECIFIED_NOT_BUILT",
+      "release": false,
+      "release_artifact_verified": false
+    }
+  ],
+  "representations": [
+    "native-desktop",
+    "headless-api",
+    "web-pwa",
+    "authorized-mobile-bridge"
+  ],
+  "mobile": [
+    "iphone-native-or-web",
+    "ipad",
+    "android-representation-as-justified"
+  ],
+  "profiles": [
+    "INSTALL_RECOMMENDED",
+    "LEAN",
+    "FULL",
+    "CUSTOM"
+  ],
+  "disclosure": [
+    "Simple",
+    "Advanced",
+    "Expert"
+  ],
+  "distributions": [
+    "Lucas-Private",
+    "Slindokuhle-Private",
+    "Family-Friends",
+    "Official-Public"
+  ],
+  "execution_classes": [
+    "ZERO",
+    "LOCAL",
+    "ALPHA",
+    "BETA"
+  ],
+  "canon_sources": [
+    "AppDev/#appDev Bible/APPDEV_BIBLE.md",
+    "AppDev/#appDev Bible/APPDEV_BIBLE.txt",
+    "AppDev/#appDev Bible/AppDevRules/UNIVERSAL_APP_INTEGRATION_HIERARCHY_RULE.md",
+    "Projects/EDEN Apps/BIFROST/docs/BIFROST_CAPABILITY_ARCHITECTURE_RECOVERY_2026-10-07.txt",
+    "EDEN Initiative/EDEN_Master_Bibles_v1.0/BIBLES_EN/BIFROST_BIBLE_v1.0_EN.txt"
+  ],
+  "dp01_steps": [
+    "discover",
+    "identify",
+    "read_metadata",
+    "normalize",
+    "classify",
+    "fingerprint",
+    "relate",
+    "persist",
+    "index",
+    "api"
+  ],
+  "dp01_evidence": "PORTABLE_FILESYSTEM_SLICE_TESTED__FULL_DP01_SCOPE_UNVERIFIED",
+  "release_gate": "Individual platform artifact build+install+runtime+regression+physical acceptance required. No aggregate PASS.",
+  "web_pwa": {
+    "role": "first-class-representation-and-transport-adapter",
+    "is_separate_product_core": false,
+    "included_in_six_desktop_targets": false,
+    "applies_to": [
+      "macos",
+      "windows",
+      "linux",
+      "iphone",
+      "ipad",
+      "android",
+      "web-browser"
+    ],
+    "local_variant": {
+      "id": "bifrost-local-pwa",
+      "source": "headless/",
+      "evidence": "LIVE_LOCAL_RUNTIME_HTTP_PASS_PHYSICAL_NOT_VERIFIED",
+      "transport": "same-origin-local-node"
+    },
+    "remote_variant": {
+      "id": "bifrost-raven-pwa",
+      "source": "BIFROST/web/lucas-raven/public/ in BIFROST Raven branch",
+      "evidence": "LOCAL_BRANCH_UNDEPLOYED",
+      "transport": "authenticated-optional-remote-provider"
+    },
+    "offline_policy": "cache-static-shell-only; never cache API/auth/state/actions; no offline actions",
+    "browser_security": "same-origin local API; no cross-origin proxy or arbitrary public BIFROST bind",
+    "local_lan_interconnect": "SPECIFIED_NOT_BUILT",
+    "remote_device_grants": "NOT_VERIFIED",
+    "actual_mobile_installation": "NOT_VERIFIED",
+    "contract": "BIFROST_PWA_INTERCONNECT_CONTRACT.md"
+  },
+  "kernel_dp01": {
+    "implementation": "core/portable_kernel.py",
+    "runtime": "Python 3.9+ and SQLite3 stdlib",
+    "status": "CANDIDATE",
+    "identity": "SHA-256 file content plus source-scoped directory/location IDs",
+    "persistence": "SQLite v1 WAL; Mac local Application Support",
+    "providers": [
+      "read-only filesystem"
+    ],
+    "shared_api": [
+      "cli.scan",
+      "cli.status",
+      "cli.search",
+      "cli.object",
+      "headless.kernel.status",
+      "headless.kernel.search"
+    ],
+    "native_user_approved_scan": "SOURCE_BUILT_NOT_PHYSICALLY_TESTED",
+    "remote_scan_enabled": false,
+    "metadata_extractors": "NOT_IMPLEMENTED",
+    "windows_linux_execution": "NOT_VERIFIED",
+    "evidence": "BIFROST_DP01_PORTABLE_KERNEL_CANDIDATE_20261009.md"
+  }
+}
