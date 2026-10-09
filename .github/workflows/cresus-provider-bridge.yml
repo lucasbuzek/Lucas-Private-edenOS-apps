@@ -1,0 +1,28 @@
+name: CRESUS provider bridge tests
+on:
+  push:
+    branches: [dev/cresus-cloudflare-intelligence-bridge]
+  pull_request:
+    paths:
+      - 'apps/cresus-pwa/**'
+      - 'CRESUS/cloudflare/**'
+      - '.github/workflows/cresus-provider-bridge.yml'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Existing PWA regression tests
+        run: node --test apps/cresus-pwa/test/*.test.mjs
+      - name: Provider bridge contract tests
+        run: node --test CRESUS/cloudflare/intelligence-bridge.test.mjs
+      - name: Syntax checks
+        run: |
+          node --check apps/cresus-pwa/src/worker.js
+          node --check apps/cresus-pwa/public/app.js
+          node --check apps/cresus-pwa/src/provider-choice.js

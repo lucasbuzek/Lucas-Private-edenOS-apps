@@ -59,6 +59,7 @@ before(async () => {
 
   const db = new DatabaseSync(':memory:');
   db.exec(readFileSync(new URL('../schema.sql', import.meta.url), 'utf8'));
+  db.exec("INSERT INTO intelligence_preferences(email,provider) VALUES ('lucasbuzek@gmail.com','workers-ai'),('wife@gmail.com','workers-ai')");
   env = {
     DB: d1(db),
     ASSETS: { fetch: () => new Response('{}') },
@@ -199,4 +200,32 @@ test('/api/me reports usage for the daily counter', async () => {
   const me = await call('/api/me', { email: 'wife@gmail.com' });
   assert.equal(me.body.usedToday, 2);
   assert.equal(me.body.dailyLimit, 2);
+});
+
+test('provider choice is authenticated and user-scoped',async()=>{
+  assert.equal((await call('/api/intelligence')).status,401);
+  const own=await call('/api/intelligence',{email:OWNER});
+  assert.equal(own.body.provider,'workers-ai');
+  assert.equal(own.body.choices.find(x=>x.id==='codex-cloud').available,false);
+  assert.equal((await call('/api/intelligence',{email:OWNER,method:'PUT',body:{provider:'codex-cloud'}})).status,409);
+  assert.equal((await call('/api/intelligence',{email:OWNER,method:'PUT',body:{provider:'none'}})).status,200);
+  assert.equal((await call('/api/chat',{email:OWNER,method:'POST',body:chat('hello')})).status,409);
+  assert.equal((await call('/api/intelligence',{email:'wife@gmail.com'})).body.provider,'workers-ai');
+  assert.equal((await call('/api/intelligence',{email:OWNER,method:'PUT',body:{provider:'workers-ai'}})).status,200);
+});
+
+test('legacy users retain the existing Workers AI provider until setup is saved',async()=>{
+  const old=await call('/api/intelligence',{email:'third@gmail.com'});
+  // Disabled users stay disabled even if they have never completed onboarding.
+  assert.equal(old.status,403);
+  const created=await call('/api/admin/users',{email:OWNER,method:'POST',body:{email:'legacy@example.com'}});
+  assert.equal(created.status,200);
+  const before=await call('/api/intelligence',{email:'legacy@example.com'});
+  assert.equal(before.status,200);
+  assert.equal(before.body.configured,false);
+  assert.equal(before.body.provider,'workers-ai');
+  const answer=await call('/api/chat',{email:'legacy@example.com',method:'POST',body:chat('legacy default works')});
+  assert.equal(answer.status,200);
+  assert.equal((await call('/api/intelligence',{email:'legacy@example.com',method:'PUT',body:{provider:'none'}})).status,200);
+  assert.equal((await call('/api/chat',{email:'legacy@example.com',method:'POST',body:chat('disabled by user choice')})).status,409);
 });

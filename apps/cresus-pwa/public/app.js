@@ -448,6 +448,31 @@ $('menuBtn').onclick = () => { openDrawer(true); loadConversations(); };
 $('closeDrawer').onclick = $('scrim').onclick = () => openDrawer(false);
 $('newBtn').onclick = $('newBtnSide').onclick = resetChat;
 $('exportBtn').onclick = exportChats;
+async function showIntelligence(firstLogin = false) {
+  const d = await api('/api/intelligence');
+  const select = $('intelligenceProvider');
+  select.replaceChildren();
+  for (const p of d.choices) {
+    const option = document.createElement('option');
+    option.value = p.id;
+    option.textContent = p.label + (p.available ? '' : ' (not connected)');
+    option.disabled = !p.available && p.id !== 'none';
+    select.append(option);
+  }
+  select.value = d.provider || 'none';
+  $('intelligenceStatus').textContent = firstLogin
+    ? 'Choose your provider to start. You can also skip and configure it later.'
+    : 'Only configured providers can be selected. Codex Cloud requires a verified account connector.';
+  $('intelligenceDlg').showModal();
+}
+$('intelligenceBtn').onclick = () => showIntelligence().catch(e => alert(e.message));
+$('intelligenceSave').onclick = async () => {
+  try {
+    const r = await api('/api/intelligence', {method:'PUT', body:JSON.stringify({provider:$('intelligenceProvider').value})});
+    $('intelligenceStatus').textContent = 'Saved: ' + r.provider;
+    $('intelligenceDlg').close();
+  } catch(e) { $('intelligenceStatus').textContent = e.message; }
+};
 $('adminBtn').onclick = () => { openDrawer(false); adminMsg(''); $('adminDlg').showModal(); loadAdmin(); };
 $('saveLimits').onclick = async () => {
   try {
@@ -482,6 +507,8 @@ $('addUser').addEventListener('submit', async (e) => {
     $('adminBtn').hidden = state.me.role !== 'admin';
     refreshQuota();
     if (!mobile()) loadConversations();
+    const intelligence = await api('/api/intelligence');
+    if (!intelligence.configured) await showIntelligence(true);
   } catch (e) {
     const body = cresusShell('simple');
     body.className = 'body';

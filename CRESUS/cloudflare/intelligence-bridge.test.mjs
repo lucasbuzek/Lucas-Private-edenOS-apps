@@ -1,0 +1,10 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import {validateCommand,validateProvider,dispatchCresusCommand} from "./intelligence-bridge.mjs";
+test("rejects arbitrary actions",()=>assert.throws(()=>validateCommand({action:"trade",instruction:"Buy shares now"})));
+test("accepts bounded research",()=>assert.equal(validateCommand({action:"research",instruction:"Research dividend history"}).action,"research"));
+test("rejects unknown provider",()=>assert.throws(()=>validateProvider("https://attacker.example")));
+test("requires authenticated identity",async()=>{const r=await dispatchCresusCommand({userId:"",provider:"workers_ai",command:{action:"research",instruction:"Research dividends"},sessionProvider:"workers_ai",env:{}});assert.equal(r.status,401);});
+test("rejects cross-user provider override",async()=>{const r=await dispatchCresusCommand({userId:"u1",provider:"workers_ai",command:{action:"research",instruction:"Research dividends"},sessionProvider:"codex_cloud",env:{}});assert.equal(r.status,403);});
+test("Codex never reports queued or executed without connector",async()=>{const r=await dispatchCresusCommand({userId:"u1",provider:"codex_cloud",command:{action:"research",instruction:"Research dividends"},sessionProvider:"codex_cloud",env:{}});assert.equal(r.status,501);assert.equal((await r.json()).status,"NOT_DISPATCHED");});
+test("Workers AI adapter executes authorized request",async()=>{let calls=0;const r=await dispatchCresusCommand({userId:"u1",provider:"workers_ai",command:{action:"research",instruction:"Research dividends"},sessionProvider:"workers_ai",env:{CRESUS_WORKERS_AI_MODEL:"test-model",AI:{run:async()=>{calls++;return {response:"result"};}}}});assert.equal(r.status,200);assert.equal(calls,1);});

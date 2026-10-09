@@ -44,6 +44,7 @@
         <div id="quota" class="quota"></div>
         <div class="account-actions">
           <button id="adminBtn" class="text-btn" hidden>Manage access</button>
+          <button id="intelligenceBtn" class="text-btn">Intelligence settings</button>
           <button id="exportBtn" class="text-btn">Export my chats</button>
           <a class="text-btn" href="/cdn-cgi/access/logout">Sign out</a>
         </div>
@@ -91,6 +92,15 @@
     </div>
   </div>
 
+  <dialog id="intelligenceDlg" class="sheet" aria-labelledby="intelligenceTitle">
+    <div class="sheet-head"><h2 id="intelligenceTitle">CRESUS Intelligence</h2>
+      <form method="dialog"><button class="icon-btn" aria-label="Close">×</button></form></div>
+    <p class="muted">Choose an AI provider. Change it anytime in Settings.</p>
+    <label for="intelligenceProvider">AI provider</label>
+    <select id="intelligenceProvider"></select>
+    <p id="intelligenceStatus" class="muted small" role="status"></p>
+    <button id="intelligenceSave" class="btn">Save provider</button>
+  </dialog>
   <dialog id="adminDlg" class="sheet" aria-labelledby="adminTitle">
     <div class="sheet-head">
       <h2 id="adminTitle">Access</h2>

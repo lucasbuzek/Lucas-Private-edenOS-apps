@@ -1,6 +1,6 @@
 import { verifyAccessJwt } from './auth.js';
-import { generate } from './providers.js';
 import { CRESUS_SYSTEM_PROMPT } from './prompt.js';
+import { providerChoices, providerForUser, setProviderForUser, generateForProvider, ProviderSelectionError } from './provider-choice.js';
 
 const HISTORY_TURNS = 12;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -131,12 +131,13 @@ async function handleChat(request, env, user) {
 
   let reply;
   try {
-    reply = await generate(env, `${CRESUS_SYSTEM_PROMPT}\n\n${MODES[mode]}`, history);
+    reply = await generateForProvider(env, await providerForUser(env, user.email), `${CRESUS_SYSTEM_PROMPT}\n\n${MODES[mode]}`, history);
   } catch (err) {
     // Remove the unanswered message so a retry starts clean.
     await env.DB.prepare('DELETE FROM messages WHERE conversation_id = ? AND client_id = ?')
       .bind(conversationId, clientId).run();
     const msg = String(err?.message || err);
+    if (err instanceof ProviderSelectionError) return json({error:msg,retryable:false},err.status);
     const quota = /neuron|4006|daily|quota|limit/i.test(msg);
     return json({
       error: quota
@@ -268,6 +269,14 @@ export default {
           dailyLimit: user.owner ? null : Number(await setting(env, 'daily_message_limit', '40')),
         });
       }
+      if (path === '/api/intelligence' && request.method === 'GET') {
+        const saved = await env.DB.prepare('SELECT provider FROM intelligence_preferences WHERE email = ?').bind(user.email).first();
+        return json({ provider: await providerForUser(env, user.email), configured: !!saved, choices: providerChoices(env) });
+      }
+      if (path === '/api/intelligence' && request.method === 'PUT') {
+        const body = await request.json();
+        return json(await setProviderForUser(env, user.email, body.provider));
+      }
       if (path === '/api/chat' && request.method === 'POST') return handleChat(request, env, user);
       if (path === '/api/export' && request.method === 'GET') return handleExport(env, user);
 
@@ -301,6 +310,7 @@ export default {
 
       return json({ error: 'Not found' }, 404);
     } catch (err) {
+      if (err instanceof ProviderSelectionError) return json({error:err.message,retryable:false},err.status);
       return json({ error: 'Server error', retryable: true }, 500);
     }
   },
