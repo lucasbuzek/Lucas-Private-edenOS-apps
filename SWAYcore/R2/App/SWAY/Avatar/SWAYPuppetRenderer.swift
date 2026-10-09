@@ -161,7 +161,7 @@ struct SWAYPuppetRenderer: View {
     var body: some View {
         if let rig {
             ZStack {
-                SWAYRigPuppetCanvas(rig: rig, joints: joints)
+                SWAYRigPuppetCanvas(rig: rig, joints: joints, mirrored: angle.mirrored)
                 if !trackingAvailable { Text("TRACKING UNKNOWN").font(.caption.bold()).padding(8).background(.black.opacity(0.7),in:Capsule()) }
             }.accessibilityLabel(trackingAvailable ? "Articulated puppet" : "Puppet tracking unknown")
         } else {

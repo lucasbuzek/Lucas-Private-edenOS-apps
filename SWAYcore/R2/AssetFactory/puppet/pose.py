@@ -64,7 +64,9 @@ POSES={
 if __name__=="__main__":
     W,H=rig["canvas"];cell=(W+200,H+200);tiles=[]
     for name,dl in POSES.items():
-        if rig.get('view')=='back': dl={k:-v for k,v in dl.items()}
+        # Heading swaps authored art, not the shared pose's joint handedness.
+        # Inverting all back-view deltas makes squats cross legs and differs from
+        # SWAYCoachPuppetView's unchanged pose.puppetJoints runtime input.
         T=fk(dl,(100,100+(220 if name=="squat" else 0)))
         bg=Image.new("RGBA",cell,(236,232,226,255));bg.alpha_composite(render(T,cell))
         ImageDraw.Draw(bg).text((12,12),name,fill=(0,0,0,255))
