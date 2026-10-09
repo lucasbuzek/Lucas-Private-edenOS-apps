@@ -19,8 +19,8 @@ PUPPET = ROOT / "AssetFactory" / "puppet"
 BOARD = ROOT / "Reference/ArtDirection/upscaled_x4/136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png"
 
 # Original-board x bounds.  Each crop contains one figure and no neighbouring figure.
-# YOUR DANCER intentionally uses Kyle's plain, unbranded parts-kit-compatible neutral base;
-# it is not represented as Lucas and its replaceable layer mapping is recorded separately.
+# YOUR DANCER starts from unbranded board-kit geometry, then build_neutral_dancer.py
+# establishes its own neutral identity and palette before cutting replaceable layers.
 CROPS = {
     "nandi": {"front": (340, 435), "side": (435, 510), "back": (510, 580)},
     "thabo": {"front": (650, 760), "side": (760, 825), "back": (825, 900)},

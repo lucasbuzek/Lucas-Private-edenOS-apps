@@ -94,7 +94,11 @@ for i,p in enumerate(parts):
         lab_o,n_o=ndi.label(own)   # keep the main body of the part only
         if n_o>1:
             sz=ndi.sum(own,lab_o,range(1,n_o+1));own=lab_o==(1+int(np.argmax(sz)))
-    if own.sum()==0: print("EMPTY",p["name"]);continue
+    if own.sum()==0:
+        # A terminal can be fully occluded in a turnaround. Reconstruct its
+        # joint pad rather than silently dropping a required rig part.
+        print("RECONSTRUCT",p["name"])
+        own=np.hypot(xx-J[p["bone"][0]][0],yy-J[p["bone"][0]][1])<=max(6,p["radius"])
     dbg[own]=cols[i]
     ext=own.copy()
     capok=sil if "capFrom" not in p else sil&np.isin(owner,[names.index(n) for n in p["capFrom"]])
@@ -102,7 +106,10 @@ for i,p in enumerate(parts):
         if jn not in J: continue
         if isinstance(r,str):        # "auto[+N]": round joint = limb half-width, NOT clipped
             jx,jy=J[jn].astype(int);hw=float(EDT[max(0,jy-12):jy+13,max(0,jx-12):jx+13].max());r=hw+float(r[4:] or 0)
-            ext|=(np.hypot(xx-J[jn][0],yy-J[jn][1])<=r)&(SILC if "capFrom" not in p else capok)
+            # Reconstruct the round material hidden below the adjoining part.
+            # Clipping this overlap back to the rest silhouette re-opens the
+            # joint as soon as either part rotates.
+            ext|=np.hypot(xx-J[jn][0],yy-J[jn][1])<=r
         elif r>0:
             ext|=(np.hypot(xx-J[jn][0],yy-J[jn][1])<=r)&capok
     for fr in p.get("fillRows",[]):   # {"y":[y0,y1],"to":x}: span from real outer edge to x
@@ -127,8 +134,13 @@ for i,p in enumerate(parts):
     # Profile art uses a single visible limb.  A source-preserving dark duplicate is
     # the TV-animation convention for the far arm/leg and keeps it behind the torso.
     if "darken" in p: rgb=np.clip(rgb.astype(float)*float(p["darken"]),0,255).astype(np.uint8)
-    a=np.where(own,alpha,0).astype(np.uint8);a[ext&~own]=255
-    ys,xs=np.nonzero(a>0);x0,x1,y0,y1=xs.min(),xs.max()+1,ys.min(),ys.max()+1
+    a=np.where(own,np.maximum(alpha,255),0).astype(np.uint8);a[ext&~own]=255
+    ys,xs=np.nonzero(a>0)
+    prox=J[p["bone"][0]]
+    # Keep the rotation pivot inside the exported bitmap even when the visible
+    # source island sits wholly to one side of the anatomically correct joint.
+    x0=min(xs.min(),int(np.floor(prox[0])));x1=max(xs.max()+1,int(np.ceil(prox[0]))+1)
+    y0=min(ys.min(),int(np.floor(prox[1])));y1=max(ys.max()+1,int(np.ceil(prox[1]))+1)
     pad=2;x0=max(0,x0-pad);y0=max(0,y0-pad);x1=min(W,x1+pad);y1=min(H,y1+pad)
     out=np.dstack([rgb,a])[y0:y1,x0:x1]
     fn=f"{cfg['prefix']}_{cfg['view']}_{p['name']}.png"

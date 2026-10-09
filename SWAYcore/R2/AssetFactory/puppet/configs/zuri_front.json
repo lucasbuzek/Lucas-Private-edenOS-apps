@@ -136,7 +136,16 @@
       ],
       "radius": 8,
       "z": 95,
-      "caps": [],
+      "caps": [
+        [
+          "Neck",
+          "auto+8"
+        ],
+        [
+          "HeadTop",
+          "auto+8"
+        ]
+      ],
       "main": true,
       "open": 1
     },
@@ -152,6 +161,14 @@
         [
           "Spine",
           "auto"
+        ],
+        [
+          "RightUpperArm",
+          "auto+12"
+        ],
+        [
+          "LeftUpperArm",
+          "auto+12"
         ]
       ],
       "main": true,
@@ -169,6 +186,14 @@
         [
           "Hips",
           "auto"
+        ],
+        [
+          "RightUpperLeg",
+          "auto+12"
+        ],
+        [
+          "LeftUpperLeg",
+          "auto+12"
         ]
       ],
       "main": true,
@@ -186,6 +211,10 @@
         [
           "RightUpperArm",
           "auto"
+        ],
+        [
+          "RightLowerArm",
+          "auto+8"
         ]
       ],
       "main": true,
@@ -203,6 +232,10 @@
         [
           "RightLowerArm",
           "auto"
+        ],
+        [
+          "RightHand",
+          "auto+8"
         ]
       ],
       "main": true,
@@ -220,6 +253,10 @@
         [
           "RightHand",
           "auto"
+        ],
+        [
+          "RightHandTip",
+          "auto+8"
         ]
       ]
     },
@@ -235,6 +272,10 @@
         [
           "LeftUpperArm",
           "auto"
+        ],
+        [
+          "LeftLowerArm",
+          "auto+8"
         ]
       ],
       "main": true,
@@ -252,6 +293,10 @@
         [
           "LeftLowerArm",
           "auto"
+        ],
+        [
+          "LeftHand",
+          "auto+8"
         ]
       ],
       "main": true,
@@ -269,6 +314,10 @@
         [
           "LeftHand",
           "auto"
+        ],
+        [
+          "LeftHandTip",
+          "auto+8"
         ]
       ]
     },
@@ -284,6 +333,10 @@
         [
           "RightUpperLeg",
           "auto"
+        ],
+        [
+          "RightLowerLeg",
+          "auto+8"
         ]
       ],
       "main": true,
@@ -301,6 +354,10 @@
         [
           "RightLowerLeg",
           "auto"
+        ],
+        [
+          "RightFoot",
+          "auto+8"
         ]
       ],
       "main": true,
@@ -314,7 +371,16 @@
       ],
       "radius": 32,
       "z": 20,
-      "caps": []
+      "caps": [
+        [
+          "RightFoot",
+          "auto+8"
+        ],
+        [
+          "RightToe",
+          "auto+8"
+        ]
+      ]
     },
     {
       "name": "leftThigh",
@@ -328,6 +394,10 @@
         [
           "LeftUpperLeg",
           "auto"
+        ],
+        [
+          "LeftLowerLeg",
+          "auto+8"
         ]
       ],
       "main": true,
@@ -345,6 +415,10 @@
         [
           "LeftLowerLeg",
           "auto"
+        ],
+        [
+          "LeftFoot",
+          "auto+8"
         ]
       ],
       "main": true,
@@ -358,7 +432,16 @@
       ],
       "radius": 32,
       "z": 20,
-      "caps": []
+      "caps": [
+        [
+          "LeftFoot",
+          "auto+8"
+        ],
+        [
+          "LeftToe",
+          "auto+8"
+        ]
+      ]
     }
   ],
   "source": {
@@ -367,5 +450,6 @@
       958,
       1050
     ]
-  }
+  },
+  "articulation": "SWAYHumanoid-v1-overlap-caps"
 }
