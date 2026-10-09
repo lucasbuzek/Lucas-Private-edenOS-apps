@@ -32,3 +32,10 @@
 - PACKAGE: ARM64 + Intel x86_64 build; signed; ZIP SHA256 and clean extraction/executable parity verified.
 - PHYSICAL: GUI click-through remains UNKNOWN (macOS assistive-access denial -25211 and screen capture unavailable). Intel physical runtime UNKNOWN; Windows physical runtime UNKNOWN.
 - STATE: candidate in Releases; no LKG or Products promotion.
+
+## 0.2.11-candidate — 2026-10-09 (EDEN UI refinement; NOT PROMOTED)
+- UI: Homebrew preview/run and unavailable Xcode simulator preview/removal are Developer tools in both the current Finder-style shell and retained legacy view; actual native maintenance actions, preview and confirmation gates are unchanged. Simulator removal stays Expert-only.
+- UI: Give standalone JANITOR its own amber paintbrush identity matching the existing EDEN/BIFROST JANITOR accent, improve sidebar width/two-line labels and selected-item emphasis, add an honest on-demand/local-first footer.
+- UI: System Check header and cards use restrained EDEN-style semantic accents. Do not imply health or completed checks without SystemInspector evidence.
+- TEST: 50/50 Python tests, native Swift runtime and SwiftUI host/System Check smoke passed; universal ARM64+x86_64 build, package verification and application launch passed.
+- PHYSICAL: screenshot/Accessibility gates remain UNKNOWN; no LKG or Products promotion. Previous 0.2.10 candidate and earlier baselines remain recoverable.

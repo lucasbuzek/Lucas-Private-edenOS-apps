@@ -1,7 +1,15 @@
 import SwiftUI
 import AppKit
 
-// Finder-style native shell. Existing JANITOR scan and recovery engines are unchanged.
+// Finder-style native shell. EDEN presentation cues are visual only;
+// JANITOR remains fully standalone. Existing scan and recovery engines unchanged.
+private enum JanitorVisual {
+    static let signature = Color(red: 0.99, green: 0.69, blue: 0.26)
+    static let action = Color(red: 0.22, green: 0.54, blue: 0.95)
+    static let panel = Color(nsColor: .controlBackgroundColor)
+    static let outline = signature.opacity(0.26)
+}
+
 private struct SidebarCommand: Identifiable {
     let id: String
     let name: String
@@ -26,12 +34,21 @@ private struct SidebarTools: View {
         )) {
             ForEach(entries.filter { m.level >= $0.minLevel }) { entry in
                 Button { run(entry.id) } label: {
-                    Label(entry.name, systemImage: entry.symbol)
-                        .font(.callout)
-                        .lineLimit(1)
+                    HStack(alignment: .center, spacing: 9) {
+                        Image(systemName: entry.symbol)
+                            .foregroundStyle(entry.id == "sim-run" ? Color.orange : JanitorVisual.action)
+                            .frame(width: 20)
+                        Text(entry.name)
+                            .font(.system(size: 12.5, weight: .medium))
+                            .lineLimit(2)
+                            .multilineTextAlignment(.leading)
+                        Spacer(minLength: 0)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
-                .padding(.vertical, 3)
+                .padding(.vertical, 4)
                 .help(entry.name)
             }
         } label: {
@@ -52,10 +69,6 @@ struct FinderShellView: View {
         .init("choose-scan", "Scan a selected folder", "folder"),
         .init("treemap", "Interactive storage map", "rectangle.split.3x3"),
         .init("storage-map", "Folder size report", "chart.bar.xaxis"),
-        .init("brew-preview", "Preview Homebrew cleanup", "eye"),
-        .init("brew-run", "Run Homebrew cleanup…", "shippingbox"),
-        .init("sim-preview", "Review unavailable simulators", "iphone"),
-        .init("sim-run", "Remove unavailable simulators…", "trash", .expert),
         .init("old-recovery", "Purge old Recovery items…", "clock.arrow.circlepath", .expert)
     ]
     private let developer: [SidebarCommand] = [
@@ -63,7 +76,11 @@ struct FinderShellView: View {
         .init("projects", "Project discovery", "square.stack.3d.up"),
         .init("builds", "Build versions", "list.number", .expert),
         .init("dependencies", "Dependencies", "shippingbox", .expert),
-        .init("dev-root", "Choose developer folder…", "folder.badge.gearshape")
+        .init("dev-root", "Choose developer folder…", "folder.badge.gearshape"),
+        .init("brew-preview", "Preview Homebrew cleanup", "eye"),
+        .init("brew-run", "Run Homebrew cleanup…", "shippingbox"),
+        .init("sim-preview", "Review unavailable simulators", "iphone"),
+        .init("sim-run", "Remove unavailable simulators…", "trash", .expert)
     ]
     private let media: [SidebarCommand] = [
         .init("media", "Find large media files", "film"),
@@ -93,19 +110,36 @@ struct FinderShellView: View {
     private func quick(_ name: String, icon: String, key: String) -> some View {
         Button { perform(key) } label: {
             Label(name, systemImage: icon)
-                .font(.callout.weight(m.workspaceTitle == name ? .semibold : .regular))
+                .font(.system(size: 13, weight: m.workspaceTitle == name ? .semibold : .medium))
                 .lineLimit(1)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .padding(.vertical, 4)
-        .listRowBackground(m.workspaceTitle == name ? Color.accentColor.opacity(0.15) : Color.clear)
+        .padding(.vertical, 6)
+        .listRowBackground(m.workspaceTitle == name ? JanitorVisual.action.opacity(0.14) : Color.clear)
     }
 
     private var sidebar: some View {
         List {
-            Section("QUICK ACTIONS") {
+            HStack(spacing: 12) {
+                Image(systemName: "paintbrush.pointed.fill")
+                    .font(.system(size: 24, weight: .medium))
+                    .foregroundStyle(JanitorVisual.signature)
+                    .frame(width: 42, height: 42)
+                    .background(JanitorVisual.signature.opacity(0.13), in: RoundedRectangle(cornerRadius: 11))
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("JANITOR")
+                        .font(.system(size: 18, weight: .bold, design: .rounded))
+                    Text("INSPECT · TIDY · RECOVER")
+                        .font(.system(size: 9, weight: .medium))
+                        .foregroundStyle(.secondary)
+                }
+            }
+            .padding(.vertical, 11)
+            .listRowBackground(Color.clear)
+            .accessibilityElement(children: .combine)
+            Section("WORKSPACE") {
                 quick("System Check", icon: "checkmark.shield", key: "system")
                 quick("Quick Scan", icon: "bolt", key: "quick")
                 quick("Storage", icon: "internaldrive", key: "storage")
@@ -113,7 +147,7 @@ struct FinderShellView: View {
                 quick("Recovery", icon: "arrow.uturn.backward", key: "recovery")
             }
             if m.level >= .advanced {
-                Section("MORE TOOLS") {
+                Section("SPECIALIST TOOLS") {
                     SidebarTools(name: "Maintenance", symbol: "wrench", entries: maintenance, run: perform)
                     SidebarTools(name: "Developer", symbol: "hammer", entries: developer, run: perform)
                     SidebarTools(name: "Media", symbol: "photo", entries: media, run: perform)
@@ -126,8 +160,25 @@ struct FinderShellView: View {
             }
         }
         .listStyle(.sidebar)
-        .navigationTitle("JANITOR")
-        .navigationSplitViewColumnWidth(min: 205, ideal: 235, max: 285)
+        .scrollContentBackground(.hidden)
+        .background(Color(nsColor: .underPageBackgroundColor))
+        .safeAreaInset(edge: .bottom) {
+            HStack(spacing: 9) {
+                Image(systemName: "checkmark.shield.fill")
+                    .foregroundStyle(JanitorVisual.signature)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("On-demand utility").font(.caption.weight(.semibold))
+                    Text("No background service · Local-first")
+                        .font(.caption2).foregroundStyle(.secondary)
+                }
+                Spacer(minLength: 0)
+            }
+            .padding(12)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(JanitorVisual.panel.opacity(0.85))
+            .accessibilityElement(children: .combine)
+        }
+        .navigationSplitViewColumnWidth(min: 250, ideal: 290, max: 345)
         .disabled(m.busy)
     }
 
@@ -199,6 +250,7 @@ struct FinderShellView: View {
                 }
             }
         }
+        .tint(JanitorVisual.action)
         .sheet(isPresented: $m.showTreemap) {
             TreemapWindow(root: m.workRoot ?? Storage.home)
         }
@@ -251,8 +303,8 @@ struct FinderShellView: View {
         let title: String
         switch key {
         case "quick": group = .clean; title = "Quick Scan"
-        case "storage", "treemap", "storage-map", "full", "choose-scan", "brew-preview",
-             "brew-run", "sim-preview", "sim-run", "old-recovery": group = .clean; title = "Storage"
+        case "storage", "treemap", "storage-map", "full", "choose-scan", "old-recovery": group = .clean; title = "Storage"
+        case "brew-preview", "brew-run", "sim-preview", "sim-run": group = .developer; title = "Developer"
         case "duplicates", "media", "similar-images", "similar-names", "photos-footprint": group = .organize; title = "Media"
         case "devquick", "projects", "builds", "dependencies", "dev-root": group = .developer; title = "Developer"
         default: group = .crew; title = "Full Crew"
@@ -327,13 +379,21 @@ private struct SystemCheckWorkspace: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 15) {
-                HStack {
+                HStack(alignment: .center, spacing: 14) {
+                    Image(systemName: "paintbrush.pointed.fill")
+                        .font(.system(size: 28, weight: .medium))
+                        .foregroundStyle(JanitorVisual.signature)
+                        .frame(width: 59, height: 59)
+                        .background(JanitorVisual.signature.opacity(0.12), in: RoundedRectangle(cornerRadius: 13))
                     VStack(alignment: .leading, spacing: 3) {
-                        Text("System Check").font(.title2.bold())
-                        Text("A quick, read-only look at maintenance opportunities.")
+                        Text("JANITOR")
+                            .font(.system(size: 26, weight: .bold, design: .rounded))
+                        Text("System maintenance & recovery")
                             .font(.callout).foregroundStyle(.secondary)
+                        Text("Read-only until you explicitly review and confirm an action")
+                            .font(.caption2).foregroundStyle(.secondary)
                     }
-                    Spacer()
+                    Spacer(minLength: 8)
                     Button {
                         run("system")
                     } label: {
@@ -342,6 +402,9 @@ private struct SystemCheckWorkspace: View {
                     .buttonStyle(.borderedProminent)
                     .disabled(m.busy)
                 }
+                .padding(16)
+                .background(JanitorVisual.panel, in: RoundedRectangle(cornerRadius: 14))
+                .overlay(RoundedRectangle(cornerRadius: 14).stroke(JanitorVisual.outline))
                 if m.busy {
                     HStack(spacing: 10) {
                         ProgressView()
@@ -363,7 +426,8 @@ private struct SystemCheckWorkspace: View {
                         StatCard(label: "Need individual review", value: "\(report.manualCount) items",
                                  detail: "No automatic decisions")
                     }
-                    Text("Recommended next actions").font(.headline)
+                    Label("Recommended next actions", systemImage: "checklist")
+                        .font(.headline)
                     if report.recommendations.isEmpty {
                         Text("No further actions recommended by these limited checks.")
                             .font(.callout).foregroundStyle(.secondary)
@@ -382,8 +446,9 @@ private struct SystemCheckWorkspace: View {
                                     Image(systemName: "chevron.right").foregroundStyle(.secondary)
                                 }
                                 .padding(10)
-                                .background(Color(nsColor: .controlBackgroundColor),
-                                            in: RoundedRectangle(cornerRadius: 9))
+                                .background(JanitorVisual.panel,
+                                            in: RoundedRectangle(cornerRadius: 11))
+                                .overlay(RoundedRectangle(cornerRadius: 11).stroke(JanitorVisual.action.opacity(0.12)))
                                 .contentShape(Rectangle())
                             }
                             .buttonStyle(.plain)
@@ -441,8 +506,9 @@ private struct StatCard: View {
         }
         .padding(13)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(nsColor: .controlBackgroundColor),
-                    in: RoundedRectangle(cornerRadius: 9))
+        .background(JanitorVisual.panel,
+                    in: RoundedRectangle(cornerRadius: 11))
+        .overlay(RoundedRectangle(cornerRadius: 11).stroke(JanitorVisual.action.opacity(0.18)))
     }
 }
 

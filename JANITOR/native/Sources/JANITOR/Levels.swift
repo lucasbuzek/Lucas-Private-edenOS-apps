@@ -75,8 +75,6 @@ struct ModeView: View {
 
 struct CleanView: View {
     @EnvironmentObject var m: Model
-    @State private var confirmBrew = false
-    @State private var confirmSim = false
     @State private var confirmOld = false
 
     var body: some View {
@@ -91,24 +89,12 @@ struct CleanView: View {
             if lv >= .advanced {
                 Btn("Deeper check", "magnifyingglass") { m.run("Full Scan") { Modes.quick(full: true) } }
                 Btn("Choose what to check…", "folder") { m.chooseAndScan() }
-                Btn("Preview Homebrew cleanup", "eye") { m.run("Homebrew preview") { Maint.brew(dryRun: true) } }
-                Btn("Run Homebrew cleanup…", "shippingbox") { confirmBrew = true }
-                Btn("Preview unavailable simulators", "eye") { m.run("Simulator preview") { Maint.simulators(dryRun: true) } }
-                Btn("Remove unavailable simulators…", "iphone") { confirmSim = true }
             }
             if lv >= .expert {
                 Btn("Delete recovery items > 30 days…", "clock.arrow.circlepath") { m.refreshOps(); confirmOld = true }
             }
         }
         .sheet(isPresented: $m.showTreemap) { TreemapWindow(root: m.workRoot ?? Storage.home) }
-        .confirmationDialog("Run `brew cleanup`?", isPresented: $confirmBrew, titleVisibility: .visible) {
-            Button("Run cleanup") { m.run("Homebrew cleanup") { Maint.brew(dryRun: false) } }
-            Button("Cancel", role: .cancel) {}
-        } message: { Text("Uses Homebrew's own cleanup. Preview first to see what it will remove.") }
-        .confirmationDialog("Remove unavailable simulators?", isPresented: $confirmSim, titleVisibility: .visible) {
-            Button("Run simctl delete unavailable") { m.run("Remove simulators") { Maint.simulators(dryRun: false) } }
-            Button("Cancel", role: .cancel) {}
-        } message: { Text("Uses Apple's simctl. Only simulators Xcode already marks unavailable are removed.") }
         .confirmationDialog("Delete \(m.oldOps(days: 30).count) quarantine operation(s) older than 30 days?", isPresented: $confirmOld, titleVisibility: .visible) {
             Button("Delete permanently", role: .destructive) { m.deleteOps(m.oldOps(days: 30)) }
             Button("Cancel", role: .cancel) {}
@@ -169,6 +155,8 @@ struct FullCrewView: View {
 
 struct DeveloperView: View {
     @EnvironmentObject var m: Model
+    @State private var confirmBrew = false
+    @State private var confirmSim = false
     var body: some View {
         let lv = m.effective(Model.Mode.developer.rawValue)
         Scaffold(title: "Developer",
@@ -177,10 +165,22 @@ struct DeveloperView: View {
                  feature: Model.Mode.developer.rawValue) {
             Btn("Find development leftovers", "externaldrive.badge.magnifyingglass") { m.run("Developer Quick") { Modes.devQuick() } }
             Btn("Find projects and versions", "square.stack.3d.up") { let r = m.devRoot; m.run("Project discovery") { Modes.projects(root: r) } }
+            Btn("Preview Homebrew cleanup", "eye") { m.run("Homebrew preview") { Maint.brew(dryRun: true) } }
+            Btn("Run Homebrew cleanup…", "shippingbox") { confirmBrew = true }
+            Btn("Review unavailable simulators", "iphone") { m.run("Simulator preview") { Maint.simulators(dryRun: true) } }
             if lv >= .expert {
                 Btn("Review old build versions", "list.number") { let r = m.devRoot; m.run("Build families") { Modes.buildFamilies(root: r) } }
                 Btn("Inspect build dependencies", "shippingbox") { let r = m.devRoot; m.run("Dependency discovery") { Modes.dependencies(root: r) } }
+                Btn("Remove unavailable simulators…", "trash") { confirmSim = true }
             }
         }
+        .confirmationDialog("Run Homebrew cleanup?", isPresented: $confirmBrew) {
+            Button("Run cleanup") { m.run("Homebrew cleanup") { Maint.brew(dryRun: false) } }
+            Button("Cancel", role: .cancel) {}
+        } message: { Text("Uses Homebrew cleanup. Review the preview first.") }
+        .confirmationDialog("Remove unavailable simulators?", isPresented: $confirmSim) {
+            Button("Remove unavailable simulators", role: .destructive) { m.run("Remove simulators") { Maint.simulators(dryRun: false) } }
+            Button("Cancel", role: .cancel) {}
+        } message: { Text("Uses native Xcode simctl, only for unavailable simulators.") }
     }
 }

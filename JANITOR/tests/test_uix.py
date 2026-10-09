@@ -15,6 +15,43 @@ class FinderUIXContractTests(unittest.TestCase):
         cls.engine = (SRC / "SystemInspector.swift").read_text()
         cls.levels = (SRC / "Levels.swift").read_text()
 
+    def test_developer_owns_homebrew_and_simulators(self):
+        maintenance = self.shell.split("private let maintenance: [SidebarCommand] = [", 1)[1].split("    ]", 1)[0]
+        developer = self.shell.split("private let developer: [SidebarCommand] = [", 1)[1].split("    ]", 1)[0]
+        for key in ("brew-preview", "brew-run", "sim-preview", "sim-run"):
+            self.assertNotIn('"' + key + '"', maintenance)
+            self.assertIn('"' + key + '"', developer)
+        self.assertIn('case "brew-preview", "brew-run", "sim-preview", "sim-run": group = .developer', self.shell)
+        self.assertIn('case "brew-run": confirmBrew = true', self.shell)
+        self.assertIn('case "sim-run": confirmSim = true', self.shell)
+        self.assertIn('"sim-run", "Remove unavailable simulators…", "trash", .expert', developer)
+
+    def test_branded_sidebar_retains_native_settings_and_cues(self):
+        self.assertIn('Text("JANITOR")', self.shell)
+        self.assertIn('Text("INSPECT · TIDY · RECOVER")', self.shell)
+        self.assertIn('Image(systemName: "paintbrush.pointed.fill")', self.shell)
+        self.assertIn('.safeAreaInset(edge: .bottom)', self.shell)
+        self.assertIn('No background service · Local-first', self.shell)
+        self.assertIn('navigationSplitViewColumnWidth(min: 250, ideal: 290, max: 345)', self.shell)
+        for required in ('case "system":', 'case "recovery":', 'case "settings":',
+                         'SystemInspectorPanel(run: perform)', 'QuarantineView()', 'SettingsView()'):
+            self.assertIn(required, self.shell)
+
+    def test_dashboard_does_not_claim_unverified_health(self):
+        self.assertIn('Text("Read-only until you explicitly review and confirm an action")', self.shell)
+        self.assertIn('No system check has been run in this session.', self.shell)
+        self.assertNotIn('Text("System Health Good")', self.shell)
+        self.assertIn('m.systemReport == nil', self.shell)
+
+    def test_legacy_clean_and_developer_classification(self):
+        legacy = (SRC / "Levels.swift").read_text()
+        clean = legacy.split('struct CleanView: View {', 1)[1].split('// MARK: - Organize', 1)[0]
+        developer = legacy.split('struct DeveloperView: View {', 1)[1]
+        self.assertNotIn('Maint.brew(', clean)
+        self.assertNotIn('Maint.simulators(', clean)
+        self.assertIn('Maint.brew(dryRun: true)', developer)
+        self.assertIn('Maint.simulators(dryRun: true)', developer)
+
     def test_interface_level_is_one_toolbar_picker(self):
         self.assertIn('Picker("Interface", selection: $m.level)', self.shell)
         self.assertIn(".pickerStyle(.menu)", self.shell)
