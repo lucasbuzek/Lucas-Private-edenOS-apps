@@ -46,3 +46,17 @@
 - UI: Shorten Developer, Maintenance, Media, Full Crew and cloud tool labels without changing their actions or confirmation gates. Homebrew/simulator actions remain under Developer with simulator deletion Expert-only.
 - EVIDENCE: 52/52 Python regression tests; direct Swift runtime + SwiftUI hosting/System Check PASS; universal Apple Silicon/Intel macOS build and clean ZIP extraction/signature/hash/byte parity PASS; launch observed.
 - PHYSICAL: visual titlebar alignment and click-through acceptance remain UNKNOWN pending user inspection of actual native window. LKG preserved, no Products promotion.
+
+
+## 0.2.13-candidate — 2026-10-09 (visual acceptance refinement; not promoted)
+- Observed from an AppKit-hosted render of JANITOR's real FinderShell: System Check heading and Inspector title entered the unified toolbar region; collapsed-section icons had insufficient light-mode contrast; Settings was occluded by the pinned status footer.
+- Repaired: 52-pt content clearance below unified toolbar for detail/Inspector, legible blue specialist icons, one pinned Settings row above the local-first footer, consistent contrast for simulator action icon.
+- Extended static UI contracts for new layout, action continuity and permission requirements. Existing engine actions, protections and LKG remain unchanged.
+- AppKit-hosted layout render is evidence of view-tree appearance, **not** on-screen GUI click-through or a physical acceptance gate. Screen capture/accessibility TCC remains unavailable from remote shell. Do not promote based on render alone.
+
+
+## 0.2.14-candidate — 2026-10-09 (sidebar fixed controls + dark contrast)
+- AppKit-hosted 1100x760 dark appearance preview exposed black text on dark List/sidebar material; physical production behavior still UNKNOWN. Explicit adaptive SwiftUI Color.primary/secondary now applied to sidebar labels and section headings.
+- Replace List.safeAreaInset overpainting with a real VStack: scrollable List above pinned Settings and local-first status. Long Developer tool lists no longer draw beneath fixed controls.
+- Preserve command action identifiers, Expert-only destructive confirmations and Inspector. Static, native runtime, visual-host and physical gates remain distinct.
+- Visual correction during 0.2.14 candidate: sidebar labels use explicit light/dark-aware ink and muted text colors because AppKit-hosted dark List material did not reliably propagate semantic Color.primary.

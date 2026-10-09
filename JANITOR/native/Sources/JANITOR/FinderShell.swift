@@ -8,6 +8,15 @@ private enum JanitorVisual {
     static let action = Color(red: 0.22, green: 0.54, blue: 0.95)
     static let panel = Color(nsColor: .controlBackgroundColor)
     static let outline = signature.opacity(0.26)
+    // Explicit sidebar ink avoids native List/NSOutlineView appearance mismatches.
+    static func ink(_ scheme: ColorScheme) -> Color {
+        scheme == .dark ? Color(red: 0.94, green: 0.95, blue: 0.97)
+                        : Color(red: 0.11, green: 0.13, blue: 0.17)
+    }
+    static func muted(_ scheme: ColorScheme) -> Color {
+        scheme == .dark ? Color(red: 0.72, green: 0.74, blue: 0.78)
+                        : Color(red: 0.39, green: 0.41, blue: 0.44)
+    }
 }
 
 private struct SidebarCommand: Identifiable {
@@ -22,6 +31,7 @@ private struct SidebarCommand: Identifiable {
 
 private struct SidebarTools: View {
     @EnvironmentObject private var m: Model
+    @Environment(\.colorScheme) private var scheme
     let name: String
     let symbol: String
     let entries: [SidebarCommand]
@@ -37,14 +47,15 @@ private struct SidebarTools: View {
                 HStack(spacing: 8) {
                     Image(systemName: expanded ? "chevron.down" : "chevron.right")
                         .font(.system(size: 10, weight: .semibold))
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(JanitorVisual.action.opacity(0.85))
                         .frame(width: 13)
                     Image(systemName: symbol)
                         .font(.system(size: 13))
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(JanitorVisual.action)
                         .frame(width: 19)
                     Text(name)
                         .font(.system(size: 13, weight: .semibold))
+                        .foregroundStyle(JanitorVisual.ink(scheme))
                     Spacer(minLength: 0)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -62,10 +73,11 @@ private struct SidebarTools: View {
                             Color.clear.frame(width: 13, height: 1)
                             Image(systemName: entry.symbol)
                                 .font(.system(size: 12))
-                                .foregroundStyle(entry.id == "sim-run" ? Color.orange : JanitorVisual.action)
+                                .foregroundStyle(JanitorVisual.action)
                                 .frame(width: 19)
                             Text(entry.name)
                                 .font(.system(size: 12.5, weight: .medium))
+                                .foregroundStyle(JanitorVisual.ink(scheme))
                                 .lineLimit(1)
                                 .minimumScaleFactor(0.85)
                             Spacer(minLength: 0)
@@ -85,6 +97,7 @@ private struct SidebarTools: View {
 
 struct FinderShellView: View {
     @EnvironmentObject private var m: Model
+    @Environment(\.colorScheme) private var scheme
     @State private var confirmBrew = false
     @State private var confirmSim = false
     @State private var confirmOld = false
@@ -136,6 +149,7 @@ struct FinderShellView: View {
         Button { perform(key) } label: {
             Label(name, systemImage: icon)
                 .font(.system(size: 13, weight: m.workspaceTitle == name ? .semibold : .medium))
+                .foregroundStyle(JanitorVisual.ink(scheme))
                 .lineLimit(1)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .contentShape(Rectangle())
@@ -146,7 +160,9 @@ struct FinderShellView: View {
     }
 
     private var sidebar: some View {
-        List {
+        // Stack the scrollable tools and pinned controls separately: no footer overlay.
+        VStack(spacing: 0) {
+            List {
             HStack(spacing: 12) {
                 Image(systemName: "paintbrush.pointed.fill")
                     .font(.system(size: 24, weight: .medium))
@@ -156,52 +172,70 @@ struct FinderShellView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text("JANITOR")
                         .font(.system(size: 18, weight: .bold, design: .rounded))
+                        .foregroundStyle(JanitorVisual.ink(scheme))
                     Text("INSPECT · TIDY · RECOVER")
                         .font(.system(size: 9, weight: .medium))
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(JanitorVisual.muted(scheme))
                 }
             }
             .padding(.vertical, 11)
             .listRowBackground(Color.clear)
             .accessibilityElement(children: .combine)
-            Section("WORKSPACE") {
+            Section {
                 quick("System Check", icon: "checkmark.shield", key: "system")
                 quick("Quick Scan", icon: "bolt", key: "quick")
                 quick("Storage", icon: "internaldrive", key: "storage")
                 quick("Duplicates", icon: "doc.on.doc", key: "duplicates")
                 quick("Recovery", icon: "arrow.uturn.backward", key: "recovery")
+            } header: {
+                Text("WORKSPACE").font(.caption.weight(.semibold))
+                    .foregroundStyle(JanitorVisual.muted(scheme))
             }
             if m.level >= .advanced {
-                Section("SPECIALIST TOOLS") {
+                Section {
                     SidebarTools(name: "Maintenance", symbol: "wrench", entries: maintenance, run: perform)
                     SidebarTools(name: "Developer", symbol: "hammer", entries: developer, run: perform)
                     SidebarTools(name: "Media", symbol: "photo", entries: media, run: perform)
                     SidebarTools(name: "Full Crew", symbol: "slider.horizontal.3", entries: fullCrew, run: perform)
                     SidebarTools(name: "Cloud & Photos", symbol: "icloud", entries: cloud, run: perform)
+                } header: {
+                    Text("SPECIALIST TOOLS").font(.caption.weight(.semibold))
+                        .foregroundStyle(JanitorVisual.muted(scheme))
                 }
-            }
-            Section {
-                quick("Settings", icon: "gearshape", key: "settings")
             }
         }
         .listStyle(.sidebar)
         .scrollContentBackground(.hidden)
         .background(Color(nsColor: .underPageBackgroundColor))
-        .safeAreaInset(edge: .bottom) {
-            HStack(spacing: 9) {
-                Image(systemName: "checkmark.shield.fill")
-                    .foregroundStyle(JanitorVisual.signature)
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("On-demand utility").font(.caption.weight(.semibold))
-                    Text("No background service · Local-first")
-                        .font(.caption2).foregroundStyle(.secondary)
+            VStack(alignment: .leading, spacing: 0) {
+                Button { perform("settings") } label: {
+                    Label("Settings", systemImage: "gearshape")
+                        .font(.system(size: 13, weight: .medium))
+                        .foregroundStyle(JanitorVisual.ink(scheme))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .contentShape(Rectangle())
                 }
-                Spacer(minLength: 0)
+                .buttonStyle(.plain)
+                .padding(.horizontal, 24)
+                .padding(.vertical, 12)
+                .background(m.workspace == .settings ? JanitorVisual.action.opacity(0.13) : Color.clear)
+                Divider()
+                HStack(spacing: 9) {
+                    Image(systemName: "checkmark.shield.fill")
+                        .foregroundStyle(JanitorVisual.signature)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("On-demand utility").font(.caption.weight(.semibold))
+                            .foregroundStyle(JanitorVisual.ink(scheme))
+                        Text("No background service · Local-first")
+                            .font(.caption2).foregroundStyle(JanitorVisual.muted(scheme))
+                    }
+                    Spacer(minLength: 0)
+                }
+                .padding(12)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .accessibilityElement(children: .combine)
             }
-            .padding(12)
-            .frame(maxWidth: .infinity, alignment: .leading)
             .background(JanitorVisual.panel.opacity(0.85))
-            .accessibilityElement(children: .combine)
         }
         .navigationSplitViewColumnWidth(min: 250, ideal: 290, max: 345)
         .disabled(m.busy)
@@ -252,6 +286,8 @@ struct FinderShellView: View {
                         .background(Color(nsColor: .controlBackgroundColor))
                 }
             }
+            // Reserve top content clearance beneath unified macOS titlebar/toolbar.
+            .padding(.top, 52)
         }
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {

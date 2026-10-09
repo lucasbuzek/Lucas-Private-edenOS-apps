@@ -30,7 +30,7 @@ class FinderUIXContractTests(unittest.TestCase):
         self.assertIn('Text("JANITOR")', self.shell)
         self.assertIn('Text("INSPECT · TIDY · RECOVER")', self.shell)
         self.assertIn('Image(systemName: "paintbrush.pointed.fill")', self.shell)
-        self.assertIn('.safeAreaInset(edge: .bottom)', self.shell)
+        self.assertIn('VStack(spacing: 0) {', self.shell)
         self.assertIn('No background service · Local-first', self.shell)
         self.assertIn('navigationSplitViewColumnWidth(min: 250, ideal: 290, max: 345)', self.shell)
         for required in ('case "system":', 'case "recovery":', 'case "settings":',
@@ -51,6 +51,37 @@ class FinderUIXContractTests(unittest.TestCase):
         self.assertNotIn('Maint.simulators(', clean)
         self.assertIn('Maint.brew(dryRun: true)', developer)
         self.assertIn('Maint.simulators(dryRun: true)', developer)
+
+    def test_sidebar_settings_pinned_above_status_footer(self):
+        sidebar = self.shell.split('private var sidebar: some View {', 1)[1].split('private var mainPane: some View', 1)[0]
+        self.assertIn('Button { perform("settings") } label:', sidebar)
+        self.assertNotIn('quick("Settings",', sidebar)
+        self.assertIn('VStack(alignment: .leading, spacing: 0)', sidebar)
+        self.assertIn('VStack(spacing: 0) {', sidebar)
+
+    def test_sidebar_section_icons_contrast_and_toolbar_clearance(self):
+        self.assertIn('.foregroundStyle(JanitorVisual.action)', self.shell)
+        self.assertIn('Image(systemName: expanded ? "chevron.down" : "chevron.right")', self.shell)
+        self.assertIn('.foregroundStyle(JanitorVisual.action.opacity(0.85))', self.shell)
+        self.assertNotIn('entry.id == "sim-run" ? Color.orange', self.shell)
+        self.assertIn('.padding(.top, 52)', self.shell)
+
+    def test_dark_sidebar_text_uses_explicit_adaptive_palette(self):
+        self.assertIn('Text(entry.name)', self.shell)
+        self.assertIn('Text(name)', self.shell)
+        self.assertIn('@Environment(\\.colorScheme) private var scheme', self.shell)
+        self.assertIn('.foregroundStyle(JanitorVisual.ink(scheme))', self.shell)
+        self.assertIn('.foregroundStyle(JanitorVisual.muted(scheme))', self.shell)
+        self.assertIn('scheme == .dark ? Color(red:', self.shell)
+        self.assertIn('Text("WORKSPACE").font(.caption.weight(.semibold))', self.shell)
+        self.assertIn('Text("SPECIALIST TOOLS").font(.caption.weight(.semibold))', self.shell)
+
+    def test_sidebar_fixed_controls_not_overlaid_on_list(self):
+        sidebar = self.shell.split('private var sidebar: some View {', 1)[1].split('private var mainPane: some View', 1)[0]
+        self.assertIn('VStack(spacing: 0) {', sidebar)
+        self.assertNotIn('.safeAreaInset(edge: .bottom', sidebar)
+        self.assertIn('Button { perform("settings") } label:', sidebar)
+        self.assertIn('Divider()', sidebar)
 
     def test_compact_toolbar_uses_single_window_placement(self):
         app = (SRC / "App.swift").read_text()
