@@ -270,7 +270,8 @@ export default {
         });
       }
       if (path === '/api/intelligence' && request.method === 'GET') {
-        return json({ provider: await providerForUser(env, user.email), choices: providerChoices(env) });
+        const saved = await env.DB.prepare('SELECT provider FROM intelligence_preferences WHERE email = ?').bind(user.email).first();
+        return json({ provider: await providerForUser(env, user.email), configured: !!saved, choices: providerChoices(env) });
       }
       if (path === '/api/intelligence' && request.method === 'PUT') {
         const body = await request.json();
