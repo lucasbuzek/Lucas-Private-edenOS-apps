@@ -191,7 +191,18 @@
   }
 
   async function refresh() {
-    try { render(await api("state")); } catch (e) { if (e.message !== "unauthorized") setBadge("stale", "Raven unreachable"); }
+    try {
+      render(await api("state"));
+      $("refreshLists").disabled = false;
+      $("chatSend").disabled = false;
+    } catch (e) {
+      if (e.message !== "unauthorized") {
+        setBadge("stale", "Raven unreachable · live state unverified");
+        setControls(false);
+        $("refreshLists").disabled = true;
+        $("chatSend").disabled = true;
+      }
+    }
   }
   function start() {
     refresh();
@@ -232,4 +243,40 @@
   if (fromHash) history.replaceState(null, "", location.pathname);
   const saved = fromHash || store.get();
   if (saved) pair(saved); else api("state").then(data => { render(data); start(); }).catch(() => showPair("Sign in through Cloudflare Access, or use a pairing key below."));
+
+  // Installable remote BIFROST representation. No API/action/auth responses
+  // are cached by the worker. PWA installation never grants remote permissions.
+  let installPrompt = null;
+  window.addEventListener("beforeinstallprompt", event => {
+    event.preventDefault();
+    installPrompt = event;
+    $("installPwa").hidden = false;
+  });
+  $("installPwa").addEventListener("click", async () => {
+    if (!installPrompt) return;
+    const pending = installPrompt;
+    installPrompt = null;
+    $("installPwa").hidden = true;
+    await pending.prompt();
+  });
+  window.addEventListener("appinstalled", () => {
+    $("installPwa").hidden = true;
+    $("pwaInstallHelp").textContent = "PWA installed; Node access remains subject to authentication and grants.";
+  });
+  if ("serviceWorker" in navigator && window.isSecureContext) {
+    navigator.serviceWorker.register("/sw.js", {scope: "/"}).catch(() => {
+      $("pwaInstallHelp").textContent = "PWA offline shell unavailable. Online Raven access remains separate.";
+    });
+  }
+  window.addEventListener("offline", () => {
+    setBadge("stale", "Offline · live state unverified");
+    setControls(false);
+    $("refreshLists").disabled = true;
+    $("chatSend").disabled = true;
+  });
+  window.addEventListener("online", () => {
+    $("refreshLists").disabled = false;
+    $("chatSend").disabled = false;
+    if (key) refresh();
+  });
 })();

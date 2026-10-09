@@ -10,6 +10,8 @@
 <meta name="referrer" content="no-referrer">
 <title>Lucas Raven · BIFROST ZERO</title>
 <link rel="stylesheet" href="/style.css">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
 </head>
 <body>
 <main class="wrap">
@@ -79,6 +81,8 @@
   <div class="footer">
     Lucas Raven is a BIFROST Web representation. It holds no provider credentials and has no shell access:
     it can only request bounded, allowlisted actions that the BIFROST node validates and executes.
+    <button type="button" id="installPwa" hidden>Install BIFROST PWA</button>
+    <p class="muted small" id="pwaInstallHelp">On iPhone/iPad use Safari Share → Add to Home Screen. Installation does not grant Node permissions.</p>
     <button type="button" id="unpair" class="link" hidden>Unpair this device</button>
   </div>
 </main>
