@@ -19,7 +19,7 @@ From `BIFROST/web/lucas-raven`:
 ```sh
 npx wrangler d1 execute lucas-raven --remote --file=migrations/0003_chat.sql
 npx wrangler pages secret put GROQ_API_KEY --project-name lucas-raven
-# Configure Pages variables: CHAT_PROVIDER=groq, CHAT_MODEL=llama-3.3-70b-versatile,
+# Configure Pages variables: CHAT_PROVIDER=groq, CHAT_MODEL=openai/gpt-oss-120b, CHAT_MODEL_FALLBACKS=openai/gpt-oss-20b,
 # CHAT_DAILY_LIMIT=300, CHAT_USER_PER_MIN=6
 npx wrangler pages deploy public --project-name lucas-raven
 ```
