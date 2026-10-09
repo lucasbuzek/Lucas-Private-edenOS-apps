@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleName</key><string>JANITOR</string>
+  <key>CFBundleDisplayName</key><string>JANITOR</string>
+  <key>CFBundleIdentifier</key><string>com.janitor.native</string>
+  <key>CFBundleExecutable</key><string>JANITOR</string>
+  <key>CFBundlePackageType</key><string>APPL</string>
+  <key>CFBundleShortVersionString</key><string>0.2.1</string>
+  <key>CFBundleVersion</key><string>1</string>
+  <key>LSMinimumSystemVersion</key><string>13.0</string>
+  <key>NSPrincipalClass</key><string>NSApplication</string>
+  <key>NSHighResolutionCapable</key><true/>
+  <key>LSApplicationCategoryType</key><string>public.app-category.utilities</string>
+  <key>NSPhotoLibraryUsageDescription</key><string>JANITOR counts Photos assets when permission is already granted; it does not change photos.</string>
+  <key>NSDownloadsFolderUsageDescription</key><string>JANITOR inspects Downloads and keeps its reviewable quarantine there.</string>
+  <key>NSDocumentsFolderUsageDescription</key><string>JANITOR only reads storage metadata you ask it to inspect.</string>
+  <key>NSDesktopFolderUsageDescription</key><string>JANITOR only reads storage metadata you ask it to inspect.</string>
+  <key>NSRemovableVolumesUsageDescription</key><string>JANITOR only inspects volumes you choose.</string>
+</dict>
+</plist>

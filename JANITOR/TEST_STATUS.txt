@@ -1,25 +1,3 @@
-JANITOR v0.9.0 TEST STATUS
-Date: 2026-09-30
-
-STATIC
-PASS  bash syntax: core/janitor-macos.sh
-PASS  no janitor-host / localhost / WebKit / brctl download path in current macOS candidate
-PASS  main UX exposes STANDARD / DEVELOPER / MEDIA / FULL CREW separation
-
-FIXTURES
-PASS  Full Scan completes on local fixture and detects >500 MB review item.
-PASS  deadline primitive terminates a 5 second command with 1 second budget (RC 124; ~2 seconds including TERM grace).
-PASS  cloud quarantine moves item into same provider-root JANITOR_Quarantine and verifies source absent/destination present.
-PASS  cloud quarantine restore returns item to original provider path.
-PASS  cloud consolidate/archive moves whole item into same provider-root JANITOR_Consolidated and verifies.
-PASS  Photos Storage Analysis reports protected library/components without changing files.
-PASS  Safe Clean quarantines a fixture item and restore returns it to original path.
-PASS  ZIP integrity.
-
-PHYSICAL
-PENDING  v0.9.0 target macOS launch / Full Scan
-PENDING  real iCloud/File Provider same-root move behavior
-PENDING  real Photos library analysis permissions/performance
-PENDING  Windows parity/testing; not current milestone
-
-UNKNOWN != PASS.
+Current focused verification: see TEST_RESULT.txt.
+Package/core identity is verified against the current workspace source.
+PHYSICAL TEST: PENDING. ACCEPTED/LKG/RELEASED: NO.

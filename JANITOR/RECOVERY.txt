@@ -1,36 +1,5 @@
-JANITOR RECOVERY / CONTINUITY
-
-Authoritative repository: Lucas-Private-edenOS-apps
-Project path: JANITOR/
-
-Historical physically evidenced LKG: v0.1.1
-Current candidate: v0.9.0-mode-separation-cloud-photos-candidate
-Release: NOT RELEASED.
-
 RECOVER BEFORE REDESIGN.
-
-Preserve:
-- physical PASS/FAIL evidence
-- failed candidates as evidence
-- STANDARD / DEVELOPER / MEDIA / FULL CREW separation
-- provider-aware quarantine ownership
-- Photos library protection
-- script-first behavioral reference until target-Mac acceptance
-
-Important failure history:
-- v0.7.4-v0.7.6 quarantine branches failed physically.
-- v0.8.1 Full Scan hung at Home summary for ~2 hours.
-
-Current correction:
-- bounded Full Scan
-- provider-aware cloud operations
-- same-provider quarantine/recovery
-- no force-download cloud fallback
-- Photos read-only storage analysis
-- verified local quarantine actions
-
-Platform sequence:
-script -> macOS native -> iOS/iPadOS native -> Windows native -> other platforms.
-
-Do not promote v0.9.0 to LKG until physical Mac verification.
-Generated != Saved != Implemented != Built != Tested != Verified != Released.
+Historical physical LKG: v0.1.1.
+v0.9.0: launch/menu physical PASS; behavioral audit FAIL / not promoted.
+v0.10.0: terminal-contract repair candidate; physical Mac pending.
+Preserve v0.9.0 audit and all physical failures as evidence.

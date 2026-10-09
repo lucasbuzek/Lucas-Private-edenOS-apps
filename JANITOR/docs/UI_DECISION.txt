@@ -1,0 +1,14 @@
+JANITOR UI decision — v0.7.2
+
+Use the existing terminal/console as the standalone JANITOR page.
+Do not add a browser, localhost server, WebKit host, or compiled GUI wrapper
+merely to display CLI output.
+
+macOS: Bash + Terminal + ANSI presentation. AppleScript/osascript remains
+available for small native confirmations/notifications where it genuinely
+improves the workflow.
+
+Windows: PowerShell/console. Native WinForms may be used later for a small
+picker/dialog when justified; it is not required for the main interface.
+
+Principle: shell/PowerShell remains the program; presentation stays thin.

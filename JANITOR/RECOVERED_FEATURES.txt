@@ -1,0 +1,68 @@
+JANITOR v0.11.0 — RECOVERED TERMINAL FEATURE CONTRACT
+
+ONE APP / TOP LEVEL
+- STANDARD — everyday cleanup and maintenance
+- DEVELOPER — projects/builds/toolchains
+- MEDIA — filesystem media and protected Photos footprint
+- FULL CREW — advanced terminal-safe inspection/recovery
+- QUARANTINE / RECOVERY
+- SETTINGS / DIAGNOSTICS
+
+STANDARD
+- Quick Scan with SAFE cache candidates + Review findings + Delete SAFE confirmation
+- Full Scan with bounded local-root traversal and partial-result continuation
+- Safe Clean with recoverable quarantine
+- Maintenance: Safe Clean, old user logs, Trash, developer maintenance, broken-items check, diagnostics
+- Storage overview, Downloads, privacy, backups/snapshots available through diagnostics/Full Crew
+
+DEVELOPER
+- Developer Quick: safe dev cache + build families
+- Preserve first/latest build per family; Git working copies excluded
+- Review / Quarantine / permanent Delete intermediates / clean safe dev cache
+- Developer storage analysis
+- Project identity/version discovery, depth/time bounded
+- Build/dependency discovery
+- Consolidation readiness gate
+- Default Terminal discovery root is local Downloads only; Documents/Desktop are not auto-recursed
+
+MEDIA
+- Protected .photoslibrary footprint analysis only
+- Photos/video inventory
+- Large media
+- Exact duplicate files on explicit LOCAL paths only
+- Similar-name review available in Full Crew
+
+FULL CREW
+- Running processes separated into Installed Apps / User-Development / macOS-Apple / Unknown; read-only
+- Background/startup items separated; read-only
+- Installed Apps & Support Inventory (not falsely called remnant deletion)
+- Project/version families
+- Build/dependency archaeology
+- Similar-name families
+- Exact content comparison
+- Consolidation readiness
+- Advanced local quarantine/recovery
+- Backups/snapshots/iOS backups
+- Privacy residue
+- Broken items
+- Downloads analysis
+
+QUARANTINE / RECOVERY
+- Local verified quarantine moves with manifests
+- Restore tolerates missing manually-deleted quarantine items
+- Explicit quarantine-session deletion with DELETE confirmation
+
+NATIVE DEFERRALS (NOT FAKED IN BASH)
+- File Provider cloud item state, cloud scan/action, known-folder ownership, eviction
+- PhotoKit local-vs-iCloud asset analysis/reclaim
+- Reliable application-remnant ownership/removal
+- Native signing/process termination controls
+- Login/background-item management requiring native APIs/authorization
+
+SAFETY
+- UNKNOWN != JUNK
+- No resident services/daemon/telemetry
+- No automatic cloud materialization
+- No recursive cloud/provider scans
+- No Photos-library internal deletion
+- Bounded scans/timeouts where traversal can be expensive

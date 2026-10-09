@@ -1,44 +1,25 @@
-JANITOR — Justified Analysis, Navigation, Inspection, Tidying, Optimization & Recovery
+JANITOR-current-physical-test
+Version: 0.11.1-terminal-safety-candidate
 
-PRIVATE — Lucas / EXPERIMENTAL
+Double-click JANITOR.command to open the Terminal interface on this Mac.
+Choose STANDARD, DEVELOPER, MEDIA, FULL CREW, or QUARANTINE / RECOVERY.
+CLI help: ./JANITOR.command --help
 
-PROJECT GOAL
-Standalone deterministic cleanup, storage, file/media organization, maintenance and recovery application. Preserve useful CleanMyMac-class capabilities without resident bloat, fake optimization, unsafe deletion, telemetry, or mandatory EDEN/cloud/AI dependencies.
+Scan -> review -> confirm -> action -> verify -> record.
+Quarantine uses verified same-filesystem moves with recovery manifests.
+Restore skips missing items and refuses existing/protected destinations.
+Cross-filesystem moves and uncertain/cloud provider operations are refused.
+Desktop/Documents are always excluded from ordinary recursive scans.
+Unknown custom locations, external/network volumes and Photos internals
+are protected. Photos footprint uses metadata only; no residency/reclaim.
+Size figures are allocated-size estimates, not guaranteed reclaimable bytes.
+Close apps/builds before reviewing developer cache cleanup.
+Build-number families use filename evidence: review before quarantine/delete.
 
-CURRENT CANDIDATE
-v0.9.0-mode-separation-cloud-photos-candidate
-
-AUTHORITATIVE USER MODES
-1. STANDARD — everyday maintenance
-2. DEVELOPER — projects, builds, toolchains and development cleanup
-3. MEDIA — Photos, video and media storage
-4. FULL CREW — advanced inspection and recovery
-
-PLATFORM ORDER
-Script behavioral reference -> macOS native -> iOS/iPadOS native -> Windows native -> other platforms.
-
-AI RULE
-Native AI is optional reasoning/classification assistance. Deterministic OS services execute actions. AI OFF remains functional.
-
-CLOUD RULE
-Quarantine follows storage ownership. Provider-managed items stay inside the same provider root when quarantined or consolidated/archived. JANITOR must not force-download cloud-only content as a quarantine fallback.
-
-PHOTOS RULE
-.photoslibrary internals are PROTECTED. JANITOR may analyze storage read-only, but must not directly delete Photos originals or database content.
-
-STATE TRUTH
-Historical physically evidenced CLI LKG: v0.1.1
-v0.7.2 Quick Scan/script launch: physical PASS evidence
-v0.7.4-v0.7.6 quarantine branches: physical FAIL evidence
-v0.8.1 Full Scan: physical FAIL; hung at Home summary for ~2 hours
-v0.9.0: static/fixture PASS; physical Mac UNKNOWN/PENDING
-RELEASE: NOT RELEASED
-
-SAFETY
-ANALYZE -> PREVIEW -> CONFIRM -> ACT/QUARANTINE -> VERIFY -> RESTORE
-UNKNOWN != JUNK.
-Similarity never authorizes deletion.
-No resident daemon/service/scheduler/telemetry.
-
-RECOVER BEFORE REDESIGN.
-See PROJECT_STATE.txt, RECOVERY.txt, TEST_STATUS.txt and CHANGELOG.txt.
+Physical testing still required: launch/menu, Quick/Full, developer review,
+local disposable-file quarantine/restore, media review, and Full Crew.
+Use disposable fixtures for actions; do not test deletion on personal projects.
+Consolidation readiness is a report; source merging is deferred.
+No daemon, telemetry, server, mandatory AI, or Python runtime dependency.
+Requires this Mac's Bash and native find/stat/realpath/PlistBuddy utilities.
+THIS IS A PHYSICAL-TEST CANDIDATE, NOT PHYSICALLY VERIFIED OR ACCEPTED.

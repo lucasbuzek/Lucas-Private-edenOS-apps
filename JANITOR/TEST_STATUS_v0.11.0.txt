@@ -1,0 +1,9 @@
+JANITOR v0.11.0 TEST STATUS
+- bash syntax: PASS
+- executable/version: PASS
+- cloud screen is status/native deferral only: PASS
+- fixture Project Discovery scans Downloads and does not auto-scan Documents: PASS
+- source audit: no direct find "$HOME" / du "$HOME" whole-home recursion pattern: PASS
+- package ZIP integrity: pending until packaged
+- physical target Mac: PENDING
+- RELEASED/LKG: NO

@@ -1,0 +1,16 @@
+Bash syntax: PASS
+Launcher/core version match: PASS (0.11.1-terminal-safety-candidate)
+test_quick_full_developer_workflows_remain_separate (test_janitor.JanitorTests.test_quick_full_developer_workflows_remain_separate) ... ok
+test_developer_quarantine_preserves_first_latest (test_janitor.JanitorTests.test_developer_quarantine_preserves_first_latest) ... ok
+test_manual_quarantine_restore_round_trip (test_janitor.JanitorTests.test_manual_quarantine_restore_round_trip) ... ok
+test_missing_manual_quarantine_is_tolerated (test_janitor.JanitorTests.test_missing_manual_quarantine_is_tolerated) ... ok
+test_known_folders_deferred_without_visible_icloud (test_janitor.JanitorTests.test_known_folders_deferred_without_visible_icloud) ... ok
+test_legacy_provider_root_deferred (test_janitor.JanitorTests.test_legacy_provider_root_deferred) ... ok
+test_provider_descendant_pruned_from_duplicates (test_janitor.JanitorTests.test_provider_descendant_pruned_from_duplicates) ... ok
+test_top_level_modes_and_protected_process_group (test_janitor.JanitorTests.test_top_level_modes_and_protected_process_group) ... ok
+test_startup_inventory_groups_by_declared_executable (test_janitor.JanitorTests.test_startup_inventory_groups_by_declared_executable) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 40.170s
+
+OK

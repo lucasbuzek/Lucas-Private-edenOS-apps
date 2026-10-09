@@ -1,0 +1,23 @@
+JANITOR 0.11.1-terminal-safety-candidate
+
+IMPLEMENTED | REUSED IMPLEMENTATION
+STANDARD: Quick/Full scans, maintenance, safe clean, storage | find/stat/df
+DEVELOPER: project/build/dependency discovery, build families, first/latest
+preservation, intermediate review/quarantine/delete, cache cleanup | find/awk/sort/mv
+MEDIA: local inventory, large files, duplicate/similar-name review | find/stat/shasum/awk
+PHOTOS: protected allocated filesystem footprint only | find/stat metadata
+FULL CREW: four process/startup groups, software/support inventory,
+storage diagnostics, recovery | ps/PlistBuddy/find/native macOS tools
+QUARANTINE: manifests, verified local moves, restore/missing-item tolerance | mv/stat
+SAFETY: provider/known-folder exclusions, Photos protection, bounded workers,
+review/confirmation, read-only system groups | Bash policy + native commands
+
+DEFERRED TO NATIVE JANITOR
+Authoritative FileProvider ownership/residency, cloud scan/hash/mutation/eviction.
+PhotoKit/iCloud Photos residency and reclaim.
+Verified app/remnant ownership and removal.
+Signed process origin, process control and startup/background-item management.
+Source consolidation/merging; cross-filesystem quarantine transfer.
+
+Process/startup groups are executable-path hints; ownership is not proven.
+Unknown != safe/junk. Timeout/errors produce PARTIAL / REVIEW.

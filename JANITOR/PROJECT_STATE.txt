@@ -1,61 +1,27 @@
 JANITOR GOVERNED PROJECT STATE
-Date: 2026-09-30
-Governor: EITRI — The Master Builder v0.2.0
-Mode: UPDATE / AUDIT
+Date: 2026-10-01
+Current authority: Lucas-private-appDevDocs + Lucas-Private-edenOS-apps
+Current candidate: v0.10.1-terminal-contract-audit-repair-candidate
+Historical physical LKG: v0.1.1
+Release: NOT RELEASED
 
-Goal: safe standalone cleanup/storage/organization/maintenance/recovery application.
-Current candidate: v0.9.0-mode-separation-cloud-photos-candidate
-Historical physical LKG: v0.1.1.
-Release: NOT RELEASED.
+CURRENT GOAL
+Complete the truthful Apple-first Terminal/Bash behavioral reference. Keep only functions Bash can safely and deterministically perform. Defer Apple-framework-dependent capabilities to native macOS/iOS JANITOR.
 
-AUTHORITATIVE PRODUCT DECISIONS
-- ONE JANITOR app/package. FULL CREW is an advanced area inside JANITOR.
-- PENELOPE is a separate App and is not a JANITOR helper.
-- Script-only reference implementation first; no daemon/server/WebKit/host runtime.
-- User-facing separation: STANDARD / DEVELOPER / MEDIA / FULL CREW.
-- Cloud quarantine follows storage ownership and stays in the respective provider root when provider-managed.
-- Cloud user choices: quarantine, delete, or consolidate/archive as appropriate.
-- Cloud consolidate/archive is whole-item organization, not blind source merging.
-- Photos library internals are PROTECTED; use Photos-aware analysis and native/supported reclaim paths only.
-- Native app order after script acceptance: macOS -> iOS/iPadOS -> Windows -> other platforms.
-- Native AI is optional reasoning/classification assistance; deterministic OS services execute actions.
+CURRENT CANDIDATE
+- Standard / Developer / Media / Full Crew separation
+- central LOCAL / FILE_PROVIDER / PHOTOS_LIBRARY / PROTECTED_SYSTEM / EXTERNAL_OR_NETWORK path guard
+- conservative iCloud Desktop/Documents exclusion from local scans
+- bounded project discovery (depth + time)
+- bounded generic custom scan, Downloads analysis, large-file/media/duplicate/similarity scans
+- deadline-bounded size walks to prevent Quick Scan/analysis stalls
+- cloud Terminal surface is detection/status only; FileProvider mutation deferred
+- Photos Terminal surface is protected filesystem footprint only; PhotoKit resident/cloud state and reclaim deferred
+- process/background views are read-only origin groups; native attribution/termination deferred
+- app support inventory is not mislabeled as proven remnants
+- stale Windows implementation excluded from Apple-first candidate
 
-PHYSICAL EVIDENCE
-- v0.7.2 script-only launcher / Quick Scan: PASS on target Mac.
-- v0.7.4 developer quarantine: FAIL (no demonstrated moves).
-- v0.7.5/v0.7.6 quarantine: FAIL on target Mac; source items remained / operation timed out.
-- v0.8.1 Full Scan: FAIL; hung at stage 1 Home summary for ~2 hours.
-- v0.9.0 physical Mac: UNKNOWN / PENDING.
-
-v0.9.0 IMPLEMENTED CANDIDATE CHANGES
-- top-level STANDARD / DEVELOPER / MEDIA / FULL CREW separation
-- bounded local Full Scan; no whole-home summary traversal
-- per-root time budget and partial-result continuation
-- cloud provider roots separated from ordinary recursive scanning
-- same-provider cloud quarantine with recoverable manifests
-- same-provider consolidate/archive option
-- cloud delete option with explicit destructive confirmation
-- no force-download/materialization fallback for provider-managed quarantine
-- MEDIA -> Photos Storage Analysis with protected .photoslibrary internals
-- verified Safe Clean / Developer Safe Clean quarantine transfer path
-- bounded standard Broken Items, Storage Overview, Large Files and Media Inventory paths
-
-CURRENT MILESTONE
-Physical verification of v0.9.0 script behavioral contract on target Mac. After acceptance, freeze behavioral contract for native macOS implementation.
-
-STATE TRUTH
-GENERATED != IMPLEMENTED != BUILT != TESTED != VERIFIED != RELEASED.
-UNKNOWN != PASS.
-
-
-FULL FUNCTION AUDIT — 2026-10-01
-- v0.9.0 behavioral baseline: FAIL / NOT PROMOTED.
-- Provider routing defect: redirected/symlinked iCloud Documents can be treated as local.
-- Project Discovery advertised bounded depth 6 but implementation is unbounded.
-- Cloud Storage lacks Scan/Review stage.
-- Quick Scan and several legacy scans remain unbounded.
-- FULL CREW processes/background/remnants are incomplete relative to described UX.
-- Photos is filesystem-footprint analysis only, not native Photos integration.
-- Windows v0.9.0 package content is stale/broken and not parity-ready.
-See AUDIT_v0.9.0_FULL_FUNCTION.md.
-Current milestone: rectify script behavioral contract before native macOS work.
+DEMONSTRATED STATE
+Static/package verification in ChatGPT execution environment: PASS.
+Target Mac physical verification: PENDING.
+Do not promote to LKG until physical Mac verification.
