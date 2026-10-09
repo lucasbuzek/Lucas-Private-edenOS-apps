@@ -27,34 +27,59 @@ private struct SidebarTools: View {
     let entries: [SidebarCommand]
     let run: (String) -> Void
 
+    // Native DisclosureGroup applies an additional indentation to nested commands.
+    // A compact disclosure row keeps category and command icons on the same grid.
+    private var expanded: Bool { m.sidebarIsExpanded(name) }
+
     var body: some View {
-        DisclosureGroup(isExpanded: Binding(
-            get: { m.sidebarIsExpanded(name) },
-            set: { m.setSidebarExpanded(name, expanded: $0) }
-        )) {
-            ForEach(entries.filter { m.level >= $0.minLevel }) { entry in
-                Button { run(entry.id) } label: {
-                    HStack(alignment: .center, spacing: 9) {
-                        Image(systemName: entry.symbol)
-                            .foregroundStyle(entry.id == "sim-run" ? Color.orange : JanitorVisual.action)
-                            .frame(width: 20)
-                        Text(entry.name)
-                            .font(.system(size: 12.5, weight: .medium))
-                            .lineLimit(2)
-                            .multilineTextAlignment(.leading)
-                        Spacer(minLength: 0)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .contentShape(Rectangle())
+        VStack(alignment: .leading, spacing: 1) {
+            Button { m.setSidebarExpanded(name, expanded: !expanded) } label: {
+                HStack(spacing: 8) {
+                    Image(systemName: expanded ? "chevron.down" : "chevron.right")
+                        .font(.system(size: 10, weight: .semibold))
+                        .foregroundStyle(.secondary)
+                        .frame(width: 13)
+                    Image(systemName: symbol)
+                        .font(.system(size: 13))
+                        .foregroundStyle(.secondary)
+                        .frame(width: 19)
+                    Text(name)
+                        .font(.system(size: 13, weight: .semibold))
+                    Spacer(minLength: 0)
                 }
-                .buttonStyle(.plain)
-                .padding(.vertical, 4)
-                .help(entry.name)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .contentShape(Rectangle())
             }
-        } label: {
-            Label(name, systemImage: symbol)
-                .font(.callout.weight(.medium))
+            .buttonStyle(.plain)
+            .padding(.vertical, 6)
+            .accessibilityLabel(name)
+            .accessibilityValue(expanded ? "Expanded" : "Collapsed")
+
+            if expanded {
+                ForEach(entries.filter { m.level >= $0.minLevel }) { entry in
+                    Button { run(entry.id) } label: {
+                        HStack(spacing: 8) {
+                            Color.clear.frame(width: 13, height: 1)
+                            Image(systemName: entry.symbol)
+                                .font(.system(size: 12))
+                                .foregroundStyle(entry.id == "sim-run" ? Color.orange : JanitorVisual.action)
+                                .frame(width: 19)
+                            Text(entry.name)
+                                .font(.system(size: 12.5, weight: .medium))
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.85)
+                            Spacer(minLength: 0)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.vertical, 5)
+                    .help(entry.name)
+                }
+            }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
@@ -65,45 +90,45 @@ struct FinderShellView: View {
     @State private var confirmOld = false
 
     private let maintenance: [SidebarCommand] = [
-        .init("full", "Detailed system scan", "magnifyingglass"),
-        .init("choose-scan", "Scan a selected folder", "folder"),
-        .init("treemap", "Interactive storage map", "rectangle.split.3x3"),
-        .init("storage-map", "Folder size report", "chart.bar.xaxis"),
-        .init("old-recovery", "Purge old Recovery items…", "clock.arrow.circlepath", .expert)
+        .init("full", "Full system scan", "magnifyingglass"),
+        .init("choose-scan", "Scan folder…", "folder"),
+        .init("treemap", "Storage map", "rectangle.split.3x3"),
+        .init("storage-map", "Folder sizes", "chart.bar.xaxis"),
+        .init("old-recovery", "Purge old Recovery…", "clock.arrow.circlepath", .expert)
     ]
     private let developer: [SidebarCommand] = [
-        .init("devquick", "Development leftovers", "hammer"),
-        .init("projects", "Project discovery", "square.stack.3d.up"),
+        .init("devquick", "Dev leftovers", "hammer"),
+        .init("projects", "Find projects", "square.stack.3d.up"),
         .init("builds", "Build versions", "list.number", .expert),
         .init("dependencies", "Dependencies", "shippingbox", .expert),
-        .init("dev-root", "Choose developer folder…", "folder.badge.gearshape"),
-        .init("brew-preview", "Preview Homebrew cleanup", "eye"),
-        .init("brew-run", "Run Homebrew cleanup…", "shippingbox"),
-        .init("sim-preview", "Review unavailable simulators", "iphone"),
-        .init("sim-run", "Remove unavailable simulators…", "trash", .expert)
+        .init("dev-root", "Choose dev folder…", "folder.badge.gearshape"),
+        .init("brew-preview", "Homebrew preview", "eye"),
+        .init("brew-run", "Homebrew cleanup…", "shippingbox"),
+        .init("sim-preview", "Preview unavailable sims", "iphone"),
+        .init("sim-run", "Remove unavailable sims…", "trash", .expert)
     ]
     private let media: [SidebarCommand] = [
-        .init("media", "Find large media files", "film"),
+        .init("media", "Large media", "film"),
         .init("similar-images", "Similar images", "photo.stack"),
-        .init("similar-names", "Similar filenames", "textformat"),
-        .init("photos-footprint", "Photos library footprint", "photo.on.rectangle")
+        .init("similar-names", "Similar names", "textformat"),
+        .init("photos-footprint", "Photos size", "photo.on.rectangle")
     ]
     private let fullCrew: [SidebarCommand] = [
-        .init("processes", "Running processes", "cpu"),
+        .init("processes", "Processes", "cpu"),
         .init("startup", "Startup items", "power"),
-        .init("apps", "Installed applications", "square.grid.2x2"),
-        .init("uninstall-review", "Uninstall ownership review", "app.badge.checkmark"),
-        .init("support", "App support inventory", "tray.full"),
-        .init("broken", "Broken shortcuts", "link"),
-        .init("growth", "Storage diagnostics", "chart.bar"),
-        .init("app-quit", "Request app to quit…", "xmark.app", .expert),
-        .init("agent-disable", "Disable user login agent…", "power.circle", .expert),
-        .init("app-quarantine", "Quarantine user app…", "app.badge", .expert)
+        .init("apps", "Installed apps", "square.grid.2x2"),
+        .init("uninstall-review", "Uninstall review", "app.badge.checkmark"),
+        .init("support", "App support", "tray.full"),
+        .init("broken", "Broken links", "link"),
+        .init("growth", "Storage changes", "chart.bar"),
+        .init("app-quit", "Quit user app…", "xmark.app", .expert),
+        .init("agent-disable", "Disable login agent…", "power.circle", .expert),
+        .init("app-quarantine", "Quarantine app…", "app.badge", .expert)
     ]
     private let cloud: [SidebarCommand] = [
-        .init("cloud", "Provider storage boundaries", "icloud"),
-        .init("photos", "PhotoKit inventory", "photo.on.rectangle.angled"),
-        .init("cloud-item", "Inspect cloud-file metadata…", "icloud.and.arrow.down")
+        .init("cloud", "Cloud boundaries", "icloud"),
+        .init("photos", "Photos inventory", "photo.on.rectangle.angled"),
+        .init("cloud-item", "Cloud file info…", "icloud.and.arrow.down")
     ]
 
     @ViewBuilder
@@ -227,29 +252,30 @@ struct FinderShellView: View {
                         .background(Color(nsColor: .controlBackgroundColor))
                 }
             }
-            .toolbar {
-                ToolbarItemGroup(placement: .primaryAction) {
-                    Picker("Interface", selection: $m.level) {
-                        ForEach(Level.allCases) { level in
-                            Text(level.label).tag(level)
-                        }
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .primaryAction) {
+                Picker("Interface", selection: $m.level) {
+                    ForEach(Level.allCases) { level in
+                        Text(level.label).tag(level)
                     }
-                    .pickerStyle(.menu)
-                    .frame(width: 112)
-                    .help("Interface complexity: Standard, Advanced or Expert")
-                    Button {
-                        m.showInspector.toggle()
-                    } label: {
-                        Image(systemName: "sidebar.right")
-                    }
-                    .help(m.showInspector ? "Hide Inspector" : "Show Inspector")
-                    Button { perform("settings") } label: {
-                        Image(systemName: "gearshape")
-                    }
-                    .help("Settings")
                 }
+                .pickerStyle(.menu)
+                .frame(width: 112)
+                .help("Interface complexity: Standard, Advanced or Expert")
+                Button {
+                    m.showInspector.toggle()
+                } label: {
+                    Image(systemName: "sidebar.right")
+                }
+                .help(m.showInspector ? "Hide Inspector" : "Show Inspector")
+                Button { perform("settings") } label: {
+                    Image(systemName: "gearshape")
+                }
+                .help("Settings")
             }
         }
+        .toolbarRole(.editor)
         .tint(JanitorVisual.action)
         .sheet(isPresented: $m.showTreemap) {
             TreemapWindow(root: m.workRoot ?? Storage.home)

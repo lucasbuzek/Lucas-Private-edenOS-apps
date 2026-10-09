@@ -21,6 +21,7 @@ struct JANITORApp: App {
                 .preferredColorScheme(model.appearance.scheme)
                 .frame(minWidth: 1000, minHeight: 680)
         }
+        .windowToolbarStyle(.unifiedCompact)
         .commands { CommandGroup(replacing: .newItem) {} }
     }
 }

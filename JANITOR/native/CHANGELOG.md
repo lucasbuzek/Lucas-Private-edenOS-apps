@@ -39,3 +39,10 @@
 - UI: System Check header and cards use restrained EDEN-style semantic accents. Do not imply health or completed checks without SystemInspector evidence.
 - TEST: 50/50 Python tests, native Swift runtime and SwiftUI host/System Check smoke passed; universal ARM64+x86_64 build, package verification and application launch passed.
 - PHYSICAL: screenshot/Accessibility gates remain UNKNOWN; no LKG or Products promotion. Previous 0.2.10 candidate and earlier baselines remain recoverable.
+
+## 0.2.12-candidate — 2026-10-09 (compact toolbar and navigation; NOT PROMOTED)
+- UI: Move the interface/inspector/settings toolbar to the full NavigationSplitView and apply native macOS unified-compact toolbar styling. The window keeps standard close/minimize/zoom controls.
+- UI: Replace automatic nested DisclosureGroup indentation with aligned native buttons, preserving stored per-group expansion and the same command IDs; use compact single-line labels with modest scaling when needed.
+- UI: Shorten Developer, Maintenance, Media, Full Crew and cloud tool labels without changing their actions or confirmation gates. Homebrew/simulator actions remain under Developer with simulator deletion Expert-only.
+- EVIDENCE: 52/52 Python regression tests; direct Swift runtime + SwiftUI hosting/System Check PASS; universal Apple Silicon/Intel macOS build and clean ZIP extraction/signature/hash/byte parity PASS; launch observed.
+- PHYSICAL: visual titlebar alignment and click-through acceptance remain UNKNOWN pending user inspection of actual native window. LKG preserved, no Products promotion.

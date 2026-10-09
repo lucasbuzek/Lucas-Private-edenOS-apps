@@ -24,7 +24,7 @@ class FinderUIXContractTests(unittest.TestCase):
         self.assertIn('case "brew-preview", "brew-run", "sim-preview", "sim-run": group = .developer', self.shell)
         self.assertIn('case "brew-run": confirmBrew = true', self.shell)
         self.assertIn('case "sim-run": confirmSim = true', self.shell)
-        self.assertIn('"sim-run", "Remove unavailable simulators…", "trash", .expert', developer)
+        self.assertIn('"sim-run", "Remove unavailable sims…", "trash", .expert', developer)
 
     def test_branded_sidebar_retains_native_settings_and_cues(self):
         self.assertIn('Text("JANITOR")', self.shell)
@@ -52,6 +52,28 @@ class FinderUIXContractTests(unittest.TestCase):
         self.assertIn('Maint.brew(dryRun: true)', developer)
         self.assertIn('Maint.simulators(dryRun: true)', developer)
 
+    def test_compact_toolbar_uses_single_window_placement(self):
+        app = (SRC / "App.swift").read_text()
+        self.assertIn('.windowToolbarStyle(.unifiedCompact)', app)
+        self.assertIn('.toolbarRole(.editor)', self.shell)
+        self.assertEqual(self.shell.count('ToolbarItemGroup(placement: .primaryAction)'), 1)
+        nav = self.shell.split('var body: some View {\n        NavigationSplitView {', 1)[1]
+        self.assertIn('        }\n        .toolbar {', nav)
+
+    def test_expanded_commands_align_and_fit(self):
+        self.assertIn('Color.clear.frame(width: 13, height: 1)', self.shell)
+        self.assertIn('Image(systemName: expanded ? "chevron.down" : "chevron.right")', self.shell)
+        self.assertIn('m.setSidebarExpanded(name, expanded: !expanded)', self.shell)
+        self.assertIn('.frame(maxWidth: .infinity, alignment: .leading)', self.shell)
+        self.assertIn('.lineLimit(1)', self.shell)
+        for short in ('Dev leftovers', 'Choose dev folder…',
+                      'Homebrew preview', 'Homebrew cleanup…',
+                      'Preview unavailable sims', 'Remove unavailable sims…'):
+            self.assertIn('"' + short + '"', self.shell)
+        for obsolete in ('"Choose developer folder…"', '"Preview Homebrew cleanup"',
+                         '"Run Homebrew cleanup…"', '"Remove unavailable simulators…"'):
+            self.assertNotIn(obsolete, self.shell)
+
     def test_interface_level_is_one_toolbar_picker(self):
         self.assertIn('Picker("Interface", selection: $m.level)', self.shell)
         self.assertIn(".pickerStyle(.menu)", self.shell)
@@ -65,7 +87,8 @@ class FinderUIXContractTests(unittest.TestCase):
     def test_expandable_advanced_categories(self):
         for name in ("Maintenance", "Developer", "Media", "Full Crew", "Cloud & Photos"):
             self.assertIn('SidebarTools(name: "' + name + '"', self.shell)
-        self.assertIn("DisclosureGroup(isExpanded: Binding(", self.shell)
+        self.assertIn('m.setSidebarExpanded(name, expanded: !expanded)', self.shell)
+        self.assertIn('if expanded {', self.shell)
         self.assertIn('janitorExpandedGroups', self.model)
 
     def test_optional_context_inspector(self):
