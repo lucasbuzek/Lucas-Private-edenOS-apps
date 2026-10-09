@@ -1,0 +1,2218 @@
+[
+  {
+    "workspace": "EitriFactory",
+    "relative_path": "README.md",
+    "sha256": "7c9ed09ed0349b3e10360a8de9364f52209220dc863e2ce310a0bed0d553f046",
+    "bytes": 476,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HEIMDALL Assistant IOS",
+    "relative_path": "project.yml",
+    "sha256": "748327dcc7bf603523ac264a0ece0cd6f8313a6716767ebea724a11a48b55291",
+    "bytes": 1625,
+    "local_check": "LOCAL_CHANGED_OR_MISSING",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HEIMDALL Assistant IOS",
+    "relative_path": "README.md",
+    "sha256": "62d57dce766117714745b813d795081de6f83a70c3d08815c8cec6a99f339e73",
+    "bytes": 201,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HEIMDALL Assistant IOS",
+    "relative_path": "RECOVERY/MANIFEST.sha256",
+    "sha256": "0d71af9309a369b57aef2d8b7a8048c4a8984fedf74e39d427b93ea3c16015b2",
+    "bytes": 9169,
+    "local_check": "LOCAL_CHANGED_OR_MISSING",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HEIMDALL Assistant IOS",
+    "relative_path": "RECOVERY/README.md",
+    "sha256": "caaa080d8e8a414d18f9bb59d00335c0b5ea7c4b7bf5a335435a0e0b57bb9399",
+    "bytes": 806,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HEIMDALL Assistant IOS",
+    "relative_path": "RECOVERY/authority/APPDEV_BIBLE.md",
+    "sha256": "dc33f5c24991239435cd6b4290929b47588828ab18f8d4a0dfc3691c43f03bb7",
+    "bytes": 4563,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HEIMDALL Assistant IOS",
+    "relative_path": "RECOVERY/authority/PROJECT_BIBLE_HEIMDALL_iOS.txt",
+    "sha256": "1dd02f59d5c4ac848cbd404da2be0dc6d49225d854efac1be907d41f58c40ed6",
+    "bytes": 4240,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "README.md",
+    "sha256": "ec388b6fb50f33ca5a4cad5609cf00ffeb2735e2ed799760f932bd79b1599339",
+    "bytes": 801,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/GardenOSLib/README.txt",
+    "sha256": "a7e67f190634e5a96f086481c323c8d5ac53161eb78a8ddeda29ab5f54e70e22",
+    "bytes": 185,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/edenOS/MANIFEST.txt",
+    "sha256": "451bc1d820767f2d278e486751d025c26e99d203aa1d3212c9c82c3daf0e4be6",
+    "bytes": 1791,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/GardenOSLib/PCF8574_library/README.md",
+    "sha256": "250172f3c0d22d60be5d19df9894c902f53938a56fb992cda4850a5c47dc8ff7",
+    "bytes": 16593,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/GardenOSLib/ArduinoJson/README.md",
+    "sha256": "649771dbe791099973d2d9a0cb7d8d10f5ed784bde6d19b88bb09e2260995b23",
+    "bytes": 11111,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/GardenOSLib/Adafruit_Sensor/README.md",
+    "sha256": "10662abe4d85297d3d2fb79a94590de6150d7b04caa68aa65c55bbb7b6cd48ff",
+    "bytes": 12271,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/GardenOSLib/DHT-sensor-library/README.md",
+    "sha256": "e6cb9c429a334754319514fada735c1e3bcda65b8ff86045cba2a8fa03276401",
+    "bytes": 1724,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/GardenOSLib/Arduino-HomeKit-ESP8266/README.md",
+    "sha256": "29bd27b17310f2cb607b9a10613d91d37ae117522f0eb116ddcf9a10a2b576e3",
+    "bytes": 8542,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/gardenOS development/GardenOS_Investor_Demo_Websites/README.txt",
+    "sha256": "cc1c949b0c898271089ad7909e203f937b49c888ab74d2687c83ff572e2b1184",
+    "bytes": 318,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/gardenOS development/GardenOS_Investor_Demo_Standalone_Website/README.txt",
+    "sha256": "497c1542ae50d6a3b4a017fe6a7bb721bd951def78faa040e354bdd349f60295",
+    "bytes": 1182,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/gardenOS development/gardenOS_Companion_Investor_Package_v0.2/README.txt",
+    "sha256": "823d8bb7084ec29bc6813de946349c93d3764d85bcbf50e5f4128843eae44a36",
+    "bytes": 316,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/00_START_HERE/FINAL_MANIFEST.json",
+    "sha256": "de520fd3de9fb39650ca5985091353454722825a3cda7926312bbb4b3040fed6",
+    "bytes": 1815,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/00_START_HERE/README.txt",
+    "sha256": "d09e420be39a7c3998fd0876a5b39af75d91a7d3fbeae928c749c98c232b45d8",
+    "bytes": 301,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/03_LONG_FORM_MILESTONE_02/EDEN_Long_Form_Milestone_02/00_CONTROL/MANIFEST.json",
+    "sha256": "05eecf9f3efdc877ceee336bb9cec07961b163a527a2b4965a5e6671bd98bb96",
+    "bytes": 531,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/03_LONG_FORM_MILESTONE_02/EDEN_Long_Form_Milestone_02/01_DOCUMENTS/SKALD_LONGFORM_BIBLE_v1.0_EN.txt",
+    "sha256": "c240ea8310a20b869a48029d5d48b808de0980fb71472166be214625c59985df",
+    "bytes": 8456,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/03_LONG_FORM_MILESTONE_02/EDEN_Long_Form_Milestone_02/01_DOCUMENTS/BIFROST_LONGFORM_BIBLE_v1.0_EN.pdf",
+    "sha256": "cb3a3191a3d9c882c0d679fa20c2a84b5383717a35572bcb4a2afe757105b041",
+    "bytes": 16124,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/03_LONG_FORM_MILESTONE_02/EDEN_Long_Form_Milestone_02/01_DOCUMENTS/HEIMDALL_LONGFORM_BIBLE_v1.0_EN.txt",
+    "sha256": "b656679b7c00901d9d4c04200e6f7b893ac5a5bdd6ab40e472bc438f37cd19a6",
+    "bytes": 8559,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/03_LONG_FORM_MILESTONE_02/EDEN_Long_Form_Milestone_02/01_DOCUMENTS/BIFROST_LONGFORM_BIBLE_v1.0_EN.txt",
+    "sha256": "f0df2bd051602606bb9f00a5140805351abebed2875555ecd3d32f2acfafca58",
+    "bytes": 8778,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/03_LONG_FORM_MILESTONE_02/EDEN_Long_Form_Milestone_02/01_DOCUMENTS/HEIMDALL_LONGFORM_BIBLE_v1.0_EN.pdf",
+    "sha256": "14b26019992fb882e4df7d4e3f5f2d7d11794bef3c0173a365799a60d9462a53",
+    "bytes": 15978,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/03_LONG_FORM_MILESTONE_02/EDEN_Long_Form_Milestone_02/01_DOCUMENTS/SKALD_LONGFORM_BIBLE_v1.0_EN.pdf",
+    "sha256": "6f93f955dd4c6dfd87b767d2de9c4c9ea5c4e9fbfa226d358363c17322f32699",
+    "bytes": 15882,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/03_LONG_FORM_MILESTONE_02/EDEN_Long_Form_Milestone_02/01_DOCUMENTS/PHOTO_DAM_LONGFORM_BIBLE_v1.0_EN.txt",
+    "sha256": "5ac4bcde2588e0913f5357a04121845c7a9b58a1a0a359fa9149dd105b946ea8",
+    "bytes": 8336,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/03_LONG_FORM_MILESTONE_02/EDEN_Long_Form_Milestone_02/01_DOCUMENTS/EDENOSHOME_LONGFORM_BIBLE_v1.0_EN.txt",
+    "sha256": "b3e3949039217fe18e0b0e06b72961de37f9785d6b75fbee8d4a709079f8d50b",
+    "bytes": 8538,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/03_LONG_FORM_MILESTONE_02/EDEN_Long_Form_Milestone_02/01_DOCUMENTS/PHOTO_DAM_LONGFORM_BIBLE_v1.0_EN.pdf",
+    "sha256": "3229b7b0f43a0089b4dac1627abf172da392f7a17aeb13f65abbdff9af37ad27",
+    "bytes": 15853,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/03_LONG_FORM_MILESTONE_02/EDEN_Long_Form_Milestone_02/01_DOCUMENTS/EDENOSHOME_LONGFORM_BIBLE_v1.0_EN.pdf",
+    "sha256": "5d525c4ee78f40068cdaba2fe3686f5fd3751a775580e106128033c7a9a78212",
+    "bytes": 16003,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/03_LONG_FORM_MILESTONE_02/EDEN_Long_Form_Milestone_02/04_RELEASE/README.txt",
+    "sha256": "9a779b2243e27ab5e4ceaa82caf4ab1d9dfde0ec27224536967a0f12f3b2bafb",
+    "bytes": 540,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/03_edenOS/edenOS_BIBLE_v1.0_SK.txt",
+    "sha256": "3889d1ccc35c1d9495f3e6ac8bb5075fb047c9061d7ef268abbced276e0dd2e7",
+    "bytes": 6781,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/03_edenOS/edenOS_BIBLE_v1.0_EN.txt",
+    "sha256": "633aaea2a26e12e96ffd576df5e5c71a04a50abc20830346cff9b83cdcfef408",
+    "bytes": 6543,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/00_START_HERE/README.txt",
+    "sha256": "32e1d4d72f67ab91a53a3fe905680e83d0c9257945892c061b1a2c33d6abab2c",
+    "bytes": 701,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/01_MASTER_BIBLE/EDEN_MASTER_BIBLE_v1.0_SK.txt",
+    "sha256": "a1284bd616c9f66fe0fd92b14fb6b633504bc047b6868aa8e9aa54dbab0fe897",
+    "bytes": 7027,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/01_MASTER_BIBLE/EDEN_MASTER_BIBLE_v1.0_EN.txt",
+    "sha256": "bfa4bd993e4dbd59349f1285d758e085a21c800eed909210d190550723483939",
+    "bytes": 6789,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/01_MASTER_BIBLE/EDEN_MASTER_BIBLE_v1.0_VISUAL.pdf",
+    "sha256": "8e0b82103611bbf90b1793965b99e6ad5607fcd9d01e754cdc768c646492cdb3",
+    "bytes": 9634,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/04_BIFROST/BIFROST_BIBLE_v1.0_EN.txt",
+    "sha256": "9b647ccdf80af95bad0c1985184b848ee9fc28b38ef17f989b78bbf5eec2ffd4",
+    "bytes": 6603,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/04_BIFROST/BIFROST_BIBLE_v1.0_SK.txt",
+    "sha256": "8e5fc6f9f96ed1baec2b9b38a7746dcf8386396e7e2d61d102b82717eaac773a",
+    "bytes": 6841,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/21_RELEASE/PROJECT_MANIFEST.json",
+    "sha256": "2320fbf12e151113735889abd991d9d724b76a198af6214aa3ed6406371ed031",
+    "bytes": 638,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/05_HEIMDALL/HEIMDALL_BIBLE_v1.0_SK.txt",
+    "sha256": "76bb3aba1ede4f3298f13d07807c236486bc57e8c8c0ea2c7b21f990331c130b",
+    "bytes": 6748,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/05_HEIMDALL/HEIMDALL_BIBLE_v1.0_EN.txt",
+    "sha256": "c9a738ad7ebc4eb6f2bb2c541bd2e1aa31f00a2eea2d2b8253988b406d6eb825",
+    "bytes": 6510,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/06_APPLICATIONS/edenOShome/edenOShome_BIBLE_v1.0_SK.txt",
+    "sha256": "4bc40f772cd0b2f748ae2e1fdf56f57aaada61e6639c5388cd3d9d136a752b06",
+    "bytes": 6690,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/06_APPLICATIONS/edenOShome/edenOShome_BIBLE_v1.0_EN.txt",
+    "sha256": "4568ab315ba91e3cc6b83a0532059d1ece3dc8e80bd80007ff946622dd7b22b5",
+    "bytes": 6452,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/06_APPLICATIONS/NANDI/NANDI_BIBLE_v1.0_EN.txt",
+    "sha256": "e02bf168f6a319bf81c05a1f4c6c568399b019ce698a68ba3eb3e6ef05388a13",
+    "bytes": 6826,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/06_APPLICATIONS/NANDI/NANDI_BIBLE_v1.0_SK.txt",
+    "sha256": "7c8a54c72337dead2b508c0d601295009e0be6de9b1deb1601606f6fa90f5d59",
+    "bytes": 7064,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/06_APPLICATIONS/HESTIA_gardenOS/HESTIA_gardenOS_BIBLE_v1.0_SK.txt",
+    "sha256": "bf95ec45bea2a1c1e6d7ac3033f1f7d2d8ca5531cb728e748e4fb39e1ce31845",
+    "bytes": 7249,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/06_APPLICATIONS/HESTIA_gardenOS/HESTIA_gardenOS_BIBLE_v1.0_EN.txt",
+    "sha256": "89b660de5f70cffa415eb79ae6b3dc48cba7044958c51df1dbfe18f033cf4d75",
+    "bytes": 7011,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/06_APPLICATIONS/SKALD/SKALD_BIBLE_v1.0_SK.txt",
+    "sha256": "8d9e10de68180dc7eb04d673847f67dec70a3d3a3adf5c0598b9b63bf36efb3f",
+    "bytes": 6870,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/06_APPLICATIONS/SKALD/SKALD_BIBLE_v1.0_EN.txt",
+    "sha256": "7375549d5febfb217fe2e633c4b3ccc93e1c38b913c3d753822958f0a3a7c302",
+    "bytes": 6632,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/06_APPLICATIONS/PHOTO_DAM/PHOTO_DAM_BIBLE_v1.0_EN.txt",
+    "sha256": "0ac42c8852e849f87c58fb17e247dcf594365be27c80ea77a73ce7664b8d170f",
+    "bytes": 6499,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/06_APPLICATIONS/PHOTO_DAM/PHOTO_DAM_BIBLE_v1.0_SK.txt",
+    "sha256": "6c14b1e2bfc64cccc0424e7a29d74e012bd7c9a7eeca22962ad37da79d71f770",
+    "bytes": 6737,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/07_WORKSPACES/Field_Research/Field_Research_BIBLE_v1.0_SK.txt",
+    "sha256": "8dbcae3bf5888c08f23bcf31f4ded3d2671c47fc3ca4360b9b133d73dcf62a00",
+    "bytes": 6645,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/07_WORKSPACES/Field_Research/Field_Research_BIBLE_v1.0_EN.txt",
+    "sha256": "24e4f0c2c9a529eb8a2bff2eacd5b0aca350fcf35d20c006ef4f6ae8f9524194",
+    "bytes": 6407,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/07_WORKSPACES/Fauna/Fauna_BIBLE_v1.0_EN.txt",
+    "sha256": "5baa9715b4cdc3cf1d9beb4f0aa1e376b8d33ebb948db3be8b559e016bcb6a2c",
+    "bytes": 6410,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/07_WORKSPACES/Fauna/Fauna_BIBLE_v1.0_SK.txt",
+    "sha256": "ce9bdf22d03a6c661214ab798fe483bc352912ecc8bd9c35ee5b78dd28e78b6f",
+    "bytes": 6648,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/07_WORKSPACES/Education/Education_BIBLE_v1.0_SK.txt",
+    "sha256": "26f48b2aabb3c3d76eb01c656f36c33457643300e656258f30bb946c38d93247",
+    "bytes": 6652,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/07_WORKSPACES/Education/Education_BIBLE_v1.0_EN.txt",
+    "sha256": "13d3f3e863aeb51dcaf328db4858e2e1f29afd7ac19fb71d6b1efeabd90e0975",
+    "bytes": 6414,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/07_WORKSPACES/Medical/Medical_BIBLE_v1.0_EN.txt",
+    "sha256": "380f1ca9913c171782bbae0fb9e3aafb9eed0b718d428e0ba17f1300a04df065",
+    "bytes": 6462,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/07_WORKSPACES/Medical/Medical_BIBLE_v1.0_SK.txt",
+    "sha256": "991825b63b70906d5fb87745219208748bf3dba9b1ec5dc1de6156c866cc4a6f",
+    "bytes": 6700,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/07_WORKSPACES/Botanical/Botanical_BIBLE_v1.0_SK.txt",
+    "sha256": "48615be3a87014aa87b4cc556709ebaca5bbfdff4066c0a8dcfaf214a67a2484",
+    "bytes": 6638,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/07_WORKSPACES/Botanical/Botanical_BIBLE_v1.0_EN.txt",
+    "sha256": "fe19f5e3e8ea973d784f9c8923652e72f46f97022f87308c1355da4ee25f749f",
+    "bytes": 6400,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/07_WORKSPACES/Engineering/Engineering_BIBLE_v1.0_EN.txt",
+    "sha256": "86d8aac52af607d8727b713209f2fefc1776295cc3d3feed37e07bc7e00b4d39",
+    "bytes": 6391,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/07_WORKSPACES/Engineering/Engineering_BIBLE_v1.0_SK.txt",
+    "sha256": "01548afe60a96b868a690555e181c076afb4e0e0380ae4edcb8e08dff9af2209",
+    "bytes": 6629,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/07_WORKSPACES/Scientific_Research/Scientific_Research_BIBLE_v1.0_EN.txt",
+    "sha256": "72f270ca68c4900d42764bfe014d024dfb5812c48316ac0ba587d9d43b7bce5d",
+    "bytes": 6442,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/07_WORKSPACES/Scientific_Research/Scientific_Research_BIBLE_v1.0_SK.txt",
+    "sha256": "db8e9ecb318aa5668122bf0a8fe28d9d9b5a3dad92a2134ae39b90129b1c749d",
+    "bytes": 6680,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/13_WEB_PORTAL/docs/SKALD_BIBLE_EN.txt",
+    "sha256": "4f6cdd2f953f381e5998edab4bb5c0a413e38ab33b9fdea6b2a32dcd730a0516",
+    "bytes": 3108,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/13_WEB_PORTAL/docs/EDEN_MASTER_BIBLE_EN.txt",
+    "sha256": "5472cadf7ea3426534cc6b4022a62456edd028e7af80cc3a6c574ffa84e7b406",
+    "bytes": 4308,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/13_WEB_PORTAL/docs/BIFROST_BIBLE_EN.txt",
+    "sha256": "b9c54f9078d15c233a0584c0cf29e2a1e012ab7b0dc2ff9d2eb86ffefcd66cc5",
+    "bytes": 3009,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/13_WEB_PORTAL/docs/PHOTO_BIBLE_EN.txt",
+    "sha256": "98475d1471c128dc55599e250cfcf3247d62744a042005960fe9ce5309e96fe3",
+    "bytes": 3043,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/13_WEB_PORTAL/docs/HOME_BIBLE_EN.txt",
+    "sha256": "7b2fbcb8adfb5b0525623ee8e9e389cba5bfb2d4ded8cb4ea2b27ff3531cf7b7",
+    "bytes": 2958,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/13_WEB_PORTAL/docs/HESTIA_BIBLE_EN.txt",
+    "sha256": "a38e4f62758d0e4722316e1c229776672d1477c1e38f7c48dccc0b32dc482150",
+    "bytes": 2996,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/13_WEB_PORTAL/docs/HEIMDALL_BIBLE_EN.txt",
+    "sha256": "15e2cc58f3d7528edb336779045c3def66ce2fdbb6390c4c0d91a02b4dfaaf0c",
+    "bytes": 2929,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/13_WEB_PORTAL/docs/EDEN_MASTER_BIBLE_v1.0_EN.txt",
+    "sha256": "bfa4bd993e4dbd59349f1285d758e085a21c800eed909210d190550723483939",
+    "bytes": 6789,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/01_FINAL_VISION_RC/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL/13_WEB_PORTAL/docs/NANDI_BIBLE_EN.txt",
+    "sha256": "5be8236cbd43de1b940f415f2557e24b507611a37d77b1aa9e61955df0328eb8",
+    "bytes": 2986,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/02_LONG_FORM_BATCH_01/EDEN_Long_Form_Production_v1.0/documents/EDEN_MASTER_BIBLE_LONGFORM_v1.0_EN.pdf",
+    "sha256": "ab6e4c1dae41fc86cd419ae00e248e39728b3f952eb03cd8e1bd7ff3d26d8ce7",
+    "bytes": 19794,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/02_LONG_FORM_BATCH_01/EDEN_Long_Form_Production_v1.0/documents/EDEN_MASTER_BIBLE_LONGFORM_v1.0_EN.txt",
+    "sha256": "096e62b1b2841d775ec664bfb1da2056d3c523a67f466da46011cb7fd54e82c9",
+    "bytes": 7597,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/02_LONG_FORM_BATCH_01/EDEN_Long_Form_Production_v1.0/documents/HESTIA_GARDENOS_LONGFORM_BIBLE_v1.0_EN.pdf",
+    "sha256": "3651a731fec2fec38f6b44f699c662a9cbff2bb42e047eafa0495ac4ffea1f35",
+    "bytes": 19761,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/02_LONG_FORM_BATCH_01/EDEN_Long_Form_Production_v1.0/documents/NANDI_LONGFORM_BIBLE_v1.0_EN.pdf",
+    "sha256": "d48d589e72765546c5f81193231f402e1ce9ba46ae0ed397d2a72bee35bd741e",
+    "bytes": 19699,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/02_LONG_FORM_BATCH_01/EDEN_Long_Form_Production_v1.0/documents/HESTIA_GARDENOS_LONGFORM_BIBLE_v1.0_EN.txt",
+    "sha256": "94d5627ebd28aa7adc865127955ac7dfebaaeedb4087731c47b6df3511f87693",
+    "bytes": 7225,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/02_LONG_FORM_BATCH_01/EDEN_Long_Form_Production_v1.0/documents/NANDI_LONGFORM_BIBLE_v1.0_EN.txt",
+    "sha256": "06dc2d321ca9b6fe671cb48917196d341e852cd46c20c9abc8bf58e52a38f4a7",
+    "bytes": 7057,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/02_LONG_FORM_BATCH_01/EDEN_Long_Form_Production_v1.0/control/MANIFEST.json",
+    "sha256": "753c8b224495d7a27404f223403198a987b1ee06fe5a84adc0265005d2d10d38",
+    "bytes": 782,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/06_PIPELINE_AND_REFERENCE/EDEN_Final_Vision_Production_Pipeline_v3.0/00_START_HERE/README.txt",
+    "sha256": "9c1664c7c54499b170c874a2ab439b09f33e71715dfd725331b272944210c626",
+    "bytes": 2598,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/06_PIPELINE_AND_REFERENCE/EDEN_Final_Vision_Production_Pipeline_v3.0/21_EXECUTION_PROMPTS/STEP_2_BIBLES_PUBLICATIONS.txt",
+    "sha256": "89d6b381d8781c7d2b3a954491571830b0cb31b012bab2439d292ad61eb395dc",
+    "bytes": 515,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/06_PIPELINE_AND_REFERENCE/EDEN_Final_Vision_Production_Pipeline_v3.0/22_MANIFEST/MANIFEST.json",
+    "sha256": "af7de28096085df1e7a47128e22732739a44d61b78b6bd84413e3fccbdaf89bf",
+    "bytes": 575,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/06_PIPELINE_AND_REFERENCE/EDEN_Final_Vision_Production_Pipeline_v3.0/18_SCHEMAS_TEMPLATES/BIBLE_TEMPLATE.txt",
+    "sha256": "b66ca5aa32712fea7e004c41db09b8a45368c851d5f52338522306c497e47cd3",
+    "bytes": 977,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/05_HISTORY_RECOVERY/EDEN_Project_History_Recovery_v1.0/08_MANIFEST/PROJECT_MANIFEST.json",
+    "sha256": "23733ae9259f41683e81954a977ec76314f2dedb3affd0aa0a1625d0015e181b",
+    "bytes": 1996,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/05_HISTORY_RECOVERY/EDEN_Project_History_Recovery_v1.0/00_START_HERE/README.txt",
+    "sha256": "6334fd0130b3c5fdf11394eff99184b2e22547e50b18bb019080501a0c283319",
+    "bytes": 825,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/04_VISUAL_SHOWCASE_PORTAL/EDEN_Visual_Showcase_v1.0/MANIFEST.json",
+    "sha256": "cde38eed490451a5005e8654f0489d8272483c5c9976fc8bb8beb3a3af734cc1",
+    "bytes": 607,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/04_VISUAL_SHOWCASE_PORTAL/EDEN_Visual_Showcase_v1.0/website/docs/SKALD_BIBLE_EN.txt",
+    "sha256": "4f6cdd2f953f381e5998edab4bb5c0a413e38ab33b9fdea6b2a32dcd730a0516",
+    "bytes": 3108,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/04_VISUAL_SHOWCASE_PORTAL/EDEN_Visual_Showcase_v1.0/website/docs/EDEN_MASTER_BIBLE_EN.txt",
+    "sha256": "5472cadf7ea3426534cc6b4022a62456edd028e7af80cc3a6c574ffa84e7b406",
+    "bytes": 4308,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/04_VISUAL_SHOWCASE_PORTAL/EDEN_Visual_Showcase_v1.0/website/docs/BIFROST_BIBLE_EN.txt",
+    "sha256": "b9c54f9078d15c233a0584c0cf29e2a1e012ab7b0dc2ff9d2eb86ffefcd66cc5",
+    "bytes": 3009,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/04_VISUAL_SHOWCASE_PORTAL/EDEN_Visual_Showcase_v1.0/website/docs/PHOTO_BIBLE_EN.txt",
+    "sha256": "98475d1471c128dc55599e250cfcf3247d62744a042005960fe9ce5309e96fe3",
+    "bytes": 3043,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/04_VISUAL_SHOWCASE_PORTAL/EDEN_Visual_Showcase_v1.0/website/docs/HOME_BIBLE_EN.txt",
+    "sha256": "7b2fbcb8adfb5b0525623ee8e9e389cba5bfb2d4ded8cb4ea2b27ff3531cf7b7",
+    "bytes": 2958,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/04_VISUAL_SHOWCASE_PORTAL/EDEN_Visual_Showcase_v1.0/website/docs/HESTIA_BIBLE_EN.txt",
+    "sha256": "a38e4f62758d0e4722316e1c229776672d1477c1e38f7c48dccc0b32dc482150",
+    "bytes": 2996,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/04_VISUAL_SHOWCASE_PORTAL/EDEN_Visual_Showcase_v1.0/website/docs/HEIMDALL_BIBLE_EN.txt",
+    "sha256": "15e2cc58f3d7528edb336779045c3def66ce2fdbb6390c4c0d91a02b4dfaaf0c",
+    "bytes": 2929,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/EDEN_Engineering_Development_Exploration_and_Nature_v1.0_FINAL_DELIVERY/04_VISUAL_SHOWCASE_PORTAL/EDEN_Visual_Showcase_v1.0/website/docs/NANDI_BIBLE_EN.txt",
+    "sha256": "5be8236cbd43de1b940f415f2557e24b507611a37d77b1aa9e61955df0328eb8",
+    "bytes": 2986,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "Recovery/Local-Scattered/EDEN_GardenOS/edenOS/platform/README.txt",
+    "sha256": "92967d73528ee66c887a1226cf104a8063e42b8fabb96021ffb4812fdbb2791f",
+    "bytes": 703,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "History/gardenOS/GardenOSLib/README.txt",
+    "sha256": "a7e67f190634e5a96f086481c323c8d5ac53161eb78a8ddeda29ab5f54e70e22",
+    "bytes": 185,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "History/gardenOS/GardenOS_Investor_Demo_Standalone_Website/README.txt",
+    "sha256": "497c1542ae50d6a3b4a017fe6a7bb721bd951def78faa040e354bdd349f60295",
+    "bytes": 1182,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "History/gardenOS/GardenOSLib/PCF8574_library/README.md",
+    "sha256": "250172f3c0d22d60be5d19df9894c902f53938a56fb992cda4850a5c47dc8ff7",
+    "bytes": 16593,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "History/gardenOS/GardenOSLib/ArduinoJson/README.md",
+    "sha256": "649771dbe791099973d2d9a0cb7d8d10f5ed784bde6d19b88bb09e2260995b23",
+    "bytes": 11111,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "History/gardenOS/GardenOSLib/Adafruit_Sensor/README.md",
+    "sha256": "10662abe4d85297d3d2fb79a94590de6150d7b04caa68aa65c55bbb7b6cd48ff",
+    "bytes": 12271,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "History/gardenOS/GardenOSLib/DHT-sensor-library/README.md",
+    "sha256": "e6cb9c429a334754319514fada735c1e3bcda65b8ff86045cba2a8fa03276401",
+    "bytes": 1724,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "History/gardenOS/GardenOSLib/Arduino-HomeKit-ESP8266/README.md",
+    "sha256": "29bd27b17310f2cb607b9a10613d91d37ae117522f0eb116ddcf9a10a2b576e3",
+    "bytes": 8542,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HESTIA",
+    "relative_path": "History/gardenOS/development/GardenOS_Investor_Demo_Websites/README.txt",
+    "sha256": "cc1c949b0c898271089ad7909e203f937b49c888ab74d2687c83ff572e2b1184",
+    "bytes": 318,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HumanSocietiesResearch",
+    "relative_path": "MIGRATION_MANIFEST.txt",
+    "sha256": "6050805aa4845a881f5d35b6b603ac87d8478e30b753823157dc3f2de9051635",
+    "bytes": 1809,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HumanSocietiesResearch",
+    "relative_path": "state/SEED_RECOVERY_MANIFEST.json",
+    "sha256": "e94eec6fdab21a6e265b3e44a23121316feb48bb1e691fa06a77080d9b725a6c",
+    "bytes": 16011,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HumanSocietiesResearch",
+    "relative_path": "state/MANIFEST.json",
+    "sha256": "f222dc04d4a36673c8dda0ac61efcea3b406452534096755341d02df09aee044",
+    "bytes": 22618,
+    "local_check": "LOCAL_CHANGED_OR_MISSING",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HumanSocietiesResearch",
+    "relative_path": "state/AJR_PACKAGE_MANIFEST.json",
+    "sha256": "ee870c87ccb00b110d9da29a860300eb9ad3aa1def7833cd8ab3b5871ae46662",
+    "bytes": 5174,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HumanSocietiesResearch",
+    "relative_path": "raw/seed-files/full/ITS-NOT-THE-COLOR/README.md",
+    "sha256": "e233b41af6952859daab1c13fc9e55b82135005eb1ab0ada1731995570428495",
+    "bytes": 3206,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HumanSocietiesResearch",
+    "relative_path": "raw/seed-files/full/ITS-NOT-THE-COLOR/manifest.json",
+    "sha256": "b44202243a3277d9467d38c176e67c4fa11f8cbf4f2c4c0288233431d198be52",
+    "bytes": 4908,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HumanSocietiesResearch",
+    "relative_path": "raw/seed-files/full/ITS-NOT-THE-COLOR/sources/README.md",
+    "sha256": "6f0d8b85b239c95da8044c28a79537a1a1ef7ea81d3579e06c9849d93c977743",
+    "bytes": 680,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HumanSocietiesResearch",
+    "relative_path": "raw/seed-files/preliminary/HistoryMap/README.md",
+    "sha256": "3b23d6ee0663348895ff6e449ca8179f50f3122c41b35b4d4a7f6bbdde73802e",
+    "bytes": 3739,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "HumanSocietiesResearch",
+    "relative_path": "raw/replication/ajr/readme.TXT",
+    "sha256": "fd6c4912d297502b581e1f513a857f3d226ace4896fd04b293ac10826a6b0ab5",
+    "bytes": 838,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas AI Journey TOME",
+    "relative_path": "GITHUB_AUTHORITY/README.md",
+    "sha256": "f313527b5334284714063a3ce40c6a9d8c119c683423487a38cec1fe90d179a0",
+    "bytes": 1190,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas AI Journey TOME",
+    "relative_path": "GITHUB_AUTHORITY/README.txt",
+    "sha256": "cd2df3cfa93586c2f970d7b43b8e9b147c8b90c879e2dedfcec6fd25709dbe1b",
+    "bytes": 754,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas AI Journey TOME",
+    "relative_path": "RECOVERY/EDEN_Apps_TOME/README.md",
+    "sha256": "337f0c7b0a30cf19931bcea8d208764aae6ad1dda31a17a8e2b6bd8c9cacd00e",
+    "bytes": 1550,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas AI Journey TOME",
+    "relative_path": "RECOVERY/AppDevCanon_TOME/README.md",
+    "sha256": "337f0c7b0a30cf19931bcea8d208764aae6ad1dda31a17a8e2b6bd8c9cacd00e",
+    "bytes": 1550,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas AI Journey TOME",
+    "relative_path": "RECOVERY/Transfer_TOME/README.md",
+    "sha256": "337f0c7b0a30cf19931bcea8d208764aae6ad1dda31a17a8e2b6bd8c9cacd00e",
+    "bytes": 1550,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas AI Journey TOME",
+    "relative_path": "GITHUB_AUTHORITY/EITRIMB_Development_Readiness_DropIn_v1.0/DROP_IN_MANIFEST.txt",
+    "sha256": "c219dcafc9b78d65ca13af317709518b32e393bb7fe8bc4edb90bf7a69e4d06e",
+    "bytes": 681,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas AI Journey TOME",
+    "relative_path": "GITHUB_AUTHORITY/EITRIMB_Development_Readiness_DropIn_v1.0/README.txt",
+    "sha256": "b3cbfe67d863ef952c12f1ce1a60fe685de2744df879ca77dc4ab26a796d6096",
+    "bytes": 1172,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas AI Journey TOME",
+    "relative_path": "GITHUB_AUTHORITY/EITRIMB/EITRI_The_Master_Builder/v0.1.0/RULESET_MANIFEST.txt",
+    "sha256": "fbb75b91736159b52c59893873a933f5ad7b490d25f9cdbe214352f866fe496c",
+    "bytes": 599,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas AI Journey TOME",
+    "relative_path": "GITHUB_AUTHORITY/EITRIMB/EITRI_The_Master_Builder/v0.1.0/README.txt",
+    "sha256": "151688778175195c3677a514a4c65c1778a37155d632345f61682e2d16a515fe",
+    "bytes": 990,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas AI Journey TOME",
+    "relative_path": "GITHUB_AUTHORITY/EITRIMB/EITRI_The_Master_Builder/v0.2.0/README.txt",
+    "sha256": "541eb763359c96d078f05a1c63606888961bc47a1904eceb8bbebe06baddc5c4",
+    "bytes": 807,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas AI Journey TOME",
+    "relative_path": "GITHUB_AUTHORITY/EITRIMB/EITRI_The_Master_Builder/v0.1.0/manifests/eden.manifest.yaml",
+    "sha256": "ad72231614b87c5ab66264bf337f90c3d45ed03a936ac85cff3a907bc5f3282a",
+    "bytes": 569,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas AI Journey TOME",
+    "relative_path": "GITHUB_AUTHORITY/EITRIMB/EITRI_The_Master_Builder/v0.1.0/modules/capability-provider-discovery-v1.0/README.txt",
+    "sha256": "e05c486d91af79db8583e113e7f846cbaf3789f7ebb77963526a7c9c2bf9f32b",
+    "bytes": 1690,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas AI Journey TOME",
+    "relative_path": "GITHUB_AUTHORITY/EITRIMB/EITRI_The_Master_Builder/v0.1.0/modules/development-readiness-v1.0/README.txt",
+    "sha256": "04fb5f9c2b04ba794ebdc70a88b1cc1f1add5d67eef6ccc21f55f4050607a1a7",
+    "bytes": 901,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas AI Journey TOME",
+    "relative_path": "GITHUB_AUTHORITY/Backups/PROMETHEUS/2026-10-05/BACKUP_MANIFEST.md",
+    "sha256": "d8717a69074734712e91469adf99745d450ef2e8f78dc2451df04c05d76c7693",
+    "bytes": 1099,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "project.yml",
+    "sha256": "b395314941bf692fa6be213f1d239f36cabe7b25c64ea10ff621ebce050ec28c",
+    "bytes": 943,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "README.md",
+    "sha256": "050c5c372b35f891d0c2c1491e3c4d687a928d6107da9c55cd6a2748d8d16bf3",
+    "bytes": 874,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "Assets/Dragon/dragon.asset-manifest.json",
+    "sha256": "f1c8dc44ff94c5e33938612835d4efc447948fd812f9080825dfeef168691382",
+    "bytes": 3249,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "Vendor/meshoptimizer/README.md",
+    "sha256": "6edcb11eff0761a4fb196219cf1270c68b4abe1ea5535665843200c32712adb6",
+    "bytes": 106245,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "Vendor/recastnavigation/README.md",
+    "sha256": "3e36443648f6f8888ebd2121663d8848b719c37a3118cfd345ca8242e7583ea3",
+    "bytes": 4330,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "Vendor/meshoptimizer/js/README.md",
+    "sha256": "72162d4a46a34622d12914bc47d94ca36e88a4be5ffdf009d89fc1c6e7c47e03",
+    "bytes": 34109,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "Vendor/meshoptimizer/js/package.json",
+    "sha256": "7c0b926331466962d22ab250359fcdea20c225ab243d78474b955fb6af23f74c",
+    "bytes": 1444,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "Vendor/meshoptimizer/gltf/gltfpack.manifest",
+    "sha256": "c545044c127a74966aaec0693053c3d02dc095b63bdc0d9ced17969220de2789",
+    "bytes": 391,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "Vendor/meshoptimizer/gltf/README.md",
+    "sha256": "1ba79677e6cdecb7ab6accfbf6c365fd464a8a2e6e21d1664a3d8495aadad979",
+    "bytes": 9683,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "Vendor/meshoptimizer/gltf/package.json",
+    "sha256": "c59c45cd8da55d0c03c988cef7a596a4e10739e9a2a49a0278b87ee67b0766a6",
+    "bytes": 600,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "Vendor/recastnavigation/Docs/Readme.md",
+    "sha256": "40878ab94e99f1bd181fab338af65a5fb28fb5a13f817d0aa66f77b2af1727b5",
+    "bytes": 1533,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "Vendor/recastnavigation/Docs/doxygen-awesome-css/README.md",
+    "sha256": "51ca4ac12de4e6a28b3deb023157651798a761216b65bd4edede1b2620b61235",
+    "bytes": 4295,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "Vendor/recastnavigation/RecastDemo/Contrib/fastlz/README.TXT",
+    "sha256": "0823beb3eb32d2830c7cb0335b30c2b4d3829c99d0ea891b9756367cc0be03a0",
+    "bytes": 1867,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "Vendor/recastnavigation/RecastDemo/Contrib/imgui/misc/README.txt",
+    "sha256": "c00e156900bcd0db58bfaee14027dd69fcc33c3cce7533b546fdc00dcc9e58dc",
+    "bytes": 998,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "Vendor/recastnavigation/RecastDemo/Contrib/imgui/misc/freetype/README.md",
+    "sha256": "6521017442931407001d9290a5fc165562c5e34ebf5aea42b0e1818831cef4f4",
+    "bytes": 3449,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "Vendor/recastnavigation/RecastDemo/Contrib/imgui/misc/debuggers/README.txt",
+    "sha256": "b3e81b9ea21da580e156bae0735281d52a22a2c554185809410ad16b808d26bd",
+    "bytes": 487,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Modern Generals Native",
+    "relative_path": "Vendor/recastnavigation/RecastDemo/Contrib/imgui/misc/cpp/README.txt",
+    "sha256": "0adaaf5b7570c7362e31caa1c57f08f2529824a7b27d1fdbad1edfa0f0f1e6a0",
+    "bytes": 586,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Nandi agriBot platform",
+    "relative_path": "README.txt",
+    "sha256": "3484cf4af91a6461bd822548d2116e07d548d81954884b89fab5db2cf613d04b",
+    "bytes": 389,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Nandi agriBot platform",
+    "relative_path": "Project Data/Recovery/17 Workspace and workflow/README.txt",
+    "sha256": "902e75c41c25b31c5d765665e3da43475505d96d4ef90d1b3c26e89afcb59700",
+    "bytes": 696,
+    "local_check": "LOCAL_CHANGED_OR_MISSING",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Nandi agriBot platform",
+    "relative_path": "Project Data/Recovery/09 Historical references/HESTIA_BIBLE_v1.0_EN.txt",
+    "sha256": "f6bc2b657a95939639033f140fd6458798df44608b627e27abcea2098c5dc736",
+    "bytes": 45388,
+    "local_check": "LOCAL_CHANGED_OR_MISSING",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Nandi agriBot platform",
+    "relative_path": "Project Data/Recovery/09 Historical references/NANDI_BIBLE_v1.0_EN.txt",
+    "sha256": "3b8f0c99a1f0804588054bb77c574515ee18cda045fcd4193ab8e82500e5f42a",
+    "bytes": 34945,
+    "local_check": "LOCAL_CHANGED_OR_MISSING",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Nandi agriBot platform",
+    "relative_path": "Project Data/Recovery/09 Historical references/README.txt",
+    "sha256": "8eb8dcef994231463af7fb97ae1447fc95706767607bafc18af04f2868ab6352",
+    "bytes": 190,
+    "local_check": "LOCAL_CHANGED_OR_MISSING",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Nandi agriBot platform",
+    "relative_path": "Project Data/Recovery/00 START HERE/README.txt",
+    "sha256": "23bc1d307a4ff82a8cf3921187238dd67284fc0890a73afeb093ebaceca5f8e3",
+    "bytes": 984,
+    "local_check": "LOCAL_CHANGED_OR_MISSING",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Nandi agriBot platform",
+    "relative_path": "Project Data/Recovery/98 Quarantine - unrelated reference material/Existing HESTIA HESPERA software/SOURCE_MANIFEST.json",
+    "sha256": "7596ac84558619187bcb539ed3d689f3ed6c4a5f61b55406024c0d6b9af9fad4",
+    "bytes": 1908,
+    "local_check": "LOCAL_CHANGED_OR_MISSING",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Nandi agriBot platform",
+    "relative_path": "Project Data/Software/13 NANDI control software/README.txt",
+    "sha256": "2ae8c418c159c623e41d08077e1194d5bd35907dc1612c08ed0a95a048dbd94f",
+    "bytes": 339,
+    "local_check": "LOCAL_CHANGED_OR_MISSING",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Nandi agriBot platform",
+    "relative_path": "Project Data/Software/06 Firmware and software/firmware_p0/README.txt",
+    "sha256": "5bef4d9f62e1f0550856f2b50740e1585b2a0fbfe78b113bc64f2bceb5e33918",
+    "bytes": 645,
+    "local_check": "LOCAL_CHANGED_OR_MISSING",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Nandi agriBot platform",
+    "relative_path": "Project Data/Verification/16 Build and release/PROJECT_MANIFEST.json",
+    "sha256": "8f7cbae986b2a9c7b8d78eaa52a9f622377aab653801e8fa4c49341cfa6582af",
+    "bytes": 251,
+    "local_check": "LOCAL_CHANGED_OR_MISSING",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "LKG-reference-BUILD143/project.yml",
+    "sha256": "3a78de06ca1d9f6b4847d0336ac89ba053b6d6f4ab58ae709cc77275f7bb4528",
+    "bytes": 1619,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "LKG-reference-BUILD143/ASSET_MANIFEST.txt",
+    "sha256": "8559cff3f4df36856b6bcd994852222f510d294dc403d31ba86e846c7b5f19ea",
+    "bytes": 889,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "LKG-reference-BUILD143/README.txt",
+    "sha256": "7fbc2694d6bc6a54b284c7c54cfcb9fbe59059cc62af3918d85b90fc91d331ba",
+    "bytes": 561,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "candidate-BUILD153-reconciled/project.yml",
+    "sha256": "bdc535564d71dd6a3b58de894f608834bad27c466d538c6181f067870ee4dafc",
+    "bytes": 1621,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "candidate-BUILD153-reconciled/ASSET_MANIFEST.txt",
+    "sha256": "8559cff3f4df36856b6bcd994852222f510d294dc403d31ba86e846c7b5f19ea",
+    "bytes": 889,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "candidate-BUILD153-reconciled/README.txt",
+    "sha256": "7fbc2694d6bc6a54b284c7c54cfcb9fbe59059cc62af3918d85b90fc91d331ba",
+    "bytes": 561,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "current-candidate/project.yml",
+    "sha256": "d7dc130c782d57e25b9f958db95c2a49243c9b230908757974fd3b80772bf13d",
+    "bytes": 2069,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "current-candidate/ASSET_MANIFEST.txt",
+    "sha256": "8559cff3f4df36856b6bcd994852222f510d294dc403d31ba86e846c7b5f19ea",
+    "bytes": 889,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "current-candidate/README.txt",
+    "sha256": "7fbc2694d6bc6a54b284c7c54cfcb9fbe59059cc62af3918d85b90fc91d331ba",
+    "bytes": 561,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Authority/PRODUCT_BIBLE.md",
+    "sha256": "8e2e83d5a174a07c80af583edc19e7fc2d2618b7a9aabba50fb2d304fb2f02bf",
+    "bytes": 5628,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/BUILD_MANIFEST.json",
+    "sha256": "7514242d15c70b563c08ac39977bd4b4788f192ebf8b776f154fd3c4be015e9f",
+    "bytes": 561,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/README.md",
+    "sha256": "aac75fcd5ed98ecab354b41a60e145e5693d9eba006ea3ba1e6728bd7299d4e0",
+    "bytes": 1298,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "LKG-reference-BUILD143/SWAY/Resources/Characters/Lucia/lucia.cutout.manifest.json",
+    "sha256": "198ac2bb9f565d21ed2a1bb8d9e3334a15f4abb83b89db9128687f33ade31f59",
+    "bytes": 5790,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "LKG-reference-BUILD143/ProductionAssets/Lucia/lucia.manifest.json",
+    "sha256": "210840f31b08b431052d1652e0cb24903b965229e157c9a9cb9b6c0ebd275bae",
+    "bytes": 5675,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "RecoveryEvidence/r2-continuity-20261006/r2-migration-manifest.json",
+    "sha256": "31b149e6f1e582c635e12905035ba6249eb7630e9e49f519cd7ab97713b53dd2",
+    "bytes": 759768,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "RecoveryEvidence/family-package-20261003/source/BUILD_MANIFEST.json",
+    "sha256": "52928e5b6ec4164e711630cb2f99d6c75b5b18a8097d21b03a6ac1b4c43c7f40",
+    "bytes": 543,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "RecoveryEvidence/family-package-20261003/source/README.md",
+    "sha256": "182c52d7fcf7c3cbc4baf0fd443d0c58ad6331babfe8c5ae5185676edea40f93",
+    "bytes": 1632,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "RecoveryEvidence/family-package-20261003/source/Blender/validate_manifest.py",
+    "sha256": "325102a8074ca08fd4824e31f2eebb80752fa70e32c091d73ad173f3d6a405f0",
+    "bytes": 4167,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "RecoveryEvidence/family-package-20261003/source/Tests/Python/test_manifest_validator.py",
+    "sha256": "cef6c84d0213c6a609848fa889ef08096ae4dd67b63a256e1f69448399b5ff9e",
+    "bytes": 3255,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "RecoveryEvidence/family-package-20261003/source/Docs/Spec/00_EMBEDDED_PROJECT_BIBLE.txt",
+    "sha256": "3ebe1899252cf2562a87ad6aec76c24305880e2b419de21148123e80396220a4",
+    "bytes": 6223,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "RecoveryEvidence/family-package-20261003/source/Apps/StudioManagement/project.yml",
+    "sha256": "c4ca090457de4491317d8d14f8f69a40ec900bae5e567dd8ca64393534b1834e",
+    "bytes": 1971,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "RecoveryEvidence/family-package-20261003/source/Apps/DanceFitness/project.yml",
+    "sha256": "6974c1fe3f26d8fea5fb4bb33cd1b0b08a25c0756a253836aba208fa912f1b9d",
+    "bytes": 2609,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "RecoveryEvidence/family-package-20261003/source/Apps/SWAYZ/project.yml",
+    "sha256": "fe5cde76243f137b3b0f51665e7101ca767f32199cbc9162a4ea54d0c74c13c2",
+    "bytes": 2149,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "RecoveryEvidence/family-package-20261003/source/Apps/KidDancers/project.yml",
+    "sha256": "d5f5c25c2a569003cde0c2828bb27905c9ca176ecfdf850acd4d6ff77b1fc023",
+    "bytes": 2026,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "RecoveryEvidence/alpha-corrections-20261002/before-source/SWAY/Resources/Characters/Lucia/lucia.cutout.manifest.json",
+    "sha256": "198ac2bb9f565d21ed2a1bb8d9e3334a15f4abb83b89db9128687f33ade31f59",
+    "bytes": 5790,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "RecoveryEvidence/Legacy-Downloads-Consolidated/original-remaining-tree/SWAYcore_BUILD153_ONE_CLICK/project.yml",
+    "sha256": "bdc535564d71dd6a3b58de894f608834bad27c466d538c6181f067870ee4dafc",
+    "bytes": 1621,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "RecoveryEvidence/Legacy-Downloads-Consolidated/original-remaining-tree/SWAYcore_BUILD153_ONE_CLICK/ASSET_MANIFEST.txt",
+    "sha256": "8559cff3f4df36856b6bcd994852222f510d294dc403d31ba86e846c7b5f19ea",
+    "bytes": 889,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "RecoveryEvidence/Legacy-Downloads-Consolidated/original-remaining-tree/SWAYcore_BUILD153_ONE_CLICK/README.txt",
+    "sha256": "7fbc2694d6bc6a54b284c7c54cfcb9fbe59059cc62af3918d85b90fc91d331ba",
+    "bytes": 561,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "RecoveryEvidence/Legacy-Downloads-Consolidated/original-remaining-tree/SWAYcore_BUILD153_ONE_CLICK/SWAY/Resources/Characters/Lucia/lucia.cutout.manifest.json",
+    "sha256": "198ac2bb9f565d21ed2a1bb8d9e3334a15f4abb83b89db9128687f33ade31f59",
+    "bytes": 5790,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "RecoveryEvidence/Legacy-Downloads-Consolidated/original-remaining-tree/SWAYcore_BUILD153_ONE_CLICK/ProductionAssets/Lucia/lucia.manifest.json",
+    "sha256": "210840f31b08b431052d1652e0cb24903b965229e157c9a9cb9b6c0ebd275bae",
+    "bytes": 5675,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "candidate-BUILD153-reconciled/SWAY/Resources/Characters/Lucia/lucia.cutout.manifest.json",
+    "sha256": "198ac2bb9f565d21ed2a1bb8d9e3334a15f4abb83b89db9128687f33ade31f59",
+    "bytes": 5790,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "candidate-BUILD153-reconciled/ProductionAssets/Lucia/lucia.manifest.json",
+    "sha256": "210840f31b08b431052d1652e0cb24903b965229e157c9a9cb9b6c0ebd275bae",
+    "bytes": 5675,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "current-candidate/SWAY/Resources/Characters/Lucia/lucia.cutout.manifest.json",
+    "sha256": "198ac2bb9f565d21ed2a1bb8d9e3334a15f4abb83b89db9128687f33ade31f59",
+    "bytes": 5790,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "current-candidate/ProductionAssets/Lucia/lucia.manifest.json",
+    "sha256": "210840f31b08b431052d1652e0cb24903b965229e157c9a9cb9b6c0ebd275bae",
+    "bytes": 5675,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/LKG-reference-BUILD143/project.yml",
+    "sha256": "3a78de06ca1d9f6b4847d0336ac89ba053b6d6f4ab58ae709cc77275f7bb4528",
+    "bytes": 1619,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/LKG-reference-BUILD143/ASSET_MANIFEST.txt",
+    "sha256": "8559cff3f4df36856b6bcd994852222f510d294dc403d31ba86e846c7b5f19ea",
+    "bytes": 889,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/LKG-reference-BUILD143/README.txt",
+    "sha256": "7fbc2694d6bc6a54b284c7c54cfcb9fbe59059cc62af3918d85b90fc91d331ba",
+    "bytes": 561,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/current-candidate/project.yml",
+    "sha256": "d7dc130c782d57e25b9f958db95c2a49243c9b230908757974fd3b80772bf13d",
+    "bytes": 2069,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/current-candidate/ASSET_MANIFEST.txt",
+    "sha256": "8559cff3f4df36856b6bcd994852222f510d294dc403d31ba86e846c7b5f19ea",
+    "bytes": 889,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/current-candidate/README.txt",
+    "sha256": "7fbc2694d6bc6a54b284c7c54cfcb9fbe59059cc62af3918d85b90fc91d331ba",
+    "bytes": 561,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/Authority/PRODUCT_BIBLE.md",
+    "sha256": "8e2e83d5a174a07c80af583edc19e7fc2d2618b7a9aabba50fb2d304fb2f02bf",
+    "bytes": 5628,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/LKG-reference-BUILD143/SWAY/Resources/Characters/Lucia/lucia.cutout.manifest.json",
+    "sha256": "198ac2bb9f565d21ed2a1bb8d9e3334a15f4abb83b89db9128687f33ade31f59",
+    "bytes": 5790,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/LKG-reference-BUILD143/ProductionAssets/Lucia/lucia.manifest.json",
+    "sha256": "210840f31b08b431052d1652e0cb24903b965229e157c9a9cb9b6c0ebd275bae",
+    "bytes": 5675,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/RecoveryEvidence/family-package-20261003/source/BUILD_MANIFEST.json",
+    "sha256": "52928e5b6ec4164e711630cb2f99d6c75b5b18a8097d21b03a6ac1b4c43c7f40",
+    "bytes": 543,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/RecoveryEvidence/family-package-20261003/source/README.md",
+    "sha256": "182c52d7fcf7c3cbc4baf0fd443d0c58ad6331babfe8c5ae5185676edea40f93",
+    "bytes": 1632,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/RecoveryEvidence/family-package-20261003/source/Blender/validate_manifest.py",
+    "sha256": "325102a8074ca08fd4824e31f2eebb80752fa70e32c091d73ad173f3d6a405f0",
+    "bytes": 4167,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/RecoveryEvidence/family-package-20261003/source/Tests/Python/test_manifest_validator.py",
+    "sha256": "cef6c84d0213c6a609848fa889ef08096ae4dd67b63a256e1f69448399b5ff9e",
+    "bytes": 3255,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/RecoveryEvidence/family-package-20261003/source/Docs/Spec/00_EMBEDDED_PROJECT_BIBLE.txt",
+    "sha256": "3ebe1899252cf2562a87ad6aec76c24305880e2b419de21148123e80396220a4",
+    "bytes": 6223,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/RecoveryEvidence/family-package-20261003/source/Apps/StudioManagement/project.yml",
+    "sha256": "c4ca090457de4491317d8d14f8f69a40ec900bae5e567dd8ca64393534b1834e",
+    "bytes": 1971,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/RecoveryEvidence/family-package-20261003/source/Apps/DanceFitness/project.yml",
+    "sha256": "6974c1fe3f26d8fea5fb4bb33cd1b0b08a25c0756a253836aba208fa912f1b9d",
+    "bytes": 2609,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/RecoveryEvidence/family-package-20261003/source/Apps/SWAYZ/project.yml",
+    "sha256": "fe5cde76243f137b3b0f51665e7101ca767f32199cbc9162a4ea54d0c74c13c2",
+    "bytes": 2149,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/RecoveryEvidence/family-package-20261003/source/Apps/KidDancers/project.yml",
+    "sha256": "d5f5c25c2a569003cde0c2828bb27905c9ca176ecfdf850acd4d6ff77b1fc023",
+    "bytes": 2026,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/RecoveryEvidence/alpha-corrections-20261002/before-source/SWAY/Resources/Characters/Lucia/lucia.cutout.manifest.json",
+    "sha256": "198ac2bb9f565d21ed2a1bb8d9e3334a15f4abb83b89db9128687f33ade31f59",
+    "bytes": 5790,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/RecoveryEvidence/Legacy-Downloads-Consolidated/original-remaining-tree/SWAYcore_BUILD153_ONE_CLICK/project.yml",
+    "sha256": "bdc535564d71dd6a3b58de894f608834bad27c466d538c6181f067870ee4dafc",
+    "bytes": 1621,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/RecoveryEvidence/Legacy-Downloads-Consolidated/original-remaining-tree/SWAYcore_BUILD153_ONE_CLICK/ASSET_MANIFEST.txt",
+    "sha256": "8559cff3f4df36856b6bcd994852222f510d294dc403d31ba86e846c7b5f19ea",
+    "bytes": 889,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/RecoveryEvidence/Legacy-Downloads-Consolidated/original-remaining-tree/SWAYcore_BUILD153_ONE_CLICK/README.txt",
+    "sha256": "7fbc2694d6bc6a54b284c7c54cfcb9fbe59059cc62af3918d85b90fc91d331ba",
+    "bytes": 561,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/RecoveryEvidence/Legacy-Downloads-Consolidated/original-remaining-tree/SWAYcore_BUILD153_ONE_CLICK/SWAY/Resources/Characters/Lucia/lucia.cutout.manifest.json",
+    "sha256": "198ac2bb9f565d21ed2a1bb8d9e3334a15f4abb83b89db9128687f33ade31f59",
+    "bytes": 5790,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/RecoveryEvidence/Legacy-Downloads-Consolidated/original-remaining-tree/SWAYcore_BUILD153_ONE_CLICK/ProductionAssets/Lucia/lucia.manifest.json",
+    "sha256": "210840f31b08b431052d1652e0cb24903b965229e157c9a9cb9b6c0ebd275bae",
+    "bytes": 5675,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/current-candidate/SWAY/Resources/Characters/Lucia/lucia.cutout.manifest.json",
+    "sha256": "198ac2bb9f565d21ed2a1bb8d9e3334a15f4abb83b89db9128687f33ade31f59",
+    "bytes": 5790,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/REJECTED/SWAYcore_CLAUDE_MASTER_HANDOFF_2026-10-04/current-candidate/ProductionAssets/Lucia/lucia.manifest.json",
+    "sha256": "210840f31b08b431052d1652e0cb24903b965229e157c9a9cb9b6c0ebd275bae",
+    "bytes": 5675,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/SWAYcore_CLAUDE_CURATED_HANDOFF_2026-10-04/LKG_Build143_Selected/project.yml",
+    "sha256": "3a78de06ca1d9f6b4847d0336ac89ba053b6d6f4ab58ae709cc77275f7bb4528",
+    "bytes": 1619,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/SWAYcore_CLAUDE_CURATED_HANDOFF_2026-10-04/LKG_Build143_Selected/ASSET_MANIFEST.txt",
+    "sha256": "8559cff3f4df36856b6bcd994852222f510d294dc403d31ba86e846c7b5f19ea",
+    "bytes": 889,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/SWAYcore_CLAUDE_CURATED_HANDOFF_2026-10-04/LKG_Build143_Selected/README.txt",
+    "sha256": "7fbc2694d6bc6a54b284c7c54cfcb9fbe59059cc62af3918d85b90fc91d331ba",
+    "bytes": 561,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/SWAYcore_CLAUDE_CURATED_HANDOFF_2026-10-04/CurrentCandidate/project.yml",
+    "sha256": "d7dc130c782d57e25b9f958db95c2a49243c9b230908757974fd3b80772bf13d",
+    "bytes": 2069,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/SWAYcore_CLAUDE_CURATED_HANDOFF_2026-10-04/CurrentCandidate/ASSET_MANIFEST.txt",
+    "sha256": "8559cff3f4df36856b6bcd994852222f510d294dc403d31ba86e846c7b5f19ea",
+    "bytes": 889,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/SWAYcore_CLAUDE_CURATED_HANDOFF_2026-10-04/CurrentCandidate/README.txt",
+    "sha256": "7fbc2694d6bc6a54b284c7c54cfcb9fbe59059cc62af3918d85b90fc91d331ba",
+    "bytes": 561,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/SWAYcore_CLAUDE_CURATED_HANDOFF_2026-10-04/Authority/PRODUCT_BIBLE.md",
+    "sha256": "8e2e83d5a174a07c80af583edc19e7fc2d2618b7a9aabba50fb2d304fb2f02bf",
+    "bytes": 5628,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/SWAYcore_CLAUDE_CURATED_HANDOFF_2026-10-04/LKG_Build143_Selected/SWAY/Resources/Characters/Lucia/lucia.cutout.manifest.json",
+    "sha256": "198ac2bb9f565d21ed2a1bb8d9e3334a15f4abb83b89db9128687f33ade31f59",
+    "bytes": 5790,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/SWAYcore_CLAUDE_CURATED_HANDOFF_2026-10-04/CurrentCandidate/SWAY/Resources/Characters/Lucia/lucia.cutout.manifest.json",
+    "sha256": "198ac2bb9f565d21ed2a1bb8d9e3334a15f4abb83b89db9128687f33ade31f59",
+    "bytes": 5790,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "Handoffs/Claude/SWAYcore_CLAUDE_CURATED_HANDOFF_2026-10-04/CurrentCandidate/ProductionAssets/Lucia/lucia.manifest.json",
+    "sha256": "210840f31b08b431052d1652e0cb24903b965229e157c9a9cb9b6c0ebd275bae",
+    "bytes": 5675,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/App/project.yml",
+    "sha256": "8b95ff5c9ec33819845a33c2128279d0bf5185c832a65fd23af3f91c57c0f08c",
+    "bytes": 2696,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/App/ASSET_MANIFEST.txt",
+    "sha256": "8559cff3f4df36856b6bcd994852222f510d294dc403d31ba86e846c7b5f19ea",
+    "bytes": 889,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/App/README.txt",
+    "sha256": "7fbc2694d6bc6a54b284c7c54cfcb9fbe59059cc62af3918d85b90fc91d331ba",
+    "bytes": 561,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/Authority/PRODUCT_BIBLE.md",
+    "sha256": "ceb2048bf3d4881d5ba2f45a533413851550eea5b59ff8d608bbc6781c86a2d5",
+    "bytes": 5760,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/App/SWAY/Resources/Characters/Lucia/lucia.cutout.manifest.json",
+    "sha256": "198ac2bb9f565d21ed2a1bb8d9e3334a15f4abb83b89db9128687f33ade31f59",
+    "bytes": 5790,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/App/ProductionAssets/Lucia/lucia.manifest.json",
+    "sha256": "210840f31b08b431052d1652e0cb24903b965229e157c9a9cb9b6c0ebd275bae",
+    "bytes": 5675,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/AssetFactory/data/clip_manifest.json",
+    "sha256": "0d128fbd27090e7185fa7ba306adfab0ebe7085197a9409840ff5c654a588c0d",
+    "bytes": 2408,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/Build/experiments/base_research_20261005/girush/readme.txt",
+    "sha256": "d2074f738fbc01e7d0baab6a9311f8c9b6260802e96f054988354b512bebee33",
+    "bytes": 1260,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/Build/resume/20261006/connected_contact_sheets/manifest.json",
+    "sha256": "c3dc55204fec5dddc8fec6e11b1d2783e91bf11285e46b6afec731e5c63931c9",
+    "bytes": 9696,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/Build/resume/20261006/contact_sheets/manifest.json",
+    "sha256": "5a358d6dc6203efe1379704ae173fa4df902e95a71aceb6bafd0ef137dc16edd",
+    "bytes": 9619,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/Build/resume/20261006/eye_verified/contact_sheets/manifest.json",
+    "sha256": "28ed1124d196a462054e93daa19284a81077fb52bae7861429a95345249916e7",
+    "bytes": 9686,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/Build/resume/20261006/heading_verified/contact_sheets/manifest.json",
+    "sha256": "28ed1124d196a462054e93daa19284a81077fb52bae7861429a95345249916e7",
+    "bytes": 9686,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/Build/resume/20261006/body_verified/contact_sheets/manifest.json",
+    "sha256": "28ed1124d196a462054e93daa19284a81077fb52bae7861429a95345249916e7",
+    "bytes": 9686,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/Reference/LKG_Build143_Selected_extracted/project.yml",
+    "sha256": "3a78de06ca1d9f6b4847d0336ac89ba053b6d6f4ab58ae709cc77275f7bb4528",
+    "bytes": 1619,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/Reference/LKG_Build143_Selected_extracted/ASSET_MANIFEST.txt",
+    "sha256": "8559cff3f4df36856b6bcd994852222f510d294dc403d31ba86e846c7b5f19ea",
+    "bytes": 889,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/Reference/LKG_Build143_Selected_extracted/README.txt",
+    "sha256": "7fbc2694d6bc6a54b284c7c54cfcb9fbe59059cc62af3918d85b90fc91d331ba",
+    "bytes": 561,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SWAYcore",
+    "relative_path": "R2/Reference/LKG_Build143_Selected_extracted/SWAY/Resources/Characters/Lucia/lucia.cutout.manifest.json",
+    "sha256": "198ac2bb9f565d21ed2a1bb8d9e3334a15f4abb83b89db9128687f33ade31f59",
+    "bytes": 5790,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "edenOS Embedded",
+    "relative_path": "PROJECT_BIBLE.txt",
+    "sha256": "521c00b930b30b40c27c0dc429aaecbbce74d0bee6fe26b15a2f422392f05121",
+    "bytes": 6584,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "APELLES",
+    "relative_path": "project.yml",
+    "sha256": "b2dfb28e8ed8f007ecb884c558bb8e4438cf8117eef80bea02a88b3aff4fe2f9",
+    "bytes": 1023,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "APELLES",
+    "relative_path": "README.md",
+    "sha256": "df54969d72321cc8a352d0cf3aeaa44d21e60964b5eefc200c0b0214e7576e80",
+    "bytes": 9205,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "APELLES",
+    "relative_path": "Evidence/package.json",
+    "sha256": "c2bdd566fe449ac7ce87d20fe9cbf0b408f89fa66d069f3cc2809ff6a10e7d3b",
+    "bytes": 653,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "APELLES",
+    "relative_path": "History/Recovered-v1/README.md",
+    "sha256": "3ea10e2b84f49c017ae052f08810eb69fd573289f37c6e303cfa7e039ca13141",
+    "bytes": 665,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "BIFROST",
+    "relative_path": "project.yml",
+    "sha256": "487f11e8677c17d9934cd94da3bf57e0937fc0e2a03f03e2299da4358aa3322d",
+    "bytes": 446,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "BIFROST",
+    "relative_path": "RECOVERY_STATUS.md",
+    "sha256": "0dc75a2bb59ccbbcbe2e31245e0a960a14071e2eb1b80787477fe588c2355a8c",
+    "bytes": 3907,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "CRESUS",
+    "relative_path": "README.md",
+    "sha256": "137a1cd153c406b8bc6d7ac6668ed26abc6508d1077be94cecf1787bd299144e",
+    "bytes": 1035,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "CRESUS",
+    "relative_path": "package.json",
+    "sha256": "c946425c6fae3d9a4bc49884e22401eb36384af32034815ebc7432cf93b23e0a",
+    "bytes": 123,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "CRESUS-PWA",
+    "relative_path": "package.json",
+    "sha256": "06094bda512dd818633f4eebc4dc5a77d2192a73f62b1b1c227298eecb4ef377",
+    "bytes": 413,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "CRESUS-PWA",
+    "relative_path": "public/manifest.webmanifest",
+    "sha256": "21c59c36407bd8a287d3e2f5c71771efbf1bdac22ef736cdb1b7f7839088a0dd",
+    "bytes": 516,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "JANITOR",
+    "relative_path": "README.txt",
+    "sha256": "ec64a2cc1ee09b7775461811c398f344db96338244030150ab972a44970c8d82",
+    "bytes": 1478,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "JANITOR",
+    "relative_path": "STALE_FAILED_PHYSICAL_TEST_PACKAGE/README.txt",
+    "sha256": "717e2757e3630fcc993a86bac93dbb6fdf9704146102c2bdd1eac97eb45a8907",
+    "bytes": 1200,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "JANITOR",
+    "relative_path": "native/README.md",
+    "sha256": "6dd36147e3c974737d5623352a7ef582b6b6dae5ccf66046e68cbdb1970656cf",
+    "bytes": 1801,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "JANITOR",
+    "relative_path": "evidence/baseline/README.txt",
+    "sha256": "a83408dff27e2ff44cda42d8c539f8bcf83eaeb9f60ed22cd3ad6a6617a0d096",
+    "bytes": 1648,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "JANITOR-i18n",
+    "relative_path": "native/README.md",
+    "sha256": "6dd36147e3c974737d5623352a7ef582b6b6dae5ccf66046e68cbdb1970656cf",
+    "bytes": 1801,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "KUROSAWA",
+    "relative_path": "PROJECT_BIBLE.md",
+    "sha256": "01ff8ac93b9a726fb35ab9f1ed055a17eb9a49e3ada1d9de8f637003680bfe44",
+    "bytes": 12769,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "KUROSAWA",
+    "relative_path": "README.md",
+    "sha256": "7e2f5ca53b52c28853e2f4addffd51c59c14f0dcef44c36d3bd8bf911f16ff1b",
+    "bytes": 1132,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas-Private-edenOS-apps",
+    "relative_path": "README.md",
+    "sha256": "d8a11328aa80b00e6b23aa64b7c8e10446f6e8cd369eeb47fe1113227e49dde2",
+    "bytes": 723,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas-Private-edenOS-apps",
+    "relative_path": "Lucas-AI-Journey-TOME/README.md",
+    "sha256": "337f0c7b0a30cf19931bcea8d208764aae6ad1dda31a17a8e2b6bd8c9cacd00e",
+    "bytes": 1550,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas-Private-edenOS-apps",
+    "relative_path": "JANITOR/README.txt",
+    "sha256": "d238157b4652feb5016aea2700ccc02922ad8eb2e4eea44bc65b9c59e3b291f7",
+    "bytes": 1938,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas-Private-edenOS-apps",
+    "relative_path": "edenOS Embedded/PROJECT_BIBLE.txt",
+    "sha256": "04b5a96aeee1ad2d62b13c03fb920b77b6ee8372017f27b982548434864b0ec3",
+    "bytes": 9017,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas-Private-edenOS-apps",
+    "relative_path": "PENELOPE/README.md",
+    "sha256": "aaa44e4d6a564ee46c16ab0933d044fa1eb15bfde328288a5459db67cacde6c4",
+    "bytes": 1851,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas-Private-edenOS-apps",
+    "relative_path": "BIFROST/README.md",
+    "sha256": "0b73ff7c2ac6508c98b7549347d41c0b8008bf0dd43dc345fa2add464fea3d55",
+    "bytes": 2349,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas-Private-edenOS-apps",
+    "relative_path": "KUROSAWA/PROJECT_BIBLE.md",
+    "sha256": "94627b8f19d03077f894eca1a35c6576dd7da408b78cc1481d8fe178d462e790",
+    "bytes": 12530,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas-Private-edenOS-apps",
+    "relative_path": "KUROSAWA/README.md",
+    "sha256": "f37c97bdf83c843e330ae592ff1d15de4bb26b14a5574b8add734d4175070f31",
+    "bytes": 1190,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "Lucas-Private-edenOS-apps",
+    "relative_path": "CURATOR/backups/v1.3.5/README.md",
+    "sha256": "383e2579b3d7b79751e3611675bb9cc483613d4ffb4ee3dc9dc5213c61350921",
+    "bytes": 1289,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "PENELOPE",
+    "relative_path": "PROJECT_BIBLE.md",
+    "sha256": "a5206fa256e248e205385606ff1cd35277008e5e9768f15121b06a6c5e08715a",
+    "bytes": 3975,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "PENELOPE",
+    "relative_path": "README.md",
+    "sha256": "3884d2e5660c440891f4c4acf90e69be192eac416f5e155b2d3d5a4ecbcde9bc",
+    "bytes": 2548,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SKALD",
+    "relative_path": "PROJECT_BIBLE.md",
+    "sha256": "26dfb8e943044b3bc27157cc993165171c12b974781f7e1c70991b6e92958bb8",
+    "bytes": 6402,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SKALD",
+    "relative_path": "README.md",
+    "sha256": "f33087a1e5be635cce2e0309e86e5dad8b34806be14de29269611cb03356d150",
+    "bytes": 907,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SKALD",
+    "relative_path": "RecoveryEvidence/rejected-0.2.0-PROJECT_BIBLE.md",
+    "sha256": "8f7b0c814ada9bb2dc917a5b057e8e474b0e6486416fd298806b4b1d25690fec",
+    "bytes": 4764,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  },
+  {
+    "workspace": "SKALD",
+    "relative_path": "web/manifest.webmanifest",
+    "sha256": "42fa173762b7708105109acd786deca6c58a78a694701b2d005f1b32ce847e1c",
+    "bytes": 228,
+    "local_check": "LOCAL_HASH_MATCH",
+    "authority_status": "CANDIDATE_NOT_PROMOTED"
+  }
+]
