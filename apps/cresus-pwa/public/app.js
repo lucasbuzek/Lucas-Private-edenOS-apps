@@ -508,7 +508,7 @@ $('addUser').addEventListener('submit', async (e) => {
     refreshQuota();
     if (!mobile()) loadConversations();
     const intelligence = await api('/api/intelligence');
-    if (!intelligence.provider) await showIntelligence(true);
+    if (!intelligence.configured) await showIntelligence(true);
   } catch (e) {
     const body = cresusShell('simple');
     body.className = 'body';
