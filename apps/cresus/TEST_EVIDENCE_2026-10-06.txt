@@ -1,0 +1,6 @@
+CRESUS local canonical workspace test evidence — 2026-10-06
+Command: npm test
+Result: PASS for recovered portable Core contract tests.
+Tests: 8; pass 8; fail 0; skipped 0.
+Covered: realized/declared dividend separation; point-in-time visibility; Alpha entitlement unlock; permanent Full entitlement semantics; Expert asymmetric-evidence gate; changed-source retry; exhausted-evidence non-synthesis.
+Scope boundary: this is Core/contract evidence only. It does NOT verify Android, Windows, iOS/iPadOS, macOS, provider integrations, silentChatGPT, full native AI, final UI/UIX, packaging, signing or physical-device behavior.
