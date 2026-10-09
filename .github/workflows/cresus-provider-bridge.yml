@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '22'
       - name: Existing PWA regression tests
-        run: node --test apps/cresus-pwa/test/worker.test.mjs
+        run: node --test apps/cresus-pwa/test/*.test.mjs
       - name: Provider bridge contract tests
         run: node --test CRESUS/cloudflare/intelligence-bridge.test.mjs
       - name: Syntax checks
