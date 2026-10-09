@@ -92,3 +92,17 @@ for iPhone users is the emailed one-time code to their iCloud address.
 | `workers-ai` | Free (10k neurons/day) | Default. Data stays on Cloudflare, not used for training. ~30 messages/day with the 6k-token canon. |
 | `gemini`     | Free tier | Stronger; Google may use free-tier prompts — avoid real financial details. |
 | `anthropic`  | Paid per use | Best quality. |
+
+## Provider-choice migration (PR #5 candidate — do not deploy before migration)
+
+The existing Cloudflare Access sign-in and D1 chats remain authoritative. PR #5 adds per-user intelligence preferences, a first-login chooser and an Intelligence settings dialog. Existing accounts continue using the deployment's prior PROVIDER setting until explicitly changed; skipping selection disables AI only for that user. Providers are available only when configured server-side. Codex Cloud remains disabled pending verified supported account-based dispatch.
+
+**Required order:** apply `migrations/0003_intelligence_preferences.sql` to the existing D1 database **before** deploying the new Worker. For the existing Cloudflare-managed build pipeline, add a pre-deploy migration step under the app's root directory:
+
+```sh
+npx wrangler d1 execute cresus-agent --remote --file=migrations/0003_intelligence_preferences.sql
+```
+
+This uses the existing D1 database and does not erase chats. Run once; CREATE TABLE IF NOT EXISTS is repeat-safe. Do not automatically deploy this candidate to the live production branch until Cloudflare Access identifiers, migration, and end-to-end checks are verified.
+
+The original `PROVIDER` environment variable remains a backward-compatible default for users who have not saved their selection. Provider keys remain server-side secrets. A successful test against a fake AI provider is not evidence of live provider billing, account entitlements, or real-time research data.
