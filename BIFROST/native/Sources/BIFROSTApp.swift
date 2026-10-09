@@ -13,15 +13,15 @@ struct BIFROSTApp: App {
         }
         .defaultSize(width: 1180, height: 760)
 
-        MenuBarExtra {
+        // A real macOS menu-bar item: the system draws a high-contrast,
+        // always identifiable title and SF Symbol in light and dark menus.
+        // Headless remains an independent launchd service when this GUI quits.
+        MenuBarExtra("BIFROST", systemImage: "network") {
             StatusMenu()
-                .preferredColorScheme(.dark)
                 .environmentObject(system)
                 .environmentObject(system.headless)
-        } label: {
-            HeadlessMenuBarLabel(client: system.headless)
         }
-        .menuBarExtraStyle(.window)
+        .menuBarExtraStyle(.menu)
 
         Settings {
             SettingsView()
@@ -29,17 +29,6 @@ struct BIFROSTApp: App {
                 .environmentObject(system)
                 .environmentObject(system.headless)
         }
-    }
-}
-
-struct HeadlessMenuBarLabel: View {
-    @ObservedObject var client: HeadlessClient
-    var body: some View {
-        HStack(spacing: 4) {
-            BifrostMark(size: 20)
-            Text(client.menuBarTitle).font(.system(size: 11, weight: .medium))
-        }
-        .accessibilityLabel("BIFROST, " + client.menuBarTitle)
     }
 }
 
