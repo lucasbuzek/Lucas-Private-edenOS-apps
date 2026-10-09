@@ -24,6 +24,7 @@ import socket
 import subprocess
 import threading
 import time
+import urllib.request
 from pathlib import Path
 
 from .remote_provider import RemoteProvider
@@ -202,6 +203,57 @@ def probe_registry():
                 apps=apps)
 
 
+def probe_bifrost_headless():
+    """Bounded, sanitized local Headless observation for an authorized Raven node.
+
+    Never forwards session tokens, ZIP filenames, filesystem paths or installer
+    actions. The Raven gateway retains its own authentication/grants authority.
+    """
+    base = "http://127.0.0.1:8798"
+
+    def read(endpoint):
+        request = urllib.request.Request(
+            base + endpoint, headers={"User-Agent": "BIFROST-RavenNode/1"})
+        with urllib.request.urlopen(request, timeout=2) as response:
+            if response.status != 200:
+                raise ValueError("Headless did not return success")
+            raw = response.read(16385)
+            if len(raw) > 16384:
+                raise ValueError("Headless response exceeds bounded size")
+            value = json.loads(raw)
+            if not isinstance(value, dict):
+                raise ValueError("Headless response has invalid schema")
+            return value
+
+    try:
+        state = read("/api/state")
+        if state.get("headless", {}).get("status") != "running":
+            raise ValueError("Headless has not confirmed running")
+        tasks = state.get("tasks") or {}
+        prefs = state.get("preferences") or {}
+        catalog = read("/api/setup/catalog")
+        safe_packages = [
+            {"id": item["id"], "state": item["status"]}
+            for item in catalog.get("packages", [])
+            if isinstance(item, dict)
+            and item.get("id") in ("ai-toolkit", "project-workspace")
+            and item.get("status") in ("available", "missing", "staged", "invalid")
+        ][:2]
+        return _cap(
+            "RUNNING", "BIFROST Headless responding on node loopback",
+            ["headless_local_http=200", "status_readonly", "no_token_forwarded"],
+            active_tasks=tasks.get("active") if tasks.get("status") == "observed" else None,
+            task_status=tasks.get("status", "unknown"),
+            ai_routing=prefs.get("aiRouting", "unknown"),
+            caffeinate_active=bool((state.get("caffeinate") or {}).get("active", False)),
+            setup_packages=safe_packages,
+            remote_setup_execution="disabled",
+        )
+    except (OSError, ValueError, TimeoutError, KeyError, TypeError) as error:
+        return _cap("UNKNOWN", "BIFROST Headless not verified on local node",
+                    ["reason=" + type(error).__name__], setup_packages=[])
+
+
 SLOW_PROBES = {"codex": probe_codex, "github": probe_github, "claude_code": probe_claude_code,
                "cloudflare": probe_cloudflare, "registry": probe_registry}
 
@@ -264,7 +316,8 @@ class StateCollector:
         for key, fn in (("node", probe_node),
                         ("power.keepawake", lambda: probe_keep_awake(self.provider)),
                         ("remote.provider", lambda: probe_remote_provider(self.provider)),
-                        ("bifrost.app", probe_bifrost_app)):
+                        ("bifrost.app", probe_bifrost_app),
+                        ("bifrost.headless", probe_bifrost_headless)):
             try:
                 caps[key] = fn()
             except Exception as e:  # noqa: BLE001
