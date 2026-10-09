@@ -69,6 +69,28 @@ class FinderUIXContractTests(unittest.TestCase):
         self.assertIn('Button("Run system check")', self.shell)
         self.assertNotIn(".onAppear { run(\"system\")", self.shell)
 
+    def test_live_developer_disclosure_matches_mode(self):
+        self.assertIn('case .developer: return .advanced', self.model)
+        self.assertIn('SidebarTools(name: "Developer"', self.shell)
+
+    def test_quarantine_checks_provider_before_creating_root(self):
+        q = (SRC / "Quarantine.swift").read_text()
+        self.assertIn('existingAncestor', q)
+        self.assertIn('proposedClass != .fileProvider', q)
+        self.assertLess(q.index('proposedClass != .fileProvider'),
+                        q.index('try fm.createDirectory(at: root'))
+
+    def test_package_version_follows_signed_bundle(self):
+        core = (SRC / "Core.swift").read_text()
+        self.assertIn('Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString")', core)
+
+    def test_native_builder_reuses_authoritative_source(self):
+        builder = SRC.parents[2] / "builders" / "macos" / "JANITOR_macOS_Build.command"
+        content = builder.read_text()
+        self.assertIn('ditto "$NATIVE" "$STAGE/src"', content)
+        self.assertNotIn('struct ContentView: View', content)
+        self.assertIn('Refusing to replace existing release', content)
+
     def test_level_switch_keeps_current_results(self):
         self.assertIn("Interface complexity never invalidates", self.model)
 

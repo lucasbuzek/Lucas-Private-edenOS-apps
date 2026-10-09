@@ -21,3 +21,14 @@
 ## 0.2.1
 - Favorites: pin any section to a Favorites group at the top of the sidebar (star in toolbar, right-click in sidebar). Sidebar otherwise unchanged. Favorites never bypass level gating.
 - State: Built/Unverified (not yet built at time of writing).
+
+## 0.2.10-candidate — 2026-10-09 (not promoted)
+- FIX: Match retained Model.Mode Developer disclosure contract to the existing active Advanced-level sidebar.
+- FIX: Reject File Provider/protected/quarantine broad roots before creating any quarantine directory; preserve the original local file when refused.
+- FIX: Read runtime version from the actual app bundle rather than hard-coding 0.2.1 in reports/recovery manifests.
+- FIX: Replace obsolete placeholder-generating macOS builder with a wrapper that packages authoritative native sources using the existing build engine; refuse release overwrite.
+- FIX: Update existing build engine to parse versioned plist reliably.
+- TEST: 46 Python regression tests, native Swift filesystem recovery regression and SwiftUI-host/System Check integration smoke passed.
+- PACKAGE: ARM64 + Intel x86_64 build; signed; ZIP SHA256 and clean extraction/executable parity verified.
+- PHYSICAL: GUI click-through remains UNKNOWN (macOS assistive-access denial -25211 and screen capture unavailable). Intel physical runtime UNKNOWN; Windows physical runtime UNKNOWN.
+- STATE: candidate in Releases; no LKG or Products promotion.

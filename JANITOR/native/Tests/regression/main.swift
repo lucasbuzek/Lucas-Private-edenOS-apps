@@ -78,6 +78,18 @@ write("Q/stray.txt", Data("s".utf8))
 let st = Quarantine.move([Candidate(url: url("Q/stray.txt"), category: "T", bytes: 1, note: "", preselect: false)], label: "Self")
 check(st.results.first?.state == "SKIPPED", "quarantine refuses items already inside the quarantine root")
 
+// 4a. Provider paths cannot even be CREATED by a rejected quarantine request.
+let providerRoot = url("Library/CloudStorage/ProviderFolder")
+write("work/cloud-probe.txt", Data("local original".utf8))
+UserDefaults.standard.set(providerRoot.path, forKey: "quarantineRoot")
+let probe = Quarantine.move(
+    [Candidate(url: url("work/cloud-probe.txt"), category: "TEST", bytes: 14, note: "", preselect: false)],
+    label: "CloudGuard")
+check(probe.results.first?.state == "SKIPPED", "provider quarantine request is rejected")
+check(!fm.fileExists(atPath: providerRoot.path), "provider quarantine root not created")
+check(fm.fileExists(atPath: url("work/cloud-probe.txt").path), "source preserved when cloud quarantine refused")
+UserDefaults.standard.set(url("Q").path, forKey: "quarantineRoot")
+
 // 5. sizing is not truncated by depth
 var deep = "deep"
 for i in 0..<14 { deep += "/d\(i)" }

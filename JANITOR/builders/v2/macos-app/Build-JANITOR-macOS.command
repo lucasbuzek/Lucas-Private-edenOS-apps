@@ -21,7 +21,7 @@ fail()  { say ""; say "FAILED: $*"; pause; exit 1; }
 
 [ -f "$SRC/Package.swift" ] || fail "src/Package.swift not found next to this script."
 command -v swift >/dev/null 2>&1 || fail "Swift was not found. Install the free Xcode Command Line Tools: run  xcode-select --install  then double-click this again. Nothing was changed."
-VER=$(sed -n 's/.*CFBundleShortVersionString<\/key><string>\(.*\)<\/string>.*/\1/p' "$SRC/Resources/Info.plist" | head -1)
+VER=$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "$SRC/Resources/Info.plist" 2>/dev/null)
 [ -n "$VER" ] || VER="unknown"
 say "JANITOR native $VER - building for: $ARCHS"
 say "Output: $OUT"

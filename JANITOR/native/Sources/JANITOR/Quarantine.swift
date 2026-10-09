@@ -52,6 +52,23 @@ enum Quarantine {
         func all(_ state: String, _ detail: String) -> [ActionResult] {
             cands.map { ActionResult(state: state, name: $0.title, detail: detail, cid: $0.id) }
         }
+        // Validate BEFORE creating any directory. Creating a root in File Provider storage
+        // is itself a cloud mutation, even if all subsequent moves are refused.
+        let resolvedRoot = root.resolvingSymlinksInPath().standardizedFileURL
+        var existingAncestor = resolvedRoot
+        while !fm.fileExists(atPath: existingAncestor.path) {
+            let parent = existingAncestor.deletingLastPathComponent()
+            if parent.path == existingAncestor.path { break }
+            existingAncestor = parent
+        }
+        let ancestorClass = Storage.classify(existingAncestor)
+        let proposedClass = Storage.classify(resolvedRoot)
+        guard ancestorClass.scannable, !Storage.isBroadRoot(resolvedRoot),
+              proposedClass != .fileProvider, proposedClass != .photos,
+              proposedClass != .network, proposedClass != .protected,
+              !Storage.isBoundary(resolvedRoot) else {
+            return ("", all("SKIPPED", "Quarantine destination not proven local/external; no directory created"))
+        }
         do { try fm.createDirectory(at: root, withIntermediateDirectories: true) }
         catch { return ("", all("FAILED", "Cannot create quarantine root: \(error.localizedDescription)")) }
         let rc = Storage.classify(root)

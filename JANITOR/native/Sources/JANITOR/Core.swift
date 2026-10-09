@@ -1,7 +1,7 @@
 import Foundation
 import CryptoKit
 
-let janitorVersion = "0.2.1"
+let janitorVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "0.2.1"
 
 func fmtBytes(_ b: Int64) -> String { ByteCountFormatter.string(fromByteCount: b, countStyle: .file) }
 func fmtOrDash(_ b: Int64) -> String { b > 0 ? fmtBytes(b) : "—" }

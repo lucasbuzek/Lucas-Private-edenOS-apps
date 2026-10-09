@@ -14,7 +14,7 @@ final class Model: ObservableObject {
         /// Lowest disclosure level at which this section appears in the sidebar.
         var minLevel: Level {
             switch self {
-            case .developer: return .expert
+            case .developer: return .advanced
             case .tools: return .advanced
             default: return .simple
             }

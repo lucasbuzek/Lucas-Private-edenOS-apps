@@ -1,22 +1,30 @@
 #!/bin/zsh
+# Authoritative JANITOR native macOS builder. Reuses existing actual SwiftUI source;
+# never generates a replacement / placeholder application.
 set -euo pipefail
-ROOT="${0:A:h}"; OUT="$ROOT/output"; APP="$OUT/JANITOR.app"; SRC="$OUT/src"
-rm -rf "$OUT"; mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources" "$SRC"
-cat > "$SRC/main.swift" <<'SWIFT'
-import SwiftUI
-@main struct JanitorApp: App { var body: some Scene { WindowGroup { ContentView() } } }
-struct ContentView: View {
- @State private var section="Overview"
- let sections=["Overview","Standard","Developer","Media","Full Crew","Quarantine"]
- var body: some View { NavigationView { List(sections,id:\.self,selection:$section){ Text($0) }.frame(minWidth:190); VStack(alignment:.leading,spacing:16){ Text(section).font(.largeTitle.bold()); Text("JANITOR — Justified Analysis, Navigation, Inspection, Tidying, Optimization & Recovery").foregroundStyle(.secondary); GroupBox { VStack(alignment:.leading,spacing:10){ Label("Ready",systemImage:"checkmark.circle"); Text(section == "Full Crew" ? "Processes and services: inspect; identified user/third-party services may Start, Stop, Restart, Enable or Disable. Apple system services remain protected." : "Self-contained baseline. Capability-first; installed compatible tools are optional accelerators.") } }.frame(maxWidth:.infinity,alignment:.leading); Spacer() }.padding(28) }.frame(minWidth:860,minHeight:600) }
-}
-SWIFT
-cat > "$APP/Contents/Info.plist" <<'PLIST'
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0"><dict><key>CFBundleExecutable</key><string>JANITOR</string><key>CFBundleIdentifier</key><string>com.eden.janitor</string><key>CFBundleName</key><string>JANITOR</string><key>CFBundlePackageType</key><string>APPL</string><key>CFBundleShortVersionString</key><string>0.13.1</string><key>LSMinimumSystemVersion</key><string>11.0</string><key>NSHighResolutionCapable</key><true/></dict></plist>
-PLIST
-SDK="$(xcrun --sdk macosx --show-sdk-path)"; SWIFTC="$(xcrun -f swiftc)"; BUILT=()
-for A in arm64 x86_64; do "$SWIFTC" -parse-as-library -O -sdk "$SDK" -target "$A-apple-macos11.0" "$SRC/main.swift" -o "$OUT/JANITOR-$A" 2>"$OUT/$A.log" && BUILT+=("$A") || true; done
-(( ${#BUILT[@]} > 0 )) || { echo 'Build failed'; exit 1; }
-if (( ${#BUILT[@]} == 2 )); then lipo -create "$OUT/JANITOR-arm64" "$OUT/JANITOR-x86_64" -output "$APP/Contents/MacOS/JANITOR"; else cp "$OUT/JANITOR-${BUILT[1]}" "$APP/Contents/MacOS/JANITOR"; fi
-chmod +x "$APP/Contents/MacOS/JANITOR"; codesign --force --deep --sign - "$APP" >/dev/null 2>&1 || true
-echo "BUILT: $APP"
+PROJECT="$(cd "$(dirname "$0")/../.." && pwd)"
+EDEN_ROOT="$(cd "$PROJECT/../.." && pwd)"
+NATIVE="$PROJECT/native"
+ENGINE="$PROJECT/builders/v2/macos-app/Build-JANITOR-macOS.command"
+[[ -f "$NATIVE/Package.swift" && -f "$ENGINE" ]] || { print -u2 "Missing current native source or builder"; exit 1; }
+VERSION="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$NATIVE/Resources/Info.plist")"
+[[ -n "$VERSION" ]] || { print -u2 "Missing version"; exit 1; }
+ARCHS="${JANITOR_ARCHS:-arm64 x86_64}"
+ARCH_LABEL="${ARCHS// /-}"
+OUT="${JANITOR_OUT:-$EDEN_ROOT/Releases/JANITOR/$VERSION-native-$ARCH_LABEL}"
+[[ ! -e "$OUT" ]] || { print -u2 "Refusing to replace existing release: $OUT"; exit 2; }
+mkdir -p "$EDEN_ROOT/Temporary/JANITOR" "$(dirname "$OUT")"
+STAGE="$(mktemp -d "$EDEN_ROOT/Temporary/JANITOR/native-build.XXXXXXXX")"
+trap 'rm -rf "$STAGE"' EXIT
+cp "$ENGINE" "$STAGE/Build-JANITOR-macOS.command"
+ditto "$NATIVE" "$STAGE/src"
+JANITOR_ARCHS="$ARCHS" JANITOR_OUT="$OUT" JANITOR_NOPAUSE=1 /bin/bash "$STAGE/Build-JANITOR-macOS.command"
+ZIP="$OUT/JANITOR-$VERSION-macOS.zip"
+[[ -s "$ZIP" && -x "$OUT/JANITOR.app/Contents/MacOS/JANITOR" ]] || { print -u2 "Missing built app or archive"; exit 3; }
+for arch in ${=ARCHS}; do
+  lipo -archs "$OUT/JANITOR.app/Contents/MacOS/JANITOR" | grep -qw "$arch" || { print -u2 "Requested architecture absent: $arch"; exit 4; }
+done
+codesign --verify --deep --strict "$OUT/JANITOR.app"
+( cd "$OUT" && shasum -a 256 -c SHA256SUMS.txt )
+print "JANITOR authoritative native source package: $ZIP"
+print "EVIDENCE: built, package verified. UI/physical acceptance remains separate."
