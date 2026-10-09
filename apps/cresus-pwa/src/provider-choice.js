@@ -11,9 +11,11 @@ export function providerChoices(env) {
 }
 export async function providerForUser(env,email) {
   const row=await env.DB.prepare('SELECT provider FROM intelligence_preferences WHERE email = ?').bind(email).first();
-  return row?.provider || null;
+  // Existing users retain the previously configured deployment provider until they choose.
+  return row?.provider || (AVAILABLE.includes((env.PROVIDER || 'workers-ai').toLowerCase()) ? (env.PROVIDER || 'workers-ai').toLowerCase() : 'workers-ai');
 }
 export async function setProviderForUser(env,email,provider) {
+  if (typeof provider !== 'string') throw new ProviderSelectionError('Unknown provider',400);
   const choice=providerChoices(env).find(p=>p.id===provider);
   if(!choice) throw new ProviderSelectionError('Unknown provider',400);
   if(!choice.available) throw new ProviderSelectionError('Provider is not connected',409);
