@@ -1,5 +1,5 @@
 #!/bin/sh
-cd "$(dirname "$0")" || exit 1
-RAVEN_URL=https://lucas-raven.pages.dev ./bifrostctl raven-bridge
-echo
-echo "Done. You can close this window."
+# Legacy launcher kept for navigation. Never starts a hidden service.
+echo "RavenNest local bridge is OFF by default."
+echo "Open BIFROST > Connections > Start Mac Bridge to activate it manually."
+echo "Cloudflare RavenNest works independently without the Mac agent."

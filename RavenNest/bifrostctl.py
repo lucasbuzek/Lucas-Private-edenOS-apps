@@ -113,6 +113,8 @@ if __name__ == "__main__":
         Submitter().clear_block()
         print("WORKinCODEX submission limiter/failure state cleared after local review.")
     elif cmd == "raven-bridge":
+        if os.environ.get("BIFROST_RAVEN_MANUAL_SESSION") != "1":
+            raise SystemExit("RavenNest Mac bridge is disabled by default. Start it explicitly from BIFROST > Connections.")
         from bifrost.raven_bridge import run_forever
         try:
             run_forever(once="--once" in sys.argv, force="--force" in sys.argv)

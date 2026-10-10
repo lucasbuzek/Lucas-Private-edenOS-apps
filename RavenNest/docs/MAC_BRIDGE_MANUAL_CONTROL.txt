@@ -1,0 +1,61 @@
+RAVENNEST — MAC BRIDGE CONTROL AND DEFAULTS
+Canonical location: ~/edenOS/Software Development/Online Plugins & Connectors/RavenNest/
+BIFROST App source: ~/edenOS/Software Development/BIFROST/
+
+WHAT IS RUNNING?
+- RavenNest Cloudflare: an independent cloud coordinator (not controlled by this Mac launch agent).
+- RavenNest Mac bridge: optional process that connects the Mac to the Raven gateway. LOCAL DEFAULT = OFF.
+- BIFROST Headless: a different independent service, never stopped by the Raven control.
+- Remote Desktop Commander: a different service, never stopped by the Raven control.
+
+LOCAL DEFAULTS — SET AND VERIFIED 2026-10-10
+- macOS launchd label: eden.bifrost.raven-bridge
+- Disabled in launchd registry: true
+- RunAtLoad: false
+- KeepAlive: false
+- Running Mac bridge at verification: none
+- Bridge restarts on crash: no
+- Bridge starts on login: no
+- Existing credentials: retained in original Mac Keychain
+- No Cloudflare/AI hosting modifications from this Mac policy
+- No third-party installer executed
+
+HOW TO SEE IT
+Manually open the existing BIFROST testing App:
+~/edenOS/Custom Apps/BIFROST-Headless-Identity-Rollback-Candidate-20261010.app
+Menu-bar BIFROST mark + small Raven status dot: green if Mac bridge running, hollow/grey if stopped.
+The BIFROST menu, Connections screen and Settings also show status and a manual start/stop control.
+
+HOW TO START
+BIFROST > Connections > Start Mac Bridge... 
+Read the confirmation and explicitly approve one on-demand session.
+The controller temporarily registers the launchd service, kickstarts it, and immediately disables future automatic launches again.
+The service refuses to start if the installed agent is not configured for manual-only operation.
+No Raven bridge was started while implementing or testing this policy.
+
+HOW TO STOP
+BIFROST > Connections > Stop Mac Bridge.
+This disables the label, boots out this one service and verifies it is stopped.
+A normal BIFROST App quit also stops and disables the local bridge. Headless/Cloudflare are not stopped.
+If BIFROST itself crashes, launchd KeepAlive=false prevents automated relaunch, but the already-running Mac process may remain until manually stopped; inspect if needed.
+
+EMERGENCY STOP WITHOUT BIFROST
+Open Terminal on the Mac and run:
+  launchctl disable "gui/$(id -u)/eden.bifrost.raven-bridge"
+  launchctl bootout "gui/$(id -u)/eden.bifrost.raven-bridge"
+If bootout reports service not found, it is already unloaded; disabling still persists.
+
+READ-ONLY STATUS
+  launchctl print-disabled "gui/$(id -u)" | grep eden.bifrost.raven-bridge
+  launchctl list | grep eden.bifrost.raven-bridge
+Disabled status + no matching launchctl list line means locally stopped/disabled.
+
+HISTORICAL ENTRY POINTS
+The old "Raven 3 Run bridge.command" is now explanatory and no longer starts a service.
+The Raven CLI refuses raven-bridge unless the manual-session environment guard is present.
+Do not follow obsolete instructions to launchctl load/bootstrap/kickstart the Mac bridge outside BIFROST.
+
+VERIFICATION CEILING
+BIFROST source compiled in Xcode; static and integration suites pass.
+The same previously-existing test App was updated and code-signature verified.
+Manual Mac bridge startup from the BIFROST GUI requires attended physical acceptance; it was NOT executed during this change.

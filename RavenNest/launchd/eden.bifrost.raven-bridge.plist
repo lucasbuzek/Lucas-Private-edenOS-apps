@@ -20,11 +20,13 @@
 		<string>lucas-macbook</string>
 		<key>PYTHONUNBUFFERED</key>
 		<string>1</string>
+		<key>BIFROST_RAVEN_MANUAL_SESSION</key>
+		<string>1</string>
 	</dict>
 	<key>RunAtLoad</key>
-	<true/>
+	<false/>
 	<key>KeepAlive</key>
-	<true/>
+	<false/>
 	<key>ThrottleInterval</key>
 	<integer>15</integer>
 	<key>AbandonProcessGroup</key>

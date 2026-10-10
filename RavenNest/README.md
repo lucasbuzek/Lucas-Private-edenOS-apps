@@ -26,9 +26,11 @@ Canonical Git tree: `63a5c2652885a6c06108f573e38d98712b9a2da2`
 
 The canonical Git branch now uses `RavenNest/` and contains no `BIFROST/` subtree. Historical Raven development remains accessible through Git history. This folder is authoritative; do not recreate a second RavenNest source under BIFROST or Temporary.
 
+See `docs/MAC_BRIDGE_MANUAL_CONTROL.txt` for the current local status, visible controls, emergency stop and manual-only policy.
+
 ## Run and test
 
-The existing macOS Raven launchd job `eden.bifrost.raven-bridge` runs from this canonical directory, with credentials remaining in their original Keychain storage. The legacy launchd label and CLI module names are retained to avoid breaking previously enrolled devices.
+The optional macOS launch agent `eden.bifrost.raven-bridge` is **STOPPED and DISABLED by default**. Its installed plist has `RunAtLoad=false` and `KeepAlive=false`. The legacy label and existing Keychain credentials are preserved. Only an explicit **BIFROST > Connections > Start Mac Bridge** confirmation can activate the local session. Stop in BIFROST disables the label again and boots it out. Cloudflare RavenNest operates independently while the Mac agent is off. The legacy `Raven 3 Run bridge.command` is informational and no longer starts an invisible process.
 
 Use `./bifrostctl --help` for supported commands. Validation: `python3 -m unittest discover -s tests`, `node --test workers/raven-cloud-node/tests/*.test.mjs`, `node --test web/lucas-raven/tests/*.test.mjs`.
 

@@ -1,5 +1,8 @@
 # BIFROST ZERO / Lucas Raven — testing guide
 
+> **CURRENT SAFETY POLICY (2026-10-10):** RavenNest's Mac LaunchAgent is disabled by default. RunAtLoad=false; KeepAlive=false. Do not run older bootstrap, kickstart, or launchctl load instructions in this historical testing guide. Use **BIFROST > Connections > Start Mac Bridge** and its explicit confirmation; use BIFROST to stop it. The Cloudflare Worker runs independently of the Mac. Existing historical observations below are NOT the current runtime state.
+
+
 Status: DRAFT test route, written 2026-10-08. Evidence ladder applies: only Level 1 has been run (on a copy, 9/9 OK). Levels 2 and 3 are UNVERIFIED until you run them.
 
 What is being tested: a Cloudflare Pages + D1 edge (`web/lucas-raven`) and an outbound-only Mac bridge (`bifrost/raven_bridge.py`) that runs only allowlisted actions: `power.keepawake.start` (1-480 min), `power.keepawake.stop`, `bifrost.state.refresh`. There is no shell action.
@@ -33,14 +36,7 @@ The launchd job owns the singleton lock. A second `./bifrostctl raven-bridge`
 exits politely. `--force` is an explicit diagnostic flag, but intentionally does
 not break a live process lock or kill its owner.
 
-Install/reload launchd on the Mac (not run by this change):
-```
-mkdir -p ~/Library/LaunchAgents ~/Library/Logs/BIFROST
-cp launchd/eden.bifrost.raven-bridge.plist ~/Library/LaunchAgents/
-launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/eden.bifrost.raven-bridge.plist 2>/dev/null || true
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/eden.bifrost.raven-bridge.plist
-launchctl kickstart -k gui/$(id -u)/eden.bifrost.raven-bridge
-```
+**Manual service operation:** open BIFROST > Connections, inspect the RavenNest status, and choose **Start Mac Bridge…** with confirmation. After testing, choose **Stop Mac Bridge**. The launchd service must stay disabled across login; never use `launchctl kickstart` or `launchctl load` as an automatic recovery step.
 
 ## WORKinCODEX unattended device action
 
@@ -114,7 +110,7 @@ RAVEN_OPERATOR_KEY="$(security find-generic-password -s eden.bifrost.raven.opera
 ```
 PASS means: pairing fragment stripped, node badge online, capability cards render, start SUCCEEDED, a pmset assertion exists for the managed pid, stop SUCCEEDED, assertion gone.
 
-Optional, only after Level 3 passes: `launchd/eden.bifrost.raven-bridge.plist` keeps the bridge running at login (copy to `~/Library/LaunchAgents/`, `launchctl load`). Not yet tested.
+**Superseded:** background login startup is prohibited for RavenNest Mac bridge. The installed launchd agent remains disabled except for explicit one-time BIFROST activation.
 
 ## Not covered yet
 Expired/stuck action sweeps (queue 120 s, claim 600 s), the 5-pending-action limit, bridge restart while Keep Awake is running, and any non-Mac node.
@@ -137,7 +133,7 @@ UNKNOWN until Lucas performs the Mac checks above. Offline mocks are TESTED only
 4. Optional: the Chrome script in Level 3.
 
 ## Troubleshooting
-- `edge unreachable` repeating while other sites work: check `curl -s https://lucas-raven.pages.dev/api/health`; if that answers, restart the bridge (`launchctl kickstart -k gui/$(id -u)/eden.bifrost.raven-bridge`).
+- `edge unreachable` repeating while other sites work: check `curl -s https://lucas-raven.pages.dev/api/health`; if that answers, inspect the optional local agent in BIFROST; do not restart automatically.
 - 401 from every call: edge secrets `OPERATOR_KEY_SHA256` / `NODE_KEY_SHA256` do not match the Keychain keys (`./bifrostctl raven-hash node|operator`).
 - Action stays `queued`: node offline (no state for 90 s) or bridge not claiming; queued actions expire after 120 s, claimed ones fail after 600 s.
 
