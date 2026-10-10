@@ -12,6 +12,7 @@
     clear() { try { localStorage.removeItem(KEY); } catch {} },
   };
   let key = null, minutes = 60, timer = null, pendingId = null, latestReply = "";
+  let cloudAvailable = false, cloudBusy = false;
 
   const TITLES = {
     node: "Mac", "power.keepawake": "Keep Awake", "remote.provider": "Remote bridge",
@@ -82,7 +83,20 @@
     const b = $("nodeBadge"); b.replaceChildren(el("span", "dot " + kind), el("span", null, text));
   }
 
+  function renderCloudAI(data) {
+    const node = (data.nodes || []).find(x => x.node_id === "lucas-cloud");
+    cloudAvailable = Boolean(node?.online && node.meta?.actions?.includes("ai.infer") && data.catalog?.["ai.infer"]);
+    $("cloudAIStatus").textContent = cloudAvailable ? "Cloud AI available (text tasks; no Mac needed)" : "Cloud AI unavailable (provider, worker or permission not ready)";
+  }
+
+  function cloudSubmitReady() {
+    $("cloudAISubmit").disabled = cloudBusy || !cloudAvailable ||
+      !$("cloudAIConsent").checked || !$("cloudAIPrompt").value.trim();
+  }
+
   function render(data) {
+    renderCloudAI(data);
+    cloudSubmitReady();
     $("pair").hidden = true; $("app").hidden = false; $("signout").hidden = !!data.user?.legacy;
     const picker = $("deviceSelect");
     const selected = picker.value;
@@ -95,7 +109,7 @@
       renderActivity(data); setControls(false); return;
     }
     setBadge(node.online ? "" : "stale", (node.meta.hostname || node.node_id) + (node.online ? " · online " : " · offline · last ") + ago(node.age_s * 1000));
-    setControls(node.online);
+    setControls(node.online && node.node_id !== "lucas-cloud");
     const caps = node.state.capabilities || {};
     const keys = ORDER.filter((k) => k in caps).concat(Object.keys(caps).filter((k) => !ORDER.includes(k)));
     const nowSec = data.now / 1000;
@@ -219,6 +233,48 @@
   if("speechSynthesis" in window){ $("chatSpeak").hidden=false; $("chatSpeak").addEventListener("click",()=>{if(latestReply)speechSynthesis.speak(new SpeechSynthesisUtterance(latestReply))}); }
   $("chatForm").addEventListener("submit",e=>{e.preventDefault();const m=$("chatInput").value.trim();if(m){$("chatInput").value="";sendChat(m)}});
 
+  async function waitForCloudAI(id) {
+    for (let i = 0; i < 72; i++) {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      const action = await api("actions/" + id);
+      if (["succeeded","failed","expired"].includes(action.status)) {
+        const status = action.status === "succeeded" ? "Completed in cloud" : "Cloud task " + action.status;
+        const output = action.result?.output || action.result?.error || "No model output";
+        $("cloudAIResult").replaceChildren(el("p", "muted", status), el("p", "message assistant", output));
+        return;
+      }
+    }
+    $("cloudAIResult").replaceChildren(el("p", "muted", "Still pending · check Activity later"));
+  }
+
+  async function submitCloudAI(event) {
+    event.preventDefault();
+    if (cloudBusy || !cloudAvailable || !$("cloudAIConsent").checked) return;
+    const prompt = $("cloudAIPrompt").value.trim();
+    if (!prompt || prompt.length > 2000) return;
+    cloudBusy = true;
+    cloudSubmitReady();
+    $("cloudAIResult").replaceChildren(el("p", "muted", "Submitting authorized cloud task…"));
+    try {
+      const job = await api("actions", {method:"POST", body:JSON.stringify({
+        node_id:"lucas-cloud", capability:"ai.infer",
+        params:{prompt,consent:"send_to_cloud_provider"}
+      })});
+      $("cloudAIResult").replaceChildren(el("p", "muted", "Cloud task queued · waiting for provider"));
+      await waitForCloudAI(job.id);
+    } catch(error) {
+      $("cloudAIResult").replaceChildren(el("p", "err", "Cloud task failed: " + error.message));
+    } finally {
+      cloudBusy = false;
+      $("cloudAIConsent").checked = false;
+      cloudSubmitReady();
+    }
+  }
+
+  // Cloud tasks remain opt-in and are never silently routed to the Mac.
+  $("cloudAIForm").addEventListener("submit", submitCloudAI);
+  $("cloudAIConsent").addEventListener("change", cloudSubmitReady);
+  $("cloudAIPrompt").addEventListener("input", cloudSubmitReady);
   // ------------------------------------------------------------ wire up
   $("kaMinutes").addEventListener("click", (e) => {
     const b = e.target.closest("button[data-min]"); if (!b) return;

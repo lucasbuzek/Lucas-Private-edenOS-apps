@@ -17,6 +17,7 @@
         "scope_guard": { "type": "str", "minlen": 8, "maxlen": 200 }
       } },
     "cloud.state.refresh": { "label": "Refresh cloud node state", "executor": "cloud", "sensitive": false, "params": {} },
-    "github.repos.status": { "label": "GitHub repositories status (read-only)", "executor": "cloud", "sensitive": false, "params": {} }
+    "github.repos.status": { "label": "GitHub repositories status (read-only)", "executor": "cloud", "sensitive": false, "params": {} },
+    "ai.infer": { "label": "Cloud AI text task (provider execution; no device tools)", "executor": "cloud", "sensitive": true, "params": { "prompt": { "type": "str", "minlen": 1, "maxlen": 2000 }, "consent": { "type": "str", "pattern": "^send_to_cloud_provider$" } } }
   }
 }

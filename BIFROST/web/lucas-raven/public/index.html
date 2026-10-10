@@ -74,6 +74,18 @@
       </form>
     </section>
 
+    <h3 class="section">Cloud AI</h3>
+    <section class="panel" id="cloudAISection" aria-label="Cloud AI text tasks">
+      <p class="muted small">Text inference runs on a configured online provider without requiring the Mac.</p>
+      <p id="cloudAIStatus" class="muted small">Checking cloud permissions…</p>
+      <form id="cloudAIForm">
+        <label for="cloudAIPrompt">Cloud AI task</label>
+        <textarea id="cloudAIPrompt" rows="4" maxlength="2000" required></textarea>
+        <label class="row small"><input type="checkbox" id="cloudAIConsent" required> I consent to sending this text to the configured external AI provider.</label>
+        <button type="submit" id="cloudAISubmit" class="primary" disabled>Send to cloud AI</button>
+      </form>
+      <div id="cloudAIResult" class="messages" aria-live="polite"></div>
+    </section>
     <h3 class="section">Activity</h3>
     <section class="panel" id="activity"><p class="muted">No actions yet.</p></section>
   </section>
