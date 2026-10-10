@@ -355,8 +355,8 @@ final class HeadlessClient: ObservableObject {
                 "Label": label,
                 "ProgramArguments": [interpreter, runtimeURL.appendingPathComponent("server.py").path],
                 "WorkingDirectory": runtimeURL.path,
-                "RunAtLoad": true,
-                "KeepAlive": true,
+                "RunAtLoad": false,
+                "KeepAlive": false,
                 "ThrottleInterval": 10,
                 "StandardOutPath": supportURL.appendingPathComponent("headless.stdout.log").path,
                 "StandardErrorPath": supportURL.appendingPathComponent("headless.stderr.log").path
@@ -366,13 +366,38 @@ final class HeadlessClient: ObservableObject {
             try fm.createDirectory(at: launchAgentURL.deletingLastPathComponent(),
                                    withIntermediateDirectories: true)
             try plist.write(to: launchAgentURL, options: .atomic)
+            let target = "gui/\(getuid())/\(label)"
+            // RunAtLoad=false: only the visible user action activates Headless.
+            // Keep the launchd label disabled across logins.
+            let (enableCode, enableError) = launchctl(["enable", target])
+            guard enableCode == 0 else {
+                throw NSError(domain: "BIFROST", code: 4,
+                              userInfo: [NSLocalizedDescriptionKey: "Could not enable manual Headless session: \(enableError)"])
+            }
             let (code, message) = launchctl(["bootstrap", "gui/\(getuid())", launchAgentURL.path])
             guard code == 0 else {
-                throw NSError(domain: "BIFROST", code: 4,
+                throw NSError(domain: "BIFROST", code: 5,
                               userInfo: [NSLocalizedDescriptionKey: "launchd bootstrap failed: \(message)"])
             }
-            feedback = "Headless launch requested · verifying status"
+            let (kickCode, kickError) = launchctl(["kickstart", target])
+            guard kickCode == 0 else {
+                throw NSError(domain: "BIFROST", code: 6,
+                              userInfo: [NSLocalizedDescriptionKey: "Headless manual start failed: \(kickError)"])
+            }
+            let (disableCode, disableError) = launchctl(["disable", target])
+            guard disableCode == 0 else {
+                throw NSError(domain: "BIFROST", code: 7,
+                              userInfo: [NSLocalizedDescriptionKey: "Could not restore disabled startup: \(disableError)"])
+            }
+            feedback = "Headless started by request · login startup disabled"
         } catch {
+            // An unsuccessful launch may have left a partially registered job.
+            // Return launchd to disabled, then clean only this Headless label.
+            let target = "gui/\(getuid())/\(label)"
+            _ = launchctl(["disable", target])
+            if launchctl(["print", target]).0 == 0 {
+                _ = launchctl(["bootout", target])
+            }
             // An unsuccessful launch must not replace an existing runnable LKG.
             // Keep the failed candidate for diagnosis and restore the prior copy.
             if promotedRuntime && launchctl(["print", "gui/\(getuid())/\(label)"]).0 != 0,
@@ -397,7 +422,14 @@ final class HeadlessClient: ObservableObject {
     func stop() -> Bool {
         // Only the dedicated BIFROST launchd label is affected. No
         // unrelated caffeinate, RavenNest or provider process is signaled.
-        let (code, message) = launchctl(["bootout", "gui/\(getuid())/\(label)"])
+        let target = "gui/\(getuid())/\(label)"
+        let (disableCode, disableError) = launchctl(["disable", target])
+        guard disableCode == 0 else {
+            feedback = "Could not disable Headless login startup: \(disableError)"
+            refreshSoon()
+            return false
+        }
+        let (code, message) = launchctl(["bootout", target])
         guard code == 0 else {
             feedback = "Could not stop Headless: \(message)"
             refreshSoon()

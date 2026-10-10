@@ -39,6 +39,27 @@ class ManualRavenTests(unittest.TestCase):
                 self.assertEqual(policy["EnvironmentVariables"]["BIFROST_RAVEN_MANUAL_SESSION"], "1")
                 self.assertEqual(policy["ProgramArguments"][-1], "raven-bridge")
 
+    def test_other_bifrost_launch_agents_cannot_start_on_login(self):
+        for name in ("eden.bifrost.headless", "org.eden.bifrost.core"):
+            plist = AGENT.parent / (name + ".plist")
+            if not plist.is_file():
+                continue
+            with self.subTest(label=name):
+                content = plistlib.loads(plist.read_bytes())
+                self.assertFalse(content["RunAtLoad"])
+                self.assertFalse(content["KeepAlive"])
+
+    def test_headless_ui_explicitly_starts_one_session_without_login_startup(self):
+        text = (SOURCE / "HeadlessClient.swift").read_text()
+        self.assertIn('"RunAtLoad": false', text)
+        self.assertIn('"KeepAlive": false', text)
+        self.assertIn('launchctl(["enable", target])', text)
+        self.assertIn('launchctl(["kickstart", target])', text)
+        self.assertIn('launchctl(["disable", target])', text)
+        self.assertIn('launchctl(["bootout", target])', text)
+        self.assertNotIn('"RunAtLoad": true', text)
+        self.assertNotIn('"KeepAlive": true', text)
+
     def test_new_controller_observes_only_until_explicit_confirm(self):
         text = (SOURCE / "RavenAgentController.swift").read_text()
         first = text.split("init() {", 1)[1].split("var localSummary:", 1)[0]
