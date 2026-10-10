@@ -20,11 +20,11 @@ The Mac bridge has **no authority over cloud jobs** that belong to `lucas-cloud`
 ## Source lineage
 
 GitHub repository: `lucasbuzek/Lucas-Private-edenOS-apps`
-Cloud branch: `bifrost/cloud-ai-provider-20261009`
-GitHub commit: `7ca1686f0df399c5f6d2793befe40f81e69d3b68`
-Git tree: `f2dac3d7eaa414f3c7996c5dec9d470716b2d8c8`
+Canonical Git branch: `ravennest/consolidated-20261010` (pre-consolidation history: `bifrost/cloud-ai-provider-20261009`)
+Canonical Git commit: `7a4b742b830a4c6c4b7c8dd3062b5b52e0277e5d`
+Canonical Git tree: `63a5c2652885a6c06108f573e38d98712b9a2da2`
 
-The historical Git branch has a `BIFROST/` prefix, retained for Git provenance. This folder is the authoritative local RavenNest source. Do not copy it back under BIFROST or Temporary.
+The canonical Git branch now uses `RavenNest/` and contains no `BIFROST/` subtree. Historical Raven development remains accessible through Git history. This folder is authoritative; do not recreate a second RavenNest source under BIFROST or Temporary.
 
 ## Run and test
 
