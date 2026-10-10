@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0d1221">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="BIFROST">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<title>BIFROST · Headless Dashboard</title>
+<link rel="stylesheet" href="/dashboard.css">
+<script src="/dashboard.js" defer></script>
+</head>
+<body>
+<main>
+<header><div><span class="brand-symbol" aria-hidden="true">◠</span><span class="mark">BIFROST</span><span class="sub">Headless · Local Dashboard</span></div><span id="overall" class="status">Connecting</span></header>
+<nav aria-label="Dashboard shortcuts"><a href="#status">Status</a><a href="#tasks">Tasks</a><a href="#interconnect">Interconnect PWA</a><a href="#kernel">Index &amp; Identity</a><a href="#setups">Install &amp; Setup</a><a href="#mobile">Mobile Bridge</a><a href="#preferences">Preferences</a><a href="https://lucas-raven.pages.dev/" target="_blank" rel="noopener noreferrer">Raven ↗</a></nav>
+<section id="status" aria-labelledby="overviewTitle"><div class="heading"><h1 id="overviewTitle">System overview</h1><button id="refresh" type="button">Refresh</button></div>
+<div class="summary"><span class="metric metric-connect" id="sumHeadless">Headless —</span><span class="metric metric-tasks" id="sumTasks">Tasks —</span><span class="metric metric-maintenance" id="sumAwake">Caffeinate —</span><span class="metric metric-capability" id="sumRaven">Raven —</span></div>
+<div class="compact">
+<div class="record feature-connect" data-section="headless"><span class="feature-icon" aria-hidden="true">▣</span><div class="record-info"><strong>Headless</strong><small>Independent BIFROST local service</small></div><output id="headlessState">Checking</output></div>
+<div class="record feature-tasks" id="tasks" data-section="tasks"><span class="feature-icon" aria-hidden="true">☷</span><div class="record-info"><strong>Codex cloud tasks</strong><small id="taskDetail">Read-only status; no tasks submitted</small></div><div class="actions"><output id="taskCount">—</output><button id="refreshTasks" type="button">Check</button></div></div>
+<div class="record feature-maintenance" data-section="caffeinate"><span class="feature-icon" aria-hidden="true">☾</span><div class="record-info"><strong>Caffeinate</strong><small>Managed by Headless, not the macOS window</small></div><div class="actions"><output id="awakeState">Off</output><button id="awakeToggle" type="button">Start 60m</button></div></div>
+<div class="record feature-capability" id="services" data-section="raven"><span class="feature-icon" aria-hidden="true">⟡</span><div class="record-info"><strong>RavenNest Mac bridge</strong><small>Independent launch agent · no implicit control</small></div><output id="ravenState">Checking</output></div>
+<div class="record feature-ai" data-section="ai"><span class="feature-icon" aria-hidden="true">✧</span><div class="record-info"><strong>AI routing</strong><small>Preference only; provider adapters are not yet connected to Headless</small></div><output id="aiState">auto</output></div>
+</div>
+<p id="feedback" aria-live="polite"></p>
+</section>
+<section id="interconnect" aria-labelledby="pwaHeading">
+<div class="heading"><h2 id="pwaHeading"><span class="section-glyph bridge-color" aria-hidden="true">⌁</span> BIFROST PWA · Interconnect</h2><button type="button" id="installPwa" hidden>Install app</button></div>
+<p class="setup-explain">This browser uses the local Headless Node directly. For a different device, use an authenticated remote provider or a verified local-network transport. Nothing is proxied or installed remotely without approval.</p>
+<div class="compact">
+  <div class="record"><div class="record-name"><span class="feature-glyph devices-color" aria-hidden="true">▣</span><div><strong>Local Headless adapter</strong><small>Same-origin loopback; Node owns state and execution</small></div></div><output id="pwaLocalStatus">Checking</output></div>
+  <div class="record"><div class="record-name"><span class="feature-glyph bridge-color" aria-hidden="true">⌁</span><div><strong>Remote provider adapter</strong><small>RavenNest · separate authentication; mobile pairing unverified</small></div></div><output id="pwaRemoteStatus">Not connected</output></div>
+  <div class="record"><div class="record-name"><span class="feature-glyph" aria-hidden="true">◉</span><div><strong>Offline mode</strong><small>Only anonymous static shell is available; live actions cannot run offline</small></div></div><output id="pwaOfflineStatus">Checking</output></div>
+</div>
+<p id="pwaInstallHelp" class="setup-explain" role="status" aria-live="polite">Install this PWA using the browser's Install App or Add to Home Screen option, where supported.</p>
+</section>
+<section id="kernel" aria-labelledby="kernelHeading">
+<div class="heading"><h2 id="kernelHeading"><span class="section-glyph bridge-color" aria-hidden="true">⌘</span> Index &amp; Identity · DP0.1</h2><button type="button" id="kernelRefresh">Refresh index</button></div>
+<p class="setup-explain">Shared BIFROST metadata kernel: content identities, basic classification, locations, directory relationships and provenance. Original files stay untouched. Indexing a folder requires an explicit selection in the native App or CLI; this PWA only reads the authorized local index.</p>
+<div class="compact">
+<div class="record"><div class="record-name"><span class="feature-glyph bridge-color" aria-hidden="true">⌘</span><div><strong>Portable index</strong><small>SQLite · local-first · shared across macOS Headless and native App</small></div></div><output id="kernelState">Checking</output></div>
+<div class="record"><div class="record-name"><span class="feature-glyph bridge-color" aria-hidden="true">⌁</span><div><strong>Persistent identities</strong><small>Object, source, location and relationship records</small></div></div><output id="kernelCounts">No data</output></div>
+</div>
+<div class="kernel-search">
+<label for="kernelQuery">Find indexed file or category</label>
+<div class="kernel-search-controls"><input type="search" id="kernelQuery" maxlength="128" autocomplete="off" placeholder="Filename or classification" aria-label="Index search"><button type="button" id="kernelSearch" disabled>Search</button></div>
+</div>
+<div id="kernelResults" class="compact" aria-live="polite" aria-label="Index search results"></div>
+<p id="kernelFeedback" class="setup-explain" role="status">No search performed. Only indexed locations are returned.</p>
+</section>
+<section id="setups" aria-labelledby="setupHeading">
+<div class="heading"><h2 id="setupHeading"><span class="section-glyph setup-color" aria-hidden="true">▦</span> Install &amp; Setup</h2><button id="refreshSetups" type="button">Refresh packages</button></div>
+<p class="setup-explain">Inspect trusted local archives, stage only for review, then authorize installation separately. No installer will run here.</p>
+<div class="compact" id="setupPackages" aria-live="polite"><div class="record"><span class="detail-muted">Checking local setup packages…</span></div></div>
+<p id="setupFeedback" role="status" aria-live="polite"></p>
+</section>
+<section id="mobile" aria-labelledby="mobileHeading">
+<div class="heading"><h2 id="mobileHeading"><span class="section-glyph bridge-color" aria-hidden="true">⌁</span> Mobile Bridge</h2></div>
+<div class="compact">
+<div class="record" data-feature="raven"><div class="record-name"><span class="feature-glyph bridge-color" aria-hidden="true">⌁</span><div><strong>RavenNest online gateway</strong><small>Authenticated remote capabilities · Headless is not public</small></div></div><div class="actions"><output id="mobileState">Unknown</output><a href="https://lucas-raven.pages.dev/" target="_blank" rel="noopener noreferrer">Open Raven ↗</a></div></div>
+<div class="record" data-feature="devices"><div class="record-name"><span class="feature-glyph devices-color" aria-hidden="true">▣</span><div><strong>Mobile device access</strong><small>Device pairing and grants require physical verification</small></div></div><output id="mobileGrant">Unverified</output></div>
+</div>
+<p class="setup-explain">Remote installation is disabled until enrollment, grants, auditing, explicit approval and rollback have been verified.</p>
+</section>
+<details id="preferences"><summary>Customize dashboard and menu bar</summary>
+<div class="pref"><strong>Menu bar status indicators</strong><label><input type="checkbox" id="showHeadless" checked> Headless</label><label><input type="checkbox" id="showTasks" checked> Active tasks</label></div>
+<div class="pref"><label for="aiRoute">AI routing preference</label><select id="aiRoute"><option value="auto">Automatic</option><option value="manual">Choose provider</option><option value="local">Prefer local/offline</option></select></div>
+<div class="pref"><label for="duration">Default Caffeinate duration</label><select id="duration"><option value="30">30 minutes</option><option value="60" selected>60 minutes</option><option value="120">120 minutes</option><option value="0">Until stopped</option></select></div>
+<div class="pref"><strong>Visible dashboard rows</strong><div id="sectionOptions"></div></div>
+<button id="save" type="button">Save preferences</button><span id="saved" aria-live="polite"></span>
+</details>
+<footer>Local-only: 127.0.0.1 · Authoritative Headless state · RavenNest remains a separate capability provider. Closing this page does not stop the service.</footer>
+</main>
+</body>
+</html>

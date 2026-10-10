@@ -17,6 +17,8 @@ RavenNest is a **standalone online connector/provider** to EDEN/BIFROST, not the
 
 The Mac bridge has **no authority over cloud jobs** that belong to `lucas-cloud`. Cloudflare owns coordination; provider services do authorized remote execution. Cloud AI provider credentials and physical mobile acceptance are not implied by the existence of a Worker.
 
+The optional Mac bridge is protected by a **manual BIFROST GUI session owner**. It verifies that the owner PID belongs to a running `BIFROST.app` process and exits if that GUI terminates unexpectedly. No additional background watchdog, app login item, or hidden scheduler is installed.
+
 ## Source lineage
 
 GitHub repository: `lucasbuzek/Lucas-Private-edenOS-apps`
