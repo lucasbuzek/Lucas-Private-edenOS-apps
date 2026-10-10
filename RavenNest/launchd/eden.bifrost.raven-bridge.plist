@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>eden.bifrost.raven-bridge</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/opt/homebrew/bin/python3</string>
+		<string>/Users/lucas/edenOS/Software Development/Online Plugins &amp; Connectors/RavenNest/bifrostctl.py</string>
+		<string>raven-bridge</string>
+	</array>
+	<key>WorkingDirectory</key>
+	<string>/Users/lucas/edenOS/Software Development/Online Plugins &amp; Connectors/RavenNest</string>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>RAVEN_URL</key>
+		<string>https://lucas-raven.pages.dev</string>
+		<key>BIFROST_NODE_ID</key>
+		<string>lucas-macbook</string>
+		<key>PYTHONUNBUFFERED</key>
+		<string>1</string>
+	</dict>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>KeepAlive</key>
+	<true/>
+	<key>ThrottleInterval</key>
+	<integer>15</integer>
+	<key>AbandonProcessGroup</key>
+	<true/>
+	<key>ProcessType</key>
+	<string>Background</string>
+	<key>StandardOutPath</key>
+	<string>/Users/lucas/Library/Logs/BIFROST/raven-bridge.out.log</string>
+	<key>StandardErrorPath</key>
+	<string>/Users/lucas/Library/Logs/BIFROST/raven-bridge.err.log</string>
+</dict>
+</plist>
