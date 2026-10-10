@@ -115,6 +115,8 @@ if __name__ == "__main__":
     elif cmd == "raven-bridge":
         if os.environ.get("BIFROST_RAVEN_MANUAL_SESSION") != "1":
             raise SystemExit("RavenNest Mac bridge is disabled by default. Start it explicitly from BIFROST > Connections.")
+        if not os.environ.get("BIFROST_RAVEN_SESSION_OWNER_PID"):
+            raise SystemExit("RavenNest requires a living BIFROST UI session owner.")
         from bifrost.raven_bridge import run_forever
         try:
             run_forever(once="--once" in sys.argv, force="--force" in sys.argv)

@@ -194,7 +194,47 @@ class Edge:
             return json.loads(raw) if raw else {}
 
 
+def manual_session_owner():
+    """Fail closed unless this local bridge belongs to a visible BIFROST GUI."""
+    pid_text = os.environ.get("BIFROST_RAVEN_SESSION_OWNER_PID", "")
+    if not pid_text.isascii() or not pid_text.isdecimal() or len(pid_text) > 10:
+        raise RuntimeError("RavenNest manual BIFROST session owner missing")
+    pid = int(pid_text)
+    if pid <= 1 or not owner_alive(pid):
+        raise RuntimeError("RavenNest manual BIFROST session owner not running")
+    # Only initial validation needs to inspect the full process command.
+    # Every subsequent liveness check is a low-cost os.kill(pid, 0).
+    check = subprocess.run(["/bin/ps", "-p", str(pid), "-o", "command="],
+                           capture_output=True, text=True, timeout=3, check=False)
+    if check.returncode != 0 or "/BIFROST.app/Contents/MacOS/BIFROST" not in check.stdout:
+        raise RuntimeError("RavenNest owner is not the BIFROST macOS application")
+    return pid
+
+
+def owner_alive(pid):
+    """Zero-signal check, never signals or terminates the application."""
+    try:
+        os.kill(pid, 0)
+        return True
+    except (OSError, ValueError):
+        return False
+
+
+def wait_while_owned(seconds, pid):
+    """When BIFROST closes unexpectedly, abandon the optional bridge quickly."""
+    import time as _time
+    remaining = max(float(seconds), 0)
+    while remaining > 0:
+        if not owner_alive(pid):
+            return False
+        delay = min(3.0, remaining)
+        _time.sleep(delay)
+        remaining -= delay
+    return owner_alive(pid)
+
+
 def run_forever(once=False, force=False):
+    owner_pid = manual_session_owner()
     lock_handle = acquire_lock(force=force)  # retained for process lifetime
     LOG_DIR.mkdir(parents=True, exist_ok=True)
     handler = RotatingFileHandler(LOG_DIR / "raven-bridge.log", maxBytes=1_000_000, backupCount=3)
@@ -209,6 +249,9 @@ def run_forever(once=False, force=False):
     log.info("bridge start node=%s edge=%s", NODE_ID, RAVEN_URL)
     last_state, backoff = 0.0, POLL_S
     while True:
+        if not owner_alive(owner_pid):
+            log.info("BIFROST UI session ended; optional RavenNest Mac bridge exits")
+            return
         try:
             if time.time() - last_state >= STATE_EVERY_S or ctx["force_slow"]:
                 state = collector.collect(force_slow=ctx["force_slow"])
@@ -245,7 +288,9 @@ def run_forever(once=False, force=False):
             backoff = min(backoff * 2, 120) * random.uniform(0.85, 1.15)
         if once:
             return
-        time.sleep(backoff)
+        if not wait_while_owned(backoff, owner_pid):
+            log.info("BIFROST UI session ended during wait; RavenNest bridge exits")
+            return
 
 
 if __name__ == "__main__":
