@@ -6,6 +6,7 @@ Binds ONLY to localhost. Mutations require a short-lived same-origin session
 request plus a locally stored secret, never exposed over the network.
 """
 import json
+import hashlib
 import os
 import pathlib
 import secrets
@@ -27,6 +28,14 @@ SUPPORT = pathlib.Path.home() / "Library" / "Application Support" / "BIFROST"
 PREFS = SUPPORT / "settings.json"
 KEYFILE = SUPPORT / "headless.token"
 WEBROOT = pathlib.Path(__file__).resolve().parent
+# Public loopback identity detects stale processes and wrong-port collisions;
+# this fingerprint is diagnostic, not a security signature or authorization.
+RUNTIME_IDENTITY = {
+    "schema": "bifrost.headless.identity.v1",
+    "productId": "eden.bifrost.headless",
+    "runtimeId": hashlib.sha256(str(WEBROOT).encode("utf-8")).hexdigest()[:16],
+    "sourceSha256": hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest(),
+}
 DEFAULTS = {
     "statusIndicators": ["headless", "activeTasks"],
     "aiRouting": "auto",
@@ -195,7 +204,8 @@ class Runtime:
         with self.lock:
             task = dict(self.tasks)
         return {
-            "headless": {"status": "running", "pid": os.getpid(), "startedAt": self.started_at},
+            "headless": {"status": "running", "pid": os.getpid(), "startedAt": self.started_at,
+                         "identity": RUNTIME_IDENTITY},
             "tasks": task,
             "caffeinate": self.awake_state(),
             "raven": {"bridge": self.raven_status(), "integration": "separate-provider"},
@@ -335,7 +345,8 @@ class Handler(BaseHTTPRequestHandler):
         if route == "/api/setup/catalog":
             return self.response(200, setups.catalog())
         if route == "/api/health":
-            return self.response(200, {"ok": True, "service": "BIFROST Headless"})
+            return self.response(200, {"ok": True, "service": "BIFROST Headless",
+                                       "identity": RUNTIME_IDENTITY})
         if route == "/api/mobile/bridge":
             return self.response(200, {
                 "provider": "RavenNest",

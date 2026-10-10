@@ -1,5 +1,6 @@
 import SwiftUI
 import AppKit
+import CryptoKit
 import Foundation
 
 /// Shared configuration written to ~/Library/Application Support/BIFROST/settings.json.
@@ -14,10 +15,16 @@ struct HeadlessPreferences: Codable, Equatable {
 @MainActor
 final class HeadlessClient: ObservableObject {
     @Published private(set) var isRunning = false
+    /// Whether our exact launchd service label is registered, independent
+    /// of the HTTP health endpoint. A degraded service must remain stoppable.
+    @Published private(set) var isRegisteredWithLaunchd: Bool? = nil
     @Published private(set) var stateMessage = "Checking Headless"
     @Published private(set) var activeTasks: Int? = nil
     @Published private(set) var taskStatus = "unknown"
     @Published private(set) var caffeinateActive = false
+    /// Observation only. A separate Caffeinate process may belong to the user
+    /// and MUST NOT be stopped by Headless's Caffeinate controls.
+    @Published private(set) var systemCaffeinateObserved: Bool? = nil
     @Published private(set) var awakeUntil: Date? = nil
     @Published private(set) var ravenBridge = "unknown"
     @Published private(set) var preferences: HeadlessPreferences
@@ -127,7 +134,13 @@ final class HeadlessClient: ObservableObject {
         // and never represents a running local agent as remote authentication.
         Task.detached(priority: .utility) { [weak self] in
             let observation = Self.observeRavenAgent()
-            await MainActor.run { self?.ravenBridge = observation }
+            let systemAwake = Self.observeCaffeinateProcess()
+            let serviceRegistered = Self.observeHeadlessLaunchdRegistration()
+            await MainActor.run {
+                self?.ravenBridge = observation
+                self?.systemCaffeinateObserved = systemAwake
+                self?.isRegisteredWithLaunchd = serviceRegistered
+            }
         }
         Task { @MainActor in
             do {
@@ -138,6 +151,28 @@ final class HeadlessClient: ObservableObject {
                       let headless = json["headless"] as? [String: Any],
                       headless["status"] as? String == "running" else {
                     throw URLError(.badServerResponse)
+                }
+                // A 200 response on loopback does not prove that this App's
+                // installed Headless build owns the port. Validate product,
+                // runtime location and on-disk source identity before trusting it.
+                let runtimePath = runtimeURL.resolvingSymlinksInPath().path
+                let expectedRuntimeId = String(SHA256.hash(data: Data(runtimePath.utf8))
+                    .map { String(format: "%02x", $0) }.joined().prefix(16))
+                guard let identity = headless["identity"] as? [String: Any],
+                      identity["schema"] as? String == "bifrost.headless.identity.v1",
+                      identity["productId"] as? String == "eden.bifrost.headless",
+                      identity["runtimeId"] as? String == expectedRuntimeId,
+                      let sourceData = try? Data(contentsOf: runtimeURL.appendingPathComponent("server.py")),
+                      let runningSource = identity["sourceSha256"] as? String,
+                      SHA256.hash(data: sourceData)
+                        .map({ String(format: "%02x", $0) }).joined() == runningSource else {
+                    isRunning = false
+                    stateMessage = "Unverified Headless identity on localhost"
+                    taskStatus = "unknown"
+                    activeTasks = nil
+                    caffeinateActive = false
+                    awakeUntil = nil
+                    return
                 }
                 isRunning = true
                 stateMessage = "Running"
@@ -164,6 +199,38 @@ final class HeadlessClient: ObservableObject {
                 // Leave independent Raven agent observation intact.
                 preferences = Self.loadPreferences()
             }
+        }
+    }
+
+    nonisolated private static func observeHeadlessLaunchdRegistration() -> Bool? {
+        let process = Process()
+        process.executableURL = URL(fileURLWithPath: "/bin/launchctl")
+        process.arguments = ["print", "gui/\(getuid())/eden.bifrost.headless"]
+        process.standardOutput = FileHandle.nullDevice
+        process.standardError = FileHandle.nullDevice
+        do {
+            try process.run()
+            process.waitUntilExit()
+            return process.terminationStatus == 0
+        } catch {
+            return nil
+        }
+    }
+
+    nonisolated private static func observeCaffeinateProcess() -> Bool? {
+        let process = Process()
+        process.executableURL = URL(fileURLWithPath: "/usr/bin/pgrep")
+        process.arguments = ["-x", "caffeinate"]
+        process.standardOutput = FileHandle.nullDevice
+        process.standardError = FileHandle.nullDevice
+        do {
+            try process.run()
+            process.waitUntilExit()
+            if process.terminationStatus == 0 { return true }
+            if process.terminationStatus == 1 { return false }
+            return nil
+        } catch {
+            return nil
         }
     }
 
@@ -216,7 +283,27 @@ final class HeadlessClient: ObservableObject {
     /// Start from the installed bundle, but copy runtime to a stable location.
     /// Closing or quitting the GUI therefore cannot remove the headless code.
     func start() {
+        if isRunning {
+            feedback = "Headless is already running; reusing the existing process"
+            return
+        }
+        if stateMessage == "Unverified Headless identity on localhost" {
+            feedback = "Refusing to replace an unknown process at the Headless port"
+            return
+        }
+        // Do not overwrite an already-running independent Headless runtime.
+        // A stale GUI health observation is not sufficient to decide ownership:
+        // query the actual launchd job before copying any runtime files.
+        if launchctl(["print", "gui/\(getuid())/\(label)"]).0 == 0 {
+            feedback = "BIFROST Headless is already registered with launchd"
+            refresh()
+            return
+        }
         let fm = FileManager.default
+        let staged = supportURL.appendingPathComponent("runtime.staging." + UUID().uuidString)
+        let previous = supportURL.appendingPathComponent("runtime.recovery." + UUID().uuidString)
+        var hadPreviousRuntime = false
+        var promotedRuntime = false
         do {
             guard let resource = Bundle.main.resourceURL?
                 .appendingPathComponent("headless", isDirectory: true),
@@ -224,11 +311,41 @@ final class HeadlessClient: ObservableObject {
                 throw NSError(domain: "BIFROST", code: 1,
                               userInfo: [NSLocalizedDescriptionKey: "Bundled Headless runtime unavailable"])
             }
-            try fm.createDirectory(at: supportURL, withIntermediateDirectories: true)
-            if fm.fileExists(atPath: runtimeURL.path) {
-                try fm.removeItem(at: runtimeURL)
+            // The adapter needs the portable kernel alongside server.py.
+            // The bundle stores it in Resources/core, separately from headless.
+            guard let portableKernel = Bundle.main.resourceURL?
+                .appendingPathComponent("core/portable_kernel.py"),
+                fm.isReadableFile(atPath: portableKernel.path),
+                fm.isReadableFile(atPath: resource.appendingPathComponent("kernel_adapter.py").path) else {
+                throw NSError(domain: "BIFROST", code: 3,
+                              userInfo: [NSLocalizedDescriptionKey: "Bundled portable kernel adapter missing"])
             }
-            try fm.copyItem(at: resource, to: runtimeURL)
+            try fm.createDirectory(at: supportURL, withIntermediateDirectories: true)
+            try fm.copyItem(at: resource, to: staged)
+            do {
+                try fm.copyItem(at: portableKernel,
+                                to: staged.appendingPathComponent("portable_kernel.py"))
+                // Promote only after every import dependency is present. Preserve
+                // the former runtime as a recovery artifact, never delete it.
+                if fm.fileExists(atPath: runtimeURL.path) {
+                    try fm.moveItem(at: runtimeURL, to: previous)
+                    hadPreviousRuntime = true
+                }
+                do {
+                    try fm.moveItem(at: staged, to: runtimeURL)
+                    promotedRuntime = true
+                } catch {
+                    if fm.fileExists(atPath: previous.path) {
+                        try? fm.moveItem(at: previous, to: runtimeURL)
+                    }
+                    throw error
+                }
+            } catch {
+                if fm.fileExists(atPath: staged.path) {
+                    try? fm.removeItem(at: staged)
+                }
+                throw error
+            }
             let candidates = ["/opt/homebrew/bin/python3", "/usr/local/bin/python3", "/usr/bin/python3"]
             guard let interpreter = candidates.first(where: { fm.isExecutableFile(atPath: $0) }) else {
                 throw NSError(domain: "BIFROST", code: 2,
@@ -250,23 +367,59 @@ final class HeadlessClient: ObservableObject {
                                    withIntermediateDirectories: true)
             try plist.write(to: launchAgentURL, options: .atomic)
             let (code, message) = launchctl(["bootstrap", "gui/\(getuid())", launchAgentURL.path])
-            feedback = code == 0 ? "Headless started" : "Headless start failed: \(message)"
+            guard code == 0 else {
+                throw NSError(domain: "BIFROST", code: 4,
+                              userInfo: [NSLocalizedDescriptionKey: "launchd bootstrap failed: \(message)"])
+            }
+            feedback = "Headless launch requested · verifying status"
         } catch {
+            // An unsuccessful launch must not replace an existing runnable LKG.
+            // Keep the failed candidate for diagnosis and restore the prior copy.
+            if promotedRuntime && launchctl(["print", "gui/\(getuid())/\(label)"]).0 != 0,
+               fm.fileExists(atPath: runtimeURL.path) {
+                let failed = supportURL.appendingPathComponent("runtime.failed." + UUID().uuidString)
+                try? fm.moveItem(at: runtimeURL, to: failed)
+            }
+            if hadPreviousRuntime && !fm.fileExists(atPath: runtimeURL.path),
+               fm.fileExists(atPath: previous.path) {
+                try? fm.moveItem(at: previous, to: runtimeURL)
+            }
+            if fm.fileExists(atPath: staged.path) {
+                try? fm.removeItem(at: staged)
+            }
             feedback = "Headless start failed: \(error.localizedDescription)"
         }
         refreshSoon()
     }
 
     /// Only the BIFROST launch agent is stopped; RavenNest and other Apps remain running.
-    func stop() {
+    @discardableResult
+    func stop() -> Bool {
+        // Only the dedicated BIFROST launchd label is affected. No
+        // unrelated caffeinate, RavenNest or provider process is signaled.
         let (code, message) = launchctl(["bootout", "gui/\(getuid())/\(label)"])
-        if code == 0 {
-            try? FileManager.default.removeItem(at: launchAgentURL)
-            feedback = "BIFROST Headless stopped; RavenNest unchanged"
-        } else {
+        guard code == 0 else {
             feedback = "Could not stop Headless: \(message)"
+            refreshSoon()
+            return false
         }
+        // A stop-and-quit operation is permitted only after launchd confirms
+        // that the old BIFROST service label is no longer registered.
+        if launchctl(["print", "gui/\(getuid())/\(label)"]).0 == 0 {
+            feedback = "Headless shutdown still pending; interface remains open"
+            refreshSoon()
+            return false
+        }
+        try? FileManager.default.removeItem(at: launchAgentURL)
+        feedback = "BIFROST Headless stopped; RavenNest unchanged"
+        isRegisteredWithLaunchd = false
+        isRunning = false
+        stateMessage = "Not connected"
+        taskStatus = "unknown"
+        activeTasks = nil
+        caffeinateActive = false
         refreshSoon()
+        return true
     }
 
     func openWeb() {

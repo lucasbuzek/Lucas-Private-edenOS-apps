@@ -85,9 +85,13 @@ class APITests(unittest.TestCase):
         code, health = self.api("GET", "/api/health")
         self.assertEqual(code, 200)
         self.assertTrue(health["ok"])
+        self.assertEqual(health["identity"]["productId"], "eden.bifrost.headless")
+        self.assertRegex(health["identity"]["runtimeId"], r"^[a-f0-9]{16}$")
+        self.assertRegex(health["identity"]["sourceSha256"], r"^[a-f0-9]{64}$")
         code, status = self.api("GET", "/api/state")
         self.assertEqual(code, 200)
         self.assertEqual(status["headless"]["status"], "running")
+        self.assertEqual(status["headless"]["identity"], health["identity"])
         self.assertEqual(status["preferences"]["caffeinateMinutes"], 60)
         self.assertEqual(status["ai"]["provider"], "not-configured")
 

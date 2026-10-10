@@ -56,6 +56,9 @@ private struct BridgeArc: Shape {
 
 /// Native vector bridge symbol, preserving the recovered rainbow-arch identity.
 struct BifrostBridgeSymbol: View {
+    var width: CGFloat = 35
+    var height: CGFloat = 28
+
     var body: some View {
         ZStack {
             BridgeArc(inset: 0)
@@ -71,7 +74,7 @@ struct BifrostBridgeSymbol: View {
                                        startPoint: .leading, endPoint: .trailing),
                         style: StrokeStyle(lineWidth: 2.8, lineCap: .round))
         }
-        .frame(width: 35, height: 28)
+        .frame(width: width, height: height)
         .accessibilityHidden(true)
     }
 }

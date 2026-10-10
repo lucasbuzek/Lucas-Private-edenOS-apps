@@ -5,6 +5,7 @@ import SwiftUI
 struct BifrostDashboardView: View {
     @EnvironmentObject private var system: BifrostSystem
     @EnvironmentObject private var headless: HeadlessClient
+    @EnvironmentObject private var raven: RavenAgentController
     @State private var showLegacyControls = false
     let onNavigate: (String) -> Void
 
@@ -30,10 +31,11 @@ struct BifrostDashboardView: View {
                          secondary: "Bonjour · not automatically trusted",
                          icon: "macbook.and.iphone",
                          feature: BifrostUI.devices, state: "unknown")
-                    tile(title: "RavenNest",
-                         value: headless.ravenBridge == "running" ? "Agent running" : headless.ravenBridge.capitalized,
-                         secondary: "Independent service", icon: "network",
-                         feature: BifrostUI.raven, state: headless.ravenBridge)
+                    tile(title: "RavenNest · Mac",
+                         value: raven.isRunning ? "Running" : "Stopped",
+                         secondary: "Manual only · Cloudflare independent", icon: "network",
+                         feature: BifrostUI.raven,
+                         state: raven.isRunning ? "running" : "unknown")
                 }
 
                 HStack(alignment: .top, spacing: 12) {
@@ -44,9 +46,10 @@ struct BifrostDashboardView: View {
                                       feature: BifrostUI.bridge,
                                       state: headless.isRunning ? "running" : "offline")
                             Divider().overlay(BifrostUI.line)
-                            statusRow(title: "RavenNest bridge", detail: "Launch agent status only",
-                                      value: headless.ravenBridge.capitalized, symbol: "network",
-                                      feature: BifrostUI.raven, state: headless.ravenBridge)
+                            statusRow(title: "RavenNest Mac bridge", detail: "Manual connection · no automatic startup",
+                                      value: raven.isRunning ? "Running" : "Stopped", symbol: "network",
+                                      feature: BifrostUI.raven,
+                                      state: raven.isRunning ? "running" : "unknown")
                             Divider().overlay(BifrostUI.line)
                             statusRow(title: "AI routing", detail: "Preference; no provider connected",
                                       value: headless.preferences.aiRouting.capitalized,

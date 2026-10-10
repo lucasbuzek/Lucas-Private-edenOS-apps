@@ -1,0 +1,29 @@
+CURRENT SOURCE LOCATIONS — 2026-10-10
+
+BIFROST application and standalone local Headless:
+~/edenOS/Software Development/BIFROST/
+
+Independent RavenNest online cloud connector / provider:
+~/edenOS/Software Development/Online Plugins & Connectors/RavenNest/
+
+Canonical GitHub source branch:
+lucasbuzek/Lucas-Private-edenOS-apps
+ravennest/consolidated-20261010
+
+No RavenNest runtime source belongs under BIFROST/web, Projects or Temporary.
+BIFROST's own local Web/PWA is in BIFROST/headless.
+RavenNest launchd service continues to use its legacy label eden.bifrost.raven-bridge.
+Cloudflare Worker is active; the newer Pages UI and external model providers remain unverified/unconfigured.
+
+Historical snapshots, Git commits and releases are evidence and not alternative active source roots.
+
+CURRENT RAVENNEST MAC BRIDGE POLICY — 2026-10-10
+The optional Mac bridge is stopped and launchctl-disabled. Both installed and source plists
+have RunAtLoad=false / KeepAlive=false. No automatic login startup or restart.
+The BIFROST menu bar, Connections and Settings have manual start (confirmation), stop and status.
+Normal BIFROST quit stops a manually started RavenNest Mac bridge.
+Existing in-place development App: ~/edenOS/Custom Apps/BIFROST-Headless-Identity-Rollback-Candidate-20261010.app
+No new ZIP or additional App candidate was produced; prior LKG remains under ~/edenOS/Backups/BIFROST/.
+See RavenNest/docs/MAC_BRIDGE_MANUAL_CONTROL.txt for manual use/emergency stop instructions.
+Cloudflare Worker remains independent; external AI provider accounts still need separate connection.
+Physical click/start/stop acceptance of the macOS GUI remains to be performed manually.

@@ -2,10 +2,38 @@ import SwiftUI
 
 struct ConnectionsView: View {
     @EnvironmentObject var system: BifrostSystem
+    @EnvironmentObject var raven: RavenAgentController
 
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
             BifrostHeader(title: "Connections", subtitle: "Live providers and controls.")
+            GroupBox("RavenNest · Optional Mac bridge") {
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(raven.localSummary).font(.headline)
+                            Text("Cloudflare orchestration operates independently of this Mac.")
+                                .font(.caption).foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                        if raven.isRunning || raven.autoStartDisabled != true {
+                            Button("Stop Mac Bridge") { raven.stop() }
+                                .disabled(raven.isBusy)
+                        } else {
+                            Button("Start Mac Bridge…") { raven.requestStart() }
+                                .disabled(raven.isBusy || raven.autoStartDisabled != true)
+                        }
+                        Button("Refresh") { raven.refresh() }
+                    }
+                    Text(raven.autoStartDisabled == true ?
+                         "Automatic startup and crash restart are disabled." :
+                         "Automatic startup needs review.")
+                        .font(.caption).foregroundStyle(.secondary)
+                    if !raven.feedback.isEmpty {
+                        Text(raven.feedback).font(.caption).foregroundStyle(.secondary)
+                    }
+                }.padding(10)
+            }
             GroupBox("Remote Desktop Commander") {
                 HStack {
                     VStack(alignment: .leading) {
@@ -143,6 +171,7 @@ struct ManagementView: View {
 struct SettingsView: View {
     @EnvironmentObject var system: BifrostSystem
     @EnvironmentObject var headless: HeadlessClient
+    @EnvironmentObject var raven: RavenAgentController
 
     var body: some View {
         Form {
@@ -172,7 +201,26 @@ struct SettingsView: View {
                     }
                     Button("Refresh") { headless.refresh() }
                 }
-                LabeledContent("RavenNest bridge", value: headless.ravenBridge.capitalized)
+                LabeledContent("RavenNest Mac bridge", value: raven.localSummary)
+            }
+            Section("RavenNest · Manual Mac connection") {
+                LabeledContent("Local service", value: raven.localSummary)
+                LabeledContent("Automatic startup",
+                               value: raven.autoStartDisabled == true ? "Disabled" : "Unverified / enabled")
+                Text("Cloudflare RavenNest runs independently. The local agent starts only when explicitly confirmed.")
+                    .font(.caption).foregroundStyle(.secondary)
+                HStack {
+                    if raven.isRunning || raven.autoStartDisabled != true {
+                        Button("Stop RavenNest on Mac") { raven.stop() }
+                    } else {
+                        Button("Start RavenNest on Mac…") { raven.requestStart() }
+                            .disabled(raven.autoStartDisabled != true)
+                    }
+                    Button("Refresh") { raven.refresh() }
+                }.disabled(raven.isBusy)
+                if !raven.feedback.isEmpty {
+                    Text(raven.feedback).font(.caption).foregroundStyle(.secondary)
+                }
             }
             Section("Caffeinate") {
                 Picker("Default duration", selection: Binding(

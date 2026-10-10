@@ -1,186 +1,252 @@
 import SwiftUI
 import AppKit
 
+/// BIFROST's real macOS status-bar menu.
+///
+/// Uses native NSMenu presentation through MenuBarExtra(.menu) instead of
+/// custom dark popovers: legible at system text scaling, keyboard navigable,
+/// visible status, and direct Headless controls without disclosure gates.
+///
+/// The menu is a view on BIFROST Headless; the GUI is not the service owner.
 struct StatusMenu: View {
     @EnvironmentObject private var system: BifrostSystem
     @EnvironmentObject private var headless: HeadlessClient
+    @EnvironmentObject private var raven: RavenAgentController
     @Environment(\.openWindow) private var openWindow
-    @Environment(\.openSettings) private var openSettings
-    @State private var showEDENControls = false
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 11) {
-            HStack(spacing: 10) {
-                BifrostMark(size: 37)
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("BIFROST").font(.headline)
-                    Text("CONNECT · KEEP · RESOLVE")
-                        .font(.system(size: 9, weight: .medium))
-                        .foregroundStyle(BifrostUI.muted)
-                }
-                Spacer()
-                BifrostStatusDot(status: headless.isRunning ? "running" : "offline")
-                Text(headless.isRunning ? "Running" : "Offline")
-                    .font(.caption.weight(.medium))
+        Group {
+            Text("BIFROST · CONNECT · KEEP · RESOLVE")
+
+            Text(headless.isRunning ? "Headless: Running" :
+                 headless.isRegisteredWithLaunchd == true ?
+                 "Headless: Registered · unreachable" : "Headless: Not connected")
+            Text("RavenNest Mac: " + raven.localSummary)
+
+            if headless.taskStatus == "observed" {
+                Text("Active tasks: " + (headless.activeTasks.map(String.init) ?? "Unknown"))
+            } else {
+                Text("Active tasks: Not verified")
             }
-            BifrostSpectrum()
-            VStack(spacing: 8) {
-                if headless.preferences.statusIndicators.contains("headless") {
-                    statusRow(title: "Headless", symbol: "server.rack",
-                              accent: BifrostUI.bridge,
-                              value: headless.stateMessage,
-                              state: headless.isRunning ? "running" : "offline")
+
+            Divider()
+
+            // This action is deliberately manual, never timer or login driven.
+            if raven.isRunning || raven.autoStartDisabled != true {
+                Button(role: .destructive) {
+                    raven.stop()
+                } label: {
+                    Label("Stop RavenNest Mac Bridge", systemImage: "stop.circle")
                 }
-                if headless.preferences.statusIndicators.contains("activeTasks") {
-                    statusRow(title: "Active tasks", symbol: "checklist",
-                              accent: BifrostUI.tasks,
-                              value: headless.activeTasks.map(String.init) ?? "Unknown",
-                              state: headless.taskStatus == "observed" ? "observed" : "unknown")
-                }
-                statusRow(title: "RavenNest agent", symbol: "network",
-                          accent: BifrostUI.raven,
-                          value: headless.ravenBridge == "running" ? "Running locally" :
-                                 headless.ravenBridge == "offline" ? "Not running" : "Unknown",
-                          state: headless.ravenBridge)
-                statusRow(title: "Mobile pairing", symbol: "iphone.gen3.radiowaves.left.and.right",
-                          accent: BifrostUI.devices,
-                          value: "Not verified",
-                          state: "unknown")
-            }
-            .padding(10)
-            .background(BifrostUI.panel, in: RoundedRectangle(cornerRadius: 10))
-            HStack(spacing: 8) {
-                if headless.isRunning {
-                    controlButton("Stop Headless", symbol: "stop.circle",
-                                  accent: BifrostUI.problem) { headless.stop() }
-                    controlButton("Open Web", symbol: "globe",
-                                  accent: BifrostUI.bridge) { headless.openWeb() }
-                } else {
-                    controlButton("Start Headless", symbol: "play.circle",
-                                  accent: BifrostUI.healthy) { headless.start() }
-                }
+                .disabled(raven.isBusy)
+            } else {
                 Button {
-                    system.refresh()
-                } label: { Image(systemName: "arrow.clockwise") }
-                    .buttonStyle(.bordered)
-                    .help("Refresh BIFROST status")
-            }
-            Divider().overlay(BifrostUI.line)
-            HStack(spacing: 9) {
-                Image(systemName: "moon.zzz.fill").foregroundStyle(BifrostUI.backup)
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Caffeinate").font(.subheadline.weight(.medium))
-                    Text(headless.caffeinateActive ? "Preventing Mac sleep" : "Not active")
-                        .font(.caption2).foregroundStyle(BifrostUI.muted)
+                    raven.requestStart()
+                } label: {
+                    Label("Start RavenNest Mac Bridge…", systemImage: "play.circle")
                 }
-                Spacer()
-                Button(headless.caffeinateActive ? "Stop" : "Start") {
-                    headless.caffeinateActive ? headless.stopCaffeinate() : headless.startCaffeinate()
-                }
-                .disabled(!headless.isRunning)
-                .buttonStyle(.bordered)
+                .disabled(raven.isBusy || raven.autoStartDisabled != true)
             }
-            HStack {
-                Text("Default duration")
-                    .font(.caption).foregroundStyle(BifrostUI.muted)
-                Spacer()
-                Picker("Caffeinate duration", selection: Binding(
-                    get: { headless.preferences.caffeinateMinutes },
-                    set: { headless.setCaffeinateMinutes($0) }
-                )) {
-                    Text("30 min").tag(30)
-                    Text("60 min").tag(60)
-                    Text("120 min").tag(120)
-                    Text("Until stopped").tag(0)
-                }
-                .labelsHidden().frame(width: 155)
+            Text(raven.autoStartDisabled == true ?
+                 "RavenNest auto-start: Disabled" : "RavenNest auto-start: Check")
+            if !raven.feedback.isEmpty {
+                Text("RavenNest: " + raven.feedback)
             }
-            Divider().overlay(BifrostUI.line)
-            DisclosureGroup(isExpanded: $showEDENControls) {
-                VStack(alignment: .leading, spacing: 8) {
-                    statusRow(title: "Remote access", symbol: "macbook.and.iphone",
-                              accent: BifrostUI.devices, value: system.remote.state.rawValue,
-                              state: "unknown")
-                    statusRow(title: "Nearby services", symbol: "dot.radiowaves.left.and.right",
-                              accent: BifrostUI.bridge, value: "\(system.discovery.services.count) observed",
-                              state: "unknown")
-                    HStack {
-                        Button("Start Remote") { system.remote.start(); system.refresh() }
-                        Button("Stop Remote") { system.remote.stop(); system.refresh() }
-                    }.buttonStyle(.bordered)
-                }.padding(.top, 6)
+
+            Divider()
+
+            Button {
+                openSection("Overview")
             } label: {
-                Label("Other EDEN controls", systemImage: "square.grid.2x2.fill")
-                    .foregroundStyle(BifrostUI.apps)
-                    .font(.subheadline.weight(.medium))
+                Label("Open BIFROST", systemImage: "house")
             }
-            VStack(spacing: 7) {
-                HStack(spacing: 7) {
-                    controlButton("Open BIFROST", symbol: "app.window",
-                                  accent: BifrostUI.apps) { openSection("Overview") }
-                    controlButton("Devices", symbol: "macbook.and.iphone",
-                                  accent: BifrostUI.devices) { openSection("Devices") }
-                }
-                HStack(spacing: 7) {
-                    controlButton("Connections", symbol: "point.3.connected.trianglepath.dotted",
-                                  accent: BifrostUI.bridge) { openSection("Connections") }
-                    controlButton("Capabilities", symbol: "square.stack.3d.up.fill",
-                                  accent: BifrostUI.apps) { openSection("Capabilities") }
-                }
-                HStack(spacing: 7) {
-                    controlButton("JANITOR", symbol: "paintbrush.pointed.fill",
-                                  accent: BifrostUI.janitor) { openSection("JANITOR") }
-                    controlButton("Settings", symbol: "gearshape.fill",
-                                  accent: BifrostUI.bridge) { openSection("Settings") }
+            Button {
+                openSection("Devices")
+            } label: {
+                Label("Devices", systemImage: "desktopcomputer")
+            }
+            Button {
+                openSection("Connections")
+            } label: {
+                Label("Connections", systemImage: "link")
+            }
+            Button {
+                openSection("Capabilities")
+            } label: {
+                Label("Capabilities", systemImage: "square.grid.2x2")
+            }
+
+            Divider()
+
+            Button {
+                openSection("JANITOR")
+            } label: {
+                Label("JANITOR", systemImage: "paintbrush.pointed.fill")
+            }
+            Button {
+                openSection("Settings")
+            } label: {
+                Label("Settings", systemImage: "gearshape")
+            }
+
+            Divider()
+
+            if headless.isRunning {
+                Button {
+                    headless.openWeb()
+                } label: {
+                    Label("Open Headless Web", systemImage: "globe")
                 }
             }
+
+            if headless.isRunning || headless.isRegisteredWithLaunchd == true {
+                Button(role: .destructive) {
+                    confirmHeadlessShutdown(quitInterface: false)
+                } label: {
+                    Label("Stop Headless", systemImage: "stop.circle")
+                }
+            } else {
+                Button {
+                    headless.start()
+                } label: {
+                    Label("Start Headless", systemImage: "play.circle")
+                }
+            }
+
+            Menu {
+                Text(caffeinateStatus)
+
+                if headless.caffeinateActive {
+                    Button {
+                        headless.stopCaffeinate()
+                    } label: {
+                        Label("Stop BIFROST Caffeinate", systemImage: "stop.circle")
+                    }
+                } else if headless.systemCaffeinateObserved == true {
+                    Text("External Caffeinate — leave running")
+                } else {
+                    Button {
+                        headless.startCaffeinate()
+                    } label: {
+                        Label("Start BIFROST Caffeinate", systemImage: "moon.zzz")
+                    }
+                    .disabled(!headless.isRunning)
+                }
+
+                Divider()
+
+                Menu {
+                    durationOption("30 minutes", minutes: 30)
+                    durationOption("60 minutes", minutes: 60)
+                    durationOption("120 minutes", minutes: 120)
+                    durationOption("Until stopped", minutes: 0)
+                } label: {
+                    Label("Default duration", systemImage: "clock")
+                }
+            } label: {
+                Label("Caffeinate & Sleep", systemImage: "moon.zzz")
+            }
+
+            Menu {
+                Text("RavenNest Mac: " + raven.localSummary)
+                Text("Mobile pairing: Unverified")
+                Text("Remote Desktop: " + system.remote.state.rawValue)
+
+                if system.remote.managedByBifrost {
+                    Button("Stop BIFROST-owned Remote Desktop") {
+                        system.remote.stop()
+                        system.remote.refresh()
+                    }
+                } else if system.remote.state == .stopped {
+                    Button("Start Remote Desktop") {
+                        system.remote.start()
+                        system.remote.refresh()
+                    }
+                }
+            } label: {
+                Label("Remote & Mobile", systemImage: "network")
+            }
+
+            Button {
+                system.refresh()
+            } label: {
+                Label("Refresh Status", systemImage: "arrow.clockwise")
+            }
+
             if !headless.feedback.isEmpty {
-                Text(headless.feedback)
-                    .font(.caption2).foregroundStyle(BifrostUI.muted)
-                    .lineLimit(3)
+                Text("Last action: " + headless.feedback)
             }
-            Divider().overlay(BifrostUI.line)
-            Button("Quit Menu Bar / App Only") {
+
+            Divider()
+
+            Button {
                 NSApplication.shared.terminate(nil)
+            } label: {
+                Label(raven.isRunning ?
+                      "Quit BIFROST · Stop RavenNest Mac" :
+                      "Quit Interface · Keep Headless",
+                      systemImage: "xmark")
             }
-            .font(.caption)
-            .help("Leaves BIFROST Headless and RavenNest running")
+
+            if headless.isRunning || headless.isRegisteredWithLaunchd == true {
+                Button(role: .destructive) {
+                    confirmHeadlessShutdown(quitInterface: true)
+                } label: {
+                    Label("Stop Headless & Quit Interface", systemImage: "power")
+                }
+            }
         }
-        .padding(13)
-        .frame(width: 350)
-        .background(BifrostUI.sidebar)
-        .tint(BifrostUI.apps)
-        .onAppear { headless.refresh() }
+        .onAppear {
+            headless.refresh()
+            raven.refresh()
+            system.remote.refresh()
+        }
+    }
+
+    private var caffeinateStatus: String {
+        if headless.caffeinateActive { return "BIFROST-owned Caffeinate active" }
+        if headless.systemCaffeinateObserved == true {
+            return "External Caffeinate active (not controlled)"
+        }
+        if headless.systemCaffeinateObserved == false { return "No process detected" }
+        return "Caffeinate state unknown"
+    }
+
+    private func durationOption(_ title: String, minutes: Int) -> some View {
+        Button {
+            headless.setCaffeinateMinutes(minutes)
+        } label: {
+            if headless.preferences.caffeinateMinutes == minutes {
+                Label(title, systemImage: "checkmark")
+            } else {
+                Text(title)
+            }
+        }
+    }
+
+    /// NSAlert works for system-native menus where SwiftUI confirmationDialog
+    /// is not reliably presented when the menu closes after selection.
+    private func confirmHeadlessShutdown(quitInterface: Bool) {
+        let alert = NSAlert()
+        alert.alertStyle = .warning
+        alert.messageText = quitInterface ?
+            "Stop BIFROST Headless and quit the interface?" :
+            "Stop BIFROST Headless?"
+        alert.informativeText = quitInterface ?
+            "BIFROST Headless will stop. Quitting also stops any manually started RavenNest Mac bridge. External Caffeinate is unaffected." :
+            "Only BIFROST Headless will stop. RavenNest and external Caffeinate are unchanged."
+        alert.addButton(withTitle: quitInterface ? "Stop Headless & Quit" : "Stop Headless")
+        alert.addButton(withTitle: "Cancel")
+        guard alert.runModal() == .alertFirstButtonReturn else { return }
+        let stopped = headless.stop()
+        if stopped && quitInterface {
+            NSApplication.shared.terminate(nil)
+        }
     }
 
     private func openSection(_ section: String) {
         system.selectedSection = section
         openWindow(id: "main")
         NSApplication.shared.activate(ignoringOtherApps: true)
-    }
-
-    private func statusRow(title: String, symbol: String,
-                           accent: Color, value: String, state: String) -> some View {
-        HStack(spacing: 8) {
-            Image(systemName: symbol).foregroundStyle(accent).frame(width: 20)
-            Text(title).font(.subheadline)
-            Spacer()
-            BifrostStatusDot(status: state)
-            Text(value).font(.caption).foregroundStyle(BifrostUI.muted)
-                .lineLimit(1)
-        }
-    }
-
-    private func controlButton(_ name: String, symbol: String,
-                               accent: Color, perform: @escaping () -> Void) -> some View {
-        Button(action: perform) {
-            Label {
-                Text(name).font(.caption.weight(.medium))
-            } icon: {
-                Image(systemName: symbol).foregroundStyle(accent)
-            }
-            .frame(maxWidth: .infinity)
-        }
-        .buttonStyle(.bordered)
     }
 }
