@@ -1,0 +1,6 @@
+BIFROST EMBEDDED — Android definition
+Role: EDEN device and service management for edenOS Embedded.
+Target: SM-T110/goyawifi ARMv7, 1024x600, approximately 1 GB RAM.
+BIFROST remains connective infrastructure and does not absorb SKALD or NOSTOS domain logic.
+Required: device identity; App/service discovery; truthful service state and measurable health; supported service lifecycle controls; SKALD/NOSTOS representation endpoints; storage/network/resource status where available; logs; package/version state; Android package compatibility inspection; Server Mode supervision; remote management representation where feasible.
+Registered does not mean working. No AI requirement. Quick Settings integration remains gated until exact Samsung Android/SystemUI build is known.
