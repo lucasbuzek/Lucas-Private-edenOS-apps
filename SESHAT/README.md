@@ -12,4 +12,4 @@ In-chat assistant: ~/edenOS/AppDev/#app-assistants/SESHAT/SESHAT_IN_CHAT_ASSISTA
 
 Read PROJECT_BIBLE.md, PROJECT_STATE.md and docs/RESEARCH_DECISIONS.md before implementation. Google service constraints are in docs/GOOGLE_SERVICES_INTEGRATION.md.
 
-The domain-core tests run with `npm test` using Node's built-in test runner; no third-party packages are required. No Google OAuth connection, live Google account access, UI build, server runtime, multi-user verification or release is claimed.
+The domain-core tests run with `npm test` using Node's built-in test runner; no third-party packages are required. Initial source and project docs are also committed to the private GitHub monorepo branch `seshat/bootstrap-20261011` (not merged to main). No Google OAuth connection, live Google account access, UI build, server runtime, multi-user verification or release is claimed.
