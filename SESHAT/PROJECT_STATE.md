@@ -15,12 +15,12 @@ Updated: 2026-10-11.
 - APP DEVELOPMENT RESEARCH / DECISIONS: WRITTEN in docs/RESEARCH_DECISIONS.md.
 - IN-CHAT ASSISTANT CONTRACT: WRITTEN.
 - PROJECT INDEX: symlink target verified (`~/edenOS/Projects/SESHAT` -> `../Software Development/SESHAT`). No broken symlinks found in the scanned Projects, AppDev/Projects or Software Development trees.
-- IMPLEMENTATION: FIRST DOMAIN-CORE PROTOTYPE WRITTEN (src/domain/ledger.mjs); not a complete app.
+- IMPLEMENTATION: INVENTORY LEDGER + CHECKSUM-PROTECTED JSON SNAPSHOT PROTOTYPES WRITTEN (src/domain/ledger.mjs, src/persistence/snapshot.mjs); not a complete app.
 - TEST: 17/17 Node tests PASS on Mac; node --check PASS for all source/test modules. Coverage includes ledger arithmetic, idempotency, quantity precision, stock guards, compensating reversal, immutability, snapshot round-trip, SHA-256 tamper detection, schema-version rejection and invalid-history rejection.
 - Snapshot serialization/import/export with SHA-256 integrity: PROTOTYPE IMPLEMENTED AND TESTED.
 - Durable database, file-system backup/restore, UI/PWA, server, auth and multi-user runtime: NOT IMPLEMENTED / UNKNOWN.
 - GOOGLE OAUTH/API: NOT CONNECTED; no credentials created or inspected.
-- GITHUB: baseline branch `seshat/bootstrap-20261011` exists in `lucasbuzek/Lucas-Private-edenOS-apps`. The initial 10-file sync was content-verified; snapshot module/tests, updated matrix/README/state and test receipt are being synchronized as the next incremental commit. Branch is not merged to main. [Open branch](https://github.com/lucasbuzek/Lucas-Private-edenOS-apps/tree/seshat/bootstrap-20261011).
+- GITHUB: 13 SESHAT project/source/test/evidence files were compared byte-for-byte with the Mac workspace and matched on `lucasbuzek/Lucas-Private-edenOS-apps` branch `seshat/bootstrap-20261011`. The test receipt is committed; branch remains separate and is not merged to main. [Open branch](https://github.com/lucasbuzek/Lucas-Private-edenOS-apps/tree/seshat/bootstrap-20261011).
 - Trademark/domain/store clearance: NOT CHECKED.
 
 ## Google connector availability
