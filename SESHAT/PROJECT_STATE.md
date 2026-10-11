@@ -14,21 +14,22 @@ Updated: 2026-10-11.
 - DESIGN BASELINE: WRITTEN.
 - APP DEVELOPMENT RESEARCH / DECISIONS: WRITTEN in docs/RESEARCH_DECISIONS.md.
 - IN-CHAT ASSISTANT CONTRACT: WRITTEN.
-- PROJECT INDEX: symlink created; verify resolution.
+- PROJECT INDEX: symlink target verified (`~/edenOS/Projects/SESHAT` -> `../Software Development/SESHAT`). No broken symlinks found in the scanned Projects, AppDev/Projects or Software Development trees.
 - IMPLEMENTATION: FIRST DOMAIN-CORE PROTOTYPE WRITTEN (src/domain/ledger.mjs); not a complete app.
 - TEST: 13/13 Node tests PASS on Mac (receipts/issues/transfers, idempotency, quantity precision, stock guards, reversal and immutability).
 - UI/PWA, durable database, server, auth and multi-user runtime: NOT IMPLEMENTED / UNKNOWN.
 - GOOGLE OAUTH/API: NOT CONNECTED; no credentials created or inspected.
-- GITHUB: initial SESHAT baseline, research, assistant contract, package, ledger and tests committed to branch `seshat/bootstrap-20261011` in `lucasbuzek/Lucas-Private-edenOS-apps`; branch is not merged to main. Remote file-content verification is the next gate.
+- GITHUB: SESHAT baseline, research, assistant contract, package, ledger and tests committed to `lucasbuzek/Lucas-Private-edenOS-apps` branch `seshat/bootstrap-20261011`; all 10 tracked project files were compared against the Mac source and matched after README synchronization. Branch is not merged to main. [Open branch](https://github.com/lucasbuzek/Lucas-Private-edenOS-apps/tree/seshat/bootstrap-20261011).
 - Trademark/domain/store clearance: NOT CHECKED.
 
 ## Google connector availability
 ChatGPT Google Drive, Gmail, Google Calendar and Google Contacts connectors returned DISABLED_BY_ADMIN / NOT_AVAILABLE. They cannot be enabled by this task, so this conversation has no verified live access to those accounts. Direct Google API integration in SESHAT remains feasible after user-controlled Google Cloud configuration, OAuth consent, enabled APIs, redirect URIs and credentials.
 
 ## Next gate
-1. Reconcile any newly recovered historical SESHAT source if found.
-2. Establish canonical GitHub persistence without overwriting unrelated repositories.
-3. Test the in-chat assistant using supplied/sample inventory data; keep external writes disabled.
-4. Define schema/API and deterministic stock-ledger tests.
-5. Implement PWA and Google adapters after auth/configuration are available.
-6. Record build, tests, provider verification and physical/browser gates separately. No LKG until acceptance.
+1. Exercise the in-chat assistant against clearly labelled fixture data; keep external writes disabled.
+2. Expand domain tests for reservations, stocktake workflows, event ordering and serialized persistence.
+3. Implement durable local storage and export/restore integrity before shared-server work.
+4. Build the responsive PWA and explicit offline/conflict states.
+5. Add Google adapters only after authorized OAuth configuration; connector access is currently unavailable.
+6. Verify remote branch/source hashes on every sync; do not merge to main until project acceptance.
+7. Record build, tests, provider verification and physical/browser gates separately. No LKG until acceptance.
