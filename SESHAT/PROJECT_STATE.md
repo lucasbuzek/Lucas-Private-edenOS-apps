@@ -20,7 +20,7 @@ Updated: 2026-10-11.
 - Snapshot serialization/import/export with SHA-256 integrity: PROTOTYPE IMPLEMENTED AND TESTED.
 - Durable database, file-system backup/restore, UI/PWA, server, auth and multi-user runtime: NOT IMPLEMENTED / UNKNOWN.
 - GOOGLE OAUTH/API: NOT CONNECTED; no credentials created or inspected.
-- GITHUB: 13 SESHAT project/source/test/evidence files were compared byte-for-byte with the Mac workspace and matched on `lucasbuzek/Lucas-Private-edenOS-apps` branch `seshat/bootstrap-20261011`. The test receipt is committed; branch remains separate and is not merged to main. [Open branch](https://github.com/lucasbuzek/Lucas-Private-edenOS-apps/tree/seshat/bootstrap-20261011).
+- GITHUB: core, snapshot, tests, acceptance matrix, development research and test receipt are committed on `lucasbuzek/Lucas-Private-edenOS-apps` branch `seshat/bootstrap-20261011`. New snapshot/research files are committed; full latest byte-for-byte verification across every tracked file remains to be repeated. Branch remains separate and is not merged to main. [Open branch](https://github.com/lucasbuzek/Lucas-Private-edenOS-apps/tree/seshat/bootstrap-20261011).
 - Trademark/domain/store clearance: NOT CHECKED.
 
 ## Google connector availability
