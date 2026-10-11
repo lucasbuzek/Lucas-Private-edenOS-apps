@@ -12,11 +12,11 @@ Updated: 2026-10-11.
 
 ## Evidence
 - DESIGN BASELINE: WRITTEN.
-- APP DEVELOPMENT RESEARCH / DECISIONS: WRITTEN in docs/RESEARCH_DECISIONS.md.
+- APP DEVELOPMENT RESEARCH / DECISIONS: WRITTEN in docs/RESEARCH_DECISIONS.md and docs/APP_DEVELOPMENT_RESEARCH.md (IndexedDB, offline-first PWA, OAuth scopes, inventory concurrency and persistence strategy).
 - IN-CHAT ASSISTANT CONTRACT: WRITTEN.
 - PROJECT INDEX: symlink target verified (`~/edenOS/Projects/SESHAT` -> `../Software Development/SESHAT`). No broken symlinks found in the scanned Projects, AppDev/Projects or Software Development trees.
 - IMPLEMENTATION: INVENTORY LEDGER + CHECKSUM-PROTECTED JSON SNAPSHOT PROTOTYPES WRITTEN (src/domain/ledger.mjs, src/persistence/snapshot.mjs); not a complete app.
-- TEST: 17/17 Node tests PASS on Mac; node --check PASS for all source/test modules. Coverage includes ledger arithmetic, idempotency, quantity precision, stock guards, compensating reversal, immutability, snapshot round-trip, SHA-256 tamper detection, schema-version rejection and invalid-history rejection.
+- TEST: 18/18 Node tests PASS on Mac; node --check PASS for all source/test modules. Coverage includes ledger arithmetic, idempotency, quantity precision, stock guards, compensating reversal, immutability, snapshot round-trip, SHA-256 tamper detection, schema-version rejection, invalid-history rejection after recomputed checksum, and duplicate-location rejection.
 - Snapshot serialization/import/export with SHA-256 integrity: PROTOTYPE IMPLEMENTED AND TESTED.
 - Durable database, file-system backup/restore, UI/PWA, server, auth and multi-user runtime: NOT IMPLEMENTED / UNKNOWN.
 - GOOGLE OAUTH/API: NOT CONNECTED; no credentials created or inspected.
