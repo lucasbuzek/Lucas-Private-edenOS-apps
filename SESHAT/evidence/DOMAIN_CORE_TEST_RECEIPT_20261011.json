@@ -21,7 +21,7 @@
     "branch": "seshat/bootstrap-20261011",
     "branch_url": "https://github.com/lucasbuzek/Lucas-Private-edenOS-apps/tree/seshat/bootstrap-20261011",
     "merged_to_main": false,
-    "note": "Core, snapshot, tests, acceptance matrix and research are committed on the feature branch; verify latest remote file hashes before treating the branch as synchronized."
+    "note": "All 14 current SESHAT project/source/test/evidence files were compared against the Mac workspace and matched byte-for-byte after the latest snapshot test synchronization. Branch remains separate from main."
   },
   "limits": [
     "Snapshot is a versioned JSON export/import prototype, not a durable database",
