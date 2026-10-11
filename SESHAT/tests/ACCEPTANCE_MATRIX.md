@@ -6,8 +6,9 @@ States: PASS / FAIL / UNKNOWN / SKIPPED / N/A. A planned feature is not PASS.
 |---|---|---|
 | Identity | NOSTOS household-only; ARGOS search-only; one SESHAT product across representations | PASS — design baseline |
 | In-chat | Grounded stock workflows; no fabricated live data/actions | UNKNOWN — prompt written, no runtime test |
-| Ledger | Receipt, issue, return, transfer, adjustment and stocktake are auditable events | UNKNOWN — not implemented |
-| Idempotency | Retry cannot double-post stock | UNKNOWN — not implemented |
+| Ledger core | Receipt, issue, return, transfer and adjustment events; stock arithmetic and compensating reversal | PASS — 13 Node tests cover core prototype; full stocktake workflow still UNKNOWN |
+| Idempotency | Retry cannot double-post stock; changed payload with same key rejected | PASS — prototype tests |
+| Persistence | Ledger survives restart and backup/restore | UNKNOWN — in-memory only; not implemented |
 | Roles | Server-side owner/manager/staff/read-only permissions | UNKNOWN — not implemented |
 | Import | Preview, mapping, validation, dry run, explicit commit and row-level errors | UNKNOWN — not implemented |
 | PWA | macOS/Windows/Linux/iOS/Android browser support | UNKNOWN — not implemented |
@@ -18,5 +19,5 @@ States: PASS / FAIL / UNKNOWN / SKIPPED / N/A. A planned feature is not PASS.
 | Calendar/Contacts | Optional scoped access and provider-ID mapping | UNKNOWN — not implemented |
 | Backup/restore | Integrity and successful restore demonstrated | UNKNOWN — not implemented |
 | Security | Tenant isolation, secret hygiene, audit and export/deletion | UNKNOWN — not implemented |
-| GitHub persistence | Canonical repository/branch and revision established | UNKNOWN — not established |
+| GitHub persistence | Canonical repository/branch and revision established | PARTIAL — initial files committed to `seshat/bootstrap-20261011`; remote content verification and source mirror reconciliation pending |
 | Release | Reproducible build and required acceptance evidence | SKIPPED — design stage |
