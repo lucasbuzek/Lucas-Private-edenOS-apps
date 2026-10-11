@@ -1,0 +1,30 @@
+{
+  "project": "SESHAT — Stock Entry, Storage, Handling & Tracking",
+  "date": "2026-10-11",
+  "stage": "DOMAIN_CORE_PROTOTYPE",
+  "evidence": {
+    "local_test_command": "npm test",
+    "test_runner": "Node.js built-in node:test",
+    "tests_passed": 13,
+    "tests_failed": 0,
+    "syntax_check": "PASS — src/domain/ledger.mjs and tests/ledger.test.mjs",
+    "source_sha256": "911f31ce2ae8c3ca01e5cc92e391434eea92e9549cddc6352c50d36d98d12d00",
+    "tests_sha256": "432182a19d515015c780115e2afdfe7146c222c306732c8de645387cbb597024",
+    "package_sha256": "7d3bbebdf5bb0387c8c797b7b1bc9470ece16b69744dde553ce46757b6989b1a",
+    "acceptance_matrix_sha256": "e7c992d1ef86e4ce58426fe18c9c5b48b9012bff5349317c79c70c386dee02ee"
+  },
+  "github": {
+    "repository": "lucasbuzek/Lucas-Private-edenOS-apps",
+    "branch": "seshat/bootstrap-20261011",
+    "head_commit": "a1dbeaa2cc77a78486b8f6fa386a450af654d108",
+    "branch_url": "https://github.com/lucasbuzek/Lucas-Private-edenOS-apps/tree/seshat/bootstrap-20261011",
+    "verified_file_content_matches": "10/10",
+    "merged_to_main": false
+  },
+  "limits": [
+    "In-memory prototype only; no durable persistence",
+    "No UI/PWA or server",
+    "No Google OAuth or live Google service access",
+    "No multi-user, physical-device, security, backup/restore, build or release verification"
+  ]
+}
