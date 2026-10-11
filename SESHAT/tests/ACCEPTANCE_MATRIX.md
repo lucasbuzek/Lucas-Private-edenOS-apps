@@ -20,5 +20,5 @@ States: PASS / FAIL / UNKNOWN / SKIPPED / N/A. A planned feature is not PASS.
 | Calendar/Contacts | Optional scoped access and provider-ID mapping | UNKNOWN — not implemented |
 | Backup/restore | Integrity and successful restore from a stored backup demonstrated | UNKNOWN — JSON snapshot round-trip passes, but filesystem backup/restore is not implemented |
 | Security | Tenant isolation, secret hygiene, audit and export/deletion | UNKNOWN — not implemented |
-| GitHub persistence | Canonical repository/branch and revision established | PARTIAL — initial 10-file sync verified; new snapshot files and refreshed evidence receipt awaiting sync verification |
+| GitHub persistence | Canonical repository/branch and revision established | PASS — 13 project/source/test/evidence files matched local contents on `seshat/bootstrap-20261011`; branch not merged to main |
 | Release | Reproducible build and required acceptance evidence | SKIPPED — design stage |
