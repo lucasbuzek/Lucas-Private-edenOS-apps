@@ -8,8 +8,8 @@ States: PASS / FAIL / UNKNOWN / SKIPPED / N/A. A planned feature is not PASS.
 | In-chat | Grounded stock workflows; no fabricated live data/actions | UNKNOWN — prompt written, no runtime test |
 | Ledger core | Receipt, issue, return, transfer and adjustment events; stock arithmetic and compensating reversal | PASS — 13 Node tests cover core prototype; full stocktake workflow still UNKNOWN |
 | Idempotency | Retry cannot double-post stock; changed payload with same key rejected | PASS — prototype tests |
-| Snapshot integrity | JSON export/import, SHA-256 tamper detection, schema-version and replay validation | PASS — 4 snapshot tests; snapshot remains an in-memory serialization interface |
-| Durable persistence | Ledger survives app restart and backup/restore | UNKNOWN — no durable database or actual file-based restore test |
+| Snapshot integrity | JSON export/import, SHA-256 tamper detection, schema-version and replay validation | PASS — 5 snapshot tests; snapshot remains an in-memory serialization interface |
+| Durable persistence | Ledger survives app restart and backup/restore | UNKNOWN — no durable database or actual file-based restore test; IndexedDB is the researched PWA candidate |
 | Roles | Server-side owner/manager/staff/read-only permissions | UNKNOWN — not implemented |
 | Import | Preview, mapping, validation, dry run, explicit commit and row-level errors | UNKNOWN — not implemented |
 | PWA | macOS/Windows/Linux/iOS/Android browser support | UNKNOWN — not implemented |
