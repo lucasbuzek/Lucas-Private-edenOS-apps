@@ -1,0 +1,10 @@
+{
+  "name": "seshat-inventory-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "SESHAT stock ledger domain core; design-stage prototype",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  }
+}
