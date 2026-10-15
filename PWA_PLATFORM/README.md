@@ -9,8 +9,11 @@ Provide one reusable deployment contract for standalone browser PWAs derived fro
 ## Current implementation
 
 - `scripts/validate-manifest.mjs` validates the shared deployment manifest.
+- `intelligence/core.mjs` provides authenticated app-aware provider routing, app-owned prompts, explicit provider choice and no silent fallback.
+- `intelligence/worker.mjs` exposes a no-store HTTP endpoint that requires a verified principal from a hosting-specific authentication adapter.
+- `intelligence/providers.mjs` provides server-side Cloudflare Workers AI and optional Gemini adapters; provider credentials never belong in the PWA bundle.
 - `examples/hermes.manifest.json` records HERMES as the initial Netlify-oriented pilot.
-- `test/validate-manifest.test.mjs` tests fail-closed behavior for login, server authorization, provider policy, secret placement and app-owned data.
+- Tests cover manifest policy, cross-app authorization, provider failure, secret separation, body limits and provider request normalization.
 - Run with Node 20+: `npm test` and `npm run validate`.
 
 This candidate is a contract/validation foundation, not yet an automatic deployer. No live deployment, identity provider, database isolation, or model route is certified by a valid manifest.
