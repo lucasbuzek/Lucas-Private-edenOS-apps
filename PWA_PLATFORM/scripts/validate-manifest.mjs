@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 const fail = (errors) => ({ ok: false, errors });
 const ID = /^[a-z][a-z0-9-]{1,47}$/;
-const VERSION = /^\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?$/;
+const VERSION = /^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$/;
 const PROVIDERS = new Set(['workers-ai', 'gemini-free-tier', 'local', 'user-connected']);
 const HOSTS = new Set(['netlify', 'cloudflare-pages']);
 const AUTH = new Set(['supabase', 'cloudflare-access', 'oidc']);
@@ -21,7 +22,7 @@ export function validateManifest(m) {
   need(typeof m.app?.version === 'string' && VERSION.test(m.app.version), 'app.version must be semantic version text');
   need(m.app?.standalone === true, 'app.standalone must be true');
 
-  need(typeof m.source?.repository === 'string' && /^https:\\/\\//.test(m.source.repository), 'source.repository must be an HTTPS URL');
+  need(typeof m.source?.repository === 'string' && /^https:\/\//.test(m.source.repository), 'source.repository must be an HTTPS URL');
   need(typeof m.source?.buildCommand === 'string' && m.source.buildCommand.trim().length > 0, 'source.buildCommand is required');
   need(typeof m.source?.outputDirectory === 'string' && m.source.outputDirectory.trim().length > 0, 'source.outputDirectory is required');
 
@@ -38,7 +39,7 @@ export function validateManifest(m) {
   if (Array.isArray(m.intelligence?.providers)) {
     for (const p of m.intelligence.providers) need(PROVIDERS.has(p), 'unsupported provider: ' + String(p));
   }
-  need(['explicit-status-no-silent-provider-switch'].includes(m.intelligence?.fallbackPolicy), 'fallback policy must make provider selection/failure explicit');
+  need(m.intelligence?.fallbackPolicy === 'explicit-status-no-silent-provider-switch', 'fallback policy must make provider selection/failure explicit');
 
   need(typeof m.data?.domainAuthority === 'string' && m.data.domainAuthority.trim().length > 0, 'data.domainAuthority is required');
   need(m.data?.ownership === 'app-owned', 'data.ownership must preserve app-owned data authority');
@@ -47,13 +48,13 @@ export function validateManifest(m) {
 
   const serialized = JSON.stringify(m);
   // Secrets belong in host secret stores, never in manifests or browser bundles.
-  const secretField = /"(?:api[_-]?key|client[_-]?secret|access[_-]?token|refresh[_-]?token|private[_-]?key)"\\s*:\\s*"(?!\\s*$)[^"]+/i;
+  const secretField = /"(?:api[_-]?key|client[_-]?secret|access[_-]?token|refresh[_-]?token|private[_-]?key)"\s*:\s*"(?!")/i;
   need(!secretField.test(serialized), 'manifest must not contain credential values; use provider/host secret storage');
 
   return errors.length ? fail(errors) : { ok: true, errors: [] };
 }
 
-if (process.argv[1] && import.meta.url === new URL('file://' + resolve(process.argv[1])).href) {
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const file = process.argv[2];
   if (!file) {
     console.error('Usage: node scripts/validate-manifest.mjs <manifest.json>');
