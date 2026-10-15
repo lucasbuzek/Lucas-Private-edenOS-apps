@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 import { spawnSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
-import { dirname, isAbsolute, resolve, sep } from 'node:path';
-import { fileURLToPath, pathToFileURL } from 'node:url';
+import { isAbsolute, resolve, sep } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { validateManifest } from './validate-manifest.mjs';
 
 export function resolveInside(root, relative) {
-  if (typeof relative !== 'string' || !relative.trim() || isAbsolute(relative) || relative.includes('..') || relative.includes('\\\\')) {
+  if (typeof relative !== 'string' || !relative.trim() || isAbsolute(relative) || relative.includes('..') || relative.includes('\\')) {
     throw new Error('Path must be a safe relative path');
   }
   const base = resolve(root);
