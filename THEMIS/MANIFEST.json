@@ -91,8 +91,8 @@
     },
     {
       "path": "#common files/project documentation/THEMIS_RECONCILED_CANON.txt",
-      "sha256": "1b5f66d4c1e54e643e2eceea302b2993ff6e3bca820ab6932552621ddb11ce65",
-      "bytes": 2133
+      "sha256": "9e5d586b23098f7955ad72b4edde9b8078b311b2b5c55b826de85c9f343b668f",
+      "bytes": 2126
     },
     {
       "path": "#common files/prompts/CLAUSE_v1.0.txt",
@@ -161,22 +161,22 @@
     },
     {
       "path": "README.md",
-      "sha256": "7ebbebcc90802dc52594d9eb385bcc52bc0590cb77e2e70c5f77ed07f997eca6",
-      "bytes": 1454
+      "sha256": "0c383ae5f9d9d3809fcaff97271e88b775444e8fdcdf06f271af1b6fd775e1a3",
+      "bytes": 1447
     },
     {
       "path": "THEMIS_PRODUCT_DESCRIPTION.docx",
-      "sha256": "c64c70458c4d84600173c4fa1aa57b50582f87181b768cb86f5fd6f71d0a7def",
-      "bytes": 7161
+      "sha256": "6477589e9662f0127a3564fa6143669ebd4e838ca3334acf6071307f5b894c86",
+      "bytes": 7192
     },
     {
       "path": "THEMIS_PRODUCT_DESCRIPTION.html",
-      "sha256": "1a2d0df3689af0eb045508e1ecdfa7a430fab8f4afa185ef11649cddf1287044",
-      "bytes": 9512
+      "sha256": "67f611fcbb7d79a019722ddd269b0ef14552037b1626f4a88631bb2ce1e6072d",
+      "bytes": 9589
     },
     {
       "path": "THEMIS_PRODUCT_GUIDE.docx",
-      "sha256": "4b8006540b498adde9c82da35d0b69ee3de98e474b8b49ee4b2f51dc887f3aa8",
+      "sha256": "d0a0500e08f18a6f447987de46b7356ba884492b8cd6c174c1baf043d36a2650",
       "bytes": 7169
     },
     {
@@ -185,7 +185,7 @@
       "bytes": 10135
     },
     {
-      "path": "in-chat/THEMIS_MASTER_v1.0.txt",
+      "path": "in-chat/THEMIS_v1.0.txt",
       "sha256": "948fe0e3a425e1135105f1c17064eb93bc9fe82ad049e92c3da4801593ba0c9a",
       "bytes": 3489
     },

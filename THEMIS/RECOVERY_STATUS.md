@@ -3,7 +3,7 @@
 Canonical ID: THEMIS. Domain: legal application. Profile: Lucas Private / Experimental.
 
 ## Recovered canonical prompts
-- Historical master helper prompt v1.0 recovered and preserved at THEMIS/in-chat/THEMIS_MASTER_v1.0.txt.
+- Historical master helper prompt v1.0 recovered and preserved at THEMIS/in-chat/THEMIS_v1.0.txt.
 - All seven subordinate v1.0 contracts recovered under THEMIS/#common files/prompts/: COVENANT, CLAUSE, OBLIGO, JURIS, LEXICON, MANDATE and COMPLY.
 - Prompt files were byte-compared against the recovered source archive before synchronization.
 

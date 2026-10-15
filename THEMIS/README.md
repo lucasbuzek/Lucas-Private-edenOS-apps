@@ -8,7 +8,7 @@ THEMIS is the EDEN legal-domain application and master legal helper. This workin
 - Self-test: python3.12 tests/test_themis.py (requires Python 3.10+ per the package release record)
 - Default local database: data/themis.json
 - Snapshots: data/snapshots/ when using the default database path
-- Canonical master prompt: in-chat/THEMIS_MASTER_v1.0.txt
+- Canonical master prompt: in-chat/THEMIS_v1.0.txt
 - Subordinate prompts: #common files/prompts/
 - User documentation: THEMIS_PRODUCT_DESCRIPTION and THEMIS_PRODUCT_GUIDE in DOCX and HTML.
 

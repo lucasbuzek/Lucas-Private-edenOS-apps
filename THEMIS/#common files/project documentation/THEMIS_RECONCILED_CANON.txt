@@ -37,7 +37,7 @@ Boundary:
 CLASSIFICATION: OPEN HISTORICAL FIELDS
 Expanded Name: Trusted Handling, Evaluation, Matters, Interpretation & Safeguards (recovered from historical v1.0 master prompt)
 Symbol: UNKNOWN / NOT RECOVERED
-Exact historical purpose wording: recovered in in-chat/THEMIS_MASTER_v1.0.txt
+Exact historical purpose wording: recovered in in-chat/THEMIS_v1.0.txt
 Exact historical mapping of each subordinate identity to functions/contracts: recovered in #common files/prompts/*_v1.0.txt
 Historical provider list and provider-specific adapters: NOT RECOVERED
 Historical source/package lineage before this recovered baseline: NOT RECOVERED
