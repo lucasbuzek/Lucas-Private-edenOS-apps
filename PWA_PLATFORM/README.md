@@ -9,6 +9,7 @@ Provide one reusable deployment contract for standalone browser PWAs derived fro
 ## Current implementation
 
 - `scripts/validate-manifest.mjs` validates the shared deployment manifest.
+- `scripts/deploy.mjs` installs dependencies, runs app tests, builds the standalone PWA, verifies expected output and runs the hosted-login browser smoke test. With `--publish-preview`, it publishes a non-production Netlify or Cloudflare Pages preview and reruns the auth smoke test against that URL.
 - `intelligence/core.mjs` provides authenticated app-aware provider routing, app-owned prompts, explicit provider choice and no silent fallback.
 - `intelligence/worker.mjs` exposes a no-store HTTP endpoint that requires a verified principal from a hosting-specific authentication adapter.
 - `intelligence/providers.mjs` provides server-side Cloudflare Workers AI and optional Gemini adapters; provider credentials never belong in the PWA bundle.
@@ -16,7 +17,7 @@ Provide one reusable deployment contract for standalone browser PWAs derived fro
 - Tests cover manifest policy, cross-app authorization, provider failure, secret separation, body limits and provider request normalization.
 - Run with Node 20+: `npm test` and `npm run validate`.
 
-This candidate is a contract/validation foundation, not yet an automatic deployer. No live deployment, identity provider, database isolation, or model route is certified by a valid manifest.
+This is an isolated deployment candidate, not a release. Example preflight: `node scripts/deploy.mjs --manifest examples/hermes.manifest.json --app-root /path/to/HERMES`. To publish a preview, add `--publish-preview`; this requires the corresponding host CLI credentials and a working app-specific browser-auth smoke test. Production promotion is deliberately excluded. No live deployment, identity provider, database isolation, or model route is certified by a valid manifest.
 
 ## Hosted authentication
 
