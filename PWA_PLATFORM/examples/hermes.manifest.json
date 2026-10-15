@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "app": {
+    "id": "hermes",
+    "name": "HERMES",
+    "version": "1.2.0",
+    "standalone": true
+  },
+  "source": {
+    "repository": "https://github.com/lucasbuzek/HERMES",
+    "buildCommand": "npm run build",
+    "outputDirectory": "web/dist"
+  },
+  "deployment": {
+    "provider": "netlify",
+    "siteUrl": "",
+    "auth": {
+      "required": true,
+      "provider": "supabase",
+      "publicClientConfigRequired": true,
+      "serverSideAuthorizationRequired": true
+    }
+  },
+  "intelligence": {
+    "mode": "shared-core-adapter",
+    "endpoint": "",
+    "paidApiDependency": false,
+    "providers": ["workers-ai", "gemini-free-tier", "local", "user-connected"],
+    "fallbackPolicy": "explicit-status-no-silent-provider-switch"
+  },
+  "data": {
+    "domainAuthority": "HERMES",
+    "ownership": "app-owned",
+    "migration": "preserve-existing-data",
+    "crossUserIsolationRequired": true
+  }
+}
