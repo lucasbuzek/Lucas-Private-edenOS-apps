@@ -8,8 +8,22 @@
   },
   "source": {
     "repository": "https://github.com/lucasbuzek/HERMES",
-    "buildCommand": "npm run build",
-    "outputDirectory": "web/dist"
+    "buildCommand": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "outputDirectory": "dist",
+    "projectDirectory": "web",
+    "testCommand": [
+      "npm",
+      "test"
+    ],
+    "authVerificationCommand": [
+      "npm",
+      "run",
+      "test:hosted-auth"
+    ]
   },
   "deployment": {
     "provider": "netlify",
@@ -25,7 +39,12 @@
     "mode": "shared-core-adapter",
     "endpoint": "",
     "paidApiDependency": false,
-    "providers": ["workers-ai", "gemini-free-tier", "local", "user-connected"],
+    "providers": [
+      "workers-ai",
+      "gemini-free-tier",
+      "local",
+      "user-connected"
+    ],
     "fallbackPolicy": "explicit-status-no-silent-provider-switch"
   },
   "data": {
