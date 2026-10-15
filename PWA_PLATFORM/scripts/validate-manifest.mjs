@@ -25,6 +25,7 @@ export function validateManifest(m) {
   need(typeof m.source?.repository === 'string' && /^https:\/\//.test(m.source.repository), 'source.repository must be an HTTPS URL');
   const validCommand = value => Array.isArray(value) && value.length > 0 && value.every(part => typeof part === 'string' && part.trim().length > 0);
   need(typeof m.source?.projectDirectory === 'string' && m.source.projectDirectory.trim().length > 0, 'source.projectDirectory is required');
+  need(validCommand(m.source?.installCommand), 'source.installCommand must be an argv array');
   need(validCommand(m.source?.buildCommand), 'source.buildCommand must be an argv array; shell commands are not accepted');
   need(validCommand(m.source?.testCommand), 'source.testCommand must be an argv array');
   need(validCommand(m.source?.authVerificationCommand), 'source.authVerificationCommand must be an argv array and verify the hosted login gate');
