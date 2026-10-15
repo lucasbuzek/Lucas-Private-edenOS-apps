@@ -28,7 +28,7 @@ export function validateManifest(m) {
   need(validCommand(m.source?.buildCommand), 'source.buildCommand must be an argv array; shell commands are not accepted');
   need(validCommand(m.source?.testCommand), 'source.testCommand must be an argv array');
   need(validCommand(m.source?.authVerificationCommand), 'source.authVerificationCommand must be an argv array and verify the hosted login gate');
-  need(typeof m.source?.outputDirectory === 'string' && m.source.outputDirectory.trim().length > 0 && !m.source.outputDirectory.startsWith('/') && !m.source.outputDirectory.includes('..') && !m.source.outputDirectory.includes('\\\\'), 'source.outputDirectory must be a safe relative path');
+  need(typeof m.source?.outputDirectory === 'string' && m.source.outputDirectory.trim().length > 0 && !m.source.outputDirectory.startsWith('/') && !m.source.outputDirectory.includes('..') && !m.source.outputDirectory.includes('\\'), 'source.outputDirectory must be a safe relative path');
 
   need(HOSTS.has(m.deployment?.provider), 'deployment.provider must be netlify or cloudflare-pages');
   need(typeof m.deployment?.siteUrl === 'string', 'deployment.siteUrl must be a string (empty is allowed before deployment)');
