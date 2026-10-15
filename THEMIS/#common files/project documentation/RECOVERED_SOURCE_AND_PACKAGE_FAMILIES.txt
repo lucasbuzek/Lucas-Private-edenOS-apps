@@ -1,0 +1,7 @@
+RECOVERED SOURCE AND PACKAGE FAMILIES
+
+1. Historical THEMIS legal-helper prompt family v1.0 — RECOVERED from MONETA_THEMIS_Helper_Ecosystem_v1.0. Includes master prompt, seven legal specialist prompts, shared core, registry, instructions, quickstart and acceptance tests.
+2. Current AppDev identity authority — establishes THEMIS as the legal-domain App and the seven subordinate identities.
+3. THEMIS private experimental/convergence baseline v0.1.0 — RECOVERED implementation source, tests, integration descriptors and implementation evidence. This baseline does not claim full historical parity.
+
+Unresolved: original owning chat; older implementation/release lineage; historical provider adapters and UI; separate platform implementations. No incompatible code families were silently merged.

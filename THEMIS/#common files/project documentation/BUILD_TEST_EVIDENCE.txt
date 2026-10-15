@@ -1,0 +1,44 @@
+BUILD / TEST EVIDENCE
+Date: 2026-09-25
+Python: 3.13.5
+Syntax compile exit: 0
+Self-test exit: 0
+Self-test output: PASS: THEMIS domain store + all supported record kinds + snapshot/LKG/rollback
+Compile stderr: Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+Test stderr: Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+
+Status:
+COMPILED: PASS
+TESTED: PASS
+VERIFIED: PASS
+
+
+WORKING COPY VALIDATION — 2026-10-15
+Environment: macOS MacBook; /opt/homebrew/bin/python3.12 reports Python 3.12.4. The shell default python3 reports 3.9.4 and is unsupported for this package.
+Syntax compilation: PASS (src/themis/__init__.py, cli.py, store.py, tests/test_themis.py using Python 3.12.4).
+Unit/self-test: PASS — all 12 record kinds, persistence, snapshots, LKG and rollback.
+CLI help: PASS — add, list, snapshot, rollback-lkg shown.
+Isolated end-to-end CLI test: PASS — add/list, create LKG, add a second record, rollback and verify the database returns to the one-record state.
+DOCX package validation: PASS — both DOCX ZIP packages intact, Word document XML parses, Heading1/2/3 and Title styles present, tables and contents section present.
+DOCX rendering: PASS — both documents opened/exported through Apple Pages to PDF; title page, contents, and content/table pages rendered and visually inspected. Table header contrast and record-kind column rendering were corrected after inspection.
+HTML syntax: PASS — both HTML documents parsed with Python HTMLParser.
+HTML preview: PASS — Quick Look HTML previews generated and visually inspected. Safari opened the guide; direct DOM inspection was SKIPPED because Safari's “Allow JavaScript from Apple Events” setting is disabled.
+Release status remains NOT RELEASED. These checks validate the local working copy, not a public release or cross-platform parity.

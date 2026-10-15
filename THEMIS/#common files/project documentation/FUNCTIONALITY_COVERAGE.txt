@@ -1,0 +1,27 @@
+FUNCTIONALITY_COVERAGE
+
+SUPPORTED + IMPLEMENTED — LOCAL PYTHON BASELINE
+- Legal-domain object persistence: PASS.
+- Twelve record kinds: PASS.
+- Provenance and event history: PASS.
+- Snapshots, LKG and rollback: PASS.
+- Local/offline operation: PASS.
+- CLI add/list/snapshot/rollback-lkg: PASS.
+- Syntax compilation, self-test and isolated end-to-end CLI: PASS on Python 3.12.4.
+
+SUPPORTED AS CANONICAL PROMPT DEFINITIONS — NOT SEPARATE EXECUTABLE SERVICES
+- THEMIS master helper v1.0: RECOVERED.
+- COVENANT, CLAUSE, OBLIGO, JURIS, LEXICON, MANDATE, COMPLY v1.0: RECOVERED.
+- Shared Core and acceptance tests v1.0: RECOVERED.
+
+DESCRIPTOR-ONLY INTEGRATION
+- BIFROST: descriptor/contract; no mandatory runtime dependency.
+- HEIMDALL: representation descriptor.
+- CONDUCTOR/shared capability: request/response envelope descriptor.
+
+STILL UNRESOLVED
+- Historical UI and proof of live LCAS host integration.
+- Historical provider list and provider-specific runtime adapters.
+- Historical package compatibility and full version/release lineage.
+- Historical production LKG.
+- Separate platform builds and deployment verification.

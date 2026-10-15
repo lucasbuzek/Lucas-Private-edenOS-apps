@@ -1,0 +1,3 @@
+NEXT ACTION
+Use this v0.1.0 package as the recoverable convergence baseline.
+When older THEMIS source/packages become available: inventory → hash → classify → compare against this baseline → reuse compatible components → preserve incompatible lineage → test → promote only with evidence.

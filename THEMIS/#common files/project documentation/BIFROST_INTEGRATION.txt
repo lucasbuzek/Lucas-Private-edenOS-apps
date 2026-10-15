@@ -1,0 +1,4 @@
+BIFROST INTEGRATION
+THEMIS exposes its identity, version, capabilities, representation and health through integration/bifrost_manifest.json.
+BIFROST may register/discover/connect/synchronize/package THEMIS but is not a mandatory runtime dependency.
+THEMIS retains legal-domain authority; BIFROST retains generic identity, registry, provenance, provider/connection, interoperability and package/update authority.

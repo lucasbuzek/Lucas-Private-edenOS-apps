@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "finance": {
+    "MONETA": "Monetary Operations, Navigation, Evaluation, Treasury & Accounting",
+    "LEDGER": "Ledger Evaluation, Double-entry Governance, Entries & Reconciliation",
+    "MERCURY": "Monetary Entry Recognition, Classification, Understanding & Reconciliation Yield",
+    "ALLOCATE": "Allocation, Limits, Line-items, Objectives, Controls, Actuals, Tracking & Evaluation",
+    "VAULT": "Value, Accounts, Utilization, Liquidity & Treasury",
+    "MARGIN": "Margin Analysis, Resource, Gross-cost & Investment Navigation",
+    "SCRIBE": "Statements, Consolidation, Reporting, Interpretation, Balances & Evaluation",
+    "PATRON": "Planning, Allocation, Requirements, Terms, Opportunities & Needs",
+    "RECEIPT": "Record Extraction, Classification, Evidence, Invoice Processing & Traceability",
+    "TRIBUTE": "Tax Records, Information, Bundling, Uncertainty, Traceability & Evidence"
+  },
+  "legal": {
+    "THEMIS": "Trusted Handling, Evaluation, Matters, Interpretation & Safeguards",
+    "COVENANT": "Contract Operations, Verification, Evaluation, Negotiation, Analysis, Notice & Terms",
+    "CLAUSE": "Clause-Level Legal Analysis, Understanding, Structure & Evaluation",
+    "OBLIGO": "Obligations, Benefits, Liabilities, Interests, Governance & Outcomes",
+    "JURIS": "Jurisdiction Understanding, Rules, Interpretation & Scope",
+    "LEXICON": "Legal Extraction, Cross-reference, Interpretation, Concepts, Ontology & Normalization",
+    "MANDATE": "Matter Analysis, Notices, Duties, Actions, Terms & Escalations",
+    "COMPLY": "Compliance Mapping, Obligations, Policies, Laws & Yield"
+  },
+  "delegated": {
+    "BIFROST": "canonical identity, relationships, provenance, audit/integrity, interoperability",
+    "CHRONOS": "persistent temporal structure, schedules, deadlines, periods, horizons, temporal scenarios",
+    "ORACLE": "generalized quantitative analytics, modelling, simulation, sensitivity, visualization",
+    "CONDUCTOR": "orchestration/routing/workflow composition",
+    "LCAS": "control/activity/status",
+    "ARGOS": "external research/evidence",
+    "CASPER": "authoring",
+    "MIRROR": "comparison/version review",
+    "READ": "audience review",
+    "LINGUA": "translation/localization",
+    "FORGE": "implementation"
+  }
+}

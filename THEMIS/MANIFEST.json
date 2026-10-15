@@ -1,0 +1,228 @@
+{
+  "package": "THEMIS_PRIVATE_LUCAS_EXPERIMENTAL_v0.1.0",
+  "canonical_working_copy": "/Users/lucas/edenOS/Software Development/THEMIS",
+  "canonical_identity": "THEMIS",
+  "domain": "legal",
+  "profile": "PRIVATE — Lucas",
+  "lifecycle": "EXPERIMENTAL",
+  "release_state": "NOT RELEASED",
+  "manifest_scope": "Current organized working tree; hashes cover all files except this manifest itself. OS-generated .DS_Store metadata is excluded.",
+  "recovered_sources": [
+    {
+      "role": "historical_helper_archive",
+      "filename": "MONETA_THEMIS_Helper_Ecosystem_v1.0.zip",
+      "original_path": "/Users/lucas/edenOS/EDEN_FULL_RECOVERY_2026-10-09/entities/specialist_THEMIS/recovered_sources/MONETA_THEMIS_Helper_Ecosystem_v1.0.zip",
+      "sha256": "a4e1aa2198567adb41536e443f048e3de46d783541abc76ec7a9b74180bb94bc",
+      "bytes": 40549
+    },
+    {
+      "role": "implementation_archive",
+      "filename": "THEMIS_PRIVATE_LUCAS_EXPERIMENTAL_v0.1.0.zip",
+      "original_path": "/Users/lucas/edenOS/EDEN_FULL_RECOVERY_2026-10-09/entities/specialist_THEMIS/recovered_sources/THEMIS_PRIVATE_LUCAS_EXPERIMENTAL_v0.1.0.zip",
+      "sha256": "a70d0ddf15c46de6afeefbc912fcd1ce71616256f8b4812ddc43fd7f2aed65df",
+      "bytes": 15254
+    }
+  ],
+  "files": [
+    {
+      "path": "#common files/project documentation/AppReleaseRecord.txt",
+      "sha256": "4e03edb96cd2c6a93fbd20ee640db9879b5f04e5ea3333aecd30dba993047807",
+      "bytes": 348
+    },
+    {
+      "path": "#common files/project documentation/BIFROST_INTEGRATION.txt",
+      "sha256": "c73a2de71e6aeb3e24135cad54e700b89ca947d8a8fc5d48be59d96e297699f1",
+      "bytes": 412
+    },
+    {
+      "path": "#common files/project documentation/BLOCKERS.txt",
+      "sha256": "16414600386f3636f7f4de6ecac3ec0e3b883acff9933807de88266fcd9e32e3",
+      "bytes": 612
+    },
+    {
+      "path": "#common files/project documentation/BUILD_TEST_EVIDENCE.txt",
+      "sha256": "6790f454c991a6aa2758526c1af90d694cd7c068ad42d8c838545dbc161c397b",
+      "bytes": 3871
+    },
+    {
+      "path": "#common files/project documentation/CONDUCTOR_SHARED_CAPABILITY_INTERFACES.txt",
+      "sha256": "17bbd3265cc64fe28a221a74c4b4d765f22700a94b64fc585aec22d5f1342fe3",
+      "bytes": 358
+    },
+    {
+      "path": "#common files/project documentation/FUNCTIONALITY_COVERAGE.txt",
+      "sha256": "e7f6722cc7d333c6f9ea012ef393d0afb5e85e37f23931e160fb67a29f85573b",
+      "bytes": 1127
+    },
+    {
+      "path": "#common files/project documentation/HEIMDALL_COMPOSABILITY.txt",
+      "sha256": "dde2e4ec3c8c3fd721857cd4f3cd8ab5988fd7368c9d4136265da4ed0c63d259",
+      "bytes": 295
+    },
+    {
+      "path": "#common files/project documentation/IMPLEMENTATION_INVENTORY.txt",
+      "sha256": "f19786bc51ed614409ac8067b13daf62003ff8757875a546ed462d1e64012a99",
+      "bytes": 1181
+    },
+    {
+      "path": "#common files/project documentation/LKG_ROLLBACK.txt",
+      "sha256": "33d99783108a53a3a2329ec7b3450e75503464f658595d4142ef74bbe72d3ae9",
+      "bytes": 490
+    },
+    {
+      "path": "#common files/project documentation/NEXT_ACTION.txt",
+      "sha256": "d363500d49b28cf0204351c49c93977170e0a6dd22c09ad55499247f249498f8",
+      "bytes": 302
+    },
+    {
+      "path": "#common files/project documentation/RECOVERED_SOURCE_AND_PACKAGE_FAMILIES.txt",
+      "sha256": "4830cf2c965b5df10f5ae93466c2c25fd95e1f90139cc977b0cd6e4406ce4bcc",
+      "bytes": 802
+    },
+    {
+      "path": "#common files/project documentation/RECOVERY_PENDING.txt",
+      "sha256": "356865a6d5c8a9af2d038967349ba01702ce112ff31e732f53211c83ed0a80ea",
+      "bytes": 877
+    },
+    {
+      "path": "#common files/project documentation/RegistryContribution.txt",
+      "sha256": "1dc0268f07007b503c713fd70ea573e0de3b4459e1903bef6157e54e5adaa237",
+      "bytes": 3105
+    },
+    {
+      "path": "#common files/project documentation/THEMIS_RECONCILED_CANON.txt",
+      "sha256": "1b5f66d4c1e54e643e2eceea302b2993ff6e3bca820ab6932552621ddb11ce65",
+      "bytes": 2133
+    },
+    {
+      "path": "#common files/prompts/CLAUSE_v1.0.txt",
+      "sha256": "aa6b9b0ad1130806d380a1667f9991aaabb0ce5ca38da92e4d93eec4716ccf70",
+      "bytes": 3206
+    },
+    {
+      "path": "#common files/prompts/COMPLY_v1.0.txt",
+      "sha256": "f10d066f9a46d0e9c32d6e6529492a5c12e51496f64cbaa0ddde65548d619e51",
+      "bytes": 3213
+    },
+    {
+      "path": "#common files/prompts/COVENANT_v1.0.txt",
+      "sha256": "0fbe5cfd4b171664c60afbcf10459a34e7e72d3d79e5ac1688dba468cf05690c",
+      "bytes": 3286
+    },
+    {
+      "path": "#common files/prompts/JURIS_v1.0.txt",
+      "sha256": "44f6f15140d57f592cd66d2705bece929a06eae8e49931811a71f193c6ae194a",
+      "bytes": 3285
+    },
+    {
+      "path": "#common files/prompts/LEXICON_v1.0.txt",
+      "sha256": "fde4517de251831bf7786d4dc21d153f133b1c7f482c2eca342817fa6b676d98",
+      "bytes": 3200
+    },
+    {
+      "path": "#common files/prompts/MANDATE_v1.0.txt",
+      "sha256": "02eb8165e171d04900e2ca5dbabb89c3cb6a16deb1d282079d151109a6ef92b2",
+      "bytes": 3197
+    },
+    {
+      "path": "#common files/prompts/OBLIGO_v1.0.txt",
+      "sha256": "f06da7f229e09641fd52a4b8ca894802398a83837abfa3d4a8e535a751e6f921",
+      "bytes": 3237
+    },
+    {
+      "path": "#common files/references/ECOSYSTEM_INSTRUCTIONS_v1.0.txt",
+      "sha256": "3ed0955a602cfe08fd275e88e7c3304bbd0fd7fef44c74ed02cb9d65a1bcb4fa",
+      "bytes": 1234
+    },
+    {
+      "path": "#common files/references/ECOSYSTEM_PACKAGE_MANIFEST_v1.0.txt",
+      "sha256": "20b96a7c18f01c4b6bf4a64a88bd2e5975c619c650aa50b729d689493dfc99ae",
+      "bytes": 337
+    },
+    {
+      "path": "#common files/references/ECOSYSTEM_QUICKSTART_v1.0.txt",
+      "sha256": "ba62bac812d6dfa5facfed7e210fa533c12ee38b001b643049184d9c9a1ae8e2",
+      "bytes": 690
+    },
+    {
+      "path": "#common files/references/HELPER_REGISTRY_v1.0.json",
+      "sha256": "1677c655fdcdbebef1295a5bf8e1181073b2bf5a5396f5e0f88321925d6f9a51",
+      "bytes": 2281
+    },
+    {
+      "path": "#common files/references/SHARED_CORE_v1.0.txt",
+      "sha256": "fab102f9af3165e377f9f694b0cd03a6a5b72f802d5f49d2447b196d27939c42",
+      "bytes": 4256
+    },
+    {
+      "path": "#common files/shared assets/ACCEPTANCE_TESTS_v1.0.txt",
+      "sha256": "e689132e22f74ece05e43c320149631202f83d3c98de67f045dd119aa45fe8b2",
+      "bytes": 960
+    },
+    {
+      "path": "README.md",
+      "sha256": "7ebbebcc90802dc52594d9eb385bcc52bc0590cb77e2e70c5f77ed07f997eca6",
+      "bytes": 1454
+    },
+    {
+      "path": "THEMIS_PRODUCT_DESCRIPTION.docx",
+      "sha256": "c64c70458c4d84600173c4fa1aa57b50582f87181b768cb86f5fd6f71d0a7def",
+      "bytes": 7161
+    },
+    {
+      "path": "THEMIS_PRODUCT_DESCRIPTION.html",
+      "sha256": "1a2d0df3689af0eb045508e1ecdfa7a430fab8f4afa185ef11649cddf1287044",
+      "bytes": 9512
+    },
+    {
+      "path": "THEMIS_PRODUCT_GUIDE.docx",
+      "sha256": "4b8006540b498adde9c82da35d0b69ee3de98e474b8b49ee4b2f51dc887f3aa8",
+      "bytes": 7169
+    },
+    {
+      "path": "THEMIS_PRODUCT_GUIDE.html",
+      "sha256": "1fef88ad288b2a1f4b550d56800822bf0506395ab0136a4e4c6c34cc4a47512a",
+      "bytes": 10135
+    },
+    {
+      "path": "in-chat/THEMIS_MASTER_v1.0.txt",
+      "sha256": "948fe0e3a425e1135105f1c17064eb93bc9fe82ad049e92c3da4801593ba0c9a",
+      "bytes": 3489
+    },
+    {
+      "path": "integration/bifrost_manifest.json",
+      "sha256": "9e9fb441329a7d65212980d2a0f541edc0b6a8026576fbbe735449200ef7ef92",
+      "bytes": 341
+    },
+    {
+      "path": "integration/heimdall_representation.json",
+      "sha256": "f2306537c11aef0e6668e473621f8c02e2a61a475db025f14d623ee597fc3bb3",
+      "bytes": 279
+    },
+    {
+      "path": "integration/shared_capability_contract.json",
+      "sha256": "2775f32a4c12f3a07924bc2e237b4e914025e1376b773f478611baef61e78de6",
+      "bytes": 271
+    },
+    {
+      "path": "src/themis/__init__.py",
+      "sha256": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+      "bytes": 22
+    },
+    {
+      "path": "src/themis/cli.py",
+      "sha256": "743787753a84d3462d06a5600c1d1eed4dc2fdb560542791cab9a3b79c38fef6",
+      "bytes": 1035
+    },
+    {
+      "path": "src/themis/store.py",
+      "sha256": "3c9fa1aca8445c1dd7bf13b64897cb2c8b888feebb83aa3d9c5cead2ff662e13",
+      "bytes": 3171
+    },
+    {
+      "path": "tests/test_themis.py",
+      "sha256": "6a82c59ca681b11020cbd31d391764bb1bb20d95c4ad589519b67dda8aec82d8",
+      "bytes": 710
+    }
+  ]
+}

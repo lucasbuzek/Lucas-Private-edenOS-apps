@@ -1,0 +1,12 @@
+BLOCKERS
+
+No blocker prevents use or validation of the evidence-supported local experimental baseline.
+
+Open recovery/verification gaps:
+- Original owning THEMIS chat and older package lineage.
+- Historical production release/LKG.
+- Historical UI and live LCAS integration.
+- Historical provider-specific adapters and separate platform builds.
+- Full historical compatibility/parity is not established.
+
+The historical master prompt and all seven subordinate prompt contracts have now been recovered. This resolves the earlier missing-definition blocker but does not prove corresponding executable integrations.

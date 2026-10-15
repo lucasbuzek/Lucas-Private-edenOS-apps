@@ -1,0 +1,14 @@
+{
+  "request": {
+    "capability": "string",
+    "input": "object",
+    "context": "object",
+    "provenance": "object"
+  },
+  "response": {
+    "status": "PASS|FAIL|UNKNOWN",
+    "output": "object",
+    "evidence": "object"
+  },
+  "conductor_runtime_dependency": false
+}

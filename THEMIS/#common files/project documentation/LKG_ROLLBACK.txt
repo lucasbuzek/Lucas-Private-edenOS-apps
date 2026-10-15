@@ -1,0 +1,8 @@
+LKG / ROLLBACK
+
+The v0.1.0 runtime supports explicit snapshots, setting an LKG snapshot, and hash-checked rollback. The local self-test and isolated end-to-end CLI test pass on Python 3.12.4.
+
+Initial packaged data is empty. No historical THEMIS production LKG or released artifact was recovered.
+Historical LKG: UNKNOWN / NOT RECOVERED.
+Current package rollback mechanism: IMPLEMENTED AND TESTED.
+Do not label the experimental v0.1.0 baseline as a released or historical known-good build.

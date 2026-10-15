@@ -1,0 +1,10 @@
+APP RELEASE RECORD
+App: THEMIS
+Version: 0.1.0
+Profile: PRIVATE — Lucas
+Lifecycle: EXPERIMENTAL
+Date: 2026-09-25
+Artifact state: GENERATED / SAVED / COMPILED / TESTED / VERIFIED
+Release state: NOT RELEASED
+Compatibility: Python 3.10+; stdlib-only; local/offline.
+Authority note: this version does not claim unrecovered historical identity fields.

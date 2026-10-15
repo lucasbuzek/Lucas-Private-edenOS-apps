@@ -1,0 +1,26 @@
+MONETA + THEMIS HELPER ECOSYSTEM — INSTRUCTIONS — v1.0
+
+PURPOSE
+Reusable HERMES-level Finance and Legal Helper families. Each named specialist can operate independently,
+as a module of its master Helper, embedded in an application, called by another capability, or orchestrated
+by CONDUCTOR.
+
+PERSISTENT UI
+All prompts include LCAS FULL. LCAS observes/control/status; it does not replace CONDUCTOR.
+
+NAMING
+MONETA is the working master Finance identity.
+THEMIS is the working master Legal identity.
+Subordinate names are functional acronyms and are versioned separately.
+AEGIS and JANUS are intentionally absent: their proposed responsibilities were deduplicated into BIFROST
+and CHRONOS respectively.
+
+PACKAGE USE
+Load SHARED/SHARED_CORE_v1.0.txt plus the master Helper prompt.
+Load subordinate prompts on demand. Do not concatenate every specialist into every task.
+For a direct specialist task, load Shared Core + that specialist.
+For cross-domain work, use CONDUCTOR and explicit handoff contracts.
+
+SAFETY
+Analysis is not authorization. External financial actions, legal filings/submissions, irreversible changes,
+publishing and other consequential external actions require explicit authorization and appropriate mechanisms.

@@ -1,0 +1,4 @@
+CONDUCTOR / SHARED-CAPABILITY INTERFACES
+CONDUCTOR may request THEMIS capabilities through a generic request envelope; it is not a runtime dependency.
+Shared-capability rule: cross-App generic capabilities should be independently consumable where practical.
+This package defines contracts only where supported and does not invent provider-specific adapters.

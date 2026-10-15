@@ -1,0 +1,73 @@
+REGISTRY CONTRIBUTION
+
+Canonical ID: THEMIS
+Canonical Name: THEMIS
+Expanded Name: Trusted Handling, Evaluation, Matters, Interpretation & Safeguards (recovered from THEMIS v1.0 prompt)
+Symbol: UNKNOWN / NOT RECOVERED
+Conceptual Identity: Legal-domain application
+Entity Type: Application
+Status: EXPERIMENTAL
+
+Purpose:
+Master legal helper and legal-domain application for documents, matters, contracts, clauses, rights, obligations, compliance questions, legal research framing, drafting requirements and legal risk.
+
+Authoritative Domain:
+Legal-domain meaning/state including matters, parties, agreements, clauses, obligations, jurisdictions, evidence, correspondence, research context, deadlines, versions and approvals/history.
+
+Capabilities:
+Local structured legal-domain records; relationships by identifiers; append-only provenance events; snapshots; LKG/rollback.
+
+Non-Goals / Boundaries:
+Does not own generic EDEN identity/registry/package state, financial meaning, generic chronology, research methodology, orchestration, build/test/package execution, or Workspace composition.
+
+Consumes Shared Capabilities:
+Generic identity/provenance/interoperability where available; research/evidence support; chronology; secure storage/credentials where later integrated.
+
+Provides Shared Capabilities:
+Legal-domain records and legal-domain interpretation interfaces where authorized.
+
+Providers / Integrations:
+BIFROST, HEIMDALL, CONDUCTOR, ARGOS, MONETA, CHRONOS, FORGE — integration boundaries only; exact historical provider adapters RECOVERY_PENDING.
+
+Nodes / Execution Targets:
+Lucas Private baseline; local Python CLI validated with Python 3.12.4 on macOS. Other platform targets UNKNOWN.
+
+Data Authority:
+THEMIS legal-domain state. External/provider source truth remains external unless explicitly imported with provenance.
+
+Parent / Family:
+EDEN/AppDev specialist Application.
+
+Subordinates:
+COVENANT; CLAUSE; OBLIGO; JURIS; LEXICON; MANDATE; COMPLY. Their full v1.0 mission contracts are recovered in #common files/prompts/.
+
+Invoked By:
+Direct user invocation; CONDUCTOR may coordinate. Other historical invokers UNKNOWN.
+
+Integrates With:
+BIFROST; HEIMDALL; CONDUCTOR; ARGOS; MONETA; CHRONOS; FORGE.
+
+Dependencies:
+Python 3.10+ standard library for this implementation. No mandatory BIFROST/HEIMDALL/AI runtime dependency.
+
+Representations:
+Headless/local Python CLI; HEIMDALL representation descriptor. Historical UI and live host representation remain NOT RECOVERED.
+
+Legacy Names / Aliases:
+RECOVERY_PENDING
+Supersedes:
+RECOVERY_PENDING
+Superseded By:
+NONE recovered
+
+Version / Revision:
+0.1.0 recovery/convergence implementation baseline; historical version lineage RECOVERY_PENDING.
+
+Provenance:
+APPDEV master handoff + recovered THEMIS-specific decisions + current recovery directive.
+
+Confidence:
+High for legal-domain identity/subordinate names/boundaries listed as CURRENT; unresolved fields explicitly marked UNKNOWN or NOT RECOVERED.
+
+RECOVERY_PENDING:
+Symbol; historical provider adapters; historical source/package/version/LKG lineage; live UI and separate platform verification.

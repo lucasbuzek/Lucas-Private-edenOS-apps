@@ -1,0 +1,15 @@
+RECOVERY STATUS — THEMIS
+
+RECOVERED
+- Historical THEMIS master helper prompt, v1.0.
+- All seven subordinate helper prompts, v1.0: COVENANT, CLAUSE, OBLIGO, JURIS, LEXICON, MANDATE, COMPLY.
+- Shared Core v1.0, registry, package instructions, quickstart and acceptance tests.
+- Private experimental implementation baseline v0.1.0, source, tests and integration descriptors.
+
+STILL UNRESOLVED
+- Original THEMIS owning chat and earlier source/package lineage before the recovered prompt bundle.
+- Historical provider list and provider-specific runtime adapters.
+- Historical UI implementation and proof of live LCAS surface integration.
+- Separate platform builds, external deployment, and release continuity.
+
+Do not treat prompt definitions as proof that equivalent executable adapters or UI are implemented. The v0.1.0 package remains PRIVATE / EXPERIMENTAL and NOT RELEASED.

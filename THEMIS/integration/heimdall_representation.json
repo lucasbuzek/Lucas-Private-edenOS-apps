@@ -1,0 +1,15 @@
+{
+  "representation_of": "THEMIS",
+  "authority": "THEMIS",
+  "surface_id": "themis.overview",
+  "title": "THEMIS",
+  "sections": [
+    "matters",
+    "agreements",
+    "obligations",
+    "deadlines",
+    "evidence"
+  ],
+  "composable": true,
+  "historical_ui_recovered": false
+}

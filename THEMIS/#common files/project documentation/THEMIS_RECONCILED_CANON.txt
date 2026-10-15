@@ -1,0 +1,50 @@
+THEMIS_RECONCILED_CANON
+Status: PRIVATE — Lucas / EXPERIMENTAL
+Version: 0.1.0 recovery/convergence baseline
+
+CLASSIFICATION: CURRENT
+Canonical ID: THEMIS
+Canonical Name: THEMIS
+Entity Type: Application
+Established domain: Legal domain.
+Established subordinate identities: COVENANT, CLAUSE, OBLIGO, JURIS, LEXICON, MANDATE, COMPLY.
+
+Authoritative legal-domain state recovered from prior THEMIS-specific decisions:
+- matters
+- parties
+- agreements
+- clauses
+- obligations
+- jurisdictions
+- evidence
+- correspondence
+- research context
+- deadlines
+- versions
+- approvals/history
+
+Boundary:
+- THEMIS owns legal-domain meaning, structure and obligations.
+- It does not own generic EDEN identity/registry/package state (BIFROST).
+- It does not own financial meaning (MONETA).
+- It does not own generic date/time capability (CHRONOS).
+- It does not own research/evidence methodology (ARGOS).
+- It does not own orchestration (CONDUCTOR).
+- It does not own build/test/package execution (FORGE).
+- HEIMDALL may compose/present THEMIS without becoming legal-domain authority.
+- Shared capabilities remain independently consumable; BIFROST is not a mandatory runtime gateway.
+
+CLASSIFICATION: OPEN HISTORICAL FIELDS
+Expanded Name: Trusted Handling, Evaluation, Matters, Interpretation & Safeguards (recovered from historical v1.0 master prompt)
+Symbol: UNKNOWN / NOT RECOVERED
+Exact historical purpose wording: recovered in in-chat/THEMIS_MASTER_v1.0.txt
+Exact historical mapping of each subordinate identity to functions/contracts: recovered in #common files/prompts/*_v1.0.txt
+Historical provider list and provider-specific adapters: NOT RECOVERED
+Historical source/package lineage before this recovered baseline: NOT RECOVERED
+
+CLASSIFICATION: PROVENANCE
+APPDEV_MASTER_v1.0_HANDOFF establishes THEMIS as the legal-domain App and preserves the seven subordinate concepts.
+Earlier unavailable/original THEMIS chat remains provenance sought for recovery.
+
+CLASSIFICATION: SUPERSEDED
+Any older universal ownership assignment that makes THEMIS own BIFROST/HEIMDALL/CONDUCTOR/shared platform authority is superseded by current EDEN/AppDev canon.

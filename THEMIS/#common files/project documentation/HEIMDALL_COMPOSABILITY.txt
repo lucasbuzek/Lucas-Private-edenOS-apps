@@ -1,0 +1,4 @@
+HEIMDALL COMPOSABILITY
+integration/heimdall_representation.json defines a composable THEMIS surface.
+HEIMDALL may present matters and related legal-domain records without becoming their authoritative owner.
+No historical THEMIS UI was recovered, so this package does not claim to reproduce one.

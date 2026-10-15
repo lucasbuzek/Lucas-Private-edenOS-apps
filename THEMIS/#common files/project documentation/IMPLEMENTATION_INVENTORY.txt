@@ -1,0 +1,23 @@
+IMPLEMENTATION_INVENTORY
+
+RECOVERED SOURCES
+- Historical THEMIS v1.0 helper prompt family: RECOVERED; master prompt and seven subordinate prompts are preserved in the working tree.
+- Private experimental executable package v0.1.0: RECOVERED; local source, tests and integration descriptors are present.
+- Historical release manifest / last-known-good implementation: NOT RECOVERED. The v0.1.0 package manifest and source archive are preserved; no historical production release is claimed.
+
+IMPLEMENTED IN THE v0.1.0 BASELINE
+- Python standard-library local/offline domain store.
+- JSON persistence and append-only event history.
+- Twelve legal-domain record kinds.
+- Snapshot creation, LKG pointer and hash-checked rollback.
+- CLI commands: add, list, snapshot, rollback-lkg.
+- BIFROST, HEIMDALL and shared-capability descriptors.
+- Deterministic self-test.
+
+TRUTH STATE
+- Historical prompt files: RECOVERED; byte-identical to the extracted source archive.
+- Local source: PRESENT.
+- Syntax compilation: PASS with Python 3.12.4.
+- Unit/self-test: PASS with Python 3.12.4.
+- Isolated CLI end-to-end: PASS.
+- Current public release: NOT RELEASED; private experimental baseline only.

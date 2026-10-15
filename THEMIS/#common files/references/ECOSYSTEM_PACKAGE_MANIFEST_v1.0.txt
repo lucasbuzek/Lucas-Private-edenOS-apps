@@ -1,0 +1,5 @@
+PACKAGE MANIFEST — v1.0
+Canonical package: MONETA + THEMIS Helper Ecosystem
+Purpose: HERMES-level Finance and Legal Helpers with detachable subordinate specialists and LCAS FULL.
+Format: separate TXT prompts + shared registry/tests.
+Status: PROMPT PACKAGE PRODUCED. Runtime integrations/builds are NOT claimed as executed or verified.

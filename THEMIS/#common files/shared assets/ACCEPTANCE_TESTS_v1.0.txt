@@ -1,0 +1,18 @@
+ACCEPTANCE_TESTS — v1.0
+
+FINANCE VERTICAL
+Input: transactions + budget + invoices/receipts + balances + project/business context.
+RECEIPT → MERCURY → LEDGER → ALLOCATE → VAULT → CHRONOS/ORACLE → MONETA → BIFROST → SCRIBE/CASPER.
+Verify FACT/CALCULATION/ASSUMPTION/FORECAST/INTERPRETATION separation, provenance, missing-data handling,
+handoffs, calculations, user correction preservation and audit history.
+
+LEGAL VERTICAL
+Input: agreement + parties + jurisdiction + related evidence.
+LEXICON/CLAUSE → COVENANT → OBLIGO → JURIS/ARGOS → CHRONOS → MONETA where financial →
+BIFROST → THEMIS → CASPER.
+Verify source-clause traceability, jurisdiction/time scope, rights/obligations, dates, uncertainty,
+cross-domain handoffs, approvals and audit history.
+
+LCAS FULL
+Verify truthful lifecycle state, completed/pending work, blockers, handoffs, evidence, artifacts, QA,
+approvals, recommended next action and AUTO-CONTINUE behavior.

@@ -1,0 +1,15 @@
+{
+  "canonical_id": "THEMIS",
+  "version": "0.1.0",
+  "profile": "PRIVATE_LUCAS",
+  "status": "EXPERIMENTAL",
+  "runtime_dependency_on_bifrost": false,
+  "capabilities": [
+    "legal.records",
+    "legal.provenance",
+    "legal.snapshot",
+    "legal.rollback"
+  ],
+  "representation": "headless-python",
+  "authority": "legal-domain state"
+}

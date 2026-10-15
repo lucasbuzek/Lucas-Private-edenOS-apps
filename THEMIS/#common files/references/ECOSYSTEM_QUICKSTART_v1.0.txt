@@ -1,0 +1,21 @@
+MONETA + THEMIS HELPER ECOSYSTEM — QUICKSTART — v1.0
+
+FINANCE
+@MONETA AUTO <financial objective>
+Direct specialists: @LEDGER @MERCURY @ALLOCATE @VAULT @MARGIN @SCRIBE @PATRON @RECEIPT @TRIBUTE
+
+LEGAL
+@THEMIS AUTO <legal objective>
+Direct specialists: @COVENANT @CLAUSE @OBLIGO @JURIS @LEXICON @MANDATE @COMPLY
+
+CONTROL
+@CONDUCTOR AUTO = orchestrate cross-helper workflow.
+@LCAS FULL = persistent complete control/status view.
+
+BOUNDARIES
+BIFROST = provenance/audit/integrity/interoperability.
+CHRONOS = time/periods/deadlines/forecast horizons/temporal scenarios.
+ORACLE = generalized quantitative analytics/modelling.
+ARGOS = research/evidence.
+CASPER = prose.
+FORGE = implementation.
