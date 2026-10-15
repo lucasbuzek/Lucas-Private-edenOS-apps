@@ -23,8 +23,12 @@ export function validateManifest(m) {
   need(m.app?.standalone === true, 'app.standalone must be true');
 
   need(typeof m.source?.repository === 'string' && /^https:\/\//.test(m.source.repository), 'source.repository must be an HTTPS URL');
-  need(typeof m.source?.buildCommand === 'string' && m.source.buildCommand.trim().length > 0, 'source.buildCommand is required');
-  need(typeof m.source?.outputDirectory === 'string' && m.source.outputDirectory.trim().length > 0, 'source.outputDirectory is required');
+  const validCommand = value => Array.isArray(value) && value.length > 0 && value.every(part => typeof part === 'string' && part.trim().length > 0);
+  need(typeof m.source?.projectDirectory === 'string' && m.source.projectDirectory.trim().length > 0, 'source.projectDirectory is required');
+  need(validCommand(m.source?.buildCommand), 'source.buildCommand must be an argv array; shell commands are not accepted');
+  need(validCommand(m.source?.testCommand), 'source.testCommand must be an argv array');
+  need(validCommand(m.source?.authVerificationCommand), 'source.authVerificationCommand must be an argv array and verify the hosted login gate');
+  need(typeof m.source?.outputDirectory === 'string' && m.source.outputDirectory.trim().length > 0 && !m.source.outputDirectory.startsWith('/') && !m.source.outputDirectory.split(/[\\\\/]+/).includes('..'), 'source.outputDirectory must be a safe relative path');
 
   need(HOSTS.has(m.deployment?.provider), 'deployment.provider must be netlify or cloudflare-pages');
   need(typeof m.deployment?.siteUrl === 'string', 'deployment.siteUrl must be a string (empty is allowed before deployment)');
