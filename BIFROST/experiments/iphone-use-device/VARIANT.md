@@ -1,6 +1,6 @@
 # BIFROST variant — iphone-use physical-device adapter
 
-Status: isolated research branch; scaffold only; NOT integrated, installed, built, or tested.
+Status: isolated read-only adapter and mock tests implemented; upstream NOT installed or connected; Mac build and physical acceptance UNKNOWN.
 Base: bifrost/native-consolidated-20261010.
 Upstream candidate: https://github.com/leeguooooo/iphone-use
 
@@ -33,3 +33,10 @@ This is a device-control/test adapter, not BIFROST's AI provider router, cloud c
 
 ## Gate
 Do not integrate until security and license checks pass. Physical-device acceptance is not proven by simulator tests or a successful MCP/API connection.
+
+## Verified source and implementation — 2026-10-16
+- Upstream `LICENSE` and `LICENSING.md`: **PolyForm Shield 1.0.0**, source-available with a noncompetition restriction, not OSI open source. No upstream code copied, vendor binary redistributed or runtime installed. Adoption requires license compatibility determination.
+- `docs/agent-reference.md` documents `GET /agent/status` / MCP `phone_status` fields `device_state`, `drivable`, `human_handoff`, `lock_readiness`; and a strict idle-release / avoid unnecessary reconnect policy.
+- `adapter.py` is a read-only status projection only, omits device identity, never taps/types/reconnects, and cannot authorize a device action.
+- `test_adapter.py`: five mock regressions executed in isolated Python unittest with exact Git blob read-back. Real device and pairing are UNKNOWN.
+- **Next gate:** written license compatibility approval and physical-device/pairing evidence. No installation until then.
