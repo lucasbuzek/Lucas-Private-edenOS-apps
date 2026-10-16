@@ -1,27 +1,39 @@
-"""Read-only MobileCLI devices response adapter. No CLI subprocess or fleet token."""
+"""Read-only MobileCLI/mobilecli WebSocket event adapter (post-auth caller only).
 
-PLATFORMS = frozenset(("ios", "android"))
-STATES = frozenset(("online", "offline"))
+Processes caller-supplied server events; does not connect to a daemon, approve tools,
+start PTYs, or authenticate clients. No session IDs or terminal text leave this module.
+"""
+
+CLI_TYPES = frozenset(("claude", "codex", "gemini", "opencode", "terminal"))
+WAIT_TYPES = frozenset(("tool_approval", "plan_approval", "clarifying_question", "awaiting_response"))
 
 
-def summarize_devices(response):
-    """Summarize the upstream DevicesCommand response without device identifiers."""
-    if not isinstance(response, dict) or response.get("status") != "ok":
-        raise ValueError("MobileCLI response must have status ok")
-    data = response.get("data")
-    if not isinstance(data, dict) or not isinstance(data.get("devices"), list):
-        raise ValueError("MobileCLI devices response missing")
-    items = data["devices"]
-    if len(items) > 100:
-        raise ValueError("too many devices")
-    counts = {"ios": 0, "android": 0, "online": 0, "offline": 0}
-    for item in items:
-        if not isinstance(item, dict):
-            raise ValueError("invalid device")
-        platform, state = item.get("platform"), item.get("state")
-        if platform not in PLATFORMS or state not in STATES:
-            raise ValueError("unsupported device platform or state")
-        counts[platform] += 1
-        counts[state] += 1
-    return {"schema": "bifrost.candidate.mobilecli.v1", "observed": True,
-            "enabled": False, "device_count": len(items), "counts": counts}
+def summarize_sessions(event):
+    """Summarize ServerMessage::Sessions from MobileCLI's Rust protocol."""
+    if not isinstance(event, dict) or event.get("type") != "sessions":
+        raise ValueError("expected MobileCLI sessions event")
+    sessions = event.get("sessions")
+    if not isinstance(sessions, list) or len(sessions) > 100:
+        raise ValueError("invalid sessions collection")
+    cli_counts = {name: 0 for name in sorted(CLI_TYPES)}
+    for session in sessions:
+        if not isinstance(session, dict):
+            raise ValueError("invalid session")
+        cli_type = session.get("cli_type")
+        if cli_type not in CLI_TYPES:
+            raise ValueError("invalid CLI type")
+        cli_counts[cli_type] += 1
+    return {"schema": "bifrost.candidate.mobilecli.v1", "enabled": False,
+            "observation": "unverified", "sessions": len(sessions), "cli_counts": cli_counts}
+
+
+def observe_wait_state(event):
+    """Report wait reason only; never equate an event with an approved action."""
+    if not isinstance(event, dict) or event.get("type") != "waiting_for_input":
+        raise ValueError("expected MobileCLI wait event")
+    reason, cli_type = event.get("wait_type"), event.get("cli_type")
+    if reason not in WAIT_TYPES or cli_type not in CLI_TYPES:
+        raise ValueError("unrecognized wait state")
+    return {"schema": "bifrost.candidate.mobilecli.v1", "enabled": False,
+            "reason": reason, "cli_type": cli_type, "needs_attention": True,
+            "authorization": "none", "execution_status": "unknown"}
