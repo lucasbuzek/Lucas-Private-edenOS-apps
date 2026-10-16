@@ -3,7 +3,7 @@
 import hmac
 import re
 
-CHALLENGE_RE = re.compile(r"[A-Z0-9]{8,16}\\Z")
+CHALLENGE_RE = re.compile(r"[A-Z0-9]{8,16}\Z")
 
 
 def observe_reply(message, challenge):
