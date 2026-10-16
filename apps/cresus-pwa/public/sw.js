@@ -1,5 +1,5 @@
 // App-shell cache only. API calls (chats, private data) are never cached.
-const CACHE = 'cresus-shell-v2';
+const CACHE = 'cresus-shell-v3';
 const SHELL = ['/', '/index.html', '/styles.css', '/app.js', '/manifest.webmanifest', '/icons/icon-192.png'];
 
 self.addEventListener('install', (e) => {
