@@ -6,7 +6,7 @@ This module is a deny-by-default normalization boundary, not an enabled adapter.
 from __future__ import annotations
 
 KIND = "imessage"
-UPSTREAM = "dvdsgl/claude-imessage"
+UPSTREAM = "prbe-ai/imessage-coding"
 ALLOWED = frozenset(("status", "capabilities"))
 
 def normalize_observation(payload):
