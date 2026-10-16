@@ -27,7 +27,10 @@
     "installCommand": [
       "npm",
       "ci"
-    ]
+    ],
+    "hostedAuthEnvironment": {
+      "VITE_EDEN_PWA_AUTH_REQUIRED": "true"
+    }
   },
   "deployment": {
     "provider": "netlify",
@@ -36,20 +39,24 @@
       "required": true,
       "provider": "supabase",
       "publicClientConfigRequired": true,
-      "serverSideAuthorizationRequired": true
-    }
+      "serverSideAuthorizationRequired": true,
+      "crossAppSessionsAllowed": false
+    },
+    "kind": "static-pwa",
+    "targetId": ""
   },
   "intelligence": {
     "mode": "shared-core-adapter",
     "endpoint": "",
     "paidApiDependency": false,
     "providers": [
-      "workers-ai",
       "gemini-free-tier",
       "local",
-      "user-connected"
+      "user-connected",
+      "openai-compatible"
     ],
-    "fallbackPolicy": "explicit-status-no-silent-provider-switch"
+    "fallbackPolicy": "explicit-status-no-silent-provider-switch",
+    "defaultProvider": null
   },
   "data": {
     "domainAuthority": "HERMES",
