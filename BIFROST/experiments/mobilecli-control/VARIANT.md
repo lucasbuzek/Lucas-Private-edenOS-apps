@@ -1,6 +1,6 @@
 # BIFROST variant — MobileCLI control-plane adapter
 
-Status: isolated research branch; scaffold only; NOT integrated, installed, built, or tested.
+Status: isolated read-only adapter and mock tests implemented; upstream NOT installed or connected; Mac build and physical acceptance UNKNOWN.
 Base: bifrost/native-consolidated-20261010.
 Upstream candidate: https://github.com/MobileCLI/mobilecli
 
@@ -33,3 +33,10 @@ BIFROST remains EDEN's connection/capability registry and policy boundary. Raven
 
 ## Gate
 Proceed to adapter code only after source/license/security review and a contract match. Physical iPhone → authorized Mac → artifact receipt remains UNKNOWN until observed.
+
+## Verified source and implementation — 2026-10-16
+- **Correct upstream:** `MobileCLI/mobilecli` (MIT license in `cli/LICENSE`); this is the Rust PTY/WebSocket relay for Claude, Codex, Gemini and other terminal sessions. **Not** `mobile-next/mobilecli`, which is an unrelated device-management CLI.
+- Auth-v2 challenge-response pairing is upstream-owned; the daemon exposes PTY input, session spawn, file access and Expo push notifications. This branch does not connect to the daemon, start any service, retain credentials or expose terminal text.
+- Inspected `cli/src/protocol.rs`: `ServerMessage::Sessions` contains `sessions` with `cli_type`; `WaitingForInput` contains `wait_type` and `cli_type`. `adapter.py` only reduces caller-supplied event data to non-identifying counters or wait reasons, with `authorization: none`. Events remain unverified until authenticated transport exists.
+- `test_adapter.py`: six mock regressions executed with Python unittest in an isolated container; the exact tested Git blobs were compared with read-back. Local Mac/real WebSocket/session/approval acceptance remains UNKNOWN.
+- **Next gate:** independently authenticate a caller against MobileCLI and the BIFROST subject/task grant, without duplicating RavenNest bridge or turning on a PTY daemon at startup.
