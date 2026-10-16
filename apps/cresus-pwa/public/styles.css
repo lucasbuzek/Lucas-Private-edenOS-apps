@@ -230,3 +230,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .notice.bad { color: var(--neg); } .notice.good { color: var(--pos); }
 .confirm { width: min(90vw, 380px); }
 .confirm-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+
+/* Mobile rail overrides follow base rules so they win the cascade. */
+@media (max-width: 959px) {
+  .workspace-nav { padding: 7px 10px; gap: 5px; }
+  .workspace-label { display: none; }
+  .workspace-btn { padding: 6px 10px; font-size: 12px; }
+}
