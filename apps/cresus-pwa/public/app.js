@@ -422,12 +422,46 @@ async function loadAdmin() {
   }
 }
 
+// ---------- Persistent workspace rail ----------
+const WORKSPACES = {
+  overview: { mode: 'simple', prompt: 'Show my CRESUS overview. Summarize only context and data actually available; do not invent account state.' },
+  research: { mode: 'expert', prompt: 'Open CRESUS Research. Start evidence-first security/company research. Ask for the security or question if missing, and distinguish known, unknown and conflicting evidence.' },
+  watchlist: { mode: 'simple', prompt: 'Open my CRESUS Watchlist workflow. Use only securities supplied by me or available in authorized context. If none exist, ask which securities to add. Do not claim durable watchlist storage unless verified.' },
+  portfolio: { mode: 'simple', prompt: 'Open my CRESUS Portfolio workflow. Use only holdings and transactions I have actually supplied or authorized. If none are available, ask for the data. Do not invent positions or claim brokerage connectivity.' },
+  income: { mode: 'zacchaeus', prompt: 'Open ZACCHAEUS — dividend and investment income. Separate realized, declared, forward-indicated and estimated income; do not conflate their evidence states.' },
+  strategy: { mode: 'strategy', prompt: 'Open CRESUS Strategy Lab. Establish the strategy, universe, period and data requirements, then specify point-in-time and bias safeguards. Do not claim a backtest ran unless it actually did.' },
+  evidence: { mode: 'expert', prompt: 'Open CRESUS Evidence. Summarize only sources and research snapshots actually available in this conversation or verified storage. State if durable cross-session evidence is unavailable.' },
+  providers: { mode: 'simple', prompt: 'Open CRESUS Provider Status. Distinguish configured, connected, available and tested. Report only provider states verifiable by this runtime; never expose secrets.' },
+};
+
+function selectWorkspace(key) {
+  const item = WORKSPACES[key];
+  if (!item) return;
+  document.querySelectorAll('.workspace-btn').forEach((b) => {
+    const active = b.dataset.workspace === key;
+    b.classList.toggle('active', active);
+    b.setAttribute('aria-pressed', String(active));
+  });
+  state.mode = item.mode;
+  store.set('cresus.mode', item.mode);
+  renderModes();
+  $('input').value = item.prompt;
+  autosize();
+  // Run the selected workflow through the existing authenticated chat path.
+  $('composer').requestSubmit();
+  if (matchMedia('(pointer: coarse)').matches) $('chat').scrollTop = 0;
+}
+
 // ---------- Wiring ----------
 function autosize() {
   const t = $('input');
   t.style.height = 'auto';
   t.style.height = `${Math.min(t.scrollHeight, 168)}px`;
 }
+
+document.querySelectorAll('.workspace-btn').forEach((b) => {
+  b.addEventListener('click', () => selectWorkspace(b.dataset.workspace));
+});
 
 $('composer').addEventListener('submit', (e) => {
   e.preventDefault();
