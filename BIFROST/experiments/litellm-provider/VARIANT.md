@@ -1,6 +1,6 @@
 # BIFROST variant — LiteLLM provider gateway adapter
 
-Status: isolated research branch; scaffold only; NOT integrated, installed, built, or tested.
+Status: isolated read-only adapter and mock tests implemented; upstream NOT installed or connected; Mac build and physical acceptance UNKNOWN.
 Base: bifrost/native-consolidated-20261010.
 Upstream candidate: https://github.com/BerriAI/litellm
 
@@ -33,3 +33,10 @@ Optional provider gateway behind a BIFROST adapter. It must not become a new aut
 
 ## Gate
 Do not install or deploy based on feature breadth alone. Adopt only if the existing provider layer is insufficient and a current security review passes.
+
+## Verified source and implementation — 2026-10-16
+- Upstream root `LICENSE`: MIT outside `enterprise/` (separately licensed). Source supports OpenAI-compatible model enumeration and broader proxy routing, but BIFROST/RavenNest already owns an AI provider path; no verified need for an additional gateway yet.
+- **Security gate:** LiteLLM reported compromised PyPI versions `1.82.7` and `1.82.8` (2026-03-24) and subsequent authenticated SSRF / provider-key exfiltration fixes (see `https://github.com/advisories/GHSA-3cv6-jpf6-8222`). Any install requires an independently assessed pinned version, artifact verification and tenant isolation; no library import or install was performed.
+- `adapter.py` only reduces caller-supplied OpenAI-compatible `GET /models` data to bounded safe model IDs. It never connects, calls inference, reads credentials, infers model pricing, or grants provider access.
+- `test_adapter.py`: five mock regressions executed in isolated Python unittest with exact Git blob read-back.
+- **Next gate:** demonstrate a concrete missing RavenNest provider feature and a safe pinned upstream version before introducing a proxy.
