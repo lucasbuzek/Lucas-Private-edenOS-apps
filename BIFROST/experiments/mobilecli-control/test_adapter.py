@@ -1,28 +1,39 @@
 import unittest
-from adapter import summarize_devices
+from adapter import summarize_sessions, observe_wait_state
 
 
 class MobileCLITests(unittest.TestCase):
-    def test_inventory_summary_redacts_identifiers(self):
-        result = summarize_devices({"status": "ok", "data": {"devices": [
-            {"id": "PRIVATE-UDID", "name": "Private iPhone", "platform": "ios", "state": "online"},
-            {"platform": "android", "state": "offline"}]}})
-        self.assertEqual(result["counts"], {"ios": 1, "android": 1, "online": 1, "offline": 1})
-        self.assertNotIn("PRIVATE-UDID", repr(result))
-        self.assertFalse(result["enabled"])
+    def test_sessions_redact_paths_commands_identifiers(self):
+        x = summarize_sessions({"type": "sessions", "sessions": [
+            {"session_id": "secret-session", "cli_type": "codex", "command": "sh private.sh",
+             "project_path": "/private/home"},
+            {"session_id": "other", "cli_type": "claude"}]})
+        self.assertEqual(x["sessions"], 2)
+        self.assertEqual(x["cli_counts"]["codex"], 1)
+        self.assertFalse(x["enabled"])
+        self.assertNotIn("secret-session", repr(x))
+        self.assertNotIn("/private/home", repr(x))
 
-    def test_error_response_rejected(self):
+    def test_wrong_event_rejected(self):
         with self.assertRaises(ValueError):
-            summarize_devices({"status": "error", "error": "offline"})
+            summarize_sessions({"type": "spawn_result", "sessions": []})
 
-    def test_invalid_device_rejected(self):
+    def test_invalid_cli_rejected(self):
         with self.assertRaises(ValueError):
-            summarize_devices({"status": "ok", "data": {"devices": ["bad"]}})
+            summarize_sessions({"type": "sessions", "sessions": [{"cli_type": "root_shell"}]})
 
-    def test_unsupported_platform_rejected(self):
+    def test_session_count_bounded(self):
         with self.assertRaises(ValueError):
-            summarize_devices({"status": "ok", "data": {"devices": [{"platform": "remote", "state": "online"}]}})
+            summarize_sessions({"type": "sessions", "sessions": [{}] * 101})
 
-    def test_inventory_bounded(self):
+    def test_wait_state_not_authorization(self):
+        x = observe_wait_state({"type": "waiting_for_input", "cli_type": "codex",
+                                "wait_type": "tool_approval", "session_id": "secret",
+                                "prompt_content": "private credentials"})
+        self.assertEqual(x["authorization"], "none")
+        self.assertEqual(x["execution_status"], "unknown")
+        self.assertNotIn("credentials", repr(x))
+
+    def test_unknown_wait_rejected(self):
         with self.assertRaises(ValueError):
-            summarize_devices({"status": "ok", "data": {"devices": [{}] * 101}})
+            observe_wait_state({"type": "waiting_for_input", "cli_type": "codex", "wait_type": "execute"})
