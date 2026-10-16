@@ -6,7 +6,7 @@ This module is a deny-by-default normalization boundary, not an enabled adapter.
 from __future__ import annotations
 
 KIND = "mobilecli"
-UPSTREAM = "mobile-next/mobilecli"
+UPSTREAM = "MobileCLI/mobilecli"
 ALLOWED = frozenset(("status", "capabilities"))
 
 def normalize_observation(payload):
