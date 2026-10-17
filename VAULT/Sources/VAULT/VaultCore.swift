@@ -14,6 +14,7 @@ struct VaultAccount: Codable, Identifiable, Equatable {
 struct VaultDocument: Codable, Equatable {
     var mode: VaultMode
     var accounts: [VaultAccount]
+    var layout: LayoutReference? = nil
 }
 struct SealedRecord: Codable {
     var salt: Data
@@ -69,7 +70,9 @@ enum VaultCipher {
 final class VaultStore: ObservableObject {
     @Published private(set) var configured = false
     @Published private(set) var unlocked = false
+    @Published private(set) var activeSessionID: UUID?
     @Published private(set) var accounts: [VaultAccount] = []
+    @Published private(set) var referenceLayout: LayoutReference?
     @Published var message: String?
     private(set) var records: [SealedRecord] = []
     private var sessionKey: SymmetricKey?
@@ -127,6 +130,8 @@ final class VaultStore: ObservableObject {
             sessionRecordIndex = index
             currentDocument = document
             accounts = document.accounts
+            referenceLayout = document.layout
+            activeSessionID = UUID()
             unlocked = true
             message = nil
             return
@@ -148,11 +153,27 @@ final class VaultStore: ObservableObject {
             message = nil
         } catch { message = "Could not save changes." }
     }
+    func updateLayout(_ layout: LayoutReference) {
+        guard unlocked, var document = currentDocument,
+              let index = sessionRecordIndex, let key = sessionKey else { return }
+        document.layout = layout
+        do {
+            var next = records
+            next[index] = try VaultCipher.reseal(document, with: key, existing: records[index])
+            try persist(next)
+            records = next
+            currentDocument = document
+            referenceLayout = layout
+            message = nil
+        } catch { message = "Could not store the layout reference." }
+    }
     func lock() {
         sessionKey = nil
         sessionRecordIndex = nil
         currentDocument = nil
         accounts = []
+        referenceLayout = nil
+        activeSessionID = nil
         unlocked = false
         message = nil
     }
