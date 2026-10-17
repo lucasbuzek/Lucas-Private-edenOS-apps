@@ -1,0 +1,34 @@
+name: VAULT
+options:
+  bundleIdPrefix: local.eden
+settings:
+  base:
+    SWIFT_VERSION: 5.0
+    SWIFT_STRICT_CONCURRENCY: minimal
+targets:
+  VAULT:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - Sources/VAULT
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.eden.VAULT
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: VAULT
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: YES
+        CODE_SIGNING_ALLOWED: NO
+  VAULTTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - Tests
+    dependencies:
+      - target: VAULT
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGNING_ALLOWED: NO
