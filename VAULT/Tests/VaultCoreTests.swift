@@ -25,6 +25,11 @@ final class VaultCoreTests: XCTestCase {
         XCTAssertEqual(try VaultCipher.open(changed, pin: "real-long-password").accounts.count, 1)
     }
 
+    func testScreenshotAnalyzerRejectsInvalidImage() throws {
+        XCTAssertThrowsError(try ScreenshotLayoutAnalyzer.analyze(Data("not an image".utf8)))
+        XCTAssertThrowsError(try ScreenshotLayoutAnalyzer.analyze(Data()))
+    }
+
     func testCiphertextTamperingIsDetected() throws {
         let original = try VaultCipher.seal(VaultDocument(mode: .personal, accounts: []),
                                             pin: "test-protected-password")
@@ -44,12 +49,17 @@ final class VaultCoreTests: XCTestCase {
         first.unlock(pin: "long-primary-password")
         XCTAssertTrue(first.unlocked)
         first.addAccount(name: "Test account", balance: "100")
+        let layout = LayoutReference(imageAspectRatio: 0.5,
+            textRegions: [ReferenceRect(x: 0.1, y: 0.2, width: 0.6, height: 0.08)])
+        first.updateLayout(layout)
+        XCTAssertEqual(first.referenceLayout, layout)
         XCTAssertEqual(first.accounts.count, 1)
         first.lock()
 
         let reopened = VaultStore(location: file)
         reopened.unlock(pin: "long-primary-password")
         XCTAssertEqual(reopened.accounts.count, 1)
+        XCTAssertEqual(reopened.referenceLayout, layout)
         reopened.lock()
         reopened.unlock(pin: "long-alternate-password")
         XCTAssertEqual(reopened.accounts.count, 2)
