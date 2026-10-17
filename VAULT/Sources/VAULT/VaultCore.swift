@@ -80,11 +80,16 @@ final class VaultStore: ObservableObject {
     init(location: URL? = nil) {
         let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
         self.location = location ?? base.appendingPathComponent("vault-state.enc")
-        if let data = try? Data(contentsOf: self.location),
-           let recovered = try? JSONDecoder().decode([SealedRecord].self, from: data),
-           !recovered.isEmpty {
-            records = recovered
+        if FileManager.default.fileExists(atPath: self.location.path) {
+            // Never convert a corrupt or unsupported store into a new empty store.
             configured = true
+            if let data = try? Data(contentsOf: self.location),
+               let recovered = try? JSONDecoder().decode([SealedRecord].self, from: data),
+               !recovered.isEmpty {
+                records = recovered
+            } else {
+                message = "Existing encrypted data is unreadable. Nothing was overwritten."
+            }
         }
     }
     func initialize(personalPIN: String, samplePIN: String) {
@@ -93,7 +98,10 @@ final class VaultStore: ObservableObject {
             message = "Choose different PINs of at least 8 characters."
             return
         }
-        guard !configured else { message = "Vault already exists."; return }
+        guard !configured && !FileManager.default.fileExists(atPath: location.path) else {
+            message = "Existing vault storage was preserved. No replacement was created."
+            return
+        }
         do {
             var output = [try VaultCipher.seal(VaultDocument(mode: .personal, accounts: []), pin: personalPIN)]
             if !samplePIN.isEmpty {
