@@ -10,6 +10,7 @@
 		38BA6306F21E71840A3C6EC3 /* VaultCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEEF0F64BD720C9EB39286 /* VaultCoreTests.swift */; };
 		6FDBFD22C0FAE29B786F1EEA /* VaultCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9EDF9F50B81B768E6E4E62 /* VaultCore.swift */; };
 		8753BF6CC3ACC123B78EA253 /* VAULTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2089FD77733F0748DD3104 /* VAULTApp.swift */; };
+		BA5981F51FD9D8A3B855BEE0 /* ScreenshotLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3759E57C59798470063A1 /* ScreenshotLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +27,7 @@
 		11CEEF0F64BD720C9EB39286 /* VaultCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultCoreTests.swift; sourceTree = "<group>"; };
 		3C2089FD77733F0748DD3104 /* VAULTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAULTApp.swift; sourceTree = "<group>"; };
 		55EAEA7B959B688568D1E7AE /* VAULT.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = VAULT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65C3759E57C59798470063A1 /* ScreenshotLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotLayout.swift; sourceTree = "<group>"; };
 		6F9EDF9F50B81B768E6E4E62 /* VaultCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultCore.swift; sourceTree = "<group>"; };
 		B1279C31A9C5332E34D4695C /* VAULTTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = VAULTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -60,6 +62,7 @@
 		C7C77781B0EE78BDCDD0FAD5 /* VAULT */ = {
 			isa = PBXGroup;
 			children = (
+				65C3759E57C59798470063A1 /* ScreenshotLayout.swift */,
 				3C2089FD77733F0748DD3104 /* VAULTApp.swift */,
 				6F9EDF9F50B81B768E6E4E62 /* VaultCore.swift */,
 			);
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA5981F51FD9D8A3B855BEE0 /* ScreenshotLayout.swift in Sources */,
 				8753BF6CC3ACC123B78EA253 /* VAULTApp.swift in Sources */,
 				6FDBFD22C0FAE29B786F1EEA /* VaultCore.swift in Sources */,
 			);
