@@ -1,4 +1,5 @@
 import SwiftUI
+import PhotosUI
 
 @main
 struct VAULTApp: App {
@@ -22,6 +23,7 @@ struct RootView: View {
     @State private var showEditor = false
     @State private var accountName = ""
     @State private var accountBalance = ""
+    @State private var pickedReference: PhotosPickerItem?
 
     var body: some View {
         NavigationStack {
@@ -74,6 +76,16 @@ struct RootView: View {
                         Section {
                             Button("Add account record") { showEditor = true }
                         }
+                        Section("Appearance") {
+                            PhotosPicker(selection: $pickedReference, matching: .images) {
+                                Label("Select layout screenshot", systemImage: "photo.on.rectangle")
+                            }
+                            if let layout = storage.referenceLayout {
+                                Text("Layout reference saved: \(layout.textRegions.count) text regions. Original image and extracted text not retained.")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
                     }
                     .toolbar {
                         ToolbarItem(placement: .topBarTrailing) {
@@ -104,6 +116,26 @@ struct RootView: View {
                 }
             }
             .navigationTitle("VAULT")
+            .onChange(of: pickedReference) { _, selection in
+                guard let selection, let session = storage.activeSessionID else { return }
+                Task {
+                    defer { pickedReference = nil }
+                    do {
+                        guard let imageData = try await selection.loadTransferable(type: Data.self) else {
+                            storage.message = "Could not read the selected image."
+                            return
+                        }
+                        let result = try await Task.detached(priority: .userInitiated) {
+                            try ScreenshotLayoutAnalyzer.analyze(imageData)
+                        }.value
+                        guard storage.activeSessionID == session else { return }
+                        storage.updateLayout(result)
+                    } catch {
+                        guard storage.activeSessionID == session else { return }
+                        storage.message = "Could not analyze this image locally."
+                    }
+                }
+            }
             .alert("VAULT", isPresented: Binding(
                 get: { storage.message != nil },
                 set: { if !$0 { storage.message = nil } }
