@@ -14,13 +14,12 @@ export class IntelligenceError extends Error {
  * Authentication is performed by the hosting app/edge adapter before calling route().
  * App prompts and capabilities are registered server-side; callers cannot submit system prompts.
  */
-export function createIntelligenceCore({ apps, providers, defaultProvider = 'workers-ai' }) {
+export function createIntelligenceCore({ apps, providers, defaultProvider = null }) {
   if (!apps || typeof apps !== 'object' || !providers || typeof providers !== 'object') {
     throw new TypeError('apps and providers registries are required');
   }
-  const defaultAdapter = providers[defaultProvider];
-  if (!defaultAdapter || !defaultAdapter.available || !['free-tier', 'local'].includes(defaultAdapter.costClass)) {
-    throw new TypeError('default provider must be available and free-tier or local');
+  if (defaultProvider !== null) {
+    throw new TypeError('automatic default AI providers are forbidden; each app must explicitly select a verified capable provider');
   }
 
   return Object.freeze({
@@ -53,14 +52,26 @@ export function createIntelligenceCore({ apps, providers, defaultProvider = 'wor
         throw new IntelligenceError('The last message must be from the user', 400, 'LAST_MESSAGE_INVALID');
       }
 
-      const selectedId = providerId || defaultProvider;
+      if (typeof providerId !== 'string' || !providerId) {
+        throw new IntelligenceError('Choose an authorized capable intelligence provider', 409, 'PROVIDER_SELECTION_REQUIRED');
+      }
+      const selectedId = providerId;
+      if (Array.isArray(app.allowedProviders) && !app.allowedProviders.includes(selectedId)) {
+        throw new IntelligenceError('Provider is not permitted for this app', 403, 'PROVIDER_NOT_PERMITTED_FOR_APP');
+      }
       const provider = providers[selectedId];
       if (!provider || !COST_CLASSES.has(provider.costClass) || !provider.available) {
         // Explicitly do not silently reroute: provider choice can change cost, privacy or capability.
         throw new IntelligenceError('Selected intelligence provider is unavailable', 503, 'PROVIDER_UNAVAILABLE');
       }
-      if (provider.costClass === 'user-connected' && providerId !== selectedId) {
-        throw new IntelligenceError('User-connected providers require explicit selection', 403, 'PROVIDER_OPT_IN_REQUIRED');
+      if (provider.costClass === 'user-connected' &&
+          (!Array.isArray(principal.allowedProviders) || !principal.allowedProviders.includes(selectedId))) {
+        throw new IntelligenceError('User-connected provider was not authorized for this account', 403, 'PROVIDER_OPT_IN_REQUIRED');
+      }
+      const required = Array.isArray(app.requiredCapabilities) ? app.requiredCapabilities : [];
+      const verified = Array.isArray(provider.verifiedCapabilities) ? provider.verifiedCapabilities : [];
+      if (!required.every(capability => verified.includes(capability))) {
+        throw new IntelligenceError('Selected provider has not passed this application capability gate', 409, 'PROVIDER_CAPABILITY_UNVERIFIED');
       }
       if (typeof provider.generate !== 'function') {
         throw new IntelligenceError('Provider adapter is incomplete', 503, 'PROVIDER_ADAPTER_INVALID');
