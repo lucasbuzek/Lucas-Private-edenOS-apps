@@ -8,9 +8,10 @@ const json = (body, status = 200) => new Response(JSON.stringify(body), {
  * The host supplies an authentication adapter that validates a real session/token.
  * Never pass raw browser credentials to provider adapters or accept client system prompts.
  */
-export function createIntelligenceWorker({ authenticate, core, maxBodyBytes = 128 * 1024 } = {}) {
-  if (typeof authenticate !== 'function' || !core || typeof core.route !== 'function') {
-    throw new TypeError('authenticate and core.route are required');
+export function createIntelligenceWorker({ authenticate, core, appId, maxBodyBytes = 128 * 1024 } = {}) {
+  if (typeof authenticate !== 'function' || !core || typeof core.route !== 'function' ||
+      typeof appId !== 'string' || !appId.trim()) {
+    throw new TypeError('exact appId, authenticate and core.route are required');
   }
 
   return {
@@ -18,6 +19,8 @@ export function createIntelligenceWorker({ authenticate, core, maxBodyBytes = 12
       const url = new URL(request.url);
       if (url.pathname !== '/api/intelligence') return json({ error: 'Not found' }, 404);
       if (request.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
+      const origin = request.headers.get('origin');
+      if (origin && origin !== url.origin) return json({ error: 'Cross-origin requests are not permitted' }, 403);
       if (!request.headers.get('content-type')?.toLowerCase().includes('application/json')) {
         return json({ error: 'Content-Type must be application/json' }, 415);
       }
@@ -43,11 +46,12 @@ export function createIntelligenceWorker({ authenticate, core, maxBodyBytes = 12
         return json({ error: 'Invalid JSON request' }, 400);
       }
       if (!body || typeof body !== 'object' || Array.isArray(body)) return json({ error: 'Invalid request shape' }, 400);
+      if (body.appId !== appId) return json({ error: 'App deployment identity mismatch' }, 403);
 
       try {
         const result = await core.route({
           principal,
-          appId: body.appId,
+          appId,
           messages: body.messages,
           providerId: body.providerId,
         });
