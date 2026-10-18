@@ -3,12 +3,40 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Manifest validation and fail-closed deployment preflight for authenticated standalone EDENOS PWAs.",
+  "description": "Reusable independent authenticated PWA staging, deployment preflight and intelligence/authentication adapters for EDENOS applications.",
   "scripts": {
     "test": "node --test test/*.test.mjs",
-    "validate": "node scripts/validate-manifest.mjs examples/hermes.manifest.json"
+    "validate": "node scripts/validate-manifest.mjs examples/hermes.manifest.json && node scripts/validate-manifest.mjs examples/cresus.worker.manifest.json && node scripts/validate-fleet.mjs examples/hermes.manifest.json examples/cresus.worker.manifest.json"
   },
   "engines": {
-    "node": ">=20"
-  }
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "jose": "6.2.12"
+  },
+  "license": "UNLICENSED",
+  "bin": {
+    "edenos-pwa": "./scripts/deploy.mjs",
+    "edenos-pwa-check": "./scripts/validate-manifest.mjs",
+    "edenos-pwa-fleet": "./scripts/validate-fleet.mjs"
+  },
+  "exports": {
+    ".": "./intelligence/core.mjs",
+    "./authentication/jwt": "./authentication/jwt.mjs",
+    "./intelligence/core": "./intelligence/core.mjs",
+    "./intelligence/worker": "./intelligence/worker.mjs",
+    "./intelligence/providers": "./intelligence/providers.mjs",
+    "./intelligence/openai-compatible": "./intelligence/openai-compatible.mjs",
+    "./deployment/hosts": "./deployment/hosts.mjs",
+    "./scripts/validate-manifest": "./scripts/validate-manifest.mjs",
+    "./scripts/validate-fleet": "./scripts/validate-fleet.mjs"
+  },
+  "files": [
+    "authentication/",
+    "deployment/",
+    "intelligence/",
+    "scripts/",
+    "examples/",
+    "README.md"
+  ]
 }
