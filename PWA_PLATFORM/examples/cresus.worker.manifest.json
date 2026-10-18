@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "app": {
+    "id": "cresus",
+    "name": "CRESUS",
+    "version": "0.1.0",
+    "standalone": true
+  },
+  "source": {
+    "repository": "https://github.com/lucasbuzek/Lucas-Private-edenOS-apps",
+    "projectDirectory": "platforms/web",
+    "installCommand": [
+      "npm",
+      "ci"
+    ],
+    "testCommand": [
+      "npm",
+      "test"
+    ],
+    "buildCommand": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "authVerificationCommand": [
+      "node",
+      "--test",
+      "test/worker.test.mjs"
+    ],
+    "outputDirectory": "public",
+    "hostedAuthEnvironment": {}
+  },
+  "deployment": {
+    "provider": "cloudflare-workers",
+    "kind": "worker-pwa",
+    "targetId": "",
+    "siteUrl": "",
+    "workerConfigPath": "wrangler.toml",
+    "previewConfigPath": "wrangler.preview.toml",
+    "auth": {
+      "required": true,
+      "provider": "cloudflare-access",
+      "publicClientConfigRequired": true,
+      "serverSideAuthorizationRequired": true,
+      "crossAppSessionsAllowed": false
+    }
+  },
+  "intelligence": {
+    "mode": "shared-core-adapter",
+    "endpoint": "",
+    "paidApiDependency": false,
+    "defaultProvider": null,
+    "providers": [
+      "gemini-free-tier",
+      "local",
+      "user-connected",
+      "openai-compatible"
+    ],
+    "fallbackPolicy": "explicit-status-no-silent-provider-switch"
+  },
+  "data": {
+    "domainAuthority": "CRESUS",
+    "ownership": "app-owned",
+    "migration": "preserve-existing-data",
+    "crossUserIsolationRequired": true
+  }
+}
