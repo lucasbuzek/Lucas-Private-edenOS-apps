@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - feat/universal-authenticated-pwa-platform
+      - feat/universal-pwa-standalone-20261018
     paths:
       - "PWA_PLATFORM/**"
       - ".github/workflows/eden-pwa-platform.yml"
@@ -23,9 +24,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Install standalone package dependencies
+        working-directory: PWA_PLATFORM
+        run: npm ci --ignore-scripts
       - name: Test fail-closed manifest validation
         working-directory: PWA_PLATFORM
         run: npm test
-      - name: Validate HERMES pilot manifest
+      - name: Validate independent HERMES and CRESUS deployment profiles
         working-directory: PWA_PLATFORM
         run: npm run validate
