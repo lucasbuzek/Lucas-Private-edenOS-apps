@@ -35,9 +35,19 @@ export function validateManifest(m) {
     const value = m.source?.[name];
     need(Array.isArray(value) && value.length > 0 && value.every(x => typeof x === 'string' && x.trim().length > 0), 'source.' + name + ' must be a non-empty argv array');
   }
+  for (const field of ['requiredHostedPublicEnv', 'publicBuildEnv']) {
+    const declared = m.source?.[field] ?? [];
+    need(Array.isArray(declared) &&
+      declared.every(x => typeof x === 'string' && SAFE_ENV.test(x)) &&
+      new Set(declared).size === declared.length,
+      'source.' + field + ' must list unique approved public build variable names');
+  }
+  const d = m.deployment || {};
   const hostedEnv = m.source?.hostedAuthEnvironment;
-  need(hostedEnv && typeof hostedEnv === 'object' && !Array.isArray(hostedEnv) && Object.keys(hostedEnv).length > 0,
-    'source.hostedAuthEnvironment must explicitly describe the app-specific hosted login build flag(s)');
+  const requiresBuildFlag = d.kind === 'static-pwa';
+  need(hostedEnv && typeof hostedEnv === 'object' && !Array.isArray(hostedEnv) &&
+       (!requiresBuildFlag || Object.keys(hostedEnv).length > 0),
+    'source.hostedAuthEnvironment must describe app-specific hosted login flags (static sites require at least one)');
   if (hostedEnv && typeof hostedEnv === 'object' && !Array.isArray(hostedEnv)) {
     for (const [key, value] of Object.entries(hostedEnv)) {
       need(SAFE_ENV.test(key) && typeof value === 'string' && ['true', 'required', 'hosted'].includes(value),
@@ -45,7 +55,6 @@ export function validateManifest(m) {
     }
   }
 
-  const d = m.deployment || {};
   need(HOSTS.has(d.provider), 'deployment.provider must be netlify, cloudflare-pages or cloudflare-workers');
   need(d.kind === (d.provider === 'cloudflare-workers' ? 'worker-pwa' : 'static-pwa'), 'deployment.kind must match hosting profile');
   need(typeof d.targetId === 'string', 'deployment.targetId must be declared (empty until target verified)');
@@ -68,6 +77,9 @@ export function validateManifest(m) {
   need(d.auth?.publicClientConfigRequired === true, 'auth must declare public client configuration');
   need(d.auth?.serverSideAuthorizationRequired === true, 'auth must require server-side authorization');
   need(d.auth?.crossAppSessionsAllowed === false, 'auth.crossAppSessionsAllowed must be false (separate app policies)');
+  if (d.kind === 'worker-pwa') {
+    need(d.auth?.provider === 'cloudflare-access', 'worker-pwa pilot requires Cloudflare Access JWT verification');
+  }
 
   const intelligence = m.intelligence || {};
   need(intelligence.mode === 'shared-core-adapter', 'intelligence.mode must be shared-core-adapter');
@@ -82,7 +94,7 @@ export function validateManifest(m) {
   need(m.data?.domainAuthority === m.app?.name, 'data.domainAuthority must equal this app identity');
   need(m.data?.ownership === 'app-owned', 'data.ownership must remain app-owned');
   need(m.data?.migration === 'preserve-existing-data', 'data.migration must preserve existing data');
-  need(m.data?.crossUserIsolationRequired === true, 'data.crossUserIsolationRequired must be true');
+  need(m.data?.crossUserIsolationRequired === true, 'cross-user data isolation must be explicitly required');
 
   const serialized = JSON.stringify(m);
   const secrets = /"(?:api[_-]?key|client[_-]?secret|access[_-]?token|refresh[_-]?token|private[_-]?key)"\s*:\s*"[^"]+"/i;
