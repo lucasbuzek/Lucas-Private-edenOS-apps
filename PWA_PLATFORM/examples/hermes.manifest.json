@@ -30,7 +30,11 @@
     ],
     "hostedAuthEnvironment": {
       "VITE_EDEN_PWA_AUTH_REQUIRED": "true"
-    }
+    },
+    "requiredHostedPublicEnv": [
+      "VITE_SUPABASE_URL",
+      "VITE_SUPABASE_ANON_KEY"
+    ]
   },
   "deployment": {
     "provider": "netlify",
