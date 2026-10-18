@@ -73,6 +73,14 @@ export function createIntelligenceCore({ apps, providers, defaultProvider = null
       if (!required.every(capability => verified.includes(capability))) {
         throw new IntelligenceError('Selected provider has not passed this application capability gate', 409, 'PROVIDER_CAPABILITY_UNVERIFIED');
       }
+      if (required.length) {
+        const acceptance=provider.acceptedFor?.[appId];
+        if (acceptance?.status !== 'ACCEPTED' ||
+            !Array.isArray(acceptance.capabilities) ||
+            !required.every(capability=>acceptance.capabilities.includes(capability))) {
+          throw new IntelligenceError('Live app-specific model acceptance has not been recorded', 409, 'PROVIDER_LIVE_ACCEPTANCE_REQUIRED');
+        }
+      }
       if (typeof provider.generate !== 'function') {
         throw new IntelligenceError('Provider adapter is incomplete', 503, 'PROVIDER_ADAPTER_INVALID');
       }

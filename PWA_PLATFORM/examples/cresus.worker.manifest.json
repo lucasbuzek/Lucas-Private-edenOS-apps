@@ -43,6 +43,14 @@
       "publicClientConfigRequired": true,
       "serverSideAuthorizationRequired": true,
       "crossAppSessionsAllowed": false
+    },
+    "accessMode": "closed-testing",
+    "closedTesting": {
+      "required": true,
+      "ownerApprovalRequired": true,
+      "turnstileRequired": true,
+      "publicWaitlistSeparateFromPrivateApp": true,
+      "allAppAssetsProtected": true
     }
   },
   "intelligence": {
@@ -56,7 +64,12 @@
       "user-connected",
       "openai-compatible"
     ],
-    "fallbackPolicy": "explicit-status-no-silent-provider-switch"
+    "fallbackPolicy": "explicit-status-no-silent-provider-switch",
+    "requiredCapabilities": [
+      "evidence-research",
+      "portfolio-math",
+      "no-fabrication"
+    ]
   },
   "data": {
     "domainAuthority": "CRESUS",

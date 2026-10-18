@@ -72,6 +72,18 @@ export function validateManifest(m) {
     need(d.provider === 'cloudflare-workers', 'worker-pwa requires cloudflare-workers');
   }
 
+  if (d.accessMode === 'closed-testing') {
+    const capabilities=m.intelligence?.requiredCapabilities;
+    need(Array.isArray(capabilities) && capabilities.length>0 &&
+      capabilities.every(v=>typeof v==='string' && /^[a-z][a-z0-9-]+$/.test(v)),
+      'Closed-testing intelligence must declare meaningful app-specific requiredCapabilities');
+    const rules = d.closedTesting;
+    for (const field of ['required','ownerApprovalRequired','turnstileRequired',
+      'publicWaitlistSeparateFromPrivateApp','allAppAssetsProtected']) {
+      need(rules?.[field] === true, 'deployment.closedTesting.'+field+' must be true in closed-testing mode');
+    }
+    need(d.auth?.provider === 'cloudflare-access', 'Closed Cloudflare pilot requires per-app Access JWT verification');
+  }
   need(d.auth?.required === true, 'deployment.auth.required must be true');
   need(AUTH.has(d.auth?.provider), 'deployment.auth.provider must identify a supported identity verifier');
   need(d.auth?.publicClientConfigRequired === true, 'auth must declare public client configuration');

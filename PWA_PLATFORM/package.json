@@ -1,12 +1,12 @@
 {
   "name": "@edenos/pwa-platform",
-  "version": "0.1.0",
+  "version": "0.2.0-dev.0",
   "private": true,
   "type": "module",
   "description": "Reusable independent authenticated PWA staging, deployment preflight and intelligence/authentication adapters for EDENOS applications.",
   "scripts": {
     "test": "node --test test/*.test.mjs",
-    "validate": "node scripts/validate-manifest.mjs examples/hermes.manifest.json && node scripts/validate-manifest.mjs examples/cresus.worker.manifest.json && node scripts/validate-fleet.mjs examples/hermes.manifest.json examples/cresus.worker.manifest.json"
+    "validate": "node scripts/validate-manifest.mjs examples/hermes.manifest.json && node scripts/validate-manifest.mjs examples/hermes.cloudflare.closed.manifest.json && node scripts/validate-manifest.mjs examples/cresus.worker.manifest.json && node scripts/validate-fleet.mjs examples/hermes.cloudflare.closed.manifest.json examples/cresus.worker.manifest.json"
   },
   "engines": {
     "node": ">=20.0.0"
@@ -18,7 +18,8 @@
   "bin": {
     "edenos-pwa": "./scripts/deploy.mjs",
     "edenos-pwa-check": "./scripts/validate-manifest.mjs",
-    "edenos-pwa-fleet": "./scripts/validate-fleet.mjs"
+    "edenos-pwa-fleet": "./scripts/validate-fleet.mjs",
+    "edenos-pwa-readiness": "./scripts/readiness.mjs"
   },
   "exports": {
     ".": "./intelligence/core.mjs",
@@ -29,7 +30,15 @@
     "./intelligence/openai-compatible": "./intelligence/openai-compatible.mjs",
     "./deployment/hosts": "./deployment/hosts.mjs",
     "./scripts/validate-manifest": "./scripts/validate-manifest.mjs",
-    "./scripts/validate-fleet": "./scripts/validate-fleet.mjs"
+    "./scripts/validate-fleet": "./scripts/validate-fleet.mjs",
+    "./deployment/verify-target": "./deployment/verify-target.mjs",
+    "./scripts/readiness": "./scripts/readiness.mjs",
+    "./closed-testing/gateway": "./closed-testing/gateway.mjs",
+    "./closed-testing/cloudflare": "./closed-testing/cloudflare.mjs",
+    "./closed-testing/d1": "./closed-testing/d1.mjs",
+    "./closed-testing/cresus-store": "./closed-testing/cresus-store.mjs",
+    "./closed-testing/turnstile": "./closed-testing/turnstile.mjs",
+    "./intelligence/qualification": "./intelligence/qualification.mjs"
   },
   "files": [
     "authentication/",
@@ -37,6 +46,8 @@
     "intelligence/",
     "scripts/",
     "examples/",
-    "README.md"
+    "README.md",
+    "closed-testing/",
+    "CLOUDFLARE_CLOSED_TEST_RELAUNCH.md"
   ]
 }

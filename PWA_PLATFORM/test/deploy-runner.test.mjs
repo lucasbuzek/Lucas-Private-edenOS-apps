@@ -42,7 +42,9 @@ test('deployment preflight installs, tests, builds and verifies hosted auth befo
   process.env.EDEN_PWA_TEST_PRIVATE_KEY = 'must-never-reach-app-build';
   try {
     const result = await execute({ manifest, appRoot, publishPreview: false });
-    assert.equal(result.localAuthSmoke, 'PASS');
+    assert.equal(result.declaredAuthTests, 'PASS');
+    assert.equal(result.liveAccountLogin, 'UNKNOWN');
+    assert.equal(result.tenantIsolation, 'UNKNOWN');
     assert.match(result.artifactFingerprint, /^[0-9a-f]{64}$/);
     assert.equal(result.sourceIsolated, true);
     assert.equal(result.previewDeployed, false);

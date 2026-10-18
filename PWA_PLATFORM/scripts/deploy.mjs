@@ -7,6 +7,7 @@ import { createHash } from 'node:crypto';
 import { validateManifest } from './validate-manifest.mjs';
 import { resolveInside, stageApplication } from '../deployment/workspace.mjs';
 import { previewCommand, extractPreviewUrl } from '../deployment/hosts.mjs';
+import { verifyHostingTarget } from '../deployment/verify-target.mjs';
 export { resolveInside };
 
 const BUILD_ENV_NAMES = new Set(['PATH','HOME','TMPDIR','LANG','LC_ALL','CI','NODE_ENV',
@@ -89,6 +90,9 @@ export async function execute({ manifest, appRoot, publishPreview = false } = {}
     // Refuse before running any installation/build hooks when the target or credentials are not identified.
     previewCommand(manifest, '__STAGED_OUTPUT__');
     previewHostEnv(manifest, isolatedBuildEnv(manifest));
+    // Verify existing, expected site identity with read-only hosting APIs BEFORE
+    // executing any app-owned installation/build code or uploading artifacts.
+    await verifyHostingTarget(manifest);
   }
   const workspace = stageApplication(appRoot, manifest.source.projectDirectory);
   try {
@@ -105,12 +109,14 @@ export async function execute({ manifest, appRoot, publishPreview = false } = {}
       version: manifest.app.version,
       provider: manifest.deployment.provider,
       artifactFingerprint: verified.artifactFingerprint,
-      localAuthSmoke: 'PASS',
+      declaredAuthTests: 'PASS',
+      liveAccountLogin: 'UNKNOWN',
+      tenantIsolation: 'UNKNOWN',
       sourceIsolated: true,
       previewDeployed: false,
     };
     if (!publishPreview) {
-      console.log('PWA_PREFLIGHT_PASS: isolated tests, build output and declared auth smoke test passed. No deployment performed.');
+      console.log('PWA_PREFLIGHT_PASS: isolated tests, build output and app-declared authentication tests passed. Live account login remains UNKNOWN. No deployment performed.');
       return result;
     }
     const command = previewCommand(manifest, verified.outputDirectory);

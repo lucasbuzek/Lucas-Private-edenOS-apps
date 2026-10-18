@@ -1,0 +1,29 @@
+# Non-deployable template: all REPLACE values must be independently verified.
+# HERMES is a separate app/service/Access audience from CRESUS.
+name = "edenos-hermes-closed-test-CANDIDATE"
+main = "./hermes.worker.mjs"
+compatibility_date = "2026-10-18"
+workers_dev = false
+
+[assets]
+directory = "./REPLACE_WITH_HOSTED_HERMES_BUILD"
+binding = "ASSETS"
+run_worker_first = true
+not_found_handling = "single-page-application"
+
+[[d1_databases]]
+binding = "GATE_DB"
+database_name = "REPLACE_WITH_SEPARATE_HERMES_WAITLIST_DB"
+database_id = "REPLACE_WITH_VERIFIED_HERMES_DB_ID"
+
+[vars]
+PRIVATE_UPSTREAM_MODE = "assets"
+PRIVATE_HOST = "REPLACE_WITH_HERMES_PRIVATE_HOST"
+WAITLIST_HOST = "REPLACE_WITH_HERMES_PUBLIC_WAITLIST_HOST"
+OWNER_EMAIL = "REPLACE_WITH_VERIFIED_OWNER_EMAIL"
+ACCESS_TEAM_DOMAIN = "REPLACE_WITH_VERIFIED_ACCESS_TEAM_DOMAIN"
+ACCESS_AUD = "REPLACE_WITH_HERMES_APPLICATION_AUDIENCE"
+TURNSTILE_SITE_KEY = "REPLACE_WITH_HERMES_PUBLIC_TURNSTILE_SITEKEY"
+# TURNSTILE_SECRET is a private secret, NOT a [vars] value.
+# Cloudflare Access policy must cover ALL paths on PRIVATE_HOST.
+# No public direct asset host, Pages alternative or Worker workers.dev bypass.

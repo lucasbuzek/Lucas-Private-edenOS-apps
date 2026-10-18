@@ -120,10 +120,27 @@ test('required intelligent capabilities cannot be inferred from model availabili
     providers: {
       'workers-ai': { costClass: 'free-tier', available: true, generate: async () => 'guessed answer' },
       'gemini-free-tier': { costClass: 'free-tier', available: true,
-        verifiedCapabilities: ['research'], generate: async () => 'grounded answer' },
+        verifiedCapabilities: ['research'],
+        acceptedFor: { cresus: { status: 'ACCEPTED', capabilities: ['research'] } },
+        generate: async () => 'grounded answer' },
     },
   });
   await assert.rejects(core.route({ principal, appId: 'cresus', providerId: 'workers-ai', messages }),
     e => e.code === 'PROVIDER_CAPABILITY_UNVERIFIED');
   assert.equal((await core.route({ principal, appId: 'cresus', providerId: 'gemini-free-tier', messages })).response, 'grounded answer');
+});
+
+
+test('a model claiming capability without actual app-specific acceptance is rejected', async () => {
+  const core = createIntelligenceCore({
+    apps: { cresus: { systemPrompt: 'CRESUS', requiredCapabilities: ['research'] } },
+    providers: { gemini: {
+      available:true,costClass:'free-tier',verifiedCapabilities:['research'],
+      generate:async()=> 'answer without verified acceptance',
+    }},
+  });
+  await assert.rejects(core.route({
+    principal:{id:'u',allowedApps:['cresus']},appId:'cresus',
+    messages:[{role:'user',content:'research this'}],providerId:'gemini',
+  }),e=>e.code==='PROVIDER_LIVE_ACCEPTANCE_REQUIRED');
 });
