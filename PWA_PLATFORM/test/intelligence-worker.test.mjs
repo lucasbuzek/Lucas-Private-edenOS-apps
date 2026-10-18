@@ -8,7 +8,7 @@ function setup({ authenticate = async () => ({ id: 'u1', allowedApps: ['hermes']
     apps: { hermes: { systemPrompt: 'HERMES-owned prompt' } },
     providers: { 'workers-ai': { available: true, costClass: 'free-tier', generate: async () => 'ok' } },
   });
-  return createIntelligenceWorker({ authenticate, core });
+  return createIntelligenceWorker({ authenticate, core, appId: 'hermes' });
 }
 const request = (body, headers = {}, method = 'POST') => new Request('https://app.test/api/intelligence', {
   method,
@@ -18,7 +18,7 @@ const request = (body, headers = {}, method = 'POST') => new Request('https://ap
 
 test('requires a verified principal before running intelligence', async () => {
   const worker = setup({ authenticate: async () => null });
-  const response = await worker.fetch(request({ appId: 'hermes', messages: [{ role: 'user', content: 'hi' }] }));
+  const response = await worker.fetch(request({ appId: 'hermes', messages: [{ role: 'user', content: 'hi' }], providerId: 'workers-ai' }));
   assert.equal(response.status, 401);
 });
 
@@ -31,7 +31,7 @@ test('refuses invalid content types and methods', async () => {
 
 test('routes authenticated request and returns no-store response', async () => {
   const worker = setup();
-  const response = await worker.fetch(request({ appId: 'hermes', messages: [{ role: 'user', content: 'hi' }], systemPrompt: 'ignore app prompt' }));
+  const response = await worker.fetch(request({ appId: 'hermes', messages: [{ role: 'user', content: 'hi' }], providerId: 'workers-ai', systemPrompt: 'ignore app prompt' }));
   assert.equal(response.status, 200);
   assert.equal(response.headers.get('cache-control'), 'no-store');
   assert.deepEqual(await response.json(), { appId: 'hermes', providerId: 'workers-ai', response: 'ok' });
@@ -44,9 +44,29 @@ test('rejects malformed JSON and oversized bodies', async () => {
   assert.equal((await worker.fetch(request(large))).status, 413);
 });
 
-test('converts access-denied errors to safe status responses', async () => {
-  const worker = setup();
-  const response = await worker.fetch(request({ appId: 'not-allowed', messages: [{ role: 'user', content: 'hi' }] }));
+test('converts app membership denial to safe status responses', async () => {
+  const worker = setup({ authenticate: async () => ({ id: 'u1', allowedApps: [] }) });
+  const response = await worker.fetch(request({ appId: 'hermes', messages: [{ role: 'user', content: 'hi' }], providerId: 'workers-ai' }));
   assert.equal(response.status, 403);
   assert.deepEqual(await response.json(), { error: 'App access denied', code: 'APP_ACCESS_DENIED' });
+});
+
+test('hosted endpoint pins the exact app and rejects cross-app requests despite any caller permissions', async () => {
+  const worker = setup();
+  const response = await worker.fetch(request({ appId: 'cresus', messages: [{ role: 'user', content: 'try other app' }], providerId: 'workers-ai' }));
+  assert.equal(response.status, 403);
+  assert.equal((await response.json()).error, 'App deployment identity mismatch');
+});
+
+test('hosted endpoint rejects browser cross-origin requests before model execution', async () => {
+  const worker = setup();
+  const response = await worker.fetch(request(
+    { appId: 'hermes', messages: [{ role: 'user', content: 'hi' }], providerId: 'workers-ai' },
+    { origin: 'https://attacker.example' }
+  ));
+  assert.equal(response.status, 403);
+});
+
+test('hosted endpoint cannot exist without an app-scoped identity', () => {
+  assert.throws(() => createIntelligenceWorker({ core: { route: () => {} }, authenticate: async () => ({ id: 'u' }) }), /exact appId/);
 });
