@@ -1,121 +1,144 @@
 #!/usr/bin/env node
 import { spawnSync } from 'node:child_process';
-import { existsSync, readFileSync } from 'node:fs';
-import { isAbsolute, resolve, sep } from 'node:path';
+import { existsSync, lstatSync, readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { createHash } from 'node:crypto';
 import { validateManifest } from './validate-manifest.mjs';
+import { resolveInside, stageApplication } from '../deployment/workspace.mjs';
+import { previewCommand, extractPreviewUrl } from '../deployment/hosts.mjs';
+export { resolveInside };
 
-export function resolveInside(root, relative) {
-  if (typeof relative !== 'string' || !relative.trim() || isAbsolute(relative) || relative.includes('..') || relative.includes('\\')) {
-    throw new Error('Path must be a safe relative path');
-  }
-  const base = resolve(root);
-  const target = resolve(base, relative);
-  if (target !== base && !target.startsWith(base + sep)) throw new Error('Path escapes its configured root');
-  return target;
+const BUILD_ENV_NAMES = new Set(['PATH','HOME','TMPDIR','LANG','LC_ALL','CI','NODE_ENV',
+  'HTTP_PROXY','HTTPS_PROXY','NO_PROXY','http_proxy','https_proxy','no_proxy',
+  'NPM_CONFIG_CACHE','npm_config_cache','SSL_CERT_FILE','NODE_EXTRA_CA_CERTS']);
+
+function isolatedBuildEnv(manifest) {
+  // Only public build keys explicitly declared by this application's manifest
+  // may enter the build. No general-purpose API tokens enter install/test/build.
+  const declaredPublic = new Set([
+    ...(manifest.source.publicBuildEnv || []),
+    ...(manifest.source.requiredHostedPublicEnv || []),
+  ]);
+  const filtered = Object.fromEntries(
+    Object.entries(process.env).filter(([key]) => BUILD_ENV_NAMES.has(key) || declaredPublic.has(key))
+  );
+  return { ...filtered, ...manifest.source.hostedAuthEnvironment };
 }
 
-function commandParts(value, name) {
-  if (!Array.isArray(value) || value.length === 0 || value.some(part => typeof part !== 'string' || !part.trim())) {
-    throw new Error(name + ' must be a non-empty argv array');
+function previewHostEnv(manifest, buildEnv) {
+  const needed = manifest.source.requiredHostedPublicEnv || [];
+  for (const name of needed) {
+    if (typeof process.env[name] !== 'string' || process.env[name].trim() === '') {
+      throw new Error('Required public hosted auth configuration is unavailable: ' + name);
+    }
   }
-  return value;
+  const provider = manifest.deployment.provider;
+  if (provider === 'netlify' && !process.env.NETLIFY_AUTH_TOKEN) {
+    throw new Error('Non-interactive Netlify preview requires an authorized NETLIFY_AUTH_TOKEN');
+  }
+  if (provider === 'cloudflare-pages' && !process.env.CLOUDFLARE_API_TOKEN) {
+    throw new Error('Non-interactive Cloudflare preview requires an authorized CLOUDFLARE_API_TOKEN');
+  }
+  return {
+    ...buildEnv,
+    ...(provider === 'netlify' ? { NETLIFY_AUTH_TOKEN: process.env.NETLIFY_AUTH_TOKEN } : {}),
+    ...(provider === 'cloudflare-pages'
+      ? { CLOUDFLARE_API_TOKEN: process.env.CLOUDFLARE_API_TOKEN, ...(process.env.CLOUDFLARE_ACCOUNT_ID
+        ? { CLOUDFLARE_ACCOUNT_ID: process.env.CLOUDFLARE_ACCOUNT_ID } : {}) } : {}),
+  };
 }
 
-function run(command, cwd, env = process.env) {
-  const [program, ...args] = commandParts(command, 'command');
-  const result = spawnSync(program, args, { cwd, env, encoding: 'utf8', maxBuffer: 8 * 1024 * 1024, shell: false });
+function run(argv, cwd, env) {
+  if (!Array.isArray(argv) || !argv.length || argv.some(s => typeof s !== 'string' || !s.trim())) {
+    throw new Error('Command must be a non-empty argv array');
+  }
+  const [program, ...args] = argv;
+  const result = spawnSync(program, args, {
+    cwd, env, encoding: 'utf8', maxBuffer: 4 * 1024 * 1024,
+    shell: false, timeout: 300000, windowsHide: true,
+  });
   if (result.stdout) process.stdout.write(result.stdout);
   if (result.stderr) process.stderr.write(result.stderr);
-  if (result.error) throw result.error;
+  if (result.error) throw new Error('Command failed or timed out: ' + program + ': ' + result.error.message);
   if (result.status !== 0) throw new Error('Command failed (' + result.status + '): ' + program);
   return result.stdout || '';
 }
 
-function extractPreviewUrl(output, provider) {
-  for (const line of output.split(/\r?\n/).reverse()) {
-    try {
-      const parsed = JSON.parse(line);
-      const candidate = parsed.deploy_url || parsed.deployUrl || parsed.url;
-      if (typeof candidate === 'string' && /^https:\/\//.test(candidate)) return candidate;
-    } catch {}
+function verifyOutput(stagedRoot, outputRelative) {
+  const output = resolveInside(stagedRoot, outputRelative);
+  const html = resolveInside(output, 'index.html');
+  const manifest = resolveInside(output, 'manifest.webmanifest');
+  for (const path of [output, html, manifest]) {
+    if (!existsSync(path) || lstatSync(path).isSymbolicLink()) throw new Error('Missing or unsafe PWA output: ' + path);
   }
-  const host = provider === 'netlify'
-    ? /https:\/\/[a-z0-9-]+(?:--[a-z0-9-]+)?\.netlify\.app\b/i
-    : /https:\/\/[a-z0-9.-]+\.pages\.dev\b/i;
-  return output.match(host)?.[0] || null;
+  if (!lstatSync(html).isFile() || !lstatSync(manifest).isFile()) throw new Error('PWA output files must be regular files');
+  const parsed = JSON.parse(readFileSync(manifest, 'utf8'));
+  if (!parsed || typeof parsed.name !== 'string' || !parsed.name.trim()) {
+    throw new Error('PWA web manifest must declare a name');
+  }
+  // Inspect only the mandatory files; avoid recording private application contents.
+  const digest = createHash('sha256').update(readFileSync(html)).update(readFileSync(manifest)).digest('hex');
+  return { outputDirectory: output, artifactFingerprint: digest };
 }
 
-function deployPreview(manifest, outputDirectory, cwd, env) {
-  let command;
-  if (manifest.deployment.provider === 'netlify') {
-    command = ['npx', '--yes', 'netlify-cli', 'deploy', '--dir', outputDirectory, '--json'];
-  } else if (manifest.deployment.provider === 'cloudflare-pages') {
-    const project = manifest.deployment.projectName;
-    if (typeof project !== 'string' || !project.trim()) throw new Error('deployment.projectName is required for Cloudflare Pages');
-    command = ['npx', '--yes', 'wrangler', 'pages', 'deploy', outputDirectory, '--project-name', project, '--branch', 'edenos-candidate'];
-  } else {
-    throw new Error('Unsupported hosting provider');
-  }
-  const output = run(command, cwd, env);
-  const url = extractPreviewUrl(output, manifest.deployment.provider);
-  if (!url) throw new Error('Preview deployment returned no verifiable HTTPS URL');
-  return url;
-}
-
-export async function execute({ manifest, appRoot, publishPreview = false }) {
+export async function execute({ manifest, appRoot, publishPreview = false } = {}) {
   const checked = validateManifest(manifest);
   if (!checked.ok) throw new Error('Manifest rejected: ' + checked.errors.join('; '));
-  if (!appRoot) throw new Error('--app-root is required');
-  const root = resolve(appRoot);
-  if (!existsSync(root)) throw new Error('App root does not exist: ' + root);
-  const project = resolveInside(root, manifest.source.projectDirectory);
-  if (!existsSync(project)) throw new Error('Configured app project directory does not exist: ' + project);
-
-  const env = { ...process.env, VITE_EDEN_PWA_AUTH_REQUIRED: 'true' };
-  run(manifest.source.installCommand, project, env);
-  run(manifest.source.testCommand, project, env);
-  run(manifest.source.buildCommand, project, env);
-
-  const outputDirectory = resolveInside(project, manifest.source.outputDirectory);
-  const html = resolveInside(outputDirectory, 'index.html');
-  const webManifest = resolveInside(outputDirectory, 'manifest.webmanifest');
-  if (!existsSync(html) || !existsSync(webManifest)) {
-    throw new Error('Build output must contain index.html and manifest.webmanifest');
+  if (publishPreview) {
+    // Refuse before running any installation/build hooks when the target or credentials are not identified.
+    previewCommand(manifest, '__STAGED_OUTPUT__');
+    previewHostEnv(manifest, isolatedBuildEnv(manifest));
   }
-
-  // Must prove the hosted login gate on the built artifact before any preview is published.
-  run(manifest.source.authVerificationCommand, project, {
-    ...env,
-    EXPECTED_HOSTED_AUTH_SCREEN: 'login',
-  });
-
-  const result = { appId: manifest.app.id, version: manifest.app.version, outputDirectory, localAuthSmoke: 'PASS' };
-  if (!publishPreview) {
-    console.log('PWA_PREFLIGHT_PASS: tests, build output and hosted-auth smoke test passed. No deployment performed.');
+  const workspace = stageApplication(appRoot, manifest.source.projectDirectory);
+  try {
+    const env = isolatedBuildEnv(manifest);
+    run(manifest.source.installCommand, workspace.staged, env);
+    run(manifest.source.testCommand, workspace.staged, env);
+    run(manifest.source.buildCommand, workspace.staged, env);
+    const verified = verifyOutput(workspace.staged, manifest.source.outputDirectory);
+    run(manifest.source.authVerificationCommand, workspace.staged, {
+      ...env, EXPECTED_HOSTED_AUTH_SCREEN: 'login',
+    });
+    const result = {
+      appId: manifest.app.id,
+      version: manifest.app.version,
+      provider: manifest.deployment.provider,
+      artifactFingerprint: verified.artifactFingerprint,
+      localAuthSmoke: 'PASS',
+      sourceIsolated: true,
+      previewDeployed: false,
+    };
+    if (!publishPreview) {
+      console.log('PWA_PREFLIGHT_PASS: isolated tests, build output and declared auth smoke test passed. No deployment performed.');
+      return result;
+    }
+    const command = previewCommand(manifest, verified.outputDirectory);
+    const output = run(command, workspace.staged, previewHostEnv(manifest, env));
+    const previewUrl = extractPreviewUrl(output, manifest.deployment.provider);
+    if (!previewUrl) throw new Error('Preview host returned no accepted HTTPS preview URL');
+    result.previewUrl = previewUrl;
+    result.previewDeployed = true;
+    run(manifest.source.authVerificationCommand, workspace.staged, {
+      ...env, EDEN_PWA_PUBLIC_URL: previewUrl, EXPECTED_HOSTED_AUTH_SCREEN: 'login',
+    });
+    result.remoteLoginScreenSmoke = 'PASS';
+    // OAuth round trips, cross-user isolation, server-side Access and provider intelligence remain separate release gates.
+    console.log('PWA_PREVIEW_LOGIN_SCREEN_TESTED: ' + previewUrl);
+    console.log('Production, account-login and AI-provider acceptance remain UNVERIFIED.');
     return result;
+  } finally {
+    workspace.dispose();
   }
-
-  const previewUrl = deployPreview(manifest, outputDirectory, project, env);
-  run(manifest.source.authVerificationCommand, project, {
-    ...env,
-    EDEN_PWA_PUBLIC_URL: previewUrl,
-    EXPECTED_HOSTED_AUTH_SCREEN: 'login',
-  });
-  result.previewUrl = previewUrl;
-  result.remoteAuthSmoke = 'PASS';
-  console.log('PWA_PREVIEW_VERIFIED: ' + previewUrl);
-  console.log('Production promotion is intentionally not performed by this candidate.');
-  return result;
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const args = process.argv.slice(2);
-  const valueAfter = flag => { const i = args.indexOf(flag); return i >= 0 ? args[i + 1] : null; };
-  const manifestPath = valueAfter('--manifest');
-  const appRoot = valueAfter('--app-root');
+  const after = flag => { const at = args.indexOf(flag); return at < 0 ? null : args[at + 1]; };
+  const manifestPath = after('--manifest');
+  const appRoot = after('--app-root');
   const publishPreview = args.includes('--publish-preview');
-  if (!manifestPath || !appRoot || args.some((x, i) => ['--manifest', '--app-root'].includes(x) && !args[i + 1])) {
+  if (!manifestPath || !appRoot) {
     console.error('Usage: node scripts/deploy.mjs --manifest <manifest.json> --app-root <app-checkout> [--publish-preview]');
     process.exitCode = 2;
   } else {
