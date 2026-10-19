@@ -58,7 +58,8 @@
     "./software-sharing/release-controls": "./software-sharing/release-controls.mjs",
     "./software-sharing/cloudflare-email-download": "./software-sharing/cloudflare-email-download.mjs",
     "./software-sharing/owner-adapter": "./software-sharing/owner-adapter.mjs",
-    "./deployment/cloudflare-private-readiness": "./deployment/cloudflare-private-readiness.mjs"
+    "./deployment/cloudflare-private-readiness": "./deployment/cloudflare-private-readiness.mjs",
+    "./intelligence/read-only-actions": "./intelligence/read-only-actions.mjs"
   },
   "files": [
     "authentication/",
