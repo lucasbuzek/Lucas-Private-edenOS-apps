@@ -68,6 +68,7 @@
     "CLOUDFLARE_CLOSED_TEST_RELAUNCH.md",
     "examples/private-pages/",
     "software-sharing/",
-    "environments/"
+    "environments/",
+    "PRIVATE_PORTAL_HOSTING_CONTRACT.md"
   ]
 }

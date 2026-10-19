@@ -102,3 +102,7 @@ New reusable backends:
 - EDEN Web Portal/functions/[[path]].js: optional Pages Functions bridge to SOFTWARE_REQUEST_GATE and EMAIL_DOWNLOAD_GATE service bindings; fails with 503 if not configured. No public GitHub browser download URLs.
 Cloudflare Email Service sender requires a properly onboarded DNS/email domain and private sender binding; no verified sender, domain or recipient delivery exists in current physical evidence. No paid service is mandatory in code, but free sending to arbitrary new recipients is NOT assumed until terms and account acceptance are checked.
 Currently the private GitHub repository had ZERO Releases at the last authenticated check. accepted-releases.json is [] and all distribution controls default disabled. No file downloads, email link deliveries, portal deployment or public launch have been physically accepted.
+
+
+### Exact public portal hosting and release contract
+See PRIVATE_PORTAL_HOSTING_CONTRACT.md for the canonical host contract (SOFTWARE_REQUEST_HOST=edenosportal.pages.dev), private Worker service-binding and D1/email/GitHub acceptance gates, and exact static Pages Functions routing. The original portal source, not a duplicate copy in this reusable package, is authoritative.
