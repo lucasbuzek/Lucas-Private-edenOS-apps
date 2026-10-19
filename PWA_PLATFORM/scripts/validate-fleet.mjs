@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { isCliMain } from './cli-main.mjs';
 import { validateManifest } from './validate-manifest.mjs';
 
 /** Inspect independently configured apps without combining their deployments. */
@@ -37,7 +37,7 @@ export function validateFleet(manifests) {
   return { ok: errors.length === 0, errors };
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+if (isCliMain(import.meta.url)) {
   const paths = process.argv.slice(2);
   if (!paths.length) {
     console.error('Usage: node scripts/validate-fleet.mjs <app-a.json> <app-b.json> [...]');

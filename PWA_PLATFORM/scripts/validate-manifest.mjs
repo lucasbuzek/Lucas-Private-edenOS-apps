@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { isCliMain } from './cli-main.mjs';
 
 const ID = /^[a-z][a-z0-9-]{1,47}$/;
 const VERSION = /^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$/;
@@ -127,7 +127,7 @@ export function validateManifest(m) {
   return { ok: errors.length === 0, errors };
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+if (isCliMain(import.meta.url)) {
   const file = process.argv[2];
   if (!file) { console.error('Usage: node scripts/validate-manifest.mjs <manifest.json>'); process.exitCode = 2; }
   else {

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import {existsSync, mkdirSync, writeFileSync, rmSync} from 'node:fs';
 import {resolve, join} from 'node:path';
-import {pathToFileURL} from 'node:url';
+import { isCliMain } from './cli-main.mjs';
 import {
   planPrivatePagesNamespace, validatePrivatePagesNamespace,
   renderUnpublishedPlaceholder,
@@ -68,7 +68,7 @@ function renderFutureApplicationPlaceholder(appId) {
     '<h1>'+appId+'</h1><p>Private application placeholder only. Not deployed or activated.</p></body></html>\n';
 }
 
-if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href) {
+if (isCliMain(import.meta.url)) {
   const argv=process.argv.slice(2);
   const at=argv.indexOf('--output');
   const output=at>=0?argv[at+1]:null;

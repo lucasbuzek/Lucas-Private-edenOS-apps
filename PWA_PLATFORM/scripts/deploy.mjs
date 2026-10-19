@@ -2,7 +2,7 @@
 import { spawnSync } from 'node:child_process';
 import { existsSync, lstatSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { isCliMain } from './cli-main.mjs';
 import { createHash } from 'node:crypto';
 import { validateManifest } from './validate-manifest.mjs';
 import { resolveInside, stageApplication } from '../deployment/workspace.mjs';
@@ -138,7 +138,7 @@ export async function execute({ manifest, appRoot, publishPreview = false } = {}
   }
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+if (isCliMain(import.meta.url)) {
   const args = process.argv.slice(2);
   const after = flag => { const at = args.indexOf(flag); return at < 0 ? null : args[at + 1]; };
   const manifestPath = after('--manifest');
