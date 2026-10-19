@@ -45,7 +45,8 @@ const CASES = Object.freeze({
     {
       id:'transport-fuel-math',
       prompt:'A transport route is 150 km. The vehicle uses 12 litres per 100 km. Calculate required fuel in litres. No price was supplied.',
-      check:answer=>/\\b18\\b/.test(answer),
+      // Exactly 18 litres is correct. Escaped literal \b incorrectly rejected it.
+      check:answer=>/\b18\b/.test(answer),
     },
     {
       id:'procurement-evidence-and-approval',
