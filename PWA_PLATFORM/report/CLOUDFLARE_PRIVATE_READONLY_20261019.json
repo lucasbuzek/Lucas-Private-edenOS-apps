@@ -1,0 +1,59 @@
+{
+  "auditTimestamp": "2026-10-19T05:40:10+02:00",
+  "source": "Authorized macOS Wrangler OAuth session and GET-only Cloudflare API",
+  "promoted": false,
+  "accountMutated": false,
+  "result": {
+    "status": "BLOCKED_NOT_DEPLOYABLE",
+    "evidenceType": "AUTHENTICATED_READ_ONLY_ACCOUNT_INVENTORY",
+    "privatePages": {
+      "exists": true,
+      "empty": true,
+      "verified": true
+    },
+    "portalPages": {
+      "exists": false,
+      "verified": false,
+      "absent": true
+    },
+    "accessApps": {
+      "readable": true,
+      "count": 0,
+      "protectedHosts": [
+        {
+          "hostname": "edenosprivate.pages.dev",
+          "matchedApplication": false,
+          "policyAndOwnerAcceptance": "UNKNOWN"
+        },
+        {
+          "hostname": "*.edenosprivate.pages.dev",
+          "matchedApplication": false,
+          "policyAndOwnerAcceptance": "UNKNOWN"
+        }
+      ]
+    },
+    "dns": {
+      "readable": true,
+      "activeZoneCount": 0
+    },
+    "emailRouting": {
+      "readable": true,
+      "count": 0
+    },
+    "ownerLogin": "UNKNOWN",
+    "senderDelivery": "UNKNOWN",
+    "releasedSoftware": "UNKNOWN",
+    "deployAllowed": false,
+    "blockers": [
+      "PORTAL_PAGES_PROJECT_NOT_CREATED",
+      "NO_ACCESS_APPLICATIONS",
+      "ACCESS_HOST_UNVERIFIED:edenosprivate.pages.dev",
+      "ACCESS_HOST_UNVERIFIED:*.edenosprivate.pages.dev",
+      "NO_ACTIVE_OWNED_DNS_ZONE_FOR_EMAIL",
+      "OWNER_ACCESS_POLICY_NOT_PHYSICALLY_ACCEPTED",
+      "PREVIEW_HASH_AND_DIRECT_ORIGIN_NOT_PHYSICALLY_ACCEPTED",
+      "SENDER_DOMAIN_AND_RECIPIENT_DELIVERY_NOT_PHYSICALLY_ACCEPTED",
+      "REAL_SOFTWARE_RELEASE_AND_DEVICE_DOWNLOAD_NOT_ACCEPTED"
+    ]
+  }
+}

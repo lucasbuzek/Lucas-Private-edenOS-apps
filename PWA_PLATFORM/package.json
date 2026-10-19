@@ -1,12 +1,13 @@
 {
   "name": "@edenos/pwa-platform",
-  "version": "0.2.0-dev.3",
+  "version": "0.2.0-dev.4",
   "private": true,
   "type": "module",
   "description": "Reusable independent authenticated PWA staging, deployment preflight and intelligence/authentication adapters for EDENOS applications.",
   "scripts": {
     "test": "node --test test/*.test.mjs",
-    "validate": "node scripts/validate-manifest.mjs examples/hermes.manifest.json && node scripts/validate-manifest.mjs examples/hermes.cloudflare.closed.manifest.json && node scripts/validate-manifest.mjs examples/cresus.worker.manifest.json && node scripts/validate-fleet.mjs examples/hermes.cloudflare.closed.manifest.json examples/cresus.worker.manifest.json"
+    "validate": "node scripts/validate-manifest.mjs examples/hermes.manifest.json && node scripts/validate-manifest.mjs examples/hermes.cloudflare.closed.manifest.json && node scripts/validate-manifest.mjs examples/cresus.worker.manifest.json && node scripts/validate-fleet.mjs examples/hermes.cloudflare.closed.manifest.json examples/cresus.worker.manifest.json",
+    "preflight:cloudflare": "node scripts/cloudflare-private-preflight.mjs"
   },
   "engines": {
     "node": ">=20.0.0"
@@ -20,7 +21,8 @@
     "edenos-pwa-check": "./scripts/validate-manifest.mjs",
     "edenos-pwa-fleet": "./scripts/validate-fleet.mjs",
     "edenos-pwa-readiness": "./scripts/readiness.mjs",
-    "edenos-pwa-namespace": "./scripts/prepare-private-pages.mjs"
+    "edenos-pwa-namespace": "./scripts/prepare-private-pages.mjs",
+    "edenos-pwa-cloudflare-check": "./scripts/cloudflare-private-preflight.mjs"
   },
   "exports": {
     ".": "./intelligence/core.mjs",
@@ -55,7 +57,8 @@
     "./software-sharing/github-release": "./software-sharing/github-release.mjs",
     "./software-sharing/release-controls": "./software-sharing/release-controls.mjs",
     "./software-sharing/cloudflare-email-download": "./software-sharing/cloudflare-email-download.mjs",
-    "./software-sharing/owner-adapter": "./software-sharing/owner-adapter.mjs"
+    "./software-sharing/owner-adapter": "./software-sharing/owner-adapter.mjs",
+    "./deployment/cloudflare-private-readiness": "./deployment/cloudflare-private-readiness.mjs"
   },
   "files": [
     "authentication/",

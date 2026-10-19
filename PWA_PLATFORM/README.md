@@ -1,4 +1,4 @@
-# EDENOS Universal PWA Deployment — 0.2.0-dev.3
+# EDENOS Universal PWA Deployment — 0.2.0-dev.4
 
 **Status: engineering candidate / not deployed / no LKG promotion.** Current source authority is the standalone project at `/Users/lucas/edenOS/Software Development/Online Plugins & Connectors/EDENOS-PWA-Deployment`. Local Git `main` remains the preservation baseline. Candidate changes belong only on the project feature branch.
 
@@ -106,3 +106,12 @@ Currently the private GitHub repository had ZERO Releases at the last authentica
 
 ### Exact public portal hosting and release contract
 See PRIVATE_PORTAL_HOSTING_CONTRACT.md for the canonical host contract (SOFTWARE_REQUEST_HOST=edenosportal.pages.dev), private Worker service-binding and D1/email/GitHub acceptance gates, and exact static Pages Functions routing. The original portal source, not a duplicate copy in this reusable package, is authoritative.
+
+
+## Reproducible authenticated Cloudflare account preflight
+
+`npm run preflight:cloudflare` or `edenos-pwa-cloudflare-check` uses explicitly supplied `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` environment values, GET-only Cloudflare API requests, and a sanitized status report. It deliberately returns nonzero/blocked until separate physical Access and download acceptance, even if the API metadata looks configured. No deploy/provision/change action exists.
+
+On the authorized macOS host, `WRANGLER_BIN=/path/to/verified/wrangler python3 scripts/wrangler-read-only-report.py` instead uses the existing Wrangler OAuth profile only in memory; it prints no secrets, account IDs or family emails. It does NOT log in, renew tokens, deploy or configure Cloudflare. The specific cached Wrangler binary must be explicit if more than one is present, to avoid guessing.
+
+Current authenticated evidence: `report/CLOUDFLARE_PRIVATE_READONLY_20261019.json`. The **edenosprivate** Pages project identity is verified, but it has NO deployment. **edenosportal** returned HTTP 404. Access application GET succeeded with zero applications; active DNS-zone GET succeeded with zero zones; account email routing GET succeeded with zero rules. Consequently NO private login/preview/origin/email policy is physically accepted, and neither a private PWA nor the public portal/download service may be deployed. This evidence supersedes the earlier possibly-created edenosprivate resource uncertainty. Never interpret empty arrays returned after API errors as successful zero counts; API failures remain UNKNOWN.

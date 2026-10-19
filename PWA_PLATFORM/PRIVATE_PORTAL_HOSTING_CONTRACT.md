@@ -51,3 +51,12 @@ The Pages Function expects `EMAIL_DOWNLOAD_GATE`, another private Worker service
 7. Only then enable the live public software request path and manually promote an independently verified artifact. The owner-approved request and download subsystem does **not** imply any private PWA or AI capability is release-ready.
 
 No Cloudflare deployment or domain/email configuration has been performed by this file.
+
+
+## Verified read-only Cloudflare account state — 2026-10-19
+
+The cached authenticated Wrangler session is bound to the account matching the canonical CRESUS D1. The Cloudflare GET-only API returned: `edenosprivate` Pages project **HTTP 200, exact-name match, no latest deployment**; `edenosportal` Pages project **HTTP 404**; account-level Access apps **HTTP 200, 0 applications**; owned active DNS zones **HTTP 200, 0**; account email routing rules **HTTP 200, 0**. Exact sanitized report in `report/CLOUDFLARE_PRIVATE_READONLY_20261019.json`. This evidence does not include credentials, account ID, private emails or tokens.
+
+**HARD STOP:** No private routes, family PWA, Lucas admin dashboard, test application, software request Worker, download Worker or accepted release can be physically deployed with the current Access and DNS/email posture. A public concept page can be prepared locally, but publication is not authorized until its real account/security/email boundaries are accepted. Cloudflare's Pages preview protection does not by itself protect the production `*.pages.dev` hostname; separately verified Access apps and owner policies are mandatory for private contents. App-specific HERMES/CRESUS identities and tenancy remain independent.
+
+Reproduction is read-only: `npm run preflight:cloudflare` with Cloudflare token/account ID supplied through nonlogged env vars; or use `WRANGLER_BIN=/exact/trusted/cached/wrangler python3 scripts/wrangler-read-only-report.py` on the authorized Mac. No new Cloudflare resource was created, no Access policy was modified, and no email was sent.
