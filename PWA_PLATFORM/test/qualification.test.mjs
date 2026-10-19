@@ -51,3 +51,30 @@ test('no unknown app identity inherits arbitrary model capability certification'
   const r=await qualifyIntelligenceProvider({appId:'unknown-app',provider:{}});
   assert.equal(r.status,'UNKNOWN_APP_PROFILE');
 });
+
+test('transport fuel arithmetic correctly recognizes 18 litres without promoting a mock model',async()=>{
+  const cases=qualificationCases('slindokuhle');
+  assert.equal(cases[0].id,'transport-fuel-math');
+  const provider={id:'test-mock',available:true,costClass:'local',
+    generate:async({messages})=>messages[0].content.includes('150 km')
+      ? '150 km × 12 litres / 100 km = 18 litres.'
+      : 'No, cannot certify compliance without a current operator licence; the missing licence blocks submission.'};
+  const report=await qualifyIntelligenceProvider({appId:'slindokuhle',provider});
+  assert.deepEqual(report.checks,[{id:'transport-fuel-math',pass:true},
+    {id:'procurement-evidence-and-approval',pass:true}]);
+  assert.equal(report.automatedPass,true);
+  assert.equal(report.productionAccepted,false);
+});
+
+test('transport arithmetic rejects incorrect or embedded 18',async()=>{
+  for(const answer of ['180 litres','1,800 litres','No fuel required']){
+    const report=await qualifyIntelligenceProvider({appId:'slindokuhle',provider:{
+      id:'bad-mock',available:true,costClass:'local',
+      generate:async({messages})=>messages[0].content.includes('150 km')
+        ? answer:'No, missing current operator licence; approval required.',
+    }});
+    assert.equal(report.checks[0].pass,false,answer);
+    assert.equal(report.automatedPass,false);
+    assert.equal(report.productionAccepted,false);
+  }
+});
