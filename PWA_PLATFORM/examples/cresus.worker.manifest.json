@@ -51,6 +51,14 @@
       "turnstileRequired": true,
       "publicWaitlistSeparateFromPrivateApp": true,
       "allAppAssetsProtected": true
+    },
+    "desiredPagesEntry": {
+      "projectIntent": "edenosprivate",
+      "branchIntent": "cresus",
+      "requestedUrl": "https://cresus.edenosprivate.pages.dev",
+      "status": "UNVERIFIED_NOT_PROVISIONED",
+      "branchAndHashPreviewsRequireAccess": true,
+      "independentAppRuntimeAndDataRequired": true
     }
   },
   "intelligence": {

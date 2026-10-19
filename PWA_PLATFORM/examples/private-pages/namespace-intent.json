@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "status": "DESIRED_NAMES_ONLY",
+  "namespace": "edenosprivate",
+  "privateRoot": "https://edenosprivate.pages.dev",
+  "securityRequirements": {
+    "privateRootRequiresAccess": true,
+    "allBranchAliasesRequireAccess": true,
+    "allImmutablePreviewUrlsRequireAccess": true,
+    "lucasOwnerAdminOnly": true,
+    "independentApplicationMembership": true,
+    "directOriginBypassMustBeBlocked": true,
+    "separatelyHostedPortal": true,
+    "physicalAcceptanceRequired": true
+  },
+  "environments": [
+    {
+      "label": "Lucas",
+      "branch": "lucas",
+      "kind": "owner-admin",
+      "access": "owner-only",
+      "appId": null,
+      "project": "edenosprivate",
+      "requestedUrl": "https://lucas.edenosprivate.pages.dev",
+      "pagesAliasKind": "branch-preview-alias",
+      "availability": "UNVERIFIED_NOT_PROVISIONED",
+      "accessAccepted": false,
+      "deployed": false,
+      "gates": {
+        "exactCloudflareProject": "UNKNOWN",
+        "branchPreview": "UNKNOWN",
+        "cloudflareAccess": "UNKNOWN",
+        "branchAndHashPreviewProtection": "UNKNOWN",
+        "ownerOrAppMembership": "UNKNOWN",
+        "directOriginBypass": "UNKNOWN"
+      },
+      "appIsolation": "separate-environment-authorization-required",
+      "placeholderOnly": true,
+      "actualApplicationDeployedHere": false
+    },
+    {
+      "label": "HERMES",
+      "branch": "hermes",
+      "kind": "standalone-app-entry",
+      "access": "approved-app-testers",
+      "appId": "hermes",
+      "project": "edenosprivate",
+      "requestedUrl": "https://hermes.edenosprivate.pages.dev",
+      "pagesAliasKind": "branch-preview-alias",
+      "availability": "UNVERIFIED_NOT_PROVISIONED",
+      "accessAccepted": false,
+      "deployed": false,
+      "gates": {
+        "exactCloudflareProject": "UNKNOWN",
+        "branchPreview": "UNKNOWN",
+        "cloudflareAccess": "UNKNOWN",
+        "branchAndHashPreviewProtection": "UNKNOWN",
+        "ownerOrAppMembership": "UNKNOWN",
+        "directOriginBypass": "UNKNOWN"
+      },
+      "appIsolation": "separate-app-runtime-data-and-identity-required",
+      "placeholderOnly": true,
+      "actualApplicationDeployedHere": false
+    },
+    {
+      "label": "CRESUS",
+      "branch": "cresus",
+      "kind": "standalone-app-entry",
+      "access": "approved-app-testers",
+      "appId": "cresus",
+      "project": "edenosprivate",
+      "requestedUrl": "https://cresus.edenosprivate.pages.dev",
+      "pagesAliasKind": "branch-preview-alias",
+      "availability": "UNVERIFIED_NOT_PROVISIONED",
+      "accessAccepted": false,
+      "deployed": false,
+      "gates": {
+        "exactCloudflareProject": "UNKNOWN",
+        "branchPreview": "UNKNOWN",
+        "cloudflareAccess": "UNKNOWN",
+        "branchAndHashPreviewProtection": "UNKNOWN",
+        "ownerOrAppMembership": "UNKNOWN",
+        "directOriginBypass": "UNKNOWN"
+      },
+      "appIsolation": "separate-app-runtime-data-and-identity-required",
+      "placeholderOnly": true,
+      "actualApplicationDeployedHere": false
+    },
+    {
+      "label": "Elysium",
+      "branch": "elysium",
+      "kind": "future-environment",
+      "access": "owner-only-until-authorized",
+      "appId": null,
+      "project": "edenosprivate",
+      "requestedUrl": "https://elysium.edenosprivate.pages.dev",
+      "pagesAliasKind": "branch-preview-alias",
+      "availability": "UNVERIFIED_NOT_PROVISIONED",
+      "accessAccepted": false,
+      "deployed": false,
+      "gates": {
+        "exactCloudflareProject": "UNKNOWN",
+        "branchPreview": "UNKNOWN",
+        "cloudflareAccess": "UNKNOWN",
+        "branchAndHashPreviewProtection": "UNKNOWN",
+        "ownerOrAppMembership": "UNKNOWN",
+        "directOriginBypass": "UNKNOWN"
+      },
+      "appIsolation": "separate-environment-authorization-required",
+      "placeholderOnly": true,
+      "actualApplicationDeployedHere": false
+    },
+    {
+      "label": "Slindokuhle",
+      "branch": "slindokuhle",
+      "kind": "future-environment",
+      "access": "owner-only-until-authorized",
+      "appId": null,
+      "project": "edenosprivate",
+      "requestedUrl": "https://slindokuhle.edenosprivate.pages.dev",
+      "pagesAliasKind": "branch-preview-alias",
+      "availability": "UNVERIFIED_NOT_PROVISIONED",
+      "accessAccepted": false,
+      "deployed": false,
+      "gates": {
+        "exactCloudflareProject": "UNKNOWN",
+        "branchPreview": "UNKNOWN",
+        "cloudflareAccess": "UNKNOWN",
+        "branchAndHashPreviewProtection": "UNKNOWN",
+        "ownerOrAppMembership": "UNKNOWN",
+        "directOriginBypass": "UNKNOWN"
+      },
+      "appIsolation": "separate-environment-authorization-required",
+      "placeholderOnly": true,
+      "actualApplicationDeployedHere": false
+    },
+    {
+      "label": "LucasTesting",
+      "branch": "lucastesting",
+      "kind": "future-environment",
+      "access": "owner-only-until-authorized",
+      "appId": null,
+      "project": "edenosprivate",
+      "requestedUrl": "https://lucastesting.edenosprivate.pages.dev",
+      "pagesAliasKind": "branch-preview-alias",
+      "availability": "UNVERIFIED_NOT_PROVISIONED",
+      "accessAccepted": false,
+      "deployed": false,
+      "gates": {
+        "exactCloudflareProject": "UNKNOWN",
+        "branchPreview": "UNKNOWN",
+        "cloudflareAccess": "UNKNOWN",
+        "branchAndHashPreviewProtection": "UNKNOWN",
+        "ownerOrAppMembership": "UNKNOWN",
+        "directOriginBypass": "UNKNOWN"
+      },
+      "appIsolation": "separate-environment-authorization-required",
+      "placeholderOnly": true,
+      "actualApplicationDeployedHere": false
+    }
+  ],
+  "futurePortal": {
+    "label": "edenOS portal",
+    "project": "edenosportal",
+    "requestedUrl": "https://edenosportal.pages.dev",
+    "kind": "future-unified-portal-placeholder",
+    "availability": "UNVERIFIED_NOT_PROVISIONED",
+    "deployed": false,
+    "productionPublicationAllowed": false
+  },
+  "criticalBoundaries": [
+    "Branch aliases on one Pages project are not separate Pages projects",
+    "Protect the project root, all branch aliases and immutable hash preview URLs",
+    "Each standalone app retains separate backend, data, Access membership and release approval",
+    "Protect or disable direct Workers, custom-domain and Pages origins bypassing the gateway",
+    "Do not auto-publish placeholders, production branches or create Cloudflare resources"
+  ]
+}

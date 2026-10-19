@@ -57,6 +57,14 @@
       "turnstileRequired": true,
       "publicWaitlistSeparateFromPrivateApp": true,
       "allAppAssetsProtected": true
+    },
+    "desiredPagesEntry": {
+      "projectIntent": "edenosprivate",
+      "branchIntent": "hermes",
+      "requestedUrl": "https://hermes.edenosprivate.pages.dev",
+      "status": "UNVERIFIED_NOT_PROVISIONED",
+      "branchAndHashPreviewsRequireAccess": true,
+      "independentAppRuntimeAndDataRequired": true
     }
   },
   "intelligence": {

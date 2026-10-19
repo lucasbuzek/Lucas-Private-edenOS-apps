@@ -1,6 +1,6 @@
 {
   "name": "@edenos/pwa-platform",
-  "version": "0.2.0-dev.0",
+  "version": "0.2.0-dev.1",
   "private": true,
   "type": "module",
   "description": "Reusable independent authenticated PWA staging, deployment preflight and intelligence/authentication adapters for EDENOS applications.",
@@ -19,7 +19,8 @@
     "edenos-pwa": "./scripts/deploy.mjs",
     "edenos-pwa-check": "./scripts/validate-manifest.mjs",
     "edenos-pwa-fleet": "./scripts/validate-fleet.mjs",
-    "edenos-pwa-readiness": "./scripts/readiness.mjs"
+    "edenos-pwa-readiness": "./scripts/readiness.mjs",
+    "edenos-pwa-namespace": "./scripts/prepare-private-pages.mjs"
   },
   "exports": {
     ".": "./intelligence/core.mjs",
@@ -38,7 +39,10 @@
     "./closed-testing/d1": "./closed-testing/d1.mjs",
     "./closed-testing/cresus-store": "./closed-testing/cresus-store.mjs",
     "./closed-testing/turnstile": "./closed-testing/turnstile.mjs",
-    "./intelligence/qualification": "./intelligence/qualification.mjs"
+    "./intelligence/qualification": "./intelligence/qualification.mjs",
+    "./deployment/private-pages-namespace": "./deployment/private-pages-namespace.mjs",
+    "./scripts/prepare-private-pages": "./scripts/prepare-private-pages.mjs",
+    "./closed-testing/owner-hub": "./closed-testing/owner-hub.mjs"
   },
   "files": [
     "authentication/",
@@ -48,6 +52,7 @@
     "examples/",
     "README.md",
     "closed-testing/",
-    "CLOUDFLARE_CLOSED_TEST_RELAUNCH.md"
+    "CLOUDFLARE_CLOSED_TEST_RELAUNCH.md",
+    "examples/private-pages/"
   ]
 }

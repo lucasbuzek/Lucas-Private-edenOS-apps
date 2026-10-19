@@ -84,6 +84,19 @@ export function validateManifest(m) {
     }
     need(d.auth?.provider === 'cloudflare-access', 'Closed Cloudflare pilot requires per-app Access JWT verification');
   }
+  if (d.desiredPagesEntry) {
+    const entry=d.desiredPagesEntry;
+    need(d.accessMode === 'closed-testing', 'Pages namespace intent requires closed-testing policy');
+    need(entry.projectIntent === 'edenosprivate', 'Pages namespace project must match the approved private namespace');
+    need(entry.branchIntent === m.app?.id, 'Pages preview branch must match the app identity');
+    need(entry.requestedUrl === 'https://' + m.app?.id + '.edenosprivate.pages.dev',
+      'Pages branch preview requested URL must be app-specific and canonical');
+    need(entry.status === 'UNVERIFIED_NOT_PROVISIONED', 'Pages intent must not claim provisioned or deployed status');
+    need(entry.branchAndHashPreviewsRequireAccess === true,
+      'Every branch and immutable Pages preview needs Cloudflare Access');
+    need(entry.independentAppRuntimeAndDataRequired === true,
+      'Pages namespace cannot combine standalone app runtimes and data');
+  }
   need(d.auth?.required === true, 'deployment.auth.required must be true');
   need(AUTH.has(d.auth?.provider), 'deployment.auth.provider must identify a supported identity verifier');
   need(d.auth?.publicClientConfigRequired === true, 'auth must declare public client configuration');
