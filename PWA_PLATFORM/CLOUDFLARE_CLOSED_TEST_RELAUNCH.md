@@ -84,3 +84,14 @@ The Lucas owner-hub adapter was implemented with separate HERMES and CRESUS admi
 New candidate package 0.2.0-dev.1: 109 tests passed, zero failed; independent HERMES/CRESUS manifest/fleet validation passed, npm dependency audit passed, and clean temporary package extraction/import/CLI acceptance passed. Verification-only tarball SHA256: c3ac11b0ed6971bf2595a69391ddc03848f929ced8acb8c218d463d593e90e77. The disposable tarball was removed after verification and is not a release or shipped artifact.
 
 **Cloudflare URL feasibility:** A branch alias like lucas.edenosprivate.pages.dev exists only once an actual Pages project edenosprivate and a successfully deployed branch named lucas exist. All hash deployment URLs must be gated too. Users cannot 'reserve' these URLs merely via manifest JSON. Distinct HERMES/CRESUS app backends and independent audiences remain mandatory. edenosportal.pages.dev would be an entirely separate Pages project requiring explicit setup and user approval. These are intentions only; external account and physical acceptance gates remain UNKNOWN.
+
+
+## Cloudflare account inventory and unresolved resource verification — 2026-10-19
+
+- A cached Wrangler 4.151.1 has an authenticated Cloudflare OAuth session. Environment API tokens remain unset. Do not infer that no Cloudflare account connection exists from missing environment tokens.
+- Read-only Pages inventory initially returned 4 projects, none with names matching the requested EDENOS private and portal projects. Wrangler CLI JSON uses display-style keys such as Project Name; it is not the REST API name property.
+- Authenticated D1 inventory verified the existing cresus-agent database UUID exactly matches canonical CRESUS platforms/web/wrangler.toml. Wrangler returned 10 historical CRESUS Worker deployment records. Neither result proves real Access login or secure exposed routes.
+- The empty edenosprivate Pages project creation command exited successfully. A subsequent list showed 5 projects, up from 4, but exact-name verification used the wrong field and did not prove ownership or identity. A later exact-name check was blocked by a tool safeguard. State: EXTERNAL_RESOURCE_UNVERIFIED_POSSIBLY_CREATED. DO NOT RETRY CREATION BLINDLY.
+- edenosportal project creation was not attempted after the ambiguous edenosprivate result.
+- No HTML or app content was uploaded; no branch previews, Access apps/policies, routes, user data, production deployments or physical tester approvals were changed.
+- Next physical gate: inspect exact project name and account using an authorized read-only dashboard/API method, then verify owner-only Access coverage of the project base, preview aliases and immutable deployment hashes before uploading any private placeholder. HERMES and CRESUS remain separate applications. No additional Cloudflare mutations until this outcome is reconciled.
