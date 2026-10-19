@@ -53,3 +53,18 @@ test('rejects non-standalone apps and missing domain authority', () => {
   assert.ok(result.errors.some(e => e.includes('standalone')));
   assert.ok(result.errors.some(e => e.includes('domainAuthority')));
 });
+
+test('CRESUS Worker manifest remains an independently authenticated deployment', async () => {
+  const cresus = JSON.parse(await readFile(new URL('../examples/cresus.worker.manifest.json', import.meta.url), 'utf8'));
+  assert.deepEqual(validateManifest(cresus), { ok: true, errors: [] });
+  assert.notEqual(cresus.app.id, valid.app.id);
+  assert.notEqual(cresus.deployment.provider, valid.deployment.provider);
+  assert.equal(cresus.deployment.kind, 'worker-pwa');
+  assert.equal(cresus.deployment.auth.crossAppSessionsAllowed, false);
+});
+
+test('rejects Worker deployment with a static auth profile', async () => {
+  const cresus = JSON.parse(await readFile(new URL('../examples/cresus.worker.manifest.json', import.meta.url), 'utf8'));
+  cresus.deployment.auth.provider = 'supabase';
+  assert.equal(validateManifest(cresus).ok, false);
+});

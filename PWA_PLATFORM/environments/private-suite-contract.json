@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "status": "CANON_RECOVERED_IMPLEMENTATION_NOT_VERIFIED",
+  "authority": "ELYSIUM_IN_CHAT_SUITE_CANON_v1.0; newest private environment user decision 2026-10-19",
+  "environments": [
+    {
+      "id": "elysium",
+      "pagesAlias": "elysium.edenosprivate.pages.dev",
+      "projectCanon": "ELYSIUM_IN_CHAT_SUITE_CANON_v1.0",
+      "intendedAudienceRoles": [
+        "owner",
+        "wife",
+        "mother",
+        "father"
+      ],
+      "currentAccess": "OWNER_ONLY_UNTIL_PHYSICAL_ACCEPTANCE",
+      "suites": [
+        {
+          "id": "personal",
+          "tenantType": "individual-or-household",
+          "domains": [
+            "employment",
+            "household-finance",
+            "budgeting",
+            "bills",
+            "savings",
+            "investment",
+            "property-economics",
+            "tax-preparation",
+            "insurance-economics",
+            "major-purchases",
+            "retirement-planning",
+            "side-businesses",
+            "opportunities"
+          ],
+          "specialists": [
+            "HERMES",
+            "MONETA",
+            "THEMIS",
+            "CRESUS",
+            "ARGOS"
+          ],
+          "independentlyUseful": true
+        },
+        {
+          "id": "business",
+          "tenantType": "organization",
+          "domains": [
+            "business-planning",
+            "finance",
+            "opportunities",
+            "procurement",
+            "contracts-compliance",
+            "operations",
+            "research",
+            "documents",
+            "decisions"
+          ],
+          "specialists": [
+            "HERMES",
+            "MONETA",
+            "THEMIS",
+            "ORACLE",
+            "CAMEL",
+            "CRESUS",
+            "ARGOS"
+          ],
+          "independentlyUseful": true
+        }
+      ],
+      "requiredConnectors": [
+        "BIFROST-local",
+        "BIFROST-online",
+        "WORKinCODEX"
+      ],
+      "separatedPersonalBusinessContexts": true,
+      "liveLoginVerified": false,
+      "liveFeatureCoverageVerified": false
+    },
+    {
+      "id": "slindokuhle",
+      "pagesAlias": "slindokuhle.edenosprivate.pages.dev",
+      "projectCanon": "SlindokuhleTransport; established Slindokuhle family and business conversation decisions",
+      "intendedAudienceRoles": [
+        "owner",
+        "approved-parent-household",
+        "approved-business-member"
+      ],
+      "currentAccess": "OWNER_ONLY_UNTIL_PHYSICAL_ACCEPTANCE",
+      "suites": [
+        {
+          "id": "parent-household",
+          "tenantType": "household",
+          "domains": [
+            "household",
+            "household-finance",
+            "farm",
+            "garage",
+            "maintenance",
+            "transport"
+          ],
+          "specialists": [
+            "MONETA",
+            "THEMIS",
+            "CAMEL",
+            "ARGOS"
+          ],
+          "independentlyUseful": true
+        },
+        {
+          "id": "transport-business",
+          "tenantType": "organization",
+          "domains": [
+            "logistics",
+            "transport",
+            "tenders",
+            "procurement",
+            "finance",
+            "farm-operations",
+            "garage",
+            "fleet-maintenance",
+            "household-business-boundaries"
+          ],
+          "specialists": [
+            "CAMEL",
+            "HERMES",
+            "TENDERS",
+            "MONETA",
+            "THEMIS",
+            "ARGOS"
+          ],
+          "independentlyUseful": true
+        }
+      ],
+      "requiredConnectors": [
+        "BIFROST-local",
+        "BIFROST-online",
+        "WORKinCODEX"
+      ],
+      "separatedHouseholdAndBusinessTenants": true,
+      "liveLoginVerified": false,
+      "liveFeatureCoverageVerified": false
+    }
+  ],
+  "security": {
+    "verifiedIdentityRequired": true,
+    "appSpecificMembershipRequired": true,
+    "tenantSpecificMembershipRequired": true,
+    "crossTenantDefaultDeny": true,
+    "explicitExternalActionConsentRequired": true,
+    "noAutomaticCrossProviderDataSharing": true,
+    "localDataRemainsUserOwned": true,
+    "protectedPagesRootAndAllPreviews": true
+  },
+  "delivery": {
+    "standalonePwaRequired": true,
+    "fullFeaturesRequired": true,
+    "realConnectorAcceptanceRequired": true,
+    "existingDomainAppsRemainAuthoritative": true,
+    "noAppReplacementOrMergedData": true,
+    "realSourceModulesConnected": false,
+    "physicalAcceptancePassed": false,
+    "publicDeploymentAllowed": false
+  }
+}

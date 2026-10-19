@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+dist/
+.wrangler/
+.netlify/
+.env
+.env.local
+test/fixtures/pwa-app/dist/

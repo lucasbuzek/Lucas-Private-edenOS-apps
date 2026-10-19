@@ -14,6 +14,7 @@ test('deployment preflight installs, tests, builds and verifies hosted auth befo
     source: {
       repository: 'https://example.invalid/fixture-pwa',
       projectDirectory: '.',
+      hostedAuthEnvironment: { VITE_EDEN_PWA_AUTH_REQUIRED: 'true' },
       installCommand: ['node', 'fixture.mjs', 'install'],
       testCommand: ['node', 'fixture.mjs', 'test'],
       buildCommand: ['node', 'fixture.mjs', 'build'],
@@ -22,11 +23,14 @@ test('deployment preflight installs, tests, builds and verifies hosted auth befo
     },
     deployment: {
       provider: 'netlify',
+      kind: 'static-pwa',
+      targetId: '',
       siteUrl: '',
-      auth: { required: true, provider: 'supabase', publicClientConfigRequired: true, serverSideAuthorizationRequired: true }
+      auth: { required: true, provider: 'supabase', publicClientConfigRequired: true, serverSideAuthorizationRequired: true, crossAppSessionsAllowed: false }
     },
     intelligence: {
       mode: 'shared-core-adapter',
+      defaultProvider: null,
       endpoint: '',
       paidApiDependency: false,
       providers: ['workers-ai'],
@@ -34,12 +38,21 @@ test('deployment preflight installs, tests, builds and verifies hosted auth befo
     },
     data: { domainAuthority: 'Fixture PWA', ownership: 'app-owned', migration: 'preserve-existing-data', crossUserIsolationRequired: true }
   };
+  const original = process.env.EDEN_PWA_TEST_PRIVATE_KEY;
+  process.env.EDEN_PWA_TEST_PRIVATE_KEY = 'must-never-reach-app-build';
   try {
     const result = await execute({ manifest, appRoot, publishPreview: false });
-    assert.equal(result.localAuthSmoke, 'PASS');
-    assert.equal(existsSync(resolve(output, 'index.html')), true);
-    assert.equal(existsSync(resolve(output, 'manifest.webmanifest')), true);
+    assert.equal(result.declaredAuthTests, 'PASS');
+    assert.equal(result.liveAccountLogin, 'UNKNOWN');
+    assert.equal(result.tenantIsolation, 'UNKNOWN');
+    assert.match(result.artifactFingerprint, /^[0-9a-f]{64}$/);
+    assert.equal(result.sourceIsolated, true);
+    assert.equal(result.previewDeployed, false);
+    assert.equal(existsSync(output), false, 'built output must stay in disposable staging');
+    assert.equal(existsSync(resolve(appRoot, 'build-marker.txt')), false, 'build must not modify original source');
   } finally {
+    if (original === undefined) delete process.env.EDEN_PWA_TEST_PRIVATE_KEY;
+    else process.env.EDEN_PWA_TEST_PRIVATE_KEY = original;
     rmSync(output, { recursive: true, force: true });
   }
 });

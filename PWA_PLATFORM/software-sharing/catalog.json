@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "scope": "SOFTWARE_DEVELOPMENT_ONLY",
+  "default": "PRIVATE_UNREVIEWED",
+  "ownerDecisionRequired": true,
+  "sourceFolderDiscoveryDoesNotGrantPublication": true,
+  "entries": [
+    {
+      "id": "hermes",
+      "name": "HERMES",
+      "description": "Private standalone application testing candidate. Access is available only after individual approval and verified login.",
+      "state": "PLACEHOLDER_ONLY",
+      "requestable": true,
+      "listed": true,
+      "downloadable": false,
+      "authorizedRelease": false
+    },
+    {
+      "id": "cresus",
+      "name": "CRESUS",
+      "description": "Private standalone application testing candidate. Access is available only after individual approval and verified login.",
+      "state": "PLACEHOLDER_ONLY",
+      "requestable": true,
+      "listed": true,
+      "downloadable": false,
+      "authorizedRelease": false
+    }
+  ]
+}

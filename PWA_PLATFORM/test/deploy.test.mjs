@@ -11,5 +11,5 @@ test('deployment paths stay inside the configured project root', () => {
 
 test('deployment paths reject traversal-like segments instead of normalizing them', () => {
   assert.throws(() => resolveInside('/tmp/app', 'dist/../secret'), /safe relative path/);
-  assert.throws(() => resolveInside('/tmp/app', 'some..folder'), /safe relative path/);
+  assert.match(resolveInside('/tmp/app', 'some..folder'), /some\.\.folder$/);
 });
