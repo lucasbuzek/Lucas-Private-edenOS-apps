@@ -10,9 +10,10 @@ export function d1WaitlistStore(db) {
   if (!db || typeof db.prepare !== 'function') throw new TypeError('Dedicated waitlist D1 binding is required');
   return Object.freeze({
     async request(appId, email) {
-      await db.prepare(
+      const result = await db.prepare(
         "INSERT OR IGNORE INTO pwa_waitlist (app_id,email,status) VALUES (?,?,'pending')"
       ).bind(appId,email).run();
+      return Number(result?.meta?.changes || 0) > 0;
     },
     async isApproved(appId, email) {
       const row = await db.prepare(

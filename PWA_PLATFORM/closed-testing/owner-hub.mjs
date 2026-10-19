@@ -36,7 +36,10 @@ export function createPrivateOwnerHub({ownerEmail,authenticate,services}) {
   if(!owner||typeof authenticate!=='function'||!services||
      typeof services!=='object'||Array.isArray(services)||
      !['hermes','cresus'].every(app=>typeof services[app]?.list==='function'&&
-       typeof services[app]?.decide==='function')) {
+       typeof services[app]?.decide==='function') ||
+     (services.softwareSharing!==undefined&&
+       (typeof services.softwareSharing?.list!=='function' ||
+        typeof services.softwareSharing?.decide!=='function'))) {
     throw new TypeError('Owner Access verifier and independently scoped HERMES/CRESUS admin service adapters required');
   }
   return Object.freeze({
@@ -65,8 +68,17 @@ export function createPrivateOwnerHub({ownerEmail,authenticate,services}) {
               email:normalizeEmail(x.email),status:String(x.status||'unknown'),
             })).filter(x=>x.email);
           }
+          if(services.softwareSharing) {
+            const requests=await services.softwareSharing.list();
+            if(!Array.isArray(requests))throw new Error('Invalid software request listing');
+            listings.softwareSharing=requests.slice(0,200).map(x=>({
+              email:normalizeEmail(x.email),status:String(x.status||'pending'),
+              targetAppId:typeof x.targetAppId==='string'?x.targetAppId:null,
+            })).filter(x=>x.email && /^[a-z][a-z0-9-]{1,58}$/.test(x.targetAppId||''));
+          }
           if(path==='/api/admin/waitlists')return reply({
             owner:true,apps:listings,accessPolicies:'UNVERIFIED',
+            softwareDownloads:'NO_RELEASES_ACTIVATED',
           });
           let rows='';
           for(const [appId,items] of Object.entries(listings)) {
@@ -76,6 +88,9 @@ export function createPrivateOwnerHub({ownerEmail,authenticate,services}) {
                 '<form method="POST" action="/admin/decision">'+
                 '<input type="hidden" name="appId" value="'+esc(appId)+'">'+
                 '<input type="hidden" name="email" value="'+esc(record.email)+'">'+
+                (appId==='softwareSharing'
+                  ? '<input type="hidden" name="targetAppId" value="'+esc(record.targetAppId)+'">'+
+                    '<small>'+esc(record.targetAppId)+'</small>' : '')+
                 '<button name="decision" value="approve">Approve</button>'+
                 '<button name="decision" value="deny">Deny</button></form></td></tr>';
             }
@@ -95,10 +110,16 @@ export function createPrivateOwnerHub({ownerEmail,authenticate,services}) {
         const appId=data?.appId;
         const applicant=normalizeEmail(data?.email);
         const decision=data?.decision;
-        if(!['hermes','cresus'].includes(appId)||!applicant||applicant===owner||
+        const sharing = appId==='softwareSharing';
+        const selected=sharing?services.softwareSharing:services[appId];
+        const targetAppId=data?.targetAppId;
+        if((!['hermes','cresus'].includes(appId)&&!sharing)||!selected||
+           (sharing && (typeof targetAppId!=='string' ||
+            !/^[a-z][a-z0-9-]{1,58}$/.test(targetAppId))) ||
+           !applicant||applicant===owner||
            !['approve','deny'].includes(decision))return reply({error:'Invalid app-specific decision'},400);
         try {
-          const applied=await services[appId].decide(appId,applicant,decision,owner);
+          const applied=await selected.decide(appId,applicant,decision,owner,targetAppId);
           if(!applied)return reply({error:'Application request not found'},404);
           return reply({ok:true,appId,decision,accessPolicies:'REQUIRES_VERIFICATION'});
         }catch{return reply({error:'App-specific decision unavailable'},503);}

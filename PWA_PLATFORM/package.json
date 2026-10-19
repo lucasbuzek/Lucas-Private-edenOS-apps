@@ -1,6 +1,6 @@
 {
   "name": "@edenos/pwa-platform",
-  "version": "0.2.0-dev.1",
+  "version": "0.2.0-dev.2",
   "private": true,
   "type": "module",
   "description": "Reusable independent authenticated PWA staging, deployment preflight and intelligence/authentication adapters for EDENOS applications.",
@@ -42,7 +42,14 @@
     "./intelligence/qualification": "./intelligence/qualification.mjs",
     "./deployment/private-pages-namespace": "./deployment/private-pages-namespace.mjs",
     "./scripts/prepare-private-pages": "./scripts/prepare-private-pages.mjs",
-    "./closed-testing/owner-hub": "./closed-testing/owner-hub.mjs"
+    "./closed-testing/owner-hub": "./closed-testing/owner-hub.mjs",
+    "./software-sharing/backend": "./software-sharing/backend.mjs",
+    "./software-sharing/catalog": "./software-sharing/catalog.mjs",
+    "./software-sharing/cloudflare": "./software-sharing/cloudflare.mjs",
+    "./software-sharing/rate-limit": "./software-sharing/rate-limit.mjs",
+    "./software-sharing/downloads": "./software-sharing/downloads.mjs",
+    "./environments/private-suites": "./environments/private-suites.mjs",
+    "./environments/tenant-gate": "./environments/tenant-gate.mjs"
   },
   "files": [
     "authentication/",
@@ -53,6 +60,8 @@
     "README.md",
     "closed-testing/",
     "CLOUDFLARE_CLOSED_TEST_RELAUNCH.md",
-    "examples/private-pages/"
+    "examples/private-pages/",
+    "software-sharing/",
+    "environments/"
   ]
 }

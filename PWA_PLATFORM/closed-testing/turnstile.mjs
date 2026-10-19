@@ -1,6 +1,7 @@
-export function createTurnstileVerifier({ secret, expectedHostname, fetchImpl = fetch } = {}) {
+export function createTurnstileVerifier({ secret, expectedHostname, expectedAction = 'waitlist', fetchImpl = fetch } = {}) {
   if (typeof secret !== 'string' || !secret.trim() ||
-      typeof expectedHostname !== 'string' || !expectedHostname.trim()) {
+      typeof expectedHostname !== 'string' || !expectedHostname.trim() ||
+      typeof expectedAction !== 'string' || !/^[a-z][a-z0-9-]{0,31}$/.test(expectedAction)) {
     throw new TypeError('A private Turnstile secret and exact public waitlist hostname are required');
   }
   return async (token, request) => {
@@ -16,7 +17,7 @@ export function createTurnstileVerifier({ secret, expectedHostname, fetchImpl = 
       if (!r.ok) return false;
       const data=await r.json();
       return data?.success===true && data.hostname===expectedHostname &&
-        data.action==='waitlist';
+        data.action===expectedAction;
     } catch { return false; }
   };
 }

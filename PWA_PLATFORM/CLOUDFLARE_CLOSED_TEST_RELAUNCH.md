@@ -95,3 +95,17 @@ New candidate package 0.2.0-dev.1: 109 tests passed, zero failed; independent HE
 - edenosportal project creation was not attempted after the ambiguous edenosprivate result.
 - No HTML or app content was uploaded; no branch previews, Access apps/policies, routes, user data, production deployments or physical tester approvals were changed.
 - Next physical gate: inspect exact project name and account using an authorized read-only dashboard/API method, then verify owner-only Access coverage of the project base, preview aliases and immutable deployment hashes before uploading any private placeholder. HERMES and CRESUS remain separate applications. No additional Cloudflare mutations until this outcome is reconciled.
+
+
+## PRIVATE edenOS family and software-sharing extension — 2026-10-19
+
+The current user scope extends the private launch to:
+- ELYSIUM Personal + Business as separately authorized full-function family suites, with individual wife/mother/father roles but NO assumed real identity/email or automatic access. Recover in-chat suite canon first, then connect real domain apps via BIFROST/WORKinCODEX with consent and audited tenant isolation.
+- Slindokuhle parent-household and transport-business contexts, with logistics/transport, tenders/procurement, finance, farm, garage and maintenance. Existing CAMEL, HERMES, MONETA, THEMIS, TENDERS and other specialists remain independently authoritative; missing runtime adapters are NOT created by displaying cards.
+- Software Development folder is the authorized project discovery boundary; only owner-reviewed release candidates may enter the public request catalog. Owner dashboard approval/denial is per application. A separate public Turnstile form and D1 approval database must not reuse the CRESUS production database.
+- Approved downloadable packages must pass standalone functional/physical release gates, be stored privately with verified checksum, and be served only through verified per-app account/approval checks. No accepted packages currently exist in the sharing registry. Private storage must never expose a public-bucket bypass.
+- The standalone public EDEN Web Portal retains its existing interactive preview source, with accurate private-programme description. The future edenosportal.pages.dev is a separate Pages project intent; do not silently publish its source or private URLs.
+
+New modules/tests: software-sharing/backend.mjs, catalog.mjs, cloudflare.mjs, rate-limit.mjs, downloads.mjs, dedicated schema.sql, owner-hub integration, and environments/private-suites.mjs / tenant-gate.mjs. Local source tests and packaging are the current engineering gates only; live Access, Cloudflare Pages name reconciliation, D1/R2 binding, family logins, AI/provider acceptance and iOS Safari acceptance remain UNKNOWN.
+
+The previous edenosprivate Pages resource creation is STILL ambiguous; no further Cloudflare mutation, deployment or resource provisioning until an independently verified project inventory resolves it. No paid AI API is mandatory; Workers are routing/security endpoints, not substitutes for a genuinely capable model.

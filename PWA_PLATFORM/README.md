@@ -1,4 +1,4 @@
-# EDENOS Universal PWA Deployment — 0.2.0-dev.0
+# EDENOS Universal PWA Deployment — 0.2.0-dev.2
 
 **Status: engineering candidate / not deployed / no LKG promotion.** Current source authority is the standalone project at `/Users/lucas/edenOS/Software Development/Online Plugins & Connectors/EDENOS-PWA-Deployment`. Local Git `main` remains the preservation baseline. Candidate changes belong only on the project feature branch.
 
@@ -76,3 +76,14 @@ The prepared artifacts are in `examples/private-pages/`. They are **inert unpubl
 The public email waitlist origin is **not specified** by this namespace; it must remain separate from the protected private owner and app origins, with Cloudflare Turnstile and the established approval/denial flow. Do not assume a Pages preview wildcard Access policy can securely distinguish owner-only branches from approved-user app branches; prove exact per-host policies and all alternate-origin denials physically before publication.
 
 Cloudflare documentation: [Pages preview aliases](https://developers.cloudflare.com/pages/configuration/preview-deployments/), [Pages Access known issues](https://developers.cloudflare.com/pages/platform/known-issues/).
+
+
+## Private owner-approved software sharing and family suite boundaries
+
+The reusable private sharing backend is in software-sharing/. Request-only public catalog entries are curated from Software Development project candidates, NEVER automatically made downloadable from a directory scan. It supports server-side Cloudflare Turnstile, honeypot, per-IP/per-email hashed D1 rate limits and a dedicated D1 approval queue. No public software download, owner email, file-system path or developer credential is returned by the request form. Optional owner notification can use a private queue; the approval process does not depend on paid outbound email.
+
+The Lucas owner hub optionally accepts a separate software-sharing service, displays requests beside (but not merged with) HERMES and CRESUS app access, and issues app-scoped approve/deny decisions. These decisions never silently modify Cloudflare Access policies. Private R2 downloads require BOTH verified Access app entitlement AND explicit sharing approval, a physically accepted release registry and matching object checksum. A private R2 bucket with public access disabled and physical identity tests is still required. Current downloadable release registry is intentionally EMPTY; software download functionality is an implemented integration candidate, NOT an operational hosted release.
+
+The ELYSIUM and Slindokuhle full-functionality requirements are preserved in environments/private-suite-contract.json: ELYSIUM Personal and Business for approved family members, and Slindokuhle parent-household versus transport-business, farm, finance, garage and maintenance contexts. Separate user/tenant membership and explicit consent for BIFROST-local, BIFROST-online and WORKinCODEX are enforced by the tested adapter contracts. Do not claim full PWA functionality until the original domain apps, authoritative data, identity and actual connectors have been integrated and physically accepted. The source for ELYSIUM/Slindokuhle is NOT created or replaced by a contract file.
+
+The separate EDEN Web Portal is authoritative under Software Development/EDEN Web Portal. Its public concept copy now accurately describes the private programme and not-yet-open invitation service without exposing private family/owner URLs. This reusable package does not deploy or replace that portal.
