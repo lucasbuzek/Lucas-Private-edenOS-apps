@@ -109,3 +109,12 @@ The current user scope extends the private launch to:
 New modules/tests: software-sharing/backend.mjs, catalog.mjs, cloudflare.mjs, rate-limit.mjs, downloads.mjs, dedicated schema.sql, owner-hub integration, and environments/private-suites.mjs / tenant-gate.mjs. Local source tests and packaging are the current engineering gates only; live Access, Cloudflare Pages name reconciliation, D1/R2 binding, family logins, AI/provider acceptance and iOS Safari acceptance remain UNKNOWN.
 
 The previous edenosprivate Pages resource creation is STILL ambiguous; no further Cloudflare mutation, deployment or resource provisioning until an independently verified project inventory resolves it. No paid AI API is mandatory; Workers are routing/security endpoints, not substitutes for a genuinely capable model.
+
+
+## Public EDEN Web Portal email-link distribution integration (2026-10-19)
+
+The user requires the established EDEN Web Portal to describe apps and provide a "download" path by email link. Original Projects/EDEN Web Portal is an actual symlink to the existing canonical Software Development/EDEN Web Portal, not a replacement project. Portal remains static when optional Cloudflare request/email service bindings are unconfigured. Source-only adapter and tests exist; original backups and live application states remain untouched.
+
+Use the private existing GitHub release repository as an optional artifact source: exact metadata SHA256 + size + accepted release manifest and read-only server-side token; never serve public release URLs. User approval, owner enabling the specifically verified release, a one-use expiring email capability and checksum-verified private download are required separately. No Github Releases assets were present at last inspection. Never grant an app login with a file download token.
+
+Portal Pages project edenosportal is still unverified/unprovisioned. Cloudflare verified exact edenosprivate project identity read-only, but owner Access policies/branch previews and direct-origin protections remain UNKNOWN. Email domain binding, D1 migrations for software_email_tickets and software_release_controls, private GitHub read token, actual owner/tester browser acceptance and any package source verification must pass before public request or email download activation. No app, portal or artifact was deployed.

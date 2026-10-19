@@ -1,4 +1,4 @@
-# EDENOS Universal PWA Deployment — 0.2.0-dev.2
+# EDENOS Universal PWA Deployment — 0.2.0-dev.3
 
 **Status: engineering candidate / not deployed / no LKG promotion.** Current source authority is the standalone project at `/Users/lucas/edenOS/Software Development/Online Plugins & Connectors/EDENOS-PWA-Deployment`. Local Git `main` remains the preservation baseline. Candidate changes belong only on the project feature branch.
 
@@ -87,3 +87,18 @@ The Lucas owner hub optionally accepts a separate software-sharing service, disp
 The ELYSIUM and Slindokuhle full-functionality requirements are preserved in environments/private-suite-contract.json: ELYSIUM Personal and Business for approved family members, and Slindokuhle parent-household versus transport-business, farm, finance, garage and maintenance contexts. Separate user/tenant membership and explicit consent for BIFROST-local, BIFROST-online and WORKinCODEX are enforced by the tested adapter contracts. Do not claim full PWA functionality until the original domain apps, authoritative data, identity and actual connectors have been integrated and physically accepted. The source for ELYSIUM/Slindokuhle is NOT created or replaced by a contract file.
 
 The separate EDEN Web Portal is authoritative under Software Development/EDEN Web Portal. Its public concept copy now accurately describes the private programme and not-yet-open invitation service without exposing private family/owner URLs. This reusable package does not deploy or replace that portal.
+
+
+## EDEN Web Portal private GitHub release hosting and email links
+
+The ORIGINAL public portal is at /Users/lucas/edenOS/Projects/EDEN Web Portal (a verified symlink to the canonical master in Software Development/EDEN Web Portal). Its interactive Atlas still runs locally as static HTML/CSS/JS. Optional Cloudflare Pages Functions enable a request button ONLY when the independent private sharing Worker reports a functioning form. Non-software routes always retain static behavior.
+
+New reusable backends:
+- software-sharing/github-release.mjs: metadata-pinned, read-only, exact GitHub Releases asset adapter, private server-side Contents-read token, allowed repo list, controlled GitHub signed CDN redirects, byte-verified SHA256, bounded 64-MiB maximum per on-demand artifact. Larger artifacts require a separately verified private R2 mirror or other memory-safe backend.
+- software-sharing/email-tickets.sql and email-tickets.mjs: separate D1 queue of SHA-256 token hashes, single-use atomic redemption, 15-minute expiry by default, invalidation of older links to the same app/email and explicit revocation.
+- software-sharing/email-links.mjs and cloudflare-email-download.mjs: user must first be approved by Lucas in the separate software-sharing queue; the owner must intentionally enable an already verified release and send the specific link. The browser receives ONLY a short-lived email capability; it never sees private GitHub credentials or asset URLs. GET never consumes the link, preventing ordinary email-scanner prefetching. Link is passed in URL fragment and only submitted on explicit button press.
+- software-sharing/release-controls.mjs: owner-controlled D1 enable/disable for physically accepted immutable packages only. Disabling revokes unconsumed email-link access; approving a request does NOT automatically authorize a release.
+- software-sharing/owner-adapter.mjs: injects trusted private email/release services into the existing Lucas Access-gated admin hub; no unauthenticated HTTP link issuance route is introduced.
+- EDEN Web Portal/functions/[[path]].js: optional Pages Functions bridge to SOFTWARE_REQUEST_GATE and EMAIL_DOWNLOAD_GATE service bindings; fails with 503 if not configured. No public GitHub browser download URLs.
+Cloudflare Email Service sender requires a properly onboarded DNS/email domain and private sender binding; no verified sender, domain or recipient delivery exists in current physical evidence. No paid service is mandatory in code, but free sending to arbitrary new recipients is NOT assumed until terms and account acceptance are checked.
+Currently the private GitHub repository had ZERO Releases at the last authenticated check. accepted-releases.json is [] and all distribution controls default disabled. No file downloads, email link deliveries, portal deployment or public launch have been physically accepted.

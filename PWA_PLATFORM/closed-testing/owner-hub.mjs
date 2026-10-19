@@ -39,7 +39,11 @@ export function createPrivateOwnerHub({ownerEmail,authenticate,services}) {
        typeof services[app]?.decide==='function') ||
      (services.softwareSharing!==undefined&&
        (typeof services.softwareSharing?.list!=='function' ||
-        typeof services.softwareSharing?.decide!=='function'))) {
+        typeof services.softwareSharing?.decide!=='function')) ||
+     (services.downloadLinks!==undefined&&
+       (typeof services.downloadLinks?.list!=='function' ||
+        typeof services.downloadLinks?.issue!=='function' ||
+        typeof services.downloadLinks?.setEnabled!=='function'))) {
     throw new TypeError('Owner Access verifier and independently scoped HERMES/CRESUS admin service adapters required');
   }
   return Object.freeze({
@@ -76,9 +80,19 @@ export function createPrivateOwnerHub({ownerEmail,authenticate,services}) {
               targetAppId:typeof x.targetAppId==='string'?x.targetAppId:null,
             })).filter(x=>x.email && /^[a-z][a-z0-9-]{1,58}$/.test(x.targetAppId||''));
           }
+          const available=services.downloadLinks
+            ? await services.downloadLinks.list() : [];
+          if(!Array.isArray(available) || available.some(x=>
+            !/^[a-z][a-z0-9-]{1,58}$/.test(x.appId||'') ||
+            !/^[a-z][a-z0-9-]{1,58}$/.test(x.releaseId||'') ||
+            typeof x.enabled!=='boolean')) {
+            throw new Error('Invalid physically accepted release list');
+          }
           if(path==='/api/admin/waitlists')return reply({
             owner:true,apps:listings,accessPolicies:'UNVERIFIED',
-            softwareDownloads:'NO_RELEASES_ACTIVATED',
+            softwareDownloads:available.length?'OWNER_RELEASE_SELECTION_REQUIRED':'NO_RELEASES_ACTIVATED',
+            acceptedReleaseIds:available.map(x=>({appId:x.appId,releaseId:x.releaseId,
+              enabled:x.enabled})),
           });
           let rows='';
           for(const [appId,items] of Object.entries(listings)) {
@@ -92,9 +106,29 @@ export function createPrivateOwnerHub({ownerEmail,authenticate,services}) {
                   ? '<input type="hidden" name="targetAppId" value="'+esc(record.targetAppId)+'">'+
                     '<small>'+esc(record.targetAppId)+'</small>' : '')+
                 '<button name="decision" value="approve">Approve</button>'+
-                '<button name="decision" value="deny">Deny</button></form></td></tr>';
+                '<button name="decision" value="deny">Deny</button></form>'+
+                (appId==='softwareSharing' && record.status==='approved'
+                  ? available.filter(x=>x.enabled===true&&x.appId===record.targetAppId).map(x=>
+                    '<form method="POST" action="/api/admin/send-release">'+
+                    '<input type="hidden" name="appId" value="'+esc(x.appId)+'">'+
+                    '<input type="hidden" name="releaseId" value="'+esc(x.releaseId)+'">'+
+                    '<input type="hidden" name="email" value="'+esc(record.email)+'">'+
+                    '<button type="submit">Send one-use email download</button></form>'
+                  ).join('') : '')+'</td></tr>';
             }
             rows+='</table>';
+          }
+          if(available.length && services.downloadLinks){
+            rows+='<h2>Accepted release hosting controls</h2>'+
+              '<p>Enabling a reviewed release does not bypass request approval or email verification.</p>';
+            for(const item of available){
+              rows+='<form method="POST" action="/api/admin/release-state">'+
+                '<input type="hidden" name="appId" value="'+esc(item.appId)+'">'+
+                '<input type="hidden" name="releaseId" value="'+esc(item.releaseId)+'">'+
+                '<button name="enabled" value="'+(item.enabled?'false':'true')+'">'+
+                (item.enabled?'Disable':'Enable')+' '+esc(item.appId)+' / '+esc(item.releaseId)+
+                '</button></form>';
+            }
           }
           return reply('<!doctype html><html lang="en"><meta charset="utf-8">'+
             '<meta name="viewport" content="width=device-width,initial-scale=1">'+
@@ -103,6 +137,43 @@ export function createPrivateOwnerHub({ownerEmail,authenticate,services}) {
             '<h1>Lucas — private EDENOS administration</h1>'+
             '<p>Approval is app-specific. Cloudflare Access policy synchronization remains separately verified.</p>'+rows+'</html>',200,'text/html');
         }catch{return reply({error:'App administration services unavailable'},503);}
+      }
+      if(request.method==='POST'&&path==='/api/admin/release-state'){
+        if(origin!==url.origin)return reply({error:'Same-origin owner action required'},403);
+        if(!services.downloadLinks)return reply({error:'Release settings unavailable'},503);
+        const data=await parse(request);
+        if(!/^[a-z][a-z0-9-]{1,58}$/.test(data?.appId||'')||
+          !/^[a-z][a-z0-9-]{1,58}$/.test(data?.releaseId||'')||
+          !['true','false'].includes(data?.enabled))
+          return reply({error:'Invalid accepted-release setting'},400);
+        try{
+          const result=await services.downloadLinks.setEnabled({
+            principal,appId:data.appId,releaseId:data.releaseId,
+            enabled:data.enabled==='true',
+          });
+          return result?.state==='UPDATED'
+            ? reply({ok:true,appId:data.appId,releaseId:data.releaseId,
+              enabled:result.enabled})
+            : reply({error:'Release not accepted or settings unavailable'},403);
+        }catch{return reply({error:'Release control service unavailable'},503);}
+      }
+      if(request.method==='POST'&&path==='/api/admin/send-release') {
+        if(origin!==url.origin)return reply({error:'Exact same-origin owner action required'},403);
+        if(!services.downloadLinks)return reply({error:'No accepted releases configured'},503);
+        const data=await parse(request);
+        const recipient=normalizeEmail(data?.email);
+        if(!recipient||recipient===owner||
+          !/^[a-z][a-z0-9-]{1,58}$/.test(data?.appId||'')||
+          !/^[a-z][a-z0-9-]{1,58}$/.test(data?.releaseId||''))
+          return reply({error:'Invalid approved download request'},400);
+        try{
+          const result=await services.downloadLinks.issue({
+            principal,email:recipient,appId:data.appId,releaseId:data.releaseId,
+          });
+          return result?.state==='SUBMITTED'
+            ? reply({ok:true,link:'SUBMITTED_TO_VERIFIED_EMAIL_PROVIDER',delivered:'UNKNOWN'})
+            : reply({error:'Email download link unavailable',reason:result?.reason||'UNKNOWN'},403);
+        }catch{return reply({error:'Email release service unavailable'},503);}
       }
       if(request.method==='POST'&&path==='/admin/decision') {
         if(origin!==url.origin)return reply({error:'Exact same-origin owner action required'},403);

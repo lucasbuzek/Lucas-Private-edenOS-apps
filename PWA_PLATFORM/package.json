@@ -1,6 +1,6 @@
 {
   "name": "@edenos/pwa-platform",
-  "version": "0.2.0-dev.2",
+  "version": "0.2.0-dev.3",
   "private": true,
   "type": "module",
   "description": "Reusable independent authenticated PWA staging, deployment preflight and intelligence/authentication adapters for EDENOS applications.",
@@ -49,7 +49,13 @@
     "./software-sharing/rate-limit": "./software-sharing/rate-limit.mjs",
     "./software-sharing/downloads": "./software-sharing/downloads.mjs",
     "./environments/private-suites": "./environments/private-suites.mjs",
-    "./environments/tenant-gate": "./environments/tenant-gate.mjs"
+    "./environments/tenant-gate": "./environments/tenant-gate.mjs",
+    "./software-sharing/email-links": "./software-sharing/email-links.mjs",
+    "./software-sharing/email-tickets": "./software-sharing/email-tickets.mjs",
+    "./software-sharing/github-release": "./software-sharing/github-release.mjs",
+    "./software-sharing/release-controls": "./software-sharing/release-controls.mjs",
+    "./software-sharing/cloudflare-email-download": "./software-sharing/cloudflare-email-download.mjs",
+    "./software-sharing/owner-adapter": "./software-sharing/owner-adapter.mjs"
   },
   "files": [
     "authentication/",
