@@ -1,0 +1,12 @@
+{
+  "files": {
+    "BIFROST_Intelligence_Architecture_and_Continuation_20261020.md": {
+      "origin": "ChatGPT Photography project BIFROST Intelligence handoff, recovered user decisions, dated 2026-10-20; exact source SHA-256 verified in ChatGPT working container",
+      "sha256": "082514510bf57e8f7952673aa380434d76e9a9634134e1a0ad82a7b9caf34858"
+    }
+  },
+  "project": "BIFROST Intelligence",
+  "schema_version": 1,
+  "state": "SAVED_INPUTS_ONLY_NOT_FULL_PROJECT_ACCEPTANCE",
+  "target": "/Users/lucas/edenOS/Software Development/BIFROST/Intelligence"
+}

@@ -1,0 +1,595 @@
+{
+  "schema": "bifrost.shortcalls.v1",
+  "catalogVersion": 1,
+  "purpose": "Portable identities. Only explicitly mapped actions are executable.",
+  "safety": "No arbitrary commands or imported legacy workflows.",
+  "actions": [
+    {
+      "id": "bifrost.system.platform.read",
+      "group": "System",
+      "title": "Read local platform",
+      "owner": "bifrost",
+      "effect": "read",
+      "state": "implemented-readonly",
+      "executors": {
+        "macos": "python.platform"
+      },
+      "requiresApproval": false,
+      "aliases": [
+        "platform.read",
+        "system.info"
+      ]
+    },
+    {
+      "id": "bifrost.automation.catalog.read",
+      "group": "Automation",
+      "title": "Discover installed native workflows",
+      "owner": "bifrost",
+      "effect": "read",
+      "state": "implemented-readonly",
+      "executors": {
+        "macos": "python.automation"
+      },
+      "requiresApproval": false,
+      "aliases": [
+        "workflow.list",
+        "shortcuts.list"
+      ]
+    },
+    {
+      "id": "bifrost.setup.catalog.read",
+      "group": "Setup",
+      "title": "Inspect setup package catalogue",
+      "owner": "bifrost",
+      "effect": "read",
+      "state": "implemented-readonly",
+      "executors": {
+        "macos": "python.setup"
+      },
+      "requiresApproval": false,
+      "aliases": [
+        "setup.list"
+      ]
+    },
+    {
+      "id": "bifrost.device.discover",
+      "group": "Devices",
+      "title": "Discover nearby advertised devices",
+      "owner": "bifrost",
+      "effect": "read",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": false
+    },
+    {
+      "id": "bifrost.device.pair",
+      "group": "Devices",
+      "title": "Establish approved device trust",
+      "owner": "bifrost",
+      "effect": "permission",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "bifrost.device.capabilities.read",
+      "group": "Devices",
+      "title": "Inspect a trusted device",
+      "owner": "bifrost",
+      "effect": "read",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": false
+    },
+    {
+      "id": "bifrost.connection.route.resolve",
+      "group": "Connections",
+      "title": "Resolve an authorized transport",
+      "owner": "bifrost",
+      "effect": "read",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": false
+    },
+    {
+      "id": "bifrost.connection.health.read",
+      "group": "Connections",
+      "title": "Read connection health",
+      "owner": "bifrost",
+      "effect": "read",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": false
+    },
+    {
+      "id": "bifrost.file.transfer.prepare",
+      "group": "Files",
+      "title": "Prepare verified file transfer",
+      "owner": "bifrost",
+      "effect": "write",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "bifrost.file.transfer.send",
+      "group": "Files",
+      "title": "Transfer an approved package",
+      "owner": "bifrost",
+      "effect": "write",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "bifrost.package.resolve",
+      "group": "Setup",
+      "title": "Resolve device-aware dependencies",
+      "owner": "bifrost",
+      "effect": "read",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": false
+    },
+    {
+      "id": "bifrost.package.stage",
+      "group": "Setup",
+      "title": "Stage checked installation package",
+      "owner": "bifrost",
+      "effect": "write",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "bifrost.app.install",
+      "group": "Apps",
+      "title": "Install approved application",
+      "owner": "bifrost",
+      "effect": "install",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "bifrost.app.health.read",
+      "group": "Apps",
+      "title": "Read installed app health",
+      "owner": "bifrost",
+      "effect": "read",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": false
+    },
+    {
+      "id": "bifrost.app.lifecycle.start",
+      "group": "Apps",
+      "title": "Start a managed app service",
+      "owner": "bifrost",
+      "effect": "write",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "bifrost.app.lifecycle.stop",
+      "group": "Apps",
+      "title": "Stop a managed app service",
+      "owner": "bifrost",
+      "effect": "write",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "bifrost.host.delegate",
+      "group": "Services",
+      "title": "Delegate a compatible shared host",
+      "owner": "bifrost",
+      "effect": "write",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "bifrost.host.recover",
+      "group": "Services",
+      "title": "Return to standalone hosting",
+      "owner": "bifrost",
+      "effect": "write",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "bifrost.power.keepawake.enable",
+      "group": "Power",
+      "title": "Enable actual power assertion",
+      "owner": "bifrost",
+      "effect": "permission",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "bifrost.power.keepawake.disable",
+      "group": "Power",
+      "title": "Release power assertion",
+      "owner": "bifrost",
+      "effect": "write",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "bifrost.task.list",
+      "group": "Tasks",
+      "title": "List recorded tasks",
+      "owner": "bifrost",
+      "effect": "read",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": false
+    },
+    {
+      "id": "bifrost.task.cancel",
+      "group": "Tasks",
+      "title": "Cancel a bounded running task",
+      "owner": "bifrost",
+      "effect": "write",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "bifrost.identity.provider.read",
+      "group": "Identity",
+      "title": "Inspect provider readiness",
+      "owner": "bifrost",
+      "effect": "read",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": false
+    },
+    {
+      "id": "bifrost.automation.workflow.run",
+      "group": "Automation",
+      "title": "Run reviewed installed workflow",
+      "owner": "bifrost",
+      "effect": "write",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "curator.archive.inventory",
+      "group": "Media",
+      "title": "Inventory a professional archive",
+      "owner": "curator",
+      "effect": "read",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": false
+    },
+    {
+      "id": "apelles.image.watermark",
+      "group": "Media",
+      "title": "Apply approved image watermark",
+      "owner": "apelles",
+      "effect": "write",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "kurosawa.video.compress",
+      "group": "Media",
+      "title": "Encode a video derivative",
+      "owner": "kurosawa",
+      "effect": "write",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "composer.audio.transcribe",
+      "group": "Media",
+      "title": "Create timed transcription",
+      "owner": "composer",
+      "effect": "write",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "penelope.archive.verify",
+      "group": "Files",
+      "title": "Verify archive contents",
+      "owner": "penelope",
+      "effect": "read",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": false
+    },
+    {
+      "id": "durer.model.render",
+      "group": "3D",
+      "title": "Render a production model",
+      "owner": "durer",
+      "effect": "write",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "forge.build.native",
+      "group": "Development",
+      "title": "Build an app from approved source",
+      "owner": "forge",
+      "effect": "write",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true
+    },
+    {
+      "id": "heimdall.workspace.open",
+      "group": "Workspace",
+      "title": "Open an authorized workspace",
+      "owner": "heimdall",
+      "effect": "read",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": false
+    },
+    {
+      "id": "conductor.project.current",
+      "aliases": [
+        "conductor.currentProject"
+      ],
+      "group": "Project",
+      "title": "Recover current project",
+      "owner": "conductor",
+      "effect": "workflow",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true,
+      "source": "2026-10-22 recovered CONDUCTOR short calls"
+    },
+    {
+      "id": "conductor.project.consolidate",
+      "aliases": [
+        "conductor.consolidate"
+      ],
+      "group": "Project",
+      "title": "Reconcile project workspaces",
+      "owner": "conductor",
+      "effect": "workflow",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true,
+      "source": "2026-10-22 recovered CONDUCTOR short calls"
+    },
+    {
+      "id": "conductor.launch.zero",
+      "aliases": [
+        "conductor.zeroLaunch"
+      ],
+      "group": "Project",
+      "title": "Prepare private local preview",
+      "owner": "conductor",
+      "effect": "workflow",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true,
+      "source": "2026-10-22 recovered CONDUCTOR short calls"
+    },
+    {
+      "id": "conductor.launch.test",
+      "aliases": [
+        "conductor.testLaunch"
+      ],
+      "group": "Project",
+      "title": "Test or experimental launch",
+      "owner": "conductor",
+      "effect": "workflow",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true,
+      "source": "2026-10-22 recovered CONDUCTOR short calls"
+    },
+    {
+      "id": "conductor.launch.official",
+      "aliases": [
+        "conductor.ofiLAUNCH"
+      ],
+      "group": "Project",
+      "title": "Official release acceptance",
+      "owner": "conductor",
+      "effect": "workflow",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true,
+      "source": "2026-10-22 recovered CONDUCTOR short calls"
+    },
+    {
+      "id": "forgemaster.product.go",
+      "aliases": [
+        "pGO"
+      ],
+      "group": "Product",
+      "title": "Full product recovery-to-delivery",
+      "owner": "forgemaster",
+      "effect": "workflow",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true,
+      "source": "#common/AppDevRules/productFLOW.md"
+    },
+    {
+      "id": "forgemaster.product.face",
+      "aliases": [
+        "pFACE"
+      ],
+      "group": "Product",
+      "title": "Visual identity review",
+      "owner": "forgemaster",
+      "effect": "workflow",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true,
+      "source": "#common/AppDevRules/productFLOW.md"
+    },
+    {
+      "id": "forgemaster.product.copy",
+      "aliases": [
+        "pCOPY"
+      ],
+      "group": "Product",
+      "title": "Documentation",
+      "owner": "forgemaster",
+      "effect": "workflow",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true,
+      "source": "#common/AppDevRules/productFLOW.md"
+    },
+    {
+      "id": "forgemaster.product.gif",
+      "aliases": [
+        "pGIF"
+      ],
+      "group": "Product",
+      "title": "Animations",
+      "owner": "forgemaster",
+      "effect": "workflow",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true,
+      "source": "#common/AppDevRules/productFLOW.md"
+    },
+    {
+      "id": "forgemaster.product.web",
+      "aliases": [
+        "pWEB"
+      ],
+      "group": "Product",
+      "title": "Web app delivery",
+      "owner": "forgemaster",
+      "effect": "workflow",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true,
+      "source": "#common/AppDevRules/productFLOW.md"
+    },
+    {
+      "id": "forgemaster.product.chat",
+      "aliases": [
+        "pCHAT"
+      ],
+      "group": "Product",
+      "title": "Chat provider delivery",
+      "owner": "forgemaster",
+      "effect": "workflow",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true,
+      "source": "#common/AppDevRules/productFLOW.md"
+    },
+    {
+      "id": "forgemaster.product.keep",
+      "aliases": [
+        "pKEEP"
+      ],
+      "group": "Product",
+      "title": "Backup/LKG",
+      "owner": "forgemaster",
+      "effect": "workflow",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true,
+      "source": "#common/AppDevRules/productFLOW.md"
+    },
+    {
+      "id": "forgemaster.product.trace",
+      "aliases": [
+        "pTRACE"
+      ],
+      "group": "Product",
+      "title": "Provenance",
+      "owner": "forgemaster",
+      "effect": "workflow",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true,
+      "source": "#common/AppDevRules/productFLOW.md"
+    },
+    {
+      "id": "forgemaster.product.portal",
+      "aliases": [
+        "pPORTAL"
+      ],
+      "group": "Product",
+      "title": "Portal handoff",
+      "owner": "forgemaster",
+      "effect": "workflow",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true,
+      "source": "#common/AppDevRules/productFLOW.md"
+    },
+    {
+      "id": "forgemaster.product.check",
+      "aliases": [
+        "pCHECK"
+      ],
+      "group": "Product",
+      "title": "Verification",
+      "owner": "forgemaster",
+      "effect": "workflow",
+      "state": "contract-only",
+      "executors": {},
+      "requiresApproval": true,
+      "source": "#common/AppDevRules/productFLOW.md"
+    }
+  ],
+  "combinations": [
+    {
+      "id": "bifrost.workstation.prepare",
+      "state": "contract-only",
+      "steps": [
+        "bifrost.device.discover",
+        "bifrost.device.pair",
+        "bifrost.device.capabilities.read",
+        "bifrost.package.resolve",
+        "bifrost.file.transfer.prepare",
+        "bifrost.file.transfer.send",
+        "bifrost.app.install",
+        "bifrost.app.health.read"
+      ]
+    },
+    {
+      "id": "bifrost.media.ingest",
+      "state": "contract-only",
+      "steps": [
+        "curator.archive.inventory",
+        "penelope.archive.verify"
+      ]
+    },
+    {
+      "id": "bifrost.status.inspect",
+      "aliases": [
+        "status.inspect",
+        "bifrost.quickcheck"
+      ],
+      "title": "Local read-only platform and workflow inspection",
+      "state": "implemented-readonly",
+      "requiresApproval": false,
+      "steps": [
+        "bifrost.system.platform.read",
+        "bifrost.automation.catalog.read",
+        "bifrost.setup.catalog.read"
+      ],
+      "scope": "Local catalogue observation only; executes no installed user workflow"
+    }
+  ]
+}

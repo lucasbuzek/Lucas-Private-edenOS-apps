@@ -1,0 +1,4 @@
+/Users/lucas/edenOS/Software Development/BIFROST/.DS_Store
+/Users/lucas/edenOS/Software Development/BIFROST/docs/.DS_Store
+/Users/lucas/edenOS/Software Development/BIFROST/headless/.DS_Store
+/Users/lucas/edenOS/Software Development/BIFROST/tests/.DS_Store

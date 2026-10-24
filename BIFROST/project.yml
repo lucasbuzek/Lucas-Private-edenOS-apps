@@ -1,0 +1,70 @@
+name: BIFROST
+options:
+  bundleIdPrefix: eden.private
+  deploymentTarget:
+    macOS: "15.0"
+targets:
+  BIFROST:
+    type: application
+    platform: macOS
+    info:
+      path: BIFROST-Info.plist
+      properties:
+        NSLocalNetworkUsageDescription: "BIFROST uses your local network to discover nearby devices and advertised services, and to ping or scan the selected private LAN when you request it. Discovery does not grant device control."
+        NSBonjourServices:
+          - _airplay._tcp
+          - _raop._tcp
+          - _companion-link._tcp
+          - _ssh._tcp
+          - _smb._tcp
+          - _afpovertcp._tcp
+          - _device-info._tcp
+          - _workstation._tcp
+          - _http._tcp
+          - _https._tcp
+          - _ipp._tcp
+          - _ipps._tcp
+          - _printer._tcp
+          - _hap._tcp
+          - _googlecast._tcp
+          - _rfb._tcp
+          - _adisk._tcp
+    sources:
+      - path: Sources
+      - path: headless
+        type: folder
+        buildPhase: resources
+      - path: core
+        type: folder
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: eden.private.bifrost
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: BIFROST
+        SWIFT_VERSION: 6.0
+        CODE_SIGN_STYLE: Automatic
+        ENABLE_HARDENED_RUNTIME: YES
+  BIFROSTMenu:
+    type: application
+    platform: macOS
+    sources:
+      - path: MenuController
+      - path: Sources/HeadlessClient.swift
+      - path: Sources/BIFROSTNativeAppLocation.swift
+      - path: Sources/VisualIdentity.swift
+      - path: headless
+        type: folder
+        buildPhase: resources
+      - path: core
+        type: folder
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: eden.private.bifrost.menu
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: BIFROST Menu
+        INFOPLIST_KEY_LSUIElement: YES
+        SWIFT_VERSION: 6.0
+        CODE_SIGN_STYLE: Automatic
+        ENABLE_HARDENED_RUNTIME: YES

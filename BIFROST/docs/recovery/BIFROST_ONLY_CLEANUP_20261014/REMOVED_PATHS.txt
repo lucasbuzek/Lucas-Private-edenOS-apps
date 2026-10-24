@@ -1,0 +1,6 @@
+/Users/lucas/edenOS/Software Development/BIFROST/tests/.DS_Store [Finder metadata]
+/Users/lucas/edenOS/Software Development/BIFROST/docs/.DS_Store [Finder metadata]
+/Users/lucas/edenOS/Software Development/BIFROST/headless/.DS_Store [Finder metadata]
+/Users/lucas/edenOS/Software Development/BIFROST/.DS_Store [Finder metadata]
+/Users/lucas/edenOS/Software Development/BIFROST/docs/operations/logs/error.log [obsolete local operational log]
+/Users/lucas/edenOS/Software Development/BIFROST/docs/operations/logs/CODEX_CLOUD_SUBMISSION.log [obsolete local operational log]

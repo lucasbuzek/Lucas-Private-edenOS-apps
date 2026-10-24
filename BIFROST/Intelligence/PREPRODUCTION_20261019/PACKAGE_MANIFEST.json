@@ -1,0 +1,26 @@
+{
+  "schema": "daedalus.preproductionpackage.v1",
+  "project": "/Users/lucas/edenOS/Software Development/BIFROST",
+  "project_name": "BIFROST",
+  "generated_utc": "2026-10-19T03:18:43.970372+00:00",
+  "source_count": 460,
+  "coverage": {
+    "Project & requirements": 7,
+    "Research & provenance": 3,
+    "Mechanical & CAD": 0,
+    "Electronics & electrical": 1,
+    "Sizing & calculations": 0,
+    "BOM & procurement": 0,
+    "Software & firmware": 8,
+    "Interfaces & integration": 11,
+    "Fabrication & manuals": 5,
+    "Safety & risk": 0,
+    "Tests & trials": 89,
+    "Workspace & knowledge": 8
+  },
+  "physical_test": "NOT_EXECUTED",
+  "engineering_acceptance": "UNKNOWN",
+  "prebuild_gate": "HOLD",
+  "source_copied": false,
+  "deliverable_type": "Evidence-linked preproduction WORK SURFACE, not final engineered package"
+}

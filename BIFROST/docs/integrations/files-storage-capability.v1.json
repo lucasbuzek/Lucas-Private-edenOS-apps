@@ -1,0 +1,151 @@
+{
+  "schema": "bifrost.capability.descriptor.v1",
+  "id": "bifrost.files-storage",
+  "name": "BIFROST Files & Storage",
+  "owner": "BIFROST",
+  "executionOwner": "BIFROSTcore",
+  "description": "User-directed local, cloud, and self-hosted storage account metadata, scoped folder inspection, and opt-in profile configuration.",
+  "version": "0.1.1",
+  "state": "ENGINEERING_CANDIDATE",
+  "platforms": {
+    "macOS": "local terminal source implemented and synthetic tests",
+    "Windows": "target not built",
+    "Linux": "target not built",
+    "server": "target not deployed"
+  },
+  "runMode": "on-demand CLI",
+  "entrypoint": "python3 -B tools/bifrost_storage.py",
+  "runtime": {
+    "mustBeInstalledInHeadless": false,
+    "installedInExistingHeadless": false,
+    "runningHeadlessAdapter": false,
+    "runtimeDependencies": [
+      "Python 3.9+ standard library"
+    ],
+    "alwaysOnDaemon": false,
+    "sourceHeadlessRoutesImplemented": true,
+    "testedInIsolatedHTTP": true,
+    "nativeSourceBundleResourcesVerified": true,
+    "sourceRoutes": [
+      "/api/storage/v1",
+      "/api/storage/v1/accounts",
+      "/api/storage/v1/preview"
+    ],
+    "sourceIntegration": "Existing BIFROST Headless, authenticated loopback read-only API only",
+    "sourceScopedPreviewTested": true,
+    "remoteMetadataReadsOnExplicitRequestOnly": true,
+    "liveInstalledHeadlessRouteVerified": false
+  },
+  "delegation": {
+    "BIFROSTcore": "capability resolution, permissions, verified receipts and provider routing",
+    "PENELOPE": "optional independently authorized user file custody/organization",
+    "JANITOR": "optional independently authorized storage inspection and cleanup",
+    "DropboxLite": "independent prior Dropbox verified-hash engine; no automatic integration"
+  },
+  "security": {
+    "default": "no account authorization or file transfer",
+    "pathScope": "explicit selected folder; direct children only; symbolic links and protected paths blocked",
+    "auth": "provider or Rclone owns credentials; user sign-in required",
+    "crossProvider": "no transfer until provider-specific verified adapters",
+    "changes": "profile metadata only with explicit --apply",
+    "browser": "never force Chrome",
+    "externalService": "no automatic authentication, installation, or server connection"
+  },
+  "actions": [
+    {
+      "name": "storage.status",
+      "command": "status",
+      "consequence": "none",
+      "availability": "implemented"
+    },
+    {
+      "name": "storage.providers",
+      "command": "providers",
+      "consequence": "none",
+      "availability": "implemented"
+    },
+    {
+      "name": "storage.accounts",
+      "command": "accounts",
+      "consequence": "reads local Rclone metadata only",
+      "availability": "implemented"
+    },
+    {
+      "name": "storage.profiles.list",
+      "command": "profiles list",
+      "consequence": "reads private local profile metadata",
+      "availability": "implemented"
+    },
+    {
+      "name": "storage.profiles.add.preview",
+      "command": "profiles add without --apply",
+      "consequence": "none",
+      "availability": "implemented"
+    },
+    {
+      "name": "storage.profiles.add.apply",
+      "command": "profiles add --apply",
+      "consequence": "writes explicitly confirmed user profile metadata, not cloud files",
+      "availability": "implemented"
+    },
+    {
+      "name": "storage.local.list",
+      "command": "list-local --path",
+      "consequence": "one-level local metadata inspection",
+      "availability": "implemented"
+    },
+    {
+      "name": "storage.icloud.list",
+      "command": "list-icloud --path",
+      "consequence": "one-level Apple-managed iCloud folder metadata only; no hydration",
+      "availability": "implemented"
+    },
+    {
+      "name": "storage.profile.preview",
+      "command": "preview --name PROFILE [--folder RELATIVE] [--read-remote]",
+      "consequence": "One saved-profile directory metadata only; remote read explicitly selected",
+      "availability": "implemented"
+    },
+    {
+      "name": "storage.cloud.sync",
+      "consequence": "cloud file writes",
+      "availability": "NOT_IMPLEMENTED"
+    },
+    {
+      "name": "storage.hosting",
+      "consequence": "self-hosted service installation",
+      "availability": "NOT_IMPLEMENTED"
+    },
+    {
+      "name": "storage.bifrost.headless.execute",
+      "consequence": "authenticated local control",
+      "availability": "NOT_CONNECTED"
+    },
+    {
+      "name": "storage.chatgpt.action",
+      "consequence": "requires independent authorized host bridge",
+      "availability": "NOT_CONNECTED"
+    },
+    {
+      "name": "storage.headless.catalog.source",
+      "method": "GET",
+      "route": "/api/storage/v1",
+      "availability": "SOURCE_TESTED_NOT_DEPLOYED",
+      "consequence": "Authenticated local metadata only; no token or account scan"
+    },
+    {
+      "name": "storage.headless.accounts.metadata.source",
+      "method": "GET",
+      "route": "/api/storage/v1/accounts",
+      "availability": "SOURCE_TESTED_NOT_DEPLOYED",
+      "consequence": "Authenticated metadata of user-configured remote names/types only"
+    },
+    {
+      "name": "storage.headless.profile.preview.source",
+      "method": "POST",
+      "route": "/api/storage/v1/preview",
+      "availability": "SOURCE_TESTED_NOT_DEPLOYED",
+      "consequence": "Authenticated exact-saved-profile read-only metadata preview; no cloud sync"
+    }
+  ]
+}

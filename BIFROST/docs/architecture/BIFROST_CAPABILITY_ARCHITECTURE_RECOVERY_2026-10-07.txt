@@ -1,0 +1,851 @@
+BIFROST — CAPABILITY ARCHITECTURE RECOVERY + NATIVE BRIDGE TARGETS
+Verified recovery snapshot: 2026-10-07 Status: Recovered canon
+reconciled with 2026-10-07 Native Bridge/Node research. Purpose:
+Preserve established BIFROST/HEIMDALL capability architecture without
+drift and add the current ZERO → LOCAL → ALPHA → BETA execution targets.
+
+====================================================================== 1.
+CANONICAL IDENTITY
+======================================================================
+
+PROJECT: BIFROST SYSTEM: edenOS / EDEN AppDev
+
+Canonical identity: CONNECT · KEEP · RESOLVE
+
+BIFROST is system-level connective infrastructure, Base App/gateway,
+App/service manager, capability/provider resolver, persistent connective
+fabric, and user-facing access/control surface.
+
+BIFROST has three primary product jobs:
+
+1)  CONNECT Connect authorized devices, machines, EDEN Apps, services,
+    providers and representations. Discover presence/capability,
+    establish trust, maintain/recover connections, and resolve where/how
+    a capability can execute.
+
+2)  SET UP / INSTALL / MANAGE Discover existing Apps/services/tools;
+    import/install/update/repair/rollback modular packages; manage
+    compatible headless services, provider connections and shared-host
+    relationships; offer useful missing components without needless
+    duplication.
+
+3)  PRESENT / CONTROL Expose BIFROST-owned/managed functions through
+    synchronized representations including headless/API, menu bar,
+    native desktop UI, Web/WebApp/PWA and authorized remote
+    control/management.
+
+Historic phrase: “My Gateway to EDEN.” Lucas Private/Custom front door:
+Garden of EDEN. Garden of EDEN is a Private configuration/name, not the
+universal BIFROST product name.
+
+======================================================================
+2. RESPONSIBILITY BOUNDARIES
+======================================================================
+
+BIFROST = CONNECT · KEEP · RESOLVE. It owns connective
+identity/state/metadata, representations/locations,
+relationships/provenance, devices, capability/provider discovery and
+resolution, connection state, interoperability, relevant
+install/package/update relationships, generic shared-host
+infrastructure, and presentation/access to managed BIFROST functions.
+
+HEIMDALL = ORGANIZE & UNDERSTAND. HEIMDALL owns Workspaces, composition,
+user working environments, adaptive/custom compositions, contextual
+presentation, panels, inspectors and contextual actions. BIFROST MUST
+NOT recreate HEIMDALL’s Workspace engine.
+
+SPECIALIST APPS = SPECIALIZE & DO. Specialist Apps retain domain
+authority, domain logic, data, APIs/capabilities, representations and
+standalone implementation.
+
+CONDUCTOR = reasoning/orchestration/co-ordination. BIFROST is not the AI
+assistant. AI reasons; deterministic/native/specialist services execute.
+
+FORGE/ForgeMASTER and the established AppDev production/governance
+system remain separate from BIFROST runtime responsibilities.
+
+LCAS FULL remains a persistent in-chat UI/status presentation layer
+only, not a BIFROST runtime dependency, governor or orchestrator.
+
+Core rule: HOSTING IS TRANSFERABLE; OWNERSHIP IS NOT.
+
+======================================================================
+3. CAPABILITY MODEL
+======================================================================
+
+Keep these concepts distinct:
+
+TYPE ≠ CAPABILITY ≠ PROVIDER ≠ INSTANCE / CONNECTION ≠ REPRESENTATION ≠
+WORKSPACE / COMPOSITION
+
+BIFROST discovers/registers/resolves authorized capabilities and
+representations. It does not swallow specialist App databases or domain
+ownership.
+
+Canonical capability-first execution principle:
+
+RECOVER → DISCOVER → RECOGNIZE → REUSE → RECONCILE → INTEGRATE / ADAPT →
+BUILD ONLY THE GAP → VERIFY
+
+Related rule: IMPLEMENT / INTEGRATE EXISTING CAPABILITY BEFORE
+RECREATING IT.
+
+Native First does NOT mean native at all costs. Use the lowest
+sufficient capability/representation.
+
+Canonical representation progression:
+
+LINK → WEB / TAB → EMBED → NATIVE BRIDGE → NATIVE
+
+Stop at the lowest representation that provides the required experience,
+reliability, privacy, offline capability, safety, performance and
+integration.
+
+======================================================================
+4. APP / SERVICE CAPABILITY CONTRACT
+======================================================================
+
+An EDEN App, compatible service, provider, helper, native capability,
+CLI, Web/PWA or other integration may expose/register a contract
+containing as applicable:
+
+-   identity and version
+-   type
+-   human name/description
+-   capabilities/actions
+-   supported input/output types
+-   entry points
+-   representations
+-   native view where applicable
+-   URL/Web/PWA representation
+-   embedded surface
+-   command/API representation
+-   deep links/routes
+-   App Intents / Shortcuts
+-   service/headless endpoint
+-   platform/architecture requirements
+-   dependencies
+-   required permissions
+-   configuration schema
+-   service/lifecycle commands
+-   health/state
+-   data locations
+-   provider/connection types
+-   update/rollback information
+-   checksums/signature metadata where available
+-   uninstall behavior
+-   authority/ownership
+-   optional shared-host compatibility
+
+Unknown future Apps/helpers should be discoverable/loadable through
+valid contracts/manifests/adapters without requiring BIFROST source
+edits.
+
+Supported integration classes include:
+
+-   managed EDEN package
+-   normalized legacy/custom package
+-   explicitly authorized executable script/command
+-   local CLI/tool
+-   native OS capability
+-   installed third-party application/service
+-   Web/API provider
+-   Web/PWA
+-   PWA/agent where legitimate interfaces exist
+-   EDEN shared helper/capability
+-   standalone EDEN App exposing a contract
+
+======================================================================
+5. REPRESENTATIONS / SURFACES
+======================================================================
+
+BIFROST representations share the same underlying authoritative state.
+
+Established surface lineage includes:
+
+-   headless/service/API
+-   menu bar
+-   full native macOS app
+-   Web/WebApp/PWA
+-   authorized remote management/control
+-   Windows desktop/service representation
+-   Linux headless/server + Web control
+-   Android representation where justified
+
+Web/PWA is a representation/capability, not a separate replacement
+architecture.
+
+Garden of EDEN is Lucas Private/Custom’s BIFROST Web/PWA front door.
+
+BIFROST Web may expose useful BIFROST functions such as: -
+installed/development Apps - App state - representations - HEIMDALL
+Workspace entry - CONDUCTOR entry where configured -
+attention/problems - package/build/update state - connectivity -
+setup/install/manage functions - advanced/developer controls where
+appropriate
+
+Developer internals belong under Advanced/Developer rather than
+dominating normal UI.
+
+======================================================================
+6. HEIMDALL WORKSPACES / CUSTOM INTERFACES
+======================================================================
+
+HEIMDALL knows available/needed Apps and capabilities and presents the
+useful contextual subset.
+
+A HEIMDALL Workspace may compose: - EDEN Apps/capabilities - native
+capabilities - installed third-party Apps - Web/PWA representations -
+PWA agents - local/remote agents - services - devices -
+information/content - actions/commands - specialist App representations
+
+BIFROST supplies truthful capability/provider/connection/representation
+state and resolves/launches the appropriate implementation.
+
+HEIMDALL composes the user-facing working environment.
+
+Therefore a development Workspace may combine ChatGPT, Codex, Claude,
+GitHub, Xcode, Mac and iPhone capabilities without BIFROST or HEIMDALL
+absorbing their ownership.
+
+Likewise a CURATOR workflow may combine CURATOR domain capabilities,
+Files/Finder, image previews, storage capabilities and device controls.
+
+======================================================================
+7. SHARED HOSTING
+======================================================================
+
+Apps remain genuinely standalone.
+
+Compatible Apps may voluntarily delegate generic headless/service
+hosting to BIFROST:
+
+STANDALONE → DELEGATING → BIFROST_HOSTED
+
+The relationship is reversible. Apps may retake hosting.
+
+BIFROST disappearance/incompatibility must not destroy the App’s
+standalone authority or data.
+
+BIFROST may provide shared runtime/service infrastructure without
+becoming the specialist domain owner.
+
+======================================================================
+8. DEVICES / DISCOVERY / TRUST
+======================================================================
+
+BIFROST discovers/manages local, network and authorized remote
+environments/devices/services.
+
+Relevant concepts: - trusted identity - enrollment/trust - presence -
+discovery - connection - authentication -
+capability/provider/representation resolution - reconnect/recovery -
+human-readable naming
+
+Normal users should not need to manage URLs, IP addresses, ports or
+process topology.
+
+Discovery proves discovery only. It does not prove EDEN installation,
+trust, authorization, capability availability or verification.
+
+Apple-priority path: - Network.framework - Bonjour / mDNS / DNS-SD -
+supported native Apple facilities
+
+For Lucas Private, use Apple-native identity/security and permission
+facilities wherever appropriate rather than recreating them.
+
+Useful Apple facilities include: - Apple account/iCloud where
+appropriate - LocalAuthentication / Face ID / Touch ID / device
+passcode - Keychain for secrets/credentials/keys - native OS
+permission/TCC systems - App Intents - App Shortcuts / Shortcuts -
+Siri/system assistant integration where supported - notifications -
+Spotlight/system search where useful - Share Sheet / Open In - deep
+links / universal links - native file/document pickers - supported
+local-network access
+
+BIFROST-specific authorization should cover gaps the OS does not know
+about, such as whether a particular agent/provider is allowed to invoke
+a particular high-impact App action. Do not duplicate OS permission
+management.
+
+======================================================================
+9. ICLOUD / APPLE COORDINATION ROLE — CURRENT RECONCILIATION
+======================================================================
+
+For the Apple-priority Private build, iCloud can reduce custom
+coordination infrastructure while preserving local-first execution.
+
+Appropriate small/shared state may include: - device/app registry
+metadata - BIFROST preferences - Remote App Surface definitions -
+job/session metadata/status - handoff state - recent activity - small
+manifests - user/provider configuration that is suitable for iCloud
+
+Use Keychain for credentials/tokens/private keys/provider secrets.
+
+Keep authoritative heavy/local work on the BIFROST Node / specialist
+owner: - large files/media - repositories - native applications - CLI
+execution - builds - heavy processing
+
+GitHub remains canonical persistence for AppDev source/project authority
+under existing AppDev canon.
+
+iCloud is not a bulk remote-desktop/media transport. On LAN, heavy
+content should move directly between devices where appropriate.
+
+======================================================================
+10. BIFROST-FIRST APPLE MOBILE
+======================================================================
+
+Established direction: iPhone is BIFROST-first rather than requiring a
+duplicate full HEIMDALL desktop client.
+
+BIFROST Mobile responsibilities may include, where platform APIs
+permit: - identity/trust - local/remote EDEN discovery -
+connection/reconnect - capability/provider/representation resolution -
+authentication/credential bridge - notifications - App Intents - Siri -
+Shortcuts - system search - Share Sheet / Open In / document handoff -
+deep/universal links - file/document pickers - local/native AI where
+adequate - secure local-network access - legitimate iOS background
+mechanisms - native presentation/embedding of resolved HEIMDALL or
+specialist representations
+
+Canonical phone flow:
+
+USER → BIFROST MOBILE → discover/identify trusted EDEN environment →
+authenticate/connect → resolve capability/provider/representation →
+open/embed/use the appropriate representation → authoritative owner
+performs work
+
+iPad may justify a richer/full adaptive HEIMDALL Workspace client
+because of its larger form factor.
+
+======================================================================
+11. BIFROST REMOTE APP SURFACE — 2026-10-07 RECONCILIATION
+======================================================================
+
+Current Native Bridge research adds a richer representation to the
+existing BIFROST capability model:
+
+BIFROST REMOTE APP SURFACE
+
+Purpose: Allow a remote/mobile device to interact with an individual
+App/workflow without streaming or reproducing the entire desktop.
+
+Default exchange: - application/workflow state - actions - relevant
+content - progress/events - thumbnails/previews where needed -
+results/errors
+
+Example: iPhone BIFROST → CURATOR Review → Mac BIFROST Node → CURATOR
+authoritative runtime
+
+The Mac performs the real work. The phone renders an appropriate mobile
+control surface.
+
+For EDEN Apps, expose richer first-class BIFROST capability/state/action
+surfaces.
+
+For third-party Apps use the lowest sufficient integration path:
+native/public API → App Intent / Shortcut → CLI → AppleScript/OSA where
+appropriate → Accessibility semantic control → visual/window interaction
+only as fallback
+
+Optional LIVE APP VIEW may stream/control the relevant
+application/window when direct visual manipulation is genuinely
+required.
+
+Do NOT default to whole-desktop VNC/RDP-style interaction.
+
+This is a BIFROST REPRESENTATION, not a new domain owner or separate
+architecture.
+
+======================================================================
+12. DISTRIBUTED OPERATING MODEL
+======================================================================
+
+Access device and execution device may differ.
+
+Examples: - iPhone controls a CURATOR workflow executing on Mac. -
+ChatGPT initiates work that Codex/Claude performs against GitHub and/or
+a Mac execution environment. - A HEIMDALL Workspace on one device
+resolves a specialist capability on another authorized device. - A
+Web/PWA representation controls an authoritative local App through
+BIFROST.
+
+Users select human-readable environments/devices rather than manually
+managing networking topology.
+
+======================================================================
+13. REMOTE / RDC STATUS
+======================================================================
+
+Remote Desktop Commander/Desktop Commander Remote is an OPTIONAL
+provider/bridge/reference/test harness, not BIFROST identity and not a
+mandatory dependency.
+
+Preserve legitimate optional RDC integration where useful, but
+develop/resolve a native/provider-agnostic BIFROST capability path.
+
+Relevant remote capability requirements include: - device
+enrollment/durable identity - explicit trust/authentication -
+online/offline presence - reconnect - capability advertisement - secure
+action invocation - authorized process/service lifecycle - authorized
+file transfer/read/write - result/error/status transport - logs/health
+where authorized - multi-device routing - optional screen/window control
+through mature safe mechanisms - revocation/least privilege
+
+Do not invent custom cryptography. Do not expose arbitrary
+unauthenticated shell execution. Remote actions do not bypass local
+safety.
+
+======================================================================
+14. CURRENT REAL-WORLD WORKFLOW — TARGET ZERO
+======================================================================
+
+ZERO is the user’s current real workflow, currently fragmented:
+
+ChatGPT ↔ Codex / Codex Cloud / local Codex where applicable ↔ Claude /
+Claude Code where applicable ↔ GitHub ↔ Mac/laptop ↔ iPhone/iPad ↔
+Cloudflare where currently used/applicable
+
+Current friction includes manual: - prompt/instruction handoff - context
+transfer - task/session resumption - project/file location - Mac
+execution handoff - GitHub synchronization/checking - build/test
+invocation - physical-device checking - package/result movement - web
+deployment steps - result/state return to the initiating surface
+
+ZERO GOAL: Streamline the existing tools/services using existing
+connectors, MCP, CLIs, APIs, Shortcuts/App Intents and automation BEFORE
+requiring the full BIFROST Native Bridge.
+
+ZERO is the real baseline against which later targets must prove
+improvement.
+
+======================================================================
+15. LOCAL — NATIVE / LOCAL-FIRST BIFROST
+======================================================================
+
+LOCAL is the native BIFROST foundation.
+
+Primary Apple-priority architecture: - local IPC/XPC/Unix-domain socket
+where suitable - localhost service/MCP where suitable - MCP stdio for
+local agents where suitable - Network.framework - Bonjour discovery -
+secure direct LAN communication - native Apple capability integration -
+BIFROST Remote App Surface
+
+Desired behavior: iPhone/iPad discovers the Mac/environment
+automatically on LAN, authenticates/pairs using native/security
+mechanisms where appropriate, and interacts with Apps/workflows
+directly.
+
+LOCAL must work without Cloudflare and without Internet where the
+underlying capability itself is local/offline.
+
+Potential route order: same process/device local → local IPC/localhost →
+direct LAN → optional remote transport
+
+======================================================================
+16. ALPHA — CLOUDFLARE-ASSISTED BIFROST
+======================================================================
+
+ALPHA extends LOCAL beyond the LAN using Cloudflare where useful.
+
+Cloudflare is NOT BIFROST and NOT an AI provider. It is an optional
+multi-capability infrastructure/provider adapter.
+
+Potential uses: - remote ingress/tunnel - TLS/edge -
+authentication/access - Web/PWA deployment - DNS - edge/API functions -
+other suitable Cloudflare services
+
+BIFROST capabilities remain owned by BIFROST/specialist Apps. Cloudflare
+is a replaceable implementation/provider for relevant infrastructure
+capabilities.
+
+ALPHA also uses Cloudflare deployment to make BIFROST Web / Garden of
+EDEN / authorized Remote App Surfaces accessible from mobile and other
+browsers where appropriate.
+
+Potential clients: - iPhone/iPad - Android phones/tablets -
+Mac/Windows/Linux browsers - other lightweight devices
+
+The Web/PWA surface should be responsive and capability-driven, not a
+desktop screenshot.
+
+======================================================================
+17. BETA — PROVIDER-INDEPENDENT / SELF-HOSTED REMOTE
+======================================================================
+
+BETA preserves the same BIFROST Node/capability/representation contracts
+while replacing Cloudflare-specific remote infrastructure where desired.
+
+Goal: fully user-controlled/provider-independent remote
+Gate/networking/auth/deployment alternatives.
+
+Candidate implementations are adapters, not canonized dependencies.
+
+BETA must not require Apps/HEIMDALL Workspaces to change merely because
+transport/deployment provider changes.
+
+======================================================================
+18. CURRENT FOUR TARGETS
+======================================================================
+
+The current development/research targets are:
+
+ZERO Streamline the existing real workflow and reduce manual handoffs.
+
+LOCAL Native/local-first BIFROST Node + direct Apple/LAN integration +
+Remote App Surface.
+
+ALPHA LOCAL plus Cloudflare-assisted remote connectivity and Web/PWA
+deployment.
+
+BETA LOCAL plus provider-independent/fully self-hosted remote
+infrastructure.
+
+Progression: ZERO → LOCAL → ALPHA → BETA
+
+Each stage should add/reuse capability rather than discard working
+earlier implementation.
+
+LOCAL is the foundational execution/interaction layer. ALPHA and BETA
+are remote/deployment extensions, not separate BIFROST products.
+
+======================================================================
+19. WEB/PWA + PWA AGENT INTEGRATION
+======================================================================
+
+Web/PWA/PWA-agent integration belongs inside the existing
+capability/provider/representation model.
+
+Where legitimate interfaces exist, integration may use: - MCP - API -
+OAuth - webhooks - deep links / universal links - supported browser/PWA
+integration - browser automation only as a lower-level fallback
+
+Do not pretend every Web/PWA service exposes arbitrary integration.
+
+ChatGPT, Codex, Claude, GitHub, Cloudflare and other Web/agent services
+should be treated according to their actual available
+capabilities/interfaces rather than hard-coded as special architecture.
+
+BIFROST discovers/resolves/connects. HEIMDALL composes the relevant
+capabilities into Workspaces. The authoritative provider/App performs
+the work.
+
+======================================================================
+20. BIFROST WEB PORTAL / CUSTOM PORTALS
+======================================================================
+
+BIFROST Web is the deployment/runtime surface for BIFROST-authorized
+Web/PWA representations.
+
+HEIMDALL may compose task/domain-specific Workspaces using registered
+capabilities and representations.
+
+BIFROST may then expose/deploy the required Web representations/portal
+surfaces without taking ownership of HEIMDALL composition.
+
+Examples: - Development Workspace - Photography Workspace - Media
+Workspace - Slindokuhle operational Workspace - temporary project/repair
+Workspace
+
+For Lucas Private, Garden of EDEN remains the established BIFROST
+Web/PWA front door.
+
+Do not create a competing “new portal architecture” that duplicates
+Garden/BIFROST Web or HEIMDALL Workspaces.
+
+======================================================================
+21. PROVIDER AGNOSTICISM
+======================================================================
+
+BIFROST capabilities belong to BIFROST/the authoritative capability
+owner, not to whichever external service currently implements a
+supporting function.
+
+Replaceable provider classes may include: - AI/intelligence - Web/edge -
+remote transport - identity/access where applicable - storage -
+compute - DNS/network - deployment - other service capabilities
+
+Private/Custom may preconfigure preferred providers without
+contaminating Official defaults.
+
+Cloudflare may be the current/default/recommended ALPHA infrastructure
+provider while remaining replaceable.
+
+======================================================================
+22. PRIVATE/CUSTOM VS OFFICIAL
+======================================================================
+
+There is ONE BIFROST core/codebase.
+
+Lucas Private/Custom: - Apple-centric where useful - deeper Apple-native
+integration - Garden of EDEN private front door - may expose
+development/experimental integrations - may preconfigure preferred
+providers/workflows
+
+Official: - no Lucas-specific paths/devices/providers/credentials/Garden
+branding assumptions - first-run discovery/configuration builds the user
+environment - same core mechanisms/contracts - portable/open -
+local-first/offline-capable where applicable - AI/cloud optional
+
+Profiles/configuration/releases select behavior; do not create
+unnecessary source forks.
+
+Official deployment/transport can ultimately expose multiple choices
+around the same BIFROST core: - local/direct - convenient supported
+remote provider path such as Cloudflare - fully
+self-hosted/provider-independent remote path
+
+======================================================================
+23. BIFROST SERVER / DESKTOP / HOST RELATIONSHIP
+======================================================================
+
+Preserve the established shared-state relationship between BIFROST
+server/headless capabilities and desktop/user representations.
+
+Do not create unrelated competing products for “server”, “desktop”,
+“web” and “remote”. They are representations/roles over common BIFROST
+contracts/state where architecture permits.
+
+The current Native Bridge/Node work is intended to operationalize
+native/device/agent/Web connectivity, not redefine BIFROST as a new
+standalone unrelated product.
+
+======================================================================
+24. LIFECYCLE / PACKAGE / RECOVERY RESPONSIBILITIES
+======================================================================
+
+BIFROST App/service management includes real lifecycle semantics such
+as:
+
+discover → import → detect type → stage/unpack → read/derive manifest →
+validate → compare installed version → resolve requirements →
+install/update/repair → verify → register → launch
+
+Support where applicable: - safe staging - compatibility/dependency
+checks - checksum verification - rollback - package history - user-data
+preservation - health/state - reconnect/recovery -
+update/repair/migrate/cleanup/uninstall
+
+Never blindly overwrite an installation. User-added scripts/commands are
+not automatically trusted. Do not silently elevate privileges.
+
+======================================================================
+25. APPLE-SPECIFIC CAPABILITY NOTES
+======================================================================
+
+Lucas Private should exploit supported native Apple capabilities rather
+than reducing Apple to a lowest-common-denominator cross-platform
+implementation.
+
+Potential/native facilities include: - Swift/native frameworks -
+Network.framework - Bonjour - AppKit/UIKit/SwiftUI as appropriate - App
+Intents - App Shortcuts / Shortcuts - Siri/system assistant surfaces
+where supported - Keychain - LocalAuthentication - iCloud/CloudKit where
+appropriate - NSUbiquitousKeyValueStore for suitably small preference
+state where appropriate - Files/document pickers - Share Sheet / Open
+In - deep/universal links - notifications - Spotlight - Accessibility
+for authorized semantic UI control - AppleScript/OSA where appropriate -
+supported screen/window capture/interaction when genuinely required -
+native OS power assertion / caffeinate for Keep Awake
+
+Platform-specific implementation remains behind portable BIFROST
+contracts.
+
+======================================================================
+26. KEEP AWAKE
+======================================================================
+
+Keep Mac Awake is a real BIFROST system capability.
+
+Use a real macOS power assertion/caffeinate or appropriate supported
+native mechanism. State must reflect the real assertion. Disable must
+release it. Restart recovery must not leave orphaned assertions. Menu
+bar/full UI representations share the same truthful state.
+
+======================================================================
+27. EVIDENCE / STATE TRUTH
+======================================================================
+
+Preserve EDEN/AppDev evidence distinctions.
+
+REGISTERED ≠ loaded ≠ operational ≠ verified.
+
+GENERATED ≠ IMPLEMENTED ≠ BUILT ≠ TESTED ≠ VERIFIED ≠ RELEASED.
+
+UNKNOWN ≠ PASS.
+
+Native Bridge/Node, Web deployment, remote control, PWA integration or
+provider adapters must not be called operational merely because
+architecture or code exists.
+
+======================================================================
+28. CURRENT IMPLEMENTATION CONTINUITY
+======================================================================
+
+Prior BIFROST work includes an existing macOS Native Host direction.
+
+The Native Bridge/Node research must recover/reuse existing
+implementation and contracts before modification and must not create a
+flag-day replacement of existing working paths.
+
+RDC remains a reference/optional transition provider rather than a
+mandatory dependency.
+
+Current research objective: make the established BIFROST
+capability/representation/Workspace architecture operational across the
+user’s actual environment: ChatGPT, Codex, Claude, GitHub, Cloudflare,
+Mac and iPhone/iPad.
+
+======================================================================
+29. CURRENT ACCEPTANCE DIRECTION
+======================================================================
+
+A representative successful workflow should eventually look like:
+
+USER on iPhone / BIFROST Web / native BIFROST → chooses/opens a HEIMDALL
+Workspace or specialist App surface → BIFROST discovers/resolves
+authorized capabilities → local/direct route is preferred when available
+→ specialist/native/agent capability executes on the appropriate
+device/provider → state/progress/results flow back through the same
+capability/session model → GitHub/project authority and AppDev evidence
+rules remain intact where development work is involved → no unnecessary
+manual copying between ChatGPT, Codex, Claude, GitHub, Mac and
+deployment surfaces
+
+For CURATOR-style interaction: iPhone/mobile Web → BIFROST Remote App
+Surface → Mac BIFROST Node → CURATOR authoritative runtime →
+state/actions/previews/results with full-window/live view only when
+required.
+
+======================================================================
+30. ANTI-DRIFT SUMMARY
+======================================================================
+
+DO NOT: - redefine BIFROST as an AI assistant - absorb HEIMDALL
+Workspaces into BIFROST - absorb specialist App domain logic/data - make
+Cloudflare mandatory - make RDC mandatory - make Web/PWA the only
+representation - make native implementation mandatory when a lower
+sufficient representation works - reduce Apple capabilities merely for
+cross-platform parity - create separate product forks for
+Private/Official - treat discovery/registration as proof of operational
+verification - build a full remote desktop when an App-focused
+capability surface is sufficient - duplicate native OS
+identity/permission/security systems without need - replace recovered
+working BIFROST behavior with placeholders or a cleaner but less
+functional rewrite
+
+DO: - CONNECT · KEEP · RESOLVE - use lowest sufficient capability -
+recover/reuse existing capability first - keep capability ownership with
+its authoritative owner - let HEIMDALL compose Workspaces - use BIFROST
+to resolve/connect/expose representations - preserve standalone Apps and
+reversible shared hosting - exploit Apple-native facilities in Lucas
+Private - preserve portable contracts for Official - make
+transport/deployment/provider adapters replaceable - keep LOCAL usable
+without cloud where underlying capabilities permit - use
+ALPHA/Cloudflare to extend rather than redefine LOCAL - use BETA to
+provide sovereign/provider-independent remote alternatives - verify
+evidence before advancing implementation state
+
+======================================================================
+31. RECOVERY COMPLETENESS NOTE
+======================================================================
+
+This document was produced after a second recovery pass against prior
+BIFROST/HEIMDALL project context and the authoritative BIFROST
+reconstruction material dated 2026-10-02.
+
+The second pass recovered material omitted from the initial 2026-10-07
+conversational summary, including: - BIFROST Base App/gateway and
+App/service-manager roles - the three primary product jobs - formal
+TYPE/CAPABILITY/PROVIDER/INSTANCE/REPRESENTATION/WORKSPACE separation -
+Garden of EDEN Private Web/PWA front door - full manifest/package/helper
+integration classes - transactional
+lifecycle/install/update/repair/rollback behavior - reversible shared
+hosting - distributed operating model - BIFROST-first mobile strategy -
+Native Host continuity - optional RDC status - device
+trust/presence/reconnect - Keep Awake - native voice/App
+Intents/Shortcuts integration - shared server/desktop state - provider
+and representation resolution - evidence-state distinctions
+
+Today’s additions/reconciliations preserved here are: - ZERO as the
+current fragmented workflow baseline - LOCAL as the native/local-first
+foundation - ALPHA as Cloudflare-assisted remote/Web deployment - BETA
+as provider-independent/self-hosted remote infrastructure - BIFROST
+Remote App Surface as an app-focused representation rather than
+whole-desktop VNC/RDP - Apple-native/iCloud coordination opportunities -
+Cloudflare-deployed responsive BIFROST Web/PWA for mobile/other
+devices - explicit PWA/PWA-agent integration within the existing
+capability model
+
+No claim is made that every historical implementation detail or every
+prior build artifact is recovered merely by this text. Implementation
+truth remains evidence-gated and must be checked against
+repository/source/build/runtime evidence before promotion.
+
+======================================================================
+OWNER UX CLARIFICATION — BIFROST SPECTRAL CONNECTIONS & APPS DOCK
+2026-10-21 | CONDUCTOR + ForgeMASTER + ForgeAPPLE
+======================================================================
+
+1. The spectral bridge paths represent distinct, ACTUAL working connections,
+not decorative rainbow stripes. Each visible path has a named observed
+connection and truthfully reflects its latest local evidence: VERIFIED
+service/application connection, OBSERVED adapter/route without authorization,
+UNVERIFIED/OFFLINE or STALE. Never color an unverified connection as working.
+Appearance can retain the original spectral bridge artwork and premium visual
+identity but must distinguish operational state from identity color. Multiple
+connections may be active concurrently; loss/expiration invalidates prior
+observations. Do not infer provider auth from an RDC local profile, ICMP reachability
+from application health, or an on-disk specialist app from an active Web UI.
+
+2. The BIFROST Apps Dock is an application Web UI LAUNCHER, not merely
+a static card catalog or a substitute specialist workspace. A dock click
+on a verified app Web representation opens the specialist application's OWN
+established Web UI in a separate normal browser tab (or a user-authorized
+supported embed/native representation later); BIFROST's connection/routing
+state stays with BIFROST while specialist app domain state stays with the app.
+Canonical representation progression remains
+LINK → WEB/TAB → EMBED → NATIVE BRIDGE → NATIVE.
+Never invent Web URLs, launch executables, start services, bypass provider
+authentication or fabricate connection status to satisfy an enabled dock icon.
+Where the app Web representation is not verified, offer a clearly marked
+unavailable/inspection state rather than a nonfunctioning open link.
+
+3. Exact locally recovered Web destinations:
+- BIFROST Headless: current same-origin / at 127.0.0.1:8798 installed LKG
+  and isolated source-preview / at 127.0.0.1:8799, each with its own
+  isolated credentials/state; current BIFROST dock opening own same-origin
+  Web tab has automated regression coverage.
+- HEIMDALL: source-backed http://127.0.0.1:8787/ with
+  /api/health identity app=HEIMDALL, schema_version=2. This endpoint was
+  NOT LISTENING during 2026-10-21 observation. It cannot be shown connected
+  or launched as a verified live app without a fresh matching response.
+- PENELOPE: source-backed http://127.0.0.1:8765/ with
+  /api/health returning status=ready, version=0.2.0 and custody=read-only.
+  This endpoint was NOT LISTENING during 2026-10-21 observation.
+- JANITOR and CURATOR: existing specialist apps remain visible; their
+  owned Web representation and running health were not verified locally.
+No automatic starts, browser-side arbitrary URLs or new plugin registrations.
+
+4. Actual current implementation recovered:
+- Headless source index.html has Apps Dock and Connections screens.
+- dashboard.js shellWebDestination accepts only live same-origin BIFROST;
+  other specialist entries inspect rather than impersonating a launch.
+- connection_fabric.js renders separate named spectral paths for local
+  BIFROST, observed RDC/connectors and eligible LAN peers; observed is not
+  the same as authenticated connection.
+- connection_observer.py reports native/test/plugin presence, RDC5 metadata,
+  and network observations without granting app Web launch authority.
+- Isolated live source preview in Safari at http://127.0.0.1:8799/
+  returned 200 and exact current source assets; installed Headless port
+  8798 and runtime identity remain separate and unmodified.
+- Current 2026-10-21 Node regression run 45/45 PASS, but it does not
+  demonstrate live specialist Web UI launch because the endpoints above
+  were offline. Mac Safari screenshot/visual owner acceptance remains UNKNOWN.
+
+Only extend the existing canonical registry/observer and associated UI where
+a real host-backed health/identity and approved representation can be
+validated. Preserve standalone domain ownership, independent Headless,
+native App, independent Menu, BIFROST Bridge and existing Files & Storage
+capability plugin; no duplicate runtime or generic alternate UI.

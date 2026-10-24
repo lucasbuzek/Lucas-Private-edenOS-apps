@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0d1221">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="BIFROST">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<title>BIFROST · Headless Dashboard</title>
+<link rel="stylesheet" href="/dashboard.css">
+<script src="/dashboard.js" defer></script>
+<script src="/connection_fabric.js" defer></script>
+</head>
+<body>
+<main>
+<div class="web-shell">
+<aside class="web-sidebar" aria-label="BIFROST side panel">
+  <div class="web-brand"><span class="brand-symbol" aria-hidden="true">◠</span><span><strong>BIFROST</strong><small>CONNECT · KEEP · RESOLVE</small></span></div>
+  <div class="web-nav-title web-nav-title-simple">Workspace</div>
+  <nav class="web-sidebar-actions" aria-label="BIFROST workspace">
+    <button id="sidebarHome" class="web-side-action" type="button" aria-current="page"><span class="web-side-icon web-side-icon-home" aria-hidden="true">⌂</span><span>Home</span></button>
+    <button id="sidebarConnections" class="web-side-action" type="button"><span class="web-side-icon web-side-icon-connections" aria-hidden="true">⌁</span><span>Connections</span></button>
+    <button id="sidebarApps" class="web-side-action" type="button"><span class="web-side-icon web-side-icon-apps" aria-hidden="true">▦</span><span>Applications</span></button>
+    <div class="web-nav-title web-side-group-label">This Mac</div>
+    <button id="sidebarMac" class="web-side-action" type="button"><span class="web-side-icon web-side-icon-mac" aria-hidden="true">▣</span><span>This Mac</span></button>
+    <button id="sidebarActivity" class="web-side-action" type="button"><span class="web-side-icon web-side-icon-activity" aria-hidden="true">▤</span><span>Activity</span></button>
+    <button id="sidebarActions" class="web-side-action" type="button"><span class="web-side-icon web-side-icon-actions" aria-hidden="true">⚡</span><span>Quick Actions</span></button>
+    <button id="sidebarSettings" class="web-side-action" type="button"><span class="web-side-icon web-side-icon-settings" aria-hidden="true">⚙</span><span>Settings</span></button>
+  </nav>
+  <div class="web-nav-title" data-min-level="advanced">BIFROST tools</div>
+  <div id="sidebarNavMount" data-min-level="advanced"></div>
+  <div class="web-nav-title" data-min-level="advanced">Suggested integrations</div>
+  <div id="webFavorites" class="web-favorites" data-min-level="advanced" aria-label="Specialist app shortcuts"></div>
+  <div class="web-sidebar-bottom">
+    <div class="web-side-status"><span id="sideNodeStatus">Headless: checking</span><small>Local-only · no new provider permissions</small></div>
+  </div>
+</aside>
+<div class="web-content">
+<header class="web-topbar">
+  <div class="web-topbar-identity"><span class="mark">BIFROST</span><span class="sub">Your connections</span></div>
+  <div class="web-topbar-actions">
+    <span id="overall" class="status">Connecting</span>
+  </div>
+</header>
+<nav aria-label="Dashboard shortcuts">
+  <a href="#status">Status</a>
+  <a data-min-level="advanced" href="#interconnect">Local PWA</a>
+  <a data-min-level="advanced" href="#orchestration">Orchestration</a>
+  <a data-min-level="advanced" href="#activity">Local activity</a>
+  <a data-min-level="advanced" href="#kernel">Index &amp; Identity</a>
+  <a data-min-level="advanced" href="#setups">Install &amp; Setup</a>
+  <a data-min-level="expert" href="#diagnostics">Diagnostics</a>
+</nav>
+
+<section id="webHomePanel" aria-labelledby="webHomeTitle">
+  <div class="web-hero"><div id="webSpectrum" class="web-spectrum" role="group" aria-label="Observed connection paths"></div>
+    <p id="webSpectrumStatus" class="web-spectrum-status" role="status">Connections not yet observed.</p>
+    <div class="web-hero-kicker">CONNECT · KEEP · RESOLVE</div>
+    <h1 id="webHomeTitle">Your gateway</h1><p>Open your connected applications. Each destination keeps its own workspace, permissions and information.</p>
+  </div>
+  <div class="web-dock-panel"><div class="web-dock-head"><h2>Apps Dock</h2><span>Open verified applications</span></div>
+    <div id="webDock" class="web-dock" aria-label="Application shortcuts"></div>
+    <p>Verified Web UIs open in their own tab. Unavailable destinations cannot be launched yet.</p>
+  </div>
+  <section id="webConnectionsPanel" class="web-connections-overview" aria-labelledby="webConnectionsHeading">
+    <div class="web-connections-head"><div><span class="web-eyebrow">Connection fabric</span><h2 id="webConnectionsHeading">Connections</h2></div><output id="webConnectionCount" role="status">Waiting for local observation</output></div>
+    <div class="web-connection-summary"><strong id="connectionThisMac">Inspecting this Mac…</strong><span id="connectionRDC">RDC not inspected</span></div>
+    <div class="web-network-controls" aria-label="Local network observation controls">
+      <div><label for="connectionMonitorInterval">Refresh observations</label><select id="connectionMonitorInterval"><option value="15">Every 15 seconds</option><option value="30" selected>Every 30 seconds</option><option value="60">Every minute</option><option value="120">Every 2 minutes</option><option value="300">Every 5 minutes</option></select></div>
+      <div><label for="connectionRangeStart">LAN range · first host</label><input type="number" id="connectionRangeStart" min="1" max="254" value="1" inputmode="numeric"></div>
+      <div><label for="connectionRangeEnd">Last host</label><input type="number" id="connectionRangeEnd" min="1" max="254" value="32" inputmode="numeric"></div>
+      <button type="button" id="connectionScan" disabled>Scan selected LAN range…</button>
+      <button type="button" id="connectionMonitorToggle" aria-pressed="false" disabled>Monitor selected range…</button>
+      <button type="button" id="connectionRefresh">Refresh observations</button>
+      <div><label for="connectionCheckScope">Connectivity checks</label><select id="connectionCheckScope"><option value="local">This Mac, Headless &amp; gateway</option><option value="internet">DNS, public ping &amp; HTTPS</option><option value="all" selected>All local &amp; online checks</option></select></div>
+      <button type="button" id="connectionDiagnose">Run selected checks…</button>
+    </div>
+    <div id="connectionDiagnostics" class="web-connection-tiles" role="list" aria-label="Connectivity check results" aria-live="polite"><p class="setup-explain">No network checks requested. Choose a scope and run to test connectivity.</p></div>
+    <p class="setup-explain" id="connectionSubnet">Checking current network adapter. This Mac is the default device.</p>
+    <p class="setup-explain" id="connectionScanState" role="status">No scan requested. Routine refresh is passive; active scanning requires confirmation.</p>
+    <div class="web-connection-sections"><div><h3>Network devices</h3><div id="connectionDeviceList" class="web-connection-tiles" role="list" aria-label="Local network observations"><p class="setup-explain">No device observations yet.</p></div></div><div><h3>Apps &amp; service connections</h3><div id="connectionServices" class="web-connection-tiles" role="list" aria-label="Observed application and provider adapters"></div></div></div>
+    <div id="webConnectionTiles" class="web-connection-tiles" role="list" aria-label="Verified Web UI connections"></div>
+  </section>
+  <div class="web-cards" aria-label="Observed system status">
+    <div id="webMacPanel" class="web-status-card"><span class="web-status-label">This Mac</span><strong id="homeHeadless">Checking…</strong><small id="homeObservation">No observation yet</small></div>
+    <div class="web-status-card"><span class="web-status-label">Connections</span><strong id="homeConnections">Not inspected</strong><small>Observed devices and connectors; authorization tracked separately</small></div>
+    <div class="web-status-card" data-min-level="advanced"><span class="web-status-label">Specialist apps</span><strong id="homeApps">Not verified</strong><small>Native test candidates and known in-chat plugins are labeled separately</small></div>
+    <div id="webActivityPanel" class="web-status-card"><span class="web-status-label">Activity</span><strong id="homeActivity">Checking…</strong><small>Local receipts only · no remote job claims</small></div>
+  </div>
+  <div class="web-home-columns">
+    <div id="webQuickActionsPanel" class="web-panel"><h2>Quick actions</h2><div class="web-actions">
+      <button type="button" data-bifrost-jump="appBrowser">Browse application functions <span>›</span></button>
+      <button type="button" data-bifrost-jump="kernel" data-min-level="advanced">Find indexed files <span>›</span></button>
+      <button type="button" data-bifrost-jump="orchestration" data-min-level="advanced">Saved Apple workflows <span>›</span></button>
+    </div><p>Additional tools are available from Settings. Every action keeps its own approvals.</p></div>
+    <div class="web-panel"><h2>Needs attention</h2><p id="webAttention">Waiting for a fresh local observation. An empty dashboard does not mean the system was inspected or cleared.</p>
+      <button type="button" id="webViewDetails">View advanced details…</button></div>
+  </div>
+</section>
+<section id="appBrowser" class="web-app-browser" aria-labelledby="appBrowserHeading">
+ <div class="heading"><h2 id="appBrowserHeading">Applications &amp; functions</h2><span id="webBrowseCount" class="setup-explain">Checking…</span></div>
+ <p class="setup-explain">Browse available Web representations. Only verified destinations open; unavailable specialist connections stay inactive.</p>
+ <div class="web-toolbar" aria-label="Application browsing tools">
+  <div class="web-toolbar-search"><label class="web-sr-only" for="appSearch">Search applications and functions</label><input id="appSearch" type="search" maxlength="100" autocomplete="off" placeholder="Find apps or functions…" aria-label="Find apps or functions"></div>
+  <button id="webHome" type="button">⌂ Home</button>
+  <button id="webRefresh" type="button">↻ Refresh</button>
+  <div class="web-layout-modes" role="group" aria-label="Application view">
+    <button class="web-layout" type="button" data-app-layout="list" aria-pressed="false">List</button>
+    <button class="web-layout" type="button" data-app-layout="columns" aria-pressed="false">Columns</button>
+    <button class="web-layout" type="button" data-app-layout="gallery" aria-pressed="true">Gallery</button>
+  </div>
+ </div>
+ <div class="web-browser-shell"><div id="webAppView" class="web-app-view" aria-label="Browse apps"></div><aside id="webAppDetail" class="web-app-detail" aria-label="Selected app details"></aside></div>
+</section>
+<section id="settingsPanel" class="web-settings-page" aria-labelledby="settingsHeading">
+  <div class="heading"><h2 id="settingsHeading">Settings</h2></div>
+  <p class="setup-explain">Manage BIFROST's interface and local Headless preferences here. This page does not grant new permissions or connect providers.</p>
+  <div class="web-settings-card">
+    <h3>Interface detail</h3>
+    <p>Choose how much detail appears throughout BIFROST. Simple is the everyday default; Advanced and Expert expose existing tools without changing authority.</p>
+    <div class="experience-switch" role="group" aria-label="Interface experience">
+      <button type="button" id="modeSimple" aria-pressed="true">Simple</button>
+      <button type="button" id="modeAdvanced" aria-pressed="false">Advanced</button>
+      <button type="button" id="modeExpert" aria-pressed="false">Expert</button>
+    </div>
+    <p id="experienceDescription" class="setup-explain" role="status">Everyday connections and applications.</p>
+  </div>
+  <div id="preferences" class="web-settings-card" data-min-level="advanced" aria-labelledby="preferencesHeading">
+    <h3 id="preferencesHeading">Headless and menu bar</h3>
+    <p>Preferences for this Mac's BIFROST Headless service. Saving requires the existing authorized local session.</p>
+    <div class="pref"><strong>Menu bar status indicators</strong><label><input type="checkbox" id="showHeadless" checked> Headless</label></div>
+    <div class="pref"><label for="duration">Default Caffeinate duration</label><select id="duration"><option value="5">5 minutes</option><option value="10">10 minutes</option><option value="15">15 minutes</option><option value="30">30 minutes</option><option value="45">45 minutes</option><option value="60" selected>60 minutes</option><option value="90">90 minutes</option><option value="120">120 minutes</option><option value="180">3 hours</option><option value="240">4 hours</option><option value="360">6 hours</option><option value="480">8 hours</option><option value="0">Until stopped</option></select></div>
+    <p class="setup-explain">Supported duration: 5 minutes to 8 hours, or until stopped. Extending the time never starts Caffeinate automatically.</p>
+    <div class="pref"><strong>Visible dashboard rows</strong><div id="sectionOptions"></div></div>
+    <div class="web-settings-save"><button id="save" type="button">Save preferences</button><span id="saved" role="status" aria-live="polite"></span></div>
+  </div>
+</section>
+<section data-min-level="advanced" id="status" aria-labelledby="overviewTitle"><div class="heading"><h1 id="overviewTitle">System overview</h1><button id="refresh" type="button">Refresh</button></div>
+<div class="summary"><span class="metric metric-connect" id="sumHeadless">Headless —</span><span class="metric metric-maintenance" id="sumAwake">Caffeinate —</span></div>
+<div class="actions"><button type="button" id="openNativeApp" disabled>Open BIFROST Native App</button><small>Explicit action on this Mac only; never launches automatically.</small></div>
+<div class="compact">
+<div class="record feature-connect" data-section="headless"><span class="feature-icon" aria-hidden="true">▣</span><div class="record-info"><strong>Headless</strong><small>Independent BIFROST local service</small></div><output id="headlessState">Checking</output></div>
+<div class="record feature-maintenance" data-section="caffeinate"><span class="feature-icon" aria-hidden="true">☾</span><div class="record-info"><strong>Caffeinate</strong><small>Managed by Headless, not the macOS window</small></div><div class="actions"><output id="awakeState">Off</output><button id="awakeToggle" type="button">Start 60m</button></div></div>
+</div>
+<p id="feedback" aria-live="polite"></p>
+</section>
+<section data-min-level="advanced" id="orchestration" aria-labelledby="orchestrationHeading">
+<div class="heading"><h2 id="orchestrationHeading">Local orchestration · Shortcuts and Automator</h2><button id="orchestrationRefresh" type="button" disabled>Inspect</button></div>
+<p class="setup-explain">The Headless daemon can run only discovered Apple Shortcuts and saved Automator workflows after confirmation. A folder-triggered Shortcut requires a separate, explicit native BIFROST folder grant; the browser cannot grant filesystem access or arm a watch. No external site automation, full-disk control, scripts or cloud providers are exposed.</p>
+<div class="compact">
+<div class="record"><div class="record-info"><strong>Folder Action approval</strong><small>Choose the folder and optional trigger Shortcut in the native macOS app</small></div><output id="folderRuleState">Not checked</output></div>
+<div class="record"><div class="record-info"><strong>Headless executor</strong><small>Independent of the full native window; manually started service only</small></div><output id="orchestrationState">Not checked</output></div>
+</div>
+<h3>Saved Apple workflows</h3>
+<div class="compact" id="orchestrationCatalog" aria-live="polite"><div class="record"><small>Connect to Headless to inspect.</small></div></div>
+<p id="orchestrationFeedback" role="status" aria-live="polite">No workflow executed.</p>
+</section>
+<section data-min-level="advanced" id="activity" aria-labelledby="activityHeading">
+<div class="heading"><h2 id="activityHeading"><span class="section-glyph bridge-color" aria-hidden="true">▤</span> Local activity · recorded checks</h2><button id="activityRefresh" type="button" disabled>Refresh</button></div>
+<p class="setup-explain">Local observations have durable receipts shared with the native App. They are not remote jobs, model executions, installations or background automation.</p>
+<div class="actions">
+  <button id="recordLocalCheck" type="button" disabled>Record local status check</button>
+</div>
+<div id="activityList" class="compact" aria-live="polite"><div class="record"><small>Connect to local Headless to view recorded checks.</small></div></div>
+<p id="activityFeedback" class="setup-explain" role="status" aria-live="polite">No task was submitted.</p>
+</section>
+<section data-min-level="advanced" id="interconnect" aria-labelledby="pwaHeading">
+<div class="heading"><h2 id="pwaHeading"><span class="section-glyph bridge-color" aria-hidden="true">⌁</span> BIFROST PWA · Interconnect</h2><button type="button" id="installPwa" hidden>Install app</button></div>
+<p class="setup-explain">This dashboard connects only to BIFROST Headless on this device (127.0.0.1). It does not connect to online services or control other devices.</p>
+<div class="compact">
+  <div class="record"><div class="record-name"><span class="feature-glyph devices-color" aria-hidden="true">▣</span><div><strong>Local Headless adapter</strong><small>Same-origin loopback; Node owns state and execution</small></div></div><output id="pwaLocalStatus">Checking</output></div>
+  <div class="record"><div class="record-name"><span class="feature-glyph" aria-hidden="true">◉</span><div><strong>Offline mode</strong><small>Only anonymous static shell is available; live actions cannot run offline</small></div></div><output id="pwaOfflineStatus">Checking</output></div>
+</div>
+<p id="pwaInstallHelp" class="setup-explain" role="status" aria-live="polite">Install this PWA using the browser's Install App or Add to Home Screen option, where supported.</p>
+</section>
+<section data-min-level="advanced" id="kernel" aria-labelledby="kernelHeading">
+<div class="heading"><h2 id="kernelHeading"><span class="section-glyph bridge-color" aria-hidden="true">⌘</span> Index &amp; Identity · DP0.1</h2><button type="button" id="kernelRefresh">Refresh index</button></div>
+<p class="setup-explain">Shared BIFROST metadata kernel: content identities, basic classification, locations, directory relationships and provenance. Original files stay untouched. Indexing a folder requires an explicit selection in the native App or CLI; this PWA only reads the authorized local index.</p>
+<div class="compact">
+<div class="record"><div class="record-name"><span class="feature-glyph bridge-color" aria-hidden="true">⌘</span><div><strong>Portable index</strong><small>SQLite · local-first · shared across macOS Headless and native App</small></div></div><output id="kernelState">Checking</output></div>
+<div class="record"><div class="record-name"><span class="feature-glyph bridge-color" aria-hidden="true">⌁</span><div><strong>Persistent identities</strong><small>Object, source, location and relationship records</small></div></div><output id="kernelCounts">No data</output></div>
+</div>
+<div class="kernel-search">
+<label for="kernelQuery">Find indexed file or category</label>
+<div class="kernel-search-controls"><input type="search" id="kernelQuery" maxlength="128" autocomplete="off" placeholder="Filename or classification" aria-label="Index search"><button type="button" id="kernelSearch" disabled>Search</button></div>
+</div>
+<div id="kernelResults" class="compact" aria-live="polite" aria-label="Index search results"></div>
+<p id="kernelFeedback" class="setup-explain" role="status">No search performed. Only indexed locations are returned.</p>
+</section>
+<section data-min-level="advanced" id="setups" aria-labelledby="setupHeading">
+<div class="heading"><h2 id="setupHeading"><span class="section-glyph setup-color" aria-hidden="true">▦</span> Install &amp; Setup</h2><button id="refreshSetups" type="button">Refresh packages</button></div>
+<p class="setup-explain">Inspect trusted local archives, stage only for review, then authorize installation separately. No installer will run here.</p>
+<div class="compact" id="setupPackages" aria-live="polite"><div class="record"><span class="detail-muted">Checking local setup packages…</span></div></div>
+<p id="setupFeedback" role="status" aria-live="polite"></p>
+</section>
+<section data-min-level="expert" id="diagnostics" aria-labelledby="diagnosticsHeading">
+<div class="heading"><h2 id="diagnosticsHeading">Expert · Local runtime evidence</h2><button id="diagnosticsRefresh" type="button">Inspect identity</button></div>
+<p class="setup-explain">Read-only local diagnostics. An observed Headless identity is not proof of workflow effects, macOS Automation permissions, or remote trust. No scripts or providers run here.</p>
+<div class="compact">
+<div class="record"><div class="record-info"><strong>Product identity</strong><small>Local service, not an external account</small></div><output id="expertProduct">Not inspected</output></div>
+<div class="record"><div class="record-info"><strong>Runtime ID</strong><small>Diagnostic identifier, not an authorization token</small></div><output id="expertRuntime">Not inspected</output></div>
+<div class="record"><div class="record-info"><strong>Source fingerprint</strong><small>Read-only observed Headless SHA-256</small></div><output id="expertSource">Not inspected</output></div>
+</div>
+<p id="expertFeedback" class="setup-explain" role="status">No diagnostic request made.</p>
+</section>
+<footer>Local-only: 127.0.0.1 · No external connections or online providers · Closing this page does not stop Headless.</footer>
+</div>
+</div>
+</main>
+</body>
+</html>

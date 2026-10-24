@@ -1,0 +1,73 @@
+BIFROST — FORGEMASTER AUTO: CURRENT PROJECT AUDIT
+Date: 2026-10-10 (South Africa)
+Project: BIFROST — CONNECT · KEEP · RESOLVE
+Authority: current canonical native source + verified GitHub Raven branch + observed Cloudflare deployment.
+Status: PARTIAL IMPLEMENTATION / NOT RELEASED / NO PRODUCT PROMOTION
+Governance: commands authorize, evidence proves; preserve LKG. LCAS is in-chat presentation only.
+
+1. CANONICAL SOURCE / RECOVERY
+Native: ~/edenOS/Software Development/BIFROST (authoritative Mac source per BIFROST_MIGRATION_FINAL_REFERENCE_20261009.md).
+Raven source: GitHub private repo lucasbuzek/Lucas-Private-edenOS-apps,
+branch bifrost/cloud-ai-provider-20261009; remote head 7ca1686f0df399c5f6d2793befe40f81e69d3b68.
+Remote Git tree f2dac3d7eaa414f3c7996c5dec9d470716b2d8c8 EXACTLY matches local cloud candidate f9ab373 tree.
+Changes were uploaded through connected GitHub integration after local gh/Git HTTPS authentication failed. Main and other branches untouched.
+Offline cloud source bundle: ~/edenOS/AppDev/#App Backups/Apps/BIFROST/BIFROST_RAVEN_CLOUD_AUDITED_20261010.bundle;
+SHA256 00329ff1691a0f46d469cafad32b9c7d51f83648bf5ec81622568c5bdf7097f8; git bundle verify PASS.
+Native pre-change ZIP: ~/edenOS/AppDev/#App Backups/Apps/BIFROST/BIFROST_NATIVE_PRE_KERNEL_RUNTIME_REPAIR_20261010.zip;
+SHA256 b4167c367f06bf90d1c74bd6c6e858781a4be6fd4ba2cc4c9165cf3e26f98017; ZIP integrity PASS.
+
+2. CLOUDFLARE REALITY
+Existing lucas-raven.pages.dev Pages gateway: health 200, production ZERO 0.1.0. Latest development PWA/Access features NOT deployed.
+Existing D1 lucas-raven retains node_state/actions; additive users/devices/grants/enrollments/audit tables deployed.
+Existing D1 pre-migration SQL export: ~/edenOS/AppDev/#App Backups/Apps/BIFROST/RAVEN_D1_PRE_CLOUD_20261010.sql;
+SQLite restore and integrity PASS. Do not treat this historical snapshot as an up-to-date data backup after migration.
+Worker raven-cloud-node: deployed version 250a746a-1989-4e23-8669-6137e29aa3f2 with one-minute cron and existing D1 binding.
+Actual cloud-only execution: synthetic cloud.state.refresh task act_cbfed3673bdbd1751e2b succeeded in D1 at 2026-10-10 05:37 UTC; result OBSERVED.
+D1 cloud heartbeat last checked 2026-10-10 05:56 UTC. No Mac execution needed.
+Cloud Worker test suite: 12 PASS; Raven gateway test suite: 36 PASS.
+Cloud worker now expires stale queued AI input, fails abandoned claims, redacts completed input, and clears stored AI result text after 7 days. SQLite state-machine integration test PASS.
+Cloudflare hosting already exists; no new VPS, Oracle instance, paid worker tier or cloud model provisioned.
+
+3. NATIVE / HEADLESS
+Native Xcode Debug BUILD PASS; Python tests 70 PASS; native/PWA JavaScript tests 10 PASS.
+Menu bar custom spectral bridge icon and genuine native menu remain in candidate, not physical click-accepted.
+Found packaging defect: runtime copy omitted core/portable_kernel.py; installed runtime also lacks kernel_adapter.py.
+Repaired HeadlessClient to assemble complete runtime in staging, preserve previous runtime, restore on failed bootstrap, and decline to overwrite registered/running or identity-mismatched services.
+Added BIFROST Headless loopback identity schema/product/runtimeId/sourceSha256 handshake; native client verifies path and source fingerprint, not merely HTTP 200. Diagnostic identity is NOT an authentication signature.
+Test candidate: ~/edenOS/Releases/Testing/BIFROST/BIFROST-Headless-Identity-Rollback-Candidate-20261010.app.
+Ad-hoc code signature verified with codesign --verify --deep --strict; binary SHA256 de3be83f3bcae9cf9944de97334026595991264df40e6a9bd0b567d018b73c42.
+An ISOLATED copy of bundled Headless started on alternate localhost port 8898; health, kernel status, identity SHA, PWA adapter and setup inventory smoke PASSED.
+Actual Headless launch agent currently NOT registered and localhost:8798 NOT responding. Current installed Headless was NOT silently restarted.
+Independent RavenNest macOS launch agent remains registered/running. No impact on it or external Caffeinate.
+
+4. PRESENT IMPLEMENTATIONS / PARTIAL
+BIFROST Mac: UIX overview/menu, devices/Bonjour discovery, managed Apps, capabilities, JANITOR entry, settings, local installer sources, limited portable metadata index, PWA adapter and headless status.
+Setup packages: Universal AI Toolkit + Universal Project Workspace discovered/importable and safely staged after archive validation. There is NO complete install/update/repair engine; no third-party scripts were executed.
+Raven: online Pages ZERO, D1 action queue, cloud Worker, separate Mac Raven provider. Candidate Pages code adds modern users/grants, PWA cloud AI form and consent, but the deployed website remains previous release.
+Cloud Worker can do cloud.state.refresh, read-only GitHub status IF configured, and bounded AI text inference IF configured/granted. These are NOT autonomous coding-agent execution.
+User accounts, API subscriptions and credentials are NOT interchangeable. ChatGPT/Claude consumer plan is not automatically an API key.
+
+5. REQUIRED GATES (ORDERED)
+CRITICAL 1: Deploy and physically verify modern Raven Pages behind properly configured Cloudflare Access with multiuser identity, onboarding, device-specific grants/revocation and no legacy-operator privilege bypass. Preserve ZERO rollback.
+CRITICAL 2: Cloud provider adapters for genuine submission and monitoring of remote tasks. Codex cloud.submit currently targets the device and refers to local handoff paths; flipping executor alone is invalid. Design provider-specific, authorized submit/status/cancel/result with idempotence, budget and audit. GitHub Actions only where workflows and runner quotas are verified.
+CRITICAL 3: Cloud provider credentials and allowed-model registry, privacy/cost/rate gates and real external provider call. Currently ai.infer NOT_CONFIGURED. No automatic Mac fallback.
+CRITICAL 4: iPhone physical remote acceptance with Mac OFFLINE and user-specific authorization; secure file/action boundaries, network reconnect, session revocation and result continuity.
+HIGH 5: Genuine Headless installed lifecycle physical gate (start/stop, bundle acceptance, rollback, no orphaned Caffeinate), verify staged App graphical menu bar and status contrast. No user-facing release yet.
+HIGH 6: Full transactional setup/install/update/recovery using INSTALL/RECOMMENDED, LEAN, FULL, CUSTOM, existing capability discovery, checksums, provenance, integration tests, rollback.
+HIGH 7: Reconcile native core with Raven representation and shared hosting/retake; Apps remain standalone. Add real Windows/Linux headless and desktop/installer smoke tests, not mere target manifests.
+HIGH 8: Restore provider-neutral status observability, correct feature-vs-health colors, localization (EN/SK), Voice/App Intents where genuinely implemented. The current native build warns App Intents metadata extraction was skipped.
+ONGOING: signed production deployment, cross-device recovery, on-device testing, source/authority ledgers and regression evidence.
+
+6. EVIDENCE GATES
+REFERENCE: PASS
+RECOVERY/BACKUP: PASS (native pre-change + Git cloud bundle + pre-migration D1 export)
+CLOUD WORKER IMPLEMENT/STATIC/REGRESSION: PASS
+CLOUD CRON & REAL CLOUD QUEUE ACTION: PASS (bounded internal action only)
+CLOUD REMOTE MODEL/EXTERNAL CODING PROVIDER: NOT CONFIGURED / NOT VERIFIED
+RAVEN MOBILE IDENTITY & PWA PRODUCTION: UNVERIFIED
+NATIVE SOURCE BUILD/ISOLATED RUNTIME: PASS
+NATIVE INSTALLED HEADLESS / PHYSICAL MAC UI: NOT VERIFIED
+CROSS-PLATFORM WINDOWS/LINUX: NOT VERIFIED
+PRODUCT RELEASE: NO. DO NOT PROMOTE OVER LKG.
+
+This report is an evidence-backed current snapshot, not an assertion of comprehensive physical acceptance.
