@@ -1,0 +1,274 @@
+SWAYcore - Final Product Feature Specification
+Consolidated from SWAY / SWAYcore project conversations - naming research excluded
+27 September 2026
+==============================================================================
+
+1. Product Definition
+---------------------
+SWAYcore is the core consumer dance-and-fitness platform: a graphical, music-driven movement experience combining dance learning, workouts, choreography, adaptive guidance and optional camera-based movement tracking.
+
+The core dance identity combines Hip-Hop, Afro/Afrobeats/Amapiano and Pop Performance, while the architecture is designed to support additional movement styles and culturally distinct content without changing the underlying movement engine.
+
+The final product is not a camera-tracking demo, a playlist player, or a collection of workout videos. It is an integrated movement system in which music, counts, choreography, instructor animation, user movement, learning, workouts and progress share the same underlying data.
+
+2. Final Consumer Navigation and Product Areas
+----------------------------------------------
+The primary consumer navigation is Home / Moves / Beats / Profile.
+
+Home is the simple launch surface for starting or resuming activity, contextual recommendations, current progress and relevant shortcuts. It must remain visually quiet rather than becoming a development dashboard.
+
+Moves is the movement-learning and choreography library. It owns discovery, Move Detail, Learn, count-by-count instruction, practice, combinations and access to creation where appropriate.
+
+Beats is the home of SWAY Beats: generated rhythms, imported/local music, supported Apple Music workflows, music analysis, beat preparation and Follow-Along.
+
+Profile owns the user-facing personal system: user avatar, progress, settings, tracking configuration, accessibility/preferences and related personal state.
+
+Create remains a real product capability but does not need to occupy a permanent primary tab. Movement Tracking is similarly a first-class capability surfaced where it is relevant, especially workout setup and Profile/Settings.
+
+3. Movement and Choreography Engine
+-----------------------------------
+The canonical hierarchy is Move -> Variation -> Combination -> Routine -> Workout -> Challenge -> Program.
+
+A deterministic choreography/pose model is the movement authority. Counts, poses, transitions, timing and practice/workout playback must refer to the same movement definition rather than separate visual approximations.
+
+The movement engine supports beat and phrase timing, transition relationships between moves, tempo changes, repetition, mirrored execution and progression from isolated movement to combinations and complete routines.
+
+Learn -> Preview -> Practice -> Workout uses one movement model. A count selected in Learn must visibly articulate the same character into the corresponding pose.
+
+Movement content can be packaged and expanded without rewriting the engine. Content packs may add styles, moves, routines, programs, instructor appearances and related material.
+
+4. Moves, Learning and Mastery
+------------------------------
+Users can browse a graphical movement library and open detailed move information.
+
+Learn provides count/position selection, previous/next navigation, play/pause preview, tempo control where appropriate, mirroring, breakdowns/tips and practice.
+
+Movement instruction progresses from positions/counts into continuous movement rather than using unrelated static illustrations.
+
+Mastery states are Discovered -> Learning -> Familiar -> Mastered. Progress can therefore represent genuine familiarity with movement vocabulary rather than only minutes exercised.
+
+Learning and practice are usable without camera tracking. When tracking is enabled, movement matching can enrich feedback and progression.
+
+5. Workout Experience
+---------------------
+SWAYcore supports Quick Dance, Dance, Learn Moves, Party, Challenge, Freestyle, Daily Dance, Endurance, Low Impact and Adaptive Workout experiences.
+
+Sessions may span short to substantial workouts, with the established planning range of approximately 5-45 minutes where applicable.
+
+A session builder/generator can use duration, tempo/energy, complexity, music, style and accessibility preferences to assemble an appropriate session.
+
+Advancement behavior can include Automatic, By Song, Continuous Mix/crossfade, By Routine, Manual and Repeat.
+
+The workout screen is stage-first and distance-readable. Movement guidance/character is visually dominant, followed by essential state such as current movement/count/time/next movement, then primary controls; secondary information recedes.
+
+Pause is a coherent modal state with Resume, Restart Movement and End Workout. Hidden or conflicting active controls must not remain beneath the modal.
+
+6. Instructor, COACH and YOU
+----------------------------
+SWAYcore distinguishes three related visual roles.
+
+INSTRUCTOR is the graphical personality demonstrating movement, style and energy.
+
+COACH is the clean movement-guidance/matching representation used when clarity of body position matters more than character styling.
+
+YOU represents the user's calibrated/tracked movement state and feedback when camera tracking is enabled.
+
+These are not separate choreography systems. They consume compatible skeleton/joint and timing data so instruction, matching and user feedback remain synchronized.
+
+7. Production Character and Instructor System
+---------------------------------------------
+The character architecture is Choreography/Pose Skeleton -> Shared Articulated Rig -> Appearance Assets -> Rendered Instructor or User Avatar.
+
+Production characters use independent graphical body components attached to skeletal joints. Static full-body pose cut-outs and primitive SwiftUI mannequin geometry are not production character paths.
+
+Rig assets require controlled pivots, overlap, z-order, mirroring and compatibility metadata so neck, shoulders, elbows, hips, knees and ankles remain visually connected during movement.
+
+The established instructor set is Lucia, Nandi, Thabo, Zuri and Kyle. The Alpha milestone only requires one fully production-ready instructor, but the final consumer product can expand through the common appearance/rig contract rather than introducing separate renderers.
+
+Instructor appearance and animation remain reusable across Home, Moves, Learn, Practice and Workout.
+
+8. User Avatar Creator
+----------------------
+The user creates a personalized graphical dancer using the same production rig contract as the instructor system.
+
+Supported customization can include skin tone, face/facial appearance, hairstyle, hair colour, body/template presentation where supported, outfit/top/bottom or outfit sets, footwear and supported accessories.
+
+Every control exposed to the user must visibly affect the live preview; unfinished categories are not shown merely to make the creator look larger.
+
+Selections persist and the saved avatar appears consistently wherever the product represents the user.
+
+Layering and rig rules prevent hair crossing the face incorrectly, detached limbs, clothing discontinuities and other common modular-character failures.
+
+The creator is a visual creation experience rather than a generic settings form.
+
+9. Camera / Vision Movement Tracking
+------------------------------------
+Camera tracking is optional but fully integrated. The app remains useful and complete without camera access.
+
+The tracking flow includes permission handling, camera preview, person/skeleton acquisition, step-into-view guidance, automatic calibration/readiness, live pose state, movement matching, loss/reacquisition handling and user feedback.
+
+Tracking is discoverable from workout setup and can also be configured/calibrated from Profile/Settings.
+
+The camera preview and matching engine share one authoritative orientation/mirroring transform so what the user sees and what the matcher evaluates cannot silently disagree.
+
+Tracking enhances practice, workouts, adaptive feedback and progress; it is not required simply to play a workout.
+
+10. Adaptive Guidance and Feedback
+----------------------------------
+The virtual instructor/coach can adapt guidance to user level, style and current performance.
+
+Where tracking data is available, the system can compare the user's pose/movement against choreography references and provide useful, encouraging feedback rather than merely displaying a camera feed.
+
+Adaptive Workout can respond to user capability, movement quality, accessibility choices and workout context.
+
+When a choreography reference is unavailable or insufficient, the product must not fabricate movement-scoring certainty. Reference-gated guidance can pause or downgrade matching while the follow-along experience continues appropriately.
+
+11. SWAY Beats
+--------------
+SWAY Beats turns rhythm or music into a dance-oriented experience and is a primary final-product capability.
+
+The canonical flow is Source -> Analysis -> Rhythm/Beat Grid -> Follow-Along/Workout.
+
+Sources include SWAY-generated rhythm, local/imported compatible audio and Apple Music where platform capability and user authorization permit.
+
+Generated rhythm uses musically useful percussion voices such as kick, snare/clap, closed/open hi-hat and percussion rather than a development test oscillator.
+
+Local audio analysis decodes supported audio and derives useful tempo/BPM, onset/beat positions, beat grid and confidence. Low-confidence or failed analysis has a usable correction/fallback path.
+
+Apple Music is isolated behind MusicKit authorization/capability. An unavailable or unauthorized Apple Music path must never disable generated rhythm or local/imported music.
+
+Follow-Along consumes the same choreography/timing engine as ordinary workouts; SWAY Beats does not introduce a second dance engine.
+
+12. Music, Playlists and Preflight
+----------------------------------
+Music can come from the user's supported library/local sources, playlists, SWAY Beats and supported Apple Music integration.
+
+Song and playlist selection are part of the workout-building experience rather than a separate media player.
+
+Where track identity or timing information is unresolved, a preflight stage can identify/prepare music before the workout. Shazam-based identification was incorporated as a preflight fallback for unresolved tracks, not as the primary playback architecture.
+
+Music transitions can support per-song advancement and continuous-mix/crossfade behavior where appropriate.
+
+13. Create / Choreography Creation
+----------------------------------
+Consumer Create remains part of the final product. Users can create movement/choreography content using the same canonical movement representation used by Learn and Workout.
+
+Creation can assemble moves, counts, timing and sequences into reusable choreography rather than producing disconnected video notes.
+
+Created content persists and can be previewed/practiced through the normal rendering and movement engine.
+
+More advanced professional choreography tooling belongs to the Studio/teacher product rather than overloading the consumer Create experience.
+
+14. Progress, Challenges and Programs
+-------------------------------------
+Progress is built around both activity and movement development.
+
+Move mastery tracks Discovered, Learning, Familiar and Mastered states.
+
+Challenges and Programs sit above individual workouts in the content hierarchy and can structure longer-term participation.
+
+Daily Dance and other recurring experiences can provide lightweight reasons to return without making the app dependent on competitive mechanics.
+
+Achievements and richer progression can expand over time, but the core progress model should remain understandable and connected to actual movement/workout activity.
+
+15. Accessibility and Adaptive Exercise
+---------------------------------------
+Low Impact and Adaptive Workout are first-class workout concepts rather than afterthoughts.
+
+Session generation can account for accessibility choices and suitable movement variants.
+
+Camera tracking is optional; a user who cannot or does not want to use the camera retains a complete follow-along workout path.
+
+Production UI follows practical Apple interaction guidance: appropriately sized touch targets, clear pressed/disabled states, semantic accessibility labels, readable contrast and Reduce Motion behavior.
+
+Workout information remains readable at distance and avoids unnecessary visual noise.
+
+16. Offline, Privacy and Resilience
+-----------------------------------
+The core architecture is offline-first where practical. Downloaded/local movement content, choreography, user avatar state, generated rhythm and compatible local workouts should not require continuous network access.
+
+Camera/Vision processing is designed around on-device capability. The product should not require uploading a user's camera feed simply to perform movement tracking.
+
+Cloud or online services enhance particular features rather than becoming an unnecessary dependency for core dancing, learning and locally available workouts.
+
+Music-provider restrictions are represented honestly; unsupported protected/cloud media must not be presented as locally analyzable when it is not.
+
+17. Shared Sessions and Multi-user Experience
+---------------------------------------------
+The consumer Shared Sessions model supports a maximum of two participants.
+
+Larger instructor-led/studio class participation belongs to the professional SWAY Master/Studio tier rather than silently expanding the consumer session model.
+
+Shared sessions should reuse the same choreography, timing and participant-state concepts rather than creating a separate workout format.
+
+18. Apple Watch and Companion Controls
+--------------------------------------
+Apple Watch command/state support is part of the product architecture, with the fuller companion experience positioned close to the v1 lifecycle rather than required for the first Alpha.
+
+The companion can provide practical workout control/state surfaces without replacing the iPhone as the primary visual dance experience.
+
+Watch functionality should reuse the authoritative workout/session state so phone and watch cannot diverge about playback or workout status.
+
+19. Content, Styles and Expansion
+---------------------------------
+The product is designed for multiple dance and movement cultures/styles. Established examples include Afrobeats, Amapiano, Hip Hop, Contemporary, Latin Fusion and Dance Fitness, with supporting Stretch & Mobility, Strength & Core and Cool Down content where appropriate.
+
+Content packs can extend movement libraries, routines, programs, instructors and related presentation without changing the core engine.
+
+The initial general dance/fitness product is the first application of SWAYcore. Later specialist products can reuse the movement platform for children, dance teaching and other movement disciplines such as yoga, tai chi or martial arts, but those are ecosystem expansion rather than requirements for the consumer dance-fitness app.
+
+20. Consumer Product Boundary
+-----------------------------
+The consumer app remains focused on dancing, learning, fitness, music, movement feedback, personal creation and progress.
+
+It does not absorb full studio-business administration merely because the underlying movement platform can support professional products.
+
+Development diagnostics, rig laboratories, tracking debug views, test-tone tools and asset inspection screens are not normal consumer navigation.
+
+21. Professional / Studio Ecosystem (Separate Product Mode)
+-----------------------------------------------------------
+A future Studio-capable product on iPad, macOS and Windows provides a professional instructor/creator workspace.
+
+Its choreography side can include Move Studio, choreography/routine editing, music/timeline alignment, counts, variants, combinations, classes/programs, content packs, participant controls, preview/testing and publishing/export.
+
+Professional teaching workflows can extend into lessons, classes, students, rehearsal, assignments and progress.
+
+Studio Management is a completely separate top-level mode from choreography/instructor creation. It can later cover class scheduling/organization, instructors/staff, members/memberships, attendance/rosters, billing/payments, basic finance, administration and related operations.
+
+Larger classes and professional shared-session capabilities belong to the professional SWAY Master/Studio model rather than the two-person consumer Shared Sessions limit.
+
+22. Platform Direction
+----------------------
+The immediate implementation focus is the iPhone consumer app.
+
+Apple Watch is architecturally integrated as a companion/control surface.
+
+Studio-class professional creation/management is intended for larger-screen platforms including iPad and macOS, with Windows also in the Studio plan.
+
+Platform-specific implementations should exploit useful native capabilities while preserving the common SWAYcore movement/choreography data model.
+
+23. Final Product Quality Rules
+-------------------------------
+One canonical implementation exists for each product concept; duplicate legacy screens and competing generations of the same feature are removed from production navigation.
+
+Every visible button, arrow, tab, card, gesture cue and customization control performs its advertised action or is removed.
+
+Production screens contain no placeholder mannequins, cropped reference artwork, static pose cut-outs, dead controls or preproduction navigation.
+
+Build/version identity is authoritative and consistent across the project, bundle, Settings/about surfaces, build documentation, installer/package and release filename.
+
+Xcode compile/type-check is the engineering gate for iOS. Physical-device behavior and screenshots/video are the UIX acceptance authority.
+
+24. Final Product Summary
+-------------------------
+At completion, SWAYcore offers a coherent dance-fitness platform in which a user can discover and learn movements, practice them count by count, dance complete workouts, choose or generate music, turn suitable music into beat-aware follow-along experiences, optionally use the camera for calibration and movement feedback, create and persist a personalized avatar, create choreography, track movement mastery and workout progress, participate in limited shared sessions, and expand through new styles, routines, programs and instructors.
+
+The defining product principle is integration: the same choreography, timing, skeleton, rig and session state should flow through Learn, Create, Beats, tracking and Workout. New content should expand the experience without repeatedly rebuilding its foundations.
+
+25. Delivery Scope Distinction
+------------------------------
+ALPHA: fully functional core consumer app with one production instructor, a fully functional production user-avatar creator, complete core navigation, Moves/Learn/Create, workouts, SWAY Beats, camera tracking/calibration, progress/state persistence and production-quality UI paths.
+
+POST-ALPHA CONSUMER EXPANSION: additional production instructors, larger content catalog, refined progression/achievements, Apple Watch companion completion, expanded packs and mature shared-session polish.
+
+PROFESSIONAL / ECOSYSTEM EXPANSION: Studio instructor/choreography tools, separate Studio Management mode, larger professional classes/SWAY Master, children/specialist movement products and additional disciplines built on SWAYcore.

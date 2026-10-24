@@ -1,0 +1,24 @@
+{
+  "contract": "SWAY-DURER-2.5D-v1",
+  "authority": "DURER",
+  "target": "Recovery/fallback illustrated 2.5D character while Blender production assets are validated",
+  "runtime": "SWAYSkeletal2DAvatarView",
+  "requirements": {
+    "singleVisibleAuthority": true,
+    "coherentSilhouette": true,
+    "jointOverlap": true,
+    "directionalVariantsAllowed": true,
+    "weightedMeshTarget": false,
+    "legacyCutoutProductionFallback": true,
+    "full3DRequired": true
+  },
+  "acceptanceMoves": [
+    "idle",
+    "march",
+    "step-touch",
+    "grapevine",
+    "knee-lift"
+  ],
+  "physicalGate": "iPhone visual test required",
+  "productionAuthority": "Blender + SWAYHumanoid-v1 + RealityKit"
+}

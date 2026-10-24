@@ -1,0 +1,13 @@
+# ZERO clean candidate — not yet CLEAN_LKG
+**State:** PREPARATION / SOURCE REFERENCED / RESTORATION + PHYSICAL ACCEPTANCE UNKNOWN. Do not call this a verified backup, working app or LKG.
+Canonical current pose source: `../../../../../SWAYcore Dance & Fitness/R2/App/SWAY/Views/StickFigureView.swift`; observed SHA256 on live Mac 2026-10-23: `2e7959c442b8a21a6c37511a5526e05ef06d107ca290b325851969058f15c339`.
+Original ZERO TestHost: `../../iOS TestHost/` (actual Swift source + Xcode project + logs); live shared package `../../../../../SWAYcore Dance & Fitness/R2/Packages/SWAYcoreEngine/`.
+Historical test evidence: Swift Engine 31/31 passed, signed iPhone debug BUILD SUCCEEDED; physical install rejected because 3 slots occupied. Historical original overnight Build 81–83 functional identity UNKNOWN; do not substitute Build 143 or 153 as a cleanLKG.
+**Next qualification:** recover original functional stickman, inventory full current dependency and source SHA, validate one clean portable build/rebuild, test stage pose animation, on-device camera/calibration/onboarding/UI, perform restore rehearsal and preserve one centralized project backup. Record PASS/FAIL/UNKNOWN per test.
+**Storage:** no second independent source master or backup archive here; candidate description and clean acceptance evidence only. After verified qualification this folder may refer to accepted immutable content/manifest in the established project; no silent promotion.
+
+## Verified engineering checkpoint — 2026-10-23
+- Four source files copied as independent physical files; exact original SHA manifests, project-relative live shared Engine dependency, and dedicated Xcode project generated. Combined provider source/diff/path/no-hardlink check: **28/28 PASS**.
+- Fresh SWAYcoreEngine **31/31 test cases invoked; process exit 0**; source candidate unsigned generic iOS Simulator **BUILD SUCCEEDED**. All three separate provider variants also produced independent unsigned generic iOS Simulator BUILD SUCCEEDED.
+- Original Build81–83 image/version still unidentified; no working-original runtime restoration. iOS Simulator runtime is unavailable; physical iPhone 15 Pro Max exists but ZERO install historically failed due to three occupied free-team slots. Camera, live pose/calibration, user interaction and true recovery/restore acceptance still UNKNOWN. **CLEAN_LKG NOT PROMOTED.**
+- Project-wide 2026-10-18 backup integrity (Zstandard) PASS, SHA256 `e37e95e78f5cd6d182a00313e18052349a1803448c7fdf23094bf7dd34fe18e4`; it predates this checkpoint and is NOT a current verified full restore point. No additional backup archive, installed-app change or user-data migration.

@@ -1,0 +1,133 @@
+{
+  "_doc": "Third-party asset/tool ledger for the SWAY asset factory. Entries with decision ADOPT/ADAPT require an allow-listed licence, archived licence text, retrieval date, rights confirmation and (once files exist) file hashes. NOTHING external has been downloaded or incorporated yet: this authoring environment had no network access to the download hosts. See RESEARCH_AND_ADOPTION_REPORT.md.",
+  "sources": [
+    {
+      "id": "quaternius-ubc",
+      "name": "Universal Base Characters (Quaternius)",
+      "url": "https://quaternius.com/packs/universalbasecharacters.html",
+      "licence_id": "CC0-1.0",
+      "decision": "REFERENCE",
+      "status": "NOT_ACQUIRED",
+      "notes": "Candidate legal base geometry. Promote to ADAPT ONLY after: (1) file downloaded by Build_Assets, (2) licence page text archived + hashed, (3) visual review accepted by the product owner. Pack licence terms must be re-read at download time; the terms shown on the vendor page, not this ledger, govern.",
+      "rights": {
+        "commercial": false,
+        "modification": false,
+        "redistribution": false,
+        "app_distribution": false
+      }
+    },
+    {
+      "id": "quaternius-ual",
+      "name": "Universal Animation Library (Quaternius)",
+      "url": "https://quaternius.com/packs/universalanimationlibrary.html",
+      "licence_id": "CC0-1.0",
+      "decision": "REFERENCE",
+      "status": "NOT_ACQUIRED",
+      "notes": "Candidate legal source of additional humanoid clips, retargeted through AssetFactory/data/retarget_map_ue_mannequin.json. Same promotion rule as above.",
+      "rights": {
+        "commercial": false,
+        "modification": false,
+        "redistribution": false,
+        "app_distribution": false
+      }
+    },
+    {
+      "id": "ready-player-me",
+      "name": "Ready Player Me",
+      "url": "https://readyplayer.me",
+      "licence_id": "proprietary-service",
+      "decision": "REJECT",
+      "notes": "Third-party avatar generator; visual identity would not be SWAY; service/terms risk. Not incorporated.",
+      "rights": {}
+    },
+    {
+      "id": "mixamo",
+      "name": "Adobe Mixamo",
+      "url": "https://www.mixamo.com",
+      "licence_id": "proprietary-adobe",
+      "decision": "REFERENCE",
+      "notes": "Naming conventions used only as retarget-map reference. No Mixamo content incorporated (redistribution/licensing constraints; no verified fit).",
+      "rights": {}
+    },
+    {
+      "id": "blender",
+      "name": "Blender",
+      "url": "https://www.blender.org",
+      "licence_id": "GPL-3.0-or-later",
+      "decision": "REFERENCE",
+      "notes": "Build-time tool only (not shipped). Output assets are the author's. Version target 5.2.x LTS.",
+      "rights": {}
+    },
+    {
+      "id": "quaternius-ubc-repacked-glb",
+      "name": "Quaternius Universal Base Characters \u2014 Superhero Male GLB repack (programasweights/avatar)",
+      "url": "https://github.com/programasweights/avatar",
+      "licence_id": "CC0-1.0",
+      "decision": "ADAPT",
+      "status": "ACQUIRED",
+      "notes": "Small repack of Quaternius UBC Standard Superhero Male. Upstream ASSETS.md states geometry, normals, skin weights, bone names and reference pose preserved; materials replaced. Original pack: https://quaternius.com/packs/universalbasecharacters.html. Asset remains CC0; repository code licence is separate.",
+      "rights": {
+        "commercial": true,
+        "modification": true,
+        "redistribution": true,
+        "app_distribution": true
+      },
+      "retrieved": "2026-10-05",
+      "files": [
+        {
+          "path": "AssetFactory/sources/Quaternius_UBC_Superhero_Male_CC0.glb",
+          "sha256": "d6f3b64cab629f6ddca9ba063811aeffd3663a8a4e49ade47cd9505dc2bbd70f"
+        },
+        {
+          "path": "AssetFactory/sources/UPSTREAM_ASSETS_PROVENANCE.md",
+          "sha256": "841ad7d42b7a8fc7b21265e6a221367e67a03f7963a87a7a201b0fae5c7ca20b"
+        }
+      ],
+      "licence_text_path": "AssetFactory/sources/QUATERNIUS-LICENSE.txt",
+      "licence_text_sha256": "0f4beaf0fe360a7732e58bbe3dbf60a2422367fbea60cb9ea4add968f383268e"
+    },
+    {
+      "id": "girush-human-yw-cc0",
+      "name": "Girush Rigged Stylized Humanoid Character Base human_YW",
+      "status": "ACQUIRED",
+      "url": "https://opengameart.org/content/basemesh-a1-human-yw-by-girush",
+      "licence_id": "CC0-1.0",
+      "decision": "ADAPT",
+      "retrieved": "2026-10-05",
+      "files": [
+        {
+          "path": "AssetFactory/sources/Girush/baseMesh_A1_(human_YW)_by_Girush.blend",
+          "sha256": "7ce117385a5e34ae145fa57442799e1bbec3d59c5d44fb40828b35a8eb3eab0f"
+        },
+        {
+          "path": "AssetFactory/sources/Girush/displacemap.png",
+          "sha256": "aefc6a4c23683fdb4f0eecd5ce1b3da30577e040c64f13792ff16abc6105e544"
+        },
+        {
+          "path": "AssetFactory/sources/Girush/baseMesh_A1_body.png",
+          "sha256": "fc23f1e876455d34c072dee5da2b494a3385df3e7a3a43b7c2858c4d3199012f"
+        },
+        {
+          "path": "AssetFactory/sources/Girush/baseMesh_A1_face.png",
+          "sha256": "f7f0011ccd35aba28f0f862bd6f05d90170b64526b1322cf8fb67487775911c2"
+        },
+        {
+          "path": "AssetFactory/sources/Girush/black_eye.png",
+          "sha256": "ffaf06351b7cfdcb93757f34306e2f5b65b31b528a274d62c89aadf6fbb85535"
+        },
+        {
+          "path": "AssetFactory/sources/Girush/baseMesh_A1_body_paint.png",
+          "sha256": "c4a885c976a486748a78ad4394c20212b0872c6c90100cb71ed35c247b00aa01"
+        }
+      ],
+      "rights": {
+        "commercial": true,
+        "modification": true,
+        "redistribution": true,
+        "app_distribution": true
+      },
+      "licence_text_path": "AssetFactory/sources/Girush/CC0_README.txt",
+      "licence_text_sha256": "d2074f738fbc01e7d0baab6a9311f8c9b6260802e96f054988354b512bebee33"
+    }
+  ]
+}

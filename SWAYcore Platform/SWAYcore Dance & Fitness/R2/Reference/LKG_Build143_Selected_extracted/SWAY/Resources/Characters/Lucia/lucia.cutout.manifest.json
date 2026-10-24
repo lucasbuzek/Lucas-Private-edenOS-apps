@@ -1,0 +1,383 @@
+{
+  "characterID": "lucia",
+  "version": 2,
+  "renderer": "cutout-fallback",
+  "generatedFrom": "Build 133 delivered Lucia PNGs",
+  "parts": {
+    "head": {
+      "assetName": "Rig_lucia_head",
+      "pixelSize": [
+        65,
+        66
+      ],
+      "alphaBounds": [
+        2,
+        0,
+        54,
+        66
+      ],
+      "pivots": {
+        "neck": [
+          0.5,
+          0.92
+        ]
+      }
+    },
+    "hairBack": {
+      "assetName": "Rig_lucia_hairBack",
+      "pixelSize": [
+        60,
+        66
+      ],
+      "alphaBounds": [
+        8,
+        0,
+        56,
+        66
+      ],
+      "pivots": {
+        "head": [
+          0.5,
+          0.55
+        ]
+      }
+    },
+    "hairFront": {
+      "assetName": "Rig_lucia_hairFront",
+      "pixelSize": [
+        60,
+        66
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        60,
+        66
+      ],
+      "pivots": {
+        "head": [
+          0.5,
+          0.55
+        ]
+      }
+    },
+    "torso": {
+      "assetName": "Rig_lucia_torso",
+      "pixelSize": [
+        55,
+        60
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        55,
+        60
+      ],
+      "pivots": {
+        "neck": [
+          0.5,
+          0.08
+        ],
+        "leftShoulder": [
+          0.18,
+          0.18
+        ],
+        "rightShoulder": [
+          0.82,
+          0.18
+        ],
+        "pelvis": [
+          0.5,
+          0.92
+        ]
+      }
+    },
+    "pelvis": {
+      "assetName": "Rig_lucia_pelvis",
+      "pixelSize": [
+        52,
+        60
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        52,
+        60
+      ],
+      "pivots": {
+        "spine": [
+          0.5,
+          0.1
+        ],
+        "leftHip": [
+          0.32,
+          0.75
+        ],
+        "rightHip": [
+          0.68,
+          0.75
+        ]
+      }
+    },
+    "leftUpperArm": {
+      "assetName": "Rig_lucia_leftUpperArm",
+      "pixelSize": [
+        30,
+        60
+      ],
+      "alphaBounds": [
+        0,
+        2,
+        24,
+        59
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.06
+        ],
+        "distal": [
+          0.5,
+          0.94
+        ]
+      }
+    },
+    "rightUpperArm": {
+      "assetName": "Rig_lucia_rightUpperArm",
+      "pixelSize": [
+        31,
+        60
+      ],
+      "alphaBounds": [
+        0,
+        3,
+        26,
+        60
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.06
+        ],
+        "distal": [
+          0.5,
+          0.94
+        ]
+      }
+    },
+    "leftLowerArm": {
+      "assetName": "Rig_lucia_leftLowerArm",
+      "pixelSize": [
+        30,
+        60
+      ],
+      "alphaBounds": [
+        0,
+        4,
+        24,
+        58
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.06
+        ],
+        "distal": [
+          0.5,
+          0.94
+        ]
+      }
+    },
+    "rightLowerArm": {
+      "assetName": "Rig_lucia_rightLowerArm",
+      "pixelSize": [
+        31,
+        60
+      ],
+      "alphaBounds": [
+        1,
+        3,
+        27,
+        58
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.06
+        ],
+        "distal": [
+          0.5,
+          0.94
+        ]
+      }
+    },
+    "leftHand": {
+      "assetName": "Rig_lucia_leftHand",
+      "pixelSize": [
+        28,
+        60
+      ],
+      "alphaBounds": [
+        7,
+        1,
+        28,
+        60
+      ],
+      "pivots": {
+        "wrist": [
+          0.5,
+          0.1
+        ]
+      }
+    },
+    "rightHand": {
+      "assetName": "Rig_lucia_rightHand",
+      "pixelSize": [
+        27,
+        60
+      ],
+      "alphaBounds": [
+        5,
+        0,
+        27,
+        60
+      ],
+      "pivots": {
+        "wrist": [
+          0.5,
+          0.1
+        ]
+      }
+    },
+    "leftThigh": {
+      "assetName": "Rig_lucia_leftThigh",
+      "pixelSize": [
+        28,
+        78
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        28,
+        78
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.05
+        ],
+        "distal": [
+          0.5,
+          0.95
+        ]
+      }
+    },
+    "rightThigh": {
+      "assetName": "Rig_lucia_rightThigh",
+      "pixelSize": [
+        29,
+        78
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        29,
+        78
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.05
+        ],
+        "distal": [
+          0.5,
+          0.95
+        ]
+      }
+    },
+    "leftCalf": {
+      "assetName": "Rig_lucia_leftCalf",
+      "pixelSize": [
+        28,
+        78
+      ],
+      "alphaBounds": [
+        0,
+        2,
+        18,
+        72
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.05
+        ],
+        "distal": [
+          0.5,
+          0.95
+        ]
+      }
+    },
+    "rightCalf": {
+      "assetName": "Rig_lucia_rightCalf",
+      "pixelSize": [
+        28,
+        78
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        28,
+        78
+      ],
+      "pivots": {
+        "proximal": [
+          0.5,
+          0.05
+        ],
+        "distal": [
+          0.5,
+          0.95
+        ]
+      }
+    },
+    "leftShoe": {
+      "assetName": "Rig_lucia_leftShoe",
+      "pixelSize": [
+        35,
+        53
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        35,
+        53
+      ],
+      "pivots": {
+        "ankle": [
+          0.35,
+          0.25
+        ]
+      }
+    },
+    "rightShoe": {
+      "assetName": "Rig_lucia_rightShoe",
+      "pixelSize": [
+        34,
+        53
+      ],
+      "alphaBounds": [
+        13,
+        42,
+        34,
+        52
+      ],
+      "pivots": {
+        "ankle": [
+          0.65,
+          0.25
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+name: SWAYcoreEngineZERO
+options:
+  bundleIdPrefix: com.lucasbuzek.private
+  deploymentTarget:
+    iOS: "26.0"
+packages:
+  SWAYcoreEngine:
+    path: ../../../SWAYcore Dance & Fitness/R2/Packages/SWAYcoreEngine
+targets:
+  EngineZERO:
+    type: application
+    platform: iOS
+    sources: [Sources]
+    dependencies:
+      - package: SWAYcoreEngine
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lucasbuzek.private.swaycore.hema.zero
+        PRODUCT_NAME: HEMAZERO
+        SWIFT_VERSION: 5.9
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: QR4USCAU5A
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: "SWAYcore Engine ZERO"
+        INFOPLIST_KEY_NSCameraUsageDescription: "SWAYcore Engine ZERO analyzes body pose on-device to show a live tracking skeleton. Camera video is not saved or uploaded."
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait"
+        CURRENT_PROJECT_VERSION: 1
+        MARKETING_VERSION: "0.0.1"
+schemes:
+  EngineZERO:
+    build:
+      targets:
+        EngineZERO: all

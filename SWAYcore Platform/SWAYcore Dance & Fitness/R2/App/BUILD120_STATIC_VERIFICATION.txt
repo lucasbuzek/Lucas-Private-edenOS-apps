@@ -1,0 +1,10 @@
+SWAYcore Build 120 — local static verification
+- Swift aggregate parse: PASS
+- Asset Contents.json parse: PASS (66 manifests)
+- Xcode project delimiter structure: PASS
+- DesignReferences absent from pbxproj/runtime membership: PASS
+- project.yml + pbxproj build number: 120 / 120
+- CFBundleVersion: 120
+- shell syntax for shipped command files: PASS
+- project-goal corrections: functional authored-foundation user Move creation; real day streak; version/documentation reconciliation
+Not proved here: Apple SDK typecheck/Xcode build, signing, camera, MusicKit, Shazam, device UI/visual quality.

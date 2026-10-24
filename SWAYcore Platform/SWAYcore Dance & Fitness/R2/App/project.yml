@@ -1,0 +1,68 @@
+name: SWAY
+options:
+  bundleIdPrefix: com.lucasbuzek.private
+  deploymentTarget:
+    iOS: '26.0'
+packages:
+  SWAYcoreEngine:
+    path: ../Packages/SWAYcoreEngine
+targets:
+  SWAY:
+    type: application
+    platform: iOS
+    sources: [SWAY]
+    dependencies:
+      - package: SWAYcoreEngine
+    entitlements:
+      path: SWAY/SWAY.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lucasbuzek.private.sway
+        PRODUCT_NAME: SWAY
+        SWIFT_VERSION: 5.9
+        GENERATE_INFOPLIST_FILE: YES
+        CURRENT_PROJECT_VERSION: 153
+        MARKETING_VERSION: 0.9
+        INFOPLIST_KEY_CFBundleVersion: 153
+        INFOPLIST_KEY_CFBundleShortVersionString: 0.9
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: NO
+        SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+        INFOPLIST_KEY_CFBundleDisplayName: "SWAYcore Dance & Fitness"
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_NSHealthShareUsageDescription: SWAYcore reads workout and heart-rate data only when you choose to connect Health.
+        INFOPLIST_KEY_NSHealthUpdateUsageDescription: SWAYcore can save completed workouts when you choose to connect Health.
+        INFOPLIST_KEY_NSCameraUsageDescription: SWAYcore uses the camera for optional on-device movement recognition.
+        INFOPLIST_KEY_NSMotionUsageDescription: SWAYcore uses motion sensors to enhance rhythm and movement feedback.
+        INFOPLIST_KEY_NSAppleMusicUsageDescription: SWAYcore uses your music library so you can dance to music you choose.
+        INFOPLIST_KEY_NSMicrophoneUsageDescription: SWAYcore uses the microphone for music recognition and, when you explicitly choose Record SWAY, to include your performance audio.
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: XZ4VRP5S5G
+      configs:
+        Release:
+          EXCLUDED_SOURCE_FILE_NAMES: SWAYNativeUnapproved.bundle
+  SWAYTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [Tests/SWAYTests]
+    dependencies:
+      - target: SWAY
+      - package: SWAYcoreEngine
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: 5.9
+        PRODUCT_BUNDLE_IDENTIFIER: com.lucasbuzek.private.sway.tests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/SWAY.app/SWAY"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+schemes:
+  SWAY:
+    build:
+      targets:
+        SWAY: all
+    test:
+      targets: [SWAYTests]

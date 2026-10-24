@@ -1,0 +1,46 @@
+name: SWAYcoreKidDancers
+options:
+  bundleIdPrefix: com.lucasbuzek.private
+  deploymentTarget: { iOS: "26.0", macOS: "26.0" }
+  createIntermediateGroups: true
+configFiles:
+  Debug: ../../Config/Signing.xcconfig
+  Release: ../../Config/Signing.xcconfig
+packages:
+  SWAYcoreKit: { path: ../../Packages/SWAYcoreKit }
+  SWAYAppKit: { path: ../../Packages/SWAYAppKit }
+targets:
+  SWAYcoreKidDancers:
+    type: application
+    platform: iOS
+    sources: [Sources]
+    resources:
+      - { path: ../../Assets/Characters, type: folder }
+    dependencies:
+      - package: SWAYcoreKit
+      - package: SWAYAppKit
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lucasbuzek.private.swaycore.kiddancers
+        PRODUCT_NAME: SWAYcoreKidDancers
+        PRODUCT_MODULE_NAME: SWAYcoreKidDancers
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SWIFT_VERSION: "5.9"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: "SWAYcore Kid Dancers"
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_NSCameraUsageDescription: "A grown-up can turn on the camera so the app can see your child's movement on this device. Nothing is stored or sent."
+  SWAYcoreKidDancersTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [Tests]
+    dependencies:
+      - target: SWAYcoreKidDancers
+    settings:
+      base: { GENERATE_INFOPLIST_FILE: YES, SWIFT_VERSION: "5.9", BUNDLE_LOADER: "$(TEST_HOST)", TEST_HOST: "$(BUILT_PRODUCTS_DIR)/SWAYcoreKidDancers.app/SWAYcoreKidDancers" }
+schemes:
+  SWAYcoreKidDancers:
+    build: { targets: { SWAYcoreKidDancers: all } }
+    test: { targets: [SWAYcoreKidDancersTests] }

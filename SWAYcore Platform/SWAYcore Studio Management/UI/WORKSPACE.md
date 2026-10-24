@@ -1,0 +1,9 @@
+# SWAYcore Studio Management — independent professional BUSINESS UI
+**Identity:** INSTRUCT · MANAGE · GROW · SUCCEED. **Existing current active source is NOT missing:** `../../SWAY/Products/StudioManagement/ActiveStudio/`; recovered original `../../SWAY/Products/StudioManagement/RecoveredFamilySource/`; separate from SWAYZ choreography editor and Dance & Fitness consumer features.
+**Business UI:** calendar/classes/recurrences, instructors/staff, students/members, private rosters/capacity/enrollment, attendance/check-in, memberships, invoices/payment status/basic finance, data recovery/backup/privacy and authorized navigation.
+**Platforms:** `../Platforms/iPadOS` and `../Platforms/macOS` are current native source/build investigation lanes. Requested `../Platforms/Windows` and `../Platforms/Linux` are future independent UI/port gates, no implied cross-platform codebase/release.
+**ZERO:** `../ZERO/` is minimum business-function implementation/optional stickman motion demonstration when connected to shared content; not an excuse to replace studio roster/finance UI with a stick figure.
+**Known historic test:** 2026-10-19 14/14 SWAYStudioKit tests and unsigned macOS/iPadOS simulator builds; real interactive UI, financial privacy and physical acceptance not verified. Must preserve original business data and failure-closed handling.
+
+## Verified engineering checkpoint — 2026-10-23
+Existing isolated `SWAYStudioKit` test command invoked **14/14 cases, exit 0**; unsigned native macOS and iOS/iPad Simulator Xcode builds both **BUILD SUCCEEDED**. Logs: `STUDIO_SWIFT_TEST_20261023.log`, `STUDIO_macOS_BUILD_20261023.log`, `STUDIO_iphonesimulator_BUILD_20261023.log`. Actual interactive business UI, physical iPad, privacy/performance and Windows/Linux builds remain UNKNOWN. No release promotion.

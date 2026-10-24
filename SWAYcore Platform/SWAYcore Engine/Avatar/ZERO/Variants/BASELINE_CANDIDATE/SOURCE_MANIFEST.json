@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "status": "ISOLATED_SOURCE_BUILD_PASS_RUNTIME_UNVERIFIED",
+  "variant": "BASELINE_CANDIDATE",
+  "source_of_truth": "/Users/lucas/edenOS/Software Development/SWAYcore Platform/SWAYcore Engine/Avatar/ZERO/iOS TestHost",
+  "engine_read_only_dependency": "/Users/lucas/edenOS/Software Development/SWAYcore Platform/SWAYcore Dance & Fitness/R2/Packages/SWAYcoreEngine",
+  "code_source_files": [
+    {
+      "source": "SWAYcore Engine/Avatar/ZERO/iOS TestHost/Sources/EngineZEROApp.swift",
+      "target": "SWAYcore Engine/Avatar/ZERO/Variants/BASELINE_CANDIDATE/Source/Sources/EngineZEROApp.swift",
+      "sha256": "2f540eca40f32ad657980f5ff60df9ab259dfcc68967ef61e09a99552ddc2caa"
+    },
+    {
+      "source": "SWAYcore Engine/Avatar/ZERO/iOS TestHost/Sources/SwayZERORecoveredPose.swift",
+      "target": "SWAYcore Engine/Avatar/ZERO/Variants/BASELINE_CANDIDATE/Source/Sources/SwayZERORecoveredPose.swift",
+      "sha256": "ac0d7c3f6bc3fd9c6151775f8fb3a7c542f55d89281d7e51d28b987338918877"
+    },
+    {
+      "source": "SWAYcore Engine/Avatar/ZERO/iOS TestHost/Sources/ZEROCamera.swift",
+      "target": "SWAYcore Engine/Avatar/ZERO/Variants/BASELINE_CANDIDATE/Source/Sources/ZEROCamera.swift",
+      "sha256": "feedc4de69b9417d11ddb0326aa06df7f463eb48f2778893a3e5665d5897d889"
+    },
+    {
+      "source": "SWAYcore Engine/Avatar/ZERO/iOS TestHost/Sources/ZEROStage.swift",
+      "target": "SWAYcore Engine/Avatar/ZERO/Variants/BASELINE_CANDIDATE/Source/Sources/ZEROStage.swift",
+      "sha256": "ebeaefb52802002ed3a7b1ab0ccdfc231233d8827d793bb8d0869dec35184eaf"
+    }
+  ],
+  "project_yml_sha256": "a4c764846c1ef924cbb063ce4f19fac3a9da09fcb5b4ca5138e62ed76496b2b3",
+  "bundle_id": "com.lucasbuzek.private.swaycore.zero.baseline",
+  "acceptance": "independent build/runtime/physical pending",
+  "original_r2_changed": false,
+  "build_test_date": "2026-10-23",
+  "build_type": "unsigned generic iOS Simulator; BUILD SUCCEEDED",
+  "build_log": "SWAYcore Engine/Avatar/ZERO/Variants/BASELINE_CANDIDATE/ios_sim_build_20261023.log",
+  "physical_camera_tracking_UI_LKG": "UNKNOWN"
+}

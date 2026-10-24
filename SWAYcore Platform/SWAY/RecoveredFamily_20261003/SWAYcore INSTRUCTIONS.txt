@@ -1,0 +1,241 @@
+SWAYcore  -  HOW TO BUILD IT
+Package: SWAYcore-family-0.1.0.zip
+
+IMPORTANT, READ FIRST
+This package has NEVER been compiled or run on a Mac. It was written in a
+Linux sandbox with no Swift, Xcode or Blender. The first run will probably
+show compile errors. That is expected. The builder saves every error in a
+log file. Send me the log and I will repair the code.
+
+Nothing is "done" until the report says so with evidence. UNKNOWN is not PASS.
+
+
+=====================================================================
+PART 1 - SIMPLE INSTRUCTIONS  (7 steps)
+=====================================================================
+
+1. Use a Mac with Xcode installed. Open Xcode once and accept its license.
+2. Double-click SWAYcore-family-0.1.0.zip to extract it.
+3. Open the extracted folder.
+4. Right-click  Build_SWAYcore_ALL.command  ->  Open  ->  Open.
+   (A Terminal window opens. If the Mac blocks it, see Detailed step D3.)
+5. Wait. The first run can take a long time (Blender character generation).
+   It may install two tools it needs: xcodegen and Blender.
+6. When it finishes, open:  Build/report/LATEST_BUILD_REPORT.md
+   Every step is listed as PASS, FAIL or UNKNOWN.
+7. If it says "CONNECT AND UNLOCK THE iPHONE", do exactly that, keep it
+   connected, then run the builder again.
+
+If anything says FAIL:  send me the file named in the "Evidence" column
+(it is in Build/logs/).
+
+To build one app only, double-click its own builder instead:
+   Build_SWAYcore_DanceFitness.command
+   Build_SWAYcore_SWAYZ.command
+   Build_SWAYcore_KidDancers.command
+   Build_SWAYcore_StudioManagement.command
+   Build_SWAYcore_Core.command   (engine + tests + character assets only)
+
+
+=====================================================================
+PART 2 - DETAILED INSTRUCTIONS
+=====================================================================
+
+----- A. WHAT YOU NEED -----
+
+A1. A Mac running a recent macOS (Apple silicon or Intel).
+A2. Full Xcode from the App Store (NOT only Command Line Tools).
+    - Open Xcode once so it finishes installing components.
+    - In Xcode > Settings > Components, make sure an iOS platform/SDK is
+      installed. If you want simulator tests, install an iOS Simulator
+      runtime too.
+    - Accept the license if asked. Or in Terminal:
+        sudo xcodebuild -license accept
+    - Point Xcode tools at Xcode if needed:
+        sudo xcode-select -s /Applications/Xcode.app
+A3. Homebrew (https://brew.sh). The builder uses it only to install two
+    declared tools if they are missing: xcodegen and Blender.
+    The builder NEVER installs Xcode for you.
+A4. An internet connection for the first run (only if Homebrew has to
+    download xcodegen or Blender, and for Swift Package resolution if any).
+A5. For running on a real device: an iPhone/iPad, a USB cable, and your
+    Apple Developer Team ID (see section F).
+
+----- B. UNPACK -----
+
+B1. Double-click the zip to extract. You get a folder named
+    SWAYcore-family-0.1.0
+B2. Move it somewhere simple, for example your Desktop or Documents.
+    Avoid cloud-synced folders if you can (iCloud may slow builds).
+B3. Optional integrity check in Terminal:
+        cd <folder containing the zip and the .sha256 file>
+        shasum -a 256 SWAYcore-family-0.1.0.zip
+    Compare the result with the text in SWAYcore-family-0.1.0.zip.sha256.
+
+----- C. WHAT IS INSIDE -----
+
+   Build_SWAYcore_ALL.command            master builder (everything)
+   Build_SWAYcore_Core.command           engine, tests, Blender characters
+   Build_SWAYcore_DanceFitness.command   Dance & Fitness
+   Build_SWAYcore_SWAYZ.command          SWAYZ (instructor/choreography)
+   Build_SWAYcore_KidDancers.command     Kid Dancers
+   Build_SWAYcore_StudioManagement.command  Studio Management (iPad + Mac)
+   Packages/   shared Swift code (Core, AppKit, Studio)
+   Apps/       the four apps (XcodeGen project.yml files)
+   Blender/    character generation + validation scripts
+   Scripts/    builder library, static verifier, packager
+   Config/     signing settings (template included)
+   Docs/       decisions, evidence states, recovery, device checklist
+   Docs/Spec/  the original handoff documents
+
+----- D. RUNNING A BUILDER -----
+
+D1. EASIEST: double-click a .command file in Finder.
+D2. OR in Terminal:
+        cd /path/to/SWAYcore-family-0.1.0
+        ./Build_SWAYcore_ALL.command
+D3. If macOS refuses to open it ("cannot be opened", "unidentified
+    developer", or permission denied), run once in Terminal:
+        cd /path/to/SWAYcore-family-0.1.0
+        xattr -dr com.apple.quarantine .
+        chmod +x *.command Scripts/*.sh
+    Then try again (right-click > Open the first time).
+D4. Safe to re-run. Re-running does not wipe your earlier results.
+
+What the master builder does, in order:
+   1. Builds/tests Core, then the four products, one after another.
+   2. For each, it runs these steps and records each as a "gate":
+        - Preflight: macOS, architecture, Homebrew, git, Xcode,
+          xcode-select, xcodebuild, xcrun, Swift, iOS SDK.
+        - Installs xcodegen (and Blender) ONLY if missing.
+        - Static check of the project files.
+        - Backs up the previous verified result (Last Known Good).
+        - Swift unit tests on your Mac.
+        - Generates the 6 characters in Blender (headless), then
+          validates them. (Done once; later products reuse them.)
+        - Generates the Xcode project, compiles, zips the app,
+          checks the zip (integrity + contents + checksum).
+        - Runs the app tests on an iOS Simulator if one exists.
+        - Only if all of the above passed: checks for a connected
+          iPhone/iPad.
+   3. Builds one combined source archive of the whole family.
+   4. Writes the report.
+
+Studio Management builds for BOTH iPad and Mac. Windows/Linux versions are
+NOT built (see Docs/IMPLEMENTATION_DECISIONS.md, ND-014).
+
+----- E. WHERE THINGS END UP -----
+
+   Build/report/LATEST_BUILD_REPORT.md   the table of PASS/FAIL/UNKNOWN
+   Build/logs/<date-time>/               one log file per gate
+   Build/Output/<Product>/               zipped .app builds + checksums
+   Build/Output/Dist/                    full source archive
+   Build/LKG/                            Last Known Good backups
+   Assets/Characters/                    generated character files (.usdz,
+                                         manifests, textures)
+   Assets/Blend/                         editable .blend sources
+   Xcode projects are generated inside each Apps/<name>/ folder.
+   To open one in Xcode: open Apps/DanceFitness/SWAYcoreDanceFitness.xcodeproj
+   (it exists after the first successful "generate project" gate).
+
+----- F. RUNNING ON A REAL iPHONE / iPAD -----
+
+F1. In the folder Config/ copy
+        Signing.local.xcconfig.template
+    to
+        Signing.local.xcconfig
+    and replace XXXXXXXXXX with your Apple Developer Team ID.
+    (Find it in Xcode > Settings > Accounts, or developer.apple.com.)
+    This file is never packaged or committed. No passwords/tokens are used.
+F2. Plug in the iPhone, unlock it, tap "Trust This Computer" if asked.
+    On the iPhone: Settings > Privacy & Security > Developer Mode = On
+    (it restarts the phone).
+F3. Run the builder again. It will build a signed copy, install it, and
+    launch it.
+F4. Installed and launched does NOT mean accepted. Walk through
+    Docs/PHYSICAL_ACCEPTANCE.md on iPhone, iPad portrait and iPad
+    landscape. Tell me what fails.
+F5. MusicKit, Apple Health and Shazam features also need the right
+    entitlements/capabilities on your developer account. They cannot be
+    proven until they run on a device.
+
+----- G. HOW TO READ THE REPORT -----
+
+   PASS     the command exited with success and a log exists.
+   FAIL     something broke. The builder stops that product. Open the
+            log named in the Evidence column (Build/logs/...).
+   UNKNOWN  not proven. Expected UNKNOWN items:
+              - character visual quality (needs your eyes)
+              - simulator tests if no simulator is installed
+              - physical device acceptance
+   A product is only "built" when its compile, package and verify gates
+   are PASS. Nothing here means "released".
+
+----- H. CHARACTERS: WHAT TO EXPECT -----
+
+The Blender step generates Lucia, Nandi, Thabo, Zuri, Kyle and YOUR DANCER
+automatically. The validator checks structure only (meshes, 23 joints,
+weights, materials, textures, 10 movement clips, size, triangle budget).
+It cannot judge whether they LOOK good. Open Assets/Blend/lucia.blend (and
+the others) in Blender and review them. If they look wrong, tell me what;
+the appearance settings are in Blender/characters.json and the generator is
+Blender/generate_characters.py.
+
+----- I. TROUBLESHOOTING -----
+
+"Host is Linux/Windows, not macOS"
+    Builders only run on a Mac.
+
+"xcode-select has no developer dir" or "Only Command Line Tools selected"
+    Install full Xcode, open it once, then:
+        sudo xcode-select -s /Applications/Xcode.app
+
+"xcodebuild unusable" / license message
+    sudo xcodebuild -license accept
+
+"No iphoneos SDK installed"
+    Xcode > Settings > Components > install the iOS platform.
+
+"Homebrew is required but not installed"
+    Install from https://brew.sh, open a NEW Terminal window, re-run.
+
+Blender will not install or is the wrong version
+    Install Blender yourself from blender.org into /Applications, re-run.
+    The handoff's evidence used Blender 5.2.x. Other versions may need
+    small script fixes; send me the log (Build/logs/.../assets_*.log).
+
+Swift compile or test errors (most likely on first run)
+    Find the gate marked FAIL, open its log, and send me the log file.
+    I will fix the code and give you a new package. Do not edit by hand
+    unless you want to.
+
+"no iOS simulator runtime available"
+    Optional. Install one in Xcode > Settings > Components to get the
+    simulator test gate. Otherwise that gate stays UNKNOWN.
+
+Signing / provisioning errors on device
+    Check DEVELOPMENT_TEAM in Config/Signing.local.xcconfig, that the
+    phone has Developer Mode on, and that your account can sign apps.
+
+Start completely fresh (keeps your source, removes build results)
+    Quit Xcode, then delete the Build/ folder and the file
+    Assets/.validated. (Backups in Build/LKG go away too, so only do this
+    if you do not need them.)
+
+----- J. SAFETY NOTES -----
+
+- The builders never delete your source and never delete Build/ on their
+  own.
+- Before replacing a verified result, the builder copies it to Build/LKG.
+- No passwords, tokens or keys are stored in the package.
+- Camera frames in the apps are analysed on the device and are not saved
+  or sent anywhere. Kid Dancers has the camera OFF by default.
+
+----- K. WHAT TO SEND ME AFTER YOUR FIRST RUN -----
+
+1. Build/report/LATEST_BUILD_REPORT.md
+2. The log files for every FAIL row (Build/logs/<date-time>/...)
+3. Screenshots or notes of anything that looks wrong in the apps or the
+   Blender characters.
+
+END

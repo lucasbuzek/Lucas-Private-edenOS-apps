@@ -1,0 +1,14 @@
+SWAYcore 0.9 Build 143 — streamlined illustrated 2.5D Alpha candidate
+
+Purpose: preserve Build 142 runtime LKG while replacing primitive Canvas pixels with approved illustrated Lucia pose artwork.
+
+Pipeline correction:
+1. Execution service probe before declaring infrastructure blocker.
+2. Visual Alpha uses illustrated pose-atlas path now; weighted-mesh R&D no longer blocks Alpha graphics testing.
+3. COACH pixel provenance: DesignReferences/SWAY_Generated_Coach_Pose_Source.png -> LuciaPose01...12 asset catalog -> SWAYSkeletal2DAvatarView.
+4. USER pixel provenance: same source -> DÜRER-separated Detail/Skin/Hair/Accent layers -> SwayCharacterProfile colors -> SWAYSkeletal2DAvatarView.
+5. Counts map deterministically to illustrated poses.
+6. Legacy Canvas drawing functions remain source-only for recovery and are not called by body.
+
+Evidence available here: asset generation complete; runtime source wired; version synchronized; source hazard scan; package integrity.
+External gates: Xcode compile, iPhone runtime, IRIS visual acceptance.

@@ -1,0 +1,13 @@
+CLAUDE — START HERE
+===================
+You have NO separate SWAYcore knowledge source. Do not ask for previous chats, Project Bible, Build 153 archive,
+GitHub source, mockups or Mac filesystem history before starting reconstruction.
+
+Read `00_EMBEDDED_PROJECT_BIBLE.txt`, then the product handoff you are rebuilding, plus the Engine/Core handoff
+and macOS build contract. Everything recovered as necessary for cold-start reconstruction must be treated as
+embedded authority here.
+
+If this package marks something UNKNOWN/not recovered, do not invent it as historical canon. Make the smallest
+documented engineering choice needed to satisfy the stated product requirement and keep it replaceable.
+
+All build/bootstrap/orchestration scripts supplied to Lucas run on macOS.

@@ -1,0 +1,76 @@
+{
+  "_doc": "Exact aliases for the inspected Girush CC0 human_YW rig. No inferred runtime matching: source names were inspected on 2026-10-05. Pelvis hierarchy inspected: Sacrum is source root; Sacrum.001 is its pelvis/leg-chain child and is the SWAY Hips mapping. Limb endpoints inspected in Blender 5.2.2 on 2026-10-06: LowerArm.L/R start at the elbows; .001 starts midway down the forearm. Tibia.L/R start at the knees; .001 starts below the knee. Map actual joints, retaining native helper descendants.",
+  "contract": "SWAYHumanoid-v1",
+  "map": {
+    "Root": [
+      "Sacrum"
+    ],
+    "Hips": [
+      "Sacrum.001"
+    ],
+    "Spine": [
+      "Spine1"
+    ],
+    "Spine1": [
+      "Spine1.001"
+    ],
+    "Chest": [
+      "Spine2"
+    ],
+    "Neck": [
+      "Spine3.002"
+    ],
+    "Head": [
+      "head"
+    ],
+    "LeftShoulder": [
+      "Clavicle.L"
+    ],
+    "LeftUpperArm": [
+      "Humerus.L"
+    ],
+    "LeftLowerArm": [
+      "LowerArm.L"
+    ],
+    "LeftHand": [
+      "hand001.L"
+    ],
+    "RightShoulder": [
+      "Clavicle.R"
+    ],
+    "RightUpperArm": [
+      "Humerus.R"
+    ],
+    "RightLowerArm": [
+      "LowerArm.R"
+    ],
+    "RightHand": [
+      "hand001.R"
+    ],
+    "LeftUpperLeg": [
+      "Femur.L"
+    ],
+    "LeftLowerLeg": [
+      "Tibia.L"
+    ],
+    "LeftFoot": [
+      "Foot.L"
+    ],
+    "LeftToe": [
+      "Foot.L.001"
+    ],
+    "RightUpperLeg": [
+      "Femur.R"
+    ],
+    "RightLowerLeg": [
+      "Tibia.R"
+    ],
+    "RightFoot": [
+      "Foot.R"
+    ],
+    "RightToe": [
+      "Foot.R.001"
+    ]
+  },
+  "weightMergeRule": "Every non-contract deform bone merges to nearest mapped ancestor; then <=4 influences and normalize."
+}

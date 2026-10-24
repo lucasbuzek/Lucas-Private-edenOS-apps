@@ -1,0 +1,14 @@
+SWAYcore 0.9 Build 139 — EITRI/DÜRER 2.5D Avatar Alpha Test Candidate
+
+Goal: a visibly coherent illustrated 2.5D avatar for both COACH and YOUR DANCER, ready for physical Alpha testing.
+
+Repairs over 138:
+- Preserved one shared 2.5D runtime authority for all SwayHumanFigureView consumers and Avatar Creator.
+- DÜRER geometry pass: body-style-specific proportions, continuous torso/pelvis overlap, rounded joint caps, neck/head overlap, explicit front/rear depth ordering, stable full-body framing.
+- User customization is now visibly implemented for all exposed Alpha categories: 3 body types, 5 skin tones, 3 face shapes, 5 hairstyles, 6 hair colors, 5 outfits, 4 footwear styles, 4 accessory modes.
+- Corrected Build 138 inconsistency where BODY/FACE/FOOTWEAR/ACCESSORIES and several HAIR/OUTFIT choices existed in UI but were not visibly implemented.
+- Expanded deterministic musical-time movement proofs beyond the four Build 137 motions: March, Step Touch/Side/Double Step, Knee Lift, Grapevine, Squat, Jumping Jack, Arm Reach, Hip Sway/Body Roll bridge, V-Step.
+- Legacy segmented PNG renderer remains source/debug only and is not selected by the shared Alpha character wrapper.
+
+Evidence available here: source implementation, Swift parse, project membership/routing audit, contract validation, package integrity.
+External gate: Xcode type-check/build and physical iPhone visual/motion acceptance.

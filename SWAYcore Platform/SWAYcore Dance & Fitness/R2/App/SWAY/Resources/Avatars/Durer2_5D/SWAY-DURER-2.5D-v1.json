@@ -1,0 +1,108 @@
+{
+  "format": "SWAY-DURER-2.5D",
+  "version": 2,
+  "rigID": "SWAY2DHumanoid-v1",
+  "coordinateSystem": "normalized-stage",
+  "roles": [
+    "coach",
+    "user"
+  ],
+  "layers": [
+    "hairBack",
+    "rearLimbs",
+    "torso",
+    "pelvis",
+    "frontLimbs",
+    "neck",
+    "head",
+    "hairFront",
+    "face",
+    "accessories"
+  ],
+  "joints": [
+    "root",
+    "hips",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "leftShoulder",
+    "leftElbow",
+    "leftHand",
+    "rightShoulder",
+    "rightElbow",
+    "rightHand",
+    "leftHip",
+    "leftKnee",
+    "leftFoot",
+    "rightHip",
+    "rightKnee",
+    "rightFoot"
+  ],
+  "bodyMetrics": {
+    "male": {
+      "shoulder": 52,
+      "waist": 34,
+      "hip": 31,
+      "arm": 34,
+      "leg": 40
+    },
+    "neutral": {
+      "shoulder": 48,
+      "waist": 32,
+      "hip": 31,
+      "arm": 32,
+      "leg": 39
+    },
+    "female": {
+      "shoulder": 45,
+      "waist": 29,
+      "hip": 34,
+      "arm": 30,
+      "leg": 39
+    }
+  },
+  "customization": {
+    "bodyTypes": 3,
+    "skinTones": 5,
+    "faceShapes": 3,
+    "hairStyles": 5,
+    "hairColours": 6,
+    "outfits": 5,
+    "footwear": 4,
+    "accessories": 4
+  },
+  "movementContract": {
+    "clock": "musicalTime",
+    "minimumMoves": [
+      "march",
+      "step-touch",
+      "knee-lift",
+      "grapevine",
+      "squat",
+      "jumping-jack",
+      "arm-reach",
+      "hip-sway",
+      "body-roll",
+      "v-step"
+    ],
+    "phraseCounts": 8,
+    "seekableDiscreteCounts": true
+  },
+  "acceptance": {
+    "legacyPNGProductionPath": false,
+    "sharedCoachUserRig": true,
+    "jointOverlapRequired": true,
+    "stableStageFraming": true
+  },
+  "visualContract": {
+    "style": "polished-friendly-illustrated-2.5D",
+    "limbs": "tapered-organic-silhouette",
+    "jointTreatment": "overlap-caps-no-cut-edges",
+    "headBodyIntegration": "neck-under-head-and-torso",
+    "face": "eyes-nose-smile-authored",
+    "hair": "front-back-depth-layers",
+    "garments": "torso-pelvis-overlap",
+    "alphaRule": "no legacy segmented PNG production path"
+  }
+}

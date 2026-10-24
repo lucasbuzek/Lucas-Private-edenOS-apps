@@ -1,0 +1,33 @@
+name: SWAY
+options:
+  bundleIdPrefix: com.lucasbuzek.private
+  deploymentTarget:
+    iOS: '26.0'
+targets:
+  SWAY:
+    type: application
+    platform: iOS
+    sources: [SWAY]
+    entitlements:
+      path: SWAY/SWAY.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lucasbuzek.private.sway
+        PRODUCT_NAME: SWAY
+        SWIFT_VERSION: 5.9
+        GENERATE_INFOPLIST_FILE: YES
+        CURRENT_PROJECT_VERSION: 143
+        MARKETING_VERSION: 0.9
+        INFOPLIST_KEY_CFBundleVersion: 143
+        INFOPLIST_KEY_CFBundleShortVersionString: 0.9
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: NO
+        SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+        INFOPLIST_KEY_CFBundleDisplayName: SWAYcore
+        INFOPLIST_KEY_NSHealthShareUsageDescription: SWAYcore reads workout and heart-rate data only when you choose to connect Health.
+        INFOPLIST_KEY_NSHealthUpdateUsageDescription: SWAYcore can save completed workouts when you choose to connect Health.
+        INFOPLIST_KEY_NSCameraUsageDescription: SWAYcore uses the camera for optional on-device movement recognition.
+        INFOPLIST_KEY_NSMotionUsageDescription: SWAYcore uses motion sensors to enhance rhythm and movement feedback.
+        INFOPLIST_KEY_NSAppleMusicUsageDescription: SWAYcore uses your music library so you can dance to music you choose.
+        INFOPLIST_KEY_NSMicrophoneUsageDescription: SWAYcore listens to music you choose so it can recognize the recording and synchronize dance counts and choreography. Audio is not saved by SWAYcore for recognition.
+        CODE_SIGN_STYLE: Automatic

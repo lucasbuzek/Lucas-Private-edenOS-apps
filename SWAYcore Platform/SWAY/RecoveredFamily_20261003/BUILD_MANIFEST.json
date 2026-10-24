@@ -1,0 +1,15 @@
+{
+  "inventoryCount": 92,
+  "mode": "family",
+  "name": "SWAYcore",
+  "note": "Archive built reproducibly: sorted entries, fixed mtimes. States here are NOT evidence of build/test success; see Build/report.",
+  "states": {
+    "blenderAssets": "UNKNOWN until builder generates+validates",
+    "physical": "UNKNOWN",
+    "source": "IMPLEMENTED",
+    "swiftCompile": "UNKNOWN until builder BUILD PASS",
+    "visualQuality": "UNKNOWN"
+  },
+  "treeSha256": "a93d69e329721fae6dca477dba8e5cd87685e0141b1e69a26ff488a31f4dead1",
+  "version": "0.1.0"
+}

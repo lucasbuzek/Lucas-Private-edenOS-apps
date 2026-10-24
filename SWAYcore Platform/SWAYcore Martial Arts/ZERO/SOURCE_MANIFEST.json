@@ -1,0 +1,36 @@
+{
+  "status": "ZERO_PREVIEW_IOS_SIM_BUILD_PASS_DEVICE_UNVERIFIED",
+  "product": "SWAYcore Martial Arts",
+  "notice": "Generic movement diagnostic; NO martial technique or combat safety certification",
+  "canonical_engine": "/Users/lucas/edenOS/Software Development/SWAYcore Platform/SWAYcore Dance & Fitness/R2/Packages/SWAYcoreEngine",
+  "product_preview_root": "/Users/lucas/edenOS/Software Development/SWAYcore Platform/SWAYcore Martial Arts/ZERO/Source",
+  "files": [
+    {
+      "file": "EngineZEROApp.swift",
+      "sha256": "fe4d57863f1439956730033fb996b35993fae1341455b8527e3a4d1feba5cac8",
+      "source_provenance": "SWAYcore Engine/Avatar/ZERO/iOS TestHost/Sources/EngineZEROApp.swift"
+    },
+    {
+      "file": "SwayZERORecoveredPose.swift",
+      "sha256": "ac0d7c3f6bc3fd9c6151775f8fb3a7c542f55d89281d7e51d28b987338918877",
+      "source_provenance": "SWAYcore Engine/Avatar/ZERO/iOS TestHost/Sources/SwayZERORecoveredPose.swift"
+    },
+    {
+      "file": "ZEROCamera.swift",
+      "sha256": "feedc4de69b9417d11ddb0326aa06df7f463eb48f2778893a3e5665d5897d889",
+      "source_provenance": "SWAYcore Engine/Avatar/ZERO/iOS TestHost/Sources/ZEROCamera.swift"
+    },
+    {
+      "file": "ZEROStage.swift",
+      "sha256": "ebeaefb52802002ed3a7b1ab0ccdfc231233d8827d793bb8d0869dec35184eaf",
+      "source_provenance": "SWAYcore Engine/Avatar/ZERO/iOS TestHost/Sources/ZEROStage.swift"
+    }
+  ],
+  "no_r2_changes": true,
+  "verification": "Build and physical checks pending",
+  "build_date": "2026-10-23",
+  "build": "unsigned generic iOS Simulator BUILD SUCCEEDED",
+  "build_log": "SWAYcore Martial Arts/ZERO/IOS_SIM_BUILD_20261023.log",
+  "scope": "diagnostic host only; final product-specific UI/features not implemented",
+  "physical_device_acceptance": "UNKNOWN"
+}

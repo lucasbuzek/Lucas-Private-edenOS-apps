@@ -1,0 +1,496 @@
+{
+ "view": "side",
+ "canvas": [
+  280,
+  1400
+ ],
+ "joints": {
+  "Hips": [
+   140,
+   846
+  ],
+  "Spine": [
+   140,
+   758
+  ],
+  "Neck": [
+   140,
+   484
+  ],
+  "HeadTop": [
+   140,
+   147
+  ],
+  "RightUpperArm": [
+   109,
+   541
+  ],
+  "RightLowerArm": [
+   109,
+   719
+  ],
+  "RightHand": [
+   109,
+   872
+  ],
+  "RightHandTip": [
+   109,
+   961
+  ],
+  "LeftUpperArm": [
+   170,
+   541
+  ],
+  "LeftLowerArm": [
+   170,
+   719
+  ],
+  "LeftHand": [
+   170,
+   872
+  ],
+  "LeftHandTip": [
+   170,
+   961
+  ],
+  "RightUpperLeg": [
+   124,
+   859
+  ],
+  "RightLowerLeg": [
+   117,
+   1088
+  ],
+  "RightFoot": [
+   115,
+   1317
+  ],
+  "RightToe": [
+   97,
+   1374
+  ],
+  "LeftUpperLeg": [
+   155,
+   859
+  ],
+  "LeftLowerLeg": [
+   162,
+   1088
+  ],
+  "LeftFoot": [
+   164,
+   1317
+  ],
+  "LeftToe": [
+   182,
+   1374
+  ]
+ },
+ "parts": [
+  {
+   "name": "head",
+   "file": "zuri_side_head.png",
+   "z": 95,
+   "bone": [
+    "Neck",
+    "HeadTop"
+   ],
+   "origin": [
+    0,
+    120
+   ],
+   "size": [
+    280,
+    366
+   ],
+   "pivot": [
+    140.0,
+    364.0
+   ],
+   "pivotNorm": [
+    0.5,
+    0.994535519125683
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 337.0
+  },
+  {
+   "name": "chest",
+   "file": "zuri_side_chest.png",
+   "z": 40,
+   "bone": [
+    "Spine",
+    "Neck"
+   ],
+   "origin": [
+    98,
+    482
+   ],
+   "size": [
+    163,
+    332
+   ],
+   "pivot": [
+    42.0,
+    276.0
+   ],
+   "pivotNorm": [
+    0.25766871165644173,
+    0.8313253012048193
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 274.0
+  },
+  {
+   "name": "pelvis",
+   "file": "zuri_side_pelvis.png",
+   "z": 50,
+   "bone": [
+    "Hips",
+    "Spine"
+   ],
+   "origin": [
+    110,
+    759
+   ],
+   "size": [
+    67,
+    124
+   ],
+   "pivot": [
+    30.0,
+    87.0
+   ],
+   "pivotNorm": [
+    0.44776119402985076,
+    0.7016129032258065
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 88.0
+  },
+  {
+   "name": "rightUpperArm",
+   "file": "zuri_side_rightUpperArm.png",
+   "z": -10,
+   "bone": [
+    "RightUpperArm",
+    "RightLowerArm"
+   ],
+   "origin": [
+    0,
+    503
+   ],
+   "size": [
+    109,
+    238
+   ],
+   "pivot": [
+    109.0,
+    38.0
+   ],
+   "pivotNorm": [
+    1.0,
+    0.15966386554621848
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 178.0
+  },
+  {
+   "name": "rightLowerArm",
+   "file": "zuri_side_rightLowerArm.png",
+   "z": 25,
+   "bone": [
+    "RightLowerArm",
+    "RightHand"
+   ],
+   "origin": [
+    0,
+    719
+   ],
+   "size": [
+    109,
+    171
+   ],
+   "pivot": [
+    109.0,
+    0.0
+   ],
+   "pivotNorm": [
+    1.0,
+    0.0
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 153.0
+  },
+  {
+   "name": "rightHand",
+   "file": "zuri_side_rightHand.png",
+   "z": 35,
+   "bone": [
+    "RightHand",
+    "RightHandTip"
+   ],
+   "origin": [
+    109,
+    851
+   ],
+   "size": [
+    32,
+    118
+   ],
+   "pivot": [
+    0.0,
+    21.0
+   ],
+   "pivotNorm": [
+    0.0,
+    0.17796610169491525
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 89.0
+  },
+  {
+   "name": "leftUpperArm",
+   "file": "zuri_side_leftUpperArm.png",
+   "z": 35,
+   "bone": [
+    "LeftUpperArm",
+    "LeftLowerArm"
+   ],
+   "origin": [
+    121,
+    484
+   ],
+   "size": [
+    157,
+    257
+   ],
+   "pivot": [
+    49.0,
+    57.0
+   ],
+   "pivotNorm": [
+    0.31210191082802546,
+    0.22178988326848248
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 178.0
+  },
+  {
+   "name": "leftLowerArm",
+   "file": "zuri_side_leftLowerArm.png",
+   "z": 70,
+   "bone": [
+    "LeftLowerArm",
+    "LeftHand"
+   ],
+   "origin": [
+    103,
+    651
+   ],
+   "size": [
+    164,
+    237
+   ],
+   "pivot": [
+    67.0,
+    68.0
+   ],
+   "pivotNorm": [
+    0.40853658536585363,
+    0.2869198312236287
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 153.0
+  },
+  {
+   "name": "leftHand",
+   "file": "zuri_side_leftHand.png",
+   "z": 80,
+   "bone": [
+    "LeftHand",
+    "LeftHandTip"
+   ],
+   "origin": [
+    115,
+    809
+   ],
+   "size": [
+    119,
+    160
+   ],
+   "pivot": [
+    55.0,
+    63.0
+   ],
+   "pivotNorm": [
+    0.46218487394957986,
+    0.39375
+   ],
+   "restAngle": 1.5707963267948966,
+   "restLength": 89.0
+  },
+  {
+   "name": "rightThigh",
+   "file": "zuri_side_rightThigh.png",
+   "z": -15,
+   "bone": [
+    "RightUpperLeg",
+    "RightLowerLeg"
+   ],
+   "origin": [
+    101,
+    859
+   ],
+   "size": [
+    41,
+    245
+   ],
+   "pivot": [
+    23.0,
+    0.0
+   ],
+   "pivotNorm": [
+    0.5609756097560976,
+    0.0
+   ],
+   "restAngle": 1.601354497072396,
+   "restLength": 229.10696191953662
+  },
+  {
+   "name": "rightCalf",
+   "file": "zuri_side_rightCalf.png",
+   "z": -35,
+   "bone": [
+    "RightLowerLeg",
+    "RightFoot"
+   ],
+   "origin": [
+    100,
+    1060
+   ],
+   "size": [
+    46,
+    195
+   ],
+   "pivot": [
+    17.0,
+    28.0
+   ],
+   "pivotNorm": [
+    0.3695652173913043,
+    0.14358974358974358
+   ],
+   "restAngle": 1.5795297292033232,
+   "restLength": 229.0087334579186
+  },
+  {
+   "name": "rightShoe",
+   "file": "zuri_side_rightShoe.png",
+   "z": -25,
+   "bone": [
+    "RightFoot",
+    "RightToe"
+   ],
+   "origin": [
+    0,
+    1251
+   ],
+   "size": [
+    136,
+    145
+   ],
+   "pivot": [
+    115.0,
+    66.0
+   ],
+   "pivotNorm": [
+    0.8455882352941176,
+    0.45517241379310347
+   ],
+   "restAngle": 1.8766751981997487,
+   "restLength": 59.77457653551382
+  },
+  {
+   "name": "leftThigh",
+   "file": "zuri_side_leftThigh.png",
+   "z": 30,
+   "bone": [
+    "LeftUpperLeg",
+    "LeftLowerLeg"
+   ],
+   "origin": [
+    138,
+    859
+   ],
+   "size": [
+    110,
+    246
+   ],
+   "pivot": [
+    17.0,
+    0.0
+   ],
+   "pivotNorm": [
+    0.15454545454545454,
+    0.0
+   ],
+   "restAngle": 1.540238156517397,
+   "restLength": 229.10696191953662
+  },
+  {
+   "name": "leftCalf",
+   "file": "zuri_side_leftCalf.png",
+   "z": 10,
+   "bone": [
+    "LeftLowerLeg",
+    "LeftFoot"
+   ],
+   "origin": [
+    120,
+    1046
+   ],
+   "size": [
+    75,
+    209
+   ],
+   "pivot": [
+    42.0,
+    42.0
+   ],
+   "pivotNorm": [
+    0.56,
+    0.20095693779904306
+   ],
+   "restAngle": 1.56206292438647,
+   "restLength": 229.0087334579186
+  },
+  {
+   "name": "leftShoe",
+   "file": "zuri_side_leftShoe.png",
+   "z": 20,
+   "bone": [
+    "LeftFoot",
+    "LeftToe"
+   ],
+   "origin": [
+    132,
+    1251
+   ],
+   "size": [
+    148,
+    125
+   ],
+   "pivot": [
+    32.0,
+    66.0
+   ],
+   "pivotNorm": [
+    0.21621621621621623,
+    0.528
+   ],
+   "restAngle": 1.2649174553900444,
+   "restLength": 59.77457653551382
+  }
+ ]
+}

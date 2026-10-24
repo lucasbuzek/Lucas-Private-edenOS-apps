@@ -1,0 +1,9 @@
+SWAYcore recovery inventory — 2026-10-01
+Status: recovery inputs, not LKG promotion.
+ 18M	/Users/lucas/Downloads/SWAYcore BUILD143 working .zip
+91656508f6a61e9f08e59aa76a88778f3b08356543187c97ee51f5605a8222c2  /Users/lucas/Downloads/SWAYcore BUILD143 working .zip
+ 20M	/Users/lucas/Downloads/SWAYcore_0.9_BUILD148_SCALABLE_WORKOUT_AVATAR_CANDIDATE
+ 18M	/Users/lucas/Downloads/SWAYcore_0.9_BUILD151_ALPHA_AVATAR_CONVERGENCE.zip
+3c86122aba61345865befc4dc8ebc868cb552d841851e0c378a6b1e81e1c443c  /Users/lucas/Downloads/SWAYcore_0.9_BUILD151_ALPHA_AVATAR_CONVERGENCE.zip
+ 18M	/Users/lucas/Downloads/SWAYcore_0.9_BUILD153_FULL_FEATURE_ALPHA.zip
+b0831aca46a32cba9dbcb01df989784916df3f45a5f8f77badcb14df4d59a152  /Users/lucas/Downloads/SWAYcore_0.9_BUILD153_FULL_FEATURE_ALPHA.zip

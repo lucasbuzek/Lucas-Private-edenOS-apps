@@ -1,0 +1,19 @@
+SWAYcore Dance & Fitness R2 — YOUR DANCER avatar customisation + Lucia avatar repair. Use every available helper, plugin, subagent and image/asset tool. Work in this cloud environment only.
+
+STEP 0 (mandatory): Locate the SWAYcore R2 source in this repository (look for SWAYcore, SWAY, App/SWAY/Avatar/SWAYSkeletal2DAvatarView.swift, AssetFactory, SWAYHumanoid-v1). Report the exact path. If it is NOT present, STOP and report "SWAYcore source not in this repo" plus the top-level tree. Do not invent files.
+
+Evidence rules: GENERATED != IMPLEMENTED != BUILT != TESTED != VERIFIED != RELEASED. UNKNOWN is not PASS. No LKG or package promotion. Preserve SWAYHumanoid-v1 (23 joints), calibration order STEP INTO VIEW > WAVE LEFT > WAVE RIGHT > LIFT LEFT FOOT > LIFT RIGHT FOOT > JUMP > READY TO SWAY, and MATCH / NOT MATCHED / UNKNOWN tracking truth.
+
+Facts verified on the Mac today by Claude (outside the Codex sandbox):
+- The SwiftUI StateMacro plugin-server failure and the Blender 5.2.2 Metal crash (exit 139) were both caused by the nested Codex sandbox (sandbox-exec "Operation not permitted"). Outside it: iOS Simulator xcodebuild BUILD SUCCEEDED (0 errors); swift test SWAYcoreEngine 31/31; Blender runs; REPAIR_NATIVE_SKIN.command gates PASS.
+- App/SWAY/SWAY.entitlements is an empty dict; Tools/regression test_entitlements_present fails. Restoring com.apple.developer.healthkit (+ healthkit.access empty array) makes 58/58 pass. Restore it unless you find a documented reason it was emptied.
+
+PRIMARY TASK — YOUR DANCER customisation (currently FAIL), root cause found:
+App/SWAY/Avatar/SWAYSkeletal2DAvatarView.swift renders the user avatar from 4 pre-rendered PNG layers per pose (UserPoseNNDetail/Skin/Hair/Accent) tinted by colour only. bodyStyle, faceShape, hairStyle, footwearStyle, accessoryStyle, outfitStyle in SwayCharacterProfile (Models/Move.swift) are only read by the dead vector path drawCharacter, which must NOT be revived (authority forbids Canvas body primitives).
+Implement: per-style transparent PNG layers for every pose index used by illustratedPoseIndex (1..12), aligned to the existing pose framing; asset-catalog naming keyed by style (e.g. UserPoseNNHair_<style>, UserPoseNNShoes_<style>, UserPoseNNFace_<shape>, UserPoseNNAccessory_<style>, body variants); a loader in the view that selects layers from the profile with safe fallback; Create Avatar UI tabs Style/Hair/Face/Outfit/Body/Shoes must change what is drawn.
+Art direction: match the user's boards (136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION, 125-IRIS_BUILD113_ARTICULATED_ASSET_DIRECTION, 134-SWAY_GENERATED_UIX_ASSET_BOARD) and the existing App/ProductionAssets/Lucia part layers: stylised 3D-cartoon dancers, dark-pink SWAY palette. If those PNGs are in the repo use them; otherwise generate consistent art matching that description. Pilot first: 3 hairstyles + 2 shoe styles on all poses, then extend to face shapes, body types, outfits, accessories. Record provenance (user-owned generated art) in AssetFactory/PROVENANCE.
+Tests: a regression that fails before and passes after, proving each profile field changes the resolved layer set for every pose; profile persistence/reload still passes.
+
+SECONDARY: Lucia instructor — numerical/USD gates already PASS (22 stages, worst joint error 0.000502 m < 0.001 m) but readability is weak: shallow squat/lunge, weak turn/body-roll. Improve those clips without lowering any deformation gate; render contact sheets for human review. visualQuality stays UNREVIEWED.
+
+Deliver: diff/PR, tests, contact sheets or renders of every new layer combination, a receipt listing each gate as PASS/FAIL/UNKNOWN, and what still needs the Mac (xcodebuild, simulator, physical iPhone 15 Pro Max).

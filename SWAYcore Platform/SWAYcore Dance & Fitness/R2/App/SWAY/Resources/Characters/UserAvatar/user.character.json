@@ -1,0 +1,63 @@
+{
+  "characterID": "user",
+  "version": 2,
+  "renderer": "realitykit",
+  "assetBaseName": "UserAvatarReality",
+  "skeletonContract": "SWAYHumanoid-v1",
+  "rootJoint": "Root",
+  "hipsJoint": "Hips",
+  "authoredBPM": 120,
+  "runtimeApproved": false,
+  "animations": {
+    "idle": {
+      "resource": "sway_idle_v1",
+      "beatsPerCycle": 4,
+      "loop": true
+    },
+    "march": {
+      "resource": "sway_march_v1",
+      "beatsPerCycle": 2,
+      "loop": true
+    },
+    "step-touch": {
+      "resource": "sway_step_touch_v1",
+      "beatsPerCycle": 4,
+      "loop": true
+    },
+    "grapevine": {
+      "resource": "sway_grapevine_v1",
+      "beatsPerCycle": 4,
+      "loop": true
+    },
+    "knee": {
+      "resource": "sway_knee_lift_v1",
+      "beatsPerCycle": 2,
+      "loop": true
+    },
+    "squat-pulse": {
+      "resource": "sway_squat_v1",
+      "beatsPerCycle": 2,
+      "loop": true
+    },
+    "side-lunge": {
+      "resource": "sway_side_lunge_v1",
+      "beatsPerCycle": 4,
+      "loop": true
+    },
+    "jumping-jack": {
+      "resource": "sway_jumping_jack_v1",
+      "beatsPerCycle": 2,
+      "loop": true
+    },
+    "body-roll": {
+      "resource": "sway_body_roll_v1",
+      "beatsPerCycle": 4,
+      "loop": true
+    },
+    "pivot-turn": {
+      "resource": "sway_pivot_turn_v1",
+      "beatsPerCycle": 4,
+      "loop": true
+    }
+  }
+}

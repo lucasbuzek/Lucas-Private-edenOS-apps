@@ -1,0 +1,17 @@
+{
+  "evidenceStates": {
+    "BUILD": "UNKNOWN",
+    "IMPLEMENTED": "source present",
+    "PHYSICAL": "UNKNOWN",
+    "RELEASE": "NO",
+    "SIMULATOR": "UNKNOWN",
+    "STATIC PASS": "see Build/report or run VERIFY_ALL"
+  },
+  "fileCount": 778,
+  "name": "SWAYcore",
+  "note": "Manifest states are NOT evidence of build/test success.",
+  "package": "recovery-R2",
+  "source": "SWAYcore_CLAUDE_CURATED_HANDOFF_2026-10-04.zip (preserved under Reference/)",
+  "treeSha256": "8d91e2e9cccdb0ee3ef420588d290873d011a5c5de93032740974da403122dc8",
+  "version": "R2-0.1.0"
+}

@@ -1,0 +1,20 @@
+# Unresolved items (nothing here is claimed done)
+
+| ID | Item | State | Why / next action |
+|---|---|---|---|
+| U-01 | **Production characters (Lucia, Nandi, Thabo, Zuri, Kyle, YOUR DANCER)** | NOT CREATED | Needs a legal base model. Human step: download a CC0 base (candidate: Quaternius Universal Base Characters), save its licence text, run `register_source.py` with explicit rights confirmation, then `BUILD_ASSETS.command --base <file> --ledger-id <id>`. Then a human visual review. The retarget map's bone names are an assumption until a real pack is inspected. |
+| U-02 | Swift compile of everything | UNKNOWN | Never run (no Swift here). First gate on the Mac. The engine package, the rewired calibration view, `SwayMatchState.notMatched`, and `SWAYSmokeTests` are the highest-risk new code. |
+| U-03 | Blender scripts (convert/bake/validate/export) | UNKNOWN | Never run. `BUILD_ASSETS.command --technical-proof` exercises bake/validate/export on the Build 153 rig and is the recommended first Blender run. |
+| U-04 | HealthKit entitlement | CHANGED, UNVERIFIED | The as-received entitlements file was empty although HealthKit is used (found by the baseline test). Added `com.apple.developer.healthkit`. Automatic signing must be able to provision it for team XZ4VRP5S5G; if signing complains, enable HealthKit for the App ID. MusicKit needs the App ID service enabled in the developer account (not an entitlement key). |
+| U-05 | New calibration thresholds | UNTUNED | Legacy thresholds kept. New: wave jitter deadband 0.004 and decay 0.995, jump baseline follower 0.0007/frame, 60 s stage timeout. These change gesture sensitivity and need physical confirmation. Legacy wave logic summed all motion, so jitter could eventually pass WAVE. |
+| U-06 | Left/right orientation of calibration | UNKNOWN | Inherited from Build 147 behaviour; not changed. Confirm on device. |
+| U-07 | `notMatched` scoring change (D-003) | BEHAVIOUR CHANGE | Previously a poor but well-observed pose showed "TRACKING" and never counted; now it shows NOT MATCHED, counts toward the average, and lowers combo like PARTIAL. Product owner should confirm this is wanted. |
+| U-08 | Workout end is driven by a 1 s wall-clock task (`activeClock`) | NOTED, UNCHANGED | It decides when the workout finishes, not choreography/cues/scoring. Authority forbids independent timers advancing those; it does not advance them. Consider deriving it from the timeline in a later pass. |
+| U-09 | 6 of 26 coach pose cases not ported (`jazz-square`, `kick-ball-change`, `lateral-hop`, `power-knee`, `salsa-basic`, `turning-grapevine`) | NOT BAKED | They are not among the 20 authored moves in the protected list. Port after the 20 are accepted. |
+| U-10 | Apple Vision 3D pose, RealityKit IK/retargeting, Core ML | NOT ADOPTED | Evaluated by documentation only. See research report. |
+| U-11 | Performance measurements (frame time, thermal, memory, load, USDZ size) | NOT MEASURED | Needs a device. Asset validator records triangle count, height, clip sizes. Budget used: 60k triangles per character (new decision). |
+| U-12 | Xcode DeviceSupport incident root cause | UNKNOWN | Guard only; see research report section 8. |
+| U-13 | UI/UX redesign against reference products | NOT DONE | Existing candidate UI preserved. |
+| U-14 | Record Me / Record SWAY, Beats analysis, MusicKit, Shazam, Health on device | UNKNOWN | Present in candidate source (static check only); historical device evidence for Build 143/147 is in the handoff, none generated here. |
+| U-15 | `App/SWAY.xcodeproj` as received was stale (target membership drift risk) | REPLACED BY GENERATION | Moved to `Reference/as_received_stale_xcodeproj/`; the builder regenerates from `project.yml`. |
+| U-16 | A separate earlier "cold-start reconstruction" package (different joint names, different movement model) was produced before this handoff | SUPERSEDED | Do not merge it. Its joint naming contradicts SWAYHumanoid-v1 and its Pose/Movement types are not the app's. |

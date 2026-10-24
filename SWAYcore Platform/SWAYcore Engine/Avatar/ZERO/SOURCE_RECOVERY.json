@@ -1,0 +1,11 @@
+{
+  "status": "SOURCE_LOCATED_RUNTIME_UNVERIFIED",
+  "canonical_source": "/Users/lucas/edenOS/Software Development/SWAYcore Platform/SWAYcore Dance & Fitness/R2/App/SWAY/Views/StickFigureView.swift",
+  "canonical_sha256": "2e7959c442b8a21a6c37511a5526e05ef06d107ca290b325851969058f15c339",
+  "historical_reference": "/Users/lucas/edenOS/Software Development/SWAYcore Platform/SWAYcore Dance & Fitness/R2/Reference/LKG_Build143_Selected_extracted/SWAY/Views/StickFigureView.swift",
+  "historical_sha256": "ba62bfd7a0ee2e4c09ac0b55aae6fe69f67c719a7c64d462b927dbb661eeb533",
+  "engine_package": "/Users/lucas/edenOS/Software Development/SWAYcore Platform/SWAYcore Dance & Fitness/R2/Packages/SWAYcoreEngine",
+  "policy": "Do not duplicate or relocate original source until integration and tests are verified",
+  "original_overnight_build": "UNKNOWN",
+  "lkg": "NONE"
+}

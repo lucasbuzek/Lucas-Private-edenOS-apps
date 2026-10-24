@@ -1,0 +1,496 @@
+{
+ "view": "front",
+ "canvas": [
+  500,
+  1420
+ ],
+ "joints": {
+  "Hips": [
+   256,
+   760
+  ],
+  "Spine": [
+   256,
+   690
+  ],
+  "Neck": [
+   256,
+   445
+  ],
+  "HeadTop": [
+   256,
+   60
+  ],
+  "RightUpperArm": [
+   156,
+   490
+  ],
+  "RightLowerArm": [
+   111,
+   640
+  ],
+  "RightHand": [
+   84,
+   772
+  ],
+  "RightHandTip": [
+   83,
+   877
+  ],
+  "LeftUpperArm": [
+   368,
+   490
+  ],
+  "LeftLowerArm": [
+   403,
+   640
+  ],
+  "LeftHand": [
+   437,
+   772
+  ],
+  "LeftHandTip": [
+   440,
+   872
+  ],
+  "RightUpperLeg": [
+   200,
+   790
+  ],
+  "RightLowerLeg": [
+   180,
+   1015
+  ],
+  "RightFoot": [
+   132,
+   1240
+  ],
+  "RightToe": [
+   100,
+   1355
+  ],
+  "LeftUpperLeg": [
+   312,
+   790
+  ],
+  "LeftLowerLeg": [
+   335,
+   1015
+  ],
+  "LeftFoot": [
+   392,
+   1240
+  ],
+  "LeftToe": [
+   430,
+   1355
+  ]
+ },
+ "parts": [
+  {
+   "name": "head",
+   "file": "lucia_front_head.png",
+   "z": 60,
+   "bone": [
+    "Neck",
+    "HeadTop"
+   ],
+   "origin": [
+    136,
+    50
+   ],
+   "size": [
+    256,
+    472
+   ],
+   "pivot": [
+    120.0,
+    395.0
+   ],
+   "pivotNorm": [
+    0.46875,
+    0.836864406779661
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 385.0
+  },
+  {
+   "name": "chest",
+   "file": "lucia_front_chest.png",
+   "z": 40,
+   "bone": [
+    "Spine",
+    "Neck"
+   ],
+   "origin": [
+    161,
+    403
+   ],
+   "size": [
+    201,
+    390
+   ],
+   "pivot": [
+    95.0,
+    287.0
+   ],
+   "pivotNorm": [
+    0.472636815920398,
+    0.735897435897436
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 245.0
+  },
+  {
+   "name": "pelvis",
+   "file": "lucia_front_pelvis.png",
+   "z": 50,
+   "bone": [
+    "Hips",
+    "Spine"
+   ],
+   "origin": [
+    127,
+    692
+   ],
+   "size": [
+    280,
+    182
+   ],
+   "pivot": [
+    129.0,
+    68.0
+   ],
+   "pivotNorm": [
+    0.4607142857142857,
+    0.37362637362637363
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 70.0
+  },
+  {
+   "name": "rightUpperArm",
+   "file": "lucia_front_rightUpperArm.png",
+   "z": 35,
+   "bone": [
+    "RightUpperArm",
+    "RightLowerArm"
+   ],
+   "origin": [
+    87,
+    446
+   ],
+   "size": [
+    112,
+    227
+   ],
+   "pivot": [
+    69.0,
+    44.0
+   ],
+   "pivotNorm": [
+    0.6160714285714286,
+    0.19383259911894274
+   ],
+   "restAngle": 1.8622531212727638,
+   "restLength": 156.60459763365824
+  },
+  {
+   "name": "rightLowerArm",
+   "file": "lucia_front_rightLowerArm.png",
+   "z": 90,
+   "bone": [
+    "RightLowerArm",
+    "RightHand"
+   ],
+   "origin": [
+    58,
+    640
+   ],
+   "size": [
+    90,
+    148
+   ],
+   "pivot": [
+    53.0,
+    0.0
+   ],
+   "pivotNorm": [
+    0.5888888888888889,
+    0.0
+   ],
+   "restAngle": 1.7725586711151837,
+   "restLength": 134.73306943731373
+  },
+  {
+   "name": "rightHand",
+   "file": "lucia_front_rightHand.png",
+   "z": 70,
+   "bone": [
+    "RightHand",
+    "RightHandTip"
+   ],
+   "origin": [
+    53,
+    747
+   ],
+   "size": [
+    60,
+    156
+   ],
+   "pivot": [
+    31.0,
+    25.0
+   ],
+   "pivotNorm": [
+    0.5166666666666667,
+    0.16025641025641027
+   ],
+   "restAngle": 1.5803198483885095,
+   "restLength": 105.00476179678711
+  },
+  {
+   "name": "leftUpperArm",
+   "file": "lucia_front_leftUpperArm.png",
+   "z": 35,
+   "bone": [
+    "LeftUpperArm",
+    "LeftLowerArm"
+   ],
+   "origin": [
+    322,
+    446
+   ],
+   "size": [
+    117,
+    226
+   ],
+   "pivot": [
+    46.0,
+    44.0
+   ],
+   "pivotNorm": [
+    0.39316239316239315,
+    0.19469026548672566
+   ],
+   "restAngle": 1.3415643935179014,
+   "restLength": 154.02921800749363
+  },
+  {
+   "name": "leftLowerArm",
+   "file": "lucia_front_leftLowerArm.png",
+   "z": 90,
+   "bone": [
+    "LeftLowerArm",
+    "LeftHand"
+   ],
+   "origin": [
+    381,
+    640
+   ],
+   "size": [
+    85,
+    149
+   ],
+   "pivot": [
+    22.0,
+    0.0
+   ],
+   "pivotNorm": [
+    0.25882352941176473,
+    0.0
+   ],
+   "restAngle": 1.3187003461268225,
+   "restLength": 136.3084736911099
+  },
+  {
+   "name": "leftHand",
+   "file": "lucia_front_leftHand.png",
+   "z": 70,
+   "bone": [
+    "LeftHand",
+    "LeftHandTip"
+   ],
+   "origin": [
+    410,
+    748
+   ],
+   "size": [
+    60,
+    154
+   ],
+   "pivot": [
+    27.0,
+    24.0
+   ],
+   "pivotNorm": [
+    0.45,
+    0.15584415584415584
+   ],
+   "restAngle": 1.5408053219380187,
+   "restLength": 100.04498987955368
+  },
+  {
+   "name": "rightThigh",
+   "file": "lucia_front_rightThigh.png",
+   "z": 30,
+   "bone": [
+    "RightUpperLeg",
+    "RightLowerLeg"
+   ],
+   "origin": [
+    93,
+    706
+   ],
+   "size": [
+    192,
+    340
+   ],
+   "pivot": [
+    107.0,
+    84.0
+   ],
+   "pivotNorm": [
+    0.5572916666666666,
+    0.24705882352941178
+   ],
+   "restAngle": 1.659452208662334,
+   "restLength": 225.88713996153035
+  },
+  {
+   "name": "rightCalf",
+   "file": "lucia_front_rightCalf.png",
+   "z": 10,
+   "bone": [
+    "RightLowerLeg",
+    "RightFoot"
+   ],
+   "origin": [
+    69,
+    956
+   ],
+   "size": [
+    163,
+    313
+   ],
+   "pivot": [
+    111.0,
+    59.0
+   ],
+   "pivotNorm": [
+    0.6809815950920245,
+    0.18849840255591055
+   ],
+   "restAngle": 1.7809789134570662,
+   "restLength": 230.0630348404541
+  },
+  {
+   "name": "rightShoe",
+   "file": "lucia_front_rightShoe.png",
+   "z": 20,
+   "bone": [
+    "RightFoot",
+    "RightToe"
+   ],
+   "origin": [
+    35,
+    1240
+   ],
+   "size": [
+    128,
+    154
+   ],
+   "pivot": [
+    97.0,
+    0.0
+   ],
+   "pivotNorm": [
+    0.7578125,
+    0.0
+   ],
+   "restAngle": 1.8421916075965323,
+   "restLength": 119.36917525056458
+  },
+  {
+   "name": "leftThigh",
+   "file": "lucia_front_leftThigh.png",
+   "z": 30,
+   "bone": [
+    "LeftUpperLeg",
+    "LeftLowerLeg"
+   ],
+   "origin": [
+    228,
+    706
+   ],
+   "size": [
+    206,
+    337
+   ],
+   "pivot": [
+    84.0,
+    84.0
+   ],
+   "pivotNorm": [
+    0.4077669902912621,
+    0.24925816023738873
+   ],
+   "restAngle": 1.468927941820104,
+   "restLength": 226.1725005388586
+  },
+  {
+   "name": "leftCalf",
+   "file": "lucia_front_leftCalf.png",
+   "z": 10,
+   "bone": [
+    "LeftLowerLeg",
+    "LeftFoot"
+   ],
+   "origin": [
+    297,
+    967
+   ],
+   "size": [
+    162,
+    302
+   ],
+   "pivot": [
+    38.0,
+    48.0
+   ],
+   "pivotNorm": [
+    0.2345679012345679,
+    0.15894039735099338
+   ],
+   "restAngle": 1.32268287769822,
+   "restLength": 232.1077336066164
+  },
+  {
+   "name": "leftShoe",
+   "file": "lucia_front_leftShoe.png",
+   "z": 20,
+   "bone": [
+    "LeftFoot",
+    "LeftToe"
+   ],
+   "origin": [
+    362,
+    1240
+   ],
+   "size": [
+    115,
+    155
+   ],
+   "pivot": [
+    30.0,
+    0.0
+   ],
+   "pivotNorm": [
+    0.2608695652173913,
+    0.0
+   ],
+   "restAngle": 1.2516567325226096,
+   "restLength": 121.1156472137271
+  }
+ ]
+}

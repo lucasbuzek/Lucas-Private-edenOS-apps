@@ -1,0 +1,7 @@
+DEFECT D-002 reproduced: 1/4 joints -> good total=0.900
+.DEFECT D-001 reproduced: zero joint overlap -> partial total=0.585
+.
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK

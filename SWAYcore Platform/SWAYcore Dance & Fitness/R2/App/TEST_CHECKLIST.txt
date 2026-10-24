@@ -1,0 +1,21 @@
+SWAYcore BUILD 83 — PHYSICAL TEST CHECKLIST
+===========================================
+
+[ ] App builds, signs, installs and launches standalone.
+[ ] Display name shows SWAYcore.
+[ ] Welcome / Quick Setup appears correctly on a fresh first run.
+[ ] Move Complexity can be selected without describing the user as a level.
+[ ] Camera permission path succeeds.
+[ ] Calibration requires: Step Into View -> Wave Left -> Wave Right -> Lift Left Foot
+    -> Lift Right Foot -> Jump (or Low Impact alternative) -> Ready to SWAY.
+[ ] Black/no-frame camera state cannot falsely complete calibration.
+[ ] COACH visibly moves continuously.
+[ ] Simple starting choreography feels slower/easier than Build 82.
+[ ] YOU tracking follows actual body movement.
+[ ] Beat/downbeat visual pulses remain synchronized with COACH.
+[ ] Easier / Harder changes choreography complexity appropriately.
+[ ] Pause/resume preserves the session and timing.
+[ ] Workout completes and result/progress persists.
+[ ] Profile/Settings remains reachable through the existing accepted icon/path.
+
+Record UNKNOWN rather than PASS for anything not physically observed.

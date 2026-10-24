@@ -1,0 +1,30 @@
+{
+  "_doc": "Maps UE-mannequin-style humanoid bone names (used by the Quaternius Universal Base Characters / Universal Animation Library rig family, CC0) onto SWAYHumanoid-v1. Matching is case-insensitive and tolerant of _l/_L/.L suffixes. EXACT bone names in the downloaded pack are DISCOVERED at conversion time and any of the 23 contract joints left unmapped makes conversion FAIL (never guessed).",
+  "contract": "SWAYHumanoid-v1",
+  "map": {
+    "Root": ["root"],
+    "Hips": ["pelvis"],
+    "Spine": ["spine_01"],
+    "Spine1": ["spine_02"],
+    "Chest": ["spine_03", "chest"],
+    "Neck": ["neck_01", "neck"],
+    "Head": ["head"],
+    "LeftShoulder": ["clavicle_l"],
+    "LeftUpperArm": ["upperarm_l"],
+    "LeftLowerArm": ["lowerarm_l", "forearm_l"],
+    "LeftHand": ["hand_l"],
+    "RightShoulder": ["clavicle_r"],
+    "RightUpperArm": ["upperarm_r"],
+    "RightLowerArm": ["lowerarm_r", "forearm_r"],
+    "RightHand": ["hand_r"],
+    "LeftUpperLeg": ["thigh_l"],
+    "LeftLowerLeg": ["calf_l", "shin_l"],
+    "LeftFoot": ["foot_l"],
+    "LeftToe": ["ball_l", "toe_l"],
+    "RightUpperLeg": ["thigh_r"],
+    "RightLowerLeg": ["calf_r", "shin_r"],
+    "RightFoot": ["foot_r"],
+    "RightToe": ["ball_r", "toe_r"]
+  },
+  "weightMergeRule": "Every deform bone that is not one of the 23 contract joints (fingers, twist, jaw, eyes, extra spine/neck) has its vertex weights added to its nearest mapped ANCESTOR, then limited to 4 influences and normalised."
+}

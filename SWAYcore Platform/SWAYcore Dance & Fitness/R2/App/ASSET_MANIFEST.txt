@@ -1,0 +1,21 @@
+SWAYcore 0.9 Build 120 candidate — runtime asset manifest
+
+P1A LUCIA AUTHORED ARTICULATED COMPONENTS
+- Rig_lucia_head
+- Rig_lucia_hairBack / Rig_lucia_hairFront
+- Rig_lucia_torso / Rig_lucia_pelvis
+- Rig_lucia_leftUpperArm / rightUpperArm
+- Rig_lucia_leftLowerArm / rightLowerArm
+- Rig_lucia_leftHand / rightHand
+- Rig_lucia_leftThigh / rightThigh
+- Rig_lucia_leftCalf / rightCalf
+- Rig_lucia_leftShoe / rightShoe
+
+Lucia runtime does not substitute generic body-part artwork for authored slots.
+All components are driven by SwayCoachPoseEngine; full-body pose-frame runtime assets are prohibited.
+
+USER AVATAR
+The current custom-user path still uses neutral articulated masks and tinting. This remains a P1B production gate and is not represented as complete.
+
+DESIGN REFERENCES
+Files under DesignReferences are development/reference evidence only and are not runtime production assets.

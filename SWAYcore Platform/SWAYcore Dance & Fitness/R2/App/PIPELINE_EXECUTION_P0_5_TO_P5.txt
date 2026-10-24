@@ -1,0 +1,26 @@
+SWAYcore PIPELINE EXECUTION CHECKPOINT
+Date: 2026-09-27
+Requested sequence: P0.5 -> P1 -> P2 -> P3 -> P4 -> P5
+
+P0 PRODUCT CANON: COMPLETE
+P0.5 PERMANENT CORE ARCHITECTURE + DATA CONTRACTS: IMPLEMENTED / SOURCE CHECKPOINT
+- SwayPackage upgraded to v2 extensible content envelope.
+- Content origin supports bundled/userCreated/directShare/officialPack/community/studio.
+- Content kind supports move/variation/combination/routine/workout/challenge/program/character/avatar/beats/mixed.
+- Dependencies and minimum SWAYcore version represented.
+- Same package contract is used for Alpha direct sharing and intended future network distribution.
+- Package validation rejects unsupported versions/formats, duplicate IDs, invalid movement data and excessive item counts.
+- Share Sheet export remains local-first.
+- .swaypack open/import path added at app scene boundary.
+- Project/build version authority mismatch corrected for next candidate.
+
+P1A LUCIA PRODUCTION RIG: BLOCKED / NOT COMPLETE
+Reason: physical-device evidence and direct asset inspection confirm the current Lucia images are cropped source fragments with contamination/insufficient clean joint overlap. They do not meet the accepted production-rig requirement. IRIS boards generated so far are visual specifications, not independent runtime parts. A truthful P1A pass requires independent transparent Lucia head/hair/torso/pelvis/upper+lower limbs/hands/legs/footwear assets with controlled pivots and overlap.
+
+P1B USER AVATAR PRODUCTION LIBRARY: NOT ENTERED (depends on common P1A rig contract)
+P2 CORE FUNCTIONAL CONVERGENCE: NOT PROMOTED (substantial implementation exists, but sequential gate not reached)
+P3 PRODUCTION UIX: NOT PROMOTED
+P4 ALPHA ENGINEERING: NOT PROMOTED
+P5 FUNCTIONAL ALPHA: NOT PROMOTED
+
+IMPORTANT: This checkpoint deliberately does not label P5 complete. Doing so would violate the accepted Alpha gate and repeat the preproduction-asset fault already identified on device.

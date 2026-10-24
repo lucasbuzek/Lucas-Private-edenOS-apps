@@ -1,0 +1,127 @@
+kyle_back            | rest        | PASS
+kyle_back            | arms out    | PASS
+kyle_back            | arms up     | PASS
+kyle_back            | point+knee  | FAIL hole=3749px
+kyle_back            | squat       | FAIL hole=13823px
+kyle_back            | lean+hip    | FAIL hole=1144px
+FAIL: 3 of 6 rig poses failed articulation
+kyle_front           | rest        | PASS
+kyle_front           | arms out    | PASS
+kyle_front           | arms up     | PASS
+kyle_front           | point+knee  | PASS
+kyle_front           | squat       | PASS
+kyle_front           | lean+hip    | FAIL hole=2472px
+FAIL: 1 of 6 rig poses failed articulation
+kyle_side            | rest        | FAIL components=2
+kyle_side            | arms out    | FAIL components=3
+kyle_side            | arms up     | FAIL components=3, hole=614px
+kyle_side            | point+knee  | FAIL components=6, hole=242px
+kyle_side            | squat       | FAIL components=5, hole=8851px
+kyle_side            | lean+hip    | FAIL components=4
+FAIL: 6 of 6 rig poses failed articulation
+lucia_back           | rest        | FAIL hole=5935px
+lucia_back           | arms out    | PASS
+lucia_back           | arms up     | FAIL components=3
+lucia_back           | point+knee  | FAIL components=2
+lucia_back           | squat       | FAIL hole=27767px
+lucia_back           | lean+hip    | PASS
+FAIL: 4 of 6 rig poses failed articulation
+lucia_front          | rest        | FAIL hole=73px
+lucia_front          | arms out    | PASS
+lucia_front          | arms up     | FAIL components=2
+lucia_front          | point+knee  | FAIL hole=91px
+lucia_front          | squat       | FAIL hole=28929px
+lucia_front          | lean+hip    | PASS
+FAIL: 4 of 6 rig poses failed articulation
+lucia_side           | rest        | PASS
+lucia_side           | arms out    | FAIL hole=2754px
+lucia_side           | arms up     | FAIL hole=2971px
+lucia_side           | point+knee  | FAIL components=2
+lucia_side           | squat       | FAIL components=2, hole=12843px
+lucia_side           | lean+hip    | FAIL components=2, hole=2026px
+FAIL: 5 of 6 rig poses failed articulation
+nandi_back           | rest        | FAIL components=4
+nandi_back           | arms out    | FAIL components=4
+nandi_back           | arms up     | FAIL components=4
+nandi_back           | point+knee  | FAIL components=2, hole=2257px
+nandi_back           | squat       | FAIL components=2
+nandi_back           | lean+hip    | FAIL components=3
+FAIL: 6 of 6 rig poses failed articulation
+nandi_front          | rest        | FAIL components=2, hole=3199px
+nandi_front          | arms out    | FAIL components=2, hole=727px
+nandi_front          | arms up     | FAIL components=2, hole=727px
+nandi_front          | point+knee  | FAIL components=3, hole=670px
+nandi_front          | squat       | FAIL components=3, hole=26397px
+nandi_front          | lean+hip    | FAIL components=2, hole=668px
+FAIL: 6 of 6 rig poses failed articulation
+nandi_side           | rest        | FAIL components=3
+nandi_side           | arms out    | FAIL components=6
+nandi_side           | arms up     | FAIL components=5
+nandi_side           | point+knee  | FAIL components=7
+nandi_side           | squat       | FAIL components=5, hole=19264px
+nandi_side           | lean+hip    | FAIL components=7
+FAIL: 6 of 6 rig poses failed articulation
+thabo_back           | rest        | PASS
+thabo_back           | arms out    | FAIL components=3, hole=2727px
+thabo_back           | arms up     | FAIL components=2, hole=775px
+thabo_back           | point+knee  | FAIL components=3
+thabo_back           | squat       | FAIL components=2, hole=4019px, area=84.0%
+thabo_back           | lean+hip    | FAIL components=3, hole=97px
+FAIL: 5 of 6 rig poses failed articulation
+thabo_front          | rest        | PASS
+thabo_front          | arms out    | FAIL components=2
+thabo_front          | arms up     | FAIL components=3
+thabo_front          | point+knee  | FAIL components=4
+thabo_front          | squat       | FAIL components=3, hole=9923px
+thabo_front          | lean+hip    | FAIL components=2
+FAIL: 5 of 6 rig poses failed articulation
+thabo_side           | rest        | FAIL components=3, hole=458px
+thabo_side           | arms out    | FAIL components=3, hole=3523px
+thabo_side           | arms up     | FAIL components=2, hole=3523px
+thabo_side           | point+knee  | FAIL components=4
+thabo_side           | squat       | FAIL components=3
+thabo_side           | lean+hip    | FAIL components=5
+FAIL: 6 of 6 rig poses failed articulation
+yourDancer_back      | rest        | PASS
+yourDancer_back      | arms out    | PASS
+yourDancer_back      | arms up     | PASS
+yourDancer_back      | point+knee  | FAIL hole=3749px
+yourDancer_back      | squat       | FAIL hole=13823px
+yourDancer_back      | lean+hip    | FAIL hole=1144px
+FAIL: 3 of 6 rig poses failed articulation
+yourDancer_front     | rest        | PASS
+yourDancer_front     | arms out    | PASS
+yourDancer_front     | arms up     | PASS
+yourDancer_front     | point+knee  | PASS
+yourDancer_front     | squat       | PASS
+yourDancer_front     | lean+hip    | FAIL hole=2472px
+FAIL: 1 of 6 rig poses failed articulation
+yourDancer_side      | rest        | FAIL components=2
+yourDancer_side      | arms out    | FAIL components=3
+yourDancer_side      | arms up     | FAIL components=3, hole=614px
+yourDancer_side      | point+knee  | FAIL components=6, hole=242px
+yourDancer_side      | squat       | FAIL components=5, hole=8825px
+yourDancer_side      | lean+hip    | FAIL components=4, hole=161px
+FAIL: 6 of 6 rig poses failed articulation
+zuri_back            | rest        | FAIL hole=1870px
+zuri_back            | arms out    | PASS
+zuri_back            | arms up     | PASS
+zuri_back            | point+knee  | FAIL hole=288px
+zuri_back            | squat       | FAIL hole=6595px, area=83.5%
+zuri_back            | lean+hip    | FAIL hole=2237px
+FAIL: 4 of 6 rig poses failed articulation
+zuri_front           | rest        | FAIL components=2, hole=5522px
+zuri_front           | arms out    | FAIL components=2
+zuri_front           | arms up     | FAIL components=3, hole=352px
+zuri_front           | point+knee  | FAIL components=3, hole=1987px
+zuri_front           | squat       | FAIL components=3, hole=24497px
+zuri_front           | lean+hip    | FAIL components=2
+FAIL: 6 of 6 rig poses failed articulation
+zuri_side            | rest        | FAIL components=3
+zuri_side            | arms out    | FAIL components=3, hole=251px
+zuri_side            | arms up     | FAIL components=3
+zuri_side            | point+knee  | FAIL components=4
+zuri_side            | squat       | FAIL components=5, hole=13341px
+zuri_side            | lean+hip    | FAIL components=4
+FAIL: 6 of 6 rig poses failed articulation
+FAIL: articulation defects in 18 of 18 rigs

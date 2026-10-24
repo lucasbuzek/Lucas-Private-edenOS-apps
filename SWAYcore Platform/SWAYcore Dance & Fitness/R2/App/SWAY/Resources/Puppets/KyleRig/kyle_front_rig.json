@@ -1,0 +1,496 @@
+{
+ "view": "front",
+ "canvas": [
+  360,
+  1400
+ ],
+ "joints": {
+  "Hips": [
+   180,
+   820
+  ],
+  "Spine": [
+   180,
+   728
+  ],
+  "Neck": [
+   180,
+   447
+  ],
+  "HeadTop": [
+   180,
+   100
+  ],
+  "RightUpperArm": [
+   69,
+   506
+  ],
+  "RightLowerArm": [
+   56,
+   689
+  ],
+  "RightHand": [
+   49,
+   846
+  ],
+  "RightHandTip": [
+   47,
+   938
+  ],
+  "LeftUpperArm": [
+   290,
+   506
+  ],
+  "LeftLowerArm": [
+   303,
+   689
+  ],
+  "LeftHand": [
+   310,
+   846
+  ],
+  "LeftHandTip": [
+   312,
+   938
+  ],
+  "RightUpperLeg": [
+   126,
+   833
+  ],
+  "RightLowerLeg": [
+   117,
+   1069
+  ],
+  "RightFoot": [
+   113,
+   1304
+  ],
+  "RightToe": [
+   90,
+   1363
+  ],
+  "LeftUpperLeg": [
+   233,
+   833
+  ],
+  "LeftLowerLeg": [
+   242,
+   1069
+  ],
+  "LeftFoot": [
+   246,
+   1304
+  ],
+  "LeftToe": [
+   269,
+   1363
+  ]
+ },
+ "parts": [
+  {
+   "name": "head",
+   "file": "kyle_front_head.png",
+   "z": 95,
+   "bone": [
+    "Neck",
+    "HeadTop"
+   ],
+   "origin": [
+    29,
+    72
+   ],
+   "size": [
+    303,
+    377
+   ],
+   "pivot": [
+    151.0,
+    375.0
+   ],
+   "pivotNorm": [
+    0.49834983498349833,
+    0.9946949602122016
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 347.0
+  },
+  {
+   "name": "chest",
+   "file": "kyle_front_chest.png",
+   "z": 40,
+   "bone": [
+    "Spine",
+    "Neck"
+   ],
+   "origin": [
+    29,
+    445
+   ],
+   "size": [
+    303,
+    435
+   ],
+   "pivot": [
+    151.0,
+    283.0
+   ],
+   "pivotNorm": [
+    0.49834983498349833,
+    0.6505747126436782
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 281.0
+  },
+  {
+   "name": "pelvis",
+   "file": "kyle_front_pelvis.png",
+   "z": 50,
+   "bone": [
+    "Hips",
+    "Spine"
+   ],
+   "origin": [
+    98,
+    730
+   ],
+   "size": [
+    164,
+    163
+   ],
+   "pivot": [
+    82.0,
+    90.0
+   ],
+   "pivotNorm": [
+    0.5,
+    0.5521472392638037
+   ],
+   "restAngle": -1.5707963267948966,
+   "restLength": 92.0
+  },
+  {
+   "name": "rightUpperArm",
+   "file": "kyle_front_rightUpperArm.png",
+   "z": 35,
+   "bone": [
+    "RightUpperArm",
+    "RightLowerArm"
+   ],
+   "origin": [
+    0,
+    444
+   ],
+   "size": [
+    132,
+    268
+   ],
+   "pivot": [
+    69.0,
+    62.0
+   ],
+   "pivotNorm": [
+    0.5227272727272727,
+    0.23134328358208955
+   ],
+   "restAngle": 1.6417154420851467,
+   "restLength": 183.46116755324545
+  },
+  {
+   "name": "rightLowerArm",
+   "file": "kyle_front_rightLowerArm.png",
+   "z": 70,
+   "bone": [
+    "RightLowerArm",
+    "RightHand"
+   ],
+   "origin": [
+    0,
+    619
+   ],
+   "size": [
+    127,
+    244
+   ],
+   "pivot": [
+    56.0,
+    70.0
+   ],
+   "pivotNorm": [
+    0.4409448818897638,
+    0.28688524590163933
+   ],
+   "restAngle": 1.6153528049311066,
+   "restLength": 157.15597347857954
+  },
+  {
+   "name": "rightHand",
+   "file": "kyle_front_rightHand.png",
+   "z": 80,
+   "bone": [
+    "RightHand",
+    "RightHandTip"
+   ],
+   "origin": [
+    0,
+    788
+   ],
+   "size": [
+    108,
+    186
+   ],
+   "pivot": [
+    49.0,
+    58.0
+   ],
+   "pivotNorm": [
+    0.4537037037037037,
+    0.3118279569892473
+   ],
+   "restAngle": 1.5925320336366893,
+   "restLength": 92.02173656261873
+  },
+  {
+   "name": "leftUpperArm",
+   "file": "kyle_front_leftUpperArm.png",
+   "z": 35,
+   "bone": [
+    "LeftUpperArm",
+    "LeftLowerArm"
+   ],
+   "origin": [
+    217,
+    423
+   ],
+   "size": [
+    143,
+    289
+   ],
+   "pivot": [
+    73.0,
+    83.0
+   ],
+   "pivotNorm": [
+    0.5104895104895105,
+    0.28719723183391005
+   ],
+   "restAngle": 1.4998772115046464,
+   "restLength": 183.46116755324545
+  },
+  {
+   "name": "leftLowerArm",
+   "file": "kyle_front_leftLowerArm.png",
+   "z": 70,
+   "bone": [
+    "LeftLowerArm",
+    "LeftHand"
+   ],
+   "origin": [
+    233,
+    619
+   ],
+   "size": [
+    127,
+    249
+   ],
+   "pivot": [
+    70.0,
+    70.0
+   ],
+   "pivotNorm": [
+    0.5511811023622047,
+    0.28112449799196787
+   ],
+   "restAngle": 1.5262398486586868,
+   "restLength": 157.15597347857954
+  },
+  {
+   "name": "leftHand",
+   "file": "kyle_front_leftHand.png",
+   "z": 80,
+   "bone": [
+    "LeftHand",
+    "LeftHandTip"
+   ],
+   "origin": [
+    253,
+    789
+   ],
+   "size": [
+    107,
+    189
+   ],
+   "pivot": [
+    57.0,
+    57.0
+   ],
+   "pivotNorm": [
+    0.5327102803738317,
+    0.30158730158730157
+   ],
+   "restAngle": 1.5490606199531038,
+   "restLength": 92.02173656261873
+  },
+  {
+   "name": "rightThigh",
+   "file": "kyle_front_rightThigh.png",
+   "z": 30,
+   "bone": [
+    "RightUpperLeg",
+    "RightLowerLeg"
+   ],
+   "origin": [
+    38,
+    750
+   ],
+   "size": [
+    172,
+    348
+   ],
+   "pivot": [
+    88.0,
+    83.0
+   ],
+   "pivotNorm": [
+    0.5116279069767442,
+    0.23850574712643677
+   ],
+   "restAngle": 1.608913448967528,
+   "restLength": 236.17154782064668
+  },
+  {
+   "name": "rightCalf",
+   "file": "kyle_front_rightCalf.png",
+   "z": 10,
+   "bone": [
+    "RightLowerLeg",
+    "RightFoot"
+   ],
+   "origin": [
+    20,
+    1047
+   ],
+   "size": [
+    109,
+    257
+   ],
+   "pivot": [
+    97.0,
+    22.0
+   ],
+   "pivotNorm": [
+    0.8899082568807339,
+    0.08560311284046693
+   ],
+   "restAngle": 1.5878159598530333,
+   "restLength": 235.03404008781365
+  },
+  {
+   "name": "rightShoe",
+   "file": "kyle_front_rightShoe.png",
+   "z": 20,
+   "bone": [
+    "RightFoot",
+    "RightToe"
+   ],
+   "origin": [
+    0,
+    1237
+   ],
+   "size": [
+    113,
+    149
+   ],
+   "pivot": [
+    113.0,
+    67.0
+   ],
+   "pivotNorm": [
+    1.0,
+    0.44966442953020136
+   ],
+   "restAngle": 1.9425052769134816,
+   "restLength": 63.324560795950255
+  },
+  {
+   "name": "leftThigh",
+   "file": "kyle_front_leftThigh.png",
+   "z": 30,
+   "bone": [
+    "LeftUpperLeg",
+    "LeftLowerLeg"
+   ],
+   "origin": [
+    155,
+    755
+   ],
+   "size": [
+    165,
+    343
+   ],
+   "pivot": [
+    78.0,
+    78.0
+   ],
+   "pivotNorm": [
+    0.4727272727272727,
+    0.22740524781341107
+   ],
+   "restAngle": 1.5326792046222653,
+   "restLength": 236.17154782064668
+  },
+  {
+   "name": "leftCalf",
+   "file": "kyle_front_leftCalf.png",
+   "z": 10,
+   "bone": [
+    "LeftLowerLeg",
+    "LeftFoot"
+   ],
+   "origin": [
+    229,
+    1045
+   ],
+   "size": [
+    92,
+    207
+   ],
+   "pivot": [
+    13.0,
+    24.0
+   ],
+   "pivotNorm": [
+    0.14130434782608695,
+    0.11594202898550725
+   ],
+   "restAngle": 1.55377669373676,
+   "restLength": 235.03404008781365
+  },
+  {
+   "name": "leftShoe",
+   "file": "kyle_front_leftShoe.png",
+   "z": 20,
+   "bone": [
+    "LeftFoot",
+    "LeftToe"
+   ],
+   "origin": [
+    239,
+    1237
+   ],
+   "size": [
+    121,
+    149
+   ],
+   "pivot": [
+    7.0,
+    67.0
+   ],
+   "pivotNorm": [
+    0.05785123966942149,
+    0.44966442953020136
+   ],
+   "restAngle": 1.1990873766763117,
+   "restLength": 63.324560795950255
+  }
+ ]
+}

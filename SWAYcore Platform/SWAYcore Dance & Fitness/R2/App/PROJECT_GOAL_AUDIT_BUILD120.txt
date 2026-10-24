@@ -1,0 +1,19 @@
+SWAYcore Build 120 — Project Goal vs Current Build Audit
+Date: 2026-09-28
+
+PROJECT GOAL
+Functional Alpha with full production UI/UX ready for Xcode/iPhone testing. Core experience must be graphical, music-driven and movement-led; Home/Moves/Beats/Profile are primary navigation while Create, Progress, Avatar, Tracking and Settings remain discoverable. One shared articulated movement truth drives instructor, COACH and user-avatar presentation. Camera tracking is optional but first-class. Music sources and analysis are independent capabilities. Direct .swaypack sharing works without an account/server. Production UI must not be a developer-control surface.
+
+BUILD 119 EVIDENCE REVIEW
+PASS/PRESERVE: four-tab shell; secondary routes; local audio import and PCM analysis; generated SWAY Beats; MusicKit/Shazam provider code; Vision camera service and calibration code; workout setup choice; .swaypack validation/import preview/share; persisted profile/avatar/COACH preferences; DesignReferences excluded from runtime.
+PARTIAL/UNVERIFIED: production character visual quality; movement teaching quality; workout composition; camera route on device; Apple Music entitlement/service configuration; Shazam device behavior; avatar breadth/visual quality; accessibility/device layouts.
+OMISSIONS/ERRORS FOUND: CFBundleVersion remained 118 while CURRENT_PROJECT_VERSION was 119; README/pipeline reports were stale; Progress Day Streak incorrectly displayed sessionsCompleted; Create Move could create a new move ID unsupported by the canonical pose engine, producing a non-moving neutral pose rather than a functional authored/remixed movement.
+
+BUILD 120 CORRECTIONS
+- Build/version metadata made internally consistent at 120.
+- Day Streak now derives consecutive calendar days from session result timestamps.
+- Alpha Create Move now requires an authored movement foundation and creates an executable remix, so saved user Moves remain previewable/practicable/shareable through the same pose engine.
+- Existing Build 119 recovery corrections preserved.
+
+NOT CLAIMED
+No Xcode/iOS SDK compile or device visual/runtime pass is claimed in this environment. Production visual milestones remain physical gates. Apple Music still requires MusicKit App Service for the explicit bundle identifier and valid signing/capability configuration.

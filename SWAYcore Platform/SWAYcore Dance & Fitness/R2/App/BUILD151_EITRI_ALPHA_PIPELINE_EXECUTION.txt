@@ -1,0 +1,36 @@
+SWAYcore 0.9 BUILD 151 — EITRI ALPHA PIPELINE EXECUTION
+
+AUTHORITATIVE BASELINE
+Build 149 = recovered working runtime baseline from physical recording.
+Build 150 = corrected candidate (Learn tempo + You navigation + verifier repair).
+Build 151 = continuation from authoritative handoff.
+Build 148 remains rejected.
+
+IMPLEMENTED
+1. Blender is explicitly the production character-authoring authority. Existing 2.5D remains protected fallback until physical acceptance.
+2. SWAYHumanoid-v1 production contract expanded from 2 proof clips to 10 Alpha movement clips.
+3. Lucia and YOUR DANCER RealityKit manifests now share the same 10-clip Alpha movement contract.
+4. Blender generator expanded to author named Alpha actions for idle, march, step-touch, grapevine, knee lift, squat, side lunge, jumping jack, body roll and pivot turn.
+5. Deterministic RealityKit character-contract validator added.
+6. YOUR DANCER editor now previews Idle/March/Groove in motion and routes through SWAYAvatarStageView, automatically using UserAvatarReality when present and preserving the 2.5D fallback otherwise.
+
+PRESERVED
+- calibration -> READY TO SWAY -> countdown invariant
+- 20–180 BPM Learn tempo and practice handoff
+- music/Shazam/timeline architecture
+- existing Moves/Beats/Create/sharing/Health/progress paths
+- iPhone/iPad source target
+
+EVIDENCE STATE
+REFERENCE: PASS
+BASELINE PRESERVATION: PASS
+IMPLEMENT: PASS for source changes above
+STATIC SWIFT PARSE: PASS
+ASSET CONTRACT VALIDATION: PASS
+SOURCE HAZARD / ROUTING / BUILD IDENTITY: PASS
+BLENDER EXECUTION: BLOCKED in this execution host because Blender executable is unavailable; generator/contract are ready for Mac Blender 4.x.
+XCODE ENVIRONMENT: pending Mac/Xcode
+PHYSICAL IPHONE/IPAD: pending Lucas test
+
+NEXT GATE
+Run BUILD_ALPHA_ASSET.command on the Mac with Blender 4.x; export named actions to LuciaReality/UserAvatarReality USD/USDZ; validate RealityKit loading and motion; compile in Xcode; perform iPhone/iPad Alpha vertical-slice test.

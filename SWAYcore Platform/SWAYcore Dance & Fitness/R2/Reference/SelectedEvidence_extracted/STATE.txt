@@ -1,0 +1,11 @@
+PROJECT: SWAYcore
+LATEST AUTHORITY: explicit user account-migration recovery instruction, 2026-10-02
+RECOVERY RECORD: CODEX_ACCOUNT_MIGRATION_HANDOFF.md
+AUTHORITATIVE WORKSPACE: /Users/lucas/edenOS/Projects/SWAYcore (no Git repository)
+ACTIVE CANDIDATE: candidate-BUILD153-reconciled; unpromoted recovery candidate
+PRESERVED LKG: /Users/lucas/Downloads/SWAYcore_BUILD153_ONE_CLICK.zip and extracted sibling; untouched
+BUILD/STATIC/POSE TESTS: PASS; signed iOS and unsigned generic simulator
+PHYSICAL: install retry PASS; installed identity 0.9 (153); no restart; functional/visual acceptance UNKNOWN
+PACKAGE: separate recovery snapshot; verify against recovery evidence
+KNOWN GAPS: production 3D assets unapproved/missing; tracked YOU silhouette; physical functional regression acceptance
+NEXT GATE: Lucas physical checklist plus production character acceptance. Preserve BUILD153 until a demonstrably better candidate passes without regression.

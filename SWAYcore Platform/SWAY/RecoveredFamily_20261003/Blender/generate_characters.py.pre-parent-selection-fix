@@ -1,0 +1,377 @@
+"""SWAYcore production humanoid generator (runs in Blender, headless).
+
+blender --background --python Blender/generate_characters.py -- \
+    --fixtures Assets/Fixtures/movements.json --characters Blender/characters.json \
+    --out Assets/Characters --blend Assets/Blend [--only lucia]
+
+Deterministic: all randomness is seeded per character. Produces, per character:
+  <id>.blend (editable source), <id>.usdz (skinned mesh + rest skeleton), <id>__<clip>.usdz (skeleton animation),
+  <id>_*.png textures, <id>.character.json manifest. Visual quality is NEVER self-certified: "UNREVIEWED".
+"""
+import bpy, bmesh, math, os, sys, json
+from mathutils import Vector, Quaternion, Matrix
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from sway_blender_common import *
+
+args = parse_kv(script_args())
+FIX = load_json(args["fixtures"]); CHARS = load_json(args["characters"])["characters"]
+OUT = os.path.abspath(args["out"]); BLEND = os.path.abspath(args["blend"])
+os.makedirs(OUT, exist_ok=True); os.makedirs(BLEND, exist_ok=True)
+JOINTS = FIX["joints"]; REST = FIX["rest"]; PARENT = FIX["parent"]; CHILD = FIX["primaryChild"]
+if FIX["contract"] != CONTRACT or len(JOINTS) != 23 or len(set(JOINTS)) != 23:
+    raise SystemExit("fixture contract mismatch")
+
+def vec(v): return Vector(sway_to_blender(v))
+
+# ---------- scene ----------
+def reset_scene():
+    bpy.ops.wm.read_factory_settings(use_empty=True)
+    for c in list(bpy.data.collections): bpy.data.collections.remove(c)
+
+def activate(obj):
+    bpy.ops.object.select_all(action='DESELECT')
+    obj.select_set(True); bpy.context.view_layer.objects.active = obj
+
+# ---------- textures / materials ----------
+def make_texture(name, size, painter, outdir):
+    import numpy as np
+    img = bpy.data.images.new(name, size, size, alpha=False)
+    px = painter(np, size)
+    flat = np.concatenate([px, np.ones((size, size, 1))], axis=2).astype('float32').ravel()
+    img.pixels.foreach_set(flat)
+    img.filepath_raw = os.path.join(outdir, name + ".png"); img.file_format = 'PNG'; img.save()
+    return img
+
+def noise(np, rng, size, cells):
+    g = rng.random((cells + 1, cells + 1))
+    xs = np.linspace(0, cells, size, endpoint=False); i = xs.astype(int); f = xs - i
+    f = f * f * (3 - 2 * f)
+    a = g[i][:, i] * (1 - f)[None, :] * (1 - f)[:, None] + g[i][:, i + 1] * f[None, :] * (1 - f)[:, None]
+    b = g[i + 1][:, i] * (1 - f)[None, :] * f[:, None] + g[i + 1][:, i + 1] * f[None, :] * f[:, None]
+    return a + b
+
+def skin_painter(col, seed):
+    def paint(np, n):
+        rng = np.random.default_rng(seed)
+        base = np.array(col).reshape(1, 1, 3)
+        v = 0.9 + 0.2 * noise(np, rng, n, 8)[..., None] * 0.5 + 0.05 * noise(np, rng, n, 64)[..., None]
+        blush = noise(np, rng, n, 4)[..., None] * np.array([0.06, 0.0, 0.0]).reshape(1, 1, 3)
+        return np.clip(base * v + blush, 0, 1)
+    return paint
+
+def hair_painter(col, seed):
+    def paint(np, n):
+        rng = np.random.default_rng(seed + 1)
+        strands = noise(np, rng, n, 256)[..., None] * 0.5 + 0.5
+        return np.clip(np.array(col).reshape(1, 1, 3) * (0.6 + 0.8 * strands), 0, 1)
+    return paint
+
+def fabric_painter(col, seed):
+    def paint(np, n):
+        rng = np.random.default_rng(seed + 2)
+        y, x = np.mgrid[0:n, 0:n]
+        weave = (0.92 + 0.08 * (((x // 4) + (y // 4)) % 2))[..., None]
+        return np.clip(np.array(col).reshape(1, 1, 3) * weave * (0.95 + 0.1 * noise(np, rng, n, 32)[..., None]), 0, 1)
+    return paint
+
+def make_material(name, img, rough, sss=0.0, metallic=0.0):
+    m = bpy.data.materials.new(name); m.use_nodes = True
+    nt = m.node_tree; bsdf = nt.nodes["Principled BSDF"]
+    tex = nt.nodes.new("ShaderNodeTexImage"); tex.image = img
+    nt.links.new(tex.outputs["Color"], bsdf.inputs["Base Color"])
+    bsdf.inputs["Roughness"].default_value = rough
+    bsdf.inputs["Metallic"].default_value = metallic
+    if sss and "Subsurface Weight" in bsdf.inputs: bsdf.inputs["Subsurface Weight"].default_value = sss
+    return m
+
+# ---------- geometry ----------
+def build_body_skin_mesh(T, ch, hip_height):
+    """Skin-modifier body from the joint graph -> smooth continuous deformable mesh."""
+    names = [j for j in JOINTS if j not in ("root", "head", "headEnd")]
+    idx = {n: i for i, n in enumerate(names)}
+    off = Vector((0, 0, hip_height))
+    verts = [tuple(vec(REST[n]) * T + off) for n in names]
+    edges = []
+    for n in names:
+        p = PARENT.get(n)
+        if p in idx: edges.append((idx[p], idx[n]))
+    # hips has no parent in graph (root excluded) -> becomes the skin root
+    me = bpy.data.meshes.new("BodySkin"); me.from_pydata(verts, edges, []); me.update()
+    obj = bpy.data.objects.new("Body", me); bpy.context.collection.objects.link(obj)
+    activate(obj)
+    sk = obj.modifiers.new("Skin", 'SKIN'); sk.use_smooth_shade = True; sk.branch_smoothing = 0.6
+    layer = me.skin_vertices[0] if len(me.skin_vertices) else me.skin_vertices.new()
+    b, s = ch["build"], ch["shoulder"]
+    R = {"hips": (0.34 * b, 0.24 * b), "spine": (0.29 * b, 0.20 * b), "chest": (0.33 * b * s, 0.22 * b), "neck": (0.095, 0.095),
+         "shoulderL": (0.11 * s, 0.11 * s), "elbowL": (0.075 * b, 0.075 * b), "wristL": (0.055, 0.05), "handL": (0.07, 0.03),
+         "hipL": (0.16 * b, 0.16 * b), "kneeL": (0.115 * b, 0.115 * b), "ankleL": (0.07, 0.07), "toesL": (0.075, 0.04)}
+    for n in names:
+        key = n[:-1] + "L" if n.endswith("R") else n
+        rx, ry = R[key]
+        layer.data[idx[n]].radius = (rx * T, ry * T)
+        if n == "hips": layer.data[idx[n]].use_root = True
+    sub = obj.modifiers.new("Subsurf", 'SUBSURF'); sub.levels = 2; sub.render_levels = 2
+    for m in ("Skin", "Subsurf"): bpy.ops.object.modifier_apply(modifier=m)
+    bpy.ops.object.shade_smooth()
+    return obj
+
+def shell_from(body_obj, name, T, hip_height, joint_names, grow):
+    """Clothing shell: its own skin tube graph around selected joints (slightly larger radius)."""
+    names = joint_names; idx = {n: i for i, n in enumerate(names)}
+    off = Vector((0, 0, hip_height))
+    verts = [tuple(vec(REST[n]) * T + off) for n in names]
+    edges = [(idx[PARENT[n]], idx[n]) for n in names if PARENT.get(n) in idx]
+    me = bpy.data.meshes.new(name + "Mesh"); me.from_pydata(verts, edges, []); me.update()
+    obj = bpy.data.objects.new(name, me); bpy.context.collection.objects.link(obj); activate(obj)
+    sk = obj.modifiers.new("Skin", 'SKIN'); sk.use_smooth_shade = True
+    layer = me.skin_vertices[0] if len(me.skin_vertices) else me.skin_vertices.new()
+    for n in names:
+        rx = grow * T * (0.36 if n in ("hips", "spine", "chest") else 0.12)
+        layer.data[idx[n]].radius = (rx, rx * 0.72)
+        if PARENT.get(n) not in idx: layer.data[idx[n]].use_root = True
+    sub = obj.modifiers.new("Subsurf", 'SUBSURF'); sub.levels = 1
+    for m in ("Skin", "Subsurf"): bpy.ops.object.modifier_apply(modifier=m)
+    return obj
+
+def uv_sphere(name, center, scale, seg=32, rings=16):
+    bpy.ops.mesh.primitive_uv_sphere_add(segments=seg, ring_count=rings, location=center)
+    o = bpy.context.active_object; o.name = name; o.scale = scale
+    bpy.ops.object.transform_apply(location=True, rotation=False, scale=True); bpy.ops.object.shade_smooth(); return o
+
+def make_head(T, hip_height, ch):
+    head_c = vec(REST["head"]) * T + Vector((0, 0, hip_height))
+    top = vec(REST["headEnd"]) * T + Vector((0, 0, hip_height))
+    hh = (top - head_c).length * 0.62
+    center = head_c + Vector((0, 0, hh * 0.78))
+    head = uv_sphere("Head", center, (hh * 0.78, hh * 0.88, hh * 1.0), 48, 24)
+    # jaw/chin taper: pull lower vertices inward
+    me = head.data
+    for v in me.vertices:
+        dz = (v.co.z - center.z) / (hh * 1.0)
+        if dz < -0.2:
+            k = 1 - 0.28 * (-0.2 - dz) / 0.8
+            v.co.x *= k; v.co.y *= (0.92 + 0.08 * k)
+    # nose + ears as separate bumps joined into head
+    parts = [head]
+    for sx in (-1, 1):
+        parts.append(uv_sphere("ear", center + Vector((sx * hh * 0.78, 0.0, -hh * 0.05)), (hh * 0.09, hh * 0.05, hh * 0.18), 12, 8))
+    parts.append(uv_sphere("nose", center + Vector((0, -hh * 0.86, -hh * 0.18)), (hh * 0.09, hh * 0.14, hh * 0.16), 12, 8))
+    for p in parts: p.select_set(True)
+    bpy.context.view_layer.objects.active = head
+    bpy.ops.object.join()
+    head = bpy.context.active_object; head.name = "Head"
+    eyes = []
+    for sx in (-1, 1):
+        eyes.append(uv_sphere("eye", center + Vector((sx * hh * 0.32, -hh * 0.78, hh * 0.08)), (hh * 0.11, hh * 0.08, hh * 0.11), 16, 8))
+    for e in eyes: e.select_set(True)
+    bpy.context.view_layer.objects.active = eyes[0]; bpy.ops.object.join()
+    eye = bpy.context.active_object; eye.name = "Eyes"
+    return head, eye, center, hh
+
+def make_hair(style, center, hh, name):
+    """Hair shell over the skull with the face region removed (bmesh), plus per-style volumes."""
+    cap = uv_sphere(name, center + Vector((0, hh * 0.06, hh * 0.1)), (hh * 0.86, hh * 0.95, hh * 0.98), 32, 16)
+    if style == "afro":
+        for v in cap.data.vertices:
+            d = v.co - center; v.co = center + Vector((d.x * 1.35, d.y * 1.35, d.z * 1.25))
+    bm = bmesh.new(); bm.from_mesh(cap.data)
+    kill = []
+    for v in bm.verts:
+        d = v.co - center
+        face = d.y < -hh * 0.25 and d.z < hh * 0.45 and abs(d.x) < hh * 0.85       # face opening below hairline
+        low = d.z < -hh * 0.15 and style not in ("long", "braids", "afro")        # short/bun: no nape coverage
+        if face or low: kill.append(v)
+    bmesh.ops.delete(bm, geom=kill, context='VERTS'); bm.to_mesh(cap.data); bm.free()
+    extra = []
+    if style in ("long", "braids"):
+        extra.append(uv_sphere("hairback", center + Vector((0, hh * 0.55, -hh * 1.2)), (hh * 0.7, hh * 0.35, hh * 1.5), 16, 12))
+    if style == "bun":
+        extra.append(uv_sphere("bun", center + Vector((0, hh * 0.3, hh * 1.0)), (hh * 0.3, hh * 0.3, hh * 0.3), 12, 8))
+    if style == "braids":
+        for sx in (-0.5, 0.5):
+            extra.append(uv_sphere("braid", center + Vector((sx * hh, hh * 0.3, -hh * 1.6)), (hh * 0.1, hh * 0.1, hh * 1.2), 8, 8))
+    for p in extra: p.select_set(True)
+    cap.select_set(True); bpy.context.view_layer.objects.active = cap
+    if extra: bpy.ops.object.join()
+    o = bpy.context.active_object; o.name = name; return o
+
+def rigid_bind(obj, arm, bone):
+    vg = obj.vertex_groups.new(name=bone); vg.add([v.index for v in obj.data.vertices], 1.0, 'REPLACE')
+    mod = obj.modifiers.new("Armature", 'ARMATURE'); mod.object = arm
+
+def build_armature(T, hip_height):
+    bpy.ops.object.armature_add(enter_editmode=True, location=(0, 0, 0))
+    arm = bpy.context.active_object; arm.name = "SWAYArmature"; arm.data.name = "SWAYSkeleton"
+    for b in list(arm.data.edit_bones): arm.data.edit_bones.remove(b)
+    off = Vector((0, 0, hip_height))
+    eb = {}
+    for j in JOINTS:
+        b = arm.data.edit_bones.new(j); b.head = vec(REST[j]) * T + off
+        c = CHILD.get(j)
+        if c: b.tail = vec(REST[c]) * T + off
+        else:
+            p = PARENT[j]; d = (vec(REST[j]) - vec(REST[p])).normalized() if p else Vector((0, 0, 1))
+            b.tail = b.head + d * 0.05 * T
+        if (b.tail - b.head).length < 1e-4: b.tail = b.head + Vector((0, 0, 0.02))
+        eb[j] = b
+    for j in JOINTS:
+        if PARENT.get(j): eb[j].parent = eb[PARENT[j]]; eb[j].use_connect = False
+    bpy.ops.object.mode_set(mode='OBJECT')
+    return arm
+
+def limit_influences(obj, n=MAX_INFLUENCES):
+    activate(obj)
+    filtered_op(bpy.ops.object.vertex_group_limit_total, group_select_mode='ALL', limit=n)
+    filtered_op(bpy.ops.object.vertex_group_normalize_all, group_select_mode='ALL', lock_active=False)
+
+def unwrap(obj):
+    activate(obj); bpy.ops.object.mode_set(mode='EDIT'); bpy.ops.mesh.select_all(action='SELECT')
+    bpy.ops.uv.smart_project(angle_limit=math.radians(66), island_margin=0.02); bpy.ops.object.mode_set(mode='OBJECT')
+
+# ---------- animation ----------
+def action_fcurves(act):
+    if hasattr(act, "fcurves"): return list(act.fcurves)           # Blender < 5
+    out = []
+    for layer in getattr(act, "layers", []):                       # layered actions (Blender 4.4+/5)
+        for strip in layer.strips:
+            for cb in getattr(strip, "channelbags", []): out += list(cb.fcurves)
+    return out
+
+def make_clip(arm, mv, T, hip_height, fps_per_beat=12):
+    """Pose-driven retarget: per-bone local rotation = R^-1 * (q_parent^-1 * q_bone) * R (see Docs/IMPLEMENTATION_DECISIONS ND-008)."""
+    name = mv["id"]
+    act = bpy.data.actions.new(name); arm.animation_data_create(); arm.animation_data.action = act
+    R = {j: arm.data.bones[j].matrix_local.to_quaternion() for j in JOINTS}
+    rest_dir = {j: (vec(REST[CHILD[j]]) - vec(REST[j])) for j in JOINTS if CHILD.get(j)}
+    for pb in arm.pose.bones: pb.rotation_mode = 'QUATERNION'
+    cycle = mv["beatsPerCycle"]
+    kfs = sorted(mv["keyframes"], key=lambda k: k["count"])
+    frames = [(k["count"] - 1, k["pose"]) for k in kfs] + [(cycle, kfs[0]["pose"])]   # wrap = count 1
+    for beat, pose in frames:
+        q = {}
+        for j in JOINTS:
+            c = CHILD.get(j)
+            if c and j in rest_dir and rest_dir[j].length > 1e-9:
+                tgt = vec(pose[c]) - vec(pose[j])
+                q[j] = rest_dir[j].normalized().rotation_difference(tgt.normalized()) if tgt.length > 1e-9 else Quaternion()
+            else:
+                q[j] = q[PARENT[j]] if PARENT.get(j) else Quaternion()
+        for j in JOINTS:
+            par = PARENT.get(j)
+            qpar = q[par] if par else Quaternion()
+            basis = R[j].inverted() @ (qpar.inverted() @ q[j]) @ R[j]
+            pb = arm.pose.bones[j]; pb.rotation_quaternion = basis
+            pb.keyframe_insert("rotation_quaternion", frame=1 + beat * fps_per_beat)
+    for fc in action_fcurves(act):
+        for kp in fc.keyframe_points: kp.interpolation = 'LINEAR'
+    bpy.context.scene.frame_start = 1; bpy.context.scene.frame_end = 1 + cycle * fps_per_beat
+    return act
+
+def reset_pose(arm):
+    for pb in arm.pose.bones: pb.rotation_mode = 'QUATERNION'; pb.rotation_quaternion = (1, 0, 0, 0)
+
+# ---------- export ----------
+def export_usd(path, objs, animation=False, meshes=True):
+    bpy.ops.object.select_all(action='DESELECT')
+    for o in objs: o.select_set(True)
+    bpy.context.view_layer.objects.active = objs[0]
+    filtered_op(bpy.ops.wm.usd_export, filepath=path, selected_objects_only=True, export_animation=animation,
+                export_meshes=meshes, export_materials=meshes, export_armatures=True, export_uvmaps=meshes, export_normals=meshes,
+                convert_orientation=True, export_global_up_selection='Y', export_global_forward_selection='NEGATIVE_Z',
+                root_prim_path="/SWAYCharacter", export_textures=meshes, overwrite_textures=True, relative_paths=True,
+                generate_preview_surface=True, convert_scene_units='METERS')
+
+def count_tris(obj):
+    dg = bpy.context.evaluated_depsgraph_get(); me = obj.evaluated_get(dg).to_mesh()
+    n = sum(len(p.vertices) - 2 for p in me.polygons); obj.evaluated_get(dg).to_mesh_clear(); return n
+
+def max_influences(obj):
+    return max((len([g for g in v.groups if g.weight > 1e-4]) for v in obj.data.vertices), default=0)
+
+def build_character(ch):
+    reset_scene()
+    cid = ch["id"]; height = ch["height"]
+    T = height * 0.285                                   # torso length (m): hips->neck
+    ankle_h = height * 0.04
+    hip_height = 1.75 * T + ankle_h                      # legs: thigh+shin = 1.75 T
+    tex_dir = os.path.join(OUT, "textures"); os.makedirs(tex_dir, exist_ok=True)
+    tex = {}
+    tex["skin"] = make_texture(cid + "_skin", 1024, skin_painter(ch["skin"], ch["seed"]), tex_dir)
+    tex["hair"] = make_texture(cid + "_hair", 512, hair_painter(ch["hairColor"], ch["seed"]), tex_dir)
+    tex["top"] = make_texture(cid + "_top", 512, fabric_painter(ch["outfit"]["top"], ch["seed"]), tex_dir)
+    tex["bottom"] = make_texture(cid + "_bottom", 512, fabric_painter(ch["outfit"]["bottom"], ch["seed"]), tex_dir)
+    tex["shoes"] = make_texture(cid + "_shoes", 256, fabric_painter(ch["outfit"]["shoes"], ch["seed"]), tex_dir)
+    tex["eye"] = make_texture(cid + "_eye", 256, skin_painter(ch["eye"], ch["seed"]), tex_dir)
+    mats = {"Skin": make_material("Skin", tex["skin"], 0.55, sss=0.15), "Hair": make_material("Hair", tex["hair"], 0.45),
+            "Top": make_material("Top", tex["top"], 0.8), "Bottom": make_material("Bottom", tex["bottom"], 0.8),
+            "Shoes": make_material("Shoes", tex["shoes"], 0.5), "Eye": make_material("Eye", tex["eye"], 0.1)}
+
+    body = build_body_skin_mesh(T, ch, hip_height); body.data.materials.append(mats["Skin"]); unwrap(body)
+    head, eyes, hc, hh = make_head(T, hip_height, ch); head.data.materials.append(mats["Skin"]); unwrap(head)
+    eyes.data.materials.append(mats["Eye"]); unwrap(eyes)
+    styles = ch.get("customizable", {}).get("hairStyles", [ch["hair"]])
+    hair = make_hair(ch["hair"], hc, hh, "Hair"); hair.data.materials.append(mats["Hair"]); unwrap(hair)
+    hair_variants = [make_hair(s, hc, hh, "Hair_" + s) for s in styles if s != ch["hair"]]
+    for h in hair_variants: h.data.materials.append(mats["Hair"]); unwrap(h); h.hide_viewport = True; h.hide_render = True
+    top = shell_from(body, "Outfit", T, hip_height, ["hips", "spine", "chest", "shoulderL", "elbowL", "shoulderR", "elbowR", "hipL", "kneeL", "hipR", "kneeR"], 1.06)
+    top.data.materials.append(mats["Top"]); unwrap(top)
+    outfit_variants = []
+    for v in ch.get("customizable", {}).get("outfits", []):
+        o = shell_from(body, "Outfit_" + v, T, hip_height, ["hips", "spine", "chest", "shoulderL", "shoulderR", "hipL", "kneeL", "hipR", "kneeR"], 1.04)
+        o.data.materials.append(mats["Bottom"]); unwrap(o); o.hide_viewport = True; o.hide_render = True; outfit_variants.append(o)
+    shoes = []
+    for sx, nm in ((1, "L"), (-1, "R")):
+        a = vec(REST["ankle" + nm]) * T + Vector((0, 0, hip_height))
+        s = uv_sphere("shoe" + nm, a + Vector((0, -0.06 * T, -0.04 * T)), (0.09 * T, 0.2 * T, 0.07 * T), 16, 8); s.data.materials.append(mats["Shoes"]); unwrap(s); shoes.append(s)
+
+    arm = build_armature(T, hip_height)
+    # Deformable meshes: automatic weights, then limit to 4 influences. Rigid parts bind to the head bone / feet.
+    for o in [body, top] + outfit_variants:
+        activate(o); o.select_set(True); arm.select_set(True); bpy.context.view_layer.objects.active = arm
+        bpy.ops.object.parent_set(type='ARMATURE_AUTO'); limit_influences(o)
+    for o in [head, eyes, hair] + hair_variants:
+        o.parent = arm; rigid_bind(o, arm, "head")
+    for o, nm in zip(shoes, ("L", "R")):
+        o.parent = arm; rigid_bind(o, arm, "ankle" + nm)
+
+    # Animation: one action per movement
+    reset_pose(arm); clips = []
+    for mv in FIX["movements"]:
+        make_clip(arm, mv, T, hip_height); clips.append(mv["id"])
+    arm.animation_data.action = None; reset_pose(arm)
+    for a in bpy.data.actions: a.use_fake_user = True
+
+    blend_path = os.path.join(BLEND, cid + ".blend"); bpy.ops.wm.save_as_mainfile(filepath=blend_path)
+
+    # Export: base asset (mesh + rest skeleton), then per-clip skeleton-only animation files.
+    for v in hair_variants + outfit_variants: v.hide_viewport = False; v.hide_render = False   # app hides non-selected variants by name
+    export_objs = [body, head, eyes, hair, top] + shoes + hair_variants + outfit_variants
+    export_usd(os.path.join(OUT, cid + ".usdz"), [arm] + export_objs, animation=False, meshes=True)
+    clip_files = {}
+    for mv in FIX["movements"]:
+        reset_pose(arm); arm.animation_data.action = bpy.data.actions[mv["id"]]
+        export_usd(os.path.join(OUT, "%s__%s.usdz" % (cid, mv["id"])), [arm], animation=True, meshes=False)
+        clip_files[mv["id"]] = "%s__%s.usdz" % (cid, mv["id"])
+    arm.animation_data.action = None
+
+    bpy.context.view_layer.update()
+    allv = [body, head, hair, top] + shoes
+    zs = [(o.matrix_world @ Vector(c)).z for o in allv for c in o.bound_box]
+    manifest = {
+        "contract": CONTRACT, "characterID": cid, "displayName": ch["displayName"], "asset": cid + ".usdz",
+        "blendSource": os.path.relpath(blend_path, os.path.dirname(OUT)), "upAxis": "Y", "metersPerUnit": 1.0,
+        "heightMeters": round(max(zs) - min(zs), 4), "joints": [b.name for b in arm.data.bones],
+        "meshes": ["Body", "Head", "Eyes", "Hair", "Outfit"] + [h.name for h in hair_variants] + [o.name for o in outfit_variants],
+        "materials": sorted(mats.keys()), "textures": sorted(os.path.basename(i.filepath_raw) for i in tex.values()),
+        "clips": clips, "clipFiles": clip_files,
+        "triangleCount": sum(count_tris(o) for o in allv), "maxSkinInfluences": max(max_influences(o) for o in (body, top)),
+        "visualQuality": "UNREVIEWED", "generator": "Blender/generate_characters.py", "blenderVersion": bpy.app.version_string,
+        "customizable": ch.get("customizable"),
+    }
+    with open(os.path.join(OUT, cid + ".character.json"), "w") as f: json.dump(manifest, f, indent=2, sort_keys=True)
+    print("[sway] built %s: %d tris, height %.3f" % (cid, manifest["triangleCount"], manifest["heightMeters"]))
+
+only = args.get("only")
+for ch in CHARS:
+    if only in (None, True) or ch["id"] == only: build_character(ch)
+print("[sway] generation complete")

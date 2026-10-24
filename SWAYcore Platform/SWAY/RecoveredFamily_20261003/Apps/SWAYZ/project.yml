@@ -1,0 +1,48 @@
+name: SWAYcoreSWAYZ
+options:
+  bundleIdPrefix: com.lucasbuzek.private
+  deploymentTarget: { iOS: "26.0", macOS: "26.0" }
+  createIntermediateGroups: true
+configFiles:
+  Debug: ../../Config/Signing.xcconfig
+  Release: ../../Config/Signing.xcconfig
+packages:
+  SWAYcoreKit: { path: ../../Packages/SWAYcoreKit }
+  SWAYAppKit: { path: ../../Packages/SWAYAppKit }
+targets:
+  SWAYcoreSWAYZ:
+    type: application
+    platform: iOS
+    sources: [Sources]
+    resources:
+      - { path: ../../Assets/Characters, type: folder }
+    dependencies:
+      - package: SWAYcoreKit
+      - package: SWAYAppKit
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lucasbuzek.private.swaycore.swayz
+        PRODUCT_NAME: SWAYcoreSWAYZ
+        PRODUCT_MODULE_NAME: SWAYcoreSWAYZ
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SWIFT_VERSION: "5.9"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: "SWAYZ"
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_NSCameraUsageDescription: "SWAY uses the camera on-device to see your movement. Frames are never stored or sent anywhere unless you choose to record."
+        INFOPLIST_KEY_NSMicrophoneUsageDescription: "Used only when you record a demonstration."
+        INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription: "Saves recordings you choose to keep."
+  SWAYcoreSWAYZTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [Tests]
+    dependencies:
+      - target: SWAYcoreSWAYZ
+    settings:
+      base: { GENERATE_INFOPLIST_FILE: YES, SWIFT_VERSION: "5.9", BUNDLE_LOADER: "$(TEST_HOST)", TEST_HOST: "$(BUILT_PRODUCTS_DIR)/SWAYcoreSWAYZ.app/SWAYcoreSWAYZ" }
+schemes:
+  SWAYcoreSWAYZ:
+    build: { targets: { SWAYcoreSWAYZ: all } }
+    test: { targets: [SWAYcoreSWAYZTests] }

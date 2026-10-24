@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "catalog": "SWAYAvatarCatalog",
+  "base": "neutral-board-kit",
+  "brandLogos": false,
+  "categories": {
+    "body": ["chest", "pelvis", "rightUpperArm", "leftUpperArm", "rightThigh", "leftThigh"],
+    "skin": ["head", "rightLowerArm", "leftLowerArm", "rightHand", "leftHand", "rightCalf", "leftCalf"],
+    "face": ["head"],
+    "hair": ["head"],
+    "hairColor": ["head"],
+    "top": ["chest"],
+    "bottom": ["pelvis", "rightThigh", "leftThigh"],
+    "shoes": ["rightShoe", "leftShoe"],
+    "accessory": []
+  }
+}

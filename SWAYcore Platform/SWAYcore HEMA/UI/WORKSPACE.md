@@ -1,0 +1,5 @@
+# SWAYcore HEMA — independent historical European martial arts UI
+**Identity/discipline:** distinct HEMA practice/learning adaptation of SWAYcore movement/timing, not an invented existing shipped app. Shared platform source and `../ZERO/` must be reused; recover full original HEMA curriculum, pedagogical references, equipment/safety content and approved UI visuals before implementation.
+**UI target:** clear stance/guard/footwork/trajectory/staged movement learning, left/right mirroring, sequence timing and review, optional on-device movement matching with honest tracking uncertainty, offline follow-along, user-relevant accessibility. ZERO begins as full-body neutral stickman, not a false precise weapon simulator.
+**Scope boundary:** do not misrepresent technique correctness, contact, weapons or physical safety from an unvalidated skeleton. Separate identity/content/UI from general Martial Arts and Dance & Fitness.
+**State:** UI lane defined; original HEMA implementation, lesson content and functional build UNKNOWN.

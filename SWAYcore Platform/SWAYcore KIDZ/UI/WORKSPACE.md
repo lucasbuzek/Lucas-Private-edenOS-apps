@@ -1,0 +1,5 @@
+# SWAYcore KIDZ / Kid Dancers — independent UI
+**Identity:** FUN · CONFIDENCE · CREATIVITY · FOUNDATIONS. Existing historical source: `../../SWAY/Products/KidDancers/RecoveredFamilySource/`; approved family handoff: `../../SWAY/RecoveredFamily_20261003/Docs/Spec/04_SWAYcore_KID_DANCERS_CLAUDE_HANDOFF.md`. Do not adopt Dance & Fitness tabs or adult-community behavior.
+**User journeys:** child-appropriate introduction, offline safe learning, watch/copy movement, small count-based sessions, expressive ZERO demonstration, accessible audio/visual hints, effort/progress, camera opt-in with parental safeguarding and usable camera-off path.
+**UI authority:** recover original KIDZ/Kid Dancers visuals and curriculum before choosing exact age bands/reward scheme. No automatic public child profiles, chat, following, user uploads or adult social discovery.
+**Separation:** consumes shared SWAYcore ZERO Engine through `../ZERO/`; KIDZ UI/permissions/progression independent, code/release not yet verified.

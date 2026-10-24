@@ -1,0 +1,29 @@
+SWAYcore 0.9 Build 137 — VISIBLE 2.5D AVATAR ALPHA
+Date: 29 September 2026
+
+Objective
+Deliver a visibly different, coherent Alpha avatar to the physical-iPhone gate. Do not stop at asset generation.
+
+Implemented
+- Added SWAYSkeletal2DAvatarView as the active Alpha character renderer.
+- COACH/Lucia path now selects the new 2.5D renderer rather than SWAYAvatarStageView/cutout fallback.
+- YOUR DANCER Avatar Creator preview now selects the same renderer and passes live user appearance state.
+- Character is drawn as overlapping organic torso/pelvis/limb/head/hair geometry to eliminate the detached capsule/rectangle appearance.
+- Skin tone, hair colour/style and outfit selections affect the visible user dancer.
+- March, Step Touch/Side, Knee and Grapevine have distinct musical-time-driven articulation.
+- Mirroring is handled at the character surface.
+- Legacy cutout and RealityKit code remain available as fallback/future providers but are not the Alpha visual path.
+- Existing 2.5D .swayavatar compiler artifacts are preserved for the next textured weighted-mesh iteration.
+
+Evidence
+- All 18 Swift files: swiftc -parse PASS.
+- All 18 Swift files represented in Xcode PBXSourcesBuildPhase: PASS.
+- Build/Bundle version 137 synchronized in project.yml and pbxproj: PASS.
+- Package archive integrity: pending packaging step, then verified.
+
+Truth / limitations
+- This build intentionally prioritizes the user's immediate physical visual test.
+- The active renderer is a coherent articulated 2.5D Alpha surface; it is NOT yet the final Metal textured weighted-mesh consumer.
+- Therefore weighted-texture deformation remains IN PROGRESS, not falsely marked complete.
+- Xcode compile and physical iPhone appearance/motion remain external gates.
+- Acceptance question: does Build 137 visibly replace the old disconnected mannequin with a coherent Memoji-like dancer and produce recognizable movement?

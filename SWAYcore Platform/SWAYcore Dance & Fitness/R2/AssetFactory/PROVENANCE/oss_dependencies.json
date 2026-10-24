@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "dependencies": [
+    {
+      "modules": [
+        "PIL"
+      ],
+      "name": "Pillow",
+      "kind": "build-test-tool",
+      "licence_id": "HPND",
+      "licence_url": "https://github.com/python-pillow/Pillow/blob/main/LICENSE",
+      "upstream": "https://github.com/python-pillow/Pillow"
+    },
+    {
+      "modules": [
+        "bmesh",
+        "bpy",
+        "mathutils"
+      ],
+      "name": "Blender Python API",
+      "kind": "build-tool",
+      "licence_id": "GPL-3.0-or-later",
+      "licence_url": "https://www.blender.org/about/license/",
+      "upstream": "https://projects.blender.org/blender/blender"
+    },
+    {
+      "modules": [
+        "pxr"
+      ],
+      "name": "OpenUSD Python API",
+      "kind": "build-test-tool",
+      "licence_id": "Apache-2.0",
+      "licence_url": "https://github.com/PixarAnimationStudios/OpenUSD/blob/release/LICENSE.txt",
+      "upstream": "https://github.com/PixarAnimationStudios/OpenUSD"
+    },
+    {
+      "modules": [
+        "vtracer"
+      ],
+      "name": "VTracer Python bindings",
+      "kind": "build-tool",
+      "licence_id": "MIT",
+      "licence_url": "https://github.com/visioncortex/vtracer/blob/master/LICENSE",
+      "upstream": "https://github.com/visioncortex/vtracer"
+    },
+    {
+      "modules": [
+        "numpy"
+      ],
+      "name": "NumPy",
+      "kind": "build-tool",
+      "licence_id": "BSD-3-Clause",
+      "licence_url": "https://github.com/numpy/numpy/blob/main/LICENSE.txt",
+      "upstream": "https://github.com/numpy/numpy"
+    },
+    {
+      "modules": [
+        "scipy"
+      ],
+      "name": "SciPy",
+      "kind": "build-tool",
+      "licence_id": "BSD-3-Clause",
+      "licence_url": "https://github.com/scipy/scipy/blob/main/LICENSE.txt",
+      "upstream": "https://github.com/scipy/scipy"
+    },
+    {
+      "modules": [
+        "cv2"
+      ],
+      "name": "OpenCV (opencv-python)",
+      "kind": "build-tool",
+      "licence_id": "Apache-2.0",
+      "licence_url": "https://github.com/opencv/opencv/blob/4.x/LICENSE",
+      "upstream": "https://github.com/opencv/opencv-python"
+    },
+    {
+      "modules": [
+        "rembg"
+      ],
+      "name": "rembg (isnet-anime model)",
+      "kind": "build-tool",
+      "licence_id": "MIT",
+      "licence_url": "https://github.com/danielgatis/rembg/blob/main/LICENSE.txt",
+      "upstream": "https://github.com/danielgatis/rembg"
+    }
+  ]
+}

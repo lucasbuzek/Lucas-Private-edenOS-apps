@@ -1,0 +1,54 @@
+# SWAYcore product family — recovered requirements and source ledger
+**Status 2026-10-10:** RECOVERED / CONSOLIDATED. Not equivalent to shipping the complete family.
+
+## Product hierarchy and relationship
+`SWAYcore Engine/Core` provides the **single movement truth** shared by distinct products. The products are NOT duplicates of the consumer app, and `SWAYZ` is NOT `Studio Management`. All local-first experiences must remain useful without continuous access to a server.
+
+### 1. SWAYcore Engine/Core — shared platform
+**Recovered functions:** Movement Definition -> normalized pose, choreography beats/counts/holds/transitions, 23-joint SWAYHumanoid-v1 compatibility, instructor COACH/visual YOUR DANCER, Vision YOU tracking, calibration, reliable matching and uncertainty, scoring, the one authoritative musical clock, music/beats, Learn/Practice/Workout/Challenge/Program model, mirrored poses, adaptive/accessibility variants, `.swaypack` import/export, content validation/versioning and local persistence. Extensible to Yoga, Tai Chi, Martial Arts, other fitness/movement apps. Each consumer renders the same move definition; no independent per-view/instructor/clips timing.
+**Source:** `Core/RecoveredSWAYcoreKit`, `Core/RecoveredSWAYAppKit`, `Core/ActiveR2Engine`. Recovered package Swift compilation: UNKNOWN.
+
+### 2. SWAYcore Dance & Fitness — consumer iOS/iPadOS
+**Core interface:** HOME · MOVES · BEATS · PROFILE, with functional Setup/Calibration, Learn, Workout, Results, Create and Creator. Premium dark/violet/magenta/cyan stage, production recognizable graphical people, proper iPhone/iPad portrait and landscape.
+**Moves:** Recovered library ~26 bundled; Move -> Variation -> Combination -> Routine -> Workout -> Challenge -> Program. Learn at adjustable 20–180 BPM with frame-continuous demonstration, pause/count-by-count, same movement truth through practice and gameplay. Mastery Discovered -> Learning -> Familiar -> Mastered. Six previously unsupported IDs restored in active R2 on Oct 10; numerical Swift/Python pose parity PASS but visible animation remains under repair.
+**Experiences:** Quick Dance, Dance, Learn Moves, Party, Challenge, Freestyle, Daily Dance, Endurance, Low Impact, Adaptive Workout. Session duration target ~5–45 minutes; automatic/by-song/continuous mix/by-routine/manual/repeat advancement where supported; truthful results and pacing.
+**Music:** offline SWAY Beats with musically useful percussion, local/imported music analysis and corrected beat grid, authorized MusicKit/Apple Music where available, Shazam preflight for unresolved songs, playlists and Follow-Along on the same clock. Unsupported music providers must not disable local/offline modes.
+**Roles:** INSTRUCTOR personality/appearance; COACH clear choreography demonstration; YOU optional on-device Vision movement feedback; YOUR DANCER user's personalized rendered avatar. All share rig/pose truth. Lucia/Nandi/Thabo/Zuri/Kyle final architecture; first Alpha one finished Lucia production instructor + production user avatar, expanded cast thereafter.
+**Create/progress:** Create Move, record and edit counts/poses, combine/rehearse, share via `.swaypack`; Record Me / Record SWAY -> Photos/Files/Share Sheet; HealthKit permission-safe integration, progress/mastery/streaks, Apple Watch companion planned close to v1, private local profile. Two-person consumer Shared Sessions maximum; professional classes separate.
+**Source:** `Products/DanceFitness/ActiveConsumerR2`, `Products/DanceFitness/RecoveredFamilySource`, `Specifications/FINAL_CONSUMER_SPEC_20260927.txt`, `Specifications/CurrentR2Authority`.
+
+### 3. SWAYZ — professional choreography and instruction
+Identity: **CREATE · CHOREOGRAPH · TEACH · INSPIRE**. An instructor creates/edit moves and movement counts, timelines and transitions, combines routines, aligns music/phrases, adds cues, previews an animated teacher, rehearses with adjustable tempo, captures movement via optional camera, versions local libraries, exports interoperable `.swaypack`, and teaches/reviews with the shared movement engine. iPad stage/timeline preferred. Future formations/partner choreography must remain metadata or verified implementation, not invented finished features. Inspired by dance-teaching experience, never copying Patrick Swayze/Dirty Dancing assets.
+**Source:** `Products/SWAYZ/RecoveredFamilySource` and original `03_SWAYcore_SWAYZ_CLAUDE_HANDOFF.md`. Mac Swift compile/device result UNKNOWN.
+
+### 4. SWAYcore Kid Dancers / Kids
+Identity: **FUN · CONFIDENCE · CREATIVITY · FOUNDATIONS**. A distinct age-appropriate child-facing experience with accessible visual dance instruction, watch/copy, clear short feedback, effort/progress, live pose tracking **only when enabled and truthful**, camera-off full follow-along, offline moves/music, parent-aware safeguarding. Uses the common engine but no adult fitness/business dashboard. No public child profiles, public messaging or identifiable uploads without a verified and separately approved safeguarding design. Earlier source does NOT establish canonical age bands, parental account schema, reward economy or exact curriculum. Those remain UNKNOWN—not licensed to invent as completed.
+**Source:** `Products/KidDancers/RecoveredFamilySource`, `04_SWAYcore_KID_DANCERS_CLAUDE_HANDOFF.md`. Swift/device UNKNOWN.
+
+### 5. SWAYcore Studio Management — separate professional operations product
+Identity: **INSTRUCT · MANAGE · GROW · SUCCEED**. Studio/business area: schedules/calendars/recurrences, studios/locations where present, class creation and capacity/rosters, instructor/staff assignments, enrollment/students/members, attendance, membership lifecycle, billing/invoice/payment states, basic finance/administration, durable local business data. iPad/macOS professional workspace and requested Windows/Linux direction (no proven framework or delivery yet). Integrates with SWAYZ content by reference, not by cloning choreography data or exposing private member records to community.
+**Source:** `Products/StudioManagement/RecoveredFamilySource`, `05_SWAYcore_STUDIO_MANAGEMENT_CLAUDE_HANDOFF.md`. Swift/device/cross-platform builds UNKNOWN.
+
+**2026-10-19 Studio Management engineering result (independent product; NOT a release):** Active candidate `Products/StudioManagement/ActiveStudio/` preserved the unchanged original recovered source. Swift 6.4/Xcode 27 on Lucas-MacBook: SWAYStudioKit **14/14 unit/workflow tests PASS**, including repaired membership lifecycle with historical event persistence, corrupt-primary backup preservation and instructor assignment rollback. Unsigned **macOS app build PASS**; unsigned **iPadOS Simulator app build PASS**; both macOS and iPadOS simulator **test-bundle build-for-testing PASS**. Test bundles were compiled, not executed. XcodeGen test-host paths were corrected for macOS versus iPadOS. Active studio schedule now exposes assignment of active instructors; UI fails closed when saved business data and its backup are both unreadable. App-level corrupt-storage behavior is compiled but NOT runtime-tested. Pending: native interactive/negative UI regressions; class-edit workflow; complete finance/roster/attendance UX; durable business-data/privacy/security verification; SWAYZ reference handoff; physical iPad/macOS acceptance; Windows/Linux route and builds. Prior single local verified SWAYcore backup predates these changes; remote GitHub changes NOT pushed; Studio Management LKG **NONE**. No Releases/Products promotion.
+
+
+### 6. SWAY — future focused dance-learning specialist
+Historical distinction: general SWAYcore consumer = **MOVE like a performer** (Hip-Hop × Afro/Afrobeats/Amapiano × Pop Performance); distinct future **SWAY** specialist = **LEARN how to dance** on the same movement technology. The future specialist is NOT automatically a second shipped application or synonym for SWAYZ. Source/target milestones require separate evidence. See `Products/SWAY-Learning-Future/PRODUCT_IDENTITY.md`.
+
+## Community, publishing, sharing
+**Offline/Alpha:** accountless native Share Sheet/iMessage/AirDrop/Files for validated `.swaypack` content; record/share through user consent; limited two-person consumer shared sessions; no required account or server. 
+**Official online product:** an optional-server-supported **community + content backend is required for official release scope**, not for initial Alpha. Identity/account separated from public pseudonym; profiles, searchable/discoverable choreography and content pack catalogs, versioned manifests, official updates/downloads, authored uploads, follows/favorites, shared challenges and optional professional class/group integrations, user controls, moderation/reporting, privacy/consent and cross-device state. No unapproved camera or music uploads. Detailed contractual boundary in `Community/` and `Sharing/`.
+**Evidence:** existing R2 `Models/ProfileSharing.swift` and portability code are recoverable; no deployed official community backend was demonstrated. Never claim it works from filename alone.
+
+## Quality + release rules
+Earlier history was partially documented in obsolete candidate archives. Separate historic Recovery trees were retired under 2026-10-18 lean-storage instructions; both candidate histories are NOT independently assured recoverable. No promotion before physical acceptance.
+**Developer evidence:** current R2 26-move pose parity PASS at 12,610 samples, 27 protected static tests PASS, full 11 executable gates PASS / 2 UNKNOWN (as of Oct 10); Xcode simulator build PASS. This does not certify all 5 family apps or iPhone experience. Historical family package had Python/static checks in an earlier sandbox; its native Swift compile/Blender production/physical test remain UNKNOWN until rerun on Mac.
+
+## Provenance
+1. Original `Specifications/OriginalProductHandoffs_20261003` five complete specifications, embedded Project Bible and macOS builders.
+2. `Specifications/FINAL_CONSUMER_SPEC_20260927.txt`, 25-section recovered product specification.
+3. `Specifications/ProjectAuthority` and `Specifications/CurrentR2Authority`.
+4. Previous user decisions: full family, SWAY specialist distinction, official backend, local Share Sheet, online privacy/pseudonyms; latest request to consolidate all into SWAY.
+5. Current SWAYcore Platform working tree, ONE verified local working-project backup ~/edenOS/Software Development/#Backups/SWAYcore/SWAYcore_WORKING_BACKUP_20261018.tar.zst, and GitHub remote at https://github.com/lucasbuzek/Lucas-Private-edenOS-apps (no extra local clone). These are not exhaustive historic-donor or off-device archival backups.
+
+**Unrecovered/incomplete:** unrestricted complete past-chat transcripts, production backend deployment, full family physical acceptance and precise future children's social/account policies. Do not fill such gaps with invented implementation.

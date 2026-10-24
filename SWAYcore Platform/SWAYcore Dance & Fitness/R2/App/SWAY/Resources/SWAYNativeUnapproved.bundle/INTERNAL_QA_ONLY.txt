@@ -1,0 +1,1 @@
+UNAPPROVED engineering fixture. Do not install, distribute, enable, promote or use in user experience. Does not replace bundled user.character.json.

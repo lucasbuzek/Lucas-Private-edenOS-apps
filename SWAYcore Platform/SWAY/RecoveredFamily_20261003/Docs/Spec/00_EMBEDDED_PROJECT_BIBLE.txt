@@ -1,0 +1,91 @@
+SWAYcore — EMBEDDED PROJECT BIBLE / COLD-START AUTHORITY
+========================================================
+PURPOSE
+Claude receives this package with NO assumed access to ChatGPT history, GitHub, the MacBook archive,
+Build 153, external Project Bibles, mockups, or prior source. The package itself is the reconstruction authority.
+
+FAMILY
+1. SWAYcore Engine/Core — common movement/timing/tracking/content engine.
+2. SWAYcore Dance & Fitness — native iOS/iPadOS consumer product.
+3. SWAYcore SWAYZ — professional dance-instructor/choreography product.
+4. SWAYcore Kid Dancers — child-focused movement/dance product.
+5. SWAYcore Studio Management — professional studio/business operations product.
+Future products may reuse Core for Yoga, Martial Arts, Tai Chi, Fitness and other movement disciplines.
+ONE CORE. MULTIPLE EXPERIENCES.
+
+REQUIREMENTS / EVIDENCE
+Functionality before presentation, but final delivery requires both functionality and final UI/UIX.
+Preserve working capability. Never replace it with placeholders.
+GENERATED != IMPLEMENTED != BUILT != TESTED != VERIFIED != RELEASED. UNKNOWN != PASS.
+A Blender export proves export, not production visual quality. Compilation proves compilation, not functionality.
+Installation/launch prove only those gates. Physical feature/visual acceptance remains a separate gate.
+Offline/local-first where practical. Native capability first. Providers extend the product.
+
+PROHIBITED FINAL CHARACTER FALLBACKS
+No primitive mannequin, raw Vision stick figure, static PNG/cutout or 2.5D placeholder may be presented as final
+COACH, YOU or YOUR DANCER. Final characters are production-quality articulated graphical humans.
+
+RECOVERED BUILD 153 IMPLEMENTATION EVIDENCE — EMBEDDED
+Build identity: `SWAYcore Build 153 — ONE CLICK`.
+Asset generator used Blender 5.2.2 LTS and wrote `SWAYAlpha_BUILD153.blend`.
+Runtime contract: `SWAYHumanoid-v1`, 23 unique joints.
+Ten recovered proof clips:
+`sway_idle_v1`, `sway_march_v1`, `sway_step_touch_v1`, `sway_grapevine_v1`,
+`sway_knee_lift_v1`, `sway_squat_v1`, `sway_side_lunge_v1`, `sway_jumping_jack_v1`,
+`sway_body_roll_v1`, `sway_pivot_turn_v1`.
+The verifier reported 10 Lucia RealityKit animation bindings, 10 user bindings, and shared SWAYHumanoid-v1
+production-character manifests.
+Recovered resource/path concepts included:
+`LuciaReality.usdc`, `lucia.character.json`, `user.character.json`, `lucia.swayavatar.json`,
+`LuciaAlpha.swayavatar`, `lucia.cutout.manifest.json`, `SWAY-DURER-2.5D-v1.json`.
+Those legacy/cutout/2.5D resources are recovery evidence, NOT final visual authority.
+
+Recovered Xcode identity/evidence:
+project/scheme `SWAY`; bundle identifier `com.lucasbuzek.private.sway`; iPhone + iPad targets;
+recovered build used arm64, iPhoneOS SDK 27.0 and minimum deployment target 26.0.
+Recovered Swift paths included:
+SWAYAvatarRendering.swift; SWAYSkeletal2DAvatarView.swift; SwayFaceTracking.swift; SwayStore.swift;
+RootView.swift; SWAYApp.swift; SettingsView.swift; StickFigureView.swift; WorkoutPlayerView.swift;
+CameraLabView.swift; CreateMoveView.swift; HomeView.swift; Move.swift; MoveLibraryView.swift;
+NativeCapabilities.swift; NativeLabView.swift; ProfileSharing.swift; ProgressViewScreen.swift.
+Recovered framework/toolchain evidence included SwiftUI/UIKit, Vision, RealityKit/RealityCore, ModelIO,
+MusicKit, ShazamKit, AVFoundation, HealthKit, Photos/PhotosUI, ReplayKit, MultipeerConnectivity,
+GroupActivities, SceneKit/SpriteKit and ARKit. Their presence does not prove each feature was physically verified.
+
+One recovered Build 153 attempt failed in Xcode indexing/DataStore rename operations. Later recovery treated
+Build 153 as package/LKG evidence and reported successful iPhone installation/launch. iPad verification was
+blocked at one point because the device was locked. Full physical feature-flow regression tests remained incomplete.
+Production 3D character assets remained primitive preview geometry and were explicitly NOT accepted.
+
+HISTORICAL REFERENCES
+Build 143 = graphical/runtime recovery reference.
+Build 147 = protected tracking-recovery reference.
+Build 148 = physically rejected.
+Build 153 = recovery/package/pipeline/LKG evidence, not final-product acceptance.
+
+KNOWN REGRESSIONS TO AVOID
+Static/cut images returning; menu regression; music analysis/Apple Music regression; missing camera tracking;
+wrong character graphics; primitive YOUR DANCER; user-avatar customization controls that barely/non-functionally
+change the avatar; tiny mannequin in oversized iPad cards; development-style diagnostics exposed as product UI.
+
+PRODUCTION HUMANOID CONTRACT
+Create one reusable production humanoid architecture for Lucia, Nandi, Thabo, Zuri, Kyle and YOUR DANCER:
+stable skeleton/bone naming; common coordinate/scale convention; deformation-ready topology and weights;
+production textures/materials; face/head architecture sufficient for visible customization; retargetable animation;
+native Apple runtime export; automated mesh/skeleton/joint/material/texture/clip/name/scale validation; iPhone/iPad
+performance validation. The recovered 23-joint rig is compatibility evidence, not a ceiling on final rig quality.
+
+FINAL VISUAL DIRECTION
+Claude cannot rely on an external mockup archive. Reconstruct from this package:
+premium dark/stage-oriented visual language; violet/magenta/cyan accents; large polished human coach;
+restrained rounded controls; clear hierarchy; movement readable at distance; no dashboard clutter.
+Recovered screenshots of the late build are NEGATIVE evidence where they show primitive mannequin, huge empty
+cards, tiny character, incomplete avatar editor or wasted iPad space. A recovered Moves screen showing a polished
+female dancer on a violet stage better represents desired character prominence/finish, but the final performer
+must be runtime articulated, not a static image.
+
+MAC BUILD-HOST INVARIANT
+All one-click builders RUN ON macOS. Lucas is not expected to build on Windows/Linux.
+Builders check Homebrew, Xcode and Blender as needed, fetch only missing declared Homebrew formulae/casks,
+generate/validate assets, build/test/package, and request iPhone/iPad connection only when physical verification
+is genuinely the next gate.

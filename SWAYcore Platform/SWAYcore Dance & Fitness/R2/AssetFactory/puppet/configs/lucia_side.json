@@ -1,0 +1,373 @@
+{
+  "src": "mattes/lucia_side_rgba.png",
+  "out": "parts",
+  "prefix": "lucia",
+  "view": "side",
+  "neckY": 414,
+  "headHalfWidth": 99,
+  "despill": 28,
+  "despillMaxY": 1360,
+  "joints": {
+    "Hips": [
+      132,
+      770
+    ],
+    "Spine": [
+      132,
+      683
+    ],
+    "Neck": [
+      132,
+      414
+    ],
+    "HeadTop": [
+      132,
+      83
+    ],
+    "RightUpperArm": [
+      106,
+      470
+    ],
+    "RightLowerArm": [
+      106,
+      646
+    ],
+    "RightHand": [
+      106,
+      796
+    ],
+    "RightHandTip": [
+      106,
+      883
+    ],
+    "LeftUpperArm": [
+      157,
+      470
+    ],
+    "LeftLowerArm": [
+      157,
+      646
+    ],
+    "LeftHand": [
+      157,
+      796
+    ],
+    "LeftHandTip": [
+      157,
+      883
+    ],
+    "RightUpperLeg": [
+      119,
+      783
+    ],
+    "RightLowerLeg": [
+      113,
+      1008
+    ],
+    "RightFoot": [
+      110,
+      1233
+    ],
+    "RightToe": [
+      95,
+      1289
+    ],
+    "LeftUpperLeg": [
+      144,
+      783
+    ],
+    "LeftLowerLeg": [
+      150,
+      1008
+    ],
+    "LeftFoot": [
+      153,
+      1233
+    ],
+    "LeftToe": [
+      168,
+      1289
+    ]
+  },
+  "force": [
+    {
+      "part": "rightHand",
+      "box": [
+        80,
+        777,
+        132,
+        890
+      ]
+    },
+    {
+      "part": "leftHand",
+      "box": [
+        131,
+        777,
+        183,
+        890
+      ]
+    },
+    {
+      "part": "rightShoe",
+      "box": [
+        84,
+        1170,
+        136,
+        1358
+      ]
+    },
+    {
+      "part": "leftShoe",
+      "box": [
+        127,
+        1170,
+        179,
+        1358
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "name": "head",
+      "bone": [
+        "Neck",
+        "HeadTop"
+      ],
+      "radius": 8,
+      "z": 95,
+      "caps": [],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "chest",
+      "bone": [
+        "Spine",
+        "Neck"
+      ],
+      "radius": 38,
+      "z": 40,
+      "caps": [
+        [
+          "Spine",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "pelvis",
+      "bone": [
+        "Hips",
+        "Spine"
+      ],
+      "radius": 35,
+      "z": 50,
+      "caps": [
+        [
+          "Hips",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "rightUpperArm",
+      "bone": [
+        "RightUpperArm",
+        "RightLowerArm"
+      ],
+      "radius": 16,
+      "z": -10,
+      "caps": [
+        [
+          "RightUpperArm",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1,
+      "darken": 0.85
+    },
+    {
+      "name": "rightLowerArm",
+      "bone": [
+        "RightLowerArm",
+        "RightHand"
+      ],
+      "radius": 14,
+      "z": 25,
+      "caps": [
+        [
+          "RightLowerArm",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1,
+      "darken": 0.85
+    },
+    {
+      "name": "rightHand",
+      "bone": [
+        "RightHand",
+        "RightHandTip"
+      ],
+      "radius": 11,
+      "z": 35,
+      "caps": [
+        [
+          "RightHand",
+          "auto"
+        ]
+      ],
+      "darken": 0.85
+    },
+    {
+      "name": "leftUpperArm",
+      "bone": [
+        "LeftUpperArm",
+        "LeftLowerArm"
+      ],
+      "radius": 16,
+      "z": 35,
+      "caps": [
+        [
+          "LeftUpperArm",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "leftLowerArm",
+      "bone": [
+        "LeftLowerArm",
+        "LeftHand"
+      ],
+      "radius": 14,
+      "z": 70,
+      "caps": [
+        [
+          "LeftLowerArm",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "leftHand",
+      "bone": [
+        "LeftHand",
+        "LeftHandTip"
+      ],
+      "radius": 11,
+      "z": 80,
+      "caps": [
+        [
+          "LeftHand",
+          "auto"
+        ]
+      ]
+    },
+    {
+      "name": "rightThigh",
+      "bone": [
+        "RightUpperLeg",
+        "RightLowerLeg"
+      ],
+      "radius": 26,
+      "z": -15,
+      "caps": [
+        [
+          "RightUpperLeg",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1,
+      "darken": 0.85
+    },
+    {
+      "name": "rightCalf",
+      "bone": [
+        "RightLowerLeg",
+        "RightFoot"
+      ],
+      "radius": 22,
+      "z": -35,
+      "caps": [
+        [
+          "RightLowerLeg",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1,
+      "darken": 0.85
+    },
+    {
+      "name": "rightShoe",
+      "bone": [
+        "RightFoot",
+        "RightToe"
+      ],
+      "radius": 21,
+      "z": -25,
+      "caps": [],
+      "darken": 0.85
+    },
+    {
+      "name": "leftThigh",
+      "bone": [
+        "LeftUpperLeg",
+        "LeftLowerLeg"
+      ],
+      "radius": 26,
+      "z": 30,
+      "caps": [
+        [
+          "LeftUpperLeg",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "leftCalf",
+      "bone": [
+        "LeftLowerLeg",
+        "LeftFoot"
+      ],
+      "radius": 22,
+      "z": 10,
+      "caps": [
+        [
+          "LeftLowerLeg",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "leftShoe",
+      "bone": [
+        "LeftFoot",
+        "LeftToe"
+      ],
+      "radius": 21,
+      "z": 20,
+      "caps": []
+    }
+  ],
+  "source": {
+    "matte": "lucia_side_rgba.png"
+  }
+}

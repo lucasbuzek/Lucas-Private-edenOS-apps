@@ -1,0 +1,270 @@
+{
+  "animations": {
+    "arm-reach": {
+      "beatsPerCycle": 1,
+      "loop": true,
+      "resource": "sway_arm_reach_v1"
+    },
+    "body-roll": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_body_roll_v1"
+    },
+    "box-step": {
+      "beatsPerCycle": 4,
+      "loop": true,
+      "resource": "sway_box_step_v1"
+    },
+    "cha-cha": {
+      "beatsPerCycle": 4,
+      "loop": true,
+      "resource": "sway_cha_cha_v1"
+    },
+    "cross-step": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_cross_step_v1"
+    },
+    "double-step": {
+      "beatsPerCycle": 4,
+      "loop": true,
+      "resource": "sway_double_step_v1"
+    },
+    "grapevine": {
+      "beatsPerCycle": 4,
+      "loop": true,
+      "resource": "sway_grapevine_v1"
+    },
+    "heel-dig": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_heel_dig_v1"
+    },
+    "hip-sway": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_hip_sway_v1"
+    },
+    "idle": {
+      "beatsPerCycle": 4,
+      "loop": true,
+      "resource": "sway_idle_v1"
+    },
+    "jumping-jack": {
+      "beatsPerCycle": 1,
+      "loop": true,
+      "resource": "sway_jumping_jack_v1"
+    },
+    "knee": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_knee_lift_v1"
+    },
+    "mambo": {
+      "beatsPerCycle": 4,
+      "loop": true,
+      "resource": "sway_mambo_v1"
+    },
+    "march": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_march_v1"
+    },
+    "pivot-turn": {
+      "beatsPerCycle": 4,
+      "loop": true,
+      "resource": "sway_pivot_turn_v1"
+    },
+    "side-lunge": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_side_lunge_v1"
+    },
+    "side-tap": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_side_tap_v1"
+    },
+    "skater": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_skater_v1"
+    },
+    "squat-pulse": {
+      "beatsPerCycle": 1,
+      "loop": true,
+      "resource": "sway_squat_v1"
+    },
+    "step-touch": {
+      "beatsPerCycle": 2,
+      "loop": true,
+      "resource": "sway_step_touch_v1"
+    },
+    "v-step": {
+      "beatsPerCycle": 4,
+      "loop": true,
+      "resource": "sway_v_step_v1"
+    }
+  },
+  "assetBaseName": "SWAYModule",
+  "authoredBPM": 120,
+  "blenderVersion": "5.2.2 LTS",
+  "characterID": "user",
+  "displayName": "Your Dancer",
+  "exportedSkeleton": "SWAYRuntimeSkeleton",
+  "hipsJoint": "Hips",
+  "maximumSimultaneousNativeModels": 12,
+  "modularAssetName": "SWAYModule",
+  "moduleAssets": {
+    "YD_Accessory_Cap": "Modules/YD_Accessory_Cap/SWAYModule.usdc",
+    "YD_Accessory_Gloves": "Modules/YD_Accessory_Gloves/SWAYModule.usdc",
+    "YD_Accessory_Headband": "Modules/YD_Accessory_Headband/SWAYModule.usdc",
+    "YD_Accessory_Wristbands": "Modules/YD_Accessory_Wristbands/SWAYModule.usdc",
+    "YD_Body_Athletic": "Modules/YD_Body_Athletic/SWAYModule.usdc",
+    "YD_Body_Balanced": "Modules/YD_Body_Balanced/SWAYModule.usdc",
+    "YD_Body_Soft": "Modules/YD_Body_Soft/SWAYModule.usdc",
+    "YD_Bottom_Jogger": "Modules/YD_Bottom_Jogger/SWAYModule.usdc",
+    "YD_Bottom_Legging": "Modules/YD_Bottom_Legging/SWAYModule.usdc",
+    "YD_Bottom_Short": "Modules/YD_Bottom_Short/SWAYModule.usdc",
+    "YD_Brows_0": "Modules/YD_Brows_0/SWAYModule.usdc",
+    "YD_Brows_1": "Modules/YD_Brows_1/SWAYModule.usdc",
+    "YD_Brows_2": "Modules/YD_Brows_2/SWAYModule.usdc",
+    "YD_Brows_3": "Modules/YD_Brows_3/SWAYModule.usdc",
+    "YD_Eyes_0": "Modules/YD_Eyes_0/SWAYModule.usdc",
+    "YD_Eyes_1": "Modules/YD_Eyes_1/SWAYModule.usdc",
+    "YD_Eyes_2": "Modules/YD_Eyes_2/SWAYModule.usdc",
+    "YD_Eyes_3": "Modules/YD_Eyes_3/SWAYModule.usdc",
+    "YD_Face_Angular": "Modules/YD_Face_Angular/SWAYModule.usdc",
+    "YD_Face_Oval": "Modules/YD_Face_Oval/SWAYModule.usdc",
+    "YD_Face_Round": "Modules/YD_Face_Round/SWAYModule.usdc",
+    "YD_Facial_Hair_0": "Modules/YD_Facial_Hair_0/SWAYModule.usdc",
+    "YD_Facial_Hair_1": "Modules/YD_Facial_Hair_1/SWAYModule.usdc",
+    "YD_Facial_Hair_2": "Modules/YD_Facial_Hair_2/SWAYModule.usdc",
+    "YD_Facial_Hair_3": "Modules/YD_Facial_Hair_3/SWAYModule.usdc",
+    "YD_Hair_Afro": "Modules/YD_Hair_Afro/SWAYModule.usdc",
+    "YD_Hair_Braids": "Modules/YD_Hair_Braids/SWAYModule.usdc",
+    "YD_Hair_Bun": "Modules/YD_Hair_Bun/SWAYModule.usdc",
+    "YD_Hair_Long": "Modules/YD_Hair_Long/SWAYModule.usdc",
+    "YD_Hair_Short": "Modules/YD_Hair_Short/SWAYModule.usdc",
+    "YD_Mouth_0": "Modules/YD_Mouth_0/SWAYModule.usdc",
+    "YD_Mouth_1": "Modules/YD_Mouth_1/SWAYModule.usdc",
+    "YD_Mouth_2": "Modules/YD_Mouth_2/SWAYModule.usdc",
+    "YD_Mouth_3": "Modules/YD_Mouth_3/SWAYModule.usdc",
+    "YD_Nose_0": "Modules/YD_Nose_0/SWAYModule.usdc",
+    "YD_Nose_1": "Modules/YD_Nose_1/SWAYModule.usdc",
+    "YD_Nose_2": "Modules/YD_Nose_2/SWAYModule.usdc",
+    "YD_Nose_3": "Modules/YD_Nose_3/SWAYModule.usdc",
+    "YD_Shoes_Barefoot": "Modules/YD_Shoes_Barefoot/SWAYModule.usdc",
+    "YD_Shoes_HighTops": "Modules/YD_Shoes_HighTops/SWAYModule.usdc",
+    "YD_Shoes_Trainers": "Modules/YD_Shoes_Trainers/SWAYModule.usdc",
+    "YD_Top_Jacket": "Modules/YD_Top_Jacket/SWAYModule.usdc",
+    "YD_Top_Tank": "Modules/YD_Top_Tank/SWAYModule.usdc",
+    "YD_Top_Tee": "Modules/YD_Top_Tee/SWAYModule.usdc"
+  },
+  "moduleContract": "your_dancer_modules.json",
+  "moduleMeshNames": [
+    "YD_Accessory_Cap",
+    "YD_Accessory_Gloves",
+    "YD_Accessory_Headband",
+    "YD_Accessory_Wristbands",
+    "YD_Body_Athletic",
+    "YD_Body_Balanced",
+    "YD_Body_Soft",
+    "YD_Bottom_Jogger",
+    "YD_Bottom_Legging",
+    "YD_Bottom_Short",
+    "YD_Brows_0",
+    "YD_Brows_1",
+    "YD_Brows_2",
+    "YD_Brows_3",
+    "YD_Eyes_0",
+    "YD_Eyes_1",
+    "YD_Eyes_2",
+    "YD_Eyes_3",
+    "YD_Face_Angular",
+    "YD_Face_Oval",
+    "YD_Face_Round",
+    "YD_Facial_Hair_0",
+    "YD_Facial_Hair_1",
+    "YD_Facial_Hair_2",
+    "YD_Facial_Hair_3",
+    "YD_Hair_Afro",
+    "YD_Hair_Braids",
+    "YD_Hair_Bun",
+    "YD_Hair_Long",
+    "YD_Hair_Short",
+    "YD_Mouth_0",
+    "YD_Mouth_1",
+    "YD_Mouth_2",
+    "YD_Mouth_3",
+    "YD_Nose_0",
+    "YD_Nose_1",
+    "YD_Nose_2",
+    "YD_Nose_3",
+    "YD_Shoes_Barefoot",
+    "YD_Shoes_HighTops",
+    "YD_Shoes_Trainers",
+    "YD_Top_Jacket",
+    "YD_Top_Tank",
+    "YD_Top_Tee"
+  ],
+  "modulePackaging": "on-demand-independent-skinned-models",
+  "motionSource": "SwayCoachPoseEngine@2e7959c442b8",
+  "nativeHelpersPreserved": true,
+  "renderer": "realitykit",
+  "retargetSourceMapping": {
+    "Chest": "Spine2",
+    "Head": "head",
+    "Hips": "Sacrum.001",
+    "LeftFoot": "Foot.L",
+    "LeftHand": "hand001.L",
+    "LeftLowerArm": "LowerArm.L",
+    "LeftLowerLeg": "Tibia.L",
+    "LeftShoulder": "Clavicle.L",
+    "LeftToe": "Foot.L.001",
+    "LeftUpperArm": "Humerus.L",
+    "LeftUpperLeg": "Femur.L",
+    "Neck": "Spine3.002",
+    "RightFoot": "Foot.R",
+    "RightHand": "hand001.R",
+    "RightLowerArm": "LowerArm.R",
+    "RightLowerLeg": "Tibia.R",
+    "RightShoulder": "Clavicle.R",
+    "RightToe": "Foot.R.001",
+    "RightUpperArm": "Humerus.R",
+    "RightUpperLeg": "Femur.R",
+    "Root": "Sacrum",
+    "Spine": "Spine1",
+    "Spine1": "Spine1.001"
+  },
+  "rootJoint": "Root",
+  "runtimeApproved": false,
+  "sharedAnimationPaths": {
+    "arm-reach": "Animations/sway_arm_reach_v1.usdc",
+    "body-roll": "Animations/sway_body_roll_v1.usdc",
+    "box-step": "Animations/sway_box_step_v1.usdc",
+    "cha-cha": "Animations/sway_cha_cha_v1.usdc",
+    "cross-step": "Animations/sway_cross_step_v1.usdc",
+    "double-step": "Animations/sway_double_step_v1.usdc",
+    "grapevine": "Animations/sway_grapevine_v1.usdc",
+    "heel-dig": "Animations/sway_heel_dig_v1.usdc",
+    "hip-sway": "Animations/sway_hip_sway_v1.usdc",
+    "idle": "Animations/sway_idle_v1.usdc",
+    "jumping-jack": "Animations/sway_jumping_jack_v1.usdc",
+    "knee": "Animations/sway_knee_lift_v1.usdc",
+    "mambo": "Animations/sway_mambo_v1.usdc",
+    "march": "Animations/sway_march_v1.usdc",
+    "pivot-turn": "Animations/sway_pivot_turn_v1.usdc",
+    "side-lunge": "Animations/sway_side_lunge_v1.usdc",
+    "side-tap": "Animations/sway_side_tap_v1.usdc",
+    "skater": "Animations/sway_skater_v1.usdc",
+    "squat-pulse": "Animations/sway_squat_v1.usdc",
+    "step-touch": "Animations/sway_step_touch_v1.usdc",
+    "v-step": "Animations/sway_v_step_v1.usdc"
+  },
+  "skeletonContract": "SWAYHumanoid-v1",
+  "sourceLedgerId": "girush-human-yw-cc0",
+  "userApprovalRequired": true,
+  "version": 2,
+  "visualQuality": "UNREVIEWED"
+}

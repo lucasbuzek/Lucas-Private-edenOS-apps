@@ -1,0 +1,26 @@
+front: source_alpha_is_kyle_clone=True
+back: source_alpha_is_kyle_clone=True
+side: source_alpha_is_kyle_clone=True
+catalog body: options=1
+catalog skin: options=1
+catalog face: options=1
+catalog hair: options=1
+catalog hairColor: options=1
+catalog top: options=1
+catalog bottom: options=1
+catalog shoes: options=1
+catalog accessory: options=1
+FAIL: YOUR DANCER front geometry identical to Kyle
+FAIL: YOUR DANCER back geometry identical to Kyle
+FAIL: YOUR DANCER side geometry identical to Kyle
+FAIL: catalog body: fewer than two selectable variants
+FAIL: catalog skin: fewer than two selectable variants
+FAIL: catalog face: fewer than two selectable variants
+FAIL: catalog hair: fewer than two selectable variants
+FAIL: catalog hairColor: fewer than two selectable variants
+FAIL: catalog top: fewer than two selectable variants
+FAIL: catalog bottom: fewer than two selectable variants
+FAIL: catalog shoes: fewer than two selectable variants
+FAIL: catalog accessory: fewer than two selectable variants
+FAIL: catalog hardcodes option availability to first item
+AVATAR_VISUAL_CATALOG_FAIL issues=13

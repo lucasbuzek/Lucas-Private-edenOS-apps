@@ -1,0 +1,17 @@
+SWAYcore 0.9 Build 124 — EITRI Alpha Implementation Candidate
+
+Implemented from Build 123:
+- Completed Lucia manifest-driven Alpha renderer contract for pelvis hip sockets, head/neck, hands/wrists and shoes/ankles; retained limb/torso pivot spans.
+- Lucia required authored parts no longer silently fall back to generic avatar masks. Future incomplete instructors retain neutral fallback until their contracts are complete.
+- Workout now honors the requested duration instead of ending when the generated step array is exhausted; choreography cycles until the duration gate.
+- Completion persistence now receives the complete workout movement set; results track performed movement sections.
+- Early-ended sub-minute workouts report 0 minutes rather than falsely showing 1.
+- Workout Mirror Instructor setting now reaches the production COACH renderer.
+- Show YOU Pose setting now controls the tracking silhouette.
+- Show Live Camera setting now displays a low-opacity live camera layer during tracking workouts.
+- Theme Follows Dance Style now affects the workout stage accent instead of being a dead setting.
+- User-created Move IDs now encode their authored executable movement foundation; the pose engine resolves them after persistence/share/import.
+- Saved Combinations/Routines are now actionable and can launch Practice using the production workout/choreography engine.
+- .swaypack/.swaybackup file import pickers use explicit UTTypes (with JSON compatibility).
+
+Evidence state at packaging: IMPLEMENTED + STATIC PASS. Xcode/iOS/device verification remains required.

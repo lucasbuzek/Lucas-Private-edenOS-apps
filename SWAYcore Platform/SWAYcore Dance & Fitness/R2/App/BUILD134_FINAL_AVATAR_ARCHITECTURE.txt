@@ -1,0 +1,15 @@
+SWAYcore 0.9 Build 134 — FINAL AVATAR ARCHITECTURE BRIDGE
+
+Forward baseline: Build 133. No rollback.
+Implemented:
+- SWAYAvatarRendering boundary and RealityKit production renderer implementation.
+- RealityKit path activates only when a real LuciaReality USDZ/Reality asset is bundled; no fake 3D substitute.
+- Explicit Lucia character/animation manifest for idle + proof movement classes.
+- Stable AnimationResource playback, transition, pause/resume, speed and deterministic musical-time seeking.
+- Existing cutout renderer retained only as fallback/debug bridge.
+- Lucia cutout manifest geometry regenerated from actual delivered PNG dimensions and alpha bounds.
+- Runtime cutout asset validator added.
+- Settings Music/Health actions now produce visible result state instead of apparently doing nothing.
+
+BLOCKER / REQUIRED ASSET:
+The final rigged/skinned LuciaReality.usdz or .reality asset and skeletal clips do not exist in Build 133. Code cannot manufacture that production character from segmented PNGs. Build 134 therefore establishes the final renderer and asset contract but does NOT claim final Lucia visual acceptance.

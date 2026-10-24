@@ -1,0 +1,11 @@
+16:57:56 | INFO: Data are loaded, start creating Blender stuff
+16:57:56 | INFO: Blender create Mesh node Face
+16:57:56 | INFO: Blender create Mesh node Face.001
+16:57:56 | INFO: Blender create Mesh node Sphere.005_Retopology.004
+16:57:56 | INFO: glTF import finished in 0.21s
+SWAY_CC0_RIG_AUDIT [('Armature', 'ARMATURE', 65), ('Camera', 'CAMERA', 0), ('Cube', 'MESH', 8), ('Eyebrows', 'MESH', 646), ('Eyes', 'MESH', 556), ('Icosphere', 'MESH', 42), ('Light', 'LIGHT', 0), ('SuperHero_Male', 'MESH', 7281)]
+SWAY_ARMATURE_BONES [['root', 'pelvis', 'spine_01', 'spine_02', 'spine_03', 'neck_01', 'Head', 'clavicle_l', 'upperarm_l', 'lowerarm_l', 'hand_l', 'index_01_l', 'index_02_l', 'index_03_l', 'index_04_leaf_l', 'middle_01_l', 'middle_02_l', 'middle_03_l', 'middle_04_leaf_l', 'pinky_01_l', 'pinky_02_l', 'pinky_03_l', 'pinky_04_leaf_l', 'ring_01_l', 'ring_02_l', 'ring_03_l', 'ring_04_leaf_l', 'thumb_01_l', 'thumb_02_l', 'thumb_03_l', 'thumb_04_leaf_l', 'clavicle_r', 'upperarm_r', 'lowerarm_r', 'hand_r', 'index_01_r', 'index_02_r', 'index_03_r', 'index_04_leaf_r', 'middle_01_r', 'middle_02_r', 'middle_03_r', 'middle_04_leaf_r', 'pinky_01_r', 'pinky_02_r', 'pinky_03_r', 'pinky_04_leaf_r', 'ring_01_r', 'ring_02_r', 'ring_03_r', 'ring_04_leaf_r', 'thumb_01_r', 'thumb_02_r', 'thumb_03_r', 'thumb_04_leaf_r']]
+SWAY_SKIN_GROUPS [('Cube', 0, 0), ('Eyebrows', 65, 1), ('Eyes', 65, 1), ('Icosphere', 0, 0), ('SuperHero_Male', 65, 1)]
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit

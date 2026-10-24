@@ -1,0 +1,25 @@
+MACOS ONE-CLICK BUILDER — REQUIRED CONTRACT
+================================================
+Every product builder is an executable `.command` that:
+1. resolves its own directory/project root;
+2. preflights project identity and required inputs;
+3. checks `command -v brew`; if Homebrew is absent, prints the official install requirement and stops clearly;
+4. uses idempotent `ensure_formula` and `ensure_cask` helpers; install only missing declared dependencies;
+5. checks Xcode with `xcode-select -p`, `xcodebuild -version`, `xcrun --find`; never silently installs Xcode;
+6. checks Blender for 3D products; recovered known-compatible evidence is Blender 5.2.2 LTS;
+7. generates production Blender meshes/rig/materials/textures/animations headlessly where practical;
+8. validates generated assets structurally before Xcode integration;
+9. keeps deterministic Blender scripts and `.blend` source in the project;
+10. generates/maintains a normal Xcode project, runs tests/static gates, then `xcodebuild`;
+11. preserves LKG before risky replacement;
+12. does not ask for iPhone/iPad until all non-physical work is complete;
+13. when device testing is next, prints the exact required device/flow;
+14. packages exact source, asset generators, assets/manifests, tests, Xcode project/generator and README;
+15. verifies ZIP inventory/CRC/build identity;
+16. never calls compilation/signing/install/launch “feature verified.”
+
+Homebrew helper semantics:
+`ensure_formula foo`: if `brew list --formula foo` fails, run `brew install foo`.
+`ensure_cask foo`: if `brew list --cask foo` fails, run `brew install --cask foo`.
+Do not install arbitrary dependencies. Blender cask is appropriate only when Blender is required and absent.
+If Claude chooses XcodeGen, fetch XcodeGen only because the implementation actually uses it.

@@ -1,0 +1,6 @@
+Config/Signing.local.xcconfig
+Build/
+*.xcodeproj
+.build/
+DerivedData/
+*.log

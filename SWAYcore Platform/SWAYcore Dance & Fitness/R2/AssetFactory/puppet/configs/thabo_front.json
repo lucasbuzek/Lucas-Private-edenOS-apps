@@ -1,0 +1,391 @@
+{
+  "src": "mattes/thabo_front_rgba.png",
+  "out": "parts",
+  "prefix": "thabo",
+  "view": "front",
+  "neckY": 441,
+  "headHalfWidth": 184,
+  "despill": 28,
+  "despillMaxY": 1400,
+  "joints": {
+    "Hips": [
+      220,
+      822
+    ],
+    "Spine": [
+      220,
+      728
+    ],
+    "Neck": [
+      220,
+      441
+    ],
+    "HeadTop": [
+      220,
+      86
+    ],
+    "RightUpperArm": [
+      84,
+      501
+    ],
+    "RightLowerArm": [
+      69,
+      688
+    ],
+    "RightHand": [
+      60,
+      849
+    ],
+    "RightHandTip": [
+      58,
+      943
+    ],
+    "LeftUpperArm": [
+      355,
+      501
+    ],
+    "LeftLowerArm": [
+      370,
+      688
+    ],
+    "LeftHand": [
+      379,
+      849
+    ],
+    "LeftHandTip": [
+      381,
+      943
+    ],
+    "RightUpperLeg": [
+      154,
+      836
+    ],
+    "RightLowerLeg": [
+      143,
+      1077
+    ],
+    "RightFoot": [
+      139,
+      1318
+    ],
+    "RightToe": [
+      110,
+      1378
+    ],
+    "LeftUpperLeg": [
+      285,
+      836
+    ],
+    "LeftLowerLeg": [
+      296,
+      1077
+    ],
+    "LeftFoot": [
+      300,
+      1318
+    ],
+    "LeftToe": [
+      329,
+      1378
+    ]
+  },
+  "force": [
+    {
+      "part": "chest",
+      "box": [
+        36,
+        441,
+        403,
+        728
+      ],
+      "notSkin": true
+    },
+    {
+      "part": "pelvis",
+      "box": [
+        36,
+        728,
+        403,
+        822
+      ],
+      "notSkin": true
+    },
+    {
+      "part": "rightHand",
+      "box": [
+        12,
+        829,
+        108,
+        949
+      ]
+    },
+    {
+      "part": "leftHand",
+      "box": [
+        331,
+        829,
+        427,
+        949
+      ]
+    },
+    {
+      "part": "rightShoe",
+      "box": [
+        91,
+        1251,
+        187,
+        1452
+      ]
+    },
+    {
+      "part": "leftShoe",
+      "box": [
+        252,
+        1251,
+        348,
+        1452
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "name": "head",
+      "bone": [
+        "Neck",
+        "HeadTop"
+      ],
+      "radius": 8,
+      "z": 95,
+      "caps": [],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "chest",
+      "bone": [
+        "Spine",
+        "Neck"
+      ],
+      "radius": 70,
+      "z": 40,
+      "caps": [
+        [
+          "Spine",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "pelvis",
+      "bone": [
+        "Hips",
+        "Spine"
+      ],
+      "radius": 66,
+      "z": 50,
+      "caps": [
+        [
+          "Hips",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "rightUpperArm",
+      "bone": [
+        "RightUpperArm",
+        "RightLowerArm"
+      ],
+      "radius": 31,
+      "z": 35,
+      "caps": [
+        [
+          "RightUpperArm",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "rightLowerArm",
+      "bone": [
+        "RightLowerArm",
+        "RightHand"
+      ],
+      "radius": 26,
+      "z": 70,
+      "caps": [
+        [
+          "RightLowerArm",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "rightHand",
+      "bone": [
+        "RightHand",
+        "RightHandTip"
+      ],
+      "radius": 20,
+      "z": 80,
+      "caps": [
+        [
+          "RightHand",
+          "auto"
+        ]
+      ]
+    },
+    {
+      "name": "leftUpperArm",
+      "bone": [
+        "LeftUpperArm",
+        "LeftLowerArm"
+      ],
+      "radius": 31,
+      "z": 35,
+      "caps": [
+        [
+          "LeftUpperArm",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "leftLowerArm",
+      "bone": [
+        "LeftLowerArm",
+        "LeftHand"
+      ],
+      "radius": 26,
+      "z": 70,
+      "caps": [
+        [
+          "LeftLowerArm",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "leftHand",
+      "bone": [
+        "LeftHand",
+        "LeftHandTip"
+      ],
+      "radius": 20,
+      "z": 80,
+      "caps": [
+        [
+          "LeftHand",
+          "auto"
+        ]
+      ]
+    },
+    {
+      "name": "rightThigh",
+      "bone": [
+        "RightUpperLeg",
+        "RightLowerLeg"
+      ],
+      "radius": 48,
+      "z": 30,
+      "caps": [
+        [
+          "RightUpperLeg",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "rightCalf",
+      "bone": [
+        "RightLowerLeg",
+        "RightFoot"
+      ],
+      "radius": 42,
+      "z": 10,
+      "caps": [
+        [
+          "RightLowerLeg",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "rightShoe",
+      "bone": [
+        "RightFoot",
+        "RightToe"
+      ],
+      "radius": 39,
+      "z": 20,
+      "caps": []
+    },
+    {
+      "name": "leftThigh",
+      "bone": [
+        "LeftUpperLeg",
+        "LeftLowerLeg"
+      ],
+      "radius": 48,
+      "z": 30,
+      "caps": [
+        [
+          "LeftUpperLeg",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "leftCalf",
+      "bone": [
+        "LeftLowerLeg",
+        "LeftFoot"
+      ],
+      "radius": 42,
+      "z": 10,
+      "caps": [
+        [
+          "LeftLowerLeg",
+          "auto"
+        ]
+      ],
+      "main": true,
+      "open": 1
+    },
+    {
+      "name": "leftShoe",
+      "bone": [
+        "LeftFoot",
+        "LeftToe"
+      ],
+      "radius": 39,
+      "z": 20,
+      "caps": []
+    }
+  ],
+  "source": {
+    "board": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+    "cropAt1x": [
+      650,
+      760
+    ]
+  }
+}

@@ -1,0 +1,237 @@
+#!/bin/bash
+# SWAYcore shared builder library. bash 3.2 compatible (macOS /bin/bash). Source this; do not execute.
+# Evidence rule: a gate is PASS only if its command exited 0 and its log exists. Missing prerequisites are FAIL or UNKNOWN, never PASS.
+
+sway_init() {
+  # $1 = directory of the calling .command (resolved with symlinks)
+  SWAY_ROOT="$(cd "$1" && pwd -P)"
+  [ -f "$SWAY_ROOT/VERSION" ] && [ -d "$SWAY_ROOT/Packages/SWAYcoreKit" ] || { echo "FAIL: not a SWAYcore root: $SWAY_ROOT"; exit 2; }
+  SWAY_VERSION="$(cat "$SWAY_ROOT/VERSION")"
+  SWAY_STAMP="$(date +%Y%m%d-%H%M%S)"
+  SWAY_BUILD="$SWAY_ROOT/Build"
+  SWAY_LOGS="$SWAY_BUILD/logs/$SWAY_STAMP"
+  SWAY_REPORT="$SWAY_BUILD/report"
+  SWAY_OUT="$SWAY_BUILD/Output"
+  mkdir -p "$SWAY_LOGS" "$SWAY_REPORT" "$SWAY_OUT" "$SWAY_BUILD/LKG"
+  SWAY_GATES="$SWAY_REPORT/gates-$SWAY_STAMP.tsv"; : > "$SWAY_GATES"
+  SWAY_FAILS=0; SWAY_UNKNOWNS=0
+  export SWAY_ROOT SWAY_LOGS SWAY_REPORT
+  say "SWAYcore $SWAY_VERSION  root=$SWAY_ROOT  logs=$SWAY_LOGS"
+}
+
+say()  { printf '%s\n' "$*"; }
+warn() { printf 'WARN: %s\n' "$*" >&2; }
+
+# ---- gate bookkeeping -------------------------------------------------------
+gate_record() { # name status evidence
+  printf '%s\t%s\t%s\n' "$1" "$2" "$3" >> "$SWAY_GATES"
+  printf '  [%-7s] %s  (%s)\n' "$2" "$1" "$3"
+  [ "$2" = FAIL ] && SWAY_FAILS=$((SWAY_FAILS+1))
+  [ "$2" = UNKNOWN ] && SWAY_UNKNOWNS=$((SWAY_UNKNOWNS+1))
+  return 0
+}
+run_gate() { # name cmd...   (runs in a subshell; captures log)
+  local name="$1"; shift
+  local log="$SWAY_LOGS/$(echo "$name" | tr -c 'A-Za-z0-9\n' '_').log"
+  say "▶ $name"
+  ( set -o pipefail; "$@" ) > "$log" 2>&1
+  local rc=$?
+  if [ $rc -eq 0 ]; then gate_record "$name" PASS "exit 0; log=$log"; return 0
+  else gate_record "$name" FAIL "exit $rc; log=$log"; tail -n 25 "$log" | sed 's/^/      | /'; return $rc; fi
+}
+gate_unknown() { gate_record "$1" UNKNOWN "$2"; }
+gate_fail()    { gate_record "$1" FAIL "$2"; }
+require_gate() { # run a gate; stop the builder on failure (genuine unrecoverable)
+  run_gate "$@" || { finish_report "STOPPED at gate: $1"; exit 1; }
+}
+
+# ---- Homebrew helpers (idempotent; install ONLY declared missing items) -----
+have() { command -v "$1" >/dev/null 2>&1; }
+need_brew() {
+  have brew && return 0
+  for p in /opt/homebrew/bin/brew /usr/local/bin/brew; do [ -x "$p" ] && eval "$($p shellenv)" && return 0; done
+  say "FAIL: Homebrew is required but not installed. Install it from https://brew.sh (official one-line installer), then re-run."; return 1
+}
+ensure_formula() { # name
+  need_brew || return 1
+  if brew list --formula "$1" >/dev/null 2>&1; then say "  formula $1: already installed"; return 0; fi
+  say "  formula $1: installing"; brew install "$1"
+}
+ensure_cask() { # name
+  need_brew || return 1
+  if brew list --cask "$1" >/dev/null 2>&1; then say "  cask $1: already installed"; return 0; fi
+  say "  cask $1: installing"; brew install --cask "$1"
+}
+
+# ---- toolchain preflight ----------------------------------------------------
+BLENDER_BIN=""
+find_blender() {
+  if have blender; then BLENDER_BIN="$(command -v blender)"; return 0; fi
+  for p in /Applications/Blender.app/Contents/MacOS/Blender "$HOME/Applications/Blender.app/Contents/MacOS/Blender"; do [ -x "$p" ] && BLENDER_BIN="$p" && return 0; done
+  return 1
+}
+preflight_host() {
+  [ "$(uname -s)" = Darwin ] || { echo "Host is $(uname -s), not macOS. Builders run on macOS."; return 1; }
+  echo "macOS $(sw_vers -productVersion) ($(sw_vers -buildVersion)) arch=$(uname -m)"
+  need_brew && echo "brew: $(brew --version | head -1)"
+  have git && git --version || { echo "git missing (install Xcode command line tools)"; return 1; }
+}
+preflight_xcode() {
+  local p; p="$(xcode-select -p 2>&1)" || { echo "xcode-select has no developer dir. Install Xcode from the App Store, launch it once, then run: sudo xcode-select -s /Applications/Xcode.app"; return 1; }
+  echo "xcode-select: $p"
+  case "$p" in */CommandLineTools) echo "Only Command Line Tools selected; full Xcode required (xcodebuild/iOS SDK)."; return 1;; esac
+  xcodebuild -version || { echo "xcodebuild unusable (license? run: sudo xcodebuild -license accept)"; return 1; }
+  for t in xcodebuild swift simctl; do xcrun --find "$t" >/dev/null 2>&1 || { echo "xcrun cannot find $t"; return 1; }; done
+  swift --version 2>&1 | head -2
+  echo "SDKs:"; xcodebuild -showsdks | grep -E 'iOS|macOS|iphone' | head -12
+  xcodebuild -showsdks | grep -q -- '-sdk iphoneos' || { echo "No iphoneos SDK installed (Xcode > Settings > Components)."; return 1; }
+}
+preflight_xcodegen() { ensure_formula xcodegen && xcodegen --version; }
+preflight_blender() {
+  if ! find_blender; then ensure_cask blender || return 1; find_blender || { echo "Blender installed but not found"; return 1; }; fi
+  local v; v="$("$BLENDER_BIN" --version 2>/dev/null | head -1)"; echo "Blender: $v ($BLENDER_BIN)"
+  case "$v" in *"Blender 5."*|*"Blender 4."*) : ;; *) echo "Unrecognised Blender version; USD/animation API may differ"; return 1;; esac
+  case "$v" in *"5.2"*) echo "matches recovered-compatible 5.2.x";; *) echo "NOTE: recovered evidence used Blender 5.2.2 LTS; this version is untested here";; esac
+}
+
+# ---- Last Known Good --------------------------------------------------------
+preserve_lkg() { # product  (copies a previously VERIFIED output before it can be replaced)
+  local prod="$1" d="$SWAY_OUT/$prod"
+  [ -f "$d/.verified" ] || { say "  LKG: nothing verified to preserve for $prod"; return 0; }
+  local dst="$SWAY_BUILD/LKG/$prod/$SWAY_STAMP"; mkdir -p "$dst"
+  cp -R "$d/." "$dst/" && say "  LKG: preserved previous verified $prod -> $dst"
+  # Keep failure evidence of the previous run alongside (never destroy the only working candidate).
+}
+preserve_assets_lkg() {
+  [ -f "$SWAY_ROOT/Assets/.validated" ] || return 0
+  local dst="$SWAY_BUILD/LKG/Assets/$SWAY_STAMP"; mkdir -p "$dst"; cp -R "$SWAY_ROOT/Assets/Characters" "$SWAY_ROOT/Assets/Blend" "$SWAY_ROOT/Assets/Fixtures" "$dst/" 2>/dev/null
+  say "  LKG: preserved validated assets -> $dst"
+}
+
+# ---- Assets: fixtures -> Blender generation -> validation -------------------
+assets_input_hash() {
+  ( cd "$SWAY_ROOT" && cat Blender/*.py Blender/characters.json Packages/SWAYcoreKit/Sources/SWAYcoreKit/PoseBuilder.swift Packages/SWAYcoreKit/Sources/SWAYcoreKit/MoveLibrary.swift Packages/SWAYcoreKit/Sources/SWAYcoreKit/Pose.swift | shasum -a 256 | cut -d' ' -f1 )
+}
+gen_fixtures() { ( cd "$SWAY_ROOT" && mkdir -p Assets/Fixtures && swift run --package-path Packages/SWAYcoreKit sway-fixtures "$SWAY_ROOT/Assets/Fixtures/movements.json" ); }
+gen_characters() {
+  cd "$SWAY_ROOT" && mkdir -p Assets/Characters Assets/Blend
+  "$BLENDER_BIN" --background --factory-startup --python Blender/generate_characters.py -- \
+     --fixtures Assets/Fixtures/movements.json --characters Blender/characters.json --out Assets/Characters --blend Assets/Blend
+}
+validate_characters() {
+  cd "$SWAY_ROOT" || return 1
+  local rc=0 c
+  for c in lucia nandi thabo zuri kyle yourdancer; do
+    [ -f "Assets/Blend/$c.blend" ] || { echo "missing Assets/Blend/$c.blend"; rc=1; continue; }
+    "$BLENDER_BIN" --background --factory-startup "Assets/Blend/$c.blend" --python Blender/validate_blend.py -- \
+       --manifest "Assets/Characters/$c.character.json" --fixtures Assets/Fixtures/movements.json || rc=1
+  done
+  python3 Blender/validate_manifest.py Assets/Characters Assets/Fixtures/movements.json --require-all || rc=1
+  return $rc
+}
+build_assets() {
+  local h; h="$(assets_input_hash)"
+  if [ -f "$SWAY_ROOT/Assets/.validated" ] && [ "$(cat "$SWAY_ROOT/Assets/.validated")" = "$h" ]; then
+    run_gate "assets: reuse validated (inputs unchanged)" validate_characters && return 0
+  fi
+  preserve_assets_lkg
+  require_gate "preflight: blender" preflight_blender
+  require_gate "assets: export movement fixtures" gen_fixtures
+  require_gate "assets: blender generate 6 characters" gen_characters
+  require_gate "assets: validate (structural; NOT visual quality)" validate_characters
+  echo "$h" > "$SWAY_ROOT/Assets/.validated"
+  gate_unknown "assets: visual production quality" "structural validation only; requires human visual review (manifest visualQuality=UNREVIEWED)"
+}
+
+# ---- Swift / Xcode ----------------------------------------------------------
+swift_test_pkg() { swift test --package-path "$SWAY_ROOT/Packages/$1"; }
+xcode_generate() { ( cd "$SWAY_ROOT/Apps/$1" && xcodegen generate --spec project.yml ); }
+sim_name() { xcrun simctl list devices available | grep -E 'iPhone|iPad' | head -1 | sed -E 's/^ *(.*) \([0-9A-F-]{36}\).*/\1/'; }
+xcode_build_generic() { # app scheme destination
+  ( cd "$SWAY_ROOT/Apps/$1" && xcodebuild -project "$2.xcodeproj" -scheme "$2" -configuration Debug -destination "$3" \
+      -derivedDataPath "$SWAY_BUILD/DerivedData/$2-$4" CODE_SIGNING_ALLOWED=NO build )
+}
+xcode_test_sim() { # app scheme simulator-name
+  ( cd "$SWAY_ROOT/Apps/$1" && xcodebuild -project "$2.xcodeproj" -scheme "$2" -configuration Debug -destination "platform=iOS Simulator,name=$3" \
+      -derivedDataPath "$SWAY_BUILD/DerivedData/$2-sim" CODE_SIGNING_ALLOWED=NO test )
+}
+
+# ---- Packaging --------------------------------------------------------------
+package_app() { # product app scheme variant(iphoneos|macos)
+  local prod="$1" scheme="$3" var="$4" d="$SWAY_OUT/$1"; mkdir -p "$d"
+  local prodsdir app
+  if [ "$var" = iphoneos ]; then prodsdir="$SWAY_BUILD/DerivedData/$scheme-$var/Build/Products/Debug-iphoneos"; else prodsdir="$SWAY_BUILD/DerivedData/$scheme-$var/Build/Products/Debug"; fi
+  app="$prodsdir/$scheme.app"; [ -d "$app" ] || { echo "built app not found: $app"; return 1; }
+  local sha; sha="$(cd "$SWAY_ROOT" && ( git rev-parse --short HEAD 2>/dev/null || echo nogit ))"
+  local zip="$d/$scheme-$var-$SWAY_VERSION-$SWAY_STAMP.zip"
+  ditto -c -k --keepParent "$app" "$zip" && echo "$zip" > "$d/.latest-$var"
+}
+verify_package() { # product variant
+  local zip; zip="$(cat "$SWAY_OUT/$1/.latest-$2" 2>/dev/null)"; [ -f "$zip" ] || { echo "no package"; return 1; }
+  unzip -tq "$zip" || return 1
+  local n; n="$(unzip -l "$zip" | grep -cE 'Info.plist|Characters/')"; echo "inventory entries (Info.plist/Characters): $n"
+  [ "$n" -ge 1 ] || return 1
+  shasum -a 256 "$zip" | tee "$zip.sha256"
+}
+mark_verified() { touch "$SWAY_OUT/$1/.verified"; }
+
+# ---- Physical device gate (only when everything non-physical is done) -------
+device_gate() { # product app scheme bundle-id
+  local prod="$1" app="$2" scheme="$3" bid="$4"
+  have xcrun || return 0
+  local devs; devs="$(xcrun devicectl list devices 2>/dev/null | grep -E 'connected|available' | grep -E 'iPhone|iPad' | head -3)"
+  local team=""; [ -f "$SWAY_ROOT/Config/Signing.local.xcconfig" ] && team="$(grep -E '^DEVELOPMENT_TEAM' "$SWAY_ROOT/Config/Signing.local.xcconfig" | sed 's/.*= *//')"
+  if [ -z "$devs" ]; then
+    say ""; say "════════ PHYSICAL GATE (next unavailable gate) ════════"
+    say "CONNECT AND UNLOCK THE iPHONE (and later the iPad) NOW. Keep it connected. No other action is required."
+    say "Then re-run this builder. Config/Signing.local.xcconfig must contain your DEVELOPMENT_TEAM (template provided)."
+    gate_unknown "physical: device present" "no connected iPhone/iPad detected"; return 0
+  fi
+  if [ -z "$team" ] || [ "$team" = XXXXXXXXXX ]; then gate_unknown "physical: signing" "set DEVELOPMENT_TEAM in Config/Signing.local.xcconfig (template: Config/Signing.local.xcconfig.template)"; return 0; fi
+  local id; id="$(xcrun devicectl list devices 2>/dev/null | grep -E 'iPhone|iPad' | head -1 | awk '{for(i=1;i<=NF;i++) if ($i ~ /^[0-9A-F-]{36}$/) print $i}' | head -1)"
+  run_gate "physical: signed device build ($prod)" bash -c "cd '$SWAY_ROOT/Apps/$app' && xcodebuild -project $scheme.xcodeproj -scheme $scheme -configuration Debug -destination 'generic/platform=iOS' -derivedDataPath '$SWAY_BUILD/DerivedData/$scheme-device' -allowProvisioningUpdates DEVELOPMENT_TEAM=$team build" || return 0
+  run_gate "physical: install ($prod) — INSTALLED only" xcrun devicectl device install app --device "$id" "$SWAY_BUILD/DerivedData/$scheme-device/Build/Products/Debug-iphoneos/$scheme.app" || return 0
+  run_gate "physical: launch ($prod) — LAUNCHED only" xcrun devicectl device process launch --device "$id" "$bid" || return 0
+  gate_unknown "physical: feature acceptance ($prod)" "installed/launched is not acceptance; walk the physical journey in Docs/PHYSICAL_ACCEPTANCE.md on iPhone, iPad portrait and iPad landscape"
+}
+
+# ---- Reporting --------------------------------------------------------------
+finish_report() { # headline
+  local md="$SWAY_REPORT/BUILD_REPORT-$SWAY_STAMP.md"
+  { echo "# SWAYcore build report — $SWAY_STAMP"; echo; echo "Version $SWAY_VERSION. Headline: ${1:-done}"; echo
+    echo "| Gate | Status | Evidence |"; echo "|---|---|---|"
+    while IFS="$(printf '\t')" read -r n s e; do echo "| $n | $s | $e |"; done < "$SWAY_GATES"
+    echo; echo "Rule: PASS requires exit 0 with a log. UNKNOWN is not PASS. Build/test/install/launch are not feature acceptance."; } > "$md"
+  cp "$md" "$SWAY_REPORT/LATEST_BUILD_REPORT.md"
+  local f; f="$(grep -c "	FAIL	" "$SWAY_GATES")"; local u; u="$(grep -c "	UNKNOWN	" "$SWAY_GATES")"
+  say ""; say "════════ RESULT: $( [ "$f" -eq 0 ] && echo "NO FAILURES" || echo "$f FAILED GATE(S)" ) · $u UNKNOWN ════════"
+  say "$1"; say "Report: $md"
+}
+
+# ---- Product pipeline -------------------------------------------------------
+# build_product <Product> <AppDir> <Scheme> <needs_assets:yes|no> <variants: "iphoneos" or "iphoneos macos"> <BundleID> <core-packages...>
+build_product() {
+  local prod="$1" app="$2" scheme="$3" needs="$4" variants="$5" bid="$6"; shift 6
+  say ""; say "=============== $prod ==============="
+  require_gate "preflight: host" preflight_host
+  require_gate "preflight: xcode" preflight_xcode
+  require_gate "preflight: xcodegen" preflight_xcodegen
+  require_gate "static: repository verification" python3 "$SWAY_ROOT/Scripts/verify_static.py" "$SWAY_ROOT"
+  preserve_lkg "$prod"
+  local pk; for pk in "$@"; do require_gate "test: $pk (swift test, macOS host)" swift_test_pkg "$pk"; done
+  [ "$needs" = yes ] && build_assets
+  require_gate "xcode: generate project ($prod)" xcode_generate "$app"
+  local v dest
+  for v in $variants; do
+    if [ "$v" = iphoneos ]; then dest="generic/platform=iOS"; else dest="generic/platform=macOS"; fi
+    require_gate "build: $prod [$v] compile" xcode_build_generic "$app" "$scheme" "$dest" "$v"
+    require_gate "package: $prod [$v]" package_app "$prod" "$app" "$scheme" "$v"
+    require_gate "verify package: $prod [$v] (zip CRC, inventory, sha256)" verify_package "$prod" "$v"
+  done
+  local sim; sim="$(sim_name)"
+  if [ -n "$sim" ]; then run_gate "environment: app tests on simulator '$sim'" xcode_test_sim "$app" "$scheme" "$sim" || true
+  else gate_unknown "environment: app tests on simulator" "no iOS simulator runtime available (Xcode > Settings > Components)"; fi
+  if [ "$SWAY_FAILS" -eq 0 ]; then mark_verified "$prod"; fi
+  case " $variants " in *" iphoneos "*) [ "$SWAY_FAILS" -eq 0 ] && device_gate "$prod" "$app" "$scheme" "$bid";; esac
+  finish_report "$prod: build/package gates complete. Physical acceptance remains UNKNOWN until performed."
+}

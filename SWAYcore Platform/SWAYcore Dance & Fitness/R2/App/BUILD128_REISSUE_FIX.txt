@@ -1,0 +1,7 @@
+SWAYcore 0.9 BUILD 128 — CLEAN REISSUE / XCODE SOURCE FIX
+
+Reason: Xcode screenshot showed a stale SettingsView.swift implementation containing hairShape/ForEach closure inference code. That implementation is not present in the Build 127 source archive. Build 128 is a clean reissue from the verified Build 127 tree, retaining the current SwayAvatarPreview backed by SwayHumanFigureView and excluding the stale hairShape implementation.
+
+Verification required/performed in packaging environment: Swift parser, stale-symbol search, project membership, version consistency, archive integrity.
+
+Physical/Xcode compile remains external gate.

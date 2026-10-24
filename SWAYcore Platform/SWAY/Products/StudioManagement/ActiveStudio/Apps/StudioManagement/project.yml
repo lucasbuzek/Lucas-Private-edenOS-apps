@@ -1,0 +1,51 @@
+name: SWAYcoreStudioManagement
+options:
+  bundleIdPrefix: com.lucasbuzek.private
+  deploymentTarget: { iOS: "26.0", macOS: "26.0" }
+  createIntermediateGroups: true
+configFiles:
+  Debug: ../../Config/Signing.xcconfig
+  Release: ../../Config/Signing.xcconfig
+packages:
+  SWAYStudioKit: { path: ../../Packages/SWAYStudioKit }
+targets:
+  SWAYcoreStudioManagement:
+    type: application
+    platform: iOS
+    supportedDestinations: [iOS, macOS]
+    sources: [Sources]
+    dependencies:
+      - package: SWAYStudioKit
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lucasbuzek.private.swaycore.studiomanagement
+        PRODUCT_NAME: SWAYcoreStudioManagement
+        PRODUCT_MODULE_NAME: SWAYcoreStudioManagement
+        TARGETED_DEVICE_FAMILY: "2"
+        MACOSX_DEPLOYMENT_TARGET: "26.0"
+        SWIFT_VERSION: "5.9"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: "SWAYcore Studio"
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: "YES"
+  SWAYcoreStudioManagementTests:
+    type: bundle.unit-test
+    platform: iOS
+    supportedDestinations: [iOS, macOS]
+    sources: [Tests]
+    dependencies:
+      - target: SWAYcoreStudioManagement
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: "5.9"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        "TEST_HOST[sdk=macosx*]": "$(BUILT_PRODUCTS_DIR)/SWAYcoreStudioManagement.app/Contents/MacOS/SWAYcoreStudioManagement"
+        "TEST_HOST[sdk=iphoneos*]": "$(BUILT_PRODUCTS_DIR)/SWAYcoreStudioManagement.app/SWAYcoreStudioManagement"
+        "TEST_HOST[sdk=iphonesimulator*]": "$(BUILT_PRODUCTS_DIR)/SWAYcoreStudioManagement.app/SWAYcoreStudioManagement"
+schemes:
+  SWAYcoreStudioManagement:
+    build: { targets: { SWAYcoreStudioManagement: all } }
+    test: { targets: [SWAYcoreStudioManagementTests] }

@@ -1,0 +1,16 @@
+{
+  "catalog": "SWAYAvatarCatalog-v1",
+  "identity": "neutral-board-kit-base-not-Lucas",
+  "source": "136-SWAY_BUILD110_CHARACTER_ASSET_DIRECTION.x4.png",
+  "options": {
+    "body_0": {"available": true, "parts": ["chest", "pelvis", "*Arm", "*Thigh", "*Calf"]},
+    "skin_0": {"available": true, "parts": ["head", "*Arm", "*Hand", "*Thigh", "*Calf"]},
+    "face_0": {"available": true, "parts": ["head"], "replacementSlot": "custom face pending"},
+    "hair_0": {"available": true, "parts": ["head"], "replacementSlot": "custom hair pending"},
+    "hairColor_0": {"available": true, "parts": ["head"]},
+    "top_0": {"available": true, "parts": ["chest"], "branding": "none"},
+    "bottom_0": {"available": true, "parts": ["pelvis", "*Thigh"]},
+    "shoes_0": {"available": true, "parts": ["*Shoe"], "branding": "none"},
+    "accessory_0": {"available": false, "parts": []}
+  }
+}

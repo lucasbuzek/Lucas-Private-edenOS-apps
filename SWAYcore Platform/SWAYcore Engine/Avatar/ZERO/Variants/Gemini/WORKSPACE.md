@@ -1,0 +1,7 @@
+# ZERO Gemini — isolated work lane
+**Workspace:** this directory (dedicated `Changes/` for this provider). **State:** PHYSICAL WORKSPACE ESTABLISHED; INDEPENDENT CLEAN SOURCE CHECKOUT NOT YET VERIFIED. **Base acceptance:** pending `../BASELINE_CANDIDATE/BASELINE.md`.
+**Provider boundary:** Gemini/Antigravity complementary lane; do not assume direct R2 access, provider capabilities, or cross-provider synchronization.
+**Input:** same immutable, hash-verified clean stickman baseline once qualified; the original ZERO TestHost `../../iOS TestHost/`, shared Engine and R2 are READ-ONLY reference sources, not provider-owned files.
+**Goal:** separately develop/repair one working ZERO stickman variation (animated coach, onboarding/permissions, camera/calibration, shared movement/musical timing) while preserving reusable Engine compatibility and full regression. Improve provider-specific suggestions without changing user-established functionality or replacing R2.
+**Outputs for ForgeMASTER review:** file list + base SHA, exact scoped patch/source in `Changes/`, tests/command logs, UI screenshot or physical evidence, known defects, privacy/licensing checks, integration request. Provider variants never write into each other's lanes, R2, official releases or backup.
+**Release gates:** clean source materialization, reproducible tests, live iPhone/appropriate simulator behavior and restore acceptance are UNKNOWN. Never label this lane `CLEAN_LKG` merely because its directory exists. No Claude/Gemini/Work session was launched by writing this file.

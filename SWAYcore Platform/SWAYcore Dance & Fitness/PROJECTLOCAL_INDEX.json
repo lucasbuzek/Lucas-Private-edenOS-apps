@@ -1,0 +1,12 @@
+{
+  "files": {
+    "Authority/FULL_NATIVE_DELIVERY_GOAL_20261022.md": {
+      "origin": "2026-10-22 current live R2/source + Project/Product Bible; read-only GitHub ref + freshly executed python/Swift/RealityKit/Xcode tests; conversation goal instruction; verified current full-scene Blender validator correction 2026-10-22",
+      "sha256": "5d51528a127c9998bced6c281c2805db5758a85adfad40ecb8298a07fe6189c0"
+    }
+  },
+  "project": "SWAYcore Dance & Fitness",
+  "schema_version": 1,
+  "state": "SAVED_INPUTS_ONLY_NOT_FULL_PROJECT_ACCEPTANCE",
+  "target": "/Users/lucas/edenOS/Software Development/SWAYcore Platform/SWAYcore Dance & Fitness"
+}

@@ -1,0 +1,13 @@
+SWAYcore Build 120 recovery candidate
+
+Physical evidence from Build 118 invalidated M2/M5/M6/M9 and M12 promotion.
+Corrections in this candidate:
+- Home hero no longer bypasses workout setup; SET UP & DANCE exposes Follow Along / Camera Tracking before workout.
+- Articulated renderer overlaps limb artwork at joints, separates visual hip sockets, and consumes the authored pelvis asset.
+- Movement preview cards sample movement-specific keyframes rather than near-identical generic frames.
+- Pause confirmation hides the underlying pause controls to prevent duplicate End Workout presentation.
+- Workout stage persistently exposes music, next move, and tracking state without reopening diagnostics.
+- Music analysis remains first-class; engineering mixer controls moved behind Advanced mixer disclosure.
+- DesignReferences remain development-only and are not runtime resources.
+
+Evidence state: IMPLEMENTED + static verification required. Xcode/device acceptance remains external physical gate.

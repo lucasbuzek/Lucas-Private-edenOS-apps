@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "status": "ISOLATED_SOURCE_BUILD_PASS_RUNTIME_UNVERIFIED",
+  "variant": "Claude",
+  "source_of_truth": "/Users/lucas/edenOS/Software Development/SWAYcore Platform/SWAYcore Engine/Avatar/ZERO/iOS TestHost",
+  "engine_read_only_dependency": "/Users/lucas/edenOS/Software Development/SWAYcore Platform/SWAYcore Dance & Fitness/R2/Packages/SWAYcoreEngine",
+  "code_source_files": [
+    {
+      "source": "SWAYcore Engine/Avatar/ZERO/iOS TestHost/Sources/EngineZEROApp.swift",
+      "target": "SWAYcore Engine/Avatar/ZERO/Variants/Claude/Source/Sources/EngineZEROApp.swift",
+      "sha256": "2f540eca40f32ad657980f5ff60df9ab259dfcc68967ef61e09a99552ddc2caa"
+    },
+    {
+      "source": "SWAYcore Engine/Avatar/ZERO/iOS TestHost/Sources/SwayZERORecoveredPose.swift",
+      "target": "SWAYcore Engine/Avatar/ZERO/Variants/Claude/Source/Sources/SwayZERORecoveredPose.swift",
+      "sha256": "ac0d7c3f6bc3fd9c6151775f8fb3a7c542f55d89281d7e51d28b987338918877"
+    },
+    {
+      "source": "SWAYcore Engine/Avatar/ZERO/iOS TestHost/Sources/ZEROCamera.swift",
+      "target": "SWAYcore Engine/Avatar/ZERO/Variants/Claude/Source/Sources/ZEROCamera.swift",
+      "sha256": "feedc4de69b9417d11ddb0326aa06df7f463eb48f2778893a3e5665d5897d889"
+    },
+    {
+      "source": "SWAYcore Engine/Avatar/ZERO/iOS TestHost/Sources/ZEROStage.swift",
+      "target": "SWAYcore Engine/Avatar/ZERO/Variants/Claude/Source/Sources/ZEROStage.swift",
+      "sha256": "ebeaefb52802002ed3a7b1ab0ccdfc231233d8827d793bb8d0869dec35184eaf"
+    }
+  ],
+  "project_yml_sha256": "ce145e289fb8c9668c9c1380d36c0d42320c48199b25e1881972b3f0e380feb4",
+  "bundle_id": "com.lucasbuzek.private.swaycore.zero.claude",
+  "acceptance": "independent build/runtime/physical pending",
+  "original_r2_changed": false,
+  "build_test_date": "2026-10-23",
+  "build_type": "unsigned generic iOS Simulator; BUILD SUCCEEDED",
+  "build_log": "SWAYcore Engine/Avatar/ZERO/Variants/Claude/ios_sim_build_20261023.log",
+  "physical_camera_tracking_UI_LKG": "UNKNOWN"
+}

@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "characterID": "yourdancer",
+  "skeletonContract": "SWAYHumanoid-v1",
+  "sourceLedgerID": "girush-human-yw-cc0",
+  "slots": {
+    "bodyStyle": {
+      "Male": "YD_Body_Athletic",
+      "Neutral": "YD_Body_Balanced",
+      "Female": "YD_Body_Soft"
+    },
+    "faceShape": {
+      "0": "YD_Face_Oval",
+      "1": "YD_Face_Round",
+      "2": "YD_Face_Angular"
+    },
+    "eyeStyle": {
+      "0": "YD_Eyes_0",
+      "1": "YD_Eyes_1",
+      "2": "YD_Eyes_2",
+      "3": "YD_Eyes_3"
+    },
+    "browStyle": {
+      "0": "YD_Brows_0",
+      "1": "YD_Brows_1",
+      "2": "YD_Brows_2",
+      "3": "YD_Brows_3"
+    },
+    "noseStyle": {
+      "0": "YD_Nose_0",
+      "1": "YD_Nose_1",
+      "2": "YD_Nose_2",
+      "3": "YD_Nose_3"
+    },
+    "mouthStyle": {
+      "0": "YD_Mouth_0",
+      "1": "YD_Mouth_1",
+      "2": "YD_Mouth_2",
+      "3": "YD_Mouth_3"
+    },
+    "hairStyle": {
+      "0": "YD_Hair_Short",
+      "1": "YD_Hair_Long",
+      "2": "YD_Hair_Braids",
+      "3": "YD_Hair_Afro",
+      "4": "YD_Hair_Bun"
+    },
+    "facialHairStyle": {
+      "0": "YD_Facial_Hair_0",
+      "1": "YD_Facial_Hair_1",
+      "2": "YD_Facial_Hair_2",
+      "3": "YD_Facial_Hair_3"
+    },
+    "outfitStyle": {
+      "0": [
+        "YD_Top_Tee",
+        "YD_Bottom_Legging"
+      ],
+      "1": [
+        "YD_Top_Tank",
+        "YD_Bottom_Short"
+      ],
+      "2": [
+        "YD_Top_Jacket",
+        "YD_Bottom_Jogger"
+      ]
+    },
+    "footwearStyle": {
+      "0": "YD_Shoes_Trainers",
+      "1": "YD_Shoes_HighTops",
+      "2": "YD_Shoes_Barefoot"
+    },
+    "accessoryStyle": {
+      "0": [],
+      "1": [
+        "YD_Accessory_Cap"
+      ],
+      "2": [
+        "YD_Accessory_Headband"
+      ],
+      "3": [
+        "YD_Accessory_Wristbands"
+      ],
+      "4": [
+        "YD_Accessory_Gloves"
+      ]
+    }
+  },
+  "materialParameters": {
+    "skinTone": "YD_Mat_Skin",
+    "hairColor": "YD_Mat_Hair",
+    "outfitStyle": "YD_Mat_Outfit",
+    "appearancePreset": "YD_Mat_Appearance"
+  },
+  "requiredProfileFields": [
+    "bodyStyle",
+    "portraitData",
+    "skinTone",
+    "hairStyle",
+    "outfitStyle",
+    "appearancePreset",
+    "faceShape",
+    "eyeStyle",
+    "browStyle",
+    "noseStyle",
+    "mouthStyle",
+    "hairColor",
+    "facialHairStyle",
+    "accessoryStyle",
+    "footwearStyle",
+    "bodyScale",
+    "headScale",
+    "limbScale",
+    "hairScale"
+  ],
+  "transformParameters": {
+    "bodyScale": "Body_Root",
+    "headScale": "Head_Root",
+    "limbScale": "Limbs_Root",
+    "hairScale": "Hair_Root"
+  },
+  "inputOnly": {
+    "portraitData": "Profile-photo input is not mapped onto the 3D dancer; it remains private UI/profile data and is never a texture or final-render fallback."
+  }
+}

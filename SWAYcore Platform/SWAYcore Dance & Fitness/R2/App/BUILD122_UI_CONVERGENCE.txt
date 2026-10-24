@@ -1,0 +1,21 @@
+SWAYcore 0.9 BUILD 122 — UI CONVERGENCE
+
+GOAL
+Functional Alpha with production UI/UX suitable for Xcode/iPhone testing. The supplied SWAY mockup is the composition/hierarchy target. Photorealistic people in the mockup are NOT runtime assets; runtime remains bound to the articulated SWAY character system. Character target is a simpler, stylized, human-looking articulated avatar with concealed/overlapping joints.
+
+IMPLEMENTED IN BUILD 122
+- Dark graphite + magenta production visual language aligned to supplied UI reference.
+- Bottom tab bar background and accent treatment aligned with the reference.
+- Home identity/hero upgraded to SWAY / Let's Dance composition with stronger DANCE CTA.
+- Workout setup tracking choice replaced by large graphical Camera Tracking / Follow Along cards.
+- Create Move now includes a large articulated runtime preview using the same movement engine.
+- Beats redesigned around SWAY Beats / Your Music intent, graphical beat card, style pills, tempo and progressive Advanced mixer disclosure.
+- Progress redesigned with Overview / Activity / Achievements, summary cards, weekly activity and recent workout cards.
+- Existing production movement, tracking, music analysis, sharing, workout outcome and persistence logic retained.
+- UI reference copied to DesignReferences only; it is excluded from Xcode/runtime.
+
+KNOWN PHYSICAL GATES
+- Xcode/iOS SDK compile.
+- Actual iPhone layout/animation review against supplied mockup.
+- Character visual quality remains a production target: current articulated assets must be judged on-device; do not substitute the photorealistic reference image.
+- Camera calibration/tracking and MusicKit require device/account capability verification.

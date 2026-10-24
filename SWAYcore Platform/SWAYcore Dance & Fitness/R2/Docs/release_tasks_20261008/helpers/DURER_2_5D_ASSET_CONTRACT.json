@@ -1,0 +1,29 @@
+{
+  "contract": "SWAY-DURER-2.5D-v2",
+  "authority": "DURER",
+  "target": "Production illustrated 2.5D cut-out character for the Alpha",
+  "runtime": "SWAYRigPuppetCanvas",
+  "requirements": {
+    "singleVisibleAuthority": true,
+    "coherentSilhouette": true,
+    "jointOverlap": true,
+    "directionalVariantsAllowed": true,
+    "weightedMeshTarget": false,
+    "legacyCutoutProductionFallback": false,
+    "full3DRequired": false,
+    "separatedRuntimeParts": true,
+    "frontBackSideViews": true,
+    "mirroredSideAllowed": true,
+    "artDefinesBoneLengths": true,
+    "motionDefinesBoneDirections": true
+  },
+  "acceptanceMoves": [
+    "idle",
+    "march",
+    "step-touch",
+    "grapevine",
+    "knee-lift"
+  ],
+  "physicalGate": "iPhone visual test required",
+  "productionAuthority": "Blender + SWAYHumanoid-v1 + RealityKit"
+}

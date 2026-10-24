@@ -1,0 +1,42 @@
+{
+  "version": "2026-10-10",
+  "umbrella": "SWAY (recovery/consolidation collection)",
+  "canonical_physical_root": "/Users/lucas/edenOS/AppDev/Projects/SWAYcore",
+  "note": "Not a new application or silent rename of the SWAYcore product family",
+  "authority_order": [
+    "User current decisions",
+    "AppDev rules",
+    "SWAYcore Project Authority",
+    "verified evidence",
+    "historical candidate provenance"
+  ],
+  "active_consumer_source": "/Users/lucas/edenOS/AppDev/Projects/SWAYcore/R2",
+  "family_source": "/Users/lucas/edenOS/AppDev/Projects/SWAYcore/SWAY/RecoveredFamily_20261003",
+  "backup": "/Users/lucas/edenOS/AppDev/#App Backups/Projects/SWAYcore/SWAY_FULL_20261010",
+  "product_source_states": {
+    "Engine/Core": "RECOVERED_SOURCE_20261003 + ACTIVE_R2_ENGINE; family package Swift compile unverified",
+    "DanceFitness": "ACTIVE_R2 + RECOVERED_20261003; current R2 movement unit/regression PASS; user-observed avatar motion regression unresolved",
+    "SWAYZ": "RECOVERED_20261003 source/tests; compile/physical UNKNOWN",
+    "KidDancers": "RECOVERED_20261003 source/tests; compile/child-facing physical UNKNOWN",
+    "StudioManagement": "RECOVERED_20261003 source/tests; compile/physical UNKNOWN",
+    "SWAY-Learning-Future": "Historical specialist concept; no independent shipped source established",
+    "CommunityBackend": "OFFICIAL_SCOPE_RECOVERED; no backend deployment verified",
+    "LocalSharing": "Share Sheet/.swaypack/recording implementations partially recoverable; physical integration UNKNOWN"
+  },
+  "originally_recovered_data": [
+    "All historical SWAYcore R2 canonical source",
+    "Oct 3 five-app family package",
+    "Sep 27 final consumer product specification",
+    "current AppDev Project Bible and R2 Project Bible",
+    "local Git worktrees, all refs, uncommitted edits via FULL backup",
+    "historical builds/evidence via original RecoveryEvidence"
+  ],
+  "gates": {
+    "full_source_backup": "PASS",
+    "family_source_checksum": "PASS",
+    "product_interface_compile": "UNKNOWN",
+    "individual_app_builds": "UNKNOWN",
+    "community_server_runtime": "UNKNOWN",
+    "iPhone_iPad_complete_visual_acceptance": "UNKNOWN"
+  }
+}
