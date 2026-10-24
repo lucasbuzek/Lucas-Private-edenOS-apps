@@ -1,5 +1,5 @@
 # SWAYcore Platform · INDEX
-**Canonical:** Authority/PROJECT_BIBLE.md. **Companion:** PLATFORM_LORE_CANON.md, PLATFORM_VARIANTS_20261023.md, INDEPENDENT_WORK_HANDOFFS.md.
+**Canonical:** Authority/PROJECT_BIBLE.md. **Companion:** PLATFORM_LORE_CANON.md, PLATFORM_VARIANTS_20261023.md, INDEPENDENT_WORK_HANDOFFS.md. See BACKUP_ARCHITECTURE_20261024.md for one tested recovery set per independent app.
 **WORKSPACE:** existing SWAYcore Platform parent; one source master, independent subproject workspaces, central backup and verified remote Git. NOT a second parallel source.
 **KNOWLEDGE:** source map and capability/status ledger below; UNKNOWN ≠ rejected, directory ≠ tested product.
 ## Open the local functional demo
