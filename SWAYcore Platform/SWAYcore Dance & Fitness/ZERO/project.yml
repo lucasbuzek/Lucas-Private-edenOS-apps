@@ -1,0 +1,44 @@
+name: SWAYcoreDanceFitnessZERO
+options:
+  bundleIdPrefix: com.lucasbuzek.private
+  deploymentTarget:
+    iOS: "26.0"
+packages:
+  SWAYcoreKit:
+    path: ../../SWAY/RecoveredFamily_20261003/Packages/SWAYcoreKit
+  SWAYAppKit:
+    path: ../../SWAY/RecoveredFamily_20261003/Packages/SWAYAppKit
+targets:
+  SWAYcoreDanceFitnessZERO:
+    type: application
+    platform: iOS
+    sources:
+      - path: ../../SWAY/RecoveredFamily_20261003/Apps/DanceFitness/Sources
+      - path: Sources
+    dependencies:
+      - package: SWAYcoreKit
+      - package: SWAYAppKit
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lucasbuzek.private.swaycore.dancezero
+        PRODUCT_NAME: SWAYcoreDanceZERO
+        SWIFT_VERSION: "5.9"
+        GENERATE_INFOPLIST_FILE: YES
+        TARGETED_DEVICE_FAMILY: "1,2"
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: XZ4VRP5S5G
+        INFOPLIST_KEY_CFBundleDisplayName: "SWAYcore Dance ZERO"
+        INFOPLIST_KEY_NSCameraUsageDescription: "On-device body pose tracking for optional dance matching. Frames are not uploaded."
+        INFOPLIST_KEY_NSMicrophoneUsageDescription: "Audio is used only when you choose to record yourself dancing."
+        INFOPLIST_KEY_NSAppleMusicUsageDescription: "Choose music for dance sessions."
+        INFOPLIST_KEY_NSHealthShareUsageDescription: "Health data is optional."
+        INFOPLIST_KEY_NSHealthUpdateUsageDescription: "Workout summaries are saved only with your permission."
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: 1
+schemes:
+  SWAYcoreDanceFitnessZERO:
+    build:
+      targets:
+        SWAYcoreDanceFitnessZERO: all
