@@ -50,6 +50,8 @@ class RemoteProvider:
             remote = "running"
         elif remote_pid:
             remote = "stale"
+        elif state.get("remote_stopped") is True:
+            remote = "stopped"
         elif self.provider_available():
             remote = "available"
         else:
@@ -72,6 +74,7 @@ class RemoteProvider:
             return {"status": "unavailable", "reason": "npx is not installed"}
         pid = self._spawn(["npx", "@wonderwhy-er/desktop-commander@latest", "remote"])
         state["remote_pid"] = pid
+        state.pop("remote_stopped", None)
         self._save(state)
         return {"status": "running", "pid": pid, "changed": True}
 
@@ -81,6 +84,8 @@ class RemoteProvider:
         if pid and self._alive(pid) and not self.dry_run:
             os.killpg(os.getpgid(int(pid)), signal.SIGTERM)
         state.pop(key, None)
+        if key == "remote_pid":
+            state["remote_stopped"] = True
         self._save(state)
         return {"status": "stopped", "pid": pid}
 

@@ -169,7 +169,7 @@
 </section>
 <section data-min-level="advanced" id="interconnect" aria-labelledby="pwaHeading">
 <div class="heading"><h2 id="pwaHeading"><span class="section-glyph bridge-color" aria-hidden="true">⌁</span> BIFROST PWA · Interconnect</h2><button type="button" id="installPwa" hidden>Install app</button></div>
-<p class="setup-explain">This dashboard connects only to BIFROST Headless on this device (127.0.0.1). It does not connect to online services or control other devices.</p>
+<p class="setup-explain">This dashboard connects only to BIFROST Headless on this device (127.0.0.1). Explicit storage reads can contact configured providers through Headless. Cross-device control is not enabled.</p>
 <div class="compact">
   <div class="record"><div class="record-name"><span class="feature-glyph devices-color" aria-hidden="true">▣</span><div><strong>Local Headless adapter</strong><small>Same-origin loopback; Node owns state and execution</small></div></div><output id="pwaLocalStatus">Checking</output></div>
   <div class="record"><div class="record-name"><span class="feature-glyph" aria-hidden="true">◉</span><div><strong>Offline mode</strong><small>Only anonymous static shell is available; live actions cannot run offline</small></div></div><output id="pwaOfflineStatus">Checking</output></div>
@@ -189,6 +189,14 @@
 </div>
 <div id="kernelResults" class="compact" aria-live="polite" aria-label="Index search results"></div>
 <p id="kernelFeedback" class="setup-explain" role="status">No search performed. Only indexed locations are returned.</p>
+<h3>Online Storage Manager · folder preview</h3>
+<p>Browse an existing approved storage profile. Local previews do not contact online providers. Online reads require the separate button below. Upload, move, delete and sync are not available here yet.</p>
+<label for="storageProfile">Saved profile name</label><input id="storageProfile" maxlength="128" autocomplete="off">
+<label for="storageFolder">Folder within profile (blank for its root)</label><input id="storageFolder" maxlength="1024" autocomplete="off">
+<div class="actions"><button id="storagePreview" type="button">Preview locally</button><button id="storageOnline" type="button">Read online folder</button></div>
+<p id="storageFeedback" role="status">Select a profile already configured through BIFROST Files &amp; Storage.</p>
+<div id="storageResults" class="compact" aria-live="polite"></div>
+<p>Related tools: <a href="#orchestration">EXECUTOR / Apple workflows</a> · <a href="#activity">Recorded checks</a> · <a href="#setups">Install &amp; Setup</a></p>
 </section>
 <section data-min-level="advanced" id="setups" aria-labelledby="setupHeading">
 <div class="heading"><h2 id="setupHeading"><span class="section-glyph setup-color" aria-hidden="true">▦</span> Install &amp; Setup</h2><button id="refreshSetups" type="button">Refresh packages</button></div>
@@ -206,7 +214,7 @@
 </div>
 <p id="expertFeedback" class="setup-explain" role="status">No diagnostic request made.</p>
 </section>
-<footer>Local-only: 127.0.0.1 · No external connections or online providers · Closing this page does not stop Headless.</footer>
+<footer>Local dashboard: 127.0.0.1 · Explicit storage reads may contact configured providers · Closing this page does not stop Headless.</footer>
 </div>
 </div>
 </main>

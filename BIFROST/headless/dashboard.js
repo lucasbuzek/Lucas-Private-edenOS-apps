@@ -47,6 +47,7 @@ function renderPrefs(settings) {
   }
 }
 function markNodeOffline(reason) {
+  clearStoragePreview();
   // A previous live observation cannot remain labeled "Running" after API loss.
   $("overall").textContent = "Unavailable · connection lost";
   $("overall").dataset.health = "offline";
@@ -1058,3 +1059,38 @@ function shellInstallRoutes() {
   shellSyncPageFromHash();
 }
 shellInstallRoutes();
+
+
+// Storage uses the existing profile-bound backend and session; never a raw path.
+let storageGeneration = 0;
+function clearStoragePreview() {
+  storageGeneration++;
+  if ($("storageResults")) $("storageResults").replaceChildren();
+  if ($("storageFeedback")) $("storageFeedback").textContent = "No current preview.";
+}
+async function browseStorage(readRemote) {
+  clearStoragePreview();
+  const generation = storageGeneration;
+  const session = token;
+  if (!session) { $("storageFeedback").textContent = "Connect to Headless first."; return; }
+  const profile = $("storageProfile").value.trim();
+  const folder = $("storageFolder").value.trim();
+  if (!profile) { $("storageFeedback").textContent = "Enter an existing saved profile name."; return; }
+  $("storageFeedback").textContent = "Reading selected folder…";
+  try {
+    const result = await request("/api/storage/v1/preview", {profile, folder, readRemote});
+    if (generation !== storageGeneration || session !== token) return;
+    $("storageFeedback").textContent = result.status + " · " + (result.count ?? 0) + " entries";
+    for (const entry of result.entries || []) {
+      const row = document.createElement("div"); row.className = "record";
+      row.textContent = entry.name + " · " + entry.kind + (entry.bytes == null ? "" : " · " + entry.bytes + " bytes");
+      $("storageResults").append(row);
+    }
+  } catch (error) {
+    if (generation === storageGeneration && session === token)
+      $("storageFeedback").textContent = "Preview unavailable: " + error.message;
+  }
+}
+$("storagePreview")?.addEventListener("click", () => browseStorage(false));
+$("storageOnline")?.addEventListener("click", () => browseStorage(true));
+for (const id of ["storageProfile", "storageFolder"]) $(id)?.addEventListener("input", clearStoragePreview);

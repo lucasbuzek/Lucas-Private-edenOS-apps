@@ -401,6 +401,7 @@ class APITests(unittest.TestCase):
         self.assertEqual(code, 409)
         self.assertIn("unavailable", value["error"])
 
+    @mock.patch.object(mod.sys, "platform", "darwin")
     def test_macos_native_launch_only_uses_exact_approved_bundle(self):
         app = self.root / "TestNativeBIFROST.app"
         (app / "Contents").mkdir(parents=True, exist_ok=True)
