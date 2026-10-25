@@ -849,3 +849,195 @@ a real host-backed health/identity and approved representation can be
 validated. Preserve standalone domain ownership, independent Headless,
 native App, independent Menu, BIFROST Bridge and existing Files & Storage
 capability plugin; no duplicate runtime or generic alternate UI.
+
+
+======================================================================
+2026-10-25 — ADDITIVE ARCHITECTURE / HIERARCHY RECONCILIATION
+CONDUCTOR + ForgeMASTER + SNOOPY · owner-approved BIFROST continuation
+======================================================================
+
+STATUS AND PRECEDENCE
+This is an append-only 2026-10-25 owner-decision reconciliation within the
+EXISTING BIFROST architecture source. All earlier text and source behavior
+are preserved. The 2026-10-07 content remains historical provenance; later
+explicit approved owner decisions control where they refine earlier scope.
+This addendum is NOT a new BIFROST project, ChatGPT plugin, registry,
+dispatcher, daemon, storage engine, separate Project Bible, release or
+claim that intended capabilities are implemented.
+
+SOURCES RECOVERED FOR THIS ADDENDUM
+- Existing BIFROST original architecture in this file and the October 2
+  complete standalone BIFROST product specification.
+- Existing docs/decisions/BIFROST_MASTER_EXTENDED_GOAL_20261014.md and
+  BIFROST_JARVIS_MASTER_AUDIT_AND_EXTENDED_GOAL_20261014.md.
+- Source-backed 2026-10-20 BIFROST Intelligence continuation document,
+  plus 2026-10-24 Universal Storage Masterplan R2/R3; both previously
+  recovered from ChatGPT Library and NOT substituted for current Mac source.
+- Owner decisions through 2026-10-25: full BIFROSTzeroRAVEN testing
+  variant; installer/inspector/discovery/connections/representations/
+  executor/ELYSIUM/HEIMDALL/Files/Online Storage Manager; DeLorean
+  TimeMachine as standalone AND BIFROST capability; distributed authority;
+  full interactive in-chat LCAS; preserve all earlier requirements.
+- GitHub existing private monorepo, recovered BIFROST source branch
+  bifrost/recovery-20261024 and unmerged draft PR #13. Current Mac dirty
+  source, running devices, provider grants and local LKG were not accessible
+  during this cloud-source reconciliation. UNKNOWN is not PASS.
+
+A. AUTHORITATIVE COMPONENT HIERARCHY
+EDEN/edenOS owner canon, per-person/tenant authorization and independent
+project source remain above all gateways, devices and helper policies.
+BIFROST MASTER / BIFROSTbridge = existing Base App/system-level gateway:
+CONNECT / KEEP / RESOLVE with outward CONNECT / MANAGE / PRESENT.
+BIFROSTcore = local-first connection, identity, device/capability registry,
+provider resolution, trusted action dispatch, package/install/lifecycle,
+reversible shared host and representations.
+BIFROSTAIcore / BIFROST Intelligence = optional native/local-first intent,
+reasoning/model selection, structured orchestration support, provider
+economy, evidence assessment and approved intelligent workflows; NEVER a
+duplicate connector, executor or independent sovereign application.
+CONDUCTOR = cross-domain coordination, governance, sequencing and goal
+continuity; ForgeMASTER = single AppDev engineering/source/test/release
+authority; SNOOPY = activation-driven workflow intelligence and regression
+diagnostics; AI TOOLKIT = model/tool host/evaluation capability, not a
+second orchestration fabric.
+HEIMDALL = Workspaces, information organization, presentation/composition
+and its separately established voice/UI functions; it does NOT own
+BIFROST's generic device/provider routing.
+ELYSIUM = separately permissioned personal/family/business representations
+and environment capabilities; BIFROST may expose only authorized views.
+PENELOPE = established project/source lineage and backup/cold-backup
+orchestration where designated; JANITOR = independent on-demand upkeep.
+Every specialist App retains its domain data, business logic, runtime
+and standalone access. HOSTING IS TRANSFERABLE; OWNERSHIP IS NOT.
+A ChatGPT-facing AOSBIFROST/BIFROST interface or plugin is optional
+presentation/access, not the native BIFROSTbridge application itself.
+No duplicate ChatGPT plugin, second app governor or new standalone storage
+manager is authorized by this addendum.
+
+B. COMPLETE FEATURE FAMILY RECOVERY — NO NARROW ROUTER REDUCTION
+1. Inspect/discover/identify trusted devices, services, networks,
+   providers, capabilities and authorized user/account environments.
+2. CONNECT: enroll/pair, maintain presence/trust, recover connections,
+   resolve providers/remote transport and preserve independent offline.
+3. KEEP: connective canonical identities, relationship provenance,
+   source/original/replica pointers, version/install states and receipts.
+4. SET UP/INSTALL/MANAGE: find existing suitable capabilities FIRST,
+   detect/stage/validate/configure/install/update/repair/rollback/uninstall
+   modular packages and compatible Apps; preserve user data and LKG.
+5. Manage headless services, live app states, real health and reversible
+   STANDALONE -> DELEGATING -> BIFROST_HOSTED -> recovered ownership.
+6. RESOLVE/DISPATCH: existing single registered shortNameCall schema,
+   typed actions, target and permission checks, deterministic executor,
+   receipt and independent postcondition validation; specialists own acts.
+7. Apple integration: Siri, App Intents, Shortcuts, Automator, AppleScript,
+   Foundation Models, Core ML, Keychain, Network.framework, Bonjour,
+   Share Sheet, Spotlight, notifications, supported OS permissions.
+8. AI: BIFROSTAIcore, on-device/local models first, approved cross-provider
+   AI, context continuity, lowest sufficient model/cost, not a required
+   cloud service and never arbitrary generated shell commands.
+9. Remote operations: native/provider-swappable discovery, device
+   enrollment, command/action execution, file transport, errors/receipts,
+   reconnect, revocation and authorized screen interaction; RDC optional.
+10. Files / Online Storage Manager: an edenOS/BIFROST-connected capability
+    for authorized local/cloud/NAS provider accounts, provenance, copies,
+    rights, browse/search and optional separately approved transactions.
+    HEIMDALL/ELYSIUM show permitted views. NOT a thirteenth web portal,
+    new storage engine, mandatory account or blanket cloud mirror.
+11. Development and project control: source, versions/LKG and build/run
+    provenance, real pipeline invocation through ForgeMASTER; no sham
+    build buttons or package-only acceptance.
+12. PRESENT: headless/API, menu, full native macOS, Garden of EDEN private
+    Web/PWA, authorized remote, mobile/iPhone, Windows/Linux/Android when
+    beneficial; one state model, progressively disclosed expert UI.
+13. Diagnostics, LCAS, task/connection history, test/permission receipts,
+    migrations, offline/degraded states, idempotency, health and recovery.
+14. Independent apps/portals, ELYSIUM/HEIMDALL workspaces, family/business
+    councils and professional specialists through discovered contracts.
+
+C. DELOREAN TIMEMACHINE — CANONICAL HISTORY/RECOVERY KEEPER
+The owner establishes DeLorean TimeMachine as BOTH a standalone,
+independently usable project/data history/snapshot/restore experience AND
+an optionally exposed BIFROST capability. Recover existing project and
+backup mechanisms: Git commits/branches/tags, Project Bible, source/LKG,
+uncommitted state where available, timeline/snapshots, assets, verified
+local/iCloud/Drive/Dropbox/NAS replicas and authorized restoration views.
+DeLorean offers navigable history, compare, preview, staged restore and
+tested recovery without fabricating success. PENELOPE retains its
+established backup orchestration and lineage duties; Git/code masters
+and specialist Apps retain independent source/data authority.
+BIFROST KEEP retains canonical CONNECTIVE identities/references,
+locations, relationships and actions; it must not silently copy/own all
+underlying data or implement a second backup engine. One active master
+per project; one supported authoritative route per operation; source
+copies never silently override originals. Actual DeLorean native
+runtime/restore integration must be separately verified: UNKNOWN.
+
+D. MULTI-LOCATION SOURCE / DEVICE AUTHORITY
+RavenAirM1 (MacBook Air M1) = established principal private build/test
+host and local project working source. RavenNestM3 (MacBook Pro M3 Pro)
+= authorized secondary/heavy development/media environment.
+iPhone 15 Pro Max = universal access/control and Apple-native voice/UI
+surface. Future RAVENnest = optional user-chosen local/server role.
+RAVENsNEST Google Drive = separately authorized cloud coordination and
+specific copies/references, NOT unconditional master ownership of
+every account, private domain or codebase. Existing iCloud RAVENnest
+knowledge source must not be confused with the Google account. GitHub
+project-specific repositories = code/revision history where designated;
+Dropbox = allowed copies/research/publishing roles, never a secret
+backdoor to AppDev source. Cloudflare, NAS and other online services are
+replaceable authorized providers, not mandatory BIFROST servers.
+ACCESS ANYWHERE / EXECUTE WHERE APPROPRIATE / STORE WHERE AUTHORIZED /
+SYNCHRONIZE WHEN AVAILABLE / CONTINUE INDEPENDENTLY WHEN DISCONNECTED.
+An offline Mac is NOT proof that the user's cloud history, connector
+sources, project canon or account identities are absent.
+
+E. LCAS FULL — IN-CHAT PRESENTATION, NOT A RUNTIME
+Every substantive @CONDUCTOR project response should render the
+established LCAS FULL interactive in-chat interface: active project,
+canonical objective, stages/current state, sourced evidence/freshness,
+next true gate, blockers/UNKNOWN, real actions and discoverable
+Suggestions/Alternative/Advanced views. LCAS is ChatGPT message
+presentation, not an independent persistent system service, pinned
+global UI, evidence authority, BIFROST runtime dependency or claimed
+installed native companion. UI controls must perform actual supported
+host actions or clearly invoke a follow-up turn. Do not replace LCAS FULL
+with an inert status paragraph; re-render it as needed in subsequent
+turns. Persistent per-project state outside chat requires a separately
+verified backend; never claim cross-turn pinned UI or live monitoring
+without actual runtime capability.
+
+F. EVIDENCE-GATED IMPLEMENTATION STATUS — OBSERVED 2026-10-25
+Existing recovered GitHub BIFROST/core/shortcalls.v1.json on branch
+bifrost/recovery-20261024 holds 47 named actions and 3 combinations:
+3 actions mapped to implemented-readonly local adapters and 44
+contract-only entries. Contract-only is NOT runnable.
+Draft unmerged PR #13 candidate on
+candidate/bifrost-apple-preflight-20261025 has 48 actions, 4 mapped
+read-only adapters and one added bounded Apple native probe; mocked
+probe tests were reported and the PR remained unmerged. Real
+Siri/iCloud/Xcode entitlement, Mac and cross-device acceptance UNKNOWN.
+The existing BIFROST/core/storage_capability.py exposes 11 provider
+descriptors and bounded local-first metadata; its existence does not
+verify a working federated Online Storage Manager. The existing
+portable_kernel.py is a DP0.1 candidate, not a universal authoritative
+backup engine. Earlier working BIFROST headless/Web/native histories,
+source tests and standalone specialist implementations must not be
+discarded or demoted by this inventory. Actual physical Mac dirty tree,
+canonical Project Bible, approved LKG, provider availability, DeLorean
+restore test, cloud-to-device handoff, real native Apple Siri and full
+AI provider execution remain independently UNKNOWN until tested.
+
+G. CONTINUATION / REGRESSION RULE
+Before ANY new BIFROST architecture answer or implementation, recover
+the full original product specification, this existing source,
+latest explicit decisions, actual provider/device/repository evidence,
+all fourteen above feature families, accepted LKG and specialist
+boundaries. Reconcile conflicts by date/authority without deleting
+historical provenance. Correct omissions additively IN THE EXISTING
+OWNER SOURCE. Do not create new project/plugin/dispatcher, silently
+merge drafts, invent missing URLs, install services, reset accounts,
+rewrite Project Bibles, promote a candidate, or treat a mock/pass
+report as hardware acceptance. Conduct real positive/negative/
+regression/recovery checks; complete only genuinely safe authorized
+actions through ForgeMASTER, BIFROST and specialist owners.
+======================================================================
