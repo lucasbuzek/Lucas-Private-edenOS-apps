@@ -13,6 +13,7 @@ from pathlib import Path
 SCHEMA = "bifrost.shortcalls.v1"
 MANIFEST = Path(__file__).resolve().parents[1] / "core" / "shortcalls.v1.json"
 PLATFORMS = {"Darwin": "macos", "Linux": "linux", "Windows": "windows"}
+READONLY_ADAPTERS = frozenset({"python.platform", "python.automation", "python.setup"})
 
 
 class ShortCallError(ValueError):
@@ -65,15 +66,27 @@ def resolve(action_id, system=None):
     entry = describe(action_id)
     os_name = system or PLATFORMS.get(platform.system(), "unknown")
     impl = entry.get("executors", {}).get(os_name)
+    available = (impl in READONLY_ADAPTERS
+                 and entry["state"] == "implemented-readonly"
+                 and entry["effect"] == "read"
+                 and entry.get("requiresApproval") is False)
     return {"action": entry["id"], "platform": os_name,
-            "available": bool(impl) and entry["state"] == "implemented-readonly",
-            "adapter": impl if entry["state"] == "implemented-readonly" else None,
+            "available": available,
+            "adapter": impl if available else None,
             "effect": entry["effect"], "state": entry["state"]}
+
+
+def _execution_platform(system):
+    actual = PLATFORMS.get(platform.system(), "unknown")
+    if system is not None and system != actual:
+        raise ShortCallError("Execution platform does not match this host; use resolve/workflow-plan for other platforms")
+    return actual
 
 
 def call(action_id, payload=None, system=None):
     if payload not in (None, {}):
         raise ShortCallError("This read-only action accepts no inputs")
+    system = _execution_platform(system)
     action_id = describe(action_id)["id"]
     route = resolve(action_id, system=system)
     if not route["available"]:
@@ -106,6 +119,7 @@ def plan_workflow(workflow_id, system=None):
     entry = describe_workflow(workflow_id)
     routes = [resolve(step, system=system) for step in entry.get("steps", [])]
     ready = (entry["state"] == "implemented-readonly" and bool(routes)
+             and entry.get("requiresApproval") is False
              and all(x["available"] and x["effect"] == "read" for x in routes))
     return {"schema": SCHEMA, "workflow": entry["id"],
             "platform": system or PLATFORMS.get(platform.system(), "unknown"),
@@ -114,6 +128,7 @@ def plan_workflow(workflow_id, system=None):
 
 
 def run_workflow(workflow_id, system=None):
+    system = _execution_platform(system)
     plan = plan_workflow(workflow_id, system=system)
     if not plan["executable"]:
         raise ShortCallError("Workflow has no verified read-only executor on this platform")
@@ -151,3 +166,4 @@ def main(argv=None):
 
 if __name__ == "__main__":
     sys.exit(main())
+
