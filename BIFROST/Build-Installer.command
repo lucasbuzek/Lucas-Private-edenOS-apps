@@ -2,7 +2,7 @@
 set -eu
 cd -- "$(dirname -- "$0")"
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
-trap 'read -r -p "Press Return to close."' EXIT
+trap 'if [ -t 0 ]; then read -r -p "Press Return to close."; fi' EXIT
 PYTHON=""
 for candidate in /opt/homebrew/bin/python3 /usr/local/bin/python3 /usr/bin/python3; do
   if [ -x "$candidate" ] && "$candidate" -c 'import sys; sys.exit(sys.version_info < (3,10))' 2>/dev/null; then
