@@ -7,6 +7,17 @@ import UniformTypeIdentifiers
 struct DeLoreanCatalog: Decodable {
     let schema: String
     let snapshots: [Checkpoint]
+    let events: [HistoryEvent]?
+}
+struct HistoryEvent: Decodable, Identifiable {
+    let event_id: String
+    let project: String
+    let owner: String
+    let provider: String
+    let event_type: String
+    let occurred_at: String
+    let evidence: String
+    var id: String { event_id }
 }
 struct Checkpoint: Decodable, Identifiable {
     let snapshot_id: String
@@ -29,6 +40,7 @@ struct CheckpointFile: Decodable, Identifiable {
 @MainActor
 final class DeLoreanCatalogStore: ObservableObject {
     @Published var snapshots: [Checkpoint] = []
+    @Published var events: [HistoryEvent] = []
     @Published var errorMessage: String?
     func importCatalog(from fileURL: URL) {
         let scoped = fileURL.startAccessingSecurityScopedResource()
@@ -44,6 +56,7 @@ final class DeLoreanCatalogStore: ObservableObject {
                 throw NSError(domain: "DeLorean", code: 2, userInfo: [NSLocalizedDescriptionKey: "Unsupported catalog format"])
             }
             snapshots = parsed.snapshots
+            events = parsed.events ?? []
             errorMessage = nil
         } catch {
             errorMessage = error.localizedDescription
@@ -77,7 +90,17 @@ struct DeLoreanTimelineView: View {
                         }
                     }
                 }
-                if store.snapshots.isEmpty {
+                if !store.events.isEmpty {
+                    Section("Provider history") {
+                        ForEach(store.events.sorted { $0.occurred_at > $1.occurred_at }) { event in
+                            VStack(alignment: .leading) {
+                                Text("\(event.event_type) · \(event.provider)")
+                                Text("\(event.occurred_at) · \(event.evidence)").font(.caption).foregroundStyle(.secondary)
+                            }
+                        }
+                    }
+                }
+                if store.snapshots.isEmpty && store.events.isEmpty {
                     ContentUnavailableView("No catalog imported", systemImage: "clock.arrow.circlepath",
                                            description: Text("Open a local DeLorean JSON export to browse offline."))
                 }
