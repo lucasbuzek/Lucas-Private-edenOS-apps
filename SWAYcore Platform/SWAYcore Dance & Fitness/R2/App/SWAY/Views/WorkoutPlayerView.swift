@@ -136,9 +136,13 @@ struct WorkoutPlayerView: View {
                 SwayTheme.stageGradient.ignoresSafeArea()
                 if store.automaticStyleThemes { SwayTheme.styleAccent(current.move.style).opacity(0.07).ignoresSafeArea() }
                 if started && store.visualCueStrength > 0 { rhythmPulse }
-                performanceSurface(size:proxy.size)
-                    .frame(maxWidth:1100,maxHeight:.infinity)
-                    .frame(maxWidth:.infinity,maxHeight:.infinity)
+                // Calibration owns the stage. Never render the workout COACH or
+                // pre-workout countdown behind the live COACH + tracked YOU overlay.
+                if !showCameraSetup {
+                    performanceSurface(size:proxy.size)
+                        .frame(maxWidth:1100,maxHeight:.infinity)
+                        .frame(maxWidth:.infinity,maxHeight:.infinity)
+                }
                 if showCameraSetup {
                     cameraSetupOverlay
                         .transition(.opacity)
@@ -204,9 +208,13 @@ struct WorkoutPlayerView: View {
                             .padding(.vertical,2)
                     }
                     if trackingThisWorkout && store.showYouOverlay {
-                        SwayUserSilhouetteView(
-                            pose:pose.bodyPose,
-                            visible:pose.personTrackingState.isTracking
+                        // Use the frozen camera-tracked graphical YOUR DANCER route,
+                        // not the raw engineering skeleton overlay.
+                        SWAYCharacterStage(
+                            character:.yourDancer,
+                            source:.tracked(pose.bodyPose,visible:pose.personTrackingState.isTracking),
+                            profile:store.character,
+                            mirrored:store.mirrored
                         )
                         .padding(.horizontal,stageHorizontal)
                         .padding(.vertical,2)
