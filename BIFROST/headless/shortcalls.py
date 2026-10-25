@@ -13,7 +13,7 @@ from pathlib import Path
 SCHEMA = "bifrost.shortcalls.v1"
 MANIFEST = Path(__file__).resolve().parents[1] / "core" / "shortcalls.v1.json"
 PLATFORMS = {"Darwin": "macos", "Linux": "linux", "Windows": "windows"}
-READONLY_ADAPTERS = frozenset({"python.platform", "python.automation", "python.setup"})
+READONLY_ADAPTERS = frozenset({"python.platform", "python.automation", "python.setup", "python.apple.native"})
 
 
 class ShortCallError(ValueError):
@@ -105,6 +105,11 @@ def call(action_id, payload=None, system=None):
             import setup_manager
             return {"schema": SCHEMA, "action": action_id, "verified": True,
                     "result": setup_manager.catalog(), "effectsVerified": True}
+        case "python.apple.native":
+            import apple_native_probe
+            result = apple_native_probe.inspect()
+            return {"schema": SCHEMA, "action": action_id, "verified": True,
+                    "result": result, "effectsVerified": True}
         case _:
             raise ShortCallError("Executor is not registered")
 
