@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#11100d"><meta name="apple-mobile-web-app-capable" content="yes">
+<title>CRESUS</title><link rel="manifest" href="./manifest.webmanifest"><link rel="stylesheet" href="./styles.css">
+</head><body>
+<div id="app">
+<header><div><div class="eyebrow">CAPITAL RESEARCH & EQUITY STRATEGY</div><h1>CRESUS</h1></div><button id="mode" class="pill">Simple</button></header>
+<main>
+<section id="today" class="view active">
+<div class="hero card"><span class="kicker">TODAY</span><h2>Investment Strategy Intelligence</h2><p class="muted">Research, portfolio intelligence and income—one evidence trail.</p>
+<div class="ask"><input id="ask" placeholder="Ask CRESUS…"><button id="askBtn">Examine</button></div></div>
+<div class="grid">
+<article class="card"><span class="kicker">PORTFOLIO</span><h3 id="portfolioValue">No portfolio yet</h3><p class="muted">Add holdings to begin portfolio analysis.</p><button data-go="portfolio">Open portfolio</button></article>
+<article class="card"><span class="kicker">ZACCHAEUS · INCOME</span><h3 id="income">No scheduled income</h3><p class="muted">Declared, expected and received distributions remain distinct.</p><button data-go="income">Income calendar</button></article>
+</div>
+<article class="card"><span class="kicker">THE GILDED ORDER</span><h3>Five lenses. One evidence trail.</h3>
+<div class="order"><button data-member="crassus">⛏ Opportunity</button><button data-member="gobseck">⌕ Quality</button><button data-member="scrooge">▣ Value</button><button data-member="cassandra">◉ Risk</button><button data-member="sibyl">⑂ Scenarios</button></div>
+<p id="memberText" class="muted">Convene the Order for serious examination. CRESUS synthesizes disagreement; it does not count votes.</p></article>
+</section>
+<section id="portfolio" class="view"><div class="sectionTitle"><div><span class="kicker">PORTFOLIO</span><h2>Capital & income</h2></div><button data-go="today">Done</button></div><div class="card"><h3>Portfolio workspace</h3><p class="muted">Holdings, lots, accounts, currencies and exposure will share the same research records used throughout CRESUS.</p><button id="demoPortfolio">Load private demo</button></div></section>
+<section id="income" class="view"><div class="sectionTitle"><div><span class="kicker">ZACCHAEUS</span><h2>Income calendar</h2></div><button data-go="today">Done</button></div><div class="card"><div id="events"></div></div></section>
+<section id="research" class="view"><div class="sectionTitle"><div><span class="kicker">RESEARCH</span><h2 id="researchTitle">Security thesis</h2></div><button data-go="today">Done</button></div><div class="grid"><article class="card"><span class="kicker">THESIS</span><h3>Why own it?</h3><p id="thesis" class="muted">Search for a security to begin an evidence-backed thesis.</p></article><article class="card"><span class="kicker">CASSANDRA</span><h3>What changes my mind?</h3><p class="muted">Kill conditions belong here: measurable evidence that questions or breaks the thesis.</p></article></div></section>
+<section id="lab" class="view"><div class="sectionTitle"><div><span class="kicker">STRATEGY LAB</span><h2>Test the idea</h2></div><button data-go="today">Done</button></div><div class="card"><h3>Friction-aware experiment</h3><div class="form"><label>Buy<input id="buy" type="number" value="100"></label><label>Sell<input id="sell" type="number" value="99"></label><label>Dividend<input id="dividend" type="number" value="1"></label><label>Tax %<input id="tax" type="number" value="20"></label></div><button id="runLab">Run scenario</button><pre id="labResult"></pre></div></section>
+<section id="expert" class="view"><div class="sectionTitle"><div><span class="kicker">EXPERT</span><h2>Research control</h2></div><button data-go="today">Done</button></div><div class="grid"><article class="card"><h3>Evidence & provenance</h3><p class="muted">Point-in-time knowledge, source observations and calculation assumptions.</p></article><article class="card"><h3>Direct analysis</h3><div class="order"><button>CRASSUS</button><button>GOBSECK</button><button>SCROOGE</button><button>CASSANDRA</button><button>SIBYL</button></div></article><article class="card"><h3>Model controls</h3><p class="muted">Benchmarks · FX · taxes · costs · reinvestment · corporate actions · return basis.</p></article><article class="card"><h3>Time Machine</h3><p class="muted">Historical research will expose only evidence known by the selected decision timestamp.</p></article></div></section>
+</main>
+<nav><button data-go="today" class="selected">Today</button><button data-go="portfolio">Portfolio</button><button data-go="research">Research</button><button data-go="lab">Lab</button></nav>
+</div><script type="module" src="./src/app.js"></script></body></html>
