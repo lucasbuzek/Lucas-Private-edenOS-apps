@@ -25,6 +25,7 @@ import storage_adapter as storage_metadata
 import task_ledger as local_tasks
 import orchestration as local_orchestration
 import connection_observer as observed_connections
+import first_use_accounts
 import connectivity_checks
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlsplit, parse_qs
@@ -330,6 +331,11 @@ class Handler(BaseHTTPRequestHandler):
                      "route": "/api/core/v1", "enabled": True,
                      "effect": "read", "requires": "local-session",
                      "execution": "read-only-federation"},
+                    {"id": "bifrost.firstuse.accounts.metadata.read",
+                     "method": "GET", "route": "/api/connections/first-use/v1",
+                     "enabled": True, "effect": "private-label-metadata-read",
+                     "requires": "local-session",
+                     "execution": "existing-headless-and-storage-adapter"},
                     {"id": "bifrost.storage.catalog.read", "method": "GET",
                      "route": "/api/storage/v1", "enabled": True,
                      "effect": "metadata-read", "requires": "local-session",
@@ -396,6 +402,16 @@ class Handler(BaseHTTPRequestHandler):
         if route == "/api/health":
             return self.response(200, {"ok": True, "service": "BIFROST Headless",
                                        "identity": RUNTIME_IDENTITY})
+        if route == "/api/connections/first-use/v1":
+            # Same existing Headless identity, Origin and token; no new daemon.
+            if not self.authentic():
+                return self.response(403, {"error": "local session required"})
+            if urlsplit(self.path).query:
+                return self.response(400, {"error": "no account inventory query parameters"})
+            try:
+                return self.response(200, first_use_accounts.snapshot())
+            except (OSError, RuntimeError, ValueError, UnicodeError):
+                return self.response(503, {"error": "account inventory unavailable"})
         if route == "/api/connections/v1":
             if not self.authentic():
                 return self.response(403, {"error": "local session required"})
