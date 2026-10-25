@@ -12,14 +12,14 @@
 <header class="header"><div class="logo"><div class="mark" aria-hidden="true">◷</div><div><div class="tag">EDEN / edenOS · Offline companion</div><h1>TimeMachine — DeLorean</h1><small>Every project. Every version. A way back.</small></div></div><div><label for="catalog">Open an exported DeLorean catalog JSON</label><input id="catalog" type="file" accept=".json,application/json"><div id="status" role="status" aria-live="polite">No catalog loaded. Files never leave this device.</div></div></header>
 <div class="layout">
 <section class="panel projects-panel" aria-labelledby="projects-title"><h2 id="projects-title">Projects</h2><ul class="projects" id="projects"></ul><p class="muted" id="project-empty">Import a verified catalog to browse actual project states.</p></section>
-<section class="panel" aria-labelledby="timeline-title"><h2 id="timeline-title">Timeline</h2><p class="muted">Catalog records are evidence, not proof of restore readiness.</p><div class="timeline" id="timeline" aria-label="Saved snapshots"></div><section aria-labelledby="files-title"><h3 id="files-title">Manifest files</h3><div class="files"><table><thead><tr><th>Path</th><th>Bytes</th><th>SHA-256</th></tr></thead><tbody id="files"></tbody></table></div><p id="no-files" class="muted">Choose a snapshot to inspect its files.</p></section></section>
+<section class="panel" aria-labelledby="timeline-title"><h2 id="timeline-title">Timeline</h2><p class="muted">Catalog records are evidence, not proof of restore readiness.</p><div class="timeline" id="timeline" aria-label="Saved snapshots"></div><h3>Provider history events</h3><ul id="events" aria-label="Git, cloud and snapshot evidence" class="muted"></ul><section aria-labelledby="files-title"><h3 id="files-title">Manifest files</h3><div class="files"><table><thead><tr><th>Path</th><th>Bytes</th><th>SHA-256</th></tr></thead><tbody id="files"></tbody></table></div><p id="no-files" class="muted">Choose a snapshot to inspect its files.</p></section></section>
 <aside class="panel" aria-labelledby="inspector-title"><h2 id="inspector-title">Inspector</h2><div id="inspector" class="empty">Select a snapshot</div><h3>Compare snapshots</h3><label for="older">From</label><select id="older" aria-label="Older snapshot"></select><label for="newer">To</label><select id="newer" aria-label="Newer snapshot"></select><p><button id="compare" disabled>Compare changes</button></p><div id="changes" role="status" aria-live="polite"></div><hr><h3>Restore safety</h3><p class="caution">The companion is read-only. It cannot restore into a Mac, access credentials, or approve unattended destructive actions.</p><button id="export-plan" disabled>Export isolated-restore request</button><p class="muted">Execute only with the installed, verified DeLorean local adapter and an approved destination.</p></aside>
 </div></main>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let items=[],project='',selected=null;
+let items=[],events=[],project='',selected=null;
 const setStatus=s=>$('status').textContent=s;
 $('catalog').addEventListener('change',async event=>{
  const file=event.target.files[0];if(!file)return;
@@ -28,12 +28,12 @@ $('catalog').addEventListener('change',async event=>{
   const v=JSON.parse(await file.text());
   if(v.schema!=='eden.delorean.catalog.v1'||!Array.isArray(v.snapshots))throw Error('Unsupported catalog schema');
   if(v.snapshots.some(s=>!s.snapshot_id||!s.project||!s.owner||!Array.isArray(s.files)))throw Error('Invalid snapshot fields');
-  items=v.snapshots;project='';selected=null;showProjects();setStatus(items.length+' snapshot(s) loaded locally. No upload.');
- }catch(err){items=[];selected=null;project='';showProjects();setStatus('Import rejected: '+err.message)}
+  items=v.snapshots;events=Array.isArray(v.events)?v.events:[];project='';selected=null;showProjects();setStatus(items.length+' snapshot(s), '+events.length+' evidence event(s) loaded locally. No upload.');
+ }catch(err){items=[];events=[];selected=null;project='';showProjects();setStatus('Import rejected: '+err.message)}
 });
 function filtered(){return items.filter(s=>s.project+' · '+s.owner===project)}
 function showProjects(){
- let names=[...new Set(items.map(s=>s.project+' · '+s.owner))].sort();
+ let names=[...new Set([...items,...events].map(s=>s.project+' · '+s.owner))].sort();
  if(!names.includes(project))project=names[0]||'';
  $('projects').replaceChildren();
  names.forEach(name=>{const li=document.createElement('li');const b=document.createElement('button');b.textContent=name;b.setAttribute('aria-current',name===project);b.onclick=()=>{project=name;selected=null;render()};li.append(b);$('projects').append(li)});
@@ -44,6 +44,10 @@ function render(){
  const snapshots=filtered().sort((a,b)=>a.recorded_at.localeCompare(b.recorded_at));
  if(!snapshots.find(s=>s.snapshot_id===selected))selected=snapshots.at(-1)?.snapshot_id||null;
  $('timeline').replaceChildren();
+ $('events').replaceChildren();
+ events.filter(e=>e.project+' · '+e.owner===project).sort((a,b)=>String(a.occurred_at).localeCompare(String(b.occurred_at))).forEach(e=>{
+  const li=document.createElement('li');li.textContent=`${e.occurred_at} · ${e.event_type} · ${e.provider} · ${e.evidence}`;$('events').append(li)
+ });
  snapshots.forEach(s=>{const b=document.createElement('button');b.className='snapshot';b.setAttribute('aria-pressed',s.snapshot_id===selected);const dot=document.createElement('span');dot.className='dot';dot.setAttribute('aria-hidden','true');const title=document.createElement('strong');title.textContent=s.recorded_at||'Undated';const sub=document.createElement('small');sub.textContent=s.snapshot_id.slice(0,12);b.append(dot,title,sub);b.onclick=()=>{selected=s.snapshot_id;render()};$('timeline').append(b)});
  const current=snapshots.find(s=>s.snapshot_id===selected);
  $('files').replaceChildren();$('no-files').hidden=!!current;
