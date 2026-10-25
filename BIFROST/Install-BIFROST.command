@@ -9,8 +9,8 @@ for candidate in /opt/homebrew/bin/python3 /usr/local/bin/python3 /usr/bin/pytho
   fi
 done
 if [ -z "$PYTHON" ]; then
-  echo 'Python 3.10 or newer is required. Install Python for macOS, then run this again.'
-else
-  "$PYTHON" -B tools/install_headless.py || true
+  echo 'Python 3.10 or newer is required. Install Python for macOS, then run this again.' >&2
+  exit 1
 fi
-read -r -p 'Press Return to close.'
+"$PYTHON" -B tools/install_headless.py
+if [ -t 0 ]; then read -r -p 'Press Return to close.'; fi
