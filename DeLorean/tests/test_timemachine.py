@@ -127,6 +127,42 @@ class TimeMachineTests(unittest.TestCase):
         info=d.stage(s,str(target))
         self.assertTrue(target.exists())
         self.assertEqual(info['files'],0)
+    def test_selective_restore_only_selected_file(self):
+        target=self.root/'selected-restored'
+        preview=d.plan(self.one,str(target),['README.md'])
+        self.assertEqual(preview['files'],1)
+        result=d.stage(self.one,str(target),['README.md'])
+        self.assertTrue(result['selective'])
+        self.assertEqual(result['files'],1)
+        self.assertTrue((target/'README.md').is_file())
+        self.assertFalse((target/'source'/'app.swift').exists())
+    def test_selective_restore_rejects_unknown_and_unsafe(self):
+        for value in ('missing.txt','../private'):
+            with self.assertRaises(d.RecoveryError):
+                d.stage(self.one,str(self.root/'should-not-exist'),[value])
+        self.assertFalse((self.root/'should-not-exist').exists())
+    def test_external_event_provenance_and_idempotence(self):
+        event=d.record_event(self.catalog,'EDEN','LucasPRIVATE','GitHub','COMMIT','abc123','2026-10-25T18:30:00Z')
+        self.assertEqual(event['provider'],'GitHub')
+        self.assertEqual(event, d.record_event(self.catalog,'EDEN','LucasPRIVATE','GitHub','COMMIT','abc123','2026-10-25T18:30:00Z'))
+        events=d.timeline(self.catalog,'EDEN','LucasPRIVATE')
+        self.assertEqual(len(events),2)
+        self.assertEqual(events[0]['event_type'],'COMMIT')
+        self.assertEqual(events[1]['event_type'],'SNAPSHOT_INDEXED') if events[1]['occurred_at'] >= events[0]['occurred_at'] else None
+    def test_event_requires_timezone(self):
+        with self.assertRaises(d.RecoveryError):
+            d.record_event(self.catalog,'EDEN','LucasPRIVATE','GitHub','COMMIT','abc123','2026-10-25T18:30:00')
+    def test_export_includes_reference_events_and_preserves_source(self):
+        d.record_event(self.catalog,'EDEN','LucasPRIVATE','GitHub','COMMIT','abc123','2026-10-25T18:30:00Z')
+        out=self.root/'export-with-events.json'
+        exported=d.export(self.catalog,out)
+        self.assertEqual(len(exported['events']),2)
+        self.assertNotIn(str(self.src),out.read_text())
+        self.assertTrue(self.src.is_dir())
+    def test_timeline_council_isolation(self):
+        d.record_event(self.catalog,'EDEN','AnotherCouncil','Google Drive','REVISION','drive:rev','2026-10-25T18:30:00+00:00')
+        self.assertEqual(len(d.timeline(self.catalog,'EDEN','LucasPRIVATE')),1)
+        self.assertEqual(len(d.timeline(self.catalog,'EDEN','AnotherCouncil')),1)
     def test_no_catalog_inside_backup(self):
         with self.assertRaises(d.RecoveryError):
             d.register(self.src/'catalog','EDEN',str(self.src))
