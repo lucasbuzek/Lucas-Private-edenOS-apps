@@ -84,6 +84,27 @@ must not be merged as-is. No merge, Mac installation, account re-pairing,
 credential access, hostname change, public deployment or LKG promotion occurred.
 
 
+## 2026-10-25 storage/installer research correction — additive candidate branch
+
+Source lineage: PR #13 retained as the original draft; bounded safe hardening work is on `codex/bifrost-storage-installer-hardening-20261025`. **No Mac installation, provider authentication, source-LKG promotion, PR merge or Dropbox publication is inferred.**
+
+Evidence-backed defects corrected in source:
+- Original `Install-BIFROST.command` used `|| true`, masking Python installer failure as success; wrapper now propagates status.
+- Original builder fixed port 8798 and unconditionally requested login autostart. New builder permits loopback port (1024–65535), explicit `startAtLogin` (OFF by default), and initial browser-open preference; boolean/int types and unknown/credential-like option keys fail closed.
+- Options are embedded in `INSTALL-OPTIONS.json` **inside the generated candidate ZIP** and its SHA-256 is included in the verified install manifest; install rejects tampering/unknown options.
+- Builder candidates and receipts now target established `~/edenOS/Releases/`, not the development directory as installed runtime. The installed app uses the existing verified BIFROST Application Support and LaunchAgent locations only after explicit user action; an existing service, port or runtime causes a hard stop.
+- Headless is first delivery; native SwiftUI and menu bar remain second-stage, not prerequisites. No duplicate daemon or storage engine was created.
+
+Critical security/research conclusions: Reuse the **existing** BIFROST storage core and profile-bound remote preview; do not expose rclone's full Remote Control API on a Web UI. Official rclone docs describe RC access as effectively shell + credential access without per-action scopes (https://rclone.org/rc/). Multi-account remotes are legitimate (https://rclone.org/docs/) but token-bearing config requires user-only protection and provider-specific credentials. Google Drive's shared rclone client is being retired during 2026; user-controlled OAuth app credentials may be required (https://rclone.org/drive/). Dropbox offline desktop consent should use authorization-code + PKCE and refresh tokens (https://dropbox.tech/developers/using-oauth-2-0-with-offline-access). A localhost Web UI still requires exact Host/Origin/CSRF checks, short-lived local sessions and bounded operations (https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html). Apple iCloud Drive is a distinct Apple-managed local/Files provider; do not imply an iCloud OAuth password is available to BIFROST.
+
+Important remaining implementation gaps:
+1. Web UI account onboarding and credential storage: RDCravensnest existing profile recovery, Google Drive OAuth using a real desktop client and provider-verified subject ID, multiple independent Dropbox/Google accounts. Previous ChatGPT account grants are NOT BIFROST-native grants.
+2. Reconciliation must separate account registered, authenticated, provider-device paired, device online, quota available, metadata readable and grant revoked; emails alone cannot prove identity. RDC7 is reserved for another future account.
+3. Credentials must not appear in browser storage, URL query strings, BIFROST logs, ZIP, GitHub or Dropbox. Work toward Apple Keychain integration; rclone may maintain its own protected config file, which is NOT equivalent to Keychain.
+4. No automatic cross-account transfers/sync/backup: stage an explicit dry-run copy plan with destination/source, collision policy, provenance, hashes where supported, independent readback and rollback before any write adapter.
+5. Negative tests still required: wrong RDC6 identity; future RDC7 reuse; expired/revoked OAuth; iCloud dataless placeholders; malicious path traversal, symlinks and DNS rebinding; service upgrade and port conflicts; offline/restart; multi-tenant metadata isolation; refusal to overwrite existing installer/LKG.
+6. One-click installer Apple acceptance remains blocked without a Mac: verify launchctl bootstrap/kickstart semantics, RunAtLoad OFF default, exact HTTP identity/port, physical browser, signing/notarization later. Local option-logic smoke is NOT a full macOS test.
+
 ## Owner priority: connect the whole platform
 
 First use case: fully functional headless service with Web UI. Native macOS app
