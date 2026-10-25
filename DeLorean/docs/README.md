@@ -19,14 +19,18 @@ The directory passed to `register` must already be a verified backup copy, NOT t
 
 ```bash
 python3 core/timemachine.py --catalog /safe/catalog register --project EDEN --owner LucasPRIVATE --provider local-existing-backup --root /already-existing/snapshot
+python3 core/timemachine.py --catalog /safe/catalog record-event --project EDEN --owner LucasPRIVATE --provider GitHub --kind COMMIT --ref abcdef --occurred-at 2026-10-25T18:30:00Z
+python3 core/timemachine.py --catalog /safe/catalog timeline --project EDEN --owner LucasPRIVATE
 python3 core/timemachine.py --catalog /safe/catalog list
 python3 core/timemachine.py --catalog /safe/catalog verify <snapshot-id>
 python3 core/timemachine.py --catalog /safe/catalog compare <older-id> <newer-id>
 python3 core/timemachine.py --catalog /safe/catalog plan-restore <snapshot-id> --target /safe/new/restore
 python3 core/timemachine.py --catalog /safe/catalog stage-restore <snapshot-id> --target /safe/new/restore
+python3 core/timemachine.py --catalog /safe/catalog stage-restore <snapshot-id> --target /safe/new/selective --include README.md source/app.swift
 python3 core/timemachine.py --catalog /safe/catalog export --output /safe/DeLoreanCatalog.json
 ```
 
+- **Selection** lists exact relative file paths; unknown, duplicate, unsafe or cross-owner paths fail closed.
 - **Stage** means a fresh isolated directory, verified by SHA-256 after copy. No command promotes or overwrites live project source.
 - If an existing backup file has changed, source verification fails and staging aborts.
 - Follow verified Apple/GitHub/provider restoration methods for subsequent promotion (outside this adapter).
@@ -48,6 +52,6 @@ Run from the `DeLorean` folder. The tests check safe metadata indexing, two-stat
 ## Known gaps
 - Mac original Project Bible and any prior code/LKG not yet reconciled.
 - No native macOS binary or signed iOS app; no connected Mac device for Xcode acceptance.
-- No direct GitHub/Google Drive/Dropbox adapter or credentials bundled. Connect existing authorized MCP/provider capability later.
+- No direct GitHub/Google Drive/Dropbox authenticated adapter or credentials bundled. Provider-event references can be recorded manually using original source IDs; that is not verification of a provider snapshot. Connect existing authorized MCP/provider capability later.
 - No destructive in-place restore. Deliberate protective policy.
 - No automated scheduler, broad filesystem scan, backup payload store, cleanup, or provider token persistence.
