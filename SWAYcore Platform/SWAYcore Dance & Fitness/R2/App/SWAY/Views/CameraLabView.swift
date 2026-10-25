@@ -240,7 +240,10 @@ struct CameraTrackingSetupView: View {
                 SwayGraphicalCoachView(moveID:calibrationMove,count:max(1,step.rawValue),waiting:false)
                     .frame(maxWidth:min(proxy.size.width*0.72,520),maxHeight:proxy.size.height*0.72)
                     .padding(.top,28)
-                SwayUserSilhouetteView(pose:pose.bodyPose,visible:pose.personTrackingState.isTracking)
+                // Live YOUR DANCER follows Vision joints on the frozen character stage.
+                SWAYCharacterStage(character:.yourDancer,
+                    source:.tracked(pose.bodyPose,visible:pose.personTrackingState.isTracking),
+                    profile:store.character,mirrored:store.mirrored)
                     .frame(maxWidth:min(proxy.size.width*0.72,520),maxHeight:proxy.size.height*0.72)
                     .padding(.top,28)
 
