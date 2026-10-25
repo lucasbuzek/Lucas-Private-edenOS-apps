@@ -18,6 +18,7 @@ from datetime import datetime, timezone
 
 SCHEMA = 'eden.delorean.snapshot.v1'
 CATALOG_SCHEMA = 'eden.delorean.catalog.v1'
+EVENT_SCHEMA = 'eden.delorean.event.v1'
 MAX_MANIFEST_BYTES = 16 * 1024 * 1024
 
 class RecoveryError(Exception):
@@ -168,7 +169,18 @@ def compare(a: dict, b: dict) -> dict:
             'added': sorted(y.keys() - x.keys()), 'removed': sorted(x.keys() - y.keys()),
             'modified': sorted(k for k in x.keys() & y.keys() if x[k] != y[k])}
 
-def plan(m: dict, target: str) -> dict:
+def selected_files(m: dict, include=None):
+    if include is None or len(include) == 0:
+        return list(m['files'])
+    wanted = set()
+    for name in include:
+        wanted.add(_safe_relpath(name).as_posix())
+    entries = [f for f in m['files'] if f['path'] in wanted]
+    if len(entries) != len(wanted):
+        raise RecoveryError('Selection contains files absent from snapshot')
+    return entries
+
+def plan(m: dict, target: str, include=None) -> dict:
     dst = Path(target).expanduser().absolute()
     src = _root(m['source_root'])
     if _is_within(dst, src) or _is_within(src, dst):
@@ -177,22 +189,25 @@ def plan(m: dict, target: str) -> dict:
         raise RecoveryError('Symlinked destination path denied')
     if dst.exists():
         raise RecoveryError('Restore destination already exists; no overwrite, even if empty')
+    files = selected_files(m, include)
     v = verify(m)
     if not v['ok']:
         raise RecoveryError('Source backup no longer matches manifest')
     return {'action': 'STAGE_ONLY_NO_OVERWRITE', 'snapshot_id': m['snapshot_id'], 'project': m['project'],
-            'owner': m['owner'], 'target': str(dst), 'files': len(m['files']),
-            'bytes': sum(f['size'] for f in m['files']), 'source_verified': True,
+            'owner': m['owner'], 'target': str(dst), 'files': len(files),
+            'selected_paths': [f['path'] for f in files],
+            'bytes': sum(f['size'] for f in files), 'source_verified': True,
             'promotion_to_live': 'NOT_AUTHORIZED_BY_THIS_TOOL'}
 
-def stage(m: dict, target: str) -> dict:
-    instructions = plan(m, target)
+def stage(m: dict, target: str, include=None) -> dict:
+    instructions = plan(m, target, include)
     src = _root(m['source_root'])
     dst = Path(instructions['target'])
     dst.parent.mkdir(parents=True, exist_ok=True)
     temp = Path(tempfile.mkdtemp(prefix='.delorean-stage-', dir=str(dst.parent)))
+    files = selected_files(m, include)
     try:
-        for file in m['files']:
+        for file in files:
             rel = _safe_relpath(file['path'])
             from_path = src / rel
             # Verify live content directly before copy, never follow source symlinks.
@@ -204,15 +219,63 @@ def stage(m: dict, target: str) -> dict:
             if _hash(destination) != file['sha256']:
                 raise RecoveryError('Copied file integrity failure')
         staged = {f['path']: f for f in scan(temp)}
-        if staged != {f['path']: f for f in m['files']}:
+        if staged != {f['path']: f for f in files}:
             raise RecoveryError('Staged content differs from manifest')
         if dst.exists():
             raise RecoveryError('Destination became occupied before promotion')
         temp.rename(dst)
-        return {'restored_to': str(dst), 'snapshot_id': m['snapshot_id'], 'status': 'ISOLATED_RESTORE_VERIFIED', 'files': len(m['files'])}
+        return {'restored_to': str(dst), 'snapshot_id': m['snapshot_id'], 'status': 'ISOLATED_RESTORE_VERIFIED', 'files': len(files), 'selective': len(files) != len(m['files'])}
     finally:
         if temp.exists():
             shutil.rmtree(temp)
+
+def record_event(catalog: Path, project: str, owner: str, provider: str, kind: str, provider_ref: str, occurred_at: str):
+    if not all(isinstance(x, str) and x.strip() for x in (project, owner, provider, kind, provider_ref, occurred_at)):
+        raise RecoveryError('Event project, owner, provider, kind, ref and time required')
+    # Require ISO-style timezone offset for event ordering; do not invent source time.
+    try:
+        when = datetime.fromisoformat(occurred_at.replace('Z', '+00:00'))
+        if when.tzinfo is None:
+            raise ValueError('Missing timezone')
+    except ValueError as exc:
+        raise RecoveryError('Event requires timezone-aware ISO 8601 timestamp') from exc
+    identity = {'schema': EVENT_SCHEMA, 'project': project, 'owner': owner, 'provider': provider,
+                'kind': kind, 'provider_ref': provider_ref, 'occurred_at': when.astimezone(timezone.utc).isoformat()}
+    key = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()[:24]
+    event = dict(identity, event_id=key, evidence='REFERENCE_RECORDED_NOT_BACKUP_VERIFIED')
+    folder = catalog / 'events'
+    if folder.is_symlink():
+        raise RecoveryError('Event store symlink denied')
+    folder.mkdir(parents=True, exist_ok=True)
+    dest = folder / (key + '.json')
+    if dest.exists():
+        old = json.loads(dest.read_text(encoding='utf-8'))
+        if old != event:
+            raise RecoveryError('Event fingerprint collision')
+        return old
+    with dest.open('x', encoding='utf-8') as f:
+        json.dump(event, f, sort_keys=True, ensure_ascii=False)
+        f.write('\n')
+    return event
+
+def timeline(catalog: Path, project=None, owner=None):
+    events = []
+    for p in catalogue_files(catalog):
+        m = load_manifest(p)
+        events.append({'event_id': m['snapshot_id'], 'event_type': 'SNAPSHOT_INDEXED', 'project': m['project'],
+                       'owner': m['owner'], 'provider': m['provider'], 'provider_ref': m['provider_ref'],
+                       'occurred_at': m['recorded_at'], 'evidence': m['evidence']})
+    for p in catalogue_files(catalog / 'events'):
+        if p.stat().st_size > MAX_MANIFEST_BYTES:
+            raise RecoveryError('Oversized event')
+        e = json.loads(p.read_text(encoding='utf-8'))
+        if e.get('schema') != EVENT_SCHEMA:
+            raise RecoveryError('Invalid event schema')
+        events.append({'event_id': e['event_id'], 'event_type': e['kind'], 'project': e['project'],
+                       'owner': e['owner'], 'provider': e['provider'], 'provider_ref': e['provider_ref'],
+                       'occurred_at': e['occurred_at'], 'evidence': e['evidence']})
+    events = [e for e in events if (project is None or e['project'] == project) and (owner is None or e['owner'] == owner)]
+    return sorted(events, key=lambda e:(e['occurred_at'], e['event_id']))
 
 def export(catalog: Path, path: Path):
     manifests = [load_manifest(p) for p in catalogue_files(catalog)]
@@ -221,7 +284,7 @@ def export(catalog: Path, path: Path):
     for m in manifests:
         public = {k:v for k,v in m.items() if k not in ('source_root',)}
         sanitized.append(public)
-    data = {'schema': CATALOG_SCHEMA, 'exported_at': stamp(), 'snapshots': sorted(sanitized, key=lambda m:m['recorded_at'])}
+    data = {'schema': CATALOG_SCHEMA, 'exported_at': stamp(), 'snapshots': sorted(sanitized, key=lambda m:m['recorded_at']), 'events': timeline(catalog)}
     dst = path.expanduser().absolute()
     if dst.exists():
         raise RecoveryError('Export already exists; no-clobber')
@@ -242,20 +305,28 @@ def main(argv=None):
     r.add_argument('--ref', default='')
     r.add_argument('--owner', default='LucasPRIVATE')
     commands.add_parser('list')
+    events = commands.add_parser('record-event', help='Index an external provider event reference only')
+    for flag in ('project','owner','provider','kind','ref','occurred-at'):
+        events.add_argument('--' + flag, required=True)
+    tl = commands.add_parser('timeline')
+    tl.add_argument('--project')
+    tl.add_argument('--owner')
     v = commands.add_parser('verify'); v.add_argument('snapshot')
     c = commands.add_parser('compare'); c.add_argument('old'); c.add_argument('new')
-    p = commands.add_parser('plan-restore'); p.add_argument('snapshot'); p.add_argument('--target', required=True)
-    t = commands.add_parser('stage-restore'); t.add_argument('snapshot'); t.add_argument('--target', required=True)
+    p = commands.add_parser('plan-restore'); p.add_argument('snapshot'); p.add_argument('--target', required=True); p.add_argument('--include', nargs='*')
+    t = commands.add_parser('stage-restore'); t.add_argument('snapshot'); t.add_argument('--target', required=True); t.add_argument('--include', nargs='*')
     e = commands.add_parser('export'); e.add_argument('--output', required=True)
     args = parser.parse_args(argv)
     catalog = Path(args.catalog)
     try:
         if args.action == 'register': result = register(catalog, args.project, args.root, args.provider, args.ref, args.owner)
         elif args.action == 'list': result = [{'snapshot_id':m['snapshot_id'], 'project':m['project'], 'owner':m['owner'], 'provider':m['provider'], 'recorded_at':m['recorded_at'], 'files':len(m['files'])} for m in [load_manifest(f) for f in catalogue_files(catalog)]]
+        elif args.action == 'record-event': result = record_event(catalog,args.project,args.owner,args.provider,args.kind,args.ref,args.occurred_at)
+        elif args.action == 'timeline': result = timeline(catalog,args.project,args.owner)
         elif args.action == 'verify': result = verify(find(catalog, args.snapshot))
         elif args.action == 'compare': result = compare(find(catalog,args.old), find(catalog,args.new))
-        elif args.action == 'plan-restore': result = plan(find(catalog,args.snapshot),args.target)
-        elif args.action == 'stage-restore': result = stage(find(catalog,args.snapshot),args.target)
+        elif args.action == 'plan-restore': result = plan(find(catalog,args.snapshot),args.target,args.include)
+        elif args.action == 'stage-restore': result = stage(find(catalog,args.snapshot),args.target,args.include)
         else: result = export(catalog,Path(args.output))
     except (RecoveryError, OSError, ValueError) as exc:
         print(json.dumps({'ok': False, 'error': str(exc)}), file=sys.stderr)
