@@ -30,3 +30,13 @@ transfers/sync, general durable execution and specialist integrations remain
 incomplete. Apple workflows require actual macOS permissions and testing.
 Portable regression tests and isolated HTTP smoke are separate from macOS
 LaunchAgent acceptance. This installer has NOT been run on RavenAirM1/RavenNestM3.
+
+## One-click installer builder
+
+Double-click `Build-Installer.command` to rebuild from this source folder.
+The builder requires Python 3.10+ and Node.js available locally. It runs the Python
+and JavaScript regressions, generates missing icons, runs an isolated HTTP smoke,
+then creates a uniquely named ZIP and SHA-256 receipt beside the source folder.
+It verifies the archived file hashes before revealing the result in Finder.
+It does not install, download dependencies, sign, notarize or publish anything.
+Use `Install-BIFROST.command` inside the generated ZIP to install on a fresh Mac.
