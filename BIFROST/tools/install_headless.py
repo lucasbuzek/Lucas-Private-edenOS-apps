@@ -13,6 +13,34 @@ import time
 import urllib.request
 
 LABEL = 'eden.bifrost.headless'
+DEFAULT_INSTALL_OPTIONS = {'port': 8798, 'startAtLogin': False, 'openDashboard': True}
+
+def validate_install_options(raw):
+    if not isinstance(raw, dict):
+        raise RuntimeError('Installer options must be a JSON object')
+    if set(raw) - set(DEFAULT_INSTALL_OPTIONS):
+        raise RuntimeError('Unrecognized installer options')
+    options = dict(DEFAULT_INSTALL_OPTIONS)
+    options.update(raw)
+    port = options['port']
+    if type(port) is not int or not 1024 <= port <= 65535:
+        raise RuntimeError('Web UI port must be an integer between 1024 and 65535')
+    for key in ('startAtLogin', 'openDashboard'):
+        if type(options[key]) is not bool:
+            raise RuntimeError(key + ' must be a boolean')
+    return options
+
+def read_install_options(source, manifest):
+    path = source / 'INSTALL-OPTIONS.json'
+    if not path.exists():
+        return dict(DEFAULT_INSTALL_OPTIONS)
+    if 'INSTALL-OPTIONS.json' not in manifest or path.is_symlink():
+        raise RuntimeError('Installer options are not covered by the package manifest')
+    try:
+        return validate_install_options(json.loads(path.read_text(encoding='utf-8')))
+    except (UnicodeError, ValueError) as error:
+        raise RuntimeError('Invalid installer options') from error
+
 
 def verify(source):
     manifest = json.loads((source / 'INSTALL-MANIFEST.json').read_text())
@@ -37,6 +65,8 @@ def install(source):
     if os.geteuid() == 0:
         raise RuntimeError('Run as your normal Mac user, without sudo')
     manifest = verify(source)
+    options = read_install_options(source, manifest)
+    port = options['port']
     home = Path.home()
     support = home / 'Library/Application Support/BIFROST'
     agent = home / 'Library/LaunchAgents' / (LABEL + '.plist')
@@ -48,7 +78,7 @@ def install(source):
     if found.returncode == 0:
         raise RuntimeError('Existing BIFROST service preserved; no replacement attempted')
     with socket.socket() as sock:
-        sock.bind(('127.0.0.1',8798))
+        sock.bind(('127.0.0.1',port))
     for path in (support, agent.parent):
         for parent in (path, *path.parents):
             if parent.is_symlink():
@@ -64,25 +94,28 @@ def install(source):
             shutil.copy2(source/name,destination)
         server = target/'headless/server.py'
         config = {'Label':LABEL,'ProgramArguments':[sys.executable,'-B',str(server)],
-                  'RunAtLoad':True,'KeepAlive':False,'WorkingDirectory':str(target),
-                  'EnvironmentVariables':{'BIFROST_HEADLESS_PORT':'8798'},
+                  'RunAtLoad':options['startAtLogin'],'KeepAlive':False,'WorkingDirectory':str(target),
+                  'EnvironmentVariables':{'BIFROST_HEADLESS_PORT':str(port)},
                   'StandardOutPath':str(support/'headless-install.log'),
                   'StandardErrorPath':str(support/'headless-install.log')}
         with agent.open('xb') as stream:
             written_agent = True
             plistlib.dump(config,stream)
         subprocess.run(['/bin/launchctl','bootstrap',domain,str(agent)],check=True)
+        if not options['startAtLogin']:
+            subprocess.run(['/bin/launchctl','kickstart',domain+'/'+LABEL],check=True)
         expected = hashlib.sha256(server.read_bytes()).hexdigest()
         runtime = hashlib.sha256(str(server.parent.resolve()).encode()).hexdigest()[:16]
         for _ in range(40):
             try:
                 opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
-                with opener.open('http://127.0.0.1:8798/api/health',timeout=1) as response:
+                with opener.open('http://127.0.0.1:'+str(port)+'/api/health',timeout=1) as response:
                     health = json.load(response)
                 identity = health.get('identity',{})
                 if health.get('ok') and identity.get('sourceSha256') == expected and identity.get('runtimeId') == runtime:
-                    print('Installed and verified: http://127.0.0.1:8798')
-                    subprocess.run(['/usr/bin/open','http://127.0.0.1:8798'],check=False)
+                    print('Installed and verified: http://127.0.0.1:'+str(port))
+                    if options['openDashboard']:
+                        subprocess.run(['/usr/bin/open','http://127.0.0.1:'+str(port)],check=False)
                     return
             except (OSError,ValueError):
                 pass
