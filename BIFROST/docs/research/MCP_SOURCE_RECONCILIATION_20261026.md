@@ -74,3 +74,13 @@ Priority references resolved from archive names to **original source**, not arch
 **Priority implementation decision:** Apple first-party Xcode MCP for local development; existing BIFROST observer/Shortcuts executor for normal Mac actions; a **single reviewed Appium/XCUITest-based physical-iPhone connector** only after pairing/code review; a separate bounded Android ADB connector. AI providers attach to the preexisting AI TOOLKIT/BIFROST adapter contract, with Ollama locally and explicit opted-in cloud accounts. No phone should become an always-on publicly exposed MCP server merely to support remote control.
 
 **Privacy and safety:** Only expose trusted fixed allowlisted operations, with per-device grants, owner confirmation for effectful app actions, authorization receipts, no automatic messaging/passcode entry, and independent read-only service discovery. A successful screenshot or WDA health check is not evidence of universal iPhone control. This remains source research; **no real phone was connected, paired, automated or modified in this ChatGPT session**.
+
+
+### ChatGPT desktop versus web MCP support (2026)
+
+Official OpenAI references:
+- https://learn.chatgpt.com/docs/extend/mcp — ChatGPT **desktop**, Codex CLI and IDE MCP host share local Codex configuration; desktop MCP settings can add a **stdio server** or Streamable HTTP server. Existing BIFROST `tools/mcp_client_config.py` currently prints **Claude Desktop JSON**, not native Codex `config.toml`; don't assume it registered in ChatGPT desktop.
+- https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt — ChatGPT **web Plugins** custom MCP route requires remote HTTPS or Secure MCP Tunnel and account/plan eligibility; custom connector setup on mobile currently unavailable. Local stdio cannot simply be pasted into a web plugin URL.
+- https://developers.openai.com/api/docs/guides/tools-connectors-mcp — the **OpenAI API** supports remote MCP or local via Secure MCP Tunnel; third-party model service costs are separate.
+
+**Implementation gap:** The existing BIFROST bridge can be configured locally through each compatible installed host (Claude Desktop, ChatGPT desktop Codex host, Codex CLI) only after source-backed client-specific configuration, protocol interop and permission tests. Avoid duplicate server processes or modifying pre-existing app configs wholesale. For mobile ChatGPT, access to web-established plugins depends on account/UI support; do not pretend iOS launches a desktop stdio executable itself. Distinguish **local model inference**, **local MCP tools**, **remote AI account**, and **web plugin** as four separate capability checks.
