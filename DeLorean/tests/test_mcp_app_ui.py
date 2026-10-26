@@ -15,7 +15,7 @@ class MCPAppUITests(unittest.TestCase):
   x=self.call(1,'resources/list');self.assertEqual(x['result']['resources'][0]['uri'],UI_RESOURCE)
  def test_resource_html_and_identity(self):
   d=self.call(2,'resources/read',{'uri':UI_RESOURCE})['result']['contents'][0]
-  self.assertIn('TimeMachine — DeLorean',d['text']);self.assertIn('data:image/png;base64,',d['text'])
+  self.assertIn('DeLorean TimeMachine',d['text']);self.assertIn('data:image/png;base64,',d['text'])
   self.assertEqual(d['mimeType'],'text/html;profile=mcp-app')
  def test_wrong_resource_denied(self):
   x=self.call(3,'resources/read',{'uri':'ui://other'});self.assertEqual(x['error']['code'],-32602)
