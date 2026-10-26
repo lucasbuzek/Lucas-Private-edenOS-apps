@@ -81,10 +81,41 @@ def _valid_headless(identity: object, runtime_path: Path) -> bool:
         return False
 
 
-def _request_headless(timeout: float) -> object:
+def headless_endpoint(home: Path) -> str:
+    """Observe an established, owner-owned LaunchAgent's selected loopback port.
+
+    Only the exact BIFROST launchd label and recognized server path are accepted;
+    malformed, symlinked or unknown launch configurations retain the default.
+    No listener, cloud request or arbitrary URL may be configured here.
+    """
+    base = home / "Library/Application Support/BIFROST"
+    plist = home / "Library/LaunchAgents/eden.bifrost.headless.plist"
+    try:
+        config = plistlib.loads(_regular_bytes(plist, MAX_PLIST))
+        expected_scripts = (str(base / "runtime/server.py"),
+                            str(base / "HeadlessRuntime/headless/server.py"))
+        arguments = config.get("ProgramArguments")
+        if (config.get("Label") != HEADLESS_PRODUCT or
+                not isinstance(arguments, list) or len(arguments) < 2 or
+                arguments[-1] not in expected_scripts):
+            return HEADLESS_ENDPOINT
+        env = config.get("EnvironmentVariables")
+        raw = env.get("BIFROST_HEADLESS_PORT") if isinstance(env, dict) else None
+        if (not isinstance(raw, str) or not raw.isascii() or
+                not raw.isdecimal() or len(raw) > 5):
+            return HEADLESS_ENDPOINT
+        port = int(raw)
+        if not 1024 <= port <= 65535:
+            return HEADLESS_ENDPOINT
+        return "http://127.0.0.1:{}/api/health".format(port)
+    except (OSError, ValueError, TypeError, plistlib.InvalidFileException, AttributeError):
+        return HEADLESS_ENDPOINT
+
+
+def _request_headless(timeout: float, *, endpoint: str = HEADLESS_ENDPOINT) -> object:
     """Loopback-only, proxy-free health check with bounded response."""
     opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
-    request = urllib.request.Request(HEADLESS_ENDPOINT, method="GET")
+    request = urllib.request.Request(endpoint, method="GET")
     with opener.open(request, timeout=timeout) as response:
         if response.status != 200:
             return None
@@ -107,7 +138,10 @@ def headless_state(home: Path, *, identity: object = None,
     provenance = "in-process" if identity is not None else "bounded-local-health"
     if identity is None:
         try:
-            reply = (request_health or _request_headless)(0.65)
+            if request_health is None:
+                reply = _request_headless(0.65, endpoint=headless_endpoint(home))
+            else:
+                reply = request_health(0.65)
             identity = reply.get("identity") if isinstance(reply, dict) and reply.get("ok") is True else None
         except (OSError, ValueError, TimeoutError, urllib.error.URLError):
             return {"state": "not-observed", "health": "unavailable",
