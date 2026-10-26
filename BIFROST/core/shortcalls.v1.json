@@ -56,11 +56,13 @@
     {
       "id": "bifrost.device.discover",
       "group": "Devices",
-      "title": "Discover nearby advertised devices",
+      "title": "Observe Apple CoreDevice inventory without pairing or disclosing identifiers",
       "owner": "bifrost",
       "effect": "read",
-      "state": "contract-only",
-      "executors": {},
+      "state": "implemented-readonly",
+      "executors": {
+        "macos": "python.apple.coredevice"
+      },
       "requiresApproval": false
     },
     {
