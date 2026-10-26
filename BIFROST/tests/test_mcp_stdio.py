@@ -40,7 +40,7 @@ class MCPTests(unittest.TestCase):
           "core_runtime":types.SimpleNamespace(snapshot=lambda:{"headless":{"state":"unverified"}})
         }):
             s=m.run("bifrost_status")
-            self.assertFalse(s["remoteChatGPTConnectionVerified"])
+            self.assertEqual(s["connectionAcceptance"], "NOT_ATTESTED_BY_LOCAL_PROCESS")
 
     def test_provider_uses_existing_adapter(self):
         with mock.patch.dict(sys.modules,{
