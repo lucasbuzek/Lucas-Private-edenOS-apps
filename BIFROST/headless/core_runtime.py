@@ -97,8 +97,13 @@ def _request_headless(timeout: float) -> object:
 def headless_state(home: Path, *, identity: object = None,
                    runtime_path: Path | None = None,
                    request_health=None) -> dict:
-    runtime_path = runtime_path or (
-        home / "Library/Application Support/BIFROST/runtime")
+    # Old installed Headless uses BIFROST/runtime/server.py. The recovered
+    # no-overwrite installer places its server in HeadlessRuntime/headless/.
+    # Reconcile only these two established layouts; require exact hash and
+    # runtime ID, never accept an arbitrary service claiming to be BIFROST.
+    candidates = ((runtime_path,) if runtime_path is not None else (
+        home / "Library/Application Support/BIFROST/runtime",
+        home / "Library/Application Support/BIFROST/HeadlessRuntime/headless"))
     provenance = "in-process" if identity is not None else "bounded-local-health"
     if identity is None:
         try:
@@ -110,7 +115,7 @@ def headless_state(home: Path, *, identity: object = None,
         if identity is None:
             return {"state": "unverified", "health": "unknown",
                     "provenance": provenance}
-    if not _valid_headless(identity, runtime_path):
+    if not any(_valid_headless(identity, candidate) for candidate in candidates):
         return {"state": "unverified", "health": "unknown",
                 "provenance": provenance}
     return {
