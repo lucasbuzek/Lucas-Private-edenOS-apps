@@ -52,7 +52,7 @@ The server waits for JSON-RPC messages on stdin and writes only JSON-RPC respons
 }
 ```
 
-## Tool surface (19 tools)
+## Tool surface (23 tools)
 
 Read-only: `delorean_status`, `delorean_capabilities`, `delorean_backup_plan`, `delorean_snapshots`, `delorean_timeline`, `delorean_compare`, `delorean_verify`, `delorean_plan_restore`, `delorean_restic_status`, `delorean_restic_snapshots`, `delorean_restic_check`, `delorean_time_machine_status`.
 
@@ -114,3 +114,17 @@ The test suite uses transient directories and deliberately corrupt/mis-scoped fi
 ## Implementation owner and release rules
 
 The GitHub candidate remains in existing `lucasbuzek/Lucas-Private-edenOS-apps` draft PR #14; keep `main` and original Mac LKG unchanged. On access to original DeLorean Mac source, use RECOVER → DISCOVER → RECOGNIZE → REUSE → RECONCILE → INTEGRATE → BUILD ONLY THE GAP → VERIFY. Existing PENELOPE, GitHub, BIFROST, HEIMDALL, JANITOR and RAVENsNEST roles are not displaced.
+
+## v0.2.1 integration and visual correction
+
+- App-consistent primary SQLite database capture uses Python sqlite3 online backup API to include committed WAL transactions; source DB is not overwritten. Other app attachments and preferences remain outside that scope.
+- A read-only per-platform device recovery plan reports full-OS recovery **NOT IMPLEMENTED** until its native backup engine and restore have been physically verified.
+- The private ChatGPT plugin now references the established graphic DeLorean clock icon. The plugin is currently **skills and bundled candidate code, not an MCP-connected ChatGPT executor**. An authorized host must run the stdio server; supported remote/tunnel connectivity is a separate permission and deployment gate.
+- The single-file offline web timeline uses that graphic identity, but stays read-only to avoid pretending to be a device restore UI.
+- Static and fixture tests are not device restoration, full cloud acceptance or installed app acceptance.
+
+## MCP Apps UI v0.2.1 (read-only, host-dependent)
+
+`delorean_dashboard` returns owner-scoped, path-redacted catalog events and snapshots. Its tool metadata references `ui://edenos-delorean/timeline`. The MCP server exposes `resources/list` and `resources/read` with the established clock-themed HTML UI, and the iframe connects over `ui/initialize`/`ui/notifications/tool-result`. This works only with an MCP client that actually connects to the stdio process and supports MCP Apps. The ChatGPT skills plugin is not connected to that process merely by packaging its source. No remote HTTPS endpoint or tunnel is claimed.
+
+The portable on-demand local server has 23 tools including SQLite transactionally consistent primary database backup planning/creation and read-only native device-recovery capability lookup. Tests are fixture scoped; no iPhone/macOS full recovery verified.
