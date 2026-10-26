@@ -69,6 +69,34 @@ class ShortCallsTests(unittest.TestCase):
                 with self.assertRaises(shortcalls.ShortCallError):
                     shortcalls.catalog()
 
+    def test_connection_observation_reuses_owner_and_redacts_identity(self):
+        import connection_observer as observer
+        sample = {
+            "observedAt": "2026-10-26T00:00:00+00:00",
+            "thisDevice": {"name": "PRIVATE-MAC", "state": "local-session-observed"},
+            "lan": {"address": "192.168.1.17", "passiveARPCount": 1,
+                    "observedPeers": [{"address": "192.168.1.23"}],
+                    "scan": {"status": "not-scanned"}},
+            "rdc": {"state": "catalogued", "selected": "PRIVATE-ACCOUNT"},
+            "apps": [{"id": "heimdall", "webVerified": False, "webURL": "private"}],
+            "connectors": [{"id": "ai-toolkit", "state": "unverified", "detail": "private"}]
+        }
+        with mock.patch.object(shortcalls.platform, "system", return_value="Darwin"), \\
+             mock.patch.object(observer, "snapshot", return_value=sample) as snapshot, \\
+             mock.patch.object(observer.MONITOR, "begin") as scan:
+            result = shortcalls.call("bifrost.connection.health.read", system="macos")
+        snapshot.assert_called_once_with()
+        scan.assert_not_called()
+        self.assertTrue(result["verified"])
+        self.assertFalse(result["effectsVerified"])
+        self.assertFalse(result["result"]["liveConnectionVerified"])
+        self.assertEqual(result["result"]["lan"]["observedPeerCount"], 1)
+        self.assertEqual(result["result"]["rdc"]["state"], "catalogued")
+        self.assertNotIn("192.168", json.dumps(result))
+        self.assertNotIn("PRIVATE", json.dumps(result))
+        self.assertNotIn("webURL", json.dumps(result))
+        self.assertFalse(shortcalls.resolve("bifrost.connection.health.read", "linux")["available"])
+
     def test_cli_end_to_end(self):
         exe = [sys.executable, "-B", str(BASE/"headless/shortcalls.py")]
         p = subprocess.run(exe+["call","bifrost.system.platform.read"],capture_output=True,text=True,timeout=8)
