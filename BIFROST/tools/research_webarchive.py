@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 import plistlib
 import re
+from urllib.parse import urlsplit
 
 MAX_FILE = 64 * 1024 * 1024
 MAX_MAIN = 16 * 1024 * 1024
@@ -23,8 +24,20 @@ class TextOnly(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.skip = 0
         self.parts = []
+        self.github_repos = set()
 
     def handle_starttag(self, tag, attrs):
+        if tag == 'a':
+            href = dict(attrs).get('href', '')
+            try:
+                u = urlsplit(href)
+                segments = u.path.strip('/').split('/')
+                if u.scheme == 'https' and u.hostname == 'github.com' and len(segments) >= 2:
+                    owner, repo = segments[:2]
+                    if owner and repo and owner not in ('.', '..') and repo not in ('.', '..'):
+                        self.github_repos.add('https://github.com/' + owner + '/' + repo.removesuffix('.git'))
+            except ValueError:
+                pass
         if tag in ('style', 'script', 'noscript', 'svg'):
             self.skip += 1
         elif tag in ('p', 'div', 'li', 'section', 'article', 'h1', 'h2', 'h3', 'tr'):
@@ -72,7 +85,8 @@ def extract(path):
         parser = TextOnly()
         parser.feed(decoded)
         text = parser.result()
-    return {'sha256': hashlib.sha256(payload).hexdigest(),
+    github_repositories = sorted(parser.github_repos)[:25] if mimetype != 'text/plain' else []
+    return {'github_repositories': github_repositories, 'sha256': hashlib.sha256(payload).hexdigest(),
             'source_url': str(main.get('WebResourceURL', '')),
             'mime': mimetype, 'bytes': size, 'text_chars': len(text)}, text
 
@@ -104,7 +118,7 @@ def scan(folder, out=None):
                     if target.read_text(encoding='utf-8') != text:
                         raise ValueError('hash-prefix conflict or output modified')
                 rec['local_export'] = target.name
-        except (ValueError, OSError, TypeError, plistlib.InvalidFileException) as exc:
+        except (ValueError, OSError, TypeError, OverflowError, RecursionError, plistlib.InvalidFileException) as exc:
             rec['archive_state'] = 'unreadable'
             rec['error'] = type(exc).__name__ + ': ' + str(exc)[:140]
         yield rec
