@@ -96,11 +96,13 @@
     {
       "id": "bifrost.connection.health.read",
       "group": "Connections",
-      "title": "Read connection health",
+      "title": "Read bounded local connection observations (not remote health proof)",
       "owner": "bifrost",
       "effect": "read",
-      "state": "contract-only",
-      "executors": {},
+      "state": "implemented-readonly",
+      "executors": {
+        "macos": "python.connection.observation"
+      },
       "requiresApproval": false
     },
     {
