@@ -1,4 +1,4 @@
-# TimeMachine — DeLorean | candidate evidence-driven component
+# DeLorean TimeMachine | candidate evidence-driven component
 
 **Stage:** Source candidate only; not a promoted master or verified Apple-device build.
 
@@ -55,8 +55,3 @@ Run from the `DeLorean` folder. The tests check safe metadata indexing, two-stat
 - No direct GitHub/Google Drive/Dropbox authenticated adapter or credentials bundled. Provider-event references can be recorded manually using original source IDs; that is not verification of a provider snapshot. Connect existing authorized MCP/provider capability later.
 - No destructive in-place restore. Deliberate protective policy.
 - No automated scheduler, broad filesystem scan, backup payload store, cleanup, or provider token persistence.
-
-
-## 2026-10-26 Additive scope correction — standalone MCP candidate
-
-DeLorean's PRIMARY PRODUCT scope includes full device/application/project/file history, protected backup and recovery; it is NOT only a project timeline. Implemented local stdio MCP v0.2 candidate: core/standalone_backup.py + core/mcp_server.py, 19 MCP tools, local file-tree backup and isolated restore, optional PENELOPE reference import and optional restic/Apple Time Machine adapter; details and documented limits in docs/STANDALONE_MCP.md. Existing 0.1.x history kernel and app UI remain preserved. User data/local copies are not bootable OS images or automatically transactionally consistent; do not claim full device completion. Original live Mac DeLorean LKG/source still unverified. Never merge candidate into canon until source reconciliation and actual target-device recovery tests pass. Research audit includes all 390 Dropbox folder filenames; 375 webarchive bodies were NOT inspected due extraction limitations. GitHub code/backups/RAVENsNEST remain independent, PENELOPE and cloud storage optional.
