@@ -1,0 +1,35 @@
+name: BIFROST candidate verification
+on:
+  pull_request:
+    paths:
+      - 'BIFROST/**'
+      - '.github/workflows/bifrost-candidate-verify.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  portable-bifrost:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Python source compile
+        run: python -B -m compileall -q BIFROST/headless BIFROST/core BIFROST/tools
+      - name: Existing BIFROST portable regression suites
+        working-directory: BIFROST
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -B tools/test_portable.py
+      - name: BIFROST modern and legacy MCP protocol
+        working-directory: BIFROST
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -B -m unittest discover -s tests -p 'test_mcp*.py' -v
