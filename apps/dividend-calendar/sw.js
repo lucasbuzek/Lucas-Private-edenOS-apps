@@ -1,0 +1,1 @@
+const CACHE="cresus-shell-v1",ASSETS=["./","./index.html","./styles.css","./manifest.webmanifest","./src/app.js","./src/core.js","./src/strategy.js"];self.addEventListener("install",e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS))));self.addEventListener("fetch",e=>{if(e.request.method==="GET")e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)))})
