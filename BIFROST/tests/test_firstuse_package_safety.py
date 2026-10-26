@@ -24,6 +24,7 @@ class PackageSafetyTests(unittest.TestCase):
             required={
                 "headless/server.py":b"print('safe headless')",
                 "headless/first_use_accounts.py":b"print('safe account names')",
+                "headless/mcp_stdio.py":b"print('on-demand MCP adapter')",
                 "headless/icons/icon-192.png":b"PNG192",
                 "headless/icons/icon-512.png":b"PNG512",
                 "core/storage_capability.py":b"pass",
@@ -46,6 +47,7 @@ class PackageSafetyTests(unittest.TestCase):
                 self.assertIsNone(archive.testzip())
                 names=set(archive.namelist())
                 self.assertIn("BIFROST/headless/first_use_accounts.py",names)
+                self.assertIn("BIFROST/headless/mcp_stdio.py",names)
                 self.assertIn("BIFROST/headless/server.py",names)
                 self.assertIn("BIFROST/core/storage_capability.py",names)
                 self.assertIn("BIFROST/INSTALL-OPTIONS.json",names)
