@@ -13,7 +13,7 @@ from pathlib import Path
 SCHEMA = "bifrost.shortcalls.v1"
 MANIFEST = Path(__file__).resolve().parents[1] / "core" / "shortcalls.v1.json"
 PLATFORMS = {"Darwin": "macos", "Linux": "linux", "Windows": "windows"}
-READONLY_ADAPTERS = frozenset({"python.platform", "python.automation", "python.setup", "python.apple.native"})
+READONLY_ADAPTERS = frozenset({"python.platform", "python.automation", "python.setup", "python.apple.native", "python.connection.observation"})
 
 
 class ShortCallError(ValueError):
@@ -110,6 +110,41 @@ def call(action_id, payload=None, system=None):
             result = apple_native_probe.inspect()
             return {"schema": SCHEMA, "action": action_id, "verified": True,
                     "result": result, "effectsVerified": True}
+        case "python.connection.observation":
+            # Reuse the existing headless observer. Never start the LAN scanner,
+            # expose IP/hostnames, disclose account identifiers or assert online
+            # health from cached ARP or a registered provider.
+            import connection_observer
+            state = connection_observer.snapshot()
+            lan = state.get("lan", {})
+            scan = lan.get("scan", {})
+            result = {
+                "schema": "bifrost.connection.mcp-observation.v1",
+                "observedAt": state.get("observedAt"),
+                "thisDevice": {"state": state.get("thisDevice", {}).get("state", "unknown")},
+                "lan": {
+                    "observedPeerCount": len(lan.get("observedPeers", [])),
+                    "passiveARPCount": lan.get("passiveARPCount", 0),
+                    "scanStatus": scan.get("status", "not-scanned"),
+                    "peerServiceHealth": "unverified"
+                },
+                "rdc": {
+                    "state": state.get("rdc", {}).get("state", "unverified"),
+                    "authentication": "not-verified-from-local-profile"
+                },
+                "apps": [
+                    {"id": app["id"], "webVerified": app.get("webVerified") is True}
+                    for app in state.get("apps", []) if isinstance(app, dict) and "id" in app
+                ],
+                "connectors": [
+                    {"id": conn["id"], "state": conn.get("state", "unverified")}
+                    for conn in state.get("connectors", []) if isinstance(conn, dict) and "id" in conn
+                ],
+                "scope": "local-read-only-redacted",
+                "liveConnectionVerified": False
+            }
+            return {"schema": SCHEMA, "action": action_id, "verified": True,
+                    "result": result, "effectsVerified": False}
         case _:
             raise ShortCallError("Executor is not registered")
 
