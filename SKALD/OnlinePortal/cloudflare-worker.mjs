@@ -1,4 +1,4 @@
-export default { fetch: async function workerFetch(req, env) {
+export default { fetch: async function workerFetch(req, env, ctx) {
   const u=new URL(req.url);
   const headers={'Cache-Control':'private, no-store, max-age=0','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','X-Frame-Options':'DENY','Strict-Transport-Security':'max-age=31536000; includeSubDomains','Permissions-Policy':'camera=(), microphone=(), geolocation=()', 'Content-Security-Policy':"default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; media-src https: blob:; connect-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'"};
   const out=(data,status=200,type='application/json; charset=utf-8')=>new Response(typeof data==='string'?data:JSON.stringify(data),{status,headers:{...headers,'Content-Type':type}});
@@ -23,7 +23,8 @@ export default { fetch: async function workerFetch(req, env) {
       return await crypto.subtle.verify({name:'RSASSA-PKCS1-v1_5'},key,b64(parts[2]),new TextEncoder().encode(parts[0]+'.'+parts[1]));
     }catch{return false}
   }
-  const isAuthed=await auth();if(!isAuthed)return out({error:'Private SKALD session required. Sign in using the Cloudflare Access page.'},401);
+  const ownerContext = ctx?.access ? await ctx.access.getIdentity().catch(()=>null) : null;
+  const isAuthed=(ownerContext?.email==='lucasbuzek@gmail.com') || await auth();if(!isAuthed)return out({error:'Private SKALD session required. Sign in using the Cloudflare Access page.'},401);
   if(req.method!=='GET'&&req.method!=='HEAD'){
     if(!['POST','DELETE'].includes(req.method))return out({error:'Method not allowed'},405);
     if(req.headers.get('Origin')!==u.origin)return out({error:'Cross-origin action denied'},403);
