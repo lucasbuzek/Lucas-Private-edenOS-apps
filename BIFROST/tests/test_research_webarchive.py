@@ -7,7 +7,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / 'tools'))
 from research_webarchive import scan, extract
 
 class WebarchiveTest(unittest.TestCase):
-    def build(self, target, kind='text/html', payload=b'<h1>Hello</h1><script>malicious()</script><p>Saved!</p>'):
+    def build(self, target, kind='text/html', payload=b'<h1>Hello</h1><script>malicious()</script><p>Saved!</p><a href="https://github.com/example/demo/issues/1">Code</a>'):
         target.write_bytes(plistlib.dumps({'WebMainResource': {'WebResourceData': payload,
             'WebResourceURL': 'https://example.invalid/reference', 'WebResourceMIMEType': kind,
             'WebResourceTextEncodingName': 'utf-8'}, 'WebSubresources': []}, fmt=plistlib.FMT_BINARY))
@@ -19,6 +19,7 @@ class WebarchiveTest(unittest.TestCase):
             self.assertIn('Hello', text); self.assertIn('Saved!', text)
             self.assertNotIn('malicious()', text)
             self.assertEqual(meta['source_url'], 'https://example.invalid/reference')
+            self.assertEqual(meta['github_repositories'], ['https://github.com/example/demo'])
 
     def test_bad_plist_does_not_stop_scan(self):
         with tempfile.TemporaryDirectory() as t:
