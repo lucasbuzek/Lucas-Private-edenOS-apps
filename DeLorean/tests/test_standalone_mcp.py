@@ -19,7 +19,7 @@ class StandaloneTests(unittest.TestCase):
         self.src=self.inputs/'A';self.src.mkdir();(self.src/'file.txt').write_text('hello world')
         (self.src/'nested').mkdir();(self.src/'nested'/'x.swift').write_text('func hello() {}')
         self.server=DeLorean(self.home,[str(self.inputs)],[str(self.restore)],owner='LucasPRIVATE')
-        self.mcp=Server(self.server)
+        self.mcp=Server(self.server,allow_writes=True)
 
     def make(self):return self.server.backup_create(str(self.src),'project','DeLorean','BACKUP NOW')
 
