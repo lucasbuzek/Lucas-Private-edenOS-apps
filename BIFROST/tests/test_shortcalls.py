@@ -81,9 +81,11 @@ class ShortCallsTests(unittest.TestCase):
             "apps": [{"id": "heimdall", "webVerified": False, "webURL": "private"}],
             "connectors": [{"id": "ai-toolkit", "state": "unverified", "detail": "private"}]
         }
-        with mock.patch.object(shortcalls.platform, "system", return_value="Darwin"), \\
-             mock.patch.object(observer, "snapshot", return_value=sample) as snapshot, \\
-             mock.patch.object(observer.MONITOR, "begin") as scan:
+        with (
+            mock.patch.object(shortcalls.platform, "system", return_value="Darwin"),
+            mock.patch.object(observer, "snapshot", return_value=sample) as snapshot,
+            mock.patch.object(observer.MONITOR, "begin") as scan,
+        ):
             result = shortcalls.call("bifrost.connection.health.read", system="macos")
         snapshot.assert_called_once_with()
         scan.assert_not_called()
