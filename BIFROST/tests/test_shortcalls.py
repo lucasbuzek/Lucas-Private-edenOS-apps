@@ -72,7 +72,7 @@ class ShortCallsTests(unittest.TestCase):
     def test_cli_end_to_end(self):
         exe = [sys.executable, "-B", str(BASE/"headless/shortcalls.py")]
         p = subprocess.run(exe+["call","bifrost.system.platform.read"],capture_output=True,text=True,timeout=8)
-        if sys.platform == "darwin":
+        if sys.platform in ("darwin", "linux", "win32"):
             self.assertEqual(p.returncode,0,p.stderr)
             self.assertEqual(json.loads(p.stdout)["action"],"bifrost.system.platform.read")
         else:

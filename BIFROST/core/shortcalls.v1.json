@@ -12,7 +12,9 @@
       "effect": "read",
       "state": "implemented-readonly",
       "executors": {
-        "macos": "python.platform"
+        "macos": "python.platform",
+        "linux": "python.platform",
+        "windows": "python.platform"
       },
       "requiresApproval": false,
       "aliases": [
