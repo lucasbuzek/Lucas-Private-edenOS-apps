@@ -102,3 +102,22 @@ Official OpenAI references:
 - Archived unrestricted AppleScript reference: https://github.com/steipete/macos-automator-mcp (archived 2026-09-13; broad execution surface; **do not automatically install or expose**).
 
 **Follow-on operational gates:** read every archive through a *trusted authorized Mac/local or connector extraction route*, reconcile to each original repo and current release/license, reject untrusted or duplicate wrappers, inspect security/grants and Apple TCC/iOS entitlement boundaries, compare against original BIFROST/HEIMDALL/PENELOPE/CONDUCTOR implementations, patch only demonstrable gaps on protected candidate branches, run local regression and actual M1/M3/iPhone acceptance before any LKG promotion. The iPhone Developer-settings screenshot was an illustrative example, **not scope reduction**. This corrects the earlier premature completion narrative. No secrets, external applications or account changes were authorized or performed by this research.
+
+
+### Safe Safari webarchive extraction candidate (2026-10-26)
+
+**Actual implementation (new draft branch only):** \`BIFROST/tools/research_webarchive.py\` and \`BIFROST/tests/test_research_webarchive.py\`. Synthetic test fixtures in an isolated Python sandbox: **5/5 pass** (main resource text, suppression of script content, malformed plist recovery, symlink refusal, separate output safety/repeatability, bounded GitHub source link extraction). Source and tests were committed to the existing protected draft, never to \`main\`. The code has NOT been invoked on any original Dropbox archive, Mac or iPhone.
+
+The research extractor is *not* an additional daemon, MCP server, service, provider, planner or replacement application. It uses Python standard library \`plistlib\` to decode Safari \`WebMainResource\`, parses only the stored HTML/text without executing scripts, and records bounded source URLs plus GitHub repository references. It refuses symlinks, non-WebArchive input, giant main resources, and output inside the source tree; it defaults to read-only metadata. The optional local \`--output\` saves textual extracts into an explicitly separate directory, never into GitHub or cloud storage.
+
+On the *authorized connected Mac*, only **after original BIFROST/source/LKG comparison**, test with:
+
+\`\`\`sh
+cd "/Users/lucas/edenOS/Software Development/BIFROST"
+python3 -m unittest discover -s tests -p 'test_research_webarchive.py' -v
+python3 tools/research_webarchive.py \
+  --source "/Users/lucas/Library/CloudStorage/Dropbox/edenOS apps/AI MCP tool" \
+  --output "/Users/lucas/edenOS/Temporary/BIFROST-webarchive-research"
+\`\`\`
+
+Those are instructions, **not a claim of command execution**. The script emits JSON lines to the executing terminal; source text remains local to the explicit temporary directory. Read source before invocation; the command must not be used for an account or directory other than the one shown without owner permission. The extractor does NOT prove any listed project is maintained or safe. Complete file-by-file research still requires reading extracted output, tracing links to original source and release/license, reviewing code and security, checking duplicate scope, deciding reuse, then original-project regression/physical acceptance. Protect separately permissioned/private archive contents from external AI services.
