@@ -12,6 +12,8 @@ import sys
 VERSION = "0.1.0-candidate"
 MAX_LINE = 65536
 PROTOCOLS = ("2025-11-25", "2025-06-18")
+MODERN = "2026-07-28"
+SERVER_INFO = {"name": "BIFROSTcore MCP", "version": VERSION}
 CALLS = {
     "bifrost_status": "Inspect existing BIFROSTcore and Headless identity; no connection claims.",
     "bifrost_storage_providers": "Read the existing BIFROSTcore storage provider catalog.",
@@ -93,6 +95,33 @@ def _result(req_id, obj):
     return {"jsonrpc": "2.0", "id": req_id, "result": obj}
 
 
+def _modern_meta(params):
+    """Recognize and validate the MCP 2026-07-28 per-request envelope."""
+    meta = params.get("_meta")
+    if meta is None:
+        return False, None
+    if not isinstance(meta, dict):
+        return None, "Invalid modern metadata"
+    version = meta.get("io.modelcontextprotocol/protocolVersion")
+    if version is None:
+        return False, None
+    if version != MODERN:
+        return None, "Unsupported protocol version"
+    if not isinstance(meta.get("io.modelcontextprotocol/clientCapabilities"), dict):
+        return None, "Missing client capabilities"
+    client = meta.get("io.modelcontextprotocol/clientInfo")
+    if client is not None and (not isinstance(client, dict) or
+                               not all(isinstance(client.get(k), str) and client[k]
+                                       for k in ("name", "version"))):
+        return None, "Malformed client identity"
+    return True, None
+
+
+def _modern_result(payload):
+    return {"resultType": "complete", **payload,
+            "_meta": {"io.modelcontextprotocol/serverInfo": SERVER_INFO}}
+
+
 def _error(req_id, code, message):
     return {"jsonrpc": "2.0", "id": req_id,
             "error": {"code": code, "message": message}}
@@ -111,29 +140,43 @@ def rpc(request):
     params = request.get("params", {})
     if not isinstance(params, dict):
         return _error(req_id, -32602, "Invalid params")
+    modern, invalid = _modern_meta(params)
+    if invalid:
+        return _error(req_id, -32602, invalid)
+    if method == "server/discover":
+        if modern is not True:
+            return _error(req_id, -32602, "Modern discovery metadata required")
+        return _result(req_id, _modern_result({
+            "supportedVersions": [MODERN, *PROTOCOLS],
+            "capabilities": {"tools": {"listChanged": False}},
+            "ttlMs": 0, "cacheScope": "private",
+            "instructions": "Read-only access to existing BIFROSTcore. Device, provider and specialist operations require separate grants."}))
     if method == "initialize":
         requested = params.get("protocolVersion")
         selected = requested if requested in PROTOCOLS else PROTOCOLS[0]
         return _result(req_id, {"protocolVersion": selected,
                                 "capabilities": {"tools": {"listChanged": False}},
-                                "serverInfo": {"name": "BIFROSTcore MCP", "version": VERSION}})
+                                "serverInfo": SERVER_INFO})
     if method == "ping":
-        return _result(req_id, {})
+        return _result(req_id, _modern_result({}) if modern else {})
     if method == "tools/list":
-        return _result(req_id, {"tools": descriptors()})
+        result = {"tools": descriptors()}
+        return _result(req_id, _modern_result(result) if modern else result)
     if method == "tools/call":
         name = params.get("name")
         if name not in CALLS:
             return _error(req_id, -32602, "Unsupported tool")
         try:
             outcome = run(name, params.get("arguments", {}))
-            return _result(req_id, {"content": [
+            result = {"content": [
                 {"type": "text", "text": json.dumps(outcome, ensure_ascii=False)}],
-                "structuredContent": outcome, "isError": False})
+                "structuredContent": outcome, "isError": False}
+            return _result(req_id, _modern_result(result) if modern else result)
         except (OSError, ValueError, TypeError, RuntimeError, KeyError):
             # Do not emit local paths/secret-bearing downstream error strings.
-            return _result(req_id, {"content": [{"type": "text",
-                              "text": "BIFROST tool denied or unavailable"}], "isError": True})
+            result = {"content": [{"type": "text",
+                              "text": "BIFROST tool denied or unavailable"}], "isError": True}
+            return _result(req_id, _modern_result(result) if modern else result)
     return _error(req_id, -32601, "Method not found")
 
 
