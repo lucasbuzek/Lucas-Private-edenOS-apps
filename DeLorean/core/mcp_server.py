@@ -18,9 +18,10 @@ try:
 except ImportError:
     from standalone_backup import DeLorean, Denied, history
 
-VERSION='0.2.0-candidate'
+VERSION='0.2.1-candidate'
 PROTOCOL='2025-06-18'
 MAX_REQUEST_BYTES=1024*1024
+UI_RESOURCE='ui://edenos-delorean/timeline'
 
 
 def tool(name, description, properties=None, required=None, readonly=True):
@@ -31,6 +32,7 @@ def field(desc):return {'type':'string','description':desc}
 def string_array(desc):return {'type':'array','items':{'type':'string'},'description':desc}
 
 TOOLS=[
+    tool('delorean_dashboard','Read live owner-scoped snapshot index for the established DeLorean interactive timeline.'),
     tool('delorean_status','Read host, grants, backend availability.'),
     tool('delorean_capabilities','Read implemented and unimplemented backup/recovery capabilities.'),
     tool('delorean_backup_plan','Plan local existing file/folder, project, app or device-data backup. A device-data backup is NOT a bootable system image.',{'source':field('File/directory on explicitly granted source root'),'scope':{'type':'string','enum':['file','folder','project','app','device-data']},'project':field('Existing project, app or device identifier')},['source','scope','project']),
@@ -43,6 +45,9 @@ TOOLS=[
     tool('delorean_stage_restore','Copy selected or all snapshot files into a NEW directory, hash-verify, never overwrite existing content.',{'snapshot':field('Snapshot ID'),'target':field('New destination directory'),'confirmation':{'type':'string','const':'RESTORE TO NEW DIRECTORY'},'include':string_array('Optional selected paths')},['snapshot','target','confirmation'],False),
     tool('delorean_record_event','Record an external Git, cloud revision, or native snapshot REFERENCE; this does not verify or back up its bytes.',{'project':field('Project identifier'),'provider':field('Provider e.g. GitHub'),'kind':field('Event type'),'ref':field('Immutable provider ref'),'occurred_at':field('Timezone-aware ISO-8601')},['project','provider','kind','ref','occurred_at'],False),
     tool('delorean_penelope_import','Import an explicitly authorized PENELOPE references JSON export without requiring PENELOPE service or copying file payloads.',{'source':field('Allowed local PENELOPE JSON export')},['source'],False),
+    tool('delorean_sqlite_backup_plan','Plan native SQLite online primary database backup; WAL-consistent, attachments excluded.',{'source':field('Allowed existing SQLite database'),'project':field('Project/app identifier')},['source','project']),
+    tool('delorean_sqlite_backup_create','Create transactionally consistent primary SQLite backup; stage and verify without overwriting live DB.',{'source':field('Allowed existing SQLite database'),'project':field('Project/app identifier'),'confirmation':{'type':'string','const':'BACKUP SQLITE DATABASE'}},['source','project','confirmation'],False),
+    tool('delorean_device_recovery_plan','Read-only platform-native complete device recovery plan. Does NOT perform OS imaging.',{'device':{'type':'string','enum':['auto','mac','iphone','ipad','windows','linux','android']}},[]),
     tool('delorean_restic_status','Check optional encrypted restic backup engine readiness without returning repository secrets.'),
     tool('delorean_restic_backup','Delegate encrypted backup to independently configured restic repository (including cloud), not enabled by default.',{'source':field('Allowed source file/folder'),'project':field('Project identifier'),'confirmation':{'type':'string','const':'CLOUD BACKUP'}},['source','project','confirmation'],False),
     tool('delorean_restic_snapshots','List optional encrypted restic snapshots belonging to the current project and owner.',{'project':field('Existing project identifier')},['project']),
@@ -51,6 +56,8 @@ TOOLS=[
     tool('delorean_time_machine_status','Read status of existing macOS Time Machine backups; Mac only.'),
     tool('delorean_time_machine_start','Start preconfigured native Apple Time Machine backup; does not format backup disk or automate full system restoration.',{'confirmation':{'type':'string','const':'START EXISTING TIME MACHINE BACKUP'}},['confirmation'],False),
 ]
+# Only the read-only dashboard has a host-renderable UI.
+TOOLS[0]['_meta']={'ui':{'resourceUri':UI_RESOURCE,'visibility':['model','app']}}
 TOOL_BY_NAME={t['name']:t for t in TOOLS}
 
 class Server:
@@ -71,6 +78,7 @@ class Server:
             if 'enum' in t and v not in t['enum']:raise ValueError('Invalid scope')
         c=self.core
         return {
+            'delorean_dashboard':lambda:c.dashboard_catalog(),
             'delorean_status':lambda:c.status(),
             'delorean_capabilities':lambda:c.capabilities(),
             'delorean_backup_plan':lambda:c.backup_plan(args['source'],args['scope'],args['project']),
@@ -83,6 +91,9 @@ class Server:
             'delorean_stage_restore':lambda:c.recovery_stage(args['snapshot'],args['target'],args['confirmation'],args.get('include')),
             'delorean_record_event':lambda:c.reference_event(args['project'],args['provider'],args['kind'],args['ref'],args['occurred_at']),
             'delorean_penelope_import':lambda:c.penelope_import(args['source']),
+            'delorean_sqlite_backup_plan':lambda:c.sqlite_backup_plan(args['source'],args['project']),
+            'delorean_sqlite_backup_create':lambda:c.sqlite_backup_create(args['source'],args['project'],args['confirmation']),
+            'delorean_device_recovery_plan':lambda:c.device_recovery_plan(args.get('device','auto')),
             'delorean_restic_status':lambda:c.restic_status(),
             'delorean_restic_backup':lambda:c.restic_backup(args['source'],args['project'],args['confirmation']),
             'delorean_restic_snapshots':lambda:c.restic_snapshots(args['project']),
@@ -98,12 +109,29 @@ class Server:
         method=req['method']; ident=req.get('id')
         if ident is None:return None  # ignore notifications including notifications/initialized
         reply={'jsonrpc':'2.0','id':ident}
-        if method=='initialize':
+        if method=='resources/list':
+            reply['result']={'resources':[{'uri':UI_RESOURCE,'name':'DeLorean Timeline',
+                'description':'Read-only unified project, app and backup history dashboard',
+                'mimeType':'text/html;profile=mcp-app'}]}
+        elif method=='resources/read':
+            uri=(req.get('params') or {}).get('uri')
+            if uri != UI_RESOURCE:
+                reply['error']={'code':-32602,'message':'Unknown UI resource'}
+            else:
+                file=Path(__file__).resolve().parents[1]/'platforms'/'web'/'index.html'
+                if not file.is_file():
+                    reply['error']={'code':-32603,'message':'UI resource not installed'}
+                else:
+                    reply['result']={'contents':[{'uri':UI_RESOURCE,
+                       'mimeType':'text/html;profile=mcp-app',
+                       'text':file.read_text(encoding='utf-8'),
+                       '_meta':{'ui':{'prefersBorder':False}}}]}
+        elif method=='initialize':
             params=req.get('params') or {}
             version=params.get('protocolVersion',PROTOCOL)
             if version not in ('2025-03-26','2025-06-18','2026-07-28'):
                 version=PROTOCOL
-            reply['result']={'protocolVersion':version,'capabilities':{'tools':{}},'serverInfo':{'name':'edenos-delorean','version':VERSION},'instructions':'Local owner-granted on-demand backup/recovery. Confirm writes; no destructive in-place restore.'}
+            reply['result']={'protocolVersion':version,'capabilities':{'tools':{},'resources':{}},'serverInfo':{'name':'edenos-delorean','version':VERSION},'instructions':'Local owner-granted on-demand backup/recovery. Confirm writes; no destructive in-place restore.'}
         elif method=='ping':reply['result']={}
         elif method=='tools/list':reply['result']={'tools':TOOLS}
         elif method=='tools/call':
