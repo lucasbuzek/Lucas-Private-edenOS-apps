@@ -5,6 +5,30 @@ import sys
 import unittest
 ROOT=Path(__file__).resolve().parents[1]
 class BridgeTests(unittest.TestCase):
+ def test_client_config_is_read_only_and_supports_codex_cli(self):
+  import shlex
+  import tempfile
+  generator=str(ROOT/'tools/mcp_client_config.py')
+  with tempfile.TemporaryDirectory() as temp:
+   home=Path(temp)
+   env={"HOME": str(home), "PATH": "/usr/bin:/bin"}
+   import os
+   env.update({key:val for key,val in os.environ.items() if key in ("SYSTEMROOT","WINDIR")})
+   original=subprocess.run([sys.executable,'-B',generator],capture_output=True,text=True,timeout=8,env=env)
+   self.assertEqual(original.returncode,0,original.stderr)
+   payload=json.loads(original.stdout)['mcpServers']['BIFROSTbridge-local']
+   self.assertEqual(payload['command'],sys.executable)
+   self.assertEqual(payload['args'],['-B',str(ROOT/'headless/mcp_bridge.py')])
+   cli=subprocess.run([sys.executable,'-B',generator,'--codex'],capture_output=True,text=True,timeout=8,env=env)
+   self.assertEqual(cli.returncode,0,cli.stderr)
+   self.assertEqual(shlex.split(cli.stdout.strip()),
+                    ['codex','mcp','add','BIFROSTbridge-local','--',
+                     sys.executable,'-B',str(ROOT/'headless/mcp_bridge.py')])
+   self.assertEqual(list(home.iterdir()),[])
+   denied=subprocess.run([sys.executable,'-B',generator,'--execute'],capture_output=True,text=True,timeout=8,env=env)
+   self.assertNotEqual(denied.returncode,0)
+   self.assertEqual(denied.stdout,'')
+
  def test_real_stdio_lifecycle_and_platform_call(self):
   messages=[{'jsonrpc':'2.0','id':1,'method':'tools/list'},
    {'jsonrpc':'2.0','id':2,'method':'initialize','params':{'protocolVersion':'2025-06-18','capabilities':{},'clientInfo':{'name':'test','version':'1'}}},
