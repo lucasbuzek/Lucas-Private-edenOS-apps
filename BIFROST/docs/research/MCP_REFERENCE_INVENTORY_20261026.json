@@ -6,22 +6,24 @@
   "branch_kind": "draft-research-evidence-only",
   "source_path": "/edenOS apps/AI MCP tool",
   "source_provider": "connected Dropbox; read-only list_folder",
-  "description": "Machine-readable all-item existence/provenance ledger. Titles, tags and linked upstream readmes are NOT equivalent to archive content inspection, security audit, coding/testing or integration. Retain prior 386-item reference analysis unchanged.",
+  "description": "Machine-readable all-item source inventory. ChatGPT original project conversation and source-backed Project Bibles/Git/LKG are authoritative for mission decisions; connected Dropbox is a live independent evidence/research and distribution source. Mac offline is NOT grounds to abandon cloud work; ZIPs in temporary/scratch are not deployable deliveries. Archive names are not equivalent to reading source, authorizing/implementing Apple actions, or physical device verification.",
   "totals": {
-    "entries": 390,
-    "bytes": 1280522718,
+    "entries": 391,
+    "bytes": 1280522778,
     "extensions": {
       "webarchive": 375,
       "png": 9,
       "html": 1,
-      "jpg": 5
+      "jpg": 5,
+      "url": 1
     }
   },
   "limitations": [
     "375 Safari webarchive files are binary archives. Dropbox fetch refused the six individually attempted archives; all others remain unattempted.",
     "The temporary Dropbox download-link API supplied URLs but this execution container cannot resolve dl.dropboxusercontent.com; container download requires public URL pre-view, which is inappropriate for short-lived private tokens.",
     "The current authorized Mac/RDC device is offline, preventing local Safari webarchive parser/Spotlight or actual iPhone and macOS tests.",
-    "No third-party installs, OAuth, cloud backup, account changes, source merge or LKG promotion performed."
+    "No third-party installs, OAuth, cloud backup, account changes, source merge or LKG promotion performed.",
+    "The 391st item, iphone-mcp.url, was text extracted and its original GitHub README/start script reviewed; its Appium solution has not been installed, authorized, tested or integrated with HEIMDALL. Inventory remains discovery evidence, not completed fullresearch."
   ],
   "items": [
     {
@@ -6289,6 +6291,24 @@
       "upstream_readme_review": null,
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
+    },
+    {
+      "name": "iphone-mcp.url",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzxw",
+      "dropbox_path": "/edenOS apps/AI MCP tool/iphone-mcp.url",
+      "size_bytes": 60,
+      "server_modified": "2026-10-26T12:20:21Z",
+      "type": "url",
+      "tags": [
+        "apple-native",
+        "dev-ai-mcp",
+        "mobile-automation"
+      ],
+      "archive_text_state": "extracted_and_read",
+      "upstream_url": "https://github.com/Lakr233/iphone-mcp",
+      "upstream_readme_review": "2026-10-26: owner-provided 60-byte InternetShortcut extracted through authenticated Dropbox; exact linked GitHub README/LICENSE/requirements/start.sh/src/server.py read via connected GitHub. MIT Appium/XCUITest physical iPhone UI automation, nine callable read/GUI actions, requires macOS/Xcode + WebDriverAgent and explicit device authorization. Appium startup uses --relaxed-security; no production adoption pending safer configuration, signing, permissions and real-device tests. NOT the complete native Apple MCP.",
+      "fullresearch_complete": false,
+      "adoption": "REFERENCE_ONLY_PENDING_SIGNING_TCC_APPINTENTS_PLATFORM_SECURITY_AND_PHYSICAL_DEVICE_TESTS"
     }
   ]
 }
