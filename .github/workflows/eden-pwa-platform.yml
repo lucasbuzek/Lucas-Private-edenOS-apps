@@ -1,0 +1,31 @@
+name: EDENOS PWA platform candidate
+
+on:
+  push:
+    branches:
+      - feat/universal-authenticated-pwa-platform
+    paths:
+      - "PWA_PLATFORM/**"
+      - ".github/workflows/eden-pwa-platform.yml"
+  pull_request:
+    paths:
+      - "PWA_PLATFORM/**"
+      - ".github/workflows/eden-pwa-platform.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Test fail-closed manifest validation
+        working-directory: PWA_PLATFORM
+        run: npm test
+      - name: Validate HERMES pilot manifest
+        working-directory: PWA_PLATFORM
+        run: npm run validate

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "app": {
+    "id": "hermes",
+    "name": "HERMES",
+    "version": "1.2.0",
+    "standalone": true
+  },
+  "source": {
+    "repository": "https://github.com/lucasbuzek/HERMES",
+    "buildCommand": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "outputDirectory": "dist",
+    "projectDirectory": "web",
+    "testCommand": [
+      "npm",
+      "test"
+    ],
+    "authVerificationCommand": [
+      "npm",
+      "run",
+      "test:hosted-auth"
+    ],
+    "installCommand": [
+      "npm",
+      "ci"
+    ],
+    "hostedAuthEnvironment": {
+      "VITE_EDEN_PWA_AUTH_REQUIRED": "true"
+    }
+  },
+  "deployment": {
+    "provider": "netlify",
+    "siteUrl": "",
+    "auth": {
+      "required": true,
+      "provider": "supabase",
+      "publicClientConfigRequired": true,
+      "serverSideAuthorizationRequired": true,
+      "crossAppSessionsAllowed": false
+    },
+    "kind": "static-pwa",
+    "targetId": ""
+  },
+  "intelligence": {
+    "mode": "shared-core-adapter",
+    "endpoint": "",
+    "paidApiDependency": false,
+    "providers": [
+      "gemini-free-tier",
+      "local",
+      "user-connected",
+      "openai-compatible"
+    ],
+    "fallbackPolicy": "explicit-status-no-silent-provider-switch",
+    "defaultProvider": null
+  },
+  "data": {
+    "domainAuthority": "HERMES",
+    "ownership": "app-owned",
+    "migration": "preserve-existing-data",
+    "crossUserIsolationRequired": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@edenos/pwa-platform",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Manifest validation and fail-closed deployment preflight for authenticated standalone EDENOS PWAs.",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "validate": "node scripts/validate-manifest.mjs examples/hermes.manifest.json"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
