@@ -8,6 +8,9 @@ No daemon, key escrow, implicit cloud upload, service install or destructive res
 from __future__ import annotations
 
 import json
+import hashlib
+import sqlite3
+from contextlib import closing
 import os
 import platform
 import shutil
@@ -52,6 +55,22 @@ def _identifier(s: str) -> str:
     if s in ('.', '..'):
         raise Denied('Invalid project identifier')
     return s
+
+
+def _sqlite_logical_digest(path: Path) -> str:
+    """Deterministic *logical* fingerprint, not an integrity or auth signature.
+
+    SQLite's online backup may increment header counters without any logical
+    change, so raw-byte comparison alone cannot deduplicate stable databases.
+    """
+    h = hashlib.sha256()
+    from urllib.parse import quote
+    uri = 'file:' + quote(str(path), safe='/:') + '?mode=ro'
+    with closing(sqlite3.connect(uri, uri=True, timeout=15)) as db:
+        for statement in db.iterdump():
+            h.update(statement.encode('utf-8'))
+            h.update(b'\n')
+    return h.hexdigest()
 
 
 class DeLorean:
@@ -102,6 +121,25 @@ class DeLorean:
             # but restoration of them needs explicit adapter integration/approval.
             raise Denied('Restore source outside managed snapshot location')
         return m
+
+    def dashboard_catalog(self) -> dict:
+        """Owner-scoped, source-root-redacted metadata for MCP Apps UI.
+
+        The underlying snapshot files never leave the backup host.
+        """
+        snapshots = []
+        for f in history.catalogue_files(self.catalog):
+            m = history.load_manifest(f)
+            if m.get('owner') != self.owner:
+                continue
+            item = {k:v for k,v in m.items() if k not in ('source_root','content_sha256')}
+            snapshots.append(item)
+        events = history.timeline(self.catalog, owner=self.owner)
+        return {'schema': history.CATALOG_SCHEMA,
+                'snapshots': sorted(snapshots,key=lambda x:x['recorded_at']),
+                'events': events,
+                'local_paths_redacted': True,
+                'restore_verified_by_live_app': False}
 
     def snapshots(self) -> list[dict]:
         result = []
@@ -208,6 +246,142 @@ class DeLorean:
         finally:
             if temporary.exists():
                 shutil.rmtree(temporary)  # only our unique temporary tree
+
+    def sqlite_backup_plan(self, source: str, project: str) -> dict:
+        """Plan a transactionally consistent copy of one existing SQLite database.
+
+        Captures the primary SQLite database via sqlite3 backup API, including
+        committed WAL data. Other external attachments are not included.
+        """
+        p = self._grant(source, self.read_roots)
+        project = _identifier(project)
+        if not p.is_file() or not stat.S_ISREG(p.stat().st_mode):
+            raise Denied('SQLite source must be an existing regular file')
+        try:
+            with p.open('rb') as handle:
+                magic = handle.read(16)
+        except OSError as exc:
+            raise Denied('SQLite source unreadable') from exc
+        if magic != b'SQLite format 3\x00':
+            raise Denied('Not a SQLite 3 database; external app engine required')
+        return {
+            'source': str(p), 'project': project, 'owner': self.owner,
+            'scope': 'sqlite-app', 'kind': 'SQLITE_ONLINE_BACKUP_API',
+            'size_at_plan_bytes': p.stat().st_size,
+            'destination_root': str(self.sets),
+            'confirmation_required': 'BACKUP SQLITE DATABASE',
+            'warning': 'Consistent primary SQLite DB only; external attachments, app preferences and files need separate native backups. Unencrypted destination.'
+        }
+
+    def sqlite_backup_create(self, source: str, project: str, confirmation: str) -> dict:
+        if confirmation != 'BACKUP SQLITE DATABASE':
+            raise Denied('Requires exact BACKUP SQLITE DATABASE confirmation')
+        plan = self.sqlite_backup_plan(source, project)
+        p = Path(plan['source'])
+        self.sets.mkdir(parents=True, exist_ok=True)
+        self.catalog.mkdir(parents=True, exist_ok=True)
+        temporary = self.sets / ('.inprogress-sqlite-' + uuid.uuid4().hex)
+        finished = self.sets / (_identifier(project) + '-sqlite-' + time.strftime('%Y%m%dT%H%M%SZ', time.gmtime()) + '-' + uuid.uuid4().hex[:10])
+        _must_be_new(temporary)
+        _must_be_new(finished)
+        try:
+            temporary.mkdir(mode=0o700)
+            payload = temporary / 'payload'
+            payload.mkdir(mode=0o700)
+            dest = payload / p.name
+            # Mode ro prevents altering the source; online backup consolidates WAL.
+            from urllib.parse import quote
+            uri = 'file:' + quote(str(p), safe='/:') + '?mode=ro'
+            with closing(sqlite3.connect(uri, uri=True, timeout=15)) as origin:
+                with closing(sqlite3.connect(str(dest), timeout=15)) as target:
+                    origin.backup(target, pages=128, sleep=0.05)
+                    integrity = target.execute('PRAGMA integrity_check').fetchone()
+                    if not integrity or integrity[0] != 'ok':
+                        raise Denied('SQLite integrity_check failed for backup')
+                    # Convert copied SQLite to one closed, self-contained file.
+                    # A source may be in WAL mode; we must not leave -wal/-shm
+                    # files in a purported single-file application snapshot.
+                    target.execute('PRAGMA journal_mode=DELETE')
+                    target.commit()
+            if list(payload.glob(p.name + '-*')):
+                raise Denied('SQLite backup left unexpected companion files')
+            logical_digest = _sqlite_logical_digest(dest)
+            source_meta = {'scope': 'sqlite-app', 'project': project, 'owner': self.owner,
+                'kind': 'SQLITE_ONLINE_BACKUP_API', 'created_at': history.stamp(),
+                'encryption': 'NONE_DESTINATION_OWNER_RESPONSIBILITY',
+                'attachments': 'NOT_INCLUDED', 'sqlite_logical_sha256': logical_digest}
+            (temporary / 'backup_info.json').write_text(json.dumps(source_meta, sort_keys=True) + '\n', encoding='utf-8')
+            # Identical verified SQLite backup is reused rather than copied twice.
+            new_hash = history._hash(dest)
+            for f in history.catalogue_files(self.catalog):
+                m = history.load_manifest(f)
+                if m.get('owner') != self.owner or m.get('project') != project or m.get('provider') != 'delorean-sqlite-online-backup':
+                    continue
+                if len(m['files']) != 1 or m['files'][0]['path'] != p.name:
+                    continue
+                if not history.verify(m)['ok']:
+                    continue
+                if m['files'][0]['sha256'] != new_hash:
+                    prior_root = Path(m['source_root'])
+                    meta_file = prior_root.parent / 'backup_info.json'
+                    try:
+                        old_meta = json.loads(meta_file.read_text(encoding='utf-8'))
+                    except (OSError, ValueError):
+                        continue
+                    if old_meta.get('sqlite_logical_sha256') != logical_digest:
+                        continue
+                return {'status': 'UNCHANGED_SQLITE_REUSED_VERIFIED', 'snapshot_id': m['snapshot_id'],
+                    'project': project, 'scope': 'sqlite-app', 'files': 1,
+                    'encrypted': False, 'application_consistency': 'SQLITE_PRIMARY_DATABASE'}
+            temporary.rename(finished)
+            # Refer only to verified payload, preserving source and avoiding LKG edits.
+            manifest = history.register(self.catalog, project, str(finished / 'payload'),
+                provider='delorean-sqlite-online-backup', ref=finished.name, owner=self.owner)
+            verified = history.verify(manifest)
+            if not verified['ok']:
+                raise Denied('Post-commit SQLite backup hash verification failed')
+            return {'status': 'SQLITE_ONLINE_BACKUP_HASH_VERIFIED',
+                'snapshot_id': manifest['snapshot_id'], 'project': project, 'scope': 'sqlite-app',
+                'files': 1, 'encrypted': False,
+                'application_consistency': 'SQLITE_PRIMARY_DATABASE_ONLY'}
+        except sqlite3.Error as exc:
+            raise Denied('SQLite API backup failed; source and LKG preserved') from exc
+        finally:
+            if temporary.exists():
+                shutil.rmtree(temporary)
+
+    def device_recovery_plan(self, device: str = 'auto') -> dict:
+        """Non-destructive native recovery capability lookup, never image/erase."""
+        if device not in ('auto','mac','iphone','ipad','windows','linux','android'):
+            raise Denied('Unsupported device family')
+        detected = platform.system()
+        if device == 'auto':
+            device = {'Darwin': 'mac', 'Windows': 'windows', 'Linux': 'linux'}.get(detected, 'linux')
+        native = {
+            'mac': ('Time Machine + macOS Recovery + Migration Assistant',
+                'Verify actual Time Machine backup, recovery media and restored apps/settings on the authorized Mac.'),
+            'iphone': ('Encrypted Finder/Apple Devices local backup or iCloud Backup',
+                'Device pairing and user-approved encrypted backup/restore required; no unattended iOS image.'),
+            'ipad': ('Encrypted Finder/Apple Devices local backup or iCloud Backup',
+                'Device pairing and user-approved encrypted backup/restore required; no unattended iPadOS image.'),
+            'windows': ('Windows Backup / wbadmin VSS system backup and Windows Recovery Environment',
+                'Verify VSS writers, privileged native backup, catalog and bare-metal recovery media.'),
+            'linux': ('Distribution filesystem/snapshot and boot/reinstall recovery method',
+                'Select proven filesystem-native method for root filesystem, volumes and bootloader; file-copy is not imaging.'),
+            'android': ('Vendor/Android backup and authorized device migration',
+                'App-specific exclusions and OEM restrictions require manual validation; no unattended system image.'),
+        }
+        engine, gate = native[device]
+        return {
+            'device':device, 'executor_os':detected,
+            'native_engine':engine,
+            'native_full_recovery_tested':False,
+            'full_device_recovery_by_delorean':'NOT_IMPLEMENTED',
+            'native_recovery_gate':gate,
+            'local_file_tree_backup':'DATA_ONLY_UNENCRYPTED_UNLESS_DESTINATION_ENCRYPTED',
+            'optional_cloud':'ENCRYPTED_RESTIC_OR_KOPIA_BACKEND_CONFIGURED_SEPARATELY',
+            'requires_owner_approval_for_restore':True,
+        }
 
     def verify_snapshot(self, snapshot: str) -> dict:
         return history.verify(self._manifest(snapshot))
