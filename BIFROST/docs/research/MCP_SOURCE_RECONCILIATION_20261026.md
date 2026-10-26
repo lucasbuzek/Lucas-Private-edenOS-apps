@@ -84,3 +84,21 @@ Official OpenAI references:
 - https://developers.openai.com/api/docs/guides/tools-connectors-mcp — the **OpenAI API** supports remote MCP or local via Secure MCP Tunnel; third-party model service costs are separate.
 
 **Implementation gap:** The existing BIFROST bridge can be configured locally through each compatible installed host (Claude Desktop, ChatGPT desktop Codex host, Codex CLI) only after source-backed client-specific configuration, protocol interop and permission tests. Avoid duplicate server processes or modifying pre-existing app configs wholesale. For mobile ChatGPT, access to web-established plugins depends on account/UI support; do not pretend iOS launches a desktop stdio executable itself. Distinguish **local model inference**, **local MCP tools**, **remote AI account**, and **web plugin** as four separate capability checks.
+
+
+## 2026-10-26 full-folder research receipt — corrected scope
+
+**Source-of-truth evidence:** [390-item Dropbox metadata ledger](MCP_REFERENCE_INVENTORY_20261026.json), read back from the same existing BIFROST candidate branch. The former 386-file snapshot above is historical, not current. The connected Dropbox returned a complete nonrecursive folder listing of **390 items**, **1,280,522,718 bytes**: **375 Safari .webarchive**, **9 PNG**, **5 JPG**, **1 HTML**. Tags are overlapping filename-derived candidates, **not validated features**.
+
+**Mandatory correction:** Inventory of all 390 does not mean fullresearch of all 390. Exactly six attempted `.webarchive` text fetches failed because the connected Dropbox extraction service cannot parse the archive format. The single `devops-practices.html` text was successfully fetched/read. Dropbox temporary download links were obtained, but the sandbox host could not resolve Dropbox's temporary download domain; user-source archives were not passed through an untrusted public web search system. Mac remote executor was offline at last check. **All per-item fullresearch_complete flags are false.** Source link, license, actual implementation/API, security and usefulness must be independently checked before integration.
+
+**Additional primary-source verification:**
+- Official Apple Xcode external-agent MCP: https://developer.apple.com/documentation/xcode/giving-external-agents-access-to-xcode (use first-party Xcode tool, subject to explicit owner settings, not a third-party replacement).
+- Official MCP Python SDK v2: https://py.sdk.modelcontextprotocol.io/whats-new/ (implements `2026-07-28` and backward-compatible old negotiation; reuse one existing bridge with regression).
+- Apple Shortcuts MCP: https://github.com/recursechat/mcp-server-apple-shortcuts (Apache-2.0; candidate thin adapter to existing shortcut executor).
+- Apple Photos MCP: https://github.com/sweetrb/apple-photos-mcp (read-only by default; requires explicit Full Disk Access and optional mutating opt-in; CURATOR/PENELOPE remain owners).
+- iCloud Drive MCP: https://github.com/robworks-code/icloud-mcp (claims remote iCloud file access without locally hydrated copies; requires independent security/authentication audit and privacy approval).
+- Physical iPhone automation MCP: https://github.com/Lakr233/iphone-mcp (Appium/XCUITest, WebDriverAgent, signing and device pairing; not general iPhone system control).
+- Archived unrestricted AppleScript reference: https://github.com/steipete/macos-automator-mcp (archived 2026-09-13; broad execution surface; **do not automatically install or expose**).
+
+**Follow-on operational gates:** read every archive through a *trusted authorized Mac/local or connector extraction route*, reconcile to each original repo and current release/license, reject untrusted or duplicate wrappers, inspect security/grants and Apple TCC/iOS entitlement boundaries, compare against original BIFROST/HEIMDALL/PENELOPE/CONDUCTOR implementations, patch only demonstrable gaps on protected candidate branches, run local regression and actual M1/M3/iPhone acceptance before any LKG promotion. The iPhone Developer-settings screenshot was an illustrative example, **not scope reduction**. This corrects the earlier premature completion narrative. No secrets, external applications or account changes were authorized or performed by this research.
