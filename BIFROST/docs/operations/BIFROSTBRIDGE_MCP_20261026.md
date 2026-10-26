@@ -13,6 +13,16 @@ an absolute-path Claude Desktop-style mcpServers fragment. Merge that one entry
 with existing settings; do not replace other server registrations. The generator
 only prints configuration and never alters a client installation.
 
+For a local Codex MCP host (including compatible ChatGPT desktop installations),
+run `python3 -B tools/mcp_client_config.py --codex` in the installed
+BIFROST working runtime to **print** a shell-quoted `codex mcp add` command.
+Review it and register through the normal installed client only after the
+device and exact source path have been verified. Default no-argument JSON
+output remains unchanged. A printed command is NOT an installed connection.
+ChatGPT **web** custom plugin MCP still requires HTTPS or Secure MCP Tunnel.
+See https://learn.chatgpt.com/docs/extend/mcp and
+https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt.
+
 The transport was exercised as a real subprocess with initialize, tool listing,
 a real platform-read call, unknown-tool denial and invalid-argument denial.
 The platform-read adapter now maps Linux/Windows as well as macOS; platform
