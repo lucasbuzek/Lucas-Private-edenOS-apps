@@ -2,6 +2,8 @@ import pathlib
 import plistlib
 import tempfile
 import unittest
+import sys
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / 'tools'))
 from research_webarchive import scan, extract
 
 class WebarchiveTest(unittest.TestCase):
