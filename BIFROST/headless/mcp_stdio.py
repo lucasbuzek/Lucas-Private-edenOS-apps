@@ -63,7 +63,7 @@ def run(name, arguments=None):
         import core_runtime
         result = core_runtime.snapshot()
         return {"source": "existing-BIFROSTcore", "readOnly": True,
-                "remoteChatGPTConnectionVerified": False,
+                "connectionAcceptance": "NOT_ATTESTED_BY_LOCAL_PROCESS",
                 "state": result}
     if name == "bifrost_storage_providers":
         import storage_adapter
