@@ -191,7 +191,7 @@
 <p id="kernelFeedback" class="setup-explain" role="status">No search performed. Only indexed locations are returned.</p>
 <h3>Online Storage Manager · folder preview</h3>
 <p>Browse an existing approved storage profile. Local previews do not contact online providers. Online reads require the separate button below. Upload, move, delete and sync are not available here yet.</p>
-<label for="storageProfile">Saved profile name</label><input id="storageProfile" maxlength="128" autocomplete="off">
+<label for="storageProfile">Saved profile name</label><select id="storageProfile"><option value="">Load saved profiles</option></select><button id="storageLoad" type="button">Load profiles</button>
 <label for="storageFolder">Folder within profile (blank for its root)</label><input id="storageFolder" maxlength="1024" autocomplete="off">
 <div class="actions"><button id="storagePreview" type="button">Preview locally</button><button id="storageOnline" type="button">Read online folder</button></div>
 <p id="storageFeedback" role="status">Select a profile already configured through BIFROST Files &amp; Storage.</p>

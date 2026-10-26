@@ -355,7 +355,7 @@ class Handler(BaseHTTPRequestHandler):
                 "offlineActionsEnabled": False,
                 "crossOriginApiEnabled": False,
             })
-        if route in ("/api/storage/v1", "/api/storage/v1/accounts"):
+        if route in ("/api/storage/v1", "/api/storage/v1/accounts", "/api/storage/v1/profiles"):
             # Storage exposes metadata only, through the SAME private
             # Headless session, identity, Host and Origin checks as Core.
             # Never permit a path or command via arbitrary query strings.
@@ -366,6 +366,7 @@ class Handler(BaseHTTPRequestHandler):
             try:
                 payload = (storage_metadata.catalog()
                            if route == "/api/storage/v1"
+                           else storage_metadata.profiles() if route.endswith("/profiles")
                            else storage_metadata.accounts())
             except (OSError, RuntimeError, ValueError, UnicodeError):
                 return self.response(503, {"error": "storage metadata unavailable"})

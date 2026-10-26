@@ -82,3 +82,14 @@ def preview(name: str, *, folder: str = "",
             remote_reader=module.rclone_metadata_reader if read_remote else None
         )
     raise StorageUnavailable("Storage preview module not installed")
+
+
+def profiles():
+    """Display fields only; no account binding, paths or credentials."""
+    module = _core()
+    result = []
+    for item in module.profiles():
+        if not isinstance(item, dict) or not isinstance(item.get('name'), str):
+            raise StorageUnavailable('Malformed storage profile')
+        result.append({'name': item['name'], 'provider': str(item.get('provider', 'unknown'))})
+    return {'profiles': result, 'execution': 'local-metadata-read-only'}

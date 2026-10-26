@@ -14,6 +14,12 @@ async function request(path, payload) {
   if (!response.ok) throw Error(json.error || ("HTTP " + response.status));
   return json;
 }
+async function storageProfileRequest(session) {
+  const response = await fetch("/api/storage/v1/profiles", {headers:{"X-Bifrost-Token":session},cache:"no-store"});
+  const data = await response.json();
+  if (!response.ok) throw Error(data.error || "Profiles unavailable");
+  return data;
+}
 function updateView(data) {
   for (const id of ["awakeToggle", "openNativeApp", "save", "refreshSetups", "activityRefresh", "recordLocalCheck"]) {
     const button = $(id); if (button) button.disabled = false;
@@ -48,6 +54,7 @@ function renderPrefs(settings) {
 }
 function markNodeOffline(reason) {
   clearStoragePreview();
+  $("storageProfile")?.replaceChildren();
   // A previous live observation cannot remain labeled "Running" after API loss.
   $("overall").textContent = "Unavailable · connection lost";
   $("overall").dataset.health = "offline";
@@ -1094,3 +1101,22 @@ async function browseStorage(readRemote) {
 $("storagePreview")?.addEventListener("click", () => browseStorage(false));
 $("storageOnline")?.addEventListener("click", () => browseStorage(true));
 for (const id of ["storageProfile", "storageFolder"]) $(id)?.addEventListener("input", clearStoragePreview);
+
+$("storageLoad")?.addEventListener("click", async () => {
+  clearStoragePreview();
+  const generation = storageGeneration, session = token;
+  $("storageProfile").replaceChildren();
+  if (!session) { $("storageFeedback").textContent = "Connect to Headless first."; return; }
+  try {
+    const data = await storageProfileRequest(session);
+    if (generation !== storageGeneration || session !== token) return;
+    for (const item of data.profiles) {
+      const option = document.createElement("option");
+      option.value = item.name; option.textContent = item.name + " · " + item.provider;
+      $("storageProfile").append(option);
+    }
+    $("storageFeedback").textContent = data.profiles.length ? "Select a profile and preview its folder." : "No saved profiles. Configure one through BIFROST Files & Storage first.";
+  } catch(error) {
+    if (generation === storageGeneration && session === token) $("storageFeedback").textContent = error.message;
+  }
+});
