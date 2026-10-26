@@ -164,6 +164,28 @@ class ShortCallsTests(unittest.TestCase):
             self.assertEqual(json.loads(p.stderr)["status"], "refused")
             self.assertEqual(p.stdout, "")
 
+    def test_apple_device_discovery_is_an_actual_readonly_mcp_route(self):
+        import apple_device_discovery
+        route = shortcalls.resolve("bifrost.device.discover", "macos")
+        self.assertTrue(route["available"])
+        self.assertEqual(route["adapter"], "python.apple.coredevice")
+        self.assertEqual(route["effect"], "read")
+        sample = {"schema": apple_device_discovery.SCHEMA, "deviceCount": 1,
+                  "devices": [{"kind": "iPhone16,2", "edenTrust": "not-established"}],
+                  "observed": True, "edenPairing": "not-attempted"}
+        with mock.patch.object(shortcalls.platform, "system", return_value="Darwin"), \
+             mock.patch.object(apple_device_discovery, "inspect", return_value=sample) as inspect:
+            actual = shortcalls.call("bifrost.device.discover", system="macos")
+        inspect.assert_called_once_with()
+        self.assertEqual(actual["result"], sample)
+        self.assertFalse(actual["effectsVerified"])
+        # Cross-platform coercion must never allow Apple command execution.
+        with mock.patch.object(shortcalls.platform, "system", return_value="Linux"), \
+             mock.patch.object(apple_device_discovery, "inspect") as inspect:
+            with self.assertRaises(shortcalls.ShortCallError):
+                shortcalls.call("bifrost.device.discover", system="macos")
+            inspect.assert_not_called()
+
 
 if __name__ == "__main__":
     unittest.main()
