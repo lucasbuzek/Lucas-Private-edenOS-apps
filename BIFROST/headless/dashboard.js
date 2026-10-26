@@ -48,6 +48,9 @@ function renderPrefs(settings) {
 }
 function markNodeOffline(reason) {
   clearStoragePreview();
+  // Never keep stale provider account labels visible after losing authorization.
+  if ($("firstUseResults")) $("firstUseResults").replaceChildren();
+  if ($("firstUseFeedback")) $("firstUseFeedback").textContent = "Unavailable · Headless disconnected.";
   // A previous live observation cannot remain labeled "Running" after API loss.
   $("overall").textContent = "Unavailable · connection lost";
   $("overall").dataset.health = "offline";
@@ -1094,3 +1097,41 @@ async function browseStorage(readRemote) {
 $("storagePreview")?.addEventListener("click", () => browseStorage(false));
 $("storageOnline")?.addEventListener("click", () => browseStorage(true));
 for (const id of ["storageProfile", "storageFolder"]) $(id)?.addEventListener("input", clearStoragePreview);
+
+
+/* First use extends the SAME Headless instance and its session; no signup or sync. */
+async function refreshFirstUseAccounts() {
+  const results = $("firstUseResults"), feedback = $("firstUseFeedback");
+  if (!results || !feedback) return;
+  results.replaceChildren();
+  if (!token) { feedback.textContent = "No authenticated local Headless session."; return; }
+  const originalSession = token;
+  feedback.textContent = "Inspecting saved account labels…";
+  try {
+    const response = await fetch("/api/connections/first-use/v1",
+      {headers: {"X-Bifrost-Token": originalSession}, cache: "no-store"});
+    const data = await response.json();
+    if (token !== originalSession) return;
+    if (!response.ok) throw Error(data.error || "Account labels unavailable");
+    const rdc = data.rdc || {}, cloud = data.cloud || {};
+    const rows = [
+      "RDC installed manager: " + (rdc.installedManagerFound ? "found" : "not detected"),
+      "RDC saved labels: " + ((rdc.profileLabels || []).join(", ") || "none found"),
+      "RDCravensnest device: UNKNOWN — not authenticated or checked",
+      "RDC7: reserved for a different future account",
+      ...((cloud.configuredRemoteLabels || []).map(x =>
+        "Cloud remote label: " + x.provider + " / " + x.remoteLabel +
+        " (" + x.configSource + ") — owner and OAuth NOT VERIFIED"))
+    ];
+    for (const line of rows) {
+      const row = document.createElement("div");
+      row.className = "record";
+      row.textContent = line;
+      results.append(row);
+    }
+    feedback.textContent = "Read-only discovery finished. No account/device changed.";
+  } catch (error) {
+    if (token === originalSession) feedback.textContent = "Inventory unavailable: " + error.message;
+  }
+}
+$("firstUseRefresh")?.addEventListener("click", refreshFirstUseAccounts);
