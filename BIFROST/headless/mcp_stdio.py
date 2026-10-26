@@ -142,6 +142,11 @@ def rpc(request):
         return _error(req_id, -32602, "Invalid params")
     modern, invalid = _modern_meta(params)
     if invalid:
+        if invalid == "Unsupported protocol version":
+            return {"jsonrpc": "2.0", "id": req_id, "error": {
+                "code": -32022, "message": invalid,
+                "data": {"supported": [MODERN, *PROTOCOLS],
+                         "requested": params["_meta"]["io.modelcontextprotocol/protocolVersion"]}}}
         return _error(req_id, -32602, invalid)
     if method == "server/discover":
         if modern is not True:
