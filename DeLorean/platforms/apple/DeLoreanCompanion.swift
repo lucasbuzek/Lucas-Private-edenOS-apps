@@ -1,4 +1,4 @@
-// TimeMachine — DeLorean | Read-only Apple companion source candidate.
+// DeLorean TimeMachine | Read-only Apple companion source candidate.
 // iOS 17+ / macOS 14+, SwiftUI. Import exported catalog JSON through Files.
 // No provider credentials or restore capability are embedded in this client.
 import SwiftUI
