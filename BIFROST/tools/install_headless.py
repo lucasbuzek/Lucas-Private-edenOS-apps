@@ -11,6 +11,7 @@ import subprocess
 import sys
 import time
 import urllib.request
+import uuid
 
 LABEL = 'eden.bifrost.headless'
 
@@ -57,6 +58,7 @@ def install(source):
     agent.parent.mkdir(parents=True, exist_ok=True)
     target.mkdir(mode=0o700)
     written_agent = False
+    bootstrapped = False
     try:
         for name in manifest:
             destination = target/name
@@ -72,6 +74,7 @@ def install(source):
             written_agent = True
             plistlib.dump(config,stream)
         subprocess.run(['/bin/launchctl','bootstrap',domain,str(agent)],check=True)
+        bootstrapped = True
         expected = hashlib.sha256(server.read_bytes()).hexdigest()
         runtime = hashlib.sha256(str(server.parent.resolve()).encode()).hexdigest()[:16]
         for _ in range(40):
@@ -89,10 +92,19 @@ def install(source):
             time.sleep(.25)
         raise RuntimeError('Service identity/health verification failed')
     except BaseException:
-        if written_agent:
-            subprocess.run(['/bin/launchctl','bootout',domain,str(agent)],capture_output=True)
-            agent.unlink(missing_ok=True)
-        # Retain failed runtime/logs for diagnosis, never remove user data.
+        stopped = not bootstrapped
+        if bootstrapped:
+            result = subprocess.run(['/bin/launchctl','bootout',domain,str(agent)],capture_output=True)
+            stopped = result.returncode == 0
+        if stopped:
+            if written_agent:
+                agent.unlink(missing_ok=True)
+            # Only the directory created by THIS attempt is moved. No deletion.
+            recovery = support / ('HeadlessRuntime.failed-' + uuid.uuid4().hex)
+            target.rename(recovery)
+            print('Failed runtime preserved at: ' + str(recovery), file=sys.stderr)
+        else:
+            print('Service stop unverified; runtime and agent retained for manual recovery.',file=sys.stderr)
         raise
 
 if __name__ == '__main__':
