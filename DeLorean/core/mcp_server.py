@@ -18,7 +18,7 @@ try:
 except ImportError:
     from standalone_backup import DeLorean, Denied, history
 
-VERSION='0.2.1-candidate'
+VERSION='0.2.3-candidate'
 PROTOCOL='2025-06-18'
 MAX_REQUEST_BYTES=1024*1024
 UI_RESOURCE='ui://edenos-delorean/timeline'
@@ -61,10 +61,18 @@ TOOLS[0]['_meta']={'ui':{'resourceUri':UI_RESOURCE,'visibility':['model','app']}
 TOOL_BY_NAME={t['name']:t for t in TOOLS}
 
 class Server:
-    def __init__(self, core:DeLorean):self.core=core
+    def __init__(self, core:DeLorean, *, allow_writes:bool=False):
+        self.core=core
+        self.allow_writes=bool(allow_writes)
+
+    def visible_tools(self):
+        # User launch, not an LLM-supplied magic phrase, gates write-capable tools.
+        return TOOLS if self.allow_writes else [t for t in TOOLS if t['annotations']['readOnlyHint']]
     def invoke(self, name:str, args:dict):
         if name not in TOOL_BY_NAME:
             raise ValueError('Unknown MCP tool')
+        if not self.allow_writes and not TOOL_BY_NAME[name]['annotations']['readOnlyHint']:
+            raise Denied('Write-capable MCP tools disabled for this session; requires locally approved --enable-writes launch')
         if not isinstance(args,dict):raise ValueError('Tool arguments must be object')
         schema=TOOL_BY_NAME[name]['inputSchema'];props=schema['properties']
         if set(args)-set(props):raise ValueError('Unexpected arguments')
@@ -133,7 +141,7 @@ class Server:
                 version=PROTOCOL
             reply['result']={'protocolVersion':version,'capabilities':{'tools':{},'resources':{}},'serverInfo':{'name':'edenos-delorean','version':VERSION},'instructions':'Local owner-granted on-demand backup/recovery. Confirm writes; no destructive in-place restore.'}
         elif method=='ping':reply['result']={}
-        elif method=='tools/list':reply['result']={'tools':TOOLS}
+        elif method=='tools/list':reply['result']={'tools':self.visible_tools()}
         elif method=='tools/call':
             params=req.get('params') or {}
             name=params.get('name')
@@ -156,6 +164,7 @@ def build_parser():
     ap.add_argument('--allow-source',action='append',default=[],help='Explicit source directory grant (may repeat)')
     ap.add_argument('--allow-restore',action='append',default=[],help='Explicit isolated destination root grant (may repeat)')
     ap.add_argument('--owner',default=os.environ.get('DELOREAN_OWNER','LucasPRIVATE'))
+    ap.add_argument('--enable-writes',action='store_true',help='Explicit local owner startup consent for write-capable tools; not a ChatGPT approval or multi-user authorization mechanism')
     return ap
 
 
@@ -164,7 +173,7 @@ def main(argv=None):
     try:core=DeLorean(args.home,args.allow_source,args.allow_restore,owner=args.owner)
     except Denied as e:
         print('DeLorean startup refusal: '+str(e),file=sys.stderr);return 2
-    server=Server(core)
+    server=Server(core, allow_writes=args.enable_writes)
     for line in sys.stdin.buffer:
         if len(line)>MAX_REQUEST_BYTES:
             sys.stdout.write(json.dumps({'jsonrpc':'2.0','id':None,'error':{'code':-32700,'message':'Oversize JSON-RPC request'}})+'\n');sys.stdout.flush();continue
