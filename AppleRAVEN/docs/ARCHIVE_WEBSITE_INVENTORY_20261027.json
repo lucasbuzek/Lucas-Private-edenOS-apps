@@ -33,7 +33,7 @@
   ],
   "counts": {
     "indexed_saved_webpages": 413,
-    "live_upstream_examples_verified": 8,
+    "live_upstream_examples_verified": 14,
     "webarchive_binary_content_decoded": 0
   },
   "caveats": [
@@ -2875,7 +2875,7 @@
       "bytes": 3416488,
       "category": "appleOS",
       "content_decoded": false,
-      "live_url_verified": null
+      "live_url_verified": "https://glama.ai/mcp/servers/thangduonghuu/macos-ui-mcp"
     },
     {
       "name": "prompt-to-asset by MohamedAbdallah-14 | Glama.webarchive",
@@ -2902,7 +2902,7 @@
       "bytes": 3287233,
       "category": "appleOS",
       "content_decoded": false,
-      "live_url_verified": null
+      "live_url_verified": "https://github.com/kapunakap/chatgpt-iphone-bridge"
     },
     {
       "name": "BrewUI: A First Look at Homebrew's Official macOS GUI - DEV Community.webarchive",
@@ -2947,7 +2947,7 @@
       "bytes": 4190464,
       "category": "appleOS",
       "content_decoded": false,
-      "live_url_verified": null
+      "live_url_verified": "https://glama.ai/mcp/servers/juliusloon/macos-agent-bridge"
     },
     {
       "name": "Siri Shortcuts MCP Server by kErdogan6537 | Glama.webarchive",
@@ -3163,7 +3163,7 @@
       "bytes": 3317683,
       "category": "appleOS",
       "content_decoded": false,
-      "live_url_verified": null
+      "live_url_verified": "https://glama.ai/mcp/servers/nickatnight96/iphone-mirror-mcp"
     },
     {
       "name": "apple-workouts-mcp by yashhooda1 | Glama.webarchive",
@@ -3244,7 +3244,7 @@
       "bytes": 3341889,
       "category": "appleOS",
       "content_decoded": false,
-      "live_url_verified": null
+      "live_url_verified": "https://github.com/kevinswint/xcode-studio-mcp"
     },
     {
       "name": "MCP Appium by appium | Glama.webarchive",
@@ -3307,7 +3307,7 @@
       "bytes": 2965912,
       "category": "appleOS",
       "content_decoded": false,
-      "live_url_verified": null
+      "live_url_verified": "https://glama.ai/mcp/servers/ailenshen/apple-notes-mcp"
     },
     {
       "name": "Screenshot MCP (macOS) by FrontMage | Glama.webarchive",
