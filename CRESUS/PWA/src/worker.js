@@ -1,3 +1,4 @@
+import { handleTradingApi } from './trading-api.js';
 import { verifyAccessJwt } from './auth.js';
 import { CRESUS_SYSTEM_PROMPT } from './prompt.js';
 import { providerChoices, providerForUser, setProviderForUser, generateForProvider, ProviderSelectionError } from './provider-choice.js';
@@ -262,6 +263,7 @@ export default {
     if (user.error) return user.error;
 
     try {
+      if (path.startsWith('/api/trading/')) return handleTradingApi(request, env, user, path);
       if (path === '/api/me') {
         return json({
           email: user.email, role: user.role, owner: user.owner,
