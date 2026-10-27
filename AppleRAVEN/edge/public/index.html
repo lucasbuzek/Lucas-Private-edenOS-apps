@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d10">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Raven">
+<meta name="referrer" content="no-referrer">
+<title>Lucas Raven · BIFROST ZERO</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+</head>
+<body>
+<main class="wrap">
+  <div class="eyebrow">BIFROST · ZERO</div>
+  <div class="top">
+    <h1>Lucas Raven</h1>
+    <div class="badge" id="nodeBadge"><span class="dot off"></span><span>Not paired</span></div>
+  </div>
+
+  <section id="pair" class="panel" hidden>
+    <h2>Sign in to Raven</h2>
+    <p>Cloudflare Access uses an approved email and a One-Time PIN. If this panel remains visible, sign in through the protected Raven URL.</p>
+    <details><summary>Use a pairing key instead</summary>
+    <h3>Pair this device</h3>
+    <p>On the Mac run <code>bifrostctl.py raven-pair</code>, then open or paste the copied link here. The key stays on this device only.</p>
+    <form id="pairForm" class="row">
+      <input id="pairInput" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Pairing link or operator key" aria-label="Pairing link or operator key">
+      <button type="submit">Pair</button>
+    </form>
+    <p class="err" id="pairErr" hidden></p>
+    </details>
+  </section>
+
+  <section id="app" hidden>
+    <section class="panel"><label for="deviceSelect">Device</label> <select id="deviceSelect"></select> · <a id="signout" href="/cdn-cgi/access/logout">Sign out</a></section>
+    <section class="panel control">
+      <div class="panel-head">
+        <h2>Keep Mac awake</h2>
+        <span class="chip" id="kaChip">—</span>
+      </div>
+      <p id="kaLine" class="muted">—</p>
+      <div class="seg" id="kaMinutes" role="group" aria-label="Duration">
+        <button type="button" data-min="30">30 min</button>
+        <button type="button" data-min="60" class="on">1 h</button>
+        <button type="button" data-min="120">2 h</button>
+        <button type="button" data-min="240">4 h</button>
+      </div>
+      <div class="row">
+        <button id="kaStart" class="primary" type="button">Keep awake</button>
+        <button id="kaStop" type="button">Release</button>
+        <button id="refresh" type="button" class="ghost">Refresh state</button>
+      </div>
+      <p class="muted small" id="actionLine"></p>
+    </section>
+
+    <h3 class="section">Capabilities</h3>
+    <section class="grid" id="caps"></section>
+
+    <div class="panel-head"><h3 class="section">Codex, Claude Code and ChatGPT</h3><button id="refreshLists" type="button">Refresh lists</button></div>
+    <section class="grid" id="lists"></section>
+
+    <h3 class="section">Raven assistant</h3>
+    <section class="panel chat" aria-label="Raven assistant">
+      <div id="chatMessages" class="messages" aria-live="polite"></div>
+      <form id="chatForm" class="row">
+        <input id="chatInput" maxlength="2000" autocomplete="off" placeholder="Ask about BIFROST…" aria-label="Message Raven">
+        <button id="chatSend" class="primary" type="submit">Send</button>
+        <button id="chatVoice" type="button" hidden aria-label="Push to talk">Talk</button>
+        <button id="chatSpeak" type="button" hidden aria-label="Read latest reply">Read</button>
+      </form>
+    </section>
+
+    <h3 class="section">Cloud AI</h3>
+    <section class="panel" id="cloudAISection" aria-label="Cloud AI text tasks">
+      <p class="muted small">Text inference runs on a configured online provider without requiring the Mac.</p>
+      <p id="cloudAIStatus" class="muted small">Checking cloud permissions…</p>
+      <form id="cloudAIForm">
+        <label for="cloudAIPrompt">Cloud AI task</label>
+        <textarea id="cloudAIPrompt" rows="4" maxlength="2000" required></textarea>
+        <label class="row small"><input type="checkbox" id="cloudAIConsent" required> I consent to sending this text to the configured external AI provider.</label>
+        <button type="submit" id="cloudAISubmit" class="primary" disabled>Send to cloud AI</button>
+      </form>
+      <div id="cloudAIResult" class="messages" aria-live="polite"></div>
+    </section>
+    <h3 class="section">Activity</h3>
+    <section class="panel" id="activity"><p class="muted">No actions yet.</p></section>
+  </section>
+
+  <div class="footer">
+    Lucas Raven is a BIFROST Web representation. It holds no provider credentials and has no shell access:
+    it can only request bounded, allowlisted actions that the BIFROST node validates and executes.
+    <button type="button" id="installPwa" hidden>Install BIFROST PWA</button>
+    <p class="muted small" id="pwaInstallHelp">On iPhone/iPad use Safari Share → Add to Home Screen. Installation does not grant Node permissions.</p>
+    <button type="button" id="unpair" class="link" hidden>Unpair this device</button>
+  </div>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
