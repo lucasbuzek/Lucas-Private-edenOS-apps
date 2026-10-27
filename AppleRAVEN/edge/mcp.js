@@ -22,6 +22,11 @@ export async function handleAppleRavenMCP({request,env,user,visibleState,allowed
   // No legacy bearer-key compatibility. Real user must have a verified Access
   // assertion and a non-revoked local user record; preserve distinct profiles.
   if(!user?.id||user.legacy||!user.subject||user.disabled_at)return json({error:'oauth-required'},401,{'WWW-Authenticate':'Bearer realm="AppleRAVEN"'});
+  // The original owner role can inspect every tenant via the admin API; this
+  // *MCP* never inherits that authority. Each device/capability needs its own
+  // explicit, current grant, including for the owner and Council variants.
+  const grants=Array.isArray(user.grants)?user.grants:[];
+  const granted=(node,cap)=>grants.some(g=>g.device_id===node && !g.revoked_at && (!cap || g.capability===cap || g.capability==='*'));
   if(request.method!=='POST')return json({error:'method not allowed'},405);
   const origin=request.headers.get('origin');
   if(origin && origin!==new URL(request.url).origin)return json({error:'origin denied'},403);
@@ -49,11 +54,12 @@ export async function handleAppleRavenMCP({request,env,user,visibleState,allowed
   if(p.name==='appleraven.nodes.status'){
     if(Object.keys(args).length)return json(err(id,-32602,'unexpected arguments'),400);
     const state=await visibleState(env,Date.now(),user); // original grant-filtered state
-    result={nodes:(state.nodes||[]).map(x=>({node_id:x.node_id,online:x.online,age_s:x.age_s,meta:x.meta,state:x.state})),available_devices:state.ids?.length||0};
+    const nodes=(state.nodes||[]).filter(x=>granted(x.node_id)).map(x=>({node_id:x.node_id,online:x.online,age_s:x.age_s,meta:x.meta,state:x.state}));
+    result={nodes,available_devices:nodes.length};
   }else{
     if(Object.keys(args).length!==1||typeof args.id!=='string'||!/^act_[a-f0-9]{20}$/.test(args.id))return json(err(id,-32602,'invalid action identifier'),400);
     const record=await env.DB.prepare('SELECT id,node_id,capability,status,created_at,completed_at,result FROM actions WHERE id=?1').bind(args.id).first();
-    if(!record||!allowed(user,record.node_id,record.capability,false))return json(err(id,-32004,'not found'),404);
+    if(!record||!granted(record.node_id,record.capability)||!allowed(user,record.node_id,record.capability,false))return json(err(id,-32004,'not found'),404);
     result={id:record.id,node_id:record.node_id,capability:record.capability,status:record.status,created_at:record.created_at,completed_at:record.completed_at,result:record.result?JSON.parse(record.result):null};
   }
   return reply(id,success(result));
