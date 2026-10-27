@@ -6446,5 +6446,62 @@
     "all_332_repo_code_audited": false,
     "mac_native_receipts_verified": false,
     "source_fingerprint": "86a387b88b1eed8064353f4eaa52ff3c211502e2"
+  },
+  "additional_actual_folder_research_20261027": {
+    "folder_url": "https://www.dropbox.com/scl/fo/21rv7kst0n56iprmdrist/AMhROe7MpqvKtU-D4tGfsxw?rlkey=suc711gm5br3j7jwj60a05g2u&dl=0",
+    "folder_path": "/eden-lucas-family/ai mcp tool",
+    "scan": "2026-10-27 COMPLETE Dropbox recursive namespace listing, fourteen cursor pages",
+    "file_count": 6304,
+    "folder_count": 1551,
+    "webarchive_count": 413,
+    "approx_total_bytes": 1889066884,
+    "root_child_folders": [
+      "#appleOS",
+      "#AI toolkit",
+      "#webMCP",
+      "#screenshots",
+      "#AIcustom",
+      "#domain-specialists"
+    ],
+    "webmcp_folder_entries": 41,
+    "disclaimer": "This is a DIFFERENT, larger folder than the original 391-file reference set: 6304 file metadata checked, NOT full text read and NOT 413 archive payloads examined. No source/adoption statuses assumed.",
+    "linked_source_live_reads": [
+      {
+        "name": "Chrome WebMCP specification and developer entry",
+        "url": "https://developer.chrome.com/docs/ai/webmcp",
+        "finding": "WebMCP is an experimental/proposed browser agent tool exposure API; supports imperative JS and declarative forms, origin trial/feature flags. Page/active browser scoped; not universal backend MCP."
+      },
+      {
+        "name": "Chrome compare WebMCP and MCP",
+        "url": "https://developer.chrome.com/docs/ai/webmcp/compare-mcp",
+        "finding": "WebMCP is frontend tab/DOM/session interaction, MCP is backend/provider integration; complementary, not replacements. WebMCP tools cease when tab closes. Existing cloud MCP tools must remain."
+      },
+      {
+        "name": "GoogleChromeLabs webmcp-tools",
+        "url": "https://github.com/GoogleChromeLabs/webmcp-tools",
+        "finding": "Original source includes inspector, browser polyfill, evaluation suite and practical demos; use these before writing own evaluator/polyfill. Experimental tooling is not a tested production capability."
+      },
+      {
+        "name": "WebMCP evals",
+        "url": "https://github.com/GoogleChromeLabs/webmcp-tools/blob/main/webmcp-evals/README.md",
+        "finding": "Evals supports local tool schema evaluation, real browser tool testing, smoke, Puppeteer, Ollama/Gemini/Vercel SDK; can test existing browser portal functionality after genuine deployment."
+      },
+      {
+        "name": "Chrome WebMCP security",
+        "url": "https://developer.chrome.com/docs/agents/security/",
+        "finding": "Agent use of live authenticated browser creates prompt-injection risks from malicious tool manifests and contaminated tool outputs. Require original account/tenant permissions and human confirmation for consequential operations."
+      },
+      {
+        "name": "Cloudflare Browser Run",
+        "url": "https://developers.cloudflare.com/browser-run/",
+        "finding": "Cloudflare Browser Run (formerly Browser Rendering) offers headless cloud browsers with Puppeteer, Playwright and CDP, plus capture/extraction endpoints. Not the same thing as WebMCP; browser execution service requires real Cloudflare account deployment/grants."
+      },
+      {
+        "name": "MCP stable 2026-07-28",
+        "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases",
+        "finding": "Latest official stable 2026-07-28; existing legacy 2025-06-18 transports need protocol version negotiation or migration before asserting compatibility."
+      }
+    ],
+    "fullresearch_complete": false
   }
 }
