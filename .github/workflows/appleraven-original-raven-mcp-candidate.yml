@@ -1,0 +1,23 @@
+name: AppleRAVEN Original Raven Integration Checks
+on:
+  push:
+    branches:
+      - candidate/appleraven-original-raven-integration-20261027
+    paths:
+      - 'BIFROST/web/lucas-raven/**'
+      - 'BIFROST/workers/raven-cloud-node/**'
+      - '.github/workflows/appleraven-original-raven-mcp-candidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Original Raven API + new AppleRAVEN MCP regression
+        run: sh BIFROST/web/lucas-raven/tests/run_all.sh
