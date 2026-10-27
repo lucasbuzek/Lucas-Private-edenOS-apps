@@ -1,0 +1,2366 @@
+{
+  "source": "Dropbox connected share 'AI MCP tool'",
+  "count": 391,
+  "extraction_note": "Dropbox connector cannot extract Safari .webarchive. This registry is a whole-folder triage, not a full content or live website audit.",
+  "scope": "Lucas-private AppleRAVEN, not EDEN",
+  "category_counts": {
+    "mcp-host-remote": 225,
+    "apple-native": 86,
+    "other-domains": 79,
+    "storage-accounts": 1
+  },
+  "records": [
+    {
+      "title": "Photo AI Studio MCP Server by photo-ai-studio | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "9 MCP Projects for AI Engineers: Collaboration, Data Generation & More | Sina Riyahi posted on the t.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "imessage-mcp by hubermjonathan | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "homebrew-cask:Casks:c:chatgpt-atlas.rb at cd8cdb689ab1fe6eb51d92ea93c56f2895b4cb77 · Homebrew:homebr.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "IMG_2890.PNG",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "davinci-resolve-mcp by mateo-khalil | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Game Asset MCP by TomasThrawat | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "autoMessage - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "devops-practices.html",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "MCP Server for macOS by avanomme | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "bult-mcp-server by bultcloud | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "PowerTokens Video Studio by PowerTokens | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "The Game Crafter by alex-gon | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "ChatGPT iPhone Bridge by kapunakap | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "GoModelHub 3D MCP by gomodelhub | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Plori by plori-ai | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "throng by agent-runbooks | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Calfeed - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "TorrentClaw-MCP by torrentclaw | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "MCP Video Generation with Veo2 by mario-andreschak | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "SocialDataX TikTok MCP by DevinChen2014 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Project Memory by Dankaro-projects | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "genpark-agent-web-stealth-scraper-distiller-skill by alphaparkinc | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "enhance_prompt - App Factory MCP | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Apple MCP Tools by wearesage | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Google Flow Browser MCP by TMSSS05 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mcp-toolkit by YoshiLoL0526 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "apple-mcp by Jameshuff91 | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Hermes Cloud — Always-On AI Agent Hosting | Nous Research.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Storacha MCP Storage Server by storacha | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Best Project Management Software with MCP Integrations (2026).webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macos-mcp-tools by HachiTogo | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Competitor Monitor AI MCP by CSOAI-ORG | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "App Pain API - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "DeckProbe MCP Server by deckflow | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Kleap by kleaphq | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Instagram MCP by thenavidm | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "siri MCP Servers | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Cursor's Agent Can Now Click Through Your Desktop Apps. Grant Access to the Helper Only - DEV Commun.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Seiche — Funding and FX Evidence by beepboop2025 | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Facebook MCP by thenavidm | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "unstuck-mcp by SamuelH98 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "identity-storage-mcp by MikSkrzyp | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Citesurf MCP by citesurf | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macos-control-mcp by vito1317 | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Photoshop MCP — Tell Photoshop what you want.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Librivox - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Atlas Cloud MCP Server (Image : Video : LLM APIs) by AtlasCloudAI | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macos-mcp by CursorTouch | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "PRIMARY_WEBSITE_READ",
+      "upstream_url": "https://github.com/CursorTouch/MacOS-MCP"
+    },
+    {
+      "title": "instagram-mcp by OraCool | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "BrewUI: A First Look at Homebrew's Official macOS GUI - DEV Community.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "cohesivity by cohesivity-org | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "icloud-mcp by robworks-code | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "PRIMARY_WEBSITE_READ",
+      "upstream_url": "https://github.com/robworks-code/icloud-mcp"
+    },
+    {
+      "title": "OBS MCP by xDarkzx | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "usb-rea by emirmrkaljevic | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Building Production-Grade AI Agents with MCP: A Complete Guide for 2026 - DEV Community.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Yamaru Hardware Probe by yamaru-eu | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "whatsapp-hermes by RicSchonfelder | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "kompas-3d-ai-bridge by quja | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Local AI MCP by TMHSDigital | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "claude-agent-mcp by j-token | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Screenshot 2026-10-26 at 03.15.30.png",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Hermes IDE — One console for every coding agent.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Game engine runtime mcp by Estiwito | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "S3-Compatible 3D Storage MCP Server by TencentCloudADP-DevRel | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "game-agent-factory by Jan-Jianhao-Liu | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "re-ios by gyh20062008-commits | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "AgentCloud iOS Simulator - MCP Connector | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "clipugc by clipugc | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "agentic-hil by agentic-hil | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macOS Office 365 MCP Server by iflow-mcp | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Hardware Manual RAG MCP Server by thenguyenyf | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Musevate by musevate | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "local-apple-data by BillyBunn | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mcp-3d-modeling-agent by SekaiNoOwari77 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "fitfilesize-mcp by Gautamstar | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macOS Automator MCP Server by SuperCrazyKaizen | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Apple Notes on Steroids by krisxsee | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "guaardvark by guaardvark | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Exposing OpenAPI as MCP Tools - Semantics Matter | Christian Posta.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "simple-3d-modeling-mcp by mazzanfar | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Independent Video Generator by yt0912iii | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "tiktok-mcp by PPiai | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macOS Automator MCP Server by steipete | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "PRIMARY_WEBSITE_READ",
+      "upstream_url": "https://github.com/steipete/macos-automator-mcp"
+    },
+    {
+      "title": "iphone-mcp by teddyoweh | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "GameCodex by sbenson2 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Arr Suite MCP Server by shaktech786 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Diogenes Context Compression, Code Patching & Deterministic Solver MCP by stand-out-of-my-sun | Glam.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Runway API MCP Server by runwayml | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mcp-remote-macos-use by baryhuang | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "icloud alias 2.jpg",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "measure-mcp by purahmanian | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "iCloud MCP Server Apple by MrGo2 | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "MCP CAD Studio by flujo-app | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "SAGE by PsYcGoD | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Gmail MCP by alexneamtu | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "3D-MCP by team-plask | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "garageband-mcp by visualfart | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mcp-server-macos-use by mediar-ai | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "PRIMARY_WEBSITE_READ",
+      "upstream_url": "https://github.com/mediar-ai/mcp-server-macos-use"
+    },
+    {
+      "title": "franchisedata-mcp by outis-co | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "GitHub - yimajo:mcp-server-chatgpt-mac-app: An MCP server that allows you to use the ChatGPT macOS a.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Universal Hardware Runtime Platform by saidul202414006 | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "imessage by christianblandford | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "3D New Era AI by leandrodaf | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "apple-books-mcp by vgnshiyer | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "nuditok - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "tiktok-scraper by harshmaur | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "movie-rec by ppikkuaho | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Mysocial Intelligence by mysocialio | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "auth-mcp by KB01111 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macOS Tools MCP Server by tornikegomareli | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macos-desktop-control by d-wwei | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "davinci-resolve-mcp by igamenovoer | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Pushary - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "facebook-lyr by ishan-parihar | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "The MCP and AI Agent Problem. A Practical, Local Way Out - DEV Community.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "MCP Game Deck by RamonBedin | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "heimdall penelope.png",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "agent-mcp-hub by blackaxgit | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Apple Contacts MCP by lu-wo | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "whatsapp by memsjava | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "How to Use Your Home AI Models From Your Laptop Anywhere in 2026 (With Tailscale) | Off Grid AI.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Substance-3D-Designer-MCP by MikeLi-28 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "sonovault-mcp by rekordcloud | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "winston-ai-mcp by gowinston-ai | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "MCP WhatsApp by gabriellopesdesouza2002 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macOS Ecosystem MCP Server by neverprepared | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "grok-game-mcp by ben-mad-jlp | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "PCCheck MCP Server by jjackk0k | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "maige-3d-mcp by m-ai-geXR | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Let AI agents control your iPhone with MCP | Askew.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "concord-mcp by Get-Concord-AI | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Why I Built Nathstar: A Local-First, 120Hz Native macOS Terminal for Projects, Live Ops & Private AI.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "ghidraMCP by LaurieWired | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "tiktok-mcp by 0xArtex | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Siri Shortcuts MCP Server by maryame8957 | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Game MCP by xthenyo | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "curator - imrich.png",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Open-Source MCP Servers – 110,216 in the Glama Registry | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "renderform-mcp by RenderForm | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Askew by Dominic-DK | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "3D Visualizer by kleinicke | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Siri Shortcuts MCP Server by dvcrn | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "awesome-mcp-servers:docs:project--task-management.md at main · TensorBlock:awesome-mcp-servers.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "MCP Appium by appium | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Open Factory - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "web-speed-agent by Dominic-Pi-Sunyer | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "hardwaremcp by saadvz | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "3D MCP Server by jagjerez-org | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "game-dev-resource-mcp by dsaewkfiush03-debug | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "MCP Web Research Agent by SnotacusNexus | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Building a Personal Productivity Assistant with Q Developer CLI and MCP - DEV Community.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "io.github.henilcalagiya:mcp-apple-notes by henilcalagiya | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mem0 MCP Server for Project Management by KunihiroS | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "tinkercad-mcp-server by sethski | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "connectors.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "iphone-mirror-mcp by nickatnight96 | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mibly-apple-health-mcp by littlenew117 | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macOS Notification MCP by devizor | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Frida Game Hacking MCP by 0xhackerfren | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "3D Mesh Optimizer MCP by Whambammy | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "robo-mcp by MariMachaidze | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "MetaVision AI Studio by adminmetavision-rgb | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "@pixelvault-dev:local-mcp by pixelvault-dev | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mcp-game-helper by xhulz | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "downloader-mcp by CarlDog | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "davinci-resolve-mcp by realmikeshu | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mcp-svd by pkt-lab | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "instagram-mcp by IvanBBaev | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Goose App Maker MCP by michaelneale | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "CAD MCP by Limnex | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "REA (Reverse Engineer Anything) by psyb0t | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "DWB MCP Studio by keattiphan-sri | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "AI eBook Generator - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Zed — Your last next editor.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "aiworkhub_quality_calibration_report - AIWorkhub | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "instagram-mcp by osAlhaddad1 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "SheetsData MCP by octoco-ltd | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "marsnme by Marsmanleo | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "game-translator-mcp by dcd887 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "deterministic-logic by SamSoupSauce | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mcp-vision by groundlight | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Building an MCP Server to Use ChatGPT Without API Keys - A Novel Approach Using macOS Shortcuts - DE.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macos-ui-mcp by thangduonghuu | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "webapp agent.jpg",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Hunyuan 3D MCP Server by Riften | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "FoundRole Jobs - AI Job Search & Application Tracker by foundrole | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "YourImageShare by yourimageshare | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "icloud alias 1.jpg",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "web agent MCP Servers | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macos-automator-mcp by schmitzjimmy1-star | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Game Artist MCP by roronoazoroshao | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Calensync - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "yt-transcript-mcp by warshanks | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Screenshot 2026-10-26 at 01.16.33.jpg",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macOS GUI Control MCP by Akira-Papa | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "apple MCP Connectors | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "eosl-mcp by Kranny36 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "LemonMCP by lemonXGroup | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mcp-mpv-player by guodaxia9527 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "prompt-to-asset by MohamedAbdallah-14 | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macOS Contacts MCP by jcontini | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "websupport-mcp by tydung26 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Coding agents for production iOS: a senior engineer's setup for 2x the output - DEV Community.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "voice-io by Furkiozknn | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "yt-audio-mcp by DaniilPak | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "3D CAD BasePlate Generator MCP by Nirlepb | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macos-computer-use by johnexzy | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "apple-workouts-mcp by yashhooda1 | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "icloud-mcp by adamzaidi | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Instagram MCP by tol518 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "project-memory-mcp by extrei | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Robotics Control MCP Server by CSOAI-ORG | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "oJo MCP Server by ojodotso | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macos-screen-mcp by dla-kirito | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "facebook-mcp by YoTro | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Doubao Image:Video Generation MCP Server by 156554395 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "davinci-resolve by kerwilgil | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "@forgeax:dsh-game by ForgeaX-Games | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "BackPow PoW Oracle by BackpowCom | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Intelagent MCP Template by Opafex | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mcp-macos-toolkit by ContractorKeith | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "CarlDog:servarr-mcp: MCP server for the Servarr stack (Sonarr, Radarr, Lidarr, Readarr, Prowlarr), p.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "TMDB MCP Server by Grinv | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "App Factory MCP by DPGS-oss | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "ios-agent by Nagarjuna2997 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Apple Notes MCP Server by ailenshen | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Screenshot MCP (macOS) by FrontMage | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "GhidraMCP by yqszxx | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Architecture overview - Model Context Protocol.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Xcode-Studio-MCP by kevinswint | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Apple Shortcuts + AI Is the Automation Stack… | Think Different.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "FapperAI - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "fashio-mcp by fashiolabs | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "DaVinci Director MCP by kashyaprahul12659 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "aether studio — AI Image Generation, Editing & Creative Workflow - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "ios-mcp by emazaheri | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "CoDesign by imgly | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "xcode-build - Xcode MCP Server | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "desaira - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "MCP Architecture Patterns for Production-Grade Agents - DEV Community.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "browser-for-ai by icueth | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "DeviceLink - Share a folder with ChatGPT or Claude.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "PRIMARY_WEBSITE_READ",
+      "upstream_url": "https://devicelink.ai/"
+    },
+    {
+      "title": "Favicon & App Icons - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "apple-photos-mcp by sweetrb | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "whatsapp by cRodriguez83407 | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "ghost-in-the-droid by ghost-in-the-droid | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Spicy API - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Forency by cheevahagadog | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Memeboat MCP by memebo-at | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Gemini Image & Video Generation MCP by collactivelabs | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "shortcuts-bridge - MCP Connector | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "automator-mcp by VetCoders | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "MCP Veo 3 Video Generation Server by dayongd1 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "4everland-hosting-mcp by 4everland | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "cloudflare MCP Servers | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "iMessage MCP by duanefields | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "sceneview-mcp by sceneview | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Chotu Robo Server by vishalmysore | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Screenshot 2026-10-26 at 01.16.46.jpg",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Reel Estate MCP by TryReelEstate | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "10 Best MCP Servers for Project Management in 2026.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Mobile Game Fixer MCP by imozkandev | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "iphone-safari-mcp by ikatkov | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "tiktok-downloader-mcp by abdouldotdev | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Glif by glifxyz | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "codex-app-server-mcp by 4714407 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "BackPow MCP Server by 0xcWalter | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "AI Web Agents. AI Web Agents are a type of Agentic… | by Cobus Greyling | Medium.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "3d-asset-server by arielshad | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "MCP-Pushover Bridge by pyang2045 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macOS Companion MCP Server by surendranb | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Screenshot 2026-10-26 at 03.23.42.png",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "tiktokporn - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "whatsapp-mcp by edouard-claude | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Playwright MCP for macOS by mb-dev | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Jsoncut MCP Server by jsoncut | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "NYT Cooking MCP by bramboe | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "garageband-llm-bridge by extao15 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "widgetdash-mcp by purian | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "media-gen-mcp by AriOliv | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Boost Your Agents with MCPs - Set up First Real-World Agentic App - DEV Community.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "How to Make Your Site Show in ChatGPT Answers (A Developer's Guide) - DEV Community.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "lgh by JoeGlenn1213 | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "0pi-mcp-server by dizzydes | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Game Asset Finder MCP by sudoriaa | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mBlock MCP by blame-me | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "lsp-intelligence by perilevy | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Building a macOS Agent Workbench with SwiftUI - DEV Community.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Cinevva Game Engine by cinevva-engine | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macos-mcp by krmj22 | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "MCP Software Engineer by Rajawatrajat | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "game-asset-mcp by theisegoria | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macOS MCP Server by alexlock1 | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "AgentsPodium Hosting by agentspodium | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "am-mcp by Z-Han-Z | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Mobile Command Gateway Design.png",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macOS Automation MCP Server by matthewdcage | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Mobile Phone Waterfall MCP Server by mambalabsdev | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "SoundBreak - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Oracle Cloud Infrastructure (OCI) MCP Server by ahmedselimmansor-ctrl | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Agent Workspace MCP Server by HrRodan | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "instagram-mcp by Joyhacks | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "quick-game by danilo-1 | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Cognito-3D-MCP by Lanc3 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "davinci MCP Servers | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "aiworkhub_manager_context_graph_related - AIWorkhub | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "math-mcp-learning-server by clouatre-labs | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Ludo AI Game Assets by Ludo-AI | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "GarageBand Practice MCP by IsaacCavallaro | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mcp-macos-popup by vakandi | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "codex-app-mcp by abetoots | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "3d-eyes by murphy977 | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "IMG_2895.PNG",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Godot MCP by Vollkorn-Games | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "BotBell MCP Server by qq418716640 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "OpenAPI Initiative – The OpenAPI Initiative provides an open source, technical community, within whi.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "SoraMCP by AceDataCloud | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mcp-whatsapp by Sealjay | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "iPhone MCP Server by Lakr233 | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "apple-design-mcp by rncrosby | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mcp-oauth-hosting by ierhgfiuoergerg | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mcp-plex by obrien-matthew | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "AITuber MCP Server by aituberapp | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "iOS Development MCP Server by dagba | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mac-cleaner by FFFames | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "LLMMO Game Server by MiloLug | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "GitHub - Homebrew:BrewUI: 📺 Homebrew's official macOS GUI · GitHub.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "google ai.png",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "reminders-bridge - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macos-computer-use-mcp by yyyyyyyyiiiii | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "notesbridge - MCP Connector | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Apple Shortcuts Server by recursechat | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "PRIMARY_WEBSITE_READ",
+      "upstream_url": "https://github.com/recursechat/mcp-server-apple-shortcuts"
+    },
+    {
+      "title": "SpicyGen - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macOS Defaults MCP Server by g0t4 | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Short Video Agent Kit by davidmosiah | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "DaVinci-Resolve-MCP by BillyRaz | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Boost Your Agents with MCPs - Productivity Customized Tools - DEV Community.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Hardware MCP Server by TheFloatingString | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "startup-valuation by simonmak-ascent | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Siri Shortcuts MCP Server by MarcelYoshida834 | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Create app hosting by Createdotcom | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "android-phone-control by FZ2000 | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "ContextForge by asit-piri | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "UnificAlly MCP Server by unifically-dev | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "ThinAir Geo by ThinAirTelematics | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "iphone-mcp.url",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "instagram-mcp by mcpware | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "bigapi by BiGapi-2026 | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Organize with AI (OwAI) - MCP Connector | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "yt download.png",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macos-agent-bridge by juliusloon | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Kaption WhatsApp by Kaption-AI | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Obsidian-Intelligence by GuideThomas | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "How to Use a Remote Ollama or llama.cpp Server From a Desktop AI App on Your Mac in 2026 - DEV Commu.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "arduino-mcp by JShort-bufr | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "SAGE-MCP by david-strejc | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "nucleus-apple-mcp by zish-rob-crur | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "DaVinci MCP Professional by hoyt-harness | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "apolo-cad by mariorojasmz | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": ",mlkl.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "LogicProMCP by shlomyss | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "chatgpt-web-agent by AxelHu | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "macos-clipboard-mcp by xiaoquisme | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "OpenSubtitles MCP Server by opensubtitles | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Apple Dev MCP Server by erdncyz | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Compare Cloud Storage providers - ComparisonTables.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "AIHawk by feder-cr | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Apple Docs 2.0 MCP by mishafyi | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "jimeng-video-mcp-server by SA-GIMA | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "MusicBrainz MCP Server by zas | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "apple-messages-mcp-remote by mpacarroll | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "SubDownload by SubDownload | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "storage-steward by yusongcao2004 | Glama.webarchive",
+      "category": "storage-accounts",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "electronic-mcp-server by wedsamuel1230 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Lightroom Classic MCP by 4xiomdev | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Apple Photos MCP by thenavidm | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "davinci-resolve-mcp by lordhoell | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Partle by rubenayla | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "wanx-t2v-video-generation - Tongyi Wanxiang MCP Server | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "TikTok MCP Server by follox42 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "small-app-dev-mcp by tomoki013 | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Siri Shortcuts MCP Server by kErdogan6537 | Glama.webarchive",
+      "category": "apple-native",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Instagram by mcp-dir | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "list_projects - App Factory MCP | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Mixly Local MCP by ovoVHV | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "mirroir-mcp by jfarcand | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "MCP is APIs for Agents - DEV Community.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "Hermes Agent — Open-Source AI Agent That Grows With You | Nous Research.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "flaiwheel by dl4rce | Glama.webarchive",
+      "category": "other-domains",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    },
+    {
+      "title": "media-gen-mcp by strato-space | Glama.webarchive",
+      "category": "mcp-host-remote",
+      "archive_review": "NOT_EXTRACTED",
+      "upstream_review": "NOT_VERIFIED"
+    }
+  ]
+}
