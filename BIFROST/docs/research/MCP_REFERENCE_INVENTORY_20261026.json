@@ -6311,5 +6311,140 @@
       "adoption": "REFERENCE_ONLY_PENDING_SIGNING_TCC_APPINTENTS_PLATFORM_SECURITY_AND_PHYSICAL_DEVICE_TESTS"
     }
   ],
-  "last_targeted_external_review": "2026-10-27: verified live upstream descriptions and docs for 26 CONDUCTOR-relevant entries. Partial live-source review only; all 391 archived site byte comparisons, exact repo code/license/security, and installed runtime tests remain pending. Existing items and adoption statuses preserved."
+  "last_targeted_external_review": "2026-10-27: verified live upstream descriptions and docs for 26 CONDUCTOR-relevant entries. Partial live-source review only; all 391 archived site byte comparisons, exact repo code/license/security, and installed runtime tests remain pending. Existing items and adoption statuses preserved.",
+  "conductor_related_official_sources_checked_20261027": [
+    {
+      "name": "MCP 2026-07-28 core",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/specification/2026-07-28/changelog.mdx",
+      "actual_finding": "Required migration: stateless core; protocol version/capabilities in request _meta, server/discover and new task extension; existing CONDUCTOR MCP 2025-06-18 is not verified compatible.",
+      "kind": "authoritative_protocol",
+      "reviewed_as": "2026-10-27: LIVE OFFICIAL DOC/UPSTREAM SOURCE INSPECTED; NOT a claim of executing or auditing upstream code, nor of exact private WebArchive equality",
+      "status": "REFERENCE_VERIFIED_RUNTIME_UNTESTED"
+    },
+    {
+      "name": "MCP Tasks 2026-07-28",
+      "url": "https://github.com/modelcontextprotocol/ext-tasks/blob/main/specification/2026-07-28/tasks.md",
+      "actual_finding": "Use external async tasks/get/update/cancel handles and real verified postconditions; do not falsely infer that ChatGPT will continue working between messages.",
+      "kind": "authoritative_protocol",
+      "reviewed_as": "2026-10-27: LIVE OFFICIAL DOC/UPSTREAM SOURCE INSPECTED; NOT a claim of executing or auditing upstream code, nor of exact private WebArchive equality",
+      "status": "REFERENCE_VERIFIED_RUNTIME_UNTESTED"
+    },
+    {
+      "name": "MCP Apps/authorization",
+      "url": "https://github.com/modelcontextprotocol/ext-apps/blob/main/docs/authorization.md",
+      "actual_finding": "Optional protected onboarding/status UI; authorization must be verified at HTTP/resource boundary and approved per sensitive tool. LCAS remains ChatGPT in-chat UI.",
+      "kind": "authoritative_protocol",
+      "reviewed_as": "2026-10-27: LIVE OFFICIAL DOC/UPSTREAM SOURCE INSPECTED; NOT a claim of executing or auditing upstream code, nor of exact private WebArchive equality",
+      "status": "REFERENCE_VERIFIED_RUNTIME_UNTESTED"
+    },
+    {
+      "name": "OpenAI Agents SDK",
+      "url": "https://github.com/openai/openai-agents-python/blob/main/docs/index.md",
+      "actual_finding": "Tool calling, specialist handoffs, guardrails, sessions, approval and tracing; candidate existing intelligence loop, not evidence of installed model credentials or universal runtime.",
+      "kind": "official_framework",
+      "reviewed_as": "2026-10-27: LIVE OFFICIAL DOC/UPSTREAM SOURCE INSPECTED; NOT a claim of executing or auditing upstream code, nor of exact private WebArchive equality",
+      "status": "REFERENCE_VERIFIED_RUNTIME_UNTESTED"
+    },
+    {
+      "name": "Google Agent Development Kit 2",
+      "url": "https://github.com/google/adk-python/blob/main/README.md",
+      "actual_finding": "Python workflow graph, model-agnostic agent delegation, MCP tools, approvals, local ADK Web UI and evaluation; evaluate as optional model/workflow adapter, not separate governor.",
+      "kind": "official_framework",
+      "reviewed_as": "2026-10-27: LIVE OFFICIAL DOC/UPSTREAM SOURCE INSPECTED; NOT a claim of executing or auditing upstream code, nor of exact private WebArchive equality",
+      "status": "REFERENCE_VERIFIED_RUNTIME_UNTESTED"
+    },
+    {
+      "name": "Anthropic Claude Agent SDK",
+      "url": "https://github.com/anthropics/claude-agent-sdk-python",
+      "actual_finding": "Existing Claude execution, prompt+tool sessions and explicit permission hooks. Tool allowlist does not itself remove all unlisted tools; enforce correct can_use_tool/disallowed_tools policy.",
+      "kind": "official_framework",
+      "reviewed_as": "2026-10-27: LIVE OFFICIAL DOC/UPSTREAM SOURCE INSPECTED; NOT a claim of executing or auditing upstream code, nor of exact private WebArchive equality",
+      "status": "REFERENCE_VERIFIED_RUNTIME_UNTESTED"
+    },
+    {
+      "name": "Microsoft Agent Framework",
+      "url": "https://learn.microsoft.com/en-us/agent-framework/concepts/workflows/",
+      "actual_finding": "Native typed workflow graph, durable checkpoints, human approval and observable progress; cross-platform alternative, likely heavyweight if reused solely for simple intent normalization.",
+      "kind": "official_framework",
+      "reviewed_as": "2026-10-27: LIVE OFFICIAL DOC/UPSTREAM SOURCE INSPECTED; NOT a claim of executing or auditing upstream code, nor of exact private WebArchive equality",
+      "status": "REFERENCE_VERIFIED_RUNTIME_UNTESTED"
+    },
+    {
+      "name": "Microsoft Playwright MCP",
+      "url": "https://github.com/microsoft/playwright-mcp",
+      "actual_finding": "Reusable browser tools; supports --browser=webkit and --headless; use scoped browser profile and actual authorized session. Do not force Chrome to satisfy user's no-Chrome preference.",
+      "kind": "official_framework",
+      "reviewed_as": "2026-10-27: LIVE OFFICIAL DOC/UPSTREAM SOURCE INSPECTED; NOT a claim of executing or auditing upstream code, nor of exact private WebArchive equality",
+      "status": "REFERENCE_VERIFIED_RUNTIME_UNTESTED"
+    },
+    {
+      "name": "Playwright browser engines",
+      "url": "https://playwright.dev/docs/browsers",
+      "actual_finding": "WebKit mode available and distinct from branded Safari; tests and automation possible without Chrome installation. Requires browsers/dependencies and genuine runtime verification.",
+      "kind": "official_framework",
+      "reviewed_as": "2026-10-27: LIVE OFFICIAL DOC/UPSTREAM SOURCE INSPECTED; NOT a claim of executing or auditing upstream code, nor of exact private WebArchive equality",
+      "status": "REFERENCE_VERIFIED_RUNTIME_UNTESTED"
+    },
+    {
+      "name": "Apple App Intents",
+      "url": "https://developer.apple.com/documentation/AppIntents",
+      "actual_finding": "Native Siri, Spotlight, Shortcuts and iPhone Action-button discovery of typed app actions. No proof of active Siri or device pairing from docs alone.",
+      "kind": "official_native",
+      "reviewed_as": "2026-10-27: LIVE OFFICIAL DOC/UPSTREAM SOURCE INSPECTED; NOT a claim of executing or auditing upstream code, nor of exact private WebArchive equality",
+      "status": "REFERENCE_VERIFIED_RUNTIME_UNTESTED"
+    },
+    {
+      "name": "Apple Foundation Models",
+      "url": "https://developer.apple.com/documentation/FoundationModels",
+      "actual_finding": "Structured Swift model outputs and tool calling via on-device / PCC / server providers where supported; native optional capability, not universal Windows/old Mac replacement.",
+      "kind": "official_native",
+      "reviewed_as": "2026-10-27: LIVE OFFICIAL DOC/UPSTREAM SOURCE INSPECTED; NOT a claim of executing or auditing upstream code, nor of exact private WebArchive equality",
+      "status": "REFERENCE_VERIFIED_RUNTIME_UNTESTED"
+    },
+    {
+      "name": "Nous Hermes Agent",
+      "url": "https://hermes-agent.nousresearch.com/docs",
+      "actual_finding": "Reference for reusable skills, memory, MCP support, native CLI/desktop and optional setup portal. Distinct vendor and EDEN HERMES; do not replace CONDUCTOR prototype.",
+      "kind": "official_framework",
+      "reviewed_as": "2026-10-27: LIVE OFFICIAL DOC/UPSTREAM SOURCE INSPECTED; NOT a claim of executing or auditing upstream code, nor of exact private WebArchive equality",
+      "status": "REFERENCE_VERIFIED_RUNTIME_UNTESTED"
+    },
+    {
+      "name": "Nous Hermes MCP Serve",
+      "url": "https://hermes-agent.nousresearch.com/docs/plugins/mcp-serve",
+      "actual_finding": "Opt-in external MCP-facing agent bridge exposing a limited tool set and approvals; not a requirement for this prototype, no credentials or deployment verified.",
+      "kind": "official_framework",
+      "reviewed_as": "2026-10-27: LIVE OFFICIAL DOC/UPSTREAM SOURCE INSPECTED; NOT a claim of executing or auditing upstream code, nor of exact private WebArchive equality",
+      "status": "REFERENCE_VERIFIED_RUNTIME_UNTESTED"
+    },
+    {
+      "name": "LangGraph persistence",
+      "url": "https://github.com/langchain-ai/docs/blob/main/src/oss/langgraph/persistence.mdx",
+      "actual_finding": "Checkpointers persist thread state while stores carry long-term knowledge; useful design reference for resume after interruption, but existing CONDUCTOR SQLite mission store should be reused first.",
+      "kind": "official_framework",
+      "reviewed_as": "2026-10-27: LIVE OFFICIAL DOC/UPSTREAM SOURCE INSPECTED; NOT a claim of executing or auditing upstream code, nor of exact private WebArchive equality",
+      "status": "REFERENCE_VERIFIED_RUNTIME_UNTESTED"
+    },
+    {
+      "name": "Pydantic AI",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/main/docs/mcp/client.md",
+      "actual_finding": "Typed MCP toolset client and structured model outputs, supports stdio and remote MCP. Reuse validation patterns; no requirement to add a second agent framework.",
+      "kind": "official_framework",
+      "reviewed_as": "2026-10-27: LIVE OFFICIAL DOC/UPSTREAM SOURCE INSPECTED; NOT a claim of executing or auditing upstream code, nor of exact private WebArchive equality",
+      "status": "REFERENCE_VERIFIED_RUNTIME_UNTESTED"
+    }
+  ],
+  "current_user_prototype_constraints_20261027": "Single evolving CONDUCTOR prototype. Natural/colloquial intent + history/mission recovery + authorized specialist ordering and shortNameCalls. Current EXECUTOR route is existing RDC terminal/CLI and separately authorized DeviceLink files; BIFROST unfinished optional. Reuse earlier source/projects/skills before adding new code. LCAS only in-chat; optional protected WebUI for native connection/auth monitor. Never claim project complete from inventory/research, static source tests, or staged MCP package.",
+  "research_completeness_20261027": {
+    "metadata_entries": 391,
+    "webarchives": 375,
+    "archived_binary_bytes_current_session": "NOT_RETRIEVED_FOR_ALL; Dropbox text extractor refuses webarchive and temporary URL transfer unsupported",
+    "earlier_claim": "Asana 2026-10-26: 375 main HTML pages extracted in an earlier separate chat; exact corpus not available/currently independently read",
+    "verified_live_upstream_entries_in_items": 26,
+    "related_official_sources_in_additional_review": 15,
+    "full_site_research_completed": false,
+    "all_332_repo_code_audited": false,
+    "mac_native_receipts_verified": false,
+    "source_fingerprint": "86a387b88b1eed8064353f4eaa52ff3c211502e2"
+  }
 }
