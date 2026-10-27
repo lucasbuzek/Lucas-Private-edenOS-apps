@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#ee4e97"><meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; img-src 'self' data:; script-src 'self'; style-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<title>THEMBIcouncil — Your world, your Council</title>
+<link rel="stylesheet" href="style.css"><script src="council-core.js" defer></script><script src="app.js" defer></script>
+</head><body>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+  <div class="identity"><span class="identity-art"><img src="assets/thembi-council-multi-clone-icon.png" alt="Original selected THEMBIcouncil multi-clone icon"/></span><div><strong>THEMBIcouncil</strong><span>Your own private Council</span></div></div>
+  <div class="side-caption">WORKSPACE</div><nav class="sidebar-nav" aria-label="Main navigation">
+    <button class="nav-link selected" data-tab="council"><span aria-hidden="true">✿</span> CHORUS</button>
+    <button class="nav-link" data-tab="domains"><span aria-hidden="true">⌂</span> Eight domains</button>
+    <button class="nav-link" data-tab="about"><span aria-hidden="true">ⓘ</span> tellMEaboutME</button>
+    <button class="nav-link" data-tab="connections"><span aria-hidden="true">◇</span> Connections</button>
+    <button class="nav-link" data-tab="notes"><span aria-hidden="true">▤</span> Private notes</button>
+  </nav>
+  <div class="side-foot"><div class="eyebrow">STATUS</div><div class="status-line"><span class="status-dot"></span> Offline working build</div><small>Generated persona artwork included. External accounts are not controlled by this page.</small></div>
+</aside>
+<main class="main-content">
+<header class="topbar"><button id="menu" class="icon-button menu" aria-label="Toggle menu">☰</button><div class="crumb">PRIVATE WORKSPACE <b>/</b> <span id="current-tab">CHORUS</span></div><div class="topbar-right"><span class="secure-pill">◉ Personal · Local</span><button class="btn small secondary" id="download-session">Export conversation</button></div></header>
+<div class="content-inner">
+<div class="hero"><div class="hero-copy"><div class="overline">ONE CORE · YOUR VOICES · YOUR CHOICES</div><h1>Every side of your life,<br><em>one Council.</em></h1><p>Eight personalities. Your interests, your pace and your rules. Select a voice and begin.</p><button class="hero-button" data-action="about">What is THEMBIcouncil? <span>↗</span></button></div><img class="hero-art" src="assets/avatars/Heartbi.png" alt="Generated Heartbi character illustration"/></div>
+<section id="panel-council" class="panel active" aria-labelledby="voices-head">
+<div class="section-heading"><div><span class="eyebrow">PERSONALITY COLLECTION</span><h2 id="voices-head">Meet your CHORUS</h2><p>Eight voices of one assistant. Choose freely in your private Council.</p></div><span class="pale-tag">8 MEMBERS</span></div>
+<div class="character-grid" id="personas" aria-label="Choose CHORUS personality"></div>
+<div class="workspace-two">
+<div class="chat card">
+<div class="chat-head"><div class="current-persona"><img id="selected-avatar" src="assets/avatars/Heartbi.png" alt="Current selected persona"/><div><strong id="selected-name">Heartbi</strong><span id="selected-role">Family First</span></div></div><span class="pale-tag">LOCAL INTERACTION</span></div>
+<div class="chat-body" id="chat-log" role="log" aria-live="polite"></div>
+<div class="suggestions" id="quick-actions"><button data-text="tellMEaboutME">About the app</button><button data-text="Terry joke — Dad lost his keys">Terry joke</button><button data-text="COREcouncilSETUP">Setup</button></div>
+<form id="message-form"><label class="visually-hidden" for="chat-input">Message</label><input id="chat-input" autocomplete="off" maxlength="1800" placeholder="Ask your Council anything…" required/><button type="submit" class="send" aria-label="Send message">➤</button></form>
+<p class="muted smallprint">Scripted offline responses; no invented AI or connected-service execution.</p>
+</div>
+<div class="card persona-detail"><div class="eyebrow">ACTIVE MEMBER</div><img id="detail-image" src="assets/avatars/Heartbi.png" alt="Heartbi character artwork"/><h3 id="detail-title">Heartbi</h3><p id="detail-intro"></p><div id="pose-controls" class="pose-controls" aria-label="Select expression or pose"></div><p id="source-label" class="muted smallprint">Generated candidate artwork · Final likeness acceptance pending.</p><button class="btn secondary full" id="reset-mode">Return to Heartbi</button></div>
+</div>
+</section>
+<section id="panel-domains" class="panel" aria-labelledby="domains-head"><div class="section-heading"><div><span class="eyebrow">YOUR WORLD</span><h2 id="domains-head">Eight life domains</h2><p>One Council, separate permissions for each part of life.</p></div></div><div id="domain-grid" class="domain-grid"></div></section>
+<section id="panel-about" class="panel" aria-labelledby="about-head"><div class="section-heading"><div><span class="eyebrow">PRODUCT IDENTITY</span><h2 id="about-head">tellMEaboutME</h2><p>What the app actually is and how it works.</p></div></div><div class="card about-card"><pre id="full-description"></pre></div></section>
+<section id="panel-connections" class="panel" aria-labelledby="connections-head"><div class="section-heading"><div><span class="eyebrow">YOUR PERMISSIONS</span><h2 id="connections-head">Connections & services</h2><p>Only verified grants count. This app does not have your logins or access tokens.</p></div></div><div id="service-grid" class="service-grid"></div></section>
+<section id="panel-notes" class="panel" aria-labelledby="notes-head"><div class="section-heading"><div><span class="eyebrow">PRIVATE BY DEFAULT</span><h2 id="notes-head">Notes & checklists</h2><p>Nothing is uploaded or silently saved. You decide when to export it.</p></div></div><div class="card note-card"><label for="note-area">MYjournal / private note</label><textarea id="note-area" placeholder="Write a thought, journal entry, or a list of things that matter today…" rows="9"></textarea><div class="note-actions"><button class="btn primary" id="export-note">Download my note</button><button class="btn secondary" id="clear-note">Clear text</button></div><span class="smallprint muted">Text stays in this open page until you clear it. No autosave; browser memory is not encrypted storage.</span><div class="task-panel"><h3>Small tasks, clearly managed</h3><div class="task-entry"><input id="task-input" maxlength="180" placeholder="Add a task…" aria-label="Task to add"/><button id="task-add" class="btn primary">Add</button></div><ul id="task-items" aria-label="Local task checklist"></ul><button id="export-tasks" class="btn secondary">Export task list</button><div class="note-actions" aria-label="Optional local task storage"><button id="save-tasks-local" class="btn secondary" type="button">Save tasks on this device</button><button id="restore-tasks-local" class="btn secondary" type="button">Restore saved tasks</button><button id="forget-tasks-local" class="btn secondary" type="button">Forget saved copy</button></div><p id="task-storage-status" class="smallprint muted" role="status">Tasks stay in this open page unless you explicitly save them. Saved tasks are unencrypted browser storage and should not contain sensitive information. Never use on a shared device.</p></div></div></section>
+<footer><span>THEMBIcouncil — private working candidate · Thembi controls her account permissions</span><span>Original registered plugin and existing artwork are not overwritten by this standalone build.</span></footer>
+</div>
+</main></div>
+<div class="dialog-backdrop" id="private-modal" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="modal-head"><h2 id="modal-head">Private CHORUS: SexyBi</h2><p>This mode is available in Thembi’s personal Council for private, consensual style and conversation. It must not appear in a business, family-shared or public tenant.</p><p class="muted smallprint">This is a local preference check, not authentication. Do not share the private package outside the intended account.</p><div class="modal-buttons"><button class="btn secondary" id="cancel-private">Cancel</button><button class="btn primary" id="allow-private">Open private mode</button></div></div></div>
+</body></html>
