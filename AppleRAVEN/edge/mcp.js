@@ -59,7 +59,7 @@ export async function handleAppleRavenMCP({request,env,user,visibleState,allowed
   }else{
     if(Object.keys(args).length!==1||typeof args.id!=='string'||!/^act_[a-f0-9]{20}$/.test(args.id))return json(err(id,-32602,'invalid action identifier'),400);
     const record=await env.DB.prepare('SELECT id,node_id,capability,status,created_at,completed_at,result FROM actions WHERE id=?1').bind(args.id).first();
-    if(!record||!granted(record.node_id,record.capability)||!allowed(user,record.node_id,record.capability,false))return json(err(id,-32004,'not found'),404);
+    if(!record||!granted(record.node_id,record.capability)||!allowed(user,record.node_id,record.capability,false))return json(err(id,-32602,'not found'),404);
     result={id:record.id,node_id:record.node_id,capability:record.capability,status:record.status,created_at:record.created_at,completed_at:record.completed_at,result:record.result?JSON.parse(record.result):null};
   }
   return reply(id,success(result));
