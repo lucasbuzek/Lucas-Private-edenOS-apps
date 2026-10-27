@@ -20,87 +20,69 @@
   "categories_overlap": true,
   "category_counts": [
     {
-      "label": "Apple / macOS / device",
+      "label": "Apple/macOS/device APIs",
       "count": 85,
       "examples": [
         "homebrew-cask:Casks:c:chatgpt-atlas.rb at cd8cdb689ab1fe6eb51d92ea93c56f2895b4cb77 · Homebrew:homebr.webarchive",
         "MCP Server for macOS by avanomme | Glama.webarchive",
         "ChatGPT iPhone Bridge by kapunakap | Glama.webarchive",
         "Apple MCP Tools by wearesage | Glama.webarchive",
-        "apple-mcp by Jameshuff91 | Glama.webarchive",
-        "macos-mcp-tools by HachiTogo | Glama.webarchive",
-        "siri MCP Servers | Glama.webarchive",
-        "macos-control-mcp by vito1317 | Glama.webarchive"
+        "apple-mcp by Jameshuff91 | Glama.webarchive"
       ]
     },
     {
-      "label": "Creative / 2D / 3D / photo / video",
+      "label": "Creative imaging, 3D, film, and games",
       "count": 74,
       "examples": [
         "Photo AI Studio MCP Server by photo-ai-studio | Glama.webarchive",
         "davinci-resolve-mcp by mateo-khalil | Glama.webarchive",
         "Game Asset MCP by TomasThrawat | Glama.webarchive",
         "PowerTokens Video Studio by PowerTokens | Glama.webarchive",
-        "The Game Crafter by alex-gon | Glama.webarchive",
-        "GoModelHub 3D MCP by gomodelhub | Glama.webarchive",
-        "MCP Video Generation with Veo2 by mario-andreschak | Glama.webarchive",
-        "Photoshop MCP — Tell Photoshop what you want.webarchive"
+        "The Game Crafter by alex-gon | Glama.webarchive"
       ]
     },
     {
-      "label": "Cloud / storage / identity / networking",
+      "label": "Storage, identity, providers and networking",
       "count": 95,
       "examples": [
         "Photo AI Studio MCP Server by photo-ai-studio | Glama.webarchive",
         "MCP Server for macOS by avanomme | Glama.webarchive",
         "bult-mcp-server by bultcloud | Glama.webarchive",
         "Hermes Cloud — Always-On AI Agent Hosting | Nous Research.webarchive",
-        "Storacha MCP Storage Server by storacha | Glama.webarchive",
-        "DeckProbe MCP Server by deckflow | Glama.webarchive",
-        "siri MCP Servers | Glama.webarchive",
-        "identity-storage-mcp by MikSkrzyp | Glama.webarchive"
+        "Storacha MCP Storage Server by storacha | Glama.webarchive"
       ]
     },
     {
-      "label": "Browser / WebMCP / online agents",
-      "count": 410,
+      "label": "WebMCP, browsers and web research",
+      "count": 28,
       "examples": [
-        "Photo AI Studio MCP Server by photo-ai-studio | Glama.webarchive",
-        "9 MCP Projects for AI Engineers: Collaboration, Data Generation & More | Sina Riyahi posted on the t.webarchive",
-        "imessage-mcp by hubermjonathan | Glama.webarchive",
-        "homebrew-cask:Casks:c:chatgpt-atlas.rb at cd8cdb689ab1fe6eb51d92ea93c56f2895b4cb77 · Homebrew:homebr.webarchive",
-        "davinci-resolve-mcp by mateo-khalil | Glama.webarchive",
-        "Game Asset MCP by TomasThrawat | Glama.webarchive",
-        "autoMessage - MCP Connector | Glama.webarchive",
-        "MCP Server for macOS by avanomme | Glama.webarchive"
+        "genpark-agent-web-stealth-scraper-distiller-skill by alphaparkinc | Glama.webarchive",
+        "Google Flow Browser MCP by TMSSS05 | Glama.webarchive",
+        "tiktok-scraper by harshmaur | Glama.webarchive",
+        "browser-for-ai by icueth | Glama.webarchive",
+        "Playwright MCP for macOS by mb-dev | Glama.webarchive"
       ]
     },
     {
-      "label": "Software dev / coding / factory",
-      "count": 321,
+      "label": "Software development and app factories",
+      "count": 52,
       "examples": [
-        "Photo AI Studio MCP Server by photo-ai-studio | Glama.webarchive",
-        "9 MCP Projects for AI Engineers: Collaboration, Data Generation & More | Sina Riyahi posted on the t.webarchive",
-        "imessage-mcp by hubermjonathan | Glama.webarchive",
-        "davinci-resolve-mcp by mateo-khalil | Glama.webarchive",
-        "Game Asset MCP by TomasThrawat | Glama.webarchive",
-        "autoMessage - MCP Connector | Glama.webarchive",
         "devops-practices.html",
-        "MCP Server for macOS by avanomme | Glama.webarchive"
+        "PowerTokens Video Studio by PowerTokens | Glama.webarchive",
+        "MCP Video Generation with Veo2 by mario-andreschak | Glama.webarchive",
+        "enhance_prompt - App Factory MCP | Glama.webarchive",
+        "Best Project Management Software with MCP Integrations (2026).webarchive"
       ]
     },
     {
-      "label": "Media / stream / library",
+      "label": "Media and libraries",
       "count": 17,
       "examples": [
         "throng by agent-runbooks | Glama.webarchive",
         "TorrentClaw-MCP by torrentclaw | Glama.webarchive",
         "Facebook MCP by thenavidm | Glama.webarchive",
         "mcp-server-macos-use by mediar-ai | Glama.webarchive",
-        "apple-books-mcp by vgnshiyer | Glama.webarchive",
-        "movie-rec by ppikkuaho | Glama.webarchive",
-        "facebook-lyr by ishan-parihar | Glama.webarchive",
-        "downloader-mcp by CarlDog | Glama.webarchive"
+        "apple-books-mcp by vgnshiyer | Glama.webarchive"
       ]
     }
   ],
@@ -3537,5 +3519,6 @@
       "kind": "file",
       "inspection": "ARCHIVE_BINARY_NOT_EXTRACTED"
     }
-  ]
+  ],
+  "category_method": "Multi-label filename keyword classification, webarchive extension ignored; labels are discoverability hints, not binary-source audits"
 }
