@@ -23,3 +23,9 @@ Keep the backend token strictly server-side, never in browser JS. The current pr
 EasyEquities: real equities/fractional purchases with manual guided order and card deposits documented; no verified public orders API. Luno: official read-only and order API for spot crypto; card availability is inconsistent across official help pages, and virtual cards are not guaranteed. First require real account KYC, virtual card issuer acceptance, fees, actual exchange rate, user transaction confirmation, provider minimums, and read-back of account balances/receipts. Every API route capable of creating a live trade is ABSENT / DENIED.
 
 Never execute a financial order by AI-generated text or an unverified MCP tool result.
+
+## Optional AI reasoning provider (not configured by default)
+
+`POST /v1/research/explain` accepts only an allowlisted pair and fixed lens SUMMARY/RISKS/CHALLENGE. This endpoint first runs the deterministic quote validation, then uses the provider's Responses API with `store:false`, `tools:[]` and short, structured evidence input. Model outputs are explicitly labelled `AI_INFERENCE_NOT_VERIFIED_FACT` and never control orders.
+
+Set `CRESUS_LLM_API_KEY` and `CRESUS_LLM_MODEL` in a secure server-side secret store only if paid provider usage is authorized separately. The initial $5 is a trading test budget, not automatic cloud-AI spending. No API keys are stored in SQLite or sent to browser clients. No real provider call has been demonstrated by CI; tests use a mock.
