@@ -1,3 +1,4 @@
+import {explainEvidence} from './intelligence.mjs';
 import http from 'node:http';
 import {DatabaseSync} from 'node:sqlite';
 import {randomUUID,timingSafeEqual} from 'node:crypto';
@@ -5,7 +6,8 @@ import {pathToFileURL} from 'node:url';
 import {resolve} from 'node:path';
 import {PROVIDERS,ONBOARDING_STEPS,createPlan,advancePlan,probeLunoMarket} from './engine.mjs';
 // Dedicated Node backend, NOT an order-enabled broker or a Cloudflare Worker.
-export function createBackend({token,dbPath=':memory:',fetchFn=fetch,clock=Date.now}={}){
+export function createBackend({token,dbPath=':memory:',fetchFn=fetch,clock=Date.now,
+  llmApiKey=process.env.CRESUS_LLM_API_KEY,llmModel=process.env.CRESUS_LLM_MODEL}={}){
   if(typeof token!=='string'||token.length<24) throw Error('Secure CRESUS_BACKEND_TOKEN (24+ characters) required.');
   const db=new DatabaseSync(dbPath);
   db.exec([
@@ -71,6 +73,16 @@ export function createBackend({token,dbPath=':memory:',fetchFn=fetch,clock=Date.
           return json(res,200,{id,plan:update,nextStep:ONBOARDING_STEPS[update.stageIndex]||null,
             verified:false,liveTradeAllowed:false});
         }
+      }
+      if(path==='/v1/research/explain'&&req.method==='POST'){
+        const body=await readJson(req);fields(body,['pair','lens']);
+        if(!llmApiKey||!llmModel)
+          return json(res,503,{error:'AI provider not connected. Deterministic research remains available.'});
+        const report=await probeLunoMarket(body.pair,fetchFn);
+        const intelligence=await explainEvidence(report,{
+          lens:body.lens||'SUMMARY',apiKey:llmApiKey,model:llmModel,fetchFn
+        });
+        return json(res,200,{report,intelligence,executionEnabled:false});
       }
       if(path==='/v1/research/quote'&&req.method==='POST'){
         const body=await readJson(req);fields(body,['pair']);
