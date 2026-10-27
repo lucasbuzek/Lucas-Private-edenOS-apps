@@ -1,0 +1,2942 @@
+{
+  "document": "EDEN_AI_MCP_TOOL_ARCHIVE_CUSTODY_REFRESH",
+  "date": "2026-10-27",
+  "evidence": "Live authenticated Dropbox list_folder direct-child results for research root and four research subfolders; previous separate snapshot had 408 archives",
+  "source_share": "https://www.dropbox.com/scl/fo/21rv7kst0n56iprmdrist/AMhROe7MpqvKtU-D4tGfsxw?rlkey=suc711gm5br3j7jwj60a05g2u&dl=0",
+  "original_webarchive_body_count_extracted": 0,
+  "safeguards": [
+    "This is path/name/size evidence, not original WebArchive body extraction or source audit",
+    "No browser profile/cookie/cache content included",
+    "No native MacBook access assumed",
+    "No deployment/install claimed",
+    "Existing archived index unchanged"
+  ],
+  "archive_summary": {
+    "count": 413,
+    "groups": [
+      {
+        "path": "ns:13844906001//",
+        "direct_children": 322,
+        "webarchives": 314,
+        "has_more": false
+      },
+      {
+        "path": "ns:13844906001//#appleOS",
+        "direct_children": 60,
+        "webarchives": 60,
+        "has_more": false
+      },
+      {
+        "path": "ns:13844906001//#webMCP",
+        "direct_children": 41,
+        "webarchives": 37,
+        "has_more": false
+      },
+      {
+        "path": "ns:13844906001//#AIcustom",
+        "direct_children": 1,
+        "webarchives": 1,
+        "has_more": false
+      },
+      {
+        "path": "ns:13844906001//#AI toolkit",
+        "direct_children": 33,
+        "webarchives": 1,
+        "has_more": false
+      }
+    ]
+  },
+  "records": [
+    {
+      "title": "How to Use a Remote Ollama or llama.cpp Server From a Desktop AI App on Your Mac in 2026 - DEV Commu.webarchive",
+      "dropbox_path": "ns:13844906001//How to Use a Remote Ollama or llama.cpp Server From a Desktop AI App on Your Mac in 2026 - DEV Commu.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyKA",
+      "bytes": 2778953,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "SheetsData MCP by octoco-ltd | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//SheetsData MCP by octoco-ltd | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzeg",
+      "bytes": 3841223,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "instagram-mcp by osAlhaddad1 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//instagram-mcp by osAlhaddad1 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzDA",
+      "bytes": 4300123,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "icloud-mcp by adamzaidi | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//icloud-mcp by adamzaidi | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzMw",
+      "bytes": 4284242,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "How to Make Your Site Show in ChatGPT Answers (A Developer's Guide) - DEV Community.webarchive",
+      "dropbox_path": "ns:13844906001//How to Make Your Site Show in ChatGPT Answers (A Developer's Guide) - DEV Community.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyJg",
+      "bytes": 2991396,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "TorrentClaw-MCP by torrentclaw | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//TorrentClaw-MCP by torrentclaw | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyWw",
+      "bytes": 3489338,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "LemonMCP by lemonXGroup | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//LemonMCP by lemonXGroup | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzKQ",
+      "bytes": 3736612,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Game Asset MCP by TomasThrawat | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Game Asset MCP by TomasThrawat | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzWg",
+      "bytes": 2779228,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "davinci-resolve-mcp by mateo-khalil | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//davinci-resolve-mcp by mateo-khalil | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy-w",
+      "bytes": 4150484,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "unstuck-mcp by SamuelH98 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//unstuck-mcp by SamuelH98 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATznA",
+      "bytes": 2844683,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "GarageBand Practice MCP by IsaacCavallaro | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//GarageBand Practice MCP by IsaacCavallaro | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyMQ",
+      "bytes": 2767063,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "math-mcp-learning-server by clouatre-labs | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//math-mcp-learning-server by clouatre-labs | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy6Q",
+      "bytes": 3306140,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macOS Companion MCP Server by surendranb | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//macOS Companion MCP Server by surendranb | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATybA",
+      "bytes": 3824389,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "imessage-mcp by hubermjonathan | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//imessage-mcp by hubermjonathan | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyhw",
+      "bytes": 3364973,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "ThinAir Geo by ThinAirTelematics | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//ThinAir Geo by ThinAirTelematics | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyWA",
+      "bytes": 3575504,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Instagram MCP by thenavidm | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Instagram MCP by thenavidm | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzDw",
+      "bytes": 2992357,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macOS Automation MCP Server by matthewdcage | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//macOS Automation MCP Server by matthewdcage | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzYg",
+      "bytes": 3588121,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Instagram MCP by tol518 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Instagram MCP by tol518 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzEA",
+      "bytes": 2856548,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Best Project Management Software with MCP Integrations (2026).webarchive",
+      "dropbox_path": "ns:13844906001//Best Project Management Software with MCP Integrations (2026).webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyQw",
+      "bytes": 2309499,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "maige-3d-mcp by m-ai-geXR | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//maige-3d-mcp by m-ai-geXR | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyrA",
+      "bytes": 3385569,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "davinci-resolve-mcp by lordhoell | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//davinci-resolve-mcp by lordhoell | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy-A",
+      "bytes": 3247105,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "MCP WhatsApp by gabriellopesdesouza2002 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//MCP WhatsApp by gabriellopesdesouza2002 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATygA",
+      "bytes": 3512814,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "tiktok-scraper by harshmaur | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//tiktok-scraper by harshmaur | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzBg",
+      "bytes": 3247546,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "3D New Era AI by leandrodaf | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//3D New Era AI by leandrodaf | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyoQ",
+      "bytes": 6942259,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mcp-server-macos-use by mediar-ai | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mcp-server-macos-use by mediar-ai | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzTg",
+      "bytes": 2766478,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "storage-steward by yusongcao2004 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//storage-steward by yusongcao2004 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyqQ",
+      "bytes": 2778722,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "GoModelHub 3D MCP by gomodelhub | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//GoModelHub 3D MCP by gomodelhub | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyrQ",
+      "bytes": 2907207,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "desaira - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//desaira - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzkg",
+      "bytes": 2848141,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Competitor Monitor AI MCP by CSOAI-ORG | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Competitor Monitor AI MCP by CSOAI-ORG | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyUw",
+      "bytes": 3575806,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "agent-mcp-hub by blackaxgit | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//agent-mcp-hub by blackaxgit | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATznQ",
+      "bytes": 3007811,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "MCP Game Deck by RamonBedin | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//MCP Game Deck by RamonBedin | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzVg",
+      "bytes": 2949782,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "4everland-hosting-mcp by 4everland | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//4everland-hosting-mcp by 4everland | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy8Q",
+      "bytes": 2806764,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "throng by agent-runbooks | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//throng by agent-runbooks | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzng",
+      "bytes": 2997595,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "web-speed-agent by Dominic-Pi-Sunyer | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//web-speed-agent by Dominic-Pi-Sunyer | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATymw",
+      "bytes": 3875585,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "3d-eyes by murphy977 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//3d-eyes by murphy977 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyrg",
+      "bytes": 2884585,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "guaardvark by guaardvark | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//guaardvark by guaardvark | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzqw",
+      "bytes": 4335125,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Game engine runtime mcp by Estiwito | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Game engine runtime mcp by Estiwito | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzbA",
+      "bytes": 2825638,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "MCP Web Research Agent by SnotacusNexus | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//MCP Web Research Agent by SnotacusNexus | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzAw",
+      "bytes": 2855967,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Universal Hardware Runtime Platform by saidul202414006 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Universal Hardware Runtime Platform by saidul202414006 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzgg",
+      "bytes": 3193817,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "MusicBrainz MCP Server by zas | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//MusicBrainz MCP Server by zas | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyag",
+      "bytes": 3105940,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "@forgeax:dsh-game by ForgeaX-Games | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//@forgeax:dsh-game by ForgeaX-Games | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzWw",
+      "bytes": 2877815,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "sonovault-mcp by rekordcloud | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//sonovault-mcp by rekordcloud | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyXQ",
+      "bytes": 3062894,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "grok-game-mcp by ben-mad-jlp | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//grok-game-mcp by ben-mad-jlp | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzOw",
+      "bytes": 3311336,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Exposing OpenAPI as MCP Tools - Semantics Matter | Christian Posta.webarchive",
+      "dropbox_path": "ns:13844906001//Exposing OpenAPI as MCP Tools - Semantics Matter | Christian Posta.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyPw",
+      "bytes": 3209036,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "facebook-mcp by YoTro | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//facebook-mcp by YoTro | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyhA",
+      "bytes": 3001515,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "TikTok MCP Server by follox42 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//TikTok MCP Server by follox42 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzCA",
+      "bytes": 3056791,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "measure-mcp by purahmanian | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//measure-mcp by purahmanian | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzKw",
+      "bytes": 3606318,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Open Factory - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Open Factory - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzNw",
+      "bytes": 2917145,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "downloader-mcp by CarlDog | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//downloader-mcp by CarlDog | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyaA",
+      "bytes": 3020323,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Building Production-Grade AI Agents with MCP: A Complete Guide for 2026 - DEV Community.webarchive",
+      "dropbox_path": "ns:13844906001//Building Production-Grade AI Agents with MCP: A Complete Guide for 2026 - DEV Community.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyPQ",
+      "bytes": 2018880,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "game-dev-resource-mcp by dsaewkfiush03-debug | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//game-dev-resource-mcp by dsaewkfiush03-debug | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzbQ",
+      "bytes": 3003076,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "media-gen-mcp by strato-space | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//media-gen-mcp by strato-space | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzrQ",
+      "bytes": 3384291,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "robo-mcp by MariMachaidze | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//robo-mcp by MariMachaidze | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzhg",
+      "bytes": 2779957,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "renderform-mcp by RenderForm | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//renderform-mcp by RenderForm | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyWQ",
+      "bytes": 2944546,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Instagram by mcp-dir | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Instagram by mcp-dir | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzCg",
+      "bytes": 2862369,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Photoshop MCP — Tell Photoshop what you want.webarchive",
+      "dropbox_path": "ns:13844906001//Photoshop MCP — Tell Photoshop what you want.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzqA",
+      "bytes": 1282883,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "OpenSubtitles MCP Server by opensubtitles | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//OpenSubtitles MCP Server by opensubtitles | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyXg",
+      "bytes": 2931715,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "tiktok-mcp by PPiai | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//tiktok-mcp by PPiai | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzBA",
+      "bytes": 2922628,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mem0 MCP Server for Project Management by KunihiroS | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mem0 MCP Server for Project Management by KunihiroS | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzRg",
+      "bytes": 11839811,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Robotics Control MCP Server by CSOAI-ORG | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Robotics Control MCP Server by CSOAI-ORG | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzhw",
+      "bytes": 2871464,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macOS Notification MCP by devizor | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//macOS Notification MCP by devizor | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzSw",
+      "bytes": 2848845,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "simple-3d-modeling-mcp by mazzanfar | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//simple-3d-modeling-mcp by mazzanfar | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyoA",
+      "bytes": 3036860,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Librivox - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Librivox - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyVQ",
+      "bytes": 3960372,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Citesurf MCP by citesurf | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Citesurf MCP by citesurf | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyVA",
+      "bytes": 3504018,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macOS Automator MCP Server by steipete | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//macOS Automator MCP Server by steipete | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyeg",
+      "bytes": 3402450,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macos-mcp by CursorTouch | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//macos-mcp by CursorTouch | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzSg",
+      "bytes": 2941318,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "instagram-mcp by OraCool | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//instagram-mcp by OraCool | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzDg",
+      "bytes": 3252538,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "reminders-bridge - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//reminders-bridge - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyUQ",
+      "bytes": 2781889,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Arr Suite MCP Server by shaktech786 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Arr Suite MCP Server by shaktech786 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyXA",
+      "bytes": 3367557,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "agentic-hil by agentic-hil | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//agentic-hil by agentic-hil | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzdA",
+      "bytes": 3644653,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mcp-vision by groundlight | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mcp-vision by groundlight | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzpA",
+      "bytes": 3278202,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "AITuber MCP Server by aituberapp | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//AITuber MCP Server by aituberapp | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzrw",
+      "bytes": 3280047,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Calensync - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Calensync - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyUA",
+      "bytes": 2778240,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "jimeng-video-mcp-server by SA-GIMA | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//jimeng-video-mcp-server by SA-GIMA | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy1g",
+      "bytes": 2886320,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "ghidraMCP by LaurieWired | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//ghidraMCP by LaurieWired | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATytQ",
+      "bytes": 3427643,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "PowerTokens Video Studio by PowerTokens | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//PowerTokens Video Studio by PowerTokens | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzqQ",
+      "bytes": 7884766,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": ",mlkl.webarchive",
+      "dropbox_path": "ns:13844906001//,mlkl.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy_g",
+      "bytes": 3260895,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Cognito-3D-MCP by Lanc3 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Cognito-3D-MCP by Lanc3 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATynw",
+      "bytes": 3712108,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mcp-toolkit by YoshiLoL0526 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mcp-toolkit by YoshiLoL0526 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzLQ",
+      "bytes": 2991128,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "auth-mcp by KB01111 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//auth-mcp by KB01111 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzjQ",
+      "bytes": 2983996,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "3D CAD BasePlate Generator MCP by Nirlepb | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//3D CAD BasePlate Generator MCP by Nirlepb | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATypw",
+      "bytes": 2906823,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Reel Estate MCP by TryReelEstate | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Reel Estate MCP by TryReelEstate | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzqg",
+      "bytes": 3198616,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Hermes Cloud — Always-On AI Agent Hosting | Nous Research.webarchive",
+      "dropbox_path": "ns:13844906001//Hermes Cloud — Always-On AI Agent Hosting | Nous Research.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATykQ",
+      "bytes": 7450177,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "OpenAPI Initiative – The OpenAPI Initiative provides an open source, technical community, within whi.webarchive",
+      "dropbox_path": "ns:13844906001//OpenAPI Initiative – The OpenAPI Initiative provides an open source, technical community, within whi.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyRA",
+      "bytes": 1765015,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "SocialDataX TikTok MCP by DevinChen2014 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//SocialDataX TikTok MCP by DevinChen2014 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzCQ",
+      "bytes": 2765446,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macOS Automator MCP Server by SuperCrazyKaizen | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//macOS Automator MCP Server by SuperCrazyKaizen | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyeQ",
+      "bytes": 4813535,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "3D Visualizer by kleinicke | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//3D Visualizer by kleinicke | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATysA",
+      "bytes": 3791335,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Mysocial Intelligence by mysocialio | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Mysocial Intelligence by mysocialio | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzUQ",
+      "bytes": 2783888,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Let AI agents control your iPhone with MCP | Askew.webarchive",
+      "dropbox_path": "ns:13844906001//Let AI agents control your iPhone with MCP | Askew.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyvg",
+      "bytes": 184487,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "am-mcp by Z-Han-Z | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//am-mcp by Z-Han-Z | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzFg",
+      "bytes": 3326825,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Game MCP by xthenyo | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Game MCP by xthenyo | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzUA",
+      "bytes": 3249051,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "DaVinci MCP Professional by hoyt-harness | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//DaVinci MCP Professional by hoyt-harness | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy-g",
+      "bytes": 2906522,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Storacha MCP Storage Server by storacha | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Storacha MCP Storage Server by storacha | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy5A",
+      "bytes": 2797391,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "SoraMCP by AceDataCloud | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//SoraMCP by AceDataCloud | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy0w",
+      "bytes": 3153148,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mcp-whatsapp by Sealjay | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mcp-whatsapp by Sealjay | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyfw",
+      "bytes": 3705979,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "AIHawk by feder-cr | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//AIHawk by feder-cr | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyjw",
+      "bytes": 3562283,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Askew by Dominic-DK | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Askew by Dominic-DK | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyvQ",
+      "bytes": 3039847,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "cohesivity by cohesivity-org | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//cohesivity by cohesivity-org | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy4w",
+      "bytes": 2845828,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "eosl-mcp by Kranny36 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//eosl-mcp by Kranny36 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzgA",
+      "bytes": 3363311,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "garageband-llm-bridge by extao15 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//garageband-llm-bridge by extao15 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyMg",
+      "bytes": 3930868,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "nucleus-apple-mcp by zish-rob-crur | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//nucleus-apple-mcp by zish-rob-crur | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzMA",
+      "bytes": 3375659,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "DaVinci Director MCP by kashyaprahul12659 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//DaVinci Director MCP by kashyaprahul12659 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy_A",
+      "bytes": 3312089,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "MCP Veo 3 Video Generation Server by dayongd1 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//MCP Veo 3 Video Generation Server by dayongd1 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy2A",
+      "bytes": 2827190,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "bigapi by BiGapi-2026 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//bigapi by BiGapi-2026 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzQg",
+      "bytes": 3002936,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Substance-3D-Designer-MCP by MikeLi-28 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Substance-3D-Designer-MCP by MikeLi-28 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyog",
+      "bytes": 3378373,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Hermes Agent — Open-Source AI Agent That Grows With You | Nous Research.webarchive",
+      "dropbox_path": "ns:13844906001//Hermes Agent — Open-Source AI Agent That Grows With You | Nous Research.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyjQ",
+      "bytes": 6906725,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Facebook MCP by thenavidm | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Facebook MCP by thenavidm | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyLA",
+      "bytes": 3224405,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "MCP-Pushover Bridge by pyang2045 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//MCP-Pushover Bridge by pyang2045 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyww",
+      "bytes": 2825807,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "PCCheck MCP Server by jjackk0k | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//PCCheck MCP Server by jjackk0k | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzeQ",
+      "bytes": 3057912,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "winston-ai-mcp by gowinston-ai | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//winston-ai-mcp by gowinston-ai | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzpQ",
+      "bytes": 3429365,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Hardware MCP Server by TheFloatingString | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Hardware MCP Server by TheFloatingString | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzgw",
+      "bytes": 3223979,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "usb-rea by emirmrkaljevic | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//usb-rea by emirmrkaljevic | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyxQ",
+      "bytes": 3473483,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "movie-rec by ppikkuaho | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//movie-rec by ppikkuaho | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyaw",
+      "bytes": 3005471,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "App Pain API - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//App Pain API - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzNg",
+      "bytes": 2896433,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "io.github.henilcalagiya:mcp-apple-notes by henilcalagiya | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//io.github.henilcalagiya:mcp-apple-notes by henilcalagiya | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzGQ",
+      "bytes": 3121666,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Jsoncut MCP Server by jsoncut | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Jsoncut MCP Server by jsoncut | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzpw",
+      "bytes": 2971835,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mcp-remote-macos-use by baryhuang | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mcp-remote-macos-use by baryhuang | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzaQ",
+      "bytes": 2968944,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Runway API MCP Server by runwayml | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Runway API MCP Server by runwayml | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyYA",
+      "bytes": 7799995,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Frida Game Hacking MCP by 0xhackerfren | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Frida Game Hacking MCP by 0xhackerfren | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzZg",
+      "bytes": 3648716,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "instagram-mcp by IvanBBaev | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//instagram-mcp by IvanBBaev | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzCw",
+      "bytes": 3668590,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Boost Your Agents with MCPs - Set up First Real-World Agentic App - DEV Community.webarchive",
+      "dropbox_path": "ns:13844906001//Boost Your Agents with MCPs - Set up First Real-World Agentic App - DEV Community.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyOA",
+      "bytes": 3116489,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Hunyuan 3D MCP Server by Riften | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Hunyuan 3D MCP Server by Riften | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATypg",
+      "bytes": 3237376,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Create app hosting by Createdotcom | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Create app hosting by Createdotcom | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy8A",
+      "bytes": 2889568,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "SAGE by PsYcGoD | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//SAGE by PsYcGoD | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzsw",
+      "bytes": 3359417,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "CoDesign by imgly | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//CoDesign by imgly | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzog",
+      "bytes": 3222463,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "S3-Compatible 3D Storage MCP Server by TencentCloudADP-DevRel | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//S3-Compatible 3D Storage MCP Server by TencentCloudADP-DevRel | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyqA",
+      "bytes": 2893432,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "game-asset-mcp by theisegoria | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//game-asset-mcp by theisegoria | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzcw",
+      "bytes": 6233531,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "MCP CAD Studio by flujo-app | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//MCP CAD Studio by flujo-app | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATysQ",
+      "bytes": 3000833,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macOS MCP Server by alexlock1 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//macOS MCP Server by alexlock1 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzZQ",
+      "bytes": 3180585,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Building a Personal Productivity Assistant with Q Developer CLI and MCP - DEV Community.webarchive",
+      "dropbox_path": "ns:13844906001//Building a Personal Productivity Assistant with Q Developer CLI and MCP - DEV Community.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyNg",
+      "bytes": 2952392,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "aether studio — AI Image Generation, Editing & Creative Workflow - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//aether studio — AI Image Generation, Editing & Creative Workflow - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzlw",
+      "bytes": 2785540,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "icloud-mcp by robworks-code | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//icloud-mcp by robworks-code | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzIg",
+      "bytes": 3021363,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Boost Your Agents with MCPs - Productivity Customized Tools - DEV Community.webarchive",
+      "dropbox_path": "ns:13844906001//Boost Your Agents with MCPs - Productivity Customized Tools - DEV Community.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyNw",
+      "bytes": 2984236,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "The MCP and AI Agent Problem. A Practical, Local Way Out - DEV Community.webarchive",
+      "dropbox_path": "ns:13844906001//The MCP and AI Agent Problem. A Practical, Local Way Out - DEV Community.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyPA",
+      "bytes": 3429691,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "yt-transcript-mcp by warshanks | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//yt-transcript-mcp by warshanks | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyZg",
+      "bytes": 2785717,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "bult-mcp-server by bultcloud | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//bult-mcp-server by bultcloud | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy6A",
+      "bytes": 5648712,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macOS GUI Control MCP by Akira-Papa | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//macOS GUI Control MCP by Akira-Papa | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzYw",
+      "bytes": 3163628,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "kompas-3d-ai-bridge by quja | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//kompas-3d-ai-bridge by quja | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATypA",
+      "bytes": 2773580,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "tinkercad-mcp-server by sethski | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//tinkercad-mcp-server by sethski | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyLw",
+      "bytes": 3120468,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "deterministic-logic by SamSoupSauce | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//deterministic-logic by SamSoupSauce | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzPw",
+      "bytes": 2889852,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "LogicProMCP by shlomyss | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//LogicProMCP by shlomyss | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy9Q",
+      "bytes": 2961484,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mcp-3d-modeling-agent by SekaiNoOwari77 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mcp-3d-modeling-agent by SekaiNoOwari77 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyow",
+      "bytes": 7675016,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mirroir-mcp by jfarcand | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mirroir-mcp by jfarcand | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyvA",
+      "bytes": 3044167,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "identity-storage-mcp by MikSkrzyp | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//identity-storage-mcp by MikSkrzyp | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy5g",
+      "bytes": 2840025,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mcp-game-helper by xhulz | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mcp-game-helper by xhulz | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzOA",
+      "bytes": 2787195,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "CarlDog:servarr-mcp: MCP server for the Servarr stack (Sonarr, Radarr, Lidarr, Readarr, Prowlarr), p.webarchive",
+      "dropbox_path": "ns:13844906001//CarlDog:servarr-mcp: MCP server for the Servarr stack (Sonarr, Radarr, Lidarr, Readarr, Prowlarr), p.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyaQ",
+      "bytes": 13311691,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Local AI MCP by TMHSDigital | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Local AI MCP by TMHSDigital | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzdw",
+      "bytes": 3055536,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "claude-agent-mcp by j-token | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//claude-agent-mcp by j-token | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATznw",
+      "bytes": 2821887,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Goose App Maker MCP by michaelneale | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Goose App Maker MCP by michaelneale | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyyw",
+      "bytes": 3100974,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "The Game Crafter by alex-gon | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//The Game Crafter by alex-gon | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzcQ",
+      "bytes": 3070499,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "BackPow PoW Oracle by BackpowCom | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//BackPow PoW Oracle by BackpowCom | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzfA",
+      "bytes": 2980257,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "game-agent-factory by Jan-Jianhao-Liu | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//game-agent-factory by Jan-Jianhao-Liu | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzOg",
+      "bytes": 3258831,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "whatsapp-hermes by RicSchonfelder | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//whatsapp-hermes by RicSchonfelder | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyfQ",
+      "bytes": 2913918,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "instagram-mcp by Joyhacks | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//instagram-mcp by Joyhacks | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzEw",
+      "bytes": 2846613,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "OBS MCP by xDarkzx | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//OBS MCP by xDarkzx | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATybw",
+      "bytes": 4954621,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Atlas Cloud MCP Server (Image : Video : LLM APIs) by AtlasCloudAI | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Atlas Cloud MCP Server (Image : Video : LLM APIs) by AtlasCloudAI | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy1Q",
+      "bytes": 3049220,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "CAD MCP by Limnex | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//CAD MCP by Limnex | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATysg",
+      "bytes": 2793903,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "GameCodex by sbenson2 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//GameCodex by sbenson2 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzVw",
+      "bytes": 3272402,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "aiworkhub_quality_calibration_report - AIWorkhub | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//aiworkhub_quality_calibration_report - AIWorkhub | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzQw",
+      "bytes": 2722517,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macOS Defaults MCP Server by g0t4 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//macOS Defaults MCP Server by g0t4 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzXg",
+      "bytes": 2855390,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "whatsapp by memsjava | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//whatsapp by memsjava | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyew",
+      "bytes": 2771195,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Remote MCP Servers | Awesome MCP Servers.webarchive",
+      "dropbox_path": "ns:13844906001//Remote MCP Servers | Awesome MCP Servers.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzug",
+      "bytes": 634190,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Independent Video Generator by yt0912iii | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Independent Video Generator by yt0912iii | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy1w",
+      "bytes": 3196339,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "TMDB MCP Server by Grinv | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//TMDB MCP Server by Grinv | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyZQ",
+      "bytes": 4701131,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "concord-mcp by Get-Concord-AI | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//concord-mcp by Get-Concord-AI | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATykA",
+      "bytes": 3418290,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "DeviceLink - Share a folder with ChatGPT or Claude.webarchive",
+      "dropbox_path": "ns:13844906001//DeviceLink - Share a folder with ChatGPT or Claude.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATztg",
+      "bytes": 1793507,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macOS Contacts MCP by jcontini | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//macOS Contacts MCP by jcontini | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzZA",
+      "bytes": 2934096,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "BotBell MCP Server by qq418716640 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//BotBell MCP Server by qq418716640 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATywg",
+      "bytes": 3351334,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mcp-mpv-player by guodaxia9527 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mcp-mpv-player by guodaxia9527 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyZw",
+      "bytes": 3026202,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "codex-app-mcp by abetoots | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//codex-app-mcp by abetoots | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyyQ",
+      "bytes": 3278201,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Doubao Image:Video Generation MCP Server by 156554395 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Doubao Image:Video Generation MCP Server by 156554395 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzjg",
+      "bytes": 2885990,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "notesbridge - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//notesbridge - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyTA",
+      "bytes": 2791921,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "browser-for-ai by icueth | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//browser-for-ai by icueth | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyxA",
+      "bytes": 3778863,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "fashio-mcp by fashiolabs | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//fashio-mcp by fashiolabs | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzpg",
+      "bytes": 3061984,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "FapperAI - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//FapperAI - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzlA",
+      "bytes": 2768349,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "clipugc by clipugc | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//clipugc by clipugc | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzrA",
+      "bytes": 3235003,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "AI Web Agents. AI Web Agents are a type of Agentic… | by Cobus Greyling | Medium.webarchive",
+      "dropbox_path": "ns:13844906001//AI Web Agents. AI Web Agents are a type of Agentic… | by Cobus Greyling | Medium.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyzQ",
+      "bytes": 6947876,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "cloudflare MCP Servers | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//cloudflare MCP Servers | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzfQ",
+      "bytes": 3064742,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Calfeed - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Calfeed - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyTw",
+      "bytes": 2774466,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "awesome-mcp-servers:docs:project--task-management.md at main · TensorBlock:awesome-mcp-servers.webarchive",
+      "dropbox_path": "ns:13844906001//awesome-mcp-servers:docs:project--task-management.md at main · TensorBlock:awesome-mcp-servers.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyQg",
+      "bytes": 7177353,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Agent Workspace MCP Server by HrRodan | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Agent Workspace MCP Server by HrRodan | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzmQ",
+      "bytes": 2929304,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macOS Office 365 MCP Server by iflow-mcp | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//macOS Office 365 MCP Server by iflow-mcp | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzPQ",
+      "bytes": 2845841,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Building an MCP Server to Use ChatGPT Without API Keys - A Novel Approach Using macOS Shortcuts - DE.webarchive",
+      "dropbox_path": "ns:13844906001//Building an MCP Server to Use ChatGPT Without API Keys - A Novel Approach Using macOS Shortcuts - DE.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyJA",
+      "bytes": 3399708,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Yamaru Hardware Probe by yamaru-eu | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Yamaru Hardware Probe by yamaru-eu | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzhA",
+      "bytes": 2962150,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "websupport-mcp by tydung26 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//websupport-mcp by tydung26 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy5Q",
+      "bytes": 3330409,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mcp-oauth-hosting by ierhgfiuoergerg | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mcp-oauth-hosting by ierhgfiuoergerg | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy7w",
+      "bytes": 3285670,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "AgentCloud iOS Simulator - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//AgentCloud iOS Simulator - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATycw",
+      "bytes": 2759806,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "franchisedata-mcp by outis-co | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//franchisedata-mcp by outis-co | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzdQ",
+      "bytes": 3277239,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "YourImageShare by yourimageshare | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//YourImageShare by yourimageshare | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy7A",
+      "bytes": 2888054,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Architecture overview - Model Context Protocol.webarchive",
+      "dropbox_path": "ns:13844906001//Architecture overview - Model Context Protocol.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATztQ",
+      "bytes": 4808759,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "oJo MCP Server by ojodotso | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//oJo MCP Server by ojodotso | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzoQ",
+      "bytes": 3230085,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Short Video Agent Kit by davidmosiah | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Short Video Agent Kit by davidmosiah | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATybg",
+      "bytes": 3353254,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "wanx-t2v-video-generation - Tongyi Wanxiang MCP Server | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//wanx-t2v-video-generation - Tongyi Wanxiang MCP Server | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy0g",
+      "bytes": 3181614,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "How to Use Your Home AI Models From Your Laptop Anywhere in 2026 (With Tailscale) | Off Grid AI.webarchive",
+      "dropbox_path": "ns:13844906001//How to Use Your Home AI Models From Your Laptop Anywhere in 2026 (With Tailscale) | Off Grid AI.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyKQ",
+      "bytes": 1592296,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macos-screen-mcp by dla-kirito | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//macos-screen-mcp by dla-kirito | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzcA",
+      "bytes": 2876460,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "GhidraMCP by yqszxx | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//GhidraMCP by yqszxx | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATytg",
+      "bytes": 3538738,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mBlock MCP by blame-me | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mBlock MCP by blame-me | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy8g",
+      "bytes": 3374458,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Godot MCP by Vollkorn-Games | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Godot MCP by Vollkorn-Games | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATycg",
+      "bytes": 4464655,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "aiworkhub_manager_context_graph_related - AIWorkhub | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//aiworkhub_manager_context_graph_related - AIWorkhub | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzRQ",
+      "bytes": 2724207,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "DWB MCP Studio by keattiphan-sri | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//DWB MCP Studio by keattiphan-sri | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzig",
+      "bytes": 3244582,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "facebook-lyr by ishan-parihar | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//facebook-lyr by ishan-parihar | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATygw",
+      "bytes": 3619779,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macos-computer-use-mcp by yyyyyyyyiiiii | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//macos-computer-use-mcp by yyyyyyyyiiiii | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzPA",
+      "bytes": 3037549,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "startup-valuation by simonmak-ascent | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//startup-valuation by simonmak-ascent | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzfw",
+      "bytes": 3582545,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Lightroom Classic MCP by 4xiomdev | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Lightroom Classic MCP by 4xiomdev | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzoA",
+      "bytes": 5704837,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "LLMMO Game Server by MiloLug | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//LLMMO Game Server by MiloLug | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzWQ",
+      "bytes": 3218757,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "NYT Cooking MCP by bramboe | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//NYT Cooking MCP by bramboe | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyYg",
+      "bytes": 2955863,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "MetaVision AI Studio by adminmetavision-rgb | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//MetaVision AI Studio by adminmetavision-rgb | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzmA",
+      "bytes": 3242651,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "ContextForge by asit-piri | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//ContextForge by asit-piri | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATziw",
+      "bytes": 3144388,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "chatgpt-web-agent by AxelHu | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//chatgpt-web-agent by AxelHu | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATymg",
+      "bytes": 2895318,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "widgetdash-mcp by purian | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//widgetdash-mcp by purian | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzLA",
+      "bytes": 2954355,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "@pixelvault-dev:local-mcp by pixelvault-dev | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//@pixelvault-dev:local-mcp by pixelvault-dev | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy6g",
+      "bytes": 3382791,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Organize with AI (OwAI) - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Organize with AI (OwAI) - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATySA",
+      "bytes": 3455174,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Google Flow Browser MCP by TMSSS05 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Google Flow Browser MCP by TMSSS05 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzow",
+      "bytes": 3167195,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "UnificAlly MCP Server by unifically-dev | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//UnificAlly MCP Server by unifically-dev | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzsA",
+      "bytes": 3234730,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Oracle Cloud Infrastructure (OCI) MCP Server by ahmedselimmansor-ctrl | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Oracle Cloud Infrastructure (OCI) MCP Server by ahmedselimmansor-ctrl | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzfg",
+      "bytes": 2852943,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "tiktokporn - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//tiktokporn - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzkQ",
+      "bytes": 2842937,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "game-translator-mcp by dcd887 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//game-translator-mcp by dcd887 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzVA",
+      "bytes": 2874144,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Building a macOS Agent Workbench with SwiftUI - DEV Community.webarchive",
+      "dropbox_path": "ns:13844906001//Building a macOS Agent Workbench with SwiftUI - DEV Community.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyPg",
+      "bytes": 2815232,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "MCP Video Generation with Veo2 by mario-andreschak | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//MCP Video Generation with Veo2 by mario-andreschak | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzkA",
+      "bytes": 3505860,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Obsidian-Intelligence by GuideThomas | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Obsidian-Intelligence by GuideThomas | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzsQ",
+      "bytes": 3375630,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macos-clipboard-mcp by xiaoquisme | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//macos-clipboard-mcp by xiaoquisme | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzXw",
+      "bytes": 2794960,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "GitHub - yimajo:mcp-server-chatgpt-mac-app: An MCP server that allows you to use the ChatGPT macOS a.webarchive",
+      "dropbox_path": "ns:13844906001//GitHub - yimajo:mcp-server-chatgpt-mac-app: An MCP server that allows you to use the ChatGPT macOS a.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyJQ",
+      "bytes": 8506951,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "0pi-mcp-server by dizzydes | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//0pi-mcp-server by dizzydes | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzJg",
+      "bytes": 2815319,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "media-gen-mcp by AriOliv | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//media-gen-mcp by AriOliv | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy1A",
+      "bytes": 2911002,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "apolo-cad by mariorojasmz | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//apolo-cad by mariorojasmz | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATysw",
+      "bytes": 2895499,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "genpark-agent-web-stealth-scraper-distiller-skill by alphaparkinc | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//genpark-agent-web-stealth-scraper-distiller-skill by alphaparkinc | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy4A",
+      "bytes": 2778927,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "lgh by JoeGlenn1213 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//lgh by JoeGlenn1213 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy7g",
+      "bytes": 3142007,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "REA (Reverse Engineer Anything) by psyb0t | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//REA (Reverse Engineer Anything) by psyb0t | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyxg",
+      "bytes": 2873918,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "10 Best MCP Servers for Project Management in 2026.webarchive",
+      "dropbox_path": "ns:13844906001//10 Best MCP Servers for Project Management in 2026.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyRQ",
+      "bytes": 1929679,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "3D MCP Server by jagjerez-org | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//3D MCP Server by jagjerez-org | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyqw",
+      "bytes": 3312032,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Forency by cheevahagadog | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Forency by cheevahagadog | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy7Q",
+      "bytes": 2826947,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "whatsapp-mcp by edouard-claude | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//whatsapp-mcp by edouard-claude | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATygQ",
+      "bytes": 4055476,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Project Memory by Dankaro-projects | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Project Memory by Dankaro-projects | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzSA",
+      "bytes": 2880990,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Seiche — Funding and FX Evidence by beepboop2025 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Seiche — Funding and FX Evidence by beepboop2025 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyVg",
+      "bytes": 4076456,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Gmail MCP by alexneamtu | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Gmail MCP by alexneamtu | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy4Q",
+      "bytes": 4911387,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Gemini Image & Video Generation MCP by collactivelabs | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Gemini Image & Video Generation MCP by collactivelabs | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzjw",
+      "bytes": 2933764,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "codex-app-server-mcp by 4714407 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//codex-app-server-mcp by 4714407 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyyg",
+      "bytes": 2984781,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "BackPow MCP Server by 0xcWalter | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//BackPow MCP Server by 0xcWalter | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzew",
+      "bytes": 3422479,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Mixly Local MCP by ovoVHV | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Mixly Local MCP by ovoVHV | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzhQ",
+      "bytes": 2934239,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macos-automator-mcp by schmitzjimmy1-star | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//macos-automator-mcp by schmitzjimmy1-star | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyeA",
+      "bytes": 3362160,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "App Factory MCP by DPGS-oss | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//App Factory MCP by DPGS-oss | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyzw",
+      "bytes": 3734593,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "nuditok - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//nuditok - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzkw",
+      "bytes": 2847493,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "web agent MCP Servers | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//web agent MCP Servers | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATynQ",
+      "bytes": 2568818,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "3d-asset-server by arielshad | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//3d-asset-server by arielshad | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyqg",
+      "bytes": 3089774,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Ludo AI Game Assets by Ludo-AI | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Ludo AI Game Assets by Ludo-AI | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzXA",
+      "bytes": 3217229,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "yt-audio-mcp by DaniilPak | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//yt-audio-mcp by DaniilPak | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATybQ",
+      "bytes": 3334597,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mcp-plex by obrien-matthew | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mcp-plex by obrien-matthew | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyZA",
+      "bytes": 3206192,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "AI eBook Generator - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//AI eBook Generator - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATySw",
+      "bytes": 2787540,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Pushary - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Pushary - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyUg",
+      "bytes": 3023535,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "lsp-intelligence by perilevy | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//lsp-intelligence by perilevy | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzsg",
+      "bytes": 2901029,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Game Artist MCP by roronoazoroshao | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Game Artist MCP by roronoazoroshao | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzTQ",
+      "bytes": 3257650,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "DaVinci-Resolve-MCP by BillyRaz | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//DaVinci-Resolve-MCP by BillyRaz | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy-Q",
+      "bytes": 3874337,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Mobile Phone Waterfall MCP Server by mambalabsdev | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Mobile Phone Waterfall MCP Server by mambalabsdev | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyvw",
+      "bytes": 2822015,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Intelagent MCP Template by Opafex | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Intelagent MCP Template by Opafex | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzJQ",
+      "bytes": 3265853,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Kleap by kleaphq | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Kleap by kleaphq | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy5w",
+      "bytes": 3219949,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "davinci MCP Servers | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//davinci MCP Servers | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy2Q",
+      "bytes": 2565327,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Zed — Your last next editor.webarchive",
+      "dropbox_path": "ns:13844906001//Zed — Your last next editor.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyQQ",
+      "bytes": 6708674,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "marsnme by Marsmanleo | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//marsnme by Marsmanleo | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy6w",
+      "bytes": 3804713,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Open-Source MCP Servers – 110,216 in the Glama Registry | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Open-Source MCP Servers – 110,216 in the Glama Registry | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzmw",
+      "bytes": 2626569,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "SpicyGen - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//SpicyGen - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzlQ",
+      "bytes": 2801349,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "iCloud MCP Server Apple by MrGo2 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//iCloud MCP Server Apple by MrGo2 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzIA",
+      "bytes": 3664639,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mcp-svd by pkt-lab | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mcp-svd by pkt-lab | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzeA",
+      "bytes": 3316910,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Hardware Manual RAG MCP Server by thenguyenyf | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Hardware Manual RAG MCP Server by thenguyenyf | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzgQ",
+      "bytes": 3199785,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mcp-macos-toolkit by ContractorKeith | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mcp-macos-toolkit by ContractorKeith | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzTw",
+      "bytes": 2861923,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "SoundBreak - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//SoundBreak - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATySQ",
+      "bytes": 2864080,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Diogenes Context Compression, Code Patching & Deterministic Solver MCP by stand-out-of-my-sun | Glam.webarchive",
+      "dropbox_path": "ns:13844906001//Diogenes Context Compression, Code Patching & Deterministic Solver MCP by stand-out-of-my-sun | Glam.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzQQ",
+      "bytes": 3251899,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "hardwaremcp by saadvz | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//hardwaremcp by saadvz | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATykg",
+      "bytes": 2885761,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "MCP Architecture Patterns for Production-Grade Agents - DEV Community.webarchive",
+      "dropbox_path": "ns:13844906001//MCP Architecture Patterns for Production-Grade Agents - DEV Community.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyOw",
+      "bytes": 3389586,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "davinci-resolve-mcp by realmikeshu | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//davinci-resolve-mcp by realmikeshu | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy9g",
+      "bytes": 3112970,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "FoundRole Jobs - AI Job Search & Application Tracker by foundrole | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//FoundRole Jobs - AI Job Search & Application Tracker by foundrole | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyWg",
+      "bytes": 3595563,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "3D Mesh Optimizer MCP by Whambammy | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//3D Mesh Optimizer MCP by Whambammy | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATypQ",
+      "bytes": 3329079,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mcp-macos-popup by vakandi | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mcp-macos-popup by vakandi | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzbw",
+      "bytes": 2876441,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Spicy API - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Spicy API - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzlg",
+      "bytes": 2814280,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "SubDownload by SubDownload | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//SubDownload by SubDownload | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyXw",
+      "bytes": 3168092,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "local-apple-data by BillyBunn | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//local-apple-data by BillyBunn | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzLg",
+      "bytes": 3604570,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Game Asset Finder MCP by sudoriaa | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Game Asset Finder MCP by sudoriaa | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzcg",
+      "bytes": 2890761,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "fitfilesize-mcp by Gautamstar | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//fitfilesize-mcp by Gautamstar | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATywA",
+      "bytes": 2877246,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "quick-game by danilo-1 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//quick-game by danilo-1 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzZw",
+      "bytes": 3020865,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Kaption WhatsApp by Kaption-AI | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Kaption WhatsApp by Kaption-AI | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyfg",
+      "bytes": 3596716,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "davinci-resolve by kerwilgil | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//davinci-resolve by kerwilgil | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy_Q",
+      "bytes": 2906115,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Memeboat MCP by memebo-at | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Memeboat MCP by memebo-at | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyYw",
+      "bytes": 3425050,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "MCP Server for macOS by avanomme | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//MCP Server for macOS by avanomme | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzOQ",
+      "bytes": 2779570,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "9 MCP Projects for AI Engineers: Collaboration, Data Generation & More | Sina Riyahi posted on the t.webarchive",
+      "dropbox_path": "ns:13844906001//9 MCP Projects for AI Engineers: Collaboration, Data Generation & More | Sina Riyahi posted on the t.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyRg",
+      "bytes": 3979877,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "3D-MCP by team-plask | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//3D-MCP by team-plask | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyrw",
+      "bytes": 5325679,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "MCP Software Engineer by Rajawatrajat | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//MCP Software Engineer by Rajawatrajat | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATytA",
+      "bytes": 2924592,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "list_projects - App Factory MCP | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//list_projects - App Factory MCP | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzNA",
+      "bytes": 2590372,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Hermes IDE — One console for every coding agent.webarchive",
+      "dropbox_path": "ns:13844906001//Hermes IDE — One console for every coding agent.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyNQ",
+      "bytes": 2259706,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Cinevva Game Engine by cinevva-engine | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Cinevva Game Engine by cinevva-engine | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzXQ",
+      "bytes": 3234000,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "tiktok-mcp by 0xArtex | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//tiktok-mcp by 0xArtex | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzBQ",
+      "bytes": 3156615,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "MCP is APIs for Agents - DEV Community.webarchive",
+      "dropbox_path": "ns:13844906001//MCP is APIs for Agents - DEV Community.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyOQ",
+      "bytes": 2774600,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Partle by rubenayla | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Partle by rubenayla | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzdg",
+      "bytes": 3585122,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Chotu Robo Server by vishalmysore | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Chotu Robo Server by vishalmysore | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy8w",
+      "bytes": 2823563,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "instagram-mcp by mcpware | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//instagram-mcp by mcpware | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzDQ",
+      "bytes": 3338644,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "android-phone-control by FZ2000 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//android-phone-control by FZ2000 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATywQ",
+      "bytes": 3714479,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "connectors.webarchive",
+      "dropbox_path": "ns:13844906001//connectors.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATycQ",
+      "bytes": 392,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "whatsapp by cRodriguez83407 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//whatsapp by cRodriguez83407 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyfA",
+      "bytes": 2894765,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mac-cleaner by FFFames | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//mac-cleaner by FFFames | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzJw",
+      "bytes": 2830917,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Cursor's Agent Can Now Click Through Your Desktop Apps. Grant Access to the Helper Only - DEV Commun.webarchive",
+      "dropbox_path": "ns:13844906001//Cursor's Agent Can Now Click Through Your Desktop Apps. Grant Access to the Helper Only - DEV Commun.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyKg",
+      "bytes": 2991480,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "DeckProbe MCP Server by deckflow | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//DeckProbe MCP Server by deckflow | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzEQ",
+      "bytes": 3316898,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "flaiwheel by dl4rce | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//flaiwheel by dl4rce | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy4g",
+      "bytes": 3803738,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "electronic-mcp-server by wedsamuel1230 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//electronic-mcp-server by wedsamuel1230 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyLg",
+      "bytes": 3630022,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Glif by glifxyz | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Glif by glifxyz | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyYQ",
+      "bytes": 3014866,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "SAGE-MCP by david-strejc | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//SAGE-MCP by david-strejc | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATztA",
+      "bytes": 2895033,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Musevate by musevate | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Musevate by musevate | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzrg",
+      "bytes": 3356927,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "iMessage MCP by duanefields | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//iMessage MCP by duanefields | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyhg",
+      "bytes": 2888771,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Plori by plori-ai | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Plori by plori-ai | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyjg",
+      "bytes": 3855349,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "arduino-mcp by JShort-bufr | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//arduino-mcp by JShort-bufr | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyMA",
+      "bytes": 3092516,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Photo AI Studio MCP Server by photo-ai-studio | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//Photo AI Studio MCP Server by photo-ai-studio | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzjA",
+      "bytes": 2945442,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "AgentsPodium Hosting by agentspodium | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//AgentsPodium Hosting by agentspodium | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyLQ",
+      "bytes": 3239718,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "davinci-resolve-mcp by igamenovoer | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//davinci-resolve-mcp by igamenovoer | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy9w",
+      "bytes": 2875437,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "enhance_prompt - App Factory MCP | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//enhance_prompt - App Factory MCP | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzNQ",
+      "bytes": 2592294,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "re-ios by gyh20062008-commits | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//re-ios by gyh20062008-commits | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATydQ",
+      "bytes": 3753317,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "project-memory-mcp by extrei | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//project-memory-mcp by extrei | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzRw",
+      "bytes": 2828676,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "tiktok-downloader-mcp by abdouldotdev | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//tiktok-downloader-mcp by abdouldotdev | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzBw",
+      "bytes": 2946033,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macos-ui-mcp by thangduonghuu | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/macos-ui-mcp by thangduonghuu | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzaA",
+      "bytes": 3416488,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "prompt-to-asset by MohamedAbdallah-14 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/prompt-to-asset by MohamedAbdallah-14 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATymQ",
+      "bytes": 3830533,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Apple Contacts MCP by lu-wo | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Apple Contacts MCP by lu-wo | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzHg",
+      "bytes": 2889337,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "ChatGPT iPhone Bridge by kapunakap | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/ChatGPT iPhone Bridge by kapunakap | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyug",
+      "bytes": 3287233,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "BrewUI: A First Look at Homebrew's Official macOS GUI - DEV Community.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/BrewUI: A First Look at Homebrew's Official macOS GUI - DEV Community.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyJw",
+      "bytes": 3313422,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Apple Notes on Steroids by krisxsee | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Apple Notes on Steroids by krisxsee | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzHQ",
+      "bytes": 3084079,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Coding agents for production iOS: a senior engineer's setup for 2x the output - DEV Community.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Coding agents for production iOS: a senior engineer's setup for 2x the output - DEV Community.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyOg",
+      "bytes": 3386595,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "garageband-mcp by visualfart | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/garageband-mcp by visualfart | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy9A",
+      "bytes": 2941501,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macos-agent-bridge by juliusloon | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/macos-agent-bridge by juliusloon | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzag",
+      "bytes": 4190464,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Siri Shortcuts MCP Server by kErdogan6537 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Siri Shortcuts MCP Server by kErdogan6537 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyig",
+      "bytes": 2768157,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "mibly-apple-health-mcp by littlenew117 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/mibly-apple-health-mcp by littlenew117 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzKg",
+      "bytes": 4627241,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Apple MCP Tools by wearesage | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Apple MCP Tools by wearesage | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzMQ",
+      "bytes": 2961453,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macos-mcp-tools by HachiTogo | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/macos-mcp-tools by HachiTogo | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzVQ",
+      "bytes": 2933433,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "siri MCP Servers | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/siri MCP Servers | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATziA",
+      "bytes": 2430898,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "apple-messages-mcp-remote by mpacarroll | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/apple-messages-mcp-remote by mpacarroll | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzLw",
+      "bytes": 3408947,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "autoMessage - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/autoMessage - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyTQ",
+      "bytes": 2806429,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "apple-mcp by Jameshuff91 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/apple-mcp by Jameshuff91 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzHw",
+      "bytes": 3057664,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Siri Shortcuts MCP Server by dvcrn | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Siri Shortcuts MCP Server by dvcrn | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyiA",
+      "bytes": 3799678,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "apple MCP Connectors | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/apple MCP Connectors | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATySg",
+      "bytes": 2491325,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Why I Built Nathstar: A Local-First, 120Hz Native macOS Terminal for Projects, Live Ops & Private AI.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Why I Built Nathstar: A Local-First, 120Hz Native macOS Terminal for Projects, Live Ops & Private AI.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyKw",
+      "bytes": 3849054,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "ios-mcp by emazaheri | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/ios-mcp by emazaheri | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATydA",
+      "bytes": 6165464,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "imessage by christianblandford | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/imessage by christianblandford | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyhQ",
+      "bytes": 3475569,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macos-control-mcp by vito1317 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/macos-control-mcp by vito1317 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzYQ",
+      "bytes": 3388525,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Apple Shortcuts Server by recursechat | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Apple Shortcuts Server by recursechat | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyIw",
+      "bytes": 3452858,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "ghost-in-the-droid by ghost-in-the-droid | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/ghost-in-the-droid by ghost-in-the-droid | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzKA",
+      "bytes": 4100007,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "ios-agent by Nagarjuna2997 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/ios-agent by Nagarjuna2997 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyyA",
+      "bytes": 3670424,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "shortcuts-bridge - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/shortcuts-bridge - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyTg",
+      "bytes": 2785451,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "apple-books-mcp by vgnshiyer | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/apple-books-mcp by vgnshiyer | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzIQ",
+      "bytes": 3600755,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "sceneview-mcp by sceneview | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/sceneview-mcp by sceneview | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzFA",
+      "bytes": 3766274,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "automator-mcp by VetCoders | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/automator-mcp by VetCoders | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATydw",
+      "bytes": 2940095,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "iphone-mcp by teddyoweh | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/iphone-mcp by teddyoweh | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATytw",
+      "bytes": 3301696,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Apple Dev MCP Server by erdncyz | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Apple Dev MCP Server by erdncyz | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzGg",
+      "bytes": 2879311,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "iphone-mirror-mcp by nickatnight96 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/iphone-mirror-mcp by nickatnight96 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyuA",
+      "bytes": 3317683,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "apple-workouts-mcp by yashhooda1 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/apple-workouts-mcp by yashhooda1 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzIw",
+      "bytes": 3509590,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Siri Shortcuts MCP Server by MarcelYoshida834 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Siri Shortcuts MCP Server by MarcelYoshida834 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyiw",
+      "bytes": 2767351,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Apple Photos MCP by thenavidm | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Apple Photos MCP by thenavidm | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzGw",
+      "bytes": 3265803,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Mobile Game Fixer MCP by imozkandev | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Mobile Game Fixer MCP by imozkandev | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzPg",
+      "bytes": 3485557,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macOS Ecosystem MCP Server by neverprepared | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/macOS Ecosystem MCP Server by neverprepared | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzbg",
+      "bytes": 3099505,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "xcode-build - Xcode MCP Server | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/xcode-build - Xcode MCP Server | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATycA",
+      "bytes": 2604315,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Favicon & App Icons - MCP Connector | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Favicon & App Icons - MCP Connector | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATymA",
+      "bytes": 2810764,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "iphone-safari-mcp by ikatkov | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/iphone-safari-mcp by ikatkov | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyuQ",
+      "bytes": 3099776,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Xcode-Studio-MCP by kevinswint | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Xcode-Studio-MCP by kevinswint | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyzg",
+      "bytes": 3341889,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "MCP Appium by appium | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/MCP Appium by appium | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyxw",
+      "bytes": 3815383,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macOS Tools MCP Server by tornikegomareli | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/macOS Tools MCP Server by tornikegomareli | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzYA",
+      "bytes": 2934572,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macos-computer-use by johnexzy | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/macos-computer-use by johnexzy | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzTA",
+      "bytes": 2849801,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "homebrew-cask:Casks:c:chatgpt-atlas.rb at cd8cdb689ab1fe6eb51d92ea93c56f2895b4cb77 · Homebrew:homebr.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/homebrew-cask:Casks:c:chatgpt-atlas.rb at cd8cdb689ab1fe6eb51d92ea93c56f2895b4cb77 · Homebrew:homebr.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyRw",
+      "bytes": 9130131,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Siri Shortcuts MCP Server by maryame8957 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Siri Shortcuts MCP Server by maryame8957 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyiQ",
+      "bytes": 2783132,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Playwright MCP for macOS by mb-dev | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Playwright MCP for macOS by mb-dev | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzSQ",
+      "bytes": 2900530,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Apple Notes MCP Server by ailenshen | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Apple Notes MCP Server by ailenshen | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzGA",
+      "bytes": 2965912,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Screenshot MCP (macOS) by FrontMage | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Screenshot MCP (macOS) by FrontMage | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzaw",
+      "bytes": 2883004,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macos-mcp by krmj22 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/macos-mcp by krmj22 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzWA",
+      "bytes": 2854277,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "macos-desktop-control by d-wwei | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/macos-desktop-control by d-wwei | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzUw",
+      "bytes": 2906951,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "GitHub - Homebrew:BrewUI: 📺 Homebrew's official macOS GUI · GitHub.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/GitHub - Homebrew:BrewUI: 📺 Homebrew's official macOS GUI · GitHub.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyMw",
+      "bytes": 8657343,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "small-app-dev-mcp by tomoki013 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/small-app-dev-mcp by tomoki013 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy0A",
+      "bytes": 3280778,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "apple-photos-mcp by sweetrb | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/apple-photos-mcp by sweetrb | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzFQ",
+      "bytes": 3865007,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Apple Docs 2.0 MCP by mishafyi | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Apple Docs 2.0 MCP by mishafyi | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzFw",
+      "bytes": 3161567,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "apple-design-mcp by rncrosby | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/apple-design-mcp by rncrosby | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzHA",
+      "bytes": 2924580,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "iPhone MCP Server by Lakr233 | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/iPhone MCP Server by Lakr233 | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyuw",
+      "bytes": 3094859,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Apple Shortcuts + AI Is the Automation Stack… | Think Different.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/Apple Shortcuts + AI Is the Automation Stack… | Think Different.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyQA",
+      "bytes": 1348965,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "iOS Development MCP Server by dagba | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#appleOS/iOS Development MCP Server by dagba | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATy0Q",
+      "bytes": 3181065,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "webmcp-tools:webmcp-evals at main · GoogleChromeLabs:webmcp-tools · GitHub.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/webmcp-tools:webmcp-evals at main · GoogleChromeLabs:webmcp-tools · GitHub.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz5A",
+      "bytes": 8660113,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "WebMCP · Cloudflare Browser Run docs.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/WebMCP · Cloudflare Browser Run docs.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz6Q",
+      "bytes": 1633697,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "WebMCP  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/WebMCP  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz2g",
+      "bytes": 2421115,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "webmcp-tools:AWESOME_WEBMCP.md at main · GoogleChromeLabs:webmcp-tools · GitHub.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/webmcp-tools:AWESOME_WEBMCP.md at main · GoogleChromeLabs:webmcp-tools · GitHub.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz4g",
+      "bytes": 8462587,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "My Orders - Search.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/My Orders - Search.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzvw",
+      "bytes": 101442,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "nekuda WebMCP Workbench - Chrome Web Store.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/nekuda WebMCP Workbench - Chrome Web Store.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz6g",
+      "bytes": 5759806,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Imperative API  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/Imperative API  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz3A",
+      "bytes": 3388854,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "WebMCP Page Agent.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/WebMCP Page Agent.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzzA",
+      "bytes": 112284,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "AI Workflow Automation Platform - n8n.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/AI Workflow Automation Platform - n8n.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz7Q",
+      "bytes": 4117674,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Stacktree · send client work as a link, not an attachment.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/Stacktree · send client work as a link, not an attachment.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzzw",
+      "bytes": 902501,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Ticket Purchase Flow.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/Ticket Purchase Flow.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzwA",
+      "bytes": 16838427,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Build your user's agentic workflows with WebMCP tools  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/Build your user's agentic workflows with WebMCP tools  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz3g",
+      "bytes": 4114347,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "webmcp-tools:demos:shared:webmcp-polyfill.js at main · GoogleChromeLabs:webmcp-tools · GitHub.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/webmcp-tools:demos:shared:webmcp-polyfill.js at main · GoogleChromeLabs:webmcp-tools · GitHub.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz5w",
+      "bytes": 8676535,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "WebMCP best practices  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/WebMCP best practices  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz3w",
+      "bytes": 3482637,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Find Your Dream Home.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/Find Your Dream Home.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzzQ",
+      "bytes": 4866739,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Test WebMCP with Evals  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/Test WebMCP with Evals  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz4Q",
+      "bytes": 4360396,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Moving Beyond Screen Scraping: Creating an Agent-Native Web App with WebMCP | by Hugo Zanini | Data .webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/Moving Beyond Screen Scraping: Creating an Agent-Native Web App with WebMCP | by Hugo Zanini | Data .webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzwQ",
+      "bytes": 8092220,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Webroom.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/Webroom.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz0w",
+      "bytes": 633703,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "WebMCP Radar - Chrome Web Store.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/WebMCP Radar - Chrome Web Store.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzwg",
+      "bytes": 4985495,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "WebMCP Directory — Websites & Shopify Stores for AI Agents.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/WebMCP Directory — Websites & Shopify Stores for AI Agents.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzyw",
+      "bytes": 1033951,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Codex Modeling Studio.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/Codex Modeling Studio.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz0Q",
+      "bytes": 3206401,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "WebMCP tool security  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/WebMCP tool security  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz6w",
+      "bytes": 3600249,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "webmcp-demo.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/webmcp-demo.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzyQ",
+      "bytes": 628098,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "WebMCP.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/WebMCP.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz2Q",
+      "bytes": 667973,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "smart-home-webmcp.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/smart-home-webmcp.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzzg",
+      "bytes": 531192,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Declarative API  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/Declarative API  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz2w",
+      "bytes": 3156084,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "GitHub - beaufortfrancois:model-context-tool-inspector: A Chrome Extension that allows developers to.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/GitHub - beaufortfrancois:model-context-tool-inspector: A Chrome Extension that allows developers to.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz1Q",
+      "bytes": 8560618,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "GitHub - webmachinelearning:awesome-webmcp: 🤖 A curated list of awesome things related to the WebMC.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/GitHub - webmachinelearning:awesome-webmcp: 🤖 A curated list of awesome things related to the WebMC.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz5Q",
+      "bytes": 8660438,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "GitHub - TueJon:webmcpify: WebMCP agent skill — make any web app agent-ready, verifiably: inventory,.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/GitHub - TueJon:webmcpify: WebMCP agent skill — make any web app agent-ready, verifiably: inventory,.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz1w",
+      "bytes": 8685359,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "GitHub - nearestnabors:mcp-webcomic-site-server: Demo server and tutorial for making agentic webcomi.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/GitHub - nearestnabors:mcp-webcomic-site-server: Demo server and tutorial for making agentic webcomi.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz2A",
+      "bytes": 8637596,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "WebMCP Examples, Tools & Guides | MCP Servers.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/WebMCP Examples, Tools & Guides | MCP Servers.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz7A",
+      "bytes": 19553524,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "WebMCP Bridge — Connect MCP Servers to Browser AI Agents.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/WebMCP Bridge — Connect MCP Servers to Browser AI Agents.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATzyg",
+      "bytes": 200925,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Margin — Local-first writing with comments.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/Margin — Local-first writing with comments.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz0A",
+      "bytes": 1350388,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "WanderNote — little plans, big adventures.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/WanderNote — little plans, big adventures.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz0g",
+      "bytes": 1240145,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "How WebMCP fits in user journeys  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/How WebMCP fits in user journeys  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz4A",
+      "bytes": 3518494,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "webmcp-types - npm.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/webmcp-types - npm.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz1A",
+      "bytes": 4969945,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "When to use WebMCP and MCP  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_path": "ns:13844906001//#webMCP/When to use WebMCP and MCP  |  AI in Chrome  |  Chrome for Developers.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATz3Q",
+      "bytes": 3454815,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "voice-io by Furkiozknn | Glama.webarchive",
+      "dropbox_path": "ns:13844906001//#AIcustom/voice-io by Furkiozknn | Glama.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATydg",
+      "bytes": 3482508,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    },
+    {
+      "title": "Compare Cloud Storage providers - ComparisonTables.webarchive",
+      "dropbox_path": "ns:13844906001//#AI toolkit/Compare Cloud Storage providers - ComparisonTables.webarchive",
+      "dropbox_id": "id:KqcGNtH_uy8AAAAAAATyng",
+      "bytes": 2950151,
+      "status": "INVENTORIED_BINARY_UNREAD"
+    }
+  ]
+}
