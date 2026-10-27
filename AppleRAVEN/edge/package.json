@@ -1,0 +1,13 @@
+{
+  "name": "appleraven-edge-candidate",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Candidate overlay for the original Raven Pages API — not a published package",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
