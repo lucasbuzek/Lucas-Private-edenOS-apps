@@ -11,8 +11,7 @@
     "png": 9,
     "html": 1,
     "jpg": 9,
-    "url": 1,
-    "no_extension": 1
+    "url": 1
   },
   "binary_extraction": "Dropbox fetch cannot extract .webarchive binary: Apple MCP Tools and Tailscale sample both errored; no bytes audited; filenames never certify features/security/licensing",
   "external_provider_runtime": "NOT INSTALLED OR VERIFIED",
@@ -3521,5 +3520,11 @@
     }
   ],
   "category_method": "Multi-label filename keyword classification, webarchive extension ignored; labels are discoverability hints, not binary-source audits",
-  "file_type_method": "True filename final-dot extension only; filenames without a dot counted no_extension"
+  "file_type_method": "Count only kind=file; folders counted separately. Count final-dot extensions.",
+  "file_count": 428,
+  "folder_count": 1,
+  "other_file_count": 20,
+  "folders": [
+    "ns:45063412//edenOS apps/AI MCP tool/webMCP"
+  ]
 }
