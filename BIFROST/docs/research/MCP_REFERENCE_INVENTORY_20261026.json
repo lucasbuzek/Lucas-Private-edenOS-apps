@@ -652,8 +652,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://cursor.com/docs/cloud-agent/capabilities",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Current Cursor developer docs reviewed 2026-10-27: isolated cloud desktop and self-hosted macOS computer use need native helper, Accessibility/Screen Recording approval, and actual signed-in GUI session. Running helper does not prove grants or successful clicks. Saved Apple WebArchive content not verified identical.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -1305,8 +1305,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://blog.christianposta.com/semantics-matter-exposing-openapi-as-mcp-tools/",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Original article read 2026-10-27: semantic action descriptions, preconditions, unique operation IDs and typed schemas are needed for reliable LLM tool selection; informs CONDUCTOR's shortNameCall semantics. Saved Apple WebArchive content not verified identical.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -1436,8 +1436,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://glama.ai/mcp/servers/stand-out-of-my-sun/diogenes-context-code-solver-mcp",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Live server schema/tool pages reviewed 2026-10-27: context compression, code diffs, AST and critical path analysis; optional bounded research/read-only service, no need to recreate it as CONDUCTOR's decision engine. Saved Apple WebArchive content not verified identical.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -1806,8 +1806,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://github.com/tornikegomareli/macos-tools-mcp-server",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Official repo/README read 2026-10-27: Spotlight-based enhanced search, file tags and resource monitoring; Node18+ and macOS privacy grants. Partial overlap RDC and DeviceLink; reuse as optional specialized tool, not core dependency. Saved Apple WebArchive content not verified identical.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -1978,8 +1978,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://getoffgridai.co/articles/how-to-use-your-home-ai-models-from-your-laptop-anywhere-in-2026-with-tailscale/",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Original article reviewed 2026-10-27: private remote model serving via Tailscale, avoid exposing unauthenticated public listeners; device/access state distinct from source model availability. Saved Apple WebArchive content not verified identical.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -3168,8 +3168,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://github.com/Akira-Papa/macOS-GUI-Control-MCP",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Official repo/README read 2026-10-27: broad run_shell, AppleScript, mouse/keyboard and screen control, very limited delete-only safety. Unsuitable for unsupervised default onboarding without sandbox/permissions design. Saved Apple WebArchive content not verified identical.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
