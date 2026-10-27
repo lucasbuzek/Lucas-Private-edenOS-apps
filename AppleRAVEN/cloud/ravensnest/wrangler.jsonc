@@ -9,5 +9,11 @@
       "database_name": "appleraven-private",
       "database_id": "740671f7-8671-44b3-83bb-69572ffc7d28"
     }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "OAUTH_KV",
+      "id": "f69dd7d18a984d2898c3c2047aeaecdb"
+    }
   ]
 }
