@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {handleAppleRavenMCP} from '../mcp.js';
+import {onRequest} from '../functions/api/[[path]].js';
 const user={id:'usr_test',role:'owner',subject:'owner@example.com',legacy:false,grants:[{device_id:'mac-a',capability:'lists.refresh'}]};
 const VERSION='2026-07-28';
 const metadata={'io.modelcontextprotocol/protocolVersion':VERSION,'io.modelcontextprotocol/clientCapabilities':{},'io.modelcontextprotocol/clientInfo':{name:'TestHost',version:'1.0'}};
@@ -27,3 +28,9 @@ test('does not expose write tools',async()=>{const r=await call('tools/call',{na
 test('owner has no implicit cross-tenant device discovery',async()=>{const r=await call('tools/call',{name:'appleraven.nodes.status',arguments:{}},{},{...user,grants:[]});const x=JSON.parse((await r.json()).result.content[0].text);assert.equal(x.nodes.length,0)});
 test('revoked device grant cannot read recorded action',async()=>{const r=await call('tools/call',{name:'appleraven.actions.status',arguments:{id:'act_0123456789abcdef0123'}},{},{...user,grants:[{device_id:'mac-a',capability:'lists.refresh',revoked_at:123}]});assert.equal(r.status,404)});
 test('unrelated capability grant does not allow action result',async()=>{const r=await call('tools/call',{name:'appleraven.actions.status',arguments:{id:'act_0123456789abcdef0123'}},{},{...user,grants:[{device_id:'mac-a',capability:'some.other.capability'}]});assert.equal(r.status,404)});
+
+test('original Pages router rejects unauthenticated MCP traffic before dispatch',async()=>{
+ const req=new Request('https://private.example/api/mcp',{method:'POST',headers:{'content-type':'application/json','accept':'application/json, text/event-stream','MCP-Protocol-Version':VERSION,'Mcp-Method':'tools/list'},body:JSON.stringify({jsonrpc:'2.0',id:3,method:'tools/list',params:{_meta:metadata}})});
+ const r=await onRequest({request:req,env:{},params:{path:['mcp']}});
+ assert.equal(r.status,401);
+});
