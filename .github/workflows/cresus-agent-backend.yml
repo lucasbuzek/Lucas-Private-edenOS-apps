@@ -1,0 +1,31 @@
+name: CRESUS stateful agent + onboarding verification
+on:
+  pull_request:
+    paths:
+      - 'CRESUS/agent-backend/**'
+      - 'CRESUS/PWA/public/account-setup.*'
+      - 'CRESUS/PWA/public/index.html'
+      - '.github/workflows/cresus-agent-backend.yml'
+  push:
+    branches: [feature/cresus-durable-agent-5usd-onboarding-20261028]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify stateful agent engine, API and onboarding
+        run: |
+          cd CRESUS/agent-backend
+          npm run check
+          npm test
+      - name: Existing CRESUS PWA regression
+        run: node --test CRESUS/PWA/test/*.test.mjs
+      - name: No broker writes or private credentials
+        run: |
+          test -f CRESUS/agent-backend/README.md
+          ! grep -RE 'Perm_W_Orders|/api/1/postorder|/api/1/marketorder' CRESUS/agent-backend/*.mjs
