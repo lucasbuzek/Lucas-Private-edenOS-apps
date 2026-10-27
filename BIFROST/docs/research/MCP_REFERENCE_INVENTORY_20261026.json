@@ -423,8 +423,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://glama.ai/mcp/servers/%40wearesage/mcp-apple",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Glama project documentation reviewed 2026-10-27: AppleScript/JXA app tools; its displayed git clone example contains a placeholder username, therefore verify actual source origin before adopting. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -440,8 +440,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://github.com/TMSSS05/google-flow-browser-mcp",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Upstream README reviewed 2026-10-27: browser integration tailored to Google's Flow using signed-in Chrome CDP and account/profile; NOT generic browser substitute or appropriate default for CONDUCTOR. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -473,8 +473,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "fetch_attempted_extraction_unsupported",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://glama.ai/mcp/servers/Jameshuff91/apple-mcp",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Glama README reviewed 2026-10-27: Mac personal data read-only by default; opt-in writes/messages/Shortcuts separated. Untrusted iMessage and notes injection and Full Disk Access risks expressly documented. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -490,8 +490,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://portal.nousresearch.com/cloud",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Official service reviewed 2026-10-27: optional hosted persistent agent and dashboard, usage-based billing. Distinct from CONDUCTOR's current local/on-demand paths and requires separate account/payment. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -541,8 +541,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://github.com/HachiTogo/macos-mcp-tools",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Upstream README reviewed 2026-10-27: modular Mail, Contacts, Notes, Messages, Calendar, Reminders; JXA+read-only SQLite+EventKit, separate opt-in integration tests; high-privacy apps need exact grants. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -748,8 +748,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://glama.ai/mcp/servers/vito1317/macos-control-mcp/schema",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Glama actual tool schema reviewed 2026-10-27: unrestricted terminal_execute and GUI controls; do NOT auto-enable this privileged alternative just to expand tool count. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -817,8 +817,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://github.com/CursorTouch/MacOS-MCP",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Upstream repository README and release information reviewed 2026-10-27: Apple Accessibility computer use, local stdio/HTTP modes, launchd support. High-privilege unsandboxed operations and telemetry notice; not suitable for automatic installation without sandbox and permissions review. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -882,7 +882,7 @@
       ],
       "archive_text_state": "fetch_attempted_extraction_unsupported",
       "upstream_url": "https://github.com/robworks-code/icloud-mcp",
-      "upstream_readme_review": "reviewed_external_description_not_archive_or_code",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Upstream README rechecked 2026-10-27: direct iCloud Drive list/search/remote hydration, local copy read fallback, persistent write goes to iCloud. Separately authenticate; sensitive upload/write/rename require scoped consent. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -987,8 +987,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://github.com/TMHSDigital/local-ai-mcp",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Upstream README/LICENSE reviewed 2026-10-27: Ollama/LM Studio/llama.cpp discovery and hardware-fit; stdio only. CC-BY-NC-ND-4.0 license precludes treating it as a freely modifiable/commercial embedded dependency; optional external reference only. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -1033,8 +1033,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://www.hermes-ide.com/",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Vendor site reviewed 2026-10-27: coding-agent console with terminal/worktrees/status/approvals/resume; BSL 1.1 source available, not a CONDUCTOR governance engine. Monitoring UX inspiration only. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -1146,8 +1146,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://github.com/agentic-hil/agentic-hil",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Upstream project/docs reviewed 2026-10-27: bounded hardware-in-loop MCP execution, external operator-owned policy and evidence gates; a safety/evidence architecture example, not generic device executor. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -1259,8 +1259,8 @@
         "task-automation"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://github.com/SuperCrazyKaizen/macos-automator-mcp",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Upstream README reviewed 2026-10-27: AppleScript/JXA with knowledge base; requires app-level macOS Automation/Accessibility grants. Compare to existing Shortcuts/Automator before adding. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -1372,7 +1372,7 @@
       ],
       "archive_text_state": "not_extracted",
       "upstream_url": "https://github.com/steipete/macos-automator-mcp",
-      "upstream_readme_review": "reviewed_external_description_not_archive_or_code",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Upstream MIT repository reviewed 2026-10-27: AppleScript/JXA runner with searchable knowledge base and macOS TCC permission prompts. Repository archived by owner 2026-09-13; reference/code reuse candidate, not maintenance-ready dependency. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -1388,8 +1388,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://glama.ai/mcp/servers/teddyoweh/iphone-mcp",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Glama upstream readme reviewed 2026-10-27: XCTest/XCUITest physical iPhone control via WebDriverAgent, Xcode signing and developer mode; no proof of user's current iPhone pairing or reliability. Sensitive passcode environment requires isolation. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -1469,8 +1469,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://github.com/baryhuang/mcp-remote-macos-use",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Upstream README reviewed 2026-10-27: remote macOS screen sharing/controller; protocol-30 authentication and legacy DH limitation documented. Reject for default privileged connection; security needs independent resolution. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -1617,8 +1617,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://github.com/mediar-ai/mcp-server-macos-use",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Upstream repo/docs and issues reviewed 2026-10-27: Swift Accessibility-based UI actions; reported current build/timeouts issues, not a drop-in verified Mac service. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -2125,8 +2125,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://askew.my/",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Official website reviewed 2026-10-27: local Mac Shortcuts MCP released, iOS app on waitlist, encrypted relay and idempotency claims. Native iPhone/cloud path not yet generally available; do not claim installed. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -3393,8 +3393,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://glama.ai/mcp/servers/adamzaidi/icloud-mcp",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Glama source listing reviewed 2026-10-27: primarily iCloud Mail SMTP/IMAP, contacts/calendar integrations; NOT a substitute for iCloud Drive file adapter. External code/audit not verified. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -3713,8 +3713,8 @@
       "type": "webarchive",
       "tags": [],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/specification/2026-07-28/basic/index.mdx",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Official current 2026-07-28 spec reviewed 2026-10-27; stateless requests require explicit metadata and stable app task IDs, not transport/process session identity. Saved archive edition not inspected. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -3911,8 +3911,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://glama.ai/mcp/servers/icueth/browser-for-ai",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Glama tool schema/README reviewed 2026-10-27: CDP/Chrome-linked browser automation and network/cookie capture; credentials/privacy risk and Chrome dependency conflict with user's no-Chrome workflow. Use official Playwright WebKit alternative instead. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -3928,8 +3928,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://devicelink.ai/",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Official website reviewed 2026-10-27: file list/read/search/grep/tree scoped user folder, streamed from local agent, Mac/Linux and Windows onboarding. Not arbitrary CLI. Current web setup displays localhost installer placeholders; verify signed installer/package and auth before deployment. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -4314,8 +4314,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://github.com/4714407/codex-app-server-mcp/blob/main/server.mjs",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Public source file reviewed 2026-10-27: MCP bridge exposing codex start/cancel/models/steer/review. Requires authenticated local codex app-server; not itself a model-account/session or installed host. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -4459,7 +4459,7 @@
       ],
       "archive_text_state": "not_extracted",
       "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Exact mb-dev upstream not verified. Separately reviewed official microsoft/playwright-mcp and Playwright WebKit browser automation, which is a grounded reuse alternative. Do not equate original mb-dev archive with Microsoft's source. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -4695,8 +4695,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://github.com/krmj22/macos-mcp",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Upstream README reviewed 2026-10-27: same Apple app split EventKit/JXA/read-only SQLite with --check doctor; local Mac only, no Windows build; reuse patterns, avoid duplicating providers. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -5038,8 +5038,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://github.com/abetoots/codex-app-mcp",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Upstream README reviewed 2026-10-27: adapter to codex app-server with persisted threads, protocol drift risk; fake-app-server tests separate from live smoke. Reuse exact verified Codex account/branch if connected. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -6255,8 +6255,8 @@
         "dev-ai-mcp"
       ],
       "archive_text_state": "not_extracted",
-      "upstream_url": null,
-      "upstream_readme_review": null,
+      "upstream_url": "https://hermes-agent.nousresearch.com/docs",
+      "upstream_readme_review": "2026-10-27 LIVE_EXTERNAL_SOURCE_REVIEW: Official docs reviewed 2026-10-27: persistent agent with learned skills, local and cloud deployments, setup portal. Do not conflate Nous Hermes with separately branded Hermes IDE or EDEN HERMES specialist. Saved Apple WebArchive bytes not read in this session; external link/source inspection is not complete repository code or security validation.",
       "fullresearch_complete": false,
       "adoption": "UNDECIDED_PENDING_SOURCE_LICENSE_SECURITY_COMPATIBILITY_AND_TESTS"
     },
@@ -6310,5 +6310,6 @@
       "fullresearch_complete": false,
       "adoption": "REFERENCE_ONLY_PENDING_SIGNING_TCC_APPINTENTS_PLATFORM_SECURITY_AND_PHYSICAL_DEVICE_TESTS"
     }
-  ]
+  ],
+  "last_targeted_external_review": "2026-10-27: verified live upstream descriptions and docs for 26 CONDUCTOR-relevant entries. Partial live-source review only; all 391 archived site byte comparisons, exact repo code/license/security, and installed runtime tests remain pending. Existing items and adoption statuses preserved."
 }
