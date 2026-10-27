@@ -16,12 +16,12 @@ const json=(body,status=200,headers={})=>new Response(JSON.stringify(body),{stat
 const err=(id,code,message)=>({jsonrpc:'2.0',id,error:{code,message}});
 const reply=(id,result)=>json({jsonrpc:'2.0',id,result:{resultType:'complete',...result,_meta:{'io.modelcontextprotocol/serverInfo':{name:'AppleRAVEN Remote',version:'0.1.0'}}}});
 const accepts=(request)=>{const s=request.headers.get('accept')||'';return s.includes('application/json')&&s.includes('text/event-stream')};
-function validMeta(x){return x&&typeof x==='object'&&!Array.isArray(x)&&x['io.modelcontextprotocol/protocolVersion']===VERSION&&x['io.modelcontextprotocol/clientCapabilities']&&typeof x['io.modelcontextprotocol/clientCapabilities']==='object'&&!Array.isArray(x['io.modelcontextprotocol/clientCapabilities'])&&typeof x['io.modelcontextprotocol/clientInfo']?.name==='string'&&!!x['io.modelcontextprotocol/clientInfo'].name&&typeof x['io.modelcontextprotocol/clientInfo']?.version==='string'&&!!x['io.modelcontextprotocol/clientInfo'].version}
+function validMeta(x){return x&&typeof x==='object'&&!Array.isArray(x)&&x['io.modelcontextprotocol/protocolVersion']===VERSION&&x['io.modelcontextprotocol/clientCapabilities']&&typeof x['io.modelcontextprotocol/clientCapabilities']==='object'&&!Array.isArray(x['io.modelcontextprotocol/clientCapabilities'])&&(!('io.modelcontextprotocol/clientInfo' in x)||(typeof x['io.modelcontextprotocol/clientInfo']?.name==='string'&&!!x['io.modelcontextprotocol/clientInfo'].name&&typeof x['io.modelcontextprotocol/clientInfo']?.version==='string'&&!!x['io.modelcontextprotocol/clientInfo'].version))}
 const success=(value)=>({content:[{type:'text',text:JSON.stringify(value).slice(0,MAX_TOOL_RESPONSE)}],isError:false});
 export async function handleAppleRavenMCP({request,env,user,visibleState,allowed}){
   // No legacy bearer-key compatibility. Real user must have a verified Access
   // assertion and a non-revoked local user record; preserve distinct profiles.
-  if(!user?.id||user.legacy||!user.subject||user.disabled_at)return json({error:'oauth-required'},401,{'WWW-Authenticate':'Bearer realm="AppleRAVEN"'});
+  if(!user?.id||user.legacy||!user.subject||user.disabled_at)return json({error:'verified Cloudflare Access user required'},401);
   // The original owner role can inspect every tenant via the admin API; this
   // *MCP* never inherits that authority. Each device/capability needs its own
   // explicit, current grant, including for the owner and Council variants.
@@ -54,7 +54,7 @@ export async function handleAppleRavenMCP({request,env,user,visibleState,allowed
   if(p.name==='appleraven.nodes.status'){
     if(Object.keys(args).length)return json(err(id,-32602,'unexpected arguments'),400);
     const state=await visibleState(env,Date.now(),user); // original grant-filtered state
-    const nodes=(state.nodes||[]).filter(x=>granted(x.node_id)).map(x=>({node_id:x.node_id,online:x.online,age_s:x.age_s,meta:x.meta,state:x.state}));
+    const nodes=(state.nodes||[]).filter(x=>granted(x.node_id)).map(x=>({node_id:x.node_id,online:x.online,age_s:x.age_s,meta:{actions:(Array.isArray(x.meta?.actions)?x.meta.actions:[]).filter(cap=>granted(x.node_id,cap))},state:{capabilities:Object.fromEntries(Object.entries(x.state?.capabilities||{}).filter(([cap])=>granted(x.node_id,cap)))}}));
     result={nodes,available_devices:nodes.length};
   }else{
     if(Object.keys(args).length!==1||typeof args.id!=='string'||!/^act_[a-f0-9]{20}$/.test(args.id))return json(err(id,-32602,'invalid action identifier'),400);
