@@ -1,0 +1,126 @@
+{
+  "version": "2026-10-28",
+  "registryOnly": true,
+  "providers": [
+    {
+      "id": "b3-mcp",
+      "name": "Investidor B3",
+      "source": "https://glama.ai/mcp/servers/mcp-dir/b3-mcp",
+      "category": "custody_portfolio",
+      "decision": "RESEARCH_ONLY",
+      "tradeAccess": false,
+      "connected": false,
+      "notes": "Brazilian consolidated B3 portfolio, D-1 read-only"
+    },
+    {
+      "id": "stock-trade-finance-api",
+      "name": "Stock Trade Tiingo",
+      "source": "https://glama.ai/mcp/servers/beatriz22092/stock-trade-finance-api",
+      "category": "market_data",
+      "decision": "REVIEW_PROVIDER",
+      "tradeAccess": false,
+      "connected": false,
+      "notes": "Tiingo market data, news, financials; API key required"
+    },
+    {
+      "id": "mcp-twelvedata",
+      "name": "Twelve Data",
+      "source": "https://glama.ai/mcp/servers/pipeworx-io/mcp-twelvedata",
+      "category": "market_data",
+      "decision": "REVIEW_PROVIDER",
+      "tradeAccess": false,
+      "connected": false,
+      "notes": "Quotes, time series, forex; check exchange coverage, entitlement, quotas"
+    },
+    {
+      "id": "brvm-mcp",
+      "name": "BRVM",
+      "source": "https://glama.ai/mcp/servers/SOTECHDI/brvm-mcp",
+      "category": "regional_equities",
+      "decision": "RESEARCH_ONLY",
+      "tradeAccess": false,
+      "connected": false,
+      "notes": "West African regional exchange; source and freshness validation required"
+    },
+    {
+      "id": "silicon-floor",
+      "name": "Silicon Floor",
+      "source": "https://glama.ai/mcp/servers/Baptoshi/silicon-floor",
+      "category": "sec_filings",
+      "decision": "RESEARCH_ONLY",
+      "tradeAccess": false,
+      "connected": false,
+      "notes": "SEC filings, ownership, insider trades and fund holdings"
+    },
+    {
+      "id": "thndr-mcp",
+      "name": "Thndr",
+      "source": "https://glama.ai/mcp/servers/armaaar/thndr-mcp",
+      "category": "account_portfolio",
+      "decision": "REVIEW_SECURITY",
+      "tradeAccess": false,
+      "connected": false,
+      "notes": "Unofficial broker account integration; verify credential storage and permissions"
+    },
+    {
+      "id": "robinhood-mcp",
+      "name": "Robinhood research",
+      "source": "https://glama.ai/mcp/servers/verygoodplugins/robinhood-mcp",
+      "category": "account_portfolio",
+      "decision": "REVIEW_SECURITY",
+      "tradeAccess": false,
+      "connected": false,
+      "notes": "Unofficial read-only Robinhood account research, never trade execution"
+    },
+    {
+      "id": "netanelavr-trading-mcp",
+      "name": "Trading research",
+      "source": "https://glama.ai/mcp/servers/netanelavr/trading-mcp",
+      "category": "sentiment_research",
+      "decision": "RESEARCH_ONLY",
+      "tradeAccess": false,
+      "connected": false,
+      "notes": "Screener, fundamentals, news and social sentiment; corroborate primary sources"
+    },
+    {
+      "id": "tv-mcp",
+      "name": "Trading Volatility",
+      "source": "https://glama.ai/mcp/servers/tradingvolatility/tv-mcp",
+      "category": "options_risk_data",
+      "decision": "REVIEW_PROVIDER",
+      "tradeAccess": false,
+      "connected": false,
+      "notes": "Options and volatility research, no automatic derivatives trade permission"
+    },
+    {
+      "id": "tigran-trading-mcp",
+      "name": "Crypto exchange trading",
+      "source": "https://glama.ai/mcp/servers/TigranPetosyants/trading-mcp-server",
+      "category": "crypto_broker_execution",
+      "decision": "EXECUTION_DISABLED",
+      "tradeAccess": false,
+      "connected": false,
+      "notes": "Binance/OKX order-capable interface; quarantine execution tools"
+    },
+    {
+      "id": "purple-flea",
+      "name": "Purple Flea",
+      "source": "https://glama.ai/mcp/servers/purple-flea/agent-trading",
+      "category": "leveraged_perpetual_execution",
+      "decision": "EXCLUDE_FROM_EXECUTION",
+      "tradeAccess": false,
+      "connected": false,
+      "notes": "Hyperliquid leveraged perpetuals up to 50x, wallet signing key risk"
+    },
+    {
+      "id": "deepblue",
+      "name": "Deep Blue",
+      "source": "https://glama.ai/mcp/servers/ClawHub-core/deepblue-mcp",
+      "category": "crypto_signals",
+      "decision": "REVIEW_PROVIDER",
+      "tradeAccess": false,
+      "connected": false,
+      "notes": "Signals/pay-per-call x402; independent validation and explicit cost opt-in required"
+    }
+  ]
+}
