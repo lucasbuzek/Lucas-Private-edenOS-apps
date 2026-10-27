@@ -8,7 +8,7 @@ const metadata={'io.modelcontextprotocol/protocolVersion':VERSION,'io.modelconte
 function call(method='tools/list',params={},headers={},identity=user){const body={jsonrpc:'2.0',id:1,method,params:{_meta:metadata,...params}};
  const h={'Content-Type':'application/json','Accept':'application/json, text/event-stream','MCP-Protocol-Version':VERSION,'Mcp-Method':method,...(method==='tools/call'?{'Mcp-Name':params.name}:{}),...headers};
  const request=new Request('https://private.example/api/mcp',{method:'POST',headers:h,body:JSON.stringify(body)});
- const rows={act_0123456789abcdef0123:{id:'act_0123456789abcdef0123',node_id:'mac-a',capability:'lists.refresh',status:'succeeded',created_at:1,completed_at:2,result:'{"ok":true}'}};
+ const rows={act_0123456789abcdef0123:{id:'act_0123456789abcdef0123',node_id:'mac-a',capability:'lists.refresh',status:'succeeded',created_at:1,completed_at:2,origin:JSON.stringify({subject:'owner@example.com'}),result:'{"ok":true}'}};
  const env={DB:{prepare(q){return {bind(id){return {async first(){return rows[id]||null}}}}}}};
  return handleAppleRavenMCP({request,env,user:identity,visibleState:async()=>({ids:['mac-a'],nodes:[{node_id:'mac-a',online:false,age_s:99,meta:{hostname:'test'},state:{capabilities:{}}}]}),allowed:(_u,id,cap)=>id==='mac-a'&&cap==='lists.refresh'});
 }
@@ -34,3 +34,5 @@ test('original Pages router rejects unauthenticated MCP traffic before dispatch'
  const r=await onRequest({request:req,env:{},params:{path:['mcp']}});
  assert.equal(r.status,401);
 });
+
+test('same device and same capability never leaks another profile action',async()=>{const r=await call('tools/call',{name:'appleraven.actions.status',arguments:{id:'act_0123456789abcdef0123'}},{},{...user,subject:'other-profile'});assert.equal(r.status,404)});
