@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark"><title>CRESUS · Trading Lab</title>
+<link rel="stylesheet" href="/styles.css">
+<style>
+.trade-app{max-width:860px;margin:auto;padding:clamp(18px,4vw,46px);color:#ece5d6}
+.trade-app h1{font-size:clamp(30px,5vw,52px);font-weight:500;letter-spacing:.07em}
+.trade-app h2{font-size:21px;margin-top:0}
+.trade-app p,.trade-app label{color:#c3b8a4;line-height:1.55}
+.trade-box{border:1px solid #493e2d;background:#15130f;padding:20px;border-radius:12px;margin-top:18px}
+.trade-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.trade-grid label{display:flex;flex-direction:column;gap:6px}
+.trade-app input,.trade-app select{background:#100f0c;border:1px solid #5e513e;border-radius:5px;color:#ece5d6;padding:10px;max-width:100%;font:inherit}
+.trade-app button{border:1px solid #a28753;background:#292315;color:#f3ebd9;padding:10px 16px;border-radius:6px;cursor:pointer}
+.trade-app button:disabled{opacity:.4}
+.trade-app pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;padding:14px;background:#10100d;color:#dfd5c4}
+.trade-status{color:#d4ba87;font-size:13px;letter-spacing:.06em}
+.trade-app a{color:#d2b37d}
+</style></head>
+<body><main class="trade-app">
+<p><a href="/">← CRESUS Workspace</a></p><h1>CRESUS <span style="color:#b69b65">Trading Lab</span></h1>
+<p class="trade-status">CANDIDATE BUILD · PAPER ONLY · NO LIVE BROKER CONNECTION</p>
+<p>Guided Trading drafts an explicitly simulated order for your review. Automated Trading evaluates a rule but cannot schedule or submit any order. Price inputs are manual and unverified.</p>
+<section class="trade-box"><h2>Guided trading — draft a paper order</h2>
+<form id="tradeForm"><div class="trade-grid">
+<label>Exchange MIC<input name="mic" required maxlength="4" value="XJSE"></label>
+<label>Listing ticker<input name="ticker" required placeholder="e.g. NPN"></label>
+<label>Currency<input name="currency" required maxlength="3" value="ZAR"></label>
+<label>Quantity<input name="quantity" required type="number" step="any" min="0.000001"></label>
+<label>Manual limit price<input name="limitPrice" required type="number" step="any" min="0.000001"></label>
+<label>Available paper capital<input name="availableCapital" required type="number" step="any" min="0.01"></label>
+<label>Max allocation % (≤10)<input name="maxAllocationPercent" type="number" min=".1" max="10" value="5" step=".1"></label>
+<label>Research source URL (optional)<input name="sourceUrl" type="url" placeholder="https://"></label>
+</div><p><button type="submit">Preview risk and order</button></p></form>
+<pre id="previewOut" role="status">No paper order drafted.</pre>
+<button id="recordPaper" type="button" disabled>Confirm and record paper order</button>
+<p id="recordOut" role="status"></p></section>
+<section class="trade-box"><h2>Automated trading — paper rule check</h2>
+<p>Test a threshold against a manually supplied observation. Unverified observations cannot trigger a strategy. No autonomous scheduled engine is active.</p>
+<form id="ruleForm"><div class="trade-grid">
+<label>Rule<select name="condition"><option value="AT_OR_BELOW">Price at or below</option><option value="AT_OR_ABOVE">Price at or above</option></select></label>
+<label>Threshold<input name="threshold" required type="number" step="any" min="0.000001"></label>
+<label>Observed price<input name="price" required type="number" step="any" min="0.000001"></label>
+</div><p><button type="submit">Evaluate simulation</button></p></form><pre id="ruleOut" role="status">No rule evaluated.</pre></section>
+<section class="trade-box"><h2>Paper order register</h2><button id="loadOrders" type="button">Load paper orders</button><pre id="ordersOut" role="status">Requires staging D1 migration 0004.</pre></section>
+</main><script type="module" src="/trading.js"></script></body></html>
