@@ -1,0 +1,13 @@
+{
+  "name": "lucas-raven-original-pages-with-appleraven-mcp",
+  "private": true,
+  "version": "0.2.0-candidate",
+  "type": "module",
+  "description": "Recovered existing Raven Pages source with AppleRAVEN private MCP overlay; no duplicate hosting service",
+  "scripts": {
+    "test": "sh tests/run_all.sh"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
