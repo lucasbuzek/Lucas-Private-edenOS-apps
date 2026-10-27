@@ -50,3 +50,16 @@ Date: 2026-10-27. Status: research and source inventory; no Mac device or remote
 ## Next independent work
 
 Preserve above inventory and eight-source capability decisions in AppleRAVEN master Asana. Continue authenticated *cloud* MCP/provider read-only acceptance through existing Creator/Cloudflare while the Mac is offline, without inventing supported iOS custom MCP. Once actual signed owner + local Mac session is established, enroll M1 and execute native read-only then permissioned write test.
+
+## Additional independently verified live references (same research session)
+
+| Archived title matched to live source | Evidence and AppleRAVEN relevance |
+|---|---|
+| [juliusloon macos-agent-bridge](https://glama.ai/mcp/servers/juliusloon/macos-agent-bridge) | File-root scoped native tools, approvals, idempotent writes, Shortcut gate, Mail draft/send gates and Raycast control panel. Valuable architecture comparison for AppleRAVEN permission UX, but its local scope does NOT equal our deployed owner relay. |
+| [thangduonghuu macos-ui-mcp](https://glama.ai/mcp/servers/thangduonghuu/macos-ui-mcp) | Semantic UI tree and click/type/screenshot via instrumented debug-build app harness. Development/testing reference only, NOT arbitrary macOS desktop access. |
+| [kapunakap ChatGPT iPhone Bridge](https://github.com/kapunakap/chatgpt-iphone-bridge) | Secure tunnel + Appium/Xcode path and opt-in separate iPhone browser. Requires actual Mac, signed WDA/phone and supported developer MCP client; never evidence of current iOS ChatGPT custom MCP support. |
+| [nickatnight96 iphone-mirror-mcp](https://glama.ai/mcp/servers/nickatnight96/iphone-mirror-mcp) | iPhone Mirroring control from macOS 15+, explicit Screen Recording/Accessibility, paired phone. Deferred optional physical acceptance path rather than owner M1 first MVP. |
+| [ailenshen Apple Notes MCP](https://glama.ai/mcp/servers/ailenshen/apple-notes-mcp) | Notes lists, search, read and Markdown draft creation. Must separately confirm exact note identification, native permissions and write consent. |
+| [kevinswint xcode-studio-mcp](https://github.com/kevinswint/xcode-studio-mcp) | Swift build, simulator launch, screenshot and UI interaction; good isolated engineering test dependency, not part of family end-user AppleRAVEN install. |
+
+Index update: 413 saved archived page identifiers remain inventoried, **14 live upstream project examples now independently verified**. Binary WebArchive content extraction remains **0**; the original saved URL/body for each archive was not independently decoded. Previous count of eight verified source matches in earlier paragraphs is the older checkpoint.
