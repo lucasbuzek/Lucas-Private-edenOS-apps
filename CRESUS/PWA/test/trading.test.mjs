@@ -27,7 +27,7 @@ test('stale and unverified signals never trigger automated paper candidates', ()
  assert.equal(assessPaperTrigger(rule,quote).eligible,true);
  assert.equal(assessPaperTrigger(rule,{...quote,verified:false}).reason,'UNVERIFIED_QUOTE');
  assert.equal(assessPaperTrigger(rule,{...quote,observedAt:'2000-01-01T00:00:00Z'}).reason,'STALE_OR_MISSING_QUOTE');
- assert.equal(assessPaperTrigger({...rule,condition:'INVALID'},quote),undefined);
+ assert.throws(()=>assessPaperTrigger({...rule,condition:'INVALID'},quote));
 });
 test('paper-only API requires authenticated caller and explicit confirmation', async () => {
  let r=await handleTradingApi(new Request('https://test/api/trading/status'),{},null,'/api/trading/status');
