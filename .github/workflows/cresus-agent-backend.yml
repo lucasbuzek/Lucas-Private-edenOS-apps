@@ -23,6 +23,9 @@ jobs:
           cd CRESUS/agent-backend
           npm run check
           npm test
+      - name: External read-only Luno ticker smoke test (no credentials or orders)
+        timeout-minutes: 2
+        run: node CRESUS/agent-backend/scripts/live-proof.mjs
       - name: Existing CRESUS PWA regression
         run: node --test CRESUS/PWA/test/*.test.mjs
       - name: No broker writes or private credentials
