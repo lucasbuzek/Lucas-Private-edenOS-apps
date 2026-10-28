@@ -1,11 +1,14 @@
 import { generate } from './providers.js';
-const AVAILABLE = ['workers-ai', 'gemini', 'anthropic'];
+const AVAILABLE = ['workers-ai', 'gemini', 'anthropic', 'openai', 'mistral'];
 export function providerChoices(env) {
   return [
     { id:'codex-cloud', label:'Codex Cloud', available:false, reason:'No verified account-based task connector' },
     { id:'workers-ai', label:'Cloudflare Workers AI', available:!!env.AI && !!env.WORKERS_AI_MODEL },
     { id:'gemini', label:'Gemini', available:!!env.GEMINI_API_KEY && !!env.GEMINI_MODEL },
     { id:'anthropic', label:'Anthropic', available:!!env.ANTHROPIC_API_KEY && !!env.ANTHROPIC_MODEL },
+    { id:'openai', label:'OpenAI API', available:!!env.OPENAI_API_KEY && !!env.OPENAI_MODEL },
+    { id:'mistral', label:'Mistral AI', available:!!env.MISTRAL_API_KEY && !!env.MISTRAL_MODEL },
+    { id:'apple-native', label:'Apple on-device AI (native CRESUS only)', available:false, reason:'Not available in a Cloudflare Worker' },
     { id:'none', label:'Set up later', available:true }
   ];
 }
