@@ -37,6 +37,7 @@ const store = {
 
 const state = {
   me: null,
+  presentation: store.get('cresus.presentation','standard') === 'expert' ? 'expert' : 'standard',
   convId: null,
   convTitle: '',
   busy: false,
@@ -452,6 +453,42 @@ function selectWorkspace(key) {
   if (matchMedia('(pointer: coarse)').matches) $('chat').scrollTop = 0;
 }
 
+
+function renderPresentation() {
+  const expert = state.presentation === 'expert';
+  document.querySelectorAll('[data-presentation]').forEach(button => {
+    const active = button.dataset.presentation === state.presentation;
+    button.setAttribute('aria-pressed', String(active));
+  });
+  $('standardDesk').hidden = expert;
+  $('expertDesk').hidden = !expert;
+  $('presentationSummary').textContent = expert
+    ? 'Advanced evidence, completion and strategy controls — same CRESUS data and permissions.'
+    : 'Clear research, holdings and income — no invented balances or fabricated market data.';
+}
+document.querySelectorAll('[data-presentation]').forEach(button => {
+  button.addEventListener('click', () => {
+    state.presentation = button.dataset.presentation === 'expert' ? 'expert' : 'standard';
+    store.set('cresus.presentation', state.presentation);
+    state.mode = state.presentation === 'expert' ? 'expert' : 'simple';
+    store.set('cresus.mode', state.mode);
+    renderPresentation();
+    renderModes();
+  });
+});
+document.querySelectorAll('[data-cresus-workspace]').forEach(button =>
+  button.addEventListener('click', () => selectWorkspace(button.dataset.cresusWorkspace))
+);
+document.querySelectorAll('[data-cresus-command]').forEach(button => button.addEventListener('click', () => {
+  if (button.dataset.cresusCommand !== 'council') return;
+  state.mode = 'council';
+  store.set('cresus.mode', state.mode);
+  renderModes();
+  $('input').value = 'Run The Gilded Order challenge on my investment thesis. If I have not supplied one, ask me for the security and investment case; do not invent it.';
+  autosize();
+  $('composer').requestSubmit();
+}));
+
 // ---------- Wiring ----------
 function autosize() {
   const t = $('input');
@@ -534,14 +571,17 @@ $('addUser').addEventListener('submit', async (e) => {
 
 (async function init() {
   renderModes();
+  renderPresentation();
   showNet();
   try {
     state.me = await api('/api/me');
+    $('verifiedRuntime').textContent = 'Signed in: ' + state.me.email + ' · AI capabilities checked separately; market data not verified.';
     $('whoami').textContent = state.me.email;
     $('adminBtn').hidden = state.me.role !== 'admin';
     refreshQuota();
     if (!mobile()) loadConversations();
     const intelligence = await api('/api/intelligence');
+    if (intelligence.provider) $('verifiedRuntime').textContent = 'Signed in: ' + state.me.email + ' · Selected intelligence: ' + intelligence.provider + ' (inference not yet tested).';
     if (!intelligence.configured) await showIntelligence(true);
   } catch (e) {
     const body = cresusShell('simple');
