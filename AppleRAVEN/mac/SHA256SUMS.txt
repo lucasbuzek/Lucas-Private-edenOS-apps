@@ -1,0 +1,3 @@
+ca7be34bb468a8a73a719700e7f9319d0741d9e29e64e408025b70459032941e  AppleRAVEN-Mac-Setup.command
+fb693744ba519d1556c4a8a87dbd07fd6d600e06ddd55652f06bdf9d58de6c30  README-FIRST.txt
+0dbda9bde1b5b68cf4b36f295299c2e2bde577dc8971cdad96b9cdffcab923c0  appleraven_agent.py
