@@ -25,16 +25,22 @@ MAX_REPLY = 8192
 class Rejected(Exception):
     pass
 
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        raise Rejected("AppleRAVEN service redirect refused")
+
 def post(endpoint, path, payload, token=None, timeout=15):
     if endpoint != ENDPOINT:
         raise Rejected("Only the pinned AppleRAVEN HTTPS service origin is permitted")
     data = json.dumps(payload, separators=(",", ":")).encode()
+    if len(data) > 2048:
+        raise Rejected("Request exceeds device service limit")
     headers = {"Content-Type": "application/json", "User-Agent": "AppleRAVEN-Mac/0.1-candidate"}
     if token:
         headers["Authorization"] = "Bearer " + token
     req = urllib.request.Request(endpoint + path, data=data, headers=headers, method="POST")
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as response:
+        with urllib.request.build_opener(NoRedirect()).open(req, timeout=timeout) as response:
             if response.status == 204:
                 return {}
             raw = response.read(MAX_REPLY + 1)
@@ -67,8 +73,12 @@ def native_shortcuts():
     try:
         r = subprocess.run(["shortcuts", "list"], capture_output=True, text=True,
                            timeout=20, check=False)
+        original = r.stdout.strip() if r.returncode == 0 else ""
+        output = original[:2800]
+        while len(json.dumps(output).encode()) > 1500:
+            output = output[:-1]
         return {"ok": r.returncode == 0,
-                "shortcuts": r.stdout.strip()[:2800] if r.returncode == 0 else "",
+                "shortcuts": output, "truncated": len(output) < len(original),
                 "error": "" if r.returncode == 0 else "Shortcuts command failed"}
     except (subprocess.TimeoutExpired, OSError):
         return {"ok": False, "error": "Shortcuts operation unavailable"}
@@ -154,3 +164,4 @@ if __name__ == "__main__":
     except (Rejected, urllib.error.URLError, OSError) as exc:
         print("AppleRAVEN: " + str(exc), file=sys.stderr)
         sys.exit(1)
+

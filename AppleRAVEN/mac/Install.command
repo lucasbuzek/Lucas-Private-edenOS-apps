@@ -41,20 +41,6 @@ else
     fail "Copied file checksum mismatch; abort."
 fi
 
-if [[ ! -e "$PLIST" ]]; then
-  "$PYTHON" - "$PLIST" "$PYTHON" "$AGENT" <<'PY'
-import pathlib, plistlib, sys
-target, python, agent = map(str, sys.argv[1:])
-p = {"Label": "com.lucasbuzek.appleraven.agent",
-     "ProgramArguments": [python, agent],
-     "RunAtLoad": True,
-     "KeepAlive": True,
-     "StandardOutPath": str(pathlib.Path.home()/"Library/Logs/AppleRAVEN.log"),
-     "StandardErrorPath": str(pathlib.Path.home()/"Library/Logs/AppleRAVEN.error.log")}
-pathlib.Path(target).write_bytes(plistlib.dumps(p))
-PY
-  /bin/chmod 600 "$PLIST"
-fi
 
 echo "AppleRAVEN local files verified. No changes to RDC, BIFROST, Tailscale or macOS security."
 "$PYTHON" "$AGENT" --status
@@ -77,6 +63,23 @@ else
   echo "Existing credential retained; no duplicate enrollment."
 fi
 
+# Register at login only after pairing has succeeded.
+if [[ ! -e "$PLIST" ]]; then
+  "$PYTHON" - "$PLIST" "$PYTHON" "$AGENT" <<'PY'
+import pathlib, plistlib, sys
+target, python, agent = map(str, sys.argv[1:])
+p = {"Label": "com.lucasbuzek.appleraven.agent",
+     "ProgramArguments": [python, agent],
+     "RunAtLoad": True,
+     "KeepAlive": True,
+     "StandardOutPath": str(pathlib.Path.home()/"Library/Logs/AppleRAVEN.log"),
+     "StandardErrorPath": str(pathlib.Path.home()/"Library/Logs/AppleRAVEN.error.log")}
+pathlib.Path(target).write_bytes(plistlib.dumps(p))
+PY
+  /bin/chmod 600 "$PLIST"
+fi
+
+
 SERVICE="gui/$(id -u)/$LABEL"
 if ! /bin/launchctl print "$SERVICE" >/dev/null 2>&1; then
   /bin/launchctl bootstrap "gui/$(id -u)" "$PLIST" ||
@@ -91,3 +94,4 @@ echo "AppleRAVEN agent loaded for signed-in user."
 echo "Cloud acceptance is complete ONLY after the owner MCP lists this device online"
 echo "and an authenticated Shortcuts tool call returns a real native result."
 echo "Logs: ~/Library/Logs/AppleRAVEN.log"
+

@@ -6,8 +6,8 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd -P)"
 OUT="$ROOT/dist"
 APP="$OUT/AppleRAVEN.app"
+[[ ! -e "$OUT" ]] || { echo "Existing build output retained; choose a clean checkout for this build." >&2; exit 1; }
 mkdir -p "$OUT"
-rm -rf "$APP"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
@@ -51,3 +51,4 @@ ln -s /Applications "$STAGING/Applications"
 (cd "$OUT" && /usr/bin/shasum -a 256 "AppleRAVEN-Mac-M1-0.1.0-UNNOTARIZED.dmg" > SHA256SUMS.txt)
 printf '\nBuild artifact: %s\n' "$OUT/AppleRAVEN-Mac-M1-0.1.0-UNNOTARIZED.dmg"
 printf 'TEST RELEASE: ad-hoc signed only; NOT notarized and NOT a production Installer.\n'
+
