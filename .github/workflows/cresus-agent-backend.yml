@@ -26,6 +26,9 @@ jobs:
       - name: External read-only Luno ticker smoke test (no credentials or orders)
         timeout-minutes: 2
         run: node CRESUS/agent-backend/scripts/live-proof.mjs
+      - name: Verify live CRESUS private Access gate (zero credentials or mutations)
+        timeout-minutes: 2
+        run: node CRESUS/agent-backend/scripts/deployed-access-smoke.mjs
       - name: Existing CRESUS PWA regression
         run: node --test CRESUS/PWA/test/*.test.mjs
       - name: No broker writes or private credentials
