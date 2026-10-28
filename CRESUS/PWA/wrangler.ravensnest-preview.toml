@@ -27,4 +27,6 @@ PROVIDER = "workers-ai"
 WORKERS_AI_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
 GEMINI_MODEL = "gemini-2.5-flash"
 ANTHROPIC_MODEL = "claude-sonnet-4-5"
+OPENAI_MODEL = "gpt-4.1-mini"
+MISTRAL_MODEL = "mistral-small-latest"
 # Optional Gemini / Anthropic credentials are intentionally NOT inherited from other projects.
