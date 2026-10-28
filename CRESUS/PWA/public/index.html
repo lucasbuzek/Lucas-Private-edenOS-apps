@@ -59,6 +59,11 @@
         </button>
         <div class="brand only-mobile"><svg class="seal" aria-hidden="true"><use href="#seal"/></svg><span>CRESUS</span></div>
         <div id="convTitle" class="conv-title only-desktop"></div>
+        <div class="presentation-switch" role="group" aria-label="CRESUS interface depth">
+          <span class="presentation-label">VIEW</span>
+          <button type="button" class="presentation-btn" data-presentation="standard" aria-pressed="true">Standard</button>
+          <button type="button" class="presentation-btn" data-presentation="expert" aria-pressed="false">Advanced / Expert</button>
+        </div>
         <div class="bar-right">
           <span id="netState" class="net" role="status" hidden>Offline</span>
           <button id="newBtn" class="icon-btn only-mobile" aria-label="New inquiry">
@@ -84,6 +89,29 @@
           <svg class="seal seal-lg" aria-hidden="true"><use href="#seal"/></svg>
           <h1 class="wordmark">CRESUS</h1>
           <p class="tagline">Research · organize · calculate · explain. <span>You decide.</span></p>
+          <div class="briefing-head">
+            <span class="briefing-kicker">RESEARCH DESK</span>
+            <p id="presentationSummary" class="briefing-summary">Standard research, organized around your own evidence.</p>
+          </div>
+          <div id="standardDesk" class="briefing-grid" aria-label="CRESUS standard workspaces">
+            <button type="button" data-cresus-workspace="research" class="briefing-tile"><span>01 / RESEARCH</span><strong>Examine a security</strong><small>Current evidence and uncertainty</small></button>
+            <button type="button" data-cresus-workspace="portfolio" class="briefing-tile"><span>02 / PORTFOLIO</span><strong>Review holdings</strong><small>Only the positions you supply</small></button>
+            <button type="button" data-cresus-workspace="income" class="briefing-tile"><span>03 / ZACCHAEUS</span><strong>Income & dividends</strong><small>Declared and estimated kept separate</small></button>
+          </div>
+          <section id="expertDesk" class="expert-desk" hidden aria-label="Advanced research workbench">
+            <div class="expert-desk-header"><span class="briefing-kicker">ADVANCED RESEARCH WORKBENCH</span>
+              <p>Evidence before conclusions. Expert runs until COMPLETE, PARTIALLY COMPARABLE, or EXHAUSTED.</p>
+            </div>
+            <div class="expert-grid">
+              <button type="button" data-cresus-workspace="research" class="expert-tile"><span>RESEARCH</span><strong>Evidence matrix</strong><small>Identity · Price · Fundamentals · Risk</small></button>
+              <button type="button" data-cresus-workspace="evidence" class="expert-tile"><span>PROVENANCE</span><strong>Source review</strong><small>Dates · Conflicts · Missing evidence</small></button>
+              <button type="button" data-cresus-workspace="strategy" class="expert-tile"><span>STRATEGY LAB</span><strong>Point-in-time analysis</strong><small>Clock · FX · Bias · Benchmarks</small></button>
+              <button type="button" data-cresus-workspace="income" class="expert-tile"><span>ZACCHAEUS</span><strong>Income coverage</strong><small>Realized · Declared · Forward · Estimate</small></button>
+              <button type="button" data-cresus-command="council" class="expert-tile"><span>THE GILDED ORDER</span><strong>Challenge the thesis</strong><small>Five lenses, one CRESUS synthesis</small></button>
+              <button type="button" data-cresus-workspace="providers" class="expert-tile"><span>INTELLIGENCE</span><strong>Provider capabilities</strong><small>Available ≠ authenticated ≠ tested</small></button>
+            </div>
+            <p id="verifiedRuntime" class="runtime-status" role="status">Authenticated runtime and provider status not yet verified.</p>
+          </section>
           <div id="modeCard" class="mode-card"></div>
           <div id="starters" class="starters"></div>
         </section>
