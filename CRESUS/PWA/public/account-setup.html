@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CRESUS — $5 Account Setup</title><link rel="stylesheet" href="/styles.css">
+<style>
+.setup{max-width:880px;margin:auto;padding:clamp(18px,4vw,44px);color:#ece5d6}
+.setup h1{font-weight:500;letter-spacing:.06em;font-size:clamp(26px,5vw,42px)}
+.setup p,.setup li{line-height:1.55;color:#d0c7b8}
+.setup a{color:#ddbd7d}
+.setup fieldset,.setup section{margin:18px 0;padding:18px;border:1px solid #514631;border-radius:10px;background:#15130f}
+.setup label{display:block;margin:10px 0;line-height:1.5}
+.setup input{accent-color:#b89963}
+.setup button{background:#262014;color:#f2eadb;border:1px solid #b89b67;padding:9px 16px;border-radius:6px;cursor:pointer}
+.setup .muted{color:#b7ad9b}
+.setup .badge-local{font-size:12px;letter-spacing:.07em;color:#d7bb85}
+.setup .provider{margin:12px 0}
+</style></head><body><main class="setup">
+<p><a href="/">← CRESUS</a> · <a href="/trading.html">Trading Lab</a></p>
+<p class="badge-local">FIRST PROOF · MAXIMUM $5 USD · NEVER AUTOMATICALLY CHARGED</p>
+<h1>Account setup and first trading proof</h1>
+<p>This guide helps you prepare an account with the actual provider. CRESUS does not create financial accounts for you, handle identity documents, collect payment-card details, or authorize an order.</p>
+<fieldset><legend>Choose what to test</legend>
+<label><input type="radio" name="provider" value="easyequities" checked> Shares / ETFs — EasyEquities (guided manual execution)</label>
+<label><input type="radio" name="provider" value="luno"> Spot crypto — Luno (official API exists; trading integration disabled)</label>
+</fieldset>
+<section><h2 id="providerHeading">EasyEquities</h2><p id="providerDetails"></p>
+<p><a id="createLink" rel="noopener noreferrer" target="_blank" href="https://www.easyequities.co.za/">Open official account website</a></p>
+<p><a id="supportLink" rel="noopener noreferrer" target="_blank" href="https://support.easyequities.co.za/">Check official account and payment guidance</a></p>
+</section>
+<section><h2>Account preparation checklist</h2>
+<p class="muted">Progress is saved only in this browser and is self-reported. It does NOT prove a broker verified your identity, funded your account or accepted the virtual card.</p>
+<div id="steps"></div><button id="reset" type="button">Clear locally saved checklist</button><p id="progress" role="status"></p></section>
+<section><h2>Spending boundary</h2>
+<p>Maximum intended outlay: <strong>$5 USD equivalent, including card, FX and brokerage fees</strong>. Conversion to ZAR and the provider's minimums must be checked at payment time. If total cost exceeds $5, stop instead of raising the amount automatically.</p>
+<p>A virtual credit card may be rejected because of issuer rules, 3-D Secure, merchant limits, cross-border restrictions or the provider's accepted payment types. No transaction is submitted by CRESUS.</p></section>
+</main><script type="module" src="/account-setup.js"></script></body></html>
