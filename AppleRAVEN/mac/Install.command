@@ -5,7 +5,7 @@ set -euo pipefail
 
 fail() { printf 'AppleRAVEN: %s\n' "$*" >&2; exit 1; }
 
-if [[ "\${1:-}" == "--dry-run" ]]; then
+if [[ "${1:-}" == "--dry-run" ]]; then
   echo "AppleRAVEN: read-only packaging check succeeded"
   exit 0
 fi
