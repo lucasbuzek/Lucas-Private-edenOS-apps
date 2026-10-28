@@ -342,7 +342,7 @@ async function refreshQuota() {
   try {
     const me = await api('/api/me');
     $('quota').textContent = me.dailyLimit == null
-      ? `${me.usedToday} sent today · owner (no daily cap)`
+      ? (me.developmentAlpha ? `${me.usedToday} sent today · DEVELOPMENT_ALPHA (CRESUS cap off; provider limits apply)` : `${me.usedToday} sent today · owner (no daily cap)`)
       : `${Math.max(me.dailyLimit - me.usedToday, 0)} of ${me.dailyLimit} messages left today`;
   } catch { /* keep last value */ }
 }
@@ -387,12 +387,14 @@ function adminMsg(text, kind = '') {
 }
 async function loadAdmin() {
   const d = await api('/api/admin/users');
-  $('maxUsers').value = d.maxUsers;
-  $('dailyLimit').value = d.dailyMessageLimit;
+  $('maxUsers').value = d.maxUsers ?? '';
+  $('dailyLimit').value = d.dailyMessageLimit ?? '';
   const owner = state.me.owner;
-  $('maxUsers').disabled = $('dailyLimit').disabled = $('saveLimits').disabled = !owner;
+  $('maxUsers').disabled = $('dailyLimit').disabled = $('saveLimits').disabled = !owner || !!d.developmentAlpha;
   const active = d.users.filter((u) => u.status === 'active');
-  $('seatInfo').textContent = `${active.length} of ${d.maxUsers} seats in use${owner ? '' : ' · only the owner can change limits'}.`;
+  $('seatInfo').textContent = d.developmentAlpha
+    ? `${active.length} accounts · DEVELOPMENT_ALPHA: CRESUS user/message caps disabled (external Access and provider limits remain).`
+    : `${active.length} of ${d.maxUsers} seats in use${owner ? '' : ' · only the owner can change limits'}.`;
   $('syncNote').textContent = d.accessSync
     ? 'Changes here also update the Cloudflare Access sign-in list.'
     : 'Access sync is off: also add or remove the person in the Cloudflare Access group.';
