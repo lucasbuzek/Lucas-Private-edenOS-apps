@@ -237,3 +237,29 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .workspace-label { display: none; }
   .workspace-btn { padding: 6px 10px; font-size: 12px; }
 }
+
+/* CRESUS sovereign research surfaces: standard and expert use the same backend. */
+.presentation-switch{display:flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:999px;padding:3px;margin-left:auto;min-width:0}
+.presentation-label{font-size:10px;letter-spacing:.15em;color:var(--muted);margin:0 5px 0 9px}
+.presentation-btn{border:0;background:transparent;color:var(--muted);border-radius:999px;font-size:12px;padding:6px 10px;white-space:nowrap}
+.presentation-btn[aria-pressed="true"]{background:var(--gold);color:var(--gold-ink);font-weight:700}
+.briefing-head{margin:0 auto 12px;width:min(100%,940px);text-align:left}
+.briefing-kicker{font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--gold)}
+.briefing-summary{font-size:13px;color:var(--muted);margin:3px 0}
+.briefing-grid,.expert-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:min(100%,940px);margin:0 auto 15px;text-align:left}
+.briefing-tile,.expert-tile{display:flex;flex-direction:column;align-items:flex-start;gap:5px;text-align:left;min-width:0;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:15px;color:var(--text)}
+.briefing-tile:hover,.expert-tile:hover{border-color:var(--gold);background:var(--raised)}
+.briefing-tile span,.expert-tile span{font-size:10px;letter-spacing:.12em;color:var(--gold)}
+.briefing-tile strong,.expert-tile strong{font-family:var(--serif);font-size:16px;font-weight:550}
+.briefing-tile small,.expert-tile small{color:var(--muted);font-size:12px;line-height:1.4}
+.expert-desk{width:min(100%,940px);margin:0 auto 18px;text-align:left;border:1px solid var(--line);border-radius:18px;padding:14px;background:var(--raised)}
+.expert-desk-header{margin:0 0 12px}
+.expert-desk-header p{font-size:12.5px;color:var(--muted);margin:3px 0}
+.expert-grid{grid-template-columns:repeat(3,minmax(0,1fr));width:100%}
+.expert-tile{background:var(--surface)}
+.runtime-status{font-size:11.5px;color:var(--muted);margin:10px 2px 0}
+[data-cresus-workspace]:focus-visible,[data-cresus-command]:focus-visible,.presentation-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+[hidden]{display:none!important}
+@media(max-width:959px){.presentation-label{display:none}.presentation-btn{font-size:11px;padding:6px}.briefing-grid,.expert-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.briefing-tile,.expert-tile{padding:12px}}
+@media(max-width:460px){.presentation-switch{gap:0}.presentation-btn{font-size:10px;padding:5px 6px}.briefing-grid,.expert-grid{grid-template-columns:1fr}.briefing-tile,.expert-tile{padding:11px}.briefing-tile small,.expert-tile small{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.briefing-tile,.expert-tile,.presentation-btn{transition:none!important}}
