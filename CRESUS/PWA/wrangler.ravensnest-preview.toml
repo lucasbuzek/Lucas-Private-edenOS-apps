@@ -1,0 +1,33 @@
+# Isolated CRESUS RAVENnest development preview — never use the original production D1.
+# Repo source branch: feature/cresus-ravensnest-standard-expert-20261028
+name = "cresus-ravensnest-preview"
+main = "src/worker.js"
+compatibility_date = "2026-10-07"
+workers_dev = true
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = ["/api/*"]
+
+[ai]
+binding = "AI"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "cresus_ravensnest_preview"
+database_id = "1316b75c-6c75-4013-9748-f7ff3af940a9"
+
+[vars]
+OWNER_EMAIL = "lucasbuzek@gmail.com"
+ACCESS_TEAM_DOMAIN = "lucasravensnest.cloudflareaccess.com"
+ACCESS_AUD = "02252382478b817fecee9e0bd47c6e9ab8831c3e4ef9c29f59efd89695c8a212"
+DEVELOPMENT_ALPHA = "true"
+PROVIDER = "workers-ai"
+WORKERS_AI_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+GEMINI_MODEL = "gemini-2.5-flash"
+ANTHROPIC_MODEL = "claude-sonnet-4-5"
+OPENAI_MODEL = "gpt-4.1-mini"
+MISTRAL_MODEL = "mistral-small-latest"
+# Optional Gemini / Anthropic credentials are intentionally NOT inherited from other projects.

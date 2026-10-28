@@ -29,6 +29,8 @@ async function setting(env, key, fallback) {
   return row ? row.value : fallback;
 }
 
+const isDevelopmentAlpha = env => String(env.DEVELOPMENT_ALPHA).toLowerCase() === 'true';
+
 async function usageToday(env, email) {
   const row = await env.DB.prepare('SELECT count FROM usage WHERE email = ? AND day = ?')
     .bind(email, today()).first();
@@ -111,7 +113,7 @@ async function handleChat(request, env, user) {
 
   // Daily per-person cap, so the free model allowance is shared fairly
   const limit = Number(await setting(env, 'daily_message_limit', '40'));
-  if (!user.owner && (await usageToday(env, user.email)) >= limit) {
+  if (!isDevelopmentAlpha(env) && !user.owner && (await usageToday(env, user.email)) >= limit) {
     return json({ error: `Daily limit of ${limit} messages reached. Resets at 02:00 SAST.` }, 429);
   }
 
@@ -194,8 +196,9 @@ async function handleAdmin(request, env, user, path) {
     ).all();
     return json({
       users: results,
-      maxUsers: Number(await setting(env, 'max_users', '2')),
-      dailyMessageLimit: Number(await setting(env, 'daily_message_limit', '40')),
+      maxUsers: isDevelopmentAlpha(env) ? null : Number(await setting(env, 'max_users', '2')),
+      dailyMessageLimit: isDevelopmentAlpha(env) ? null : Number(await setting(env, 'daily_message_limit', '40')),
+      developmentAlpha: isDevelopmentAlpha(env),
       accessSync: !!env.CF_API_TOKEN,
     });
   }
@@ -210,7 +213,7 @@ async function handleAdmin(request, env, user, path) {
     const { n } = await env.DB.prepare(
       "SELECT COUNT(*) AS n FROM users WHERE status = 'active' AND email != ?"
     ).bind(email).first();
-    if (n >= maxUsers) return json({ error: `User limit reached (${maxUsers}). Raise it first.` }, 409);
+    if (!isDevelopmentAlpha(env) && n >= maxUsers) return json({ error: `User limit reached (${maxUsers}). Raise it first.` }, 409);
 
     await env.DB.prepare(
       `INSERT INTO users (email, role, status, added_by) VALUES (?, ?, 'active', ?)
@@ -229,6 +232,7 @@ async function handleAdmin(request, env, user, path) {
   }
 
   if (request.method === 'PUT' && path === '/api/admin/settings') {
+    if (isDevelopmentAlpha(env)) return json({ error: 'DEVELOPMENT_ALPHA has no CRESUS-side seat or message caps; provider limits still apply.' }, 409);
     if (!user.owner) return json({ error: 'Only the owner can change limits' }, 403);
     const body = await request.json();
     const updates = [];
@@ -265,8 +269,9 @@ export default {
       if (path === '/api/me') {
         return json({
           email: user.email, role: user.role, owner: user.owner,
+          developmentAlpha: isDevelopmentAlpha(env),
           usedToday: await usageToday(env, user.email),
-          dailyLimit: user.owner ? null : Number(await setting(env, 'daily_message_limit', '40')),
+          dailyLimit: isDevelopmentAlpha(env) || user.owner ? null : Number(await setting(env, 'daily_message_limit', '40')),
         });
       }
       if (path === '/api/intelligence' && request.method === 'GET') {

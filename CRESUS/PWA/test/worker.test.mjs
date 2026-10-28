@@ -85,7 +85,7 @@ test('forged, expired and wrong-audience tokens are rejected', async () => {
 
 test('owner is automatically admin', async () => {
   const r = await call('/api/me', { email: OWNER });
-  assert.deepEqual(r.body, { email: OWNER, role: 'admin', owner: true, usedToday: 0, dailyLimit: null });
+  assert.deepEqual(r.body, { email: OWNER, role: 'admin', owner: true, developmentAlpha: false, usedToday: 0, dailyLimit: null });
 });
 
 test('someone not on the list gets 403', async () => {
@@ -228,4 +228,26 @@ test('legacy users retain the existing Workers AI provider until setup is saved'
   assert.equal(answer.status,200);
   assert.equal((await call('/api/intelligence',{email:'legacy@example.com',method:'PUT',body:{provider:'none'}})).status,200);
   assert.equal((await call('/api/chat',{email:'legacy@example.com',method:'POST',body:chat('disabled by user choice')})).status,409);
+});
+
+test('DEVELOPMENT_ALPHA removes CRESUS quotas without removing authentication or upstream constraints', async()=>{
+  const original=env.DEVELOPMENT_ALPHA;
+  env.DEVELOPMENT_ALPHA='true';
+  try{
+    const me=await call('/api/me',{email:'wife@gmail.com'});
+    assert.equal(me.status,200);
+    assert.equal(me.body.developmentAlpha,true);
+    assert.equal(me.body.dailyLimit,null);
+    const d=await call('/api/admin/users',{email:OWNER});
+    assert.equal(d.body.developmentAlpha,true);
+    assert.equal(d.body.maxUsers,null);
+    assert.equal(d.body.dailyMessageLimit,null);
+    assert.equal((await call('/api/admin/settings',{email:OWNER,method:'PUT',body:{maxUsers:1}})).status,409);
+    // The member had exhausted a 2-message cap in commercial behavior tests.
+    assert.equal((await call('/api/chat',{email:'wife@gmail.com',method:'POST',body:chat('alpha unrestricted')})).status,200);
+    assert.equal((await call('/api/admin/users',{email:OWNER,method:'POST',body:{email:'alpha-tester@example.com'}})).status,200);
+    assert.equal((await call('/api/me',{email:'alpha-tester@example.com'})).status,200);
+    assert.equal((await call('/api/me')).status,401);
+    assert.equal((await call('/api/conversations',{email:'stranger@example.com'})).status,403);
+  }finally{if(original===undefined)delete env.DEVELOPMENT_ALPHA;else env.DEVELOPMENT_ALPHA=original;}
 });

@@ -37,6 +37,7 @@ const store = {
 
 const state = {
   me: null,
+  presentation: store.get('cresus.presentation','standard') === 'expert' ? 'expert' : 'standard',
   convId: null,
   convTitle: '',
   busy: false,
@@ -341,7 +342,7 @@ async function refreshQuota() {
   try {
     const me = await api('/api/me');
     $('quota').textContent = me.dailyLimit == null
-      ? `${me.usedToday} sent today · owner (no daily cap)`
+      ? (me.developmentAlpha ? `${me.usedToday} sent today · DEVELOPMENT_ALPHA (CRESUS cap off; provider limits apply)` : `${me.usedToday} sent today · owner (no daily cap)`)
       : `${Math.max(me.dailyLimit - me.usedToday, 0)} of ${me.dailyLimit} messages left today`;
   } catch { /* keep last value */ }
 }
@@ -386,12 +387,14 @@ function adminMsg(text, kind = '') {
 }
 async function loadAdmin() {
   const d = await api('/api/admin/users');
-  $('maxUsers').value = d.maxUsers;
-  $('dailyLimit').value = d.dailyMessageLimit;
+  $('maxUsers').value = d.maxUsers ?? '';
+  $('dailyLimit').value = d.dailyMessageLimit ?? '';
   const owner = state.me.owner;
-  $('maxUsers').disabled = $('dailyLimit').disabled = $('saveLimits').disabled = !owner;
+  $('maxUsers').disabled = $('dailyLimit').disabled = $('saveLimits').disabled = !owner || !!d.developmentAlpha;
   const active = d.users.filter((u) => u.status === 'active');
-  $('seatInfo').textContent = `${active.length} of ${d.maxUsers} seats in use${owner ? '' : ' · only the owner can change limits'}.`;
+  $('seatInfo').textContent = d.developmentAlpha
+    ? `${active.length} accounts · DEVELOPMENT_ALPHA: CRESUS user/message caps disabled (external Access and provider limits remain).`
+    : `${active.length} of ${d.maxUsers} seats in use${owner ? '' : ' · only the owner can change limits'}.`;
   $('syncNote').textContent = d.accessSync
     ? 'Changes here also update the Cloudflare Access sign-in list.'
     : 'Access sync is off: also add or remove the person in the Cloudflare Access group.';
@@ -451,6 +454,42 @@ function selectWorkspace(key) {
   $('composer').requestSubmit();
   if (matchMedia('(pointer: coarse)').matches) $('chat').scrollTop = 0;
 }
+
+
+function renderPresentation() {
+  const expert = state.presentation === 'expert';
+  document.querySelectorAll('[data-presentation]').forEach(button => {
+    const active = button.dataset.presentation === state.presentation;
+    button.setAttribute('aria-pressed', String(active));
+  });
+  $('standardDesk').hidden = expert;
+  $('expertDesk').hidden = !expert;
+  $('presentationSummary').textContent = expert
+    ? 'Advanced evidence, completion and strategy controls — same CRESUS data and permissions.'
+    : 'Clear research, holdings and income — no invented balances or fabricated market data.';
+}
+document.querySelectorAll('[data-presentation]').forEach(button => {
+  button.addEventListener('click', () => {
+    state.presentation = button.dataset.presentation === 'expert' ? 'expert' : 'standard';
+    store.set('cresus.presentation', state.presentation);
+    state.mode = state.presentation === 'expert' ? 'expert' : 'simple';
+    store.set('cresus.mode', state.mode);
+    renderPresentation();
+    renderModes();
+  });
+});
+document.querySelectorAll('[data-cresus-workspace]').forEach(button =>
+  button.addEventListener('click', () => selectWorkspace(button.dataset.cresusWorkspace))
+);
+document.querySelectorAll('[data-cresus-command]').forEach(button => button.addEventListener('click', () => {
+  if (button.dataset.cresusCommand !== 'council') return;
+  state.mode = 'council';
+  store.set('cresus.mode', state.mode);
+  renderModes();
+  $('input').value = 'Run The Gilded Order challenge on my investment thesis. If I have not supplied one, ask me for the security and investment case; do not invent it.';
+  autosize();
+  $('composer').requestSubmit();
+}));
 
 // ---------- Wiring ----------
 function autosize() {
@@ -534,14 +573,17 @@ $('addUser').addEventListener('submit', async (e) => {
 
 (async function init() {
   renderModes();
+  renderPresentation();
   showNet();
   try {
     state.me = await api('/api/me');
+    $('verifiedRuntime').textContent = 'Signed in: ' + state.me.email + ' · AI capabilities checked separately; market data not verified.';
     $('whoami').textContent = state.me.email;
     $('adminBtn').hidden = state.me.role !== 'admin';
     refreshQuota();
     if (!mobile()) loadConversations();
     const intelligence = await api('/api/intelligence');
+    if (intelligence.provider) $('verifiedRuntime').textContent = 'Signed in: ' + state.me.email + ' · Selected intelligence: ' + intelligence.provider + ' (inference not yet tested).';
     if (!intelligence.configured) await showIntelligence(true);
   } catch (e) {
     const body = cresusShell('simple');
