@@ -4,6 +4,8 @@ export async function generate(env, system, history) {
   const provider = (env.PROVIDER || 'workers-ai').toLowerCase();
   if (provider === 'gemini') return gemini(env, system, history);
   if (provider === 'anthropic') return anthropic(env, system, history);
+  if (provider === 'openai') return openai(env, system, history);
+  if (provider === 'mistral') return mistral(env, system, history);
   return workersAi(env, system, history);
 }
 
@@ -57,4 +59,36 @@ async function anthropic(env, system, history) {
   if (!res.ok) throw new Error(`Anthropic error ${res.status}`);
   const data = await res.json();
   return data.content?.filter((b) => b.type === 'text').map((b) => b.text).join('') ?? '';
+}
+
+/* Additional CRESUS Alpha adapters. Never read tokens from browser localStorage,
+   never infer that a consumer ChatGPT/Mistral session authorizes API calls. */
+async function openai(env, system, history) {
+  if (!env.OPENAI_API_KEY || !env.OPENAI_MODEL) throw new Error('OpenAI provider is not connected');
+  const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    method:'POST',
+    headers:{'content-type':'application/json','authorization':'Bearer ' + env.OPENAI_API_KEY},
+    body:JSON.stringify({
+      model:env.OPENAI_MODEL, messages:[{role:'system',content:system},...history],
+      max_completion_tokens:2048
+    })
+  });
+  if(!response.ok) throw new Error('OpenAI provider request failed: HTTP ' + response.status);
+  const data=await response.json();
+  return typeof data.choices?.[0]?.message?.content === 'string' ? data.choices[0].message.content : '';
+}
+
+async function mistral(env, system, history) {
+  if (!env.MISTRAL_API_KEY || !env.MISTRAL_MODEL) throw new Error('Mistral provider is not connected');
+  const response = await fetch('https://api.mistral.ai/v1/chat/completions',{
+    method:'POST',
+    headers:{'content-type':'application/json','authorization':'Bearer ' + env.MISTRAL_API_KEY},
+    body:JSON.stringify({
+      model:env.MISTRAL_MODEL, messages:[{role:'system',content:system},...history],
+      max_tokens:2048,temperature:0.3
+    })
+  });
+  if(!response.ok) throw new Error('Mistral provider request failed: HTTP ' + response.status);
+  const data=await response.json();
+  return typeof data.choices?.[0]?.message?.content === 'string' ? data.choices[0].message.content : '';
 }
