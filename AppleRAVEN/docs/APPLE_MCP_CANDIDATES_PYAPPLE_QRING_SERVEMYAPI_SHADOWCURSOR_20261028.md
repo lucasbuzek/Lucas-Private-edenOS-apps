@@ -52,3 +52,18 @@ Date: 2026-10-28. Owner: AppleRAVEN. Status: **design research only**. Verified 
 6. Append research to existing Asana AppleRAVEN owner / M1 task; keep incomplete until real native execution.
 
 **Evidence limitation:** code and documentation were inspected remotely; no local binary, app signature, package install, Mac screenshot or MCP live tool call was tested.
+
+
+## (E) hrrrsn/mcp-vnc — optional VNC GUI fallback
+- User source: https://mcpservers.org/servers/hrrrsn/mcp-vnc ; original GitHub https://github.com/hrrrsn/mcp-vnc ; inspected README, `package.json`, MIT `LICENSE`, `src/server.ts`, `src/index.ts`, `src/vnc/client.ts`, `src/tools/input.ts` and `src/tools/screenshot.ts`.
+- Source package currently **v1.0.2**, **Node >=22**, TypeScript + `@computernewb/nodejs-rfb`, stdio MCP. Six commands: `vnc_click`, `vnc_move_mouse`, `vnc_key_press`, `vnc_type_text`, `vnc_type_multiline`, `vnc_screenshot`.
+- This is a **client to a pre-existing VNC server** requiring `VNC_HOST`, `VNC_PORT` and optional `VNC_PASSWORD`. It does not install macOS Screen Sharing, provide an outbound device agent, expose protected Cloudflare Streamable HTTP MCP, pair a user or solve offline-Mac access.
+- **Security findings from exact source:** `VncClient.connect({host,port,path:null,auth:{password}})` shows no TLS/VNC tunnel setup or extra AppleRAVEN owner-grant enforcement. Raw VNC should remain private in an authenticated encrypted local tunnel; never expose port 5900 to the Internet. `typeCharacter` logs individual typed characters to stderr and `handleTypeText` echoes the input text in an MCP tool response. This risks disclosing passwords, private messages and contents in local logs/model transcripts. No per-tool human confirmation layer, window allowlist, or sensitive screenshot redaction was identified in this small reviewed source.
+- **Decision: REJECT AS DEFAULT owner-private AppleRAVEN executor.** Keep an optional **experimental lab-only GUI fallback** candidate for non-sensitive, owner-visible applications after M1 is online, private network tunnel and VNC server are configured, security output redaction/code modifications are tested, and strict per-action owner permission is enforced *outside* the tool. Prefer semantic Apple-native adapter (`pyapple-mcp`) for ordinary Notes/Shortcuts/Calendar and original native AppleRAVEN Mac agent.
+- **Acceptance still unverified:** No VNC connection, no screenshot from a real Mac, no keyboard event, no Mac pairing, no Cloudflare deployment and no iOS ChatGPT custom MCP proof.
+
+Updated comparison addendum:
+
+| Candidate | Original role | Security posture | AppleRAVEN integration |
+|---|---|---|---|
+| hrrrsn/mcp-vnc | Screen/pointer/keyboard remote GUI over stdio → VNC | Requires separately secured VNC; typed characters echoed/logged; screenshots sensitive; no internal owner policy | Optional lab-only fallback **after** M1 native pairing; not default, not remote Cloudflare endpoint |
