@@ -13,8 +13,9 @@
     {
       "filename": "DeexTgFif7T.url",
       "original_path": "ns:13844906001//DeexTgFif7T.url",
-      "source_url": "https://www.instagram.com/p/DeexTgFif7T/?img_index=5&exln=MWlzeXJuczNzcHZrbQ==",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/p/DeexTgFif7T/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "darpa-mil-opportunities.url",
@@ -31,8 +32,9 @@
     {
       "filename": "trading servers.url",
       "original_path": "ns:13844906001//trading servers.url",
-      "source_url": "https://glama.ai/mcp/servers?query=Trading",
-      "state": "url_read_unverified"
+      "source_url": "https://glama.ai/mcp/servers",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "GoModelHub-MCP.url",
@@ -43,14 +45,16 @@
     {
       "filename": "De1ud0eiSgq.url",
       "original_path": "ns:13844906001//De1ud0eiSgq.url",
-      "source_url": "https://www.instagram.com/p/De1ud0eiSgq/?img_index=3&psln=cXRvZHd2NWY5aHo5",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/p/De1ud0eiSgq/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "DdHSlvcJxje.url",
       "original_path": "ns:13844906001//DdHSlvcJxje.url",
-      "source_url": "https://www.instagram.com/reel/DdHSlvcJxje/?dlrf=MWtoYzA1a2ZjMWR3",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/reel/DdHSlvcJxje/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "cloudflare webmcp.url",
@@ -61,8 +65,9 @@
     {
       "filename": "Dd4A1otEqRG.url",
       "original_path": "ns:13844906001//Dd4A1otEqRG.url",
-      "source_url": "https://www.instagram.com/p/Dd4A1otEqRG/?img_index=7&xtok=MWl6eWd6bDJueWRhaQ==",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/p/Dd4A1otEqRG/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "mcp-3d-modeling-agent.url",
@@ -73,14 +78,16 @@
     {
       "filename": "goto.url",
       "original_path": "ns:13844906001//goto.url",
-      "source_url": "https://www.google.com/goto?url=CAESrgEB6zswFRsQOSEX4BJDTzT09tj0ggmsWSQ3DeOmd6TrHZJnw2oMwNVCT2gQ5_EhiPcvAuQP3Gwb9lr8ldeF9PRGz_A08GWg7fsVdhM8QP4TfPGnZxVwAqFkFtyKkA-YrJKQnCUP-aMhOLvHW-3KJUdYHiy4e0slb42ixvsvlOj61fkA5_h-ZhB0X8XoejK-vZ5VKrCTAJLATJ-hILQcq2n57CL99iF4j6MWXRQsCRk",
-      "state": "url_read_unverified"
+      "source_url": "https://www.google.com/goto",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "i_built_a_massive_cinematic_reference_library_for.url",
       "original_path": "ns:13844906001//i_built_a_massive_cinematic_reference_library_for.url",
-      "source_url": "https://www.reddit.com/r/cinematography/comments/1qe0fhx/i_built_a_massive_cinematic_reference_library_for/?solution=a50fbd2e6ee77955a50fbd2e6ee77955&js_challenge=1&jsc_token=2824be10929bdc604753c70a67a1c331a68f0c462c933c5f51809ec63aad69d8&jsc_orig_r=",
-      "state": "url_read_unverified"
+      "source_url": "https://www.reddit.com/r/cinematography/comments/1qe0fhx/i_built_a_massive_cinematic_reference_library_for/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "prototyping sst-hardware.nl.url",
@@ -106,5 +113,7 @@
       "source_url": "https://glama.ai/mcp/servers/CarlDog/downloader-mcp",
       "state": "url_read_unverified"
     }
-  ]
+  ],
+  "normalization_notice": "Source URLs normalized by removing ALL query strings and URL fragments to avoid persisting tracking, session/challenge tokens or client parameters. Where original target is a redirect requiring a query, source MUST be manually resolved from the original .url file before use.",
+  "review_state": "do_not_publish_auto_or_fetch_private_without_consent"
 }
