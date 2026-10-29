@@ -44,7 +44,11 @@ class BridgeTests(unittest.TestCase):
    req(7,'tools/list',{}),
    req(8,'server/discover',{'_meta':{'io.modelcontextprotocol/protocolVersion':'2026-07-28'}}),
    req(9,'tools/call',{'name':'bifrost.system.platform.read','arguments':{},'_meta':{**modern_meta,
-      'io.modelcontextprotocol/clientCapabilities':None}})
+      'io.modelcontextprotocol/clientCapabilities':None}}),
+   req(10,'ping',{'_meta':modern_meta}),
+   req(11,'tools/call',{'name':[], 'arguments':{},'_meta':modern_meta}),
+   req(12,'tools/call',{'name':{'malformed':'tool'},'arguments':{},'_meta':modern_meta}),
+   req(13,'tools/call',{'name':'bifrost.system.platform.read','arguments':True,'_meta':modern_meta})
   ]
   p=subprocess.run([sys.executable,'-B',str(ROOT/'headless/mcp_bridge.py')],
     input='\n'.join(map(json.dumps,m))+'\n',capture_output=True,text=True,timeout=15)
@@ -64,6 +68,10 @@ class BridgeTests(unittest.TestCase):
   self.assertIn('error',rows[6])
   self.assertEqual(rows[7]['error']['code'],-32602)
   self.assertEqual(rows[8]['error']['code'],-32602)
+  self.assertEqual(rows[9]['error']['code'],-32601)  # Removed in 2026 modern spec.
+  self.assertEqual(rows[10]['error']['code'],-32602)  # Array name, not internal failure.
+  self.assertEqual(rows[11]['error']['code'],-32602)  # Object name, not internal failure.
+  self.assertEqual(rows[12]['error']['code'],-32602)  # Non-object arguments.
 
  def test_real_stdio_lifecycle_and_platform_call(self):
   messages=[{'jsonrpc':'2.0','id':1,'method':'tools/list'},
