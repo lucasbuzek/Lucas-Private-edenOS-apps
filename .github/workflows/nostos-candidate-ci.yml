@@ -1,0 +1,35 @@
+name: NOSTOS isolated candidate tests
+on:
+  push:
+    branches:
+      - work/nostos-recovery-webapp-20261029
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  service-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install optional MCP SDK for adapter tests
+        run: python -m pip install 'mcp>=2,<3'
+      - name: Compile recovered and protected service
+        run: python -m py_compile NOSTOS/nostos.py NOSTOS/tests/test_service.py
+      - name: Exercise NOSTOS authenticated API
+        run: python -m unittest discover -s NOSTOS/tests -p "test_*.py" -v
+      - name: Validate browser JavaScript syntax
+        run: node --check NOSTOS/web/app.js
+      - name: Validate MCP adapter syntax
+        run: python -m py_compile NOSTOS/mcp_readonly.py
+      - name: Install browser test harness
+        run: npm install --no-save --package-lock=false playwright && npx playwright install --with-deps chromium
+        working-directory: NOSTOS
+      - name: Exercise real mobile browser household workflows
+        run: node tests/web_e2e.cjs
+        working-directory: NOSTOS
