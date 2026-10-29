@@ -57,15 +57,27 @@ def keychain_get():
     return result.stdout.strip() if result.returncode == 0 else None
 
 def keychain_set(token):
+    """Store device token using Security.framework, never a command-line argument."""
     if not isinstance(token, str) or len(token) != 64 or any(c not in "0123456789abcdef" for c in token):
         raise Rejected("Invalid device credential")
+    if platform.system() != "Darwin":
+        raise Rejected("Keychain enrollment is supported only on macOS")
+    import ctypes
     import getpass
-    # This standard macOS Keychain CLI receives the value as an argument; the
-    # device credential must never be printed or saved in logs.
-    subprocess.run(
-        ["/usr/bin/security", "add-generic-password", "-U", "-s", SERVICE,
-         "-a", getpass.getuser(), "-l", "AppleRAVEN device credential", "-w", token],
-        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+    from ctypes import c_void_p, c_uint32, c_char_p, c_int32, POINTER
+    service = SERVICE.encode("utf-8")
+    account = getpass.getuser().encode("utf-8")
+    secret = token.encode("ascii")
+    sec = ctypes.CDLL("/System/Library/Frameworks/Security.framework/Security")
+    add = sec.SecKeychainAddGenericPassword
+    add.argtypes = [c_void_p, c_uint32, c_char_p, c_uint32, c_char_p,
+                    c_uint32, c_char_p, POINTER(c_void_p)]
+    add.restype = c_int32
+    status = add(None, len(service), service, len(account), account,
+                 len(secret), secret, None)
+    if status != 0:
+        # Never echo any secret bytes, even in failure paths.
+        raise Rejected("macOS Keychain rejected the device credential: OSStatus " + str(status))
 
 def native_shortcuts():
     if not shutil.which("shortcuts"):
