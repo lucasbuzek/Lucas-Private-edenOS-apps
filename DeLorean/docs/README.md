@@ -59,3 +59,10 @@ Run from the `DeLorean` folder. The tests check safe metadata indexing, two-stat
 
 ## 2026-10-29 cross-platform correction
 DeLorean is one agentic multi-client plugin and native app family, not ChatGPT/macOS-only. See `PLATFORMS_AND_AGENT_BRIDGES.md` for independently authorized provider connectors, desktop/mobile/web targets and current verification. Native clients and full-device restore remain pending per-platform acceptance; the core Python MCP is a candidate, not the entire product.
+
+
+## v0.2.6 — Connector-neutral verified metadata handoff
+
+The one DeLorean TimeMachine now has a local MCP evidence handoff for authorized provider connector metadata: `delorean_connector_preview` (read), `delorean_connector_events` (read), `delorean_connector_import` (locally write-gated). **32 total MCP tools (21 default read-only / 11 write-enabled)**; original backup/recovery capabilities unchanged. Host applications may use real connected GitHub/Drive/Dropbox APIs independently when no DeLorean device is online; a remote DeLorean endpoint is optional. New metadata-only records are explicitly NOT verified backups. See `docs/CONNECTOR_BRIDGE.md`, `core/connector_evidence.py`, `tests/test_connector_bridge.py`.
+
+Local Python test suite passed **134/134** on Linux; three actual provider revision records were retrieved by connected tools then imported into an isolated local MCP and read back. No native on-device install, ChatGPT direct DeLorean MCP connection, Windows/macOS/Android/iOS build, complete device-image recovery or physical restoration is claimed.
