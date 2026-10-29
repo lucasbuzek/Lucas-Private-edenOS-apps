@@ -53,3 +53,15 @@ Connected Dropbox files `RavenNest/docs/MAC_BRIDGE_MANUAL_CONTROL.txt` and `RAVE
 
 ## Evidence ceiling
 GitHub public source code and 21 ORIGINAL Dropbox WebArchive HTML payloads were actually examined. No external native executor was installed, no signed AppleRAVEN DMG produced, no physical Mac pairing, no owner-approved ChatGPT tool invocation; mission OPEN.
+
+
+## Addendum — all AppleOS/WebMCP binary archives decoded
+
+**2026-10-29 verified source expansion; supersedes the earlier 21-file coverage checkpoint:**
+- Connected Dropbox Files raw-file materialization succeeded for all **104** `#appleOS` and **37** `#webMCP` saved `.webarchive` files, after existing 21 archived reference samples were already decoded. **162 Apple WebArchive file copies successfully decoded (0 parse errors), yielding 153 distinct original saved website URLs**, with full `WebMainResource.WebResourceData` HTML and main-resource URLs recovered. Nine source URLs had duplicate archived copies.
+- Source review was performed by Python `plistlib` and HTML parser against the actual saved bytes, not inferred filenames. Original query strings were intentionally omitted from report URLs to avoid historic installation/session codes.
+- The wider five-category Dropbox inventory remains 498 archived files, many outside AppleRAVEN; no assertion that all 498 archive bodies were decoded.
+- Original source corroboration: `DeviceLink` archive records desktop-browser-only sharing or a separate persistent agent and hosted remote MCP, but **folder read-only** is narrower than requested Mac control. `macOS Agent Bridge` includes 63 native local actions with approvals, but no complete owner-remote gateway. `Macbeth` is a local stdio semantic GUI tool using a vendor-described signed/notarized universal daemon, again not authenticated remote pairing. `ToolPiper` requires macOS 26+ and proprietary local app. `mcp-remote-macos-use` relies on reachable Screen Sharing/VNC and Mac credentials. `Cloudflare WebMCP` and Chrome API pages describe browser-page tools, not Mac pairing.
+- One saved third-party WebMCP Bridge page contains a visible **Failed to connect** state. A directory listing or browser form is not working proof.
+- Critical status unchanged: existing RAVENsNEST AppleRAVEN MCP has NOT passed authenticated ChatGPT → real Mac action acceptance. The original Mac agent remains unpaired/uninstalled in verified evidence. No functional gateway was selected or installed by archive decoding alone; do not claim otherwise.
+- The full 153-URL deduplicated sanitized table is present in the downloadable research artifact `AppleRAVEN_141_Apple_and_WebMCP_Original_Archives_2026-10-29.md` generated in this chat. This Git report is the durable source-status record; no legacy LKG or deployed Cloudflare Worker was overwritten.
