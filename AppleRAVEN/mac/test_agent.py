@@ -35,6 +35,20 @@ class Tests(unittest.TestCase):
   s=(root/'build_macos.sh').read_text()
   self.assertNotIn('rm -rf "$APP"',s)
   self.assertLess(s.index('[[ ! -e "$OUT" ]]'),s.index('mkdir -p "$OUT"'))
+ def test_keychain_lookup_is_scoped_to_signed_in_owner(self):
+  from unittest.mock import patch
+  good='a'*64
+  with patch('getpass.getuser',return_value='owner'), \\
+       patch.object(a.subprocess,'run',return_value=subprocess.CompletedProcess([],0,good+'\\n','')) as run:
+   self.assertEqual(a.keychain_get(),good)
+   args,kwargs=run.call_args
+   self.assertEqual(args[0][:4],['/usr/bin/security','find-generic-password','-s',a.SERVICE])
+   self.assertIn('-a',args[0])
+   self.assertEqual(args[0][args[0].index('-a')+1],'owner')
+   self.assertEqual(kwargs.get('timeout'),10)
+  with patch('getpass.getuser',return_value='owner'), \\
+       patch.object(a.subprocess,'run',return_value=subprocess.CompletedProcess([],0,'bad-token\\n','')):
+   self.assertIsNone(a.keychain_get())
  def test_keychain_never_in_subprocess_argv(self):
   import ctypes
   with patch.object(a.platform,'system',return_value='Darwin'), \
