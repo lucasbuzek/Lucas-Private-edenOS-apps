@@ -21,3 +21,6 @@
 
 /* Candidate 2026-10-29: source preset for official public feed only. */
 .sourcePresets{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin:.7rem 0}.sourcePresets small{flex:1;min-width:220px;line-height:1.45}.sourcePresets button{max-width:100%;white-space:normal}
+
+/* Candidate local preparatory tender compliance matrix */
+.compliancePanel{margin:1.4rem 0;padding:1rem;border:1px solid var(--line,#d8d8d4);border-radius:14px}.complianceRow{display:grid;grid-template-columns:minmax(180px,2fr) minmax(150px,1fr) minmax(180px,1.3fr);gap:.75rem;align-items:center;padding:.85rem 0;border-top:1px solid var(--line,#ddd)}.complianceRow label{display:flex;flex-direction:column;gap:.35rem}.complianceRow select{width:100%;min-width:0}@media(max-width:710px){.complianceRow{grid-template-columns:1fr}}
