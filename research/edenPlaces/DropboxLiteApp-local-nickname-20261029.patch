@@ -10,7 +10,7 @@
      @Published var browsePath = ""
      @Published var browseFolders: [String] = []
      @Published var previewText = ""
-@@ -49,7 +50,8 @@
+@@ -49,13 +50,37 @@
              loaded.autoSync = false
              try? LitePersistence.saveSettings(loaded)
          }
@@ -19,8 +19,6 @@
 +        accountNicknames = UserDefaults.standard.dictionary(forKey: "DropboxLite.accountNicknames.v1") as? [String: String] ?? [:]
      }
      func persist() {
-         do { try LitePersistence.saveSettings(settings) }
-@@ -55,7 +57,30 @@
          do { try LitePersistence.saveSettings(settings) }
          catch { message = "Could not save settings: \(error.localizedDescription)" }
      }
