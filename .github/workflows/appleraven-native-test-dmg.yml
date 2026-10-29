@@ -12,10 +12,15 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Python and setup checks
         run: |
           python3 -m unittest discover -s AppleRAVEN/mac -p test_agent.py -v
           bash -n AppleRAVEN/mac/Install.command
+          bash -n AppleRAVEN/mac/Install-native.command
+          bash AppleRAVEN/mac/Install-native.command --dry-run
       - name: Build macOS test app and DMG
         run: bash AppleRAVEN/mac/build_macos.sh
       - name: Publish unnotarized test DMG
