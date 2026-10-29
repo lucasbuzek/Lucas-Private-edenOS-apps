@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="/dashboard.css">
 <script src="/dashboard.js" defer></script>
 <script src="/connection_fabric.js" defer></script>
+<script src="/webmcp.js" defer></script>
 </head>
 <body>
 <main>
@@ -213,6 +214,12 @@
 <div class="record"><div class="record-info"><strong>Source fingerprint</strong><small>Read-only observed Headless SHA-256</small></div><output id="expertSource">Not inspected</output></div>
 </div>
 <p id="expertFeedback" class="setup-explain" role="status">No diagnostic request made.</p>
+</section>
+<section data-min-level="expert" id="webmcp" aria-labelledby="webmcpHeading">
+<div class="heading"><h2 id="webmcpHeading">WebMCP · Browser agent tools</h2></div>
+<p class="setup-explain">Expose only the existing, authorized, read-only BIFROST shortNameCalls as browser tools. Experimental WebMCP-capable browsers only. Explicit opt-in; no implicit AppleScript, remote or provider actions.</p>
+<div class="actions"><button id="webmcpEnable" type="button">Enable browser WebMCP tools</button><button id="webmcpRevoke" type="button">Revoke WebMCP tools</button></div>
+<p id="webmcpState" role="status" aria-live="polite">WebMCP tools not registered</p>
 </section>
 <footer>Local dashboard: 127.0.0.1 · Explicit storage reads may contact configured providers · Closing this page does not stop Headless.</footer>
 </div>
