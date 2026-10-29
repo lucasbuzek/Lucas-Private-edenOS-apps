@@ -67,3 +67,69 @@ test("CSV import requires explicit preview and does not alter stock", async ({ p
   await expect(page.locator("#overview-body")).toContainText("Chicken eggs");
   await expect(page.locator("#stat-movements")).toHaveText("0");
 });
+
+test("portable inventory backup restores stock into a clean browser profile", async ({ page, browser }) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: "Catalogue & locations" }).click();
+  await page.getByLabel("Location identifier").fill("farm");
+  await page.getByRole("button", { name: "Add location" }).click();
+  await page.getByLabel("SKU", { exact: true }).fill("EGG-RESTORE-1");
+  await page.getByLabel("Product name").fill("Large eggs");
+  await page.getByLabel("Unit").fill("each");
+  await page.getByRole("button", { name: "Add product" }).click();
+  await page.getByRole("button", { name: "Stock movements" }).click();
+  await page.getByLabel("Quantity").fill("18");
+  await page.getByRole("button", { name: "Preview movement" }).click();
+  await page.getByRole("button", { name: "Confirm and post" }).click();
+  await page.getByRole("button", { name: "Backup & restore" }).click();
+  const [download] = await Promise.all([
+    page.waitForEvent("download"),
+    page.getByRole("button", { name: "Download JSON backup" }).click(),
+  ]);
+  const chunks = [];
+  for await (const chunk of await download.createReadStream()) chunks.push(chunk);
+  const backup = Buffer.concat(chunks);
+  const fresh = await browser.newContext({ acceptDownloads: true });
+  const restored = await fresh.newPage();
+  await restored.goto("/");
+  await restored.getByRole("button", { name: "Backup & restore" }).click();
+  await restored.locator("#import-file").setInputFiles({
+    name: "seshat-backup.json", mimeType: "application/json", buffer: backup,
+  });
+  restored.once("dialog", dialog => dialog.accept());
+  await restored.getByRole("button", { name: "Validate and restore" }).click();
+  await expect(restored.locator("#notice")).toContainText("Validated backup restored");
+  await restored.getByRole("button", { name: "Overview" }).click();
+  await expect(restored.locator("#overview-body")).toContainText("18 each");
+  await restored.reload();
+  await expect(restored.locator("#overview-body")).toContainText("EGG-RESTORE-1");
+  await expect(restored.locator("#stat-movements")).toHaveText("1");
+  await fresh.close();
+});
+
+test("tampered inventory ledger backup is rejected without replacing local records", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: "Catalogue & locations" }).click();
+  await page.getByLabel("Location identifier").fill("farm");
+  await page.getByRole("button", { name: "Add location" }).click();
+  await page.getByRole("button", { name: "Backup & restore" }).click();
+  const [download] = await Promise.all([
+    page.waitForEvent("download"),
+    page.getByRole("button", { name: "Download JSON backup" }).click(),
+  ]);
+  const chunks = [];
+  for await (const chunk of await download.createReadStream()) chunks.push(chunk);
+  const portable = JSON.parse(Buffer.concat(chunks).toString("utf8"));
+  const ledger = JSON.parse(portable.snapshot);
+  ledger.locations.push("forged-warehouse");
+  portable.snapshot = JSON.stringify(ledger);
+  await page.locator("#import-file").setInputFiles({
+    name: "forged.json", mimeType: "application/json",
+    buffer: Buffer.from(JSON.stringify(portable)),
+  });
+  await page.getByRole("button", { name: "Validate and restore" }).click();
+  await expect(page.locator("#notice")).toContainText("checksum mismatch");
+  await page.getByRole("button", { name: "Catalogue & locations" }).click();
+  await expect(page.locator("#location-list")).toContainText("farm");
+  await expect(page.locator("#location-list")).not.toContainText("forged-warehouse");
+});
