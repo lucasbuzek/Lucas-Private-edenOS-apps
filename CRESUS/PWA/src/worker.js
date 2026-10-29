@@ -1,4 +1,5 @@
 import { verifyAccessJwt } from './auth.js';
+import { handleWatchlist } from './watchlist.js';
 import { CRESUS_SYSTEM_PROMPT } from './prompt.js';
 import { providerChoices, providerForUser, setProviderForUser, generateForProvider, ProviderSelectionError } from './provider-choice.js';
 
@@ -264,6 +265,12 @@ export default {
 
     const user = await resolveUser(request, env);
     if (user.error) return user.error;
+    // CRESUS Access JWT already verified. Reject browser-origin cross-site mutations
+    // independently from Access session cookies, without trusting user supplied URLs.
+    const origin = request.headers.get('Origin');
+    if (!['GET','HEAD','OPTIONS'].includes(request.method) && origin && origin !== url.origin) {
+      return json({error:'Cross-origin mutation denied'},403);
+    }
 
     try {
       if (path === '/api/me') {
@@ -282,6 +289,7 @@ export default {
         const body = await request.json();
         return json(await setProviderForUser(env, user.email, body.provider));
       }
+      if (path === '/api/watchlist' || path.startsWith('/api/watchlist/')) return handleWatchlist(request,env,user.email,path);
       if (path === '/api/chat' && request.method === 'POST') return handleChat(request, env, user);
       if (path === '/api/export' && request.method === 'GET') return handleExport(env, user);
 
