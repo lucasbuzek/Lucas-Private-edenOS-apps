@@ -1,0 +1,35 @@
+name: SESHAT PWA Candidate Tests
+on:
+  push:
+    branches:
+      - 'seshat/pwa-recovery-20261029'
+    paths:
+      - 'SESHAT/**'
+      - '.github/workflows/seshat-pwa-candidate.yml'
+  workflow_dispatch:
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: SESHAT
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Domain and persistence tests
+        run: npm test
+      - name: Static syntax and allowlisted PWA build
+        run: npm run check:web
+      - name: Ensure no source documentation or secrets in publication directory
+        run: |
+          test -f dist/index.html
+          test -f dist/app.mjs
+          test -f dist/sw.js
+          test ! -e dist/PROJECT_BIBLE.md
+          test ! -e dist/tests
+          test ! -e dist/.env
+          test ! -e dist/docs
+          find dist -type f | sort
