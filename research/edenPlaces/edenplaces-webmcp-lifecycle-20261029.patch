@@ -1,0 +1,106 @@
+--- a/eden-places-panel.mjs
++++ b/eden-places-panel.mjs
+@@ -15 +15 @@
+-  constructor(){super();this.attachShadow({mode:'open'});this.accounts=[];this.selected='';this.path='';this.nextCursor=null;this.generation=0;this.abort=null;}
++  constructor(){super();this.attachShadow({mode:'open'});this.accounts=[];this.selected='';this.path='';this.nextCursor=null;this.generation=0;this.abort=null;this.browserToolController=null;this.browserToolEnabled=false;this.browserToolPending=false;this.browserToolAccount='';}
+@@ -37 +37 @@
+-    root.getElementById('account').addEventListener('change',e=>{this.selected=e.target.value;this.path='';this.reload();});
++    root.getElementById('account').addEventListener('change',e=>{this.disableBrowserTool();this.selected=e.target.value;this.path='';this.reload();});
+@@ -49 +49,17 @@
+-  disconnectedCallback(){this.abort?.abort();this.generation++;}
++  disconnectedCallback(){
++    this.abort?.abort();
++    this.generation++;
++    this.disableBrowserTool();
++  }
++  disableBrowserTool() {
++    this.browserToolController?.abort();
++    this.browserToolController=null;
++    this.browserToolEnabled=false;
++    this.browserToolPending=false;
++    this.browserToolAccount='';
++    const button=this.shadowRoot?.getElementById('webmcp');
++    if(button) {
++      button.disabled=false;
++      button.textContent='Enable AI folder list';
++    }
++  }
+@@ -51,2 +67,7 @@
+-    if(!this.selected || this.browserToolEnabled) return;
+-    const self=this;
++    if(!this.selected || this.browserToolEnabled || this.browserToolPending || !this.isConnected) return;
++    if(typeof document.modelContext?.registerTool !== 'function') return;
++    const controller=new AbortController();
++    const allowedAccount=this.selected;
++    this.browserToolController=controller;
++    this.browserToolPending=true;
++    button.disabled=true;
+@@ -56 +77 @@
+-        description:'List names and sizes in the folder currently selected in edenPlaces. Read-only; does not open, download, transfer or share files.',
++        description:'List names and sizes in the selected edenPlaces folder. Read-only; no downloads, transfers or shares.',
+@@ -59,3 +80,6 @@
+-          const account=self.selected, path=self.path;
+-          if(!account) return {error:'No authorized account selected'};
+-          // Same-origin user authorization and live grants are rechecked on EVERY invocation.
++          // The initial explicit user opt-in applies ONLY to the selected account.
++          if(!this.isConnected || controller.signal.aborted || this.selected!==allowedAccount) {
++            return {error:'The selected account or browser tool is no longer authorized'};
++          }
++          const path=this.path;
++          const generation=this.generation;
+@@ -63,2 +87,17 @@
+-            const data=await self.api(placesURL('list',{account,path}));
+-            return {account,path,entries:(data.entries??[]).slice(0,100).map(e=>({name:e.name,type:e.type,size:e.size}))};
++            // Server independently checks the current user, Council, account and grant.
++            const data=await this.api(placesURL('list',{account:allowedAccount,path}));
++            // Never return a stale file list after navigation, account switching,
++            // panel removal or explicit tool revocation during an async fetch.
++            if(!this.isConnected || controller.signal.aborted ||
++               this.selected!==allowedAccount || this.path!==path ||
++               this.generation!==generation) {
++              return {error:'Folder context changed; request a new listing'};
++            }
++            if(!Array.isArray(data.entries))return {error:'Storage listing unavailable'};
++            const entries=data.entries.slice(0,100)
++              .filter(e=>e && typeof e.name==='string' &&
++                (e.type==='file'||e.type==='folder'))
++              .map(e=>({name:e.name,type:e.type,
++                        size:Number.isSafeInteger(e.size)&&e.size>=0?e.size:null}));
++            return {account:allowedAccount,path,entries,
++                    moreAvailable:Boolean(data.nextCursor)||data.entries.length>100};
+@@ -66,2 +105,8 @@
+-        }
+-      });
++        },
++        annotations:{readOnlyHint:true,untrustedContentHint:true}
++      }, {signal:controller.signal});
++      if(controller.signal.aborted || !this.isConnected ||
++         this.browserToolController!==controller || this.selected!==allowedAccount) {
++        controller.abort();
++        return;
++      }
+@@ -69 +114 @@
+-      button.disabled=true;
++      this.browserToolAccount=allowedAccount;
+@@ -71,2 +116,14 @@
+-      this.setStatus('Optional browser AI tool enabled for current-folder metadata only');
+-    }catch{this.setStatus('This browser could not register the optional AI tool');}
++      this.setStatus('Browser AI can read current-folder metadata for this account only');
++    }catch{
++      if(this.browserToolController===controller) {
++        controller.abort();
++        this.browserToolController=null;
++        button.disabled=false;
++        this.setStatus('This browser could not register the optional AI tool');
++      }
++    }finally{
++      if(this.browserToolController===controller){
++        this.browserToolPending=false;
++        button.disabled=this.browserToolEnabled;
++      }
++    }
+@@ -82 +139,3 @@
+-    this.selected=this.accounts.some(a=>a.accountId===this.selected)?this.selected:(this.accounts[0]?.accountId??'');
++    const nextAccount=this.accounts.some(a=>a.accountId===this.selected)?this.selected:(this.accounts[0]?.accountId??'');
++    if(nextAccount!==this.selected) this.disableBrowserTool();
++    this.selected=nextAccount;
