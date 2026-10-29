@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "config_status": "TEMPLATE_NOT_CONFIGURED",
+  "discovery_providers": ["gdelt", "google_news"],
+  "default_queries": [],
+  "rss_feeds": [],
+  "lookback_hours": 72,
+  "max_results_per_provider_query": 12,
+  "capture_article_text": true,
+  "source_scope_note": "Add only public, lawful, intended-for-access sources. Search results are leads; fetched pages are not independently verified claims.",
+  "future_connectors": [
+    "official government and regulator feeds for selected jurisdictions",
+    "research-paper indexes and publisher feeds for relevant domains",
+    "platform-specific public search APIs where permitted",
+    "explicitly configured trusted news RSS feeds"
+  ],
+  "review_rules": {
+    "primary_source_required_for_material_claims": true,
+    "independent_corroboration_for_disputed_claims": true,
+    "counterevidence_search_required": true,
+    "fail_closed_when_evidence_is_missing": true,
+    "no_login_wall_bypass": true,
+    "no_private_or_hacked_data": true
+  }
+}
+

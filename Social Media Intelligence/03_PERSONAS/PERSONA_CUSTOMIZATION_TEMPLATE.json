@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "persona_id": "persona-replace-me",
+  "display_name": "User-defined editorial persona",
+  "account_identity": {
+    "type": "person|brand|project|publication",
+    "public_name": "",
+    "ownership_disclosure": "",
+    "platforms": [],
+    "account_refs": []
+  },
+  "mission": "",
+  "audience": {
+    "description": "",
+    "geography": "",
+    "language": "en",
+    "timezone": ""
+  },
+  "voice": {
+    "traits": [
+      "direct",
+      "clear"
+    ],
+    "tone_examples": [],
+    "avoid_phrases": [],
+    "format_preferences": []
+  },
+  "expertise": {
+    "areas": [],
+    "limits": [],
+    "must_escalate_topics": []
+  },
+  "editorial_scope": {
+    "allowlist": [],
+    "blocklist": [],
+    "controversy_definition": "Documented disagreement or material public-interest debate; never manufacture conflict."
+  },
+  "evidence_policy": {
+    "primary_sources_required_for_material_claims": true,
+    "independent_corroboration": true,
+    "counterevidence_required_for_disputed_claims": true,
+    "unsupported_claim_disposition": "BLOCK_OR_UNKNOWN",
+    "freshness_hours": 72
+  },
+  "engagement_strategy": {
+    "goals": [
+      "qualified discussion",
+      "saves",
+      "shares with context",
+      "retention"
+    ],
+    "prohibited_optimization": [
+      "rage",
+      "harassment",
+      "deceptive bait",
+      "identity-based antagonism"
+    ]
+  },
+  "publishing": {
+    "default_mode": "HUMAN_APPROVAL_REQUIRED",
+    "auto_publish": false,
+    "allowed_actions": [
+      "RESEARCH",
+      "DRAFT",
+      "PREPARE_LOCAL_SCHEDULE"
+    ],
+    "approval_binds": [
+      "content_hash",
+      "account_ref",
+      "platform",
+      "action",
+      "proposed_time",
+      "expiry"
+    ]
+  },
+  "commercial_disclosures": [],
+  "accessibility": {
+    "alt_text": true,
+    "captions_when_needed": true,
+    "plain_language": true
+  },
+  "moderation": {
+    "policy": "",
+    "escalation_contact": ""
+  },
+  "metrics_allowlist": [
+    "reach",
+    "retention",
+    "saves",
+    "shares",
+    "qualified_clicks",
+    "constructive_comments"
+  ],
+  "review": {
+    "last_human_review": null,
+    "reviewer": ""
+  },
+  "status": "TEMPLATE_NOT_CONFIGURED",
+  "calendar": {
+    "posts_per_week": null,
+    "preferred_days": [],
+    "preferred_local_times": [],
+    "minimum_gap_hours": null,
+    "timezone": "USE_AUDIENCE_TIMEZONE",
+    "approval_required_for_each_slot": true,
+    "remote_scheduling_enabled": false
+  },
+  "workspace_scope": "LUCAS_PRIVATE",
+  "model_routing": {
+    "preferred": "APPLE_ON_DEVICE_WHEN_AVAILABLE",
+    "cloud_allowed": false,
+    "allow_household_context_to_cloud": false,
+    "fallback": "HOLD_AND_ASK"
+  }
+}
+

@@ -1,0 +1,22 @@
+name: FAMA candidate original + local agent tests
+on:
+  push:
+    branches:
+      - candidate/fama-source-recovery-webagent-20261029
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile recovered source (no social or live network actions)
+        run: python -m compileall -q "Social Media Intelligence/10_RUNTIME"
+      - name: Original FAMA unit tests and local-agent deny tests
+        run: |
+          cd "Social Media Intelligence/10_RUNTIME"
+          python -m unittest discover -p "test_*.py" -v
