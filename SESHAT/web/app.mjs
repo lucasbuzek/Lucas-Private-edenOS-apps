@@ -146,6 +146,38 @@ $("import-button").addEventListener("click",async ()=>{
     await commit(restored,cat,"restored");message("Validated backup restored to local profile.");
   }catch(err){fail(err);}
 });
+let csvPending = null;
+$("csv-file").addEventListener("change", ev => {
+  csvPending = null; $("csv-commit-button").disabled = true;
+  $("csv-preview-button").disabled = !ev.currentTarget.files?.length;
+  $("csv-preview").textContent = "No CSV preview available.";
+});
+$("csv-preview-button").addEventListener("click", async () => {
+  try {
+    const file = $("csv-file").files?.[0];
+    if (!file) throw new Error("Choose a CSV file.");
+    if (file.size > 1024 * 1024) throw new Error("CSV exceeds 1 MB limit.");
+    const preview = previewCatalogueCSV(catalogue, await file.text());
+    csvPending = { preview, revision };
+    $("csv-commit-button").disabled = !preview.canCommit;
+    $("csv-preview").textContent = "DRY RUN ONLY: " + preview.rows + " rows; " + preview.products.length +
+      " valid new products; " + preview.errors.length + " errors." +
+      (preview.errors.length ? " " + preview.errors.map(e => "Line " + e.line + ": " + e.message).join(" | ") : " No stock movements will be created.");
+  } catch (err) { csvPending = null; $("csv-commit-button").disabled = true; fail(err); }
+});
+$("csv-commit-button").addEventListener("click", async () => {
+  if (!csvPending || !csvPending.preview.canCommit || csvPending.revision !== revision) {
+    message("CSV preview is stale. Validate the file again.", true); return;
+  }
+  if (!confirm("Import " + csvPending.preview.products.length + " new catalogue products? Existing stock will not change.")) return;
+  try {
+    const next = applyCatalogueCSV(ledger, catalogue, csvPending.preview);
+    await commit(next.ledger, next.catalogue);
+    csvPending = null; $("csv-commit-button").disabled = true;
+    $("csv-file").value = "";
+    message("Validated catalogue import committed to the local profile. No stock movements were posted.");
+  } catch (err) { fail(err); }
+});
 function network(){ $("network-state").textContent=navigator.onLine?"Browser online":"Browser offline"; }
 window.addEventListener("online",network);window.addEventListener("offline",network);
 async function start(){
