@@ -26,6 +26,7 @@ async function waitForServer(){
 }
 function fail(message){throw new Error(message);}
 async function expectText(locator,expected){
+ await locator.filter({hasText:expected}).waitFor({state:'visible',timeout:12000});
  const actual=(await locator.textContent())||'';
  if(!actual.includes(expected))fail('Expected '+JSON.stringify(expected)+' in '+JSON.stringify(actual));
 }
