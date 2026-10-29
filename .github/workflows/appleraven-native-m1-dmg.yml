@@ -1,0 +1,35 @@
+name: AppleRAVEN M1 owner test DMG
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mac-test-package:
+    runs-on: macos-15
+    timeout-minutes: 25
+    steps:
+      - name: Checkout preserved AppleRAVEN candidate
+        uses: actions/checkout@v4
+      - name: Verify Mac package inputs and isolated agent tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(uname -m)" = "arm64"
+          bash -n AppleRAVEN/mac/Install.command
+          bash -n AppleRAVEN/mac/build_macos.sh
+          bash AppleRAVEN/mac/Install.command --dry-run
+          python3 -m unittest discover -s AppleRAVEN/mac -p 'test_*.py' -v
+      - name: Build test macOS application and DMG
+        shell: bash
+        run: bash AppleRAVEN/mac/build_macos.sh
+      - name: Publish unnotarized candidate and checksums
+        uses: actions/upload-artifact@v4
+        with:
+          name: AppleRAVEN-Mac-M1-TEST-UNNOTARIZED
+          path: |
+            AppleRAVEN/mac/dist/*.dmg
+            AppleRAVEN/mac/dist/SHA256SUMS.txt
+          retention-days: 14
+          if-no-files-found: error
