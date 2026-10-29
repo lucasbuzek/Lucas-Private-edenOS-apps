@@ -59,3 +59,10 @@ Use stdio for on-device desktop MCP clients supporting process launch. Remote cl
 5. RAVENsNEST can retain permissioned metadata/evidence; GitHub remains source history; cloud backup location is optional and provider-specific.
 
 Source references: official MCP transport spec https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/specification/2026-07-28/basic/transports/index.mdx ; Kopia supported desktop OS https://kopia.io/docs/installation/ .
+
+
+## v0.2.6 — Connector-neutral verified metadata handoff
+
+The one DeLorean TimeMachine now has a local MCP evidence handoff for authorized provider connector metadata: `delorean_connector_preview` (read), `delorean_connector_events` (read), `delorean_connector_import` (locally write-gated). **32 total MCP tools (21 default read-only / 11 write-enabled)**; original backup/recovery capabilities unchanged. Host applications may use real connected GitHub/Drive/Dropbox APIs independently when no DeLorean device is online; a remote DeLorean endpoint is optional. New metadata-only records are explicitly NOT verified backups. See `docs/CONNECTOR_BRIDGE.md`, `core/connector_evidence.py`, `tests/test_connector_bridge.py`.
+
+Local Python test suite passed **134/134** on Linux; three actual provider revision records were retrieved by connected tools then imported into an isolated local MCP and read back. No native on-device install, ChatGPT direct DeLorean MCP connection, Windows/macOS/Android/iOS build, complete device-image recovery or physical restoration is claimed.
