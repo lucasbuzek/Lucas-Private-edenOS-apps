@@ -1,18 +1,18 @@
 {
   "schema": "appleraven_website_archive_index_v1",
-  "captured_date": "2026-10-27",
+  "captured_date": "2026-10-29",
   "mission": "AppleRAVEN reference collection only; no EDEN specialist implementation",
-  "scope": "Immediate archived pages in five curated Dropbox collection roots; excludes unrelated browser cache and deeper application package folders.",
+  "scope": "Current COMPLETE direct-child snapshots of five curated source folders (root, #appleOS, #webMCP, #AI toolkit, #AIcustom); not all recursively nested files, unrelated app screenshots, or Chromium browser-profile data. Filename metadata is not original website content verification.",
   "source_folder": "/EDEN-lucas-family/AI MCP tool",
   "sections": [
     {
       "name": "root",
-      "number_of_saved_pages": 314,
+      "number_of_saved_pages": 355,
       "has_more": false
     },
     {
       "name": "appleOS",
-      "number_of_saved_pages": 60,
+      "number_of_saved_pages": 104,
       "has_more": false
     },
     {
@@ -32,16 +32,28 @@
     }
   ],
   "counts": {
-    "indexed_saved_webpages": 413,
+    "indexed_saved_webpages": 498,
     "live_upstream_examples_verified": 14,
     "webarchive_binary_content_decoded": 0
   },
   "caveats": [
     "Dropbox text extraction failed for binary .webarchive. An attempted single-use download was blocked by the execution environment, so original saved URL and snapshot content are not verified.",
     "Filenames represent research leads, not installed MCP integrations, source-code inspections or native tool acceptance.",
-    "Verified links are to live upstream sources matching distinct named entries, not proof every saved original URL matched."
+    "Verified links are to live upstream sources matching distinct named entries, not proof every saved original URL matched.",
+    "Full folder recursive traversal included nested browser-profile data and was PARTIAL; it must not be indexed into the public website source catalog.",
+    "Latest supplied Dropbox share is public with EDIT access and contains nested browser-profile databases; review privacy/sharing independently; do not copy those files.",
+    "Binary archive payloads could not be downloaded in current runtime due DNS failure; live URL matching based on independently verified named source projects is not validation of the archived original URL/body."
   ],
   "entries": [
+    {
+      "name": "Kobel MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Pg",
+      "path": "ns:13844906001//Kobel MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 2928306,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
     {
       "name": "How to Use a Remote Ollama or llama.cpp Server From a Desktop AI App on Your Mac in 2026 - DEV Commu.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATyKA",
@@ -70,10 +82,28 @@
       "live_url_verified": null
     },
     {
+      "name": "NoMac MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5bw",
+      "path": "ns:13844906001//NoMac MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1853858,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "icloud-mcp by adamzaidi | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATzMw",
       "path": "ns:13844906001//icloud-mcp by adamzaidi | Glama.webarchive",
       "bytes": 4284242,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "ClawLink - MCP Connector | Glama.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ48w",
+      "path": "ns:13844906001//ClawLink - MCP Connector | Glama.webarchive",
+      "bytes": 3514643,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -119,6 +149,24 @@
       "file_id": "id:KqcGNtH_uy8AAAAAAATy-w",
       "path": "ns:13844906001//davinci-resolve-mcp by mateo-khalil | Glama.webarchive",
       "bytes": 4150484,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Filex AI MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5PA",
+      "path": "ns:13844906001//Filex AI MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1907271,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "XcodeBuildMCP MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5bA",
+      "path": "ns:13844906001//XcodeBuildMCP MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1848160,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -178,6 +226,15 @@
       "live_url_verified": null
     },
     {
+      "name": "Remote Files MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5OQ",
+      "path": "ns:13844906001//Remote Files MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1739087,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "Instagram MCP by thenavidm | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATzDw",
       "path": "ns:13844906001//Instagram MCP by thenavidm | Glama.webarchive",
@@ -205,6 +262,15 @@
       "live_url_verified": null
     },
     {
+      "name": "Macbeth MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5cQ",
+      "path": "ns:13844906001//Macbeth MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 10006843,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "Best Project Management Software with MCP Integrations (2026).webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATyQw",
       "path": "ns:13844906001//Best Project Management Software with MCP Integrations (2026).webarchive",
@@ -218,6 +284,15 @@
       "file_id": "id:KqcGNtH_uy8AAAAAAATyrA",
       "path": "ns:13844906001//maige-3d-mcp by m-ai-geXR | Glama.webarchive",
       "bytes": 3385569,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "hermes-agent - AI Agents on GitHub (257.5k★) | SkillsLLM.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ4-A",
+      "path": "ns:13844906001//hermes-agent - AI Agents on GitHub (257.5k★) | SkillsLLM.webarchive",
+      "bytes": 1275069,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -254,6 +329,15 @@
       "file_id": "id:KqcGNtH_uy8AAAAAAATyoQ",
       "path": "ns:13844906001//3D New Era AI by leandrodaf | Glama.webarchive",
       "bytes": 6942259,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "DiskWise MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5PQ",
+      "path": "ns:13844906001//DiskWise MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 5578360,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -376,6 +460,15 @@
       "live_url_verified": null
     },
     {
+      "name": "transmission-mcp-server by dgoo2308 | Glama.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ48A",
+      "path": "ns:13844906001//transmission-mcp-server by dgoo2308 | Glama.webarchive",
+      "bytes": 3266704,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "MCP Web Research Agent by SnotacusNexus | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATzAw",
       "path": "ns:13844906001//MCP Web Research Agent by SnotacusNexus | Glama.webarchive",
@@ -457,10 +550,28 @@
       "live_url_verified": null
     },
     {
+      "name": "MCP Server - StockCake | Free AI Images for AI Agents.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5MQ",
+      "path": "ns:13844906001//MCP Server - StockCake | Free AI Images for AI Agents.webarchive",
+      "bytes": 6807729,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "measure-mcp by purahmanian | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATzKw",
       "path": "ns:13844906001//measure-mcp by purahmanian | Glama.webarchive",
       "bytes": 3606318,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Mini MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5cA",
+      "path": "ns:13844906001//Mini MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1735889,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -488,6 +599,15 @@
       "file_id": "id:KqcGNtH_uy8AAAAAAATyPQ",
       "path": "ns:13844906001//Building Production-Grade AI Agents with MCP: A Complete Guide for 2026 - DEV Community.webarchive",
       "bytes": 2018880,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "MPilot by davezfr | Glama.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5dQ",
+      "path": "ns:13844906001//MPilot by davezfr | Glama.webarchive",
+      "bytes": 3404067,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -533,6 +653,15 @@
       "file_id": "id:KqcGNtH_uy8AAAAAAATzCg",
       "path": "ns:13844906001//Instagram by mcp-dir | Glama.webarchive",
       "bytes": 2862369,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Mac Apps Launcher MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5cg",
+      "path": "ns:13844906001//Mac Apps Launcher MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1735366,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -655,10 +784,28 @@
       "live_url_verified": null
     },
     {
+      "name": "Google Photos MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5QA",
+      "path": "ns:13844906001//Google Photos MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1749751,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "Arr Suite MCP Server by shaktech786 | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATyXA",
       "path": "ns:13844906001//Arr Suite MCP Server by shaktech786 | Glama.webarchive",
       "bytes": 3367557,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "media-stack-mcp by gbone001 | Glama.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ49A",
+      "path": "ns:13844906001//media-stack-mcp by gbone001 | Glama.webarchive",
+      "bytes": 3797073,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -871,6 +1018,15 @@
       "live_url_verified": null
     },
     {
+      "name": "Introduction | Playwright.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5LQ",
+      "path": "ns:13844906001//Introduction | Playwright.webarchive",
+      "bytes": 1010901,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "Storacha MCP Storage Server by storacha | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATy5A",
       "path": "ns:13844906001//Storacha MCP Storage Server by storacha | Glama.webarchive",
@@ -929,6 +1085,15 @@
       "file_id": "id:KqcGNtH_uy8AAAAAAATzgA",
       "path": "ns:13844906001//eosl-mcp by Kranny36 | Glama.webarchive",
       "bytes": 3363311,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "affaan-m (Affaan Mustafa).webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ49g",
+      "path": "ns:13844906001//affaan-m (Affaan Mustafa).webarchive",
+      "bytes": 12861092,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -1087,6 +1252,15 @@
       "live_url_verified": null
     },
     {
+      "name": "Truenas MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Nw",
+      "path": "ns:13844906001//Truenas MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1755751,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "mcp-remote-macos-use by baryhuang | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATzaQ",
       "path": "ns:13844906001//mcp-remote-macos-use by baryhuang | Glama.webarchive",
@@ -1231,6 +1405,15 @@
       "live_url_verified": "https://github.com/robworks-code/icloud-mcp"
     },
     {
+      "name": "Use of ChatGPT on iOS with Apple Shortcuts and Siri | by Sam Parmar | Medium.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5cw",
+      "path": "ns:13844906001//Use of ChatGPT on iOS with Apple Shortcuts and Siri | by Sam Parmar | Medium.webarchive",
+      "bytes": 8666460,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "Boost Your Agents with MCPs - Productivity Customized Tools - DEV Community.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATyNw",
       "path": "ns:13844906001//Boost Your Agents with MCPs - Productivity Customized Tools - DEV Community.webarchive",
@@ -1312,6 +1495,15 @@
       "live_url_verified": null
     },
     {
+      "name": "MediaLit MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Mg",
+      "path": "ns:13844906001//MediaLit MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1835777,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "mcp-3d-modeling-agent by SekaiNoOwari77 | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATyow",
       "path": "ns:13844906001//mcp-3d-modeling-agent by SekaiNoOwari77 | Glama.webarchive",
@@ -1384,10 +1576,28 @@
       "live_url_verified": null
     },
     {
+      "name": "Remote File MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5NA",
+      "path": "ns:13844906001//Remote File MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1776333,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "The Game Crafter by alex-gon | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATzcQ",
       "path": "ns:13844906001//The Game Crafter by alex-gon | Glama.webarchive",
       "bytes": 3070499,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "SILO MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Mw",
+      "path": "ns:13844906001//SILO MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 2042067,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -1618,6 +1828,15 @@
       "live_url_verified": null
     },
     {
+      "name": "Official YetiBrowser MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Lg",
+      "path": "ns:13844906001//Official YetiBrowser MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1839177,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "clipugc by clipugc | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATzrA",
       "path": "ns:13844906001//clipugc by clipugc | Glama.webarchive",
@@ -1739,6 +1958,15 @@
       "file_id": "id:KqcGNtH_uy8AAAAAAATy7A",
       "path": "ns:13844906001//YourImageShare by yourimageshare | Glama.webarchive",
       "bytes": 2888054,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "facebook-ads-library-mcp - MCP Servers on GitHub | SkillsLLM.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Kw",
+      "path": "ns:13844906001//facebook-ads-library-mcp - MCP Servers on GitHub | SkillsLLM.webarchive",
+      "bytes": 1300835,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -1924,6 +2152,15 @@
       "live_url_verified": null
     },
     {
+      "name": "ShotGlass MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5bg",
+      "path": "ns:13844906001//ShotGlass MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 2441742,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "widgetdash-mcp by purian | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATzLA",
       "path": "ns:13844906001//widgetdash-mcp by purian | Glama.webarchive",
@@ -2050,10 +2287,28 @@
       "live_url_verified": null
     },
     {
+      "name": "SpringBrand — AI Agent Builder to Get Work Done.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5MA",
+      "path": "ns:13844906001//SpringBrand — AI Agent Builder to Get Work Done.webarchive",
+      "bytes": 4254267,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "media-gen-mcp by AriOliv | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATy1A",
       "path": "ns:13844906001//media-gen-mcp by AriOliv | Glama.webarchive",
       "bytes": 2911002,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Scrapling - MCP Servers on GitHub (89.9k★) | SkillsLLM.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Kg",
+      "path": "ns:13844906001//Scrapling - MCP Servers on GitHub (89.9k★) | SkillsLLM.webarchive",
+      "bytes": 1305317,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -2140,6 +2395,15 @@
       "live_url_verified": null
     },
     {
+      "name": "Cmdshellmcp MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Pw",
+      "path": "ns:13844906001//Cmdshellmcp MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1775934,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "Seiche — Funding and FX Evidence by beepboop2025 | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATyVg",
       "path": "ns:13844906001//Seiche — Funding and FX Evidence by beepboop2025 | Glama.webarchive",
@@ -2185,6 +2449,15 @@
       "live_url_verified": null
     },
     {
+      "name": "Torrent Search MCP Server by philogicae | Glama.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ48Q",
+      "path": "ns:13844906001//Torrent Search MCP Server by philogicae | Glama.webarchive",
+      "bytes": 3801856,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "Mixly Local MCP by ovoVHV | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATzhQ",
       "path": "ns:13844906001//Mixly Local MCP by ovoVHV | Glama.webarchive",
@@ -2207,6 +2480,15 @@
       "file_id": "id:KqcGNtH_uy8AAAAAAATyzw",
       "path": "ns:13844906001//App Factory MCP by DPGS-oss | Glama.webarchive",
       "bytes": 3734593,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "IronShard Object Storage Sandbox MCP Server.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5NQ",
+      "path": "ns:13844906001//IronShard Object Storage Sandbox MCP Server.webarchive",
+      "bytes": 1746786,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -2257,6 +2539,15 @@
       "live_url_verified": null
     },
     {
+      "name": "jfarcand:mirroir-mcp: MCP server for controlling a real iPhone via macOS iPhone Mirroring...and any .webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5dA",
+      "path": "ns:13844906001//jfarcand:mirroir-mcp: MCP server for controlling a real iPhone via macOS iPhone Mirroring...and any .webarchive",
+      "bytes": 18103008,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "mcp-plex by obrien-matthew | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATyZA",
       "path": "ns:13844906001//mcp-plex by obrien-matthew | Glama.webarchive",
@@ -2270,6 +2561,15 @@
       "file_id": "id:KqcGNtH_uy8AAAAAAATySw",
       "path": "ns:13844906001//AI eBook Generator - MCP Connector | Glama.webarchive",
       "bytes": 2787540,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "ECC - AI Agents on GitHub (290.2k★) | SkillsLLM.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ49w",
+      "path": "ns:13844906001//ECC - AI Agents on GitHub (290.2k★) | SkillsLLM.webarchive",
+      "bytes": 1260051,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -2437,6 +2737,15 @@
       "live_url_verified": null
     },
     {
+      "name": "613 MCP Servers for OpenAPI | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5bQ",
+      "path": "ns:13844906001//613 MCP Servers for OpenAPI | Awesome MCP Servers.webarchive",
+      "bytes": 1847583,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "hardwaremcp by saadvz | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATykg",
       "path": "ns:13844906001//hardwaremcp by saadvz | Glama.webarchive",
@@ -2450,6 +2759,15 @@
       "file_id": "id:KqcGNtH_uy8AAAAAAATyOw",
       "path": "ns:13844906001//MCP Architecture Patterns for Production-Grade Agents - DEV Community.webarchive",
       "bytes": 3389586,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Fast Io MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5OA",
+      "path": "ns:13844906001//Fast Io MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1752203,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -2518,6 +2836,15 @@
       "live_url_verified": null
     },
     {
+      "name": "Google Drive MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Ow",
+      "path": "ns:13844906001//Google Drive MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1736350,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "Game Asset Finder MCP by sudoriaa | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATzcg",
       "path": "ns:13844906001//Game Asset Finder MCP by sudoriaa | Glama.webarchive",
@@ -2540,6 +2867,15 @@
       "file_id": "id:KqcGNtH_uy8AAAAAAATzZw",
       "path": "ns:13844906001//quick-game by danilo-1 | Glama.webarchive",
       "bytes": 3020865,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "YouTube Download To Cloud Storage — FlashData MCP Server.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Lw",
+      "path": "ns:13844906001//YouTube Download To Cloud Storage — FlashData MCP Server.webarchive",
+      "bytes": 1972513,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -2594,6 +2930,15 @@
       "file_id": "id:KqcGNtH_uy8AAAAAAATyrw",
       "path": "ns:13844906001//3D-MCP by team-plask | Glama.webarchive",
       "bytes": 5325679,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "rea - AI Agents on GitHub (393.7k★) | SkillsLLM.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ49Q",
+      "path": "ns:13844906001//rea - AI Agents on GitHub (393.7k★) | SkillsLLM.webarchive",
+      "bytes": 1307597,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -2698,6 +3043,15 @@
       "live_url_verified": null
     },
     {
+      "name": "Stream Vessel MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Ng",
+      "path": "ns:13844906001//Stream Vessel MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1768416,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "whatsapp by cRodriguez83407 | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATyfA",
       "path": "ns:13844906001//whatsapp by cRodriguez83407 | Glama.webarchive",
@@ -2711,6 +3065,24 @@
       "file_id": "id:KqcGNtH_uy8AAAAAAATzJw",
       "path": "ns:13844906001//mac-cleaner by FFFames | Glama.webarchive",
       "bytes": 2830917,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "mcp-arrstack by indlns | Glama.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ48g",
+      "path": "ns:13844906001//mcp-arrstack by indlns | Glama.webarchive",
+      "bytes": 4134381,
+      "category": "root",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Browser MCP - Let AI use your real browser.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5LA",
+      "path": "ns:13844906001//Browser MCP - Let AI use your real browser.webarchive",
+      "bytes": 1998400,
       "category": "root",
       "content_decoded": false,
       "live_url_verified": null
@@ -2878,6 +3250,15 @@
       "live_url_verified": "https://glama.ai/mcp/servers/thangduonghuu/macos-ui-mcp"
     },
     {
+      "name": "VNC MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Zw",
+      "path": "ns:13844906001//#appleOS/VNC MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 4609113,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "prompt-to-asset by MohamedAbdallah-14 | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATymQ",
       "path": "ns:13844906001//#appleOS/prompt-to-asset by MohamedAbdallah-14 | Glama.webarchive",
@@ -2896,6 +3277,15 @@
       "live_url_verified": null
     },
     {
+      "name": "2XcodeBuildMCP MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5aw",
+      "path": "ns:13844906001//#appleOS/2XcodeBuildMCP MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1823866,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "ChatGPT iPhone Bridge by kapunakap | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATyug",
       "path": "ns:13844906001//#appleOS/ChatGPT iPhone Bridge by kapunakap | Glama.webarchive",
@@ -2905,10 +3295,37 @@
       "live_url_verified": "https://github.com/kapunakap/chatgpt-iphone-bridge"
     },
     {
+      "name": "NoMac MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5VA",
+      "path": "ns:13844906001//#appleOS/NoMac MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1853858,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "iMessage Query MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5UQ",
+      "path": "ns:13844906001//#appleOS/iMessage Query MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1738746,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "BrewUI: A First Look at Homebrew's Official macOS GUI - DEV Community.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATyJw",
       "path": "ns:13844906001//#appleOS/BrewUI: A First Look at Homebrew's Official macOS GUI - DEV Community.webarchive",
       "bytes": 3313422,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "XcodeMCP MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5aA",
+      "path": "ns:13844906001//#appleOS/XcodeMCP MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1832210,
       "category": "appleOS",
       "content_decoded": false,
       "live_url_verified": null
@@ -2950,6 +3367,15 @@
       "live_url_verified": "https://glama.ai/mcp/servers/juliusloon/macos-agent-bridge"
     },
     {
+      "name": "Tethered MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5aQ",
+      "path": "ns:13844906001//#appleOS/Tethered MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1750426,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "Siri Shortcuts MCP Server by kErdogan6537 | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATyig",
       "path": "ns:13844906001//#appleOS/Siri Shortcuts MCP Server by kErdogan6537 | Glama.webarchive",
@@ -2963,6 +3389,33 @@
       "file_id": "id:KqcGNtH_uy8AAAAAAATzKg",
       "path": "ns:13844906001//#appleOS/mibly-apple-health-mcp by littlenew117 | Glama.webarchive",
       "bytes": 4627241,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Akou MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ4_A",
+      "path": "ns:13844906001//#appleOS/Akou MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1888674,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Official Google MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5ag",
+      "path": "ns:13844906001//#appleOS/Official Google MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1750598,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Google Drive MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5RA",
+      "path": "ns:13844906001//#appleOS/Google Drive MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1757594,
       "category": "appleOS",
       "content_decoded": false,
       "live_url_verified": null
@@ -3004,10 +3457,37 @@
       "live_url_verified": "https://github.com/mpacarroll/apple-messages-mcp-remote"
     },
     {
+      "name": "Pages Native MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Xg",
+      "path": "ns:13844906001//#appleOS/Pages Native MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1803729,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "autoMessage - MCP Connector | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATyTQ",
       "path": "ns:13844906001//#appleOS/autoMessage - MCP Connector | Glama.webarchive",
       "bytes": 2806429,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "iOS Device Control MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Ug",
+      "path": "ns:13844906001//#appleOS/iOS Device Control MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1777079,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Phosphor MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ4-g",
+      "path": "ns:13844906001//#appleOS/Phosphor MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 7722888,
       "category": "appleOS",
       "content_decoded": false,
       "live_url_verified": null
@@ -3022,10 +3502,28 @@
       "live_url_verified": null
     },
     {
+      "name": "Nexus Shell Agent Bridge MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Wg",
+      "path": "ns:13844906001//#appleOS/Nexus Shell Agent Bridge MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1740921,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "Siri Shortcuts MCP Server by dvcrn | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATyiA",
       "path": "ns:13844906001//#appleOS/Siri Shortcuts MCP Server by dvcrn | Glama.webarchive",
       "bytes": 3799678,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "XcodeBuildMCP MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Zg",
+      "path": "ns:13844906001//#appleOS/XcodeBuildMCP MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1819912,
       "category": "appleOS",
       "content_decoded": false,
       "live_url_verified": null
@@ -3049,10 +3547,37 @@
       "live_url_verified": null
     },
     {
+      "name": "Numbers Native MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Xw",
+      "path": "ns:13844906001//#appleOS/Numbers Native MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1854053,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "ServeMyAPI MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Yw",
+      "path": "ns:13844906001//#appleOS/ServeMyAPI MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1746831,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "ios-mcp by emazaheri | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATydA",
       "path": "ns:13844906001//#appleOS/ios-mcp by emazaheri | Glama.webarchive",
       "bytes": 6165464,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "ToolPiper MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5VQ",
+      "path": "ns:13844906001//#appleOS/ToolPiper MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1745957,
       "category": "appleOS",
       "content_decoded": false,
       "live_url_verified": null
@@ -3112,6 +3637,24 @@
       "live_url_verified": null
     },
     {
+      "name": "PyApple Tools MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5YA",
+      "path": "ns:13844906001//#appleOS/PyApple Tools MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1867367,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Official SlateVM MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ4-Q",
+      "path": "ns:13844906001//#appleOS/Official SlateVM MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1746597,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "apple-books-mcp by vgnshiyer | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATzIQ",
       "path": "ns:13844906001//#appleOS/apple-books-mcp by vgnshiyer | Glama.webarchive",
@@ -3148,6 +3691,15 @@
       "live_url_verified": null
     },
     {
+      "name": "HomePort MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5UA",
+      "path": "ns:13844906001//#appleOS/HomePort MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1732708,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "Apple Dev MCP Server by erdncyz | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATzGg",
       "path": "ns:13844906001//#appleOS/Apple Dev MCP Server by erdncyz | Glama.webarchive",
@@ -3164,6 +3716,42 @@
       "category": "appleOS",
       "content_decoded": false,
       "live_url_verified": "https://glama.ai/mcp/servers/nickatnight96/iphone-mirror-mcp"
+    },
+    {
+      "name": "Q Ring MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5YQ",
+      "path": "ns:13844906001//#appleOS/Q Ring MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1906825,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Iphone Mirror MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Uw",
+      "path": "ns:13844906001//#appleOS/Iphone Mirror MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1781522,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "ShadowCursor MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5ZA",
+      "path": "ns:13844906001//#appleOS/ShadowCursor MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1737454,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "3D Agent (external Agents, Ultra) MCP Server.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ4-w",
+      "path": "ns:13844906001//#appleOS/3D Agent (external Agents, Ultra) MCP Server.webarchive",
+      "bytes": 1859384,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
     },
     {
       "name": "apple-workouts-mcp by yashhooda1 | Glama.webarchive",
@@ -3188,6 +3776,24 @@
       "file_id": "id:KqcGNtH_uy8AAAAAAATzGw",
       "path": "ns:13844906001//#appleOS/Apple Photos MCP by thenavidm | Glama.webarchive",
       "bytes": 3265803,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "HomeMCPBridge MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Tw",
+      "path": "ns:13844906001//#appleOS/HomeMCPBridge MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1754469,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Smart Photo Journal MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5SA",
+      "path": "ns:13844906001//#appleOS/Smart Photo Journal MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1740113,
       "category": "appleOS",
       "content_decoded": false,
       "live_url_verified": null
@@ -3247,6 +3853,33 @@
       "live_url_verified": "https://github.com/kevinswint/xcode-studio-mcp"
     },
     {
+      "name": "composer - Yovoice MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5ZQ",
+      "path": "ns:13844906001//#appleOS/composer - Yovoice MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 4098996,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Oh My Android MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5XQ",
+      "path": "ns:13844906001//#appleOS/Oh My Android MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 4555904,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Cross Platform File System MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5RQ",
+      "path": "ns:13844906001//#appleOS/Cross Platform File System MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1733566,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "MCP Appium by appium | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATyxw",
       "path": "ns:13844906001//#appleOS/MCP Appium by appium | Glama.webarchive",
@@ -3265,10 +3898,28 @@
       "live_url_verified": null
     },
     {
+      "name": "iMCP MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Sg",
+      "path": "ns:13844906001//#appleOS/iMCP MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1833610,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "macos-computer-use by johnexzy | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATzTA",
       "path": "ns:13844906001//#appleOS/macos-computer-use by johnexzy | Glama.webarchive",
       "bytes": 2849801,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Cloak Proxy MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5TQ",
+      "path": "ns:13844906001//#appleOS/Cloak Proxy MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 2282577,
       "category": "appleOS",
       "content_decoded": false,
       "live_url_verified": null
@@ -3292,10 +3943,64 @@
       "live_url_verified": null
     },
     {
+      "name": "macOS Remote Control MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Rw",
+      "path": "ns:13844906001//#appleOS/macOS Remote Control MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1750556,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Official AppleScript BB MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5SQ",
+      "path": "ns:13844906001//#appleOS/Official AppleScript BB MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1746692,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Siri Shortcuts MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5XA",
+      "path": "ns:13844906001//#appleOS/Siri Shortcuts MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 2714983,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Argus Testing MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Sw",
+      "path": "ns:13844906001//#appleOS/Argus Testing MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 2137525,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "Playwright MCP for macOS by mb-dev | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATzSQ",
       "path": "ns:13844906001//#appleOS/Playwright MCP for macOS by mb-dev | Glama.webarchive",
       "bytes": 2900530,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Remote macOS Use MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5QQ",
+      "path": "ns:13844906001//#appleOS/Remote macOS Use MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 8057962,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Homebrew MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Tg",
+      "path": "ns:13844906001//#appleOS/Homebrew MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1750718,
       "category": "appleOS",
       "content_decoded": false,
       "live_url_verified": null
@@ -3319,6 +4024,15 @@
       "live_url_verified": null
     },
     {
+      "name": "Fast File System MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Rg",
+      "path": "ns:13844906001//#appleOS/Fast File System MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1753268,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "macos-mcp by krmj22 | Glama.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATzWA",
       "path": "ns:13844906001//#appleOS/macos-mcp by krmj22 | Glama.webarchive",
@@ -3337,10 +4051,46 @@
       "live_url_verified": null
     },
     {
+      "name": "macOS Automator MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Qg",
+      "path": "ns:13844906001//#appleOS/macOS Automator MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 2273962,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "ClawTank MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5TA",
+      "path": "ns:13844906001//#appleOS/ClawTank MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1742550,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "Safari MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Ww",
+      "path": "ns:13844906001//#appleOS/Safari MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 3902427,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
       "name": "GitHub - Homebrew:BrewUI: 📺 Homebrew's official macOS GUI · GitHub.webarchive",
       "file_id": "id:KqcGNtH_uy8AAAAAAATyMw",
       "path": "ns:13844906001//#appleOS/GitHub - Homebrew:BrewUI: 📺 Homebrew's official macOS GUI · GitHub.webarchive",
       "bytes": 8657343,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "AgentHub MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Qw",
+      "path": "ns:13844906001//#appleOS/AgentHub MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 2815060,
       "category": "appleOS",
       "content_decoded": false,
       "live_url_verified": null
@@ -3362,6 +4112,15 @@
       "category": "appleOS",
       "content_decoded": false,
       "live_url_verified": "https://github.com/sweetrb/apple-photos-mcp"
+    },
+    {
+      "name": "Serato DJ (serato Dj MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ5Yg",
+      "path": "ns:13844906001//#appleOS/Serato DJ (serato Dj MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1778854,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
     },
     {
       "name": "Apple Docs 2.0 MCP by mishafyi | Glama.webarchive",
@@ -3395,6 +4154,15 @@
       "file_id": "id:KqcGNtH_uy8AAAAAAATyQA",
       "path": "ns:13844906001//#appleOS/Apple Shortcuts + AI Is the Automation Stack… | Think Different.webarchive",
       "bytes": 1348965,
+      "category": "appleOS",
+      "content_decoded": false,
+      "live_url_verified": null
+    },
+    {
+      "name": "AE Motion MCP Server | Awesome MCP Servers.webarchive",
+      "file_id": "id:KqcGNtH_uy8AAAAAAAZ4_Q",
+      "path": "ns:13844906001//#appleOS/AE Motion MCP Server | Awesome MCP Servers.webarchive",
+      "bytes": 1742582,
       "category": "appleOS",
       "content_decoded": false,
       "live_url_verified": null
