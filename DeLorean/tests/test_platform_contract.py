@@ -30,7 +30,7 @@ class MultiPlatformContract(unittest.TestCase):
         t=[x for x in TOOLS if x['name']=='delorean_platform_matrix']
         self.assertEqual(len(t),1)
         self.assertTrue(t[0]['annotations']['readOnlyHint'])
-        self.assertEqual(len(TOOLS),29)
+        self.assertEqual(len(TOOLS),32)
     def test_06_status_readable_with_no_device_and_no_cloud(self):
         with tempfile.TemporaryDirectory() as d:
             core=DeLorean(str(Path(d)/'home'),[],[],owner='TestOwner')
