@@ -1,7 +1,7 @@
 const CACHE = "seshat-local-v1";
 const ASSETS = [
   "./", "./index.html", "./app.mjs", "./styles.css", "./manifest.webmanifest", "./icon.svg",
-  "./src/domain/ledger.mjs", "./src/domain/queries.mjs", "./src/domain/catalogue.mjs",
+  "./src/domain/ledger.mjs", "./src/domain/queries.mjs", "./src/domain/catalogue.mjs", "./src/domain/csv-import.mjs",
   "./src/persistence/snapshot.mjs", "./src/persistence/browser-idb.mjs",
   "./fixtures/demo-inventory.mjs"
 ];
