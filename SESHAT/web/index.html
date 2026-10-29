@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b35">
+  <meta name="description" content="SESHAT local-first stock ledger and inventory workspace">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+  <title>SESHAT — Inventory</title>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brandicon">S</span><span><strong>SESHAT</strong><small>Stock &amp; Inventory</small></span></div>
+      <nav aria-label="Workspace">
+        <button type="button" class="nav active" data-page="overview">Overview</button>
+        <button type="button" class="nav" data-page="catalogue">Catalogue &amp; locations</button>
+        <button type="button" class="nav" data-page="movements">Stock movements</button>
+        <button type="button" class="nav" data-page="backup">Backup &amp; restore</button>
+      </nav>
+      <div class="sidefoot"><span class="dot"></span><span>Single-device workspace<br><small>No cloud account connected</small></span></div>
+    </aside>
+    <div class="maincol">
+      <header class="topbar"><div><strong>Inventory workspace</strong><span id="source-status">Loading local profile…</span></div><div class="pills"><span id="network-state" class="pill">Checking network</span><span class="pill dark">Local-only</span></div></header>
+      <main>
+        <div id="notice" role="status" aria-live="polite" class="notice" hidden></div>
+        <section data-panel="overview">
+          <div class="hero"><div><span class="eyebrow">BUSINESS OPERATIONS / INVENTORY</span><h1>Know what is in stock.</h1><p>Trace every receipt, issue and transfer. Your local records remain on this device until you explicitly export them.</p></div><div class="hero-mark" aria-hidden="true">S</div></div>
+          <div class="stats"><div class="stat"><span>Products</span><strong id="stat-products">0</strong><small>Catalogued SKUs</small></div><div class="stat"><span>Locations</span><strong id="stat-locations">0</strong><small>Storage points</small></div><div class="stat"><span>Movements</span><strong id="stat-movements">0</strong><small>Append-only records</small></div><div class="stat"><span>Low stock</span><strong id="stat-low">0</strong><small>Below reorder threshold</small></div></div>
+          <div class="panel"><div class="panel-head"><div><h2>Stock overview</h2><p>On-hand counts derived from recorded movements</p></div><label class="sr" for="filter-products">Filter catalogue</label><input id="filter-products" placeholder="Search SKU, name or barcode" type="search"></div><div class="tablewrap"><table><thead><tr><th>Product</th><th>SKU</th><th>On hand</th><th>Reorder at</th><th>Status</th></tr></thead><tbody id="overview-body"></tbody></table></div></div>
+        </section>
+        <section data-panel="catalogue" hidden>
+          <div class="sectionhead"><span class="eyebrow">INVENTORY SETUP</span><h1>Catalogue &amp; locations</h1><p>Add products and locations before recording stock. Duplicate SKUs and barcodes are rejected.</p></div>
+          <div class="twocol"><div class="panel"><h2>Add a product</h2><form id="product-form" class="formgrid"><label>SKU <input name="sku" required maxlength="80" placeholder="EGG-LARGE-001"></label><label>Product name <input name="name" required maxlength="160" placeholder="Large eggs"></label><label>Unit <input name="unit" required maxlength="32" value="each"></label><label>Barcode <input name="barcode" maxlength="100" placeholder="Optional"></label><label>Category <input name="category" maxlength="100" placeholder="Optional"></label><label>Reorder threshold <input name="reorder" type="number" min="0" step="0.001" placeholder="Optional"></label><button type="submit" class="primary">Add product</button></form></div><div class="panel"><h2>Add a location</h2><form id="location-form" class="formgrid"><label>Location identifier <input name="location" required maxlength="100" placeholder="main-store"></label><button type="submit" class="primary">Add location</button></form><h3>Current locations</h3><ul id="location-list" class="tags"></ul></div></div>
+        </section>
+        <section data-panel="movements" hidden>
+          <div class="sectionhead"><span class="eyebrow">APPEND-ONLY LEDGER</span><h1>Stock movements</h1><p>Preview every change before posting. Corrections require another traceable movement, not a silent edit.</p></div>
+          <div class="twocol wideleft"><div class="panel"><h2>Record a movement</h2><form id="movement-form" class="formgrid"><label>Type <select name="type" id="movement-type"><option value="receipt">Receive</option><option value="issue">Issue / stock out</option><option value="return">Return to stock</option><option value="transfer">Transfer</option><option value="adjustment">Adjustment</option></select></label><label>Product <select name="productId" id="movement-product" required></select></label><label>Location / source <select name="locationId" id="movement-location" required></select></label><label id="to-location-label" hidden>Destination <select name="toLocationId" id="movement-to"></select></label><label>Quantity <input id="movement-quantity" name="quantity" type="number" step="0.001" required placeholder="0.000"></label><label>Reference <input name="reference" maxlength="180" placeholder="Delivery, sale or stocktake ID"></label><div class="buttonrow"><button type="submit" class="primary">Preview movement</button><button id="post-movement" type="button" disabled>Confirm and post</button></div></form><div id="movement-preview" class="preview" aria-live="polite">Nothing to post. Select a product, location and quantity.</div></div><div class="panel"><h2>Posting rules</h2><p class="muted">Local-only. This profile has no verified identity, shared server or cross-device synchronization.</p><div class="rule"><strong>Nonnegative stock</strong><span>Issues and transfers cannot make on-hand quantity negative.</span></div><div class="rule"><strong>Idempotent entries</strong><span>Retried movements do not double-post an identical event.</span></div><div class="rule"><strong>Concurrent tab safety</strong><span>Stale revisions abort instead of silently overwriting the ledger.</span></div></div></div>
+          <div class="panel"><div class="panel-head"><h2>Recent movement history</h2><span id="history-count" class="muted"></span></div><div class="tablewrap"><table><thead><tr><th>Timestamp</th><th>Type</th><th>SKU</th><th>Quantity</th><th>Location(s)</th><th>Reference</th></tr></thead><tbody id="history-body"></tbody></table></div></div>
+        </section>
+        <section data-panel="backup" hidden>
+          <div class="sectionhead"><span class="eyebrow">DATA CUSTODY</span><h1>Backup &amp; recovery</h1><p>Portable JSON inventory export. Restore validates event history and the SHA-256 stock checksum before replacing any local record.</p></div>
+          <div class="twocol"><div class="panel"><h2>Export inventory</h2><p>Download a local copy with the product catalogue and original append-only ledger. Save the file somewhere you control.</p><button id="export-button" class="primary">Download JSON backup</button><p class="footnote">A download is not proof of an independently tested restore.</p></div><div class="panel"><h2>Restore inventory</h2><p>Choose a SESHAT portable backup or a version 1 ledger snapshot. The entire current local profile will be replaced only after explicit confirmation.</p><label class="filelabel">Choose JSON backup<input id="import-file" type="file" accept=".json,application/json"></label><button id="import-button" disabled>Validate and restore</button></div></div>
+          <div class="panel caution"><h2>Data status</h2><p id="storage-status">Local database loading.</p><p>Browser storage can be cleared or evicted. No remote backup or server reconciliation is configured. Do not treat this profile as a shared multi-user system.</p></div>
+        </section>
+      </main>
+      <footer>SESHAT · Local-first engineering candidate · No remote posting or external provider writes</footer>
+    </div>
+  </div>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>
