@@ -9,6 +9,7 @@ on:
       - BIFROST/headless/mcp_remote.py
       - BIFROST/tests/test_mcp_remote_auth.py
       - BIFROST/tests/test_mcp_remote_auth_https.py
+      - BIFROST/tests/test_mcp_remote_http.py
       - BIFROST/tests/test_mcp_remote_transport_contract.py
       - BIFROST/headless/shortcalls.py
       - BIFROST/core/shortcalls.v1.json
@@ -24,6 +25,7 @@ on:
       - BIFROST/headless/mcp_remote.py
       - BIFROST/tests/test_mcp_remote_auth.py
       - BIFROST/tests/test_mcp_remote_auth_https.py
+      - BIFROST/tests/test_mcp_remote_http.py
       - BIFROST/tests/test_mcp_remote_transport_contract.py
       - BIFROST/tests/test_mcp_bridge.py
       - BIFROST/docs/research/MCP_SOURCE_RECONCILIATION_20261026.md
@@ -65,3 +67,9 @@ jobs:
         run: python -B -m unittest discover -s tests -p "test_mcp_remote_transport_contract.py" -v
       - name: Compile independent remote SDK adapter
         run: python -B -m py_compile headless/mcp_remote_auth.py headless/mcp_remote.py
+      - name: Install official SDK for actual HTTP boundary tests
+        run: python -m pip install --disable-pip-version-check 'mcp==2.3.0'
+      - name: Exercise SDK HTTP listener and real platform dispatcher
+        env:
+          BIFROST_REQUIRE_MCP_SDK: '1'
+        run: python -B -m unittest discover -s tests -p "test_mcp_remote_http.py" -v
