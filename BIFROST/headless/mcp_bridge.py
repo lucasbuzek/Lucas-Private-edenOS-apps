@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""BIFROSTbridge local stdio MCP, negotiated protocol 2025-06-18.
+"""BIFROSTbridge local stdio MCP, legacy 2025-06-18 plus modern 2026-07-28.
 
 Uses existing owners. No remote listener, shell execution, or implicit online read.
 The launching local client grants access by starting this process as its user.
@@ -11,6 +11,10 @@ import shortcalls
 import storage_adapter
 
 VERSION = '2025-06-18'
+MODERN_VERSION = '2026-07-28'
+VERSION_KEY = 'io.modelcontextprotocol/protocolVersion'
+CAPABILITIES_KEY = 'io.modelcontextprotocol/clientCapabilities'
+SERVER_INFO_KEY = 'io.modelcontextprotocol/serverInfo'
 LIMIT = 65536
 EMPTY = {'type':'object','properties':{},'additionalProperties':False}
 
@@ -37,6 +41,8 @@ class Session:
             return None
         if not isinstance(ident,(str,int)) or isinstance(ident,bool):return self.error(None,-32600,'Invalid request id')
         if not isinstance(params,dict):return self.error(ident,-32602,'Invalid parameters')
+        if method == 'server/discover' or '_meta' in params:
+            return self.modern(ident, method, params)
         if method=='initialize':
             if self.initialized:return self.error(ident,-32600,'Already initialized')
             if not isinstance(params.get('protocolVersion'),str) or not isinstance(params.get('capabilities'),dict) or not isinstance(params.get('clientInfo'),dict):
@@ -47,21 +53,68 @@ class Session:
         if not self.ready:return self.error(ident,-32000,'Initialize the session first')
         if method=='tools/list':return self.result(ident,{'tools':tools()})
         if method=='tools/call':
-            name=params.get('name'); arguments=params.get('arguments',{})
-            if arguments != {} or not isinstance(arguments,dict):return self.error(ident,-32602,'This tool accepts no arguments')
-            if name not in {t['name'] for t in tools()}:return self.error(ident,-32602,'Unknown or unavailable tool')
-            try:
-                with contextlib.redirect_stdout(sys.stderr):
-                    value=storage_adapter.profiles() if name=='bifrost.storage.profiles' else shortcalls.call(name)
-                return self.result(ident,{'content':[{'type':'text','text':json.dumps(value)}],'isError':False})
-            except Exception:
-                return self.result(ident,{'content':[{'type':'text','text':'Local capability failed; check the local installation.'}],'isError':True})
+            return self.run_tool(ident,params,modern=False)
         return self.error(ident,-32601,'Method not found')
+
+    def modern(self, ident, method, params):
+        """Stateless 2026 RPC; each request supplies its own version/capabilities."""
+        meta = params.get('_meta')
+        if not isinstance(meta, dict):
+            return self.error(ident,-32602,'Modern request requires _meta')
+        version = meta.get(VERSION_KEY)
+        if not isinstance(version, str):
+            return self.error(ident,-32602,'Missing protocol version')
+        if version != MODERN_VERSION:
+            return self.error(ident,-32022,'Unsupported protocol version',
+                              {'supported':[MODERN_VERSION],'requested':version})
+        if not isinstance(meta.get(CAPABILITIES_KEY),dict):
+            return self.error(ident,-32602,'Missing client capabilities')
+        def payload(fields):
+            return {'resultType':'complete',**fields,
+                    '_meta':{SERVER_INFO_KEY:{'name':'BIFROSTbridge-local','version':'0.2.0'}}}
+        if method=='server/discover':
+            if set(params) != {'_meta'}:
+                return self.error(ident,-32602,'Unexpected discovery parameters')
+            return self.result(ident,payload({
+                'supportedVersions':[MODERN_VERSION],
+                'capabilities':{'tools':{}},
+                'ttlMs':0,'cacheScope':'private'}))
+        if method=='ping':
+            return self.result(ident,payload({}))
+        if method=='tools/list':
+            if set(params) != {'_meta'}:
+                return self.error(ident,-32602,'Unsupported tool list pagination')
+            return self.result(ident,payload({'tools':tools(),'ttlMs':0,'cacheScope':'private'}))
+        if method=='tools/call':
+            if not set(params).issubset({'_meta','name','arguments'}):
+                return self.error(ident,-32602,'Unexpected tool parameters')
+            return self.run_tool(ident,params,modern=True)
+        return self.error(ident,-32601,'Method not found')
+
+    def run_tool(self, ident, params, modern=False):
+        name=params.get('name'); arguments=params.get('arguments',{})
+        if arguments != {} or not isinstance(arguments,dict):
+            return self.error(ident,-32602,'This tool accepts no arguments')
+        if name not in {t['name'] for t in tools()}:
+            return self.error(ident,-32602,'Unknown or unavailable tool')
+        try:
+            with contextlib.redirect_stdout(sys.stderr):
+                value=storage_adapter.profiles() if name=='bifrost.storage.profiles' else shortcalls.call(name)
+            payload={'content':[{'type':'text','text':json.dumps(value)}],'isError':False}
+        except Exception:
+            payload={'content':[{'type':'text','text':'Local capability failed; check the local installation.'}],'isError':True}
+        if modern:
+            payload={'resultType':'complete',**payload,
+                     '_meta':{SERVER_INFO_KEY:{'name':'BIFROSTbridge-local','version':'0.2.0'}}}
+        return self.result(ident,payload)
 
     @staticmethod
     def result(ident,result):return {'jsonrpc':'2.0','id':ident,'result':result}
     @staticmethod
-    def error(ident,code,message):return {'jsonrpc':'2.0','id':ident,'error':{'code':code,'message':message}}
+    def error(ident,code,message,data=None):
+        err={'code':code,'message':message}
+        if data is not None:err['data']=data
+        return {'jsonrpc':'2.0','id':ident,'error':err}
 
 def main():
     session=Session()
