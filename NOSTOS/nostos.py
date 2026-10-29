@@ -41,13 +41,16 @@ def db(path=None):
         c.close()
 
 def init_db(path=None):
-    if path is None: DATA_DIR.mkdir(parents=True, exist_ok=True)
+    if path is None:
+        DATA_DIR.mkdir(parents=True,exist_ok=True,mode=0o700)
+        if os.name == 'posix': os.chmod(DATA_DIR,0o700)
     with db(path) as c:
         c.execute("PRAGMA journal_mode=WAL")
         c.execute("CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY AUTOINCREMENT, kind TEXT NOT NULL, title TEXT NOT NULL, details TEXT NOT NULL DEFAULT '', status TEXT NOT NULL DEFAULT 'active', quantity REAL, location TEXT NOT NULL DEFAULT '', due_date TEXT NOT NULL DEFAULT '', created_at TEXT NOT NULL, updated_at TEXT NOT NULL, data_json TEXT NOT NULL DEFAULT '{}')")
         c.execute("CREATE INDEX IF NOT EXISTS items_kind_updated ON items(kind, updated_at DESC)")
         c.execute("CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT NOT NULL)")
         c.execute("INSERT OR IGNORE INTO meta(key,value) VALUES('schema_version','1')")
+    if os.name == 'posix': os.chmod(str(path or DB_PATH),0o600)
 
 def item_dict(row):
     d=dict(row); d['data']=json.loads(d.pop('data_json') or '{}'); return d
@@ -101,7 +104,7 @@ class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt, *args):
         if os.environ.get('NOSTOS_ACCESS_LOG')=='1': super().log_message(fmt,*args)
     def send_bytes(self, status, payload, ctype='application/json; charset=utf-8', headers=None):
-        self.send_response(status); self.send_header('Content-Type',ctype); self.send_header('X-Content-Type-Options','nosniff'); self.send_header('Cache-Control','no-store')
+        self.send_response(status); self.send_header('Content-Type',ctype); self.send_header('X-Content-Type-Options','nosniff'); self.send_header('Cache-Control','no-store'); self.send_header('X-Frame-Options','DENY'); self.send_header('Referrer-Policy','no-referrer'); self.send_header('Permissions-Policy','camera=(), microphone=(), geolocation=()')
         for k,v in (headers or {}).items(): self.send_header(k,v)
         self.send_header('Content-Length',str(len(payload))); self.end_headers()
         try: self.wfile.write(payload)
@@ -212,6 +215,7 @@ class Handler(BaseHTTPRequestHandler):
                     # Durable preimage: failure to create it aborts the data replacement.
                     recovery_dir=DATA_DIR/'recovery'
                     recovery_dir.mkdir(parents=True,exist_ok=True,mode=0o700)
+                    if os.name == 'posix': os.chmod(recovery_dir,0o700)
                     snapshot=recovery_dir/('before-restore-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'-'+secrets.token_hex(5)+'.sqlite3')
                     old=connect()
                     before=sqlite3.connect(str(snapshot))
@@ -221,6 +225,7 @@ class Handler(BaseHTTPRequestHandler):
                             raise ValueError('pre-restore snapshot integrity failed')
                     finally:
                         before.close(); old.close()
+                    if os.name == 'posix': os.chmod(snapshot,0o600)
                     with snapshot.open('rb') as f: os.fsync(f.fileno())
                     current=connect()
                     try: current.execute('PRAGMA wal_checkpoint(TRUNCATE)')
