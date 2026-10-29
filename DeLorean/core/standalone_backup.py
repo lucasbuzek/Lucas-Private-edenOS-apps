@@ -24,8 +24,10 @@ from typing import Any
 
 try:
     from . import timemachine as history
+    from . import connector_evidence
 except ImportError:
     import timemachine as history
+    import connector_evidence
 
 
 class Denied(history.RecoveryError):
@@ -135,7 +137,7 @@ class DeLorean:
                 continue
             item = {k:v for k,v in m.items() if k not in ('source_root','content_sha256')}
             snapshots.append(item)
-        events = history.timeline(self.catalog, owner=self.owner)
+        events = self.timeline()
         return {'schema': history.CATALOG_SCHEMA,
                 'snapshots': sorted(snapshots,key=lambda x:x['recorded_at']),
                 'events': events,
@@ -405,8 +407,25 @@ class DeLorean:
     def reference_event(self, project: str, provider: str, kind: str, ref: str, occurred_at: str) -> dict:
         return history.record_event(self.catalog,_identifier(project),self.owner,provider,kind,ref,occurred_at)
 
+    def connector_preview(self, bundle:dict) -> dict:
+        return connector_evidence.preview(bundle,self.owner)
+
+    def connector_import(self, bundle:dict, confirmation:str) -> dict:
+        if confirmation != 'IMPORT CONNECTOR REFERENCES':
+            raise Denied('Connector evidence import requires local operator write approval')
+        return connector_evidence.import_events(self.catalog,bundle,self.owner)
+
+    def connector_events(self, project:str='') -> list[dict]:
+        return connector_evidence.list_events(self.catalog,self.owner,project)
+
     def timeline(self, project: str = '') -> list[dict]:
-        return history.timeline(self.catalog,project or None,self.owner)
+        native=history.timeline(self.catalog,project or None,self.owner)
+        connector=[{'event_id':e['event_id'],'event_type':e['kind'],
+                    'project':e['project'],'owner':e['owner'],'provider':e['provider'],
+                    'account_alias':e['account_alias'],'provider_ref':e['provider_ref'],
+                    'occurred_at':e['occurred_at'],'evidence':e['evidence'],
+                    'recoverability':e['recoverability']} for e in self.connector_events(project)]
+        return sorted(native+connector,key=lambda e:(e['occurred_at'],e['event_id']))
 
     def capabilities(self) -> dict:
         return {
