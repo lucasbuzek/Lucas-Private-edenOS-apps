@@ -132,6 +132,23 @@
     </div>
   </div>
 
+  <dialog id="watchlistDlg" class="sheet watchlist-sheet" aria-labelledby="watchlistTitle">
+    <div class="sheet-head"><h2 id="watchlistTitle">CRESUS · Watchlist</h2>
+      <form method="dialog"><button class="icon-btn" aria-label="Close watchlist">×</button></form>
+    </div>
+    <p class="muted">These are your saved research securities, not brokerage positions or live quotes. Specify the exchange MIC to distinguish cross-listings; leave it blank when unknown.</p>
+    <form id="watchlistAdd" class="watchlist-add">
+      <label>Ticker or symbol<input id="watchlistTicker" required maxlength="24" autocomplete="off" placeholder="AAPL"></label>
+      <label>Exchange MIC (optional)<input id="watchlistMic" maxlength="4" autocomplete="off" placeholder="XNAS"></label>
+      <label>Currency (optional)<input id="watchlistCurrency" maxlength="3" autocomplete="off" placeholder="USD"></label>
+      <label>ISIN (optional)<input id="watchlistIsin" maxlength="12" autocomplete="off" placeholder="US0378331005"></label>
+      <label class="watchlist-wide">Name (optional)<input id="watchlistName" maxlength="120" autocomplete="off" placeholder="Registered security name"></label>
+      <label class="watchlist-wide">Research notes (optional)<textarea id="watchlistNotes" maxlength="2000" rows="2" placeholder="Evidence questions, thesis or risks to investigate"></textarea></label>
+      <button type="submit" id="watchlistAddBtn" class="btn watchlist-wide">Save to my watchlist</button>
+    </form>
+    <p id="watchlistStatus" class="notice" role="status" aria-live="polite"></p>
+    <div id="watchlistRows" class="watchlist-rows" aria-label="Saved securities"></div>
+  </dialog>
   <dialog id="intelligenceDlg" class="sheet" aria-labelledby="intelligenceTitle">
     <div class="sheet-head"><h2 id="intelligenceTitle">CRESUS Intelligence</h2>
       <form method="dialog"><button class="icon-btn" aria-label="Close">×</button></form></div>

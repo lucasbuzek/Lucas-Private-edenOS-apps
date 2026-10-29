@@ -32,8 +32,9 @@ async function token(email, { aud = AUD, exp = Math.floor(Date.now() / 1000) + 3
 
 const chat = (message, extra = {}) => ({ conversationId: crypto.randomUUID(), clientId: crypto.randomUUID(), message, ...extra });
 
-async function call(path, { email, method = 'GET', body, tok } = {}) {
+async function call(path, { email, method = 'GET', body, tok, origin } = {}) {
   const headers = {};
+  if (origin) headers.Origin = origin;
   if (email || tok) headers['Cf-Access-Jwt-Assertion'] = tok ?? (await token(email));
   const req = new Request(`https://cresus.test${path}`, {
     method, headers, body: body ? JSON.stringify(body) : undefined,
@@ -250,4 +251,60 @@ test('DEVELOPMENT_ALPHA removes CRESUS quotas without removing authentication or
     assert.equal((await call('/api/me')).status,401);
     assert.equal((await call('/api/conversations',{email:'stranger@example.com'})).status,403);
   }finally{if(original===undefined)delete env.DEVELOPMENT_ALPHA;else env.DEVELOPMENT_ALPHA=original;}
+});
+
+test('watchlist is durable per user, with cross-listing identity and duplicate protection',async()=>{
+  const owner=OWNER,member='wife@gmail.com';
+  const create=await call('/api/watchlist',{email:owner,method:'POST',body:{ticker:'brk.b',mic:'xnys',currency:'usd',name:'Berkshire Hathaway B',notes:'Review latest filing'}});
+  assert.equal(create.status,201);
+  const {id,ticker,mic,currency}=create.body.entry;
+  assert.deepEqual([ticker,mic,currency],['BRK.B','XNYS','USD']);
+  const list=await call('/api/watchlist',{email:owner});
+  assert.equal(list.status,200);
+  assert.equal(list.body.entries.some(x=>x.id===id),true);
+  assert.equal(list.body.pricesAvailable,false);
+  assert.equal((await call('/api/watchlist',{email:owner,method:'POST',body:{ticker:'brk.b',mic:'xnys'}})).status,409);
+  // Same ticker at a distinct exchange is not silently collapsed.
+  assert.equal((await call('/api/watchlist',{email:owner,method:'POST',body:{ticker:'brk.b',mic:'xnas'}})).status,201);
+  assert.equal((await call('/api/watchlist',{email:member})).body.entries.some(x=>x.id===id),false);
+  assert.equal((await call('/api/watchlist/'+id,{email:member,method:'DELETE'})).status,404);
+  assert.equal((await call('/api/watchlist/'+id,{email:member,method:'PATCH',body:{notes:'attack'}})).status,404);
+  const edit=await call('/api/watchlist/'+id,{email:owner,method:'PATCH',body:{notes:'Verify 10-K and evidence clock'}});
+  assert.equal(edit.status,200);
+  assert.match(edit.body.entry.notes,/Verify 10-K/);
+  assert.equal((await call('/api/watchlist/'+id,{email:owner,method:'PATCH',body:{ticker:'FAKE'}})).status,400);
+  assert.equal((await call('/api/watchlist/'+id,{email:owner,method:'DELETE'})).status,200);
+  assert.equal((await call('/api/watchlist/'+id,{email:owner,method:'DELETE'})).status,404);
+});
+
+test('watchlist prevents ambiguous malformed listing data, cross-site mutation and unauthenticated reads',async()=>{
+  assert.equal((await call('/api/watchlist')).status,401);
+  assert.equal((await call('/api/watchlist',{email:'stranger@gmail.com'})).status,403);
+  for(const invalid of [
+    {ticker:'NYSE:BOGUS; DROP TABLE users'},
+    {ticker:'AAPL',mic:'NY'},
+    {ticker:'AAPL',currency:'US'},
+    {ticker:'AAPL',isin:'INVALID'},
+    {ticker:''},
+    {ticker:'AAPL',name:'x'.repeat(121)}
+  ]){
+    assert.equal((await call('/api/watchlist',{email:OWNER,method:'POST',body:invalid})).status,400);
+  }
+  assert.equal((await call('/api/watchlist',{email:OWNER,method:'POST',origin:'https://evil.example',body:{ticker:'AAPL'}})).status,403);
+  assert.equal((await call('/api/watchlist',{email:OWNER,method:'POST',origin:'https://cresus.test',body:{ticker:'VALID',mic:'XNAS'}})).status,201);
+  assert.equal((await call('/api/watchlist',{email:OWNER,method:'POST',body:{ticker:'AAPL',notes:'x'.repeat(2001)}})).status,400);
+});
+
+test('current opportunity discovery is routed to Expert with explicit missing live evidence',async()=>{
+  let system='';
+  const run=env.AI.run;
+  env.AI.run=async(model,options)=>{system=options.messages[0].content;return run(model,options)};
+  try{
+    const r=await call('/api/chat',{email:OWNER,method:'POST',body:chat('Find current investment opportunities today',{mode:'simple'})});
+    assert.equal(r.status,200);
+    assert.equal(r.body.mode,'expert');
+    assert.match(system,/Requested depth: EXPERT/);
+    assert.match(system,/Live web search: DISABLED/);
+    assert.match(system,/Do not invent quotes/);
+  }finally{env.AI.run=run}
 });

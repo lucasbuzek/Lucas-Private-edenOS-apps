@@ -1,4 +1,6 @@
 import { verifyAccessJwt } from './auth.js';
+import { handleWatchlist } from './watchlist.js';
+import { routeMode, webResearch, runtimeResearchContext } from './research.js';
 import { CRESUS_SYSTEM_PROMPT } from './prompt.js';
 import { providerChoices, providerForUser, setProviderForUser, generateForProvider, ProviderSelectionError } from './provider-choice.js';
 
@@ -94,6 +96,7 @@ async function handleChat(request, env, user) {
     return json({ error: 'Bad request' }, 400);
   }
   if (!MODES[mode]) return json({ error: 'Unknown mode' }, 400);
+  const effectiveMode = routeMode(text,mode);
 
   // The client creates conversation ids, so a retried "first message" can't fork a chat.
   const conv = await env.DB.prepare('SELECT email FROM conversations WHERE id = ?').bind(conversationId).first();
@@ -124,7 +127,7 @@ async function handleChat(request, env, user) {
 
   await env.DB.prepare(
     'INSERT INTO messages (conversation_id, role, content, client_id, mode) VALUES (?, ?, ?, ?, ?)'
-  ).bind(conversationId, 'user', text, clientId, mode).run();
+  ).bind(conversationId, 'user', text, clientId, effectiveMode).run();
 
   const { results } = await env.DB.prepare(
     'SELECT role, content FROM messages WHERE conversation_id = ? ORDER BY id DESC LIMIT ?'
@@ -133,7 +136,8 @@ async function handleChat(request, env, user) {
 
   let reply;
   try {
-    reply = await generateForProvider(env, await providerForUser(env, user.email), `${CRESUS_SYSTEM_PROMPT}\n\n${MODES[mode]}`, history);
+    const research = await webResearch(env,text,effectiveMode);
+    reply = await generateForProvider(env, await providerForUser(env, user.email), `${CRESUS_SYSTEM_PROMPT}\n\n${MODES[effectiveMode]}\n\n${runtimeResearchContext(research)}`, history);
   } catch (err) {
     // Remove the unanswered message so a retry starts clean.
     await env.DB.prepare('DELETE FROM messages WHERE conversation_id = ? AND client_id = ?')
@@ -151,7 +155,7 @@ async function handleChat(request, env, user) {
 
   await env.DB.batch([
     env.DB.prepare('INSERT INTO messages (conversation_id, role, content, mode) VALUES (?, ?, ?, ?)')
-      .bind(conversationId, 'assistant', reply, mode),
+      .bind(conversationId, 'assistant', reply, effectiveMode),
     env.DB.prepare("UPDATE conversations SET updated_at = datetime('now') WHERE id = ?").bind(conversationId),
     env.DB.prepare(
       `INSERT INTO usage (email, day, count) VALUES (?, ?, 1)
@@ -159,7 +163,7 @@ async function handleChat(request, env, user) {
     ).bind(user.email, today()),
   ]);
 
-  return json({ conversationId, reply, mode });
+  return json({ conversationId, reply, mode: effectiveMode });
 }
 
 // "User data outlives software": everything a person wrote, as one Markdown file.
@@ -264,6 +268,12 @@ export default {
 
     const user = await resolveUser(request, env);
     if (user.error) return user.error;
+    // CRESUS Access JWT already verified. Reject browser-origin cross-site mutations
+    // independently from Access session cookies, without trusting user supplied URLs.
+    const origin = request.headers.get('Origin');
+    if (!['GET','HEAD','OPTIONS'].includes(request.method) && origin && origin !== url.origin) {
+      return json({error:'Cross-origin mutation denied'},403);
+    }
 
     try {
       if (path === '/api/me') {
@@ -282,6 +292,7 @@ export default {
         const body = await request.json();
         return json(await setProviderForUser(env, user.email, body.provider));
       }
+      if (path === '/api/watchlist' || path.startsWith('/api/watchlist/')) return handleWatchlist(request,env,user.email,path);
       if (path === '/api/chat' && request.method === 'POST') return handleChat(request, env, user);
       if (path === '/api/export' && request.method === 'GET') return handleExport(env, user);
 
