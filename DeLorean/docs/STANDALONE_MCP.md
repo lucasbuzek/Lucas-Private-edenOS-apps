@@ -1,4 +1,4 @@
-# DeLorean TimeMachine standalone MCP (0.2.3 candidate)
+# DeLorean TimeMachine — portable standalone MCP v0.2.5 candidate
 
 ## Product identity and scope
 
@@ -52,7 +52,7 @@ The server waits for JSON-RPC messages on stdin and writes only JSON-RPC respons
 }
 ```
 
-## Tool surface (23 tools)
+## Tool surface (29 tools in v0.2.5; legacy list follows)
 
 Read-only: `delorean_status`, `delorean_capabilities`, `delorean_backup_plan`, `delorean_snapshots`, `delorean_timeline`, `delorean_compare`, `delorean_verify`, `delorean_plan_restore`, `delorean_restic_status`, `delorean_restic_snapshots`, `delorean_restic_check`, `delorean_time_machine_status`.
 
@@ -147,3 +147,9 @@ The existing local DeLorean MCP now supports five OPTIONAL Kopia tools in additi
 **Kopia source and CLI references:** https://kopia.io/docs/reference/command-line/common/snapshot-list/ ; https://kopia.io/docs/reference/command-line/common/snapshot-create/ ; https://kopia.io/docs/reference/command-line/common/snapshot-restore/ ; https://kopia.io/docs/reference/command-line/common/snapshot-verify/
 
 **Test evidence:** `tests/test_kopia_adapter.py` uses a simulated Kopia CLI and tests owner isolation, authorization, harmless args, hook disablement, refusal and isolated restoration. This is not a live Kopia-cloud verification. Full source corpus review remains blocked by raw `.webarchive` extraction; see research/DELOREAN_EXTERNAL_REUSE_REVIEW_20261029.md.
+
+
+## Multi-client and multi-OS correction v0.2.5
+DeLorean is not ChatGPT-only and not macOS-only. The installed agentic ChatGPT plugin is one client/agent distribution. The portable MCP is stdio-based and uses host-local Python; its Linux fixture tests do not establish Windows/macOS native integration. Native desktop apps for macOS/Windows/Linux, mobile companions for iOS/iPadOS/Android and an optional PWA share one target UX/agent contract, but their full binaries are NOT yet built. Existing authorized cloud/provider connectors can serve provider operations without a DeLorean remote HTTP host; local device operations require a connected native executor. Do not duplicate cloud backup engines or require PENELOPE. See PLATFORMS_AND_AGENT_BRIDGES.md.
+
+The v0.2.5 MCP adds **read-only** `delorean_platform_matrix` returning target platforms, evidence levels and explicit zero verified client installations/connections; total tools = 29 (19 read-only default, 10 write-capable only with local write enable). This endpoint is a capability/evidence disclosure, not a discovery of remotely installed apps or authentication. No existing accepted LKG/source changed.
