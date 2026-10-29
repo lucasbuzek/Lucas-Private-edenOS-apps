@@ -20,7 +20,7 @@ except ImportError:
     from standalone_backup import DeLorean, Denied, history
     from bridge_contract import platform_matrix
 
-VERSION='0.2.5-candidate'
+VERSION='0.2.6-candidate'
 PROTOCOL='2025-06-18'
 MAX_REQUEST_BYTES=1024*1024
 UI_RESOURCE='ui://edenos-delorean/timeline'
@@ -37,6 +37,9 @@ TOOLS=[
     tool('delorean_dashboard','Read live owner-scoped snapshot index for the established DeLorean interactive timeline.'),
     tool('delorean_status','Read host, grants, backend availability.'),
     tool('delorean_platform_matrix','Read truthful multi-agent and cross-OS client target/evidence matrix; no installed client or connector is implied.'),
+    tool('delorean_connector_preview','Validate typed, metadata-only provider evidence without persisting or asserting a backup is recoverable.',{'bundle':{'type':'object','description':'Schema eden.delorean.connector-events.v1, exact owner and typed entries only.'}},['bundle']),
+    tool('delorean_connector_events','List imported owner-scoped connector metadata events; references are NOT verified backups.',{'project':field('Optional exact project identifier')}),
+    tool('delorean_connector_import','Record typed connector event references, never provider credentials/payloads, after local owner write enablement.',{'bundle':{'type':'object','description':'Validated connector evidence bundle from a separately authorized provider connector.'},'confirmation':{'type':'string','const':'IMPORT CONNECTOR REFERENCES'}},['bundle','confirmation'],False),
     tool('delorean_capabilities','Read implemented and unimplemented backup/recovery capabilities.'),
     tool('delorean_backup_plan','Plan local existing file/folder, project, app or device-data backup. A device-data backup is NOT a bootable system image.',{'source':field('File/directory on explicitly granted source root'),'scope':{'type':'string','enum':['file','folder','project','app','device-data']},'project':field('Existing project, app or device identifier')},['source','scope','project']),
     tool('delorean_backup_create','Create and hash-verify a new local file-tree snapshot, retaining the original. Requires explicit confirmation; does not capture running DB consistency or bootable OS.',{'source':field('Allowed source directory or file'),'scope':{'type':'string','enum':['file','folder','project','app','device-data']},'project':field('Name of existing project/app/device'), 'confirmation':{'type':'string','const':'BACKUP NOW'}},['source','scope','project','confirmation'],False),
@@ -88,6 +91,7 @@ class Server:
         for k,v in args.items():
             t=props[k]
             if t.get('type')=='string' and not isinstance(v,str):raise ValueError('Argument '+k+' must be string')
+            if t.get('type')=='object' and not isinstance(v,dict):raise ValueError('Argument '+k+' must be object')
             if t.get('type')=='array' and (not isinstance(v,list) or not all(isinstance(x,str) for x in v)):
                 raise ValueError('Argument '+k+' must be list of strings')
             if 'const' in t and v!=t['const']:raise Denied('Confirmation requirement not satisfied')
@@ -97,6 +101,9 @@ class Server:
             'delorean_dashboard':lambda:c.dashboard_catalog(),
             'delorean_status':lambda:c.status(),
             'delorean_platform_matrix':lambda:platform_matrix(),
+            'delorean_connector_preview':lambda:c.connector_preview(args['bundle']),
+            'delorean_connector_events':lambda:c.connector_events(args.get('project','')),
+            'delorean_connector_import':lambda:c.connector_import(args['bundle'],args['confirmation']),
             'delorean_capabilities':lambda:c.capabilities(),
             'delorean_backup_plan':lambda:c.backup_plan(args['source'],args['scope'],args['project']),
             'delorean_backup_create':lambda:c.backup_create(args['source'],args['scope'],args['project'],args['confirmation']),
