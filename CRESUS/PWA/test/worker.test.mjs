@@ -294,3 +294,17 @@ test('watchlist prevents ambiguous malformed listing data, cross-site mutation a
   assert.equal((await call('/api/watchlist',{email:OWNER,method:'POST',origin:'https://cresus.test',body:{ticker:'VALID',mic:'XNAS'}})).status,201);
   assert.equal((await call('/api/watchlist',{email:OWNER,method:'POST',body:{ticker:'AAPL',notes:'x'.repeat(2001)}})).status,400);
 });
+
+test('current opportunity discovery is routed to Expert with explicit missing live evidence',async()=>{
+  let system='';
+  const run=env.AI.run;
+  env.AI.run=async(model,options)=>{system=options.messages[0].content;return run(model,options)};
+  try{
+    const r=await call('/api/chat',{email:OWNER,method:'POST',body:chat('Find current investment opportunities today',{mode:'simple'})});
+    assert.equal(r.status,200);
+    assert.equal(r.body.mode,'expert');
+    assert.match(system,/Requested depth: EXPERT/);
+    assert.match(system,/Live web search: DISABLED/);
+    assert.match(system,/Do not invent quotes/);
+  }finally{env.AI.run=run}
+});
