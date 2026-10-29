@@ -34,3 +34,14 @@ ChatGPT Google Drive, Gmail, Google Calendar and Google Contacts connectors retu
 5. Add Google adapters only after authorized OAuth configuration; connector access is currently unavailable.
 6. Verify remote branch/source hashes on every sync; do not merge to main until project acceptance.
 7. Record build, tests, provider verification and physical/browser gates separately. No LKG until acceptance.
+## Continuation receipt — 2026-10-29
+
+This section is additive; the prior 2026-10-11 source and its evidence remain historically accurate.
+
+- Protected continuation branch: `seshat/pwa-recovery-20261029`; original `seshat/bootstrap-20261011` and `main` not mutated by this work.
+- Reconciled and recovered the seven later query, reservation, stocktake, snapshot, fixture and test files from two identical Dropbox SESHAT source copies.
+- IMPLEMENTED_CANDIDATE: validated catalogue/locations, local IndexedDB persistence with stale-revision rejection, responsive standalone PWA, receipt/issue/return/transfer/adjustment movement confirmation, live stock queries, CSV catalogue dry-run/import with row errors, explicit backup export and validated restore, service worker offline shell.
+- TESTED_CI: **49 Node tests pass, 4 Chromium browser tests pass**, static build/syntax and allowlisted publication checks pass on GitHub Actions run [40835282434](https://github.com/lucasbuzek/Lucas-Private-edenOS-apps/actions/runs/40835282434) at commit `158474c76d7d91930454865e9b6f86e9152f125b`.
+- Cloudflare inspected READ ONLY: SlindokuhleCouncil account has no Pages projects or D1 databases in inspected lists and Access is not enabled (403). No SESHAT deployment created; do not mix with separate RAVENnest Access apps and their D1 data.
+- NOT VERIFIED/NOT IMPLEMENTED: authenticated multi-user stock posting, server transactional ledger, remote MCP, supplier/PO UI, durable stocktake/reservation UI, Google OAuth/provider adapters, authenticated hosted preview, physical-device acceptance, user acceptance/release.
+- Additional coverage: see `docs/PWA_CANDIDATE_20261029.md`. A browser-local working application does not prove remote multi-user consistency. Do not promote to Products or merge to main.
