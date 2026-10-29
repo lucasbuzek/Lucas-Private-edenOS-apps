@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - work/nostos-recovery-webapp-20261029
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
