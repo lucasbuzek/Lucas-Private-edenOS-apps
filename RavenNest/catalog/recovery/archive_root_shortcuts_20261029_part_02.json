@@ -49,8 +49,9 @@
     {
       "filename": "DewhksxCR_Z.url",
       "original_path": "ns:13844906001//DewhksxCR_Z.url",
-      "source_url": "https://www.instagram.com/p/DewhksxCR_Z/?img_index=5&rpxt=enRjcmxsNHF6MW11",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/p/DewhksxCR_Z/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "mcp-archviz.url",
@@ -61,8 +62,9 @@
     {
       "filename": "DeaxpnpiatB.url",
       "original_path": "ns:13844906001//DeaxpnpiatB.url",
-      "source_url": "https://www.instagram.com/p/DeaxpnpiatB/?img_index=4&rpxt=MXc1Zm1sZzJ1M3R4eQ==",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/p/DeaxpnpiatB/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "trading-mcp.url",
@@ -73,14 +75,16 @@
     {
       "filename": "De441psIJdk.url",
       "original_path": "ns:13844906001//De441psIJdk.url",
-      "source_url": "https://www.instagram.com/p/De441psIJdk/?img_index=3&mdxt=MTZ4cnFkYTRvbXc2cw==",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/p/De441psIJdk/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "DeHTFYETiSy.url",
       "original_path": "ns:13844906001//DeHTFYETiSy.url",
-      "source_url": "https://www.instagram.com/reel/DeHTFYETiSy/?psln=MThrY3VuNm9qNWFxOQ==",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/reel/DeHTFYETiSy/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "jarvis-a-framework-for-building-powerful-collaborative-systems-with-language-models-914bd38f8705.url",
@@ -97,8 +101,9 @@
     {
       "filename": "Dbf2H6pEhBH.url",
       "original_path": "ns:13844906001//Dbf2H6pEhBH.url",
-      "source_url": "https://www.instagram.com/p/Dbf2H6pEhBH/?img_index=4&cplk=MWRqNThpbW44ZXM0Yg==",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/p/Dbf2H6pEhBH/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "mcp-arr.url",
@@ -106,5 +111,7 @@
       "source_url": "https://glama.ai/mcp/servers/aplaceforallmystuff/mcp-arr",
       "state": "url_read_unverified"
     }
-  ]
+  ],
+  "normalization_notice": "Source URLs normalized by removing ALL query strings and URL fragments to avoid persisting tracking, session/challenge tokens or client parameters. Where original target is a redirect requiring a query, source MUST be manually resolved from the original .url file before use.",
+  "review_state": "do_not_publish_auto_or_fetch_private_without_consent"
 }
