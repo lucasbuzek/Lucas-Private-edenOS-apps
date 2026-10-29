@@ -44,3 +44,14 @@ Sources:
 - https://modelcontextprotocol.io/specification/2025-06-18/basic/lifecycle
 - https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop
 - https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt
+
+
+## 2026-10-29 additive dual-era stdio implementation
+
+Candidate source `headless/mcp_bridge.py` now also supports the MCP `2026-07-28` stateless **stdio** request envelope while retaining legacy `2025-06-18` initialize/initialized behavior. The modern path validates per-request `_meta` protocol version and client capabilities; implements `server/discover` and modern `tools/list`, `tools/call`, `ping`; returns `resultType: complete`, private/zero-TTL caching hints for listings; and reports version mismatch as `-32022` with supported/requested versions. Both eras delegate only to the EXISTING read-only shortNameCall/storage adapter; no new command authority, HTTP listener, account, or unattended automation.
+
+**Source/verification receipt:** draft PR #13 on candidate branch, bridge Git blob `b7b3050460d6b95695764ab8597ce2654894cad8`; the exact blob was reconstructed byte-for-byte in an isolated container and `git hash-object` matched. Five focused Python subprocess test groups passed on this exact bridge blob with stubbed allowlisted dispatcher/storage adapters: legacy handshake; modern discovery/list/call; invalid versions/unknown tools/extra arguments/missing capabilities; malformed messages; oversized-message rejection. A new GitHub regression was also committed, but this full-repository test suite has **not** been executed against live authoritative shortcalls, nor on macOS, nor through a real client. No LKG promotion.
+
+**Scope limits:** This is STDIO compatibility only, not MCP Streamable HTTP over a network. It is NOT evidence of universal device discovery/pairing, physical iPhone control, remote hosted MCP, Cloudflare OAuth or HEIMDALL/ELYSIUM live end-to-end execution. An authenticated remote MCP gateway with per-user grants, revocation, task receipts and audit remains a separate accepted delivery gate. For a production-quality complete protocol lifecycle prefer the **official MCP SDK v2** after dependency and source comparison; preserve the legacy bridge until real client acceptance.
+
+References: https://blog.modelcontextprotocol.io/posts/2026-07-28/ ; https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/specification/2026-07-28/server/discover.mdx ; https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/specification/2026-07-28/basic/versioning.mdx.
