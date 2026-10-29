@@ -1,0 +1,110 @@
+{
+  "type": "Dropbox original .url shortcut source recovery",
+  "path_scope": "/EDEN-lucas-family/AI MCP tool/",
+  "root_direct_listing_total": 442,
+  "total_shortcut_files": 64,
+  "range": [
+    0,
+    15
+  ],
+  "source_status": "read from original shortcut, destination NOT individually source reviewed",
+  "privacy": "not published or added to user library",
+  "records": [
+    {
+      "filename": "b3-mcp.url",
+      "original_path": "ns:13844906001//b3-mcp.url",
+      "source_url": "https://glama.ai/mcp/servers/mcp-dir/b3-mcp",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "DezbQvKCQGh.url",
+      "original_path": "ns:13844906001//DezbQvKCQGh.url",
+      "source_url": "https://www.instagram.com/p/DezbQvKCQGh/?img_index=8&vrfl=MWdhN3locTNmaWRpaQ==",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "iphone-mirror-mcp.url",
+      "original_path": "ns:13844906001//iphone-mirror-mcp.url",
+      "source_url": "https://glama.ai/mcp/servers/nickatnight96/iphone-mirror-mcp",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "mcp-server.url",
+      "original_path": "ns:13844906001//mcp-server.url",
+      "source_url": "https://www.mux.com/docs/integrations/mcp-server",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "iphone-mcp.url",
+      "original_path": "ns:13844906001//iphone-mcp.url",
+      "source_url": "https://glama.ai/mcp/servers/teddyoweh/iphone-mcp",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "DdMXr3JpeW8.url",
+      "original_path": "ns:13844906001//DdMXr3JpeW8.url",
+      "source_url": "https://www.instagram.com/reel/DdMXr3JpeW8/?xtok=MTI5NzRrNWFnZHozZw==",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "mux- mcp-server.url",
+      "original_path": "ns:13844906001//mux- mcp-server.url",
+      "source_url": "https://www.mux.com/docs/integrations/mcp-server",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "playable-locations-api.url",
+      "original_path": "ns:13844906001//playable-locations-api.url",
+      "source_url": "https://glama.ai/mcp/servers/ag2-mcp-servers/playable-locations-api",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "3d-new-era-ai.url",
+      "original_path": "ns:13844906001//3d-new-era-ai.url",
+      "source_url": "https://glama.ai/mcp/servers/leandrodaf/3d-new-era-ai",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "Db8edC_MUf7.url",
+      "original_path": "ns:13844906001//Db8edC_MUf7.url",
+      "source_url": "https://www.instagram.com/reel/Db8edC_MUf7/?cplk=dTZhOWkzeHByeGZl",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "lognexus.url",
+      "original_path": "ns:13844906001//lognexus.url",
+      "source_url": "https://glama.ai/mcp/servers/digital-lake-ai/lognexus",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "best-apps-for-cinematographers.url",
+      "original_path": "ns:13844906001//best-apps-for-cinematographers.url",
+      "source_url": "https://scriptation.com/blog/best-apps-for-cinematographers/",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "DcC20-KJ5tf.url",
+      "original_path": "ns:13844906001//DcC20-KJ5tf.url",
+      "source_url": "https://www.instagram.com/reel/DcC20-KJ5tf/?cplk=MTNpdTJoZDFzMXhyMw==",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "www.projectnomad.us.url",
+      "original_path": "ns:13844906001//www.projectnomad.us.url",
+      "source_url": "https://www.projectnomad.us/",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "Dew6bswEhpG.url",
+      "original_path": "ns:13844906001//Dew6bswEhpG.url",
+      "source_url": "https://www.instagram.com/p/Dew6bswEhpG/?img_index=4&vrfl=c2hodjBlOW9iNXRo",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "uniwire.url",
+      "original_path": "ns:13844906001//uniwire.url",
+      "source_url": "https://glama.ai/mcp/servers/uniwire-dev/uniwire",
+      "state": "url_read_unverified"
+    }
+  ]
+}
