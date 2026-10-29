@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#10171a"><title>RAVENsNEST · My Files</title>
+<link rel="stylesheet" href="/style.css">
+<style>
+.files-wrap{max-width:940px;margin:auto;padding:24px 16px}.files-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.files-panel{border:1px solid #61777666;border-radius:14px;padding:16px;margin:14px 0;min-height:70px}
+.files-muted{opacity:.8;font-size:.9em}.files-input{min-width:170px;padding:10px;border-radius:9px}
+.file-row{padding:12px 5px;display:flex;align-items:center;gap:12px;justify-content:space-between;border-bottom:1px solid #61777642}
+.file-row button{white-space:nowrap}.file-name{overflow-wrap:anywhere}.file-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+</style>
+</head><body>
+<main class="files-wrap"><div class="files-head"><div><p class="files-muted">RAVENsNEST · PRIVATE</p><h1>My files</h1></div><a href="/">Raven home</a></div>
+<p>Browse only the cloud folders explicitly granted to this account. Your other accounts and devices are never included automatically.</p>
+<section class="files-panel"><label for="source">Storage location</label><div class="file-controls">
+<select id="source" class="files-input" aria-label="Storage source"></select>
+<button id="refresh" type="button">Refresh</button><button id="up" type="button" disabled>Up one folder</button>
+</div><p id="status" role="status" aria-live="polite">Checking your session…</p></section>
+<section class="files-panel" aria-labelledby="heading"><h2 id="heading">Files</h2><p id="location" class="files-muted">/</p>
+<div id="items"></div><button id="more" type="button" hidden>Load more</button></section>
+<p class="files-muted">Requires approved Cloudflare Access sign-in and provider-specific permissions. Files remain in their original storage accounts. DeviceLink is optional file access to enrolled folders, not cloud streaming.</p>
+</main><script src="/files.js" defer></script></body></html>
