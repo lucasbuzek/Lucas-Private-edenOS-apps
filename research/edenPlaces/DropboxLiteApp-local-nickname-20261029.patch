@@ -1,0 +1,103 @@
+--- a/Sources/DropboxLiteApp/DropboxLiteApp.swift
++++ b/Sources/DropboxLiteApp/DropboxLiteApp.swift
+@@ -18,7 +18,8 @@
+     @Published var settings: LiteSettings
+     @Published var message = "Idle — no automatic downloads"
+     @Published var busy = false
+-    @Published var availableRemotes: [RcloneRemote] = []
++    @Published var availableRemotes: [RcloneRemote] = []
++    @Published private(set) var accountNicknames: [String: String] = [:]
+     @Published var browsePath = ""
+     @Published var browseFolders: [String] = []
+     @Published var previewText = ""
+@@ -49,7 +50,8 @@
+             loaded.autoSync = false
+             try? LitePersistence.saveSettings(loaded)
+         }
+-        settings = loaded
++        settings = loaded
++        accountNicknames = UserDefaults.standard.dictionary(forKey: "DropboxLite.accountNicknames.v1") as? [String: String] ?? [:]
+     }
+     func persist() {
+         do { try LitePersistence.saveSettings(settings) }
+@@ -55,7 +57,30 @@
+         do { try LitePersistence.saveSettings(settings) }
+         catch { message = "Could not save settings: \(error.localizedDescription)" }
+     }
+-    func selectRemote(_ key: String) {
++    // Display-only metadata: remote names, secrets, permissions and scheduler stay unchanged.
++    func nickname(for remote: RcloneRemote) -> String {
++        guard let key = try? AccountNicknamePolicy.key(source: remote.source.rawValue, remote: remote.name) else { return "" }
++        return accountNicknames[key] ?? ""
++    }
++    func displayName(for remote: RcloneRemote) -> String {
++        let local = nickname(for: remote)
++        return local.isEmpty ? remote.label : local + " · " + remote.backend + " · local label"
++    }
++    func setNickname(_ raw: String, for remote: RcloneRemote) {
++        do {
++            let key = try AccountNicknamePolicy.key(source: remote.source.rawValue, remote: remote.name)
++            if let safe = try AccountNicknamePolicy.normalized(raw) {
++                accountNicknames[key] = safe
++            } else {
++                accountNicknames.removeValue(forKey: key)
++            }
++            UserDefaults.standard.set(accountNicknames, forKey: "DropboxLite.accountNicknames.v1")
++            message = "Local nickname saved — account identity is not independently verified"
++        } catch {
++            message = "Invalid nickname: use at most 48 printable characters"
++        }
++    }
++    func selectRemote(_ key: String) {
+         guard let choice = availableRemotes.first(where: { $0.id == key }) else { return }
+         if settings.autoSync { setAuto(false) }
+         if settings.remoteName != choice.name || settings.remoteSource != choice.source {
+@@ -351,7 +376,8 @@
+     @State private var setupLevel = 0
+     @State private var providerChoice = "dropbox"
+     @State private var newFolder = ""
+-    @State private var tab = 0
++    @State private var tab = 0
++    @State private var nicknameDrafts: [String: String] = [:]
+ 
+     var body: some View {
+         VStack(alignment: .leading, spacing: 11) {
+@@ -442,7 +468,7 @@
+                     .fixedSize(horizontal: false, vertical: true)
+             }
+             Divider()
+-            Text("Connected / existing Rclone accounts").font(.subheadline).bold()
++            Text("Configured Rclone remotes · identity unverified").font(.subheadline).bold()
+             if store.availableRemotes.isEmpty {
+                 Text("No configured accounts found. Add Dropbox above.")
+                     .font(.caption).foregroundStyle(.secondary)
+@@ -452,11 +478,24 @@
+                         ForEach(store.availableRemotes) { remote in
+                             HStack {
+                                 VStack(alignment: .leading) {
+-                                    Text(remote.label).font(.subheadline)
+-                                    Text(remote.backend == "dropbox" ?
+-                                         "Dropbox direct-file sync available" :
+-                                         "Browse-only · cloud transfer adapter unverified")
+-                                        .font(.caption2).foregroundStyle(.secondary)
++                                    Text(store.displayName(for: remote)).font(.subheadline)
++                                    Text("Remote: " + remote.name + " · " + remote.source.rawValue + " · owner unverified")
++                                        .font(.caption2).foregroundStyle(.secondary)
++                                    Text(remote.backend == "dropbox" ?
++                                         "Dropbox direct-file sync available when explicitly authorized" :
++                                         "Browse-only · cloud transfer adapter unverified")
++                                        .font(.caption2).foregroundStyle(.secondary)
++                                    HStack {
++                                        TextField("Optional local nickname", text: Binding(
++                                            get: { nicknameDrafts[remote.id] ?? store.nickname(for: remote) },
++                                            set: { nicknameDrafts[remote.id] = $0 }
++                                        ))
++                                        .textFieldStyle(.roundedBorder)
++                                        Button("Save label") {
++                                            store.setNickname(nicknameDrafts[remote.id] ?? store.nickname(for: remote), for: remote)
++                                            nicknameDrafts.removeValue(forKey: remote.id)
++                                        }.controlSize(.small)
++                                    }
+                                 }
+                                 Spacer()
+                                 Button("Use") {
