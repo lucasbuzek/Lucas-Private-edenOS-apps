@@ -15,10 +15,12 @@ from typing import Callable
 
 try:
     from .standalone_backup import DeLorean, Denied, history
+    from .bridge_contract import platform_matrix
 except ImportError:
     from standalone_backup import DeLorean, Denied, history
+    from bridge_contract import platform_matrix
 
-VERSION='0.2.4-candidate'
+VERSION='0.2.5-candidate'
 PROTOCOL='2025-06-18'
 MAX_REQUEST_BYTES=1024*1024
 UI_RESOURCE='ui://edenos-delorean/timeline'
@@ -34,6 +36,7 @@ def string_array(desc):return {'type':'array','items':{'type':'string'},'descrip
 TOOLS=[
     tool('delorean_dashboard','Read live owner-scoped snapshot index for the established DeLorean interactive timeline.'),
     tool('delorean_status','Read host, grants, backend availability.'),
+    tool('delorean_platform_matrix','Read truthful multi-agent and cross-OS client target/evidence matrix; no installed client or connector is implied.'),
     tool('delorean_capabilities','Read implemented and unimplemented backup/recovery capabilities.'),
     tool('delorean_backup_plan','Plan local existing file/folder, project, app or device-data backup. A device-data backup is NOT a bootable system image.',{'source':field('File/directory on explicitly granted source root'),'scope':{'type':'string','enum':['file','folder','project','app','device-data']},'project':field('Existing project, app or device identifier')},['source','scope','project']),
     tool('delorean_backup_create','Create and hash-verify a new local file-tree snapshot, retaining the original. Requires explicit confirmation; does not capture running DB consistency or bootable OS.',{'source':field('Allowed source directory or file'),'scope':{'type':'string','enum':['file','folder','project','app','device-data']},'project':field('Name of existing project/app/device'), 'confirmation':{'type':'string','const':'BACKUP NOW'}},['source','scope','project','confirmation'],False),
@@ -93,6 +96,7 @@ class Server:
         return {
             'delorean_dashboard':lambda:c.dashboard_catalog(),
             'delorean_status':lambda:c.status(),
+            'delorean_platform_matrix':lambda:platform_matrix(),
             'delorean_capabilities':lambda:c.capabilities(),
             'delorean_backup_plan':lambda:c.backup_plan(args['source'],args['scope'],args['project']),
             'delorean_backup_create':lambda:c.backup_create(args['source'],args['scope'],args['project'],args['confirmation']),
