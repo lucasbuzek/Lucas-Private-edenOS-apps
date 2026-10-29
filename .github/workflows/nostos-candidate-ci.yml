@@ -27,3 +27,9 @@ jobs:
         run: node --check NOSTOS/web/app.js
       - name: Validate MCP adapter syntax
         run: python -m py_compile NOSTOS/mcp_readonly.py
+      - name: Install browser test harness
+        run: npm install --no-save --package-lock=false playwright && npx playwright install --with-deps chromium
+        working-directory: NOSTOS
+      - name: Exercise real mobile browser household workflows
+        run: node tests/web_e2e.cjs
+        working-directory: NOSTOS
