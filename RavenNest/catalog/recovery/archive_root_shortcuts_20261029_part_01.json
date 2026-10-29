@@ -19,8 +19,9 @@
     {
       "filename": "DezbQvKCQGh.url",
       "original_path": "ns:13844906001//DezbQvKCQGh.url",
-      "source_url": "https://www.instagram.com/p/DezbQvKCQGh/?img_index=8&vrfl=MWdhN3locTNmaWRpaQ==",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/p/DezbQvKCQGh/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "iphone-mirror-mcp.url",
@@ -43,8 +44,9 @@
     {
       "filename": "DdMXr3JpeW8.url",
       "original_path": "ns:13844906001//DdMXr3JpeW8.url",
-      "source_url": "https://www.instagram.com/reel/DdMXr3JpeW8/?xtok=MTI5NzRrNWFnZHozZw==",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/reel/DdMXr3JpeW8/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "mux- mcp-server.url",
@@ -67,8 +69,9 @@
     {
       "filename": "Db8edC_MUf7.url",
       "original_path": "ns:13844906001//Db8edC_MUf7.url",
-      "source_url": "https://www.instagram.com/reel/Db8edC_MUf7/?cplk=dTZhOWkzeHByeGZl",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/reel/Db8edC_MUf7/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "lognexus.url",
@@ -85,8 +88,9 @@
     {
       "filename": "DcC20-KJ5tf.url",
       "original_path": "ns:13844906001//DcC20-KJ5tf.url",
-      "source_url": "https://www.instagram.com/reel/DcC20-KJ5tf/?cplk=MTNpdTJoZDFzMXhyMw==",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/reel/DcC20-KJ5tf/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "www.projectnomad.us.url",
@@ -97,8 +101,9 @@
     {
       "filename": "Dew6bswEhpG.url",
       "original_path": "ns:13844906001//Dew6bswEhpG.url",
-      "source_url": "https://www.instagram.com/p/Dew6bswEhpG/?img_index=4&vrfl=c2hodjBlOW9iNXRo",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/p/Dew6bswEhpG/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "uniwire.url",
@@ -106,5 +111,7 @@
       "source_url": "https://glama.ai/mcp/servers/uniwire-dev/uniwire",
       "state": "url_read_unverified"
     }
-  ]
+  ],
+  "normalization_notice": "Source URLs normalized by removing ALL query strings and URL fragments to avoid persisting tracking, session/challenge tokens or client parameters. Where original target is a redirect requiring a query, source MUST be manually resolved from the original .url file before use.",
+  "review_state": "do_not_publish_auto_or_fetch_private_without_consent"
 }
