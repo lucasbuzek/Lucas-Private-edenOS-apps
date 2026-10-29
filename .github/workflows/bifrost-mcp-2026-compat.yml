@@ -9,12 +9,16 @@ on:
       - BIFROST/core/shortcalls.v1.json
       - BIFROST/tests/test_mcp_bridge.py
       - BIFROST/tests/test_shortcalls.py
+      - BIFROST/tools/research_webarchive.py
+      - BIFROST/tests/test_research_webarchive.py
       - .github/workflows/bifrost-mcp-2026-compat.yml
   pull_request:
     paths:
       - BIFROST/headless/mcp_bridge.py
       - BIFROST/tests/test_mcp_bridge.py
       - BIFROST/docs/research/MCP_SOURCE_RECONCILIATION_20261026.md
+      - BIFROST/tools/research_webarchive.py
+      - BIFROST/tests/test_research_webarchive.py
       - .github/workflows/bifrost-mcp-2026-compat.yml
   workflow_dispatch:
 
@@ -41,3 +45,5 @@ jobs:
         run: python -B -m unittest discover -s tests -p "test_mcp_bridge.py" -v
       - name: Test original shortNameCall authorization/allowlist
         run: python -B -m unittest discover -s tests -p "test_shortcalls.py" -v
+      - name: Test safe recursive archived-source extraction
+        run: python -B -m unittest discover -s tests -p "test_research_webarchive.py" -v
