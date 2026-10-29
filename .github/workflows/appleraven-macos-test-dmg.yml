@@ -1,0 +1,35 @@
+name: AppleRAVEN macOS native DMG acceptance build
+on:
+  push:
+    branches:
+      - candidate/appleraven-native-dmg-elysium-proof-20261028
+    paths:
+      - "AppleRAVEN/mac/**"
+      - ".github/workflows/appleraven-macos-test-dmg.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  apple-m1-dmg:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate original native agent
+        run: |
+          python3 -m unittest discover -s AppleRAVEN/mac -p 'test_*.py' -v
+          bash -n AppleRAVEN/mac/Install.command
+          bash -n AppleRAVEN/mac/build_macos.sh
+      - name: Build macOS application and unsigned test DMG
+        run: bash AppleRAVEN/mac/build_macos.sh
+      - name: Collect checksum and disk image
+        uses: actions/upload-artifact@v4
+        with:
+          name: AppleRAVEN-M1-DMG-test-UNNOTARIZED
+          path: |
+            AppleRAVEN/mac/dist/*.dmg
+            AppleRAVEN/mac/dist/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 14
