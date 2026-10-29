@@ -1,0 +1,36 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import {WORK_MODES,WORK_MODE_IDS,PRIVATE_CONTEXT_ID,normalizeContexts,recordContextId,scopedRecords,validateEngagementDraft,checkLocalAction,requireLocalAction} from "../src/workModes.js";
+import {migrateWorkspace,SCHEMA_VERSION} from "../src/workflow.js";
+import {readWorkspace,writeWorkspace,validateBackup,STORAGE_KEYS} from "../src/storage.js";
+const makeStore=()=>{const map=new Map();return {map,getItem:k=>map.get(k)??null,setItem:(k,v)=>map.set(k,v)}};
+const tender=(contextId,serviceMode="supplier",status="DISCOVERED")=>({id:"same-id",contextId,serviceMode,status,title:"Example"});
+test("seven composable modes preserve supplier and buyer identities",()=>{assert.equal(WORK_MODE_IDS.length,7);for(const mode of ["supplier","buyer","advisor","representative","sourcing","contracts","intelligence"])assert.ok(WORK_MODES[mode]);});
+test("schema v1 and v2 records migrate to v3 private context without changing status or history",()=>{
+ for(const version of [1,2]){const row={id:"old",status:"ON_HOLD",resumeStatus:"DISCOVERED",history:[{at:"2025-01-01",note:"HOLD"}],sourceEvidence:[{type:"source_page",title:"Source"}],approvals:[{status:"PENDING"}]};const next=migrateWorkspace({schemaVersion:version,records:[row],profile:{organisation:"legacy"}});assert.equal(next.schemaVersion,3);assert.equal(recordContextId(next.records[0]),PRIVATE_CONTEXT_ID);assert.equal(next.records[0].status,"ON_HOLD");assert.equal(next.records[0].resumeStatus,"DISCOVERED");assert.equal(next.records[0].sourceEvidence.length,1);assert.equal(next.records[0].approvals.length,1);assert.equal(next.activeContextId,PRIVATE_CONTEXT_ID);}
+});
+test("new context registration has no automatic membership or credential grants",()=>{const contexts=normalizeContexts([{id:"gondzar",name:"Gondzar"},{id:"gondzar",name:"Duplicate"},{id:"../../bad",name:"Bad"}]);assert.equal(contexts.length,2);assert.equal(contexts[1].name,"Gondzar");assert.ok(!contexts[1].members);});
+test("same record ID in two local contexts is segregated in list and action check",()=>{
+ const rows=[tender("buzek"),tender("slindokuhle")];assert.equal(scopedRecords(rows,"buzek").length,1);assert.equal(scopedRecords(rows,"slindokuhle").length,1);assert.throws(()=>requireLocalAction(rows[1],"buzek","record_evidence"),/access denied/);});
+test("invalid mode and missing context are rejected",()=>{assert.equal(validateEngagementDraft({title:"X",contextId:"buzek",serviceMode:"new-app"}).length,1);assert.equal(validateEngagementDraft({title:"X",contextId:"buzek",serviceMode:"advisor"}).length,0);});
+test("browser-only credentials cannot authorize submit award payment or client export",()=>{for(const action of ["issue","submit","sign","award","pay","amend_contract","external_message","client_export","release_hold"])assert.equal(checkLocalAction(tender("buzek"),{contextId:"buzek",action}).ok,false,action);});
+test("representative without a named mandate cannot advance local approvals",()=>{const row=tender("buzek","representative");assert.equal(checkLocalAction(row,{contextId:"buzek",action:"approve_submission"}).ok,false);assert.equal(checkLocalAction(row,{contextId:"buzek",action:"record_status"}).ok,false);});
+test("expired or action-limited representative mandate is denied",()=>{
+ const row={...tender("buzek","representative"),mandate:{principal:"Client",evidenceId:"doc1",validUntil:"2025-12-31T23:59:59Z",approvedActions:["record_status"]}};assert.equal(checkLocalAction(row,{contextId:"buzek",action:"record_status",now:"2026-10-24T00:00:00Z"}).ok,false);row.mandate.validUntil="2027-12-31T00:00:00Z";assert.equal(checkLocalAction(row,{contextId:"buzek",action:"approve_submission",now:"2026-10-24T00:00:00Z"}).ok,false);});
+test("buyer evaluation requires conflict clearance and trusted authorization",()=>{const row=tender("buzek","buyer");assert.equal(checkLocalAction(row,{contextId:"buzek",action:"review_buyer_evaluation"}).ok,false);row.conflictStatus="CLEARED";row.conflictDeclarationId="declaration1";assert.equal(checkLocalAction(row,{contextId:"buzek",action:"review_buyer_evaluation"}).ok,false);});
+test("flagged conflict blocks local submission approval",()=>{const row={...tender("buzek"),conflictStatus:"FLAGGED"};assert.equal(checkLocalAction(row,{contextId:"buzek",action:"approve_submission"}).ok,false);});
+test("ON_HOLD cannot silently be released through new mode actions",()=>{const row=tender("slindokuhle","supplier","ON_HOLD");assert.equal(checkLocalAction(row,{contextId:"slindokuhle",action:"release_hold"}).ok,false);assert.equal(checkLocalAction(row,{contextId:"slindokuhle",action:"approve_submission"}).ok,false);});
+test("v3 writes keep v2/v1 rollback keys private-only, never copy another context",()=>{
+ const storage=makeStore(),profile={organisation:"Original"};const rows=[tender(PRIVATE_CONTEXT_ID),tender("gondzar","buyer")];const saved=writeWorkspace({schemaVersion:3,records:rows,profile,contexts:[{id:"gondzar",name:"Gondzar"}],activeContextId:"gondzar"},storage);
+ assert.equal(saved.schemaVersion,SCHEMA_VERSION);assert.equal(readWorkspace(storage).records.length,2);assert.equal(JSON.parse(storage.getItem(STORAGE_KEYS.workspace)).records.length,1);assert.equal(JSON.parse(storage.getItem(STORAGE_KEYS.records)).length,1);assert.equal(JSON.parse(storage.getItem(STORAGE_KEYS.workspaceV3)).activeContextId,"gondzar");
+});
+test("backup validation denies undeclared contexts or invalid statuses",()=>{
+ assert.throws(()=>validateBackup({schemaVersion:3,records:[tender("unknown")],profile:{}}),/undeclared/);assert.throws(()=>validateBackup({schemaVersion:3,records:[{...tender(PRIVATE_CONTEXT_ID),status:"FAKE_AWARD"}],profile:{}}),/invalid/);
+});
+test("legacy v2 workspace remains readable without reclassification into BUZEK",()=>{
+ const storage=makeStore();storage.setItem(STORAGE_KEYS.workspace,JSON.stringify({schemaVersion:2,records:[{id:"old",status:"ON_HOLD",title:"Slindokuhle review"}],profile:{organisation:"Existing"}}));const state=readWorkspace(storage);assert.equal(state.records[0].status,"ON_HOLD");assert.equal(state.records[0].contextId,PRIVATE_CONTEXT_ID);});
+
+test("organisation profiles stay separate and rollback copy exposes only personal profile",()=>{const s=makeStore();writeWorkspace({schemaVersion:3,records:[tender("gondzar")],profile:{organisation:"PRIVATE PROFILE"},profilesByContext:{[PRIVATE_CONTEXT_ID]:{organisation:"PRIVATE PROFILE"},gondzar:{organisation:"GONDZAR PROFILE"}},contexts:[{id:"gondzar",name:"Gondzar"}],activeContextId:"gondzar"},s);const state=readWorkspace(s);assert.equal(state.profilesByContext.gondzar.organisation,"GONDZAR PROFILE");assert.equal(state.profilesByContext[PRIVATE_CONTEXT_ID].organisation,"PRIVATE PROFILE");assert.equal(JSON.parse(s.getItem(STORAGE_KEYS.workspace)).profile.organisation,"PRIVATE PROFILE");assert.ok(!s.getItem(STORAGE_KEYS.workspace).includes("GONDZAR PROFILE"));});
+
+test("every work mode provides bounded draft-only preparation steps",async()=>{const {preparationSteps}=await import("../src/workModes.js");for(const mode of WORK_MODE_IDS){const steps=preparationSteps(mode);assert.ok(steps.length>=3);assert.ok(steps.every(x=>typeof x==="string"&&x.length>10));}assert.deepEqual(preparationSteps("unregistered"),[]);});
+
