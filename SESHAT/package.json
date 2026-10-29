@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "SESHAT stock ledger domain core; design-stage prototype",
+  "description": "SESHAT inventory domain and local-first PWA candidate",
   "scripts": {
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "build:web": "node scripts/build-web.mjs",
+    "check:web": "node --check web/app.mjs && node --check web/sw.js && npm run build:web"
   }
 }
