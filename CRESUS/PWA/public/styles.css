@@ -263,3 +263,19 @@ button { font: inherit; color: inherit; cursor: pointer; }
 @media(max-width:959px){.presentation-label{display:none}.presentation-btn{font-size:11px;padding:6px}.briefing-grid,.expert-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.briefing-tile,.expert-tile{padding:12px}}
 @media(max-width:460px){.presentation-switch{gap:0}.presentation-btn{font-size:10px;padding:5px 6px}.briefing-grid,.expert-grid{grid-template-columns:1fr}.briefing-tile,.expert-tile{padding:11px}.briefing-tile small,.expert-tile small{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.briefing-tile,.expert-tile,.presentation-btn{transition:none!important}}
+
+/* CRESUS deterministic watchlist — data UI, not a conversation shortcut */
+.watchlist-sheet{width:min(95vw,740px);max-height:90vh;overflow:auto}
+.watchlist-add{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}
+.watchlist-add label{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:5px}
+.watchlist-add .watchlist-wide{grid-column:1/-1}
+.watchlist-add input,.watchlist-add textarea{background:var(--raised);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:9px;min-width:0;font:inherit}
+.watchlist-rows{display:grid;gap:8px;margin-top:12px}
+.watchlist-row{border:1px solid var(--line);background:var(--raised);border-radius:var(--radius);padding:11px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.watchlist-row-info{display:flex;flex-direction:column;gap:3px;min-width:0}
+.watchlist-row-info strong{font-family:var(--serif);font-size:17px}
+.watchlist-row-info small{color:var(--muted);overflow-wrap:anywhere}
+.watchlist-row-info p{margin:3px 0;color:var(--muted);font-size:12px;overflow-wrap:anywhere}
+.watchlist-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.watchlist-actions .btn{font-size:12px;padding:6px 9px}
+@media(max-width:530px){.watchlist-add{grid-template-columns:1fr}.watchlist-row{flex-direction:column}.watchlist-actions{width:100%;justify-content:flex-start}}
