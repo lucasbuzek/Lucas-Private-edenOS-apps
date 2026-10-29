@@ -54,3 +54,10 @@ The default bind is **127.0.0.1**; remote clients need an authorized TLS reverse
 - https://github.com/modelcontextprotocol/python-sdk/blob/main/docs/run/authorization.md
 - https://github.com/modelcontextprotocol/python-sdk/blob/main/docs/run/deploy.md
 - https://github.com/modelcontextprotocol/python-sdk/blob/main/docs_src/authorization/tutorial001.py
+
+
+## Follow-up authentication regression receipt (2026-10-29)
+
+The real introspection guard previously raised `ValueError` for a JSON `exp: NaN` value: Python's JSON decoder accepts this nonstandard constant, both expiry comparisons are false, and the subsequent integer conversion fails. The guard now rejects non-finite floating-point expiry values before conversion. The regression failed against the original source and passed after correction; all seven focused `test_mcp_remote_auth.py` tests passed on independent Linux Python. These tests use an introspection response fixture, not a live issuer or SDK HTTP server. Source fix commit `29fa2802b014da42ca373fef6dbc7475345a6640`; regression commit `3d49bd2ce36910b32b2d1d3f385108d75705acfa`; both saved files were read back byte-for-byte.
+
+Hosting readback: the connected Vercel search for `bifrost` returned zero projects. The selected RAVENsNEST Cloudflare account's Workers inventory contained no BIFROST-named script. These scoped observations do not exclude another named deployment/account and do not prove endpoint availability. No deployment, permission change, live OAuth acceptance or LKG promotion was performed. SDK authorization documentation was independently read at upstream blob `fefd0ed34a362d2f43f0ce36cf346d9dc884d9dd`; HTTP authentication requires actual transport tests because in-memory clients bypass the HTTP authentication layer.
