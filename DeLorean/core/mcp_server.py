@@ -18,7 +18,7 @@ try:
 except ImportError:
     from standalone_backup import DeLorean, Denied, history
 
-VERSION='0.2.3-candidate'
+VERSION='0.2.4-candidate'
 PROTOCOL='2025-06-18'
 MAX_REQUEST_BYTES=1024*1024
 UI_RESOURCE='ui://edenos-delorean/timeline'
@@ -53,6 +53,11 @@ TOOLS=[
     tool('delorean_restic_snapshots','List optional encrypted restic snapshots belonging to the current project and owner.',{'project':field('Existing project identifier')},['project']),
     tool('delorean_restic_check','Run restic repository integrity check (not proof of full restore).'),
     tool('delorean_restic_restore','Restore exact owner-scoped restic snapshot into a NEW grant-limited directory; no overwrites.',{'project':field('Project identifier'),'snapshot':field('Exact full snapshot id'),'target':field('New isolated destination'),'confirmation':{'type':'string','const':'RESTORE CLOUD SNAPSHOT TO NEW DIRECTORY'}},['project','snapshot','target','confirmation'],False),
+    tool('delorean_kopia_status','Read readiness of externally configured encrypted Kopia repository without exposing credentials.'),
+    tool('delorean_kopia_snapshots','List owner/project-tagged Kopia snapshots for an explicitly granted source.',{'source':field('Exact granted source'),'project':field('Project identity')},['source','project']),
+    tool('delorean_kopia_backup','Create encrypted Kopia snapshot with repository actions disabled; requires local write-enabled MCP session.',{'source':field('Granted source'),'project':field('Project identity'),'confirmation':{'type':'string','const':'ENCRYPTED KOPIA BACKUP'}},['source','project','confirmation'],False),
+    tool('delorean_kopia_verify','Check metadata for exact owner-scoped Kopia snapshot (not a full blob/restore test).',{'source':field('Granted source'),'project':field('Project identity'),'snapshot':field('Full snapshot ID')},['source','project','snapshot']),
+    tool('delorean_kopia_restore','Stage owner-scoped encrypted Kopia snapshot into a NEW isolated destination, without overwriting.',{'source':field('Granted source'),'project':field('Project identity'),'snapshot':field('Full snapshot ID'),'target':field('New restore destination'),'confirmation':{'type':'string','const':'RESTORE KOPIA TO NEW DIRECTORY'}},['source','project','snapshot','target','confirmation'],False),
     tool('delorean_time_machine_status','Read status of existing macOS Time Machine backups; Mac only.'),
     tool('delorean_time_machine_start','Start preconfigured native Apple Time Machine backup; does not format backup disk or automate full system restoration.',{'confirmation':{'type':'string','const':'START EXISTING TIME MACHINE BACKUP'}},['confirmation'],False),
 ]
@@ -107,6 +112,11 @@ class Server:
             'delorean_restic_snapshots':lambda:c.restic_snapshots(args['project']),
             'delorean_restic_check':lambda:c.restic_check(),
             'delorean_restic_restore':lambda:c.restic_restore(args['project'],args['snapshot'],args['target'],args['confirmation']),
+            'delorean_kopia_status':lambda:c.kopia_status(),
+            'delorean_kopia_snapshots':lambda:c.kopia_snapshots(args['source'],args['project']),
+            'delorean_kopia_backup':lambda:c.kopia_backup(args['source'],args['project'],args['confirmation']),
+            'delorean_kopia_verify':lambda:c.kopia_verify(args['source'],args['project'],args['snapshot']),
+            'delorean_kopia_restore':lambda:c.kopia_restore(args['source'],args['project'],args['snapshot'],args['target'],args['confirmation']),
             'delorean_time_machine_status':lambda:c.time_machine_status(),
             'delorean_time_machine_start':lambda:c.time_machine_start(args['confirmation']),
         }[name]()
