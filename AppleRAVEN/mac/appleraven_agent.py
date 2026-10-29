@@ -51,10 +51,14 @@ def post(endpoint, path, payload, token=None, timeout=15):
         raise Rejected("AppleRAVEN service HTTP " + str(exc.code)) from None
 
 def keychain_get():
+    """Read only this signed-in macOS user's device credential, not another account's."""
+    import getpass
     result = subprocess.run(
-        ["/usr/bin/security", "find-generic-password", "-s", SERVICE, "-w"],
-        capture_output=True, text=True)
-    return result.stdout.strip() if result.returncode == 0 else None
+        ["/usr/bin/security", "find-generic-password", "-s", SERVICE,
+         "-a", getpass.getuser(), "-w"],
+        capture_output=True, text=True, timeout=10)
+    value = result.stdout.strip() if result.returncode == 0 else None
+    return value if value and len(value) == 64 and all(c in "0123456789abcdef" for c in value) else None
 
 def keychain_set(token):
     """Store device token using Security.framework, never a command-line argument."""
