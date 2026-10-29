@@ -1,8 +1,8 @@
-# TimeMachine — DeLorean standalone MCP (0.2.0 candidate)
+# DeLorean TimeMachine standalone MCP (0.2.3 candidate)
 
 ## Product identity and scope
 
-**One existing product:** EDEN / edenOS TimeMachine—DeLorean. This is an additive native/headless MCP representation of the same app, not an independent app, alternate repository, new backup authority, replacement for PENELOPE, or BIFROST prerequisite.
+**One existing product:** EDEN / edenOS DeLorean TimeMachine. This is an additive native/headless MCP representation of the same app, not an independent app, alternate repository, new backup authority, replacement for PENELOPE, or BIFROST prerequisite.
 
 DeLorean is a unified project/application/device-data history and recovery interface over established, separately authorized backup engines and locations. Local-only operation works without Internet, PENELOPE, BIFROST, or a cloud account. PENELOPE adds optional relationship/reference discovery. Cloud storage is optional through an independently configured encrypted restic repository (local, S3-compatible, supported provider or rclone as supported by that installed engine).
 
@@ -128,3 +128,22 @@ The GitHub candidate remains in existing `lucasbuzek/Lucas-Private-edenOS-apps` 
 `delorean_dashboard` returns owner-scoped, path-redacted catalog events and snapshots. Its tool metadata references `ui://edenos-delorean/timeline`. The MCP server exposes `resources/list` and `resources/read` with the established clock-themed HTML UI, and the iframe connects over `ui/initialize`/`ui/notifications/tool-result`. This works only with an MCP client that actually connects to the stdio process and supports MCP Apps. The ChatGPT skills plugin is not connected to that process merely by packaging its source. No remote HTTPS endpoint or tunnel is claimed.
 
 The portable on-demand local server has 23 tools including SQLite transactionally consistent primary database backup planning/creation and read-only native device-recovery capability lookup. Tests are fixture scoped; no iPhone/macOS full recovery verified.
+
+
+## 2026-10-26 v0.2.3 security gate
+
+The standalone stdio MCP advertises and permits read-only tools by DEFAULT. Start with `--enable-writes` ONLY after the local device owner selects a scoped backup/restore workflow, path grants and target destination. A fixed `BACKUP NOW` phrase is **not authentication** and does not prove user approval by itself. Do not expose write mode to an unattended internet-facing or multi-user remote service; host-level user consent/OAuth/session-bound authorization must be implemented and tested first. This is an additive local safety guard; it is not a production remote authorization system. The existing physical full-device restoration, cloud and ChatGPT permissions remain unverified.
+
+## 2026-10-29 incremental review: optional Kopia adapter (candidate v0.2.4)
+
+The existing local DeLorean MCP now supports five OPTIONAL Kopia tools in addition to the previous 23. This references a separately installed and configured **Kopia encrypted repository**: no second backup engine, new repository creation, provider login, migration, scheduled upload, retention or deletion. The owner/host controls repository credentials and storage location outside the MCP.
+
+- `delorean_kopia_status` — returns boolean installed/connected, never repository credentials.
+- `delorean_kopia_snapshots` — only snapshots of an explicitly granted source, with exact `delorean-owner:<owner>` and `delorean-project:<project>` tags. Fail closed on missing metadata.
+- `delorean_kopia_verify` — verifies snapshot index metadata, NOT complete downloaded/decrypted bytes or recovery.
+- `delorean_kopia_backup` — requires write-enabled LOCAL MCP and confirmation. Kopia actions/hooks disabled, snapshot reported only after valid engine receipt.
+- `delorean_kopia_restore` — requires write-enabled LOCAL MCP and confirmation; staged into new granted directory with no overwrite/delete. Must complete a separate application/physical recovery test before promotion.
+
+**Kopia source and CLI references:** https://kopia.io/docs/reference/command-line/common/snapshot-list/ ; https://kopia.io/docs/reference/command-line/common/snapshot-create/ ; https://kopia.io/docs/reference/command-line/common/snapshot-restore/ ; https://kopia.io/docs/reference/command-line/common/snapshot-verify/
+
+**Test evidence:** `tests/test_kopia_adapter.py` uses a simulated Kopia CLI and tests owner isolation, authorization, harmless args, hook disablement, refusal and isolated restoration. This is not a live Kopia-cloud verification. Full source corpus review remains blocked by raw `.webarchive` extraction; see research/DELOREAN_EXTERNAL_REUSE_REVIEW_20261029.md.
