@@ -1,0 +1,71 @@
+name: RavenNest offline HTML candidate QA
+on:
+  push:
+    branches:
+      - candidate/ravennest-universal-files-20261029
+    paths:
+      - 'RavenNest/catalog/offline_candidates/**'
+      - '.github/workflows/ravennest-offline-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install offline browser verifier
+        run: |
+          python -m pip install --disable-pip-version-check playwright beautifulsoup4
+          python -m playwright install --with-deps chromium
+      - name: Verify real committed HTML + Markdown, disconnected Chromium
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from bs4 import BeautifulSoup
+          from playwright.sync_api import sync_playwright
+          p = Path("RavenNest/catalog/offline_candidates/20261029")
+          candidates = [
+              ("googlechromelabs-webmcp-tools-readme", 700),
+              ("googlechromelabs-awesome-webmcp", 1500),
+          ]
+          with sync_playwright() as pw:
+              browser = pw.chromium.launch(headless=True)
+              for slug,minimum in candidates:
+                  html_path=p/(slug+".html")
+                  md_path=p/(slug+".md")
+                  assert html_path.is_file() and md_path.is_file(), slug
+                  raw=html_path.read_text(encoding="utf-8")
+                  md=md_path.read_text(encoding="utf-8")
+                  soup=BeautifulSoup(raw,"html.parser")
+                  assert soup.html and soup.head and soup.body and soup.title, slug
+                  assert len(soup.get_text(" ",strip=True)) > minimum, slug
+                  assert "Full recovered upstream source text" in md, slug
+                  assert "upstream_blob_sha" in md and "source_url" in md, slug
+                  assert not soup.select("script,iframe,object,form,link[rel=stylesheet]"),slug
+                  assert not [i for i in soup.select("img[src]") if i.get("src","").startswith(("http:", "https:"))],slug
+                  assert "default-src 'none'" in raw, slug
+                  for width in (390,1280):
+                      ctx=browser.new_context(viewport={"width":width,"height":850},offline=True)
+                      net=[]
+                      ctx.route("**/*",lambda route: route.abort())
+                      page=ctx.new_page()
+                      page.on("request",lambda req: net.append(req.url))
+                      page.set_content(raw,wait_until="load",timeout=20000)
+                      visible=page.locator("body").inner_text()
+                      broken=page.evaluate("Array.from(document.images).filter(x=>!x.complete||x.naturalWidth===0).length")
+                      over=page.evaluate("document.documentElement.scrollWidth-innerWidth")
+                      assert len(visible)>minimum,(slug,width,"too short",len(visible))
+                      assert broken==0,(slug,width,"broken images",broken)
+                      assert over<45,(slug,width,"horizontal overflow",over)
+                      assert not net,(slug,width,"network requested",net[:3])
+                      assert page.title(),(slug,width,"missing title")
+                      print(f"PASS {slug} {width}px offline browser text={len(visible)} overflow={over}px requests={len(net)}")
+                      ctx.close()
+              browser.close()
+          PY
