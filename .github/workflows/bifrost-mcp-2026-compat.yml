@@ -8,6 +8,7 @@ on:
       - BIFROST/headless/mcp_remote_auth.py
       - BIFROST/headless/mcp_remote.py
       - BIFROST/tests/test_mcp_remote_auth.py
+      - BIFROST/tests/test_mcp_remote_transport_contract.py
       - BIFROST/headless/shortcalls.py
       - BIFROST/core/shortcalls.v1.json
       - BIFROST/tests/test_mcp_bridge.py
@@ -21,6 +22,7 @@ on:
       - BIFROST/headless/mcp_remote_auth.py
       - BIFROST/headless/mcp_remote.py
       - BIFROST/tests/test_mcp_remote_auth.py
+      - BIFROST/tests/test_mcp_remote_transport_contract.py
       - BIFROST/tests/test_mcp_bridge.py
       - BIFROST/docs/research/MCP_SOURCE_RECONCILIATION_20261026.md
       - BIFROST/tools/research_webarchive.py
@@ -55,5 +57,7 @@ jobs:
         run: python -B -m unittest discover -s tests -p "test_research_webarchive.py" -v
       - name: Test independent OAuth guard (no Mac or cloud credentials)
         run: python -B -m unittest discover -s tests -p "test_mcp_remote_auth.py" -v
+      - name: Test stateless independent remote MCP transport contract
+        run: python -B -m unittest discover -s tests -p "test_mcp_remote_transport_contract.py" -v
       - name: Compile independent remote SDK adapter
         run: python -B -m py_compile headless/mcp_remote_auth.py headless/mcp_remote.py
