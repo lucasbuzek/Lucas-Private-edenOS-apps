@@ -17,6 +17,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install optional MCP SDK for adapter tests
+        run: python -m pip install 'mcp>=2,<3'
       - name: Compile recovered and protected service
         run: python -m py_compile NOSTOS/nostos.py NOSTOS/tests/test_service.py
       - name: Exercise NOSTOS authenticated API
