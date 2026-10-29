@@ -11,6 +11,16 @@ mkdir -p "$OUT"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
+# Freeze the original stdlib-only Python agent into one arm64 executable at build time.
+# End-user MacBook does NOT require Python, pip, Homebrew or developer tools.
+python3 -m venv "$TMP/venv"
+"$TMP/venv/bin/python3" -m pip install --disable-pip-version-check "pyinstaller==6.22.3"
+"$TMP/venv/bin/python3" -m PyInstaller --onefile --name AppleRAVEN-Agent --target-arch arm64 \
+  --distpath "$TMP/frozen" --workpath "$TMP/work" --specpath "$TMP/spec" "$ROOT/appleraven_agent.py"
+[[ -f "$TMP/frozen/AppleRAVEN-Agent" ]] || { echo "Missing native agent executable" >&2; exit 1; }
+/usr/bin/lipo -verify_arch arm64 "$TMP/frozen/AppleRAVEN-Agent"
+"$TMP/frozen/AppleRAVEN-Agent" --status
+
 cat > "$TMP/launcher.applescript" <<'APPLESCRIPT'
 on run
     set appRoot to POSIX path of (path to me)
@@ -28,19 +38,19 @@ APPLESCRIPT
 /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString 0.1.0" "$APP/Contents/Info.plist" ||
   /usr/libexec/PlistBuddy -c "Add :CFBundleShortVersionString string 0.1.0" "$APP/Contents/Info.plist"
 /usr/bin/plutil -lint "$APP/Contents/Info.plist"
-/bin/cp "$ROOT/Install.command" "$ROOT/appleraven_agent.py" "$APP/Contents/Resources/"
-/bin/chmod 755 "$APP/Contents/Resources/Install.command"
-/bin/chmod 644 "$APP/Contents/Resources/appleraven_agent.py"
+/bin/cp "$ROOT/Install-native.command" "$APP/Contents/Resources/Install.command"
+/bin/cp "$TMP/frozen/AppleRAVEN-Agent" "$APP/Contents/Resources/AppleRAVEN-Agent"
+/bin/chmod 755 "$APP/Contents/Resources/Install.command" "$APP/Contents/Resources/AppleRAVEN-Agent"
 /bin/bash -n "$APP/Contents/Resources/Install.command"
 "/bin/bash" "$APP/Contents/Resources/Install.command" --dry-run
-python3 -m py_compile "$APP/Contents/Resources/appleraven_agent.py"
+"$APP/Contents/Resources/AppleRAVEN-Agent" --status
 
 ARCH_INFO="$(/usr/bin/lipo -info "$APP/Contents/MacOS/applet")"
 printf 'Mac executable architecture: %s\n' "$ARCH_INFO"
 /usr/bin/lipo -verify_arch arm64 "$APP/Contents/MacOS/applet"
 
 # An AppleScript wrapper is the macOS desktop launcher; the native device
-# execution runs in user-context Python. The app requests no admin permission.
+# execution runs in a bundled arm64 executable. The app requests no admin permission.
 /usr/bin/codesign --force --deep --sign - "$APP"
 STAGING="$TMP/image"
 mkdir -p "$STAGING"
