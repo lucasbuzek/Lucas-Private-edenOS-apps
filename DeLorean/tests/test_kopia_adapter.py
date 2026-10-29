@@ -113,12 +113,12 @@ class KopiaIntegration(unittest.TestCase):
         self.assertIn('--no-overwrite-symlinks',cmd)
     def test_15_read_only_mcp_cannot_backup(self):
         server=m.Server(self.core)
-        self.assertEqual(len(server.visible_tools()),19)
+        self.assertEqual(len(server.visible_tools()),21)
         r=server.handle({'jsonrpc':'2.0','id':1,'method':'tools/call','params':{'name':'delorean_kopia_backup','arguments':{'source':str(self.source),'project':PROJECT,'confirmation':'ENCRYPTED KOPIA BACKUP'}}})
         self.assertTrue(r['result']['isError'])
     def test_16_write_enabled_mcp_backup(self):
         server=m.Server(self.core,allow_writes=True)
-        self.assertEqual(len(server.visible_tools()),29)
+        self.assertEqual(len(server.visible_tools()),32)
         r=server.handle({'jsonrpc':'2.0','id':1,'method':'tools/call','params':{'name':'delorean_kopia_backup','arguments':{'source':str(self.source),'project':PROJECT,'confirmation':'ENCRYPTED KOPIA BACKUP'}}})
         self.assertFalse(r['result']['isError'])
     def test_17_write_denied_outside_grant(self):
