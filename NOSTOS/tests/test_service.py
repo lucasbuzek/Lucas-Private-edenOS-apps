@@ -84,5 +84,34 @@ class NostosServiceTests(unittest.TestCase):
         try: self._expect_http('/api/restore',403,'POST',b'not valid sqlite',{'Authorization':'Bearer '+app.OWNER_TOKEN,'X-NOSTOS-Restore-Confirm':'RESTORE NOSTOS'})
         finally: app.RESTORE_ENABLED=True
 
+
+    def test_static_browser_files_and_privacy_headers(self):
+        for route,expected in (('/','text/html'),('/app.js','javascript')):
+            req=urllib.request.Request(self.base+route)
+            with urllib.request.urlopen(req,timeout=3) as response:
+                self.assertEqual(response.status,200)
+                self.assertIn(expected,response.headers['Content-Type'])
+                self.assertEqual(response.headers['X-Frame-Options'],'DENY')
+                self.assertEqual(response.headers['Referrer-Policy'],'no-referrer')
+                self.assertNotIn('Access-Control-Allow-Origin',response.headers)
+                body=response.read().decode()
+                self.assertTrue(body)
+                if route=='/':
+                    self.assertIn('src="/app.js"',body)
+                    self.assertIn("script-src 'self'",response.headers['Content-Security-Policy'])
+
+    def test_cors_preflight_rejected(self):
+        self._expect_http('/api/items',405,'OPTIONS',headers={'Origin':'https://example.invalid'})
+
+    def test_database_and_recovery_permissions(self):
+        if os.name!='posix': self.skipTest('POSIX permission test')
+        import stat
+        self.assertEqual(stat.S_IMODE(app.DB_PATH.stat().st_mode),0o600)
+        self.assertEqual(stat.S_IMODE(app.DATA_DIR.stat().st_mode),0o700)
+        snapshots=list((app.DATA_DIR/'recovery').glob('before-restore-*.sqlite3'))
+        if snapshots:
+            self.assertTrue(all(stat.S_IMODE(p.stat().st_mode)==0o600 for p in snapshots))
+
+
 if __name__=='__main__': unittest.main(verbosity=2)
 
