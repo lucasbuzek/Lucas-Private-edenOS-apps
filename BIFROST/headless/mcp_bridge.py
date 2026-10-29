@@ -79,8 +79,7 @@ class Session:
                 'supportedVersions':[MODERN_VERSION],
                 'capabilities':{'tools':{}},
                 'ttlMs':0,'cacheScope':'private'}))
-        if method=='ping':
-            return self.result(ident,payload({}))
+        # MCP 2026-07-28 removed ping; retain it only in the legacy session path.
         if method=='tools/list':
             if set(params) != {'_meta'}:
                 return self.error(ident,-32602,'Unsupported tool list pagination')
@@ -95,7 +94,9 @@ class Session:
         name=params.get('name'); arguments=params.get('arguments',{})
         if arguments != {} or not isinstance(arguments,dict):
             return self.error(ident,-32602,'This tool accepts no arguments')
-        if name not in {t['name'] for t in tools()}:
+        # Untrusted JSON can supply arrays or objects as tool names. Reject with a
+        # typed parameters error rather than propagating an unhashable-type fault.
+        if not isinstance(name,str) or name not in {t['name'] for t in tools()}:
             return self.error(ident,-32602,'Unknown or unavailable tool')
         try:
             with contextlib.redirect_stdout(sys.stderr):
