@@ -80,7 +80,7 @@ def run():
         allowed_hosts=[host], allowed_origins=allowed_origins)
     create_server(config).run(
         transport="streamable-http", host=bind, port=int(port_text),
-        json_response=True, transport_security=security,
+        json_response=True, stateless_http=True, transport_security=security,
         max_request_body_size=65536,
     )
 
