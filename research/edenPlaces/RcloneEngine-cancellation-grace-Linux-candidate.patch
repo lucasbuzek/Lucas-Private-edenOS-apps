@@ -1,0 +1,14 @@
+--- a/Sources/DropboxLiteCore/RcloneEngine.swift
++++ b/Sources/DropboxLiteCore/RcloneEngine.swift
+@@ -144,9 +144,9 @@
+             if cancellation?.isCancelled == true || Date() >= deadline {
+                 let stoppedByUser = cancellation?.isCancelled == true
+                 if task.isRunning { task.terminate() }
+-                if completed.wait(timeout: .now() + 5) == .timedOut {
++                if completed.wait(timeout: .now() + 1) == .timedOut {
+                     kill(task.processIdentifier, SIGKILL)
+-                    _ = completed.wait(timeout: .now() + 5)
++                    _ = completed.wait(timeout: .now() + 1)
+                 }
+                 if stoppedByUser { throw RcloneError.cancelled }
+                 throw RcloneError.operationFailed("Operation timed out; no further transfers started")
