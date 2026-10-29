@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import {GOOGLE_SERVICES,getGoogleConfig,createGoogleApiClient} from "../src/google.js";
+import {GOOGLE_SERVICES,getGoogleConfig,createGoogleApiClient,parseGrantedScopes} from "../src/google.js";
 test("Google integration scopes are explicit and least-privilege oriented",()=>{assert.equal(GOOGLE_SERVICES.gmail.scope,"https://www.googleapis.com/auth/gmail.readonly");assert.equal(GOOGLE_SERVICES.drive.scope,"https://www.googleapis.com/auth/drive.file");assert.equal(GOOGLE_SERVICES.calendar.scope,"https://www.googleapis.com/auth/calendar.events");assert.ok(!Object.values(GOOGLE_SERVICES).some(x=>x.scope.includes("/auth/drive")&&x.scope.endsWith("/drive")))});
 test("Google client configuration fails closed when no OAuth client ID is supplied",()=>{const config=getGoogleConfig();assert.equal(config.configured,false);assert.equal(config.clientId,"")});
 function mockedClient({status=200,body={ok:true},scopes=Object.values(GOOGLE_SERVICES).map(x=>x.scope)}={}){const calls=[];let cleared=0;const client=createGoogleApiClient({fetchImpl:async(url,init)=>{calls.push({url,init});return {ok:status>=200&&status<300,status,json:async()=>body}},tokenProvider:()=>({value:"mock-access-token",expiresAt:Date.now()+60000}),hasScope:scope=>scopes.includes(scope),onUnauthorized:()=>{cleared++}});return {client,calls,cleared:()=>cleared}}
@@ -11,3 +11,12 @@ test("mocked Calendar creation validates event and posts JSON without sending re
 test("mocked Google API 401 clears connection and reports reconnect requirement",async()=>{const {client,cleared}=mockedClient({status:401,body:{error:{message:"Invalid Credentials"}}});await assert.rejects(()=>client.searchGmail("newer_than:1d"),/HTTP 401.*Invalid Credentials.*reconnect/);assert.equal(cleared(),1)});
 test("mocked Google API rejects missing scopes before making a request",async()=>{const {client,calls}=mockedClient({scopes:[]});assert.throws(()=>client.listDriveMetadata(),/Connect Google Drive first/);assert.equal(calls.length,0)});
 
+
+test("Google OAuth consent parser splits the actual whitespace-delimited scope list",()=>{
+ const drive=GOOGLE_SERVICES.drive.scope, gmail=GOOGLE_SERVICES.gmail.scope;
+ const granted=parseGrantedScopes("openid \t"+drive+"\n"+gmail+" ");
+ assert.equal(granted.has(drive),true);
+ assert.equal(granted.has(gmail),true);
+ assert.equal(granted.has(drive+" "+gmail),false);
+ assert.deepEqual([...parseGrantedScopes("")],[]);
+});

@@ -18,3 +18,6 @@
 .prepChecklist input[type=checkbox]{width:17px;height:17px;flex:none}
 .prepChecklist p{font-size:.82rem;opacity:.85}
 
+
+/* Candidate 2026-10-29: source preset for official public feed only. */
+.sourcePresets{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin:.7rem 0}.sourcePresets small{flex:1;min-width:220px;line-height:1.45}.sourcePresets button{max-width:100%;white-space:normal}

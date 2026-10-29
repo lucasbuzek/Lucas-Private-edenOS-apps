@@ -7,7 +7,9 @@
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "pretest": "python3 scripts/generate_icons.py",
+    "prebuild": "python3 scripts/generate_icons.py"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
@@ -19,4 +21,3 @@
     "vite": "^7.1.5"
   }
 }
-
