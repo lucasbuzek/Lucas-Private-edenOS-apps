@@ -22,6 +22,7 @@ import setup_manager as setups
 import kernel_adapter as core_adapter
 import core_runtime as runtime_inventory
 import storage_adapter as storage_metadata
+import webmcp_bridge
 import task_ledger as local_tasks
 import orchestration as local_orchestration
 import connection_observer as observed_connections
@@ -271,6 +272,7 @@ class Handler(BaseHTTPRequestHandler):
             "/index.html": ("index.html", "text/html"),
             "/dashboard.js": ("dashboard.js", "text/javascript"),
             "/connection_fabric.js": ("connection_fabric.js", "text/javascript"),
+            "/webmcp.js": ("webmcp.js", "text/javascript"),
             "/dashboard.css": ("dashboard.css", "text/css"),
             "/manifest.webmanifest": ("manifest.webmanifest", "application/manifest+json"),
             "/sw.js": ("sw.js", "text/javascript"),
@@ -298,6 +300,12 @@ class Handler(BaseHTTPRequestHandler):
                              "form-action 'none'; frame-ancestors 'none'")
             self.end_headers()
             return self.wfile.write(data)
+        if route == "/api/webmcp/tools":
+            if not self.authentic():
+                return self.response(403, {"error": "local session required"})
+            if urlsplit(self.path).query:
+                return self.response(400, {"error": "unexpected WebMCP query"})
+            return self.response(200, {"tools": webmcp_bridge.tools()})
         if route == "/api/pwa/adapter":
             return self.response(200, {
                 "schema": "bifrost.pwa.adapter.v1",
@@ -464,6 +472,13 @@ class Handler(BaseHTTPRequestHandler):
                 return self.response(400, {"error": "expected JSON object"})
         except (ValueError, OSError):
             return self.response(400, {"error": "invalid JSON"})
+        if route == "/api/webmcp/call":
+            if urlsplit(self.path).query or set(data) != {"name","arguments"}:
+                return self.response(400, {"error": "invalid WebMCP call shape"})
+            try:
+                return self.response(200, webmcp_bridge.call(data["name"],data["arguments"]))
+            except (ValueError, TypeError):
+                return self.response(403, {"error": "WebMCP request denied by existing shortNameCall authority"})
         if route == "/api/storage/v1/preview":
             if (urlsplit(self.path).query or
                 set(data) - {"profile", "folder", "readRemote"} or
