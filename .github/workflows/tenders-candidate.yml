@@ -29,3 +29,6 @@ jobs:
         run: npm run build
       - name: Verify output
         run: test -f dist/index.html && test -f dist/manifest.webmanifest && test -f dist/icons/tenders-512.png
+      - name: Public official APIs read-only schema smoke (informational)
+        continue-on-error: true
+        run: node scripts/official_source_smoke.mjs
