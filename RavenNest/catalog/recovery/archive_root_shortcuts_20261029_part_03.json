@@ -31,8 +31,9 @@
     {
       "filename": "DerUSfFE14i.url",
       "original_path": "ns:13844906001//DerUSfFE14i.url",
-      "source_url": "https://www.instagram.com/p/DerUSfFE14i/?img_index=9&psln=MWg0NnE2dXgzdjZ6aw==",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/p/DerUSfFE14i/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "agentic-cad-mcp.url",
@@ -43,38 +44,44 @@
     {
       "filename": "Ddq_2f6EtN1.url",
       "original_path": "ns:13844906001//Ddq_2f6EtN1.url",
-      "source_url": "https://www.instagram.com/p/Ddq_2f6EtN1/?img_index=3&obrf=MWc1Nmc0dXM2NW9rcA==",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/p/Ddq_2f6EtN1/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "Dejjy1xicyr.url",
       "original_path": "ns:13844906001//Dejjy1xicyr.url",
-      "source_url": "https://www.instagram.com/p/Dejjy1xicyr/?img_index=4&vrfl=d21wbHI0b3luZHJq",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/p/Dejjy1xicyr/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "DdEoYyrPTbF.url",
       "original_path": "ns:13844906001//DdEoYyrPTbF.url",
-      "source_url": "https://www.instagram.com/reel/DdEoYyrPTbF/?exln=MWs3dmt2OWtkcHF1eQ==",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/reel/DdEoYyrPTbF/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "servers.url",
       "original_path": "ns:13844906001//servers.url",
-      "source_url": "https://glama.ai/mcp/servers?query=Trading",
-      "state": "url_read_unverified"
+      "source_url": "https://glama.ai/mcp/servers",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "De9TjuXjL1J.url",
       "original_path": "ns:13844906001//De9TjuXjL1J.url",
-      "source_url": "https://www.instagram.com/p/De9TjuXjL1J/?img_index=7&exln=MW10OWl6dWdwYWo4Mg==",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/p/De9TjuXjL1J/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "Deom1cklqvC.url",
       "original_path": "ns:13844906001//Deom1cklqvC.url",
-      "source_url": "https://www.instagram.com/reel/Deom1cklqvC/?psln=OGhpbGFxemp2Mnd1",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/reel/Deom1cklqvC/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "stock-trade-finance-api.url",
@@ -97,8 +104,9 @@
     {
       "filename": "DcJeROghMkO.url",
       "original_path": "ns:13844906001//DcJeROghMkO.url",
-      "source_url": "https://www.instagram.com/reel/DcJeROghMkO/?cplk=MW5tYjEyZG1vdjViMw==",
-      "state": "url_read_unverified"
+      "source_url": "https://www.instagram.com/reel/DcJeROghMkO/",
+      "state": "url_read_unverified",
+      "query_parameters_dropped": true
     },
     {
       "filename": "thndr-mcp.url",
@@ -106,5 +114,7 @@
       "source_url": "https://glama.ai/mcp/servers/armaaar/thndr-mcp",
       "state": "url_read_unverified"
     }
-  ]
+  ],
+  "normalization_notice": "Source URLs normalized by removing ALL query strings and URL fragments to avoid persisting tracking, session/challenge tokens or client parameters. Where original target is a redirect requiring a query, source MUST be manually resolved from the original .url file before use.",
+  "review_state": "do_not_publish_auto_or_fetch_private_without_consent"
 }
