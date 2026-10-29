@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test("local inventory: catalogue, receipt, reload and stock visibility", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByText("Local-only")).toBeVisible();
+  await expect(page.getByText("Local-only", { exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Catalogue & locations" }).click();
   await page.getByLabel("Location identifier").fill("shop");
   await page.getByRole("button", { name: "Add location" }).click();
