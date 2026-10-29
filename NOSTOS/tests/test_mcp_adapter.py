@@ -65,6 +65,37 @@ class NostosMcpTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     self.adapter._settings()
 
+    def test_mcp_stdio_protocol_discovery_and_real_tool_calls(self):
+        """Run an actual SDK v2 MCP client over stdio to a child MCP server."""
+        import sys
+        import anyio
+        from mcp import Client, StdioServerParameters
+        from mcp.client.stdio import stdio_client
+
+        async def exercise():
+            params=StdioServerParameters(
+                command=sys.executable,
+                args=[str(ROOT/'mcp_readonly.py')],
+                env={'NOSTOS_OWNER_TOKEN':self.app.OWNER_TOKEN,
+                     'NOSTOS_API_URL':self.base},
+            )
+            async with Client(stdio_client(params)) as client:
+                listed=await client.list_tools()
+                names={t.name for t in listed.tools}
+                self.assertEqual(names,{'household_summary','search_household'})
+                summary=await client.call_tool('household_summary',{})
+                self.assertFalse(summary.is_error)
+                self.assertIn('supplies',str(summary.structured_content or summary.content))
+                found=await client.call_tool('search_household',
+                    {'kind':'supplies','query':'Pantry','limit':10})
+                self.assertFalse(found.is_error)
+                self.assertIn('Pantry rice',str(found.structured_content or found.content))
+                forbidden=await client.call_tool('search_household',
+                    {'kind':'not-a-category','query':''})
+                self.assertTrue(forbidden.is_error)
+
+        anyio.run(exercise)
+
     def test_mcp_no_bearer_or_invalid_kind_or_bad_limit(self):
         with self.env(token='wrong'+'x'*40):
             with self.assertRaises(HTTPError) as denied:
