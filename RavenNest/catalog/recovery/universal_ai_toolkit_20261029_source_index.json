@@ -1,0 +1,2893 @@
+{
+  "source_authority": "Dropbox /EDEN-lucas-family/AI MCP tool/#AI toolkit/Universal_AI_Toolkit_Final/catalog_metadata.json",
+  "original_metadata_count": 320,
+  "reference_url_count": 237,
+  "missing_url_count": 83,
+  "source_url_count_unique": 176,
+  "relation": "source-specific toolkit metadata; not universal RAVENnest taxonomy, not installed software",
+  "status": "private archive recovery; URL targets not individually source-read or security audited",
+  "publication": "none; no permissions granted",
+  "preserve": "Original toolkit source and 11 historical RAVENnest roots remain unchanged; broader extensible cross-domain classification is separate.",
+  "records": [
+    {
+      "original_id": "industry-automotive-trucking-logistics-traccar",
+      "name": "Traccar",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.traccar.org/",
+      "short_description": "GPS fleet tracking",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-thingsboard",
+      "name": "ThingsBoard",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://thingsboard.io/",
+      "short_description": "IoT telemetry",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-or-tools",
+      "name": "OR-Tools",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://developers.google.com/optimization",
+      "short_description": "Vehicle routing optimization",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-vroom",
+      "name": "VROOM",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/VROOM-Project/vroom",
+      "short_description": "Vehicle routing",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-graphhopper",
+      "name": "GraphHopper",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/graphhopper/graphhopper",
+      "short_description": "Routing engine",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-osrm",
+      "name": "OSRM",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/Project-OSRM/osrm-backend",
+      "short_description": "Open routing",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-valhalla",
+      "name": "Valhalla",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/valhalla/valhalla",
+      "short_description": "Routing",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-python-obd",
+      "name": "python-OBD",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/brendan-w/python-OBD",
+      "short_description": "OBD diagnostics",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-savvycan",
+      "name": "SavvyCAN",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/collin80/SavvyCAN",
+      "short_description": "CAN bus inspection",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-erpnext-logistics",
+      "name": "ERPNext Logistics",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://github.com/search?q=ERPNext%20Logistics&type=repositories",
+      "short_description": "Transport ERP",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-openboxes",
+      "name": "OpenBoxes",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://openboxes.com/",
+      "short_description": "Inventory",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-samsara",
+      "name": "Samsara",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "https://www.samsara.com/",
+      "short_description": "Cloud fleet management",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-geotab",
+      "name": "Geotab",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "https://www.geotab.com/",
+      "short_description": "Cloud fleet telematics",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-motive",
+      "name": "Motive",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "https://gomotive.com/",
+      "short_description": "Cloud fleet management",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-project44",
+      "name": "project44",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "https://www.project44.com/",
+      "short_description": "Cloud shipment visibility",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-fourkites",
+      "name": "FourKites",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "https://www.fourkites.com/",
+      "short_description": "Cloud shipment visibility",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-yolo",
+      "name": "YOLO",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=YOLO&type=repositories",
+      "short_description": "Vehicle detection",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-chronos",
+      "name": "Chronos",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Chronos&type=repositories",
+      "short_description": "ETA and demand forecasting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-timesfm",
+      "name": "TimesFM",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=TimesFM&type=repositories",
+      "short_description": "Time series forecasting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-layoutlmv3",
+      "name": "LayoutLMv3",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=LayoutLMv3&type=repositories",
+      "short_description": "Freight documents",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-can-utils",
+      "name": "can-utils",
+      "kind": "utilities",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=can-utils&type=repositories",
+      "short_description": "CAN diagnostics",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-qgis",
+      "name": "QGIS",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=QGIS&type=repositories",
+      "short_description": "GIS",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-automotive-trucking-logistics-postgis",
+      "name": "PostGIS",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=PostGIS&type=repositories",
+      "short_description": "Geospatial database",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-agriculture-farming-farmos",
+      "name": "farmOS",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://farmos.org/",
+      "short_description": "Farm management",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-agriculture-farming-agopengps",
+      "name": "AgOpenGPS",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/farmerbriantee/AgOpenGPS",
+      "short_description": "Guidance",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-agriculture-farming-opendronemap",
+      "name": "OpenDroneMap",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.opendronemap.org/",
+      "short_description": "Aerial mapping",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-agriculture-farming-pytorch",
+      "name": "PyTorch",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=PyTorch&type=repositories",
+      "short_description": "Crop vision models",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-agriculture-farming-yolo",
+      "name": "YOLO",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=YOLO&type=repositories",
+      "short_description": "Crop detection",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-agriculture-farming-prithvi",
+      "name": "Prithvi",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Prithvi&type=repositories",
+      "short_description": "Earth observation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-agriculture-farming-qgis",
+      "name": "QGIS",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=QGIS&type=repositories",
+      "short_description": "Farm maps",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-construction-civil-engineering-bonsai-bim",
+      "name": "Bonsai BIM",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://bonsaibim.org/",
+      "short_description": "BIM workflow",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-construction-civil-engineering-ifcopenshell",
+      "name": "IfcOpenShell",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://ifcopenshell.org/",
+      "short_description": "BIM data",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-construction-civil-engineering-openproject",
+      "name": "OpenProject",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.openproject.org/",
+      "short_description": "Project management",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-construction-civil-engineering-opendronemap",
+      "name": "OpenDroneMap",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.opendronemap.org/",
+      "short_description": "Survey imagery",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-construction-civil-engineering-yolo",
+      "name": "YOLO",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=YOLO&type=repositories",
+      "short_description": "Site monitoring",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-construction-civil-engineering-sam-2",
+      "name": "SAM 2",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=SAM%202&type=repositories",
+      "short_description": "Segmentation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-construction-civil-engineering-freecad",
+      "name": "FreeCAD",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://www.freecad.org/",
+      "short_description": "CAD",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-construction-civil-engineering-qgis",
+      "name": "QGIS",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=QGIS&type=repositories",
+      "short_description": "Surveying",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-architecture-interior-design-comfyui",
+      "name": "ComfyUI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=ComfyUI&type=repositories",
+      "short_description": "Concept visualization",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-architecture-interior-design-invokeai",
+      "name": "InvokeAI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=InvokeAI&type=repositories",
+      "short_description": "Image generation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-architecture-interior-design-trellis",
+      "name": "TRELLIS",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=TRELLIS&type=repositories",
+      "short_description": "3D concepts",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-architecture-interior-design-sdxl",
+      "name": "SDXL",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=SDXL&type=repositories",
+      "short_description": "Image generation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-architecture-interior-design-controlnet",
+      "name": "ControlNet",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=ControlNet&type=repositories",
+      "short_description": "Spatial conditioning",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-architecture-interior-design-freecad",
+      "name": "FreeCAD",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://www.freecad.org/",
+      "short_description": "CAD",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-architecture-interior-design-bonsai-bim",
+      "name": "Bonsai BIM",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://bonsaibim.org/",
+      "short_description": "Building information modeling",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-manufacturing-industrial-automation-node-red",
+      "name": "Node-RED",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://nodered.org/",
+      "short_description": "Industrial workflows",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-manufacturing-industrial-automation-thingsboard",
+      "name": "ThingsBoard",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://thingsboard.io/",
+      "short_description": "Telemetry",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-manufacturing-industrial-automation-pyod",
+      "name": "PyOD",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=PyOD&type=repositories",
+      "short_description": "Anomaly detection",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-manufacturing-industrial-automation-chronos",
+      "name": "Chronos",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Chronos&type=repositories",
+      "short_description": "Sensor forecasting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-manufacturing-industrial-automation-yolo",
+      "name": "YOLO",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=YOLO&type=repositories",
+      "short_description": "Quality inspection",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-manufacturing-industrial-automation-openplc",
+      "name": "OpenPLC",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://autonomylogic.com/",
+      "short_description": "PLC runtime",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-energy-utilities-openems",
+      "name": "OpenEMS",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://openems.io/",
+      "short_description": "Energy management",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-energy-utilities-pypsa",
+      "name": "PyPSA",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://pypsa.org/",
+      "short_description": "Energy optimization",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-energy-utilities-darts",
+      "name": "Darts",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Darts&type=repositories",
+      "short_description": "Forecasting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-energy-utilities-timesfm",
+      "name": "TimesFM",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=TimesFM&type=repositories",
+      "short_description": "Energy forecasting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-energy-utilities-chronos",
+      "name": "Chronos",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Chronos&type=repositories",
+      "short_description": "Demand forecasting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-energy-utilities-opendss",
+      "name": "OpenDSS",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://opendss.epri.com/",
+      "short_description": "Grid simulation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-real-estate-property-management-erpnext",
+      "name": "ERPNext",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://github.com/search?q=ERPNext&type=repositories",
+      "short_description": "Property workflows",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-real-estate-property-management-odoo",
+      "name": "Odoo",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://github.com/search?q=Odoo&type=repositories",
+      "short_description": "ERP workflows",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-real-estate-property-management-docling",
+      "name": "Docling",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Docling&type=repositories",
+      "short_description": "Lease document extraction",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-real-estate-property-management-metabase",
+      "name": "Metabase",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://github.com/search?q=Metabase&type=repositories",
+      "short_description": "Portfolio analytics",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-real-estate-property-management-tabpfn",
+      "name": "TabPFN",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=TabPFN&type=repositories",
+      "short_description": "Valuation modelling",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-real-estate-property-management-layoutlmv3",
+      "name": "LayoutLMv3",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=LayoutLMv3&type=repositories",
+      "short_description": "Document extraction",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-real-estate-property-management-qgis",
+      "name": "QGIS",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=QGIS&type=repositories",
+      "short_description": "Location analysis",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-retail-e-commerce-saleor",
+      "name": "Saleor",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://saleor.io/",
+      "short_description": "Commerce platform",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-retail-e-commerce-medusa",
+      "name": "Medusa",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://medusajs.com/",
+      "short_description": "Commerce backend",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-retail-e-commerce-odoo",
+      "name": "Odoo",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://github.com/search?q=Odoo&type=repositories",
+      "short_description": "ERP and inventory",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-retail-e-commerce-metabase",
+      "name": "Metabase",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://github.com/search?q=Metabase&type=repositories",
+      "short_description": "Analytics",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-retail-e-commerce-lightgbm",
+      "name": "LightGBM",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=LightGBM&type=repositories",
+      "short_description": "Demand forecasting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-retail-e-commerce-bge-m3",
+      "name": "BGE-M3",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=BGE-M3&type=repositories",
+      "short_description": "Product search",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-retail-e-commerce-erpnext-pos",
+      "name": "ERPNext POS",
+      "kind": "utilities",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://github.com/search?q=ERPNext%20POS&type=repositories",
+      "short_description": "Point of sale",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-hospitality-tourism-qloapps",
+      "name": "QloApps",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://qloapps.com/",
+      "short_description": "Hotel management",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-hospitality-tourism-hoteldruid",
+      "name": "HotelDruid",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.hoteldruid.com/",
+      "short_description": "Property management",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-hospitality-tourism-darts",
+      "name": "Darts",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Darts&type=repositories",
+      "short_description": "Demand forecasting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-hospitality-tourism-chronos",
+      "name": "Chronos",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Chronos&type=repositories",
+      "short_description": "Occupancy forecasting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-hospitality-tourism-openstreetmap",
+      "name": "OpenStreetMap",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=OpenStreetMap&type=repositories",
+      "short_description": "Map data",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-restaurants-food-services-odoo-pos",
+      "name": "Odoo POS",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://github.com/search?q=Odoo%20POS&type=repositories",
+      "short_description": "POS and inventory",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-restaurants-food-services-erpnext-pos",
+      "name": "ERPNext POS",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://github.com/search?q=ERPNext%20POS&type=repositories",
+      "short_description": "Point of sale",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-restaurants-food-services-or-tools",
+      "name": "OR-Tools",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://developers.google.com/optimization",
+      "short_description": "Delivery scheduling",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-restaurants-food-services-timesfm",
+      "name": "TimesFM",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=TimesFM&type=repositories",
+      "short_description": "Demand forecasting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-restaurants-food-services-grocy",
+      "name": "Grocy",
+      "kind": "utilities",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=Grocy&type=repositories",
+      "short_description": "Stock management",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-healthcare-administration-openemr",
+      "name": "OpenEMR",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.open-emr.org/",
+      "short_description": "Clinical records",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-healthcare-administration-openmrs",
+      "name": "OpenMRS",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://openmrs.org/",
+      "short_description": "Medical records",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-healthcare-administration-monai",
+      "name": "MONAI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=MONAI&type=repositories",
+      "short_description": "Medical imaging",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-healthcare-administration-medgemma",
+      "name": "MedGemma",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=MedGemma&type=repositories",
+      "short_description": "Medical research model",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-healthcare-administration-gnu-health",
+      "name": "GNU Health",
+      "kind": "utilities",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.gnuhealth.org/",
+      "short_description": "Health information system",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-insurance-risk-management-pyod",
+      "name": "PyOD",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=PyOD&type=repositories",
+      "short_description": "Fraud anomalies",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-insurance-risk-management-docling",
+      "name": "Docling",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Docling&type=repositories",
+      "short_description": "Claims extraction",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-insurance-risk-management-autogluon",
+      "name": "AutoGluon",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=AutoGluon&type=repositories",
+      "short_description": "Risk modeling",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-insurance-risk-management-tabpfn",
+      "name": "TabPFN",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=TabPFN&type=repositories",
+      "short_description": "Risk prediction",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-insurance-risk-management-layoutlmv3",
+      "name": "LayoutLMv3",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=LayoutLMv3&type=repositories",
+      "short_description": "Claims documents",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-insurance-risk-management-gnucash",
+      "name": "GnuCash",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=GnuCash&type=repositories",
+      "short_description": "Accounting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-human-resources-recruitment-opencats",
+      "name": "OpenCATS",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.opencats.org/",
+      "short_description": "Applicant tracking",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-human-resources-recruitment-orangehrm",
+      "name": "OrangeHRM",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.orangehrm.com/",
+      "short_description": "HR management",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-human-resources-recruitment-docling",
+      "name": "Docling",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Docling&type=repositories",
+      "short_description": "Resume parsing",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-human-resources-recruitment-bge-m3",
+      "name": "BGE-M3",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=BGE-M3&type=repositories",
+      "short_description": "Semantic search",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-human-resources-recruitment-erpnext-hr",
+      "name": "ERPNext HR",
+      "kind": "utilities",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://github.com/search?q=ERPNext%20HR&type=repositories",
+      "short_description": "HR operations",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-customer-support-contact-centers-chatwoot",
+      "name": "Chatwoot",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.chatwoot.com/",
+      "short_description": "Customer support",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-customer-support-contact-centers-rasa",
+      "name": "Rasa",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://rasa.com/",
+      "short_description": "Conversational AI",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-customer-support-contact-centers-open-webui",
+      "name": "Open WebUI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=Open%20WebUI&type=repositories",
+      "short_description": "Local assistant",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-customer-support-contact-centers-whisper",
+      "name": "Whisper",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=Whisper&type=repositories",
+      "short_description": "Transcription",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-customer-support-contact-centers-piper",
+      "name": "Piper",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Piper&type=repositories",
+      "short_description": "Speech synthesis",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-customer-support-contact-centers-freeswitch",
+      "name": "FreeSWITCH",
+      "kind": "utilities",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=FreeSWITCH&type=repositories",
+      "short_description": "Telephony",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-telecommunications-networks-zabbix",
+      "name": "Zabbix",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://www.zabbix.com/",
+      "short_description": "Network monitoring",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-telecommunications-networks-pyod",
+      "name": "PyOD",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=PyOD&type=repositories",
+      "short_description": "Anomaly detection",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-telecommunications-networks-thingsboard",
+      "name": "ThingsBoard",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://thingsboard.io/",
+      "short_description": "Telemetry",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-telecommunications-networks-chronos",
+      "name": "Chronos",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Chronos&type=repositories",
+      "short_description": "Traffic forecasting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-telecommunications-networks-open5gs",
+      "name": "Open5GS",
+      "kind": "utilities",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://open5gs.org/",
+      "short_description": "Mobile core",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-telecommunications-networks-srsran",
+      "name": "srsRAN",
+      "kind": "utilities",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.srsran.com/",
+      "short_description": "Radio access",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-cybersecurity-digital-forensics-wazuh",
+      "name": "Wazuh",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://wazuh.com/",
+      "short_description": "Security monitoring",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-cybersecurity-digital-forensics-velociraptor",
+      "name": "Velociraptor",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://docs.velociraptor.app/",
+      "short_description": "Endpoint forensics",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-cybersecurity-digital-forensics-garak",
+      "name": "garak",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=garak&type=repositories",
+      "short_description": "LLM scanning",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-cybersecurity-digital-forensics-yolo",
+      "name": "YOLO",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=YOLO&type=repositories",
+      "short_description": "Visual anomaly detection",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-cybersecurity-digital-forensics-zeek",
+      "name": "Zeek",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://zeek.org/",
+      "short_description": "Network analysis",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-cybersecurity-digital-forensics-suricata",
+      "name": "Suricata",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://suricata.io/",
+      "short_description": "Intrusion detection",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-environmental-monitoring-opendronemap",
+      "name": "OpenDroneMap",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.opendronemap.org/",
+      "short_description": "Environmental imagery",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-environmental-monitoring-torchgeo",
+      "name": "TorchGeo",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=TorchGeo&type=repositories",
+      "short_description": "Satellite ML",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-environmental-monitoring-raster-vision",
+      "name": "Raster Vision",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=Raster%20Vision&type=repositories",
+      "short_description": "Imagery ML",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-environmental-monitoring-prithvi",
+      "name": "Prithvi",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Prithvi&type=repositories",
+      "short_description": "Earth observation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-environmental-monitoring-sam-2",
+      "name": "SAM 2",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=SAM%202&type=repositories",
+      "short_description": "Segmentation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-environmental-monitoring-qgis",
+      "name": "QGIS",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=QGIS&type=repositories",
+      "short_description": "GIS",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-marine-maritime-or-tools",
+      "name": "OR-Tools",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://developers.google.com/optimization",
+      "short_description": "Vessel scheduling",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-marine-maritime-pyod",
+      "name": "PyOD",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=PyOD&type=repositories",
+      "short_description": "Vessel anomaly detection",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-marine-maritime-yolo",
+      "name": "YOLO",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=YOLO&type=repositories",
+      "short_description": "Vessel detection",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-marine-maritime-chronos",
+      "name": "Chronos",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Chronos&type=repositories",
+      "short_description": "Arrival forecasting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-marine-maritime-opencpn",
+      "name": "OpenCPN",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://opencpn.org/",
+      "short_description": "Navigation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-marine-maritime-ais-processing",
+      "name": "AIS processing",
+      "kind": "utilities",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=AIS%20processing&type=repositories",
+      "short_description": "Vessel position data",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-aviation-drones-mavsdk",
+      "name": "MAVSDK",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://mavsdk.mavlink.io/",
+      "short_description": "Drone automation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-aviation-drones-opendronemap",
+      "name": "OpenDroneMap",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.opendronemap.org/",
+      "short_description": "Aerial mapping",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-aviation-drones-yolo",
+      "name": "YOLO",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=YOLO&type=repositories",
+      "short_description": "Object detection",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-aviation-drones-depth-anything",
+      "name": "Depth Anything",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=Depth%20Anything&type=repositories",
+      "short_description": "Depth estimation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-aviation-drones-ardupilot",
+      "name": "ArduPilot",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://ardupilot.org/",
+      "short_description": "Autopilot",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-aviation-drones-px4",
+      "name": "PX4",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://px4.io/",
+      "short_description": "Autopilot",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-aviation-drones-qgroundcontrol",
+      "name": "QGroundControl",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://qgroundcontrol.com/",
+      "short_description": "Ground control",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-scientific-research-laboratories-deepchem",
+      "name": "DeepChem",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=DeepChem&type=repositories",
+      "short_description": "Scientific ML",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-scientific-research-laboratories-monai",
+      "name": "MONAI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=MONAI&type=repositories",
+      "short_description": "Medical imaging",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-scientific-research-laboratories-autogluon",
+      "name": "AutoGluon",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=AutoGluon&type=repositories",
+      "short_description": "AutoML",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-scientific-research-laboratories-esm",
+      "name": "ESM",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=ESM&type=repositories",
+      "short_description": "Protein language model",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-scientific-research-laboratories-jupyterlab",
+      "name": "JupyterLab",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=JupyterLab&type=repositories",
+      "short_description": "Notebooks",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-scientific-research-laboratories-scipy",
+      "name": "SciPy",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=SciPy&type=repositories",
+      "short_description": "Scientific computing",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-public-administration-civic-services-docling",
+      "name": "Docling",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Docling&type=repositories",
+      "short_description": "Civic document extraction",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-public-administration-civic-services-haystack",
+      "name": "Haystack",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=Haystack&type=repositories",
+      "short_description": "Public knowledge search",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-public-administration-civic-services-bge-m3",
+      "name": "BGE-M3",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=BGE-M3&type=repositories",
+      "short_description": "Document retrieval",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-public-administration-civic-services-ckan",
+      "name": "CKAN",
+      "kind": "utilities",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://ckan.org/",
+      "short_description": "Open data",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-public-administration-civic-services-open311",
+      "name": "Open311",
+      "kind": "utilities",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.open311.org/",
+      "short_description": "Civic requests",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-iot-smart-buildings-frigate",
+      "name": "Frigate",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://frigate.video/",
+      "short_description": "Local vision NVR",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-iot-smart-buildings-home-assistant",
+      "name": "Home Assistant",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.home-assistant.io/",
+      "short_description": "Automation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-iot-smart-buildings-esphome",
+      "name": "ESPHome",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://esphome.io/",
+      "short_description": "Embedded devices",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-iot-smart-buildings-yolo",
+      "name": "YOLO",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=YOLO&type=repositories",
+      "short_description": "Object detection",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-iot-smart-buildings-openhab",
+      "name": "openHAB",
+      "kind": "utilities",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://www.openhab.org/",
+      "short_description": "Automation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-iot-smart-buildings-mosquitto",
+      "name": "Mosquitto",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Mosquitto&type=repositories",
+      "short_description": "MQTT",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-electronics-embedded-systems-edge-impulse",
+      "name": "Edge Impulse",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "https://edgeimpulse.com/",
+      "short_description": "Edge ML platform",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-electronics-embedded-systems-tensorflow-lite-micro",
+      "name": "TensorFlow Lite Micro",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=TensorFlow%20Lite%20Micro&type=repositories",
+      "short_description": "Embedded inference",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-electronics-embedded-systems-mobilenet",
+      "name": "MobileNet",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=MobileNet&type=repositories",
+      "short_description": "Edge vision",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-electronics-embedded-systems-kicad",
+      "name": "KiCad",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://www.kicad.org/",
+      "short_description": "PCB CAD",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-electronics-embedded-systems-platformio",
+      "name": "PlatformIO",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://platformio.org/",
+      "short_description": "Firmware tooling",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-electronics-embedded-systems-zephyr",
+      "name": "Zephyr",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://www.zephyrproject.org/",
+      "short_description": "RTOS",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-geology-mining-surveying-gempy",
+      "name": "GemPy",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://www.gempy.org/",
+      "short_description": "Geological modeling",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-geology-mining-surveying-opendronemap",
+      "name": "OpenDroneMap",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.opendronemap.org/",
+      "short_description": "Survey imagery",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-geology-mining-surveying-torchgeo",
+      "name": "TorchGeo",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=TorchGeo&type=repositories",
+      "short_description": "Spatial ML",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-geology-mining-surveying-prithvi",
+      "name": "Prithvi",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Prithvi&type=repositories",
+      "short_description": "Earth observation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-geology-mining-surveying-qgis",
+      "name": "QGIS",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=QGIS&type=repositories",
+      "short_description": "GIS",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-chemistry-materials-science-deepchem",
+      "name": "DeepChem",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=DeepChem&type=repositories",
+      "short_description": "Molecular ML",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-chemistry-materials-science-esm",
+      "name": "ESM",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=ESM&type=repositories",
+      "short_description": "Protein model",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-chemistry-materials-science-rdkit",
+      "name": "RDKit",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://www.rdkit.org/",
+      "short_description": "Cheminformatics",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-chemistry-materials-science-ase",
+      "name": "ASE",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://wiki.fysik.dtu.dk/ase/",
+      "short_description": "Atomic simulation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-biotechnology-genomics-deepchem",
+      "name": "DeepChem",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=DeepChem&type=repositories",
+      "short_description": "Molecular ML",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-biotechnology-genomics-monai",
+      "name": "MONAI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=MONAI&type=repositories",
+      "short_description": "Imaging ML",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-biotechnology-genomics-esm",
+      "name": "ESM",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=ESM&type=repositories",
+      "short_description": "Protein language model",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-biotechnology-genomics-alphafold",
+      "name": "AlphaFold",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/google-deepmind/alphafold",
+      "short_description": "Protein structure",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-biotechnology-genomics-biopython",
+      "name": "Biopython",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://biopython.org/",
+      "short_description": "Bioinformatics",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-accessibility-assistive-technology-whisper-cpp",
+      "name": "Whisper.cpp",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Whisper.cpp&type=repositories",
+      "short_description": "Offline speech recognition",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-accessibility-assistive-technology-piper",
+      "name": "Piper",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Piper&type=repositories",
+      "short_description": "Offline speech synthesis",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-accessibility-assistive-technology-argos-translate",
+      "name": "Argos Translate",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Argos%20Translate&type=repositories",
+      "short_description": "Offline translation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-accessibility-assistive-technology-florence-2",
+      "name": "Florence-2",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=Florence-2&type=repositories",
+      "short_description": "Image descriptions",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-accessibility-assistive-technology-ocrmypdf",
+      "name": "OCRmyPDF",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=OCRmyPDF&type=repositories",
+      "short_description": "Searchable documents",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-photography-digital-asset-management-immich",
+      "name": "Immich",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://immich.app/",
+      "short_description": "Self-hosted photo search",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-photography-digital-asset-management-photoprism",
+      "name": "PhotoPrism",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://www.photoprism.app/",
+      "short_description": "Self-hosted image management",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-photography-digital-asset-management-comfyui",
+      "name": "ComfyUI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=ComfyUI&type=repositories",
+      "short_description": "Local image generation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-photography-digital-asset-management-clip",
+      "name": "CLIP",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/openai/CLIP",
+      "short_description": "Image embeddings",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-photography-digital-asset-management-sam-2",
+      "name": "SAM 2",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=SAM%202&type=repositories",
+      "short_description": "Segmentation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-photography-digital-asset-management-digikam",
+      "name": "digiKam",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://www.digikam.org/",
+      "short_description": "Photo management",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-photography-digital-asset-management-exiftool",
+      "name": "ExifTool",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=ExifTool&type=repositories",
+      "short_description": "Metadata",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-personal-finance-household-management-actual-budget",
+      "name": "Actual Budget",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=Actual%20Budget&type=repositories",
+      "short_description": "Local-first budgeting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-personal-finance-household-management-firefly-iii",
+      "name": "Firefly III",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=Firefly%20III&type=repositories",
+      "short_description": "Self-hosted finance",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-personal-finance-household-management-fava",
+      "name": "Fava",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/search?q=Fava&type=repositories",
+      "short_description": "Ledger reporting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-personal-finance-household-management-chronos",
+      "name": "Chronos",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=Chronos&type=repositories",
+      "short_description": "Forecasting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-personal-finance-household-management-gnucash",
+      "name": "GnuCash",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=GnuCash&type=repositories",
+      "short_description": "Accounting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "industry-personal-finance-household-management-homebank",
+      "name": "HomeBank",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/search?q=HomeBank&type=repositories",
+      "short_description": "Personal finance",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-llama-cpp",
+      "name": "llama.cpp",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/ggml-org/llama.cpp",
+      "short_description": "Cross-platform GGUF inference",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-koboldcpp",
+      "name": "KoboldCpp",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/LostRuins/koboldcpp",
+      "short_description": "GGUF local inference UI",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-sglang",
+      "name": "SGLang",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/sgl-project/sglang",
+      "short_description": "Model serving and inference",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-jan",
+      "name": "Jan",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://jan.ai/",
+      "short_description": "Local AI desktop",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-lm-studio",
+      "name": "LM Studio",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://lmstudio.ai/",
+      "short_description": "Local model desktop",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-privategpt",
+      "name": "PrivateGPT",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/zylon-ai/private-gpt",
+      "short_description": "Private document Q&A",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-letta",
+      "name": "Letta",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/letta-ai/letta",
+      "short_description": "Stateful agent framework",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-open-interpreter",
+      "name": "Open Interpreter",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/OpenInterpreter/open-interpreter",
+      "short_description": "Local computer code assistant",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-piper-tts",
+      "name": "Piper TTS",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/rhasspy/piper",
+      "short_description": "Local text-to-speech",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-coqui-tts",
+      "name": "Coqui TTS",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/coqui-ai/TTS",
+      "short_description": "Open source speech synthesis",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-kokoro-tts",
+      "name": "Kokoro TTS",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://huggingface.co/hexgrad/Kokoro-82M",
+      "short_description": "Local voice synthesis",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-uvr",
+      "name": "UVR",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Deployment unverified",
+      "original_url": "https://github.com/Anjok07/ultimatevocalremovergui",
+      "short_description": "Audio stem separation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-flux-1-schnell",
+      "name": "FLUX.1 schnell",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://huggingface.co/black-forest-labs/FLUX.1-schnell",
+      "short_description": "Local image generation weights",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-qwen2-5-vl",
+      "name": "Qwen2.5-VL",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct",
+      "short_description": "Vision language model",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-depth-anything-v2",
+      "name": "Depth Anything V2",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/DepthAnything/Depth-Anything-V2",
+      "short_description": "Monocular depth",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-marigold",
+      "name": "Marigold",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/prs-eth/Marigold",
+      "short_description": "Depth estimation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-hunyuan3d-2",
+      "name": "Hunyuan3D 2",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2",
+      "short_description": "3D generation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-jina-embeddings-v3",
+      "name": "Jina Embeddings v3",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://huggingface.co/jinaai/jina-embeddings-v3",
+      "short_description": "Multilingual embeddings",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-colpali",
+      "name": "ColPali",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://huggingface.co/vidore/colpali-v1.2",
+      "short_description": "Visual document retrieval",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-surya-ocr",
+      "name": "Surya OCR",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/datalab-to/surya",
+      "short_description": "Document OCR",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-qwen2-5-coder",
+      "name": "Qwen2.5-Coder",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://huggingface.co/Qwen",
+      "short_description": "Coding model family",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-deepseek-coder-v2",
+      "name": "DeepSeek Coder V2",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://huggingface.co/deepseek-ai",
+      "short_description": "Code model family",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-starcoder2",
+      "name": "StarCoder2",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://huggingface.co/bigcode",
+      "short_description": "Code model family",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-codegemma",
+      "name": "CodeGemma",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://huggingface.co/google",
+      "short_description": "Code model family",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-granite-code",
+      "name": "Granite Code",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://huggingface.co/ibm-granite",
+      "short_description": "IBM coding models",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-onnx-runtime",
+      "name": "ONNX Runtime",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://onnxruntime.ai/",
+      "short_description": "Cross-platform inference",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-openvino",
+      "name": "OpenVINO",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/openvinotoolkit/openvino",
+      "short_description": "Intel inference toolkit",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-mlx",
+      "name": "MLX",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/ml-explore/mlx",
+      "short_description": "Apple Silicon ML framework",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-gguf",
+      "name": "GGUF",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/ggml-org/ggml",
+      "short_description": "Local model file format",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-hugging-face-hub",
+      "name": "Hugging Face Hub",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://huggingface.co/docs/huggingface_hub",
+      "short_description": "Model download and cache",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-safetensors",
+      "name": "safetensors",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/huggingface/safetensors",
+      "short_description": "Model weight format",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-llama-cpp-python",
+      "name": "llama-cpp-python",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/abetlen/llama-cpp-python",
+      "short_description": "Python GGUF inference",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "expanded-comfyui-manager",
+      "name": "ComfyUI Manager",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/ltdrdata/ComfyUI-Manager",
+      "short_description": "ComfyUI extension manager",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "docker",
+      "name": "Docker",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "Containers",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "aws",
+      "name": "AWS CLI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "",
+      "short_description": "Amazon cloud",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "az",
+      "name": "Azure CLI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "",
+      "short_description": "Microsoft cloud",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "gcloud",
+      "name": "Google Cloud CLI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "",
+      "short_description": "Google cloud",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "tailscale",
+      "name": "Tailscale",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "Private networking",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "gh",
+      "name": "GitHub CLI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "GitHub",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "vercel",
+      "name": "Vercel CLI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "",
+      "short_description": "Web deployments",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "netlify",
+      "name": "Netlify CLI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "",
+      "short_description": "Web deployments",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "continue",
+      "name": "Continue",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "IDE assistant",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "goose",
+      "name": "Goose",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "Agent",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "openhands",
+      "name": "OpenHands",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "Software agent",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "auto-editor",
+      "name": "Auto-Editor",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Automatic cuts",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "comfyui",
+      "name": "ComfyUI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Local workflows",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "rife",
+      "name": "RIFE",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Frame interpolation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "realesrgan-video",
+      "name": "Real-ESRGAN",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Video upscale",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "musetalk",
+      "name": "MuseTalk",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Lip sync",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "liveportrait",
+      "name": "LivePortrait",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Animation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "wan-video",
+      "name": "Wan",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Video generation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "ltx-video",
+      "name": "LTX-Video",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Video generation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "hunyuanvideo",
+      "name": "HunyuanVideo",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Video generation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "cogvideox",
+      "name": "CogVideoX",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Video generation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "svd",
+      "name": "Stable Video Diffusion",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Image to video",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "animatediff",
+      "name": "AnimateDiff",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Motion",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "sam2",
+      "name": "SAM 2",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Segmentation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "ffmpeg",
+      "name": "FFmpeg",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Processing",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "blender",
+      "name": "Blender",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "3D & animation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "yt-dlp",
+      "name": "yt-dlp",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Downloads",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "kdenlive",
+      "name": "Kdenlive",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Editing",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "shotcut",
+      "name": "Shotcut",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Editing",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "whisper",
+      "name": "Whisper",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Transcription",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "piper",
+      "name": "Piper",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Offline speech",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "bark",
+      "name": "Bark",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Speech/audio",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "kokoro-tts",
+      "name": "Kokoro",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Speech",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "f5-tts",
+      "name": "F5-TTS",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Speech",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "audacity",
+      "name": "Audacity",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Audio editing",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "comfyui-image",
+      "name": "ComfyUI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Offline workflows",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "realesrgan",
+      "name": "Real-ESRGAN",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Upscaling",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "controlnet",
+      "name": "ControlNet",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Image guidance",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "gimp",
+      "name": "GIMP",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Editing",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "darktable",
+      "name": "darktable",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "RAW photos",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "rawtherapee",
+      "name": "RawTherapee",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "RAW photos",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "krita",
+      "name": "Krita",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Painting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "inkscape",
+      "name": "Inkscape",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Vector graphics",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "imagemagick",
+      "name": "ImageMagick",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Batch processing",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "exiftool",
+      "name": "ExifTool",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Metadata",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "n8n",
+      "name": "n8n",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "Automation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "flowise",
+      "name": "Flowise",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "AI workflows",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "langflow",
+      "name": "Langflow",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "Visual workflows",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "anythingllm",
+      "name": "AnythingLLM",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "Knowledge base",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "ollama-business",
+      "name": "Ollama",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Local business assistant",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "metabase-business",
+      "name": "Metabase",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "Business dashboards",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "zapier",
+      "name": "Zapier",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "",
+      "short_description": "Cloud automation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "make-com",
+      "name": "Make",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "",
+      "short_description": "Cloud workflows",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "notion-ai",
+      "name": "Notion AI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "",
+      "short_description": "Cloud workspace AI",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "open-webui",
+      "name": "Open WebUI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Model chat",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "litellm",
+      "name": "LiteLLM",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "Model gateway",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "open-webui-research",
+      "name": "Open WebUI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Self-hosted research chat",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "docling",
+      "name": "Docling",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Document extraction",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "paddleocr",
+      "name": "PaddleOCR",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "OCR models",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "ocrmypdf",
+      "name": "OCRmyPDF",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Searchable PDFs",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "whisper-translate",
+      "name": "Whisper",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Local speech translation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "jupyterlab",
+      "name": "JupyterLab",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Notebook environment",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "crewai",
+      "name": "CrewAI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "Multi-agent framework",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "autogen",
+      "name": "AutoGen",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "Agent framework",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "dify",
+      "name": "Dify",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "AI application platform",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "open-webui-tutor",
+      "name": "Open WebUI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Local tutoring workflows",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "erpnext",
+      "name": "ERPNext",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "Self-hosted ERP and accounting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "odoo",
+      "name": "Odoo",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "ERP and accounting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "metabase",
+      "name": "Metabase",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "",
+      "short_description": "Self-hosted analytics",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "powerbi",
+      "name": "Power BI",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "",
+      "short_description": "Cloud/desktop business intelligence",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "quickbooks",
+      "name": "QuickBooks Online",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "",
+      "short_description": "Cloud accounting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "xero",
+      "name": "Xero",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "",
+      "short_description": "Cloud accounting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "zoho-books",
+      "name": "Zoho Books",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "",
+      "short_description": "Cloud accounting",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "dext",
+      "name": "Dext",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "",
+      "short_description": "Cloud bookkeeping automation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "hubdoc",
+      "name": "Hubdoc",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Online / Cloud",
+      "original_url": "",
+      "short_description": "Cloud receipt capture",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "docling-finance",
+      "name": "Docling",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Local statement/document extraction",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "paddleocr-finance",
+      "name": "PaddleOCR",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Local invoice and receipt OCR",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "qgis",
+      "name": "QGIS",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "GIS",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "opencv",
+      "name": "OpenCV",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Computer vision",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "yolo",
+      "name": "YOLO",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Object detection",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "depth-anything",
+      "name": "Depth Anything",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Depth estimation",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "ollama-copy",
+      "name": "Ollama",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Local copywriting workflows",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "ollama-server",
+      "name": "Ollama",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "",
+      "short_description": "Local model service",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "v22-milvus",
+      "name": "Milvus",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://milvus.io/",
+      "short_description": "Vector database",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "v22-lancedb",
+      "name": "LanceDB",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://lancedb.com/",
+      "short_description": "Embedded vector database",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "v22-neo4j",
+      "name": "Neo4j",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://neo4j.com/",
+      "short_description": "Graph database",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "v22-phi-4-mini",
+      "name": "Phi-4-mini",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://huggingface.co/microsoft",
+      "short_description": "Compact reasoning model",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "v22-smollm2",
+      "name": "SmolLM2",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://huggingface.co/HuggingFaceTB",
+      "short_description": "Small local language models",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "v22-gemma-3-1b",
+      "name": "Gemma 3 1B",
+      "kind": "ai_models",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://huggingface.co/google",
+      "short_description": "Compact Gemma model",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "v22-executorch",
+      "name": "ExecuTorch",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/pytorch/executorch",
+      "short_description": "On-device PyTorch runtime",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "v22-litert",
+      "name": "LiteRT",
+      "kind": "utilities",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://ai.google.dev/edge/litert",
+      "short_description": "On-device ML runtime",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "v22-microsoft-presidio",
+      "name": "Microsoft Presidio",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/microsoft/presidio",
+      "short_description": "PII detection and anonymization",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "v22-giskard",
+      "name": "Giskard",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/Giskard-AI/giskard",
+      "short_description": "AI testing",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "v22-autogptq",
+      "name": "AutoGPTQ",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/AutoGPTQ/AutoGPTQ",
+      "short_description": "Model quantization",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "v22-langgraph",
+      "name": "LangGraph",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://github.com/langchain-ai/langgraph",
+      "short_description": "Stateful agent orchestration",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "v22-temporal",
+      "name": "Temporal",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Hybrid",
+      "original_url": "https://temporal.io/",
+      "short_description": "Durable workflow engine",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "v22-h2o-3",
+      "name": "H2O-3",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://github.com/h2oai/h2o-3",
+      "short_description": "Machine learning platform",
+      "source_verification": "not_individually_verified"
+    },
+    {
+      "original_id": "v22-neuralforecast",
+      "name": "NeuralForecast",
+      "kind": "ai_tools",
+      "deployment_label_unverified": "Local / Offline capable",
+      "original_url": "https://nixtlaverse.nixtla.io/neuralforecast/",
+      "short_description": "Neural forecasting",
+      "source_verification": "not_individually_verified"
+    }
+  ]
+}
