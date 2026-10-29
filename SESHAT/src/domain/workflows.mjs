@@ -109,7 +109,7 @@ export function resolveReservation(state, ledger, raw) {
 export function createStocktakeSession(ledger, { id, locationId, startedAt }) {
   text(id, "id"); text(startedAt, "startedAt");
   if (!ledger.locations.includes(locationId)) fail("Unknown location: " + locationId + ".");
-  const expected = {};
+  const expected = Object.create(null);
   for (const productId of Object.keys(ledger.products)) expected[productId] = getOnHand(ledger, productId, locationId);
   return { id, locationId, startedAt, baseEventCount: ledger.events.length, expected, counts: {} };
 }
