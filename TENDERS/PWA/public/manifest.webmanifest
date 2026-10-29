@@ -1,0 +1,17 @@
+{
+  "id": "/",
+  "name": "TENDERS — Procurement Workspace",
+  "short_name": "TENDERS",
+  "description": "Evidence-led procurement discovery, bid preparation and contract lifecycle management.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f5f5f2",
+  "theme_color": "#17191d",
+  "categories": ["business", "productivity"],
+  "icons": [
+    {"src":"/icons/tenders-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"/icons/tenders-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"},
+    {"src":"/icons/tenders.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}
+  ]
+}
