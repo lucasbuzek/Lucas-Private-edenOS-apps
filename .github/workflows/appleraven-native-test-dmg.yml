@@ -1,0 +1,27 @@
+name: AppleRAVEN M1 independent test DMG
+on:
+  push:
+    branches: [candidate/appleraven-native-dmg-elysium-proof-20261028]
+    paths: [AppleRAVEN/mac/**, .github/workflows/appleraven-native-test-dmg.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  macos-build:
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python and setup checks
+        run: |
+          python3 -m unittest discover -s AppleRAVEN/mac -p test_agent.py -v
+          bash -n AppleRAVEN/mac/Install.command
+      - name: Build macOS test app and DMG
+        run: bash AppleRAVEN/mac/build_macos.sh
+      - name: Publish unnotarized test DMG
+        uses: actions/upload-artifact@v4
+        with:
+          name: AppleRAVEN-M1-UNNOTARIZED-DMG
+          path: AppleRAVEN/mac/dist/
+          if-no-files-found: error
+          retention-days: 14
