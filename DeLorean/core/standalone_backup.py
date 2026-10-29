@@ -99,13 +99,14 @@ class DeLorean:
 
     def status(self) -> dict:
         return {
-            'identity': 'EDEN/edenOS TimeMachine—DeLorean',
+            'identity': 'EDEN/edenOS DeLorean TimeMachine',
             'runtime': 'standalone-stdio-on-demand', 'owner': self.owner,
             'system': platform.system(),
             'catalog_exists': self.catalog.is_dir(),
             'read_grants': len(self.read_roots), 'restore_grants': len(self.restore_roots),
             'cloud_enabled': bool(os.environ.get('RESTIC_REPOSITORY') and os.environ.get('RESTIC_PASSWORD_FILE')),
             'restic_available': shutil.which('restic') is not None,
+            'kopia_available': shutil.which('kopia') is not None,
             'time_machine_available': platform.system() == 'Darwin' and shutil.which('tmutil') is not None,
             'penelope': 'OPTIONAL_EXTERNAL_ADAPTER_NOT_REQUIRED',
             'system_image_restoration': 'REQUIRES_PLATFORM_RECOVERY_OUTSIDE_MCP',
@@ -410,7 +411,7 @@ class DeLorean:
     def capabilities(self) -> dict:
         return {
             'native': ['file-tree backup with hash verification', 'isolated restore','manifest/timeline/compare'],
-            'optional': ['restic external encrypted remote repository', 'Apple Time Machine for supported device data','PENELOPE recognition (external separately permitted integration)'],
+            'optional': ['restic or Kopia externally configured encrypted repositories', 'Apple Time Machine for supported device data','PENELOPE recognition (external separately permitted integration)'],
             'not_implemented': ['bootable device image', 'platform-consistent open-database capture', 'cloud credentials management', 'remote device power/control', 'in-place system restore', 'automated JANITOR deletion'],
         }
 
@@ -454,6 +455,157 @@ class DeLorean:
             raise Denied('Time Machine reported failure; inspect protected local logs')
         return {'state':'NATIVE_BACKUP_REPORTED_SUCCESS','verification_required':'Confirm backup destination, list backups, rehearse file restore'}
 
+
+
+# KOPIA OPTIONAL ADAPTER — delegates encryption/deduplication to an existing
+# user-configured Kopia repository. Does not create, prune or migrate a repository.
+# This is NOT an OS image, device recovery, or unauthenticated remote interface.
+import re as _kopia_re
+
+
+def _kopia_checked(argv: list[str], timeout: int = 300) -> str:
+    exe = shutil.which('kopia')
+    if not exe:
+        raise Denied('Kopia CLI is not installed on this executor')
+    proc = subprocess.run([exe, '--no-progress', *argv], capture_output=True,
+                          text=True, timeout=timeout, check=False)
+    if proc.returncode:
+        # Kopia can print repository URLs / host paths in error text: redact.
+        raise Denied('Kopia operation failed; inspect local protected executor logs')
+    return proc.stdout
+
+
+def kopia_status(self: DeLorean) -> dict:
+    if not shutil.which('kopia'):
+        return {'engine': 'kopia', 'installed': False, 'connected': False,
+                'credentials_exposed': False}
+    try:
+        status = json.loads(_kopia_checked(['repository', 'status', '--json'], 30))
+        ok = isinstance(status, dict) and bool(status)
+    except (Denied, ValueError, subprocess.TimeoutExpired):
+        ok = False
+    return {'engine': 'kopia', 'installed': True, 'connected': ok,
+            'credentials_exposed': False, 'storage': 'OWNER_CONFIGURED_EXTERNAL_REPOSITORY'}
+
+
+def _kopia_entries(self: DeLorean, source: str, project: str) -> list[dict]:
+    # Kopia is scoped by repository identity AND source AND per-owner/project
+    # tags. A trusted on-disk repo alone does not grant any owner access.
+    project = _identifier(project)
+    path = self._grant(source, self.read_roots, existing=False)
+    if not kopia_status(self)['connected']:
+        raise Denied('Connect an existing encrypted Kopia repository on executor first')
+    raw = json.loads(_kopia_checked(['snapshot','list','--json',
+             '--tags','delorean-owner:'+self.owner,
+             '--tags','delorean-project:'+project,str(path)], 90))
+    if not isinstance(raw, list):
+        raise Denied('Unexpected Kopia snapshot list format')
+    items = []
+    for candidate in raw:
+        if not isinstance(candidate, dict):
+            continue
+        # CLI versions may return direct snapshots or grouped sources.
+        group = candidate.get('snapshots')
+        rows = group if isinstance(group, list) else [candidate]
+        for m in rows:
+            if not isinstance(m, dict):
+                continue
+            tags = m.get('tags')
+            if not isinstance(tags, dict):
+                continue  # Never infer cross-tenant grants from names/IDs.
+            if tags.get('delorean-owner') != self.owner or tags.get('delorean-project') != project:
+                continue
+            snapshot_id = m.get('id')
+            root_id = m.get('rootID')
+            if not (isinstance(snapshot_id, str) and _kopia_re.fullmatch('[0-9a-f]{32,64}', snapshot_id)
+                    and isinstance(root_id, str) and _kopia_re.fullmatch('k[0-9a-f]{32,64}', root_id)):
+                continue
+            items.append({'snapshot_id':snapshot_id,'root_id':root_id,
+                          'project':project,'owner':self.owner,'time':m.get('endTime'),
+                          'engine':'kopia','status':'BACKUP_REFERENCE_NOT_RESTORE_TESTED'})
+    return items
+
+
+def kopia_snapshots(self: DeLorean, source: str, project: str) -> list[dict]:
+    return _kopia_entries(self, source, project)
+
+
+def kopia_backup(self: DeLorean, source: str, project: str, confirmation: str) -> dict:
+    if confirmation != 'ENCRYPTED KOPIA BACKUP':
+        raise Denied('Kopia snapshot requires exact confirmation')
+    project = _identifier(project)
+    p = self._grant(source, self.read_roots)
+    if not (p.is_file() or p.is_dir()):
+        raise Denied('Kopia source must be a real file or directory')
+    if not kopia_status(self)['connected']:
+        raise Denied('Kopia encrypted repository is not configured on executor')
+    # Explicitly DISABLE backup hooks: untrusted repository policies must not
+    # execute actions as a consequence of an AI tool invocation.
+    result = json.loads(_kopia_checked(['snapshot','create','--json',
+        '--force-disable-actions', '--no-send-snapshot-report',
+        '--tags','delorean-owner:'+self.owner,
+        '--tags','delorean-project:'+project,str(p)],3600))
+    if not isinstance(result, dict) or not _kopia_re.fullmatch('[0-9a-f]{32,64}',str(result.get('id',''))):
+        raise Denied('Kopia did not provide a valid snapshot receipt')
+    if result.get('incomplete'):
+        raise Denied('Kopia reported an incomplete snapshot; do not accept as backup')
+    return {'engine':'kopia', 'snapshot_id':result['id'], 'project':project,
+            'encrypted_by_engine':True, 'verified_restore':False,
+            'status':'ENGINE_REPORTED_BACKUP_RESTORE_REHEARSAL_REQUIRED'}
+
+
+def _authorized_kopia(self: DeLorean, source: str, project: str, snapshot: str) -> dict:
+    matches = [x for x in _kopia_entries(self,source,project) if x['snapshot_id']==snapshot]
+    if len(matches)!=1:
+        raise Denied('Kopia snapshot not found for exact owner, project and source grant')
+    return matches[0]
+
+
+def kopia_verify(self: DeLorean, source: str, project: str, snapshot: str) -> dict:
+    m = _authorized_kopia(self,source,project,snapshot)
+    # Metadata/index validation, not full blob download/decryption.
+    _kopia_checked(['snapshot','verify','--verify-files-percent=0',m['snapshot_id']],3600)
+    return {'engine':'kopia','snapshot_id':m['snapshot_id'],
+            'status':'INDEX_VERIFIED_BLOB_BYTES_NOT_FULLY_READ',
+            'full_restore_tested':False}
+
+
+def kopia_restore(self: DeLorean, source: str, project: str, snapshot: str,
+                  target: str, confirmation: str) -> dict:
+    if confirmation != 'RESTORE KOPIA TO NEW DIRECTORY':
+        raise Denied('Explicit isolated Kopia restore confirmation required')
+    m = _authorized_kopia(self,source,project,snapshot)
+    dest = self._grant(target,self.restore_roots,existing=False)
+    _must_be_new(dest)
+    dest.parent.mkdir(parents=True,exist_ok=True)
+    temp = dest.parent / ('.delorean-kopia-stage-' + uuid.uuid4().hex)
+    _must_be_new(temp)
+    try:
+        # Restore into a NEW path, with overwrite and delete disabled. The
+        # engine never receives a live application or user working directory.
+        _kopia_checked(['snapshot','restore',m['root_id'],str(temp),
+          '--no-overwrite-files','--no-overwrite-directories',
+          '--no-overwrite-symlinks','--no-delete-extra','--no-ignore-errors',
+          '--write-files-atomically'],3600)
+        if not temp.exists() or not temp.is_dir():
+            raise Denied('Kopia did not create a restored directory')
+        files = history.scan(temp) # rejects symlinks and special objects
+        _must_be_new(dest)
+        temp.rename(dest)
+        return {'engine':'kopia','snapshot_id':m['snapshot_id'],
+                'status':'ISOLATED_RESTORE_SCANNED_NOT_APP_ACCEPTED',
+                'restored_files':len(files),'destination':str(dest),
+                'promotion_requires_separate_approval':True}
+    finally:
+        if temp.exists() and not temp.is_symlink():
+            shutil.rmtree(temp)
+
+
+DeLorean.kopia_status = kopia_status
+DeLorean.kopia_snapshots = kopia_snapshots
+DeLorean.kopia_backup = kopia_backup
+DeLorean.kopia_verify = kopia_verify
+DeLorean.kopia_restore = kopia_restore
 
 # Optional PENELOPE interoperability: import non-secret identity references only.
 # Deliberately does not invoke, install, or subsume PENELOPE's analysis runtime.
