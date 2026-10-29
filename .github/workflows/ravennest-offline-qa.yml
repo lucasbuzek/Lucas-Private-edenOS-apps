@@ -31,12 +31,13 @@ jobs:
           from playwright.sync_api import sync_playwright
           p = Path("RavenNest/catalog/offline_candidates/20261029")
           candidates = [
-              ("googlechromelabs-webmcp-tools-readme", 700),
-              ("googlechromelabs-awesome-webmcp", 1500),
+              ("googlechromelabs-webmcp-tools-readme", 700, "Full recovered upstream source text"),
+              ("googlechromelabs-awesome-webmcp", 1500, "Full recovered upstream source text"),
+              ("googlechromelabs-webmcp-polyfill", 1500, "Full original source code"),
           ]
           with sync_playwright() as pw:
               browser = pw.chromium.launch(headless=True)
-              for slug,minimum in candidates:
+              for slug,minimum,marker in candidates:
                   html_path=p/(slug+".html")
                   md_path=p/(slug+".md")
                   assert html_path.is_file() and md_path.is_file(), slug
@@ -45,7 +46,7 @@ jobs:
                   soup=BeautifulSoup(raw,"html.parser")
                   assert soup.html and soup.head and soup.body and soup.title, slug
                   assert len(soup.get_text(" ",strip=True)) > minimum, slug
-                  assert "Full recovered upstream source text" in md, slug
+                  assert marker in md, slug
                   assert "upstream_blob_sha" in md and "source_url" in md, slug
                   assert not soup.select("script,iframe,object,form,link[rel=stylesheet]"),slug
                   assert not [i for i in soup.select("img[src]") if i.get("src","").startswith(("http:", "https:"))],slug
