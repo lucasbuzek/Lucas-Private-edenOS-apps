@@ -91,7 +91,7 @@ def extract(path):
             'mime': mimetype, 'bytes': size, 'text_chars': len(text)}, text
 
 
-def scan(folder, out=None):
+def scan(folder, out=None, *, recursive=False):
     folder = Path(folder).expanduser().resolve(strict=True)
     if not folder.is_dir():
         raise ValueError('source must be a directory')
@@ -101,10 +101,16 @@ def scan(folder, out=None):
         if export == folder or folder in export.parents or export in folder.parents:
             raise ValueError('output and source trees must be separate')
         export.mkdir(parents=True, exist_ok=True)
-    for p in sorted(folder.iterdir(), key=lambda x: x.name.casefold()):
-        if p.suffix.lower() != '.webarchive':
-            continue
-        rec = {'filename': p.name, 'archive_state': 'not_executed'}
+    # Original single-directory mode stays the default. Recursive mode covers
+    # archived topic folders without following directory symlinks (Path.rglob
+    # does not traverse them by default on Python 3.11+).
+    paths = folder.rglob('*') if recursive else folder.iterdir()
+    archives = (p for p in paths if p.suffix.lower() == '.webarchive')
+    for i, p in enumerate(sorted(archives, key=lambda x: x.relative_to(folder).as_posix().casefold())):
+        if i >= 20000:
+            raise ValueError('archive count exceeds bounded research limit')
+        rec = {'filename': p.name, 'relative_path': p.relative_to(folder).as_posix(),
+               'archive_state': 'not_executed'}
         try:
             info, text = extract(p)
             rec.update(info)
@@ -128,8 +134,9 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--source', required=True, help='Existing directory containing .webarchive files')
     ap.add_argument('--output', help='Explicit separate private directory for plain-text copies')
+    ap.add_argument('--recursive', action='store_true', help='Include nested source subfolders without following symlinks')
     args = ap.parse_args()
-    for record in scan(args.source, args.output):
+    for record in scan(args.source, args.output, recursive=args.recursive):
         print(json.dumps(record, ensure_ascii=False, sort_keys=True))
 
 
