@@ -5,6 +5,9 @@ on:
       - candidate/bifrost-apple-preflight-20261025
     paths:
       - BIFROST/headless/mcp_bridge.py
+      - BIFROST/headless/mcp_remote_auth.py
+      - BIFROST/headless/mcp_remote.py
+      - BIFROST/tests/test_mcp_remote_auth.py
       - BIFROST/headless/shortcalls.py
       - BIFROST/core/shortcalls.v1.json
       - BIFROST/tests/test_mcp_bridge.py
@@ -15,6 +18,9 @@ on:
   pull_request:
     paths:
       - BIFROST/headless/mcp_bridge.py
+      - BIFROST/headless/mcp_remote_auth.py
+      - BIFROST/headless/mcp_remote.py
+      - BIFROST/tests/test_mcp_remote_auth.py
       - BIFROST/tests/test_mcp_bridge.py
       - BIFROST/docs/research/MCP_SOURCE_RECONCILIATION_20261026.md
       - BIFROST/tools/research_webarchive.py
@@ -47,3 +53,7 @@ jobs:
         run: python -B -m unittest discover -s tests -p "test_shortcalls.py" -v
       - name: Test safe recursive archived-source extraction
         run: python -B -m unittest discover -s tests -p "test_research_webarchive.py" -v
+      - name: Test independent OAuth guard (no Mac or cloud credentials)
+        run: python -B -m unittest discover -s tests -p "test_mcp_remote_auth.py" -v
+      - name: Compile independent remote SDK adapter
+        run: python -B -m py_compile headless/mcp_remote_auth.py headless/mcp_remote.py
