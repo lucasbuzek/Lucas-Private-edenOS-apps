@@ -53,6 +53,11 @@ class RemoteAuthTests(unittest.TestCase):
             with self.subTest(case=changed):
                 self.assertIsNone(self.inspect({**self.payload, **changed}))
 
+    def test_denies_nonfinite_expiry_without_raising(self):
+        for expiry in (float("nan"), float("inf"), float("-inf")):
+            with self.subTest(expiry=expiry):
+                self.assertIsNone(self.inspect({**self.payload, "exp": expiry}))
+
     def test_denies_malformed_bearer(self):
         for bearer in ("", "bad token", "bad\nheader", "a" * 4097, None):
             self.assertIsNone(a.inspect_token(self.config, bearer,
