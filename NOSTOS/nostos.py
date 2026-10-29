@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """NOSTOS local-first household service candidate (stdlib only)."""
 from __future__ import annotations
-import json, os, sqlite3, tempfile, threading
+import json, os, sqlite3, tempfile, threading, hmac, math, secrets
 from contextlib import contextmanager
-from datetime import datetime, timezone
+from datetime import datetime, timezone, date
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs
 
-VERSION = "0.1.0-dev.1"
+VERSION = "0.1.0-dev.2-security-candidate"
+OWNER_TOKEN = os.environ.get("NOSTOS_OWNER_TOKEN", "")
+RESTORE_ENABLED = os.environ.get("NOSTOS_ENABLE_RESTORE") == "1"
 PORT = int(os.environ.get("NOSTOS_PORT", "8787"))
 HOST = os.environ.get("NOSTOS_HOST", "127.0.0.1")
 DATA_DIR = Path(os.environ.get("NOSTOS_DATA_DIR", str(Path.home()/"Library/Application Support/NOSTOS"))).expanduser()
@@ -63,15 +65,39 @@ def parse_item(body, existing=None):
     if quantity is not None:
         try: quantity=float(quantity)
         except (TypeError,ValueError): raise ValueError('quantity must be numeric')
+        if not math.isfinite(quantity): raise ValueError('quantity must be finite')
         if quantity<0: raise ValueError('quantity cannot be negative')
     location=str(data.get('location',(existing or {}).get('location',''))).strip()[:500]
-    due_date=str(data.get('due_date',(existing or {}).get('due_date',''))).strip()[:40]
+    due_date=str(data.get('due_date',(existing or {}).get('due_date',''))).strip()
+    if due_date:
+        try:
+            if date.fromisoformat(due_date).isoformat() != due_date: raise ValueError('date must use YYYY-MM-DD')
+        except ValueError: raise ValueError('due_date must be a real date in YYYY-MM-DD format')
     extra=data.get('data',(existing or {}).get('data',{}))
     if not isinstance(extra,dict): raise ValueError('data must be an object')
     return kind,title,details,status,quantity,location,due_date,json.dumps(extra,ensure_ascii=False),now()
 
 class Handler(BaseHTTPRequestHandler):
     server_version='NOSTOS/'+VERSION
+    def guard(self):
+        """Reject DNS rebinding, cross-origin requests and unauthenticated API access."""
+        host=self.headers.get('Host','').lower()
+        port=self.server.server_address[1]
+        allowed={f'127.0.0.1:{port}', f'localhost:{port}', f'[::1]:{port}'}
+        if host not in allowed:
+            self.send_json(403,{'error':'untrusted host'}); return False
+        origin=self.headers.get('Origin')
+        if origin and origin.lower() != 'http://'+host:
+            self.send_json(403,{'error':'cross-origin request rejected'}); return False
+        if self.headers.get('Sec-Fetch-Site','').lower() == 'cross-site':
+            self.send_json(403,{'error':'cross-site request rejected'}); return False
+        if urlparse(self.path).path.startswith('/api/'):
+            if len(OWNER_TOKEN) < 32:
+                self.send_json(503,{'error':'owner token is not configured'}); return False
+            if not hmac.compare_digest(self.headers.get('Authorization',''), 'Bearer '+OWNER_TOKEN):
+                self.send_bytes(401,b'{"error":"owner authentication required"}',headers={'WWW-Authenticate':'Bearer realm="NOSTOS"'})
+                return False
+        return True
     def log_message(self, fmt, *args):
         if os.environ.get('NOSTOS_ACCESS_LOG')=='1': super().log_message(fmt,*args)
     def send_bytes(self, status, payload, ctype='application/json; charset=utf-8', headers=None):
@@ -80,23 +106,26 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header('Content-Length',str(len(payload))); self.end_headers()
         try: self.wfile.write(payload)
         except (BrokenPipeError, ConnectionResetError): pass
-    def send_json(self,status,obj): self.send_bytes(status,json.dumps(obj,ensure_ascii=False).encode(),headers={'Access-Control-Allow-Origin':'null'})
+    def send_json(self,status,obj): self.send_bytes(status,json.dumps(obj,ensure_ascii=False).encode())
     def body(self):
         n=int(self.headers.get('Content-Length','0'))
         if n<0 or n>MAX_BODY: raise ValueError('request body too large')
         raw=self.rfile.read(n)
         return json.loads(raw.decode('utf-8')) if raw else {}
     def do_OPTIONS(self):
-        self.send_bytes(204,b'',headers={'Allow':'GET, POST, PATCH, DELETE, OPTIONS'})
+        self.send_json(405,{'error':'cross-origin access is not enabled'})
     def do_GET(self):
+        if not self.guard(): return
         p=urlparse(self.path); path=p.path
         if path=='/' or path=='/index.html':
-            f=WEB_ROOT/'index.html'; self.send_bytes(200,f.read_bytes(),'text/html; charset=utf-8',{'Content-Security-Policy':"default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'"}); return
+            f=WEB_ROOT/'index.html'; self.send_bytes(200,f.read_bytes(),'text/html; charset=utf-8',{'Content-Security-Policy':"default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'"}); return
+        if path=='/app.js':
+            self.send_bytes(200,(WEB_ROOT/'app.js').read_bytes(),'application/javascript; charset=utf-8'); return
         if path=='/api/health':
             try:
                 with LOCK, db() as c: c.execute('SELECT 1').fetchone(); count=c.execute('SELECT COUNT(*) FROM items').fetchone()[0]
                 self.send_json(200,{'app':'NOSTOS','version':VERSION,'status':'ready','database':'connected','items':count,'host':HOST,'port':PORT})
-            except Exception as e: self.send_json(503,{'app':'NOSTOS','status':'unavailable','error':str(e)})
+            except Exception: self.send_json(503,{'app':'NOSTOS','status':'unavailable'})
             return
         if path=='/api/summary':
             with LOCK, db() as c:
@@ -128,8 +157,14 @@ class Handler(BaseHTTPRequestHandler):
             self.send_bytes(200,payload,'application/vnd.sqlite3',{'Content-Disposition':'attachment; filename="nostos-backup.sqlite3"'}); return
         self.send_json(404,{'error':'not found'})
     def do_POST(self):
+        if not self.guard(): return
         path=urlparse(self.path).path
-        if path=='/api/restore': self.restore_from_body(); return
+        if path=='/api/restore':
+            if not RESTORE_ENABLED:
+                self.send_json(403,{'error':'restore is disabled; enable explicitly on the owner host'}); return
+            if self.headers.get('X-NOSTOS-Restore-Confirm') != 'RESTORE NOSTOS':
+                self.send_json(409,{'error':'restore requires explicit confirmation'}); return
+            self.restore_from_body(); return
         try: body=self.body()
         except (ValueError,UnicodeDecodeError,json.JSONDecodeError) as e: self.send_json(400,{'error':str(e)}); return
         if path=='/api/items':
@@ -139,8 +174,6 @@ class Handler(BaseHTTPRequestHandler):
                 cur=c.execute('INSERT INTO items(kind,title,details,status,quantity,location,due_date,created_at,updated_at,data_json) VALUES(?,?,?,?,?,?,?,?,?,?)',values[:7]+(values[8],values[8],values[7]))
                 row=c.execute('SELECT * FROM items WHERE id=?',(cur.lastrowid,)).fetchone()
             self.send_json(201,{'item':item_dict(row)}); return
-        if path=='/api/restore':
-            self.restore_from_body(); return
         self.send_json(404,{'error':'not found'})
     def restore_from_body(self):
         try:
@@ -176,10 +209,24 @@ class Handler(BaseHTTPRequestHandler):
                     dst.executemany('INSERT INTO items(id,kind,title,details,status,quantity,location,due_date,created_at,updated_at,data_json) VALUES(?,?,?,?,?,?,?,?,?,?,?)',clean)
                     dst.execute("UPDATE sqlite_sequence SET seq=MAX(seq, COALESCE((SELECT MAX(id) FROM items),0)) WHERE name='items'")
                 with LOCK:
+                    # Durable preimage: failure to create it aborts the data replacement.
+                    recovery_dir=DATA_DIR/'recovery'
+                    recovery_dir.mkdir(parents=True,exist_ok=True,mode=0o700)
+                    snapshot=recovery_dir/('before-restore-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'-'+secrets.token_hex(5)+'.sqlite3')
                     old=connect()
-                    try: old.execute('PRAGMA wal_checkpoint(TRUNCATE)')
-                    finally: old.close()
-                    Path(str(DB_PATH)+'-wal').unlink(missing_ok=True); Path(str(DB_PATH)+'-shm').unlink(missing_ok=True)
+                    before=sqlite3.connect(str(snapshot))
+                    try:
+                        old.backup(before)
+                        if before.execute('PRAGMA integrity_check').fetchone()[0] != 'ok':
+                            raise ValueError('pre-restore snapshot integrity failed')
+                    finally:
+                        before.close(); old.close()
+                    with snapshot.open('rb') as f: os.fsync(f.fileno())
+                    current=connect()
+                    try: current.execute('PRAGMA wal_checkpoint(TRUNCATE)')
+                    finally: current.close()
+                    Path(str(DB_PATH)+'-wal').unlink(missing_ok=True)
+                    Path(str(DB_PATH)+'-shm').unlink(missing_ok=True)
                     os.replace(rebuilt,DB_PATH)
                 self.send_json(200,{'restored':True,'records':len(clean),'database':'validated'})
             finally:
@@ -187,6 +234,7 @@ class Handler(BaseHTTPRequestHandler):
         except (ValueError,sqlite3.Error,json.JSONDecodeError,OSError) as e:
             self.send_json(400,{'restored':False,'error':str(e)})
     def do_PATCH(self):
+        if not self.guard(): return
         path=urlparse(self.path).path
         if not path.startswith('/api/items/'): self.send_json(404,{'error':'not found'}); return
         try: ident=int(path.rsplit('/',1)[1]); body=self.body()
@@ -201,6 +249,7 @@ class Handler(BaseHTTPRequestHandler):
             row=c.execute('SELECT * FROM items WHERE id=?',(ident,)).fetchone()
         self.send_json(200,{'item':item_dict(row)})
     def do_DELETE(self):
+        if not self.guard(): return
         path=urlparse(self.path).path
         if not path.startswith('/api/items/'): self.send_json(404,{'error':'not found'}); return
         try: ident=int(path.rsplit('/',1)[1])
@@ -209,6 +258,10 @@ class Handler(BaseHTTPRequestHandler):
         self.send_json(200,{'deleted':cur.rowcount==1,'id':ident})
 
 def main():
+    if HOST not in {'127.0.0.1','::1','localhost'}:
+        raise SystemExit('Refusing non-loopback binding; private remote routing requires separate authorization')
+    if len(OWNER_TOKEN) < 32:
+        raise SystemExit('Set a random NOSTOS_OWNER_TOKEN of at least 32 characters before starting')
     init_db()
     httpd=ThreadingHTTPServer((HOST,PORT),Handler)
     print(f'NOSTOS {VERSION} listening at http://{HOST}:{PORT}/; database={DB_PATH}',flush=True)
