@@ -1,0 +1,110 @@
+{
+  "type": "Dropbox original .url shortcut source recovery",
+  "path_scope": "/EDEN-lucas-family/AI MCP tool/",
+  "root_direct_listing_total": 442,
+  "total_shortcut_files": 64,
+  "range": [
+    16,
+    31
+  ],
+  "source_status": "read from original shortcut, destination NOT individually source reviewed",
+  "privacy": "not published or added to user library",
+  "records": [
+    {
+      "filename": "mcp-webgpu.url",
+      "original_path": "ns:13844906001//mcp-webgpu.url",
+      "source_url": "https://glama.ai/mcp/servers/m-ai-geXR/mcp-webgpu",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "videogames-mcp-server.url",
+      "original_path": "ns:13844906001//videogames-mcp-server.url",
+      "source_url": "https://glama.ai/mcp/servers/BaranDev/videogames-mcp-server",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "JARVIS.url",
+      "original_path": "ns:13844906001//JARVIS.url",
+      "source_url": "https://github.com/microsoft/JARVIS",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "3d-mcp.url",
+      "original_path": "ns:13844906001//3d-mcp.url",
+      "source_url": "https://glama.ai/mcp/servers/team-plask/3d-mcp",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "how-to-start-building-your-own-jarvis-almost-everyone-does-it-wrong-daac4a9ee1fe.url",
+      "original_path": "ns:13844906001//how-to-start-building-your-own-jarvis-almost-everyone-does-it-wrong-daac4a9ee1fe.url",
+      "source_url": "https://kalashnikovisme.medium.com/how-to-start-building-your-own-jarvis-almost-everyone-does-it-wrong-daac4a9ee1fe",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "15-open-source-tools-that-feel-illegal-42cf76e7e915.url",
+      "original_path": "ns:13844906001//15-open-source-tools-that-feel-illegal-42cf76e7e915.url",
+      "source_url": "https://pixicstudio.medium.com/15-open-source-tools-that-feel-illegal-42cf76e7e915",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "DewhksxCR_Z.url",
+      "original_path": "ns:13844906001//DewhksxCR_Z.url",
+      "source_url": "https://www.instagram.com/p/DewhksxCR_Z/?img_index=5&rpxt=enRjcmxsNHF6MW11",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "mcp-archviz.url",
+      "original_path": "ns:13844906001//mcp-archviz.url",
+      "source_url": "https://glama.ai/mcp/servers/Simoagadir95/mcp-archviz",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "DeaxpnpiatB.url",
+      "original_path": "ns:13844906001//DeaxpnpiatB.url",
+      "source_url": "https://www.instagram.com/p/DeaxpnpiatB/?img_index=4&rpxt=MXc1Zm1sZzJ1M3R4eQ==",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "trading-mcp.url",
+      "original_path": "ns:13844906001//trading-mcp.url",
+      "source_url": "https://glama.ai/mcp/servers/netanelavr/trading-mcp",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "De441psIJdk.url",
+      "original_path": "ns:13844906001//De441psIJdk.url",
+      "source_url": "https://www.instagram.com/p/De441psIJdk/?img_index=3&mdxt=MTZ4cnFkYTRvbXc2cw==",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "DeHTFYETiSy.url",
+      "original_path": "ns:13844906001//DeHTFYETiSy.url",
+      "source_url": "https://www.instagram.com/reel/DeHTFYETiSy/?psln=MThrY3VuNm9qNWFxOQ==",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "jarvis-a-framework-for-building-powerful-collaborative-systems-with-language-models-914bd38f8705.url",
+      "original_path": "ns:13844906001//jarvis-a-framework-for-building-powerful-collaborative-systems-with-language-models-914bd38f8705.url",
+      "source_url": "https://medium.com/version-1/jarvis-a-framework-for-building-powerful-collaborative-systems-with-language-models-914bd38f8705",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "nooticr-mcp.url",
+      "original_path": "ns:13844906001//nooticr-mcp.url",
+      "source_url": "https://glama.ai/mcp/servers/Nooticr/nooticr-mcp",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "Dbf2H6pEhBH.url",
+      "original_path": "ns:13844906001//Dbf2H6pEhBH.url",
+      "source_url": "https://www.instagram.com/p/Dbf2H6pEhBH/?img_index=4&cplk=MWRqNThpbW44ZXM0Yg==",
+      "state": "url_read_unverified"
+    },
+    {
+      "filename": "mcp-arr.url",
+      "original_path": "ns:13844906001//mcp-arr.url",
+      "source_url": "https://glama.ai/mcp/servers/aplaceforallmystuff/mcp-arr",
+      "state": "url_read_unverified"
+    }
+  ]
+}
