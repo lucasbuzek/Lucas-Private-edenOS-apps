@@ -1,6 +1,7 @@
 import { createLedgerState, getStockSummary, postMovement } from "./src/domain/ledger.mjs";
 import { searchProducts } from "./src/domain/queries.mjs";
 import { addProduct, addLocation, validateCatalogue } from "./src/domain/catalogue.mjs";
+import { previewCatalogueCSV, applyCatalogueCSV } from "./src/domain/csv-import.mjs";
 import { exportLedgerSnapshot, importLedgerSnapshot } from "./src/persistence/snapshot.mjs";
 import { openInventoryDB, readInventory, saveInventory } from "./src/persistence/browser-idb.mjs";
 import { demoCatalogue, demoLedgerState, demoProvenance } from "./fixtures/demo-inventory.mjs";
