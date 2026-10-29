@@ -78,10 +78,10 @@ function stockDelta(movement, locationId) {
 }
 
 export function createLedgerState({ products = [], locations = [], events = [] } = {}) {
-  const productMap = {};
+  const productMap = Object.create(null);
   for (const product of products) {
     const id = requireText(product.id, "product.id");
-    if (productMap[id]) fail(`Duplicate product id: ${id}.`);
+    if (Object.hasOwn(productMap, id)) fail(`Duplicate product id: ${id}.`);
     productMap[id] = { id, unit: requireText(product.unit, "product.unit"), name: String(product.name ?? id) };
   }
   const locationIds = locations.map((location) => requireText(
@@ -105,7 +105,7 @@ export function getOnHand(state, productId, locationId) {
 
 export function getStockSummary(state, productId) {
   if (!state.products[productId]) fail(`Unknown product: ${productId}.`);
-  const byLocation = {};
+  const byLocation = Object.create(null);
   let total = 0;
   for (const locationId of state.locations) {
     const quantity = getOnHand(state, productId, locationId);
