@@ -1,13 +1,14 @@
 ---
 title: "Collection of WebMCP tools"
 source_url: "https://github.com/GoogleChromeLabs/webmcp-tools/blob/main/README.md"
-original_archive: "/EDEN-lucas-family/AI MCP tool/#webMCP/webmcp-tools:webmcp-tools at main · GoogleChromeLabs:webmcp-tools · GitHub.webarchive"
+related_archive_folder: "/EDEN-lucas-family/AI MCP tool/#webMCP/"
+exact_webarchive_file: null
 retrieved_at: "2026-10-29"
 upstream_repository: "GoogleChromeLabs/webmcp-tools"
 upstream_branch: main
 upstream_blob_sha: "a216607ff4f035972684334fc9b5a08af1ef3bc9"
 source_license: "Apache-2.0 (repository license; observe any per-file notices)"
-status: "SOURCE_LATEST_MAIN | OFFLINE_HTML_CANDIDATE | NOT_DROBOX_REPLACED"
+status: "SUPPORTING_UPSTREAM_SOURCE | NOT_DIRECT_ARCHIVE_REPLACEMENT"
 content_origin: "upstream GitHub repository file, not decoded Safari archive"
 ---
 
@@ -17,7 +18,7 @@ Original GoogleChromeLabs webmcp-tools repository landing documentation: develop
 
 **Canonical source:** https://github.com/GoogleChromeLabs/webmcp-tools/blob/main/README.md
 
-**Archive represented:** `/EDEN-lucas-family/AI MCP tool/#webMCP/webmcp-tools:webmcp-tools at main · GoogleChromeLabs:webmcp-tools · GitHub.webarchive`
+**Archive coverage:** This upstream README supports the WebMCP archive collection but is NOT a one-to-one replacement for any confirmed `.webarchive` filename. No original should be deleted based on this file.
 
 **Content acquisition:** Exact current `main` repository Markdown text read through authenticated GitHub connector; not a live rendered GitHub site snapshot and not an archived Safari payload. Source links point outside the offline copy and may require internet to open.
 
