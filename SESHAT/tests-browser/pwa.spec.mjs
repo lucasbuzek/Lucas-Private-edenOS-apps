@@ -48,3 +48,22 @@ test("service worker permits offline cold reload after installation", async ({ c
   await expect(page.getByText("Know what is in stock.")).toBeVisible();
   await expect(page.locator("#network-state")).toContainText("Browser offline");
 });
+
+test("CSV import requires explicit preview and does not alter stock", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: "Backup & restore" }).click();
+  await page.locator("#csv-file").setInputFiles({
+    name: "catalogue.csv", mimeType: "text/csv",
+    buffer: Buffer.from("sku,name,unit,barcode,category,reorderPoint\nEGG-1,Chicken eggs,each,123,Poultry,12\n"),
+  });
+  await page.getByRole("button", { name: "Preview catalogue import" }).click();
+  await expect(page.locator("#csv-preview")).toContainText("1 valid new products");
+  await page.getByRole("button", { name: "Overview" }).click();
+  await expect(page.locator("#stat-products")).toHaveText("0");
+  await page.getByRole("button", { name: "Backup & restore" }).click();
+  page.once("dialog", dialog => dialog.accept());
+  await page.getByRole("button", { name: "Confirm and import" }).click();
+  await page.getByRole("button", { name: "Overview" }).click();
+  await expect(page.locator("#overview-body")).toContainText("Chicken eggs");
+  await expect(page.locator("#stat-movements")).toHaveText("0");
+});
