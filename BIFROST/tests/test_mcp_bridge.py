@@ -47,7 +47,7 @@ class BridgeTests(unittest.TestCase):
       'io.modelcontextprotocol/clientCapabilities':None}})
   ]
   p=subprocess.run([sys.executable,'-B',str(ROOT/'headless/mcp_bridge.py')],
-    input='\\n'.join(map(json.dumps,m))+'\\n',capture_output=True,text=True,timeout=15)
+    input='\n'.join(map(json.dumps,m))+'\n',capture_output=True,text=True,timeout=15)
   self.assertEqual(p.returncode,0,p.stderr)
   rows=[json.loads(row) for row in p.stdout.splitlines()]
   self.assertEqual(len(rows),len(m),p.stdout)
