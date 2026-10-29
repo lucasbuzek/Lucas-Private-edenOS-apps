@@ -10,6 +10,7 @@ const allow = [
   ["web/manifest.webmanifest","manifest.webmanifest"],["web/sw.js","sw.js"],["web/icon.svg","icon.svg"],
   ["src/domain/ledger.mjs","src/domain/ledger.mjs"],["src/domain/queries.mjs","src/domain/queries.mjs"],
   ["src/domain/catalogue.mjs","src/domain/catalogue.mjs"],
+  ["src/domain/csv-import.mjs","src/domain/csv-import.mjs"],
   ["src/persistence/snapshot.mjs","src/persistence/snapshot.mjs"],
   ["src/persistence/browser-idb.mjs","src/persistence/browser-idb.mjs"],
   ["fixtures/demo-inventory.mjs","fixtures/demo-inventory.mjs"],
