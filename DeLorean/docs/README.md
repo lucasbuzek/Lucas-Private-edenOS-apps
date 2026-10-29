@@ -55,3 +55,7 @@ Run from the `DeLorean` folder. The tests check safe metadata indexing, two-stat
 - No direct GitHub/Google Drive/Dropbox authenticated adapter or credentials bundled. Provider-event references can be recorded manually using original source IDs; that is not verification of a provider snapshot. Connect existing authorized MCP/provider capability later.
 - No destructive in-place restore. Deliberate protective policy.
 - No automated scheduler, broad filesystem scan, backup payload store, cleanup, or provider token persistence.
+
+
+## 2026-10-29 cross-platform correction
+DeLorean is one agentic multi-client plugin and native app family, not ChatGPT/macOS-only. See `PLATFORMS_AND_AGENT_BRIDGES.md` for independently authorized provider connectors, desktop/mobile/web targets and current verification. Native clients and full-device restore remain pending per-platform acceptance; the core Python MCP is a candidate, not the entire product.
