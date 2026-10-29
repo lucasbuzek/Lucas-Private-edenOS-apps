@@ -74,3 +74,4 @@ test("snapshot rejects duplicate location ids even when checksum is valid", asyn
   document.locations.push("shop");
   await assert.rejects(importLedgerSnapshot(resign(document)), /unique/);
 });
+
