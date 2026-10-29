@@ -23,6 +23,12 @@ jobs:
         run: npm test
       - name: Static syntax and allowlisted PWA build
         run: npm run check:web
+      - name: Install browser-test dependencies
+        run: npm install --no-save @playwright/test@1.57.0
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Exercise SESHAT in Chromium
+        run: npx playwright test --config=playwright.config.mjs
       - name: Ensure no source documentation or secrets in publication directory
         run: |
           test -f dist/index.html
