@@ -438,6 +438,10 @@ const WORKSPACES = {
 };
 
 function selectWorkspace(key) {
+  if (key === 'watchlist') {
+    showWatchlist().catch(err => { $('watchlistStatus').textContent = err.message; });
+    return;
+  }
   const item = WORKSPACES[key];
   if (!item) return;
   document.querySelectorAll('.workspace-btn').forEach((b) => {
@@ -490,6 +494,81 @@ document.querySelectorAll('[data-cresus-command]').forEach(button => button.addE
   autosize();
   $('composer').requestSubmit();
 }));
+
+
+/* Durable, server-owned securities collection. No price or account claims. */
+async function showWatchlist() {
+  const dlg = $('watchlistDlg');
+  if (!dlg.open) dlg.showModal();
+  await refreshWatchlist();
+}
+async function refreshWatchlist(){
+  const rows=$('watchlistRows');
+  rows.replaceChildren();
+  $('watchlistStatus').textContent = 'Loading saved securities…';
+  const res=await api('/api/watchlist');
+  $('watchlistStatus').textContent = res.entries.length
+    ? res.entries.length+' saved securities · no live prices'
+    : 'No securities saved. Add a ticker and, if known, its exchange MIC.';
+  for(const entry of res.entries){
+    const row=document.createElement('article');
+    row.className='watchlist-row';
+    const head=document.createElement('div');
+    head.className='watchlist-row-info';
+    const title=document.createElement('strong');
+    title.textContent=entry.ticker+(entry.mic?' · '+entry.mic:' · MIC unknown');
+    const sub=document.createElement('small');
+    sub.textContent=[entry.name,entry.currency||'currency unknown',entry.isin?('ISIN '+entry.isin):''].filter(Boolean).join(' · ');
+    const note=document.createElement('p');
+    note.textContent=entry.notes||'No research notes';
+    head.append(title,sub,note);
+    const actions=document.createElement('div');
+    actions.className='watchlist-actions';
+    const research=document.createElement('button');
+    research.type='button';research.textContent='Research';research.className='btn ghost';
+    research.onclick=()=>{
+      $('watchlistDlg').close();
+      state.mode=state.presentation==='expert'?'expert':'simple';
+      store.set('cresus.mode',state.mode);
+      renderModes();
+      $('input').value='Research '+entry.ticker+(entry.mic?' on '+entry.mic:' (exchange not yet verified)')+(entry.currency?' in '+entry.currency:'')+
+        '. Resolve the exact listing and use dated, sourced evidence; do not infer market data from the watchlist.';
+      autosize();
+      $('composer').requestSubmit();
+    };
+    const remove=document.createElement('button');
+    remove.type='button';remove.textContent='Remove';remove.className='btn ghost';
+    remove.setAttribute('aria-label','Remove '+entry.ticker+' from your watchlist');
+    remove.onclick=async()=>{
+      if(!confirm('Remove '+entry.ticker+' from your saved watchlist?'))return;
+      try{await api('/api/watchlist/'+encodeURIComponent(entry.id),{method:'DELETE'});await refreshWatchlist();}
+      catch(e){$('watchlistStatus').textContent=e.message;}
+    };
+    actions.append(research,remove);
+    row.append(head,actions);
+    rows.append(row);
+  }
+}
+$('watchlistAdd').addEventListener('submit',async event=>{
+  event.preventDefault();
+  const btn=$('watchlistAddBtn');
+  btn.disabled=true;
+  $('watchlistStatus').textContent='Saving…';
+  try{
+    const obj={
+      ticker:$('watchlistTicker').value,
+      mic:$('watchlistMic').value,
+      currency:$('watchlistCurrency').value,
+      isin:$('watchlistIsin').value,
+      name:$('watchlistName').value,
+      notes:$('watchlistNotes').value
+    };
+    await api('/api/watchlist',{method:'POST',body:JSON.stringify(obj)});
+    $('watchlistAdd').reset();
+    await refreshWatchlist();
+  }catch(e){$('watchlistStatus').textContent=e.message;}
+  finally{btn.disabled=false;}
+});
 
 // ---------- Wiring ----------
 function autosize() {
