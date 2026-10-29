@@ -10,6 +10,7 @@ from urllib.request import Request, build_opener, HTTPRedirectHandler
 from urllib.error import HTTPError, URLError
 import base64
 import json
+import math
 import os
 import stat
 import time
@@ -92,7 +93,9 @@ def inspect_token(config, bearer, *, opener=None, now=None):
         return None
     exp = obj.get("exp")
     now = time.time() if now is None else now
-    if type(exp) not in (int, float) or exp <= now or exp > now + 86400 * 2:
+    if (type(exp) not in (int, float)
+            or (isinstance(exp, float) and not math.isfinite(exp))
+            or exp <= now or exp > now + 86400 * 2):
         return None
     scopes = obj.get("scope", [])
     scopes = scopes.split() if isinstance(scopes, str) else scopes
