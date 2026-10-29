@@ -21,3 +21,7 @@ jobs:
         run: python -m py_compile NOSTOS/nostos.py NOSTOS/tests/test_service.py
       - name: Exercise NOSTOS authenticated API
         run: python -m unittest discover -s NOSTOS/tests -p "test_*.py" -v
+      - name: Validate browser JavaScript syntax
+        run: node --check NOSTOS/web/app.js
+      - name: Validate MCP adapter syntax
+        run: python -m py_compile NOSTOS/mcp_readonly.py
