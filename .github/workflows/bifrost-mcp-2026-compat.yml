@@ -10,6 +10,12 @@ on:
       - BIFROST/tests/test_mcp_bridge.py
       - BIFROST/tests/test_shortcalls.py
       - .github/workflows/bifrost-mcp-2026-compat.yml
+  pull_request:
+    paths:
+      - BIFROST/headless/mcp_bridge.py
+      - BIFROST/tests/test_mcp_bridge.py
+      - BIFROST/docs/research/MCP_SOURCE_RECONCILIATION_20261026.md
+      - .github/workflows/bifrost-mcp-2026-compat.yml
   workflow_dispatch:
 
 permissions:
