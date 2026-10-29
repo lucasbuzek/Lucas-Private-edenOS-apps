@@ -1,0 +1,37 @@
+name: BIFROST MCP protocol compatibility (candidate)
+on:
+  push:
+    branches:
+      - candidate/bifrost-apple-preflight-20261025
+    paths:
+      - BIFROST/headless/mcp_bridge.py
+      - BIFROST/headless/shortcalls.py
+      - BIFROST/core/shortcalls.v1.json
+      - BIFROST/tests/test_mcp_bridge.py
+      - BIFROST/tests/test_shortcalls.py
+      - .github/workflows/bifrost-mcp-2026-compat.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  protocol-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: BIFROST
+    steps:
+      - name: Checkout candidate code
+        uses: actions/checkout@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile the existing MCP bridge and tests
+        run: python -B -m py_compile headless/mcp_bridge.py tests/test_mcp_bridge.py
+      - name: Test legacy and 2026 stdio protocol, typed denials
+        run: python -B -m unittest discover -s tests -p "test_mcp_bridge.py" -v
+      - name: Test original shortNameCall authorization/allowlist
+        run: python -B -m unittest discover -s tests -p "test_shortcalls.py" -v
