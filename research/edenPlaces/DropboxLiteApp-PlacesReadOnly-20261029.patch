@@ -1,0 +1,177 @@
+--- a/Sources/DropboxLiteApp/DropboxLiteApp.swift
++++ b/Sources/DropboxLiteApp/DropboxLiteApp.swift
+@@ -20,7 +20,10 @@
+     @Published var busy = false
+     @Published var availableRemotes: [RcloneRemote] = []
+     @Published var browsePath = ""
+-    @Published var browseFolders: [String] = []
++    @Published var browseFolders: [String] = []
++    @Published var browseFiles: [PlacesReadOnly.Entry] = []
++    @Published var browsingFiles = false
++    private var browseGeneration = 0
+     @Published var previewText = ""
+     @Published var offloadText = ""
+     private var activeCancellation: RunCancellation?
+@@ -59,8 +62,12 @@
+         guard let choice = availableRemotes.first(where: { $0.id == key }) else { return }
+         if settings.autoSync { setAuto(false) }
+         if settings.remoteName != choice.name || settings.remoteSource != choice.source {
+-            stopCurrentOperation()
+-            // Folder permissions never migrate implicitly to another account.
++            stopCurrentOperation()
++            browseGeneration += 1
++            browseFiles = []
++            browseFolders = []
++            browsingFiles = false
++            // Folder permissions never migrate implicitly to another account.
+             for i in settings.grants.indices { settings.grants[i].mode = .off }
+             settings.localRoot = ""
+         }
+@@ -71,8 +78,12 @@
+         persist()
+         message = "Account selected; all previous folder permissions are Off"
+     }
+-    func connectedDropbox(_ name: String) {
+-        stopCurrentOperation()
++    func connectedDropbox(_ name: String) {
++        browseGeneration += 1
++        browseFiles = []
++        browseFolders = []
++        browsingFiles = false
++        stopCurrentOperation()
+         if settings.autoSync { setAuto(false) }
+         for i in settings.grants.indices { settings.grants[i].mode = .off }
+         settings.localRoot = ""
+@@ -219,27 +230,82 @@
+             }
+         }
+     }
+-    func listFolders() {
+-        let remote = settings.remoteName
+-        let source = settings.remoteSource
+-        let path = browsePath
+-        guard PathSafety.validRemoteName(remote) else { message = "Select a remote first"; return }
+-        Task.detached {
+-            do {
+-                let folders = try SyncCoordinator(engine: RcloneEngine.detected(source: source)).folders(remote: remote, path: path)
+-                await MainActor.run { self.browseFolders = folders; self.message = "Browse only — no files downloaded" }
+-            } catch { await MainActor.run { self.message = error.localizedDescription } }
+-        }
+-    }
+-    func navigate(_ name: String) {
+-        browsePath = browsePath.isEmpty ? name : browsePath + "/" + name
+-        listFolders()
+-    }
+-    func up() {
+-        let segments = browsePath.split(separator: "/").dropLast().map(String.init)
+-        browsePath = segments.joined(separator: "/")
+-        listFolders()
+-    }
++    func listFolders() {
++        let remote = settings.remoteName
++        let source = settings.remoteSource
++        let path = browsePath
++        let generation = browseGeneration
++        guard PathSafety.validRemoteName(remote) else { message = "Select a remote first"; return }
++        Task.detached {
++            do {
++                let folders = try SyncCoordinator(engine: RcloneEngine.detected(source: source)).folders(remote: remote, path: path)
++                await MainActor.run {
++                    guard self.browseGeneration == generation,
++                          self.settings.remoteName == remote, self.settings.remoteSource == source,
++                          self.browsePath == path else { return }
++                    self.browseFolders = folders
++                    self.message = "Browse only — no files downloaded"
++                }
++            } catch {
++                await MainActor.run {
++                    guard self.browseGeneration == generation else { return }
++                    self.message = error.localizedDescription
++                }
++            }
++        }
++    }
++    /// Explicit metadata-only read. Does not grant download/sync permissions.
++    func listPlaceFiles() {
++        let remote = settings.remoteName
++        let source = settings.remoteSource
++        let path = browsePath
++        let generation = browseGeneration
++        guard PathSafety.validRemoteName(remote),
++              availableRemotes.contains(where: { $0.name == remote && $0.source == source }) else {
++            message = "Select a configured account to inspect direct file names"
++            return
++        }
++        guard !browsingFiles else { return }
++        browsingFiles = true
++        browseFiles = []
++        Task.detached {
++            do {
++                let engine = try RcloneEngine.detected(source: source)
++                let snapshot = try PlacesReadOnly.inspect(source: source, remote: remote, path: path) {
++                    try engine.execute($0)
++                }
++                await MainActor.run {
++                    guard self.browseGeneration == generation,
++                          self.settings.remoteName == remote, self.settings.remoteSource == source,
++                          self.browsePath == path else { return }
++                    self.browsingFiles = false
++                    self.browseFiles = snapshot.entries.filter { !$0.isDirectory }
++                    self.message = "Metadata only — no files downloaded or folder permissions changed"
++                }
++            } catch {
++                await MainActor.run {
++                    guard self.browseGeneration == generation else { return }
++                    self.browsingFiles = false
++                    self.message = "Read-only file listing unavailable: " + error.localizedDescription
++                }
++            }
++        }
++    }
++    func navigate(_ name: String) {
++        browseGeneration += 1
++        browseFiles = []
++        browsingFiles = false
++        browsePath = browsePath.isEmpty ? name : browsePath + "/" + name
++        listFolders()
++    }
++    func up() {
++        browseGeneration += 1
++        browseFiles = []
++        browsingFiles = false
++        let segments = browsePath.split(separator: "/").dropLast().map(String.init)
++        browsePath = segments.joined(separator: "/")
++        listFolders()
++    }
+ 
+     func previewOffload() {
+         guard !busy else { return }
+@@ -640,8 +706,26 @@
+                     }
+                 }
+             }.frame(minHeight: 100, maxHeight: 210)
+-            Button("Add this folder as Off") {
+-                store.addFolder(store.browsePath)
++            HStack {
++                Text("Direct files · current folder only").font(.caption).foregroundStyle(.secondary)
++                Spacer()
++                Button("Show file names") { store.listPlaceFiles() }
++                    .disabled(store.browsingFiles || store.settings.remoteName.isEmpty)
++            }
++            if store.browsingFiles { ProgressView("Loading file metadata…").controlSize(.small) }
++            ForEach(store.browseFiles) { entry in
++                HStack {
++                    Image(systemName: "doc")
++                    Text(entry.name).lineLimit(1)
++                    Spacer()
++                    if let bytes = entry.size {
++                        Text(ByteCountFormatter.string(fromByteCount: bytes, countStyle: .file))
++                            .font(.caption2).foregroundStyle(.secondary)
++                    }
++                }.font(.caption)
++            }
++            Button("Add this folder as Off") {
++                store.addFolder(store.browsePath)
+                 tab = 0
+             }.disabled(store.browsePath.isEmpty)
+         }
