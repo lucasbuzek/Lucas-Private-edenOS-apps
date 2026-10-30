@@ -2,6 +2,7 @@ import os
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from bifrost.remote_provider import RemoteProvider
 
@@ -34,6 +35,22 @@ class RemoteProviderTests(unittest.TestCase):
         self.assertEqual(self.p.status()["keep_awake"], "running")
         self.p.stop_keep_awake()
         self.assertEqual(self.p.status()["keep_awake"], "stopped")
+
+    def test_stopped_state_survives_reload_and_provider_availability_changes(self):
+        self.p.start_remote()
+        self.p.stop_remote()
+        reloaded = RemoteProvider(state_dir=self.state_dir, dry_run=True)
+        for available in (True, False):
+            with mock.patch.object(reloaded, "provider_available", return_value=available):
+                self.assertEqual(reloaded.status()["remote"], "stopped")
+        reloaded.start_remote()
+        self.assertEqual(reloaded.status()["remote"], "running")
+        self.assertNotIn("remote_stopped", reloaded._load())
+
+    def test_stale_pid_is_not_hidden_by_stopped_marker(self):
+        self.p._save({"remote_pid": 123, "remote_stopped": True})
+        with mock.patch.object(self.p, "_alive", return_value=False):
+            self.assertEqual(self.p.status()["remote"], "stale")
 
 
 if __name__ == "__main__":

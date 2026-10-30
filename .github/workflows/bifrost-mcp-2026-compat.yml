@@ -1,0 +1,75 @@
+name: BIFROST MCP protocol compatibility (candidate)
+on:
+  push:
+    branches:
+      - candidate/bifrost-apple-preflight-20261025
+    paths:
+      - BIFROST/headless/mcp_bridge.py
+      - BIFROST/headless/mcp_remote_auth.py
+      - BIFROST/headless/mcp_remote.py
+      - BIFROST/tests/test_mcp_remote_auth.py
+      - BIFROST/tests/test_mcp_remote_auth_https.py
+      - BIFROST/tests/test_mcp_remote_http.py
+      - BIFROST/tests/test_mcp_remote_transport_contract.py
+      - BIFROST/headless/shortcalls.py
+      - BIFROST/core/shortcalls.v1.json
+      - BIFROST/tests/test_mcp_bridge.py
+      - BIFROST/tests/test_shortcalls.py
+      - BIFROST/tools/research_webarchive.py
+      - BIFROST/tests/test_research_webarchive.py
+      - .github/workflows/bifrost-mcp-2026-compat.yml
+  pull_request:
+    paths:
+      - BIFROST/headless/mcp_bridge.py
+      - BIFROST/headless/mcp_remote_auth.py
+      - BIFROST/headless/mcp_remote.py
+      - BIFROST/tests/test_mcp_remote_auth.py
+      - BIFROST/tests/test_mcp_remote_auth_https.py
+      - BIFROST/tests/test_mcp_remote_http.py
+      - BIFROST/tests/test_mcp_remote_transport_contract.py
+      - BIFROST/tests/test_mcp_bridge.py
+      - BIFROST/docs/research/MCP_SOURCE_RECONCILIATION_20261026.md
+      - BIFROST/tools/research_webarchive.py
+      - BIFROST/tests/test_research_webarchive.py
+      - .github/workflows/bifrost-mcp-2026-compat.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  protocol-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: BIFROST
+    steps:
+      - name: Checkout candidate code
+        uses: actions/checkout@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile the existing MCP bridge and tests
+        run: python -B -m py_compile headless/mcp_bridge.py tests/test_mcp_bridge.py
+      - name: Test legacy and 2026 stdio protocol, typed denials
+        run: python -B -m unittest discover -s tests -p "test_mcp_bridge.py" -v
+      - name: Test original shortNameCall authorization/allowlist
+        run: python -B -m unittest discover -s tests -p "test_shortcalls.py" -v
+      - name: Test safe recursive archived-source extraction
+        run: python -B -m unittest discover -s tests -p "test_research_webarchive.py" -v
+      - name: Test independent OAuth guard (no Mac or cloud credentials)
+        run: python -B -m unittest discover -s tests -p "test_mcp_remote_auth.py" -v
+      - name: Test real TLS introspection and credential containment
+        run: python -B -m unittest discover -s tests -p "test_mcp_remote_auth_https.py" -v
+      - name: Test stateless independent remote MCP transport contract
+        run: python -B -m unittest discover -s tests -p "test_mcp_remote_transport_contract.py" -v
+      - name: Compile independent remote SDK adapter
+        run: python -B -m py_compile headless/mcp_remote_auth.py headless/mcp_remote.py
+      - name: Install official SDK for actual HTTP boundary tests
+        run: python -m pip install --disable-pip-version-check 'mcp==2.3.0'
+      - name: Exercise SDK HTTP listener and real platform dispatcher
+        env:
+          BIFROST_REQUIRE_MCP_SDK: '1'
+        run: python -B -m unittest discover -s tests -p "test_mcp_remote_http.py" -v

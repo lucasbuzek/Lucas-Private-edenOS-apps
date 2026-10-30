@@ -171,7 +171,9 @@ def _arp(subnet, own_address):
 def _rdc():
     exe = CONNECTORS / "RDC5" / "rdc5"
     if not exe.is_file() or exe.is_symlink():
-        return {"state": "not-found", "selected": None, "profiles": []}
+        return {"state": "not-found", "selected": None, "profiles": [],
+                "authentication": "not-verified-from-local-profile",
+                "liveChatGPTTransport": "independent-verification-required"}
     text = _fixed_read([str(exe), "list"], timeout=5)
     selected, profiles = None, []
     for line in text.splitlines():

@@ -69,10 +69,40 @@ class ShortCallsTests(unittest.TestCase):
                 with self.assertRaises(shortcalls.ShortCallError):
                     shortcalls.catalog()
 
+    def test_connection_observation_reuses_owner_and_redacts_identity(self):
+        import connection_observer as observer
+        sample = {
+            "observedAt": "2026-10-26T00:00:00+00:00",
+            "thisDevice": {"name": "PRIVATE-MAC", "state": "local-session-observed"},
+            "lan": {"address": "192.168.1.17", "passiveARPCount": 1,
+                    "observedPeers": [{"address": "192.168.1.23"}],
+                    "scan": {"status": "not-scanned"}},
+            "rdc": {"state": "catalogued", "selected": "PRIVATE-ACCOUNT"},
+            "apps": [{"id": "heimdall", "webVerified": False, "webURL": "private"}],
+            "connectors": [{"id": "ai-toolkit", "state": "unverified", "detail": "private"}]
+        }
+        with (
+            mock.patch.object(shortcalls.platform, "system", return_value="Darwin"),
+            mock.patch.object(observer, "snapshot", return_value=sample) as snapshot,
+            mock.patch.object(observer.MONITOR, "begin") as scan,
+        ):
+            result = shortcalls.call("bifrost.connection.health.read", system="macos")
+        snapshot.assert_called_once_with()
+        scan.assert_not_called()
+        self.assertTrue(result["verified"])
+        self.assertFalse(result["effectsVerified"])
+        self.assertFalse(result["result"]["liveConnectionVerified"])
+        self.assertEqual(result["result"]["lan"]["observedPeerCount"], 1)
+        self.assertEqual(result["result"]["rdc"]["state"], "catalogued")
+        self.assertNotIn("192.168", json.dumps(result))
+        self.assertNotIn("PRIVATE", json.dumps(result))
+        self.assertNotIn("webURL", json.dumps(result))
+        self.assertFalse(shortcalls.resolve("bifrost.connection.health.read", "linux")["available"])
+
     def test_cli_end_to_end(self):
         exe = [sys.executable, "-B", str(BASE/"headless/shortcalls.py")]
         p = subprocess.run(exe+["call","bifrost.system.platform.read"],capture_output=True,text=True,timeout=8)
-        if sys.platform == "darwin":
+        if sys.platform in ("darwin", "linux", "win32"):
             self.assertEqual(p.returncode,0,p.stderr)
             self.assertEqual(json.loads(p.stdout)["action"],"bifrost.system.platform.read")
         else:
@@ -133,6 +163,28 @@ class ShortCallsTests(unittest.TestCase):
             self.assertEqual(p.returncode, 2, p.stdout)
             self.assertEqual(json.loads(p.stderr)["status"], "refused")
             self.assertEqual(p.stdout, "")
+
+    def test_apple_device_discovery_is_an_actual_readonly_mcp_route(self):
+        import apple_device_discovery
+        route = shortcalls.resolve("bifrost.device.discover", "macos")
+        self.assertTrue(route["available"])
+        self.assertEqual(route["adapter"], "python.apple.coredevice")
+        self.assertEqual(route["effect"], "read")
+        sample = {"schema": apple_device_discovery.SCHEMA, "deviceCount": 1,
+                  "devices": [{"kind": "iPhone16,2", "edenTrust": "not-established"}],
+                  "observed": True, "edenPairing": "not-attempted"}
+        with mock.patch.object(shortcalls.platform, "system", return_value="Darwin"), \
+             mock.patch.object(apple_device_discovery, "inspect", return_value=sample) as inspect:
+            actual = shortcalls.call("bifrost.device.discover", system="macos")
+        inspect.assert_called_once_with()
+        self.assertEqual(actual["result"], sample)
+        self.assertFalse(actual["effectsVerified"])
+        # Cross-platform coercion must never allow Apple command execution.
+        with mock.patch.object(shortcalls.platform, "system", return_value="Linux"), \
+             mock.patch.object(apple_device_discovery, "inspect") as inspect:
+            with self.assertRaises(shortcalls.ShortCallError):
+                shortcalls.call("bifrost.device.discover", system="macos")
+            inspect.assert_not_called()
 
 
 if __name__ == "__main__":

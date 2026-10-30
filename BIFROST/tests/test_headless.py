@@ -282,6 +282,18 @@ class APITests(unittest.TestCase):
                                    "X-Bifrost-Token": token})
             self.assertEqual(code, 404)
 
+    def test_storage_profiles_require_session_and_exclude_private_fields(self):
+        token = self.api("GET", "/api/session")[1]["token"]
+        core = mock.Mock()
+        core.profiles.return_value = [{"name":"saved", "provider":"drive", "account_binding":"secret", "local_root":"private"}]
+        with mock.patch.object(mod.storage_metadata, "_core", return_value=core):
+            code, _ = self.api("GET", "/api/storage/v1/profiles")
+            self.assertEqual(code, 403)
+            core.profiles.assert_not_called()
+            code, result = self.api("GET", "/api/storage/v1/profiles", headers={"X-Bifrost-Token":token})
+            self.assertEqual(code, 200)
+            self.assertEqual(result["profiles"], [{"name":"saved", "provider":"drive"}])
+
     def test_storage_account_metadata_is_private_and_not_called_without_auth(self):
         token = self.api("GET", "/api/session")[1]["token"]
         fixture = {"schema": "bifrost.storage.v1", "accounts": [
@@ -401,6 +413,7 @@ class APITests(unittest.TestCase):
         self.assertEqual(code, 409)
         self.assertIn("unavailable", value["error"])
 
+    @mock.patch.object(mod.sys, "platform", "darwin")
     def test_macos_native_launch_only_uses_exact_approved_bundle(self):
         app = self.root / "TestNativeBIFROST.app"
         (app / "Contents").mkdir(parents=True, exist_ok=True)
