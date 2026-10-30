@@ -2,7 +2,7 @@
 // RAVENsNEST human-first file browser; WebMCP is optional on supported browsers.
 (()=>{
  const $=id=>document.getElementById(id);
- let sources=[],source=null,paths=['/'],busy=0;
+ let sources=[],source=null,paths=['/'],busy=0,nextCursor=null,shown=0;
  const say=s=>{$('status').textContent=s};
  async function api(data){
   const u=new URL('/api/files',location.origin);
@@ -13,7 +13,7 @@
   return j;
  }
  function element(tag,value){const e=document.createElement(tag);if(value!==undefined)e.textContent=value;return e}
- function start(){paths=['/'];$('up').disabled=true;refresh()}
+ function start(){paths=['/'];nextCursor=null;shown=0;$('up').disabled=true;refresh()}
  async function sourcesList(){
   say('Checking authorized sources…');
   try{
@@ -23,11 +23,12 @@
    source=sources[0];$('source').value=source.id;start();
   }catch(e){say(e.message);$('items').replaceChildren()}
  }
- async function refresh(){
+ async function refresh(cursor=null){
   if(!source)return;
-  const seq=++busy,at=paths[paths.length-1];say('Loading files…');
+  const seq=++busy,at=paths[paths.length-1],paging=typeof cursor==='string'&&cursor.length>0;
+  $('more').disabled=true;say(paging?'Loading next page…':'Loading files…');
   try{
-   const result=await api({action:'list',source:source.id,path:at});
+   const result=await api({action:'list',source:source.id,path:at,cursor:paging?cursor:null});
    if(seq!==busy)return;
    const rows=(result.items||[]).map(item=>{
     const r=element('div');r.className='file-row';
@@ -36,7 +37,7 @@
     b.onclick=()=>{
      if(item.type==='folder'){
       paths.push(source.provider==='dropbox'?(at==='/'?'/'+item.name:at+'/'+item.name):'/'+item.id);
-      $('up').disabled=false;refresh();return;
+      nextCursor=null;shown=0;$('up').disabled=false;refresh();return;
      }
      const u=new URL('/api/files',location.origin);
      u.searchParams.set('action','download');u.searchParams.set('source',source.id);
@@ -45,14 +46,19 @@
     };
     r.append(name,b);return r;
    });
-   $('items').replaceChildren(...rows);$('location').textContent=at;
-   say(rows.length+' files and folders'+(result.has_more?' · additional pages not yet enabled in this candidate':''));
-  }catch(e){if(seq===busy){say(e.message);$('items').replaceChildren()}}
+   if(paging)$('items').append(...rows);else $('items').replaceChildren(...rows);
+   shown=paging?shown+rows.length:rows.length;
+   nextCursor=typeof result.next_cursor==='string'?result.next_cursor:null;
+   $('more').hidden=!nextCursor;$('more').disabled=false;
+   $('location').textContent=at;
+   say(shown+' files and folders'+(nextCursor?' · more available':result.has_more?' · pagination is not configured':''));
+  }catch(e){if(seq===busy){say(e.message);$('more').disabled=false;if(!paging){$('items').replaceChildren();$('more').hidden=true;nextCursor=null}}}
  }
  $('source').addEventListener('change',()=>{source=sources.find(s=>s.id===$('source').value);start()});
  $('refresh').addEventListener('click',()=>source?refresh():sourcesList());
- $('up').addEventListener('click',()=>{if(paths.length>1){paths.pop();$('up').disabled=paths.length===1;refresh()}});
- $('more').hidden=true; // API candidate currently supports first 100 entries per folder.
+ $('up').addEventListener('click',()=>{if(paths.length>1){paths.pop();nextCursor=null;shown=0;$('up').disabled=paths.length===1;refresh()}});
+ $('more').hidden=true;
+ $('more').addEventListener('click',()=>{if(nextCursor&&!$('more').disabled)refresh(nextCursor)});
  if(document.modelContext&&typeof document.modelContext.registerTool==='function'){
   document.modelContext.registerTool({
    name:'raven_files_providers',description:'List only the storage sources granted to the signed-in portal account; no secrets.',
@@ -62,9 +68,9 @@
   });
   document.modelContext.registerTool({
    name:'raven_files_list',description:'List an approved source folder under the same server-side user grants.',
-   inputSchema:{type:'object',properties:{source:{type:'string'},path:{type:'string'}},required:['source'],additionalProperties:false},
+   inputSchema:{type:'object',properties:{source:{type:'string'},path:{type:'string'},cursor:{type:'string'}},required:['source'],additionalProperties:false},
    annotations:{readOnlyHint:true,destructiveHint:false,openWorldHint:false},
-   execute:({source,path})=>api({action:'list',source,path:path||'/'})
+   execute:({source,path,cursor})=>api({action:'list',source,path:path||'/',cursor:cursor||null})
   });
  }
  sourcesList();
