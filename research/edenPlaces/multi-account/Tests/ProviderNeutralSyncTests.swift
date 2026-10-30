@@ -6,6 +6,7 @@ final class FakeCloud: PlacesSafeProvider {
     var providerType: PlacesProvider
     var folders: [String:[String:Data]] = [:]
     var calls: [String] = []
+    var directories: [String:[String]] = [:]
     var failUploads=false
     var mutateOnDownload=false
     init(_ provider: PlacesProvider){self.providerType=provider}
@@ -18,6 +19,7 @@ final class FakeCloud: PlacesSafeProvider {
             return PlacesRemoteBlob(name:name,sha256:try PlacesFileDigest.sha256(u),bytes:Int64(data.count))
         }
     }
+    func subfolders(folder:String) throws -> [String] { calls.append("dirs:\(folder)");return directories[folder] ?? [] }
     func download(folder: String,name: String, into stagingFile: URL) throws {
         calls.append("download:\(name)")
         guard let d=folders[folder]?[name] else {throw PlacesTransferFailure.changedDuringTransfer}
@@ -152,5 +154,45 @@ final class ProviderNeutralSyncTests: XCTestCase {
         var ledger=PlacesTransferLedger()
         let res=try coordinator(remote).execute(profile:p,ledger:&ledger,dryRun:false)
         XCTAssertEqual(res.downloads,0);XCTAssertTrue(remote.calls.isEmpty)
+    }
+}
+
+extension ProviderNeutralSyncTests {
+    func testExplicitRecursiveGrantIncludesOnlyApprovedDescendants() throws {
+        var (p,root,cloud)=try setup(.googleDrive)
+        defer {try? FileManager.default.removeItem(at:root)}
+        p.folderGrants=[try PlacesFolderPermission("Photos",mode:.sync,recursive:true)]
+        cloud.directories["Photos"]=["2026"]
+        cloud.directories["Photos/2026"]=["January"]
+        cloud.folders["Photos/2026/January"]=["sample.txt":Data("in folder".utf8)]
+        var ledger=PlacesTransferLedger()
+        let result=try coordinator(cloud).execute(profile:p,ledger:&ledger,dryRun:false)
+        XCTAssertEqual(result.downloads,1)
+        XCTAssertEqual(try String(contentsOf:root.appendingPathComponent("Photos/2026/January/sample.txt"),encoding:.utf8),"in folder")
+        XCTAssertFalse(cloud.calls.contains("list:Other"))
+    }
+    func testNonRecursiveGrantDoesNotScanSubfolders() throws {
+        let (p,root,cloud)=try setup()
+        defer {try? FileManager.default.removeItem(at:root)}
+        cloud.directories["Photos"]=["2026"]
+        cloud.folders["Photos/2026"]=["secret.txt":Data("secret".utf8)]
+        var ledger=PlacesTransferLedger()
+        let res=try coordinator(cloud).execute(profile:p,ledger:&ledger,dryRun:false)
+        XCTAssertEqual(res.downloads,0)
+        XCTAssertFalse(cloud.calls.contains("dirs:Photos"))
+        XCTAssertFalse(cloud.calls.contains("list:Photos/2026"))
+    }
+    func testRecursiveTraversalRejectsInvalidProviderDirectoryName() throws {
+        var (p,root,cloud)=try setup()
+        defer {try? FileManager.default.removeItem(at:root)}
+        p.folderGrants=[try PlacesFolderPermission("Photos",mode:.sync,recursive:true)]
+        cloud.directories["Photos"]=["../other"]
+        var ledger=PlacesTransferLedger()
+        XCTAssertThrowsError(try coordinator(cloud).execute(profile:p,ledger:&ledger,dryRun:false))
+    }
+    func testRecursionDefaultsOffForOldRegistryEncoding() throws {
+        let oldJSON=#"{"path":"Photos","mode":"sync"}"#
+        let g=try JSONDecoder().decode(PlacesFolderPermission.self,from:Data(oldJSON.utf8))
+        XCTAssertFalse(g.recursive)
     }
 }
