@@ -28,6 +28,7 @@ class Settings:
     introspection: str
     client_id: str
     client_secret: str
+    allowed_subjects: tuple[str, ...] = ()
 
 def _https_url(value, name):
     parsed = urlsplit(value)
@@ -42,6 +43,15 @@ def from_environment(env=None):
             "BIFROST_MCP_SECRET_FILE")
     if any(not env.get(k) for k in keys):
         raise ConfigurationError("Independent remote BIFROST requires an OAuth issuer, resource, introspection endpoint, client ID and private client-secret file")
+    try:
+        subjects = json.loads(env.get("BIFROST_MCP_ALLOWED_SUBJECTS", "[]"))
+    except (ValueError, TypeError, RecursionError):
+        raise ConfigurationError("Allowed subjects must be a JSON array of verified issuer subject IDs") from None
+    if (not isinstance(subjects, list) or not subjects or len(subjects) > 100
+            or any(not isinstance(s, str) or not s or s != s.strip()
+                   or len(s) > 512 or s == "*" or any(ord(c) < 32 for c in s)
+                   for s in subjects)):
+        raise ConfigurationError("Configure explicit verified issuer subject IDs; empty or wildcard access is denied")
     path = Path(env["BIFROST_MCP_SECRET_FILE"])
     if not path.is_file() or path.is_symlink():
         raise ConfigurationError("Client-secret file must be an existing regular file")
@@ -58,7 +68,8 @@ def from_environment(env=None):
         resource=resource,
         introspection=_https_url(env[keys[2]], keys[2]),
         client_id=env[keys[3]],
-        client_secret=secret
+        client_secret=secret,
+        allowed_subjects=tuple(subjects)
     )
 
 class _NoRedirect(HTTPRedirectHandler):
@@ -67,6 +78,8 @@ class _NoRedirect(HTTPRedirectHandler):
 
 def inspect_token(config, bearer, *, opener=None, now=None):
     """Return a minimal validated identity dict or None. Never raise provider details."""
+    if not config.allowed_subjects:
+        return None
     if not isinstance(bearer, str) or not 1 <= len(bearer) <= 4096 or any(ord(c) < 33 or ord(c) > 126 for c in bearer):
         return None
     encoded = base64.b64encode(f"{config.client_id}:{config.client_secret}".encode()).decode("ascii")
@@ -103,6 +116,8 @@ def inspect_token(config, bearer, *, opener=None, now=None):
         return None
     subject, client_id = obj.get("sub"), obj.get("client_id")
     if not isinstance(subject,str) or not subject or not isinstance(client_id,str) or not client_id:
+        return None
+    if subject not in config.allowed_subjects:
         return None
     return {"subject": subject, "client_id": client_id, "scopes": scopes,
             "resource": config.resource, "expires_at": int(exp)}
