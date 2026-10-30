@@ -34,7 +34,7 @@ class RemoteAuthTests(unittest.TestCase):
     def setUp(self):
         self.config = a.Settings(
             "https://auth.example.com", "https://bifrost.example.com/mcp",
-            "https://auth.example.com/introspect", "bifrost-service", "secret")
+            "https://auth.example.com/introspect", "bifrost-service", "secret", ("user-1",))
         self.payload = {"active": True, "iss": self.config.issuer,
             "aud": self.config.resource, "client_id": "client-1",
             "sub": "user-1", "scope": "bifrost:read", "exp": 1700001000}
@@ -45,6 +45,17 @@ class RemoteAuthTests(unittest.TestCase):
     def test_valid_scope_identity_and_audience(self):
         self.assertEqual(self.inspect()["subject"], "user-1")
         self.assertEqual(self.inspect()["resource"], self.config.resource)
+
+    def test_valid_token_for_another_subject_is_denied(self):
+        self.assertIsNone(self.inspect({**self.payload, "sub": "other-user"}))
+        self.assertIsNone(self.inspect({**self.payload, "sub": "USER-1"}))
+
+    def test_unconfigured_subjects_deny_without_network(self):
+        from dataclasses import replace
+        opener = Opener(self.payload)
+        self.assertIsNone(a.inspect_token(replace(self.config, allowed_subjects=()),
+            "token1", opener=opener, now=1700000000))
+        self.assertEqual(opener.requests, [])
 
     def test_denies_invalid_grants(self):
         for changed in ({"active": False}, {"iss": "https://other.example.com"},
@@ -82,13 +93,18 @@ class RemoteAuthTests(unittest.TestCase):
                    "BIFROST_MCP_RESOURCE_URL": "https://bifrost.example.com/mcp",
                    "BIFROST_MCP_INTROSPECTION_URL": "https://auth.example.com/introspect",
                    "BIFROST_MCP_OAUTH_CLIENT_ID": "bifrost-service",
-                   "BIFROST_MCP_SECRET_FILE": str(secret)}
+                   "BIFROST_MCP_SECRET_FILE": str(secret),
+                   "BIFROST_MCP_ALLOWED_SUBJECTS": '["user-1"]'}
             if os.name == "posix":
                 secret.chmod(0o644)
                 with self.assertRaises(a.ConfigurationError):
                     a.from_environment(env)
                 secret.chmod(0o600)
             self.assertEqual(a.from_environment(env).client_secret, "secret")
+            self.assertEqual(a.from_environment(env).allowed_subjects, ("user-1",))
+            for value in ('[]', '"user-1"', '["*"]', '[null]', '[""]', '[" user-1"]', 'invalid'):
+                with self.subTest(subjects=value), self.assertRaises(a.ConfigurationError):
+                    a.from_environment({**env, "BIFROST_MCP_ALLOWED_SUBJECTS": value})
             env["BIFROST_MCP_RESOURCE_URL"] = "http://bifrost.example.com/mcp"
             with self.assertRaises(a.ConfigurationError):
                 a.from_environment(env)
@@ -96,3 +112,4 @@ class RemoteAuthTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
