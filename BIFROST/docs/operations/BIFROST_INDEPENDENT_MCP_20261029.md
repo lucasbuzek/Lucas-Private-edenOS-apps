@@ -121,3 +121,9 @@ RustDesk official README (blob 38433e0afced9361a77254f6b5499c86066dae03) provide
 Sources: https://github.com/Ylianst/MeshCentral/blob/master/readme.md ; https://github.com/Ylianst/MeshCentral/blob/master/meshctrl.js ; https://github.com/Ylianst/MeshCentral/blob/master/LICENSE ; https://github.com/rustdesk/rustdesk/blob/master/README.md ; https://github.com/tailscale/tailscale/blob/main/README.md .
 
 Current source-research network limitation: both connected web search engines returned isError with empty content in this session; primary repository reads remain available. Entire archive review is still incomplete. No claims of free hosting suitability, installation, deployed OAuth, device control, whole-product completion or commercial readiness follow from these source reads.
+
+### Verified CI follow-up
+
+Run https://github.com/lucasbuzek/Lucas-Private-edenOS-apps/actions/runs/41089759733 at code commit 0607f30647ca7e725ada3471e3759875fd518f8d completed SUCCESS. Job 124180248371 steps and logs confirm the actual SDK installed and all six HTTP boundary tests passed, in addition to the existing stdio/dispatcher/archive/auth/TLS/transport suites. All four changed code/test files were read back exactly from that commit. These HTTP tests use fixture identities; production sign-in, ChatGPT invocation, remote Mac operations and all platform acceptance remain open.
+
+Google Drive original BIFROST_ZERO_Oracle_Always_Free_Complete_Guide.txt (file 17pwah_q7DVHp5ufVFRHxQJZTtMQyrtsk) was read. Its own handoff says only a VCN was reported created; no running VM, SSH login or cloud task was verified. It is historical setup guidance, not proof of a usable current compute host or current free-tier allowances. Do not silently bill/upgrade or treat its historical price assertions as current verification.
