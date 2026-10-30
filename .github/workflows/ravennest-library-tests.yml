@@ -1,0 +1,31 @@
+name: RAVENsNEST private library regressions
+on:
+  push:
+    branches:
+      - candidate/ravennest-universal-files-20261029
+    paths:
+      - 'RavenNest/web/lucas-raven/functions/api/knowledge.js'
+      - 'RavenNest/web/lucas-raven/functions/api/file-cursor.js'
+      - 'RavenNest/web/lucas-raven/migrations/0004_library_sources.sql'
+      - 'RavenNest/web/lucas-raven/tests/**'
+      - '.github/workflows/ravennest-library-tests.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  authorization-and-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax checks
+        run: |
+          node --check RavenNest/web/lucas-raven/functions/api/knowledge.js
+          node --check RavenNest/web/lucas-raven/functions/api/file-cursor.js
+          node --check RavenNest/web/lucas-raven/public/knowledge.js
+      - name: Private library authorization and signed cursor regressions
+        working-directory: RavenNest/web/lucas-raven
+        run: node --test tests/knowledge.test.mjs tests/file-cursor.test.mjs
