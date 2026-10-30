@@ -18,6 +18,7 @@ public struct PlacesRemoteBlob: Equatable {
 public protocol PlacesSafeProvider {
     var providerType: PlacesProvider { get }
     func snapshot(folder: String) throws -> [PlacesRemoteBlob]
+    func subfolders(folder: String) throws -> [String]
     func download(folder: String, name: String, into stagingFile: URL) throws
     func createOnly(folder: String, name: String, from local: URL) throws
 }
@@ -114,10 +115,14 @@ public struct PlacesSafeSyncCoordinator {
             guard try authorized(profile,grant),try stillCurrent(profile,grant) else {
                 throw PlacesTransferFailure.unauthorized
             }
-            let location=try PlacesSyncSafePaths.folder(profile:profile,grant:grant,create:false)
-            let remote=try vettedRemote(provider.snapshot(folder:grant.path))
+            let selectedPaths = try pathsForGrant(profile:profile,grant:grant)
+            for exactPath in selectedPaths {
+            guard try stillCurrent(profile,grant) else { throw PlacesTransferFailure.unauthorized }
+            let exactGrant=try PlacesFolderPermission(exactPath, mode:grant.mode)
+            let location=try PlacesSyncSafePaths.folder(profile:profile,grant:exactGrant,create:false)
+            let remote=try vettedRemote(provider.snapshot(folder:exactPath))
             let local=try localFiles(at:location)
-            let scope=profile.id.uuidString + "|" + profile.accountKey + "|" + profile.root + "|" + grant.path
+            let scope=profile.id.uuidString + "|" + profile.accountKey + "|" + profile.root + "|" + exactPath
             let old=ledger.previouslySeen[scope] ?? [:]
             let names=Set(remote.keys).union(local.keys).sorted()
             var next=old
@@ -132,20 +137,20 @@ public struct PlacesSafeSyncCoordinator {
                 } else if remoteHash != nil {
                     if dryRun { report.downloads+=1;continue }
                     // Start with a fully verified remote object version; no file is published until it matches.
-                    guard let before=try vettedRemote(provider.snapshot(folder:grant.path))[name],
+                    guard let before=try vettedRemote(provider.snapshot(folder:exactPath))[name],
                           before==remote[name] else { report.conflicts+=1;continue }
                     guard try stillCurrent(profile,grant) else { throw PlacesTransferFailure.unauthorized }
-                    let target=try PlacesSyncSafePaths.folder(profile:profile,grant:grant,create:true)
+                    let target=try PlacesSyncSafePaths.folder(profile:profile,grant:exactGrant,create:true)
                         .appendingPathComponent(name,isDirectory:false)
                     try PlacesSyncSafePaths.ensureNoSymlink(target)
                     if FileManager.default.fileExists(atPath:target.path) { report.conflicts+=1;continue }
                     let stage=target.deletingLastPathComponent().appendingPathComponent(".edenplaces-stage-"+UUID().uuidString)
                     defer { try? FileManager.default.removeItem(at:stage) }
-                    try provider.download(folder:grant.path,name:name,into:stage)
+                    try provider.download(folder:exactPath,name:name,into:stage)
                     try PlacesSyncSafePaths.ensureNoSymlink(stage)
                     guard try PlacesFileDigest.sha256(stage)==before.sha256,
                           (try FileManager.default.attributesOfItem(atPath:stage.path)[.size] as? NSNumber)?.int64Value == before.bytes,
-                          try vettedRemote(provider.snapshot(folder:grant.path))[name]==before else {
+                          try vettedRemote(provider.snapshot(folder:exactPath))[name]==before else {
                         throw PlacesTransferFailure.changedDuringTransfer
                     }
                     guard try stillCurrent(profile,grant) else { throw PlacesTransferFailure.unauthorized }
@@ -157,21 +162,66 @@ public struct PlacesSafeSyncCoordinator {
                 } else if localHash != nil && grant.mode == .sync {
                     if dryRun { report.uploads+=1;continue }
                     guard try stillCurrent(profile,grant) else { throw PlacesTransferFailure.unauthorized }
-                    guard try vettedRemote(provider.snapshot(folder:grant.path))[name]==nil,
+                    guard try vettedRemote(provider.snapshot(folder:exactPath))[name]==nil,
                           try PlacesFileDigest.sha256(location.appendingPathComponent(name))==localHash else {
                         report.conflicts+=1;continue
                     }
                     // Provider must guarantee create-if-absent atomically; unsupported backends fail closed.
-                    try provider.createOnly(folder:grant.path,name:name,from:location.appendingPathComponent(name))
-                    guard try vettedRemote(provider.snapshot(folder:grant.path))[name]?.sha256==localHash else {
+                    try provider.createOnly(folder:exactPath,name:name,from:location.appendingPathComponent(name))
+                    guard try vettedRemote(provider.snapshot(folder:exactPath))[name]?.sha256==localHash else {
                         throw PlacesTransferFailure.changedDuringTransfer
                     }
                     report.uploads+=1;next[name]=localHash!
                     ledger.previouslySeen[scope]=next;try save(ledger)
                 }
             }
+            }
         }
         return report
+    }
+    /// Visit only the descendants of a user-approved folder, when the grant explicitly opts in.
+    /// Missing provider directory support is a hard error, not a silent empty traversal.
+    private func pathsForGrant(profile:PlacesSyncProfile,grant:PlacesFolderPermission) throws -> [String] {
+        guard grant.recursive else { return [grant.path] }
+        var seen:Set<String> = [grant.path]
+        var queue:[String] = [grant.path]
+        var result:[String] = []
+        while !queue.isEmpty {
+            let current=queue.removeFirst()
+            result.append(current)
+            guard result.count<=500 else { throw PlacesTransferFailure.tooManyEntries }
+            let depth=current.split(separator:"/").count-grant.path.split(separator:"/").count
+            guard depth<16 else { throw PlacesTransferFailure.tooManyEntries }
+            let currentGrant=try PlacesFolderPermission(current,mode:grant.mode)
+            let location=try PlacesSyncSafePaths.folder(profile:profile,grant:currentGrant,create:false)
+            let localDirs=try localSubfolders(at:location)
+            let remoteDirs=try provider.subfolders(folder:current)
+            let names=Set(localDirs).union(remoteDirs).sorted()
+            guard names.count<=500 else { throw PlacesTransferFailure.tooManyEntries }
+            var fold=Set<String>()
+            for name in names {
+                guard (try? PathSafety.validateFileName(name)) != nil,
+                      fold.insert(name.folding(options:[.caseInsensitive,.diacriticInsensitive],locale:.current)).inserted
+                else { throw PlacesTransferFailure.corruptProviderListing }
+                let sub=current+"/"+name
+                guard sub.hasPrefix(grant.path+"/") else { throw PlacesTransferFailure.unsafeFile }
+                if seen.insert(sub).inserted { queue.append(sub) }
+            }
+        }
+        return result
+    }
+    private func localSubfolders(at url:URL) throws -> [String] {
+        let fm=FileManager.default
+        guard fm.fileExists(atPath:url.path) else { return [] }
+        try PlacesSyncSafePaths.ensureNoSymlink(url)
+        let contents=try fm.contentsOfDirectory(at:url,includingPropertiesForKeys:[.isDirectoryKey,.isSymbolicLinkKey])
+        var dirs:[String]=[]
+        for item in contents {
+            try PlacesSyncSafePaths.ensureNoSymlink(item)
+            let meta=try item.resourceValues(forKeys:[.isDirectoryKey,.isSymbolicLinkKey])
+            if meta.isDirectory == true && meta.isSymbolicLink != true { dirs.append(item.lastPathComponent) }
+        }
+        return dirs
     }
     private func vettedRemote(_ list:[PlacesRemoteBlob]) throws -> [String:PlacesRemoteBlob] {
         guard list.count<=1000 else { throw PlacesTransferFailure.tooManyEntries }
