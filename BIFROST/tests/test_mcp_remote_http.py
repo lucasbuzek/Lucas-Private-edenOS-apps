@@ -54,7 +54,7 @@ class RemoteHTTPTests(unittest.TestCase):
         host = "127.0.0.1:" + str(sock.getsockname()[1])
         cls.base = "http://" + host
         config = Settings("https://issuer.example", cls.resource,
-                          "https://issuer.example/introspect", "fixture", "unused")
+                          "https://issuer.example/introspect", "fixture", "unused", ("fixture-owner",))
         app = remote.create_server(config).streamable_http_app(
             json_response=True, stateless_http=True, max_request_body_size=65536,
             transport_security=TransportSecuritySettings(allowed_hosts=[host], allowed_origins=[]))
