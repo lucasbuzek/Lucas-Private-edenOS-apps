@@ -1,6 +1,7 @@
 // RAVENsNEST selected-source read-only files. Original RavenNest source only.
 // No legacy pairing, no cloud account federation, no provider tokens in HTML.
 import {verifyAccessJwt} from './[[path]].js';
+import {sealCursor,openCursor} from './file-cursor.js';
 const J=(x,s=200)=>new Response(JSON.stringify(x),{status:s,headers:{'content-type':'application/json','cache-control':'private, no-store','x-content-type-options':'nosniff','referrer-policy':'no-referrer'}});
 const E=(n,e)=>J({error:e},n);
 const NAME=/^[a-z][a-z0-9_-]{1,48}$/,KEY=/^RAVEN_FILE_[A-Z0-9_]{2,60}$/;
@@ -53,9 +54,10 @@ async function driveScoped(tok,id,root){
  return false;
 }
 export async function onRequest({request,env}){
- const url=new URL(request.url),q=url.searchParams,a=q.get('action')||'providers';
+ const url=new URL(request.url),q=url.searchParams,a=q.get('action')||'providers',pageCursor=q.get('cursor');
  if(request.method!=='GET')return E(405,'method not allowed');
- if(q.toString().length>8000)return E(400,'query too long');
+ if(q.toString().length>11000)return E(400,'query too long');
+ if(pageCursor&&a!=='list')return E(400,'cursor only valid for listing');
  if(request.headers.get('origin')&&request.headers.get('origin')!==url.origin)return E(403,'cross-origin denied');
  const u=await principal(request,env);if(!u)return E(401,'sign-in required');
  try{
@@ -69,12 +71,18 @@ export async function onRequest({request,env}){
   if(!s||s.can_list!==1||(a==='download'&&s.can_download!==1))return E(403,'source not permitted');
   if(!['dropbox','google_drive'].includes(s.provider))return E(503,'provider unsupported');
   const rel=q.get('path')||'/';if(rel.length>1024)return E(400,'invalid path');
+  const scope={user:u.id,source:id,path:rel,provider:s.provider};
+  let providerCursor=null;
+  if(pageCursor){try{providerCursor=await openCursor(env,scope,pageCursor)}catch{return E(403,'invalid cursor')}}
   const tok=await token(env,s);
   if(s.provider==='dropbox'){
    const path=dropboxPath(s.root_ref,rel);
    if(a==='list'){
-    const r=await remote('https://api.dropboxapi.com/2/files/list_folder',{method:'POST',headers:{authorization:'Bearer '+tok,'content-type':'application/json'},body:JSON.stringify({path,recursive:false,limit:100})});
-    const d=await r.json();return J({items:(d.entries||[]).map(e=>({id:e.path_display||e.path_lower,name:e.name,type:e['.tag']==='folder'?'folder':'file',size:e.size??null})),has_more:!!d.has_more,next_cursor:null});
+    const endpoint=providerCursor?'https://api.dropboxapi.com/2/files/list_folder/continue':'https://api.dropboxapi.com/2/files/list_folder';
+    const r=await remote(endpoint,{method:'POST',headers:{authorization:'Bearer '+tok,'content-type':'application/json'},body:JSON.stringify(providerCursor?{cursor:providerCursor}:{path,recursive:false,limit:100})});
+    const d=await r.json();
+    const next_cursor=d.has_more?await sealCursor(env,scope,d.cursor):null;
+    return J({items:(d.entries||[]).map(e=>({id:e.path_display||e.path_lower,name:e.name,type:e['.tag']==='folder'?'folder':'file',size:e.size??null})),has_more:!!d.has_more,next_cursor});
    }
    if(!path)return E(400,'file required');
    const r=await remote('https://content.dropboxapi.com/2/files/download',{method:'POST',headers:{authorization:'Bearer '+tok,'dropbox-api-arg':JSON.stringify({path})}});
@@ -88,8 +96,10 @@ export async function onRequest({request,env}){
    z.searchParams.set('q',"'"+fileId+"' in parents and trashed = false");
    z.searchParams.set('fields','nextPageToken,files(id,name,mimeType,size,modifiedTime)');
    z.searchParams.set('pageSize','100');
+   if(providerCursor)z.searchParams.set('pageToken',providerCursor);
    const r=await remote(z,{headers:{authorization:'Bearer '+tok}});const d=await r.json();
-   return J({items:(d.files||[]).map(e=>({id:e.id,name:e.name,type:e.mimeType==='application/vnd.google-apps.folder'?'folder':'file',size:e.size??null})),has_more:!!d.nextPageToken,next_cursor:null});
+   const next_cursor=d.nextPageToken?await sealCursor(env,scope,d.nextPageToken):null;
+   return J({items:(d.files||[]).map(e=>({id:e.id,name:e.name,type:e.mimeType==='application/vnd.google-apps.folder'?'folder':'file',size:e.size??null})),has_more:!!d.nextPageToken,next_cursor});
   }
   const m=await driveMeta(tok,fileId);if(m.mimeType==='application/vnd.google-apps.folder')return E(422,'not a file');
   const native=m.mimeType?.startsWith('application/vnd.google-apps.');
@@ -99,6 +109,7 @@ export async function onRequest({request,env}){
  }catch(e){
   if(e.message==='bad path')return E(400,'invalid path');
   if(e.message==='not configured')return E(503,'provider not configured');
+  if(e.message==='cursor service not configured')return E(503,'pagination is not configured');
   return E(502,'provider unavailable');
  }
 }
