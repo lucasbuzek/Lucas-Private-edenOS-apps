@@ -84,7 +84,7 @@ def inspect_token(config, bearer, *, opener=None, now=None):
             if len(body) > MAX_RESPONSE or response.status != 200:
                 return None
         obj = json.loads(body)
-    except (OSError, URLError, HTTPError, ValueError, UnicodeError, TypeError):
+    except (OSError, URLError, HTTPError, ValueError, UnicodeError, TypeError, RecursionError):
         return None
     if not isinstance(obj, dict) or obj.get("active") is not True or obj.get("iss") != config.issuer:
         return None
