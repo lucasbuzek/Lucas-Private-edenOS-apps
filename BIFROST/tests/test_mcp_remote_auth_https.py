@@ -63,7 +63,7 @@ class IntrospectionHTTPSTests(unittest.TestCase):
     def setUp(self):
         self.config = auth.Settings(
             self.server.base_url, "https://bifrost.example/mcp",
-            self.server.base_url + "/introspect", "fixture-client", "fixture-secret")
+            self.server.base_url + "/introspect", "fixture-client", "fixture-secret", ("fixture-owner",))
         self.payload = {"active": True, "iss": self.config.issuer,
                         "aud": self.config.resource, "scope": "bifrost:read",
                         "sub": "fixture-owner", "client_id": "fixture-app", "exp": 2000}
@@ -96,6 +96,11 @@ class IntrospectionHTTPSTests(unittest.TestCase):
         self.respond({"active": False})
         self.assertIsNone(self.inspect())
         self.assertEqual(len(self.server.requests), 2)
+
+    def test_another_valid_subject_is_denied_over_tls(self):
+        self.respond({**self.payload, "sub": "uninvited-user"})
+        self.assertIsNone(self.inspect())
+        self.assertEqual(len(self.server.requests), 1)
 
     def test_redirects_never_forward_credentials(self):
         for status in (301, 302, 303, 307, 308):
