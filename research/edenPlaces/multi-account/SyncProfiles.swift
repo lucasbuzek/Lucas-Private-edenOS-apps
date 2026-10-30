@@ -74,9 +74,18 @@ public struct PlacesFolderPermission: Codable, Equatable, Sendable {
     public enum Mode: String, Codable, Sendable { case off, download, sync }
     public var path: String
     public var mode: Mode
-    public init(_ path: String, mode: Mode = .off) throws {
+    public var recursive: Bool
+    public init(_ path: String, mode: Mode = .off, recursive: Bool = false) throws {
         self.path = try PathSafety.normalizedRelativePath(path)
         self.mode = mode
+        self.recursive = recursive
+    }
+    enum CodingKeys: String, CodingKey { case path, mode, recursive }
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        self.path = try c.decode(String.self, forKey: .path)
+        self.mode = try c.decode(Mode.self, forKey: .mode)
+        self.recursive = try c.decodeIfPresent(Bool.self, forKey: .recursive) ?? false
     }
 }
 
@@ -98,7 +107,7 @@ public struct PlacesProfileRegistry: Codable, Equatable {
         guard let i=profiles.firstIndex(where: { $0.id==id }) else { return }
         profiles[i].automatic=false
         // Revocation is persistent. The worker MUST reload this registry before each transfer.
-        profiles[i].folderGrants = try profiles[i].folderGrants.map { try PlacesFolderPermission($0.path, mode: .off) }
+        profiles[i].folderGrants = try profiles[i].folderGrants.map { try PlacesFolderPermission($0.path, mode: .off, recursive: $0.recursive) }
         try validate()
     }
     public func validate() throws {
