@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>AppleRAVEN MCP — Connect your Apple devices</title>
+<style>
+:root{color-scheme:light;--bg:#f5f7fb;--card:#fff;--ink:#172334;--muted:#5b6c7e;--accent:#176ac6;--border:#dbe3ee}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}
+main{max-width:820px;margin:5vh auto;padding:24px}.top{display:flex;align-items:center;gap:14px;margin-bottom:24px}.logo{display:grid;place-items:center;width:54px;height:54px;border-radius:15px;background:#0e2238;color:white;font-size:24px;font-weight:800}
+h1{font-size:clamp(27px,4vw,38px);line-height:1.14;margin:0}p{margin:9px 0 16px;color:var(--muted)}
+.card{padding:26px;border:1px solid var(--border);background:var(--card);border-radius:18px;box-shadow:0 12px 35px #17233409}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}.button{display:inline-block;background:var(--accent);color:white;padding:12px 18px;text-decoration:none;font-weight:650;border-radius:9px}.button.secondary{background:white;color:var(--accent);border:1px solid #9bb9da}
+ul{padding-left:22px;margin:18px 0 8px}li{margin:8px 0}small,.foot{color:var(--muted);font-size:13px}.foot{margin-top:18px}
+code{font:13px ui-monospace,SFMono-Regular,Consolas,monospace;background:#eef3f9;padding:3px 6px;border-radius:5px;overflow-wrap:anywhere}
+@media(max-width:560px){main{padding:15px;margin:16px auto}.card{padding:20px}.actions{display:grid}.button{text-align:center}}
+</style>
+</head>
+<body>
+<main>
+<div class="top"><div class="logo">R</div><div><h1>AppleRAVEN MCP</h1><p>One Apple MCP. Existing open-source tools. Your devices, your approval.</p></div></div>
+<section class="card" aria-label="Installer">
+<h2>Install and connect</h2>
+<p>Deploy the always-on Oracle coordinator and enroll your Mac using your existing owner account. No Remote Desktop Commander and no credentials pasted into a webpage.</p>
+<div class="actions">
+<a class="button" href="./bootstrap.command" download="AppleRAVEN-Install.command">Download one-step Mac installer</a>
+<a class="button secondary" href="https://appleraven-private.lucasravensnest.workers.dev/pair" rel="noopener">Owner login &amp; Mac pairing</a>
+</div>
+<ul>
+<li><strong>Download</strong> the command file. On macOS, run <code>bash ~/Downloads/AppleRAVEN-Install.command</code> in Terminal.</li>
+<li><strong>Sign in</strong> through the opened GitHub and Cloudflare browser pages. The installer reads your existing SSH identity on your Mac.</li>
+<li><strong>Connect</strong> authorized source MCP providers and approve native operations locally on the Mac.</li>
+</ul>
+<p><small>Includes Finder/files, Terminal, desktop automation, Shortcuts, Apple apps, Photos and Xcode via their real installed MCP servers. Individual macOS permissions and source requirements apply.</small></p>
+</section>
+<div class="foot">Requested address: <code>appleravenMCP.ravensnest.pages.dev</code> · Private original source:
+<a href="https://github.com/lucasbuzek/Lucas-Private-edenOS-apps/tree/candidate/appleraven-unified-source-federation-oracle-20261031/AppleRAVEN">AppleRAVEN GitHub</a>.
+This page prepares installation; a real device connection is confirmed only by a successful end-to-end tool call.</div>
+</main>
+</body>
+</html>
