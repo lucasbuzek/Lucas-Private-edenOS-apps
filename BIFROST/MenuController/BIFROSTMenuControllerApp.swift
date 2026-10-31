@@ -55,6 +55,14 @@ struct BIFROSTMenuControllerApp: App {
                         )
                 }
             }
+            .task {
+                // Refresh the one real Headless state even while the menu is closed.
+                // Keep Awake expiry and remote/manual stops must reach the status item.
+                while !Task.isCancelled {
+                    headless.refresh()
+                    try? await Task.sleep(for: .seconds(30))
+                }
+            }
             .accessibilityLabel(
                 "BIFROST Menu · Keep Awake " +
                 (headless.caffeinateActive ? "active" : "inactive") + " · Headless " +
