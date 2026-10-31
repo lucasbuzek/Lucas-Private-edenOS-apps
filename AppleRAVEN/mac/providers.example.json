@@ -1,0 +1,57 @@
+{
+  "$comment": "Copy to ~/.config/appleraven/providers.json and enable only providers installed and approved on this Mac. Source MCP servers execute locally; Oracle runs cloud orchestration only.",
+  "providers": [
+    {
+      "key": "macui",
+      "command": "npx",
+      "args": [
+        "-y",
+        "mac-use-mcp@1.1.1"
+      ],
+      "source": "https://github.com/antbotlab/mac-use-mcp",
+      "license": "MIT"
+    },
+    {
+      "key": "pyapple",
+      "command": "pyapple-mcp",
+      "args": [],
+      "source": "https://github.com/54yyyu/pyapple-mcp",
+      "license": "MIT"
+    },
+    {
+      "key": "macdev",
+      "command": "node",
+      "args": [
+        "/ABSOLUTE/PATH/TO/mac-developer-bridge/bridge.mjs"
+      ],
+      "source": "https://github.com/alexanderradahl/mac-developer-bridge",
+      "license": "MIT",
+      "security": "No command allowlist; per-call Mac authorization enforced by AppleRAVEN agent"
+    },
+    {
+      "key": "appleapps",
+      "command": "node",
+      "args": [
+        "/ABSOLUTE/PATH/TO/Apple-MCP/dist/mcp/index.js"
+      ],
+      "source": "https://github.com/0xatrilla/Apple-MCP",
+      "security": "Requires app-specific macOS permissions and installation"
+    },
+    {
+      "key": "xcode",
+      "command": "/ABSOLUTE/PATH/TO/xcode-studio-mcp/.build/release/XcodeStudioMCP",
+      "args": [],
+      "source": "https://github.com/kevinswint/xcode-studio-mcp",
+      "license": "MIT"
+    },
+    {
+      "key": "shortcuts",
+      "command": "node",
+      "args": [
+        "/ABSOLUTE/PATH/TO/mcp-server-apple-shortcuts/build/index.js"
+      ],
+      "source": "https://github.com/recursechat/mcp-server-apple-shortcuts",
+      "license": "Apache-2.0"
+    }
+  ]
+}
