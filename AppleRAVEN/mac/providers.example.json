@@ -52,6 +52,48 @@
       ],
       "source": "https://github.com/recursechat/mcp-server-apple-shortcuts",
       "license": "Apache-2.0"
+    },
+    {
+      "key": "photos",
+      "command": "npx",
+      "args": [
+        "-y",
+        "apple-photos-mcp"
+      ],
+      "source": "https://github.com/sweetrb/apple-photos-mcp",
+      "license": "MIT",
+      "security": "Requires Photos Full Disk Access; writes opt-in upstream"
+    },
+    {
+      "key": "icloud",
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-icloud"
+      ],
+      "source": "https://github.com/MrGo2/icloud-mcp",
+      "license": "MIT",
+      "security": "Use local AppleScript mode; never export iCloud credentials to Oracle"
+    },
+    {
+      "key": "macosbridge",
+      "command": "/ABSOLUTE/PATH/TO/Library/Application Support/MacOSAgentBridge/bridge",
+      "args": [
+        "--serve"
+      ],
+      "source": "https://github.com/juliusloon/macos-agent-bridge",
+      "license": "MIT",
+      "security": "Install official native helper and management extension for its scoped approvals"
+    },
+    {
+      "key": "photoscli",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@thenavidm/apple-photos-mcp-cli"
+      ],
+      "source": "https://github.com/thenavidm/apple-photos-mcp-cli",
+      "license": "MIT"
     }
   ]
 }
