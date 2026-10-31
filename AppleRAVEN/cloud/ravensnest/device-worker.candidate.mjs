@@ -1,3 +1,4 @@
+import {handleDeviceProviders} from "./device-providers.mjs";
 /**
  * AppleRAVEN separate device-ingress CANDIDATE, not the Access-protected owner
  * MCP. Public enrollment is one-time challenge gated; actual permission is
@@ -29,6 +30,11 @@ export default {async fetch(request,env){
  if(p==='/health'&&request.method==='GET')return json({service:'AppleRAVEN device bridge',stage:'candidate',online_mac_not_implied:true});
  if(request.method!=='POST'||!p.startsWith('/v1/'))return json({error:'not_found'},404);
  if(request.headers.get('origin'))return json({error:'browser_origin_denied'},403);
+ if(p.startsWith('/v1/device/providers/')){
+  const d=await device(request,env);
+  if(!d)return json({error:'unauthorized'},401);
+  try{return await handleDeviceProviders(request,env,d,p)}catch{return json({error:'backend_unavailable'},503)}
+ }
  let b;try{b=await body(request)}catch{return json({error:'invalid_request'},400)}
  try{
   if(p==='/v1/pair/start'){
@@ -53,9 +59,10 @@ export default {async fetch(request,env){
    try{outcomes=await env.DB.batch([
      env.DB.prepare('UPDATE appleraven_pair_challenges SET redeemed_at=?1,device_id=?2 WHERE id=?3 AND redeemed_at IS NULL AND approved_by IS NOT NULL AND expires_at>=?1').bind(now,id,row.id),
      env.DB.prepare("INSERT INTO devices(id,name,kind,credential_sha256,created_by,created_at) SELECT ?1,device_name,'device',?2,approved_by,?3 FROM appleraven_pair_challenges WHERE id=?4 AND device_id=?1 AND redeemed_at=?3").bind(id,hashed,now,row.id),
-     env.DB.prepare("INSERT INTO grants(id,user_id,device_id,capability,created_at,created_by) SELECT ?1,created_by,id,'shortcuts.list',?2,created_by FROM devices WHERE id=?3 AND revoked_at IS NULL").bind('gr_'+hex(12),now,id)
+     env.DB.prepare("INSERT INTO grants(id,user_id,device_id,capability,created_at,created_by) SELECT ?1,created_by,id,'shortcuts.list',?2,created_by FROM devices WHERE id=?3 AND revoked_at IS NULL").bind('gr_'+hex(12),now,id),
+     env.DB.prepare("INSERT INTO grants(id,user_id,device_id,capability,created_at,created_by) SELECT ?1,created_by,id,'tools.proxy',?2,created_by FROM devices WHERE id=?3 AND revoked_at IS NULL").bind('gr_'+hex(12),now,id)
    ])}catch{return json({error:'enrollment_transaction_failed'},503)}
-   if(outcomes?.length!==3||outcomes.some(x=>x.meta?.changes!==1))
+   if(outcomes?.length!==4||outcomes.some(x=>x.meta?.changes!==1))
      return json({error:'pairing_already_redeemed_or_incomplete'},409);
    return json({status:'approved',device_token:token,device_id:id});
   }
