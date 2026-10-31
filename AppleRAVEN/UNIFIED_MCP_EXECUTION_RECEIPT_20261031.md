@@ -21,3 +21,6 @@ Not completed / blocking:
 - Existing ChatGPT plugin is not advertised as fully functional across web/iOS until authenticated tool acceptance succeeds.
 
 Next release gates: Mac owner pairing; Oracle authenticated SSH; signed service tunnel; cloud OAuth consent; end-to-end native/tool/security tests; Pages authenticated installer; in-place update of the EXISTING plugin identity; production promotion only after receipts.
+
+
+Canonical Cloudflare Pages deployment target (owner correction, 2026-10-31): https://appleravenMCP.ravensnest.pages.dev . This is the requested address, not proof of a live deployment.
