@@ -102,7 +102,7 @@ final class HeadlessClient: ObservableObject {
         prefs.dashboardSections = prefs.dashboardSections.filter {
             ["headless", "caffeinate"].contains($0)
         }
-        if ![0, 30, 60, 120].contains(prefs.caffeinateMinutes) {
+        if ![0, 5, 10, 15, 30, 45, 60, 90, 120, 180, 240, 360, 480].contains(prefs.caffeinateMinutes) {
             prefs.caffeinateMinutes = 60
         }
         return prefs
@@ -124,7 +124,7 @@ final class HeadlessClient: ObservableObject {
     }
 
     func setCaffeinateMinutes(_ minutes: Int) {
-        guard [0, 30, 60, 120].contains(minutes) else { return }
+        guard [0, 5, 10, 15, 30, 45, 60, 90, 120, 180, 240, 360, 480].contains(minutes) else { return }
         update { $0.caffeinateMinutes = minutes }
     }
 
@@ -587,6 +587,25 @@ final class HeadlessClient: ObservableObject {
 
     func startCaffeinate() {
         control("caffeinate.start", duration: preferences.caffeinateMinutes)
+    }
+
+    /// Duration selection and activation are one user action.
+    /// Refuse unverified Headless and external caffeinate ownership.
+    func activateCaffeinate(minutes: Int) {
+        guard [0, 5, 10, 15, 30, 45, 60, 90, 120, 180, 240, 360, 480].contains(minutes) else {
+            feedback = "Unsupported Keep Awake duration"
+            return
+        }
+        guard isRunning else {
+            feedback = "Start BIFROST Headless before using Keep Awake"
+            return
+        }
+        guard systemCaffeinateObserved != true || caffeinateActive else {
+            feedback = "External Caffeinate is running; BIFROST will not take ownership"
+            return
+        }
+        setCaffeinateMinutes(minutes)
+        control("caffeinate.start", duration: minutes)
     }
 
     func stopCaffeinate() { control("caffeinate.stop") }
