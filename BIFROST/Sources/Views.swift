@@ -38,15 +38,14 @@ struct OverviewView: View {
                             Button(durationName(minutes)) {
                                 system.headless.activateCaffeinate(minutes: minutes)
                             }
-                            .disabled(!system.headless.isRunning ||
-                                      (system.headless.systemCaffeinateObserved == true &&
-                                       !system.headless.caffeinateActive))
+                            .disabled(system.headless.systemCaffeinateObserved == true &&
+                                      !system.headless.caffeinateActive)
                         }
                         Spacer()
                         Button("Refresh") { system.refresh() }
                     }
                     if !system.headless.isRunning {
-                        Text("Start BIFROST Headless to enable local Keep Awake.")
+                        Text("Choosing a duration starts BIFROST Headless on this Mac.")
                             .font(.caption).foregroundStyle(.secondary)
                     }
                 }
