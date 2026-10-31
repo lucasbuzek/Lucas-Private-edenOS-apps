@@ -76,6 +76,8 @@ class BifrostIndependentMenuContracts(unittest.TestCase):
         self.assertIn('Image(systemName: "sun.max.fill")', self.agent)
         self.assertNotIn('Button("Start BIFROST Keep Awake")', self.menu)
         self.assertIn('func activateCaffeinate(minutes: Int)', self.client)
+        self.assertIn('        start()\n        Task { @MainActor in', self.client)
+        self.assertNotIn('.disabled(!headless.isRunning || !canStartKeepAwake)', self.menu)
         overview = (SOURCE / "Views.swift").read_text()
         self.assertIn('system.headless.activateCaffeinate(minutes: minutes)', overview)
         self.assertIn('system.headless.awakeUntil', overview)
