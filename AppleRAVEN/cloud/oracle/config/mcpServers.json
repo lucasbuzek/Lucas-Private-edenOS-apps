@@ -1,0 +1,79 @@
+{
+  "mcpServers": {
+    "appleraven": {
+      "type": "streamable-http",
+      "enabled": false,
+      "url": "${APPLE_RAVEN_REMOTE_URL}",
+      "headers": {
+        "Authorization": "Bearer ${APPLE_RAVEN_REMOTE_TOKEN}"
+      },
+      "namespace": "apple",
+      "prefixTools": true,
+      "readOnly": false,
+      "toolFilter": [
+        "*"
+      ],
+      "timeout": 30
+    },
+    "conductor": {
+      "type": "streamable-http",
+      "enabled": false,
+      "url": "${CONDUCTOR_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${CONDUCTOR_MCP_TOKEN}"
+      },
+      "namespace": "conductor",
+      "prefixTools": true,
+      "readOnly": false,
+      "toolFilter": [
+        "*"
+      ],
+      "timeout": 30
+    },
+    "asana": {
+      "type": "streamable-http",
+      "enabled": false,
+      "url": "${ASANA_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${ASANA_MCP_TOKEN}"
+      },
+      "namespace": "asana",
+      "prefixTools": true,
+      "readOnly": false,
+      "toolFilter": [
+        "*"
+      ],
+      "timeout": 30
+    },
+    "dropbox": {
+      "type": "streamable-http",
+      "enabled": false,
+      "url": "${DROPBOX_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${DROPBOX_MCP_TOKEN}"
+      },
+      "namespace": "dropbox",
+      "prefixTools": true,
+      "readOnly": false,
+      "toolFilter": [
+        "*"
+      ],
+      "timeout": 30
+    },
+    "gdrive": {
+      "type": "streamable-http",
+      "enabled": false,
+      "url": "${GDRIVE_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${GDRIVE_MCP_TOKEN}"
+      },
+      "namespace": "gdrive",
+      "prefixTools": true,
+      "readOnly": false,
+      "toolFilter": [
+        "*"
+      ],
+      "timeout": 30
+    }
+  }
+}
