@@ -47,12 +47,16 @@ export default {async fetch(request,env){
    if(!row.approved_by)return json({status:'pending'});
    if(row.redeemed_at)return json({status:'revoked'},410);
    const id='mac_'+hex(12),token=hex(32),hashed=await sha(token);
-   const m=await env.DB.prepare('UPDATE appleraven_pair_challenges SET redeemed_at=?1,device_id=?2 WHERE id=?3 AND redeemed_at IS NULL AND approved_by IS NOT NULL AND expires_at>=?1').bind(now,id,row.id).run();
-   if(m.meta?.changes!==1)return json({status:'revoked'},410);
-   try{await env.DB.batch([
-     env.DB.prepare("INSERT INTO devices(id,name,kind,credential_sha256,created_by,created_at) VALUES(?1,?2,'device',?3,?4,?5)").bind(id,row.device_name,hashed,row.approved_by,now),
-     env.DB.prepare("INSERT INTO grants(id,user_id,device_id,capability,created_at,created_by) VALUES(?1,?2,?3,'shortcuts.list',?4,?5)").bind('gr_'+hex(12),row.approved_by,id,now,row.approved_by)
+   // Commit redemption, device identity and capability grant atomically.
+   // A failed grant must never consume the one-time challenge.
+   let outcomes;
+   try{outcomes=await env.DB.batch([
+     env.DB.prepare('UPDATE appleraven_pair_challenges SET redeemed_at=?1,device_id=?2 WHERE id=?3 AND redeemed_at IS NULL AND approved_by IS NOT NULL AND expires_at>=?1').bind(now,id,row.id),
+     env.DB.prepare("INSERT INTO devices(id,name,kind,credential_sha256,created_by,created_at) SELECT ?1,device_name,'device',?2,approved_by,?3 FROM appleraven_pair_challenges WHERE id=?4 AND device_id=?1 AND redeemed_at=?3").bind(id,hashed,now,row.id),
+     env.DB.prepare("INSERT INTO grants(id,user_id,device_id,capability,created_at,created_by) SELECT ?1,created_by,id,'shortcuts.list',?2,created_by FROM devices WHERE id=?3 AND revoked_at IS NULL").bind('gr_'+hex(12),now,id)
    ])}catch{return json({error:'enrollment_transaction_failed'},503)}
+   if(outcomes?.length!==3||outcomes.some(x=>x.meta?.changes!==1))
+     return json({error:'pairing_already_redeemed_or_incomplete'},409);
    return json({status:'approved',device_token:token,device_id:id});
   }
   if(!['/v1/device/state','/v1/device/next','/v1/device/result'].includes(p))return json({error:'not_found'},404);
