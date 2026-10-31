@@ -138,30 +138,43 @@ struct BIFROSTMenuControllerView: View {
             }
             if showKeepAwake {
                 Menu {
-                    Text(headless.caffeinateActive ? "BIFROST Caffeinate · Running" :
-                         headless.systemCaffeinateObserved == true ?
-                         "External Caffeinate · Not controlled" :
-                         "BIFROST Caffeinate · Stopped")
                     if headless.caffeinateActive {
+                        Text("BIFROST Keep Awake · Active")
+                        if let until = headless.awakeUntil {
+                            Text("Ends at \(until.formatted(date: .omitted, time: .shortened))")
+                            Text(until, style: .timer)
+                        } else {
+                            Text("Active until stopped")
+                        }
                         Button("Stop BIFROST Keep Awake") { headless.stopCaffeinate() }
-                    } else if headless.systemCaffeinateObserved != true {
-                        Button("Start BIFROST Keep Awake") { headless.startCaffeinate() }
-                            .disabled(!headless.isRunning)
+                    } else if headless.systemCaffeinateObserved == true {
+                        Text("External Caffeinate · Not controlled")
+                    } else {
+                        Text("BIFROST Keep Awake · Inactive")
                     }
                     Divider()
                     ForEach([30, 60, 120, 0], id: \.self) { minutes in
-                        Button {
-                            headless.setCaffeinateMinutes(minutes)
-                        } label: {
-                            if headless.preferences.caffeinateMinutes == minutes {
-                                Label(durationName(minutes), systemImage: "checkmark")
-                            } else {
-                                Text(durationName(minutes))
-                            }
+                        Button(durationName(minutes)) {
+                            headless.activateCaffeinate(minutes: minutes)
                         }
+                        .disabled(!headless.isRunning || !canStartKeepAwake)
+                    }
+                    Menu {
+                        ForEach([5, 10, 15, 45, 90, 180, 240, 360, 480], id: \.self) { minutes in
+                            Button(durationName(minutes)) {
+                                headless.activateCaffeinate(minutes: minutes)
+                            }
+                            .disabled(!headless.isRunning || !canStartKeepAwake)
+                        }
+                    } label: {
+                        Text("More durations")
+                    }
+                    if !headless.isRunning {
+                        Text("Start BIFROST Headless to enable Keep Awake")
                     }
                 } label: {
-                    Label("Keep Awake", systemImage: "moon.zzz")
+                    Label(headless.caffeinateActive ? "Keep Awake · Active" : "Keep Awake",
+                          systemImage: headless.caffeinateActive ? "sun.max.fill" : "sun.max")
                 }
             }
 
@@ -231,8 +244,18 @@ struct BIFROSTMenuControllerView: View {
         }
     }
 
+    private var canStartKeepAwake: Bool {
+        headless.systemCaffeinateObserved != true || headless.caffeinateActive
+    }
+
     private func durationName(_ minutes: Int) -> String {
-        minutes == 0 ? "Until stopped" : "\(minutes) minutes"
+        if minutes == 0 { return "Until stopped" }
+        if minutes < 60 { return "\(minutes) minutes" }
+        if minutes.isMultiple(of: 60) {
+            let hours = minutes / 60
+            return "\(hours) hour" + (hours == 1 ? "" : "s")
+        }
+        return "\(minutes / 60) h \(minutes % 60) min"
     }
 
     private func confirmStop() {
