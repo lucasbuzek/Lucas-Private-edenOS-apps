@@ -33,7 +33,7 @@ export async function handleDeviceProviders(request,env,device,path){
    statements.push(env.DB.prepare("INSERT INTO appleraven_provider_tools(node_id,tool_name,description,schema_json,updated_at) VALUES(?1,?2,?3,?4,?5) ON CONFLICT(node_id,tool_name) DO UPDATE SET description=excluded.description,schema_json=excluded.schema_json,updated_at=excluded.updated_at").bind(device.id,t.name,description,serialized,now));
   }
   // Replace the previous manifest only after every new tool has passed validation.
-  await env.DB.prepare("DELETE FROM appleraven_provider_tools WHERE node_id=?1").bind(device.id).run();
+  if(b.append!==true)await env.DB.prepare("DELETE FROM appleraven_provider_tools WHERE node_id=?1").bind(device.id).run();
   for(let i=0;i<statements.length;i+=40)await env.DB.batch(statements.slice(i,i+40));
   return json({ok:true,registered:statements.length});
  }
