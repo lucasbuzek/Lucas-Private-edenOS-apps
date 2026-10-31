@@ -589,23 +589,47 @@ final class HeadlessClient: ObservableObject {
         control("caffeinate.start", duration: preferences.caffeinateMinutes)
     }
 
-    /// Duration selection and activation are one user action.
-    /// Refuse unverified Headless and external caffeinate ownership.
+    /// Duration choice is the explicit user action. The independently owned
+    /// Headless runtime starts only on request, never at login or app startup.
+    /// Never take over another app's caffeinate process or an unknown listener.
     func activateCaffeinate(minutes: Int) {
         guard [0, 5, 10, 15, 30, 45, 60, 90, 120, 180, 240, 360, 480].contains(minutes) else {
             feedback = "Unsupported Keep Awake duration"
-            return
-        }
-        guard isRunning else {
-            feedback = "Start BIFROST Headless before using Keep Awake"
             return
         }
         guard systemCaffeinateObserved != true || caffeinateActive else {
             feedback = "External Caffeinate is running; BIFROST will not take ownership"
             return
         }
+        guard stateMessage != "Unverified Headless identity on localhost" else {
+            feedback = "Keep Awake refused: unknown service on BIFROST's local port"
+            return
+        }
         setCaffeinateMinutes(minutes)
-        control("caffeinate.start", duration: minutes)
+        if isRunning {
+            control("caffeinate.start", duration: minutes)
+            return
+        }
+
+        // A duration button is an explicit request to start local Keep Awake.
+        // Reuse the existing verified launchd/rollback path, then wait for the
+        // shared HeadlessClient identity check before sending any command.
+        start()
+        Task { @MainActor in
+            for _ in 0..<16 {
+                try? await Task.sleep(for: .milliseconds(500))
+                if isRunning {
+                    guard systemCaffeinateObserved != true || caffeinateActive else {
+                        feedback = "Keep Awake refused: external Caffeinate observed"
+                        return
+                    }
+                    control("caffeinate.start", duration: minutes)
+                    return
+                }
+                refresh()
+            }
+            feedback = "Keep Awake not started: BIFROST Headless did not become available"
+        }
     }
 
     func stopCaffeinate() { control("caffeinate.stop") }
