@@ -16,20 +16,52 @@ struct OverviewView: View {
                            "\(system.discovery.services.count) observed",
                            "dot.radiowaves.left.and.right")
             }
-            GroupBox("Local power management") {
-                HStack(spacing: 14) {
-                    Toggle("Keep Mac Awake", isOn: Binding(
-                        get: { system.keepAwake },
-                        set: { system.setKeepAwake($0) }
-                    )).disabled(!system.headless.isRunning)
-                    Spacer()
-                    Button("Refresh") { system.refresh() }
-                }.padding(8)
+            GroupBox("Keep Awake") {
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack {
+                        Label(system.headless.caffeinateActive ? "Active" : "Inactive",
+                              systemImage: system.headless.caffeinateActive ? "sun.max.fill" : "sun.max")
+                        if let until = system.headless.awakeUntil {
+                            Text("Until \(until.formatted(date: .omitted, time: .shortened))")
+                                .foregroundStyle(.secondary)
+                            Text(until, style: .timer).foregroundStyle(.secondary)
+                        } else if system.headless.caffeinateActive {
+                            Text("Until stopped").foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                        if system.headless.caffeinateActive {
+                            Button("Stop") { system.headless.stopCaffeinate() }
+                        }
+                    }
+                    HStack(spacing: 8) {
+                        ForEach([30, 60, 120, 0], id: \.self) { minutes in
+                            Button(durationName(minutes)) {
+                                system.headless.activateCaffeinate(minutes: minutes)
+                            }
+                            .disabled(!system.headless.isRunning ||
+                                      (system.headless.systemCaffeinateObserved == true &&
+                                       !system.headless.caffeinateActive))
+                        }
+                        Spacer()
+                        Button("Refresh") { system.refresh() }
+                    }
+                    if !system.headless.isRunning {
+                        Text("Start BIFROST Headless to enable local Keep Awake.")
+                            .font(.caption).foregroundStyle(.secondary)
+                    }
+                }
+                .padding(8)
             }
             Text("External connections are managed separately by optional plugins.")
                 .font(.caption).foregroundStyle(.secondary)
         }
         .frame(maxWidth: 940, alignment: .leading)
+    }
+    private func durationName(_ minutes: Int) -> String {
+        if minutes == 0 { return "Until stopped" }
+        if minutes == 60 { return "1 hour" }
+        if minutes.isMultiple(of: 60) { return "\(minutes / 60) hours" }
+        return "\(minutes) minutes"
     }
 }
 
