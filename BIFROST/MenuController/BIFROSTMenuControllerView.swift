@@ -157,20 +157,20 @@ struct BIFROSTMenuControllerView: View {
                         Button(durationName(minutes)) {
                             headless.activateCaffeinate(minutes: minutes)
                         }
-                        .disabled(!headless.isRunning || !canStartKeepAwake)
+                        .disabled(!canStartKeepAwake)
                     }
                     Menu {
                         ForEach([5, 10, 15, 45, 90, 180, 240, 360, 480], id: \.self) { minutes in
                             Button(durationName(minutes)) {
                                 headless.activateCaffeinate(minutes: minutes)
                             }
-                            .disabled(!headless.isRunning || !canStartKeepAwake)
+                            .disabled(!canStartKeepAwake)
                         }
                     } label: {
                         Text("More durations")
                     }
                     if !headless.isRunning {
-                        Text("Start BIFROST Headless to enable Keep Awake")
+                        Text("Choosing a duration starts BIFROST Headless on this Mac")
                     }
                 } label: {
                     Label(headless.caffeinateActive ? "Keep Awake · Active" : "Keep Awake",
