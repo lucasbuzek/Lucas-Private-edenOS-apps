@@ -57,3 +57,6 @@ No Apple-native MCP source is reimplemented on Linux. Each upstream's own licens
 ## Acceptance and current limitations
 
 Source code is now assembled on a candidate branch, **not operationally accepted**. No Mac was paired or driven in this ChatGPT session. Oracle SSH key is only available on the owner's Mac, not inside this execution environment; no Docker installation was performed. The current D1 JSON relay bounds responses at 150 KB. Large images/screenshots/files require a tested chunked/streaming data plane before full-sized transfers can be claimed. macOS permission and OS-version gates remain. ChatGPT web integration is not evidence that ChatGPT iOS native app supports the same custom MCP flow; test each separately. The exact Pages hostname requested must be verified against the Cloudflare account's actual project subdomain before publishing.
+
+
+Canonical Cloudflare Pages deployment target (owner correction, 2026-10-31): https://appleravenMCP.ravensnest.pages.dev . This is the requested address, not proof of a live deployment.
