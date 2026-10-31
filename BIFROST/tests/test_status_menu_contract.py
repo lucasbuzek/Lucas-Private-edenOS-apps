@@ -69,6 +69,19 @@ class BifrostIndependentMenuContracts(unittest.TestCase):
         self.assertIn("Quit Menu Controller · Keep Headless", self.menu)
         self.assertNotIn("killall caffeinate", self.menu)
 
+    def test_one_action_keep_awake_and_truthful_status(self):
+        self.assertIn('headless.activateCaffeinate(minutes: minutes)', self.menu)
+        self.assertIn('headless.awakeUntil', self.menu)
+        self.assertIn('headless.caffeinateActive', self.agent)
+        self.assertIn('Image(systemName: "sun.max.fill")', self.agent)
+        self.assertNotIn('Button("Start BIFROST Keep Awake")', self.menu)
+        self.assertIn('func activateCaffeinate(minutes: Int)', self.client)
+        self.assertIn('        start()\n        Task { @MainActor in', self.client)
+        self.assertNotIn('.disabled(!headless.isRunning || !canStartKeepAwake)', self.menu)
+        overview = (SOURCE / "Views.swift").read_text()
+        self.assertIn('system.headless.activateCaffeinate(minutes: minutes)', overview)
+        self.assertIn('system.headless.awakeUntil', overview)
+
     def test_headless_identity_and_rollback_preserved(self):
         self.assertIn("func stop() -> Bool", self.client)
         self.assertIn('identity["productId"] as? String == "eden.bifrost.headless"', self.client)

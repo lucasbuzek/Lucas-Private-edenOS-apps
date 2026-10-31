@@ -37,6 +37,12 @@ struct BIFROSTMenuControllerApp: App {
                         .font(.system(size: 9, weight: .medium, design: .monospaced))
                         .foregroundStyle(.secondary)
                 }
+                if headless.caffeinateActive {
+                    Image(systemName: "sun.max.fill")
+                        .font(.system(size: 9, weight: .semibold))
+                        .foregroundStyle(.orange)
+                        .accessibilityLabel("BIFROST Keep Awake active")
+                }
                 if showHeadlessState {
                     Image(systemName:
                         headless.isRunning ? "circle.fill" :
@@ -49,8 +55,17 @@ struct BIFROSTMenuControllerApp: App {
                         )
                 }
             }
+            .task {
+                // Refresh the one real Headless state even while the menu is closed.
+                // Keep Awake expiry and remote/manual stops must reach the status item.
+                while !Task.isCancelled {
+                    headless.refresh()
+                    try? await Task.sleep(for: .seconds(30))
+                }
+            }
             .accessibilityLabel(
-                "BIFROST Menu · Headless " +
+                "BIFROST Menu · Keep Awake " +
+                (headless.caffeinateActive ? "active" : "inactive") + " · Headless " +
                 (headless.isRunning ? "running" :
                  headless.isRegisteredWithLaunchd == true ? "registered but unreachable" : "stopped") +
                 (menuLevel != "Simple" && peers.hasFreshObservation

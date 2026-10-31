@@ -1,0 +1,43 @@
+name: BIFROST native coherence (isolated candidate)
+
+on:
+  push:
+    branches:
+      - candidate/bifrost-native-coherence-20261031
+    paths:
+      - BIFROST/Sources/**
+      - BIFROST/MenuController/**
+      - BIFROST/tests/test_status_menu_contract.py
+      - BIFROST/tests/test_status_menu_recovered_guards.py
+      - BIFROST/project.yml
+      - .github/workflows/bifrost-native-coherence-candidate.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run native menu and preservation contracts
+        run: python3 -B -m unittest discover -s BIFROST/tests -p "test_status_menu*.py" -v
+
+  macos-build:
+    runs-on: macos-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure XcodeGen is available
+        run: command -v xcodegen || brew install xcodegen
+      - name: Generate Xcode project
+        working-directory: BIFROST
+        run: xcodegen generate
+      - name: Build full native BIFROST without signing
+        working-directory: BIFROST
+        run: xcodebuild -project BIFROST.xcodeproj -scheme BIFROST -configuration Debug CODE_SIGNING_ALLOWED=NO build
+      - name: Build menu helper without signing
+        working-directory: BIFROST
+        run: xcodebuild -project BIFROST.xcodeproj -scheme BIFROSTMenu -configuration Debug CODE_SIGNING_ALLOWED=NO build
