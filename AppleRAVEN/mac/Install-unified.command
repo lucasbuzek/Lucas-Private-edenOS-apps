@@ -38,6 +38,7 @@ if [[ ! -e "$CONFIG/providers.json" ]]; then
  const fs=require("node:fs"),path=require("node:path");
  const base=process.env.APPLE_RAVEN_BASE,p=[];
  p.push({key:"macui",command:"npx",args:["-y","mac-use-mcp@1.1.1"]});
+ p.push({key:"photos",command:"npx",args:["-y","apple-photos-mcp"]});
  if(fs.existsSync(process.env.APPLE_RAVEN_PYAPPLE))p.push({key:"pyapple",command:process.env.APPLE_RAVEN_PYAPPLE,args:[]});
  const dev=path.join(base,"sources/mac-developer-bridge/bridge.mjs");
  if(fs.existsSync(dev))p.push({key:"macdev",command:process.execPath,args:[dev]});
