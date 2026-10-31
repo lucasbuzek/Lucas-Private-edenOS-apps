@@ -22,7 +22,7 @@ const tools=Object.freeze([
 const headers={"content-type":"application/json","cache-control":"no-store","x-content-type-options":"nosniff"};
 const json=(body,status=200,extra={})=>new Response(JSON.stringify(body),{status,headers:{...headers,...extra}});
 const error=(id,code,message,status=400)=>json({jsonrpc:"2.0",id,error:{code,message}},status);
-const reply=(id,value)=>json({jsonrpc:"2.0",id,result:{resultType:"complete",...value}});
+const reply=(id,value)=>json({jsonrpc:"2.0",id,result:{resultType:"complete",...value,_meta:{"io.modelcontextprotocol/serverInfo":{name:"AppleRAVEN",version:"0.1.2"}}}});
 function decode64(v){
  if(typeof v!=="string"||!v||!/^[A-Za-z0-9_-]+$/.test(v))throw new Error("invalid base64url");
  const b=atob(v.replace(/-/g,"+").replace(/_/g,"/").padEnd(Math.ceil(v.length/4)*4,"="));
@@ -86,6 +86,8 @@ const resourceInfo={resource:"https://appleraven-private.lucasravensnest.workers
 const challenge=()=>json({error:"owner_login_required"},401,{"www-authenticate":'Bearer resource_metadata="https://appleraven-private.lucasravensnest.workers.dev/.well-known/oauth-protected-resource"'});
 export default {
  async fetch(request,env){
+  const origin=request.headers.get("origin");
+  if(origin&&origin!==new URL(request.url).origin)return json({error:"origin_forbidden"},403);
   const path=new URL(request.url).pathname;
   if(path==="/pair"||path==="/pair/approve"){
    const identity=await verifyAccess(request);
@@ -117,7 +119,7 @@ export default {
    if(typeof id!=="number"&&typeof id!=="string")return json({error:"missing_request_id"},400);
    if(request.headers.get("Mcp-Method")!==body.method)return error(id,-32602,"method header mismatch");
    const meta=body.params?._meta;
-   if(!meta||meta["io.modelcontextprotocol/protocolVersion"]!==VERSION||typeof meta["io.modelcontextprotocol/clientInfo"]?.name!=="string"||typeof meta["io.modelcontextprotocol/clientCapabilities"]!=="object")return error(id,-32602,"client metadata required");
+   if(!meta||meta["io.modelcontextprotocol/protocolVersion"]!==VERSION||(meta["io.modelcontextprotocol/clientInfo"]!==undefined&&(typeof meta["io.modelcontextprotocol/clientInfo"]?.name!=="string"||typeof meta["io.modelcontextprotocol/clientInfo"]?.version!=="string"))||typeof meta["io.modelcontextprotocol/clientCapabilities"]!=="object")return error(id,-32602,"client metadata required");
    if(body.method==="server/discover")return reply(id,{supportedVersions:[VERSION],capabilities:{tools:{}},instructions:"Owner-private AppleRAVEN. M1 pairing required before native Apple tools are available."});
    if(body.method==="tools/list")return reply(id,{tools});
    if(body.method!=="tools/call")return error(id,-32601,"method not found",404);
