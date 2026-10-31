@@ -1,4 +1,5 @@
 import {handleOwnerPair,PAIR_TOOLS,queueShortcuts,readAction} from "./owner-pair-addon.mjs";
+import {FEDERATION_TOOLS,federationCatalog,federationInvoke,federationResult} from "./provider-federation.mjs";
 /**
  * AppleRAVEN initial OWNER-ONLY MCP.
  * Cloudflare Access Managed OAuth authenticates the client, and this Worker
@@ -16,6 +17,7 @@ const PROFILE_TOOL="appleraven.owner.status";
 const DEVICE_TOOL="appleraven.devices.list";
 const tools=Object.freeze([
  ...PAIR_TOOLS,
+ ...FEDERATION_TOOLS,
  {name:PROFILE_TOOL,title:"AppleRAVEN owner profile",description:"Report the authenticated owner profile and pairing state for this AppleRAVEN connection.",inputSchema:{type:"object",properties:{},additionalProperties:false},annotations:{readOnlyHint:true,destructiveHint:false,openWorldHint:false},_meta:{"openai/profile":true}},
  {name:DEVICE_TOOL,title:"My paired Apple devices",description:"List only live enrollment records explicitly granted to the authenticated owner. Returns empty until M1 is paired.",inputSchema:{type:"object",properties:{},additionalProperties:false},annotations:{readOnlyHint:true,destructiveHint:false,openWorldHint:false}}
 ]);
@@ -127,7 +129,7 @@ export default {
    if(!tools.some(t=>t.name===body.params.name))return error(id,-32601,"unknown tool",404);
    const args=body.params.arguments||{};
    if(typeof args!=="object"||Array.isArray(args))return error(id,-32602,"invalid arguments");
-   if(![PAIR_TOOLS[0].name,PAIR_TOOLS[1].name].includes(body.params.name)&&Object.keys(args).length)return error(id,-32602,"unexpected arguments");
+   if(![PAIR_TOOLS[0].name,PAIR_TOOLS[1].name,...FEDERATION_TOOLS.map(t=>t.name)].includes(body.params.name)&&Object.keys(args).length)return error(id,-32602,"unexpected arguments");
    let owner;
    try{owner=await getOwner(env,identity)}catch{return error(id,-32603,"owner store unavailable",503)}
    if(!owner)return error(id,-32001,"account not authorized",403);
@@ -142,6 +144,15 @@ export default {
     if(Object.keys(args).length!==1||typeof args.id!=="string")return error(id,-32602,"invalid action id");
     result=await readAction(env,owner,args.id);
     if(result.error)return error(id,-32002,result.error,result.status);
+   }else if(body.params.name===FEDERATION_TOOLS[0].name){
+    result=await federationCatalog(env,owner,args);
+    if(result.error)return error(id,-32005,result.error,result.status);
+   }else if(body.params.name===FEDERATION_TOOLS[1].name){
+    result=await federationInvoke(env,owner,args);
+    if(result.error)return error(id,-32005,result.error,result.status);
+   }else if(body.params.name===FEDERATION_TOOLS[2].name){
+    result=await federationResult(env,owner,args);
+    if(result.error)return error(id,-32005,result.error,result.status);
    }else return error(id,-32601,"unknown tool",404);
    return reply(id,{content:[{type:"text",text:JSON.stringify(result)}],structuredContent:result,isError:false});
   }
