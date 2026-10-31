@@ -1,0 +1,39 @@
+# AppleRAVEN Oracle coordinator — isolated from OracleCloudIn and other projects.
+# Native macOS tools do NOT run inside this Linux container.
+services:
+  applemcp-orchestrator:
+    image: ghcr.io/cociweb/mcp-gateway:latest
+    restart: unless-stopped
+    container_name: appleraven-orchestrator
+    environment:
+      GATEWAY_LISTEN: "0.0.0.0"
+      GATEWAY_PORT: "5555"
+      GATEWAY_PATH: "/mcp"
+      GATEWAY_RELOAD: "true"
+      GATEWAY_HEALTH_ENDPOINT: "true"
+      GATEWAY_METRICS: "false"
+      MCP_SERVERS_CONFIG: "/app/config/mcpServers.json"
+      APPLE_RAVEN_REMOTE_URL: "${APPLE_RAVEN_REMOTE_URL:-}"
+      APPLE_RAVEN_REMOTE_TOKEN: "${APPLE_RAVEN_REMOTE_TOKEN:-}"
+      CONDUCTOR_MCP_URL: "${CONDUCTOR_MCP_URL:-}"
+      CONDUCTOR_MCP_TOKEN: "${CONDUCTOR_MCP_TOKEN:-}"
+      ASANA_MCP_URL: "${ASANA_MCP_URL:-}"
+      ASANA_MCP_TOKEN: "${ASANA_MCP_TOKEN:-}"
+      DROPBOX_MCP_URL: "${DROPBOX_MCP_URL:-}"
+      DROPBOX_MCP_TOKEN: "${DROPBOX_MCP_TOKEN:-}"
+      GDRIVE_MCP_URL: "${GDRIVE_MCP_URL:-}"
+      GDRIVE_MCP_TOKEN: "${GDRIVE_MCP_TOKEN:-}"
+    ports:
+      - "127.0.0.1:5567:5555"
+    volumes:
+      - "./config:/app/config:ro"
+    networks:
+      - appleraven-private
+    healthcheck:
+      test: ["CMD-SHELL","python -c 'import urllib.request; urllib.request.urlopen(\"http://127.0.0.1:5555/health\",timeout=5)'"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+networks:
+  appleraven-private:
+    driver: bridge
