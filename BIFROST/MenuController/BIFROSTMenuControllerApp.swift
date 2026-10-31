@@ -37,6 +37,12 @@ struct BIFROSTMenuControllerApp: App {
                         .font(.system(size: 9, weight: .medium, design: .monospaced))
                         .foregroundStyle(.secondary)
                 }
+                if headless.caffeinateActive {
+                    Image(systemName: "sun.max.fill")
+                        .font(.system(size: 9, weight: .semibold))
+                        .foregroundStyle(.orange)
+                        .accessibilityLabel("BIFROST Keep Awake active")
+                }
                 if showHeadlessState {
                     Image(systemName:
                         headless.isRunning ? "circle.fill" :
@@ -50,7 +56,8 @@ struct BIFROSTMenuControllerApp: App {
                 }
             }
             .accessibilityLabel(
-                "BIFROST Menu · Headless " +
+                "BIFROST Menu · Keep Awake " +
+                (headless.caffeinateActive ? "active" : "inactive") + " · Headless " +
                 (headless.isRunning ? "running" :
                  headless.isRegisteredWithLaunchd == true ? "registered but unreachable" : "stopped") +
                 (menuLevel != "Simple" && peers.hasFreshObservation
