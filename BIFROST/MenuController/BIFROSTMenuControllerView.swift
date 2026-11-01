@@ -1,100 +1,17 @@
 import SwiftUI
 import AppKit
 
-@MainActor final class BIFROSTNativeAppLauncher: ObservableObject {
-    @Published private(set) var status = ""
-
-    private let expectedBundleID = BIFROSTNativeAppLocation.nativeBundleID
-
-    private func validated(_ url: URL) -> URL? {
-        BIFROSTNativeAppLocation.validated(url)
-    }
-
-    private func findApp() -> URL? {
-        if let chosen = BIFROSTNativeAppLocation.approved() {
-            return chosen
-        }
-        // Flat Releases may contain many accepted historical candidates.
-        // First prefer the exact release partner with our own dated suffix;
-        // do not pick "newest", overwrite an earlier candidate, or launch a
-        // random same-identifier app merely because it shares a directory.
-        let parent = Bundle.main.bundleURL.deletingLastPathComponent()
-        let menuName = Bundle.main.bundleURL.lastPathComponent
-        if menuName.hasPrefix("BIFROST_Menu_") {
-            // Preserve the original VersionZero companion route while also
-            // pairing the current Orchestration / Automation named releases.
-            // Exact bundle identity is verified before requesting a launch.
-            let suffix = String(menuName.dropFirst("BIFROST_Menu_".count))
-            for partnerName in ["BIFROST_" + suffix,
-                                "BIFROST_VersionZero_" + suffix] {
-                if let verified = validated(parent.appendingPathComponent(partnerName)) {
-                    return verified
-                }
-            }
-        }
-        if let registered = NSWorkspace.shared.urlForApplication(
-            withBundleIdentifier: expectedBundleID
-        ), let verified = validated(registered) {
-            return verified
-        }
-        let candidates = (try? FileManager.default.contentsOfDirectory(
-            at: parent,
-            includingPropertiesForKeys: nil,
-            options: [.skipsHiddenFiles]
-        ))?.filter {
-            $0.pathExtension.lowercased() == "app" &&
-            $0.lastPathComponent.hasPrefix("BIFROST_")
-        }.compactMap(validated) ?? []
-        return candidates.count == 1 ? candidates[0] : nil
-    }
-
-    func open() {
-        guard let nativeApp = findApp() else {
-            status = "BIFROST not located. Select the authorized BIFROST app."
-            return
-        }
-        NSWorkspace.shared.openApplication(
-            at: nativeApp,
-            configuration: NSWorkspace.OpenConfiguration()
-        ) { _, error in
-            Task { @MainActor in
-                self.status = error.map { "Open failed: \($0.localizedDescription)" }
-                    ?? "macOS accepted the BIFROST launch request."
-            }
-        }
-    }
-
-    func chooseApp() {
-        let panel = NSOpenPanel()
-        panel.title = "Select the existing BIFROST native application"
-        panel.message = "Only the app with bundle identifier eden.private.bifrost is accepted."
-        panel.allowedContentTypes = [.applicationBundle]
-        panel.allowsOtherFileTypes = false
-        panel.canChooseDirectories = false
-        panel.canChooseFiles = true
-        panel.allowsMultipleSelection = false
-        guard panel.runModal() == .OK, let selection = panel.url else { return }
-        do {
-            let approved = try BIFROSTNativeAppLocation.approve(selection)
-            status = "Approved BIFROST app: \(approved.lastPathComponent). Not launched."
-        } catch {
-            status = "Could not approve BIFROST app: \(error.localizedDescription)"
-        }
-    }
-}
-
 struct BIFROSTMenuControllerView: View {
     @ObservedObject var headless: HeadlessClient
     @ObservedObject var peers: BifrostObservedPeerRegistry
     @AppStorage("bifrost.menu.level") private var menuLevel = "Simple"
     @AppStorage("bifrost.menu.peerSummary") private var showPeerSummary = true
     @AppStorage("bifrost.menu.animateBridge") private var animateBridge = true
-    @StateObject private var launcher = BIFROSTNativeAppLauncher()
+    @Environment(\.openWindow) private var openWindow
     @AppStorage("bifrost.menu.showTitle") private var showTitle = true
     @AppStorage("bifrost.menu.showHeadlessState") private var showHeadlessState = true
     @AppStorage("bifrost.menu.showDashboard") private var showDashboard = true
     @AppStorage("bifrost.menu.showKeepAwake") private var showKeepAwake = true
-    @AppStorage("bifrost.menu.showAppSelection") private var showAppSelection = true
 
     var body: some View {
         Group {
@@ -105,14 +22,10 @@ struct BIFROSTMenuControllerView: View {
                  "Headless · Stopped")
             Divider()
             Button {
-                launcher.open()
+                openWindow(id: "main")
+                NSApplication.shared.activate(ignoringOtherApps: true)
             } label: {
                 Label("Open BIFROST App", systemImage: "macwindow")
-            }
-            if showAppSelection {
-                Button("Locate Existing BIFROST App…") {
-                    launcher.chooseApp()
-                }
             }
             Divider()
 
@@ -215,7 +128,6 @@ struct BIFROSTMenuControllerView: View {
                 Toggle("Show Headless indicator", isOn: $showHeadlessState)
                 Toggle("Show Local Dashboard action", isOn: $showDashboard)
                 Toggle("Show Keep Awake", isOn: $showKeepAwake)
-                Toggle("Show app-location selector", isOn: $showAppSelection)
             } label: {
                 Label("Customize Menu Bar", systemImage: "slider.horizontal.3")
             }
@@ -225,9 +137,6 @@ struct BIFROSTMenuControllerView: View {
             } label: {
                 Label("Refresh Headless Status", systemImage: "arrow.clockwise")
             }
-            if !launcher.status.isEmpty {
-                Text(launcher.status)
-            }
             if !headless.feedback.isEmpty {
                 Text(headless.feedback)
             }
@@ -235,7 +144,7 @@ struct BIFROSTMenuControllerView: View {
             Button {
                 NSApplication.shared.terminate(nil)
             } label: {
-                Label("Quit Menu Controller · Keep Headless", systemImage: "xmark")
+                Label("Quit BIFROST App · Keep Headless", systemImage: "xmark")
             }
         }
         .onAppear {
