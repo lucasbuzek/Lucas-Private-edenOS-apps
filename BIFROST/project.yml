@@ -45,6 +45,7 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: eden.private.bifrost
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_KEY_CFBundleDisplayName: BIFROST
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         SWIFT_VERSION: 6.0
         CODE_SIGN_STYLE: Automatic
         ENABLE_HARDENED_RUNTIME: YES
