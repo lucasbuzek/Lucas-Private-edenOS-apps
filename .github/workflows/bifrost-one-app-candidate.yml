@@ -16,6 +16,8 @@ jobs:
   python-regression:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      PYTHONPATH: BIFROST
     steps:
       - uses: actions/checkout@v4
       - name: All BIFROST Python regression contracts
