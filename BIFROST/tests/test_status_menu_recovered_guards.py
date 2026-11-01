@@ -1,4 +1,4 @@
-"""Recovered pre-refactor BIFROST guards; adjusted for separate Menu process.
+"""Recovered pre-refactor BIFROST guards; adjusted for one native app and status menu.
 
 Derived from the verified 2026-10-19 pre-change source archive.
 Static contracts do not prove physical interaction.
@@ -17,14 +17,14 @@ class PreservedNativeMenuAndHeadlessGuards(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.menu = (MENU / "BIFROSTMenuControllerView.swift").read_text()
-        cls.agent = (MENU / "BIFROSTMenuControllerApp.swift").read_text()
+        cls.agent = (SOURCE / "BIFROSTApp.swift").read_text()
         cls.native = (SOURCE / "BIFROSTApp.swift").read_text()
         cls.client = (SOURCE / "HeadlessClient.swift").read_text()
 
     def test_native_system_menu_contrast(self):
         self.assertIn("Group {", self.menu)
         self.assertNotIn(".background(BifrostUI.sidebar)", self.menu)
-        self.assertNotIn(".preferredColorScheme(.dark)", self.agent)
+        self.assertIn("BifrostBridgeSymbol(width: 24, height: 18)", self.agent)
         self.assertIn('Text("BIFROST · CONNECT · KEEP · RESOLVE")', self.menu)
         self.assertNotIn('systemImage: "network"', self.agent)
 
@@ -37,7 +37,7 @@ class PreservedNativeMenuAndHeadlessGuards(unittest.TestCase):
         self.assertIn("HeadlessServiceView()", root)
 
     def test_quit_menu_is_separate_from_explicit_headless_stop(self):
-        self.assertIn("Quit Menu Controller · Keep Headless", self.menu)
+        self.assertIn("Quit BIFROST App · Keep Headless", self.menu)
         self.assertIn("NSApplication.shared.terminate(nil)", self.menu)
         self.assertIn("confirmStop()", self.menu)
         self.assertIn("headless.stop()", self.menu)
