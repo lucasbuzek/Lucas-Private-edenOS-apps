@@ -18,6 +18,7 @@ from pydantic import AnyHttpUrl
 
 from mcp_remote_auth import ConfigurationError, SCOPE, from_environment, inspect_token
 import shortcalls
+import mcp_remote_capabilities
 
 
 class BifrostTokenVerifier:
@@ -55,6 +56,14 @@ def create_server(config):
         if identity is None or SCOPE not in identity.scopes:
             raise PermissionError("Authenticated capability scope required")
         return shortcalls.call("bifrost.system.platform.read")
+
+    @server.tool(name="bifrost.capabilities.list")
+    def list_capabilities() -> dict:
+        """Discover mapped read-only BIFROST capabilities, without executing them."""
+        identity = get_access_token()
+        if identity is None or SCOPE not in identity.scopes:
+            raise PermissionError("Authenticated capability scope required")
+        return mcp_remote_capabilities.snapshot()
 
     return server
 
