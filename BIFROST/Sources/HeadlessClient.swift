@@ -158,13 +158,15 @@ final class HeadlessClient: ObservableObject {
     func refresh() {
         // Observe only local resources. External plugin services are managed
         // by their own projects, never polled or started by BIFROST Headless.
-        Task.detached(priority: .utility) { [weak self] in
-            let systemAwake = Self.observeCaffeinateProcess()
-            let serviceRegistered = Self.observeHeadlessLaunchdRegistration()
-            await MainActor.run {
-                self?.systemCaffeinateObserved = systemAwake
-                self?.isRegisteredWithLaunchd = serviceRegistered
-            }
+        Task { @MainActor [weak self] in
+            // The detached read has no reference to the observable UI object.
+            // Only the main-actor task updates published menu/window state.
+            let observed = await Task.detached(priority: .utility) {
+                (HeadlessClient.observeCaffeinateProcess(),
+                 HeadlessClient.observeHeadlessLaunchdRegistration())
+            }.value
+            self?.systemCaffeinateObserved = observed.0
+            self?.isRegisteredWithLaunchd = observed.1
         }
         Task { @MainActor in
             do {
