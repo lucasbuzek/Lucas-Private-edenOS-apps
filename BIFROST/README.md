@@ -1,55 +1,34 @@
 # BIFROST
 
-**Identity:** EDEN system-level connective infrastructure  
-**Canonical principle:** CONNECT · KEEP · RESOLVE
+**Bridged Intelligence Fabric for Routing, Orchestration, Services & Tasks**  
+**CONNECT · KEEP · RESOLVE**
 
-## Current authoritative stage
+BIFROST is EDEN's provider-neutral connective product, not a ChatGPT-only client, Cloudflare-specific gateway, MacConnect component, or permanent dependency on any remote desktop provider.
 
-Requirements/research recovery before implementation. Existing BIFROST 12.x artifacts are evidence/candidates, not an automatically promoted product baseline.
+## Product surfaces
 
-## Immediate operational milestone
+- **Native Mac app:** one user-facing BIFROST app with workspace and rainbow status menu, both observing the same Headless state (candidate in PR #28).
+- **Headless:** an independently permissioned local background service, deliberately opt-in. It does not become another user-facing BIFROST app.
+- **Web/PWA:** local representation of the Headless API. The existing Python tests presently report missing PNG icon assets in the GitHub checkout.
+- **Remote MCP:** optional Streamable HTTP adapter with fail-closed OAuth introspection. The currently implemented remote tools are platform read and read-only capability discovery. A manifest-mapped capability is not automatically a verified live provider.
+- **Future cloud and other runtimes:** external cloud infrastructure, persistent task/project/memory storage, scheduler, multi-endpoint execution and agent interoperability require independent provider adapters, policies and receipts. They are not marked operational merely because contracts or examples exist.
 
-BIFROST must govern the Mac remote-development bridge currently provided by Desktop Commander Remote / Remote Desktop Commander:
+MCP is the tool interface. Agent-to-agent handoffs and cloud vendor execution must use each provider's **actual authenticated API/runner contract**; do not fake Codex, Antigravity, or other agents as generic MCP executors.
 
-- detect whether the Remote Device provider is available;
-- fetch/install the official provider if missing;
-- start it;
-- stop it;
-- restart it;
-- report truthful status;
-- preserve/reuse its existing authorization rather than storing credentials itself;
-- expose native macOS keep-awake control separately from remote-access state.
+## Ownership boundaries
 
-Remote Desktop Commander is a reference implementation, test harness and development bridge. It is not a permanent HEIMDALL runtime dependency and does not replace BIFROST.
+BIFROST owns connective identities, provider/capability resolution, transport, observable state, and safe dispatch contracts. CONDUCTOR owns higher orchestration; FORGE performs reviewed build/test/package steps; HEIMDALL owns presentation; specialist apps retain their own domain authority. Legacy remote desktop utilities remain independent optional providers or test fixtures, not bootstrap requirements.
 
-## Power-management requirement
+## Current engineering state
 
-Use native macOS `caffeinate` where sufficient. Distinguish:
+- The working source is a **GitHub candidate**, not a released installed build or promoted last-known-good product. A physical Mac compile, signed packaging, spectral icon rendering, and interaction acceptance are separate.
+- Keep Awake duration selection is a single explicit action against the verified BIFROST Headless endpoint; external caffeinate processes cannot be stopped as a side effect.
+- Cloudflare inventory or an unrelated Worker does not constitute BIFROST deployment. No authenticated cloud orchestration mesh, hosted persistent memory or universal cross-vendor agent dispatcher has been accepted.
+- Existing installed BIFROST Menu helper copies are not automatically deleted; migration to the one-app design must be owner-approved after testing.
 
-1. **Remote Access keep-awake** — provider-scoped; Remote Desktop Commander currently uses caffeinate by default while its remote process runs.
-2. **BIFROST Keep Awake** — independent native power capability, controllable even when Remote Desktop Commander is stopped.
+See docs/ONE_APP_CANDIDATE_20261101.md for acceptance, migration and exact remaining gates.
 
-Do not require a third-party Caffeine/Amphetamine-style app when native macOS capability is sufficient.
+## Evidence discipline
 
-## Canonical Mac workspace
-
-Persistent: `~/edenOS/Projects/BIFROST/`  
-Temporary: `~/edenOS/Temporary/BIFROST/`
-
-Do not scatter incremental builds through Downloads/Desktop. Git/history carries evolution.
-
-## Authority boundaries
-
-- **EITRI / EITRIMB:** software-development governor.
-- **CONDUCTOR:** orchestration under its own canon.
-- **FORGE:** deterministic implementation/build/test/package execution.
-- **PENELOPE:** App authority for identity, lineage, provenance and recovery relationships.
-- **BIFROST:** connectivity, device/provider/capability resolution and persistent connective state.
-- Specialist Apps retain their own domain authority and databases.
-
-## Evidence rules
-
-`GENERATED ≠ IMPLEMENTED ≠ BUILT ≠ TESTED ≠ VERIFIED ≠ RELEASED`  
-`UNKNOWN ≠ PASS`
-
-Preserve LKG. Do not promote a route, UI, mock, registry entry or package merely because it exists.
+**GENERATED ≠ IMPLEMENTED ≠ BUILT ≠ TESTED ≠ VERIFIED ≠ RELEASED.**  
+**UNKNOWN ≠ PASS.** Preserve the existing last-known-good installation and source history until acceptance.
