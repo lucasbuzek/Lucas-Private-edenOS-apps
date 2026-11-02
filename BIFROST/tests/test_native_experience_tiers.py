@@ -73,7 +73,7 @@ class BifrostExperienceTests(unittest.TestCase):
 
     def test_menu_retains_vector_arch_and_original_independent_actions(self):
         icon=(SRC/"VisualIdentity.swift").read_text()
-        app=(MENU/"BIFROSTMenuControllerApp.swift").read_text()
+        app=(SRC/"BIFROSTApp.swift").read_text()
         menu=(MENU/"BIFROSTMenuControllerView.swift").read_text()
         self.assertIn("struct BifrostBridgeSymbol:",icon)
         self.assertIn("BridgeArc(inset: 0)",icon)
@@ -83,30 +83,22 @@ class BifrostExperienceTests(unittest.TestCase):
         self.assertIn(".menuBarExtraStyle(.menu)",app)
         for label in ("Open BIFROST App","Start Headless","Stop Headless…",
                       "Keep Awake","Open Local Dashboard","Customize Menu Bar",
-                      "Quit Menu Controller · Keep Headless"):
+                      "Quit BIFROST App · Keep Headless"):
             self.assertIn(label,menu)
         self.assertIn("headless.isRegisteredWithLaunchd",app)
         self.assertIn("confirmStop()",menu)
         self.assertNotIn("headless.start()",app)
 
-    def test_exact_named_release_pair_and_older_versionzero_preserved(self):
+    def test_single_built_bundle_replaces_release_pair_lookup(self):
+        project=(ROOT/"project.yml").read_text()
         menu=(MENU/"BIFROSTMenuControllerView.swift").read_text()
-        self.assertIn('["BIFROST_" + suffix,',menu)
-        self.assertIn('"BIFROST_VersionZero_" + suffix]',menu)
-        self.assertIn("validated(parent.appendingPathComponent(partnerName))",menu)
-        examples=[
-            ("BIFROST_Menu_Orchestration_20261019_macOS_Custom_TEST.app",
-             "BIFROST_Orchestration_20261019_macOS_Custom_TEST.app"),
-            ("BIFROST_Menu_Automation_20261019_macOS_Custom_TEST.app",
-             "BIFROST_Automation_20261019_macOS_Custom_TEST.app"),
-            ("BIFROST_Menu_20261019_macOS_Custom_TEST_R3.app",
-             "BIFROST_VersionZero_20261019_macOS_Custom_TEST_R3.app")
-        ]
-        for observed, expected in examples:
-            suffix=observed.removeprefix("BIFROST_Menu_")
-            matches={"BIFROST_"+suffix,"BIFROST_VersionZero_"+suffix}
-            self.assertIn(expected,matches)
+        self.assertEqual(project.count("type: application"), 1)
+        self.assertIn('PRODUCT_BUNDLE_IDENTIFIER: eden.private.bifrost',project)
+        self.assertNotIn('PRODUCT_BUNDLE_IDENTIFIER: eden.private.bifrost.menu',project)
+        self.assertIn('openWindow(id: "main")',menu)
+        self.assertNotIn('BIFROST_VersionZero_',menu)
+        self.assertNotIn('validated(parent.appendingPathComponent(partnerName))',menu)
+
 
 if __name__=="__main__":
     unittest.main()
-

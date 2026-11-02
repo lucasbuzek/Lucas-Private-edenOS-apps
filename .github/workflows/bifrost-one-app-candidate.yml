@@ -1,0 +1,38 @@
+name: BIFROST one-app native candidate
+
+on:
+  push:
+    branches:
+      - candidate/bifrost-one-app-status-20261101
+    paths:
+      - BIFROST/**
+      - .github/workflows/bifrost-one-app-candidate.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONPATH: BIFROST
+    steps:
+      - uses: actions/checkout@v4
+      - name: All BIFROST Python regression contracts
+        run: python3 -B -m unittest discover -s BIFROST/tests -p 'test_*.py' -v
+
+  native-macos-build:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install XcodeGen
+        run: command -v xcodegen || brew install xcodegen
+      - name: Generate the single-app Xcode project
+        working-directory: BIFROST
+        run: xcodegen generate
+      - name: Build BIFROST app without signing
+        working-directory: BIFROST
+        run: xcodebuild -project BIFROST.xcodeproj -scheme BIFROST -configuration Debug CODE_SIGNING_ALLOWED=NO build

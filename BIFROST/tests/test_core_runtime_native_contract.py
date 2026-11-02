@@ -26,7 +26,7 @@ class BifrostCoreNativeContracts(unittest.TestCase):
         self.assertIn('headless.inspectCoreRuntime()', MENU)
         self.assertIn('headless.inspectCoreRuntime()', CONNECTIONS)
         self.assertIn('BIFROSTcore · Runtime identity', CONNECTIONS)
-        self.assertIn('Sources/HeadlessClient.swift', PROJECT)
+        self.assertIn('path: Sources', PROJECT)
         self.assertIn('type: folder', PROJECT)
 
     def test_no_legacy_agent_start_in_status_path(self):
