@@ -1,0 +1,37 @@
+# BIFROST bridge: existing independent authenticated MCP adapter.
+# Not a second core, CONDUCTOR, dispatcher, or credential store.
+# DO NOT start until a genuine OAuth issuer, audience, client and explicit owner
+# subject IDs have been configured and tested. Stays host-loopback-only.
+services:
+  bifrost-remote-mcp:
+    build:
+      context: ../..
+      dockerfile: deploy/oci/Dockerfile
+      target: runtime
+    image: bifrost-remote-mcp:oci-candidate
+    network_mode: host
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    user: "${BIFROST_MCP_UID:?owner-controlled service UID required}:${BIFROST_MCP_GID:?owner-controlled service GID required}"
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 64
+    mem_limit: 256m
+    restart: "no"
+    environment:
+      BIFROST_MCP_BIND_HOST: "127.0.0.1"
+      BIFROST_MCP_PORT: "8799"
+      BIFROST_MCP_ISSUER_URL: "${BIFROST_MCP_ISSUER_URL:?verified HTTPS issuer required}"
+      BIFROST_MCP_RESOURCE_URL: "${BIFROST_MCP_RESOURCE_URL:?verified public /mcp resource URL required}"
+      BIFROST_MCP_INTROSPECTION_URL: "${BIFROST_MCP_INTROSPECTION_URL:?verified HTTPS introspection URL required}"
+      BIFROST_MCP_OAUTH_CLIENT_ID: "${BIFROST_MCP_OAUTH_CLIENT_ID:?registered OAuth client ID required}"
+      BIFROST_MCP_ALLOWED_SUBJECTS: "${BIFROST_MCP_ALLOWED_SUBJECTS:?explicit JSON array of verified subject IDs required}"
+      BIFROST_MCP_SECRET_FILE: "/run/secrets/issuer-client"
+    volumes:
+      - type: bind
+        source: "${BIFROST_MCP_SECRET_FILE_HOST:?existing 0600 owner-owned secret file required}"
+        target: /run/secrets/issuer-client
+        read_only: true
