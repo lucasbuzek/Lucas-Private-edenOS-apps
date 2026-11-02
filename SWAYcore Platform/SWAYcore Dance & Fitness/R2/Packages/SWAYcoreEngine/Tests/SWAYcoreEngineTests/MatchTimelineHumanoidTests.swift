@@ -24,6 +24,26 @@ final class MatchTruthTests: XCTestCase {
         XCTAssertEqual(s([:]).outcome, .unknown(.noObservation))
         XCTAssertFalse(s(ref, conf: 0.1).outcome.earnsCredit)
     }
+    func testInvalidConfidenceCannotEarnCredit() {
+        for confidence in [1.01, 2.0, Double.infinity, -Double.infinity, Double.nan] {
+            let result = s(ref, conf: confidence)
+            XCTAssertEqual(result.outcome, .unknown(.lowDetectorConfidence))
+            XCTAssertFalse(result.outcome.earnsCredit)
+            XCTAssertEqual(result.total, 0)
+        }
+        XCTAssertEqual(s(ref, conf: 1).total, 1, accuracy: 1e-12)
+    }
+    func testNonfiniteAgeCannotEarnCredit() {
+        for age in [Double.nan, Double.infinity, -Double.infinity] {
+            let result = s(ref, age: age)
+            XCTAssertEqual(result.outcome, .unknown(.staleObservation))
+            XCTAssertFalse(result.outcome.earnsCredit)
+            XCTAssertEqual(result.total, 0)
+        }
+        XCTAssertEqual(s(ref, age: 0).outcome, .good)
+        XCTAssertEqual(s(ref, age: 0.35).outcome, .good)
+        XCTAssertEqual(s(ref, age: 0.350001).outcome, .unknown(.staleObservation))
+    }
     func testDeterministic() { let o = ["leftElbow": 80.0, "rightElbow": 95, "leftKnee": 150, "rightKnee": 170]; XCTAssertEqual(s(o, timing: 0.05, conf: 0.8, prev: 0.6), s(o, timing: 0.05, conf: 0.8, prev: 0.6)) }
     func testLegacyWeightsPreserved() {
         let r = s(ref, conf: 1.0)       // shape 1, timing 1, continuity 1 → total 1.0
@@ -58,8 +78,37 @@ final class TimelineMathTests: XCTestCase {
         XCTAssertEqual(SwayTimelineMath.position(time: 12.34, bpm: 97), SwayTimelineMath.position(time: 12.34, bpm: 97))
     }
     func testPauseResumeIsTimeDerivedNotAccumulated() {
-        // Same musical time always yields the same position regardless of how it was reached.
-        XCTAssertEqual(SwayTimelineMath.position(time: 4.0, bpm: 90), SwayTimelineMath.position(time: 4.0, bpm: 90))
+        var clock = SwayMusicalClock(hostTime: 10)
+        XCTAssertEqual(clock.sample(hostTime: 12), 2, accuracy: 1e-12)
+        clock.pause(hostTime: 14)
+        XCTAssertTrue(clock.isPaused)
+        XCTAssertEqual(clock.sample(hostTime: 100), 4, accuracy: 1e-12)
+        clock.pause(hostTime: 101)
+        clock.resume(hostTime: 110)
+        XCTAssertFalse(clock.isPaused)
+        XCTAssertEqual(clock.sample(hostTime: 112), 6, accuracy: 1e-12)
+        // A repeated resume must not reset the running clock's anchor.
+        clock.resume(hostTime: 113)
+        XCTAssertEqual(clock.sample(hostTime: 114), 8, accuracy: 1e-12)
+        XCTAssertEqual(SwayTimelineMath.position(time: clock.musicalTime, bpm: 90).beat, 12)
+    }
+    func testBackwardHostSamplesDoNotDoubleCountElapsedTime() {
+        var clock = SwayMusicalClock(hostTime: 10)
+        XCTAssertEqual(clock.sample(hostTime: 12), 2, accuracy: 1e-12)
+        XCTAssertEqual(clock.sample(hostTime: 11), 2, accuracy: 1e-12)
+        XCTAssertEqual(clock.sample(hostTime: 12), 2, accuracy: 1e-12)
+        XCTAssertEqual(clock.sample(hostTime: 13), 3, accuracy: 1e-12)
+    }
+    func testSeekWhilePausedPreservesPauseAndReanchorsOnResume() {
+        var clock = SwayMusicalClock(hostTime: 10)
+        clock.pause(hostTime: 12)
+        clock.seek(to: 5, hostTime: 20)
+        XCTAssertTrue(clock.isPaused)
+        XCTAssertEqual(clock.sample(hostTime: 30), 5, accuracy: 1e-12)
+        clock.resume(hostTime: 40)
+        XCTAssertEqual(clock.sample(hostTime: 41), 6, accuracy: 1e-12)
+        clock.seek(to: -1, hostTime: 42)
+        XCTAssertEqual(clock.sample(hostTime: 43), 1, accuracy: 1e-12)
     }
 }
 
