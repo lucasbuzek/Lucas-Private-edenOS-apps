@@ -40,8 +40,8 @@ public enum SwayMatchTruth {
         }
         if referenceAngles.isEmpty { return unknown(.noReference) }
         if observedAngles.isEmpty { return unknown(.noObservation) }
-        if let age = observationAge, age > config.maxObservationAge || age < 0 { return unknown(.staleObservation) }
-        guard detectorConfidence.isFinite, detectorConfidence >= config.minDetectorConfidence else { return unknown(.lowDetectorConfidence) }
+        if let age = observationAge, !age.isFinite || age > config.maxObservationAge || age < 0 { return unknown(.staleObservation) }
+        guard detectorConfidence.isFinite, detectorConfidence >= config.minDetectorConfidence, detectorConfidence <= 1 else { return unknown(.lowDetectorConfidence) }
         let diffs = referenceAngles.compactMap { k, v in observedAngles[k].map { abs($0 - v) } }
         let coverage = Double(diffs.count) / Double(referenceAngles.count)
         guard diffs.count >= config.minComparableJoints, coverage >= config.minReferenceCoverage else {
