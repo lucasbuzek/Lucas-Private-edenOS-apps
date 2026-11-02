@@ -38,10 +38,14 @@ Authority: [existing BIFROST Asana task](https://app.asana.com/1/121987310742582
 ## Missing verification / release gates
 1. **Original archives:** disparate 386/391-file old snapshots and 7,855-item broader Dropbox inventory were NOT all text-extracted or upstream-audited. Continue original-URL/code/license retrieval for relevant parts of \`AI MCP tool\`.
 2. **Security:** real OIDC/Access identity and separately authenticated devices, scopes, grants, replay protection, approvals, cancellation, revocation, rate/size limits, negative auth tests.
-3. **Cloud:** deploy Worker with D1 binding and owner-authenticated endpoints, explicitly **not** a general code execution endpoint; test durable task lifecycle and encrypted payload policy.
+3. **Cloud:** isolated Worker and D1 staging deployment, secret-name readback, public health and unauthorized-denial *body* checks are **VERIFIED 2026-11-02** (see [staging verification receipt](../verification/BIFROST_CLOUD_STAGING_RECEIPT_20261102.md)). Authenticated request tests, device/provider task execution and encrypted payload policy remain **UNVERIFIED**.
 4. **Execution:** integrate a proven independent executor (approved provider or device node), return provider job ID, verified receipts; cloud dispatch != action completion.
 5. **UX:** single BIFROST web/native interface, rainbow menubar icon and unified Keep Awake, AI routing, projects/tasks/schedules/memory.
 6. **Cost:** confirm each chosen hosting/runtime/provider is within strict $0 at deployment time.
 7. **Physical:** only after Lucas approves device tests; offline Mac does not block source/cloud work.
 
 This is a source-first engineering ledger; it is not a claim that research is exhaustive or BIFROST has launched.
+
+
+## RAVEN Research custody (owner-private)
+The evidence archive is indexed at [ravenResearch / BIFROST / 2026-11-02](https://github.com/lucasbuzek/Lucas-RavenNest/blob/main/ravenResearch/BIFROST/2026-11-02/README.md). It includes the source audit, cloud verification, recovered requirements and unverified archive gaps. **This private research archive does not replace BIFROST source canon, the existing Asana task, or LKG.**
