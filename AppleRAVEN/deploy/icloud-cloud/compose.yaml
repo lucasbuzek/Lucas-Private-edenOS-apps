@@ -50,6 +50,24 @@ services:
     pids_limit: 128
     mem_limit: 512m
 
+
+  photo_media:
+    # Opt-in only: rclone reads iCloud Photos media directly from Apple cloud.
+    # No public port; run explicitly with --profile photo-media.
+    profiles: [photo-media]
+    image: rclone/rclone:latest
+    entrypoint: [rclone]
+    volumes:
+      - icloud_rclone_config:/config/rclone
+      - icloud_photo_exports:/exports
+    networks:
+      - icloud_private
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
 networks:
   icloud_private:
     driver: bridge
@@ -59,3 +77,5 @@ networks:
 volumes:
   icloud_drive_sessions:
   icloud_photos_sessions:
+  icloud_rclone_config:
+  icloud_photo_exports:
