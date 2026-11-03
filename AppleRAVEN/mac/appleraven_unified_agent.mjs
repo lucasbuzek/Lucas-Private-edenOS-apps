@@ -8,7 +8,7 @@ import path from "node:path";
 import {existsSync} from "node:fs";
 import {spawn,execFile} from "node:child_process";
 import {promisify} from "node:util";
-import {createHash} from "node:crypto";
+import {createHash,randomBytes} from "node:crypto";
 import {createInterface} from "node:readline";
 const exec=promisify(execFile);
 const BASE=path.join(os.homedir(),".config","appleraven");
@@ -26,7 +26,14 @@ const definitions=[
   {name:"terminal",description:"Run a Terminal zsh command. Requires explicit Allow on the Mac each time.",inputSchema:{type:"object",properties:{command:{type:"string"}},required:["command"]}},
   {name:"applescript",description:"Run AppleScript/Automator automation after Mac confirmation.",inputSchema:{type:"object",properties:{script:{type:"string"}},required:["script"]}},
   {name:"xcodebuild",description:"Run xcodebuild with argument list after Mac confirmation.",inputSchema:{type:"object",properties:{args:{type:"array",items:{type:"string"}}},required:["args"]}},
-  {name:"blender_python",description:"Run a saved Blender Python script in background after Mac confirmation.",inputSchema:{type:"object",properties:{script_path:{type:"string"}},required:["script_path"]}}
+  {name:"blender_python",description:"Run a saved Blender Python script in background after Mac confirmation.",inputSchema:{type:"object",properties:{script_path:{type:"string"}},required:["script_path"]}},
+  {name:"file_stat",description:"Inspect file metadata and SHA-256 of a local text file up to 1 MiB, for safe edits.",inputSchema:{type:"object",properties:{path:{type:"string"}},required:["path"]}},
+  {name:"write_text_file",description:"Write up to 20 KB of text, with local Mac approval and overwrite opt-in.",inputSchema:{type:"object",properties:{path:{type:"string"},content:{type:"string"},overwrite:{type:"boolean"}},required:["path","content"]}},
+  {name:"make_directory",description:"Create a macOS directory with local owner approval.",inputSchema:{type:"object",properties:{path:{type:"string"}},required:["path"]}},
+  {name:"move_file",description:"Move or rename a file/folder, with local approval; refuses overwrite.",inputSchema:{type:"object",properties:{from:{type:"string"},to:{type:"string"}},required:["from","to"]}},
+  {name:"terminal_job_start",description:"Start a long-running Terminal job after local approval. Return durable job_id immediately; survives AppleRAVEN agent restart.",inputSchema:{type:"object",properties:{command:{type:"string"}},required:["command"]}},
+  {name:"terminal_job_status",description:"Get persistent long-running job status and recent stdout/stderr.",inputSchema:{type:"object",properties:{job_id:{type:"string"}},required:["job_id"]}},
+  {name:"terminal_job_cancel",description:"Request cancellation of a long-running Terminal job, after local approval.",inputSchema:{type:"object",properties:{job_id:{type:"string"}},required:["job_id"]}}
 ];
 const commandOutput=async (command,args=[],timeout=30000)=>{
   const {stdout,stderr}=await exec(command,args,{timeout,maxBuffer:80000,encoding:"utf8",env:process.env});
@@ -44,6 +51,40 @@ async function confirm(action,summary) {
 function target(p){const s=String(p??"");if(!s||s.includes("\0"))throw new Error("Path required");return path.resolve(s.startsWith("~/")?path.join(os.homedir(),s.slice(2)):s);}
 function requiredText(s,n=2000){if(typeof s!=="string"||!s.trim()||s.length>n)throw new Error("Invalid argument");return s;}
 function stringArgs(a){if(!Array.isArray(a)||a.length>30||!a.every(x=>typeof x==="string"&&x.length<1024))throw new Error("Invalid argument list");return a;}
+
+const JOB_ROOT=path.join(BASE,"jobs");
+const JOB_RUNNER="const fs=require(\"node:fs\"),path=require(\"node:path\"),cp=require(\"node:child_process\");\nconst command=process.argv[1],dir=process.argv[2];\nconst output=fs.openSync(path.join(dir,\"stdout.log\"),\"a\",0o600),errors=fs.openSync(path.join(dir,\"stderr.log\"),\"a\",0o600);\nconst child=cp.spawn(\"/bin/zsh\",[\"-lc\",command],{stdio:[\"ignore\",output,errors]});\nfs.writeFileSync(path.join(dir,\"child.pid\"),String(child.pid||\"\"),{mode:0o600});\nlet requested=false;\nconst timer=setInterval(()=>{if(fs.existsSync(path.join(dir,\"cancel\"))){requested=true;child.kill(\"SIGTERM\");}},1500);\nfunction finish(state,exit_code,signal,error){clearInterval(timer);fs.writeFileSync(path.join(dir,\"status.json\"),JSON.stringify({state,exit_code,signal,error,completed_at:Date.now()}),{mode:0o600});process.exit(0)}\nchild.once(\"error\",e=>finish(\"failed\",-1,null,e.message));\nchild.once(\"close\",(code,signal)=>finish(requested?\"cancelled\":code===0?\"succeeded\":\"failed\",code,signal,null));";
+const safeJobId=id=>{if(typeof id!=="string"||!/^job_[a-f0-9]{32}$/.test(id))throw new Error("Invalid job id");return id;};
+async function jobRoot(id){const dir=path.join(JOB_ROOT,safeJobId(id));if(!(await fs.stat(dir).catch(()=>null))?.isDirectory())throw new Error("Unknown job");return dir;}
+async function logTail(file,max=14000){
+  const f=await fs.open(file,"r").catch(()=>null);if(!f)return "";
+  try{const st=await f.stat(),length=Math.min(max,st.size),b=Buffer.alloc(length);await f.read(b,0,length,Math.max(0,st.size-length));return b.toString("utf8");}
+  finally{await f.close();}
+}
+async function jobStatus(id){
+  const dir=await jobRoot(id),meta=JSON.parse(await fs.readFile(path.join(dir,"meta.json"),"utf8"));
+  let status=await fs.readFile(path.join(dir,"status.json"),"utf8").then(JSON.parse).catch(()=>null);
+  if(!status){
+    const pid=Number(await fs.readFile(path.join(dir,"runner.pid"),"utf8").catch(()=>"0"));
+    if(pid){try{process.kill(pid,0)}catch{status={state:"interrupted",error:"Background runner stopped without an exit receipt"};}}
+  }
+  return {job_id:id,created_at:meta.created_at,command_sha256:meta.command_sha256,...(status||{state:"running"}),stdout_tail:await logTail(path.join(dir,"stdout.log")),stderr_tail:await logTail(path.join(dir,"stderr.log"))};
+}
+async function startJob(command){
+  await fs.mkdir(JOB_ROOT,{recursive:true,mode:0o700});
+  const dirs=(await fs.readdir(JOB_ROOT)).filter(n=>/^job_[a-f0-9]{32}$/.test(n));
+  let active=0;for(const name of dirs.slice(-200)){const st=await jobStatus(name).catch(()=>null);if(st?.state==="running")active++;}
+  if(active>=5)throw new Error("Five concurrent Mac jobs already running");
+  const id="job_"+randomBytes(16).toString("hex"),dir=path.join(JOB_ROOT,id);
+  await fs.mkdir(dir,{mode:0o700});
+  const meta={created_at:Date.now(),command_sha256:createHash("sha256").update(command).digest("hex")};
+  await fs.writeFile(path.join(dir,"meta.json"),JSON.stringify(meta),{mode:0o600});
+  const runner=spawn(process.execPath,["-e",JOB_RUNNER,"--",command,dir],{detached:true,stdio:"ignore"});
+  await fs.writeFile(path.join(dir,"runner.pid"),String(runner.pid||""),{mode:0o600});
+  runner.unref();
+  return {job_id:id,status:"started",created_at:meta.created_at,next:"terminal_job_status"};
+}
+
 async function directCall(name,arg={}) {
   switch(name){
     case "status":return {device:os.hostname(),macos:os.release(),arch:os.arch(),node:process.version,system:"macOS",uptime_seconds:Math.round(os.uptime())};
@@ -86,6 +127,45 @@ async function directCall(name,arg={}) {
       const blender=candidates.find(existsSync);
       if(!blender)throw new Error("Blender executable not found");
       return commandOutput(blender,["--background","--python",script],120000);
+    }
+    case "file_stat":{
+      const file=target(arg.path),st=await fs.stat(file),sha256=st.isFile()&&st.size<=1048576?createHash("sha256").update(await fs.readFile(file)).digest("hex"):null;
+      return {path:file,type:st.isDirectory()?"folder":st.isFile()?"file":"other",size:st.size,modified_at:st.mtime.toISOString(),sha256};
+    }
+    case "write_text_file":{
+      const file=target(arg.path);
+      if(typeof arg.content!=="string"||Buffer.byteLength(arg.content,"utf8")>20000)throw new Error("Text content exceeds 20 KB");
+      const previous=await fs.stat(file).catch(e=>{if(e.code==="ENOENT")return null;throw e});
+      if(previous&&!previous.isFile())throw new Error("Existing target is not a regular file");
+      if(previous&&arg.overwrite!==true)throw new Error("Existing file: set overwrite=true to request local approval");
+      const digest=createHash("sha256").update(arg.content).digest("hex");
+      await confirm("Write Mac text file",(previous?"OVERWRITE ":"CREATE ")+file+"; bytes="+Buffer.byteLength(arg.content)+"; SHA256="+digest);
+      await fs.writeFile(file,arg.content,{flag:previous?"w":"wx",mode:0o600});
+      return {path:file,bytes:Buffer.byteLength(arg.content),sha256:digest,overwrote:!!previous};
+    }
+    case "make_directory":{
+      const dir=target(arg.path);await confirm("Create Mac directory",dir);
+      await fs.mkdir(dir,{recursive:true,mode:0o700});return {path:dir,created:true};
+    }
+    case "move_file":{
+      const from=target(arg.from),to=target(arg.to);
+      await fs.lstat(from);
+      if(await fs.lstat(to).then(()=>true).catch(e=>{if(e.code==="ENOENT")return false;throw e}))throw new Error("Destination exists; overwrite refused");
+      await confirm("Move or rename Mac file",from+" -> "+to);
+      await fs.rename(from,to);return {from,to,moved:true};
+    }
+    case "terminal_job_start":{
+      const command=requiredText(arg.command,4000);
+      await confirm("Start long-running Terminal job",command);
+      return startJob(command);
+    }
+    case "terminal_job_status":return jobStatus(arg.job_id);
+    case "terminal_job_cancel":{
+      const dir=await jobRoot(arg.job_id),before=await jobStatus(arg.job_id);
+      if(before.state!=="running")return {job_id:arg.job_id,status:before.state,already_finished:true};
+      await confirm("Cancel Mac Terminal job",arg.job_id);
+      await fs.writeFile(path.join(dir,"cancel"),"cancel\n",{flag:"w",mode:0o600});
+      return {job_id:arg.job_id,status:"cancellation_requested"};
     }
     default:throw new Error("Unknown direct tool");
   }
