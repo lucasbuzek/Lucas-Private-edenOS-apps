@@ -125,3 +125,14 @@ else
 fi
 echo "Provider configuration: $CONFIG/providers.json"
 echo "Operation logs: $LOGS"
+echo
+echo "AppleRAVEN local connection summary:"
+python3 "$BASE/appleraven_agent.py" --status
+if /bin/launchctl print "$DOMAIN/$LABEL" >/dev/null 2>&1; then
+ echo "Background execution service: loaded"
+else
+ echo "Background execution service: NOT LOADED (check logs above)" >&2
+ exit 1
+fi
+echo "Cloud owner MCP: https://appleraven-private.lucasravensnest.workers.dev/mcp"
+echo "Use appleraven.devices.list from your existing ChatGPT AppleRAVEN connector after pairing."
