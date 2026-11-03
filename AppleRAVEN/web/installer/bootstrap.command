@@ -28,7 +28,6 @@ gh repo clone "$REPO" "$STAGE/repo" -- --branch "$BRANCH" --filter=blob:none --s
 git -C "$STAGE/repo" sparse-checkout set AppleRAVEN
 COMMIT="$(git -C "$STAGE/repo" rev-parse HEAD)"
 echo "Source commit: $COMMIT"
-test -f "$STAGE/repo/AppleRAVEN/deploy/one-step.command"
-test -f "$STAGE/repo/AppleRAVEN/cloud/oracle/docker-compose.yml"
+test -f "$STAGE/repo/AppleRAVEN/mac/Install-unified.command"
 test -f "$STAGE/repo/AppleRAVEN/mac/appleraven_unified_agent.mjs"
-bash "$STAGE/repo/AppleRAVEN/deploy/one-step.command"
+bash "$STAGE/repo/AppleRAVEN/mac/Install-unified.command"
