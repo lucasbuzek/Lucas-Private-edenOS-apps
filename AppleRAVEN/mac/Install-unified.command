@@ -4,9 +4,19 @@ set -euo pipefail
 if [[ "$(uname -s)" != "Darwin" ]]; then echo "AppleRAVEN requires macOS." >&2; exit 1; fi
 HERE="$(cd "$(dirname "$0")" && pwd -P)"
 NODE_BIN="$(command -v node || true)"
-if [[ -z "$NODE_BIN" ]] || [[ "$("$NODE_BIN" -p 'Number(process.versions.node.split(".")[0])')" -lt 22 ]]; then
- echo "Install Node.js 22+ and rerun." >&2; exit 1
+if [[ -z "$NODE_BIN" ]] || [[ "$("$NODE_BIN" -p 'Number(process.versions.node.split(".")[0])' 2>/dev/null || echo 0)" -lt 22 ]]; then
+ if command -v brew >/dev/null 2>&1; then
+  echo "Installing free Node.js 22 for the local AppleRAVEN runtime."
+  brew install node@22 || { echo "Node.js install failed. See https://nodejs.org/en/download" >&2; exit 1; }
+  NODE_BIN="$(brew --prefix node@22)/bin/node"
+ else
+  echo "Node.js 22+ required: https://nodejs.org/en/download (or install Homebrew)." >&2; exit 1
+ fi
 fi
+if [[ ! -x "$NODE_BIN" ]]; then echo "Node.js 22 installation not usable." >&2; exit 1; fi
+# npx and native providers inherit a matching Node.js runtime instead of a stale
+# older npm installation from the user's shell.
+export PATH="$(dirname "$NODE_BIN"):$PATH"
 if ! command -v python3 >/dev/null; then echo "Python 3 required for Keychain pairing." >&2; exit 1; fi
 if [[ ! -f "$HERE/appleraven_unified_agent.mjs" || ! -f "$HERE/appleraven_agent.py" ]]; then
  echo "Use the complete AppleRAVEN Mac distribution, not this script alone." >&2; exit 1
