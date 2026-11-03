@@ -78,6 +78,8 @@ if [[ ! -e "$CONFIG/providers.json" ]]; then
  const fs=require("node:fs"),path=require("node:path");
  const base=process.env.APPLE_RAVEN_BASE,p=[];
  p.push({key:"macui",command:"npx",args:["-y","mac-use-mcp@1.1.1"]});
+ // JoshuaRileyDev's MIT launcher provides installed-app enumeration and open-with.
+ p.push({key:"applaunch",command:"npx",args:["-y","@joshuarileydev/mac-apps-launcher-mcp-server@0.0.1"]});
  // Reuse the actual upstream Apple MCP implementations instead of recreating them.
  p.push({key:"imcp",command:"npx",args:["-y","@heznpc/imcp@1.3.0","--full"]});
  p.push({key:"photos",command:"npx",args:["-y","apple-photos-mcp"]});
