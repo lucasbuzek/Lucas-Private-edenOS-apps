@@ -1,0 +1,61 @@
+name: appleraven-icloud-cloud
+# Private cloud execution nodes; the Cloudflare owner MCP remains the only public API.
+# cloudflared runs on this VM host; Workers VPC Services target host loopback ports.
+services:
+  drive:
+    build:
+      context: .
+      dockerfile: Dockerfile.drive
+    restart: unless-stopped
+    environment:
+      ICLOUD_APPLE_ID: ${ICLOUD_APPLE_ID:?Set Apple account address in private .env}
+      ICLOUD_SESSION_DIR: /config/session
+    volumes:
+      - icloud_drive_sessions:/config
+    ports:
+      - "127.0.0.1:8302:8080"
+    networks:
+      - icloud_private
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 128
+    mem_limit: 512m
+
+  photos:
+    build:
+      context: .
+      dockerfile: Dockerfile.photos
+    restart: unless-stopped
+    environment:
+      ICLOUD_USERNAME: ${ICLOUD_APPLE_ID:?Set Apple account address in private .env}
+      ICLOUD_SESSION_DIR: /config/session
+      ICLOUD_PHOTOS_ENABLE_WRITES: "0"
+      ICLOUD_PHOTOS_ENABLE_DELETES: "0"
+      # Container source IP is the isolated Docker bridge. Never publish 8301 on 0.0.0.0.
+      ICLOUD_PHOTOS_ALLOWED_NETWORKS: "127.0.0.0/8,172.29.232.0/24"
+    volumes:
+      - icloud_photos_sessions:/config
+    ports:
+      - "127.0.0.1:8301:8080"
+    networks:
+      - icloud_private
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 128
+    mem_limit: 512m
+
+networks:
+  icloud_private:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.29.232.0/24
+volumes:
+  icloud_drive_sessions:
+  icloud_photos_sessions:
