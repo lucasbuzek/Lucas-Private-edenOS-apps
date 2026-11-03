@@ -35,3 +35,19 @@ Mission correction: AppleRAVEN replaces inadequate Remote Desktop Commander with
 3. Confirm live D1 devices/provider-tools counts and an approved ChatGPT MCP call through the original plugin identity. Check negative, revoke and offline cases.
 4. Finish installed-provider coverage and task/job/file streaming tests; then update the original plugin package in place only when new tool discovery and owner auth are confirmed.
 5. Preserve previous Worker deployment versions and original LKG; do not mark full release accepted before physical end-to-end receipts.
+
+## Cloud-first installer and local-engine repair (same day)
+
+- Fixed a reproducible first-run Python error in `mac/appleraven_agent.py`: `os.environ` was used before `import os`. Commit `3619cf255d9d4149d4c077982a6309df8854c8e0`.
+- Fixed `Install-unified.command` so repeat installs restart the existing user LaunchAgent; without this, a live old process would keep running after updating the source. Commit `0937d0ae18e6900337661a6031ce0df24ade3156`.
+- Extended the installed Mac agent with file metadata + SHA-256, owner-approved text write, folder creation, safe move, and detached/persistent Terminal job start/status/cancel. V8 static syntax parse completed, **Mac runtime untested**. Commit `8ed6cb35f17584c1ab230b7b97bc82332c8b6eb4`.
+- Added explicit terminal opt-in for Mac Developer Bridge full-user-power tools; no automatic broad unlock. Each federated call retains the AppleRAVEN on-Mac approval dialog; operator can revoke provider unlock. Commit `6907f1c468ba597d8caabb2c83e4127560924490`.
+- Added upstream `@heznpc/imcp@1.3.0 --full` for native Notes/Calendar/Mail/Messages/Music/Safari etc.; `apple-tools-mcp` via `uvx` (if installed; free Homebrew bootstrap), alongside mac-use-mcp and Apple Photos. Actual upstream readiness and schema registrations remain unverified until Mac enrollment. Commit `58119f14b4509a1618467af470a6b9462b18a400`.
+- Cloudflare D1 independent recheck after the production deployments still returned active_devices=0, registered_tools=0, pending_jobs=0. Owner Mac login/pairing is the single missing physical dependency, not an Oracle requirement.
+- Existing ChatGPT plugin `plugins_6ae05fb243a48191a7cd678e20ee608c` still points to production MCP, but its v0.1.3 descriptive metadata is outdated; do not represent it as upgraded or end-to-end callable.
+
+### Current verification tier
+- **Cloudflare production Workers:** deployed, 100% version rollout verified by Cloudflare API.
+- **Cloudflare Pages:** preview alias successful by Cloudflare deployment API; direct external browser fetch not independently verified.
+- **GitHub Mac agent:** modified and statically parsed; not executed under macOS.
+- **First paired Mac + consent + live tool call:** not completed. Do not mark AppleRAVEN operational.
