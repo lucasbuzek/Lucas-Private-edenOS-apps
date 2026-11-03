@@ -1,0 +1,19 @@
+# AppleRAVEN: cloud-side iCloud Drive MCP, never requires macOS.
+# Upstream: https://github.com/robworks-code/icloud-mcp (MIT)
+FROM python:3.12-slim
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 \
+    ICLOUD_SESSION_DIR=/config/session
+RUN apt-get update && apt-get install -y --no-install-recommends git ca-certificates \
+    && rm -rf /var/lib/apt/lists/* \
+    && python -m pip install --no-cache-dir uv mcp-proxy
+ARG DRIVE_REF=main
+RUN git clone https://github.com/robworks-code/icloud-mcp.git /opt/icloud-mcp \
+    && git -C /opt/icloud-mcp checkout "$DRIVE_REF" \
+    && uv sync --project /opt/icloud-mcp --no-dev
+RUN mkdir -p /config/session && chown -R 10001:10001 /config \
+    && useradd --uid 10001 --home-dir /config --no-create-home --shell /usr/sbin/nologin icloud
+USER 10001:10001
+WORKDIR /opt/icloud-mcp
+EXPOSE 8080
+# The Docker host publishes only 127.0.0.1:8302; all external traffic is forbidden.
+ENTRYPOINT ["mcp-proxy","--host=0.0.0.0","--port=8080","--allowed-host=127.0.0.1:8302","--allowed-host=localhost:8302","--","/opt/icloud-mcp/.venv/bin/icloud-mcp","serve"]
