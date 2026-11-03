@@ -10,7 +10,7 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "appleraven-owner",
+      "database_name": "appleraven-private",
       "database_id": "740671f7-8671-44b3-83bb-69572ffc7d28"
     }
   ],
