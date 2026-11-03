@@ -101,7 +101,7 @@ export default {
    return handleOwnerPair(request,env,owner);
   }
   if(path==="/health"&&request.method==="GET"){
-   try{const d=await env.DB.prepare("SELECT 1 AS ok").first();return json({service:APP,hosting:"ravensnest",database:!!d?.ok,mode:"owner_read_only",m1:"unpaired"},d?.ok?200:503)}
+   try{const d=await env.DB.prepare("SELECT 1 AS ok").first();return json({service:APP,hosting:"ravensnest",database:!!d?.ok,mode:"owner_private_mcp",device_state:"query_authenticated_appleraven.devices.list"},d?.ok?200:503)}
    catch{return json({service:APP,status:"database_unavailable"},503)}
   }
   if(path==="/mcp"||path==="/api/mcp"){
