@@ -29,6 +29,28 @@ mkdir -p "$SOURCE_DIR"
 if [[ ! -e "$SOURCE_DIR/mac-developer-bridge" ]]; then
  git clone --depth 1 https://github.com/alexanderradahl/mac-developer-bridge.git "$SOURCE_DIR/mac-developer-bridge" || echo "Developer bridge unavailable; skipped." >&2
 fi
+# Mac Developer Bridge exposes broad local authority. Ask the owner explicitly before
+# activating it; every federated call also receives an AppleRAVEN GUI approval.
+DEVELOPER_BRIDGE="$SOURCE_DIR/mac-developer-bridge/bridge.mjs"
+BRIDGE_DATA="$HOME/Library/Application Support/MacDeveloperBridge"
+BRIDGE_UNLOCK="$BRIDGE_DATA/FULL_ACCESS_ENABLED"
+if [[ -f "$DEVELOPER_BRIDGE" && ! -f "$BRIDGE_UNLOCK" ]]; then
+ echo
+ echo "Optional: Mac Developer Bridge adds PTY sessions, Codex history, advanced file"
+ echo "operations and complete developer jobs. It can access data as your Mac user."
+ echo "AppleRAVEN asks for confirmation before each forwarded call. You may revoke"
+ echo "the bridge independently by removing its FULL_ACCESS_ENABLED file."
+ read -r -p "Enable this powerful local MCP provider? Type ENABLE to confirm [skip]: " BRIDGE_CHOICE
+ if [[ "$BRIDGE_CHOICE" == "ENABLE" ]]; then
+  mkdir -p "$BRIDGE_DATA"
+  chmod 700 "$BRIDGE_DATA"
+  ( umask 077; printf '%s\n' 'I_UNDERSTAND_THIS_GRANTS_FULL_ACCESS' > "$BRIDGE_UNLOCK" )
+  chmod 600 "$BRIDGE_UNLOCK"
+  echo "Mac Developer Bridge enabled for this macOS user."
+ else
+  echo "Mac Developer Bridge disabled. Other AppleRAVEN tools remain available."
+ fi
+fi
 PYAPPLE="$BASE/python/bin/pyapple-mcp"
 if [[ ! -x "$PYAPPLE" ]] && python3 -m venv "$BASE/python"; then
  "$BASE/python/bin/python" -m pip install --disable-pip-version-check pyapple-mcp || echo "pyapple-mcp installation unavailable; skipped." >&2
@@ -41,7 +63,7 @@ if [[ ! -e "$CONFIG/providers.json" ]]; then
  p.push({key:"photos",command:"npx",args:["-y","apple-photos-mcp"]});
  if(fs.existsSync(process.env.APPLE_RAVEN_PYAPPLE))p.push({key:"pyapple",command:process.env.APPLE_RAVEN_PYAPPLE,args:[]});
  const dev=path.join(base,"sources/mac-developer-bridge/bridge.mjs");
- if(fs.existsSync(dev))p.push({key:"macdev",command:process.execPath,args:[dev]});
+ if(fs.existsSync(dev)&&fs.existsSync(path.join(require("node:os").homedir(),"Library/Application Support/MacDeveloperBridge/FULL_ACCESS_ENABLED")))p.push({key:"macdev",command:process.execPath,args:[dev]});
  fs.writeFileSync(process.env.APPLE_RAVEN_CONFIG,JSON.stringify({providers:p},null,2)+"\n",{flag:"wx",mode:0o600});
  '
 fi
