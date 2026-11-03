@@ -1,0 +1,30 @@
+{
+  // Apply only after TWO private Workers VPC Services actually exist.
+  // From AppleRAVEN/deploy/icloud-cloud in the original private repository:
+  // npx wrangler deploy --config wrangler.vpc.jsonc
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "appleraven-private",
+  "main": "../../cloud/ravensnest/owner-mcp-v2.candidate.mjs",
+  "compatibility_date": "2026-10-27",
+  "workers_dev": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "appleraven-owner",
+      "database_id": "740671f7-8671-44b3-83bb-69572ffc7d28"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "OAUTH_KV",
+      "id": "f69dd7d18a984d2898c3c2047aeaecdb"
+    }
+  ],
+  "vpc_services": [
+    {"binding": "ICLOUD_DRIVE_VPC", "service_id": "REPLACE_WITH_DRIVE_VPC_SERVICE_ID"},
+    {"binding": "ICLOUD_PHOTOS_VPC", "service_id": "REPLACE_WITH_PHOTOS_VPC_SERVICE_ID"}
+  ],
+  "vars": {
+    "ICLOUD_DRIVE_ENABLE_WRITES": "0"
+  }
+}
