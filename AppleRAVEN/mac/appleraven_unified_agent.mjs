@@ -271,10 +271,16 @@ async function main(){
   if(process.platform!=="darwin")throw new Error("AppleRAVEN native source agent runs only on macOS.");
   if(Number(process.versions.node.split(".")[0])<22)throw new Error("Node.js 22+ is required.");
   const creds=await credentials();
-  await setupProviders();
-  const tools=[...definitions,...[...providerTools.values()].map(p=>p.tool)];
+  // Advertise native tools and begin heartbeats BEFORE optional npm/Python MCP
+  // initialization. A slow Photos/desktop installation must not hide a paired Mac.
+  let tools=[...definitions];
   let registered=await publishManifest(tools,creds.device_token);
-  console.log("AppleRAVEN source federation:",registered,"tools from native and installed MCP providers. Outbound-only; local approval required for upstream actions.");
+  console.log("AppleRAVEN native tools online:",registered,"source providers starting asynchronously.");
+  setupProviders().then(async()=>{
+    tools=[...definitions,...[...providerTools.values()].map(p=>p.tool)];
+    registered=await publishManifest(tools,creds.device_token);
+    console.log("AppleRAVEN unified catalog ready:",registered,"tools.");
+  }).catch(e=>console.error("AppleRAVEN optional provider setup:",e.message));
   let failures=0,heartbeat=0;
   while(true){
     try{
