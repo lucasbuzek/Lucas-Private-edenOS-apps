@@ -13,7 +13,7 @@ import {createInterface} from "node:readline";
 const exec=promisify(execFile);
 const BASE=path.join(os.homedir(),".config","appleraven");
 const REGISTRY=path.join(BASE,"providers.json");
-const ENDPOINT=process.env.APPLERAVEN_DEVICE_ENDPOINT||"https://appleraven-device-unified-staging.lucasravensnest.workers.dev";
+const ENDPOINT=process.env.APPLERAVEN_DEVICE_ENDPOINT||"https://appleraven-device.lucasravensnest.workers.dev";
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
 const limit=s=>String(s??"").slice(0,80000);
 const definitions=[
