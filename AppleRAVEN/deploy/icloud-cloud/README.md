@@ -12,6 +12,8 @@
 
 ## Deployment order (private Linux VM; no public inbound ports)
 
+**One-command private node setup:** `bash install-cloud.sh` checks Docker, builds providers, prompts for the account identifier and then performs two interactive Apple 2FA logins on the private VM terminal. The steps below also document a manual setup and private tunnel wiring.
+
 1. Obtain this folder from the existing PRIVATE AppleRAVEN candidate repository. Review upstream source and licenses, then choose and pin upstream Git commit refs as Docker build args for repeatable production builds.
 2. Copy `.env.example` to `.env`, set your Apple Account identifier; set `chmod 600 .env`. **Do not put passwords, 2FA codes, login cookies or tokens in Git.**
 3. Run `docker compose -f compose.yaml build`, then authenticate both providers on the host's terminal:
@@ -22,7 +24,7 @@
 5. Install an outbound-only **named Cloudflare Tunnel** on the same Linux VM, connected to the existing `ravensnest` Cloudflare account. Do not set a public hostname or publish these private services.
 6. In **Cloudflare Workers VPC** create two HTTP VPC Services on that tunnel, pointed to `127.0.0.1:8301` (Photos) and `127.0.0.1:8302` (Drive); bind them to the existing `appleraven-private` owner Worker under `ICLOUD_PHOTOS_VPC` and `ICLOUD_DRIVE_VPC`. This requires the cloud federation source update and Worker redeployment. The current production Worker is NOT yet connected to these bindings.
 7. After exact owner Access authorization, call `appleraven.cloud.catalog` to discover namespaced `icloud.photos.*` and `icloud.drive.*` tools. First acceptance tests read `doctor`, `icloud_status`, list a Drive folder, list Photos albums, retrieve one preview **with both Macs offline**. Only after that enable any authorized writes in a separately reviewed change.
-8. For full original photo downloads add a separate read-only rclone Photos adapter; rclone's Apple trust token may expire after ~30 days. The current Photos MCP provides previews, not original exports.
+8. Optional full photo/video MEDIA downloads (direct from iCloud, no Mac): run `docker compose --profile photo-media run --rm photo_media config` and configure an `icloudphotos` remote of type `iclouddrive`, service `photos`; complete Apple 2FA inside the cloud console. Review available libraries with `docker compose --profile photo-media run --rm photo_media lsd icloudphotos:`. To download an explicitly chosen file or album to the private named `icloud_photo_exports` volume, preview `docker compose --profile photo-media run --rm photo_media copy 'icloudphotos:PrimarySync/Favorites/IMG_0001.HEIC' /exports --dry-run` before rerunning without `--dry-run`. Avoid unbounded full-library downloads. These rclone operations are **CLI only**, not exposed through the ChatGPT MCP until a constrained rclone MCP adapter is reviewed. The rclone trust token expires after roughly 30 days and its config contains sensitive Apple account authentication state.
 
 ### Security boundaries and recovery
 
