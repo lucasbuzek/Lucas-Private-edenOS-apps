@@ -116,6 +116,10 @@ def pair():
     print("Open https://appleraven-private.lucasravensnest.workers.dev/pair")
     print("Enter the pairing code: " + code)
     print("Approve using your existing owner Cloudflare Access login. No password is requested in Terminal.")
+    # Open the verified owner page as a convenience; never pass the device
+    # secret through the browser or URL.
+    subprocess.Popen(["/usr/bin/open", "https://appleraven-private.lucasravensnest.workers.dev/pair"],
+                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     deadline = time.monotonic() + 600
     while time.monotonic() < deadline:
         time.sleep(5)
