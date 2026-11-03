@@ -57,6 +57,8 @@ services:
     profiles: [photo-media]
     image: rclone/rclone:latest
     entrypoint: [rclone]
+    environment:
+      XDG_CACHE_HOME: /tmp/rclone-cache
     volumes:
       - icloud_rclone_config:/config/rclone
       - icloud_photo_exports:/exports
