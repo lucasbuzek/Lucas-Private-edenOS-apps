@@ -19,7 +19,7 @@ import urllib.error
 import urllib.request
 
 SERVICE = "com.lucasbuzek.appleraven.device"
-ENDPOINT = os.environ.get("APPLERAVEN_DEVICE_ENDPOINT", "https://appleraven-device-unified-staging.lucasravensnest.workers.dev")
+ENDPOINT = os.environ.get("APPLERAVEN_DEVICE_ENDPOINT", "https://appleraven-device.lucasravensnest.workers.dev")
 MAX_REPLY = 8192
 
 class Rejected(Exception):
