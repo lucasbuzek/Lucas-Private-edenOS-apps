@@ -55,12 +55,23 @@ PYAPPLE="$BASE/python/bin/pyapple-mcp"
 if [[ ! -x "$PYAPPLE" ]] && python3 -m venv "$BASE/python"; then
  "$BASE/python/bin/python" -m pip install --disable-pip-version-check pyapple-mcp || echo "pyapple-mcp installation unavailable; skipped." >&2
 fi
+# Apple-Tools-MCP is an optional unified native provider; uvx manages its
+# Python environment. No paid service or separate cloud connection is involved.
+UVX_BIN="$(command -v uvx || true)"
+if [[ -z "$UVX_BIN" ]] && command -v brew >/dev/null 2>&1; then
+ echo "Installing the free uv runner for Apple-Tools-MCP."
+ brew install uv || echo "uv unavailable; Apple-Tools-MCP will be skipped." >&2
+ UVX_BIN="$(command -v uvx || true)"
+fi
 if [[ ! -e "$CONFIG/providers.json" ]]; then
- APPLE_RAVEN_CONFIG="$CONFIG/providers.json" APPLE_RAVEN_BASE="$BASE" APPLE_RAVEN_PYAPPLE="$PYAPPLE" "$NODE_BIN" -e '
+ APPLE_RAVEN_CONFIG="$CONFIG/providers.json" APPLE_RAVEN_BASE="$BASE" APPLE_RAVEN_PYAPPLE="$PYAPPLE" APPLE_RAVEN_UVX="$UVX_BIN" "$NODE_BIN" -e '
  const fs=require("node:fs"),path=require("node:path");
  const base=process.env.APPLE_RAVEN_BASE,p=[];
  p.push({key:"macui",command:"npx",args:["-y","mac-use-mcp@1.1.1"]});
+ // Reuse the actual upstream Apple MCP implementations instead of recreating them.
+ p.push({key:"imcp",command:"npx",args:["-y","@heznpc/imcp@1.3.0","--full"]});
  p.push({key:"photos",command:"npx",args:["-y","apple-photos-mcp"]});
+ if(process.env.APPLE_RAVEN_UVX)p.push({key:"appletools",command:process.env.APPLE_RAVEN_UVX,args:["apple-tools-mcp"]});
  if(fs.existsSync(process.env.APPLE_RAVEN_PYAPPLE))p.push({key:"pyapple",command:process.env.APPLE_RAVEN_PYAPPLE,args:[]});
  const dev=path.join(base,"sources/mac-developer-bridge/bridge.mjs");
  if(fs.existsSync(dev)&&fs.existsSync(path.join(require("node:os").homedir(),"Library/Application Support/MacDeveloperBridge/FULL_ACCESS_ENABLED")))p.push({key:"macdev",command:process.execPath,args:[dev]});
