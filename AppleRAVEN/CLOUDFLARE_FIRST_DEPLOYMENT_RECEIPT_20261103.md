@@ -51,3 +51,11 @@ Mission correction: AppleRAVEN replaces inadequate Remote Desktop Commander with
 - **Cloudflare Pages:** preview alias successful by Cloudflare deployment API; direct external browser fetch not independently verified.
 - **GitHub Mac agent:** modified and statically parsed; not executed under macOS.
 - **First paired Mac + consent + live tool call:** not completed. Do not mark AppleRAVEN operational.
+
+## Final installer/source verification addendum
+
+- Repaired slow-provider startup: the native Mac tool catalog now registers immediately and the heartbeat/queue loop starts while optional upstream MCP servers initialize asynchronously; source commit `dc065a4025d51d4512a6660df1678b780dc99bb6`.
+- Installer now installs matching free Homebrew Node.js 22 only if current Node is absent/outdated; confirms formula currently exists. It displays background-agent status after installation; source commits `9440fdf8bdbded83a5f0918fd2ae855c3aa0408d` and `99ffbe8142aa7390ce79fc3e945a366c22994056`.
+- Pairing now attempts to open the existing Cloudflare owner page, with printed URL fallback if no GUI browser is available; source commit `029c6217e6247389722aedad36c806c64a62680b`.
+- Latest source readback + independent syntax checks: `bash -n` both Mac installer and Pages bootstrap **PASS**; Python AST parse pairing agent **PASS**; Node ESM `--check` federated Mac agent **PASS**. No hidden inference of macOS native acceptance from these results.
+- Existing production Cloudflare Workers and Pages remain as previously recorded. No additional cloud deployments were necessary for these dynamic GitHub-bootstrap Mac-script improvements.
