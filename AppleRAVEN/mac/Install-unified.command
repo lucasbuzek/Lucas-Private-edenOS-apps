@@ -62,10 +62,23 @@ if [[ ! -e "$PLIST" ]]; then
  fs.writeFileSync(process.env.APPLE_RAVEN_PLIST,plist,{flag:"wx",mode:0o600});
  '
 fi
-if /bin/launchctl bootstrap "gui/$(id -u)" "$PLIST"; then
+LABEL="com.lucasbuzek.appleraven.unified"
+DOMAIN="gui/$(id -u)"
+# Re-running the installer updates the existing executable and restarts the live agent.
+# Without this, launchctl bootstrap returns "already loaded" and keeps the old code.
+if /bin/launchctl print "$DOMAIN/$LABEL" >/dev/null 2>&1; then
+  echo "Restarting existing AppleRAVEN user agent with current source."
+  /bin/launchctl bootout "$DOMAIN/$LABEL" || {
+    echo "Could not stop existing AppleRAVEN agent; no forced termination." >&2
+    exit 1
+  }
+fi
+if /bin/launchctl bootstrap "$DOMAIN" "$PLIST"; then
+ /bin/launchctl kickstart "$DOMAIN/$LABEL" >/dev/null 2>&1 || true
  echo "AppleRAVEN unified Mac agent installed and launched."
 else
- echo "Review existing LaunchAgent or start manually: $NODE_BIN $BASE/appleraven_unified_agent.mjs"
+ echo "Could not load agent. Review $LOGS/unified.err.log or start manually: $NODE_BIN $BASE/appleraven_unified_agent.mjs" >&2
+ exit 1
 fi
 echo "Provider configuration: $CONFIG/providers.json"
 echo "Operation logs: $LOGS"
