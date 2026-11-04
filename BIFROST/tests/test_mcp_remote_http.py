@@ -113,7 +113,16 @@ class RemoteHTTPTests(unittest.TestCase):
         status, _, body = self.request()
         self.assertEqual(status, 200)
         self.assertEqual([t["name"] for t in json.loads(body)["result"]["tools"]],
-                         ["bifrost.system.platform.read"])
+                         ["bifrost.system.platform.read", "bifrost.bridge.connections.list"])
+
+    def test_bridge_registry_uses_authenticated_subject(self):
+        with patch.object(remote, "connections_for_subject", return_value=[]) as registry:
+            status, _, body = self.request("tools/call", {"name": "bifrost.bridge.connections.list", "arguments": {}})
+            self.assertEqual(status, 200)
+            result = json.loads(body)["result"]
+            self.assertFalse(result.get("isError", False))
+            self.assertEqual(result.get("structuredContent", {}).get("connections"), [])
+            registry.assert_called_once_with("fixture-owner")
 
     def test_authenticated_call_uses_real_platform_dispatcher(self):
         status, _, body = self.request("tools/call", {"name": "bifrost.system.platform.read", "arguments": {}})
