@@ -238,16 +238,22 @@ async function http(route,body,token){
   return data;
 }
 async function credentials(){
-  const account=os.userInfo().username;
+  // Read the device credential through the same macOS Security.framework
+  // executable that enrolled it. The `security -w` CLI prompts for a
+  // separate Keychain ACL grant in a headless LaunchAgent.
+  const helper=path.join(os.homedir(),"Library","Application Support","AppleRAVEN","Unified","appleraven_agent.py");
   let stdout;
   try{
-    const r=await exec("/usr/bin/security",["find-generic-password","-s","com.lucasbuzek.appleraven.device","-a",account,"-w"],{timeout:10000,encoding:"utf8"});
+    const r=await exec("python3",[helper,"--agent-token"],{timeout:12000,encoding:"utf8",maxBuffer:4096});
     stdout=r.stdout;
-  }catch{throw new Error("Mac not paired. Complete AppleRAVEN owner pairing using appleraven_agent.py --pair.");}
+  }catch{
+    throw new Error("AppleRAVEN Mac Keychain credential unavailable; verify owner pairing and login Keychain access.");
+  }
   const token=String(stdout||"").trim();
   if(!/^[a-f0-9]{64}$/.test(token))throw new Error("Invalid AppleRAVEN Keychain credential");
   return {device_token:token};
 }
+
 async function publishManifest(tools,token){
   await http("/v1/device/providers/register",{tools:[]},token);
   let batch=[],bytes=0,total=0;
