@@ -52,14 +52,39 @@ def post(endpoint, path, payload, token=None, timeout=15):
         raise Rejected("AppleRAVEN service HTTP " + str(exc.code)) from None
 
 def keychain_get():
-    """Read only this signed-in macOS user's device credential, not another account's."""
+    """Read only this user's Keychain item via the creating Python executable.
+
+    Using /usr/bin/security -w from a different executable triggers a macOS
+    Keychain UI ACL prompt in headless LaunchAgents, then times out.
+    """
+    if platform.system() != "Darwin":
+        return None
+    import ctypes
     import getpass
-    result = subprocess.run(
-        ["/usr/bin/security", "find-generic-password", "-s", SERVICE,
-         "-a", getpass.getuser(), "-w"],
-        capture_output=True, text=True, timeout=10)
-    value = result.stdout.strip() if result.returncode == 0 else None
-    return value if value and len(value) == 64 and all(c in "0123456789abcdef" for c in value) else None
+    from ctypes import c_void_p, c_uint32, c_char_p, c_int32, POINTER, byref
+    service = SERVICE.encode("utf-8")
+    account = getpass.getuser().encode("utf-8")
+    sec = ctypes.CDLL("/System/Library/Frameworks/Security.framework/Security")
+    find = sec.SecKeychainFindGenericPassword
+    find.argtypes = [c_void_p, c_uint32, c_char_p, c_uint32, c_char_p,
+                     POINTER(c_uint32), POINTER(c_void_p), POINTER(c_void_p)]
+    find.restype = c_int32
+    length = c_uint32()
+    data = c_void_p()
+    status = find(None, len(service), service, len(account), account,
+                  byref(length), byref(data), None)
+    if status != 0 or not data:
+        return None
+    try:
+        token = ctypes.string_at(data, length.value).decode("ascii")
+    except (UnicodeError, ValueError):
+        return None
+    finally:
+        free = sec.SecKeychainItemFreeContent
+        free.argtypes = [c_void_p, c_void_p]
+        free.restype = c_int32
+        free(None, data)
+    return token if len(token) == 64 and all(c in "0123456789abcdef" for c in token) else None
 
 def keychain_set(token):
     """Store device token using Security.framework, never a command-line argument."""
@@ -162,7 +187,14 @@ def main():
     parser.add_argument("--pair", action="store_true")
     parser.add_argument("--once", action="store_true")
     parser.add_argument("--status", action="store_true")
+    parser.add_argument("--agent-token", action="store_true", help=argparse.SUPPRESS)
     args = parser.parse_args()
+    if args.agent_token:
+        token = keychain_get()
+        if not token:
+            raise Rejected("AppleRAVEN Keychain credential unavailable")
+        print(token)
+        return
     if args.status:
         print(json.dumps({"macos": platform.mac_ver()[0], "node": socket.gethostname(),
                           "device_credential_present": bool(keychain_get()),
