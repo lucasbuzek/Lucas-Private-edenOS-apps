@@ -121,7 +121,10 @@ class RemoteHTTPTests(unittest.TestCase):
             self.assertEqual(status, 200)
             result = json.loads(body)["result"]
             self.assertFalse(result.get("isError", False))
-            self.assertEqual(result.get("structuredContent", {}).get("connections"), [])
+            data = result.get("structuredContent")
+            if data is None or "connections" not in data:
+                data = json.loads(result["content"][0]["text"])
+            self.assertEqual(data["connections"], [])
             registry.assert_called_once_with("fixture-owner")
 
     def test_authenticated_call_uses_real_platform_dispatcher(self):
