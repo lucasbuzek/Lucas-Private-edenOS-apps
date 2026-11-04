@@ -175,3 +175,5 @@ export default {
   return json({error:"not_found"},404);
  }
 };
+
+export {verifyAccess};
