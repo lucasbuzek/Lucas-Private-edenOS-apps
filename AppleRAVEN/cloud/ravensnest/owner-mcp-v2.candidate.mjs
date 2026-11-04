@@ -1,4 +1,5 @@
 import {handleOwnerPair,PAIR_TOOLS,queueShortcuts,readAction} from "./owner-pair-addon.mjs";
+import {handleOwnerManage} from "./owner-manage-addon.mjs";
 import {FEDERATION_TOOLS,federationCatalog,federationInvoke,federationResult} from "./provider-federation.mjs";
 import {CLOUD_TOOLS,cloudCatalog,cloudInvoke} from "./oracle-federation.mjs";
 import {ICLOUD_TOOLS,icloudCatalog,icloudInvoke} from "./icloud-vpc-federation.mjs";
@@ -95,6 +96,13 @@ export default {
   const origin=request.headers.get("origin");
   if(origin&&origin!==new URL(request.url).origin)return json({error:"origin_forbidden"},403);
   const path=new URL(request.url).pathname;
+  if(path==="/manage"||path==="/manage/app.js"||path==="/manage/status"||path==="/manage/grant"||path==="/manage/revoke"){
+   const identity=await verifyAccess(request);
+   if(!identity)return challenge();
+   let owner;try{owner=await getOwner(env,identity)}catch{return json({error:"owner_store_unavailable"},503)}
+   if(!owner)return json({error:"owner_not_authorized"},403);
+   return handleOwnerManage(request,env,owner);
+  }
   if(path==="/pair"||path==="/pair/approve"){
    const identity=await verifyAccess(request);
    if(!identity)return challenge();
