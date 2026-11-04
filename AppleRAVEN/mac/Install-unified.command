@@ -29,6 +29,13 @@ mkdir -p "$BASE" "$CONFIG" "$LOGS" "$HOME/Library/LaunchAgents"
 chmod 700 "$CONFIG"
 install -m 0755 "$HERE/appleraven_unified_agent.mjs" "$BASE/appleraven_unified_agent.mjs"
 install -m 0700 "$HERE/appleraven_agent.py" "$BASE/appleraven_agent.py"
+# Present the owned AppleRAVEN agent by its product name in macOS process lists.
+# Node.js remains the runtime, but the LaunchAgent launches this private alias.
+AGENT_NODE="$BASE/AppleRAVENnode"
+if [[ ! -e "$AGENT_NODE" && ! -L "$AGENT_NODE" ]]; then
+ /bin/ln -s "$NODE_BIN" "$AGENT_NODE"
+fi
+if [[ ! -x "$AGENT_NODE" ]]; then echo "AppleRAVENnode runtime alias is not executable." >&2; exit 1; fi
 "$NODE_BIN" --check "$BASE/appleraven_unified_agent.mjs"
 if ! /usr/bin/security find-generic-password -s com.lucasbuzek.appleraven.device -a "$(id -un)" >/dev/null 2>&1; then
  echo "Pair using your existing AppleRAVEN owner sign-in. Device secret stays in Keychain."
@@ -102,7 +109,7 @@ if [[ -f "$HERE/patch-launcher.mjs" && -f "$LAUNCHER_DIR/node_modules/@joshuaril
  "$NODE_BIN" "$HERE/patch-launcher.mjs" "$LAUNCHER_DIR" || echo "Launcher compatibility patch failed; do not authorize its tools." >&2
 fi
 if [[ ! -e "$PLIST" ]]; then
- APPLE_RAVEN_PLIST="$PLIST" APPLE_RAVEN_AGENT="$BASE/appleraven_unified_agent.mjs" APPLE_RAVEN_LOGS="$LOGS" APPLE_RAVEN_NODE="$NODE_BIN" "$NODE_BIN" -e '
+ APPLE_RAVEN_PLIST="$PLIST" APPLE_RAVEN_AGENT="$BASE/appleraven_unified_agent.mjs" APPLE_RAVEN_LOGS="$LOGS" APPLE_RAVEN_NODE="$AGENT_NODE" "$NODE_BIN" -e '
  const fs=require("node:fs");
  const xml=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
  const plist=[
