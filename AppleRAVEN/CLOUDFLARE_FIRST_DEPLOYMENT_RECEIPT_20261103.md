@@ -59,3 +59,15 @@ Mission correction: AppleRAVEN replaces inadequate Remote Desktop Commander with
 - Pairing now attempts to open the existing Cloudflare owner page, with printed URL fallback if no GUI browser is available; source commit `029c6217e6247389722aedad36c806c64a62680b`.
 - Latest source readback + independent syntax checks: `bash -n` both Mac installer and Pages bootstrap **PASS**; Python AST parse pairing agent **PASS**; Node ESM `--check` federated Mac agent **PASS**. No hidden inference of macOS native acceptance from these results.
 - Existing production Cloudflare Workers and Pages remain as previously recorded. No additional cloud deployments were necessary for these dynamic GitHub-bootstrap Mac-script improvements.
+
+
+## 2026-11-04 — Separate AppleRAVEN Secure MCP Tunnel origin
+
+- Deployed Cloudflare Worker `appleraven-tunnel-origin` to the existing **ravensnest** Cloudflare account `d468143e61d414b11fed13f133732964`, preserving `appleraven-private`, `appleraven-device`, and their existing LKG deployments.
+- Private MCP origin URL: `https://appleraven-tunnel-origin.lucasravensnest.workers.dev/mcp`; `workers.dev` route enabled and preview URLs disabled.
+- Cloudflare bindings verified by API: existing D1 `DB`, KV `OAUTH_KV`, and encrypted `TUNNEL_ORIGIN_TOKEN` secret. **Never store or commit the secret in GitHub.**
+- Separate sources added in the existing AppleRAVEN tree: `cloud/ravensnest/owner-mcp-tunnel.mjs`, `tunnel-origin.mjs`, and `tunnel-wrangler.candidate.jsonc`. Reused the existing owner pairing, device providers, cloud and iCloud federation modules without cloning their business logic.
+- Standard stateless Streamable HTTP MCP routing added: `initialize`, `notifications/initialized`, `ping`, `tools/list`, `tools/call`, with preserved legacy method translation and backend owner grants. The `/mcp` route requires a strong bearer token. The older `/api/mcp` route remains behind existing owner authentication.
+- **Browser-observed live selftest** at `https://appleraven-tunnel-origin.lucasravensnest.workers.dev/health/mcp` returned HTTP success with `{"mcp_compatible":true,"initialize_http":200,"tools_list_http":200,"tool_count":11,"version":"0.2.0"}`; DB-backed `/health` returned `database:true`.
+- OpenAI tunnel-client supports origin header injection via `--mcp.extra-headers "Authorization: env:APPLERAVEN_ORIGIN_AUTH_HEADER"`. This allows **ChatGPT Connection: Tunnel, Authentication: No authentication** while the separate persistent tunnel-client inserts the securely stored upstream bearer token; do not disable origin authentication.
+- **Not yet verified**: live OpenAI tunnel-client process, distinct AppleRAVEN tunnel ID, plugin installation into ChatGPT web/mobile, owner macOS pairing, full desktop execution, private cloud iCloud Drive/Photos source. These require the separately established tunnel runtime and connected sources. Do not represent the MCP smoke as evidence for native execution.
