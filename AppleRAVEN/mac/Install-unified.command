@@ -73,13 +73,21 @@ if [[ -z "$UVX_BIN" ]] && command -v brew >/dev/null 2>&1; then
  brew install uv || echo "uv unavailable; Apple-Tools-MCP will be skipped." >&2
  UVX_BIN="$(command -v uvx || true)"
 fi
+# Install only the owner's requested MIT launcher into the private AppleRAVEN app source.
+# Its npm v0.0.1 bin metadata is incorrect; patch-launcher.mjs verifies
+# and repairs the installed source before any MCP agent starts it.
+LAUNCHER_DIR="$SOURCE_DIR/mac-apps-launcher"
+if [[ ! -d "$LAUNCHER_DIR/node_modules/@joshuarileydev/mac-apps-launcher-mcp-server" ]]; then
+  npm install --prefix "$LAUNCHER_DIR" --no-audit --no-fund --ignore-scripts '@joshuarileydev/mac-apps-launcher-mcp-server@0.0.1' || echo "Optional Mac app launcher unavailable." >&2
+fi
 if [[ ! -e "$CONFIG/providers.json" ]]; then
  APPLE_RAVEN_CONFIG="$CONFIG/providers.json" APPLE_RAVEN_BASE="$BASE" APPLE_RAVEN_PYAPPLE="$PYAPPLE" APPLE_RAVEN_UVX="$UVX_BIN" "$NODE_BIN" -e '
  const fs=require("node:fs"),path=require("node:path");
  const base=process.env.APPLE_RAVEN_BASE,p=[];
  p.push({key:"macui",command:"npx",args:["-y","mac-use-mcp@1.1.1"]});
  // MIT launcher by JoshuaRileyDev provides installed-app enumeration and open-with.
- p.push({key:"applaunch",command:"npx",args:["-y","@joshuarileydev/mac-apps-launcher-mcp-server@0.0.1"]});
+ const launcher=path.join(base,"sources/mac-apps-launcher/node_modules/@joshuarileydev/mac-apps-launcher-mcp-server/dist/src/index.js");
+ if(fs.existsSync(launcher))p.push({key:"applaunch",command:process.execPath,args:[launcher]});
  // Reuse the actual upstream Apple MCP implementations instead of recreating them.
  p.push({key:"imcp",command:"npx",args:["-y","@heznpc/imcp@1.3.0","--full"]});
  p.push({key:"photos",command:"npx",args:["-y","apple-photos-mcp"]});
@@ -89,6 +97,9 @@ if [[ ! -e "$CONFIG/providers.json" ]]; then
  if(fs.existsSync(dev)&&fs.existsSync(path.join(require("node:os").homedir(),"Library/Application Support/MacDeveloperBridge/FULL_ACCESS_ENABLED")))p.push({key:"macdev",command:process.execPath,args:[dev]});
  fs.writeFileSync(process.env.APPLE_RAVEN_CONFIG,JSON.stringify({providers:p},null,2)+"\n",{flag:"wx",mode:0o600});
  '
+fi
+if [[ -f "$HERE/patch-launcher.mjs" && -f "$LAUNCHER_DIR/node_modules/@joshuarileydev/mac-apps-launcher-mcp-server/dist/src/index.js" ]]; then
+ "$NODE_BIN" "$HERE/patch-launcher.mjs" "$LAUNCHER_DIR" || echo "Launcher compatibility patch failed; do not authorize its tools." >&2
 fi
 if [[ ! -e "$PLIST" ]]; then
  APPLE_RAVEN_PLIST="$PLIST" APPLE_RAVEN_AGENT="$BASE/appleraven_unified_agent.mjs" APPLE_RAVEN_LOGS="$LOGS" APPLE_RAVEN_NODE="$NODE_BIN" "$NODE_BIN" -e '
