@@ -8,6 +8,7 @@ const unauthorized=()=>json({error:"owner_auth_required"},401,{"www-authenticate
 export default {
  async fetch(req,env,ctx){
   const u=new URL(req.url),path=u.pathname;
+  if(req.method==="GET"&&(path==="/"||(path==="/health"&&(req.headers.get("accept")||"").includes("text/html"))))return Response.redirect(new URL("/manage",req.url),302);
   if(path==="/.well-known/oauth-protected-resource"||path==="/.well-known/oauth-protected-resource/mcp"){
    if(req.method!=="GET")return json({error:"method_not_allowed"},405);
    return json({resource:RESOURCE,authorization_servers:[ISSUER],bearer_methods_supported:["header"],scopes_supported:["appleraven:read"]});
