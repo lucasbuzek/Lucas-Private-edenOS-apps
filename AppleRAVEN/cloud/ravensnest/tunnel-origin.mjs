@@ -6,6 +6,22 @@ const err=(id,code,message,status=200)=>json({jsonrpc:"2.0",id,error:{code,messa
 export default {
  async fetch(request,env,ctx){
   const path=new URL(request.url).pathname;
+  if(path==="/health/mcp"&&request.method==="GET"){
+   if(typeof env.TUNNEL_ORIGIN_TOKEN!=="string")return json({service:name,mcp_compatible:false,reason:"tunnel_secret_unconfigured"},503);
+   const target=new URL(request.url);target.pathname="/mcp";
+   const probe=async (id,method,params)=>this.fetch(new Request(target.toString(),{
+    method:"POST",headers:{"content-type":"application/json","authorization":"Bearer "+env.TUNNEL_ORIGIN_TOKEN},
+    body:JSON.stringify({jsonrpc:"2.0",id,method,params})
+   }),env,ctx);
+   try{
+    const i=await probe(7101,"initialize",{protocolVersion:"2025-06-18",capabilities:{},clientInfo:{name:"appleraven-selftest",version:"1"}});
+    const init=await i.json();
+    const l=await probe(7102,"tools/list",{});
+    const list=await l.json();
+    const compatible=i.status===200&&init?.result?.serverInfo?.name===name&&l.status===200&&Array.isArray(list?.result?.tools);
+    return json({service:name,mcp_compatible:compatible,initialize_http:i.status,tools_list_http:l.status,tool_count:list?.result?.tools?.length||0,version:"0.2.0"},compatible?200:503);
+   }catch{return json({service:name,mcp_compatible:false,reason:"selftest_exception"},503)}
+  }
   if(path!=="/mcp")return upstream.fetch(request,env,ctx);
   const origin=request.headers.get("origin");
   if(origin&&origin!==new URL(request.url).origin)return json({error:"origin_forbidden"},403);
