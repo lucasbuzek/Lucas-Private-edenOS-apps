@@ -7,6 +7,8 @@ on:
       - BIFROST/headless/mcp_bridge.py
       - BIFROST/headless/mcp_remote_auth.py
       - BIFROST/headless/mcp_remote.py
+      - BIFROST/headless/bridge_registry.py
+      - BIFROST/tests/test_bridge_registry.py
       - BIFROST/tests/test_mcp_remote_auth.py
       - BIFROST/tests/test_mcp_remote_auth_https.py
       - BIFROST/tests/test_mcp_remote_http.py
@@ -25,6 +27,8 @@ on:
       - BIFROST/headless/mcp_bridge.py
       - BIFROST/headless/mcp_remote_auth.py
       - BIFROST/headless/mcp_remote.py
+      - BIFROST/headless/bridge_registry.py
+      - BIFROST/tests/test_bridge_registry.py
       - BIFROST/tests/test_mcp_remote_auth.py
       - BIFROST/tests/test_mcp_remote_auth_https.py
       - BIFROST/tests/test_mcp_remote_http.py
@@ -71,8 +75,10 @@ jobs:
         run: python -B -m unittest discover -s tests -p "test_mcp_remote_transport_contract.py" -v
       - name: Guard OCI MCP packaging against auth downgrade and public exposure
         run: python -B -m unittest discover -s tests -p "test_oci_mcp_deployment_contract.py" -v
+      - name: Test scoped bridge connection registry and tenant denials
+        run: python -B -m unittest discover -s tests -p "test_bridge_registry.py" -v
       - name: Compile independent remote SDK adapter
-        run: python -B -m py_compile headless/mcp_remote_auth.py headless/mcp_remote.py
+        run: python -B -m py_compile headless/mcp_remote_auth.py headless/mcp_remote.py headless/bridge_registry.py
       - name: Install official SDK for actual HTTP boundary tests
         run: python -m pip install --disable-pip-version-check 'mcp==2.3.0'
       - name: Exercise SDK HTTP listener and real platform dispatcher
