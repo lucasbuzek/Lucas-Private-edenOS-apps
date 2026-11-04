@@ -17,6 +17,7 @@ from mcp.server.transport_security import TransportSecuritySettings
 from pydantic import AnyHttpUrl
 
 from mcp_remote_auth import ConfigurationError, SCOPE, from_environment, inspect_token
+from bridge_registry import connections_for_subject
 import shortcalls
 
 
@@ -55,6 +56,17 @@ def create_server(config):
         if identity is None or SCOPE not in identity.scopes:
             raise PermissionError("Authenticated capability scope required")
         return shortcalls.call("bifrost.system.platform.read")
+
+    @server.tool(name="bifrost.bridge.connections.list")
+    def list_connections() -> dict:
+        """List only explicitly configured and authorized MCP/A2A/cloud/device/user endpoints.
+
+        This is passive discovery, not proof of connectivity or execution authority.
+        """
+        identity = get_access_token()
+        if identity is None or SCOPE not in identity.scopes or not identity.subject:
+            raise PermissionError("Authenticated subject and capability scope required")
+        return {"connections": connections_for_subject(identity.subject)}
 
     return server
 
