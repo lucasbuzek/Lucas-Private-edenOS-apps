@@ -62,7 +62,7 @@ if [[ -f "$DEVELOPER_BRIDGE" && ! -f "$BRIDGE_UNLOCK" ]]; then
  fi
 fi
 PYAPPLE="$BASE/python/bin/pyapple-mcp"
-if [[ ! -x "$PYAPPLE" ]] && python3 -m venv "$BASE/python"; then
+if [[ ! -x "$PYAPPLE" && "${APPLERAVEN_DEFER_PYAPPLE:-0}" != "1" ]] && python3 -m venv "$BASE/python"; then
  "$BASE/python/bin/python" -m pip install --disable-pip-version-check pyapple-mcp || echo "pyapple-mcp installation unavailable; skipped." >&2
 fi
 # Apple-Tools-MCP is an optional unified native provider; uvx manages its
