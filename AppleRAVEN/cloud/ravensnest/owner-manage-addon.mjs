@@ -6,7 +6,7 @@ const json=(data,status=200)=>new Response(JSON.stringify(data),{status,headers:
 const DEVICE=/^mac_[a-f0-9]{24}$/;
 const caps=new Set(["tools.proxy","shortcuts.list"]);
 function sameOrigin(req){const u=new URL(req.url);return req.headers.get("origin")===u.origin&&req.headers.get("x-appleraven-owner-action")==="owner-dashboard"&&(req.headers.get("content-type")||"").split(";")[0]==="application/json";}
-async function getRows(statement,params=[]){return (await params.reduce((q,p)=>q.bind(p),statement).all()).results||[];}
+async function getRows(statement,params=[]){return (await statement.bind(...params).all()).results||[];}
 async function ownerDevices(env,owner){
  const d=await getRows(env.DB.prepare("SELECT d.id,d.name,d.kind,d.created_at,n.updated_at AS last_seen,(SELECT COUNT(*) FROM appleraven_provider_tools t WHERE t.node_id=d.id) AS tool_count FROM devices d JOIN grants g ON g.device_id=d.id LEFT JOIN node_state n ON n.node_id=d.id WHERE g.user_id=?1 AND d.revoked_at IS NULL GROUP BY d.id ORDER BY d.created_at DESC"),[owner.id]);
  for(const x of d){const g=await getRows(env.DB.prepare("SELECT capability,revoked_at FROM grants WHERE user_id=?1 AND device_id=?2"),[owner.id,x.id]);x.grants=g.map(y=>({capability:y.capability,enabled:y.revoked_at===null}));x.tool_count=Number(x.tool_count||0);x.online=Boolean(Number(x.last_seen)>Date.now()-90000);}
