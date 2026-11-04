@@ -14,6 +14,12 @@ async function request(path, payload) {
   if (!response.ok) throw Error(json.error || ("HTTP " + response.status));
   return json;
 }
+async function storageProfileRequest(session) {
+  const response = await fetch("/api/storage/v1/profiles", {headers:{"X-Bifrost-Token":session},cache:"no-store"});
+  const data = await response.json();
+  if (!response.ok) throw Error(data.error || "Profiles unavailable");
+  return data;
+}
 function updateView(data) {
   for (const id of ["awakeToggle", "openNativeApp", "save", "refreshSetups", "activityRefresh", "recordLocalCheck"]) {
     const button = $(id); if (button) button.disabled = false;
@@ -47,6 +53,8 @@ function renderPrefs(settings) {
   }
 }
 function markNodeOffline(reason) {
+  clearStoragePreview();
+  $("storageProfile")?.replaceChildren();
   // A previous live observation cannot remain labeled "Running" after API loss.
   $("overall").textContent = "Unavailable · connection lost";
   $("overall").dataset.health = "offline";
@@ -1058,3 +1066,57 @@ function shellInstallRoutes() {
   shellSyncPageFromHash();
 }
 shellInstallRoutes();
+
+
+// Storage uses the existing profile-bound backend and session; never a raw path.
+let storageGeneration = 0;
+function clearStoragePreview() {
+  storageGeneration++;
+  if ($("storageResults")) $("storageResults").replaceChildren();
+  if ($("storageFeedback")) $("storageFeedback").textContent = "No current preview.";
+}
+async function browseStorage(readRemote) {
+  clearStoragePreview();
+  const generation = storageGeneration;
+  const session = token;
+  if (!session) { $("storageFeedback").textContent = "Connect to Headless first."; return; }
+  const profile = $("storageProfile").value.trim();
+  const folder = $("storageFolder").value.trim();
+  if (!profile) { $("storageFeedback").textContent = "Enter an existing saved profile name."; return; }
+  $("storageFeedback").textContent = "Reading selected folder…";
+  try {
+    const result = await request("/api/storage/v1/preview", {profile, folder, readRemote});
+    if (generation !== storageGeneration || session !== token) return;
+    $("storageFeedback").textContent = result.status + " · " + (result.count ?? 0) + " entries";
+    for (const entry of result.entries || []) {
+      const row = document.createElement("div"); row.className = "record";
+      row.textContent = entry.name + " · " + entry.kind + (entry.bytes == null ? "" : " · " + entry.bytes + " bytes");
+      $("storageResults").append(row);
+    }
+  } catch (error) {
+    if (generation === storageGeneration && session === token)
+      $("storageFeedback").textContent = "Preview unavailable: " + error.message;
+  }
+}
+$("storagePreview")?.addEventListener("click", () => browseStorage(false));
+$("storageOnline")?.addEventListener("click", () => browseStorage(true));
+for (const id of ["storageProfile", "storageFolder"]) $(id)?.addEventListener("input", clearStoragePreview);
+
+$("storageLoad")?.addEventListener("click", async () => {
+  clearStoragePreview();
+  const generation = storageGeneration, session = token;
+  $("storageProfile").replaceChildren();
+  if (!session) { $("storageFeedback").textContent = "Connect to Headless first."; return; }
+  try {
+    const data = await storageProfileRequest(session);
+    if (generation !== storageGeneration || session !== token) return;
+    for (const item of data.profiles) {
+      const option = document.createElement("option");
+      option.value = item.name; option.textContent = item.name + " · " + item.provider;
+      $("storageProfile").append(option);
+    }
+    $("storageFeedback").textContent = data.profiles.length ? "Select a profile and preview its folder." : "No saved profiles. Configure one through BIFROST Files & Storage first.";
+  } catch(error) {
+    if (generation === storageGeneration && session === token) $("storageFeedback").textContent = error.message;
+  }
+});

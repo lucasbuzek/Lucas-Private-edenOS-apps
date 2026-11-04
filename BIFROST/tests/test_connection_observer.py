@@ -50,6 +50,16 @@ class SnapshotTests(unittest.TestCase):
         self.assertEqual(result["authentication"], "not-verified-from-local-profile")
         self.assertEqual(result["liveChatGPTTransport"], "independent-verification-required")
 
+    def test_missing_local_rdc_manager_does_not_imply_account_loss(self):
+        with mock.patch.object(obs, "CONNECTORS", Path("/nonexistent-bifrost-test")), \
+             mock.patch.object(obs, "_fixed_read") as read:
+            result = obs._rdc()
+        self.assertEqual(result["state"], "not-found")
+        self.assertEqual(result["profiles"], [])
+        self.assertEqual(result["authentication"], "not-verified-from-local-profile")
+        self.assertEqual(result["liveChatGPTTransport"], "independent-verification-required")
+        read.assert_not_called()
+
     def test_monitor_unauthorized_and_invalid_scans_cannot_execute(self):
         monitor = obs.LANMonitor()
         with mock.patch.object(obs, "_interface", return_value={

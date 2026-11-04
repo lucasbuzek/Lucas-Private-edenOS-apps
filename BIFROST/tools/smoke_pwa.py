@@ -11,6 +11,7 @@ import os
 import pathlib
 import socket
 import subprocess
+import sys
 import tempfile
 import time
 
@@ -41,7 +42,7 @@ def main():
         environment = dict(os.environ, HOME=folder, BIFROST_HEADLESS_PORT=str(port))
         with (host / "stdout.log").open("wb") as stdout:
             process = subprocess.Popen(
-                ["/opt/homebrew/bin/python3", "-B", str(SERVER)],
+                [sys.executable, "-B", str(SERVER)],
                 cwd=SERVER.parent, env=environment,
                 stdin=subprocess.DEVNULL, stdout=stdout, stderr=subprocess.STDOUT)
             try:

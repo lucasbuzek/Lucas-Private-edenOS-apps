@@ -1,5 +1,14 @@
 # BIFROST — canonical cross-platform product and delivery contract
 
+## 2026-10-29 OWNER CORRECTION — independent BIFROST is not Mac-gated
+
+**Independence is a primary acceptance property.** BIFROST's core, provider/identity/capability registry, Headless runtime, CLI, authenticated remote MCP and web interfaces must be installable, operable and verifiable on a supported independently provisioned host without any Apple device, RDC agent, HEIMDALL interface or Garden of EDEN PWA being online. A disconnected Mac is a **platform-specific acceptance gap only**, never an excuse to stop independent source development, non-Mac testing, external provider integration or a separately authorized secure deployment.
+
+BIFROSTcore / BIFROSTcorezero / BIFROSTzero retain their distinct established definitions and target matrices. Remote-host identity and per-owner permissions are mandatory; independence does NOT mean unauthenticated public execution, shell command access, broad cloud credentials, bypassing platform permissions or silently moving specialist data. Preserve standalone specialist ownership and existing LKG. Native Apple/Windows/Linux/mobile/WebMCP interfaces each retain separate platform acceptance gates without preventing other supported runtimes from functioning.
+
+**Delivery evidence ladder** is independent source implementation → isolated portable tests → authenticated real remote MCP client with denial/revocation → usable independent web portal and managed runtime → additional native/platform integration tests. Any real verified non-Apple host may satisfy the independent BIFROST gates. A localhost-only stdio server or loopback dashboard does not satisfy the remotely accessible gate by itself.
+
+
 ## 2026-10-21 owner correction — BIFROSTcore / BIFROSTcorezero / BIFROSTzero (CURRENT definitions)
 
 These **replace older overlapping uses** of ZERO/LOCAL/ALPHA, while retaining original artifacts and their provenance. ONE BIFROST identity: **Bridged Intelligence Fabric for Routing, Orchestration, Services & Tasks**, **CONNECT · KEEP · RESOLVE**. **BIFROST Bridge** remains the main ChatGPT/in-chat surface. Do not create separate runtime governors, competing cores, unverified new apps or another RavenNest. A documented new representation does not mean a binary or working device adapter exists.

@@ -12,7 +12,9 @@
       "effect": "read",
       "state": "implemented-readonly",
       "executors": {
-        "macos": "python.platform"
+        "macos": "python.platform",
+        "linux": "python.platform",
+        "windows": "python.platform"
       },
       "requiresApproval": false,
       "aliases": [
@@ -54,11 +56,13 @@
     {
       "id": "bifrost.device.discover",
       "group": "Devices",
-      "title": "Discover nearby advertised devices",
+      "title": "Observe Apple CoreDevice inventory without pairing or disclosing identifiers",
       "owner": "bifrost",
       "effect": "read",
-      "state": "contract-only",
-      "executors": {},
+      "state": "implemented-readonly",
+      "executors": {
+        "macos": "python.apple.coredevice"
+      },
       "requiresApproval": false
     },
     {
@@ -94,11 +98,13 @@
     {
       "id": "bifrost.connection.health.read",
       "group": "Connections",
-      "title": "Read connection health",
+      "title": "Read bounded local connection observations (not remote health proof)",
       "owner": "bifrost",
       "effect": "read",
-      "state": "contract-only",
-      "executors": {},
+      "state": "implemented-readonly",
+      "executors": {
+        "macos": "python.connection.observation"
+      },
       "requiresApproval": false
     },
     {
@@ -550,6 +556,22 @@
       "executors": {},
       "requiresApproval": true,
       "source": "#common/AppDevRules/productFLOW.md"
+    },
+    {
+      "id": "bifrost.apple.native.capabilities.read",
+      "group": "Apple",
+      "title": "Inspect locally available Apple tools without accessing user data",
+      "owner": "bifrost",
+      "effect": "read",
+      "state": "implemented-readonly",
+      "executors": {
+        "macos": "python.apple.native"
+      },
+      "requiresApproval": false,
+      "aliases": [
+        "apple.capabilities",
+        "apple.native.read"
+      ]
     }
   ],
   "combinations": [
