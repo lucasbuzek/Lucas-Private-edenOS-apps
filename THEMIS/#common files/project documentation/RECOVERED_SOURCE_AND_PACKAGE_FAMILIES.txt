@@ -1,7 +1,9 @@
 RECOVERED SOURCE AND PACKAGE FAMILIES
 
-1. Historical THEMIS legal-helper prompt family v1.0 — RECOVERED from MONETA_THEMIS_Helper_Ecosystem_v1.0. Includes master prompt, seven legal specialist prompts, shared core, registry, instructions, quickstart and acceptance tests.
+1. Historical THEMIS legal-helper prompt family v1.0 — RECOVERED from MONETA_THEMIS_Helper_Ecosystem_v1.0. Contains a file labeled master helper prompt, seven legal specialist prompts, shared core, registry, instructions, quickstart and acceptance tests. **The owner explicitly rejected the short master file as the complete original working THEMIS master**; preserve it as historical evidence only, not an accepted full master.
 2. Current AppDev identity authority — establishes THEMIS as the legal-domain App and the seven subordinate identities.
 3. THEMIS private experimental/convergence baseline v0.1.0 — RECOVERED implementation source, tests, integration descriptors and implementation evidence. This baseline does not claim full historical parity.
 
 Unresolved: original owning chat; older implementation/release lineage; historical provider adapters and UI; separate platform implementations. No incompatible code families were silently merged.
+
+2026-11-06 verified recovery distinction: `@themis` worked in ChatGPT on 2026-10-31 and generated an editable 19-page legal/H&S plan package; source conversation evidence is not proof of a specific plugin/host registration. A new private ChatGPT plugin created 2026-11-04 and revised 2026-11-06 is a separate variant candidate of the SAME THEMIS application, not the historical original, and no replacement of accepted LKG is authorized.

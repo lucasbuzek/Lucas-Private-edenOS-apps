@@ -1,15 +1,18 @@
 RECOVERY STATUS — THEMIS
 
 RECOVERED
-- Historical THEMIS master helper prompt, v1.0.
+- Historical short helper-definition artifact labeled THEMIS v1.0 (owner REJECTED as the full working master; source file retained).
 - All seven subordinate helper prompts, v1.0: COVENANT, CLAUSE, OBLIGO, JURIS, LEXICON, MANDATE, COMPLY.
 - Shared Core v1.0, registry, package instructions, quickstart and acceptance tests.
 - Private experimental implementation baseline v0.1.0, source, tests and integration descriptors.
 
 STILL UNRESOLVED
+- Original full working master, confirmed mechanism of 2026-10-31 working `@themis` chat invocation, and host-level parity with the later reconstructed private plugin.
 - Original THEMIS owning chat and earlier source/package lineage before the recovered prompt bundle.
 - Historical provider list and provider-specific runtime adapters.
 - Historical UI implementation and proof of live LCAS surface integration.
 - Separate platform builds, external deployment, and release continuity.
 
 Do not treat prompt definitions as proof that equivalent executable adapters or UI are implemented. The v0.1.0 package remains PRIVATE / EXPERIMENTAL and NOT RELEASED.
+
+ACCEPTANCE REFERENCE 2026-10-31: original in-chat THEMIS produced an editable 19-page electrical-installation H&S package (controlled draft). Original route working historically; new plugin installed 2026-11-04 cannot be cited as that earlier runtime. Treat prompt/plugin/web/native/CLI/MCP as user-selectable access variants of ONE THEMIS product; none proves parity without host acceptance.
