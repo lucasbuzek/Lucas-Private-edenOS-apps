@@ -1,4 +1,4 @@
-import upstream,{verifyAccess} from "./owner-mcp-v2.candidate.mjs";
+import upstream,{verifyAccess,toolCatalog} from "./owner-mcp-v2.candidate.mjs";
 const APP="AppleRAVEN",ISSUER="https://lucasravensnest.cloudflareaccess.com";
 const RESOURCE="https://appleraven-private.lucasravensnest.workers.dev/mcp";
 const SUPPORTED=["2025-03-26","2025-06-18","2025-11-25","2026-07-28"];
@@ -17,8 +17,7 @@ export default {
   const origin=req.headers.get("origin");
   if(origin&&origin!==u.origin)return json({error:"origin_forbidden"},403);
   if(req.method!=="POST")return json({error:"method_not_allowed"},405,{"allow":"POST"});
-  const identity=await verifyAccess(req);
-  if(!identity)return unauthorized();
+
   if(!(req.headers.get("content-type")||"").toLowerCase().startsWith("application/json"))return json({error:"content_type_required"},415);
   let payload;
   try{const raw=await req.text();if(raw.length>32768)return json({error:"request_too_large"},413);payload=JSON.parse(raw)}catch{return json({error:"invalid_json"},400)}
@@ -27,9 +26,22 @@ export default {
   if(id===undefined)return new Response(null,{status:202,headers:{"cache-control":"no-store"}});
   if(typeof id!=="number"&&typeof id!=="string")return json({error:"invalid_request_id"},400);
   if(payload.method==="initialize"){
-   return json({jsonrpc:"2.0",id,result:{protocolVersion:SUPPORTED.includes(payload.params?.protocolVersion)?payload.params.protocolVersion:"2025-06-18",capabilities:{tools:{listChanged:false}},serverInfo:{name:APP,version:"0.2.1"},instructions:"Authenticated AppleRAVEN owner service. Tools are performed by existing paired providers or provisioned cloud sources; catalog entries alone do not mean a device is online."}});
+   return json({jsonrpc:"2.0",id,result:{protocolVersion:SUPPORTED.includes(payload.params?.protocolVersion)?payload.params.protocolVersion:"2025-06-18",capabilities:{tools:{listChanged:false}},serverInfo:{name:APP,version:"0.2.1"},instructions:"AppleRAVEN remote MCP. Tool discovery is public; private data and device actions require validated owner OAuth, granted devices and local approval. A listed tool does not imply a device is online."}});
   }
   if(payload.method==="ping")return json({jsonrpc:"2.0",id,result:{}});
+  if(payload.method==="tools/list"){
+   const schemes=[{type:"oauth2",scopes:["appleraven:read"]}];
+   const tools=toolCatalog.map(t=>({...t,securitySchemes:schemes,_meta:{...(t._meta||{}),securitySchemes:schemes}}));
+   return json({jsonrpc:"2.0",id,result:{tools}});
+  }
+  const identity=await verifyAccess(req);
+  if(!identity){
+   if(payload.method==="tools/call"){
+    const challenge='Bearer resource_metadata="https://appleraven-private.lucasravensnest.workers.dev/.well-known/oauth-protected-resource", error="insufficient_scope", error_description="Owner sign-in required before AppleRAVEN can access devices"';
+    return json({jsonrpc:"2.0",id,result:{content:[{type:"text",text:"AppleRAVEN owner authorization required. Sign in to connect this client."}],isError:true,_meta:{"mcp/www_authenticate":[challenge]}}});
+   }
+   return unauthorized();
+  }
   if(!["server/discover","tools/list","tools/call"].includes(payload.method))return fail(id,-32601,"Method not found");
   const params=payload.params&&typeof payload.params==="object"&&!Array.isArray(payload.params)?{...payload.params}:{};
   params._meta={...params._meta,"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientCapabilities":{},"io.modelcontextprotocol/clientInfo":{name:"chatgpt-remote-mcp",version:"1.0"}};

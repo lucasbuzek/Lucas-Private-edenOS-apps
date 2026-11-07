@@ -184,4 +184,4 @@ export default {
  }
 };
 
-export {verifyAccess};
+export {verifyAccess,tools as toolCatalog};
