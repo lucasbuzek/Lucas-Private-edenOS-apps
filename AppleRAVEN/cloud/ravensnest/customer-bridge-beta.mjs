@@ -4,6 +4,7 @@
  * NOT a public MCP; denies requests without a signed short-lived server-to-server message.
  * Read-only allowlist ONLY. Does not install, pair or grant devices.
  */
+import {federationCatalog,federationInvoke,federationResult} from "./provider-federation.mjs";
 const HEAD={ "content-type":"application/json; charset=utf-8", "cache-control":"no-store", "x-content-type-options":"nosniff" };
 const json=(value,status=200)=>new Response(JSON.stringify(value),{status,headers:HEAD});
 const ALLOWED=new Set(["status","shortcuts_list"]);
@@ -77,6 +78,12 @@ const PUBLIC_TOOLS=[
  {name:"appleraven.native.shortcuts.list",title:"Shortcuts list",description:"Queue a native Apple Shortcuts listing on an owner-paired Mac. Retrieve result using appleraven.native.result.",inputSchema:{type:"object",properties:{device_id:{type:"string"}},additionalProperties:false},annotations:{readOnlyHint:true,destructiveHint:false}},
  {name:"appleraven.native.result",title:"Mac operation result",description:"Read the result of a previously queued owner-authorized read-only AppleRAVEN operation.",inputSchema:{type:"object",properties:{command_id:{type:"string"}},required:["command_id"],additionalProperties:false},annotations:{readOnlyHint:true,destructiveHint:false}}
 ];
+const FEDERATION_TOOLS=[
+ {name:"appleraven.providers.catalog",title:"AppleRAVEN installed tools",description:"Search all tools registered by paired Mac MCP providers. Returns names, descriptions, input schemas, device identity and online status; use query and paging to find the required tool.",inputSchema:{type:"object",properties:{device_id:{type:"string"},query:{type:"string"},offset:{type:"integer",minimum:0},limit:{type:"integer",minimum:1,maximum:100}},additionalProperties:false},annotations:{readOnlyHint:true,destructiveHint:false,openWorldHint:false}},
+ {name:"appleraven.providers.invoke",title:"Run an AppleRAVEN tool",description:"Invoke ANY currently registered tool on a paired owner-granted Mac through the existing native MCP provider federation. All provider calls require approval on the Mac; built-in sensitive operations also require their own approval. Returns command_id for result retrieval.",inputSchema:{type:"object",properties:{device_id:{type:"string"},tool_name:{type:"string"},arguments:{type:"object"}},required:["device_id","tool_name"],additionalProperties:false},annotations:{readOnlyHint:false,destructiveHint:true,openWorldHint:false}},
+ {name:"appleraven.providers.result",title:"Check AppleRAVEN tool result",description:"Retrieve the actual result or error for a previous owner-authorized native MCP invocation. Repeat until completed or expired.",inputSchema:{type:"object",properties:{command_id:{type:"string"}},required:["command_id"],additionalProperties:false},annotations:{readOnlyHint:true,destructiveHint:false,openWorldHint:false}}
+];
+const ALL_MCP_TOOLS=[...PUBLIC_TOOLS,...FEDERATION_TOOLS];
 const rpc=(id,result)=>json({jsonrpc:"2.0",id,result});
 const rpcError=(id,code,message)=>json({jsonrpc:"2.0",id,error:{code,message}});
 const sha256=async value=>Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value))),z=>z.toString(16).padStart(2,"0")).join("");
@@ -96,14 +103,25 @@ async function ownerMcp(req,env,path){
  if(!v||v.jsonrpc!=="2.0"||typeof v.method!=="string")return json({error:"invalid_jsonrpc"},400);
  if(v.method==="notifications/initialized"&&v.id===undefined)return new Response(null,{status:202,headers:HEAD});
  if(typeof v.id!=="number"&&typeof v.id!=="string")return rpcError(null,-32600,"Invalid request id");
- if(v.method==="initialize")return rpc(v.id,{protocolVersion:["2025-03-26","2025-06-18","2025-11-25"].includes(v.params?.protocolVersion)?v.params.protocolVersion:"2025-06-18",capabilities:{tools:{listChanged:false}},serverInfo:{name:"AppleRAVEN",version:"0.2.0"},instructions:"Read-only owner MCP. Use appleraven.native.status, then appleraven.native.result with returned command_id. Original Mac permissions are enforced; terminal and write actions are unavailable in this test."});
+ if(v.method==="initialize")return rpc(v.id,{protocolVersion:["2025-03-26","2025-06-18","2025-11-25"].includes(v.params?.protocolVersion)?v.params.protocolVersion:"2025-06-18",capabilities:{tools:{listChanged:false}},serverInfo:{name:"AppleRAVEN",version:"0.3.0"},instructions:"Owner-authorized AppleRAVEN MCP. Use appleraven.providers.catalog to find all registered Mac tool names and their exact argument schemas, appleraven.providers.invoke to queue a selected tool on the granted Mac, and appleraven.providers.result to retrieve completion. The Mac retains local per-action approvals; no tool is callable solely because it appears in the catalog."});
  if(v.method==="ping")return rpc(v.id,{});
- if(v.method==="tools/list")return rpc(v.id,{tools:PUBLIC_TOOLS});
+ if(v.method==="tools/list")return rpc(v.id,{tools:ALL_MCP_TOOLS});
  if(v.method!=="tools/call")return rpcError(v.id,-32601,"Method not found");
  const name=v.params?.name,args=v.params?.arguments??{};
- if(!PUBLIC_TOOLS.some(t=>t.name===name))return rpcError(v.id,-32601,"Unknown tool");
+ if(!ALL_MCP_TOOLS.some(t=>t.name===name))return rpcError(v.id,-32601,"Unknown tool");
  if(!args||typeof args!=="object"||Array.isArray(args))return rpcError(v.id,-32602,"Invalid tool arguments");
  const keys=Object.keys(args);
+ if(FEDERATION_TOOLS.some(t=>t.name===name)){
+  let response;
+  try{
+   const ownerIdentity={id:link.owner_id,email:"lucasbuzek@gmail.com"};
+   if(name==="appleraven.providers.catalog")response=await federationCatalog(env,ownerIdentity,args);
+   else if(name==="appleraven.providers.invoke")response=await federationInvoke(env,ownerIdentity,args);
+   else response=await federationResult(env,ownerIdentity,args);
+  }catch{return rpc(v.id,{content:[{type:"text",text:"AppleRAVEN provider federation temporarily unavailable."}],isError:true});}
+  await env.DB.prepare("UPDATE appleraven_owner_mcp_connections SET last_used_at=?1 WHERE id=?2").bind(now,link.id).run();
+  return rpc(v.id,{content:[{type:"text",text:JSON.stringify(response)}],structuredContent:response,isError:Boolean(response.error)});
+ }
  if(name==="appleraven.devices.list"&&keys.length)return rpcError(v.id,-32602,"No arguments expected");
  if(name==="appleraven.native.result"&&(keys.length!==1||typeof args.command_id!=="string"||!COMMAND.test(args.command_id)))return rpcError(v.id,-32602,"Invalid command id");
  if((name==="appleraven.native.status"||name==="appleraven.native.shortcuts.list")&&(keys.some(k=>k!=="device_id")||(args.device_id!==undefined&&typeof args.device_id!=="string")))return rpcError(v.id,-32602,"Invalid device id");
