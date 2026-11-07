@@ -202,6 +202,17 @@ class ChildMCP {
 }
 const providers=[];
 const providerTools=new Map();
+// Adapt only a verified upstream JSON-schema incompatibility without modifying
+// the third-party AppLaunch package. Its Zod converter returns {$schema: ...}
+// rather than the object schemas defined in its original source.
+function providerInputSchema(providerKey,actualName,published){
+  if(published?.type==="object")return published;
+  if(providerKey!=="applaunch")return null;
+  if(actualName==="list_applications")return {type:"object",properties:{},additionalProperties:false};
+  if(actualName==="launch_app")return {type:"object",properties:{appName:{type:"string"}},required:["appName"],additionalProperties:false};
+  if(actualName==="open_with_app")return {type:"object",properties:{appName:{type:"string"},filePath:{type:"string"}},required:["appName","filePath"],additionalProperties:false};
+  return null;
+}
 async function setupProviders(){
   if(!existsSync(REGISTRY)){console.log("No providers.json; built-in Mac tools still available. Install source MCPs and configure ~/.config/appleraven/providers.json.");return;}
   let registry;try{registry=JSON.parse(await fs.readFile(REGISTRY,"utf8"));}catch(e){console.error("Bad providers.json:",e.message);return;}
@@ -213,8 +224,9 @@ async function setupProviders(){
       for(const tool of child.tools){
         const normalized=String(tool.name).toLowerCase().replace(/[^a-z0-9_]/g,"_");
         const key=p.key+"__"+normalized;
-        if(key.length>64||providerTools.has(key)||!tool.inputSchema)continue;
-        providerTools.set(key,{child,actual:tool.name,tool:{name:key,description:"["+p.key+"] "+String(tool.description||tool.name).slice(0,400),inputSchema:tool.inputSchema}});
+        const inputSchema=providerInputSchema(p.key,tool.name,tool.inputSchema);
+        if(key.length>64||providerTools.has(key)||!inputSchema)continue;
+        providerTools.set(key,{child,actual:tool.name,tool:{name:key,description:"["+p.key+"] "+String(tool.description||tool.name).slice(0,400),inputSchema}});
       }
       console.log("Connected provider",p.key,"with",child.tools.length,"tools");
     }catch(e){console.error("Provider "+p.key+" unavailable:",e.message);child.proc?.kill();}
