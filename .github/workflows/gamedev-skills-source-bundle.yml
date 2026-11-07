@@ -1,0 +1,38 @@
+name: Bundle pinned game-development skills for offline FORGE integration
+on:
+  push:
+    branches: [integrations/gamedev-skills-offline-20261107]
+    paths: ['.github/workflows/gamedev-skills-source-bundle.yml']
+permissions:
+  contents: read
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Fetch and pin original upstream
+        run: |
+          set -euo pipefail
+          git clone --filter=blob:none --no-checkout https://github.com/gamedev-skills/awesome-gamedev-agent-skills.git upstream
+          cd upstream
+          git fetch --depth 1 origin 19d93f97c9c1ea0f8b306e77aa81e0d3e352d3e9
+          git checkout --detach 19d93f97c9c1ea0f8b306e77aa81e0d3e352d3e9
+          test "$(git rev-parse HEAD)" = '19d93f97c9c1ea0f8b306e77aa81e0d3e352d3e9'
+          test "$(find skills -name SKILL.md | wc -l)" -eq 77
+          test -f router/SKILL.md
+          test -f LICENSE && test -f NOTICE
+          git status --porcelain
+      - name: Make offline archive preserving all references
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          cd upstream
+          zip -q -r ../out/awesome-gamedev-agent-skills-pinned-19d93f.zip             skills router LICENSE NOTICE README.md docs/INSTALLATION.md docs/VERSION-SUPPORT.md
+          unzip -t ../out/awesome-gamedev-agent-skills-pinned-19d93f.zip | tail -1
+          sha256sum ../out/awesome-gamedev-agent-skills-pinned-19d93f.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: awesome-gamedev-agent-skills-pinned-19d93f
+          path: out/awesome-gamedev-agent-skills-pinned-19d93f.zip
+          if-no-files-found: error
+          retention-days: 2
