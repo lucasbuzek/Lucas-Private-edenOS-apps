@@ -15,7 +15,7 @@ async function ownerDevices(env,owner){
 async function audit(env,owner,action,deviceId,detail){await env.DB.prepare("INSERT INTO appleraven_owner_audit(id,owner_id,action,device_id,detail,created_at) VALUES(?1,?2,?3,?4,?5,?6)").bind(crypto.randomUUID(),owner.id,action,deviceId,detail,Date.now()).run();}
 export async function handleOwnerManage(req,env,owner){
  const path=new URL(req.url).pathname;
- if(path==="/manage"&&req.method==="GET")return new Response(PAGE,{headers:{"content-type":"text/html; charset=utf-8","content-security-policy":"default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; connect-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; frame-ancestors 'none'",...noStore}});
+ if(path==="/manage"&&req.method==="GET")return new Response(PAGE.replace('<a class="button" href="/pair">','<a class="button" href="/manage/connect">MCP connections</a><a class="button" href="/pair">'),{headers:{"content-type":"text/html; charset=utf-8","content-security-policy":"default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; connect-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; frame-ancestors 'none'",...noStore}});
  if(path==="/manage/app.js"&&req.method==="GET")return new Response(SCRIPT,{headers:{"content-type":"application/javascript; charset=utf-8",...noStore}});
  if(path==="/manage/status"&&req.method==="GET"){
   try{const devices=await ownerDevices(env,owner);
