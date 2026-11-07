@@ -73,9 +73,9 @@ async function handle(msg,env){
  */
 const PUBLIC_TOOLS=[
  {name:"appleraven.devices.list",title:"Paired devices",description:"List available owner-paired Mac endpoints.",inputSchema:{type:"object",properties:{},additionalProperties:false},annotations:{readOnlyHint:true,destructiveHint:false}},
- {name:"appleraven.native.status",title:"Mac status",description:"Queue the existing native Mac status operation; retrieve its result using appleraven.native.result.",inputSchema:{type:"object",properties:{device_id:{type:"string"}}},additionalProperties:false},annotations:{readOnlyHint:true,destructiveHint:false}},
- {name:"appleraven.native.shortcuts.list",title:"Shortcuts list",description:"Queue a native Apple Shortcuts listing on an owner-paired Mac. Retrieve result using appleraven.native.result.",inputSchema:{type:"object",properties:{device_id:{type:"string"}}},additionalProperties:false},annotations:{readOnlyHint:true,destructiveHint:false}},
- {name:"appleraven.native.result",title:"Mac operation result",description:"Read the result of a previously queued owner-authorized read-only AppleRAVEN operation.",inputSchema:{type:"object",properties:{command_id:{type:"string"}}},required:["command_id"],additionalProperties:false},annotations:{readOnlyHint:true,destructiveHint:false}}
+ {name:"appleraven.native.status",title:"Mac status",description:"Queue the existing native Mac status operation; retrieve its result using appleraven.native.result.",inputSchema:{type:"object",properties:{device_id:{type:"string"}},additionalProperties:false},annotations:{readOnlyHint:true,destructiveHint:false}},
+ {name:"appleraven.native.shortcuts.list",title:"Shortcuts list",description:"Queue a native Apple Shortcuts listing on an owner-paired Mac. Retrieve result using appleraven.native.result.",inputSchema:{type:"object",properties:{device_id:{type:"string"}},additionalProperties:false},annotations:{readOnlyHint:true,destructiveHint:false}},
+ {name:"appleraven.native.result",title:"Mac operation result",description:"Read the result of a previously queued owner-authorized read-only AppleRAVEN operation.",inputSchema:{type:"object",properties:{command_id:{type:"string"}},required:["command_id"],additionalProperties:false},annotations:{readOnlyHint:true,destructiveHint:false}}
 ];
 const rpc=(id,result)=>json({jsonrpc:"2.0",id,result});
 const rpcError=(id,code,message)=>json({jsonrpc:"2.0",id,error:{code,message}});
