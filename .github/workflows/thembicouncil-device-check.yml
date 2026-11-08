@@ -1,0 +1,27 @@
+name: THEMBIcouncil device agent (offline)
+on:
+  push:
+    branches:
+      - thembicouncil-product-site-20261108
+    paths:
+      - 'THEMBIcouncil/device-agent/**'
+      - '.github/workflows/thembicouncil-device-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-contract:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile endpoint
+        run: python -m py_compile THEMBIcouncil/device-agent/thembicouncil_agent.py
+      - name: Offline root and permission checks
+        run: python -m unittest discover -s THEMBIcouncil/device-agent/tests -v
