@@ -21,7 +21,35 @@ function validate(input,create=true){
 async function hash(text){const b=new TextEncoder().encode(text);const h=await crypto.subtle.digest("SHA-256",b);return Array.from(new Uint8Array(h)).map(x=>x.toString(16).padStart(2,"0")).join("");}
 function equal(a,b){if(typeof a!=="string"||typeof b!=="string"||a.length!==b.length)return false;let d=0;for(let i=0;i<a.length;i++)d|=a.charCodeAt(i)^b.charCodeAt(i);return d===0;}
 async function sig(data,secret){const key=await crypto.subtle.importKey("raw",new TextEncoder().encode(secret),{name:"HMAC",hash:"SHA-256"},false,["sign"]);const bits=await crypto.subtle.sign("HMAC",key,new TextEncoder().encode(data));return Array.from(new Uint8Array(bits)).map(x=>x.toString(16).padStart(2,"0")).join("");}
+let accessKeys=null,accessKeyTime=0;
+async function accessOwner(req,env){
+ if(!env.ACCESS_AUD||!env.TEAM_DOMAIN||!env.OWNER_EMAIL)return false;
+ const jwt=req.headers.get("Cf-Access-Jwt-Assertion");
+ if(!jwt)return false;
+ try{
+   const parts=jwt.split(".");
+   if(parts.length!==3)return false;
+   const dec=s=>Uint8Array.from(atob(s.replace(/-/g,"+").replace(/_/g,"/")+"=".repeat((4-s.length%4)%4)),c=>c.charCodeAt(0));
+   const header=JSON.parse(new TextDecoder().decode(dec(parts[0])));
+   const claims=JSON.parse(new TextDecoder().decode(dec(parts[1])));
+   if(header.alg!=="RS256"||!header.kid)return false;
+   const aud=Array.isArray(claims.aud)?claims.aud:[claims.aud];
+   const now=Date.now()/1000;
+   if(!aud.includes(env.ACCESS_AUD)||claims.iss!=="https://"+env.TEAM_DOMAIN||Number(claims.exp)<=now||Number(claims.nbf||0)>now)return false;
+   if(String(claims.email||"").toLowerCase()!==env.OWNER_EMAIL.toLowerCase())return false;
+   if(!accessKeys||Date.now()-accessKeyTime>300000){
+     const res=await fetch("https://"+env.TEAM_DOMAIN+"/cdn-cgi/access/certs",{redirect:"error"});
+     if(!res.ok)return false;
+     accessKeys=(await res.json()).keys||[];accessKeyTime=Date.now();
+   }
+   const jwk=accessKeys.find(k=>k.kid===header.kid&&k.kty==="RSA");
+   if(!jwk)return false;
+   const key=await crypto.subtle.importKey("jwk",jwk,{name:"RSASSA-PKCS1-v1_5",hash:"SHA-256"},false,["verify"]);
+   return await crypto.subtle.verify("RSASSA-PKCS1-v1_5",key,dec(parts[2]),new TextEncoder().encode(parts[0]+"."+parts[1]));
+ }catch{return false}
+}
 async function logged(req,env) {
+ if(await accessOwner(req,env))return true;
  if(!env.OWNER_HASH)return false;
  const bearer=req.headers.get("Authorization")?.match(/^Bearer (.+)$/i)?.[1];
  if(bearer && equal(await hash(bearer),env.OWNER_HASH))return true;
@@ -122,12 +150,12 @@ async function mcp(body,env){
 export default {
  async fetch(req,env){
   const url=new URL(req.url),p=url.pathname,method=req.method;
-  if(method==="GET" && p==="/api/health")return send({service:"THEMIS",identity:"one-product",ready:!!env.OWNER_HASH,storage:"SQLite Durable Object",version:"0.2.0"});
+  if(method==="GET" && p==="/api/health")return send({service:"THEMIS",identity:"one-product",ready:!!env.OWNER_HASH||!!(env.ACCESS_AUD&&env.TEAM_DOMAIN&&env.OWNER_EMAIL),storage:"SQLite Durable Object",version:"0.2.0"});
   if(method==="GET" && p==="/"){
    const nonce=crypto.randomUUID().replace(/-/g,"");
    return new Response(UI.replace("THEMIS_NONCE",nonce),{headers:headersForHtml(nonce)});
   }
-  if(!env.OWNER_HASH)return error("Owner authentication not configured",503);
+  if(!env.OWNER_HASH && !(env.ACCESS_AUD && env.TEAM_DOMAIN && env.OWNER_EMAIL))return error("Owner authentication not configured",503);
   if(method==="POST" && p==="/auth/login"){
    if(req.headers.get("Origin")!==url.origin)return error("Origin mismatch",403);
    if(!req.headers.get("Content-Type")?.startsWith("application/json"))return error("JSON required",415);
