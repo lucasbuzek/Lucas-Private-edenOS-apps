@@ -19,7 +19,7 @@ test("service worker caches app shell and provides offline navigation fallback",
   assert.match(sw, /addEventListener\(['"]install/);
   assert.match(sw, /addEventListener\(['"]fetch/);
   assert.match(sw, /cache\.match\(new URL\("index\.html",ROOT\)\.href\)/);
-  assert.match(sw, /await cache\.put\(request, response\.clone\(\)\)/);
+  assert.match(sw, /cache\.put\(request,\s*response\.clone\(\)\)/);
   assert.match(sw, /CACHE_PREFIX="tenders-shell-"/);
   assert.match(sw, /registration\.scope/);
   assert.match(sw, /!staticAsset/);
