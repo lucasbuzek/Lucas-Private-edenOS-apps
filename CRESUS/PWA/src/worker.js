@@ -1,6 +1,7 @@
 import { verifyAccessJwt } from './auth.js';
 import { handleWatchlist } from './watchlist.js';
 import { handlePortfolio } from './portfolio.js';
+import { handleIncome } from './income.js';
 import { routeMode, webResearch, runtimeResearchContext } from './research.js';
 import { CRESUS_SYSTEM_PROMPT } from './prompt.js';
 import { providerChoices, providerForUser, setProviderForUser, generateForProvider, ProviderSelectionError } from './provider-choice.js';
@@ -194,6 +195,10 @@ async function handleExport(env, user) {
   const safeJson = data => JSON.stringify(data,null,2).replaceAll('```','\\u0060\\u0060\\u0060');
   out += '\n\n---\n\n## Saved watchlist (JSON)\n\n```json\n' + safeJson(watchlist) + '\n```';
   out += '\n\n---\n\n## Manually entered portfolio positions (JSON)\n\n_No verified brokerage balances, trade fills or current prices._\n\n```json\n' + safeJson(portfolio) + '\n```';
+  const {results: income} = await env.DB.prepare(
+    'SELECT account_label,ticker,mic,currency,amount,status,effective_at,pay_date,source_published_at,description,source_ref,notes,known_at,observed_at,revision FROM income_events WHERE email=? ORDER BY effective_at,id'
+  ).bind(user.email).all();
+  out += '\n\n---\n\n## Manually entered income events (JSON)\n\n_These user entries do not independently verify payment, market prices or dividend declarations._\n\n```json\n' + safeJson(income) + '\n```';
   return new Response(out, {
     headers: {
       'content-type': 'text/markdown; charset=utf-8',
@@ -306,6 +311,7 @@ export default {
       }
       if (path === '/api/watchlist' || path.startsWith('/api/watchlist/')) return handleWatchlist(request,env,user.email,path);
       if (path === '/api/portfolio' || path.startsWith('/api/portfolio/')) return handlePortfolio(request,env,user.email,path);
+      if (path === '/api/income' || path.startsWith('/api/income/')) return handleIncome(request,env,user.email,path);
       if (path === '/api/chat' && request.method === 'POST') return handleChat(request, env, user);
       if (path === '/api/export' && request.method === 'GET') return handleExport(env, user);
 
