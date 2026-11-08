@@ -1,0 +1,6 @@
+Source: https://github.com/Jakeschincariol/instagram-agent-skill
+Revision: d03c56bb598be770c60b201f94237e5d1a4268a6
+Vendored file: skills/ig-caption/caption.py
+License: MIT; license copied in adjacent LICENSE.
+Purpose: owner-local read-only caption analysis in FAMA review, never live social account access or publishing.
+Important: upstream character, visibility and hashtag numbers are advisory until official Instagram policy is independently revalidated.
