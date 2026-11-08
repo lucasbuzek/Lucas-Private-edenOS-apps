@@ -1,0 +1,15 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {checkConfig,parseEnv} from '../scripts/preflight.mjs';
+const compose=await readFile(new URL('../postiz/compose.yaml',import.meta.url),'utf8');
+const env={POSTIZ_IMAGE:'ghcr.io/gitroomhq/postiz-app:v2.25.3',PUBLIC_URL:'http://127.0.0.1:4007',JWT_SECRET:'a'.repeat(40),POSTGRES_PASSWORD:'b'.repeat(40),TEMPORAL_POSTGRES_PASSWORD:'c'.repeat(40),BRAGI_DISABLE_REGISTRATION:'true'};
+test('secure default bootstrap accepted',()=>assert.deepEqual(checkConfig(env,compose),[]));
+test('reject unpinned image',()=>assert.ok(checkConfig({...env,POSTIZ_IMAGE:'ghcr.io/gitroomhq/postiz-app:latest'},compose).length));
+test('reject public registration',()=>assert.ok(checkConfig({...env,PUBLIC_URL:'https://bragiapp.ravensnest.pages.dev',BRAGI_DISABLE_REGISTRATION:'false'},compose).some(x=>x.includes('registration'))));
+test('reject public HTTP origin',()=>assert.ok(checkConfig({...env,PUBLIC_URL:'http://bragiapp.ravensnest.pages.dev'},compose).some(x=>x.includes('HTTPS'))));
+test('permit only loopback initial local onboarding',()=>assert.deepEqual(checkConfig({...env,BRAGI_DISABLE_REGISTRATION:'false'},compose),[]));
+test('reject missing secrets',()=>assert.ok(checkConfig({...env,JWT_SECRET:'GENERATE_LOCALLY'},compose).length));
+test('reject duplicate secrets',()=>assert.ok(checkConfig({...env,POSTGRES_PASSWORD:env.JWT_SECRET},compose).some(x=>x.includes('distinct'))));
+test('no public ports, externally network-enabled Postiz',()=>{assert.match(compose,/127\.0\.0\.1:4007:5000/);assert.doesNotMatch(compose,/\b:latest\b/);assert.match(compose,/postiz-net: \{internal: false\}/)});
+test('parse env',()=>assert.deepEqual(parseEnv('#hi\nFOO=bar\nSECOND="value"\n'),{FOO:'bar',SECOND:'value'}));
