@@ -17,14 +17,17 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from inchat_gateway import execute
 from research_runner import run_research
+from web_queue import execute as queue_execute
+from external.instagram_agent_skill.caption import analyse as instagram_caption_analyse
 
 ROOT = Path(__file__).resolve().parent
-MAX_BODY = 4096
+MAX_BODY = 8192
 HOST = "127.0.0.1"
 DEFAULT_PORT = 8765
 ASSETS = {
     "/": ("web/index.html", "text/html; charset=utf-8"),
     "/app.js": ("web/app.js", "text/javascript; charset=utf-8"),
+    "/style.css": ("web/style.css", "text/css; charset=utf-8"),
 }
 RATE = defaultdict(deque)
 
@@ -88,7 +91,7 @@ def make_handler(token: str):
             return self.response(404, {"error": "Not found"})
         def do_POST(self):
             path = urlsplit(self.path).path
-            if path not in ("/api/capabilities", "/api/validate-persona", "/api/research"):
+            if path not in ("/api/capabilities", "/api/validate-persona", "/api/research", "/api/queue", "/api/caption-audit"):
                 return self.response(404, {"error": "Operation not exposed"})
             if not authorize(self.headers.get("Authorization", ""), token):
                 return self.response(401, {"error": "Authentication required"})
@@ -109,6 +112,22 @@ def make_handler(token: str):
                 if not isinstance(data, dict) or not isinstance(data.get("persona"), dict):
                     return self.response(400, {"error": "Persona object required"})
                 return self.response(200, execute({"operation": "validate_persona", "persona": data["persona"]}))
+            if path == "/api/caption-audit":
+                if (not isinstance(data, dict) or set(data) != {"text"} or
+                        not isinstance(data["text"], str) or not 1 <= len(data["text"]) <= 2200):
+                    return self.response(400, {"error": "Caption text must contain 1..2200 characters"})
+                return self.response(200, {
+                    "status": "PASS", "provider": "instagram-agent-skill/ig-caption",
+                    "source_revision": "d03c56bb598be770c60b201f94237e5d1a4268a6",
+                    "analysis": instagram_caption_analyse(data["text"]),
+                    "policy_status": "EDITORIAL_HEURISTIC_ONLY",
+                    "external_social_action": "NOT_PERFORMED",
+                })
+            if path == "/api/queue":
+                try:
+                    return self.response(200, queue_execute(data))
+                except (ValueError, RuntimeError) as exc:
+                    return self.response(400, {"error": str(exc)[:300]})
             try:
                 q, h, n = validate_research(data)
             except ValueError as exc:
