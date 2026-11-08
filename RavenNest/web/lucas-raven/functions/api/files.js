@@ -1,6 +1,7 @@
 // RAVENsNEST selected-source read-only files. Original RavenNest source only.
 // No legacy pairing, no cloud account federation, no provider tokens in HTML.
 import {verifyAccessJwt} from './[[path]].js';
+import {portalUser} from './portal-session.js';
 import {sealCursor,openCursor} from './file-cursor.js';
 const J=(x,s=200)=>new Response(JSON.stringify(x),{status:s,headers:{'content-type':'application/json','cache-control':'private, no-store','x-content-type-options':'nosniff','referrer-policy':'no-referrer'}});
 const E=(n,e)=>J({error:e},n);
@@ -13,6 +14,11 @@ function dropboxPath(root,rel){
 }
 async function principal(request,env){
  if(!env.DB)return null;
+ // Ordinary portal users authenticate through explicit Google/Apple enrollment.
+ // Cloudflare Access is strictly opt-in for admin/MCP routing, never implicit user OAuth.
+ let session=null;try{session=await portalUser(request,env)}catch{}
+ if(session)return session;
+ if(env.RAVEN_FILES_ACCESS_ADMIN_ENABLED!=='1')return null;
  let c;try{c=await verifyAccessJwt(request.headers.get('cf-access-jwt-assertion'),env)}catch{return null}
  if(!Number.isFinite(c.exp)||c.exp<Date.now()/1000)return null;
  const u=await env.DB.prepare('SELECT id,disabled_at FROM users WHERE subject=?1 AND email=?2').bind(c.sub,c.email).first();
