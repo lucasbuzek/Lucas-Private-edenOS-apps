@@ -1,0 +1,44 @@
+name: FAMA owner cloud adapter build and regression
+on:
+  push:
+    branches:
+      - forge/fama-integrated-review-20261108
+    paths:
+      - 'Social Media Intelligence/10_RUNTIME/edge/**'
+      - 'Social Media Intelligence/10_RUNTIME/web/**'
+      - '.github/workflows/fama-edge-tests.yml'
+  pull_request:
+    paths:
+      - 'Social Media Intelligence/10_RUNTIME/edge/**'
+      - 'Social Media Intelligence/10_RUNTIME/web/**'
+      - '.github/workflows/fama-edge-tests.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  edge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Node syntax validation
+        run: |
+          node --check "Social Media Intelligence/10_RUNTIME/edge/worker.mjs"
+          node --check "Social Media Intelligence/10_RUNTIME/web/app.js"
+      - name: Run owner cloud adapter positive and negative tests
+        run: |
+          cd "Social Media Intelligence/10_RUNTIME/edge"
+          node --test test_worker.mjs
+      - name: Bundle exact FAMA source UI into Worker
+        run: |
+          cd "Social Media Intelligence/10_RUNTIME/edge"
+          node bundle.mjs
+          node --check dist/fama-worker.mjs
+      - name: Assert source placeholders fully replaced
+        run: |
+          if grep -E '__FAMA_(HTML|JS|CSS)__' "Social Media Intelligence/10_RUNTIME/edge/dist/fama-worker.mjs"; then
+            echo "Unresolved asset marker"
+            exit 1
+          fi
