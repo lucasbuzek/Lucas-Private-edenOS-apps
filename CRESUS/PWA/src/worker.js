@@ -1,5 +1,6 @@
 import { verifyAccessJwt } from './auth.js';
 import { handleWatchlist } from './watchlist.js';
+import { handlePortfolio } from './portfolio.js';
 import { routeMode, webResearch, runtimeResearchContext } from './research.js';
 import { CRESUS_SYSTEM_PROMPT } from './prompt.js';
 import { providerChoices, providerForUser, setProviderForUser, generateForProvider, ProviderSelectionError } from './provider-choice.js';
@@ -182,6 +183,17 @@ async function handleExport(env, user) {
       out += `\n**${who}** (${m.created_at} UTC)\n\n${m.content}\n`;
     }
   }
+  // Export all durable records owned by this user, not only conversation history.
+  // JSON in Markdown preserves exact decimal strings, unicode and field names.
+  const {results: watchlist} = await env.DB.prepare(
+    'SELECT ticker,mic,currency,isin,name,notes,created_at,updated_at FROM watchlist_entries WHERE email=? ORDER BY updated_at,id'
+  ).bind(user.email).all();
+  const {results: portfolio} = await env.DB.prepare(
+    'SELECT account_label,ticker,mic,currency,name,quantity,unit_cost,notes,created_at,updated_at FROM portfolio_positions WHERE email=? ORDER BY account_label,ticker,mic'
+  ).bind(user.email).all();
+  const safeJson = data => JSON.stringify(data,null,2).replaceAll('```','\\u0060\\u0060\\u0060');
+  out += '\n\n---\n\n## Saved watchlist (JSON)\n\n```json\n' + safeJson(watchlist) + '\n```';
+  out += '\n\n---\n\n## Manually entered portfolio positions (JSON)\n\n_No verified brokerage balances, trade fills or current prices._\n\n```json\n' + safeJson(portfolio) + '\n```';
   return new Response(out, {
     headers: {
       'content-type': 'text/markdown; charset=utf-8',
@@ -293,6 +305,7 @@ export default {
         return json(await setProviderForUser(env, user.email, body.provider));
       }
       if (path === '/api/watchlist' || path.startsWith('/api/watchlist/')) return handleWatchlist(request,env,user.email,path);
+      if (path === '/api/portfolio' || path.startsWith('/api/portfolio/')) return handlePortfolio(request,env,user.email,path);
       if (path === '/api/chat' && request.method === 'POST') return handleChat(request, env, user);
       if (path === '/api/export' && request.method === 'GET') return handleExport(env, user);
 
