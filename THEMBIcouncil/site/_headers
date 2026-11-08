@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'self'; img-src 'self' data:; script-src 'none'; style-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; object-src 'none'; frame-ancestors 'none'; base-uri 'none'
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https://www.dropbox.com https://*.dropboxusercontent.com; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'none'; form-action 'none'; object-src 'none'; frame-ancestors 'none'; base-uri 'none'
   Referrer-Policy: no-referrer
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
