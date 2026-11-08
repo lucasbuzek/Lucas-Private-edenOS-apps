@@ -36,6 +36,19 @@ class FAMAWebAgentTests(unittest.TestCase):
     def setUp(self):
         RATE.clear()
 
+    def test_vendored_instagram_caption_linter_is_authenticated_read_only(self):
+        self.assertEqual(self.request("/api/caption-audit", {"text":"A sourced caption."})[0], 401)
+        code, report = self.request("/api/caption-audit", {"text":"How evidence changes the argument. Save this."}, TOKEN)
+        self.assertEqual(code, 200)
+        self.assertEqual(report["provider"], "instagram-agent-skill/ig-caption")
+        self.assertEqual(report["policy_status"], "EDITORIAL_HEURISTIC_ONLY")
+        self.assertEqual(report["analysis"]["visible"], "How evidence changes the argument. Save this.")
+        self.assertEqual(report["external_social_action"], "NOT_PERFORMED")
+        self.assertEqual(self.request("/api/caption-audit", {"text":"#test"}, TOKEN,
+                                      "https://attacker.example")[0], 403)
+        self.assertEqual(self.request("/api/caption-audit", {"text":"hi", "account_id":"other"}, TOKEN)[0], 400)
+        self.assertEqual(self.request("/api/caption-audit", {"text":"x"*2201}, TOKEN)[0], 400)
+
     def test_health_does_not_claim_cloud(self):
         code,data=self.request("/health")
         self.assertEqual(code,200)
