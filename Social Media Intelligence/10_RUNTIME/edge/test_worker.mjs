@@ -14,7 +14,6 @@ class Cursor {
 class FakeSql {
   constructor(){this.posts=new Map();this.auditRows=[];this.changes=0;this.rates=new Map();}
   exec(sql,...values){
-    this.changes=0;
     if (sql.startsWith("CREATE TABLE"))return new Cursor([]);
     if (sql.startsWith("INSERT INTO posts")){
       const [id,payload,updated]=values;
