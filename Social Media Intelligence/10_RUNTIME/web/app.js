@@ -10,12 +10,14 @@
     $("result").textContent = JSON.stringify(value, null, 2);
   }
   async function call(path, data) {
+    const cloudAccess = document.body.dataset.famaAccess === "1";
     const token = $("token").value;
-    if (!token || token.length < 32) throw Error("Enter your configured owner session token");
+    if (!cloudAccess && (!token || token.length < 32)) throw Error("Enter your configured owner session token");
+    const headers = {"Content-Type":"application/json"};
+    if (!cloudAccess) headers.Authorization = "Bearer " + token;
     const response = await fetch(path, {
       method: "POST", cache: "no-store", credentials: "same-origin",
-      headers: {"Content-Type": "application/json", "Authorization": "Bearer " + token},
-      body: JSON.stringify(data)
+      headers, body: JSON.stringify(data)
     });
     const result = await response.json();
     if (!response.ok) throw Error(result.error || "Request failed (" + response.status + ")");
@@ -146,6 +148,10 @@
       output(response);
     }
     await listPosts(current.post_id); await openPost();
+  }
+  if (document.body.dataset.famaAccess === "1") {
+    $("token").closest("label").hidden = true;
+    status("Sign in through the Cloudflare owner access screen to continue.");
   }
   const tomorrow = new Date(Date.now() + 24 * 60 * 60 * 1000);
   $("publish_at").value = toLocalInput(tomorrow.toISOString());
