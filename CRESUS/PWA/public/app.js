@@ -446,6 +446,10 @@ function selectWorkspace(key) {
     showPortfolio().catch(err => { $('portfolioStatus').textContent = err.message; });
     return;
   }
+  if (key === 'income') {
+    showIncome().catch(err => { $('incomeStatus').textContent = err.message; });
+    return;
+  }
   const item = WORKSPACES[key];
   if (!item) return;
   document.querySelectorAll('.workspace-btn').forEach((b) => {
@@ -670,6 +674,126 @@ $('portfolioAdd').addEventListener('submit',async event=>{
     await refreshPortfolio();
   }catch(e){$('portfolioStatus').textContent=e.message;}
   finally{button.disabled=false;}
+});
+
+
+/* ZACCHAEUS: exact, provenance-qualified income events. No quote or FX assertions. */
+const incomeStatuses=['estimated','forward_indicated','declared','entitled','payable','paid','reconciled','changed','deferred','cancelled'];
+const incomeFields=[
+  ['Amount','amount','decimal'],['Status','status','state'],['Effective date','effectiveAt','date'],
+  ['Pay date','payDate','date'],['Source published','sourcePublishedAt','date'],
+  ['Description','description','text'],['Source reference','sourceRef','text'],['Notes','notes','textarea']
+];
+async function showIncome(){
+  const dlg=$('incomeDlg');
+  if(!dlg.open)dlg.showModal();
+  await refreshIncome();
+}
+function buildIncomeEditField(label,name,value,type){
+  const el=document.createElement('label');
+  el.textContent=label;
+  const input=document.createElement(type==='textarea'?'textarea':type==='state'?'select':'input');
+  input.name=name;
+  if(type==='state'){
+    for(const status of incomeStatuses){
+      const option=document.createElement('option');
+      option.value=status;option.textContent=status.replaceAll('_',' ');
+      input.append(option);
+    }
+  }else if(type!=='textarea'){
+    input.type=type==='date'?'date':'text';
+    if(type==='decimal')input.inputMode='decimal';
+    input.maxLength=type==='decimal'?32:type==='text'?500:undefined;
+  }
+  input.value=value||'';
+  el.append(input);
+  return el;
+}
+async function refreshIncome(){
+  $('incomeStatus').textContent='Loading saved income events…';
+  const data=await api('/api/income');
+  const totals=$('incomeTotals'),rows=$('incomeRows');
+  totals.replaceChildren();rows.replaceChildren();
+  $('incomeStatus').textContent=data.events.length
+    ? data.events.length+' user-entered events · no payment verification'
+    : 'No income events yet. Add an estimated, declared or realized record.';
+  for(const t of data.totals){
+    const item=document.createElement('p');
+    item.className='income-total';
+    item.textContent=t.currency+' · '+t.basis.replaceAll('_',' ')+' · '+t.amount;
+    totals.append(item);
+  }
+  for(const entry of data.events){
+    const row=document.createElement('article');
+    row.className='watchlist-row income-row';
+    const head=document.createElement('div');
+    head.className='watchlist-row-info';
+    const title=document.createElement('strong');
+    title.textContent=entry.ticker+(entry.mic?' · '+entry.mic:'');
+    const sub=document.createElement('small');
+    sub.textContent=entry.amount+' '+entry.currency+' · '+entry.status.replaceAll('_',' ')+' ('+entry.basis.replaceAll('_',' ')+') · '+entry.effective_at;
+    const note=document.createElement('p');
+    note.textContent=entry.description||entry.notes||'Manually entered event';
+    head.append(title,sub,note);
+    const form=document.createElement('form');
+    form.className='income-edit';
+    const vals={
+      amount:entry.amount,status:entry.status,effectiveAt:entry.effective_at,
+      payDate:entry.pay_date,sourcePublishedAt:entry.source_published_at,
+      description:entry.description,sourceRef:entry.source_ref,notes:entry.notes
+    };
+    for(const [label,name,type] of incomeFields)form.append(buildIncomeEditField(label,name,vals[name],type));
+    const actions=document.createElement('div');
+    actions.className='watchlist-actions income-actions';
+    const save=document.createElement('button');
+    save.className='btn';save.type='submit';save.textContent='Save revision';
+    const remove=document.createElement('button');
+    remove.className='btn ghost';remove.type='button';remove.textContent='Remove';
+    actions.append(save,remove);
+    form.append(actions);
+    form.addEventListener('submit',async event=>{
+      event.preventDefault();save.disabled=true;
+      try{
+        const changes=Object.fromEntries(new FormData(form).entries());
+        await api('/api/income/'+encodeURIComponent(entry.id),{
+          method:'PATCH',headers:{'If-Match':String(entry.revision)},
+          body:JSON.stringify(changes)
+        });
+        await refreshIncome();
+      }catch(e){$('incomeStatus').textContent=e.message;}
+      finally{save.disabled=false;}
+    });
+    remove.addEventListener('click',async()=>{
+      const ok=await confirmAction('Delete income event?',entry.ticker+' · '+entry.amount+' '+entry.currency+' · '+entry.status,'Delete');
+      if(!ok)return;
+      remove.disabled=true;
+      try{
+        await api('/api/income/'+encodeURIComponent(entry.id),{method:'DELETE'});
+        await refreshIncome();
+      }catch(e){$('incomeStatus').textContent=e.message;remove.disabled=false;}
+    });
+    row.append(head,form);rows.append(row);
+  }
+}
+$('incomeAdd').addEventListener('submit',async event=>{
+  event.preventDefault();
+  const btn=$('incomeAddBtn');
+  btn.disabled=true;
+  $('incomeStatus').textContent='Saving income event…';
+  try{
+    const eventData={
+      accountLabel:$('incomeAccount').value,ticker:$('incomeTicker').value,mic:$('incomeMic').value,
+      currency:$('incomeCurrency').value,amount:$('incomeAmount').value,status:$('incomeState').value,
+      effectiveAt:$('incomeEffective').value,payDate:$('incomePayDate').value,
+      sourcePublishedAt:$('incomePublished').value,description:$('incomeDescription').value,
+      sourceRef:$('incomeSource').value,notes:$('incomeNotes').value
+    };
+    await api('/api/income',{method:'POST',body:JSON.stringify(eventData)});
+    $('incomeAdd').reset();
+    $('incomeAccount').value=eventData.accountLabel||'Manual';
+    await refreshIncome();
+  }catch(e){$('incomeStatus').textContent=e.message;}
+  finally{btn.disabled=false;}
 });
 
 // ---------- Wiring ----------
