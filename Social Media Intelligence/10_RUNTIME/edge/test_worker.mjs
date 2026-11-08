@@ -121,7 +121,7 @@ test("edit invalidates approval; stale or cross-account approval rejected",async
 });
 test("research requests are bounded and upstream data cannot trigger account actions",async()=>{
   const {env}=makeEnv();
-  assert.equal((await post(env,"/api/research",{query:"x",limit:5})).status,200);
-  // Bad query returns a provider-state object; never invented fetched results.
-  assert.equal((await post(env,"/api/research",{query:"good",limit:500})).body.run_status,"PROVIDER_UNAVAILABLE");
+  assert.equal((await post(env,"/api/research",{query:"x",limit:5})).status,400);
+  // Malformed inputs never invoke a provider.
+  assert.equal((await post(env,"/api/research",{query:"good",limit:500})).status,400);
 });
