@@ -9,7 +9,8 @@ globalThis.crypto ??= webcrypto;
 const cursor = readFileSync(new URL('../functions/api/file-cursor.js',import.meta.url)).toString();
 const cursorUrl = 'data:text/javascript;base64,' + Buffer.from(cursor).toString('base64');
 let code = readFileSync(new URL('../functions/api/files.js',import.meta.url)).toString();
-code = code.replace("import {verifyAccessJwt} from './[[path]].js';",
+code = code.replace("import {portalUser} from './portal-session.js';", "const portalUser=async()=>globalThis.__ravenTestSessionUser||null;")
+ .replace("import {verifyAccessJwt} from './[[path]].js';",
  "const verifyAccessJwt=async token => { if(token!=='approved' && token!=='expired') throw Error('unauthorized'); return {sub:'owner-sub',email:'owner@example.test',exp:token==='expired'?1:Date.now()/1000+3600}; };")
  .replace("import {sealCursor,openCursor} from './file-cursor.js';",
  "import {sealCursor,openCursor} from '"+cursorUrl+"';");
@@ -21,6 +22,7 @@ function environment(overrides={}){
  const rows=[selected,drive];
  return {
   RAVEN_FILES_CURSOR_KEY:'isolated-test-cursor-key-at-least-32-characters',
+  RAVEN_FILES_ACCESS_ADMIN_ENABLED:'1',
   RAVEN_FILE_GOOD:'isolated-test-provider-token',
   DB:{
    prepare(sql){
@@ -65,7 +67,8 @@ function mockDropbox({has_more=false}={}){
  return seen;
 }
 const originalFetch=globalThis.fetch;
-test.afterEach(()=>{globalThis.fetch=originalFetch});
+globalThis.__ravenTestSessionUser=null;
+test.afterEach(()=>{globalThis.fetch=originalFetch;globalThis.__ravenTestSessionUser=null});
 
 test('unauthenticated and expired identities are rejected before provider access',async()=>{
  const seen=mockDropbox();
@@ -147,4 +150,17 @@ test('Google Drive rejects IDs outside the selected root and lists granted root'
  const no=await response({action:'list',source:'drive',path:'/outsider'});
  assert.equal(no.status,403);
  assert.ok(seen.some(x=>x.includes('/files/outsider?')));
+});
+
+test('Cloudflare Access is not a default public-user login when admin mode is off',async()=>{
+ const env=environment({RAVEN_FILES_ACCESS_ADMIN_ENABLED:'0'});
+ const r=await response({action:'providers'},{},env);
+ assert.equal(r.status,401);
+});
+test('explicit enrolled portal session works without Cloudflare Access',async()=>{
+ globalThis.__ravenTestSessionUser={id:'owner',email:'owner@example.test',role:'owner',disabled_at:null};
+ const env=environment({RAVEN_FILES_ACCESS_ADMIN_ENABLED:'0'});
+ const r=await response({action:'providers'},{auth:false},env);
+ assert.equal(r.status,200);
+ assert.equal((await r.json()).providers[0].id,'research');
 });
