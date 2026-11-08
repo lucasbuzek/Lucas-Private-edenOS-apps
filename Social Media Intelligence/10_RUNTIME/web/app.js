@@ -155,6 +155,19 @@
   }
   const tomorrow = new Date(Date.now() + 24 * 60 * 60 * 1000);
   $("publish_at").value = toLocalInput(tomorrow.toISOString());
+  // The original upstream analyzer is Python and remains local-only until the
+  // cloud adapter has an independently verified, license-preserving implementation.
+  const captionAction = $("caption_audit");
+  if (document.body.dataset.famaAccess === "1") {
+    captionAction.disabled = true;
+    captionAction.title = "Available in the authenticated local FAMA studio; not yet in cloud preview";
+  } else {
+    captionAction.addEventListener("click", () => act(async () => {
+      const response = await call("/api/caption-audit", {text:$("draft_text").value});
+      output(response);
+      status("Original Instagram Agent caption analysis ready · editorial heuristic, not platform clearance");
+    }));
+  }
   $("research").addEventListener("click", () => act(async () => {
     const response = await call("/api/research",
       {query:$("query").value.trim(),hours:72,limit:5});
