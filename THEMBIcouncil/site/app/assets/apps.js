@@ -51,7 +51,7 @@ async function assistant(input){
  if(/\b(show|list|find)\b.*\b(notes|documents)\b/i.test(q)){const {items}=await request('items?kind=note');return items.length?'Your notes:\n'+items.slice(0,20).map(x=>'• '+x.title).join('\n'):'You have no saved notes yet.'}
  if(/\b(storage|files|drive|iCloud)\b/i.test(q))return 'You can work with selected files in Storage. Open the Storage app from the app directory. iCloud access remains under your own Apple login.';
  if(/\b(hello|hi|hey)\b/i.test(q))return 'Hello, '+(currentUser?.display_name||'there')+'. I can organize tasks, remember notes, and find what you saved. What would you like to do?';
- return 'I can help manage your personal tasks and notes right now. Try “add task book dentist”, “remember buy flowers”, “show my tasks”, or “show my notes”. Other questions can be handled by your connected Council assistant.';
+ try{const result=await request('agent','POST',{message:q,persona:byId('council-persona')?.value||'Heartbi'});return result.reply}catch(e){if(e.message==='agent_runtime_not_connected')return 'Council AI has not been connected to a personal agent engine yet. Your tasks and notes are still available.';return 'Council AI request was not completed ('+e.message+'). Check the individual action receipts before retrying commands that could change files.'}
 }
 function initAssistant(){
  const form=byId('assistant-form');if(!form)return;
