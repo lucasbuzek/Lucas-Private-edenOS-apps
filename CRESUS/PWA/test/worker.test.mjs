@@ -308,3 +308,84 @@ test('current opportunity discovery is routed to Expert with explicit missing li
     assert.match(system,/Do not invent quotes/);
   }finally{env.AI.run=run}
 });
+
+test('portfolio positions are user-scoped, durable and preserve exact decimal strings',async()=>{
+  assert.equal((await call('/api/portfolio')).status,401);
+  assert.equal((await call('/api/portfolio',{email:'stranger@gmail.com'})).status,403);
+  const owner=OWNER,member='wife@gmail.com';
+  const post=await call('/api/portfolio',{email:owner,method:'POST',
+    body:{accountLabel:'Retirement',ticker:'brk.b',mic:'xnys',currency:'usd',quantity:'12.00000001',unitCost:'403.12345678',name:'Berkshire B',notes:'Manual tax lot summary'}});
+  assert.equal(post.status,201);
+  const p=post.body.position;
+  assert.deepEqual([p.ticker,p.mic,p.currency,p.quantity,p.unit_cost,p.account_label],
+    ['BRK.B','XNYS','USD','12.00000001','403.12345678','Retirement']);
+  const listing=await call('/api/portfolio',{email:owner});
+  assert.equal(listing.status,200);
+  assert.equal(listing.body.brokerConnected,false);
+  assert.equal(listing.body.livePrices,false);
+  assert.equal(listing.body.positions.some(x=>x.id===p.id),true);
+  assert.equal((await call('/api/portfolio',{email:member})).body.positions.some(x=>x.id===p.id),false);
+  assert.equal((await call('/api/portfolio/'+p.id,{email:member,method:'PATCH',body:{quantity:'99'}})).status,404);
+  assert.equal((await call('/api/portfolio/'+p.id,{email:member,method:'DELETE'})).status,404);
+  assert.equal((await call('/api/portfolio',{email:owner,method:'POST',
+    body:{accountLabel:'Retirement',ticker:'BRK.B',mic:'XNYS',currency:'USD',quantity:'1'}})).status,409);
+  assert.equal((await call('/api/portfolio',{email:owner,method:'POST',
+    body:{accountLabel:'Broker 2',ticker:'BRK.B',mic:'XNYS',quantity:'1'}})).status,201);
+  assert.equal((await call('/api/portfolio',{email:owner,method:'POST',
+    body:{accountLabel:'Retirement',ticker:'BRK.B',mic:'XNAS',quantity:'1'}})).status,201);
+  const edit=await call('/api/portfolio/'+p.id,{email:owner,method:'PATCH',
+    body:{quantity:'0.00000001',unitCost:'0',currency:'USD',notes:'corrected user entry'}});
+  assert.equal(edit.status,200);
+  assert.equal(edit.body.position.quantity,'0.00000001');
+  assert.equal(edit.body.position.unit_cost,'0');
+  assert.equal(edit.body.position.notes,'corrected user entry');
+  assert.equal((await call('/api/portfolio/'+p.id,{email:owner,method:'PATCH',body:{ticker:'FAKE'}})).status,400);
+  assert.equal((await call('/api/portfolio/'+p.id,{email:owner,method:'DELETE'})).status,200);
+  assert.equal((await call('/api/portfolio/'+p.id,{email:owner,method:'DELETE'})).status,404);
+});
+
+test('portfolio rejects wrong numeric precision, ambiguity and cross-origin mutation',async()=>{
+  for(const bad of [
+    {ticker:'AAPL',quantity:'0'},
+    {ticker:'AAPL',quantity:'-1'},
+    {ticker:'AAPL',quantity:'1e3'},
+    {ticker:'AAPL',quantity:'1.000000001'},
+    {ticker:'AAPL',quantity:0.2},
+    {ticker:'AAPL',quantity:'1',unitCost:'2.50'},
+    {ticker:'AAPL',quantity:'1',unitCost:'-2',currency:'USD'},
+    {ticker:'AAPL',quantity:'1',mic:'NY'},
+    {ticker:'AAPL',quantity:'1',accountLabel:'x'.repeat(81)},
+    {ticker:'AAPL',quantity:'1',notes:'x'.repeat(2001)}
+  ]){
+    const r=await call('/api/portfolio',{email:OWNER,method:'POST',body:bad});
+    assert.equal(r.status,400,JSON.stringify(bad));
+  }
+  assert.equal((await call('/api/portfolio',{email:OWNER,method:'POST',origin:'https://other.example',
+    body:{ticker:'AAPL',quantity:'1'}})).status,403);
+  const ok=await call('/api/portfolio',{email:OWNER,method:'POST',origin:'https://cresus.test',
+    body:{ticker:'AAPL',mic:'XNAS',quantity:'1.5',notes:'Self-reported'}});
+  assert.equal(ok.status,201);
+  assert.equal((await call('/api/portfolio/'+ok.body.position.id,{email:OWNER,method:'PATCH',
+    body:{currency:''}})).status,200);
+});
+
+test('CRESUS export includes owned chats, watchlist and manual positions, excluding other user data',async()=>{
+  const saved=await call('/api/watchlist',{email:OWNER,method:'POST',
+    body:{ticker:'EXPT',mic:'XNAS',notes:'OWNER_PRIVATE_WATCHLIST_NOTE'}});
+  assert.equal(saved.status,201);
+  const other=await call('/api/portfolio',{email:'wife@gmail.com',method:'POST',
+    body:{ticker:'WIFE1',quantity:'2',notes:'OTHER_USER_PRIVATE_POSITION'}});
+  assert.equal(other.status,201);
+  const req=new Request('https://cresus.test/api/export',{headers:{
+    'Cf-Access-Jwt-Assertion':await token(OWNER)
+  }});
+  const res=await worker.fetch(req,env);
+  assert.equal(res.status,200);
+  const md=await res.text();
+  assert.match(md,/Saved watchlist \(JSON\)/);
+  assert.match(md,/Manually entered portfolio positions \(JSON\)/);
+  assert.match(md,/OWNER_PRIVATE_WATCHLIST_NOTE/);
+  assert.match(md,/"quantity": "1.5"/);
+  assert.doesNotMatch(md,/OTHER_USER_PRIVATE_POSITION/);
+  assert.doesNotMatch(md,/WIFE1/);
+});
