@@ -27,6 +27,7 @@ class FakeSql {
       return new Cursor([...this.posts.values()].map(x=>({payload:x.payload})));
     }
     if (sql.startsWith("UPDATE posts SET")){
+      this.changes=0;
       const [payload,updated,id,previous]=values;
       const p=this.posts.get(id);
       if(p&&p.payload===previous){this.posts.set(id,{payload,updated});this.changes=1;}
