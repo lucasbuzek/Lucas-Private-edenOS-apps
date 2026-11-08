@@ -116,7 +116,8 @@ export async function onRequest({request,env}){
  try{
   if(action==='status'&&request.method==='GET'){
    const user=await portalUser(request,env);
-   return J(user?{authenticated:true,user:{email:user.email,role:user.role}}:{authenticated:false});
+   const providers=['google','apple'].filter(p=>!!config(p,env));
+   return J(user?{authenticated:true,user:{email:user.email,role:user.role},providers}:{authenticated:false,providers});
   }
   if(action==='start'&&request.method==='GET')return start(request,env,url);
   if(action==='callback'&&(request.method==='GET'||request.method==='POST'))return callback(request,env,url);
