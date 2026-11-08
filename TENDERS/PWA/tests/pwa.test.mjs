@@ -20,7 +20,9 @@ test("service worker caches app shell and provides offline navigation fallback",
   assert.match(sw, /addEventListener\(['"]fetch/);
   assert.match(sw, /cache\.match\(["']\/index\.html["']\)/);
   assert.match(sw, /await cache\.put\(request, response\.clone\(\)\)/);
-  assert.match(sw, /tenders-shell-v3/);
+  assert.match(sw, /CACHE_PREFIX="tenders-shell-"/);
+  assert.match(sw, /registration\.scope/);
+  assert.match(sw, /!staticAsset/);
 });
 test("connectors are explicitly unconfigured by default", async () => {
   const app = await readFile(join(root, "src/main.jsx"), "utf8");
