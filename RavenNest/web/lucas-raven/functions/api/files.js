@@ -7,9 +7,9 @@ const E=(n,e)=>J({error:e},n);
 const NAME=/^[a-z][a-z0-9_-]{1,48}$/,KEY=/^RAVEN_FILE_[A-Z0-9_]{2,60}$/;
 const safeFile=n=>String(n||'file').replace(/[^A-Za-z0-9._ -]/g,'_').slice(0,120);
 function dropboxPath(root,rel){
- if(typeof root!=='string'||typeof rel!=='string'||rel.length>1024||!rel.startsWith('/')||rel.includes('//')||rel.includes('\\')||root.includes('\\')||(root&&(!root.startsWith('/')||root.endsWith('/')||root.includes('//'))))throw Error('bad path');
+ if(typeof root!=='string'||typeof rel!=='string'||rel.length>1024||!rel.startsWith('/')||rel.includes('//')||rel.includes('\\')||root.includes('\\')||(root&&(!root.startsWith('/')||(root.endsWith('/')&&root!=='/')||root.includes('//'))))throw Error('bad path');
  if([...root.split('/'),...rel.split('/')].some(x=>x==='.'||x==='..'||/[\u0000-\u001f\u007f]/.test(x)))throw Error('bad path');
- return root+(rel==='/'?'':rel);
+ return (root==='/'?'':root)+(rel==='/'?'':rel);
 }
 async function principal(request,env){
  if(!env.DB)return null;
