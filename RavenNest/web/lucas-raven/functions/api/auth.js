@@ -88,6 +88,7 @@ async function start(request,env,url){
 async function callback(request,env,url){
  const provider=url.searchParams.get('provider'),cfg=config(provider,env);
  if(!cfg||!env.DB)return bad('Sign-in provider unavailable',503);
+ if(request.method==='POST'&&(Number(request.headers.get('content-length')||0)>8192||!String(request.headers.get('content-type')||'').startsWith('application/x-www-form-urlencoded')))return bad('Invalid callback payload',400);
  const p=request.method==='POST'?await request.formData():url.searchParams;
  const state=p.get('state'),code=p.get('code');
  if(typeof state!=='string'||typeof code!=='string'||state.length>128||code.length>3000||
@@ -112,7 +113,7 @@ async function callback(request,env,url){
 }
 export async function onRequest({request,env}){
  const url=new URL(request.url),action=url.searchParams.get('action')||'status';
- if(request.headers.get('origin')&&request.headers.get('origin')!==url.origin&&action!=='callback')return bad('Cross-origin request denied',403);
+ if(action!=='callback'&&(request.headers.get('origin')&&request.headers.get('origin')!==url.origin||request.headers.get('sec-fetch-site')==='cross-site'))return bad('Cross-origin request denied',403);
  try{
   if(action==='status'&&request.method==='GET'){
    const user=await portalUser(request,env);
