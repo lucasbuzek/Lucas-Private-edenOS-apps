@@ -1,6 +1,7 @@
 // Optional Chrome WebMCP progressive enhancement for PUBLIC Treasury results only.
 // No access to TENDERS local workspace, private files, credentials or bid actions.
 import {defaultSaWindow,validateSaWindow} from "./saOcds.js";
+import {appPath} from "./runtime.js";
 export function registerPublicTenderWebMcp({
   modelContext=typeof document!=="undefined"?document.modelContext:null,
   fetchImpl=fetch,
@@ -25,7 +26,7 @@ export function registerPublicTenderWebMcp({
     execute:async ({dateFrom,dateTo}={},execution={})=>{
       const defaults=defaultSaWindow(now);
       const window=validateSaWindow(dateFrom||defaults.from,dateTo||defaults.to);
-      const url=new URL("/api/official/sa-ocds",origin);
+      const url=new URL(appPath("api/official/sa-ocds"),origin);
       url.searchParams.set("dateFrom",window.from);
       url.searchParams.set("dateTo",window.to);
       const response=await fetchImpl(url.href,{credentials:"same-origin",cache:"no-store",redirect:"error",signal:execution.signal||controller.signal});
