@@ -42,8 +42,8 @@
   });
   byId('create-mail')?.addEventListener('click',()=>{
     const to=str('mail-to'),subject=str('mail-subject'),a=byId('mail-result');
-    if(!a||!to||!/^\S+@\S+\.\S+$/.test(to)||to.length>160){say('Enter a valid recipient address.');return}
-    a.href='mailto:'+encodeURIComponent(to)+'?subject='+encodeURIComponent(subject.slice(0,180));
+    if(!a||!to||!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(to)||to.length>160){say('Enter a valid recipient address.');return}
+    a.href='mailto:'+to+'?subject='+encodeURIComponent(subject.slice(0,180));
     a.textContent='Compose message in Apple Mail or default mail app';
     a.hidden=false;
     say('Compose link ready. Nothing is sent unless you review and send it in your mail app.');
