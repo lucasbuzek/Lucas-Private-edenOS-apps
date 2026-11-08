@@ -1,7 +1,7 @@
 name: TENDERS 0.1.3 candidate QA
 on:
   push:
-    branches: [candidate/tenders-0.1.3-recovery-20261029]
+    branches: [candidate/tenders-0.1.3-recovery-20261029, integration/tenders-ravenapps-20261108]
     paths: ['TENDERS/PWA/**', '.github/workflows/tenders-candidate.yml']
   workflow_dispatch:
 permissions:
