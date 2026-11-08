@@ -33,7 +33,9 @@
    const rows=(result.items||[]).map(item=>{
     const r=element('div');r.className='file-row';
     const name=element('span',(item.type==='folder'?'▣ ':'▤ ')+item.name);name.className='file-name';
-    const b=element('button',item.type==='folder'?'Open':'Download');b.type='button';
+    const canDownload=item.type==='folder'||source.can_download===true;
+    const b=element('button',item.type==='folder'?'Open':canDownload?'Download':'Download not permitted');b.type='button';
+    b.disabled=!canDownload;if(!canDownload)b.title='This storage grant permits listing, not downloading.';
     b.onclick=()=>{
      if(item.type==='folder'){
       paths.push(source.provider==='dropbox'?(at==='/'?'/'+item.name:at+'/'+item.name):'/'+item.id);
