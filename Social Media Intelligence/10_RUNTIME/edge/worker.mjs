@@ -91,13 +91,17 @@ async function parseInput(request){
   check(value&&typeof value==="object"&&!Array.isArray(value),"Expected JSON object");
   return value;
 }
-async function research(data){
+function validateResearch(data) {
   exactKeys(data,["query","hours","limit"]);
   const q=textValue(data.query,"query",120);
   check(q.length>=2,"Query must contain at least 2 characters");
   const hours=data.hours===undefined?72:data.hours,limit=data.limit===undefined?5:data.limit;
   check(Number.isInteger(hours)&&hours>=1&&hours<=168,"hours outside 1..168");
   check(Number.isInteger(limit)&&limit>=1&&limit<=5,"limit outside 1..5");
+  return {q,hours,limit};
+}
+async function research(data){
+  const {q,hours,limit}=validateResearch(data);
   const fmt=t=>new Date(t).toISOString().replace(/[-:TZ.]/g,"").slice(0,14);
   const url=new URL("https://api.gdeltproject.org/api/v2/doc/doc");
   url.search=new URLSearchParams({query:q,mode:"ArtList",format:"json",maxrecords:String(limit),
@@ -292,9 +296,10 @@ export default {
       return stub.fetch(new Request("https://fama.internal/queue",{method:"POST",
         headers:{"Content-Type":"application/json"},body:JSON.stringify(data)}));
     try{
+      validateResearch(data);
       const rate=await stub.fetch(new Request("https://fama.internal/rate",{method:"POST",body:"{}"}));
       if(!rate.ok)return rate;
       return respond(await research(data));
-    }catch{return replyError(502,"Research provider failed; no claim of success");}
+    }catch(err){return replyError(400,String(err.message||"Research request rejected").slice(0,180));}
   }
 };
