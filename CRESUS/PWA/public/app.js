@@ -438,6 +438,18 @@ const WORKSPACES = {
 };
 
 function selectWorkspace(key) {
+  if (key === 'watchlist') {
+    showWatchlist().catch(err => { $('watchlistStatus').textContent = err.message; });
+    return;
+  }
+  if (key === 'portfolio') {
+    showPortfolio().catch(err => { $('portfolioStatus').textContent = err.message; });
+    return;
+  }
+  if (key === 'income') {
+    showIncome().catch(err => { $('incomeStatus').textContent = err.message; });
+    return;
+  }
   const item = WORKSPACES[key];
   if (!item) return;
   document.querySelectorAll('.workspace-btn').forEach((b) => {
@@ -490,6 +502,299 @@ document.querySelectorAll('[data-cresus-command]').forEach(button => button.addE
   autosize();
   $('composer').requestSubmit();
 }));
+
+
+/* Durable, server-owned securities collection. No price or account claims. */
+async function showWatchlist() {
+  const dlg = $('watchlistDlg');
+  if (!dlg.open) dlg.showModal();
+  await refreshWatchlist();
+}
+async function refreshWatchlist(){
+  const rows=$('watchlistRows');
+  rows.replaceChildren();
+  $('watchlistStatus').textContent = 'Loading saved securities…';
+  const res=await api('/api/watchlist');
+  $('watchlistStatus').textContent = res.entries.length
+    ? res.entries.length+' saved securities · no live prices'
+    : 'No securities saved. Add a ticker and, if known, its exchange MIC.';
+  for(const entry of res.entries){
+    const row=document.createElement('article');
+    row.className='watchlist-row';
+    const head=document.createElement('div');
+    head.className='watchlist-row-info';
+    const title=document.createElement('strong');
+    title.textContent=entry.ticker+(entry.mic?' · '+entry.mic:' · MIC unknown');
+    const sub=document.createElement('small');
+    sub.textContent=[entry.name,entry.currency||'currency unknown',entry.isin?('ISIN '+entry.isin):''].filter(Boolean).join(' · ');
+    const note=document.createElement('p');
+    note.textContent=entry.notes||'No research notes';
+    head.append(title,sub,note);
+    const actions=document.createElement('div');
+    actions.className='watchlist-actions';
+    const research=document.createElement('button');
+    research.type='button';research.textContent='Research';research.className='btn ghost';
+    research.onclick=()=>{
+      $('watchlistDlg').close();
+      state.mode=state.presentation==='expert'?'expert':'simple';
+      store.set('cresus.mode',state.mode);
+      renderModes();
+      $('input').value='Research '+entry.ticker+(entry.mic?' on '+entry.mic:' (exchange not yet verified)')+(entry.currency?' in '+entry.currency:'')+
+        '. Resolve the exact listing and use dated, sourced evidence; do not infer market data from the watchlist.';
+      autosize();
+      $('composer').requestSubmit();
+    };
+    const remove=document.createElement('button');
+    remove.type='button';remove.textContent='Remove';remove.className='btn ghost';
+    remove.setAttribute('aria-label','Remove '+entry.ticker+' from your watchlist');
+    remove.onclick=async()=>{
+      if(!confirm('Remove '+entry.ticker+' from your saved watchlist?'))return;
+      try{await api('/api/watchlist/'+encodeURIComponent(entry.id),{method:'DELETE'});await refreshWatchlist();}
+      catch(e){$('watchlistStatus').textContent=e.message;}
+    };
+    actions.append(research,remove);
+    row.append(head,actions);
+    rows.append(row);
+  }
+}
+$('watchlistAdd').addEventListener('submit',async event=>{
+  event.preventDefault();
+  const btn=$('watchlistAddBtn');
+  btn.disabled=true;
+  $('watchlistStatus').textContent='Saving…';
+  try{
+    const obj={
+      ticker:$('watchlistTicker').value,
+      mic:$('watchlistMic').value,
+      currency:$('watchlistCurrency').value,
+      isin:$('watchlistIsin').value,
+      name:$('watchlistName').value,
+      notes:$('watchlistNotes').value
+    };
+    await api('/api/watchlist',{method:'POST',body:JSON.stringify(obj)});
+    $('watchlistAdd').reset();
+    await refreshWatchlist();
+  }catch(e){$('watchlistStatus').textContent=e.message;}
+  finally{btn.disabled=false;}
+});
+
+
+/* Authenticated D1-backed manual positions, not broker holdings or live prices. */
+async function showPortfolio(){
+  const dlg=$('portfolioDlg');
+  if(!dlg.open)dlg.showModal();
+  await refreshPortfolio();
+}
+async function refreshPortfolio(){
+  const wrap=$('portfolioRows');
+  wrap.replaceChildren();
+  $('portfolioStatus').textContent='Loading manual positions…';
+  const data=await api('/api/portfolio');
+  $('portfolioStatus').textContent=data.positions.length
+    ? data.positions.length+' saved positions · no live prices or verified executions'
+    : 'No manual positions yet. Enter a position above to keep it in your private account.';
+  const field=(label,value,name,kind='text')=>{
+    const node=document.createElement('label');
+    node.textContent=label;
+    const input=document.createElement(kind==='textarea'?'textarea':'input');
+    if(kind!=='textarea'){input.type='text';if(kind==='decimal')input.inputMode='decimal';}
+    input.value=value||'';
+    input.name=name;
+    node.appendChild(input);
+    return node;
+  };
+  for(const p of data.positions){
+    const card=document.createElement('article');
+    card.className='watchlist-row portfolio-row';
+    const head=document.createElement('div');
+    head.className='watchlist-row-info';
+    const title=document.createElement('strong');
+    title.textContent=p.ticker+(p.mic?' · '+p.mic:' · MIC unknown');
+    const detail=document.createElement('small');
+    detail.textContent=p.account_label+' · '+p.quantity+' units · '+(p.unit_cost?p.currency+' '+p.unit_cost+' / unit (user entered)':'cost basis unknown');
+    const context=document.createElement('p');
+    context.textContent=p.name||'Manual security record';
+    head.append(title,detail,context);
+    const edit=document.createElement('form');
+    edit.className='portfolio-edit';
+    edit.append(
+      field('Quantity',p.quantity,'quantity','decimal'),
+      field('Cost currency',p.currency,'currency'),
+      field('Unit cost',p.unit_cost,'unitCost','decimal'),
+      field('Name',p.name,'name'),
+      field('Notes',p.notes,'notes','textarea')
+    );
+    const actions=document.createElement('div');
+    actions.className='watchlist-actions portfolio-actions';
+    const save=document.createElement('button');
+    save.className='btn';save.type='submit';save.textContent='Save changes';
+    const remove=document.createElement('button');
+    remove.className='btn ghost';remove.type='button';remove.textContent='Remove';
+    remove.setAttribute('aria-label','Remove '+p.ticker+' from '+p.account_label);
+    actions.append(save,remove);
+    edit.append(actions);
+    edit.addEventListener('submit',async event=>{
+      event.preventDefault();save.disabled=true;
+      $('portfolioStatus').textContent='Saving position…';
+      try{
+        const data=Object.fromEntries(new FormData(edit).entries());
+        await api('/api/portfolio/'+encodeURIComponent(p.id),{method:'PATCH',body:JSON.stringify(data)});
+        await refreshPortfolio();
+      }catch(e){$('portfolioStatus').textContent=e.message;}
+      finally{save.disabled=false;}
+    });
+    remove.addEventListener('click',async()=>{
+      const ok=await confirmAction('Remove manual position?',p.ticker+' in '+p.account_label+' will be removed from the private portfolio.','Remove');
+      if(!ok)return;
+      remove.disabled=true;
+      try{
+        await api('/api/portfolio/'+encodeURIComponent(p.id),{method:'DELETE'});
+        await refreshPortfolio();
+      }catch(e){$('portfolioStatus').textContent=e.message;remove.disabled=false;}
+    });
+    card.append(head,edit);
+    wrap.append(card);
+  }
+}
+$('portfolioAdd').addEventListener('submit',async event=>{
+  event.preventDefault();
+  const button=$('portfolioAddBtn');
+  button.disabled=true;
+  $('portfolioStatus').textContent='Saving manual position…';
+  try{
+    const position={
+      accountLabel:$('portfolioAccount').value,ticker:$('portfolioTicker').value,
+      mic:$('portfolioMic').value,currency:$('portfolioCurrency').value,
+      quantity:$('portfolioQuantity').value,unitCost:$('portfolioUnitCost').value,
+      name:$('portfolioName').value,notes:$('portfolioNotes').value
+    };
+    await api('/api/portfolio',{method:'POST',body:JSON.stringify(position)});
+    $('portfolioAdd').reset();
+    $('portfolioAccount').value=position.accountLabel||'Manual';
+    await refreshPortfolio();
+  }catch(e){$('portfolioStatus').textContent=e.message;}
+  finally{button.disabled=false;}
+});
+
+
+/* ZACCHAEUS: exact, provenance-qualified income events. No quote or FX assertions. */
+const incomeStatuses=['estimated','forward_indicated','declared','entitled','payable','paid','reconciled','changed','deferred','cancelled'];
+const incomeFields=[
+  ['Amount','amount','decimal'],['Status','status','state'],['Effective date','effectiveAt','date'],
+  ['Pay date','payDate','date'],['Source published','sourcePublishedAt','date'],
+  ['Description','description','text'],['Source reference','sourceRef','text'],['Notes','notes','textarea']
+];
+async function showIncome(){
+  const dlg=$('incomeDlg');
+  if(!dlg.open)dlg.showModal();
+  await refreshIncome();
+}
+function buildIncomeEditField(label,name,value,type){
+  const el=document.createElement('label');
+  el.textContent=label;
+  const input=document.createElement(type==='textarea'?'textarea':type==='state'?'select':'input');
+  input.name=name;
+  if(type==='state'){
+    for(const status of incomeStatuses){
+      const option=document.createElement('option');
+      option.value=status;option.textContent=status.replaceAll('_',' ');
+      input.append(option);
+    }
+  }else if(type!=='textarea'){
+    input.type=type==='date'?'date':'text';
+    if(type==='decimal')input.inputMode='decimal';
+    input.maxLength=type==='decimal'?32:type==='text'?500:undefined;
+  }
+  input.value=value||'';
+  el.append(input);
+  return el;
+}
+async function refreshIncome(){
+  $('incomeStatus').textContent='Loading saved income events…';
+  const data=await api('/api/income');
+  const totals=$('incomeTotals'),rows=$('incomeRows');
+  totals.replaceChildren();rows.replaceChildren();
+  $('incomeStatus').textContent=data.events.length
+    ? data.events.length+' user-entered events · no payment verification'
+    : 'No income events yet. Add an estimated, declared or realized record.';
+  for(const t of data.totals){
+    const item=document.createElement('p');
+    item.className='income-total';
+    item.textContent=t.currency+' · '+t.basis.replaceAll('_',' ')+' · '+t.amount;
+    totals.append(item);
+  }
+  for(const entry of data.events){
+    const row=document.createElement('article');
+    row.className='watchlist-row income-row';
+    const head=document.createElement('div');
+    head.className='watchlist-row-info';
+    const title=document.createElement('strong');
+    title.textContent=entry.ticker+(entry.mic?' · '+entry.mic:'');
+    const sub=document.createElement('small');
+    sub.textContent=entry.amount+' '+entry.currency+' · '+entry.status.replaceAll('_',' ')+' ('+entry.basis.replaceAll('_',' ')+') · '+entry.effective_at;
+    const note=document.createElement('p');
+    note.textContent=entry.description||entry.notes||'Manually entered event';
+    head.append(title,sub,note);
+    const form=document.createElement('form');
+    form.className='income-edit';
+    const vals={
+      amount:entry.amount,status:entry.status,effectiveAt:entry.effective_at,
+      payDate:entry.pay_date,sourcePublishedAt:entry.source_published_at,
+      description:entry.description,sourceRef:entry.source_ref,notes:entry.notes
+    };
+    for(const [label,name,type] of incomeFields)form.append(buildIncomeEditField(label,name,vals[name],type));
+    const actions=document.createElement('div');
+    actions.className='watchlist-actions income-actions';
+    const save=document.createElement('button');
+    save.className='btn';save.type='submit';save.textContent='Save revision';
+    const remove=document.createElement('button');
+    remove.className='btn ghost';remove.type='button';remove.textContent='Remove';
+    actions.append(save,remove);
+    form.append(actions);
+    form.addEventListener('submit',async event=>{
+      event.preventDefault();save.disabled=true;
+      try{
+        const changes=Object.fromEntries(new FormData(form).entries());
+        await api('/api/income/'+encodeURIComponent(entry.id),{
+          method:'PATCH',headers:{'If-Match':String(entry.revision)},
+          body:JSON.stringify(changes)
+        });
+        await refreshIncome();
+      }catch(e){$('incomeStatus').textContent=e.message;}
+      finally{save.disabled=false;}
+    });
+    remove.addEventListener('click',async()=>{
+      const ok=await confirmAction('Delete income event?',entry.ticker+' · '+entry.amount+' '+entry.currency+' · '+entry.status,'Delete');
+      if(!ok)return;
+      remove.disabled=true;
+      try{
+        await api('/api/income/'+encodeURIComponent(entry.id),{method:'DELETE'});
+        await refreshIncome();
+      }catch(e){$('incomeStatus').textContent=e.message;remove.disabled=false;}
+    });
+    row.append(head,form);rows.append(row);
+  }
+}
+$('incomeAdd').addEventListener('submit',async event=>{
+  event.preventDefault();
+  const btn=$('incomeAddBtn');
+  btn.disabled=true;
+  $('incomeStatus').textContent='Saving income event…';
+  try{
+    const eventData={
+      accountLabel:$('incomeAccount').value,ticker:$('incomeTicker').value,mic:$('incomeMic').value,
+      currency:$('incomeCurrency').value,amount:$('incomeAmount').value,status:$('incomeState').value,
+      effectiveAt:$('incomeEffective').value,payDate:$('incomePayDate').value,
+      sourcePublishedAt:$('incomePublished').value,description:$('incomeDescription').value,
+      sourceRef:$('incomeSource').value,notes:$('incomeNotes').value
+    };
+    await api('/api/income',{method:'POST',body:JSON.stringify(eventData)});
+    $('incomeAdd').reset();
+    $('incomeAccount').value=eventData.accountLabel||'Manual';
+    await refreshIncome();
+  }catch(e){$('incomeStatus').textContent=e.message;}
+  finally{btn.disabled=false;}
+});
 
 // ---------- Wiring ----------
 function autosize() {

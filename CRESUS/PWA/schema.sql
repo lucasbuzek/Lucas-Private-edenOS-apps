@@ -48,3 +48,63 @@ CREATE TABLE IF NOT EXISTS intelligence_preferences (
   provider TEXT NOT NULL,
   updated_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
+
+-- Scoped CRESUS watchlist. Identity is an explicit ticker + MIC if known;
+-- unknown MIC remains blank rather than resolving the wrong exchange.
+CREATE TABLE IF NOT EXISTS watchlist_entries (
+  id TEXT PRIMARY KEY,
+  email TEXT NOT NULL,
+  ticker TEXT NOT NULL,
+  mic TEXT NOT NULL DEFAULT '',
+  currency TEXT NOT NULL DEFAULT '',
+  isin TEXT NOT NULL DEFAULT '',
+  name TEXT NOT NULL DEFAULT '',
+  notes TEXT NOT NULL DEFAULT '',
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+  UNIQUE(email,ticker,mic)
+);
+CREATE INDEX IF NOT EXISTS idx_watchlist_email_updated ON watchlist_entries(email,updated_at DESC);
+
+-- User-scoped manual position snapshots; no brokerage transactions or quotes are inferred.
+-- All quantity and cost values stay decimal strings, never floating-point SQL REAL.
+CREATE TABLE IF NOT EXISTS portfolio_positions (
+  id TEXT PRIMARY KEY,
+  email TEXT NOT NULL,
+  account_label TEXT NOT NULL DEFAULT 'Manual',
+  ticker TEXT NOT NULL,
+  mic TEXT NOT NULL DEFAULT '',
+  currency TEXT NOT NULL DEFAULT '',
+  name TEXT NOT NULL DEFAULT '',
+  quantity TEXT NOT NULL,
+  unit_cost TEXT NOT NULL DEFAULT '',
+  notes TEXT NOT NULL DEFAULT '',
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+  UNIQUE(email,account_label,ticker,mic)
+);
+CREATE INDEX IF NOT EXISTS idx_portfolio_email_account ON portfolio_positions(email,account_label,ticker);
+
+-- Manual ZACCHAEUS event log, evidence states never merged, amounts exact decimal text.
+-- known_at and observed_at are WHEN CRESUS received the manual entry, not the economic date.
+CREATE TABLE IF NOT EXISTS income_events (
+  id TEXT PRIMARY KEY,
+  email TEXT NOT NULL,
+  account_label TEXT NOT NULL DEFAULT 'Manual',
+  ticker TEXT NOT NULL,
+  mic TEXT NOT NULL DEFAULT '',
+  currency TEXT NOT NULL,
+  amount TEXT NOT NULL,
+  status TEXT NOT NULL,
+  effective_at TEXT NOT NULL,
+  pay_date TEXT NOT NULL DEFAULT '',
+  source_published_at TEXT NOT NULL DEFAULT '',
+  description TEXT NOT NULL DEFAULT '',
+  source_ref TEXT NOT NULL DEFAULT '',
+  notes TEXT NOT NULL DEFAULT '',
+  known_at TEXT NOT NULL,
+  observed_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+  revision INTEGER NOT NULL DEFAULT 1
+);
+CREATE INDEX IF NOT EXISTS idx_income_email_effective ON income_events(email,effective_at DESC);

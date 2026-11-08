@@ -45,7 +45,7 @@
         <div class="account-actions">
           <button id="adminBtn" class="text-btn" hidden>Manage access</button>
           <button id="intelligenceBtn" class="text-btn">Intelligence settings</button>
-          <button id="exportBtn" class="text-btn">Export my chats</button>
+          <button id="exportBtn" class="text-btn">Export my data</button>
           <a class="text-btn" href="/cdn-cgi/access/logout">Sign out</a>
         </div>
       </div>
@@ -132,6 +132,79 @@
     </div>
   </div>
 
+  <dialog id="incomeDlg" class="sheet watchlist-sheet income-sheet" aria-labelledby="incomeTitle">
+    <div class="sheet-head"><h2 id="incomeTitle">ZACCHAEUS · Income</h2>
+      <form method="dialog"><button class="icon-btn" aria-label="Close income">×</button></form>
+    </div>
+    <p class="muted">Record your own income events. REALIZED, DECLARED, FORWARD INDICATED and ESTIMATED remain separate. Entries are not independent confirmation of a dividend or received cash; no currency conversion is inferred.</p>
+    <form id="incomeAdd" class="watchlist-add">
+      <label>Account<input id="incomeAccount" maxlength="80" value="Manual" required></label>
+      <label>Security symbol<input id="incomeTicker" maxlength="24" autocomplete="off" placeholder="AAPL" required></label>
+      <label>Exchange MIC (optional)<input id="incomeMic" maxlength="4" autocomplete="off" placeholder="XNAS"></label>
+      <label>Currency<input id="incomeCurrency" maxlength="3" autocomplete="off" placeholder="USD" required></label>
+      <label>Amount in currency<input id="incomeAmount" type="text" inputmode="decimal" autocomplete="off" placeholder="0.25" required></label>
+      <label>Event status
+        <select id="incomeState" required>
+          <option value="estimated">Estimated</option>
+          <option value="forward_indicated">Forward indicated</option>
+          <option value="declared">Declared</option>
+          <option value="entitled">Entitled</option>
+          <option value="payable">Payable</option>
+          <option value="paid">Paid (user entered)</option>
+          <option value="reconciled">Reconciled (user entered)</option>
+          <option value="changed">Changed</option>
+          <option value="deferred">Deferred</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+      </label>
+      <label>Effective date<input id="incomeEffective" type="date" required></label>
+      <label>Pay date (optional)<input id="incomePayDate" type="date"></label>
+      <label>Source published (optional)<input id="incomePublished" type="date"></label>
+      <label class="watchlist-wide">Description<input id="incomeDescription" maxlength="160" autocomplete="off" placeholder="Dividend declaration or income event"></label>
+      <label class="watchlist-wide">Source reference (optional)<input id="incomeSource" maxlength="500" autocomplete="off" placeholder="URL or reference"></label>
+      <label class="watchlist-wide">Notes<textarea id="incomeNotes" maxlength="2000" rows="2"></textarea></label>
+      <button id="incomeAddBtn" type="submit" class="btn watchlist-wide">Save income event</button>
+    </form>
+    <p id="incomeStatus" class="notice" role="status" aria-live="polite"></p>
+    <div id="incomeTotals" class="income-totals" aria-label="Separate evidence-state income totals"></div>
+    <div id="incomeRows" class="watchlist-rows" aria-label="Saved income events"></div>
+  </dialog>
+  <dialog id="portfolioDlg" class="sheet watchlist-sheet portfolio-sheet" aria-labelledby="portfolioTitle">
+    <div class="sheet-head"><h2 id="portfolioTitle">CRESUS · Portfolio</h2>
+      <form method="dialog"><button class="icon-btn" aria-label="Close portfolio">×</button></form>
+    </div>
+    <p class="muted">Manual position snapshots only. These are not verified brokerage balances, executions, live prices or market valuations. CRESUS never assumes an exchange, FX rate or cost basis.</p>
+    <form id="portfolioAdd" class="watchlist-add">
+      <label>Account label<input id="portfolioAccount" maxlength="80" autocomplete="off" value="Manual" required></label>
+      <label>Symbol<input id="portfolioTicker" maxlength="24" autocomplete="off" placeholder="AAPL" required></label>
+      <label>Exchange MIC (optional)<input id="portfolioMic" maxlength="4" autocomplete="off" placeholder="XNAS"></label>
+      <label>Quantity (exact decimal)<input id="portfolioQuantity" type="text" inputmode="decimal" autocomplete="off" placeholder="12.5" required></label>
+      <label>Cost currency (optional)<input id="portfolioCurrency" maxlength="3" autocomplete="off" placeholder="USD"></label>
+      <label>Unit cost in that currency (optional)<input id="portfolioUnitCost" type="text" inputmode="decimal" autocomplete="off" placeholder="123.45"></label>
+      <label class="watchlist-wide">Security name (optional)<input id="portfolioName" maxlength="120" autocomplete="off" placeholder="Name of security"></label>
+      <label class="watchlist-wide">Notes (optional)<textarea id="portfolioNotes" maxlength="2000" rows="2"></textarea></label>
+      <button id="portfolioAddBtn" class="btn watchlist-wide" type="submit">Save manual position</button>
+    </form>
+    <p id="portfolioStatus" class="notice" role="status" aria-live="polite"></p>
+    <div id="portfolioRows" class="watchlist-rows" aria-label="Manual portfolio positions"></div>
+  </dialog>
+  <dialog id="watchlistDlg" class="sheet watchlist-sheet" aria-labelledby="watchlistTitle">
+    <div class="sheet-head"><h2 id="watchlistTitle">CRESUS · Watchlist</h2>
+      <form method="dialog"><button class="icon-btn" aria-label="Close watchlist">×</button></form>
+    </div>
+    <p class="muted">These are your saved research securities, not brokerage positions or live quotes. Specify the exchange MIC to distinguish cross-listings; leave it blank when unknown.</p>
+    <form id="watchlistAdd" class="watchlist-add">
+      <label>Ticker or symbol<input id="watchlistTicker" required maxlength="24" autocomplete="off" placeholder="AAPL"></label>
+      <label>Exchange MIC (optional)<input id="watchlistMic" maxlength="4" autocomplete="off" placeholder="XNAS"></label>
+      <label>Currency (optional)<input id="watchlistCurrency" maxlength="3" autocomplete="off" placeholder="USD"></label>
+      <label>ISIN (optional)<input id="watchlistIsin" maxlength="12" autocomplete="off" placeholder="US0378331005"></label>
+      <label class="watchlist-wide">Name (optional)<input id="watchlistName" maxlength="120" autocomplete="off" placeholder="Registered security name"></label>
+      <label class="watchlist-wide">Research notes (optional)<textarea id="watchlistNotes" maxlength="2000" rows="2" placeholder="Evidence questions, thesis or risks to investigate"></textarea></label>
+      <button type="submit" id="watchlistAddBtn" class="btn watchlist-wide">Save to my watchlist</button>
+    </form>
+    <p id="watchlistStatus" class="notice" role="status" aria-live="polite"></p>
+    <div id="watchlistRows" class="watchlist-rows" aria-label="Saved securities"></div>
+  </dialog>
   <dialog id="intelligenceDlg" class="sheet" aria-labelledby="intelligenceTitle">
     <div class="sheet-head"><h2 id="intelligenceTitle">CRESUS Intelligence</h2>
       <form method="dialog"><button class="icon-btn" aria-label="Close">×</button></form></div>
