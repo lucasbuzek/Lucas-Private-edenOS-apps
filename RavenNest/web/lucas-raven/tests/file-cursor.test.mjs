@@ -30,3 +30,28 @@ test('rejects overly long cursors and empty provider tokens',async()=>{
  await assert.rejects(openCursor(env,scope,'a'.repeat(10000),1100),/invalid cursor/);
  await assert.rejects(sealCursor(env,scope,'',1000),/invalid cursor/);
 });
+
+test('provider tokens remain confidential in browser-visible pagination URLs',async()=>{
+ const secret='sensitive-provider-continuation-token-ABCD-12345';
+ const c=await sealCursor(env,scope,secret,1000);
+ assert.match(c,/^v2\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/);
+ assert.ok(!c.includes(secret),'provider token must never appear as plaintext');
+ const decoded=c.split('.').slice(1).map(part=>Buffer.from(part.replace(/-/g,'+').replace(/_/g,'/'),'base64').toString('utf8')).join('');
+ assert.ok(!decoded.includes(secret),'provider token must not be recoverable by base64 decoding');
+ assert.equal(await openCursor(env,scope,c,1100),secret);
+});
+test('rejects v1 plaintext tokens, wrong secret and changed ciphertext',async()=>{
+ const c=await sealCursor(env,scope,'private-provider-token',1000);
+ await assert.rejects(openCursor(env,scope,'abc.def',1100),/invalid cursor/);
+ await assert.rejects(openCursor({...env,RAVEN_FILES_CURSOR_KEY:'other-secret-sufficiently-long-for-isolated-tests'},scope,c,1100),/invalid cursor/);
+ const parts=c.split('.');
+ const altered=parts[2].slice(0,-1)+(parts[2].endsWith('A')?'B':'A');
+ await assert.rejects(openCursor(env,scope,parts[0]+'.'+parts[1]+'.'+altered,1100),/invalid cursor/);
+});
+test('independent cursor encryptions use distinct nonces',async()=>{
+ const a=await sealCursor(env,scope,'same-provider-token',1000);
+ const b=await sealCursor(env,scope,'same-provider-token',1000);
+ assert.notEqual(a,b);
+ assert.equal(await openCursor(env,scope,a,1100),'same-provider-token');
+ assert.equal(await openCursor(env,scope,b,1100),'same-provider-token');
+});
