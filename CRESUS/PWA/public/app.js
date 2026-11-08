@@ -442,6 +442,10 @@ function selectWorkspace(key) {
     showWatchlist().catch(err => { $('watchlistStatus').textContent = err.message; });
     return;
   }
+  if (key === 'portfolio') {
+    showPortfolio().catch(err => { $('portfolioStatus').textContent = err.message; });
+    return;
+  }
   const item = WORKSPACES[key];
   if (!item) return;
   document.querySelectorAll('.workspace-btn').forEach((b) => {
@@ -568,6 +572,104 @@ $('watchlistAdd').addEventListener('submit',async event=>{
     await refreshWatchlist();
   }catch(e){$('watchlistStatus').textContent=e.message;}
   finally{btn.disabled=false;}
+});
+
+
+/* Authenticated D1-backed manual positions, not broker holdings or live prices. */
+async function showPortfolio(){
+  const dlg=$('portfolioDlg');
+  if(!dlg.open)dlg.showModal();
+  await refreshPortfolio();
+}
+async function refreshPortfolio(){
+  const wrap=$('portfolioRows');
+  wrap.replaceChildren();
+  $('portfolioStatus').textContent='Loading manual positions…';
+  const data=await api('/api/portfolio');
+  $('portfolioStatus').textContent=data.positions.length
+    ? data.positions.length+' saved positions · no live prices or verified executions'
+    : 'No manual positions yet. Enter a position above to keep it in your private account.';
+  const field=(label,value,name,kind='text')=>{
+    const node=document.createElement('label');
+    node.textContent=label;
+    const input=document.createElement(kind==='textarea'?'textarea':'input');
+    if(kind!=='textarea'){input.type='text';if(kind==='decimal')input.inputMode='decimal';}
+    input.value=value||'';
+    input.name=name;
+    node.appendChild(input);
+    return node;
+  };
+  for(const p of data.positions){
+    const card=document.createElement('article');
+    card.className='watchlist-row portfolio-row';
+    const head=document.createElement('div');
+    head.className='watchlist-row-info';
+    const title=document.createElement('strong');
+    title.textContent=p.ticker+(p.mic?' · '+p.mic:' · MIC unknown');
+    const detail=document.createElement('small');
+    detail.textContent=p.account_label+' · '+p.quantity+' units · '+(p.unit_cost?p.currency+' '+p.unit_cost+' / unit (user entered)':'cost basis unknown');
+    const context=document.createElement('p');
+    context.textContent=p.name||'Manual security record';
+    head.append(title,detail,context);
+    const edit=document.createElement('form');
+    edit.className='portfolio-edit';
+    edit.append(
+      field('Quantity',p.quantity,'quantity','decimal'),
+      field('Cost currency',p.currency,'currency'),
+      field('Unit cost',p.unit_cost,'unitCost','decimal'),
+      field('Name',p.name,'name'),
+      field('Notes',p.notes,'notes','textarea')
+    );
+    const actions=document.createElement('div');
+    actions.className='watchlist-actions portfolio-actions';
+    const save=document.createElement('button');
+    save.className='btn';save.type='submit';save.textContent='Save changes';
+    const remove=document.createElement('button');
+    remove.className='btn ghost';remove.type='button';remove.textContent='Remove';
+    remove.setAttribute('aria-label','Remove '+p.ticker+' from '+p.account_label);
+    actions.append(save,remove);
+    edit.append(actions);
+    edit.addEventListener('submit',async event=>{
+      event.preventDefault();save.disabled=true;
+      $('portfolioStatus').textContent='Saving position…';
+      try{
+        const data=Object.fromEntries(new FormData(edit).entries());
+        await api('/api/portfolio/'+encodeURIComponent(p.id),{method:'PATCH',body:JSON.stringify(data)});
+        await refreshPortfolio();
+      }catch(e){$('portfolioStatus').textContent=e.message;}
+      finally{save.disabled=false;}
+    });
+    remove.addEventListener('click',async()=>{
+      const ok=await confirmAction('Remove manual position?',p.ticker+' in '+p.account_label+' will be removed from the private portfolio.','Remove');
+      if(!ok)return;
+      remove.disabled=true;
+      try{
+        await api('/api/portfolio/'+encodeURIComponent(p.id),{method:'DELETE'});
+        await refreshPortfolio();
+      }catch(e){$('portfolioStatus').textContent=e.message;remove.disabled=false;}
+    });
+    card.append(head,edit);
+    wrap.append(card);
+  }
+}
+$('portfolioAdd').addEventListener('submit',async event=>{
+  event.preventDefault();
+  const button=$('portfolioAddBtn');
+  button.disabled=true;
+  $('portfolioStatus').textContent='Saving manual position…';
+  try{
+    const position={
+      accountLabel:$('portfolioAccount').value,ticker:$('portfolioTicker').value,
+      mic:$('portfolioMic').value,currency:$('portfolioCurrency').value,
+      quantity:$('portfolioQuantity').value,unitCost:$('portfolioUnitCost').value,
+      name:$('portfolioName').value,notes:$('portfolioNotes').value
+    };
+    await api('/api/portfolio',{method:'POST',body:JSON.stringify(position)});
+    $('portfolioAdd').reset();
+    $('portfolioAccount').value=position.accountLabel||'Manual';
+    await refreshPortfolio();
+  }catch(e){$('portfolioStatus').textContent=e.message;}
+  finally{button.disabled=false;}
 });
 
 // ---------- Wiring ----------
