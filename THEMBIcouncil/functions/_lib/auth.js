@@ -28,7 +28,7 @@ export async function authenticated(context){
 }
 export async function authorize(context){
  const request=context.request;
- if(!["GET","HEAD"].includes(request.method)){const origin=request.headers.get("Origin");if(!origin||origin!==new URL(request.url).origin)return {error:issued({error:"invalid_request_origin"},403)}}
+ if(!["GET","HEAD"].includes(request.method)){const origin=request.headers.get("Origin");const site=request.headers.get("Sec-Fetch-Site");if(origin?origin!==new URL(request.url).origin:site!=="same-origin")return {error:json({error:"invalid_request_origin"},403)}}
  try{const user=await authenticated(context);if(!user)return {error:new Response(JSON.stringify(NOT_AUTH),{status:401,headers:{"Content-Type":"application/json","Cache-Control":"no-store"}})};return {user}}catch{return {error:new Response(JSON.stringify({error:"service_unavailable"}),{status:503,headers:{"Content-Type":"application/json","Cache-Control":"no-store"}})}}
 }
 export function json(data,status=200){return new Response(JSON.stringify(data),{status,headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}})}
