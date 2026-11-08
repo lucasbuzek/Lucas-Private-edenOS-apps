@@ -2,7 +2,7 @@
 # THEMBIcouncil isolated FreeLLMAPI installation from its original source.
 set -Eeuo pipefail
 umask 077
-ROOT="\${HOME}/thembicouncil-freellmapi"
+ROOT="${HOME}/thembicouncil-freellmapi"
 PROJECT="thembicouncil-freellmapi"
 PORT="3103"
 cd "$ROOT"
@@ -53,8 +53,8 @@ docker compose -p "$PROJECT" -f docker-compose.yml -f council.override.yml confi
 docker compose -p "$PROJECT" -f docker-compose.yml -f council.override.yml pull freellmapi
 docker compose -p "$PROJECT" -f docker-compose.yml -f council.override.yml up -d --no-build --no-deps freellmapi
 for i in $(seq 1 20); do
-  if curl --noproxy '*' -fsS --max-time 4 "http://127.0.0.1:\${PORT}/api/ping" >/dev/null; then
-    echo "THEMBIcouncil router responds on localhost:\${PORT}"
+  if curl --noproxy '*' -fsS --max-time 4 "http://127.0.0.1:${PORT}/api/ping" >/dev/null; then
+    echo "THEMBIcouncil router responds on localhost:${PORT}"
     docker compose -p "$PROJECT" -f docker-compose.yml -f council.override.yml ps
     exit 0
   fi
