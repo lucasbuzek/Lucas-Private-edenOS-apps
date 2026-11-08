@@ -72,8 +72,8 @@ function initLocalView(){
 (async()=>{
  try{
   const response=await request('me');if(!response.authenticated)throw Error('not signed in');
-  currentUser=response;const pill=byId('account-name');if(pill)pill.textContent=response.display_name+(response.role==='owner_admin'?' · Owner':' · Administrator');
+  currentUser=response;const pill=byId('account-name');if(pill){pill.textContent=response.display_name+(response.role==='owner_admin'?' · Owner':' · Administrator');const signout=node('button','tiny','Sign out');signout.type='button';signout.addEventListener('click',async()=>{signout.disabled=true;try{await request('auth/logout','POST',{})}finally{location.replace('/login/')}});pill.insertAdjacentElement('afterend',signout)}
   document.body.classList.add('ready');byId('auth-state')?.remove();initCatalog();installEditors();initAssistant();initLocalView();
   if(['tasks','storage','documents'].includes(kind()))await refresh();
- }catch(err){const state=byId('auth-state');if(state){state.innerHTML='';const h=node('h2','','Sign in to your Council');const p=node('p','', 'Use the Google account invited to THEMBIcouncil and reload this page.');const b=node('button','cta','Retry connection');b.type='button';b.addEventListener('click',()=>location.reload());state.append(h,p,b)}}
+ }catch(err){if(err.message==='authentication_required'){location.replace('/login/?next='+encodeURIComponent(location.pathname));return}const state=byId('auth-state');if(state){state.innerHTML='';const h=node('h2','','Your Council is temporarily unavailable');const p=node('p','', 'Please retry this connection shortly. Your saved items have not been changed.');const b=node('button','cta','Retry');b.type='button';b.addEventListener('click',()=>location.reload());state.append(h,p,b)}}
 })();
