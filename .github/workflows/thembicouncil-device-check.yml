@@ -25,3 +25,14 @@ jobs:
         run: python -m py_compile THEMBIcouncil/device-agent/thembicouncil_agent.py
       - name: Offline root and permission checks
         run: python -m unittest discover -s THEMBIcouncil/device-agent/tests -v
+      - name: Validate Mac Linux installer syntax
+        if: runner.os != 'Windows'
+        run: sh -n THEMBIcouncil/device-agent/install-thembicouncil.sh
+      - name: Validate Windows installer syntax
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $tokens = $null
+          $errors = $null
+          [System.Management.Automation.Language.Parser]::ParseFile((Resolve-Path 'THEMBIcouncil/device-agent/Install-THEMBIcouncil.ps1'), [ref]$tokens, [ref]$errors) | Out-Null
+          if ($errors.Count -gt 0) { throw ($errors | Out-String) }
