@@ -1,34 +1,27 @@
-const NOT_AUTH=Object.freeze({error:"authentication_required"});
-const issued = (j)=>Response.json(j,{headers:{"Cache-Control":"no-store","X-Content-Type-Options":"nosniff","Referrer-Policy":"no-referrer"}});
-function decodeBase64Url(data){const raw=atob(data.replace(/-/g,"+").replace(/_/g,"/").padEnd(Math.ceil(data.length/4)*4,"="));return Uint8Array.from(raw,c=>c.charCodeAt(0))}
-function decodeJSON(data){return JSON.parse(new TextDecoder().decode(decodeBase64Url(data)))}
-let keysCache=null;let keysUntil=0;
-async function publicKeys(issuer){if(keysCache&&Date.now()<keysUntil)return keysCache;const r=await fetch(issuer+"/cdn-cgi/access/certs",{headers:{accept:"application/json"}});if(!r.ok)throw new Error("identity_keys_unavailable");const data=await r.json();if(!Array.isArray(data.keys)||!data.keys.length)throw new Error("identity_keys_unavailable");keysCache=data.keys;keysUntil=Date.now()+120000;return keysCache}
+const cookieName="__Secure-tc_session";
+function readCookie(req){const c=req.headers.get("Cookie")||"";return c.split(/;\s*/).find(x=>x.startsWith(cookieName+"="))?.slice(cookieName.length+1)||""}
+async function digest(str){return [...new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(str)))].map(x=>x.toString(16).padStart(2,"0")).join("")}
+function role(email,env){const o=String(env.COUNCIL_OWNER_EMAIL||"").toLowerCase().trim(),a=String(env.COUNCIL_ADMIN_EMAIL||"").toLowerCase().trim();if(!o||!a||o===a)return null;return email===o?"owner_admin":email===a?"founder_admin":null}
+export function json(data,status=200,headers={}){return new Response(JSON.stringify(data),{status,headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff","Referrer-Policy":"no-referrer",...headers}})}
+export function exactOrigin(request){const origin=request.headers.get("Origin"),site=request.headers.get("Sec-Fetch-Site");return origin?origin===new URL(request.url).origin:site==="same-origin"}
 export async function authenticated(context){
-  const env=context.env,issuer=String(env.COUNCIL_ACCESS_ISSUER||"").replace(/\/$/,"");
-  const aud=String(env.COUNCIL_ACCESS_AUD||"");
-  if(!env.COUNCIL_DB||!issuer||!aud||!env.COUNCIL_OWNER_EMAIL||!env.COUNCIL_ADMIN_EMAIL)throw new Error("identity_not_configured");
-  const jwt=context.request.headers.get("Cf-Access-Jwt-Assertion");
-  if(!jwt||jwt.length>8192)return null;
-  const parts=jwt.split(".");if(parts.length!==3)return null;
-  try{
-    const head=decodeJSON(parts[0]),payload=decodeJSON(parts[1]);
-    if(head.alg!=="RS256"||typeof head.kid!=="string"||payload.iss!==issuer||!Array.isArray(payload.aud)||!payload.aud.includes(aud))return null;
-    const sec=Math.floor(Date.now()/1000);
-    if(typeof payload.exp!=="number"||payload.exp<=sec||typeof payload.iat!=="number"||payload.iat>sec+60||payload.nbf&&payload.nbf>sec+60)return null;
-    const keys=await publicKeys(issuer),jwk=keys.find(k=>k.kid===head.kid&&k.kty==="RSA");
-    if(!jwk)return null;
-    const key=await crypto.subtle.importKey("jwk",jwk,{name:"RSASSA-PKCS1-v1_5",hash:"SHA-256"},false,["verify"]);
-    const input=new TextEncoder().encode(parts[0]+"."+parts[1]),sig=decodeBase64Url(parts[2]);
-    if(!await crypto.subtle.verify("RSASSA-PKCS1-v1_5",key,sig,input))return null;
-    const email=String(payload.email||"").toLowerCase().trim(),owner=String(env.COUNCIL_OWNER_EMAIL).toLowerCase().trim(),admin=String(env.COUNCIL_ADMIN_EMAIL).toLowerCase().trim();
-    if(email!==owner&&email!==admin)return null;
-    return {email,role:email===owner?"owner_admin":"founder_admin",name:email===owner?"Thembi":"Lucas"};
-  }catch{return null}
+ const e=context.env;
+ if(!e.COUNCIL_DB||!e.COUNCIL_OWNER_EMAIL||!e.COUNCIL_ADMIN_EMAIL||e.COUNCIL_PRODUCT_AUTH!=="enabled")return null;
+ const token=readCookie(context.request);if(!/^[A-Za-z0-9_-]{43}$/.test(token))return null;
+ const row=await e.COUNCIL_DB.prepare("SELECT email,subject,provider,expires_at FROM council_sessions WHERE token_hash=?1 AND expires_at>?2 AND revoked_at IS NULL LIMIT 1").bind(await digest(token),Date.now()).first();
+ if(!row)return null;const email=String(row.email).toLowerCase().trim(),r=role(email,e);if(!r)return null;
+ return {email,role:r,name:r==="owner_admin"?"Thembi":"Lucas",subject:row.subject,provider:row.provider}
 }
 export async function authorize(context){
- const request=context.request;
- if(!["GET","HEAD"].includes(request.method)){const origin=request.headers.get("Origin");const site=request.headers.get("Sec-Fetch-Site");if(origin?origin!==new URL(request.url).origin:site!=="same-origin")return {error:json({error:"invalid_request_origin"},403)}}
- try{const user=await authenticated(context);if(!user)return {error:new Response(JSON.stringify(NOT_AUTH),{status:401,headers:{"Content-Type":"application/json","Cache-Control":"no-store"}})};return {user}}catch{return {error:new Response(JSON.stringify({error:"service_unavailable"}),{status:503,headers:{"Content-Type":"application/json","Cache-Control":"no-store"}})}}
+ if(!["GET","HEAD"].includes(context.request.method)&&!exactOrigin(context.request))return {error:json({error:"invalid_request_origin"},403)};
+ try{
+  if(context.env.COUNCIL_PRODUCT_AUTH!=="enabled")return {error:json({error:"product_auth_not_ready"},503)};
+  const user=await authenticated(context);return user?{user}:{error:json({error:"authentication_required"},401)}
+ }catch{return {error:json({error:"auth_service_unavailable"},503)}}
 }
-export function json(data,status=200){return new Response(JSON.stringify(data),{status,headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}})}
+export function issueSession(token){return cookieName+"="+token+"; Max-Age=604800; Path=/app; Secure; HttpOnly; SameSite=Lax"}
+export function clearSession(){return cookieName+"=; Max-Age=0; Path=/app; Secure; HttpOnly; SameSite=Lax"}
+export async function digestToken(token){return digest(token)}
+export function roleFor(email,env){return role(String(email).toLowerCase().trim(),env)}
+export function sessionToken(){const b=crypto.getRandomValues(new Uint8Array(32));let s="";for(const v of b)s+=String.fromCharCode(v);return btoa(s).replace(/\+/g,"-").replace(/\//g,"_").replace(/=/g,"")}
+export function rawToken(req){return readCookie(req)}
