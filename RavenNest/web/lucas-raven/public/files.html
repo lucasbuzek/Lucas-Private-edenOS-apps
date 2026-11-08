@@ -18,8 +18,10 @@
 <section class="files-panel"><label for="source">Storage location</label><div class="file-controls">
 <select id="source" class="files-input" aria-label="Storage source"></select>
 <button id="refresh" type="button">Refresh</button><button id="up" type="button" disabled>Up one folder</button>
-</div><p id="status" role="status" aria-live="polite">Checking your session…</p></section>
+</div><p id="status" role="status" aria-live="polite">Checking your session…</p>
+<div id="login" class="file-controls" hidden><a id="login-google" href="/api/auth?action=start&amp;provider=google" hidden>Sign in with Google</a><a id="login-apple" href="/api/auth?action=start&amp;provider=apple" hidden>Sign in with Apple</a></div>
+<p id="login-unavailable" class="files-muted" hidden>Sign-in providers have not been configured for this deployment.</p><button id="logout" type="button" hidden>Sign out</button></section>
 <section class="files-panel" aria-labelledby="heading"><h2 id="heading">Files</h2><p id="location" class="files-muted">/</p>
 <div id="items"></div><button id="more" type="button" hidden>Load more</button></section>
-<p class="files-muted">Requires approved Cloudflare Access sign-in and provider-specific permissions. Files remain in their original storage accounts. DeviceLink is optional file access to enrolled folders, not cloud streaming.</p>
+<p class="files-muted">Requires enrolled Google/Apple sign-in and independently approved provider-specific permissions. Cloudflare Access is reserved for administrative routes. Files remain in their original storage accounts. DeviceLink is optional file access to enrolled folders, not cloud streaming.</p>
 </main><script src="/files.js" defer></script></body></html>
