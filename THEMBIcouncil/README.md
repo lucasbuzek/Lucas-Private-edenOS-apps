@@ -3,9 +3,14 @@
 Source: exact current registered plugin v0.1.26 (release pluginrel_6ae040c3f83c8191b85be407462ac407), imported into a non-default private GitHub branch, then minimally patched. The registered plugin itself is NOT updated here.
 
 ## Corrected CHORUS canon (8 November 2026)
-- Seven CHORUS characters: Heartbi, Fitbi, Dreambi, Bossbi, Roambi, Storybi and private SexyBi.
+- Seven CHORUS characters: Heartbi, Fitbi, Dreambi, Bossbi, Roambi, Storybi and SexyBi (all seven equally selectable in Thembi's own Council).
 - Terry is a separate companion and Chief Inspector, not an eighth CHORUS character. Preserve his original artwork and seven poses.
 - CHORUS output and UI group Terry separately; all eight visual assets are retained.
+
+## Owner correction — 8 November 2026
+- All seven CHORUS characters appear in the chooser. SexyBi is a normal, immediately selectable character inside Thembi's own personal Council; no extra modal, hidden label, or optional opt-in.
+- Role/tenant permissions remain enforced separately. Neither Thembi's personal availability nor Lucas's development authorization implies access to another account or a shared business tenant.
+- Terry remains a separate companion and Chief Inspector; he is not the eighth CHORUS character.
 
 ## Implemented in this branch
 - Explicit Save / Restore / Forget for non-sensitive local tasks using browser localStorage; never save journals, chat messages, personal photos, owner-private conversations, or authentication tokens.
