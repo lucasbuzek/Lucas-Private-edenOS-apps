@@ -16,6 +16,8 @@ async function sessionKey(user,persona){
   const digest=await crypto.subtle.digest("SHA-256",data);
   return "tc_"+[...new Uint8Array(digest)].map(x=>x.toString(16).padStart(2,"0")).join("").slice(0,40);
 }
+export async function onRequestGet() { return json({error:"method_not_allowed"},405,{"Allow":"POST"}); }
+export async function onRequestHead() { return new Response(null,{status:405,headers:{"Allow":"POST","Cache-Control":"no-store"}}); }
 export async function onRequestPost(context) {
   const access=await authorize(context);
   if(access.error)return access.error;
