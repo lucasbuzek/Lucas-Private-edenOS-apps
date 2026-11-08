@@ -132,6 +132,43 @@
     </div>
   </div>
 
+  <dialog id="incomeDlg" class="sheet watchlist-sheet income-sheet" aria-labelledby="incomeTitle">
+    <div class="sheet-head"><h2 id="incomeTitle">ZACCHAEUS · Income</h2>
+      <form method="dialog"><button class="icon-btn" aria-label="Close income">×</button></form>
+    </div>
+    <p class="muted">Record your own income events. REALIZED, DECLARED, FORWARD INDICATED and ESTIMATED remain separate. Entries are not independent confirmation of a dividend or received cash; no currency conversion is inferred.</p>
+    <form id="incomeAdd" class="watchlist-add">
+      <label>Account<input id="incomeAccount" maxlength="80" value="Manual" required></label>
+      <label>Security symbol<input id="incomeTicker" maxlength="24" autocomplete="off" placeholder="AAPL" required></label>
+      <label>Exchange MIC (optional)<input id="incomeMic" maxlength="4" autocomplete="off" placeholder="XNAS"></label>
+      <label>Currency<input id="incomeCurrency" maxlength="3" autocomplete="off" placeholder="USD" required></label>
+      <label>Amount in currency<input id="incomeAmount" type="text" inputmode="decimal" autocomplete="off" placeholder="0.25" required></label>
+      <label>Event status
+        <select id="incomeState" required>
+          <option value="estimated">Estimated</option>
+          <option value="forward_indicated">Forward indicated</option>
+          <option value="declared">Declared</option>
+          <option value="entitled">Entitled</option>
+          <option value="payable">Payable</option>
+          <option value="paid">Paid (user entered)</option>
+          <option value="reconciled">Reconciled (user entered)</option>
+          <option value="changed">Changed</option>
+          <option value="deferred">Deferred</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+      </label>
+      <label>Effective date<input id="incomeEffective" type="date" required></label>
+      <label>Pay date (optional)<input id="incomePayDate" type="date"></label>
+      <label>Source published (optional)<input id="incomePublished" type="date"></label>
+      <label class="watchlist-wide">Description<input id="incomeDescription" maxlength="160" autocomplete="off" placeholder="Dividend declaration or income event"></label>
+      <label class="watchlist-wide">Source reference (optional)<input id="incomeSource" maxlength="500" autocomplete="off" placeholder="URL or reference"></label>
+      <label class="watchlist-wide">Notes<textarea id="incomeNotes" maxlength="2000" rows="2"></textarea></label>
+      <button id="incomeAddBtn" type="submit" class="btn watchlist-wide">Save income event</button>
+    </form>
+    <p id="incomeStatus" class="notice" role="status" aria-live="polite"></p>
+    <div id="incomeTotals" class="income-totals" aria-label="Separate evidence-state income totals"></div>
+    <div id="incomeRows" class="watchlist-rows" aria-label="Saved income events"></div>
+  </dialog>
   <dialog id="portfolioDlg" class="sheet watchlist-sheet portfolio-sheet" aria-labelledby="portfolioTitle">
     <div class="sheet-head"><h2 id="portfolioTitle">CRESUS · Portfolio</h2>
       <form method="dialog"><button class="icon-btn" aria-label="Close portfolio">×</button></form>
