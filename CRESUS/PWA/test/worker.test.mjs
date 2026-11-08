@@ -389,3 +389,95 @@ test('CRESUS export includes owned chats, watchlist and manual positions, exclud
   assert.doesNotMatch(md,/OTHER_USER_PRIVATE_POSITION/);
   assert.doesNotMatch(md,/WIFE1/);
 });
+
+test('ZACCHAEUS manual income supports exact sums and separate evidence states',async()=>{
+  assert.equal((await call('/api/income')).status,401);
+  assert.equal((await call('/api/income',{email:'stranger@gmail.com'})).status,403);
+  const input=(amount,status,currency='USD')=>({accountLabel:'Manual',ticker:'ZTEST',mic:'XNAS',currency,amount,status,effectiveAt:'2026-02-03',sourcePublishedAt:'2026-02-01',description:'Self-entered event'});
+  const one=await call('/api/income',{email:OWNER,method:'POST',body:input('0.1','paid')});
+  assert.equal(one.status,201);
+  const two=await call('/api/income',{email:OWNER,method:'POST',body:input('0.2','reconciled')});
+  assert.equal(two.status,201);
+  const declared=await call('/api/income',{email:OWNER,method:'POST',body:input('0.3','declared')});
+  assert.equal(declared.status,201);
+  const forward=await call('/api/income',{email:OWNER,method:'POST',body:input('0.4','forward_indicated','EUR')});
+  assert.equal(forward.status,201);
+  const estimated=await call('/api/income',{email:OWNER,method:'POST',body:input('0.5','estimated')});
+  assert.equal(estimated.status,201);
+  const cancelled=await call('/api/income',{email:OWNER,method:'POST',body:input('0','cancelled')});
+  assert.equal(cancelled.status,201);
+  const r=await call('/api/income',{email:OWNER});
+  assert.equal(r.status,200);
+  assert.equal(r.body.verifiedCash,false);
+  assert.equal(r.body.fxConversion,false);
+  assert.ok(r.body.totals.some(x=>x.currency==='USD'&&x.basis==='REALIZED'&&x.amount==='0.3'));
+  assert.ok(r.body.totals.some(x=>x.currency==='USD'&&x.basis==='DECLARED'&&x.amount==='0.3'));
+  assert.ok(r.body.totals.some(x=>x.currency==='EUR'&&x.basis==='FORWARD_INDICATED'&&x.amount==='0.4'));
+  assert.ok(r.body.totals.some(x=>x.currency==='USD'&&x.basis==='ESTIMATED'&&x.amount==='0.5'));
+  assert.ok(r.body.totals.some(x=>x.currency==='USD'&&x.basis==='EXCEPTION'&&x.amount==='0'));
+  assert.equal((await call('/api/income',{email:'wife@gmail.com'})).body.events.some(x=>x.id===one.body.event.id),false);
+  const e=one.body.event;
+  assert.match(e.known_at,/^\d{4}-\d{2}-\d{2}T/);
+  assert.equal(e.effective_at,'2026-02-03');
+  assert.notEqual(e.known_at.slice(0,10),e.effective_at);
+  const p=await call('/api/income/'+e.id,{email:'wife@gmail.com',method:'DELETE'});
+  assert.equal(p.status,404);
+});
+
+test('ZACCHAEUS validates event sources and exact date/currency/amount',async()=>{
+  const valid={ticker:'ANNUAL',currency:'ZAR',amount:'1.00000001',status:'estimated',effectiveAt:'2026-09-30'};
+  for(const bad of [
+    {...valid,amount:'-1'}, {...valid,amount:'1e5'}, {...valid,amount:'1.000000001'},
+    {...valid,amount:1.2}, {...valid,amount:'1000000000000'},
+    {...valid,currency:''}, {...valid,currency:'US'}, {...valid,status:'unknown'},
+    {...valid,effectiveAt:'2026-02-30'}, {...valid,payDate:'2026-12-32'},
+    {...valid,sourcePublishedAt:'2026-13-01'}, {...valid,notes:'X'.repeat(2001)}
+  ]) {
+    const result=await call('/api/income',{email:OWNER,method:'POST',body:bad});
+    assert.equal(result.status,400,JSON.stringify(bad));
+  }
+  assert.equal((await call('/api/income',{email:OWNER,method:'POST',origin:'https://evil.example',body:valid})).status,403);
+  const positive=await call('/api/income',{email:OWNER,method:'POST',origin:'https://cresus.test',body:valid});
+  assert.equal(positive.status,201);
+  assert.equal(positive.body.event.amount,'1.00000001');
+  assert.equal((await call('/api/income',{email:OWNER,method:'POST',body:{...valid,effectiveAt:'2024-02-29'}})).status,201);
+});
+
+test('ZACCHAEUS optimistic revision guards and income export isolation',async()=>{
+  const original=await call('/api/income',{email:OWNER,method:'POST',body:{
+    ticker:'ZEND',currency:'USD',amount:'0.125',status:'declared',effectiveAt:'2026-06-01',
+    notes:'OWNER_INCOME_EVIDENCE_RECEIPT'
+  }});
+  assert.equal(original.status,201);
+  const e=original.body.event;
+  const patch=async(email,revision,body)=>{
+    const req=new Request('https://cresus.test/api/income/'+e.id,{
+      method:'PATCH',headers:{'Cf-Access-Jwt-Assertion':await token(email),'If-Match':String(revision),'Origin':'https://cresus.test'},
+      body:JSON.stringify(body)
+    });
+    const response=await worker.fetch(req,env);
+    return {status:response.status,body:await response.json()};
+  };
+  assert.equal((await patch('wife@gmail.com',1,{amount:'8'})).status,404);
+  assert.equal((await patch(OWNER,0,{amount:'8'})).status,409);
+  const updated=await patch(OWNER,1,{amount:'0.25',status:'paid',notes:'OWNER_INCOME_EVIDENCE_RECEIPT'});
+  assert.equal(updated.status,200);
+  assert.equal(updated.body.event.revision,2);
+  assert.equal(updated.body.event.amount,'0.25');
+  assert.equal((await patch(OWNER,1,{status:'reconciled'})).status,409);
+  assert.equal((await patch(OWNER,2,{currency:'EUR'})).status,400);
+  const other=await call('/api/income',{email:'wife@gmail.com',method:'POST',body:{
+    ticker:'PRIVATE',currency:'EUR',amount:'42',status:'estimated',effectiveAt:'2026-08-04',
+    notes:'OTHER_PERSON_INCOME_SECRET'
+  }});
+  assert.equal(other.status,201);
+  const request=new Request('https://cresus.test/api/export',{headers:{'Cf-Access-Jwt-Assertion':await token(OWNER)}});
+  const exported=await worker.fetch(request,env);
+  assert.equal(exported.status,200);
+  const markdown=await exported.text();
+  assert.match(markdown,/Manually entered income events \(JSON\)/);
+  assert.match(markdown,/OWNER_INCOME_EVIDENCE_RECEIPT/);
+  assert.doesNotMatch(markdown,/OTHER_PERSON_INCOME_SECRET/);
+  assert.equal((await call('/api/income/'+e.id,{email:OWNER,method:'DELETE'})).status,200);
+  assert.equal((await call('/api/income/'+e.id,{email:OWNER,method:'DELETE'})).status,404);
+});
