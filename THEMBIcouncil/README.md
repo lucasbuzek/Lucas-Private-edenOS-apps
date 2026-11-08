@@ -2,6 +2,11 @@
 
 Source: exact current registered plugin v0.1.26 (release pluginrel_6ae040c3f83c8191b85be407462ac407), imported into a non-default private GitHub branch, then minimally patched. The registered plugin itself is NOT updated here.
 
+## Corrected CHORUS canon (8 November 2026)
+- Seven CHORUS characters: Heartbi, Fitbi, Dreambi, Bossbi, Roambi, Storybi and private SexyBi.
+- Terry is a separate companion and Chief Inspector, not an eighth CHORUS character. Preserve his original artwork and seven poses.
+- CHORUS output and UI group Terry separately; all eight visual assets are retained.
+
 ## Implemented in this branch
 - Explicit Save / Restore / Forget for non-sensitive local tasks using browser localStorage; never save journals, chat messages, personal photos, owner-private conversations, or authentication tokens.
 - Chrome WebMCP feature-detected task creation as an optional in-page action, using an isolated current-page task list and no remote executor or auto-save; unsupported browsers retain standard task UI.
