@@ -154,6 +154,7 @@ struct CapabilitiesView: View {
     @EnvironmentObject var system: BifrostSystem
     @EnvironmentObject private var permissions: BifrostPermissionCenter
     @ObservedObject var capabilities: CapabilityRegistry
+    @StateObject private var localIntelligence = BifrostLocalIntelligence()
     @StateObject private var workflowRunner = BifrostNativeWorkflowRunner()
     @State private var requestedShortcut: String?
     @State private var confirmShortcut = false
@@ -268,6 +269,36 @@ struct CapabilitiesView: View {
                 }.padding(8)
             }
             BifrostFolderActionApproval(shortcuts: capabilities.shortcuts)
+            GroupBox("Apple on-device intelligence · Optional") {
+                VStack(alignment: .leading, spacing: 9) {
+                    Text(localIntelligence.availabilityMessage)
+                        .font(.caption).foregroundStyle(.secondary)
+                    HStack {
+                        Button("Explain observed capabilities") {
+                            localIntelligence.explain(
+                                capabilities: capabilities.items,
+                                services: system.discovery.services.count,
+                                shortcutStatus: capabilities.shortcutsStatus
+                            )
+                        }
+                        .disabled(!localIntelligence.available || localIntelligence.isRunning)
+                        if localIntelligence.isRunning {
+                            ProgressView().controlSize(.small)
+                            Button("Cancel") { localIntelligence.cancel() }
+                        }
+                        Spacer()
+                        Button("Check availability") { localIntelligence.refreshAvailability() }
+                    }
+                    if !localIntelligence.explanation.isEmpty {
+                        Text(localIntelligence.explanation)
+                            .font(.callout)
+                            .textSelection(.enabled)
+                            .accessibilityLabel("On-device explanation")
+                    }
+                    Text("Explicit opt-in. Only capability names and counts are provided to Apple's local model. No commands execute, and the app works without AI.")
+                        .font(.caption2).foregroundStyle(.secondary)
+                }.padding(8)
+            }
         }
         .frame(maxWidth: 960, alignment: .leading)
         .sheet(isPresented: $showAutomationConsent, onDismiss: {
