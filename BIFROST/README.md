@@ -5,7 +5,20 @@
 
 BIFROST is EDEN's **user-local endpoint access and local environment management app**, not an agentic orchestration engine, cloud fleet governor, universal AI gateway, ChatGPT-only client, MacConnect component, or Remote Desktop Commander dependency. The 2026-11-09 owner correction controls the current scope; the acronym and historic source are preserved.
 
-## 2026-11-09 current functional boundary
+## 2026-11-09 confirmed owner clarifications — current precedence
+
+The owner's explicit recovery clarifications control over conflicting text retained below for history. This is a scoped source-document correction on an unmerged candidate, **not** a running implementation, installation, merged branch, or LKG promotion.
+
+- **BIFROSTbridge is the universal shared CONNECTIVITY AND TRANSPORT layer** across authorized MCP/A2A, cloud services, devices, users, endpoint interfaces, and RAVENaIntelligence. It does not own agent planning, reasoning, global task orchestration, domain data, or user privileges. Connections and any cross-owner routing require authentic contracts, scoped permissions, denial/revocation and real delivery receipts; a compatible protocol declaration is not live integration.
+- **BIFROSTAIcore / BIFROST Intelligence stays within the BIFROST product** for native/on-device AI and deterministic local logic, including a usable non-AI fallback. Prefer exact deterministic operations and supported OS/native capabilities before optional available local models. Advanced global models, agentic reasoning, fleet planning, RAG and orchestration are separate RAVENaIntelligence-owned functions. The existing `Sources/BifrostLocalIntelligence.swift` is currently excluded in `project.yml`; restore only with source/runtime tests and native acceptance, not by declaring it complete.
+- **Historical durable identity and data contracts are retained** until separately migrated and verified: stable identities, metadata, mappings, provenance, relationships, storage authority, versioned schemas, backup/restore and rollback. Do not merge distinct legacy databases, delete archival implementations or reassign ownership by documentation change.
+- **The next acceptance milestone includes ALL SIX independently verifiable native/headless desktop targets:** macOS native, macOS Headless, Windows native, Windows Headless, Linux native and Linux Headless. A CI pass or portable CLI does not certify an entire platform.
+- **AOSbifrost, EDEN-BIFROST-Connector, bifrost-files-storage, RavenNest, ZERO Connections and similar historical connector/plugin labels** are legacy implementation/provenance identities, not authorization to ship or install separate BIFROST plugins/products. Recover their actual useful capabilities under current owner-approved application/transport contracts; preserve working original sources, independent domain ownership, data, credentials and LKG until functionality is verified. Do not bulk delete, rename or instantiate replacement plugins.
+- **ELYSIUM** is the independently governed integrated Personal/Business suite and configurable user/organization environments, not merely a portal. **PENELOPE** is the independent authorized user-file/folder custodian, organizer and cleaner, not AppDev Git/source/LKG governance.
+
+The older 2026-11-09 endpoint-only descriptions below are **superseded only where they contradict these explicit clarifications**. Local-first operation, privacy, security, permission gating and evidence rules remain binding.
+
+## 2026-11-09 earlier endpoint-only description (historical where superseded)
 
 **IN:** local user interface; local endpoint discovery/pairing; device capabilities, files, apps, services, networking and peripherals; approved terminal/desktop/browser access; independent opt-in Headless; diagnostics, local security and permissions, offline operation and verifiable receipts.
 
