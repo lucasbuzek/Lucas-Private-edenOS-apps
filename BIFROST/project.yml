@@ -31,6 +31,8 @@ targets:
           - _adisk._tcp
     sources:
       - path: Sources
+        excludes:
+          - BifrostLocalIntelligence.swift
       - path: MenuController/BIFROSTMenuControllerView.swift
       - path: MenuController/BifrostObservedPeerRegistry.swift
       - path: MenuController/BifrostPeerMenu.swift
