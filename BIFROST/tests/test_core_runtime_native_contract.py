@@ -9,6 +9,8 @@ MENU = (ROOT / "MenuController/BIFROSTMenuControllerView.swift").read_text()
 CONNECTIONS = (ROOT / "Sources/SecondaryViews.swift").read_text()
 PROJECT = (ROOT / "project.yml").read_text()
 CORE = (ROOT / "headless/core_runtime.py").read_text()
+README = (ROOT / "README.md").read_text()
+ROLE = (ROOT / "docs/architecture/BIFROST_CROSS_PLATFORM_PRODUCT_CONTRACT.md").read_text()
 
 
 class BifrostCoreNativeContracts(unittest.TestCase):
@@ -46,6 +48,21 @@ class BifrostCoreNativeContracts(unittest.TestCase):
         self.assertIn('Button("Inspect Runtime")', CONNECTIONS)
         self.assertIn('Label("Inspect BIFROSTcore…"', MENU)
         self.assertIn('config.add_argument("--apply"', CORE)
+
+
+    def test_local_endpoint_role_excludes_advanced_intelligence_from_native_app(self):
+        # Owner's 2026-11-09 scope change: BIFROST is a local endpoint,
+        # NOT the agentic brain. Source is preserved for external migration,
+        # but its optional FoundationModels UI is no longer instantiated.
+        self.assertIn("local endpoint access and local environment management", README)
+        self.assertIn("RAVENaIntelligence", ROLE)
+        self.assertIn("BIFROSTbridge retains only the endpoint-facing", ROLE)
+        self.assertIn("        excludes:\\n          - BifrostLocalIntelligence.swift", PROJECT)
+        self.assertNotIn("BifrostLocalIntelligence()", CONNECTIONS)
+        self.assertNotIn("Apple on-device intelligence", CONNECTIONS)
+        self.assertNotIn("localIntelligence.explain(", CONNECTIONS)
+        self.assertIn('HOST = "127.0.0.1"', SERVER)
+        self.assertIn('"connectionScope": "local-only"', SERVER)
 
 
 if __name__ == "__main__":
