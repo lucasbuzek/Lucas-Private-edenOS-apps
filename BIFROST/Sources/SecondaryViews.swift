@@ -68,7 +68,7 @@ struct ConnectionsView: View {
                 VStack(alignment: .leading, spacing: 9) {
                     HStack {
                         VStack(alignment: .leading, spacing: 3) {
-                            Text("BIFROST owns remote-connection management")
+                            Text("Inspect optional local connection profiles")
                                 .font(.subheadline.weight(.medium))
                             Text("Read existing RDC profile labels; no account sign-in or device operation starts.")
                                 .font(.caption).foregroundStyle(.secondary)
@@ -86,9 +86,9 @@ struct ConnectionsView: View {
                     Image(systemName: "person.crop.circle.badge.plus")
                         .foregroundStyle(BifrostUI.bridge)
                     VStack(alignment: .leading, spacing: 3) {
-                        Text("Add an account through its official provider")
+                        Text("Inspect or authorize a local connector")
                             .font(.subheadline.weight(.medium))
-                        Text("Save separate provider identities and open their isolated WebKit sessions. Connector authorization remains independently verified.")
+                        Text("Local connector identity and permission review only. Cloud and AI accounts remain under their separate owners.")
                             .font(.caption).foregroundStyle(.secondary)
                     }
                     Spacer()

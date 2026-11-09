@@ -14,7 +14,7 @@ class PeerMenuSafetyTests(unittest.TestCase):
         cls.catalog=(MENU/"BifrostObservedPeerRegistry.swift").read_text()
         cls.peer=(MENU/"BifrostPeerMenu.swift").read_text()
         cls.menu=(MENU/"BIFROSTMenuControllerView.swift").read_text()
-        cls.app=(MENU/"BIFROSTMenuControllerApp.swift").read_text()
+        cls.app=(ROOT/"Sources/BIFROSTApp.swift").read_text()
 
     def test_exact_known_sources_not_arbitrary_launch_agents(self):
         for label in ("eden.bifrost.raven-bridge","org.eden.bifrost.core",
@@ -47,11 +47,11 @@ class PeerMenuSafetyTests(unittest.TestCase):
     def test_original_bifrost_controls_and_identity_retained(self):
         for text in ("Open BIFROST App","Start Headless","Stop Headless…",
                      "Keep Awake","Open Local Dashboard",
-                     "Quit Menu Controller · Keep Headless"):
+                     "Quit BIFROST App · Keep Headless"):
             self.assertIn(text,self.menu)
         self.assertIn("BifrostBridgeSymbol(width: 24, height: 18)",self.app)
         self.assertIn("MenuBarExtra",self.app)
-        self.assertIn("BIFROSTMenuControllerApp",self.app)
+        self.assertIn("BIFROSTApp",self.app)
         self.assertIn("BIFROST · CONNECT · KEEP · RESOLVE",self.menu)
 
     def test_interface_levels_are_real(self):

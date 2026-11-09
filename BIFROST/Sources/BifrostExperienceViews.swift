@@ -61,7 +61,7 @@ struct BifrostSimpleHomeView: View {
                         navigate("Devices")
                     }
                     simpleAction("Accounts & Access",
-                                 subtitle: "Separate identities for AI providers and RDC",
+                                 subtitle: "Local connector identity and access permissions",
                                  symbol: "person.crop.circle.badge.checkmark", accent: BifrostUI.bridge) {
                         navigate("Accounts & Access")
                     }
