@@ -50,20 +50,41 @@ class BifrostCoreNativeContracts(unittest.TestCase):
         self.assertIn('config.add_argument("--apply"', CORE)
 
 
-    def test_local_endpoint_role_excludes_advanced_intelligence_from_native_app(self):
-        # Owner's 2026-11-09 scope change: BIFROST is a local endpoint,
-        # NOT the agentic brain. Source is preserved for external migration,
-        # but its optional FoundationModels UI is no longer instantiated.
+    def test_preserve_local_native_ai_boundary_and_universal_bridge_contract(self):
+        # Current owner corrections: advanced global agentic orchestration belongs
+        # to RAVENaIntelligence, but BIFROST retains deterministic local logic and
+        # optional native/on-device intelligence. Universal BIFROSTbridge is a
+        # permission-gated transport, not a planner or executor by implication.
         self.assertIn("local endpoint access and local environment management", README)
         self.assertIn("RAVENaIntelligence", ROLE)
-        self.assertIn("BIFROSTbridge retains only the endpoint-facing", ROLE)
-        self.assertIn("        excludes:", PROJECT)
-        self.assertIn("          - BifrostLocalIntelligence.swift", PROJECT)
-        self.assertNotIn("BifrostLocalIntelligence()", CONNECTIONS)
-        self.assertNotIn("Apple on-device intelligence", CONNECTIONS)
-        self.assertNotIn("localIntelligence.explain(", CONNECTIONS)
+        self.assertIn("BIFROSTbridge — UNIVERSAL SHARED TRANSPORT", ROLE)
+        self.assertIn("BIFROSTAIcore — KEEP LOCAL NATIVE INTELLIGENCE", ROLE)
+        self.assertIn("PENELOPE", ROLE)
+        self.assertIn("ELYSIUM", ROLE)
+        local_ai = (ROOT / "Sources/BifrostLocalIntelligence.swift").read_text()
+        self.assertIn("FoundationModels", local_ai)
+        self.assertIn("func refreshAvailability()", local_ai)
+        self.assertIn("func explain(capabilities:", local_ai)
+        self.assertIn("No project", local_ai)
+        # This tests source/canon preservation only. Native build inclusion,
+        # model availability and real execution require separate acceptance.
         self.assertIn('HOST = "127.0.0.1"', SERVER)
         self.assertIn('"connectionScope": "local-only"', SERVER)
+
+    def test_all_six_desktop_headless_targets_remain_required(self):
+        import json
+        target_contract = json.loads(
+            (ROOT / "docs/architecture/bifrost.platform-targets.json").read_text()
+        )
+        actual = {item["id"] for item in target_contract["deployment_targets"]}
+        self.assertEqual(actual, {
+            "macos-native", "macos-headless",
+            "windows-native", "windows-headless",
+            "linux-native", "linux-headless",
+        })
+        # A target record or CI build is not a release.
+        self.assertTrue(all(not item["release"]
+                            for item in target_contract["deployment_targets"]))
 
 
 if __name__ == "__main__":
