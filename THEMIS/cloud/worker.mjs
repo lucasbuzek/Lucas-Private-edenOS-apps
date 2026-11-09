@@ -36,7 +36,12 @@ async function accessOwner(req,env){
    const aud=Array.isArray(claims.aud)?claims.aud:[claims.aud];
    const now=Date.now()/1000;
    if(!aud.includes(env.ACCESS_AUD)||claims.iss!=="https://"+env.TEAM_DOMAIN||Number(claims.exp)<=now||Number(claims.nbf||0)>now)return false;
-   if(String(claims.email||"").toLowerCase()!==env.OWNER_EMAIL.toLowerCase())return false;
+   // Owner identity and the dedicated authenticated Pages service are separate.
+   // Access Service Auth validates the token before forwarding this request.
+   const owner=String(claims.email||"").toLowerCase()===env.OWNER_EMAIL.toLowerCase();
+   const proxy=!!env.RAVEN_PROXY_CLIENT_ID &&
+     req.headers.get("Cf-Access-Client-Id")===env.RAVEN_PROXY_CLIENT_ID;
+   if(!owner&&!proxy)return false;
    if(!accessKeys||Date.now()-accessKeyTime>300000){
      const res=await fetch("https://"+env.TEAM_DOMAIN+"/cdn-cgi/access/certs",{redirect:"error"});
      if(!res.ok)return false;
