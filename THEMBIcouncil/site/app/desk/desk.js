@@ -62,6 +62,15 @@ function initTaskForm(){
     finally{button.disabled=false;}
   });
 }
+function initNoteForm(){
+  el('quick-note').addEventListener('submit',async ev=>{
+    ev.preventDefault();const input=el('new-note');const body=input.value.trim();if(!body)return;
+    const button=el('create-note');const output=el('note-feedback');button.disabled=true;output.textContent='Saving…';
+    try{await request('items','POST',{kind:'note',title:body.slice(0,80),body});input.value='';await reload();output.textContent='Saved to your private notes.';input.focus();}
+    catch(e){output.textContent='Could not save: '+e.message;}
+    finally{button.disabled=false;}
+  });
+}
 function fail(message){
   const gate=el('auth-state');gate.replaceChildren();
   const inside=item('div','gate-inner');inside.append(item('h1','','Your Council is temporarily unavailable'),item('p','',message));
@@ -79,6 +88,7 @@ async function start(){
     el('today-date').textContent=new Date().toLocaleDateString(undefined,{weekday:'short',month:'long',day:'numeric',year:'numeric'});
     el('logout').addEventListener('click',async()=>{el('logout').disabled=true;try{await request('auth/logout','POST',{});}finally{location.assign('/login/');}});
     initTaskForm();
+    initNoteForm();
     el('workspace').hidden=false;el('auth-state').hidden=true;
     try{await reload();}catch(e){el('connection-state').textContent='Records unavailable';setStatus('Could not load your private items: '+e.message,true);}
   }catch(e){
