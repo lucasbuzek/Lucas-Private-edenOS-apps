@@ -53,7 +53,7 @@ async function assistant(input){
  
  const mode=byId('assistant-mode')?.value||'agent';
  if(mode!=='agent'){
-  try{const result=await request('infer','POST',{message:q,model:mode});return result.reply+'\\n\\n(Model-only response; no file or device actions were executed.)';}
+  try{const result=await request('infer','POST',{message:q,model:mode});return result.reply+'\n\n(Model-only response; no file or device actions were executed.)';}
   catch(e){return e.message==='shared_router_client_not_connected'?'Your shared FreeLLMAPI client credential has not been connected yet.':'Model routing was not completed ('+e.message+').';}
  }
  try{const result=await request('agent','POST',{message:q,persona:byId('council-persona')?.value||'Heartbi'});return result.reply}catch(e){if(e.message==='agent_runtime_not_connected')return 'Council AI has not been connected to a personal agent engine yet. Your tasks and notes are still available.';return 'Council AI request was not completed ('+e.message+'). Check the individual action receipts before retrying commands that could change files.'}
