@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#281d36">
+<title>My Desk · THEMBIcouncil</title><meta name="description" content="Your private THEMBIcouncil workspace">
+<link rel="icon" href="https://thembicouncil-artwork.lucasbuzek.workers.dev/img/logo" type="image/png">
+<link rel="stylesheet" href="/app/desk/desk.css"><script src="/app/desk/desk.js" defer></script>
+</head><body>
+<div id="auth-state" class="gate" role="status" aria-live="polite"><div class="gate-inner"><span class="gate-icon">T</span><h1>Opening your desk</h1><p>Checking your private Council session…</p></div></div>
+<div id="workspace" class="shell" hidden>
+<aside class="sidebar" aria-label="Workspace navigation">
+  <a href="/" class="brand"><span class="brand-mark">T</span><span>THEMBI<span class="brand-accent">council</span><small>YOUR PRIVATE WORKSPACE</small></span></a>
+  <div class="sidebar-group"><p class="nav-label">EVERYDAY</p>
+    <nav class="sidebar-nav" aria-label="Everyday">
+      <a href="/app/desk/" class="active" aria-current="page"><span aria-hidden="true">◈</span> My Desk</a>
+      <a href="/app/tasks/"><span aria-hidden="true">☑</span> Tasks & Planner</a>
+      <a href="/app/assistant/"><span aria-hidden="true">✧</span> My Council</a>
+    </nav>
+  </div>
+  <div class="sidebar-group"><p class="nav-label">MY PLACES</p>
+    <nav class="sidebar-nav" aria-label="Personal spaces">
+      <a href="/app/documents/"><span aria-hidden="true">▤</span> Documents & Notes</a>
+      <a href="/app/storage/"><span aria-hidden="true">▦</span> My Storage</a>
+      <a href="/app/workspace/"><span aria-hidden="true">▣</span> Projects & Ideas</a>
+    </nav>
+  </div>
+  <div class="sidebar-group"><p class="nav-label">EXPLORE</p>
+    <nav class="sidebar-nav" aria-label="Explore">
+      <a href="/app/"><span aria-hidden="true">▦</span> All Applications</a>
+      <a href="/connect/"><span aria-hidden="true">◇</span> Connect Your Tools</a>
+    </nav>
+  </div>
+  <div class="sidebar-footer"><span class="privacy-dot"></span> Private Council space<p>Services connect only with your permission.</p></div>
+</aside>
+<div class="content">
+  <header class="topbar"><div class="breadcrumbs"><a href="/app/">Applications</a><span aria-hidden="true">/</span><strong>My Desk</strong></div>
+  <div class="top-actions"><span class="today-date" id="today-date"></span><span class="avatar" id="avatar-initial" aria-hidden="true">T</span><span class="role" id="account-role">Private account</span><button id="logout" class="logout" type="button">Sign out</button></div></header>
+  <main class="main">
+    <div class="welcome"><div><p class="eyebrow">THEMBICOUNCIL <span class="dot">·</span> YOUR SPACE</p><h1>Good day, <span id="welcome-name">Thembi</span><span class="period">.</span></h1><p>Your plans, ideas and everyday things—together, without the noise.</p></div><a class="primary-button" href="/app/assistant/">Ask your Council <span aria-hidden="true">↗</span></a></div>
+    <section class="metric-grid" aria-label="Your actual workspace activity">
+      <article class="metric"><div class="metric-top"><span class="metric-icon blush" aria-hidden="true">☑</span><span class="metric-label">In progress</span></div><strong id="metric-open">—</strong><p>Tasks still to do</p></article>
+      <article class="metric"><div class="metric-top"><span class="metric-icon sage" aria-hidden="true">✓</span><span class="metric-label">Completed</span></div><strong id="metric-done">—</strong><p>Finished tasks</p></article>
+      <article class="metric"><div class="metric-top"><span class="metric-icon lavender" aria-hidden="true">▤</span><span class="metric-label">Your notes</span></div><strong id="metric-notes">—</strong><p>Notes you saved</p></article>
+      <article class="metric"><div class="metric-top"><span class="metric-icon peach" aria-hidden="true">▦</span><span class="metric-label">Documents</span></div><strong id="metric-files">—</strong><p>Text files in Council</p></article>
+    </section>
+    <div class="dashboard-grid">
+      <section class="panel daily"><div class="panel-heading"><div><p class="eyebrow">TODAY AT A GLANCE</p><h2>Your priorities</h2></div><a class="quiet-link" href="/app/tasks/">All tasks ↗</a></div>
+        <div class="progress-row"><span id="task-progress-label">Loading your tasks…</span><span id="task-progress-percent">—</span></div><div class="progress-track" role="progressbar" aria-label="Completed task percentage" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="task-progress"><span id="task-progress-fill"></span></div>
+        <form id="quick-task" class="quick-task"><label for="new-task">Add something to remember</label><div class="entry"><input id="new-task" name="task" maxlength="180" required placeholder="What's next on your list?" autocomplete="off"><button type="submit" id="create-task" aria-label="Add task">Add <span aria-hidden="true">＋</span></button></div></form>
+        <div class="task-header"><h3>Your open tasks</h3><span class="mini-caption">Your own Council records</span></div><ul id="task-list" class="task-list" aria-live="polite"><li class="muted">Loading…</li></ul>
+        <p class="feedback" id="task-feedback" role="status" aria-live="polite"></p>
+      </section>
+      <div class="right-col">
+       <section class="spotlight"><div class="sparkle" aria-hidden="true">✦</div><p class="eyebrow">YOUR PERSONAL ASSISTANT</p><h2>One Council.<br>Many ways to help.</h2><p>Ask a question, plan the day, save a note, or find a task. Connected actions need your authorization.</p><a class="spotlight-link" href="/app/assistant/">Open the Council <span aria-hidden="true">↗</span></a></section>
+       <section class="panel compact"><div class="panel-heading"><div><p class="eyebrow">AT HOME</p><h2>Home & family</h2></div><span class="status-pill">Not connected</span></div><p>Homebase, property and shared family services can appear here when you authorize their connections.</p><a class="quiet-link" href="/app/">Browse available apps ↗</a></section>
+       <section class="panel compact"><div class="panel-heading"><div><p class="eyebrow">WORK & IDEAS</p><h2>Stay in your flow</h2></div></div><p>Keep projects, documents and business plans organized in your private workspace.</p><div class="action-line"><a href="/app/workspace/">Projects ↗</a><a href="/app/documents/">Documents ↗</a></div></section>
+      </div>
+    </div>
+    <div class="bottom-grid">
+      <section class="panel recent"><div class="panel-heading"><div><p class="eyebrow">WITHIN REACH</p><h2>Recently updated</h2></div><a class="quiet-link" href="/app/storage/">My storage ↗</a></div><ul id="recent-list" class="recent-list" aria-live="polite"><li class="muted">Loading…</li></ul></section>
+      <section class="panel shortcuts"><div class="panel-heading"><div><p class="eyebrow">QUICK DESTINATIONS</p><h2>Go straight to it</h2></div></div><div class="quick-links">
+        <a href="/app/tasks/"><span class="shortcut-icon blush">☑</span><span><strong>Tasks</strong><small>Plan & complete</small></span><span>↗</span></a>
+        <a href="/app/documents/"><span class="shortcut-icon lavender">▤</span><span><strong>Notes</strong><small>Write & keep</small></span><span>↗</span></a>
+        <a href="/app/storage/"><span class="shortcut-icon peach">▦</span><span><strong>Storage</strong><small>Your cloud text files</small></span><span>↗</span></a>
+        <a href="/app/"><span class="shortcut-icon sage">◇</span><span><strong>Applications</strong><small>Explore more tools</small></span><span>↗</span></a>
+      </div></section>
+    </div>
+    <footer class="foot"><span>THEMBIcouncil · A personal workspace, not a shared ELYSIUM account</span><span id="connection-state">Checking connection…</span></footer>
+  </main>
+</div>
+</div>
+</body></html>
