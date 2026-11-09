@@ -65,6 +65,9 @@ class BifrostCoreNativeContracts(unittest.TestCase):
         self.assertIn("FoundationModels", local_ai)
         self.assertIn("func refreshAvailability()", local_ai)
         self.assertIn("func explain(capabilities:", local_ai)
+        self.assertNotIn("          - BifrostLocalIntelligence.swift", PROJECT)
+        self.assertIn("BifrostLocalIntelligence()", CONNECTIONS)
+        self.assertIn("Apple on-device intelligence · Optional", CONNECTIONS)
         self.assertIn("No project", local_ai)
         # This tests source/canon preservation only. Native build inclusion,
         # model availability and real execution require separate acceptance.
