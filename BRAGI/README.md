@@ -1,0 +1,13 @@
+# BRAGI · Postiz executable candidate
+
+This is an **isolated app-engineering candidate**, not a replacement for an unrecovered BRAGI executable master or an accepted release. It uses the upstream Postiz AGPL-3.0 engine (v2.25.3 security update) rather than inventing a duplicate social scheduler. Keep existing Project Bible/LKG intact.
+
+## Local owner integration acceptance
+
+Requirements: >=2GB actually available RAM, >=20GB disk, a Docker Compose runtime, Node 20+, and an authorized Mac/free Linux host. The 1GB Oracle micro VM is **not** established as sufficient. `cd BRAGI && npm test && node scripts/bootstrap.mjs && npm run preflight`, then `docker compose --env-file postiz/.env -f postiz/compose.yaml up -d`. Image manifest availability and resource fit must be verified on host; this file does not imply they have been tested. Runtime binds ONLY `127.0.0.1:4007` and has no public signup by default. To create the initial administrator, temporarily set `BRAGI_DISABLE_REGISTRATION=false` **only on the loopback-only local installation**, sign up as the owner, set it back to `true`, restart, and verify that unrelated registration fails. Never expose initial signup publicly.
+
+Before a production launch: obtain verified permanent $0 compute (Postiz + PostgreSQL + Redis + Temporal + Elasticsearch), persistent volumes and restore tests; secure Postiz origin via Cloudflare Tunnel/Access or equivalent; set production `PUBLIC_URL=https://bragiapp.ravensnest.pages.dev`; configure only owner-permitted provider OAuth; verify social publishing receipts; activate the Cloudflare Pages proxy only with valid `POSTIZ_ORIGIN`, `ACCESS_TEAM_DOMAIN`, `ACCESS_AUD`, `BRAGI_OWNER_EMAIL`, and trusted backend service credentials. Never push `postiz/.env`. Social publishing is never authorized merely by build/deployment.
+
+The Cloudflare Access application already created for owner-only entry is `cc9a7da4-2496-447f-a83a-a90156a05004`, audience `db4c6a56104e62963d1194fd3bc0afa7c69ccd523934915f81d780e3a4ebc0dc`, team `floral-sky-7240.cloudflareaccess.com`. These are non-secret identifiers; the application policy permits only `lucasbuzek@gmail.com`. The Pages proxy independently verifies JWTs, including on immutable preview URLs. Do not expose the proxy until its upstream is online, protected and tested.
+
+**Separation:** FAMA and MAMMON are not BRAGI data sources or account authorities. Family/Slindokuhle tenants require later per-principal authorizations, server-side scoping and negative isolation tests. Postiz/Mixpost remain separate suppliers; no Mixpost service is installed. No billed service, API subscription, social account provisioning or unsolicited publishing is configured.
