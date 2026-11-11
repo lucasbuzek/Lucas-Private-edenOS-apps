@@ -1,0 +1,30 @@
+{
+  "schema": "eden.delorean.connector-events.v1",
+  "owner": "LucasPRIVATE",
+  "entries": [
+    {
+      "provider": "github",
+      "project": "DeLorean",
+      "account_alias": "LucasGitHub",
+      "kind": "commit",
+      "ref": "cb9b032f68b02e224d4cd4708b198f402c8ed941",
+      "occurred_at": "2026-10-29T16:09:19Z"
+    },
+    {
+      "provider": "google-drive",
+      "project": "DeLorean",
+      "account_alias": "RAVENsNESTDrive",
+      "kind": "file-revision",
+      "ref": "1BrDh3BI1AQOHbaXAW_f9WOhz7Dmnu0y1l3q3KzOtVHE:7",
+      "occurred_at": "2026-10-25T19:59:01.731Z"
+    },
+    {
+      "provider": "dropbox",
+      "project": "DeLorean",
+      "account_alias": "RAVENsNESTResearch",
+      "kind": "file-revision",
+      "ref": "KqcGNtH_uy8AAAAAAAUMEQ:0165ed405b460530000000339388011",
+      "occurred_at": "2026-10-27T15:23:02Z"
+    }
+  ]
+}

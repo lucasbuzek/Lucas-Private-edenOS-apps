@@ -1,0 +1,2357 @@
+{
+  "schema": "eden.delorean.research-source-inventory.v1",
+  "source": "Connected authorized Dropbox folder /edenOS apps/AI MCP tool",
+  "capture_date": "2026-10-26",
+  "all_direct_children_exhausted": true,
+  "total": 390,
+  "by_extension": {
+    "webarchive": 375,
+    "png": 9,
+    "html": 1,
+    "jpg": 5
+  },
+  "clearly_relevant_filenames": 79,
+  "scope_note": "File names, byte sizes and timestamps inspected. Stored .webarchive contents have not been read; text extraction fails. References are research candidates, NOT verified implementations.",
+  "files": [
+    {
+      "name": "Photo AI Studio MCP Server by photo-ai-studio | Glama.webarchive",
+      "size": 2945442,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "9 MCP Projects for AI Engineers: Collaboration, Data Generation & More | Sina Riyahi posted on the t.webarchive",
+      "size": 3979877,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "imessage-mcp by hubermjonathan | Glama.webarchive",
+      "size": 3364973,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "homebrew-cask:Casks:c:chatgpt-atlas.rb at cd8cdb689ab1fe6eb51d92ea93c56f2895b4cb77 · Homebrew:homebr.webarchive",
+      "size": 9130131,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "IMG_2890.PNG",
+      "size": 4743938,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "davinci-resolve-mcp by mateo-khalil | Glama.webarchive",
+      "size": 4150484,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Game Asset MCP by TomasThrawat | Glama.webarchive",
+      "size": 2779228,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "autoMessage - MCP Connector | Glama.webarchive",
+      "size": 2806429,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "devops-practices.html",
+      "size": 359366,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "MCP Server for macOS by avanomme | Glama.webarchive",
+      "size": 2779570,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "bult-mcp-server by bultcloud | Glama.webarchive",
+      "size": 5648712,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "PowerTokens Video Studio by PowerTokens | Glama.webarchive",
+      "size": 7884766,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "The Game Crafter by alex-gon | Glama.webarchive",
+      "size": 3070499,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "ChatGPT iPhone Bridge by kapunakap | Glama.webarchive",
+      "size": 3287233,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "GoModelHub 3D MCP by gomodelhub | Glama.webarchive",
+      "size": 2907207,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Plori by plori-ai | Glama.webarchive",
+      "size": 3855349,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "throng by agent-runbooks | Glama.webarchive",
+      "size": 2997595,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Calfeed - MCP Connector | Glama.webarchive",
+      "size": 2774466,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "TorrentClaw-MCP by torrentclaw | Glama.webarchive",
+      "size": 3489338,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "MCP Video Generation with Veo2 by mario-andreschak | Glama.webarchive",
+      "size": 3505860,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "SocialDataX TikTok MCP by DevinChen2014 | Glama.webarchive",
+      "size": 2765446,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Project Memory by Dankaro-projects | Glama.webarchive",
+      "size": 2880990,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "genpark-agent-web-stealth-scraper-distiller-skill by alphaparkinc | Glama.webarchive",
+      "size": 2778927,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "enhance_prompt - App Factory MCP | Glama.webarchive",
+      "size": 2592294,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Apple MCP Tools by wearesage | Glama.webarchive",
+      "size": 2961453,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Google Flow Browser MCP by TMSSS05 | Glama.webarchive",
+      "size": 3167195,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "mcp-toolkit by YoshiLoL0526 | Glama.webarchive",
+      "size": 2991128,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "apple-mcp by Jameshuff91 | Glama.webarchive",
+      "size": 3057664,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Hermes Cloud — Always-On AI Agent Hosting | Nous Research.webarchive",
+      "size": 7450177,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Storacha MCP Storage Server by storacha | Glama.webarchive",
+      "size": 2797391,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Best Project Management Software with MCP Integrations (2026).webarchive",
+      "size": 2309499,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macos-mcp-tools by HachiTogo | Glama.webarchive",
+      "size": 2933433,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Competitor Monitor AI MCP by CSOAI-ORG | Glama.webarchive",
+      "size": 3575806,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "App Pain API - MCP Connector | Glama.webarchive",
+      "size": 2896433,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "DeckProbe MCP Server by deckflow | Glama.webarchive",
+      "size": 3316898,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Kleap by kleaphq | Glama.webarchive",
+      "size": 3219949,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Instagram MCP by thenavidm | Glama.webarchive",
+      "size": 2992357,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "siri MCP Servers | Glama.webarchive",
+      "size": 2430898,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Cursor's Agent Can Now Click Through Your Desktop Apps. Grant Access to the Helper Only - DEV Commun.webarchive",
+      "size": 2991480,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Seiche — Funding and FX Evidence by beepboop2025 | Glama.webarchive",
+      "size": 4076456,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Facebook MCP by thenavidm | Glama.webarchive",
+      "size": 3224405,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "unstuck-mcp by SamuelH98 | Glama.webarchive",
+      "size": 2844683,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "identity-storage-mcp by MikSkrzyp | Glama.webarchive",
+      "size": 2840025,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Citesurf MCP by citesurf | Glama.webarchive",
+      "size": 3504018,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macos-control-mcp by vito1317 | Glama.webarchive",
+      "size": 3388525,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Photoshop MCP — Tell Photoshop what you want.webarchive",
+      "size": 1282883,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Librivox - MCP Connector | Glama.webarchive",
+      "size": 3960372,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Atlas Cloud MCP Server (Image : Video : LLM APIs) by AtlasCloudAI | Glama.webarchive",
+      "size": 3049220,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "macos-mcp by CursorTouch | Glama.webarchive",
+      "size": 2941318,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "instagram-mcp by OraCool | Glama.webarchive",
+      "size": 3252538,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "BrewUI: A First Look at Homebrew's Official macOS GUI - DEV Community.webarchive",
+      "size": 3313422,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "cohesivity by cohesivity-org | Glama.webarchive",
+      "size": 2845828,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "icloud-mcp by robworks-code | Glama.webarchive",
+      "size": 3021363,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "OBS MCP by xDarkzx | Glama.webarchive",
+      "size": 4954621,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "usb-rea by emirmrkaljevic | Glama.webarchive",
+      "size": 3473483,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Building Production-Grade AI Agents with MCP: A Complete Guide for 2026 - DEV Community.webarchive",
+      "size": 2018880,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Yamaru Hardware Probe by yamaru-eu | Glama.webarchive",
+      "size": 2962150,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "whatsapp-hermes by RicSchonfelder | Glama.webarchive",
+      "size": 2913918,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "kompas-3d-ai-bridge by quja | Glama.webarchive",
+      "size": 2773580,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Local AI MCP by TMHSDigital | Glama.webarchive",
+      "size": 3055536,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "claude-agent-mcp by j-token | Glama.webarchive",
+      "size": 2821887,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Screenshot 2026-10-26 at 03.15.30.png",
+      "size": 2281522,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Hermes IDE — One console for every coding agent.webarchive",
+      "size": 2259706,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Game engine runtime mcp by Estiwito | Glama.webarchive",
+      "size": 2825638,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "S3-Compatible 3D Storage MCP Server by TencentCloudADP-DevRel | Glama.webarchive",
+      "size": 2893432,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "game-agent-factory by Jan-Jianhao-Liu | Glama.webarchive",
+      "size": 3258831,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "re-ios by gyh20062008-commits | Glama.webarchive",
+      "size": 3753317,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "AgentCloud iOS Simulator - MCP Connector | Glama.webarchive",
+      "size": 2759806,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "clipugc by clipugc | Glama.webarchive",
+      "size": 3235003,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "agentic-hil by agentic-hil | Glama.webarchive",
+      "size": 3644653,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macOS Office 365 MCP Server by iflow-mcp | Glama.webarchive",
+      "size": 2845841,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Hardware Manual RAG MCP Server by thenguyenyf | Glama.webarchive",
+      "size": 3199785,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Musevate by musevate | Glama.webarchive",
+      "size": 3356927,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "local-apple-data by BillyBunn | Glama.webarchive",
+      "size": 3604570,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "mcp-3d-modeling-agent by SekaiNoOwari77 | Glama.webarchive",
+      "size": 7675016,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "fitfilesize-mcp by Gautamstar | Glama.webarchive",
+      "size": 2877246,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "macOS Automator MCP Server by SuperCrazyKaizen | Glama.webarchive",
+      "size": 4813535,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Apple Notes on Steroids by krisxsee | Glama.webarchive",
+      "size": 3084079,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "guaardvark by guaardvark | Glama.webarchive",
+      "size": 4335125,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Exposing OpenAPI as MCP Tools - Semantics Matter | Christian Posta.webarchive",
+      "size": 3209036,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "simple-3d-modeling-mcp by mazzanfar | Glama.webarchive",
+      "size": 3036860,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Independent Video Generator by yt0912iii | Glama.webarchive",
+      "size": 3196339,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "tiktok-mcp by PPiai | Glama.webarchive",
+      "size": 2922628,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macOS Automator MCP Server by steipete | Glama.webarchive",
+      "size": 3402450,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "iphone-mcp by teddyoweh | Glama.webarchive",
+      "size": 3301696,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "GameCodex by sbenson2 | Glama.webarchive",
+      "size": 3272402,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Arr Suite MCP Server by shaktech786 | Glama.webarchive",
+      "size": 3367557,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Diogenes Context Compression, Code Patching & Deterministic Solver MCP by stand-out-of-my-sun | Glam.webarchive",
+      "size": 3251899,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Runway API MCP Server by runwayml | Glama.webarchive",
+      "size": 7799995,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "mcp-remote-macos-use by baryhuang | Glama.webarchive",
+      "size": 2968944,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "icloud alias 2.jpg",
+      "size": 128477,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "measure-mcp by purahmanian | Glama.webarchive",
+      "size": 3606318,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "iCloud MCP Server Apple by MrGo2 | Glama.webarchive",
+      "size": 3664639,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "MCP CAD Studio by flujo-app | Glama.webarchive",
+      "size": 3000833,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "SAGE by PsYcGoD | Glama.webarchive",
+      "size": 3359417,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Gmail MCP by alexneamtu | Glama.webarchive",
+      "size": 4911387,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "3D-MCP by team-plask | Glama.webarchive",
+      "size": 5325679,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "garageband-mcp by visualfart | Glama.webarchive",
+      "size": 2941501,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "mcp-server-macos-use by mediar-ai | Glama.webarchive",
+      "size": 2766478,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "franchisedata-mcp by outis-co | Glama.webarchive",
+      "size": 3277239,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "GitHub - yimajo:mcp-server-chatgpt-mac-app: An MCP server that allows you to use the ChatGPT macOS a.webarchive",
+      "size": 8506951,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Universal Hardware Runtime Platform by saidul202414006 | Glama.webarchive",
+      "size": 3193817,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "imessage by christianblandford | Glama.webarchive",
+      "size": 3475569,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "3D New Era AI by leandrodaf | Glama.webarchive",
+      "size": 6942259,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "apple-books-mcp by vgnshiyer | Glama.webarchive",
+      "size": 3600755,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "nuditok - MCP Connector | Glama.webarchive",
+      "size": 2847493,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "tiktok-scraper by harshmaur | Glama.webarchive",
+      "size": 3247546,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "movie-rec by ppikkuaho | Glama.webarchive",
+      "size": 3005471,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Mysocial Intelligence by mysocialio | Glama.webarchive",
+      "size": 2783888,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "auth-mcp by KB01111 | Glama.webarchive",
+      "size": 2983996,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macOS Tools MCP Server by tornikegomareli | Glama.webarchive",
+      "size": 2934572,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "macos-desktop-control by d-wwei | Glama.webarchive",
+      "size": 2906951,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "davinci-resolve-mcp by igamenovoer | Glama.webarchive",
+      "size": 2875437,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Pushary - MCP Connector | Glama.webarchive",
+      "size": 3023535,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "facebook-lyr by ishan-parihar | Glama.webarchive",
+      "size": 3619779,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "The MCP and AI Agent Problem. A Practical, Local Way Out - DEV Community.webarchive",
+      "size": 3429691,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "MCP Game Deck by RamonBedin | Glama.webarchive",
+      "size": 2949782,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "heimdall penelope.png",
+      "size": 2089409,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "agent-mcp-hub by blackaxgit | Glama.webarchive",
+      "size": 3007811,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Apple Contacts MCP by lu-wo | Glama.webarchive",
+      "size": 2889337,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "whatsapp by memsjava | Glama.webarchive",
+      "size": 2771195,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "How to Use Your Home AI Models From Your Laptop Anywhere in 2026 (With Tailscale) | Off Grid AI.webarchive",
+      "size": 1592296,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Substance-3D-Designer-MCP by MikeLi-28 | Glama.webarchive",
+      "size": 3378373,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "sonovault-mcp by rekordcloud | Glama.webarchive",
+      "size": 3062894,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "winston-ai-mcp by gowinston-ai | Glama.webarchive",
+      "size": 3429365,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "MCP WhatsApp by gabriellopesdesouza2002 | Glama.webarchive",
+      "size": 3512814,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macOS Ecosystem MCP Server by neverprepared | Glama.webarchive",
+      "size": 3099505,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "grok-game-mcp by ben-mad-jlp | Glama.webarchive",
+      "size": 3311336,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "PCCheck MCP Server by jjackk0k | Glama.webarchive",
+      "size": 3057912,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "maige-3d-mcp by m-ai-geXR | Glama.webarchive",
+      "size": 3385569,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Let AI agents control your iPhone with MCP | Askew.webarchive",
+      "size": 184487,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "concord-mcp by Get-Concord-AI | Glama.webarchive",
+      "size": 3418290,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Why I Built Nathstar: A Local-First, 120Hz Native macOS Terminal for Projects, Live Ops & Private AI.webarchive",
+      "size": 3849054,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "ghidraMCP by LaurieWired | Glama.webarchive",
+      "size": 3427643,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "tiktok-mcp by 0xArtex | Glama.webarchive",
+      "size": 3156615,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Siri Shortcuts MCP Server by maryame8957 | Glama.webarchive",
+      "size": 2783132,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Game MCP by xthenyo | Glama.webarchive",
+      "size": 3249051,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "curator - imrich.png",
+      "size": 2093510,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Open-Source MCP Servers – 110,216 in the Glama Registry | Glama.webarchive",
+      "size": 2626569,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "renderform-mcp by RenderForm | Glama.webarchive",
+      "size": 2944546,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Askew by Dominic-DK | Glama.webarchive",
+      "size": 3039847,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "3D Visualizer by kleinicke | Glama.webarchive",
+      "size": 3791335,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Siri Shortcuts MCP Server by dvcrn | Glama.webarchive",
+      "size": 3799678,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "awesome-mcp-servers:docs:project--task-management.md at main · TensorBlock:awesome-mcp-servers.webarchive",
+      "size": 7177353,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "MCP Appium by appium | Glama.webarchive",
+      "size": 3815383,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Open Factory - MCP Connector | Glama.webarchive",
+      "size": 2917145,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "web-speed-agent by Dominic-Pi-Sunyer | Glama.webarchive",
+      "size": 3875585,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "hardwaremcp by saadvz | Glama.webarchive",
+      "size": 2885761,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "3D MCP Server by jagjerez-org | Glama.webarchive",
+      "size": 3312032,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "game-dev-resource-mcp by dsaewkfiush03-debug | Glama.webarchive",
+      "size": 3003076,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "MCP Web Research Agent by SnotacusNexus | Glama.webarchive",
+      "size": 2855967,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Building a Personal Productivity Assistant with Q Developer CLI and MCP - DEV Community.webarchive",
+      "size": 2952392,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "io.github.henilcalagiya:mcp-apple-notes by henilcalagiya | Glama.webarchive",
+      "size": 3121666,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "mem0 MCP Server for Project Management by KunihiroS | Glama.webarchive",
+      "size": 11839811,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "tinkercad-mcp-server by sethski | Glama.webarchive",
+      "size": 3120468,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "connectors.webarchive",
+      "size": 392,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "iphone-mirror-mcp by nickatnight96 | Glama.webarchive",
+      "size": 3317683,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "mibly-apple-health-mcp by littlenew117 | Glama.webarchive",
+      "size": 4627241,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "macOS Notification MCP by devizor | Glama.webarchive",
+      "size": 2848845,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Frida Game Hacking MCP by 0xhackerfren | Glama.webarchive",
+      "size": 3648716,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "3D Mesh Optimizer MCP by Whambammy | Glama.webarchive",
+      "size": 3329079,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "robo-mcp by MariMachaidze | Glama.webarchive",
+      "size": 2779957,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "MetaVision AI Studio by adminmetavision-rgb | Glama.webarchive",
+      "size": 3242651,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "@pixelvault-dev:local-mcp by pixelvault-dev | Glama.webarchive",
+      "size": 3382791,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "mcp-game-helper by xhulz | Glama.webarchive",
+      "size": 2787195,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "downloader-mcp by CarlDog | Glama.webarchive",
+      "size": 3020323,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "davinci-resolve-mcp by realmikeshu | Glama.webarchive",
+      "size": 3112970,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "mcp-svd by pkt-lab | Glama.webarchive",
+      "size": 3316910,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "instagram-mcp by IvanBBaev | Glama.webarchive",
+      "size": 3668590,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Goose App Maker MCP by michaelneale | Glama.webarchive",
+      "size": 3100974,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "CAD MCP by Limnex | Glama.webarchive",
+      "size": 2793903,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "REA (Reverse Engineer Anything) by psyb0t | Glama.webarchive",
+      "size": 2873918,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "DWB MCP Studio by keattiphan-sri | Glama.webarchive",
+      "size": 3244582,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "AI eBook Generator - MCP Connector | Glama.webarchive",
+      "size": 2787540,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Zed — Your last next editor.webarchive",
+      "size": 6708674,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "aiworkhub_quality_calibration_report - AIWorkhub | Glama.webarchive",
+      "size": 2722517,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "instagram-mcp by osAlhaddad1 | Glama.webarchive",
+      "size": 4300123,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "SheetsData MCP by octoco-ltd | Glama.webarchive",
+      "size": 3841223,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "marsnme by Marsmanleo | Glama.webarchive",
+      "size": 3804713,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "game-translator-mcp by dcd887 | Glama.webarchive",
+      "size": 2874144,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "deterministic-logic by SamSoupSauce | Glama.webarchive",
+      "size": 2889852,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "mcp-vision by groundlight | Glama.webarchive",
+      "size": 3278202,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Building an MCP Server to Use ChatGPT Without API Keys - A Novel Approach Using macOS Shortcuts - DE.webarchive",
+      "size": 3399708,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "macos-ui-mcp by thangduonghuu | Glama.webarchive",
+      "size": 3416488,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "webapp agent.jpg",
+      "size": 392188,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Hunyuan 3D MCP Server by Riften | Glama.webarchive",
+      "size": 3237376,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "FoundRole Jobs - AI Job Search & Application Tracker by foundrole | Glama.webarchive",
+      "size": 3595563,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "YourImageShare by yourimageshare | Glama.webarchive",
+      "size": 2888054,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "icloud alias 1.jpg",
+      "size": 116991,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "web agent MCP Servers | Glama.webarchive",
+      "size": 2568818,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macos-automator-mcp by schmitzjimmy1-star | Glama.webarchive",
+      "size": 3362160,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Game Artist MCP by roronoazoroshao | Glama.webarchive",
+      "size": 3257650,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Calensync - MCP Connector | Glama.webarchive",
+      "size": 2778240,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "yt-transcript-mcp by warshanks | Glama.webarchive",
+      "size": 2785717,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Screenshot 2026-10-26 at 01.16.33.jpg",
+      "size": 85061,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macOS GUI Control MCP by Akira-Papa | Glama.webarchive",
+      "size": 3163628,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "apple MCP Connectors | Glama.webarchive",
+      "size": 2491325,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "eosl-mcp by Kranny36 | Glama.webarchive",
+      "size": 3363311,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "LemonMCP by lemonXGroup | Glama.webarchive",
+      "size": 3736612,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "mcp-mpv-player by guodaxia9527 | Glama.webarchive",
+      "size": 3026202,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "prompt-to-asset by MohamedAbdallah-14 | Glama.webarchive",
+      "size": 3830533,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macOS Contacts MCP by jcontini | Glama.webarchive",
+      "size": 2934096,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "websupport-mcp by tydung26 | Glama.webarchive",
+      "size": 3330409,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Coding agents for production iOS: a senior engineer's setup for 2x the output - DEV Community.webarchive",
+      "size": 3386595,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "voice-io by Furkiozknn | Glama.webarchive",
+      "size": 3482508,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "yt-audio-mcp by DaniilPak | Glama.webarchive",
+      "size": 3334597,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "3D CAD BasePlate Generator MCP by Nirlepb | Glama.webarchive",
+      "size": 2906823,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macos-computer-use by johnexzy | Glama.webarchive",
+      "size": 2849801,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "apple-workouts-mcp by yashhooda1 | Glama.webarchive",
+      "size": 3509590,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "icloud-mcp by adamzaidi | Glama.webarchive",
+      "size": 4284242,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Instagram MCP by tol518 | Glama.webarchive",
+      "size": 2856548,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "project-memory-mcp by extrei | Glama.webarchive",
+      "size": 2828676,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Robotics Control MCP Server by CSOAI-ORG | Glama.webarchive",
+      "size": 2871464,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "oJo MCP Server by ojodotso | Glama.webarchive",
+      "size": 3230085,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macos-screen-mcp by dla-kirito | Glama.webarchive",
+      "size": 2876460,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "facebook-mcp by YoTro | Glama.webarchive",
+      "size": 3001515,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Doubao Image:Video Generation MCP Server by 156554395 | Glama.webarchive",
+      "size": 2885990,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "davinci-resolve by kerwilgil | Glama.webarchive",
+      "size": 2906115,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "@forgeax:dsh-game by ForgeaX-Games | Glama.webarchive",
+      "size": 2877815,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "BackPow PoW Oracle by BackpowCom | Glama.webarchive",
+      "size": 2980257,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Intelagent MCP Template by Opafex | Glama.webarchive",
+      "size": 3265853,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "mcp-macos-toolkit by ContractorKeith | Glama.webarchive",
+      "size": 2861923,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "CarlDog:servarr-mcp: MCP server for the Servarr stack (Sonarr, Radarr, Lidarr, Readarr, Prowlarr), p.webarchive",
+      "size": 13311691,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "TMDB MCP Server by Grinv | Glama.webarchive",
+      "size": 4701131,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "App Factory MCP by DPGS-oss | Glama.webarchive",
+      "size": 3734593,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "ios-agent by Nagarjuna2997 | Glama.webarchive",
+      "size": 3670424,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Apple Notes MCP Server by ailenshen | Glama.webarchive",
+      "size": 2965912,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Screenshot MCP (macOS) by FrontMage | Glama.webarchive",
+      "size": 2883004,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "GhidraMCP by yqszxx | Glama.webarchive",
+      "size": 3538738,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Architecture overview - Model Context Protocol.webarchive",
+      "size": 4808759,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Xcode-Studio-MCP by kevinswint | Glama.webarchive",
+      "size": 3341889,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Apple Shortcuts + AI Is the Automation Stack… | Think Different.webarchive",
+      "size": 1348965,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "FapperAI - MCP Connector | Glama.webarchive",
+      "size": 2768349,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "fashio-mcp by fashiolabs | Glama.webarchive",
+      "size": 3061984,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "DaVinci Director MCP by kashyaprahul12659 | Glama.webarchive",
+      "size": 3312089,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "aether studio — AI Image Generation, Editing & Creative Workflow - MCP Connector | Glama.webarchive",
+      "size": 2785540,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "ios-mcp by emazaheri | Glama.webarchive",
+      "size": 6165464,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "CoDesign by imgly | Glama.webarchive",
+      "size": 3222463,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "xcode-build - Xcode MCP Server | Glama.webarchive",
+      "size": 2604315,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "desaira - MCP Connector | Glama.webarchive",
+      "size": 2848141,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "MCP Architecture Patterns for Production-Grade Agents - DEV Community.webarchive",
+      "size": 3389586,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "browser-for-ai by icueth | Glama.webarchive",
+      "size": 3778863,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "DeviceLink - Share a folder with ChatGPT or Claude.webarchive",
+      "size": 1793507,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Favicon & App Icons - MCP Connector | Glama.webarchive",
+      "size": 2810764,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "apple-photos-mcp by sweetrb | Glama.webarchive",
+      "size": 3865007,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "whatsapp by cRodriguez83407 | Glama.webarchive",
+      "size": 2894765,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "ghost-in-the-droid by ghost-in-the-droid | Glama.webarchive",
+      "size": 4100007,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Spicy API - MCP Connector | Glama.webarchive",
+      "size": 2814280,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Forency by cheevahagadog | Glama.webarchive",
+      "size": 2826947,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Memeboat MCP by memebo-at | Glama.webarchive",
+      "size": 3425050,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Gemini Image & Video Generation MCP by collactivelabs | Glama.webarchive",
+      "size": 2933764,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "shortcuts-bridge - MCP Connector | Glama.webarchive",
+      "size": 2785451,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "automator-mcp by VetCoders | Glama.webarchive",
+      "size": 2940095,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "MCP Veo 3 Video Generation Server by dayongd1 | Glama.webarchive",
+      "size": 2827190,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "4everland-hosting-mcp by 4everland | Glama.webarchive",
+      "size": 2806764,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "cloudflare MCP Servers | Glama.webarchive",
+      "size": 3064742,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "iMessage MCP by duanefields | Glama.webarchive",
+      "size": 2888771,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "sceneview-mcp by sceneview | Glama.webarchive",
+      "size": 3766274,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Chotu Robo Server by vishalmysore | Glama.webarchive",
+      "size": 2823563,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Screenshot 2026-10-26 at 01.16.46.jpg",
+      "size": 100925,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Reel Estate MCP by TryReelEstate | Glama.webarchive",
+      "size": 3198616,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "10 Best MCP Servers for Project Management in 2026.webarchive",
+      "size": 1929679,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Mobile Game Fixer MCP by imozkandev | Glama.webarchive",
+      "size": 3485557,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "iphone-safari-mcp by ikatkov | Glama.webarchive",
+      "size": 3099776,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "tiktok-downloader-mcp by abdouldotdev | Glama.webarchive",
+      "size": 2946033,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Glif by glifxyz | Glama.webarchive",
+      "size": 3014866,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "codex-app-server-mcp by 4714407 | Glama.webarchive",
+      "size": 2984781,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "BackPow MCP Server by 0xcWalter | Glama.webarchive",
+      "size": 3422479,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "AI Web Agents. AI Web Agents are a type of Agentic… | by Cobus Greyling | Medium.webarchive",
+      "size": 6947876,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "3d-asset-server by arielshad | Glama.webarchive",
+      "size": 3089774,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "MCP-Pushover Bridge by pyang2045 | Glama.webarchive",
+      "size": 2825807,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macOS Companion MCP Server by surendranb | Glama.webarchive",
+      "size": 3824389,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Screenshot 2026-10-26 at 03.23.42.png",
+      "size": 291562,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "tiktokporn - MCP Connector | Glama.webarchive",
+      "size": 2842937,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "whatsapp-mcp by edouard-claude | Glama.webarchive",
+      "size": 4055476,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Playwright MCP for macOS by mb-dev | Glama.webarchive",
+      "size": 2900530,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Jsoncut MCP Server by jsoncut | Glama.webarchive",
+      "size": 2971835,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "NYT Cooking MCP by bramboe | Glama.webarchive",
+      "size": 2955863,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "garageband-llm-bridge by extao15 | Glama.webarchive",
+      "size": 3930868,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "widgetdash-mcp by purian | Glama.webarchive",
+      "size": 2954355,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "media-gen-mcp by AriOliv | Glama.webarchive",
+      "size": 2911002,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Boost Your Agents with MCPs - Set up First Real-World Agentic App - DEV Community.webarchive",
+      "size": 3116489,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "How to Make Your Site Show in ChatGPT Answers (A Developer's Guide) - DEV Community.webarchive",
+      "size": 2991396,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "lgh by JoeGlenn1213 | Glama.webarchive",
+      "size": 3142007,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "0pi-mcp-server by dizzydes | Glama.webarchive",
+      "size": 2815319,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Game Asset Finder MCP by sudoriaa | Glama.webarchive",
+      "size": 2890761,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "mBlock MCP by blame-me | Glama.webarchive",
+      "size": 3374458,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "lsp-intelligence by perilevy | Glama.webarchive",
+      "size": 2901029,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Building a macOS Agent Workbench with SwiftUI - DEV Community.webarchive",
+      "size": 2815232,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Cinevva Game Engine by cinevva-engine | Glama.webarchive",
+      "size": 3234000,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macos-mcp by krmj22 | Glama.webarchive",
+      "size": 2854277,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "MCP Software Engineer by Rajawatrajat | Glama.webarchive",
+      "size": 2924592,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "game-asset-mcp by theisegoria | Glama.webarchive",
+      "size": 6233531,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macOS MCP Server by alexlock1 | Glama.webarchive",
+      "size": 3180585,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "AgentsPodium Hosting by agentspodium | Glama.webarchive",
+      "size": 3239718,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "am-mcp by Z-Han-Z | Glama.webarchive",
+      "size": 3326825,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Mobile Command Gateway Design.png",
+      "size": 420673,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macOS Automation MCP Server by matthewdcage | Glama.webarchive",
+      "size": 3588121,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Mobile Phone Waterfall MCP Server by mambalabsdev | Glama.webarchive",
+      "size": 2822015,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "SoundBreak - MCP Connector | Glama.webarchive",
+      "size": 2864080,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Oracle Cloud Infrastructure (OCI) MCP Server by ahmedselimmansor-ctrl | Glama.webarchive",
+      "size": 2852943,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Agent Workspace MCP Server by HrRodan | Glama.webarchive",
+      "size": 2929304,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "instagram-mcp by Joyhacks | Glama.webarchive",
+      "size": 2846613,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "quick-game by danilo-1 | Glama.webarchive",
+      "size": 3020865,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Cognito-3D-MCP by Lanc3 | Glama.webarchive",
+      "size": 3712108,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "davinci MCP Servers | Glama.webarchive",
+      "size": 2565327,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "aiworkhub_manager_context_graph_related - AIWorkhub | Glama.webarchive",
+      "size": 2724207,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "math-mcp-learning-server by clouatre-labs | Glama.webarchive",
+      "size": 3306140,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Ludo AI Game Assets by Ludo-AI | Glama.webarchive",
+      "size": 3217229,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "GarageBand Practice MCP by IsaacCavallaro | Glama.webarchive",
+      "size": 2767063,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "mcp-macos-popup by vakandi | Glama.webarchive",
+      "size": 2876441,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "codex-app-mcp by abetoots | Glama.webarchive",
+      "size": 3278201,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "3d-eyes by murphy977 | Glama.webarchive",
+      "size": 2884585,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "IMG_2895.PNG",
+      "size": 2127640,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Godot MCP by Vollkorn-Games | Glama.webarchive",
+      "size": 4464655,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "BotBell MCP Server by qq418716640 | Glama.webarchive",
+      "size": 3351334,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "OpenAPI Initiative – The OpenAPI Initiative provides an open source, technical community, within whi.webarchive",
+      "size": 1765015,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "SoraMCP by AceDataCloud | Glama.webarchive",
+      "size": 3153148,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "mcp-whatsapp by Sealjay | Glama.webarchive",
+      "size": 3705979,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "iPhone MCP Server by Lakr233 | Glama.webarchive",
+      "size": 3094859,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "apple-design-mcp by rncrosby | Glama.webarchive",
+      "size": 2924580,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "mcp-oauth-hosting by ierhgfiuoergerg | Glama.webarchive",
+      "size": 3285670,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "mcp-plex by obrien-matthew | Glama.webarchive",
+      "size": 3206192,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "AITuber MCP Server by aituberapp | Glama.webarchive",
+      "size": 3280047,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "iOS Development MCP Server by dagba | Glama.webarchive",
+      "size": 3181065,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "mac-cleaner by FFFames | Glama.webarchive",
+      "size": 2830917,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "LLMMO Game Server by MiloLug | Glama.webarchive",
+      "size": 3218757,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "GitHub - Homebrew:BrewUI: 📺 Homebrew's official macOS GUI · GitHub.webarchive",
+      "size": 8657343,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "google ai.png",
+      "size": 1903155,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "reminders-bridge - MCP Connector | Glama.webarchive",
+      "size": 2781889,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macos-computer-use-mcp by yyyyyyyyiiiii | Glama.webarchive",
+      "size": 3037549,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "notesbridge - MCP Connector | Glama.webarchive",
+      "size": 2791921,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Apple Shortcuts Server by recursechat | Glama.webarchive",
+      "size": 3452858,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "SpicyGen - MCP Connector | Glama.webarchive",
+      "size": 2801349,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macOS Defaults MCP Server by g0t4 | Glama.webarchive",
+      "size": 2855390,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Short Video Agent Kit by davidmosiah | Glama.webarchive",
+      "size": 3353254,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "DaVinci-Resolve-MCP by BillyRaz | Glama.webarchive",
+      "size": 3874337,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Boost Your Agents with MCPs - Productivity Customized Tools - DEV Community.webarchive",
+      "size": 2984236,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Hardware MCP Server by TheFloatingString | Glama.webarchive",
+      "size": 3223979,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "startup-valuation by simonmak-ascent | Glama.webarchive",
+      "size": 3582545,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Siri Shortcuts MCP Server by MarcelYoshida834 | Glama.webarchive",
+      "size": 2767351,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Create app hosting by Createdotcom | Glama.webarchive",
+      "size": 2889568,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "android-phone-control by FZ2000 | Glama.webarchive",
+      "size": 3714479,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "ContextForge by asit-piri | Glama.webarchive",
+      "size": 3144388,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "UnificAlly MCP Server by unifically-dev | Glama.webarchive",
+      "size": 3234730,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "ThinAir Geo by ThinAirTelematics | Glama.webarchive",
+      "size": 3575504,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "instagram-mcp by mcpware | Glama.webarchive",
+      "size": 3338644,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "bigapi by BiGapi-2026 | Glama.webarchive",
+      "size": 3002936,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Organize with AI (OwAI) - MCP Connector | Glama.webarchive",
+      "size": 3455174,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "yt download.png",
+      "size": 705696,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macos-agent-bridge by juliusloon | Glama.webarchive",
+      "size": 4190464,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Kaption WhatsApp by Kaption-AI | Glama.webarchive",
+      "size": 3596716,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Obsidian-Intelligence by GuideThomas | Glama.webarchive",
+      "size": 3375630,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "How to Use a Remote Ollama or llama.cpp Server From a Desktop AI App on Your Mac in 2026 - DEV Commu.webarchive",
+      "size": 2778953,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "arduino-mcp by JShort-bufr | Glama.webarchive",
+      "size": 3092516,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "SAGE-MCP by david-strejc | Glama.webarchive",
+      "size": 2895033,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "nucleus-apple-mcp by zish-rob-crur | Glama.webarchive",
+      "size": 3375659,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "DaVinci MCP Professional by hoyt-harness | Glama.webarchive",
+      "size": 2906522,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "apolo-cad by mariorojasmz | Glama.webarchive",
+      "size": 2895499,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": ",mlkl.webarchive",
+      "size": 3260895,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "LogicProMCP by shlomyss | Glama.webarchive",
+      "size": 2961484,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "chatgpt-web-agent by AxelHu | Glama.webarchive",
+      "size": 2895318,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "macos-clipboard-mcp by xiaoquisme | Glama.webarchive",
+      "size": 2794960,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "OpenSubtitles MCP Server by opensubtitles | Glama.webarchive",
+      "size": 2931715,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Apple Dev MCP Server by erdncyz | Glama.webarchive",
+      "size": 2879311,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "Compare Cloud Storage providers - ComparisonTables.webarchive",
+      "size": 2950151,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "AIHawk by feder-cr | Glama.webarchive",
+      "size": 3562283,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Apple Docs 2.0 MCP by mishafyi | Glama.webarchive",
+      "size": 3161567,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "jimeng-video-mcp-server by SA-GIMA | Glama.webarchive",
+      "size": 2886320,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "MusicBrainz MCP Server by zas | Glama.webarchive",
+      "size": 3105940,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "apple-messages-mcp-remote by mpacarroll | Glama.webarchive",
+      "size": 3408947,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "SubDownload by SubDownload | Glama.webarchive",
+      "size": 3168092,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "storage-steward by yusongcao2004 | Glama.webarchive",
+      "size": 2778722,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "electronic-mcp-server by wedsamuel1230 | Glama.webarchive",
+      "size": 3630022,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Lightroom Classic MCP by 4xiomdev | Glama.webarchive",
+      "size": 5704837,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Apple Photos MCP by thenavidm | Glama.webarchive",
+      "size": 3265803,
+      "type": "file",
+      "relevant_by_filename": true
+    },
+    {
+      "name": "davinci-resolve-mcp by lordhoell | Glama.webarchive",
+      "size": 3247105,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Partle by rubenayla | Glama.webarchive",
+      "size": 3585122,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "wanx-t2v-video-generation - Tongyi Wanxiang MCP Server | Glama.webarchive",
+      "size": 3181614,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "TikTok MCP Server by follox42 | Glama.webarchive",
+      "size": 3056791,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "small-app-dev-mcp by tomoki013 | Glama.webarchive",
+      "size": 3280778,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Siri Shortcuts MCP Server by kErdogan6537 | Glama.webarchive",
+      "size": 2768157,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Instagram by mcp-dir | Glama.webarchive",
+      "size": 2862369,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "list_projects - App Factory MCP | Glama.webarchive",
+      "size": 2590372,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Mixly Local MCP by ovoVHV | Glama.webarchive",
+      "size": 2934239,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "mirroir-mcp by jfarcand | Glama.webarchive",
+      "size": 3044167,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "MCP is APIs for Agents - DEV Community.webarchive",
+      "size": 2774600,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "Hermes Agent — Open-Source AI Agent That Grows With You | Nous Research.webarchive",
+      "size": 6906725,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "flaiwheel by dl4rce | Glama.webarchive",
+      "size": 3803738,
+      "type": "file",
+      "relevant_by_filename": false
+    },
+    {
+      "name": "media-gen-mcp by strato-space | Glama.webarchive",
+      "size": 3384291,
+      "type": "file",
+      "relevant_by_filename": false
+    }
+  ]
+}
