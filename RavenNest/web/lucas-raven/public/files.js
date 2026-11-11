@@ -13,6 +13,21 @@
   return j;
  }
  function element(tag,value){const e=document.createElement(tag);if(value!==undefined)e.textContent=value;return e}
+ async function identityUI(){
+  try{
+   const r=await fetch('/api/auth?action=status',{credentials:'same-origin',cache:'no-store',redirect:'error'});
+   const j=await r.json();const available=Array.isArray(j.providers)?j.providers:[];
+   const signed=!!j.authenticated;
+   $('login-google').hidden=signed||!available.includes('google');
+   $('login-apple').hidden=signed||!available.includes('apple');
+   $('login').hidden=signed||available.length===0;
+   $('login-unavailable').hidden=signed||available.length>0;
+   $('logout').hidden=!signed;
+  }catch{
+   $('login').hidden=true;$('logout').hidden=true;
+   $('login-unavailable').hidden=false;
+  }
+ }
  function start(){paths=['/'];nextCursor=null;shown=0;$('up').disabled=true;refresh()}
  async function sourcesList(){
   say('Checking authorized sources…');
@@ -22,6 +37,7 @@
    if(!sources.length){source=null;$('items').replaceChildren();say('No approved providers. Connect a storage account and grant access first.');return}
    source=sources[0];$('source').value=source.id;start();
   }catch(e){say(e.message);$('items').replaceChildren()}
+  finally{identityUI()}
  }
  async function refresh(cursor=null){
   if(!source)return;
@@ -33,7 +49,9 @@
    const rows=(result.items||[]).map(item=>{
     const r=element('div');r.className='file-row';
     const name=element('span',(item.type==='folder'?'▣ ':'▤ ')+item.name);name.className='file-name';
-    const b=element('button',item.type==='folder'?'Open':'Download');b.type='button';
+    const canDownload=item.type==='folder'||source.can_download===true;
+    const b=element('button',item.type==='folder'?'Open':canDownload?'Download':'Download not permitted');b.type='button';
+    b.disabled=!canDownload;if(!canDownload)b.title='This storage grant permits listing, not downloading.';
     b.onclick=()=>{
      if(item.type==='folder'){
       paths.push(source.provider==='dropbox'?(at==='/'?'/'+item.name:at+'/'+item.name):'/'+item.id);
@@ -73,5 +91,14 @@
    execute:({source,path,cursor})=>api({action:'list',source,path:path||'/',cursor:cursor||null})
   });
  }
+ $('logout').addEventListener('click',async()=>{
+  try{
+   const r=await fetch('/api/auth?action=logout',{method:'POST',credentials:'same-origin',cache:'no-store',redirect:'error'});
+   if(!r.ok)throw Error('Unable to sign out');
+   source=null;sources=[];paths=['/'];nextCursor=null;
+   $('items').replaceChildren();$('source').replaceChildren();
+   await sourcesList();
+  }catch(e){say(e.message)}
+ });
  sourcesList();
 })();

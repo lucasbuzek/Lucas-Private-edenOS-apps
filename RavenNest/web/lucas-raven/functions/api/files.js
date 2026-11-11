@@ -1,18 +1,24 @@
 // RAVENsNEST selected-source read-only files. Original RavenNest source only.
 // No legacy pairing, no cloud account federation, no provider tokens in HTML.
 import {verifyAccessJwt} from './[[path]].js';
+import {portalUser} from './portal-session.js';
 import {sealCursor,openCursor} from './file-cursor.js';
 const J=(x,s=200)=>new Response(JSON.stringify(x),{status:s,headers:{'content-type':'application/json','cache-control':'private, no-store','x-content-type-options':'nosniff','referrer-policy':'no-referrer'}});
 const E=(n,e)=>J({error:e},n);
 const NAME=/^[a-z][a-z0-9_-]{1,48}$/,KEY=/^RAVEN_FILE_[A-Z0-9_]{2,60}$/;
 const safeFile=n=>String(n||'file').replace(/[^A-Za-z0-9._ -]/g,'_').slice(0,120);
 function dropboxPath(root,rel){
- if(typeof root!=='string'||typeof rel!=='string'||rel.length>1024||!rel.startsWith('/')||rel.includes('//')||rel.includes('\\')||root.includes('\\')||(root&&(!root.startsWith('/')||root.endsWith('/')||root.includes('//'))))throw Error('bad path');
+ if(typeof root!=='string'||typeof rel!=='string'||rel.length>1024||!rel.startsWith('/')||rel.includes('//')||rel.includes('\\')||root.includes('\\')||(root&&(!root.startsWith('/')||(root.endsWith('/')&&root!=='/')||root.includes('//'))))throw Error('bad path');
  if([...root.split('/'),...rel.split('/')].some(x=>x==='.'||x==='..'||/[\u0000-\u001f\u007f]/.test(x)))throw Error('bad path');
- return root+(rel==='/'?'':rel);
+ return (root==='/'?'':root)+(rel==='/'?'':rel);
 }
 async function principal(request,env){
  if(!env.DB)return null;
+ // Ordinary portal users authenticate through explicit Google/Apple enrollment.
+ // Cloudflare Access is strictly opt-in for admin/MCP routing, never implicit user OAuth.
+ let session=null;try{session=await portalUser(request,env)}catch{}
+ if(session)return session;
+ if(env.RAVEN_FILES_ACCESS_ADMIN_ENABLED!=='1')return null;
  let c;try{c=await verifyAccessJwt(request.headers.get('cf-access-jwt-assertion'),env)}catch{return null}
  if(!Number.isFinite(c.exp)||c.exp<Date.now()/1000)return null;
  const u=await env.DB.prepare('SELECT id,disabled_at FROM users WHERE subject=?1 AND email=?2').bind(c.sub,c.email).first();
