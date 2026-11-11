@@ -1,0 +1,33 @@
+name: ELYSIUM THEMBIcouncil desk — source and security contract
+on:
+  push:
+    branches:
+      - design/thembicouncil-elysium-desk-20261109
+    paths:
+      - 'THEMBIcouncil/site/**'
+      - 'THEMBIcouncil/functions/**'
+      - 'THEMBIcouncil/tests/**'
+      - '.github/workflows/thembicouncil-elysium-desk.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify original protected runtime and modern Desk presentation contract
+        run: python3 THEMBIcouncil/tests/test_elysium_desk_design.py
+      - name: JavaScript syntax for existing Desk and ELYSIUM enhancement
+        run: |
+          node --check THEMBIcouncil/site/app/desk/desk.js
+          node --check THEMBIcouncil/site/app/desk/desk-modern.js
+          node --check THEMBIcouncil/functions/_lib/auth.js
+          node --check THEMBIcouncil/functions/app/api/items.js
+      - name: Verify exact Cloudflare Pages test route entry
+        run: |
+          grep -Fx '/elysium /app/desk/ 302' THEMBIcouncil/site/_redirects
+          grep -Fx '/elysium/ /app/desk/ 302' THEMBIcouncil/site/_redirects
