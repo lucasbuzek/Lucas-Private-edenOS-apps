@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark">
+  <title>NOSTOS | Home & Household</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, sans-serif; color-scheme: light dark; }
+    body { margin:0; background:Canvas; color:CanvasText; line-height:1.5; }
+    header { padding:1rem max(1rem,calc((100vw - 1100px)/2)); border-bottom:1px solid color-mix(in srgb,CanvasText 18%,Canvas); }
+    h1 { font-size:1.7rem; margin:.1rem 0; } h2 {font-size:1.15rem;margin:.3rem 0 1rem}
+    main {max-width:1100px; margin:auto; padding:1rem;display:grid;gap:1rem}
+    .panel {border:1px solid color-mix(in srgb,CanvasText 18%,Canvas); border-radius:14px;padding:1.1rem;}
+    .grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:.7rem}
+    .two {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+    .metric {padding:.8rem; border-radius:12px;background:color-mix(in srgb,CanvasText 5%,Canvas)}
+    .metric strong {display:block;font-size:1.6rem;font-variant-numeric:tabular-nums}
+    label {display:block;font-size:.92rem;font-weight:600;margin:.5rem 0}
+    input,select,textarea,button {font:inherit;box-sizing:border-box}
+    input,select,textarea {display:block;width:100%;margin-top:.2rem;padding:.55rem .65rem;border:1px solid color-mix(in srgb,CanvasText 24%,Canvas);border-radius:8px;background:Canvas;color:CanvasText}
+    button {border:1px solid color-mix(in srgb,CanvasText 28%,Canvas);border-radius:9px;padding:.5rem .85rem;cursor:pointer;background:Canvas;color:CanvasText}
+    button.primary {background:CanvasText;color:Canvas;border-color:CanvasText}
+    button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible {outline:3px solid Highlight;outline-offset:2px}
+    .toolbar {display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+    .toolbar>* {min-width:120px}.toolbar input {flex:1}
+    .items {display:grid;gap:.6rem}
+    article {padding:.8rem 1rem;border:1px solid color-mix(in srgb,CanvasText 14%,Canvas);border-radius:10px}
+    article h3 {margin:.1rem 0}.muted {opacity:.73;font-size:.89rem}.error {color:#c34040}
+    .actions {display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+    #locked,#work {display:none}
+    @media (max-width:600px){header,main{padding:1rem}.panel{padding:.9rem}}
+  </style>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+<header><h1>NOSTOS</h1><div class="muted">Home & Household · private local-first workspace</div></header>
+<main>
+ <section id="locked" class="panel" aria-labelledby="access-label">
+  <h2 id="access-label">Owner access</h2><p class="muted">Connect to the local NOSTOS service. The access token stays in this page's memory and is not stored in your browser.</p>
+  <form id="login"><label>Local owner token<input name="token" type="password" autocomplete="off" required minlength="32"></label>
+  <button class="primary" type="submit">Unlock household</button></form>
+ </section>
+ <div id="work">
+  <section class="panel"><div class="toolbar"><strong>Household overview</strong><button type="button" id="refresh">Refresh</button><button type="button" id="lock">Lock</button></div><div id="metrics" class="grid" aria-live="polite"></div></section>
+  <div class="two">
+   <section class="panel" aria-labelledby="editor-label"><h2 id="editor-label">Record</h2>
+    <form id="editor">
+      <input type="hidden" name="ident">
+      <label>Category<select name="kind" required>
+        <option value="members">Household members</option><option value="spaces">Spaces</option><option value="assets">Possessions</option><option value="supplies">Pantry & supplies</option><option value="chores">Chores</option><option value="maintenance">Maintenance</option><option value="records">Documents & records</option>
+      </select></label>
+      <label>Title<input name="title" maxlength="240" required></label>
+      <label>Status<select name="status"><option value="active">Active</option><option value="open">Open</option><option value="in_progress">In progress</option><option value="needs_attention">Needs attention</option><option value="done">Done</option><option value="archived">Archived</option></select></label>
+      <div class="two"><label>Due date<input name="due_date" type="date"></label><label>Location<input name="location" maxlength="500"></label></div>
+      <label>Quantity<input name="quantity" type="number" min="0" step="any"></label>
+      <label>Notes<textarea name="details" rows="3" maxlength="10000"></textarea></label>
+      <div class="actions"><button class="primary" type="submit">Save record</button><button type="button" id="clear">Clear</button></div>
+    </form>
+   </section>
+   <section class="panel" aria-labelledby="recovery-label"><h2 id="recovery-label">Data recovery</h2>
+    <p>Download a complete SQLite backup. A restore replaces current household records and is disabled unless the owner enables it on the local service.</p>
+    <button type="button" id="backup">Download backup</button>
+    <details><summary>Advanced: restore database</summary>
+      <p class="muted">Requires owner authorization, an explicit server setting and the exact confirmation phrase. The service takes a snapshot before replacing data.</p>
+      <form id="restore"><label>Validated NOSTOS SQLite backup<input type="file" name="backup" accept=".sqlite3,.db" required></label>
+      <label>Type RESTORE NOSTOS<input name="confirmation" autocomplete="off" required></label>
+      <button type="submit">Restore household data</button></form>
+    </details>
+   </section>
+  </div>
+  <section class="panel" aria-labelledby="records-label"><h2 id="records-label">Household records</h2>
+    <div class="toolbar"><input id="search" type="search" aria-label="Search household records" placeholder="Search title, notes or location">
+    <select id="filter" aria-label="Filter category"><option value="">All categories</option><option value="members">Members</option><option value="spaces">Spaces</option><option value="assets">Possessions</option><option value="supplies">Supplies</option><option value="chores">Chores</option><option value="maintenance">Maintenance</option><option value="records">Records</option></select></div>
+    <div id="items" class="items" aria-live="polite"></div>
+  </section>
+ </div>
+ <p id="notice" role="status" aria-live="polite" class="muted">Private development candidate. Loopback only; no remote household access enabled.</p>
+</main>
+</body></html>
