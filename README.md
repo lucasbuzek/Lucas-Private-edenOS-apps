@@ -1,16 +1,18 @@
-# Lucas Private edenOS Apps
+# Lucas-Private-edenOS-apps
 
-**Purpose:** custom/private versions and owner-specific variants of EDEN applications.
+**Purpose:** Lucas's owner-specific EDEN application variants and explicitly private EDEN development workspaces. This repository is not the general EDEN applications repository and is not the authority for every EDEN platform or application.
 
-This repository holds Lucas-only application variants. It is not the general EDEN applications repository, not the EDEN platform repository, and not an authority over every EDEN application. The normal EDEN application sources remain in `edenOS-apps`; each application's established source, Project Bible, history and LKG remain attached to that application. A custom/private copy is a separate variant and must not silently replace or redefine its normal EDEN application.
+## Boundaries
 
-## CURATOR
-**CURATOR — Creative Understanding, Review, Asset Tagging, Organization & Retrieval**
+- Normal EDEN application sources belong in `lucasbuzek/edenOS-apps`.
+- Owner-specific private/custom application variants belong in the designated RAVENsNEST account/repository when their migration destination and source lineage have been verified.
+- The EDEN hardware/software platform lineage (GardenOS, coreOS, edenOScore and the embedded/Linux platform work) is not an ordinary app collection. Its own platform repository and Project Bibles govern it; do not move it into an app repository.
+- `edenOS Embedded/` is a distinct private Samsung SM-T110 Android embedded-platform project. Its own Project Bible and handoff explicitly designate this repository as its development continuity location and prohibit writing its development artifacts into `lucasbuzek/edenOS` or `lucasbuzek/edenOS-apps`. Preserve that project-specific contract unless Lucas explicitly supersedes it.
+- `edenOS` is the separate hardware/software platform repository.
+- `edenOS-public` is the separate public release/distribution destination. No release readiness is implied.
 
-Current development state: v1.3.5 goal/pipeline audit + repair, EXPERIMENTAL, PRIVATE — Lucas.
+## Preservation rules
 
-Evidence: portable Swift PASS (40/40); macOS source syntax parse PASS; native macOS/M1 and real professional-provider round trips remain UNKNOWN.
+Keep each project in its own established lineage. Preserve source history, Project Bible, LKG, current candidate, test evidence and provenance. Do not merge similarly named projects, flatten platform and app boundaries, or treat a private variant as a replacement for the normal application.
 
-CURATOR retains creative-media domain ownership. BIFROST is optional shared interoperability/access/resolution infrastructure. Established EDEN Apps/helpers retain their original authoritative definitions.
-
-See `CURATOR/RECOVERY.md` for recoverability state and evidence.
+Before moving a project, inspect its own Project Bible and handoff, verify the destination, copy and verify the complete source first, and only then remove the old copy. Do not delete nonempty project content as a cleanup shortcut.
