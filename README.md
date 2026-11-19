@@ -1,8 +1,8 @@
 # Lucas Private edenOS Apps
 
-Private repository for Lucas' custom/private EDEN application builds and owner-specific variants.
+**Purpose:** custom/private versions and owner-specific variants of EDEN applications.
 
-**Authority boundary:** this repository is authoritative only for the custom applications and variants whose development is explicitly maintained here. It is not the master authority for EDEN, the EDEN platform, or every EDEN application. Existing EDEN applications, shared components, helpers and product families retain their own established canonical repositories, Project Bibles, source histories and LKGs. A private/custom copy does not supersede its upstream or original product authority merely by being stored here.
+This repository holds Lucas-only application variants. It is not the general EDEN applications repository, not the EDEN platform repository, and not an authority over every EDEN application. The normal EDEN application sources remain in `edenOS-apps`; each application's established source, Project Bible, history and LKG remain attached to that application. A custom/private copy is a separate variant and must not silently replace or redefine its normal EDEN application.
 
 ## CURATOR
 **CURATOR — Creative Understanding, Review, Asset Tagging, Organization & Retrieval**
