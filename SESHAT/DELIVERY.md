@@ -59,7 +59,7 @@ No NOSTOS or unrelated inventory product is a donor.
 
 ## Current state / blockers
 Recovered: Project Bible, product docs, acceptance matrix, in-chat contract, GitHub branches, Dropbox copies, skills and PWA candidate tree.
-Historical CI: 49 Node + 4 Chromium tests and static PWA build on run 40835282434; not rerun in this task.
+Run 40835282434 checked out 158474c76d7d91930454865e9b6f86e9152f125b and passed 49 Node + 4 Chromium tests plus static build/syntax/allowlist checks. Current branch HEAD 0c0b89ce6899726c7bd1e567777303ac4e336981 is later and adds a browser test file; no CI receipt for that HEAD was found. Do not promote the older run as verification of current HEAD.
 Not verified: live deployment, SaaS login, shared transactional backend, provider connections, native app, physical-device acceptance.
 Local write blocked by AppleRAVEN allowed roots; /Users/lucas/SoftwareDev is not exposed. Dropbox direct .md upload is not exposed through the current text-file API; Dropbox Paper can hold a native mirror but is not a literal .md file.
 Chromium count discrepancy: candidate source says four; one memory summary said six. Verify from CI before changing the record.
