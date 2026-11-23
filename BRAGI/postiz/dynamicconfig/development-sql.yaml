@@ -1,0 +1,4 @@
+# Temporal default dynamic configuration; no experimental overrides.
+limit.maxIDLength:
+  - value: 255
+    constraints: {}
